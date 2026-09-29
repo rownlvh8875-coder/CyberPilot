@@ -14,6 +14,8 @@ from openpilot.selfdrive.controls.lib.longitudinal_mpc_lib.long_mpc import T_IDX
 from openpilot.selfdrive.controls.lib.drive_helpers import CONTROL_N, get_accel_from_plan, should_stop
 from openpilot.selfdrive.car.cruise import V_CRUISE_MAX, V_CRUISE_UNSET
 from openpilot.common.swaglog import cloudlog
+from openpilot.selfdrive.controls.lib.cyber_long.policy import CyberLongPolicy
+from openpilot.selfdrive.controls.lib.cyber_long.types import CyberLongConfig, CyberLongMode, LongContext, ParameterBinding, StockCandidate
 
 A_CRUISE_MAX_VALS = [1.6, 1.2, 0.8, 0.6]
 A_CRUISE_MAX_BP = [0., 10.0, 25., 40.]
@@ -54,8 +56,14 @@ def get_cruise_accel(e2e, v_cruise, v_ego, a_cruise_prev, angle_steers, CP, dt, 
 
 
 class LongitudinalPlanner:
-  def __init__(self, CP, init_v=0.0, init_a=0.0, dt=DT_MDL):
+  def __init__(self, CP, init_v=0.0, init_a=0.0, dt=DT_MDL, *, cyber_long_config=None):
     self.CP = CP
+    self.cyber_long_config = cyber_long_config if cyber_long_config is not None else CyberLongConfig()
+    self.cyber_long_policy = CyberLongPolicy(self.cyber_long_config)
+    # CP fingerprint is a label, not firmware/model identity. No provenance IO.
+    self.cyber_long_binding = ParameterBinding(vehicle=str(CP.carFingerprint),
+                                               configuration_epoch=self.cyber_long_config.configuration_epoch)
+    self.cyber_long_fault = None
     self.mpc = LongitudinalMpc(dt=dt)
     self.fcw = False
     self.dt = dt
@@ -140,11 +148,37 @@ class LongitudinalPlanner:
     if sm['selfdriveState'].experimentalMode:
       candidates.append((output_a_target_e2e, LongitudinalPlanSource.e2e, output_should_stop_e2e))
 
+    if self.cyber_long_config.mode != CyberLongMode.DISABLED:
+      self._observe_stock(sm, candidates, reset_state, v_ego, v_cruise)
+
     output_a_target, self.mpc.source, _ = min(candidates, key=lambda c: c[0])
     self.output_should_stop = any(should_stop for _, _, should_stop in candidates)
     self.output_a_target = np.clip(output_a_target, ACCEL_MIN, ACCEL_MAX)
 
     self.v_desired_filter.x = self.v_desired_filter.x + self.dt * (self.output_a_target + a_prev) / 2.0
+
+  def _observe_stock(self, sm, candidates, reset_state, v_ego, v_cruise):
+    # Optional diagnostics only. Never return a candidate or change stock inputs.
+    if self.cyber_long_config.mode == CyberLongMode.DISABLED:
+      return
+    self.cyber_long_fault = None
+    context = None
+    try:
+      context = LongContext(
+        candidates=tuple(StockCandidate(float(a), str(source), bool(stop)) for a, source, stop in candidates),
+        input_valid=sm.all_checks(), reset_state=reset_state,
+        brake_pressed=sm['carState'].brakePressed, gas_pressed=sm['carState'].gasPressed,
+        long_active=sm['carControl'].longActive,
+        model_mono_time_ns=sm.logMonoTime['modelV2'], car_state_mono_time_ns=sm.logMonoTime['carState'],
+        radar_mono_time_ns=sm.logMonoTime['radarState'], v_ego_mps=v_ego, a_ego_mps2=sm['carState'].aEgo,
+        v_cruise_mps=v_cruise, force_decel=sm['controlsState'].forceDecel,
+        personality=str(sm['selfdriveState'].personality), binding=self.cyber_long_binding,
+      )
+      self.cyber_long_policy.observe(context)
+    except Exception as error:
+      # Bound the catch to optional observation, never to upstream computation.
+      self.cyber_long_fault = type(error).__name__
+      self.cyber_long_policy.invalidate('observer_fault', context)
 
   def publish(self, sm, pm):
     plan_send = messaging.new_message('longitudinalPlan')
