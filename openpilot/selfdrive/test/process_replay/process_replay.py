@@ -25,6 +25,7 @@ from openpilot.common.prefix import OpenpilotPrefix
 from openpilot.common.timeout import Timeout
 from openpilot.common.realtime import DT_CTRL
 from openpilot.system.camerad.cameras.nv12_info import get_nv12_info
+from openpilot.system.manager.process import PythonProcess
 from openpilot.system.manager.process_config import managed_processes
 from openpilot.selfdrive.test.process_replay.vision_meta import meta_from_camera_state, available_streams
 from openpilot.selfdrive.test.process_replay.migration import migrate_all
@@ -132,6 +133,7 @@ class ProcessConfig:
   main_pub_drained: bool = False
   vision_pubs: list[str] = field(default_factory=list)
   ignore_alive_pubs: list[str] = field(default_factory=list)
+  python_module: str | None = None
 
   def __post_init__(self):
     # If the process is polling a service, we can just lock that one to speed up replay
@@ -144,6 +146,10 @@ class ProcessContainer:
     self.prefix = OpenpilotPrefix(create_dirs_on_enter=False, clean_dirs_on_exit=False)
     self.cfg = copy.deepcopy(cfg)
     self.process = copy.deepcopy(managed_processes[cfg.proc_name])
+    if cfg.python_module is not None:
+      if not isinstance(self.process, PythonProcess):
+        raise ValueError(f'Process module override requires a Python process: {cfg.proc_name}')
+      self.process.module = cfg.python_module
     self.msg_queue: list[capnp._DynamicStructReader] = []
     self.last_input_log_mono_time: int = -1
     self.cnt = 0
