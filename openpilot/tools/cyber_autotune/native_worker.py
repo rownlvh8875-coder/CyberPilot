@@ -143,6 +143,8 @@ def _execute_request(request: dict) -> dict:
 
 def main():
   try:
+    from worker_resources import apply_worker_limits
+    apply_worker_limits()
     payload = sys.stdin.buffer.read(MAX_REQUEST_BYTES + 1)
     request = decode_request(payload)
     with open(os.devnull, 'w') as quiet, contextlib.redirect_stdout(quiet):

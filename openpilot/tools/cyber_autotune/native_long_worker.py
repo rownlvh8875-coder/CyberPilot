@@ -95,6 +95,8 @@ def _execute_request(request):
 
 def main():
   try:
+    from worker_resources import apply_worker_limits
+    apply_worker_limits()
     request = decode_request(sys.stdin.buffer.read(MAX_REQUEST_BYTES + 1))
     with open(os.devnull, 'w') as quiet, contextlib.redirect_stdout(quiet):
       result = execute_request(request)
