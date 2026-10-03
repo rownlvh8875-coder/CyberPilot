@@ -11,6 +11,22 @@ for the supplied-plan synthetic scope. The following historical qualification
 limitations and rejected candidates are preserved; new synthetic execution does
 not turn them into PASS results.
 
+Post-completion continuation adds read-only
+[candidate failure diagnostics](cyberpilot/changes/synthetic-candidate-failure-diagnostics.md)
+and [native longitudinal feedback parity tests](cyberpilot/changes/cyber-long-native-feedback-parity.md).
+The v2 longitudinal gain scales leave the pinned Santa Fe Ki vector at zero, so
+those candidates exercised no changed longitudinal trace. The new separate
+generic test closes native planner/LongControl feedback and verifies observer
+parity, not full process replay or calibrated vehicle performance. Neither
+extension changes the rejected candidate verdicts or vehicle readiness.
+
+The continuation's unchanged default software test suite completed with 1,526
+passed, 42 skipped and one expected failure (exit 0). The separately targeted
+AutoTune/controls run passed 619 tests. The
+[remaining-work audit](cyberpilot/CYBERPILOT_REMAINING_WORK_AUDIT.md) preserves
+earlier incomplete executions and the verified public-fixture resolution; these
+software results do not satisfy the unchecked vehicle qualifications below.
+
 The offline AutoTune contracts and local three-arm comparison do not yet form a
 qualified replay/closed-loop/shadow pipeline. The current lateral experiment was
 repeatable but failed its unchanged performance gates. Missing evidence must not

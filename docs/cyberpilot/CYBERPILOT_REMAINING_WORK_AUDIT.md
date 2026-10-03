@@ -69,3 +69,108 @@ would discard established evidence; declaring completion from existing unit test
 would omit user requirements. Perform changes inline with test-first validation.
 The user explicitly delegated intermediate design decisions and prohibited waiting
 for approvals; record those decisions here. Commit/push only after final gates.
+
+## 2026-10-04 continuation after the offline completion checkpoint
+
+Base: `cfa169896ad2efd913ec2f99e968ece1fed8c475`, initially clean and matching the
+local origin tracking ref. This continuation does not rewrite the prior publication
+receipt or declare the original STEP1-10 goals done. Git delivery is checked
+separately after the final verification below.
+
+Completed bounded work:
+
+- [Candidate diagnostics](changes/synthetic-candidate-failure-diagnostics.md):
+  preserve original verdicts, separate delay variants, show metric direction and
+  effective output changes, reject incomparable evidence before summarizing it.
+- [Native longitudinal feedback parity](changes/cyber-long-native-feedback-parity.md):
+  independent native planner/LongControl/generic-plant loops for lead transitions,
+  true standstill/restart and supplied driver cancellation/reengagement. No sockets
+  or actual device actuation; not a full coupled-process replay.
+- Independent source review corrections are covered by regression tests. No
+  policy, controller behavior, active profile, safety limit or holdout changes.
+
+| Check | Result |
+| --- | --- |
+| Final AutoTune + controls supported runner, `-j 1` | PASS: 619 tests, exit 0, 124.95 s |
+| Focused lateral process-replay tests | PASS: 16 tests and 4 subtests, exit 0 |
+| Ruff / compileall / whitespace | PASS on changed source and applicable existing modules |
+| SCons `-j2` | PASS, 100%, exit 0 |
+| Full fresh-worker synthetic comparison twice | PASS for exact repeatability; candidates still REJECTED |
+| Preserved-report diagnostic reader reruns | PASS for identical output bytes; not native qualification |
+| Publication scanner | PASS: zero findings, including new untracked files; rechecked at handoff |
+| Repository-wide default runner `-j 2` | FAILED execution: exit 1 without final summary; no full-suite PASS |
+| Instrumented default-runner attempt | FAILED execution: exit 1 without final summary/traceback; cause unresolved |
+| Later per-test/supervised default-runner observation | BLOCKED: explicit 900 s observation deadline; child terminated by SIGTERM, not a completed test verdict |
+| Fresh overnight AutoTune + controls, `-j 1` | PASS: 619 tests, exit 0, 122.84 s |
+| Final verified-fixture default runner, `-j 2 -v` | PASS: 1,526 passed, 42 skipped, 1 xfailed; exit 0, 353.59 s |
+| Vehicle-calibrated qualification / live shadow / deployment | NOT_RUN, vehicle activation BLOCKED |
+
+Both full-run attempts were bounded to 300 seconds. A local-only exception-tracing
+wrapper left the runner/tests/filters/assertions untouched. It did not expose the
+termination cause; no remaining Python/timeout processes were observed afterwards.
+Do not infer a named failed test, an OOM, or the historical loggerd audio failure
+from this symptom. The targeted final suite succeeded independently. At that point
+full-suite verification was incomplete and publication remained blocked pending
+the final verified-fixture run recorded below.
+
+Later observation separated the shell result from the actual child result. An
+external supervisor recorded `timed_out=true`, child returncode `-15` (SIGTERM)
+and elapsed 900.018 s. Before that deadline the unchanged default suite recorded
+1,483 individual passed, 32 skipped and one expected-failure stop event, without
+a failed/error/unexpected-success event. These partial events are not a complete
+suite PASS and do not count fixture-level skips that never start a test.
+The outstanding worker stayed in `TestLagd.test_read_invalid_saved_params`, whose
+first operation loads upstream's public CI log for CarParams. A separate bounded
+stack diagnostic reached SSL response reads through URLFile and LogReader. An
+HTTP206 range probe received only 327,244 bytes in 20.003 s from that public CI
+fixture endpoint. This supports an external-transfer bottleneck for the observed
+run; the two older attempts have no equivalent child receipt and remain historical
+incomplete executions, not proven named test failures.
+
+No assertions, time limits inside tests, collection rules, warnings, production
+code, cache policy or replay reference were changed. The 900 s observation budget
+belongs to the external diagnostic supervisor, not an acceptance threshold.
+The next environment-only step was to verify the exact public upstream fixture bytes
+against their server content length and digest before using the existing local
+`DATA_ENDPOINT` source option. A mirror is not a replacement synthetic fixture,
+and incomplete downloads must not be exposed as valid inputs. No user driving
+logs or additional driving-data request is involved. Fresh Ruff, whitespace,
+SCons and zero-finding publication checks passed; the full-suite publication gate
+remained open until the unchanged full run in the verified environment below.
+
+New complete synthetic output SHA-256:
+`9443899865794b59c731babd5754936c3488bb4204aa8a0c46059dcec2b9cf90`.
+All 200 first-repetition case/arm trace identities (including unavailable fault
+entries) are unchanged from the preserved artifact. Its original SHA remains
+`4e5145c0b2385f08105657c059ee0c072660c62c46115f952700dad41af5e5f5`.
+Frozen v2 policy SHA remains
+`4ff9dcfaa369cbdcee53f56a8db9c160efb3005a50f463e4125a1f41b74e8d35`.
+
+Final code/test content identities:
+
+- `synthetic_diagnostics.py`: `72823a4fcd0636afdcb0dbfc80f2bba160dda8ddc6ccfde1726bbf22b5f3cee3`
+- `test_synthetic_diagnostics.py`: `61721b6b281df4f9cad4fc44e856beecd3deec498f9f3a41fc55881ba2c4396b`
+- `test_cyber_long_feedback.py`: `41d9b8de76ac7d30697cbbe5b6591e76b90345a72bfb94c7503429f1a016d847`
+
+The historical full-suite publication blocker above was subsequently resolved:
+the exact public upstream CarParams fixture was fully downloaded and independently
+checked against server length and Content-MD5 before using the existing local
+`DATA_ENDPOINT` option. Failed/partial download attempts remain local evidence;
+no partial file was presented to tests. The final unchanged default runner completed
+in 353.59 s with 1,526 passed, 42 skipped, one expected failure and actual exit 0.
+The external supervisor recorded no timeout and identical before/after source,
+submodule, overlay and fixture identities. Its receipt SHA-256 is
+`ef6ebc76b01eb43dbbd4d91e10a53238e6ba3fd3011f3a7d10336dfa8ce55feb`.
+The previously stalled CarParams test passed in 1.895 s. The slowest remaining
+network test completed in 134.17 s. Existing skips, warnings, tests and references
+were not changed; no private driving data was used. Local diagnostic-wrapper
+tests and independent review additionally covered durable exit receipts and owned
+child cleanup. The default suite is software regression coverage, not qualified
+process replay, vehicle-calibrated simulation or device shadow.
+
+Remaining order: define bounded planner-coupled performance evaluation and effective offline
+candidate domains. Multiplying the pinned Santa Fe zero Ki cannot test a new
+longitudinal tune. Active Carrot cut-in/comfort, accepted lateral optimizer,
+qualified replay/calibrated plant and continuous device shadow remain incomplete.
+No new driving data is requested. REAL_VEHICLE_UNVERIFIED and
+VEHICLE_ACTIVATION_BLOCKED remain unchanged.

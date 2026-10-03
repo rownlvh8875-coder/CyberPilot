@@ -84,3 +84,21 @@ automatic installation or tuning workflow.
 All six vehicle authority flags must remain false: `real_vehicle_verified`,
 `runtime_accepted`, `active_profile_enabled`, `vehicle_write_enabled`,
 `can_write_enabled`, `promotable_to_vehicle`.
+
+## Verified diagnostic continuation
+
+The follow-up from `cfa169896ad2efd913ec2f99e968ece1fed8c475` adds a read-only
+frozen-report diagnostic reader and native planner/LongControl/generic-plant
+feedback parity tests. It does not change any controller, safety limit, frozen
+policy or candidate verdict. See the [continuation audit](CYBERPILOT_REMAINING_WORK_AUDIT.md)
+and its two feature records for exact source identities and limitations.
+
+The unchanged default software suite completed with 1,526 passed / 42 skipped /
+1 xfailed, exit 0, 353.59 s, with source and verified public fixture unchanged.
+Targeted AutoTune/controls coverage increased to 619 passed; the prior 607-test
+checkpoint above remains historical. Earlier incomplete default runs remain in
+the audit rather than being relabeled successful. This is a bounded offline
+engineering extension, not completion of active cut-in/comfort, an accepted
+lateral optimizer or the original full STEP1-10 vehicle objectives.
+
+REAL_VEHICLE_UNVERIFIED, VEHICLE_ACTIVATION_BLOCKED and NOT_READY remain in force.
