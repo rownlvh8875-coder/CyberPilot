@@ -1,0 +1,89 @@
+name: CyberPilot
+
+on:
+  push:
+    branches:
+      - feature/cyber-autotune
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cyberpilot-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CI: 1
+  PYTHONPATH: ${{ github.workspace }}
+  GIT_CONFIG_COUNT: 1
+  GIT_CONFIG_KEY_0: lfs.fetchexclude
+  GIT_CONFIG_VALUE_0: openpilot/selfdrive/modeld/models/big_driving_tinygrad.pkl
+
+jobs:
+  validate:
+    name: build and validate offline branch
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Set up openpilot development environment
+        run: ./tools/op.sh setup
+
+      - name: Audit publication before build
+        run: |
+          git fetch --no-tags origin main:refs/remotes/origin/main
+          python3 tools/cyberpilot/check_publication.py --base origin/main
+
+      - name: Build openpilot
+        run: scons -j2
+
+      - name: Ruff CyberPilot sources
+        run: |
+          ruff check \
+            tools/cyberpilot \
+            openpilot/tools/cyber_autotune \
+            openpilot/selfdrive/controls/lib/cyber_lateral \
+            openpilot/selfdrive/controls/lib/cyber_long \
+            openpilot/selfdrive/controls/tests/test_cyber_*.py \
+            openpilot/selfdrive/test/process_replay/*cyber_lateral*.py
+
+      - name: Run AutoTune and controls regression suite
+        run: >-
+          python3 tools/test_runner.py openpilot/tools/cyber_autotune/tests openpilot/selfdrive/controls/tests -j 1
+
+      - name: Check Python syntax and branch whitespace
+        run: |
+          python3 -m compileall -q openpilot/tools/cyber_autotune tools/cyberpilot
+          git diff --check origin/main...HEAD
+
+      - name: Run focused Cyber lateral replay tests
+        run: |
+          python3 -m pytest -q \
+            openpilot/selfdrive/test/process_replay/test_cyber_lateral_card_replay.py \
+            openpilot/selfdrive/test/process_replay/test_cyber_lateral_native_experiment.py
+
+      - name: Validate policy and evidence JSON
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            python3 -m json.tool "$file" >/dev/null
+          done < <(find docs/cyberpilot/policies docs/cyberpilot/changes \
+            -type f -name '*.json' -print0)
+
+      - name: Audit changed files for private evidence and credentials
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main:refs/remotes/origin/main
+          python3 tools/cyberpilot/check_publication.py --base origin/main
+
+      - name: Verify clean working tree
+        run: git diff --exit-code && git diff --cached --exit-code
