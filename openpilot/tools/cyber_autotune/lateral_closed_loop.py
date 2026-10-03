@@ -12,9 +12,12 @@ from openpilot.tools.cyber_autotune.contracts import finite_number, is_sha256
 
 
 ARMS = frozenset({'UPSTREAM_BASELINE', 'CYBER_CURRENT', 'CYBER_CANDIDATE'})
+CALIBRATION_STATUSES = frozenset({
+  'DESCRIPTIVE_CALIBRATION_EVIDENCE',
+  'CALIBRATION_EVIDENCE_READY_FOR_REVIEW',
+})
 MAX_FRAMES = 60_000
-STRUCTURAL_BLOCKERS = (
-  'PLANT_CALIBRATION_AUTHENTICITY_UNVERIFIED',
+BASE_STRUCTURAL_BLOCKERS = (
   'INDEPENDENT_REFERENCE_UNVERIFIED',
   'PERFORMANCE_GATE_NOT_EVALUATED',
 )
@@ -38,6 +41,7 @@ class ClosedLoopBinding:
   controller_sha256: str
   adapter_sha256: str
   plant_sha256: str
+  plant_calibration_sha256: str
   domain_sha256: str
   inputs_sha256: str
   reset_sha256: str
@@ -77,6 +81,8 @@ class ClosedLoopReceipt:
   outcome: str
   samples: tuple[ClosedLoopSample, ...]
   trace_sha256: str | None
+  plant_calibration_status: str
+  plant_calibration_qualified: bool
   physical_delay_owners: tuple[str, ...]
   controller_delay_queue_present: bool
   sendcan_forwarded: bool
@@ -203,6 +209,9 @@ def _receipt_valid(receipt) -> bool:
     and type(receipt.outcome) is str
     and type(receipt.samples) is tuple
     and (receipt.trace_sha256 is None or is_sha256(receipt.trace_sha256))
+    and type(receipt.plant_calibration_status) is str
+    and receipt.plant_calibration_status in CALIBRATION_STATUSES
+    and type(receipt.plant_calibration_qualified) is bool
     and type(receipt.physical_delay_owners) is tuple
     and all(type(owner) is str for owner in receipt.physical_delay_owners)
     and type(receipt.controller_delay_queue_present) is bool
@@ -237,6 +246,8 @@ def admit_closed_loop_receipt(
     return _blocked('INVALID_PHYSICAL_DELAY_OWNERSHIP')
   if receipt.controller_delay_queue_present:
     return _blocked('DUPLICATE_ACTUATOR_DELAY_QUEUE')
+  if receipt.plant_calibration_qualified:
+    return _blocked('FORBIDDEN_CALIBRATION_AUTHORITY')
   if any((
     receipt.sendcan_forwarded,
     receipt.live_can,
@@ -265,9 +276,14 @@ def admit_closed_loop_receipt(
   trace_digest = trace_sha256(receipt.samples)
   if receipt.trace_sha256 != trace_digest:
     return _blocked('TRACE_DIGEST_MISMATCH')
+  calibration_blocker = (
+    'PLANT_CALIBRATION_DESCRIPTIVE_ONLY'
+    if receipt.plant_calibration_status == 'DESCRIPTIVE_CALIBRATION_EVIDENCE'
+    else 'PLANT_CALIBRATION_REVIEW_REQUIRED'
+  )
   return ClosedLoopAdmission(
     status='STRUCTURAL_ADMISSION',
-    blockers=STRUCTURAL_BLOCKERS,
+    blockers=(calibration_blocker,) + BASE_STRUCTURAL_BLOCKERS,
     sample_count=len(receipt.samples),
     inputs_sha256=inputs_digest,
     trace_sha256=trace_digest,

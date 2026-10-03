@@ -34,6 +34,7 @@ class TestLateralClosedLoopAdmission(unittest.TestCase):
       controller_sha256=h('c'),
       adapter_sha256=h('d'),
       plant_sha256=h('e'),
+      plant_calibration_sha256=h('6'),
       domain_sha256=domain.identity_sha256,
       inputs_sha256=frames_sha256(frames),
       reset_sha256=h('f'),
@@ -47,6 +48,8 @@ class TestLateralClosedLoopAdmission(unittest.TestCase):
       outcome='COMPLETED',
       samples=samples,
       trace_sha256=trace_sha256(samples),
+      plant_calibration_status='DESCRIPTIVE_CALIBRATION_EVIDENCE',
+      plant_calibration_qualified=False,
       physical_delay_owners=('PLANT',),
       controller_delay_queue_present=False,
       sendcan_forwarded=False,
@@ -67,12 +70,44 @@ class TestLateralClosedLoopAdmission(unittest.TestCase):
     self.assertTrue(result.structural_admission_pass)
     self.assertEqual(result.sample_count, 4)
     self.assertEqual(result.trace_sha256, receipt.trace_sha256)
-    self.assertIn('PLANT_CALIBRATION_AUTHENTICITY_UNVERIFIED', result.blockers)
+    self.assertIn('PLANT_CALIBRATION_DESCRIPTIVE_ONLY', result.blockers)
     self.assertIn('INDEPENDENT_REFERENCE_UNVERIFIED', result.blockers)
     self.assertIn('PERFORMANCE_GATE_NOT_EVALUATED', result.blockers)
     self.assertFalse(result.qualified_closed_loop)
     self.assertFalse(result.runtime_accepted)
     self.assertFalse(result.promotable)
+
+  def test_calibration_status_is_bound_and_never_self_qualifies(self):
+    from openpilot.tools.cyber_autotune.lateral_closed_loop import admit_closed_loop_receipt
+
+    domain, frames, receipt = self.make_case()
+    ready = replace(
+      receipt,
+      plant_calibration_status='CALIBRATION_EVIDENCE_READY_FOR_REVIEW',
+    )
+    result = admit_closed_loop_receipt(domain, frames, ready)
+    self.assertEqual(result.status, 'STRUCTURAL_ADMISSION')
+    self.assertIn('PLANT_CALIBRATION_REVIEW_REQUIRED', result.blockers)
+    self.assertFalse(result.qualified_closed_loop)
+
+    result = admit_closed_loop_receipt(
+      domain, frames, replace(receipt, plant_calibration_qualified=True),
+    )
+    self.assertEqual(result.status, 'BLOCKED')
+    self.assertIn('FORBIDDEN_CALIBRATION_AUTHORITY', result.blockers)
+
+    result = admit_closed_loop_receipt(
+      domain, frames, replace(receipt, plant_calibration_status='UNKNOWN'),
+    )
+    self.assertEqual(result.status, 'BLOCKED')
+    self.assertIn('INVALID_RECEIPT', result.blockers)
+
+    bad_binding = replace(receipt.binding, plant_calibration_sha256='bad')
+    result = admit_closed_loop_receipt(
+      domain, frames, replace(receipt, binding=bad_binding),
+    )
+    self.assertEqual(result.status, 'BLOCKED')
+    self.assertIn('INVALID_RECEIPT', result.blockers)
 
   def test_physical_delay_must_have_exactly_one_plant_owner(self):
     from openpilot.tools.cyber_autotune.lateral_closed_loop import admit_closed_loop_receipt
