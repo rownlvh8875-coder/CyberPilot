@@ -174,3 +174,28 @@ longitudinal tune. Active Carrot cut-in/comfort, accepted lateral optimizer,
 qualified replay/calibrated plant and continuous device shadow remain incomplete.
 No new driving data is requested. REAL_VEHICLE_UNVERIFIED and
 VEHICLE_ACTIVATION_BLOCKED remain unchanged.
+
+## Planner feedback measurement checkpoint
+
+Follow-up from `2a17919614632c4dd6f72cac65a09f6751b1ed07` adds
+[separate interval-aligned measurements](changes/planner-feedback-measurements.md)
+to the existing native feedback fixture. Original parity trace values remain
+exactly equal to the preserved Git-object fixture; four native reference/current/
+observer arms agree. No controller, frozen metric/policy, plant calibration,
+parameter bound or candidate verdict changes.
+
+Focused10tests and combined AutoTune/controls626tests passed. New full default
+suite:1,533passed /42skipped /1xfailed,exit0,249.50s, with unchanged source and
+verified public input. Ruff, SCons, publication audit and independent review pass;
+two complete fresh-process aggregate reports are byte-identical. Exact source and
+receipt identities and descriptive metric values are in the linked feature record.
+These results supersede the earlier counts only for this new executable overlay;
+historical evidence above is not rewritten. Test-only helper identity necessarily
+changed to emit separate rows; its prior hash remains a historical identity.
+
+This completes descriptive planner-coupled measurement, not performance acceptance.
+Desired-follow and stop-position errors remain null without independent targets.
+Effective vehicle gain search remains BLOCKED by zero stock Ki and unreviewed
+bounds. Do not insert an arbitrary nonzero gain or tune a generic plant as if it
+were the user's vehicle. Qualified replay, calibrated simulation and device
+shadow/activation remain unverified; all vehicle authority remains disabled.

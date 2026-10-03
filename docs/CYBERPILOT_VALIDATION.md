@@ -27,6 +27,12 @@ AutoTune/controls run passed 619 tests. The
 earlier incomplete executions and the verified public-fixture resolution; these
 software results do not satisfy the unchecked vehicle qualifications below.
 
+The later [planner feedback measurement checkpoint](cyberpilot/changes/planner-feedback-measurements.md)
+adds descriptive time-aligned metrics without changing control or acceptance:
+626 targeted and1,533 default tests passed (42 skipped,1 expected failure in the
+default suite). Missing independent follow/stop-position truth remains null;
+generic measurement results do not establish a vehicle gain domain or calibration.
+
 The offline AutoTune contracts and local three-arm comparison do not yet form a
 qualified replay/closed-loop/shadow pipeline. The current lateral experiment was
 repeatable but failed its unchanged performance gates. Missing evidence must not
