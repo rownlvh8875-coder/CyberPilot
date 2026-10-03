@@ -1,7 +1,15 @@
 # CyberPilot v0.1 validation and vehicle-application preparation
 
-Current readiness: **NOT_READY**. Last assessment: 2026-10-03 KST.
+Current vehicle readiness: **NOT_READY**. Last assessment: 2026-10-04 KST.
 This is a living preparation document, not approval for vehicle use.
+
+Offline engineering and vehicle qualification are separate decisions. See
+[branch completion](cyberpilot/CYBERPILOT_BRANCH_COMPLETION.md) for the final
+software test/publication gates, and
+[offline v2 change record](cyberpilot/changes/offline-synthetic-v2-and-rehearsal.md)
+for the supplied-plan synthetic scope. The following historical qualification
+limitations and rejected candidates are preserved; new synthetic execution does
+not turn them into PASS results.
 
 The offline AutoTune contracts and local three-arm comparison do not yet form a
 qualified replay/closed-loop/shadow pipeline. The current lateral experiment was
@@ -10,8 +18,8 @@ be represented as zero error, PASS, a valid calibration or an active profile.
 
 ## Scope and current evidence
 
-The offline tooling is committed and published on `feature/cyber-autotune`; the
-current evidence no longer depends on a dirty working-tree overlay. Every new
+Previously published offline tooling is on `feature/cyber-autotune`; the
+completion report separately records the current publication checkpoint. Every new
 validation run must still bind its exact source HEAD, submodules, model, configuration
 and environment identities before its results can be compared or promoted.
 
@@ -431,9 +439,11 @@ Hash chains without trusted checkpoints do not detect full-history rewriting.
   candidate/platform. Still not actuator authority.
 - **NOT_READY:** any mandatory prerequisite absent, blocked, failed or unverified.
 
-Current classification is **NOT_READY**: real tune qualification and native
-metric/plant/longitudinal integration are missing, primary truth/coverage remain
-incomplete, and no accepted optimizer or measured shadow integration exists.
+Current vehicle classification is **NOT_READY**: real tune qualification and
+vehicle-calibrated, qualified metric/plant/longitudinal integration are missing.
+Independent physical truth/coverage remain incomplete, and no accepted optimizer
+or qualified on-device shadow integration exists. The generic synthetic and
+offline immutable-window integrations are described in the completion report.
 
 ## Real-vehicle checklist — do not execute yet
 
@@ -451,11 +461,16 @@ incomplete, and no accepted optimizer or measured shadow integration exists.
 
 ## Development references
 
-- [Retrospective route/source evaluation](CYBER_AUTOTUNE_RETROSPECTIVE_EVALUATION_20261003.md)
-- [AutoTune policy/profile result](CYBER_AUTOTUNE_STEP8_POLICY_PROFILE_RESULT_20261002.md)
-- [Grid/audit result](CYBER_AUTOTUNE_STEP8_GRID_AUDIT_RESULT_20261002.md)
-- [STEP9 comparison result](CYBER_STEP9_COMPARISON_CORE_RESULT_20261002.md)
-- [Corrected lateral gate record](CYBER_LATERAL_STEP7_D3Y_CORRECTED_GATE_REPORT_20261001.md)
+- [Offline engineering release checklist](cyberpilot/CYBERPILOT_RELEASE_CHECKLIST.md)
+- [Manual vehicle-evaluation preparation, Korean](cyberpilot/MANUAL_VEHICLE_EVALUATION_KO.md)
+- [Remaining-work audit](cyberpilot/CYBERPILOT_REMAINING_WORK_AUDIT.md)
+
+- Historical local report identifiers (not bundled in this public tree):
+  `CYBER_AUTOTUNE_RETROSPECTIVE_EVALUATION_20261003.md`,
+  `CYBER_AUTOTUNE_STEP8_POLICY_PROFILE_RESULT_20261002.md`,
+  `CYBER_AUTOTUNE_STEP8_GRID_AUDIT_RESULT_20261002.md`,
+  `CYBER_STEP9_COMPARISON_CORE_RESULT_20261002.md`,
+  `CYBER_LATERAL_STEP7_D3Y_CORRECTED_GATE_REPORT_20261001.md`.
 - Repository safety requirements: docs/SAFETY.md (unchanged in the repository).
 
 Update this document when implementation/evidence changes. Do not mark unchecked
