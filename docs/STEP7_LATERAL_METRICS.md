@@ -129,7 +129,7 @@ The repository-owned native experiment runner at `b1473ac6947ba591cf745b53645068
 | Isolated native A0 controller baseline | PASSED | 2 identical runs, 6004 outputs each; `sendcan` discarded |
 | Isolated native A3 controller counterfactual | PASSED | 2 identical runs; 25 raw outputs changed; performance pass false |
 | Simulator fail-closed domain contract | PASSED | 8 tests; direct 7.28 m/s probe blocked with `speed_below_validated_domain`; no score emitted |
-| Public closed-loop structural admission | PASSED | 12/12 current-head arm receipts admitted structurally; all retained plant/truth/performance blockers; A3 performance remained 0/6 |
+| Calibration-bound closed-loop structural admission | PASSED | 12/12 arm receipts bound descriptive plant evidence; qualification/truth/performance blockers remain; A3 performance remained 0/6 |
 | Calibrated A0-A5 closed loop | BLOCKED | segment 29 is 3.19-7.28 m/s; plant is valid only at 15-27 m/s |
 | Non-actuating shadow | NOT RUN | requires replay and simulator gates plus separate approval |
 | Real vehicle | NOT RUN | prohibited at this stage |

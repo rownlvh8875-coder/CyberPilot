@@ -73,17 +73,25 @@ parameter identification remain unqualified, and candidate generation, replay
 acceptance, profile activation and vehicle use remain blocked. Overall readiness
 remains NOT_READY. Detailed report: `CYBER_AUTOTUNE_CLUSTER_TLS_STABILITY_20261003.md`.
 
-A repository-owned lateral closed-loop structural admission contract now checks
-external aggregate-only receipts before comparison. It binds controller/adapter/plant/
-domain/input/reset/metric/environment/timebase identities, requires one physical delay
-owner (`PLANT`), rejects any second controller delay queue, validates the ordered trace,
-and forbids CAN, vehicle, parameter, runtime and promotion authority. Against public
-HEAD `5e0dcc3f8fa42a4fd1a5f3bb7f8a387f00804573`, the frozen six-window development run
+A repository-owned plant-calibration evidence contract now verifies the private
+aggregate evidence chain without importing route identities, paths, samples or model
+coefficients. The result is `DESCRIPTIVE_CALIBRATION_EVIDENCE`: development/validation
+roles are disjoint, the model was frozen before validation, no validation refit or
+candidate-output selection occurred, and smoke trace/pose are deterministic. It is not
+qualified because historical acceptance limits were not precommitted, position truth is
+not independent, external reproduction is absent, and the exact current platform has not
+been prospectively revalidated. Detailed report:
+`docs/cyberpilot/changes/cyber-validation-plant-calibration-evidence.md`.
+
+The lateral closed-loop contract now binds that evidence SHA/status to every external
+receipt in addition to controller/adapter/plant/domain/input/reset/metric/environment/
+timebase identities. Against public HEAD
+`dfa0ff8ff465962ecb0e0db2a0f2536ac0a746c1`, the frozen six-window development run
 passed strict A/A 6/6 and A/B repeatability 6/6. All 12 arm receipts (1,000 samples each)
-passed structural admission and retained `PLANT_CALIBRATION_AUTHENTICITY_UNVERIFIED`,
+passed structural admission and retained `PLANT_CALIBRATION_DESCRIPTIVE_ONLY`,
 `INDEPENDENT_REFERENCE_UNVERIFIED` and `PERFORMANCE_GATE_NOT_EVALUATED`. The aggregate
 result repeated byte-identically with SHA-256
-`c72d3045c6bab27fd769a3743f8d0a2a098605c0098327557eb0cb12f3c92468`. Every prior
+`06332c1492de07f92b26aae9a833af081063160a454b38cef02eed8f928703c7`. Every prior
 A0/A3 trace hash and metric was unchanged, so no integration drift was observed. A3
 still passed 0/6 performance gates, remains rejected, and cannot proceed to shadow.
 Detailed report: `docs/cyberpilot/changes/cyber-validation-lateral-closed-loop-admission.md`.

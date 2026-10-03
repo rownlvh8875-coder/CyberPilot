@@ -3,66 +3,70 @@
 ## Identity and purpose
 
 - Area: STEP7/STEP9 offline lateral closed-loop validation.
-- Public source HEAD: `5e0dcc3f8fa42a4fd1a5f3bb7f8a387f00804573`.
-- Purpose: admit aggregate-only external plant/controller receipts to the
-  repository comparison pipeline without importing private logs or plant code.
-- This is not a plant implementation, model calibration, performance approval,
-  shadow scheduler, profile writer, CAN transport or vehicle-use authorization.
+- Evaluated public source HEAD: `dfa0ff8ff465962ecb0e0db2a0f2536ac0a746c1`.
+- Purpose: admit aggregate-only external plant/controller receipts without
+  importing private logs, route identities, raw traces, model coefficients or
+  private plant code.
+- This is not performance approval, shadow permission, profile activation,
+  CAN transport or vehicle-use authorization.
 
-The repository now owns the receipt contract in
-`openpilot/tools/cyber_autotune/lateral_closed_loop.py`. A private offline runner
-may produce a receipt, but the receipt fails closed unless its domain, inputs,
-timebase, trace and authority boundaries match this contract.
+CyberPilot owns two authority-free contracts:
 
-## Structural contract
+- `plant_calibration.py`: verifies aggregate calibration evidence and its limits;
+- `lateral_closed_loop.py`: binds that evidence to immutable closed-loop receipts.
 
-The contract binds:
+The private producer may calculate a receipt, but it cannot grant qualification,
+runtime acceptance or promotion to itself.
 
-- software, controller, adapter, plant, domain and environment SHA-256 identities;
-- immutable reset, input, metric and timebase SHA-256 identities;
-- contiguous frame indices and the declared fixed control period;
-- speed and normalized-command bounds from the frozen domain;
-- controller prediction delay as metadata, not a second physical delay queue;
-- exactly one physical actuator-delay owner: `PLANT`;
-- ordered trace samples and their content digest.
+## Calibration evidence bound to the receipt
 
-Every receipt must also assert all of the following as false:
-
-- `sendcan_forwarded`
-- `live_can`
-- `vehicle_write`
-- `parameter_write`
-- `runtime_accepted`
-- `promotable`
-
-A structurally valid receipt returns `STRUCTURAL_ADMISSION`, not qualification.
-The result always retains these blockers until separate evidence exists:
-
-1. `PLANT_CALIBRATION_AUTHENTICITY_UNVERIFIED`
-2. `INDEPENDENT_REFERENCE_UNVERIFIED`
-3. `PERFORMANCE_GATE_NOT_EVALUATED`
-
-## TDD and focused verification
-
-The test was first run before the module existed and failed 8/8 with
-`ModuleNotFoundError`. After implementation:
+The private D3Y evidence chain was revalidated as an aggregate-only receipt.
 
 ```text
-public admission contract  8 passed / 12 subtests
-private D3Y focused suite  29 passed
-Ruff                      PASS
+status                              DESCRIPTIVE_CALIBRATION_EVIDENCE
+evidence-chain receipt SHA-256      db035e6d6c2f763953c6f1d8ac66111d30b5b9bf7402d885bb319d539f961f23
+canonical evidence SHA-256          523f0a77eea1a8ea9c75a30b21d14c3e6550d4754a10b2ae561ebc1b9ff4a6ac
+development routes                  8
+validation routes                   4
+validation sequences               17
+eligible pose samples               6,359
+model stability radius              0.9571762129
+validation refit                    false
+candidate-output model selection    false
+deterministic trace / pose          true / true
 ```
 
-Covered failures include duplicate/no physical delay owner, a controller-side
-physical delay queue, discontinuous timebase, out-of-domain speed, mismatched
-input/domain/timebase/trace digests, invalid trace values, cardinality mismatch,
-non-completed runs and every forbidden authority flag.
+The evidence is internally consistent and development/validation roles are
+disjoint. It is not a calibration qualification because the historical protocol
+did not precommit an acceptance threshold, the validation was descriptive, its
+position reference was not independent primary truth, external reproduction is
+absent, and the exact current platform has not been prospectively revalidated.
 
-## Current-HEAD six-window revalidation
+## Structural receipt contract
+
+The receipt binds:
+
+- software, controller, adapter, plant and plant-calibration SHA-256 identities;
+- domain, input, reset, metric, environment and timebase identities;
+- contiguous frame indices and fixed control period;
+- speed and normalized-command bounds;
+- ordered trace samples and their digest;
+- exactly one physical actuator-delay owner: `PLANT`;
+- controller prediction delay as metadata, not a second physical delay queue.
+
+Every receipt asserts `sendcan_forwarded`, `live_can`, `vehicle_write`,
+`parameter_write`, `runtime_accepted` and `promotable` as false. A producer claim
+of `plant_calibration_qualified=true` is rejected as forbidden authority.
+
+`DESCRIPTIVE_CALIBRATION_EVIDENCE` is admitted structurally with
+`PLANT_CALIBRATION_DESCRIPTIVE_ONLY`; `CALIBRATION_EVIDENCE_READY_FOR_REVIEW`
+would still retain `PLANT_CALIBRATION_REVIEW_REQUIRED`. Neither status creates
+closed-loop qualification.
+
+## Calibration-bound six-window revalidation
 
 The existing external D3Y adapter and frozen development manifest were rerun
-against the public CyberPilot source after adding the public contract. Private
-route identities, raw logs and plant implementation remain outside the repository.
+with the plant-evidence receipt bound to both baseline and candidate arms.
 
 | Check | Result |
 |---|---:|
@@ -76,55 +80,59 @@ route identities, raw logs and plant implementation remain outside the repositor
 | shadow promotion | false |
 | active-control promotion | false |
 
-Every one of the 12 arm receipts retained the three structural blockers and
-reported `qualified_closed_loop=false`, `runtime_accepted=false` and
-`promotable=false`.
+All 12 receipts retained:
 
-The complete aggregate result repeated byte-for-byte with SHA-256:
+1. `PLANT_CALIBRATION_DESCRIPTIVE_ONLY`
+2. `INDEPENDENT_REFERENCE_UNVERIFIED`
+3. `PERFORMANCE_GATE_NOT_EVALUATED`
+
+Every receipt reported `qualified_closed_loop=false`, `runtime_accepted=false`
+and `promotable=false`.
+
+The aggregate output repeated byte-for-byte:
 
 ```text
-c72d3045c6bab27fd769a3743f8d0a2a098605c0098327557eb0cb12f3c92468
+06332c1492de07f92b26aae9a833af081063160a454b38cef02eed8f928703c7
 ```
 
-Compared with the prior corrected six-window result, every A0/A3 ordered trace
-hash, strict A/A receipt, A/B repeatability field, comparison field and metric
-record was unchanged. The public-source integration introduced no observed
+Compared with the prior corrected result, all A0/A3 ordered trace hashes,
+strict A/A records, A/B repeatability fields, comparison fields and metric
+records were unchanged. Binding the calibration evidence introduced no observed
 closed-loop behavior drift.
+
+## Verification
+
+```text
+closed-loop admission tests      9 passed / 12 subtests
+plant evidence tests             8 passed / 23 subtests
+private D3Y focused suite       29 passed
+AutoTune + controls            492 / 492 passed
+Ruff                            PASS
+SCons                           100% complete
+Git whitespace / privacy audit  PASS
+```
+
+Sanitized machine-readable receipt:
+
+```text
+cyber-validation-lateral-closed-loop-admission-result.json
+eed1bf817c37161b47d593e17082ee75514cb6e0de47909d107053cb7670001b
+```
 
 ## Interpretation and next gate
 
-This work closes a structural integration gap only. It proves that an external
-closed-loop producer can be checked against a repository-owned, single-delay,
-non-actuating receipt contract. It does not prove that the private plant is a
-calibrated representation of the current vehicle or that its path reference is
-independent ground truth.
-
-The previously tested A3 candidate remains rejected. The new contract must not
-be used to relabel its repeatability as a performance pass.
+This closes the plant-evidence identity gap but does not close the plant
+qualification gap. The A3 candidate remains rejected and cannot proceed to
+shadow.
 
 Remaining mandatory gates are:
 
-- authenticate plant calibration and applicability to the exact vehicle/software;
-- provide independent center/edge or equivalent primary path truth;
-- evaluate an accepted candidate against frozen regression thresholds;
-- qualify uncertainty and complete replay/closed-loop evidence;
-- only then evaluate continuous non-actuating shadow non-interference.
+- a prospectively frozen or independently reproduced plant-calibration protocol
+  with predeclared acceptance limits;
+- independent center/edge or equivalent primary path truth;
+- an accepted candidate that passes all frozen regression thresholds;
+- uncertainty qualification and complete replay/closed-loop evidence;
+- only then continuous non-actuating shadow non-interference testing.
 
-No current result permits profile activation, CAN output, safety-limit changes or
-vehicle operation.
-
-## Final regression verification
-
-```text
-public admission contract       8 passed / 12 subtests
-private D3Y focused suite      29 passed
-AutoTune + controls           483 / 483 passed
-Ruff                           PASS
-SCons                          100% complete
-Git whitespace check           PASS
-```
-
-The sanitized machine-readable result is
-`cyber-validation-lateral-closed-loop-admission-result.json`, SHA-256
-`9b658c0e84bd5e234fc6e1175850056eed6353f831af32dea13ae008ff57b1c0`.
-It contains no route identity, log path, raw trace or private plant implementation.
+No current result permits profile activation, CAN output, safety-limit changes,
+shadow promotion or vehicle operation.
