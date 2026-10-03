@@ -1,0 +1,34 @@
+{
+  "baseline_internal_report_sha256": "2421a5399f33fb7b523f8f4b4e486c0f9d717c70edd3a89750cbe49c03e8bdfd",
+  "candidate_executed": false,
+  "candidate_generation_allowed": false,
+  "frozen_baseline_artifact_sha256": "5b287382df84d7d95f253479dcce3be93447fd9477de132426ca9a9953d123f5",
+  "gate": {
+    "blockers": [
+      "SYNTHETIC_ONLY_NO_PHYSICAL_QUALIFICATION",
+      "STRESS_IMPROVEMENT_INCOMPLETE",
+      "CANDIDATE_GENERATION_NOT_AUTHORIZED"
+    ],
+    "candidate_generation_allowed": false,
+    "compared_scenario_count": 14,
+    "fault_identity_pass": true,
+    "improved_stress_scenarios": [],
+    "improvement_pass": false,
+    "no_regression_pass": true,
+    "performance_qualified": false,
+    "policy_sha256": "ae4ad7f1cad3e4e5f138df2d4ef8feae17e881a951a5b37caa481fd124ba2a62",
+    "promotable": false,
+    "regressions": [],
+    "runtime_accepted": false,
+    "shadow_promotion_allowed": false,
+    "status": "SYNTHETIC_NONREGRESSION_PASS",
+    "symmetry_pass": true
+  },
+  "performance_qualified": false,
+  "policy_sha256": "ae4ad7f1cad3e4e5f138df2d4ef8feae17e881a951a5b37caa481fd124ba2a62",
+  "promotable": false,
+  "runtime_accepted": false,
+  "schema_version": 1,
+  "shadow_promotion_allowed": false,
+  "source_head": "1a4d3a55921f29516d0b004fbd6c7c104299198c"
+}

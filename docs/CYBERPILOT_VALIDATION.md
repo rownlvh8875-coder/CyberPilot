@@ -146,6 +146,19 @@ pass. `GENERIC_SYNTHETIC_PLANT_NOT_VEHICLE_CALIBRATED` and
 sanitized result:
 `docs/cyberpilot/changes/cyber-validation-synthetic-lateral-closed-loop-result.json`.
 
+Before any new candidate execution, a relative no-regression/improvement policy was
+committed and pushed with SHA-256
+`ae4ad7f1cad3e4e5f138df2d4ef8feae17e881a951a5b37caa481fd124ba2a62`.
+It binds all 14 scenarios, catalog/CarParams identity, sample counts, fault outcomes,
+left/right symmetry and the baseline internal report. The baseline self-check returns
+`SYNTHETIC_NONREGRESSION_PASS`, with no regressions, preserved symmetry/fault identity
+and `improvement_pass=false`; it repeated byte-identically with SHA-256
+`3d07f9be8afa562333db535755c8f97d86fb476d204b9592f3cc5f0ae3c7f559`.
+No candidate was executed and candidate/shadow/runtime/promotion authority remains false.
+Detailed report: `docs/cyberpilot/changes/cyber-validation-synthetic-lateral-gate.md`;
+self-check result:
+`docs/cyberpilot/changes/cyber-validation-synthetic-lateral-gate-selfcheck-result.json`.
+
 The new LongControl worker consumes exogenous plan/state/event samples, fixed serialized
 CP, native Float32 messages, stock engagement/reset and source-derived PID limits.
 It reports requested acceleration before CarController/CAN, not applied plant input.
