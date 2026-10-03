@@ -83,6 +83,17 @@ not independent, external reproduction is absent, and the exact current platform
 been prospectively revalidated. Detailed report:
 `docs/cyberpilot/changes/cyber-validation-plant-calibration-evidence.md`.
 
+A prospective current-platform protocol is now frozen at
+`2026-10-03T12:11:42Z` before future content access. It binds the exact model,
+adapter, plant builder and validation runner, requires independent primary position
+truth, predeclared 1/5/10-second limits, minimum route/sequence/sample coverage,
+and metadata-manifest freeze before semantic evaluation. Historical evidence is
+ineligible with `DATA_PREDATES_PROTOCOL_FREEZE`. A metadata-only scan of 5,602
+local rlog/qlog candidates found zero post-freeze logs, so the current status is
+`PROTOCOL_FROZEN_AWAITING_POST_FREEZE_EVIDENCE`. Policy:
+`docs/cyberpilot/policies/plant-calibration-prospective-v1.json`; report:
+`docs/cyberpilot/changes/cyber-validation-plant-calibration-prospective-protocol.md`.
+
 The lateral closed-loop contract now binds that evidence SHA/status to every external
 receipt in addition to controller/adapter/plant/domain/input/reset/metric/environment/
 timebase identities. Against public HEAD

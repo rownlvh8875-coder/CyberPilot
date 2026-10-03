@@ -127,8 +127,8 @@ shadow.
 
 Remaining mandatory gates are:
 
-- a prospectively frozen or independently reproduced plant-calibration protocol
-  with predeclared acceptance limits;
+- collect and evaluate post-freeze evidence under the now-frozen prospective
+  plant-calibration protocol; no eligible post-freeze log exists yet;
 - independent center/edge or equivalent primary path truth;
 - an accepted candidate that passes all frozen regression thresholds;
 - uncertainty qualification and complete replay/closed-loop evidence;

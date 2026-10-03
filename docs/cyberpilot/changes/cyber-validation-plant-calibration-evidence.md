@@ -96,3 +96,15 @@ identity, log path, raw sample or model coefficient.
 `plant_calibration_qualified`, `runtime_accepted`, `promotable`,
 `performance_acceptance`, `recommendation_authorized` and `real_vehicle_write`
 all remain false.
+
+## Prospective successor protocol
+
+The historical evidence remains descriptive. A separate protocol was frozen on
+2026-10-03 before future content access:
+
+- policy: `../policies/plant-calibration-prospective-v1.json`
+- freeze result: `../policies/plant-calibration-prospective-v1-result.json`
+- canonical policy SHA-256: `a3419a10bf24592c23ccb6e48662ba1235e89029b50e866ac894a47c82300119`
+
+No local post-freeze driving log currently exists. Historical artifacts cannot be
+submitted to this protocol and receive `DATA_PREDATES_PROTOCOL_FREEZE`.
