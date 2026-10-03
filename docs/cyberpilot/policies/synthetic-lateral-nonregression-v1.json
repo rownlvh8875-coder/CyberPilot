@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_BEFORE_CANDIDATE_EXECUTION",
+  "purpose": "SYNTHETIC_LATERAL_CANDIDATE_NONREGRESSION_AND_IMPROVEMENT_GATE",
+  "baseline_artifact_sha256": "5b287382df84d7d95f253479dcce3be93447fd9477de132426ca9a9953d123f5",
+  "baseline_internal_report_sha256": "2421a5399f33fb7b523f8f4b4e486c0f9d717c70edd3a89750cbe49c03e8bdfd",
+  "required_scenario_ids": [
+    "straight_low",
+    "straight_high",
+    "gentle_left",
+    "gentle_right",
+    "tight_left",
+    "tight_right",
+    "s_curve",
+    "ramp_curve",
+    "lane_change",
+    "driver_override",
+    "friction_low",
+    "friction_high",
+    "sensor_dropout",
+    "timebase_gap"
+  ],
+  "stress_scenario_ids": [
+    "tight_left",
+    "tight_right",
+    "s_curve",
+    "ramp_curve",
+    "lane_change",
+    "driver_override"
+  ],
+  "symmetry_pairs": [
+    ["gentle_left", "gentle_right"],
+    ["tight_left", "tight_right"]
+  ],
+  "thresholds": {
+    "maximum_relative_lateral_rmse_regression": 0.02,
+    "maximum_absolute_lateral_rmse_regression_m": 0.01,
+    "maximum_relative_lateral_max_regression": 0.02,
+    "maximum_absolute_lateral_max_regression_m": 0.02,
+    "maximum_relative_heading_error_regression": 0.02,
+    "maximum_absolute_heading_error_regression_rad": 0.001,
+    "maximum_relative_jerk_regression": 0.10,
+    "maximum_absolute_jerk_regression_deg_s3": 5.0,
+    "maximum_absolute_saturation_regression": 0.02,
+    "maximum_absolute_requested_torque_regression": 0.01,
+    "maximum_command_reversal_increase": 1,
+    "maximum_inactive_requested_torque_abs": 1e-12,
+    "left_right_symmetry_absolute_tolerance": 1e-9,
+    "minimum_stress_improvement_fraction": 0.10,
+    "require_every_stress_scenario_improved": true
+  },
+  "improvement_metrics": [
+    "lateral_error_rmse_m",
+    "maximum_abs_lateral_error_m",
+    "steering_jerk_rmse_deg_s3",
+    "saturation_ratio"
+  ],
+  "identity_requirements": {
+    "same_catalog_sha256": true,
+    "same_car_params_sha256": true,
+    "same_scenario_order": true,
+    "same_sample_count": true,
+    "same_fault_outcomes": true
+  },
+  "authority": {
+    "performance_qualification": false,
+    "candidate_generation_allowed": false,
+    "shadow_promotion_allowed": false,
+    "runtime_accepted": false,
+    "promotable": false,
+    "vehicle_or_can_write": false
+  }
+}
