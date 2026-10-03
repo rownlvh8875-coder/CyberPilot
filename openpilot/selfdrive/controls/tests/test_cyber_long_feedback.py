@@ -37,6 +37,7 @@ def simulate(scenario, planner_type=LongitudinalPlanner, control_type=LongContro
   accel, response, position = 0., 0., 0.
   lead_position = 6. if scenario == 'stop_start' else 35.
   trace = []
+  measurements = []  # Separate diagnostic rows; the original parity trace is unchanged.
   observations = updates = 0
   planner_stride = round(DT_MDL / DT_CTRL)
   assert planner_stride == 5
@@ -73,6 +74,12 @@ def simulate(scenario, planner_type=LongitudinalPlanner, control_type=LongContro
       policy = getattr(planner, 'cyber_long_policy', None)
       if policy is not None and policy.last_observation is not None:
         observations += 1
+    measurement = {'time_s': tick * DT_CTRL, 'active': active, 'stop_demand': stopping,
+                   'lead_present': bool(sm['radarState'].leadOne.present),
+                   'cut_in_event': scenario == 'lead_transition' and tick == 200,
+                   'speed_mps': speed, 'accel_mps2': accel, 'position_m': position,
+                   'lead_gap_m': lead_position - position, 'lead_speed_mps': lead_speed,
+                   'planner_accel_mps2': float(planner.output_a_target)}
     command = float(control.update(active, car, planner.output_a_target, planner.output_should_stop, (ACCEL_MIN, ACCEL_MAX)))
     applied = delay.popleft()
     delay.append(command)
@@ -87,7 +94,10 @@ def simulate(scenario, planner_type=LongitudinalPlanner, control_type=LongContro
     trace.append((planner.output_a_target, planner.output_should_stop, command, speed, accel, position,
                   str(control.long_control_state), control.pid.i, planner.mpc.source,
                   tuple(planner.a_desired_trajectory), tuple(planner.mpc.a_solution)))
-  return {'trace': tuple(trace), 'planner_updates': updates, 'observations': observations, 'vehicle_qualified': False}
+    measurements.append({**measurement, 'requested_accel_mps2': command, 'applied_accel_mps2': applied,
+                         'response_speed_mps': speed, 'response_accel_mps2': accel})
+  return {'trace': tuple(trace), 'measurements': tuple(measurements),
+          'planner_updates': updates, 'observations': observations, 'vehicle_qualified': False}
 
 
 class TestCyberLongFeedback(unittest.TestCase):
