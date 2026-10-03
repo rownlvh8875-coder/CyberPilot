@@ -10,10 +10,10 @@ be represented as zero error, PASS, a valid calibration or an active profile.
 
 ## Scope and current evidence
 
-Cyber source baseline is `1ee1eb07f6cc48526f4d61265abe317fe67cc23b`, with uncommitted
-offline tooling additions on `feature/cyber-autotune`. Source identity therefore
-requires the dirty overlay as well as HEAD. All source/submodule/model/configuration
-and environment identities must be bound in a new validation run.
+The offline tooling is committed and published on `feature/cyber-autotune`; the
+current evidence no longer depends on a dirty working-tree overlay. Every new
+validation run must still bind its exact source HEAD, submodules, model, configuration
+and environment identities before its results can be compared or promoted.
 
 | Area | Implemented evidence | Still missing |
 | --- | --- | --- |
