@@ -117,6 +117,18 @@ class TestLateralClosedLoopAdmission(unittest.TestCase):
       admit_closed_loop_receipt(domain, frames, replace(receipt, binding=bad_binding)).blockers,
     )
 
+    bad_binding = replace(receipt.binding, domain_sha256=h('4'))
+    self.assertIn(
+      'DOMAIN_BINDING_MISMATCH',
+      admit_closed_loop_receipt(domain, frames, replace(receipt, binding=bad_binding)).blockers,
+    )
+
+    bad_binding = replace(receipt.binding, timebase_sha256=h('5'))
+    self.assertIn(
+      'TIMEBASE_BINDING_MISMATCH',
+      admit_closed_loop_receipt(domain, frames, replace(receipt, binding=bad_binding)).blockers,
+    )
+
   def test_trace_sample_and_authority_mutations_are_rejected(self):
     from openpilot.tools.cyber_autotune.lateral_closed_loop import admit_closed_loop_receipt
 

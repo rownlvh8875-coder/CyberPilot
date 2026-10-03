@@ -51,3 +51,20 @@
 - Remaining regression risks and next verification: review and approve a fail-closed offline adapter that feeds Cyber A0/A3 controller commands into the frozen D3Y plant with exactly one actuator-delay model before any closed-loop performance claim.
 - Commit / PR references: local implementation commits `b1473ac6947ba591cf745b53645068eccb7077d9` and `706fa6fa25c79a9a61afb6b8694e82d12e82019c`; no PR or push.
 - Vehicle application decision: not authorized.
+
+## Current-public-head closed-loop follow-up
+
+The Handoff above records the original runner state. A later external D3Y adapter
+was retained outside the public repository, while CyberPilot now owns the
+fail-closed receipt boundary in `openpilot/tools/cyber_autotune/lateral_closed_loop.py`.
+The external runner was rerun against public HEAD
+`5e0dcc3f8fa42a4fd1a5f3bb7f8a387f00804573` with the same frozen six-window
+development manifest and one physical actuator-delay owner.
+
+Results: strict A/A 6/6, A0/A3 repeatability 6/6 and public structural admission
+12/12 arm receipts. Each receipt kept plant-authenticity, independent-reference and
+performance-evaluation blockers, with no runtime or promotion authority. A3 again
+passed 0/6 performance gates and remains rejected. The aggregate report repeated
+byte-identically with SHA-256
+`c72d3045c6bab27fd769a3743f8d0a2a098605c0098327557eb0cb12f3c92468`.
+No active-control or shadow permission was created.

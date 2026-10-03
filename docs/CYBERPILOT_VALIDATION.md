@@ -18,9 +18,9 @@ and environment identities before its results can be compared or promoted.
 | Area | Implemented evidence | Still missing |
 | --- | --- | --- |
 | Cyber Long | disabled/observer and fail-closed proposal scaffolding; historical PC/replay diagnostics | qualified full coupled replay, vehicle-calibrated closed loop, shadow qualification |
-| Cyber Lateral | upstream-compatible offline bridge, development A/A and candidate repeatability | accepted optimizer candidate, independent center/edge truth, qualification coverage |
+| Cyber Lateral | upstream-compatible offline bridge, development A/A/candidate repeatability, repository-owned closed-loop structural admission | accepted optimizer candidate, authenticated plant calibration, independent center/edge truth, qualification coverage |
 | AutoTune | six-class policy, structural profile guard, finite proposal preview, reviewed durable archive and restartable preview-job integration | producer-authenticated identification/confidence, reviewed search domain, evaluable real candidates, authenticated active profile/history |
-| STEP9 | local three-arm receipt comparator/report; native requested-torque and requested-acceleration diagnostic workers; synthetic source-isolated repeatability and timeout/cleanup tests | complete metric/plant producers, artifact authenticity, full longitudinal coupled replay, uncertainty and regression evidence |
+| STEP9 | local three-arm receipt comparator/report; native diagnostic workers; external lateral plant receipt structural admission; synthetic source-isolated repeatability and cleanup tests | authenticated metric/plant producers, full longitudinal coupled replay, uncertainty and regression evidence |
 | STEP10 | reviewed offline shadow-window scheduler and immutable promotion/fault rehearsal; no activation writer | continuous/on-device shadow, measured active-loop non-interference, authenticated evidence/persistence and executed rollback integration |
 
 Recorded development baseline A/A and candidate-repeatability results are not new
@@ -72,6 +72,22 @@ SE is 0.014358 m/s². This is still an authority-free diagnostic: confidence and
 parameter identification remain unqualified, and candidate generation, replay
 acceptance, profile activation and vehicle use remain blocked. Overall readiness
 remains NOT_READY. Detailed report: `CYBER_AUTOTUNE_CLUSTER_TLS_STABILITY_20261003.md`.
+
+A repository-owned lateral closed-loop structural admission contract now checks
+external aggregate-only receipts before comparison. It binds controller/adapter/plant/
+domain/input/reset/metric/environment/timebase identities, requires one physical delay
+owner (`PLANT`), rejects any second controller delay queue, validates the ordered trace,
+and forbids CAN, vehicle, parameter, runtime and promotion authority. Against public
+HEAD `5e0dcc3f8fa42a4fd1a5f3bb7f8a387f00804573`, the frozen six-window development run
+passed strict A/A 6/6 and A/B repeatability 6/6. All 12 arm receipts (1,000 samples each)
+passed structural admission and retained `PLANT_CALIBRATION_AUTHENTICITY_UNVERIFIED`,
+`INDEPENDENT_REFERENCE_UNVERIFIED` and `PERFORMANCE_GATE_NOT_EVALUATED`. The aggregate
+result repeated byte-identically with SHA-256
+`c72d3045c6bab27fd769a3743f8d0a2a098605c0098327557eb0cb12f3c92468`. Every prior
+A0/A3 trace hash and metric was unchanged, so no integration drift was observed. A3
+still passed 0/6 performance gates, remains rejected, and cannot proceed to shadow.
+Detailed report: `docs/cyberpilot/changes/cyber-validation-lateral-closed-loop-admission.md`.
+Sanitized receipt: `docs/cyberpilot/changes/cyber-validation-lateral-closed-loop-admission-result.json`.
 
 The new LongControl worker consumes exogenous plan/state/event samples, fixed serialized
 CP, native Float32 messages, stock engagement/reset and source-derived PID limits.
