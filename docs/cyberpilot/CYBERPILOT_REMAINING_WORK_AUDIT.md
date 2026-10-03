@@ -223,3 +223,24 @@ requested/performed. Do not repeat or retune this rejected experiment to claim
 progress. New hypotheses require separate design; qualified replay, calibrated
 vehicle simulation and non-actuating device shadow remain unverified.
 REAL_VEHICLE_UNVERIFIED / VEHICLE_ACTIVATION_BLOCKED / NOT_READY remain in force.
+
+## Intervention-history coverage checkpoint
+
+The approved [test-only continuation](changes/comfort-history-coverage.md) now
+exercises actual cap intervention before lead/model/force-deceleration stops and
+restart, across30/150/300ms generic delays. All nine cases cover prior cap,
+fresh observation accounting and same-state protected arbitration; disabled
+baseline identity and two fresh-process repeats pass. Production control and
+the rejected cap95 experiment are unchanged.
+
+**Absolute lead-gap check FAIL:** both baseline and candidate pass the supplied
+lead position at all three delays; candidate stop latency also worsens0.01s.
+The unchanged relative comparator's two scoped passes do not make these safe
+scenarios. Seven other relative comparisons reject. This is coverage completion,
+not candidate acceptance, vehicle calibration or a safety improvement claim.
+
+Final AutoTune/controls641tests and default1,548tests pass (42existing skips,
+1expected failure,actualexit0). SCons/Ruff/privacy and independent review pass;
+feature record binds source, synthetic report and full-suite receipt. Historic
+results are retained. Qualified replay/calibrated vehicle simulation/device
+shadow remain unverified and vehicle activation remains blocked.
