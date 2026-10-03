@@ -18,7 +18,7 @@ and environment identities before its results can be compared or promoted.
 | Area | Implemented evidence | Still missing |
 | --- | --- | --- |
 | Cyber Long | disabled/observer and fail-closed proposal scaffolding; historical PC/replay diagnostics | qualified full coupled replay, vehicle-calibrated closed loop, shadow qualification |
-| Cyber Lateral | upstream-compatible offline bridge, development A/A/candidate repeatability, repository-owned closed-loop structural admission | accepted optimizer candidate, authenticated plant calibration, independent center/edge truth, qualification coverage |
+| Cyber Lateral | upstream-compatible offline bridge, deterministic synthetic scenario matrix, development A/A/candidate repeatability, repository-owned closed-loop structural admission | accepted optimizer candidate, authenticated plant calibration, independent center/edge truth, qualification coverage |
 | AutoTune | six-class policy, structural profile guard, finite proposal preview, reviewed durable archive and restartable preview-job integration | producer-authenticated identification/confidence, reviewed search domain, evaluable real candidates, authenticated active profile/history |
 | STEP9 | local three-arm receipt comparator/report; native diagnostic workers; external lateral plant receipt structural admission; synthetic source-isolated repeatability and cleanup tests | authenticated metric/plant producers, full longitudinal coupled replay, uncertainty and regression evidence |
 | STEP10 | reviewed offline shadow-window scheduler and immutable promotion/fault rehearsal; no activation writer | continuous/on-device shadow, measured active-loop non-interference, authenticated evidence/persistence and executed rollback integration |
@@ -107,6 +107,18 @@ A0/A3 trace hash and metric was unchanged, so no integration drift was observed.
 still passed 0/6 performance gates, remains rejected, and cannot proceed to shadow.
 Detailed report: `docs/cyberpilot/changes/cyber-validation-lateral-closed-loop-admission.md`.
 Sanitized receipt: `docs/cyberpilot/changes/cyber-validation-lateral-closed-loop-admission-result.json`.
+
+A deterministic synthetic lateral matrix now freezes 14 offline scenarios before any
+controller or plant execution. Twelve nominal cases cover straight, left/right gentle
+and tight curves, S-curve, ramp, lane change, driver override/release/reengagement,
+low/medium/high speed, entry/apex/exit and saturation. Two rejected-input cases cover
+sensor dropout and a single timebase gap; delay-high and friction-low/high stress axes
+are also explicit. Catalog SHA-256 is
+`c92cb9e71a9e9c0273f56a6ca3966b7d92fda5c67aa47742aa852a0b3a14928c`.
+The matrix is deterministic and structurally complete, but no controller, plant or
+vehicle path was executed and `SYNTHETIC_ONLY_NO_PHYSICAL_QUALIFICATION` remains.
+Detailed report: `docs/cyberpilot/changes/cyber-validation-synthetic-lateral-matrix.md`;
+sanitized result: `docs/cyberpilot/changes/cyber-validation-synthetic-lateral-matrix-result.json`.
 
 The new LongControl worker consumes exogenous plan/state/event samples, fixed serialized
 CP, native Float32 messages, stock engagement/reset and source-derived PID limits.
