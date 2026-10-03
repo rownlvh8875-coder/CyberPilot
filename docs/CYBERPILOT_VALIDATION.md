@@ -18,7 +18,7 @@ and environment identities before its results can be compared or promoted.
 | Area | Implemented evidence | Still missing |
 | --- | --- | --- |
 | Cyber Long | disabled/observer and fail-closed proposal scaffolding; historical PC/replay diagnostics | qualified full coupled replay, vehicle-calibrated closed loop, shadow qualification |
-| Cyber Lateral | upstream-compatible offline bridge, deterministic synthetic scenario matrix, development A/A/candidate repeatability, repository-owned closed-loop structural admission | accepted optimizer candidate, authenticated plant calibration, independent center/edge truth, qualification coverage |
+| Cyber Lateral | upstream-compatible offline bridge, deterministic synthetic scenario matrix and generic plant, development A/A/candidate repeatability, repository-owned closed-loop structural admission | accepted optimizer candidate, authenticated plant calibration, independent center/edge truth, qualification coverage |
 | AutoTune | six-class policy, structural profile guard, finite proposal preview, reviewed durable archive and restartable preview-job integration | producer-authenticated identification/confidence, reviewed search domain, evaluable real candidates, authenticated active profile/history |
 | STEP9 | local three-arm receipt comparator/report; native diagnostic workers; external lateral plant receipt structural admission; synthetic source-isolated repeatability and cleanup tests | authenticated metric/plant producers, full longitudinal coupled replay, uncertainty and regression evidence |
 | STEP10 | reviewed offline shadow-window scheduler and immutable promotion/fault rehearsal; no activation writer | continuous/on-device shadow, measured active-loop non-interference, authenticated evidence/persistence and executed rollback integration |
@@ -119,6 +119,17 @@ The matrix is deterministic and structurally complete, but no controller, plant 
 vehicle path was executed and `SYNTHETIC_ONLY_NO_PHYSICAL_QUALIFICATION` remains.
 Detailed report: `docs/cyberpilot/changes/cyber-validation-synthetic-lateral-matrix.md`;
 sanitized result: `docs/cyberpilot/changes/cyber-validation-synthetic-lateral-matrix-result.json`.
+
+A repository-owned generic lateral plant now provides a deterministic, transparent
+software-stress response surface with one plant-owned 30 ms physical delay queue,
+normalized-command friction deadzone, first-order lag, saturation and left/right
+symmetry. Zero input remains exactly zero, reset reproduces the same trace, and
+friction-low/high responses preserve the expected ordering. It is explicitly classified
+`GENERIC_SYNTHETIC_NOT_VEHICLE_CALIBRATION`: no controller was executed and no actual
+vehicle friction, tire response, steering ratio or time constant is claimed. Result
+SHA-256 is `2410c5e4d373c9d4eb0af5d0dc5afe0929e0894065c793560315f9e7261b7751`.
+Detailed report: `docs/cyberpilot/changes/cyber-validation-synthetic-lateral-plant.md`;
+sanitized result: `docs/cyberpilot/changes/cyber-validation-synthetic-lateral-plant-result.json`.
 
 The new LongControl worker consumes exogenous plan/state/event samples, fixed serialized
 CP, native Float32 messages, stock engagement/reset and source-derived PID limits.
