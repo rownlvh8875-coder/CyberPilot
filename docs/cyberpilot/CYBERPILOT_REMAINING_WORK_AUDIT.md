@@ -199,3 +199,27 @@ Effective vehicle gain search remains BLOCKED by zero stock Ki and unreviewed
 bounds. Do not insert an arbitrary nonzero gain or tune a generic plant as if it
 were the user's vehicle. Qualified replay, calibrated simulation and device
 shadow/activation remain unverified; all vehicle authority remains disabled.
+
+## Approved offline comfort hypothesis checkpoint
+
+The [single positive-acceleration cap experiment](changes/offline-positive-accel-cap.md)
+adds only synthetic tools/tests, not a production controller or active Phase B.
+Its fixed95%stock ceiling is inserted before native arbitration/feedback and
+compared across10cases,3delays and3arms with two repetitions, then the whole
+matrix is repeated in a fresh process. Disabled/native baseline identity and
+repeatability pass. The candidate is **REJECTED**:15case/delay regressions,
+12NO_EFFECT,3scoped synthetic passes. Speed-response loss is not excused by jerk
+reduction. Four scenarios never activate the cap; unresolved model-stop results
+and missing cap-history-to-stop coverage are explicitly retained as limitations.
+
+Final-source AutoTune/controls635tests and default1,542tests pass, with42existing
+skips/1expected failure and exit0. Ruff, SCons, privacy and independent review
+pass. Exact report/source/receipt identities and the documentation-only closeout
+boundary are recorded in the feature record. Earlier counts remain historical.
+
+This closes one approved offline hypothesis, not accepted comfort control or the
+original full STEP1-10 objectives. No additional logs or vehicle operations were
+requested/performed. Do not repeat or retune this rejected experiment to claim
+progress. New hypotheses require separate design; qualified replay, calibrated
+vehicle simulation and non-actuating device shadow remain unverified.
+REAL_VEHICLE_UNVERIFIED / VEHICLE_ACTIVATION_BLOCKED / NOT_READY remain in force.
