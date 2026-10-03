@@ -18,7 +18,7 @@ and environment identities before its results can be compared or promoted.
 | Area | Implemented evidence | Still missing |
 | --- | --- | --- |
 | Cyber Long | disabled/observer and fail-closed proposal scaffolding; historical PC/replay diagnostics | qualified full coupled replay, vehicle-calibrated closed loop, shadow qualification |
-| Cyber Lateral | upstream-compatible offline bridge, deterministic synthetic scenario matrix and generic plant, development A/A/candidate repeatability, repository-owned closed-loop structural admission | accepted optimizer candidate, authenticated plant calibration, independent center/edge truth, qualification coverage |
+| Cyber Lateral | upstream-compatible offline bridge, deterministic synthetic scenario matrix, generic plant and native-controller closed loop, development A/A/candidate repeatability, repository-owned closed-loop structural admission | accepted optimizer candidate, authenticated plant calibration, independent center/edge truth, qualification coverage |
 | AutoTune | six-class policy, structural profile guard, finite proposal preview, reviewed durable archive and restartable preview-job integration | producer-authenticated identification/confidence, reviewed search domain, evaluable real candidates, authenticated active profile/history |
 | STEP9 | local three-arm receipt comparator/report; native diagnostic workers; external lateral plant receipt structural admission; synthetic source-isolated repeatability and cleanup tests | authenticated metric/plant producers, full longitudinal coupled replay, uncertainty and regression evidence |
 | STEP10 | reviewed offline shadow-window scheduler and immutable promotion/fault rehearsal; no activation writer | continuous/on-device shadow, measured active-loop non-interference, authenticated evidence/persistence and executed rollback integration |
@@ -130,6 +130,21 @@ vehicle friction, tire response, steering ratio or time constant is claimed. Res
 SHA-256 is `2410c5e4d373c9d4eb0af5d0dc5afe0929e0894065c793560315f9e7261b7751`.
 Detailed report: `docs/cyberpilot/changes/cyber-validation-synthetic-lateral-plant.md`;
 sanitized result: `docs/cyberpilot/changes/cyber-validation-synthetic-lateral-plant-result.json`.
+
+The actual `LatControlTorque` implementation was then connected to that generic plant
+with fresh state for all 14 frozen scenarios. Twelve nominal runs completed and both
+fault inputs were rejected before controller execution. The aggregate result repeated
+byte-identically with SHA-256
+`5b287382df84d7d95f253479dcce3be93447fd9477de132426ca9a9953d123f5`.
+Straight cases remained exactly zero and left/right curves were symmetric, but tight
+curves and the ramp showed about 79–80% torque saturation with very large generic-plant
+tracking errors; driver override also exposed a large synthetic steering-jerk transient.
+This is therefore a deterministic baseline and defect-finding result, not a performance
+pass. `GENERIC_SYNTHETIC_PLANT_NOT_VEHICLE_CALIBRATED` and
+`PERFORMANCE_GATE_NOT_EVALUATED` remain. Detailed report:
+`docs/cyberpilot/changes/cyber-validation-synthetic-lateral-closed-loop.md`;
+sanitized result:
+`docs/cyberpilot/changes/cyber-validation-synthetic-lateral-closed-loop-result.json`.
 
 The new LongControl worker consumes exogenous plan/state/event samples, fixed serialized
 CP, native Float32 messages, stock engagement/reset and source-derived PID limits.
