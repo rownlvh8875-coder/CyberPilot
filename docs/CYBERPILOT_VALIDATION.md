@@ -507,3 +507,10 @@ not applied steering performance. Center deviation, lane edge margin and physica
 steering jerk remain unavailable at this boundary. Fixture-only parameter bounds
 are not vehicle calibration. No new vehicle checklist item above is checked off;
 qualified replay, calibrated closed loop and device shadow remain unverified.
+
+The separate [A1 generic feedback experiment](cyberpilot/changes/a1-native-closed-loop.md)
+adds synthetic center/edge/jerk measurements using unchanged v2 definitions; it
+does not retroactively supply real metrics to the requested-torque-only receipt.
+All three nonidentity candidates reject. Most scenarios are blocked by unchanged
+first-frame admission, and admitted scenarios show regressions/negative margins.
+No vehicle checklist item changes; synthetic plant truth is not real lane truth.

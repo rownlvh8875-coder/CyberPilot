@@ -115,3 +115,14 @@ Verification:38 targeted /654 AutoTune+controls /1561 default tests passed, with
 passed. The feature record retains failures, environment corrections and one
 deferred minor reporting issue. Engineering completion is scoped to this offline
 increment; original STEP1-10 vehicle objectives and activation remain incomplete.
+
+## A1 generic feedback comparison
+
+[A1 closed-loop comparison](changes/a1-native-closed-loop.md) extends measurement
+to the unchanged generic plant. Exact disabled/identity baseline parity holds;
+factor/friction/combined hypotheses are REJECTED for missing admissible coverage,
+regressions and negative synthetic lane margin. This is a completed experiment,
+not an accepted optimizer or calibrated vehicle simulation. Software final gates
+pass:45targeted/661AutoTune+controls/1568default, plus Ruff/SCons/deterministic
+rerun/privacy and independent review fix verification.42existing skips/1expected
+failure remain. Feature record holds identities and limitations. Vehicle NOT_READY.

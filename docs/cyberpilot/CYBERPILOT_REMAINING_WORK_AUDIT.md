@@ -265,3 +265,19 @@ Next: a separately declared A1 closed-loop comparison using existing plant/metri
 without changing frozen policies. Real-data bounds, qualification and accepted
 vehicle tunes remain absent. No new driving logs requested. Vehicle NOT_READY /
 REAL_VEHICLE_UNVERIFIED / VEHICLE_ACTIVATION_BLOCKED remain in force.
+
+## A1 generic closed-loop comparison continuation
+
+The [independent A1 feedback experiment](changes/a1-native-closed-loop.md) now
+uses existing generic plants, unchanged v2 scenarios and unchanged metrics.
+Disabled/identity traces exactly match the frozen native loop over all26 valid
+case/delay pairs. Nonidentity factor/friction/combined each complete3, block23
+at first-frame admission, and reject3 invalid-input pairs. All three candidate
+comparisons REJECT; no threshold or startup history was changed to admit them.
+Admitted cases show tracking/smoothness trade-offs and negative synthetic lane
+margin, not a qualified improvement. Real-vehicle bounds/replay/calibrated plant/
+shadow remain absent. Final gates:45targeted,661AutoTune+controls,1568default
+passed (42existing skips/1expected failure); Ruff/SCons/privacy PASS. Independent
+review's policy revalidation issue fixed RED->GREEN; deterministic reports exact.
+See feature record for identities, errors and limits. This closes the declared
+generic A1 comparison, not performance acceptance or vehicle qualification.
