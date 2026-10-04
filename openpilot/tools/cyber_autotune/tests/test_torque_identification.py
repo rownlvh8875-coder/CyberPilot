@@ -81,6 +81,38 @@ class TestTorqueIdentification(unittest.TestCase):
                        tuple((key, 'INVALID') for key in PROVENANCE_KEYS)):
       self.assert_blocked(dataclasses.replace(request, provenance=provenance))
 
+  def test_missing_runtime_configuration_bindings_block_before_numeric_fit(self):
+    request = fixture()
+    for key in ('configuration', 'runtime_epoch', 'signal_units_frames_stages', 'timestamp_join_staleness'):
+      provenance = tuple(pair for pair in request.provenance if pair[0] != key)
+      with self.subTest(key=key), patch('numpy.linalg.svd', side_effect=AssertionError('must not fit')):
+        self.assert_blocked(dataclasses.replace(request, provenance=provenance))
+
+  def test_opaque_snapshot_and_epoch_digests_do_not_qualify_numerical_estimate(self):
+    request = fixture()
+    # These hashes deliberately bind unknown semantics, not reviewed runtime facts.
+    replacements = {'configuration': hashlib.sha256(b'synthetic initial snapshot only').hexdigest(),
+                    'runtime_epoch': hashlib.sha256(b'synthetic effective parameter history unknown').hexdigest()}
+    provenance = tuple((key, replacements.get(key, value)) for key, value in request.provenance)
+    result = identify_torque(dataclasses.replace(request, provenance=provenance))
+    self.assertEqual(result.status, 'NUMERICAL_DIAGNOSTIC')
+    self.assertIsNotNone(result.estimate)
+    self.assertIn('RAW_SELECTION_ALIGNMENT_UNVERIFIED', result.blockers)
+    self.assertIn('EVIDENCE_AND_CANDIDATE_ADMISSION_REQUIRED', result.blockers)
+    self.assertIsNone(result.confidence)
+    for name in ('parameter_identification_qualified', 'candidate_generation_allowed', 'runtime_accepted', 'promotable'):
+      self.assertFalse(getattr(result, name))
+
+  def test_wrong_sign_stage_or_double_delay_declaration_blocks_before_fit(self):
+    request = fixture()
+    for contract in (
+      SIGNAL_CONTRACT.replace('negative-applied', 'positive-applied'),
+      SIGNAL_CONTRACT.replace('negative-applied', 'negative-requested'),
+      SIGNAL_CONTRACT.replace('lag-aligned-once', 'lag-aligned-twice'),
+    ):
+      with self.subTest(contract=contract), patch('numpy.linalg.svd', side_effect=AssertionError('must not fit')):
+        self.assert_blocked(dataclasses.replace(request, signal_contract=contract))
+
   def test_bad_container_count_and_scalar_types(self):
     request = fixture()
     for invalid in (None, {}, dataclasses.asdict(request)):

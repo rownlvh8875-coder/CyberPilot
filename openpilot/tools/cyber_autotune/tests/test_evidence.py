@@ -73,6 +73,23 @@ class TestEvidence(unittest.TestCase):
     for value in (provenance[:-1], provenance + (('unknown', HASH),), ((provenance[0][0], None),) + provenance[1:]):
       self.assert_blocked_without_open(self.changed(provenance=value))
 
+  def test_runtime_configuration_bindings_required_before_artifact_io(self):
+    provenance = self.manifest.datasets[0].provenance
+    for key in ('configuration', 'runtime_epoch', 'signal_units_frames_stages', 'timestamp_join_staleness'):
+      remaining = tuple(pair for pair in provenance if pair[0] != key)
+      for changed in (remaining, remaining + ((key, None),), remaining + ((key, ''),)):
+        with self.subTest(key=key, provenance=changed):
+          result = self.assert_blocked_without_open(self.changed(provenance=changed))
+          self.assertEqual(result.blockers, ('INVALID_DATASET_CONTRACT',))
+
+  def test_changed_runtime_configuration_invalidates_prior_manifest_review(self):
+    provenance = self.manifest.datasets[0].provenance
+    for key in ('configuration', 'runtime_epoch', 'signal_units_frames_stages', 'timestamp_join_staleness'):
+      changed = tuple((name, 'b' * 64 if name == key else digest) for name, digest in provenance)
+      with self.subTest(key=key):
+        result = self.assert_blocked_without_open(self.changed(provenance=changed), self.policy)
+        self.assertEqual(result.blockers, ('REVIEWED_MANIFEST_MISMATCH',))
+
   def test_route_and_vehicle_day_leakage(self):
     fit, evaluation = self.manifest.datasets
     for group in (replace(fit.group, route_group=evaluation.group.route_group),
