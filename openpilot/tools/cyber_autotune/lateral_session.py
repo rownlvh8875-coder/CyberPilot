@@ -45,6 +45,10 @@ class SessionError(RuntimeError):
 
 class LateralSession:
   """Synchronous, single-owner session; OPEN/ADVANCE/FINISH/ABORT/CLOSE only."""
+  # Private built-in protocol/entry hooks; no caller-supplied commands.
+  _protocol = protocol
+  _worker_name = 'lateral_session_worker.py'
+
   def __init__(self, *, timeout_s):
     if not finite(timeout_s) or not 0 < timeout_s <= MAX_TIMEOUT_S:
       raise ValueError('INVALID_TIMEOUT')
@@ -127,7 +131,7 @@ class LateralSession:
 
   def _spawn(self):
     self._expires = time.monotonic() + MAX_TIMEOUT_S
-    worker = Path(__file__).resolve().with_name('lateral_session_worker.py')
+    worker = Path(__file__).resolve().with_name(self._worker_name)
     self._process = subprocess.Popen([sys.executable, '-I', str(worker), str(int(self._expires * 1e9))], stdin=subprocess.PIPE,
                                      stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
                                      start_new_session=True, close_fds=True, bufsize=0)
@@ -170,21 +174,21 @@ class LateralSession:
             if b'\n' in received:
               if pending or received[-1:] != b'\n' or received.count(b'\n') != 1:
                 raise ValueError('EXTRA_OR_PREMATURE_REPLY')
-              return protocol.decode_json(bytes(received[:-1]))
+              return self._protocol.decode_json(bytes(received[:-1]))
 
   def _request(self, operation, epoch_id, body):
-    request = protocol.make_message(self._session_id, self._sequence, epoch_id, operation, body)
-    payload = protocol.encode_message(request)
+    request = self._protocol.make_message(self._session_id, self._sequence, epoch_id, operation, body)
+    payload = self._protocol.encode_message(request)
     if self._epoch is not None:
-      protocol.verify_epoch(self._epoch)
+      self._protocol.verify_epoch(self._epoch)
     if self._process is None:
       self._spawn()
     if self._process.poll() is not None:
       raise EOFError('WORKER_ALREADY_EXITED')
     result = self._exchange(payload)
-    protocol.validate_reply(request, result)
+    self._protocol.validate_reply(request, result)
     if self._epoch is not None:
-      protocol.verify_epoch(self._epoch)
+      self._protocol.verify_epoch(self._epoch)
     if operation != 'CLOSE' and self._process.poll() is not None:
       raise EOFError('WORKER_EXITED_DURING_JOB')
     self._sequence += 1
@@ -197,11 +201,11 @@ class LateralSession:
 
   def open_epoch(self, epoch):
     with self._guard():
-      snapshot = protocol.decode_json(protocol.encode_epoch(epoch))
-      protocol.verify_epoch(snapshot)
+      snapshot = self._protocol.decode_json(self._protocol.encode_epoch(epoch))
+      self._protocol.verify_epoch(snapshot)
       if self._handle is not None:
         raise ValueError('ACTIVE_EPOCH_NOT_CLOSED')
-      if self._epoch is not None and protocol.encode_epoch(snapshot) != protocol.encode_epoch(self._epoch):
+      if self._epoch is not None and self._protocol.encode_epoch(snapshot) != self._protocol.encode_epoch(self._epoch):
         raise ValueError('CHANGED_EPOCH_REQUIRES_FRESH_PROCESS')
       self._epoch = snapshot
       next_id = self._epoch_id + 1
@@ -232,7 +236,7 @@ class LateralSession:
       continuity.validate_response(request, data)
       if canonical(data['chunks']) != canonical(self._checkpoints):
         raise ValueError('CHECKPOINT_HISTORY_MISMATCH')
-      protocol.verify_epoch(self._epoch)
+      self._protocol.verify_epoch(self._epoch)
       self._handle = None
       return data
 

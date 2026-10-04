@@ -29,7 +29,7 @@ def _arm_lifetime():
   signal.setitimer(signal.ITIMER_REAL, remaining)
 
 
-def main():
+def main(*, _joint=False):
   previous = sys.pycache_prefix, sys.dont_write_bytecode
   output = sys.stdout.buffer
   try:
@@ -41,7 +41,13 @@ def main():
       from worker_resources import apply_worker_limits
       apply_worker_limits()
       from openpilot.tools.cyber_autotune.native_runner import MAX_RESPONSE_BYTES, MAX_TIMEOUT_S
-      from openpilot.tools.cyber_autotune.lateral_session_protocol import MAX_REQUEST_BYTES, EpochMachine, canonical, decode_message
+      # Only fixed internal entries select a protocol; no user module/path input.
+      if _joint is True:
+        from openpilot.tools.cyber_autotune.joint_session_protocol import MAX_REQUEST_BYTES, EpochMachine, canonical, decode_message
+      elif _joint is False:
+        from openpilot.tools.cyber_autotune.lateral_session_protocol import MAX_REQUEST_BYTES, EpochMachine, canonical, decode_message
+      else:
+        raise ValueError('INVALID_INTERNAL_SESSION_MODE')
 
       if MAX_TIMEOUT_S != BOOTSTRAP_WALL_LIMIT_S:
         raise ValueError('BOOTSTRAP_LIMIT_MISMATCH')
