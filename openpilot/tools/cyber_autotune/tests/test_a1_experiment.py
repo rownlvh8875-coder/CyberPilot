@@ -145,5 +145,66 @@ class TestA1Experiment(unittest.TestCase):
         self.assertEqual(json.loads(result.stdout)['status'], 'REJECTED')
 
 
+class TestA1FailureTransport(unittest.TestCase):
+  def setUp(self):
+    from openpilot.tools.cyber_autotune import a1_experiment
+    self.api = a1_experiment
+    self.request = self.api.build_request('identity')
+
+  def check_failure(self, result, status, returncode):
+    self.assertEqual(result, {
+      'status': status, 'worker_returncode': returncode,
+      'request_sha256': digest(self.api.encode_request(self.request)),
+      **dict.fromkeys(self.api.AUTHORITIES, False),
+    })
+
+  def test_real_exit_codes_are_retained_without_child_output(self):
+    for code, status in ((0, 'INVALID_RESPONSE'), (7, 'WORKER_FAILED')):
+      with self.subTest(code=code):
+        body = f'print("PRIVATE_A1_TRANSPORT_SENTINEL"); raise SystemExit({code})'
+        observed = _run_process([sys.executable, '-c', body], b'', 5.)
+        self.assertEqual((observed.status, observed.returncode), ('EXITED', code))
+        with patch.object(self.api, '_run_process', return_value=observed):
+          result = self.api.run_experiment(self.request, timeout_s=5.)
+        self.check_failure(result, status, code)
+
+  def test_real_signal_exit_is_retained(self):
+    import signal
+    observed = _run_process([sys.executable, '-c',
+                             'import os, signal; os.kill(os.getpid(), signal.SIGTERM)'], b'', 5.)
+    self.assertEqual((observed.status, observed.returncode), ('EXITED', -signal.SIGTERM))
+    with patch.object(self.api, '_run_process', return_value=observed):
+      result = self.api.run_experiment(self.request, timeout_s=5.)
+    self.check_failure(result, 'WORKER_FAILED', -signal.SIGTERM)
+
+  def test_timeout_keeps_status_and_observed_cleanup_returncode(self):
+    observed = _run_process([sys.executable, '-c', 'import time; time.sleep(30)'], b'', .1)
+    self.assertEqual(observed.status, 'TIMEOUT')
+    self.assertIs(type(observed.returncode), int)
+    with patch.object(self.api, '_run_process', return_value=observed):
+      result = self.api.run_experiment(self.request, timeout_s=5.)
+    self.check_failure(result, 'TIMEOUT', observed.returncode)
+
+  def test_unobserved_returncode_is_null_without_exception_details(self):
+    with patch.object(self.api.sys, 'platform', 'unsupported'), \
+         patch.object(self.api, '_run_process', side_effect=AssertionError('must not launch')):
+      result = self.api.run_experiment(self.request, timeout_s=5.)
+    self.check_failure(result, 'UNSUPPORTED_PLATFORM', None)
+    with patch.object(self.api, '_run_process', side_effect=OSError('PRIVATE_A1_TRANSPORT_SENTINEL')):
+      result = self.api.run_experiment(self.request, timeout_s=5.)
+    self.check_failure(result, 'WORKER_UNAVAILABLE', None)
+
+  def test_invalid_zero_exit_responses_remain_failures(self):
+    from openpilot.tools.cyber_autotune.native_runner import ProcessOutcome
+    payloads = (b'', b'[]', b'{"status":"x","status":"x"}', b'{"vehicle_authority":true}',
+                b'X' * (self.api.MAX_RESPONSE_BYTES + 1))
+    for index, payload in enumerate(payloads):
+      with self.subTest(case=index):
+        observed = ProcessOutcome('EXITED', 0, payload, 0)
+        with patch.object(self.api, '_run_process', return_value=observed):
+          result = self.api.run_experiment(self.request, timeout_s=5.)
+        self.check_failure(result, 'INVALID_RESPONSE', 0)
+
+
 if __name__ == '__main__':
   unittest.main()

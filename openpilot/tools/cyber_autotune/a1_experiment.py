@@ -201,8 +201,10 @@ def run_experiment(request, *, timeout_s):
   payload = encode_request(request)
   request = decode_request(payload)
 
-  def failure(status):
-    return {'status': status, 'request_sha256': digest(payload), **dict.fromkeys(AUTHORITIES, False)}
+  def failure(status, worker_returncode=None):
+    # None means no returned process outcome, not successful exit or proof of no launch.
+    return {'status': status, 'worker_returncode': worker_returncode,
+            'request_sha256': digest(payload), **dict.fromkeys(AUTHORITIES, False)}
 
   if sys.platform != 'linux':
     return failure('UNSUPPORTED_PLATFORM')
@@ -211,15 +213,15 @@ def run_experiment(request, *, timeout_s):
   except OSError:
     return failure('WORKER_UNAVAILABLE')
   if observed.status == 'TIMEOUT':
-    return failure('TIMEOUT')
+    return failure('TIMEOUT', observed.returncode)
   if observed.status != 'EXITED' or observed.returncode != 0:
-    return failure('WORKER_FAILED')
+    return failure('WORKER_FAILED', observed.returncode)
   if not 0 < len(observed.stdout) <= MAX_RESPONSE_BYTES:
-    return failure('INVALID_RESPONSE')
+    return failure('INVALID_RESPONSE', observed.returncode)
   try:
     result = json.loads(observed.stdout, object_pairs_hook=_unique_pairs)
     validate_response(request, result)
     _verify_bindings(request)
   except (ValueError, OSError, UnicodeError, RecursionError):
-    return failure('INVALID_RESPONSE')
+    return failure('INVALID_RESPONSE', observed.returncode)
   return result
