@@ -44,7 +44,7 @@ def execute_request(request: dict) -> dict:
     return _execute_request(request)
 
 
-def _execute_request(request: dict) -> dict:
+def _execute_request(request: dict, *, _a1_table=None, _capture_state=False) -> dict:
   payload = encode_request(request)
   request = decode_request(payload)  # immutable boundary copy, never mutate caller state
   root = _verify_source(request['source'])
@@ -89,9 +89,20 @@ def _execute_request(request: dict) -> dict:
                                              tuning.steeringAngleDeadzoneDeg)) or
           tuning.latAccelFactor <= 0 or tuning.friction < 0 or tuning.steeringAngleDeadzoneDeg < 0):
         raise ValueError('CP_TUNING_INVALID')
+      # Private synthetic experiment extension; the public v1 entrypoint never
+      # enables it. Admit the ENTIRE schedule before constructing the controller.
+      schedule = None
+      if _a1_table is not None:
+        if not _capture_state:
+          raise ValueError('A1_REQUIRES_STATE_RECEIPT')
+        from openpilot.tools.cyber_autotune.a1_schedule import prepare_schedule
+        schedule = prepare_schedule(_a1_table, tuple(frame['speed_mps'] for frame in request['frames']),
+                                    tuning.latAccelFactor, tuning.friction)
       controller = LatControlTorque(cp, LinearConversion(), DT_CTRL)
       vm = VehicleModel(cp)
-      for frame in request['frames']:
+      states, effective_schedule = [], []
+      invariants = _a1_invariants(controller) if _capture_state else None
+      for frame_index, frame in enumerate(request['frames']):
         state = structs.CarState()
         state.vEgo = state.vEgoRaw = frame['speed_mps']
         state.aEgo = frame['accel_mps2']
@@ -103,6 +114,19 @@ def _execute_request(request: dict) -> dict:
         if not all(finite(value) for value in (state.vEgo, state.vEgoRaw, state.aEgo, state.steeringAngleDeg,
                                                state.steeringRateDeg, state.steeringTorque)):
           raise ValueError('NATIVE_FIELD_OVERFLOW')
+        if schedule is not None:
+          speed, requested_factor, requested_friction, factor, friction = schedule[frame_index]
+          before = _a1_dynamic_state(controller)
+          controller.update_torque_parameters(factor, tuning.latAccelOffset, friction)
+          if (state.vEgo != speed or controller.torque_params.latAccelFactor != factor or
+              controller.torque_params.friction != friction or before != _a1_dynamic_state(controller)):
+            raise ValueError('A1_NATIVE_STORAGE_OR_STATE_MISMATCH')
+        if _capture_state:
+          if _a1_invariants(controller) != invariants:
+            raise ValueError('A1_INVARIANT_CHANGED')
+          effective_schedule.append(list(schedule[frame_index]) if schedule is not None else
+                                    [float(state.vEgo), tuning.latAccelFactor, tuning.friction,
+                                     tuning.latAccelFactor, tuning.friction])
         params = SimpleNamespace(roll=frame['roll_rad'], angleOffsetDeg=frame['angle_offset_deg'])
         vm.update_params(frame['stiffness_factor'], frame['steer_ratio'])
         if not all(finite(value) and value > 0 for value in (vm.cF, vm.cR, vm.sR)):
@@ -130,15 +154,42 @@ def _execute_request(request: dict) -> dict:
         if not finite(torque) or abs(torque) > 1 or not finite(curvature):
           raise ValueError('INVALID_NATIVE_OUTPUT')
         samples.append({'time_ns': frame['time_ns'], 'requested_torque': float(torque), 'estimated_curvature_1pm': float(curvature)})
+        if _capture_state:
+          dynamic = _a1_dynamic_state(controller)
+          factor, friction = controller.torque_params.latAccelFactor, controller.torque_params.friction
+          snapshot = dict(dynamic, factor=factor, friction=friction, offset=controller.torque_params.latAccelOffset,
+                          pos_limit=float(controller.pid.pos_limit), neg_limit=float(controller.pid.neg_limit))
+          states.append({'state_sha256': digest(canonical(snapshot)), 'factor': factor, 'friction': friction,
+                         'pid_i': float(controller.pid.i), 'history_sha256': digest(canonical(dynamic['history']))})
     _verify_source(request['source'])  # ordinary concurrent selected-file edits invalidate the run
-    return {'status': 'COMPLETED', 'scope': 'OFFLINE_NATIVE_REQUESTED_TORQUE', 'request_sha256': digest(payload),
+    result = {'status': 'COMPLETED', 'scope': 'OFFLINE_NATIVE_REQUESTED_TORQUE', 'request_sha256': digest(payload),
             'source_head': request['source']['head'], 'opendbc_head': request['source']['opendbc_head'],
             'car_params_sha256': request['car_params_sha256'], 'samples': samples,
             'ordered_trace_sha256': digest(canonical(samples)), 'runtime_accepted': False, 'promotable': False}
+    if _capture_state:
+      result['a1'] = {'state_schema': 'native-torque-state-v1', 'reset': 'fresh-controller-once',
+                      'invariants_sha256': digest(canonical(invariants)), 'schedule': effective_schedule,
+                      'schedule_sha256': digest(canonical(effective_schedule)), 'states': states,
+                      'states_sha256': digest(canonical(states))}
+    return result
   except Exception as exc:
     raise ValueError('NATIVE_EXECUTION_REJECTED') from exc
   finally:
     del sys.path[:2]
+
+
+def _a1_dynamic_state(controller):
+  return {'pid': {name: float(getattr(controller.pid, name)) for name in ('p', 'i', 'd', 'f', 'control', 'speed')},
+          'history': [float(value) for value in controller.lat_accel_request_buffer],
+          'jerk_filter': float(controller.jerk_filter.x), 'sat_time': float(controller.sat_time)}
+
+
+def _a1_invariants(controller):
+  return {'offset': controller.torque_params.latAccelOffset, 'steer_max': controller.steer_max,
+          'deadzone': controller.steering_angle_deadzone_deg, 'dt': controller.dt,
+          'kp': controller.pid._k_p, 'ki': controller.pid._k_i, 'kd': controller.pid._k_d,
+          'i_dt': controller.pid.i_dt, 'history_length': controller.lat_accel_request_buffer_len,
+          'lookahead_frames': controller.lookahead_frames}
 
 
 def main():

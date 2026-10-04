@@ -244,3 +244,24 @@ Final AutoTune/controls641tests and default1,548tests pass (42existing skips,
 feature record binds source, synthetic report and full-suite receipt. Historic
 results are retained. Qualified replay/calibrated vehicle simulation/device
 shadow remain unverified and vehicle activation remains blocked.
+
+## A1 native speed-tune integration checkpoint
+
+The [synthetic A1 adapter](changes/a1-native-speed-tune.md) now applies admitted
+factor/friction schedules through native LatControlTorque, preserving state and
+upstream normalized limits. Disabled and identity schedules match independent
+baseline outputs/state exactly; factor-only, friction-only and combined fixtures
+produce nonzero output changes. Two fresh complete reports are byte-identical.
+Existing command-only optimizer's native-adapter guard is intentionally unchanged:
+this is a separate offline experiment, not enabled live A1/A4/A5 control.
+
+Targeted38, AutoTune+controls654 and default1561 tests pass (42existing skips,
+1expected failure; actual exit0). Ruff/SCons/privacy and independent review pass.
+Feature record binds evidence and preserves earlier environment/network failures;
+one minor failure-transport detail is deferred. No private data or fork code copied.
+
+This closes native speed-table application feasibility, not performance acceptance.
+Next: a separately declared A1 closed-loop comparison using existing plant/metrics,
+without changing frozen policies. Real-data bounds, qualification and accepted
+vehicle tunes remain absent. No new driving logs requested. Vehicle NOT_READY /
+REAL_VEHICLE_UNVERIFIED / VEHICLE_ACTIVATION_BLOCKED remain in force.

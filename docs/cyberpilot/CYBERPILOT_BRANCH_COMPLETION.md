@@ -102,3 +102,16 @@ engineering extension, not completion of active cut-in/comfort, an accepted
 lateral optimizer or the original full STEP1-10 vehicle objectives.
 
 REAL_VEHICLE_UNVERIFIED, VEHICLE_ACTIVATION_BLOCKED and NOT_READY remain in force.
+
+## A1 native application extension
+
+[A1 synthetic native speed tuning](changes/a1-native-speed-tune.md) adds actual
+factor/friction application, full-schedule admission, exact OFF/identity parity,
+retained-state receipts and fresh-process repeatability. It does not establish
+centering/comfort improvement or admit a real vehicle tune. Legacy v1 interfaces,
+live controllers, safety code and the command-only optimizer guard remain unchanged.
+Verification:38 targeted /654 AutoTune+controls /1561 default tests passed, with
+42existing skips and1expected failure; Ruff, SCons, privacy and independent review
+passed. The feature record retains failures, environment corrections and one
+deferred minor reporting issue. Engineering completion is scoped to this offline
+increment; original STEP1-10 vehicle objectives and activation remain incomplete.

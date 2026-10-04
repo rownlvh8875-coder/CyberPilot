@@ -497,3 +497,13 @@ offline immutable-window integrations are described in the completion report.
 
 Update this document when implementation/evidence changes. Do not mark unchecked
 items complete from synthetic tests or reused historical results alone.
+
+## A1 synthetic native integration evidence
+
+The [A1 speed-tune experiment](cyberpilot/changes/a1-native-speed-tune.md) passed
+native parameter application, exact disabled/identity parity and repeated-process
+checks using repository-owned synthetic inputs. Requested torque differences are
+not applied steering performance. Center deviation, lane edge margin and physical
+steering jerk remain unavailable at this boundary. Fixture-only parameter bounds
+are not vehicle calibration. No new vehicle checklist item above is checked off;
+qualified replay, calibrated closed loop and device shadow remain unverified.
