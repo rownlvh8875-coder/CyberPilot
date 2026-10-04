@@ -45,6 +45,17 @@ def execute_request(request: dict) -> dict:
 
 
 def _execute_request(request: dict, *, _a1_table=None, _capture_state=False) -> dict:
+  # Existing callers still drain exactly one fresh native controller to completion.
+  with contextlib.closing(_request_steps(request, _a1_table=_a1_table, _capture_state=_capture_state)) as steps:
+    while True:
+      try:
+        next(steps)
+      except StopIteration as completed:
+        return completed.value
+
+
+def _request_steps(request: dict, *, _a1_table=None, _capture_state=False):
+  """Private child-only iterator; always exhaust or close to release source context."""
   payload = encode_request(request)
   request = decode_request(payload)  # immutable boundary copy, never mutate caller state
   root = _verify_source(request['source'])
@@ -161,6 +172,8 @@ def _execute_request(request: dict, *, _a1_table=None, _capture_state=False) -> 
                           pos_limit=float(controller.pid.pos_limit), neg_limit=float(controller.pid.neg_limit))
           states.append({'state_sha256': digest(canonical(snapshot)), 'factor': factor, 'friction': friction,
                          'pid_i': float(controller.pid.i), 'history_sha256': digest(canonical(dynamic['history']))})
+        # Pause only after the complete native update and state checks. No reset.
+        yield states[-1]['state_sha256'] if _capture_state else None
     _verify_source(request['source'])  # ordinary concurrent selected-file edits invalidate the run
     result = {'status': 'COMPLETED', 'scope': 'OFFLINE_NATIVE_REQUESTED_TORQUE', 'request_sha256': digest(payload),
             'source_head': request['source']['head'], 'opendbc_head': request['source']['opendbc_head'],
