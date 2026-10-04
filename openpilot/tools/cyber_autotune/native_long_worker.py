@@ -22,7 +22,21 @@ def execute_request(request):
     return _execute_request(request)
 
 
-def _execute_request(request):
+# Mutable native PID fields, in their existing internal units; not tune inputs.
+PID_STATE_FIELDS = ('p', 'i', 'd', 'f', 'control', 'speed', 'pos_limit', 'neg_limit')
+
+
+def _execute_request(request, *, _capture_state=False):
+  with contextlib.closing(_request_steps(request, _capture_state=_capture_state)) as steps:
+    while True:
+      try:
+        next(steps)
+      except StopIteration as completed:
+        return completed.value
+
+
+def _request_steps(request, *, _capture_state=False):
+  """Private lazy loop; caller must exhaust/close in its owned source context."""
   payload = encode_request(request)
   request = decode_request(payload)
   root = _verify_source(request['source'])
@@ -46,6 +60,7 @@ def _execute_request(request):
     native_states = structs.CarControl.Actuators.LongControlState
     state_names = {getattr(native_states, name): name for name in ('off', 'stopping', 'pid')}
     samples = []
+    states = []
     with structs.CarParams.from_bytes(base64.b64decode(request['car_params_base64'])) as cp:
       if (cp.carFingerprint != request['fingerprint'] or
           cp.openpilotLongitudinalControl != request['openpilot_longitudinal_control']):
@@ -84,11 +99,23 @@ def _execute_request(request):
           raise ValueError('INVALID_NATIVE_OUTPUT')
         samples.append({'time_ns': frame['time_ns'], 'requested_accel_mps2': output, 'long_active': bool(active),
                         'state_before': state_before, 'state_after': state_names[controller.long_control_state]})
+        if _capture_state:
+          snapshot = {'mode': state_names[controller.long_control_state], 'last_output_accel': float(controller.last_output_accel),
+                      'pid': {name: float(getattr(controller.pid, name)) for name in PID_STATE_FIELDS}}
+          if not all(finite(value) for value in snapshot['pid'].values()):
+            raise ValueError('INVALID_NATIVE_PID_STATE')
+          states.append({'time_ns': frame['time_ns'], 'state_sha256': digest(canonical(snapshot)), 'snapshot': snapshot})
+        # Pause after the complete native step; never reset at a chunk boundary.
+        yield states[-1]['state_sha256'] if _capture_state else None
     _verify_source(request['source'])
-    return {'status': 'COMPLETED', 'scope': 'OFFLINE_NATIVE_REQUESTED_ACCEL', 'request_sha256': digest(payload),
+    result = {'status': 'COMPLETED', 'scope': 'OFFLINE_NATIVE_REQUESTED_ACCEL', 'request_sha256': digest(payload),
             'source_head': request['source']['head'], 'opendbc_head': request['source']['opendbc_head'],
             'car_params_sha256': request['car_params_sha256'], 'samples': samples,
             'ordered_trace_sha256': digest(canonical(samples)), 'runtime_accepted': False, 'promotable': False}
+    if _capture_state:
+      result['continuity'] = {'state_schema': 'native-long-state-v1', 'states': states,
+                              'states_sha256': digest(canonical(states))}
+    return result
   finally:
     del sys.path[:2]
 
