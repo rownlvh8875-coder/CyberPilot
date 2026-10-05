@@ -8,6 +8,7 @@ from enum import StrEnum
 
 from openpilot.selfdrive.controls.lib.cyber_lateral.jerk_observer import JerkPersistenceObservation
 from openpilot.selfdrive.controls.lib.cyber_lateral.path_observer import PathQualityObservation
+from openpilot.selfdrive.controls.lib.cyber_lateral.path_tracking import PathTrackingObservation
 
 
 class CyberLateralMode(StrEnum):
@@ -89,3 +90,4 @@ class LateralObservation:
   mode: CyberLateralMode
   reason: str
   provenance_complete: bool
+  path_tracking_observation: PathTrackingObservation | None = None

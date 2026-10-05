@@ -3,6 +3,7 @@ from collections.abc import Callable
 import math
 from typing import TypeVar
 
+from openpilot.selfdrive.controls.lib.cyber_lateral.path_tracking import observe_path_tracking
 from openpilot.selfdrive.controls.lib.cyber_lateral.types import (
   CyberLateralConfig, CyberLateralMode, LateralBinding, LateralContext,
   LateralObservation,
@@ -85,6 +86,13 @@ class CyberLateralCoordinator:
         mode=self.config.mode,
         reason='native_observation_only',
         provenance_complete=context.binding.complete,
+        path_tracking_observation=observe_path_tracking(
+          model_mono_time_ns=context.model_mono_time_ns,
+          car_state_mono_time_ns=context.car_state_mono_time_ns,
+          desired_curvature_1pm=context.desired_curvature_1pm,
+          current_curvature_1pm=context.current_curvature_1pm,
+          path_quality=context.path_quality_observation,
+        ),
       )
       self.last_reset_reason = 'observed'
 
