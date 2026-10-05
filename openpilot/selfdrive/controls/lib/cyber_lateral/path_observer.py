@@ -115,35 +115,43 @@ def observe_path_quality(data: PathQualityInput) -> PathQualityObservation:
   if any(std < 0. for std in standard_deviations):
     return _invalid('invalid_lane_std')
 
-  widths = tuple(
-    left - right for left, right in zip(data.left_lane_y_m, data.right_lane_y_m, strict=True)
+  lane_order = tuple(
+    1 if left > right else -1 if left < right else 0
+    for left, right in zip(data.left_lane_y_m, data.right_lane_y_m, strict=True)
   )
-  if any(width <= 0. for width in widths):
+  if 0 in lane_order or any(direction != lane_order[0] for direction in lane_order[1:]):
     return _invalid('crossed_lane_boundaries')
-  if any(not right <= desired <= left for desired, left, right in zip(
+  if data.left_road_edge_y_m is not None and data.right_road_edge_y_m is not None:
+    edge_order = tuple(
+      1 if left > right else -1 if left < right else 0
+      for left, right in zip(data.left_road_edge_y_m, data.right_road_edge_y_m, strict=True)
+    )
+    if (0 in edge_order or any(direction != edge_order[0] for direction in edge_order[1:]) or
+        edge_order[0] != lane_order[0]):
+      return _invalid('crossed_lane_boundaries')
+
+  widths = tuple(
+    abs(left - right) for left, right in zip(data.left_lane_y_m, data.right_lane_y_m, strict=True)
+  )
+  if any(not min(left, right) <= desired <= max(left, right) for desired, left, right in zip(
     data.desired_path_y_m, data.left_lane_y_m, data.right_lane_y_m, strict=True,
   )):
     return _invalid('desired_path_outside_lanes')
 
-  edge_clearances = []
-  if data.left_road_edge_y_m is not None:
-    left_clearances = tuple(
-      edge - lane for edge, lane in zip(data.left_road_edge_y_m, data.left_lane_y_m, strict=True)
-    )
-    if any(clearance < 0. for clearance in left_clearances):
-      return _invalid('invalid_road_edge_ordering')
-    edge_clearances.extend(left_clearances)
-  if data.right_road_edge_y_m is not None:
-    right_clearances = tuple(
-      lane - edge for edge, lane in zip(data.right_road_edge_y_m, data.right_lane_y_m, strict=True)
-    )
-    if any(clearance < 0. for clearance in right_clearances):
-      return _invalid('invalid_road_edge_ordering')
-    edge_clearances.extend(right_clearances)
-
   lane_centers = tuple(
     (left + right) / 2. for left, right in zip(data.left_lane_y_m, data.right_lane_y_m, strict=True)
   )
+  edge_clearances = []
+  if data.left_road_edge_y_m is not None:
+    for edge, lane, center in zip(data.left_road_edge_y_m, data.left_lane_y_m, lane_centers, strict=True):
+      if (edge - center) * (lane - center) <= 0. or abs(edge - center) < abs(lane - center):
+        return _invalid('invalid_road_edge_ordering')
+      edge_clearances.append(abs(edge - lane))
+  if data.right_road_edge_y_m is not None:
+    for edge, lane, center in zip(data.right_road_edge_y_m, data.right_lane_y_m, lane_centers, strict=True):
+      if (edge - center) * (lane - center) <= 0. or abs(edge - center) < abs(lane - center):
+        return _invalid('invalid_road_edge_ordering')
+      edge_clearances.append(abs(edge - lane))
   bias = tuple(
     desired - center for desired, center in zip(data.desired_path_y_m, lane_centers, strict=True)
   )
