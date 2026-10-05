@@ -29,7 +29,7 @@ class TestNativeCleanup(unittest.TestCase):
       except (FileNotFoundError, ProcessLookupError):
         state = 'ABSENT'
       with self.subTest(repetition=repetition):
-        self.assertIn(state, ('ABSENT', 'Z'))
+        self.assertIn(state, ('ABSENT', 'Z', 'X', 'x'))
       with self.assertRaises(ProcessLookupError):
         os.kill(result.pid, 0)
 
@@ -47,6 +47,10 @@ class TestNativeCleanup(unittest.TestCase):
         return 323 if pid == 101 else 999
 
       with patch.object(runner, 'PROC_ROOT', root), patch.object(runner.os, 'getpgid', group):
+        self.assertFalse(runner._owned_group_running(323))
+        stat.write_text('101 (synthetic ) tricky) X 1 323 323 0 -1 0\n')
+        self.assertFalse(runner._owned_group_running(323))
+        stat.write_text('101 (synthetic ) tricky) x 1 323 323 0 -1 0\n')
         self.assertFalse(runner._owned_group_running(323))
         stat.write_text('101 (synthetic ) tricky) R 1 323 323 0 -1 0\n')
         self.assertTrue(runner._owned_group_running(323))

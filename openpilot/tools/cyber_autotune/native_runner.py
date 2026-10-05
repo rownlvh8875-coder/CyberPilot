@@ -47,7 +47,8 @@ def _owned_group_running(pgid):
         continue
       fields = (entry / 'stat').read_text().rsplit(') ', 1)[1].split()
       # Check membership again: disappearance/reuse can race the first lookup.
-      if int(fields[2]) == pgid and fields[0] != 'Z':
+      # Linux /proc state Z is zombie; X/x are dead terminal states.
+      if int(fields[2]) == pgid and fields[0] not in ('Z', 'X', 'x'):
         return True
     except (ProcessLookupError, FileNotFoundError):
       continue

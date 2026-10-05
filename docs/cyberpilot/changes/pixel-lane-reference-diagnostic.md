@@ -65,6 +65,26 @@ still depends on camera calibration and the turn-normalized sign comes from the
 caller's requested-curvature direction. It is not surveyed lane-center ground
 truth and does not prove a causal model defect.
 
+## Regression-gate finding and bounded fix
+
+The first full verified-public suite run exposed one pre-existing cleanup race
+under concurrent load: the kernel briefly exposed a terminated descendant with
+/proc state X (dead), while the cleanup test accepted only ABSENT or Z (zombie).
+The new pixel diagnostic did not call or modify that supervisor path.
+
+A focused TDD fix was applied to the existing offline native supervisor:
+
+- the test first added X/x as terminal synthetic states and failed against the
+  previous implementation;
+- native_runner now classifies Linux Z, X and x as terminal process states;
+- the timeout postcondition accepts ABSENT, Z, X or x, all non-running states;
+- the cleanup test passed in 10 repeated pre-fix reproductions after the original
+  full-suite race, and the corrected native-runner/cleanup set passed 17/17.
+
+This does not shorten the cleanup timeout, skip group confirmation, weaken a
+vehicle safety limit, or authorize runtime use. It only prevents a kernel-dead
+process state from being misclassified as running.
+
 ## Safety and authority
 
 - No panda/opendbc safety code or actuator limit is changed.
@@ -93,6 +113,11 @@ NOT_READY / REAL_VEHICLE_UNVERIFIED / VEHICLE_ACTIVATION_BLOCKED
 | Publication/privacy audit | 3 changed files / 0 findings |
 | Production/runtime caller search | 0 callers |
 | Private two-frame read-only cross-check | reproduced prior decomposition within floating-point rounding |
+| First post-publication full-suite rerun | 1782 passed / 42 skipped / 1 xfailed / 1 failed; sole failure observed kernel X(dead) cleanup state |
+| Native cleanup TDD after observed race | synthetic X/x case RED before fix; corrected native runner / long runner / cleanup set 17/17 PASS; timeout cleanup repeated 10 times without failure before the focused fix |
+| AutoTune + controls after cleanup-state fix | 876/876 PASS in 226.79 s |
+| Native SCons build after cleanup-state fix | PASS, exit 0; existing non-fatal PWD warning only |
+| Final full verified-public suite after cleanup-state fix | 1783 passed / 42 skipped / 1 xfailed / 0 failed in 327.73 s |
 
 Review findings fixed before the full gates:
 
