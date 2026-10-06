@@ -126,6 +126,34 @@ public tests.
 Final staged source review found no remaining Critical or Important issue in
 this bounded offline diagnostic.
 
+## Temporal and independent-reference follow-up
+
+Private follow-up analysis tested whether the position/orientation separation was
+only a single-frame artifact.
+
+In strong turn-inside DIVERGING geometry, the LESS_TURN_THAN_LANE state was the
+majority orientation relation. More than half of its frames belonged to runs
+lasting at least 0.25 s, more than one third belonged to runs lasting at least
+0.5 s, and a smaller but material subset persisted for at least 1 s. The state
+therefore cannot be explained only as isolated model-frame noise.
+
+Future model-lane-relative recenter remained rare in both orientation groups.
+The MORE_TURN_THAN_LANE subgroup was especially adverse, but the much larger
+LESS_TURN_THAN_LANE subgroup also overwhelmingly failed to recenter. This keeps
+position DIVERGENCE as the primary descriptive separator rather than turning the
+orientation relation into a standalone causal rule.
+
+A second follow-up reused the previously locked pixel-reference frame set
+without detector retuning or backfill. For frames where the unchanged pixel
+detector and historical action horizon were both usable, model-lane and
+image-derived lane tangents agreed on the orientation MORE/LESS_TURN relation in
+five of six comparisons. One frame disagreed because the model-lane tangent and
+the image-derived tangent themselves differed enough to cross the orientation
+yaw.
+
+The pixel result therefore provides partial independent support, while also
+showing why the model-lane tangent must not be treated as absolute ground truth.
+
 ## Evidence boundary
 
 Private route-level numeric evidence is not included as a public test fixture.
