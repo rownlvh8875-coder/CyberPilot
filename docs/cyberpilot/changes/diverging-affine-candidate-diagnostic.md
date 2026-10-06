@@ -120,6 +120,37 @@ Final staged source review found no remaining Critical or Important issue in the
 bounded offline candidate module. The candidate remains disconnected from
 planner/control and cannot authorize vehicle activation.
 
+## Generic closed-loop screening follow-up
+
+A later private synthetic screen compared ORIGINAL, FLAT and MIRROR through the
+existing native LatControlTorque plus the repository generic lateral plant.
+
+The first zero-state comparison was intentionally treated as insufficient
+because all arms began from zero lateral/heading error. A second screen therefore
+used an identical 2 m ORIGINAL pre-roll for every arm, then branched only after
+the action horizon for the following 6.75 m. The plant integrated lane error
+against one common model-lane-center curvature reference so each arm was compared
+against the same reference.
+
+The screen used 12 predeclared strong DIVERGING+INSIDE frames selected only from
+baseline metadata, with one frame per distinct segment and balanced requested-
+curvature signs. Candidate results were not used for selection or backfill.
+
+Results were effectively neutral:
+
+- FLAT median final absolute lane-error ratio vs ORIGINAL was about 1.00003;
+- MIRROR median final absolute lane-error ratio was about 1.00005;
+- post-window RMSE ratios were also approximately 1.00001 for both candidates;
+- neither candidate increased saturation in the selected generic-plant runs;
+- per-frame improvement direction was mixed rather than monotonic.
+
+This does not invalidate the earlier geometry-only benefits, but it does reject
+a stronger claim that FLAT or MIRROR has demonstrated closed-loop lane-centering
+improvement. The generic plant is not vehicle calibrated, uses static one-frame
+geometry convected at constant speed, and starts from a synthetic pre-roll state.
+Accordingly no candidate is promoted or connected to runtime control from this
+screen.
+
 ## Remaining limits
 
 - Affine correction changes the full observed path, including samples before the
