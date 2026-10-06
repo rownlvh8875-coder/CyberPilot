@@ -63,6 +63,8 @@ jobs:
           python3 -m compileall -q openpilot/tools/cyber_autotune tools/cyberpilot
           git diff --check origin/main...HEAD
 
+      - name: Install pytest
+        run: .venv/bin/pip install pytest
       - name: Run focused Cyber lateral replay tests
         run: |
           python3 -m pytest -q \
