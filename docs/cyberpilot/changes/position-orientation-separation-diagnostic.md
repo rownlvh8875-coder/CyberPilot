@@ -104,6 +104,28 @@ Final staged source review found no remaining Critical or Important issue. The
 module contains no action/correction output and remains disconnected from
 modeld, controlsd, planner and vehicle actuation.
 
+## Validation results
+
+| Check | Result |
+| --- | --- |
+| TDD red phase | 9/9 expected failures before implementation |
+| Centered forged-authority integrity red/green | forged authority initially masked by TURN_UNRESOLVED; validation ordering corrected, then PASS |
+| Position/orientation + action-horizon + pixel/action + tracking-geometry + affine + recenter/path-observer targeted tests | 90/90 PASS |
+| Ruff / staged whitespace | PASS |
+| Publication/privacy audit | 3 changed files / 0 findings |
+| Production/runtime caller search | 0 callers |
+| Cyber AutoTune + controls regression | 956/956 PASS in 227.75 s |
+| Native SCons build | PASS; existing non-fatal PWD warning only |
+| Default verified-public suite | 1863 passed / 42 skipped / 1 xfailed / 0 failed in 343.59 s |
+
+Historical small-model source reconstruction and route-level orientation/lane
+comparisons remain private descriptive evidence only. No historical log values,
+route identifiers, device identifiers, or private fixtures are included in
+public tests.
+
+Final staged source review found no remaining Critical or Important issue in
+this bounded offline diagnostic.
+
 ## Evidence boundary
 
 Private route-level numeric evidence is not included as a public test fixture.
