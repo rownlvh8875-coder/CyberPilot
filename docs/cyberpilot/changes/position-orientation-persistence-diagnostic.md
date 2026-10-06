@@ -87,6 +87,35 @@ Final staged source review found no remaining Critical or Important issue. The
 module only groups already-descriptive states and has no action/correction or
 vehicle-decision surface.
 
+## Historical controller seeded-shadow follow-up
+
+A later private replay reconstructed the historical small-model torque-control
+path before attempting any orientation correction. The replay bound the
+historical custom torque gains and linear torque mapping, replayed vehicle-model
+feedback and next-frame safety-limit freeze state, and seeded the controller
+integrator from the logged state before each selected window.
+
+Reconstruction quality was materially stronger than the earlier current-
+controller shadow. Vehicle-model curvature matched the logged control curvature
+to near floating-point precision, historical P/F terms were reproduced to
+near-floating precision, and the selected persistent-run baseline requested
+torque was reproduced with sub-milliscale normalized-torque RMSE. Replaying the
+model-action-to-controls desired-curvature smoothing/clip path also reproduced
+logged desired curvature at roughly 1e-5 1/m or better on the selected windows.
+
+With that higher-fidelity baseline, a direct counterfactual that replaced model
+orientation yaw with the model-lane-center tangent was intentionally screened.
+Across eight result-blind persistent strong DIVERGING+INSIDE windows, the
+counterfactual produced large requested-torque changes and frequently changed
+requested-torque sign even though the hard normalized bound was not reached.
+The direct orientation-to-lane-tangent rewrite is therefore rejected.
+
+This negative result strengthens the separation rule: position-path divergence
+must not be converted into a direct orientation/action rewrite. No gain is tuned
+post hoc from the rejected result. Future work should prefer actual model
+inference plus closed-loop/vehicle-dynamics comparison; any bounded transform
+would need a new, predeclared hypothesis and independent validation.
+
 ## Evidence boundary
 
 Private temporal-run and pixel-reference aggregate evidence is descriptive
