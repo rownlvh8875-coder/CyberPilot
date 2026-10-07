@@ -1,0 +1,66 @@
+{
+  "automated_taxonomy": {
+    "GT_UNAVAILABLE": 25,
+    "MIXED_ROW_AND_SPATIAL_TAIL": 50,
+    "NO_LARGE_ROW_TAIL": 6,
+    "NO_PREDICTION": 15,
+    "ROW_ASSOCIATION_SENSITIVE": 19,
+    "SPATIALLY_REMOTE_PREDICTION": 4
+  },
+  "automated_taxonomy_ratios": {
+    "GT_UNAVAILABLE": 0.21008403361344538,
+    "MIXED_ROW_AND_SPATIAL_TAIL": 0.42016806722689076,
+    "NO_LARGE_ROW_TAIL": 0.05042016806722689,
+    "NO_PREDICTION": 0.12605042016806722,
+    "ROW_ASSOCIATION_SENSITIVE": 0.15966386554621848,
+    "SPATIALLY_REMOTE_PREDICTION": 0.03361344537815126
+  },
+  "causal_taxonomy_count_status": "UNAVAILABLE_WITHOUT_INDEPENDENT_SEMANTIC_REVIEW; geometric categories above are not causal ground truth",
+  "conclusion": "MIXED_REPRESENTATION_AND_PAINT_DISAGREEMENT_WITH_UNRESOLVED_CAUSAL_ASSIGNMENT",
+  "confidence_gate_fitted": false,
+  "coordinate_implementation_failure": "NOT_OBSERVED_GEOMETRIC_ROUNDTRIP_PASS; actual FOV/domain mismatch not disproven",
+  "coverage_disagreement": {
+    "all_no_observable_prediction_frames": 32,
+    "gt_eligible_frames": 94,
+    "gt_to_pred_p95_px": 343.3515477869,
+    "no_observable_prediction_gt_frames": 15,
+    "raw_no_lane_frames": 32,
+    "semantics": "paint localization/support disagreement, not physical ego-lane truth"
+  },
+  "dataset_ambiguity": "GT_UNAVAILABLE_25; no fabricated ego-lane labels",
+  "detector_localization_failure": "NOT_UNIQUELY_PROVABLE_FROM_CONTEXTUAL_LANE_TO_VISIBLE_PAINT_COMPARISON",
+  "domain_gap": "SHARED_TAIL_IN_TWO_RELATED_CULANE_TRAINED_MODELS; not independent proof of cause",
+  "independent_human_review": "PENDING_METADATA_MANIFEST_ONLY",
+  "legacy_directional_metric_retained": true,
+  "legacy_result_invalidated": false,
+  "metric_implementation_failure": "NOT_OBSERVED_ANALYTIC_AND_HISTORICAL_REPLAY_PASS",
+  "outlier_filter_applied": false,
+  "policy_sha256": "cac00d0936765b289298142d84a477bf86f3d795e49b053eb00c5d62dcde11ff",
+  "private_input_opened": false,
+  "qualification": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "receipt_sha256": "25d5220397ca7bed560eb0b39d26a4ff9c643c2561284cf8c69325530355bc06",
+  "reference_promotable": false,
+  "representation_sensitivity": {
+    "historical_p95_tail_points": 2115,
+    "same_population_spatial_p95": 137.81973328330474,
+    "still_spatially_remote": 1036,
+    "within_0_05_width_spatially": 1079
+  },
+  "schema": "PUBLIC_PIXEL_TAIL_ATTRIBUTION_VERDICT_V1",
+  "semantic_categories": {
+    "lane_marking": 0,
+    "movable": 95,
+    "movable_in_car": 0,
+    "my_car": 607,
+    "road": 1389,
+    "undrivable": 24
+  },
+  "source_report_sha256": "6a2139dcf9213563baada4f69694999e9e3c9a0ad0560c7306db39d48b37d0ec",
+  "taxonomy_denominator_frames": 119,
+  "unresolved": [
+    "unpainted/contextual lane target vs visible paint",
+    "domain/FOV effect vs model failure",
+    "ambiguous or incomplete paint annotation",
+    "ego association unprovided"
+  ]
+}

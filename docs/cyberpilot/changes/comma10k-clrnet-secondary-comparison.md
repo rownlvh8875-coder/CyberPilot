@@ -43,7 +43,7 @@ The initial strict-load attempt failed on these omitted keys and is recorded as
 NO_INFERENCE, not a successful reproduction. Exact two-pass SAME-INSTANCE
 repeatability then failed: official predictions_to_pred changes prior_ys from
 float32 to float64, consumed by subsequent forward curvature coordinate algebra.
-Only firstframe differed between passes. Failed repetition artifacts stay external
+Only firstframe differed between passes. Failed repetition artifacts were captured externally
 with their SHA in the public capture receipt; no rounding to manufacture equality.
 
 Fresh-process first-pass output SHA matched another fresh process after validation
@@ -74,7 +74,8 @@ Both remain unqualified; no winner declared.
 
 DIAGNOSTIC PUBLIC GT only. Secondary repeatability REJECTED, official benchmark
 BLOCKED. No meter/ego/reference promotion. Public binaries/raw frames/weights
-stay external; only provenance/numerical reports committed. Remove new offline
+were external and subsequently lost with the volatile public cache; only
+provenance/numerical reports survive in Git. See the full-attempt availability receipt. Remove new offline
 files to roll back; production path unchanged.
 
 BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE.

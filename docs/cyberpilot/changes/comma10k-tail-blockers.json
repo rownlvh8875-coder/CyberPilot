@@ -112,11 +112,56 @@
       "parent_code": "INDEPENDENT_REFERENCE_UNAVAILABLE",
       "resolution_condition": "Frozen public-qualified detector + independent private human holdout",
       "status": "BLOCKED"
+    },
+    {
+      "code": "CONFIDENCE_CALIBRATION_UNESTABLISHED",
+      "dependent_gates": [
+        "REFERENCE_UNAVAILABLE_CONFIDENCE_GATE",
+        "REFERENCE_PROMOTION"
+      ],
+      "evidence_file": "comma10k-tail-clrernet-report.json",
+      "evidence_file_sha256": "4f69da0d7ddc977aff0e10592a40ba70d787fe08d423848820822876aa8ed491",
+      "parent_code": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+      "resolution_condition": "semantically matched GT and prefrozen independent calibration/evaluation split; no confidence optimization on these diagnostic results",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "FULL_PUBLIC_EVALUATION_INCOMPLETE",
+      "dependent_gates": [
+        "PRIVATE_INFERENCE"
+      ],
+      "evidence_file": "comma10k-full-attempt-availability.json",
+      "evidence_file_sha256": "329e4afe56d882477f3a9899f7a53f3fd8d2bb915e3eed0730ee1087a6308341",
+      "parent_code": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+      "resolution_condition": "Replayable11888-frame complete report; restore/cache and rerun missing source experiment honestly",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "PUBLIC_RUNTIME_CACHE_LOST",
+      "dependent_gates": [
+        "FULL_PUBLIC_EVALUATION_INCOMPLETE"
+      ],
+      "evidence_file": "comma10k-full-attempt-availability.json",
+      "evidence_file_sha256": "329e4afe56d882477f3a9899f7a53f3fd8d2bb915e3eed0730ee1087a6308341",
+      "parent_code": "FULL_PUBLIC_EVALUATION_INCOMPLETE",
+      "resolution_condition": "Persistent external cache with verified source/kernel/weights/environment/input identities",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "COMMA10K_LABEL_COMPLETENESS_UNVERIFIED",
+      "dependent_gates": [
+        "PUBLIC_PIXEL_QUALIFICATION"
+      ],
+      "evidence_file": "comma10k-tail-annotation-provenance.json",
+      "evidence_file_sha256": "e2ad017a1024d0b2f1d33e4e795202f1febaec76daa32475e42eb6210a9a5859",
+      "parent_code": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+      "resolution_condition": "Independent per-frame label completion provenance, especially1400 identical all-undrivable masks; no posthoc metric filtering",
+      "status": "BLOCKED"
     }
   ],
   "private_input_opened": false,
   "public_tier": "DIAGNOSTIC_PUBLIC_GT",
-  "receipt_sha256": "bbd83e65ddaf02cbebdf80e66af3a5052818ea96788fff33d7e09378777cdc97",
+  "receipt_sha256": "c9ca5d23c39eb62cd4913200963af53eeeb4f813f96da3883baf64dc842ef7ba",
   "reference_promotable": false,
   "root": "INDEPENDENT_REFERENCE_UNAVAILABLE",
   "schema": "INDEPENDENT_REFERENCE_BLOCKER_HIERARCHY_V1",

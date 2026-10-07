@@ -1,0 +1,59 @@
+{
+  "acquisition": {
+    "attempt_counts": [
+      14342,
+      21906,
+      23776
+    ],
+    "attempt_seconds": [
+      1207.837,
+      1222.506110315997,
+      609.901099648996
+    ],
+    "policy_file_sha256": "5c706ea229889abec899bbe5fb01b1b807035d5f822bba56159528c17d2636de",
+    "preflight_seconds": 28.965827670996077,
+    "total_bytes": 11316893221,
+    "verified_files": 23776
+  },
+  "evidence_tier": "OBSERVED_PROCESS_PROGRESS_ONLY_NOT_REPLAYABLE",
+  "full_complete": false,
+  "full_distribution": null,
+  "full_exact_repeatability": null,
+  "full_producer_code_commit": "baee04e5040fd038b274681d086e64380ca31ce1",
+  "full_producer_source_sha256": "b6e07cbf6defceb5286b34aa5c17520a79e155758bdfaa6954d376951ebcb8da",
+  "missing_external_artifacts": [
+    "public input bytes",
+    "all full per-frame receipts",
+    "full input manifest/protocol",
+    "CUDA runtime/source/build cache",
+    "raw119captured predictions"
+  ],
+  "new_guard_GPU_execution": "NOT_RUN",
+  "observed_hard_failures": 0,
+  "observed_manifest_file_sha256": "3414ed5cf5ba14633e28a0c2f84d87351ffd8952d89f6d6fa5946a937c7c6ba1",
+  "observed_mid_run_freeze_check": "PASS_SAME_05f56a_run_root",
+  "observed_prior_subset_raw_record_matches": 77,
+  "observed_processed_pairs": 10336,
+  "observed_progress_receipt_sha256": "9671f24d2d6e7fc6fb5c4ca1878abfb1e75da3a04d2a19ce35699d47bfc25f93",
+  "observed_protocol_file_sha256": "1ccabb992d3540820459081f2640b5cfdefb51403c04c0e24a259f79fbeb7942",
+  "observed_run_sha256": "05f56aeb92ab00e5c39c3e7337c3022d9114da492c4bbc3b758e1ca437f6c00f",
+  "observed_seconds": 1800.4606712269888,
+  "observed_status": "PARTIAL_NOT_QUALIFICATION",
+  "post_run_environment_identity_audit": "UNAVAILABLE_AFTER_CACHE_LOSS",
+  "private_input_opened": false,
+  "qualification": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "receipt_sha256": "792cd7660abf9ac5ef72c5722828c9c07b72fb2f7d15014d39327b5185b4a5fe",
+  "reference_promotable": false,
+  "resolution": "restore verified original public artifacts into persistent external storage, or freeze a new environment experiment; rerun ALL11888 from first frame if missing receipts; never count lost prefix as completed",
+  "scheduling_budget_seconds": 1800,
+  "schema": "COMMA10K_FULL_ATTEMPT_AVAILABILITY_V1",
+  "status": "BLOCKED_EXTERNAL_PUBLIC_CACHE_LOST_ON_WSL_RESTART",
+  "surviving_public_artifacts": "committed119 numerical ledgers/capture/env identities/reports; historical metrics unchanged",
+  "target_pairs": 11888,
+  "temp_configuration": "systemd tmpfiles D /tmp 1777 root root 30d; observed WSL cold restart uptime0 and cache absent",
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

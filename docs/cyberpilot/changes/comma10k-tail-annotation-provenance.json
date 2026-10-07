@@ -1,0 +1,33 @@
+{
+  "GT_semantic_quality_verified": false,
+  "dataset_commit": "6c205fe4c43cc53b2b1befafb1060d0606555027",
+  "filter_applied": false,
+  "full_frame_count_preserved": true,
+  "full_input_manifest_file_sha256": "3414ed5cf5ba14633e28a0c2f84d87351ffd8952d89f6d6fa5946a937c7c6ba1",
+  "full_pairs": 11888,
+  "imgs2_masks": 2000,
+  "imgs2_unique_mask_blobs": 601,
+  "interpretation": "IDENTICAL_ALL_UNDRIVABLE_MASKS_NOT_VERIFIED_LANE_ABSENCE; official imgs2 unfinished",
+  "known_shared_mask_category": "undrivable",
+  "known_shared_mask_geometry": [
+    1208,
+    1928
+  ],
+  "known_shared_mask_only_color": [
+    128,
+    128,
+    96
+  ],
+  "legacy_metric_invalidated": false,
+  "official_readme": "https://github.com/commaai/comma10k/blob/6c205fe4c43cc53b2b1befafb1060d0606555027/README.md",
+  "original119_shared_mask_count": 13,
+  "original119_shared_mask_pred_to_gt_samples": 0,
+  "original_imgs_masks_unique": 9888,
+  "qualification": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "receipt_sha256": "ceb9606170b4d6110ec98f35a5a2721345536b898e51b9c1b0daa0547a4696c7",
+  "repeated_shared_mask_bytes": 379,
+  "repeated_shared_mask_count": 1400,
+  "repeated_shared_mask_git_blob_sha1": "1f020c8422f05ce8906e652d307a610becaaedcb",
+  "repeated_shared_mask_sha256": "fea98461253c4c12e2039a52ae61cd33d5e68e59adb006103d067667232bb786",
+  "schema": "COMMA10K_LABEL_PROVENANCE_AUDIT_V1"
+}

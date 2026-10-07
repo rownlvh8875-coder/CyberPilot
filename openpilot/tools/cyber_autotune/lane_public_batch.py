@@ -21,6 +21,95 @@ from openpilot.tools.cyber_autotune import lane_tail_diagnostics as t
 from openpilot.tools.cyber_autotune import lane_tail_report as report
 from openpilot.tools.cyber_autotune.lane_public_protocol import sample_detector_lane_diagnostics
 from openpilot.tools.cyber_autotune.native_protocol import canonical, digest
+from openpilot.tools.cyber_autotune.contracts import is_sha256
+
+
+def require_persistent_path(path):
+  path = Path(path).absolute().resolve()
+  if any(path.is_relative_to(root) for root in (Path('/tmp'), Path('/run'), Path('/dev/shm'))):
+    raise ValueError('PERSISTENT_PUBLIC_ARTIFACT_PATH_REQUIRED')
+  return path
+
+
+def active_source_hashes():
+  return {
+    'producer_source_sha256': digest(Path(__file__).read_bytes()),
+    'metric_source_sha256': digest(Path(t.__file__).read_bytes()),
+    'report_source_sha256': digest(Path(report.__file__).read_bytes()),
+  }
+
+
+def require_active_run_sources(run, current_hashes):
+  frozen = report.unseal(run)
+  keys = {'producer_source_sha256', 'metric_source_sha256', 'report_source_sha256'}
+  if (
+    type(current_hashes) is not dict
+    or set(current_hashes) != keys
+    or any(not is_sha256(current_hashes[key]) or current_hashes[key] != frozen.get(key) for key in keys)
+  ):
+    raise ValueError('ACTIVE_RUN_SOURCE_IDENTITY_DRIFT')
+
+
+def require_active_run_identity(run, current_environment, current_hashes, actual_head):
+  require_active_run_sources(run, current_hashes)
+  frozen_environment = e._unseal(run['environment'], 'environment_sha256')
+  if actual_head != e.COMMIT or type(current_environment) is not dict or canonical(current_environment) != canonical(frozen_environment):
+    raise ValueError('ACTIVE_RUN_SOURCE_IDENTITY_DRIFT')
+
+
+def source_drift_progress(run_sha, completed, expected):
+  completion_state(expected, len(completed), 1)
+  if (
+    not is_sha256(run_sha)
+    or type(completed) is not list
+    or any(
+      type(item) is not dict
+      or set(item) != {'ordinal', 'receipt_sha256'}
+      or type(item['ordinal']) is not int
+      or not 0 <= item['ordinal'] < expected
+      or not is_sha256(item['receipt_sha256'])
+      for item in completed
+    )
+    or len({item['ordinal'] for item in completed}) != len(completed)
+  ):
+    raise ValueError('INVALID_SOURCE_DRIFT_PROGRESS')
+  return report.seal(
+    {
+      'run_sha256': run_sha,
+      'expected_frames': expected,
+      'completed_frames': len(completed),
+      'per_frame_receipts': sorted(completed, key=lambda item: item['ordinal']),
+      'status': 'FAILED_SOURCE_IDENTITY_DRIFT',
+      'reference_promotable': False,
+      'private_input_opened': False,
+    }
+  )
+
+
+def make_active_identity_guard(run, output, completed, expected, source_getter, environment_getter, head_getter):
+  def guard(*, check_environment=True):
+    try:
+      hashes = source_getter()
+      require_active_run_sources(run, hashes)
+      head = head_getter()
+      if head != e.COMMIT:
+        raise ValueError('ACTIVE_RUN_SOURCE_IDENTITY_DRIFT')
+      if check_environment:
+        require_active_run_identity(run, environment_getter(), hashes, head)
+    except Exception as exc:
+      state = source_drift_progress(run['receipt_sha256'], completed, expected)
+      temporary = output / 'progress.identity-drift.tmp'
+      temporary.write_text(json.dumps(state, indent=2, sort_keys=True) + '\n')
+      temporary.replace(output / 'progress.json')
+      summary = output / 'summary.json'
+      if summary.exists():
+        preserved = output / ('summary-before-identity-drift-' + digest(summary.read_bytes()) + '.json')
+        if preserved.exists() and preserved.read_bytes() != summary.read_bytes():
+          raise ValueError('PRIOR_SUMMARY_PRESERVATION_MISMATCH') from exc
+        summary.replace(preserved)
+      raise ValueError('ACTIVE_RUN_SOURCE_IDENTITY_DRIFT') from exc
+
+  return guard
 
 
 def inference_budget_expired(started, now, budget):
@@ -122,6 +211,11 @@ def main():
   if not 1 <= args.max_seconds <= 3600:
     raise ValueError('BOUNDED_RUNTIME_REQUIRED')
   r.require_network_isolation(r.network_interfaces(Path('/proc/self/net/dev').read_text()))
+  for name in ('source', 'weight', 'environment', 'toolchain_manifest', 'protocol', 'manifest', 'cache', 'output'):
+    require_persistent_path(getattr(args, name))
+  repo = Path(__file__).resolve().parents[3]
+  if any(require_persistent_path(getattr(args, name)).is_relative_to(repo) for name in ('weight', 'cache', 'output')):
+    raise ValueError('PUBLIC_RAW_ARTIFACTS_MUST_STAY_OUTSIDE_REPOSITORY')
   protocol_bytes, manifest_bytes = args.protocol.read_bytes(), args.manifest.read_bytes()
   protocol, manifest = json.loads(protocol_bytes), json.loads(manifest_bytes)
   r.validate_protocol_pairs(protocol, manifest)
@@ -164,6 +258,25 @@ def main():
   if args.freeze_only:
     print(json.dumps({'run_sha256': run['receipt_sha256']}))
     return
+  start, done, pending, failed = time.monotonic(), [], [], 0
+  failure_records = []
+  resolved_config_sha = None
+
+  def current_environment():
+    value = r.runtime_environment(args.source, args.toolchain_manifest, args.protocol, args.manifest)
+    if resolved_config_sha is not None:
+      value['config_sha256'] = resolved_config_sha
+    return value
+
+  guard = make_active_identity_guard(
+    run,
+    args.output,
+    done,
+    len(protocol['pairs']),
+    active_source_hashes,
+    current_environment,
+    lambda: subprocess.check_output(['git', '-C', str(args.source), 'rev-parse', 'HEAD'], text=True).strip(),
+  )
   import cv2
   import numpy as np
   import torch
@@ -183,6 +296,8 @@ def main():
   if os.environ.get('CUBLAS_WORKSPACE_CONFIG') != ':4096:8':
     raise ValueError('CUBLAS_DETERMINISM_NOT_FROZEN')
   config = Config.fromfile(str(args.source / 'configs/clrernet/culane/clrernet_culane_dla34.py'))
+  resolved_config_sha = digest(config.pretty_text.encode())
+  guard(check_environment=True)
   with r.sealed_weight(args.weight, environment['weight_sha256']) as snapshot:
     model = init_detector(config, snapshot, palette='random', device='cuda:0')
     checkpoint = load_checkpoint(model, snapshot, map_location='cpu', strict=False)
@@ -191,11 +306,11 @@ def main():
   model.eval()
   pipeline = Compose(config.test_dataloader.dataset.pipeline)
   identities = {item['path']: item for item in manifest['files']}
-  start, done, pending, failed = time.monotonic(), [], [], 0
-  failure_records = []
+  guard(check_environment=True)
 
   def collect():
     nonlocal pending
+    guard()
     for ordinal, destination, future, detector_record, resumed in pending:
       try:
         ledger, pool, confidence, regions = future.result()
@@ -224,6 +339,7 @@ def main():
       temporary.replace(destination)
       done.append({'ordinal': ordinal, 'receipt_sha256': value['receipt_sha256']})
     pending = []
+    guard()
     state = report.seal(
       {
         'expected_frames': len(protocol['pairs']),
@@ -312,6 +428,7 @@ def main():
     if failure_records:
       raise ValueError('FULL_METRIC_FRAME_FAILED_NO_SILENT_SKIP')
   if len(done) == len(protocol['pairs']) and failed == 0:
+    guard(check_environment=True)
 
     def frames():
       for ordinal in range(len(protocol['pairs'])):
@@ -333,6 +450,7 @@ def main():
         'progress_receipt_sha256': json.loads((args.output / 'progress.json').read_bytes())['receipt_sha256'],
       }
     )
+    guard(check_environment=True)
     (args.output / 'summary.json').write_text(json.dumps(report.seal(summary), indent=2, sort_keys=True) + '\n')
     (args.output / 'ledger.json').write_text(json.dumps(ledger, sort_keys=True) + '\n')
     (args.output / 'review.json').write_text(json.dumps(report.review_manifest(ledger), indent=2, sort_keys=True) + '\n')

@@ -121,14 +121,29 @@ frames nor a pure coordinate bug explains the distribution.
 Near p95776.546058px; mid451.137921px; far has no supported samples, null.
 Public overlays of six deterministically chosen examples show contextual lane
 continuations across dashed gaps, occlusion and hood; assistant visual inspection
-is diagnostic only, not independent human-label validation. Raw overlays remain
-external and are not committed. Semantic categories count every tail point.
+is diagnostic only, not independent human-label validation. Raw overlays were inspected externally and never committed; they are now
+unavailable after the cache loss described below. Semantic categories count every tail point.
 
 Confidence0.4–.6/.6–.8/.8–1 has p95636.296120/613.371381/469.223174px.
 Higher scores improve median but do not eliminate large tails. Scores below the
 original.41 threshold are unobserved; no-output frames have no invented score.
 Confidence buckets also show support and diagnostic large-tail rates with
 explicit denominators. No confidence gate was optimized or promoted.
+
+## Annotation provenance and full-run limitation
+
+The pinned official comma10k README says imgs2 is unfinished. Metadata shows
+2,000imgs2masks but only601distinct Git blobs:1,400share a379byte PNG whose
+already-opened subset representative is entirely undrivable. These are not
+verified human lane-absence labels. Thirteen occur in the119subset and contributed
+zero original directional samples, so this does not invalidate or explain away
+the608px tail. No frame was filtered or relabeled. See the annotation provenance
+receipt. Image/mask file pairing alone does not prove annotation completeness.
+
+The bounded full attempt reached an observed10,336/11,888before cache loss on WSL
+restart. No full distribution survives; see the full availability receipt and
+public-run persistence record. Independent human causal review remains pending.
+The machine attribution verdict preserves this uncertainty.
 
 ## Handoff
 

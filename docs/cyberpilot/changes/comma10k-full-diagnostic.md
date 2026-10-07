@@ -2,7 +2,7 @@
 
 ## Identity and purpose
 
-IMPLEMENTED restartable full-public runner; actual full result pending acquisition.
+IMPLEMENTED restartable full-public runner; full evaluation BLOCKED after the observed partial attempt and external cache loss.
 Baseline41cfd0c1f, feature/cyber-autotune. All11,888pinned road pairs including
 both imgs2view markers; interior imgsd excluded. Evidence stays DIAGNOSTIC_PUBLIC_GT.
 
@@ -39,8 +39,8 @@ Initial acquisition used16workers, was interrupted after measuring low throughpu
 then resource-only64worker policy frozen. Same images/source/detector/metrics,
 no parameter selection. Each subsequent acquisition attempt has a1,200second
 budget,3attempts/file,45second request timeout; cached valid bytes reused.
-First64worker attempt14,342/23,776files; second21,906/23,776. Both preserved as
-PARTIAL_NOT_EVALUATION, not full evidence. Expected size from119subset was about
+First64worker attempt14,342/23,776files; second21,906/23,776; third23,776/23,776.
+All11,888pairs were acquired and hash-verified before inference. Expected size from119subset was about
 11GB; actual paired-view transfer cost/runtime measured separately.
 
 ## Regression risk and acceptance
@@ -55,15 +55,32 @@ additional detector, ensemble, interpolation or geometry calibration.
 
 | Stage | Evidence | Result |
 | --- | --- | --- |
-| Acquisition |external full-acquisition-result-v2.json; public resource report on completion |bounded/resumable; initially partial as above |
-| Inference / metrics |external run-freeze/progress/summary; public full report when available |NOT_RUN until complete manifest available |
+| Acquisition |external full-acquisition-result-v2.json; public resource report on completion |all23,776files verified,11,316,893,221bytes; external bytes subsequently lost |
+| Inference / metrics |external run-freeze/progress/summary; public full report when available |observed10,336/11,888 in1,800.46s; PARTIAL_NOT_QUALIFICATION; receipts lost, no full distribution |
 | Focused/full/build |comma10k-tail-validation.json when finalized |actual counts/checks recorded |
 | Replay / simulation / shadow |not applicable |no production/controller/private execution |
 
 ## Handoff
 
-Final acquisition/execution count, runtime, full-vs-subset differences and any
-failure must be appended below after the run, not filled with planned numbers.
+The observed process completed10,336/11,888frames in1,800.460671seconds with
+zero reported hard failures. It exited PARTIAL_NOT_QUALIFICATION. This is
+OBSERVED_PROCESS_PROGRESS_ONLY_NOT_REPLAYABLE, not a retained full receipt tree.
+A subsequent WSL cold restart was observed (uptime reset) and the entire volatile
+public cache was absent. The system tmpfiles configuration contains a boot-cleaned
+/tmp rule; unavailable journal evidence prevents attributing the exact cleanup
+event. The public datasets, detector runtime/source/weights, old raw captures and
+full per-frame receipts were lost. Committed119numerical ledgers remain intact.
+
+See comma10k-full-attempt-availability.json for observed run/progress/manifest
+identities and the cache-loss blocker. Neither full quantiles nor full-vs-subset
+differences can now be computed legitimately. A mid-run read-only freeze check
+matched the original run root;77overlapping119subset raw records matched, which
+does not prove full-run repeatability or a post-run environment audit.
+
+The source used for that attempt belongs to baee04e50. The subsequent active
+identity/persistent-storage guard has unit/regression validation, but GPU execution
+of the hardened version is NOT_RUN. Future source/environment changes require
+a fresh freeze; missing receipts require a complete rerun from the first frame.
 Private gate remains BLOCKED; no reference JSON.
 
 BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE.
