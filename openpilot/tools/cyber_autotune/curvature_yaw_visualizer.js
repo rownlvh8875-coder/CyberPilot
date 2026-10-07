@@ -7,7 +7,8 @@ const cursor = document.getElementById("cursor");
 bundle.reports.forEach((r, i) => {
   const option = document.createElement("option");
   option.value = String(i);
-  option.textContent = r.manifest.scenario;
+  const high = r.arms[0].samples.some(s=>s.speed_mps>=20);
+  option.textContent = r.manifest.scenario + (r.attribution ? " ["+(high?"HIGH":"LOW/MID")+" · "+r.attribution.status+"]" : "");
   choice.appendChild(option);
 });
 const fmt = x => Math.abs(x) < 1e-3 && x !== 0 ? x.toExponential(3) : x.toFixed(4);
@@ -43,6 +44,7 @@ function plot(id, series, xLabel, yLabel, events = []) {
 function render() {
   const report = bundle.reports[Number(choice.value)];
   const step = Number(cursor.value);
+  document.getElementById("physical-delay").textContent=String((report.manifest.plant_config?report.manifest.plant_config.delay_steps*report.manifest.plant_config.dt_s:0.02)*1000)+" ms";
   const selected = ids.map(id => document.getElementById(id).checked);
   const list = (field, xfield = "time_s", applied = false) => report.arms.flatMap((a,i) => selected[i] ? [{
     points:a.samples.map(s => [s[xfield],s[field]]), color:colors[i],
@@ -58,13 +60,56 @@ function render() {
   ].map(s => ({x:s.time_s,y:s.requested_torque,color:s.label==="saturation"?"#ee7787":colors[i],
                radius:s.label==="saturation"?1.8:3,label:s.label+" · "+ids[i]+" · "+s.time_s.toFixed(2)+" s"})) : []);
   plot("torque",[...list("requested_torque"),...list("applied_normalized_torque","time_s",true)],"Time (s)","Normalized torque",markers);
-  plot("angle",list("steering_angle_deg"),"Time (s)","Pre-step steering angle (deg)");
+  const angles=list("steering_angle_deg");
+  if (report.arms[0].samples[0].desired_steering_angle_deg!==undefined) angles.unshift({
+    points:report.arms[0].samples.map(s=>[s.time_s,s.desired_steering_angle_deg]),color:"#ffffff",dash:"6 4",name:"desired-steering-angle"});
+  plot("angle",angles,"Time (s)","Pre-step steering angle (deg)");
   const a = report.arms[0].samples, b = report.arms[2].samples;
-  plot("delta",[{points:b.map((s,i)=>[s.time_s,s.pose_y_m-a[i].pose_y_m]),color:colors[2],name:"candidate-minus-baseline"}],"Time (s)","Candidate − baseline y (m)");
+  const fieldValue = (samples, field, i) => {
+    const s=samples[i];
+    if (field==="curvature_residual_1pm") return s.curvature_1pm-s.desired_curvature_1pm;
+    if (field==="command_derivative_per_s") return (s.requested_torque-(i?samples[i-1].requested_torque:0))/.01;
+    return s[field];
+  };
+  for (const [id,field,label] of [["requested-delta","requested_torque","Requested torque Δ"],
+      ["applied-delta","applied_normalized_torque","Applied delayed torque Δ"],
+      ["residual-delta","curvature_residual_1pm","Post curvature residual Δ (1/m)"],
+      ["derivative-delta","command_derivative_per_s","Command derivative Δ (/s)"]]) {
+    const deltas=[];
+    if (selected[2]) deltas.push({points:b.map((s,i)=>[s.time_s,fieldValue(b,field,i)-fieldValue(a,field,i)]),
+      color:colors[2],name:"candidate-minus-baseline-"+field});
+    if (selected[2] && report.attribution) {
+      const v1=report.attribution.v1_arm.samples;
+      deltas.push({points:v1.map((s,i)=>[s.time_s,fieldValue(v1,field,i)-fieldValue(a,field,i)]),
+        color:"#d68eee",dash:"6 4",name:"v1-minus-baseline-"+field});
+    }
+    plot(id,deltas,"Time (s)",label);
+  }
+  plot("speed",[{points:a.map(s=>[s.time_s,s.speed_mps]),color:"#81d3bd",name:"speed_mps"}],"Time (s)","Synthetic speed (m/s)");
+  document.getElementById("projection-warning").textContent=report.projection ?
+    "Display projection omits native proofs and cannot independently satisfy full report admission. "+
+    "Source full-report receipt is a reference; display projection has a separate checksum." : "";
+  document.getElementById("robustness").textContent=bundle.robustness ?
+    "Frozen 23-case one-at-a-time synthetic stress: hard "+bundle.robustness.hard_pass_count+
+    "/"+bundle.robustness.case_count+", no-worse "+bundle.robustness.no_worse_screen_pass_count+
+    "/"+bundle.robustness.case_count+", stress "+bundle.robustness.stress_screen_status+
+    ", selected "+bundle.robustness.selected_candidate_status+
+    ". Not calibrated vehicle uncertainty.\n"+JSON.stringify(bundle.robustness,null,2) :
+    "Stress matrix not supplied; no stress coverage claim.";
+  const caseScope=report.attribution?"PER-CASE "+report.attribution.status:"V1 DESCRIPTIVE";
+  document.getElementById("verdict").textContent=bundle.evaluation_verdict ?
+    "Frozen eleven-case evaluation: "+bundle.evaluation_verdict.status+" · no vehicle qualification":
+    "Diagnostic per-case display · no final frozen evaluation verdict";
+  document.getElementById("attribution").textContent=report.attribution ?
+    "Frozen v2 attribution · "+caseScope+"\nV1 comparison is dashed purple in delta panels. "+
+    "Cell failures: "+report.attribution.comparison.failures.length+"\n"+
+    JSON.stringify({failures:report.attribution.comparison.failures,v1_diagnostics:report.attribution.v1_arm.diagnostics},null,2):
+    "V1 diagnostic receipt · speed/phase, saturation and adverse metrics remain visible";
+  plot("delta",selected[2]?[{points:b.map((s,i)=>[s.time_s,s.pose_y_m-a[i].pose_y_m]),color:colors[2],name:"candidate-minus-baseline"}]:[],"Time (s)","Candidate − baseline y (m)");
   const row = report.arms[0].samples[step];
   document.getElementById("clock").textContent = row.time_s.toFixed(2)+" s";
   document.getElementById("cursor-readout").textContent = "Curve phase: "+row.phase+" · "+row.speed_mps.toFixed(2)+
-    " m/s · active: "+row.active+" · steering pressed: "+row.steering_pressed+"\n"+
+    " m/s · "+(row.speed_mps<10?"LOW":row.speed_mps<20?"MID":"HIGH")+" · active: "+row.active+" · steering pressed: "+row.steering_pressed+"\n"+
     report.arms.map((arm,i) => {
       const s=arm.samples[step], d=arm.diagnostics;
       return ids[i].toUpperCase()+": curvature "+s.curvature_1pm.toExponential(7)+", requested "+
@@ -80,7 +125,8 @@ function render() {
   document.getElementById("diagnostics").innerHTML = "<table><thead><tr><th>Metric</th><th>Baseline</th><th>Current</th><th>Candidate</th></tr></thead><tbody>"+
     metrics.map(([label,key])=>"<tr><td>"+label+"</td>"+report.arms.map(arm=>"<td>"+fmt(arm.diagnostics[key])+"</td>").join("")+"</tr>").join("")+"</tbody></table>";
   document.getElementById("identity").textContent = JSON.stringify({artifact:bundle.artifact,
-    receipt_sha256:report.receipt_sha256,manifest_sha256:report.manifest_sha256,
+    source_full_report_receipt_sha256:report.projection?report.projection.source_full_report_receipt_sha256:report.receipt_sha256,
+    display_projection_sha256:report.display_projection_sha256,projection:report.projection,manifest_sha256:report.manifest_sha256,
     candidate_difference:report.candidate_difference,manifest:report.manifest},null,2);
 }
 choice.addEventListener("change",()=>{cursor.value="0";render();});

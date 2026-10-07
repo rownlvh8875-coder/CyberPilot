@@ -26,16 +26,18 @@ details{margin-top:18px;overflow-wrap:anywhere}pre{white-space:pre-wrap;word-bre
 <h1>Controller screening</h1>
 <div class="warning"><strong>NO INDEPENDENT LANE TRUTH</strong> · SYNTHETIC / NOT VEHICLE TRUTH<br>
 <span class="states">NOT_READY / REAL_VEHICLE_UNVERIFIED / VEHICLE_ACTIVATION_BLOCKED</span></div>
-<p class="muted">Two unique controllers + one declared equivalent arm. CURRENT = BASELINE.
-No lane boundaries or road truth are drawn. No performance qualification, best selection or vehicle activation.
+<p class="muted">Native controller hypotheses + one declared equivalent arm. CURRENT = BASELINE.
+No lane boundaries or road truth are drawn. No performance qualification or vehicle activation. Frozen synthetic selection is diagnostic only.
 Checksums and physical replay check internal consistency; they do not authenticate execution.</p>
+<p id="verdict" class="warning"></p>
+<p id="projection-warning" class="muted"></p>
 <div class="controls"><label for="scenario">Scenario</label><select id="scenario"></select>
 <label class="arm baseline"><input id="baseline" type="checkbox" checked>BASELINE</label>
 <label class="arm current"><input id="current" type="checkbox" checked>CURRENT (exact alias)</label>
 <label class="arm candidate"><input id="candidate" type="checkbox" checked>CANDIDATE</label></div>
 <div class="controls"><label for="cursor">Time cursor</label><input id="cursor" type="range" min="0" max="400" value="0" step="1"><output id="clock"></output></div>
 <div class="panel"><h2>Curve phase / saturation / events</h2><div id="cursor-readout"></div></div>
-<p class="muted">Requested command is native controller output. Applied command has the plant's 20 ms physical delay.
+<p class="muted">Requested command is native controller output. Applied command has the plant's <span id="physical-delay">frozen</span> physical delay.
 Actual curvature / pose are post-step plant states; steering angle is native pre-step feedback.
 Trajectory axes are scaled independently. Dashed torque = applied delayed; dotted green = exact CURRENT alias.</p>
 <div class="grid">
@@ -44,11 +46,18 @@ Trajectory axes are scaled independently. Dashed torque = applied delayed; dotte
 <div class="panel"><h2>Requested / applied delayed torque</h2><svg id="torque" viewBox="0 0 860 250" role="img" aria-label="Requested and applied delayed native torque"></svg></div>
 <div class="panel"><h2>Steering angle</h2><svg id="angle" viewBox="0 0 860 250" role="img" aria-label="Native pre-step steering angle by time"></svg></div>
 <div class="panel"><h2>Candidate − baseline observer pose</h2><svg id="delta" viewBox="0 0 860 250" role="img" aria-label="Candidate minus baseline lateral pose by time"></svg></div>
+<div class="panel"><h2>Synthetic speed</h2><svg id="speed" viewBox="0 0 860 250" role="img" aria-label="Synthetic speed"></svg></div>
+<div class="panel"><h2>Requested torque delta · candidate and V1 − baseline</h2><svg id="requested-delta" viewBox="0 0 860 250" role="img" aria-label="Requested torque delta"></svg></div>
+<div class="panel"><h2>Applied delayed torque delta · candidate and V1 − baseline</h2><svg id="applied-delta" viewBox="0 0 860 250" role="img" aria-label="Applied delayed torque delta"></svg></div>
+<div class="panel"><h2>Curvature residual delta · candidate and V1 − baseline</h2><svg id="residual-delta" viewBox="0 0 860 250" role="img" aria-label="Curvature residual delta"></svg></div>
+<div class="panel"><h2>Command derivative delta · candidate and V1 − baseline</h2><svg id="derivative-delta" viewBox="0 0 860 250" role="img" aria-label="Command derivative delta"></svg></div>
 <div class="panel"><h2>Descriptive diagnostics · no acceptance threshold</h2><div id="diagnostics"></div></div>
 </div>
 <p class="muted">Command zero crossings and Reversal events ignore exact zeros.
 Reversal count is a command oscillation proxy, not physical comfort or steering jerk.
 High speed saturation and adverse diagnostics remain visible; compare all phases.</p>
+<details><summary>Frozen v2 attribution / regressions</summary><pre id="attribution"></pre></details>
+<details><summary>Frozen synthetic stress matrix</summary><pre id="robustness"></pre></details>
 <details><summary>Frozen identity and receipts</summary><pre id="identity"></pre></details>
 <script id="screening-data" type="application/json">@@DATA@@</script>
 <script>@@SCRIPT@@</script>
