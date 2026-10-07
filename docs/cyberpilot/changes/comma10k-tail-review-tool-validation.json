@@ -1,0 +1,64 @@
+{
+  "authority_privacy": "PASS",
+  "autotune_passed": 1190,
+  "autotune_seconds": 295.4,
+  "browser": {
+    "delayed_navigation_frame_save_alignment": "PASS",
+    "external_page_requests": 0,
+    "js_errors": 0,
+    "navigation": "PASS",
+    "overlays": "PASS",
+    "process_restart_persistence": "PASS",
+    "render": "PASS",
+    "save": "PASS",
+    "scope": "TEST_ONLY_NOT_HUMAN_EVIDENCE",
+    "server_clean_shutdown": "PASS"
+  },
+  "browser_artifact_sha256": {
+    "lane-tail-review-browser-result.json": "f271e647fdfed51776b1bffb0e9f4023b67cd035abc5bdd385d5ae236ae3f856",
+    "lane-tail-review-race-result.json": "efa02bb40619be161625dbfdd90da673239e84142beb8181b76bb69ddcc7c173",
+    "lane-tail-review-test-only.png": "6d8cc1945e95a3f0ff232972522108db72f3c769469885e9994552fd1164f8f4"
+  },
+  "browser_environment": {
+    "chrome": "154.0.8037.98",
+    "node": "v24.19.0",
+    "playwright": "1.62.1"
+  },
+  "excluded_validation": {
+    "log_sha256": "d1c5340e6db35f0be4c7dc8c143ca6cab9ffea8408606611d3c9bbba1e49d546",
+    "reason": "SOURCE_SET_CHANGED_DURING_EXECUTION_NOT_FINAL_PROOF"
+  },
+  "focused_new_passed": 46,
+  "git_diff": "PASS",
+  "human_review_status": "TAIL_HUMAN_REVIEW_PENDING",
+  "independent_review": "PASS_NO_IMPORTANT_FINDINGS_FOCUSED46_INDEPENDENT_RERUN",
+  "log_sha256": {
+    "full-analysis-coverage-red.log": "84f72177aa3de806d9ec91cef72c263258c826f061042073e18015f3a24cdfe5",
+    "full-analysis-red.log": "0511393e682c23b82c21e752c102a8dc27a4b2317382a3907481a0cb616af5ef",
+    "review-analysis-focused.log": "8ab0ff659e5038e3a15a9c0f67f7d9d122868135e0785d40b7cb1e1832a0a4a9",
+    "review-analysis-full-frozen-source.log": "c69412870abaf8abac65b7c6087f988e64248f4b046aec52e1e5a5f8efae483d",
+    "review-analysis-scons.log": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056",
+    "review-contract-red.log": "0a202a13f40c457605a5e44b0cce2580c6dd013dd622554331cd8ac7382f6d35",
+    "review-findings-red.log": "1355c645e3734381f65ed7e36db8a84d23036bc7a622efca172cbc4b72f2aaba",
+    "review-orphan-red.log": "b1f83da0e33507035dae898f8a46e76b2e7aa0d1171ee4acff1a690b247b0eac",
+    "review-ui-red.log": "a31c93d9220b6c90d06ee939507418f06deb527c4b7e29f7188cadf6418d8f2e"
+  },
+  "private_input_opened": false,
+  "publication": {
+    "files": 520,
+    "findings": 0
+  },
+  "qualification": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "receipt_sha256": "ef5b422b06ae0fae638b9d29bd4c647d17c6e104a1ee431c61643d828b0773e1",
+  "review_tool_sha256": "6b0ec140be7fe6862a071da3adf4da3ebc31f2de995067d7c1a9cadf9e4bec1f",
+  "ruff": "PASS",
+  "schema": "PUBLIC_TAIL_REVIEW_TOOL_VALIDATION_V1",
+  "scons": "PASS",
+  "sealed_reference_generated": false,
+  "syntax": "PASS",
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}
