@@ -15,6 +15,108 @@ class TestActivePublicIdentity(unittest.TestCase):
     run = seal({'environment': frozen_environment, **hashes})
     return run, environment, hashes
 
+  def test_v2_storage_source_and_schema_changes_fail_closed(self):
+    run, environment, hashes = self.fixture()
+    hashes = {**hashes, 'storage_source_sha256': '3' * 64, 'storage_schema_sha256': '4' * 64}
+    run = seal({**{k: v for k, v in run.items() if k != 'receipt_sha256'}, 'schema': 'FULL_PUBLIC_RUN_FREEZE_V2', **hashes})
+    api.require_active_run_identity(run, environment, hashes, e.COMMIT)
+    for key in ('storage_source_sha256', 'storage_schema_sha256'):
+      with self.subTest(key=key), self.assertRaises(ValueError):
+        api.require_active_run_identity(run, environment, {**hashes, key: 'f' * 64}, e.COMMIT)
+
+  def test_completed_reuse_rechecks_source_after_long_audit(self):
+    from pathlib import Path
+    import tempfile
+    from openpilot.tools.cyber_autotune import lane_public_storage as store
+
+    run, environment, hashes = self.fixture()
+    current = dict(hashes)
+    with tempfile.TemporaryDirectory() as directory:
+      output = Path(directory)
+      durable = store.DurableRun(output, run, ['imgs/a.png'])
+      row = seal({'run_sha256': run['receipt_sha256'], 'ordinal': 0, 'frame_status': 'COMPLETED'})
+      durable.put(0, row, lambda r: r)
+      durable.complete({'summary.json': {'value': 1}}, lambda r: r)
+      guard = api.make_active_identity_guard(run, output, [], 1, lambda: current, lambda: environment, lambda: e.COMMIT)
+
+      def audit():
+        current['metric_source_sha256'] = 'f' * 64
+
+      with self.assertRaisesRegex(ValueError, 'ACTIVE_RUN_SOURCE_IDENTITY_DRIFT'):
+        api.completed_reuse(durable, lambda r: r, guard, audit)
+
+  def test_freeze_only_publishes_new_directory_durably_and_immutably(self):
+    import os
+    from pathlib import Path
+    import tempfile
+    from unittest.mock import patch
+    from openpilot.tools.cyber_autotune import lane_public_storage as store
+
+    run, _, _ = self.fixture()
+    with tempfile.TemporaryDirectory() as directory:
+      root = Path(directory)
+      synced = []
+      original = os.fsync
+
+      def record(fd):
+        synced.append(Path(os.readlink('/proc/self/fd/' + str(fd))))
+        original(fd)
+
+      with patch.object(store.os, 'fsync', side_effect=record):
+        api.freeze_run_file(root / 'new-output', run)
+      self.assertIn(root, synced)
+      with self.assertRaises(ValueError):
+        api.freeze_run_file(root / 'new-output', seal({'changed': True}))
+
+  def test_final_collection_is_pending_until_marker_not_completed(self):
+    self.assertEqual(api.collection_status(2, 2, 0), 'ALL_FRAMES_STORED_AGGREGATION_PENDING')
+
+  def test_completed_reuse_checks_actual_weight_and_each_public_input(self):
+    import hashlib
+    from pathlib import Path
+    import tempfile
+    from openpilot.tools.cyber_autotune import lane_detector_runner as r
+
+    with tempfile.TemporaryDirectory() as directory:
+      root = Path(directory)
+      inputs = [('imgs/a.png', b'image'), ('masks/a.png', b'mask')]
+      files = []
+      for name, data in inputs:
+        path = root / name
+        path.parent.mkdir()
+        path.write_bytes(data)
+        files.append(
+          {
+            'path': name,
+            'size': len(data),
+            'sha256': hashlib.sha256(data).hexdigest(),
+            'git_blob_sha1': hashlib.sha1(('blob ' + str(len(data)) + '\0').encode() + data).hexdigest(),
+          }
+        )
+      weight = root / 'weight.pth'
+      weight.write_bytes(b'weight')
+      expected_weight = hashlib.sha256(b'weight').hexdigest()
+      pairs = [{'image': inputs[0][0], 'mask': inputs[1][0]}]
+      manifest = {
+        'schema': 'PUBLIC_DIAGNOSTIC_INPUT_MANIFEST_V1',
+        'dataset_commit': r.COMMA10K_COMMIT,
+        'protocol_file_sha256': 'a' * 64,
+        'files': files,
+        'semantic_content_opened': False,
+      }
+      self.assertEqual(api.audit_completed_inputs(root, pairs, manifest, weight, expected_weight), 1)
+      for name, data in inputs:
+        for mode in ('corrupt', 'missing'):
+          with self.subTest(input=name, mode=mode):
+            path = root / name
+            path.write_bytes(b'corrupted') if mode == 'corrupt' else path.unlink()
+            with self.assertRaises(ValueError):
+              api.audit_completed_inputs(root, pairs, manifest, weight, expected_weight)
+            path.write_bytes(data)
+      weight.write_bytes(b'changed')
+      with self.assertRaises(ValueError):
+        api.audit_completed_inputs(root, pairs, manifest, weight, expected_weight)
+
   def test_unchanged_active_identity_passes(self):
     run, environment, hashes = self.fixture()
     api.require_active_run_identity(run, environment, hashes, e.COMMIT)

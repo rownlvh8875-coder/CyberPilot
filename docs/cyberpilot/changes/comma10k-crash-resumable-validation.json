@@ -1,0 +1,38 @@
+{
+  "authority_privacy": "PASS",
+  "autotune_passed": 1144,
+  "autotune_seconds": 299.77,
+  "focused_passed": 91,
+  "full_execution": "PENDING_ACQUISITION_NEW_ENVIRONMENT",
+  "git_diff": "PASS",
+  "independent_review": "PASS_NO_IMPORTANT_FINDINGS",
+  "log_sha256": {
+    "final-resume-red.log": "eb9e436d3c1ac387b5acc8a77fc49780ff12790f98fd19141d3d2d1106fba46f",
+    "resume-autotune-final.log": "c05af1f64e186863d1f9fb9e701dfabe0208c47663f4a724dc0198b5299f5281",
+    "resume-focused.log": "29bb1b6258468d5c165ae4ef1aab2dcdcef833d2d20d8278736f57e09506d751",
+    "resume-full-final.log": "c874f9ae4d70a0aec6157932a70953e91f2f8bafe4d51548cf31a532cfb2bf01",
+    "resume-scons-final.log": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056",
+    "resume-scons.log": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056",
+    "review-fixes-red.log": "1ca655839003a181d94036c11c9bfce5db2cd336bda97c3a4c90efde0433cb05",
+    "storage-batch-red.log": "6e59ec648760473d9b15c516a5b4db26ba03f46f608da521340922d4746c4ac7",
+    "storage-bounded-red.log": "61b434f3909b5df0a165028732be5ca0574ee8e5d47f3d067a99ea9e8647299c",
+    "storage-red.log": "9a6a9de9df91bd6e8416fadc744d382fb0b3101c3b778d12348a332241fb8e6e"
+  },
+  "private_input_opened": false,
+  "publication": {
+    "files": 512,
+    "findings": 0
+  },
+  "qualification": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "receipt_sha256": "98d4d2d36379c409c37fe7c2a65f1e5570b53b7f663598ca0254c9d65ce6ab8d",
+  "ruff": "PASS",
+  "schema": "PUBLIC_DURABLE_STORAGE_VALIDATION_V1",
+  "scons": "PASS",
+  "sealed_reference_generated": false,
+  "syntax": "PASS",
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

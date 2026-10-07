@@ -15,6 +15,7 @@ import sys
 import subprocess
 import time
 
+from openpilot.tools.cyber_autotune import lane_public_storage as storage
 from openpilot.tools.cyber_autotune import lane_detector_execution as e
 from openpilot.tools.cyber_autotune import lane_detector_runner as r
 from openpilot.tools.cyber_autotune import lane_tail_diagnostics as t
@@ -39,9 +40,23 @@ def active_source_hashes():
   }
 
 
+def durable_source_hashes():
+  return {
+    **active_source_hashes(),
+    'storage_source_sha256': digest(Path(storage.__file__).read_bytes()),
+    'storage_schema_sha256': storage.SCHEMA_SHA256,
+  }
+
+
+def frame_disposition(ledger):
+  return 'REFERENCE_UNAVAILABLE' if ledger['failure_category'] in ('GT_UNAVAILABLE', 'NO_PREDICTION') else 'COMPLETED'
+
+
 def require_active_run_sources(run, current_hashes):
   frozen = report.unseal(run)
   keys = {'producer_source_sha256', 'metric_source_sha256', 'report_source_sha256'}
+  if frozen.get('schema') == 'FULL_PUBLIC_RUN_FREEZE_V2':
+    keys |= {'storage_source_sha256', 'storage_schema_sha256'}
   if (
     type(current_hashes) is not dict
     or set(current_hashes) != keys
@@ -98,9 +113,7 @@ def make_active_identity_guard(run, output, completed, expected, source_getter, 
         require_active_run_identity(run, environment_getter(), hashes, head)
     except Exception as exc:
       state = source_drift_progress(run['receipt_sha256'], completed, expected)
-      temporary = output / 'progress.identity-drift.tmp'
-      temporary.write_text(json.dumps(state, indent=2, sort_keys=True) + '\n')
-      temporary.replace(output / 'progress.json')
+      storage.atomic_json(output / 'progress.json', state)
       summary = output / 'summary.json'
       if summary.exists():
         preserved = output / ('summary-before-identity-drift-' + digest(summary.read_bytes()) + '.json')
@@ -123,6 +136,27 @@ def completion_state(expected, completed, failed):
   return 'FAILED_NOT_QUALIFICATION' if failed else 'COMPLETE_DIAGNOSTIC_NOT_QUALIFICATION' if completed == expected else 'PARTIAL_NOT_QUALIFICATION'
 
 
+def collection_status(expected, completed, failed):
+  status = completion_state(expected, completed, failed)
+  return 'ALL_FRAMES_STORED_AGGREGATION_PENDING' if status == 'COMPLETE_DIAGNOSTIC_NOT_QUALIFICATION' else status
+
+
+def completed_reuse(durable, validator, guard, audit):
+  guard()
+  audit()
+  marker = durable.verify_completed(validator)
+  guard()
+  return marker
+
+
+def audit_completed_inputs(root, pairs, manifest, weight, weight_sha):
+  r.read_bound_bytes(weight, weight_sha)
+  identities = {item['path']: item for item in manifest['files']}
+  for pair in pairs:
+    r.verify_inputs(root, {**manifest, 'files': [identities[pair['image']], identities[pair['mask']]]})
+  return len(pairs)
+
+
 def require_primary_environment(current, primary, actual_head):
   allowed = ('public_protocol_file_sha256', 'public_input_manifest_file_sha256')
   if actual_head != e.COMMIT or any(key not in current or key not in primary for key in allowed):
@@ -143,6 +177,10 @@ def verify_resume(receipt, binding, ordinal, pair=None, identities=None):
 
   core = report.unseal(receipt)
   expected_keys = {'run_sha256', 'ordinal', 'detector_record', 'ledger', 'pool', 'confidence', 'regions'}
+  if 'frame_status' in core:
+    expected_keys.add('frame_status')
+    if core['frame_status'] != frame_disposition(core['ledger']):
+      raise ValueError('FRAME_DISPOSITION_MISMATCH')
   if set(core) != expected_keys or core['run_sha256'] != binding or type(core['ordinal']) is not int or core['ordinal'] != ordinal:
     raise ValueError('FULL_RUN_RESUME_BINDING_MISMATCH')
   ledger = report.unseal(core['ledger'])
@@ -201,6 +239,16 @@ def merge_frame_results(values):
   return ledger, pool, confidence, regions
 
 
+def freeze_run_file(output, run):
+  storage.durable_mkdir(output)
+  freeze = output / 'run-freeze.json'
+  if freeze.exists():
+    if storage.read_json(freeze) != run:
+      raise ValueError('NEW_SOURCE_OR_POLICY_REQUIRES_NEW_FULL_RUN_DIRECTORY')
+  else:
+    storage.atomic_json(freeze, run)
+
+
 def main():
   parser = argparse.ArgumentParser()
   for name in ('source', 'weight', 'environment', 'toolchain-manifest', 'protocol', 'manifest', 'cache', 'output'):
@@ -208,6 +256,14 @@ def main():
   parser.add_argument('--max-seconds', type=int, default=1800)
   parser.add_argument('--freeze-only', action='store_true')
   args = parser.parse_args()
+  if args.freeze_only:
+    execute(args)
+  else:
+    with storage.writer_lease(args.output):
+      execute(args)
+
+
+def execute(args):
   if not 1 <= args.max_seconds <= 3600:
     raise ValueError('BOUNDED_RUNTIME_REQUIRED')
   r.require_network_isolation(r.network_interfaces(Path('/proc/self/net/dev').read_text()))
@@ -229,11 +285,9 @@ def main():
   environment = e.freeze_environment(current)
   run = report.seal(
     {
-      'schema': 'FULL_PUBLIC_RUN_FREEZE_V1',
+      'schema': 'FULL_PUBLIC_RUN_FREEZE_V2',
       'environment': environment,
-      'producer_source_sha256': digest(Path(__file__).read_bytes()),
-      'metric_source_sha256': digest(Path(t.__file__).read_bytes()),
-      'report_source_sha256': digest(Path(report.__file__).read_bytes()),
+      **durable_source_hashes(),
       'policy_sha256': t.policy_sha(t.policy()),
       'max_new_inference_scheduling_seconds': args.max_seconds,
       'max_replay_frames': 11888,
@@ -248,13 +302,7 @@ def main():
       'reference_promotable': False,
     }
   )
-  args.output.mkdir(parents=True, exist_ok=True)
-  freeze = args.output / 'run-freeze.json'
-  if freeze.exists():
-    if json.loads(freeze.read_bytes()) != run:
-      raise ValueError('NEW_SOURCE_OR_POLICY_REQUIRES_NEW_FULL_RUN_DIRECTORY')
-  else:
-    freeze.write_text(json.dumps(run, indent=2, sort_keys=True) + '\n')
+  freeze_run_file(args.output, run)
   if args.freeze_only:
     print(json.dumps({'run_sha256': run['receipt_sha256']}))
     return
@@ -273,10 +321,33 @@ def main():
     args.output,
     done,
     len(protocol['pairs']),
-    active_source_hashes,
+    durable_source_hashes,
     current_environment,
     lambda: subprocess.check_output(['git', '-C', str(args.source), 'rev-parse', 'HEAD'], text=True).strip(),
   )
+  durable = storage.DurableRun(args.output, run, [pair['image'] for pair in protocol['pairs']])
+  identities = {item['path']: item for item in manifest['files']}
+
+  def validate_row(row):
+    core = report.unseal(row)
+    if 'frame_status' not in core:
+      raise ValueError('EXPLICIT_DURABLE_FRAME_DISPOSITION_REQUIRED')
+    ordinal = core['ordinal']
+    durable.row_path(ordinal)
+    return verify_resume(row, run['receipt_sha256'], ordinal, protocol['pairs'][ordinal], identities)
+
+  if durable.marker_path.exists():
+    marker = completed_reuse(
+      durable,
+      validate_row,
+      guard,
+      lambda: audit_completed_inputs(args.cache, protocol['pairs'], manifest, args.weight, environment['weight_sha256']),
+    )
+    print(
+      json.dumps({'storage_status': 'COMPLETED', 'processed': marker['processed'], 'expected': marker['expected'], 'cached_inference_reused': True}), flush=True
+    )
+    return
+  durable.recover(validate_row, retain=False)
   import cv2
   import numpy as np
   import torch
@@ -311,7 +382,7 @@ def main():
   def collect():
     nonlocal pending
     guard()
-    for ordinal, destination, future, detector_record, resumed in pending:
+    for ordinal, _destination, future, detector_record, resumed in pending:
       try:
         ledger, pool, confidence, regions = future.result()
       except Exception as exc:
@@ -321,6 +392,7 @@ def main():
         {
           'run_sha256': run['receipt_sha256'],
           'ordinal': ordinal,
+          'frame_status': frame_disposition(ledger[0]),
           'detector_record': detector_record,
           'ledger': ledger[0],
           'pool': pool,
@@ -334,17 +406,16 @@ def main():
         except ValueError as exc:
           failure_records.append({'ordinal': ordinal, 'error': str(exc)})
           continue
-      temporary = destination.with_suffix('.tmp')
-      temporary.write_text(json.dumps(value, sort_keys=True) + '\n')
-      temporary.replace(destination)
+      durable.put(ordinal, value, validate_row, sync_index=False)
       done.append({'ordinal': ordinal, 'receipt_sha256': value['receipt_sha256']})
     pending = []
+    durable.flush_index()
     guard()
     state = report.seal(
       {
         'expected_frames': len(protocol['pairs']),
         'completed_frames': len(done),
-        'status': completion_state(len(protocol['pairs']), len(done), failed + len(failure_records)),
+        'status': collection_status(len(protocol['pairs']), len(done), failed + len(failure_records)),
         'run_sha256': run['receipt_sha256'],
         'per_frame_receipts': sorted(done, key=lambda item: item['ordinal']),
         'runtime_seconds': time.monotonic() - start,
@@ -352,7 +423,7 @@ def main():
         'reference_promotable': False,
       }
     )
-    (args.output / 'progress.json').write_text(json.dumps(state, indent=2, sort_keys=True) + '\n')
+    storage.atomic_json(args.output / 'progress.json', state)
     print(json.dumps({k: v for k, v in state.items() if k != 'per_frame_receipts'}), flush=True)
 
   collect()
@@ -360,11 +431,11 @@ def main():
     try:
       resumed_ordinals = set()
       for ordinal, pair in enumerate(protocol['pairs']):
-        destination = args.output / f'{ordinal:05d}.json'
+        destination = durable.row_path(ordinal)
         if not destination.exists():
           continue
         one_manifest = {**manifest, 'files': [identities[pair['image']], identities[pair['mask']]]}
-        core = verify_resume(json.loads(destination.read_bytes()), run['receipt_sha256'], ordinal, pair, identities)
+        core = verify_resume(storage.read_json(destination), run['receipt_sha256'], ordinal, pair, identities)
         record = core['detector_record']
         pending.append((ordinal, destination, workers.submit(metric_job, args.cache, one_manifest, pair, record), record, core))
         resumed_ordinals.add(ordinal)
@@ -381,7 +452,7 @@ def main():
           continue
         if inference_budget_expired(inference_started, time.monotonic(), args.max_seconds):
           break
-        destination = args.output / f'{ordinal:05d}.json'
+        destination = durable.row_path(ordinal)
         one_manifest = {**manifest, 'files': [identities[pair['image']], identities[pair['mask']]]}
         files = r.verify_inputs(args.cache, one_manifest)
         image = cv2.imdecode(np.frombuffer(files[pair['image']], dtype=np.uint8), cv2.IMREAD_COLOR)
@@ -422,7 +493,10 @@ def main():
             raise ValueError('FULL_METRIC_FRAME_FAILED_NO_SILENT_SKIP')
     except Exception:
       failed += 1
-      collect()
+      try:
+        collect()
+      finally:
+        durable.interrupted(invalid=True)
       raise
     collect()
     if failure_records:
@@ -432,9 +506,7 @@ def main():
 
     def frames():
       for ordinal in range(len(protocol['pairs'])):
-        yield verify_resume(
-          json.loads((args.output / f'{ordinal:05d}.json').read_bytes()), run['receipt_sha256'], ordinal, protocol['pairs'][ordinal], identities
-        )
+        yield verify_resume(storage.read_json(durable.row_path(ordinal)), run['receipt_sha256'], ordinal, protocol['pairs'][ordinal], identities)
 
     ledger, pool, confidence, regions = merge_frame_results(frames())
     summary = report.unseal(report.make_report(ledger, pool, confidence, regions, {'receipt_sha256': run['receipt_sha256'], 'exact_repeatability': None}))
@@ -451,9 +523,18 @@ def main():
       }
     )
     guard(check_environment=True)
-    (args.output / 'summary.json').write_text(json.dumps(report.seal(summary), indent=2, sort_keys=True) + '\n')
-    (args.output / 'ledger.json').write_text(json.dumps(ledger, sort_keys=True) + '\n')
-    (args.output / 'review.json').write_text(json.dumps(report.review_manifest(ledger), indent=2, sort_keys=True) + '\n')
+    durable.complete(
+      {
+        'summary.json': report.seal(summary),
+        'ledger.json': ledger,
+        'review.json': report.review_manifest(ledger),
+      },
+      validate_row,
+      before_marker=guard,
+    )
+    guard()
+  else:
+    durable.interrupted(invalid=failed > 0 or bool(failure_records))
 
 
 if __name__ == '__main__':
