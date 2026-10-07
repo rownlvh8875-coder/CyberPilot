@@ -1,0 +1,53 @@
+{
+  "authority": "PASS_LITERAL_GREP_AND_IMPORT_AST",
+  "autotune": {
+    "failed": 0,
+    "log_sha256": "7822418366119b5d5edd2ba1c96404f8e291e65c55b5f064e20d395188dacff1",
+    "passed": 1109,
+    "seconds": 371.06
+  },
+  "focused": {
+    "log_sha256": "0ccbb27d14b4cfbe8567f8334561a25d390c3640b29cd9d81becbc6fd53f827f",
+    "passed": 56,
+    "subtests_passed": 29
+  },
+  "format": "PASS",
+  "full_actual_run": "RUNNING_NOT_COMPLETED",
+  "independent_review": {
+    "56_tests_independently_reproduced": true,
+    "followup_important": "active-process producer/config identity drift guard; add after active run and separately audit unchanged current run before publication",
+    "subset_and_math_remaining_important": 0
+  },
+  "initial_invalidated_regression": {
+    "failed": 1,
+    "failure": "bounded A1 worker generic rejection; source-scoped test edit overlapped run; precise caught exception not retained",
+    "individual_stable_retest": "PASS",
+    "log_sha256": "adb06dd1a50e2547afc0c98abf5a97e8cac142306eddd83dc66107a3991096ce",
+    "passed": 1108,
+    "source_edit_during_run": true
+  },
+  "official_reproduction": "BLOCKED",
+  "privacy": "PASS_METADATA_AND_SOURCE_ONLY",
+  "private_input_opened": false,
+  "publication": {
+    "files": 498,
+    "findings": 0
+  },
+  "qualification": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "receipt_sha256": "614e4df251e62170dc865006d6714a4e824b51eb6600efed6b2770f694f85425",
+  "reference_promotable": false,
+  "ruff": "PASS",
+  "schema": "COMMA10K_TAIL_CORE_VALIDATION_V1",
+  "scons": {
+    "command": "export PATH=\"$PWD/.venv/bin:$PATH\"; .venv/bin/scons -j2",
+    "log_sha256": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056",
+    "status": "PASS"
+  },
+  "status": "TESTS_AND_BUILD_PASS_RUNTIME_GUARD_FOLLOWUP_PENDING",
+  "syntax": "PASS",
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

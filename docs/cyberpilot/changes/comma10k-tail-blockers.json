@@ -1,0 +1,137 @@
+{
+  "children": [
+    {
+      "code": "PUBLIC_BENCHMARK_REPRODUCTION_BLOCKED",
+      "dependent_gates": [
+        "PUBLIC_DETECTOR_QUALIFICATION",
+        "PRIVATE_INFERENCE"
+      ],
+      "evidence_file": "comma10k-tail-culane-availability.json",
+      "evidence_file_sha256": "7a87391586e57d787a3fb5732aada03426cec6664b071dd97eebb8cb5558d067",
+      "parent_code": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+      "resolution_condition": "Official complete CULane split + faithful reproduction",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "CULANE_DATASET_UNAVAILABLE",
+      "dependent_gates": [
+        "PUBLIC_BENCHMARK_REPRODUCTION"
+      ],
+      "evidence_file": "comma10k-tail-culane-availability.json",
+      "evidence_file_sha256": "7a87391586e57d787a3fb5732aada03426cec6664b071dd97eebb8cb5558d067",
+      "parent_code": "PUBLIC_BENCHMARK_REPRODUCTION_BLOCKED",
+      "resolution_condition": "Supplier official access or documented authorized alternate",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "COMMA10K_EGO_LANE_IDENTITY_UNAVAILABLE",
+      "dependent_gates": [
+        "EGO_REFERENCE_PROMOTION"
+      ],
+      "evidence_file": "public-lane-reference-calibration-audit.json",
+      "evidence_file_sha256": "a84f408979fa9d1b0e885650cdb5e58d74b22242668d33b148c32360ccbefd2d",
+      "parent_code": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+      "resolution_condition": "Independent validated ego-left/right association GT, not all-paint segmentation",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "COMMA10K_TAIL_SEMANTICS_REVIEW_PENDING",
+      "dependent_gates": [
+        "TAIL_ATTRIBUTION_COMPLETE",
+        "PRIVATE_INFERENCE"
+      ],
+      "evidence_file": "comma10k-tail-clrernet-human-review.json",
+      "evidence_file_sha256": "81d0d46b6171ac771ed686f962dc5e6fe8d93a579c2b1b181f27275eac4d2618",
+      "parent_code": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+      "resolution_condition": "Independent semantic review resolves mixed representation/localization categories; all tail samples retained",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "PUBLIC_PIXEL_QUALIFICATION_THRESHOLD_UNJUSTIFIED",
+      "dependent_gates": [
+        "PUBLIC_DETECTOR_QUALIFICATION",
+        "PRIVATE_INFERENCE"
+      ],
+      "evidence_file": "comma10k-tail-private-gate.json",
+      "evidence_file_sha256": "88344f760c87f15a3d3e373e0dd998b6d55a0283010840310420a54c874106cf",
+      "parent_code": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+      "resolution_condition": "Externally justified downstream error/coverage budget frozen before qualifying evaluation",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "METRIC_CALIBRATION_UNAVAILABLE",
+      "dependent_gates": [
+        "METER_REFERENCE"
+      ],
+      "evidence_file": "comma10k-tail-clrernet-report.json",
+      "evidence_file_sha256": "4f69da0d7ddc977aff0e10592a40ba70d787fe08d423848820822876aa8ed491",
+      "parent_code": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+      "resolution_condition": "Verified camera geometry and independently measured uncertainty",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "INDEPENDENT_EXTRINSICS_UNAVAILABLE",
+      "dependent_gates": [
+        "METER_REFERENCE"
+      ],
+      "evidence_file": "comma10k-tail-clrernet-report.json",
+      "evidence_file_sha256": "4f69da0d7ddc977aff0e10592a40ba70d787fe08d423848820822876aa8ed491",
+      "parent_code": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+      "resolution_condition": "Independently observed camera pose/height; no model-derived calibration treated as truth",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "ROAD_REGISTRATION_UNAVAILABLE",
+      "dependent_gates": [
+        "SEALED_REFERENCE"
+      ],
+      "evidence_file": "comma10k-tail-private-gate.json",
+      "evidence_file_sha256": "88344f760c87f15a3d3e373e0dd998b6d55a0283010840310420a54c874106cf",
+      "parent_code": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+      "resolution_condition": "Independent road geometry to closed-loop vehicle coordinate registration",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "DESIRED_PATH_REFERENCE_UNAVAILABLE",
+      "dependent_gates": [
+        "SEALED_REFERENCE"
+      ],
+      "evidence_file": "comma10k-tail-private-gate.json",
+      "evidence_file_sha256": "88344f760c87f15a3d3e373e0dd998b6d55a0283010840310420a54c874106cf",
+      "parent_code": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+      "resolution_condition": "Reviewed desired path provenance independent of model/planner/candidate",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "PRIVATE_HUMAN_VALIDATION_NOT_RUN",
+      "dependent_gates": [
+        "SEALED_REFERENCE"
+      ],
+      "evidence_file": "comma10k-tail-private-gate.json",
+      "evidence_file_sha256": "88344f760c87f15a3d3e373e0dd998b6d55a0283010840310420a54c874106cf",
+      "parent_code": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+      "resolution_condition": "Frozen public-qualified detector + independent private human holdout",
+      "status": "BLOCKED"
+    }
+  ],
+  "private_input_opened": false,
+  "public_tier": "DIAGNOSTIC_PUBLIC_GT",
+  "receipt_sha256": "bbd83e65ddaf02cbebdf80e66af3a5052818ea96788fff33d7e09378777cdc97",
+  "reference_promotable": false,
+  "root": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "schema": "INDEPENDENT_REFERENCE_BLOCKER_HIERARCHY_V1",
+  "sealed_reference_generated": false,
+  "status": "BLOCKED",
+  "structural_results": {
+    "metric_correctness": "PASS_SYNTHETIC_ANALYTIC_AND_REPLAY",
+    "primary_119_repeatability": "PASS",
+    "secondary_repeatability": "REJECTED",
+    "tail_geometry_attribution": "IMPLEMENTED",
+    "tail_semantic_causal_review": "PENDING"
+  },
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

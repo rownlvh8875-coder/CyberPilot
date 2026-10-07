@@ -1,0 +1,67 @@
+{
+  "comparison_conclusion": "SHARED_ROW_REPRESENTATION_TAIL_AND_REMOTE_RESIDUAL; correlated CULane-trained architectures, no unique domain-causal attribution",
+  "detector_winner": null,
+  "evidence_tier": "POST_RESULT_DIAGNOSTIC_PUBLIC_GT",
+  "official_reproduction": "NOT_RUN",
+  "primary_gt_to_pred": {
+    "maximum": 1092.5504938968224,
+    "median": 2.715233780634435,
+    "p90": 178.6479163777251,
+    "p95": 343.3515477869,
+    "p99": 711.1539577006589,
+    "sample_count": 36991
+  },
+  "primary_paired_spatial_pred": {
+    "maximum": 643.0505703535439,
+    "median": 2.029025034869716,
+    "p90": 79.4024203824593,
+    "p95": 137.81973328330474,
+    "p99": 250.93013905781558,
+    "sample_count": 42296
+  },
+  "primary_pred_to_gt": {
+    "maximum": 1137.6493476633284,
+    "median": 3.8846122138368457,
+    "p90": 409.88921711000256,
+    "p95": 608.4058599107527,
+    "p99": 818.5084663714657,
+    "sample_count": 42296
+  },
+  "primary_repeatability": true,
+  "primary_report_sha256": "6a2139dcf9213563baada4f69694999e9e3c9a0ad0560c7306db39d48b37d0ec",
+  "private_input_opened": false,
+  "qualification": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "receipt_sha256": "e803e97f2aec616bd3c33c71230cf0f31fea4aeca1d8a90283af72d4c66b1ef8",
+  "reference_promotable": false,
+  "same_119_inputs": true,
+  "same_coordinate_restoration": true,
+  "same_policy_sha256": "cac00d0936765b289298142d84a477bf86f3d795e49b053eb00c5d62dcde11ff",
+  "schema": "PUBLIC_TAIL_DETECTOR_COMPARISON_V1",
+  "secondary_gt_to_pred": {
+    "maximum": 931.1826621134201,
+    "median": 3.2573306208394115,
+    "p90": 164.05937063246344,
+    "p95": 323.07422779370586,
+    "p99": 683.3591673597152,
+    "sample_count": 36658
+  },
+  "secondary_paired_spatial_pred": {
+    "maximum": 476.6172729192752,
+    "median": 2.0905691306347607,
+    "p90": 76.73652522590444,
+    "p95": 136.9915202305112,
+    "p99": 244.28238725887758,
+    "sample_count": 41017
+  },
+  "secondary_pred_to_gt": {
+    "maximum": 1144.3209884869166,
+    "median": 4.055732935785386,
+    "p90": 411.6591573814078,
+    "p95": 611.6267657282517,
+    "p99": 822.5721975393556,
+    "sample_count": 41017
+  },
+  "secondary_repeatability": false,
+  "secondary_report_sha256": "d34bdd4e817a7145afbf3bb1662d2d58ecb80ee28056465c92129ce37c8a7a9a",
+  "secondary_status": "REJECTED_FOR_EXACT_REPEATABILITY"
+}

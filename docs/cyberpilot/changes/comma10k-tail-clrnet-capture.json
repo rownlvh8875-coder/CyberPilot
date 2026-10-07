@@ -1,0 +1,30 @@
+{
+  "candidate_outputs_used_for_reference": false,
+  "capture_source_sha256": "a4f85073ac22018d57d8c6610372e71ba9a294654f3cc0eb3e7d0aa5ed0c45c6",
+  "detector_status": "REJECTED_FOR_EXACT_REPEATABILITY",
+  "environment_sha256": "cfd5b46df8190c3345aa80696f0025679bb75e7b63f48049bd6169c91d031910",
+  "exact_repeatability": false,
+  "frames": 119,
+  "historical_union_exact_match": null,
+  "initialized_buffers_sha256": "41275f0c681cf8ee831656e3bb98a9cc793356e0d95c3856e1fb748e5afeed06",
+  "manifest_file_sha256": "f5f58574fa93c0915ce0a9d0f499a278bd89294ab64276049fcc4919411e4bcf",
+  "official_reproduction_status": "NOT_RUN_CULANE_DATASET_UNAVAILABLE",
+  "openpilot_path_lane_used": false,
+  "prior_ys_dtype_after_first": "torch.float64",
+  "prior_ys_dtype_before": "torch.float32",
+  "private_input_opened": false,
+  "protocol_file_sha256": "1b6a1d3f3dda87a8ae173e3e1a32b9d5c86a488bb2af8a84374348ca45a14f4e",
+  "receipt_sha256": "83644a9538b0169d0a924d5cef5c44e20310c427d1e59fa87df30d927e3a2ebf",
+  "records_sha256": "0550560fd95fa3e00b39fc3c0add27e6916548205be2de456eab91b1c43d513d",
+  "reference_promotable": false,
+  "repeat_differing_frames": [
+    "imgs/0000_0085e9e41513078a_2018-08-19--13-26-08_11_864.png"
+  ],
+  "repetitions": 2,
+  "runtime_seconds": {
+    "median": 0.023728558007860556,
+    "p95": 0.032222576405911224
+  },
+  "schema": "PUBLIC_CLRNET_CAPTURE_V1",
+  "second_records_sha256": "9d979d4ccc9ae8f5bbaa6bc6954ee21180b7ffb5a4ce367c7852f54398aa7b88"
+}
