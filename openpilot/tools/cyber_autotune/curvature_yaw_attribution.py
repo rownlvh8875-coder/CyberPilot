@@ -2,6 +2,7 @@
 import base64
 from collections import defaultdict
 import math
+import struct
 from pathlib import Path
 
 from openpilot.tools.cyber_autotune.a1_experiment import build_request, make_fixture
@@ -13,11 +14,11 @@ LOW_END_MPS, MID_END_MPS = 10., 20.
 MAGNITUDE_SPLIT_1PM = .0005  # existing S-curve amplitude; descriptive grouping only
 LAG_BOUND_STEPS = 20  # 0.19 s native lookahead plus one 10 ms frame
 REFERENCE_HISTORY_STEPS = 16  # int(.15/.01+1), native buffer index after append
-SPEC = {'version':1,'speed_buckets_mps':[3.,10.,20.,27.],
+SPEC = {'version':2,'dt_s':DT_S,'speed_buckets_mps':[3.,10.,20.,27.],
         'magnitude_split_1pm':MAGNITUDE_SPLIT_1PM,'lag_bound_steps':LAG_BOUND_STEPS,
         'native_history_index':REFERENCE_HISTORY_STEPS,'derivative':'adjacent frame before grouping; first vs zero',
         'lag':'minimum demeaned squared error, integer [-20,20], smallest absolute lag then signed',
-        'phase_residual':'pre-step curvature minus delayed accel reference/current speed squared',
+        'phase_residual':'pre-step plant curvature minus delayed accel reference/current wire speed squared',
         'truth':'SYNTHETIC_NOT_VEHICLE_TRUTH'}
 
 
@@ -72,10 +73,11 @@ def decorate_samples(samples,frames,angles,initial_curvature=0.):
     raise ValueError('ATTRIBUTION_LENGTH_MISMATCH')
   rows=[]
   prior_u,prior_applied,pre_curvature=0.,0.,initial_curvature
+  wire_speeds=[struct.unpack('<f',struct.pack('<f',f['speed_mps']))[0] for f in frames]
   for i,(sample,frame,angle) in enumerate(zip(samples,frames,angles,strict=True)):
     row=dict(sample)
     j=i-(REFERENCE_HISTORY_STEPS-1)
-    target=0. if j<0 else frames[j]['desired_curvature_1pm']*frames[j]['speed_mps']**2/frame['speed_mps']**2
+    target=0. if j<0 else frames[j]['desired_curvature_1pm']*wire_speeds[j]**2/wire_speeds[i]**2
     row.update({
       'speed_bucket':speed_bucket(frame['speed_mps']),
       'curvature_sign':'POSITIVE' if frame['desired_curvature_1pm']>0 else 'NEGATIVE' if frame['desired_curvature_1pm']<0 else 'ZERO',

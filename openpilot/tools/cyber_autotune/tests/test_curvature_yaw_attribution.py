@@ -55,6 +55,19 @@ class TestCurvatureYawAttribution(unittest.TestCase):
     self.assertEqual(result['status'],'DESCRIPTIVE_LAG')
     self.assertFalse(result['physical_delay_estimate'])
 
+  def test_native_aligned_target_reproduces_wire_speed_history(self):
+    from opendbc.car import structs
+    from openpilot.tools.cyber_autotune.curvature_yaw_attribution import decorate_samples
+    from openpilot.tools.cyber_autotune.curvature_yaw_screening import _inputs
+    frames,_=_inputs('speed_sweep')
+    samples=copy.deepcopy(self.report['arms'][0]['samples'])
+    rows=decorate_samples(samples,frames,[0.]*len(frames))
+    old,current=structs.CarState(),structs.CarState()
+    old.vEgo=frames[206]['speed_mps']
+    current.vEgo=frames[221]['speed_mps']
+    target=frames[206]['desired_curvature_1pm']*old.vEgo**2/current.vEgo**2
+    self.assertEqual(rows[221]['native_aligned_desired_curvature_1pm'],target)
+
   def test_tamper_never_receives_attribution(self):
     from openpilot.tools.cyber_autotune.curvature_yaw_attribution import attribute_report
     report=copy.deepcopy(self.report)

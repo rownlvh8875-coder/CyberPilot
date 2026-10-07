@@ -90,3 +90,8 @@ Replay: existing public structural reports validated. Synthetic only.
 Shadow/device/real performance: NOT_RUN / BLOCKED.
 Next: frozen search, separate development/evaluation roles and bounded stress,
 then viewer and loopback browser validation. Production/A3/private data unchanged.
+
+Follow-up in candidate-v2-frozen-search.md: SPEC2 aligns speed-sweep delayed target
+to native CarState float32 speed. Historical SPEC1 summary remains a bound
+historical descriptive receipt, not the revised scoring source. Constant-speed
+quantities/cause limits above are unchanged. Revised search results are separate.
