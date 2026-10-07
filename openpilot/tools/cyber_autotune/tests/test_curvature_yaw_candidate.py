@@ -123,6 +123,20 @@ class TestCurvatureYawCandidate(unittest.TestCase):
       with self.subTest(key=key), self.assertRaises(ValueError):
         validate_response(request,changed)
 
+  def test_response_canonical_binding_rejects_boolean_and_integer_aliases(self):
+    request = v2_request()
+    result = run_native_transcript(request,timeout_s=10.)
+    self.assertEqual(result['status'],'COMPLETED')
+    for field in ('controller_spec','effective_parameters'):
+      for value in (False,0):
+        changed = copy.deepcopy(result)
+        if field == 'controller_spec':
+          changed[field]['config']['points'][0][0] = value
+        else:
+          changed[field][0][1] = value
+        with self.subTest(field=field,value=value),self.assertRaises(ValueError):
+          validate_response(request,changed)
+
 
 if __name__ == '__main__':
   unittest.main()

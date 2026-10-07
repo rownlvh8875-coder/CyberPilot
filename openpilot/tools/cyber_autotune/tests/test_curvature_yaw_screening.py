@@ -152,6 +152,54 @@ class TestCurvatureYawScreening(unittest.TestCase):
         run_screening_case(value,expected_manifest_sha256=digest(canonical(value['manifest'])),timeout_s=10.)
       worker.assert_not_called()
 
+  def test_rehashed_manifest_binding_and_digest_shape_drift_rejected(self):
+    from openpilot.tools.cyber_autotune.curvature_yaw_screening import validate_screening_report
+    changes = (
+      ('frames_sha256','0'*64),('version',True),('execution_head','bogus'),
+      ('diagnostic_producer_sha256','bogus'),('effective_parameters_sha256','not-a-hash'),
+      ('configuration_sha256','0'*64),('controller_sha256','0'*64),
+      ('producer_sha256','0'*64),('active_source_sha256','0'*64),
+      ('yaw_bias_rad_s',False),('diagnostic_version',True),
+      ('candidate_spec_boolean',False),('missing_source',None),
+    )
+    for field,value in changes:
+      report = copy.deepcopy(self.report)
+      manifest = report['manifest']
+      if field in ('configuration_sha256','controller_sha256','producer_sha256','active_source_sha256'):
+        manifest['arms'][2][field] = value
+        report['arms'][2]['identity'] = copy.deepcopy(manifest['arms'][2])
+      elif field == 'effective_parameters_sha256':
+        report['arms'][2][field] = value
+      elif field == 'yaw_bias_rad_s':
+        manifest['plant_config'][field] = value
+      elif field == 'diagnostic_version':
+        manifest['diagnostic_spec']['version'] = value
+      elif field == 'candidate_spec_boolean':
+        manifest['candidate_spec']['config']['points'][0][0] = value
+      elif field == 'missing_source':
+        manifest['native_source_files'].pop(next(iter(manifest['native_source_files'])))
+      else:
+        manifest[field] = value
+      report['manifest_sha256'] = digest(canonical(manifest))
+      report['receipt_sha256'] = digest(canonical({k:v for k,v in report.items() if k!='receipt_sha256'}))
+      with self.subTest(field=field),self.assertRaises(ValueError):
+        validate_screening_report(report)
+
+  def test_manifest_type_and_numeric_config_drift_abort_before_worker(self):
+    from openpilot.tools.cyber_autotune.curvature_yaw_screening import run_screening_case, _manifest
+    for field in ('manifest_version','config_wire_type'):
+      case = copy.deepcopy(self.case)
+      if field == 'manifest_version':
+        case['manifest']['version'] = True
+      else:
+        case['requests'][2]['controller']['config']['points'][0][0] = 0
+        case['manifest'] = _manifest(case['manifest']['scenario'],case['requests'])
+      with patch('openpilot.tools.cyber_autotune.curvature_yaw_screening.run_native_transcript') as worker:
+        worker.return_value = {'status':'WORKER_FAILED'}
+        with self.assertRaises(ValueError):
+          run_screening_case(case,expected_manifest_sha256=digest(canonical(case['manifest'])),timeout_s=10.)
+        self.assertEqual(worker.call_count,0,'Invalid canonical manifest must abort before execution')
+
 
 if __name__ == '__main__':
   unittest.main()

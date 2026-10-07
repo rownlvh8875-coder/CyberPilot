@@ -91,10 +91,14 @@ Full AutoTune 891/891 PASS in 233.81 s (873 original + 7 candidate + 11 screenin
 Ruff, py_compile, authority grep (no authority writers), git diff --check PASS.
 publication_check: 366 changed files / 0 findings. SCons 100% PASS using
 export PATH="$PWD/.venv/bin:$PATH"; .venv/bin/scons -j2.
-Final catalog: 78 native runs, 78 public replays; all thirteen cases repeated exactly.
+Task 2 catalog at cc8dc181a: 78 native runs, 78 public replays; all thirteen cases repeated exactly.
 Catalog SHA-256: 85ff09f3203edd65e3b7e043f6aed1d8a7240ff0565b5f7d0db60046b3c821dd.
 Historical snapshot uses the execution HEAD plus explicit diagnostic producer source
 SHA because the experiment module was under development during this run.
 Actual performance qualification / real reference / real vehicle readiness:
 BLOCKED / UNAVAILABLE / NOT_READY. Next: standalone offline visualizer and final
 review, keeping warnings and all regressions visible.
+
+Review follow-up: canonical/type binding strengthened in curvature-yaw-canonical-binding-review-fix.md.
+The latest aggregate snapshot binds catalog ec7b9557f91fc97fbd5012702d2367d9325310a000baa55884234a2219e5a027;
+prior diagnostics are exactly preserved, and original Task 2 snapshot remains in Git history.

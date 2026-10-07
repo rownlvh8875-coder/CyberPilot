@@ -20,7 +20,7 @@ from openpilot.tools.cyber_autotune.curvature_yaw_native_runner import (
 from openpilot.tools.cyber_autotune.curvature_yaw_plant import (
   CurvatureYawPlantConfig, CurvatureYawPlantState, observe_curvature_yaw_step,
 )
-from openpilot.tools.cyber_autotune.native_protocol import _hex
+from openpilot.tools.cyber_autotune.native_protocol import FINGERPRINT, SOURCE_FILES, _hex
 from openpilot.tools.cyber_autotune.lateral_closed_loop import (
   ClosedLoopBinding, ClosedLoopDomain, frames_sha256, timebase_sha256,
 )
@@ -170,11 +170,11 @@ def _freeze_case(case, expected):
   manifest, requests = case['manifest'], case['requests']
   if digest(canonical(manifest)) != expected or type(requests) is not list or len(requests) != 3:
     raise ValueError('SCREENING_MANIFEST_FREEZE_MISMATCH')
-  if requests[0] != requests[1] or requests[0]['controller'] != {'implementation': 'NATIVE', 'config': {}}:
+  if canonical(requests[0]) != canonical(requests[1]) or requests[0]['controller'] != {'implementation': 'NATIVE', 'config': {}}:
     raise ValueError('DECLARED_ALIAS_MUST_BE_EXACT')
   common = copy.deepcopy(requests[2])
   common['controller'] = requests[0]['controller']
-  if common != requests[0] or requests[2]['controller'] != CANDIDATE:
+  if canonical(common) != canonical(requests[0]) or canonical(requests[2]['controller']) != canonical(CANDIDATE):
     raise ValueError('CANDIDATE_COMMON_BASIS_MISMATCH')
   frames, _ = _inputs(manifest['scenario'])
   if (requests[0]['native']['frames'] != frames or requests[0]['plant_config'] != PLANT
@@ -192,7 +192,7 @@ def _freeze_case(case, expected):
         raise ValueError('SCREENING_SUPPORT_SOURCE_DRIFT')
     encode_request(request)
     effective_parameters(request)  # includes complete schedule/bounds before six workers
-  if _manifest(manifest['scenario'], requests) != manifest:
+  if canonical(_manifest(manifest['scenario'], requests)) != canonical(manifest):
     raise ValueError('SCREENING_ARM_MANIFEST_MISMATCH')
   return case
 
@@ -356,15 +356,29 @@ def validate_screening_report(report):
     'candidate_kind','candidate_spec','diagnostic_spec','diagnostic_producer_sha256','environment',
     'synthetic_input','reference_status'))
   if (digest(canonical(manifest)) != report['manifest_sha256']
+      or type(manifest['version']) is not int or manifest['version'] != 1
+      or not _hex(manifest['execution_head'],40)
+      or not all(_hex(manifest[k],64) for k in ('car_params_sha256','frames_sha256','diagnostic_producer_sha256'))
       or manifest['contract'] != 'OFFLINE_TWO_UNIQUE_PLUS_EXACT_BASELINE_ALIAS'
-      or manifest['diagnostic_spec'] != DIAGNOSTICS or manifest['candidate_spec'] != CANDIDATE
+      or canonical(manifest['diagnostic_spec']) != canonical(DIAGNOSTICS)
+      or canonical(manifest['candidate_spec']) != canonical(CANDIDATE)
       or manifest['reference_status'] != report['reference_status'] or manifest['synthetic_input'] is not True
       or manifest['upstream_native_anchor'] != UPSTREAM or manifest['opendbc_head'] != OPENDBC
       or manifest['candidate_kind'] != 'FIXED_BOUNDED_A1_COMBINED_NO_SEARCH'
       or manifest['controller_to_plant_sign'] != -1.):
     raise ValueError('INVALID_SCREENING_MANIFEST')
   frames, phases = _inputs(manifest['scenario'])
-  if manifest['phase_labels'] != phases or manifest['plant_config'] != PLANT or manifest['initial_state'] != RESET:
+  _keys(manifest['native_source_files'],SOURCE_FILES)
+  _keys(manifest['support_files'],SUPPORT_FILES+CANDIDATE_FILES)
+  for files in (manifest['native_source_files'],manifest['support_files']):
+    if not all(_hex(value,64) for value in files.values()):
+      raise ValueError('INVALID_SCREENING_SOURCE_DIGEST')
+  _keys(manifest['environment'],('python','numpy','capnp','machine'))
+  if not all(type(value) is str and value for value in manifest['environment'].values()):
+    raise ValueError('INVALID_SCREENING_ENVIRONMENT')
+  if (manifest['phase_labels'] != phases or canonical(manifest['plant_config']) != canonical(PLANT)
+      or canonical(manifest['initial_state']) != canonical(RESET)
+      or manifest['frames_sha256'] != digest(canonical(frames))):
     raise ValueError('INVALID_SCREENING_INPUTS')
   if (type(manifest['arms']) is not list or len(manifest['arms']) != 3
       or type(report['arms']) is not list or len(report['arms']) != 3):
@@ -375,6 +389,27 @@ def validate_screening_report(report):
     if (identity['arm'] != ARMS[index] or identity['alias_of'] != (ARMS[0] if index==1 else None)
         or not all(_hex(value,64) for key,value in identity.items() if key not in ('arm','alias_of'))):
       raise ValueError('INVALID_DECLARED_ARM')
+    # Independent recomputation of deterministic v2 identities. Request bytes,
+    # effective CP rows and native result contents are omitted: their digests
+    # remain shape-checked provenance declarations, not authenticated execution.
+    spec = CANDIDATE if index == 2 else {'implementation':'NATIVE','config':{}}
+    candidate_sources = {p:manifest['support_files'][p] for p in CANDIDATE_FILES}
+    sources = dict(manifest['native_source_files'])
+    if index == 2:
+      sources.update(candidate_sources)
+    controller_sha = digest(canonical({
+      'source_head':manifest['execution_head'], 'opendbc_head':manifest['opendbc_head'],
+      'source_files':manifest['native_source_files'], 'car_params_sha256':manifest['car_params_sha256'],
+      'fingerprint':FINGERPRINT, 'controller':spec, 'candidate_sources':candidate_sources,
+    }))
+    expected = {
+      'configuration_sha256':digest(canonical(spec)), 'active_source_sha256':digest(canonical(sources)),
+      'controller_sha256':controller_sha,
+      'producer_sha256':digest(canonical({'support_files':manifest['support_files'],'controller_identity_sha256':controller_sha})),
+    }
+    if any(identity[key] != value for key,value in expected.items()):
+      raise ValueError('SCREENING_DECLARED_BINDING_DRIFT')
+
   if any(manifest['arms'][0][key] != manifest['arms'][1][key] for key in manifest['arms'][0] if key not in ('arm','alias_of')):
     raise ValueError('INVALID_DECLARED_ALIAS')
   if manifest['arms'][0]['active_source_sha256'] == manifest['arms'][2]['active_source_sha256']:
@@ -388,6 +423,8 @@ def validate_screening_report(report):
       values = arm[key]
       if type(values) is not list or len(values) != 2 or values[0] != values[1] or not all(_hex(v,64) for v in values):
         raise ValueError('INVALID_REPEAT_RECEIPT')
+    if not _hex(arm['effective_parameters_sha256'],64):
+      raise ValueError('INVALID_EFFECTIVE_PARAMETER_DIGEST')
     samples = arm['samples']
     if (type(samples) is not list or len(samples) != len(frames)
         or digest(canonical(samples)) != arm['samples_sha256']):
@@ -406,11 +443,11 @@ def validate_screening_report(report):
           or row['active'] is not frame['active'] or row['steering_pressed'] is not frame['steering_pressed']
           or type(row['saturated']) is not bool or any(row[key] != value for key,value in plant_row.items())):
         raise ValueError('INVALID_SCREENING_SAMPLE')
-    if diagnose_samples(samples,.01) != arm['diagnostics']:
+    if canonical(diagnose_samples(samples,.01)) != canonical(arm['diagnostics']):
       raise ValueError('INVALID_SCREENING_DIAGNOSTICS')
-  if report['arms'][0]['samples'] != report['arms'][1]['samples']:
+  if canonical(report['arms'][0]['samples']) != canonical(report['arms'][1]['samples']):
     raise ValueError('INVALID_ALIAS_TRACE')
-  if _difference(report['arms'][0]['samples'],report['arms'][2]['samples']) != report['candidate_difference']:
+  if canonical(_difference(report['arms'][0]['samples'],report['arms'][2]['samples'])) != canonical(report['candidate_difference']):
     raise ValueError('INVALID_DIFFERENCE_DIAGNOSTIC')
 
 
