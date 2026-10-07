@@ -1,0 +1,66 @@
+{
+  "ablations": [
+    {
+      "config": {
+        "factor_high_fraction": 0.0,
+        "friction_high_fraction": 0.0
+      },
+      "name": "FULL_V2"
+    },
+    {
+      "config": {
+        "factor_high_fraction": 0.0,
+        "friction_high_fraction": 1.0
+      },
+      "name": "FACTOR_CORRECTION_ONLY"
+    },
+    {
+      "config": {
+        "factor_high_fraction": 1.0,
+        "friction_high_fraction": 0.0
+      },
+      "name": "FRICTION_CORRECTION_ONLY"
+    },
+    {
+      "config": {
+        "factor_high_fraction": 1.0,
+        "friction_high_fraction": 1.0
+      },
+      "name": "NEITHER_CORRECTION"
+    }
+  ],
+  "cluster_axes": [
+    "scenario",
+    "speed_bucket",
+    "phase",
+    "metric_family"
+  ],
+  "controller_delay_queue_added": false,
+  "expected_violation_count": 37,
+  "family_decision": "FAMILY_REDESIGN if all four ablations fail original no-worse rules on diagnostic cases; otherwise FAMILY_RESTRICT (diagnostic-only lead; no global promotion)",
+  "metrics": "unchanged original policy; exact IEEE no-worse against baseline HIGH, v1 LOW/MID",
+  "native_runs": 64,
+  "not_applicable_axes": [
+    "transition slew mechanism",
+    "history modification",
+    "lookahead modification",
+    "independent interpolation knob"
+  ],
+  "original_policy_sha256": "7bc06b4f58d72a623cc6966b2fa7e6e4048243c457276323a8961309a39ebe96",
+  "passive_diagnostic_runs": 16,
+  "physical_delay_owner": "PLANT",
+  "real_performance_status": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "repetitions": 2,
+  "scenarios": [
+    "sharp_mid_left",
+    "speed_sweep"
+  ],
+  "scope": "POST_EVALUATION_EXPLANATORY_DIAGNOSTICS_NOT_SELECTION",
+  "v3_creation": "not part of this diagnostic experiment; RESTRICT permits a separately prefrozen future experiment, never retrospective selection",
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "version": 1
+}
