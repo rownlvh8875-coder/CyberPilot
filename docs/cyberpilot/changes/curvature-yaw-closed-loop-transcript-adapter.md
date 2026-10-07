@@ -107,7 +107,7 @@ All qualification, runtime and promotion flags remain false.
 | Adapter + plant + structural admission focused set | 23/23 PASS |
 | Ruff changed Python files | PASS |
 | `git diff --check` | PASS |
-| AutoTune package regression | 838/838 PASS in 371.00 s |
+| AutoTune package regression | 838/838 PASS in 371.35 s |
 | Runtime/CAN/Params/profile call sites introduced | none by design |
 | Vehicle qualification | NOT RUN / NOT AUTHORIZED |
 
