@@ -1,0 +1,88 @@
+{
+  "AutoTune": {
+    "command": ".venv/bin/python tools/test_runner.py -j2 openpilot/tools/cyber_autotune/tests",
+    "elapsed_seconds": 282.66,
+    "exit_code": 0,
+    "log_sha256": "1614cedb109a22ac8a4d065623dee7363742666e072a3267d20dec973434dc9e",
+    "passed": 1053
+  },
+  "Ruff": {
+    "exit_code": 0,
+    "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "status": "PASS"
+  },
+  "SCons": {
+    "command": "export PATH=\"$PWD/.venv/bin:$PATH\"; .venv/bin/scons -j2",
+    "exit_code": 0,
+    "final_recheck": "PASS; unchanged runtime source, final test/document tree",
+    "log_sha256": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056",
+    "status": "PASS"
+  },
+  "actual_GPU_diagnostic": {
+    "exact_repeatability": true,
+    "exit_code": 0,
+    "frames_per_repeat": 119,
+    "repeats": 2
+  },
+  "authority_privacy": {
+    "binary_dataset_weight_or_private_raw_data_added": false,
+    "grep_only_match": "cameraOdometry prose describing model-derived calibration blocker; no authority caller/import",
+    "new_scope_only": [
+      "offline AutoTune helpers/tests",
+      "feature records/metadata"
+    ],
+    "status": "PASS"
+  },
+  "diff_check": "PASS on staged additions before commits",
+  "focused": {
+    "command": ".venv/bin/python -m unittest five new lane execution/protocol/projection/records test modules",
+    "exit_code": 0,
+    "log_sha256": "c223c9d78b70b396ba745a91fa7b413cdd5e0cda72b7d530cb6573f785032c2b",
+    "tests": 44
+  },
+  "implementation_base_sha": "b885a914adeb5cd5b2332ffb6a18a5a546f8aa99",
+  "independent_review": {
+    "critical_remaining": 0,
+    "fixes": [
+      "single consumed bound buffers/sealed checkpoint",
+      "exact unique pair/blob/geometry validation",
+      "retained initial/prior result lineage and unchanged selection"
+    ],
+    "important_fixed": 3,
+    "important_remaining": 0,
+    "minor_runtime_documentation_corrected": true,
+    "status": "APPROVED_AFTER_FIXES"
+  },
+  "module_test_sha256": {
+    "openpilot/tools/cyber_autotune/lane_detector_execution.py": "05aca9f9574c219e7a9794bdfa0500c4696fa20b6a19ee2ffa413b13681cd753",
+    "openpilot/tools/cyber_autotune/lane_detector_runner.py": "fad11ac613af5a15884f1ee23267295bc802e79dbc610122578edd4b926f8f01",
+    "openpilot/tools/cyber_autotune/lane_projection_validation.py": "afffb2a2afc44d37903e8d9e792cb1813998b161ba0914d696d1233554451101",
+    "openpilot/tools/cyber_autotune/lane_public_protocol.py": "f06eba0ddb51ca03a70b8cdb68a9cfb27bd5aab60a08724fdefc63bcbde06a7e",
+    "openpilot/tools/cyber_autotune/tests/test_lane_detector_execution.py": "4467024c9c8cda64356863231a93e3b577535287dbffde993b031ab68a23092e",
+    "openpilot/tools/cyber_autotune/tests/test_lane_detector_execution_records.py": "26fd879cdf8a4ca63251f25b315a1a5d62440cbde68a3ce790c3c25d8312bfad",
+    "openpilot/tools/cyber_autotune/tests/test_lane_detector_runner.py": "96dbe502cb333d6fba428abbd457db4b1d838cf8e876c2f64aeb2db0306369b7",
+    "openpilot/tools/cyber_autotune/tests/test_lane_projection_validation.py": "fe0aecd45306f442e2a6b586d3052b7d46384e09eb5ce37ca43abab8a3372b8c",
+    "openpilot/tools/cyber_autotune/tests/test_lane_public_protocol.py": "48b5fa87586a5f2258250f877f539ffe6a2e5e82c08e4934a0bf5e610d924310"
+  },
+  "official_benchmark": "NOT_RUN_SUPPLIER_QUOTA_BLOCKED",
+  "private_input_opened": false,
+  "publication": {
+    "changed_files": 472,
+    "findings": 0,
+    "initial_local_checkout_path_finding_corrected": true,
+    "status": "PASS"
+  },
+  "py_compile": {
+    "exit_code": 0,
+    "new_python_files": 9,
+    "status": "PASS"
+  },
+  "qualification": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "schema": "PUBLIC_LANE_EXECUTION_VALIDATION_V1",
+  "sealed_reference_generated": false,
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

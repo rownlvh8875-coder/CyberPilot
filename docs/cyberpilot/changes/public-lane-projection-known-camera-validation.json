@@ -1,0 +1,266 @@
+{
+  "calibration_blockers": {
+    "CALIBRATION_MEASUREMENT_PENDING": {
+      "effect": "Independent stationary measurements and uncertainty review require physical observations.",
+      "status": "BLOCKED"
+    },
+    "CAMERA_EXTRINSICS_MODEL_DERIVED": {
+      "effect": "cameraOdometry/live calibration depends on driving model; cannot certify independent pose.",
+      "status": "BLOCKED"
+    },
+    "CAMERA_HEIGHT_UNVERIFIED": {
+      "effect": "Ground scale and lateral scale depend on measured camera height; default 1.22m is not a survey.",
+      "status": "BLOCKED"
+    },
+    "CAMERA_INTRINSICS_AVAILABLE": {
+      "effect": "Sensor-dependent nominal focal/principal point; actual sensor and per-unit uncertainty unverified.",
+      "status": "NOMINAL_ONLY"
+    },
+    "CAMERA_MOUNT_PITCH_UNVERIFIED": {
+      "effect": "Near-horizon range/lateral sensitivity grows with pitch error; independent stationary target pose missing.",
+      "status": "BLOCKED"
+    },
+    "CAMERA_MOUNT_ROLL_YAW_UNVERIFIED": {
+      "effect": "Cross-axis errors affect boundary position; model roll=0 is not a measurement.",
+      "status": "BLOCKED"
+    },
+    "DISTORTION_UNCERTAINTY_UNVERIFIED": {
+      "effect": "Nominal pinhole projection omits audited per-sensor distortion and its uncertainty.",
+      "status": "BLOCKED"
+    },
+    "ROAD_PLANE_ASSUMPTION_UNVERIFIED": {
+      "effect": "Grade/camber/nonplanarity creates projection error not bounded by nominal Jacobian.",
+      "status": "BLOCKED"
+    }
+  },
+  "calibration_error_m": null,
+  "camera_intrinsics_source": "Pandar128 Configuration.yaml nominal values, prior pinned audit; orientation/ground points defined by construction, not claimed actual Pandar camera extrinsics",
+  "checks": {
+    "calibration_measured": false,
+    "camera_center": [
+      0.0,
+      0.0,
+      1.213
+    ],
+    "camera_to_road": [
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0,
+        0.0
+      ]
+    ],
+    "intrinsics": [
+      [
+        1341.684118,
+        0.0,
+        1437.123805
+      ],
+      [
+        0.0,
+        1348.879723,
+        973.23026
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "receipt_sha256": "109f1214a220fcf2cf8df96ca1189d8216df491890cccc24c42f7949d5d66850",
+    "reference_promotable": false,
+    "rows": [
+      {
+        "distance_m": 5.0,
+        "forward_back_error_m": 9.155133597044475e-16,
+        "known_lateral_m": 1.5,
+        "maximum_jacobian_difference": 1.5301226952146862e-10,
+        "pixel": [
+          1034.6185696,
+          1300.4684807998
+        ],
+        "sensitivities": {
+          "camera_height_m": {
+            "absolute_difference": 5.849987161354875e-12,
+            "analytic": 1.2366034624896947,
+            "central_difference": 1.2366034624955446,
+            "step": 1e-05
+          },
+          "fx_px": {
+            "absolute_difference": 5.169410906280536e-14,
+            "analytic": -0.001117997880332664,
+            "central_difference": -0.0011179978803843582,
+            "step": 0.001
+          },
+          "pitch_world_y_rad": {
+            "absolute_difference": 1.4027268235849988e-10,
+            "analytic": -6.183017312448473,
+            "central_difference": -6.1830173125887455,
+            "step": 1e-06
+          },
+          "roll_world_x_rad": {
+            "absolute_difference": 1.5301226952146862e-10,
+            "analytic": 3.0679051937345423,
+            "central_difference": 3.0679051938875546,
+            "step": 1e-06
+          },
+          "u_px": {
+            "absolute_difference": 2.4283960259330328e-14,
+            "analytic": -0.0037266596011088803,
+            "central_difference": -0.0037266596011331643,
+            "step": 0.001
+          }
+        },
+        "symbolic_first_order_error_m": "sum(abs(J_i(distance))*independently_measured_bound_i) + certified_projection_remainder"
+      },
+      {
+        "distance_m": 10.0,
+        "forward_back_error_m": 5.3705425095741715e-15,
+        "known_lateral_m": 1.5,
+        "maximum_jacobian_difference": 8.35639113461184e-10,
+        "pixel": [
+          1235.8711873,
+          1136.8493703999
+        ],
+        "sensitivities": {
+          "camera_height_m": {
+            "absolute_difference": 5.849098982935175e-12,
+            "analytic": 1.2366034624896955,
+            "central_difference": 1.2366034624955446,
+            "step": 1e-05
+          },
+          "fx_px": {
+            "absolute_difference": 5.169324170106737e-14,
+            "analytic": -0.001117997880332665,
+            "central_difference": -0.0011179978803843582,
+            "step": 0.001
+          },
+          "pitch_world_y_rad": {
+            "absolute_difference": 8.35639113461184e-10,
+            "analytic": -12.366034624896963,
+            "central_difference": -12.366034625732603,
+            "step": 1e-06
+          },
+          "roll_world_x_rad": {
+            "absolute_difference": 4.198774661290372e-11,
+            "analytic": 3.0679051937345445,
+            "central_difference": 3.0679051937765323,
+            "step": 1e-06
+          },
+          "u_px": {
+            "absolute_difference": 6.245958611428293e-14,
+            "analytic": -0.007453319202217766,
+            "central_difference": -0.007453319202155306,
+            "step": 0.001
+          }
+        },
+        "symbolic_first_order_error_m": "sum(abs(J_i(distance))*independently_measured_bound_i) + certified_projection_remainder"
+      },
+      {
+        "distance_m": 20.0,
+        "forward_back_error_m": 4.276247048650115e-14,
+        "known_lateral_m": 1.5,
+        "maximum_jacobian_difference": 6.778442696031561e-09,
+        "pixel": [
+          1336.49749615,
+          1055.0398151999502
+        ],
+        "sensitivities": {
+          "camera_height_m": {
+            "absolute_difference": 5.85242965200905e-12,
+            "analytic": 1.2366034624896922,
+            "central_difference": 1.2366034624955446,
+            "step": 1e-05
+          },
+          "fx_px": {
+            "absolute_difference": 5.169649430758483e-14,
+            "analytic": -0.0011179978803326617,
+            "central_difference": -0.0011179978803843582,
+            "step": 0.001
+          },
+          "pitch_world_y_rad": {
+            "absolute_difference": 6.778442696031561e-09,
+            "analytic": -24.73206924979379,
+            "central_difference": -24.73206925657223,
+            "step": 1e-06
+          },
+          "roll_world_x_rad": {
+            "absolute_difference": 1.5302070721645578e-10,
+            "analytic": 3.067905193734534,
+            "central_difference": 3.0679051938875546,
+            "step": 1e-06
+          },
+          "u_px": {
+            "absolute_difference": 3.469221437901737e-13,
+            "analytic": -0.01490663840443549,
+            "central_difference": -0.014906638404088568,
+            "step": 0.001
+          }
+        },
+        "symbolic_first_order_error_m": "sum(abs(J_i(distance))*independently_measured_bound_i) + certified_projection_remainder"
+      },
+      {
+        "distance_m": 30.0,
+        "forward_back_error_m": 6.769447763470395e-14,
+        "known_lateral_m": 1.5,
+        "maximum_jacobian_difference": 2.260220810512692e-08,
+        "pixel": [
+          1370.0395991,
+          1027.7699634666335
+        ],
+        "sensitivities": {
+          "camera_height_m": {
+            "absolute_difference": 5.8539839642435254e-12,
+            "analytic": 1.2366034624896907,
+            "central_difference": 1.2366034624955446,
+            "step": 1e-05
+          },
+          "fx_px": {
+            "absolute_difference": 5.169801219062631e-14,
+            "analytic": -0.0011179978803326602,
+            "central_difference": -0.0011179978803843582,
+            "step": 0.001
+          },
+          "pitch_world_y_rad": {
+            "absolute_difference": 2.260220810512692e-08,
+            "analytic": -37.098103874690636,
+            "central_difference": -37.098103897292845,
+            "step": 1e-06
+          },
+          "roll_world_x_rad": {
+            "absolute_difference": 6.901990090568688e-11,
+            "analytic": 3.06790519373453,
+            "central_difference": 3.06790519366551,
+            "step": 1e-06
+          },
+          "u_px": {
+            "absolute_difference": 5.203823483235226e-13,
+            "analytic": -0.022359957606653234,
+            "central_difference": -0.022359957606132852,
+            "step": 0.001
+          }
+        },
+        "symbolic_first_order_error_m": "sum(abs(J_i(distance))*independently_measured_bound_i) + certified_projection_remainder"
+      }
+    ],
+    "schema": "KNOWN_CAMERA_GEOMETRY_JACOBIAN_CHECK_V1",
+    "scope": "KNOWN_BY_CONSTRUCTION_GEOMETRY_NOT_MEASURED_CALIBRATION",
+    "total_conservative_uncertainty_m": null
+  },
+  "detector_error_m": null,
+  "opencv_forward_projection_max_pixel_difference": 6.821210263296962e-13,
+  "opencv_version": "4.8.1",
+  "projection_error_m": null,
+  "scope": "KNOWN_BY_CONSTRUCTION_UNDISTORTED_CAMERA_FIXTURE_NOT_REAL_CALIBRATION",
+  "status": "BLOCKED_CALIBRATION_MEASUREMENT_PENDING",
+  "total_conservative_uncertainty_m": null
+}

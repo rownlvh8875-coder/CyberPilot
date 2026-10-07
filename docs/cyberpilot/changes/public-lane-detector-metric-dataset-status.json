@@ -1,0 +1,38 @@
+{
+  "CULane_TuSimple_comma10k_meter_results": null,
+  "candidate": "Pandar128",
+  "metadata_available": [
+    "nominal intrinsics/extrinsics",
+    "metric XYZ lane arrays declared",
+    "odometry/time arrays declared",
+    "MIT license"
+  ],
+  "metric_evaluation": "NOT_RUN",
+  "not_verified": [
+    "archive contents/inventory",
+    "coordinate conventions and distortion model",
+    "camera-to-road registration",
+    "timestamp association",
+    "GT uncertainty"
+  ],
+  "prior_source_audit_sha256": "6f759f170c7e4c3fdae357f7018b1e32a56ce75c1f92681ab34750321847ad6b",
+  "reference_promotable": false,
+  "schema": "METRIC_DATASET_EXECUTION_STATUS_V1",
+  "status": "METRIC_PUBLIC_GT_UNAVAILABLE",
+  "structural_gate": {
+    "evidence_sha256": "c94d83d3cc42e29e56e6049a3ad03143ded1c4bedaca7fcf6b18e0cc3ed01a95",
+    "meter_evaluation_allowed": false,
+    "missing": [
+      "camera_road_transform_sha256",
+      "coordinate_conventions_sha256",
+      "extrinsics_sha256",
+      "gt_provenance_sha256",
+      "intrinsics_sha256",
+      "license_sha256",
+      "metric_lane_gt_sha256",
+      "timestamp_association_sha256"
+    ],
+    "reference_promotable": false,
+    "status": "METRIC_PUBLIC_GT_UNAVAILABLE"
+  }
+}
