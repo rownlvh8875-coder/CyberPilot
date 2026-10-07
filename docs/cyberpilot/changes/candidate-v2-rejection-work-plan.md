@@ -34,7 +34,7 @@ Interfaces: decide_family(ablations); experimental_contract(controller, input_so
 
 ## Task 3: Rejection viewer
 Create curvature_yaw_rejection_visualizer.py; extend shared HTML/JS only with rejection-specific controls.
-- [ ] Test 37 rows, clusters, four-arm overlays, click-to-frame navigation, schedule and divergence marker.
-- [ ] Bind viewer data to admitted ledger and raw report projections, never caller-supplied status.
-- [ ] Validate rendering/selectors/runtime via temporary 127.0.0.1 server; close server and browser.
-- [ ] Full required gates; feature record; review; commit/push; fresh remote/local equality and clean tree.
+- [x] Test 37 rows, clusters, four-arm overlays, click-to-frame navigation, schedule and divergence marker.
+- [x] Bind viewer data to admitted ledger and raw report projections, never caller-supplied status.
+- [x] Validate rendering/selectors/runtime via temporary 127.0.0.1 server; close server and browser.
+- [x] Full required gates; feature record; review; commit/push; fresh remote/local equality and clean tree.

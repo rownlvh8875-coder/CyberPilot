@@ -18,7 +18,7 @@ Frozen original search policy SHA-256 7bc06b4f58d72a623cc6966b2fa7e6e4048243c457
 
 ## Regression risk and acceptance
 Original comparator and exact IEEE cellwise rules unchanged: HIGH <= baseline; LOW/MID <= v1; all eight metrics lower-is-better; no weighted compensation. CURRENT=BASELINE exact alias. Original A3 rejection retained.
-These scenarios were previously exposed, including v1 attribution: EXPOSED_SYNTHETIC_POST_EVALUATION_DIAGNOSTIC, never an untouched holdout. The ablations are explanations, not new selection.
+The original13 scenarios were seen during v1 attribution; the derived15/17.5 m/s cases were frozen before v2 execution. The collection remains EXPOSED_SYNTHETIC_POST_EVALUATION_DIAGNOSTIC, never an untouched holdout. The ablations are explanations, not new selection.
 Rollback removes these offline analysis modules/artifacts; original runtime and prior evidence remain unchanged. Independent reviewer required; no vehicle promotion authority.
 
 ## Validation method and actual results
