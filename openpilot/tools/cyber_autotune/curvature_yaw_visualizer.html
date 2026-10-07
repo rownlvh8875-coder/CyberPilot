@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; base-uri 'none'; form-action 'none'">
+<title>CyberPilot · Offline controller screening</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#11141b;color:#e7ecf4}
+body{margin:0;padding:24px;max-width:1450px;margin-inline:auto}h1{font-size:28px;margin:4px 0 12px}
+h2{font-size:16px;font-weight:600;margin:0 0 10px}.eyebrow{letter-spacing:2px;color:#98a9c2;font-size:12px}
+.warning{padding:12px 16px;background:#332619;border:1px solid #ae793b;border-radius:10px;margin:10px 0;line-height:1.7}
+.warning strong{color:#ffd196}.states{font-size:12px;color:#ffcba1}.muted{color:#a7b3c5;font-size:13px;line-height:1.6}
+.controls{display:flex;align-items:center;flex-wrap:wrap;gap:14px;padding:16px 0}
+select{background:#222936;color:#e7ecf4;padding:8px;border-radius:6px;border:1px solid #566076}
+input[type=range]{min-width:200px;flex:1;accent-color:#e9a757}
+.arm{font-size:13px;white-space:nowrap}.baseline{color:#9dacf9}.current{color:#81d3bd}.candidate{color:#ffb263}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(350px,1fr));gap:16px}
+.panel{background:#1a202b;border:1px solid #323c50;border-radius:10px;padding:16px}
+svg{width:100%;height:auto;display:block}svg text{font-size:12px;fill:#b8c5d9}
+table{border-collapse:collapse;width:100%;font-size:12px}td,th{text-align:left;padding:7px;border-bottom:1px solid #323c50}
+td:not(:first-child),th:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
+#cursor-readout{font-variant-numeric:tabular-nums;white-space:pre-wrap;font-size:13px;line-height:1.6}
+details{margin-top:18px;overflow-wrap:anywhere}pre{white-space:pre-wrap;word-break:break-all;font-size:11px}
+@media(max-width:780px){body{padding:14px}.grid{grid-template-columns:1fr}h1{font-size:23px}table{font-size:10px}}
+</style></head><body>
+<div class="eyebrow">CYBERPILOT · DESCRIPTIVE OFFLINE EXPERIMENT</div>
+<h1>Controller screening</h1>
+<div class="warning"><strong>NO INDEPENDENT LANE TRUTH</strong> · SYNTHETIC / NOT VEHICLE TRUTH<br>
+<span class="states">NOT_READY / REAL_VEHICLE_UNVERIFIED / VEHICLE_ACTIVATION_BLOCKED</span></div>
+<p class="muted">Two unique controllers + one declared equivalent arm. CURRENT = BASELINE.
+No lane boundaries or road truth are drawn. No performance qualification, best selection or vehicle activation.
+Checksums and physical replay check internal consistency; they do not authenticate execution.</p>
+<div class="controls"><label for="scenario">Scenario</label><select id="scenario"></select>
+<label class="arm baseline"><input id="baseline" type="checkbox" checked>BASELINE</label>
+<label class="arm current"><input id="current" type="checkbox" checked>CURRENT (exact alias)</label>
+<label class="arm candidate"><input id="candidate" type="checkbox" checked>CANDIDATE</label></div>
+<div class="controls"><label for="cursor">Time cursor</label><input id="cursor" type="range" min="0" max="400" value="0" step="1"><output id="clock"></output></div>
+<div class="panel"><h2>Curve phase / saturation / events</h2><div id="cursor-readout"></div></div>
+<p class="muted">Requested command is native controller output. Applied command has the plant's 20 ms physical delay.
+Actual curvature / pose are post-step plant states; steering angle is native pre-step feedback.
+Trajectory axes are scaled independently. Dashed torque = applied delayed; dotted green = exact CURRENT alias.</p>
+<div class="grid">
+<div class="panel"><h2>Baseline / current / candidate trajectory</h2><svg id="trajectory" viewBox="0 0 860 250" role="img" aria-label="Synthetic post-step trajectory; no lane geometry"></svg></div>
+<div class="panel"><h2>Desired / actual curvature</h2><svg id="curvature" viewBox="0 0 860 250" role="img" aria-label="Desired and actual curvature by time"></svg></div>
+<div class="panel"><h2>Requested / applied delayed torque</h2><svg id="torque" viewBox="0 0 860 250" role="img" aria-label="Requested and applied delayed native torque"></svg></div>
+<div class="panel"><h2>Steering angle</h2><svg id="angle" viewBox="0 0 860 250" role="img" aria-label="Native pre-step steering angle by time"></svg></div>
+<div class="panel"><h2>Candidate − baseline observer pose</h2><svg id="delta" viewBox="0 0 860 250" role="img" aria-label="Candidate minus baseline lateral pose by time"></svg></div>
+<div class="panel"><h2>Descriptive diagnostics · no acceptance threshold</h2><div id="diagnostics"></div></div>
+</div>
+<p class="muted">Command zero crossings and Reversal events ignore exact zeros.
+Reversal count is a command oscillation proxy, not physical comfort or steering jerk.
+High speed saturation and adverse diagnostics remain visible; compare all phases.</p>
+<details><summary>Frozen identity and receipts</summary><pre id="identity"></pre></details>
+<script id="screening-data" type="application/json">@@DATA@@</script>
+<script>@@SCRIPT@@</script>
+</body></html>

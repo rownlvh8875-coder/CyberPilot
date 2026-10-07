@@ -58,11 +58,20 @@ six native results + independent replay; immutable sanitized report and plot sam
 
 ## Task 3: Offline visualizer
 Files: curvature_yaw_visualizer.py + local JS/HTML asset + tests; feature record.
-- [ ] RED: malformed/forged report rejected; required traces/events/warnings;
+- [x] RED: malformed/forged report rejected; required traces/events/warnings;
   real browser UI renders scenario/arm selection and cursor data.
-- [ ] Implement deterministic network-free HTML with SVG trajectory/time traces,
+- [x] Implement deterministic network-free HTML with SVG trajectory/time traces,
   desired/actual curvature, requested/applied torque, angle, phases/saturation/reversals.
-- [ ] Analyze Sunnylink public source selector/visualization structure at exact SHA;
+- [x] Analyze Sunnylink public source selector/visualization structure at exact SHA;
   adopt presentation ideas only, no heuristic simulated behavior as controller evidence.
-- [ ] GREEN full gates and final independent review; record artifacts;
+- [x] GREEN full gates and final independent review; record artifacts;
   commit/push, verify HEAD/origin/clean.
+
+## Verification exception
+The real browser-render check in Task 3 is BLOCKED: browser tool explicitly
+rejected local file protocol and prohibited workarounds. A separate Node DOM-double
+control test passed, without claiming browser rendering, CSP enforcement or
+visual/accessibility verification. Generated standalone artifact is delivered
+locally for human opening; independent truth and readiness blockers stay intact.
+Independent final review found two consistency issues, fixed through new RED
+tests, focused regression and complete 901-test/build/static rerun; re-review clear.
