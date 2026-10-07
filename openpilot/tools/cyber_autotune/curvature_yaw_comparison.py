@@ -17,6 +17,7 @@ from openpilot.tools.cyber_autotune.curvature_yaw_closed_loop import CurvatureYa
 from openpilot.tools.cyber_autotune.curvature_yaw_native_protocol import (
   ADAPTER_PATH,
   PLANT_PATH,
+  controller_identity_sha256,
   producer_identity_sha256,
 )
 from openpilot.tools.cyber_autotune.curvature_yaw_native_runner import (
@@ -113,15 +114,13 @@ def _reference_valid(evidence, sample_count: int, coverage_policy: CoveragePolic
   return all(counts[name] >= minimum for name, minimum in coverage_policy.minimum_counts)
 
 
-def run_binding_for_native(
+def declared_run_binding(
   request: dict,
-  producer_result: dict,
   domain: ClosedLoopDomain,
   contract: MetricContract,
   *,
   environment_sha256: str,
 ) -> RunBinding:
-  validate_response(request, producer_result)
   if type(domain) is not ClosedLoopDomain or type(contract) is not MetricContract or not is_sha256(environment_sha256):
     raise ValueError('INVALID_RUN_BINDING_INPUT')
   frames = closed_loop_frames(request)
@@ -132,8 +131,8 @@ def run_binding_for_native(
     raise ValueError('METRIC_RESET_BINDING_MISMATCH')
   return RunBinding(
     software_sha256=producer_identity_sha256(request),
-    profile_sha256=producer_result['car_params_sha256'],
-    configuration_sha256=producer_result['controller_identity_sha256'],
+    profile_sha256=request['native']['car_params_sha256'],
+    configuration_sha256=controller_identity_sha256(request),
     inputs_sha256=frames_sha256(frames),
     reset_sha256=state_hash,
     mask_sha256=contract.mask_sha256,
@@ -144,6 +143,35 @@ def run_binding_for_native(
     environment_sha256=environment_sha256,
     timebase_sha256=timebase_sha256(frames),
   )
+
+
+def validate_reference_evidence(
+  evidence: CurvatureYawReferenceEvidence,
+  sample_count: int,
+  coverage_policy: CoveragePolicy,
+) -> None:
+  if not _reference_valid(evidence, sample_count, coverage_policy):
+    raise ValueError('INDEPENDENT_REFERENCE_REQUIRED')
+
+
+def run_binding_for_native(
+  request: dict,
+  producer_result: dict,
+  domain: ClosedLoopDomain,
+  contract: MetricContract,
+  *,
+  environment_sha256: str,
+) -> RunBinding:
+  declared = declared_run_binding(
+    request, domain, contract, environment_sha256=environment_sha256,
+  )
+  validate_response(request, producer_result)
+  if (
+    producer_result['car_params_sha256'] != declared.profile_sha256
+    or producer_result['controller_identity_sha256'] != declared.configuration_sha256
+  ):
+    raise ValueError('NATIVE_RESULT_DECLARATION_MISMATCH')
+  return declared
 
 
 def closed_loop_binding_for_comparison(
