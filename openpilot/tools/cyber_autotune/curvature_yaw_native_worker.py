@@ -98,6 +98,7 @@ def execute_request(request: dict) -> dict:
       config_hash = plant_config_sha256(config)
       initial_hash = closed_loop_state_sha256(state)
       transcript = []
+      metric_observations = []
       sign = float(request['controller_to_plant_sign'])
 
       with structs.CarParams.from_bytes(base64.b64decode(native['car_params_base64'])) as cp:
@@ -199,6 +200,10 @@ def execute_request(request: dict) -> dict:
               frame['lateral_delay_s'],
             )
           requested = float(requested)
+          with np.errstate(over='raise', invalid='raise', divide='raise'):
+            desired_angle_deg = math.degrees(model.get_steer_from_curvature(
+              -frame['desired_curvature_1pm'], frame['speed_mps'], frame['roll_rad'],
+            )) + frame['angle_offset_deg']
           native_state = (
             *controller.lat_accel_request_buffer,
             controller.jerk_filter.x,
@@ -224,6 +229,13 @@ def execute_request(request: dict) -> dict:
             feedback_sha256=feedback_hash,
             requested_normalized_torque=requested,
           ))
+          metric_observations.append({
+            'step_index': index,
+            'time_s': frame['time_ns'] * 1e-9,
+            'steering_angle_deg': float(car_state.steeringAngleDeg),
+            'desired_steering_angle_deg': float(desired_angle_deg),
+            'saturated': bool(pid_log.saturated),
+          })
           observation = observe_curvature_yaw_step(
             config,
             state.plant_state,
@@ -256,6 +268,8 @@ def execute_request(request: dict) -> dict:
         'support_files_sha256': digest(canonical(request['support_files'])),
         'controller_transcript': [asdict(step) for step in transcript_t],
         'controller_transcript_sha256': controller_transcript_sha256(transcript_t),
+        'metric_observations': metric_observations,
+        'metric_observations_sha256': digest(canonical(metric_observations)),
         'final_state_sha256': closed_loop_state_sha256(state),
         'runtime_accepted': False,
         'promotable': False,

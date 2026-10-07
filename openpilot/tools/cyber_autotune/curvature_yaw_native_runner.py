@@ -92,6 +92,7 @@ def validate_response(request: dict, result: dict) -> None:
     'car_params_sha256', 'controller_identity_sha256',
     'plant_config_sha256', 'initial_state_sha256', 'support_files_sha256',
     'controller_transcript', 'controller_transcript_sha256',
+    'metric_observations', 'metric_observations_sha256',
     'final_state_sha256', 'runtime_accepted', 'promotable',
   )
   _keys(result, expected)
@@ -136,6 +137,21 @@ def validate_response(request: dict, result: dict) -> None:
   transcript = typed_transcript(result)
   if result['controller_transcript_sha256'] != controller_transcript_sha256(transcript):
     raise ValueError('TRANSCRIPT_DIGEST_MISMATCH')
+  observations = result['metric_observations']
+  if type(observations) is not list or len(observations) != len(frames):
+    raise ValueError('INVALID_METRIC_OBSERVATION_COUNT')
+  for index, (frame, row) in enumerate(zip(frames, observations, strict=True)):
+    _keys(row, ('step_index', 'time_s', 'steering_angle_deg', 'desired_steering_angle_deg', 'saturated'))
+    if (
+      type(row['step_index']) is not int or row['step_index'] != index
+      or not finite(row['time_s']) or row['time_s'] != frame['time_ns'] * 1e-9
+      or not finite(row['steering_angle_deg'])
+      or not finite(row['desired_steering_angle_deg'])
+      or type(row['saturated']) is not bool
+    ):
+      raise ValueError('INVALID_METRIC_OBSERVATION')
+  if result['metric_observations_sha256'] != digest(canonical(observations)):
+    raise ValueError('METRIC_OBSERVATION_DIGEST_MISMATCH')
 
 
 def run_native_transcript(request: dict, *, timeout_s: float) -> dict:
