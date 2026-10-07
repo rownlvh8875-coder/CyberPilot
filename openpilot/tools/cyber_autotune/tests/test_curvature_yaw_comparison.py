@@ -40,13 +40,16 @@ def reference_fixture(count):
   phases = ('straight', 'entry', 'apex', 'exit') * (count // 4) + ('straight',) * (count % 4)
   return CurvatureYawReferenceEvidence(
     desired_path_offset_m=(0.0,) * count,
-    lane_center_offset_m=(0.0,) * count,
-    lane_edge_margin_m=(1.0,) * count,
+    lane_center_path_offset_m=(0.0,) * count,
+    left_lane_edge_offset_m=(-1.8,) * count,
+    right_lane_edge_offset_m=(1.8,) * count,
+    vehicle_half_width_m=0.9,
     curve_phase_labels=tuple(phases),
     coverage=coverage,
     desired_path_source_sha256=h('8'),
     lane_center_source_sha256=h('9'),
     lane_edge_source_sha256=h('a'),
+    vehicle_geometry_sha256=h('7'),
     coverage_review_sha256=h('b'),
   )
 
@@ -124,13 +127,16 @@ class TestCurvatureYawComparisonBridge(unittest.TestCase):
     admitted = self.admitted(arm.arm)
     short = CurvatureYawReferenceEvidence(
       desired_path_offset_m=self.reference.desired_path_offset_m[:-1],
-      lane_center_offset_m=self.reference.lane_center_offset_m,
-      lane_edge_margin_m=self.reference.lane_edge_margin_m,
+      lane_center_path_offset_m=self.reference.lane_center_path_offset_m,
+      left_lane_edge_offset_m=self.reference.left_lane_edge_offset_m,
+      right_lane_edge_offset_m=self.reference.right_lane_edge_offset_m,
+      vehicle_half_width_m=self.reference.vehicle_half_width_m,
       curve_phase_labels=self.reference.curve_phase_labels,
       coverage=self.reference.coverage,
       desired_path_source_sha256=h('8'),
       lane_center_source_sha256=h('9'),
       lane_edge_source_sha256=h('a'),
+      vehicle_geometry_sha256=h('7'),
       coverage_review_sha256=h('b'),
     )
     dependent = CurvatureYawReferenceEvidence(

@@ -50,9 +50,14 @@ External mandatory reference evidence:
 - frozen curve-phase labels;
 - all frozen coverage strata and coverage-review identity.
 
-If those references are absent, malformed, insufficient, dependent on the
-closed-loop trace, or not bound to the metric contract, the bridge raises a
-fail-closed error before creating a comparison RunReceipt.
+The bridge derives each arm's lane-center offset from closed-loop pose minus the
+independent lane-center path, and derives edge margin from closed-loop pose, the
+independent left/right edges and the reviewed vehicle half-width. This correction
+makes the primary lane-center metric arm-sensitive while preserving a common
+independent road reference. If those references are absent, malformed,
+insufficient, dependent on the closed-loop trace, or not bound to the metric
+contract, the bridge raises a fail-closed error before creating a comparison
+RunReceipt.
 
 ## Current qualification status
 

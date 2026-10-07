@@ -32,13 +32,16 @@ from openpilot.tools.cyber_autotune.preflight import CoveragePolicy, REQUIRED_ST
 @dataclass(frozen=True)
 class CurvatureYawReferenceEvidence:
   desired_path_offset_m: tuple[float, ...]
-  lane_center_offset_m: tuple[float, ...]
-  lane_edge_margin_m: tuple[float, ...]
+  lane_center_path_offset_m: tuple[float, ...]
+  left_lane_edge_offset_m: tuple[float, ...]
+  right_lane_edge_offset_m: tuple[float, ...]
+  vehicle_half_width_m: float
   curve_phase_labels: tuple[str, ...]
   coverage: tuple[tuple[str, int], ...]
   desired_path_source_sha256: str
   lane_center_source_sha256: str
   lane_edge_source_sha256: str
+  vehicle_geometry_sha256: str
   coverage_review_sha256: str
 
 
@@ -66,13 +69,22 @@ def _reference_valid(evidence, sample_count: int, coverage_policy: CoveragePolic
     return False
   series = (
     evidence.desired_path_offset_m,
-    evidence.lane_center_offset_m,
-    evidence.lane_edge_margin_m,
+    evidence.lane_center_path_offset_m,
+    evidence.left_lane_edge_offset_m,
+    evidence.right_lane_edge_offset_m,
   )
   if any(type(values) is not tuple or len(values) != sample_count for values in series):
     return False
   if not all(finite_number(value) for values in series for value in values):
     return False
+  if not finite_number(evidence.vehicle_half_width_m) or not 0.0 < evidence.vehicle_half_width_m < 5.0:
+    return False
+  for left, center, right in zip(
+    evidence.left_lane_edge_offset_m, evidence.lane_center_path_offset_m,
+    evidence.right_lane_edge_offset_m, strict=True,
+  ):
+    if not left < center < right or right - left <= 2.0 * evidence.vehicle_half_width_m:
+      return False
   if (
     type(evidence.curve_phase_labels) is not tuple
     or len(evidence.curve_phase_labels) != sample_count
@@ -83,6 +95,7 @@ def _reference_valid(evidence, sample_count: int, coverage_policy: CoveragePolic
     evidence.desired_path_source_sha256,
     evidence.lane_center_source_sha256,
     evidence.lane_edge_source_sha256,
+    evidence.vehicle_geometry_sha256,
     evidence.coverage_review_sha256,
   )
   if not all(is_sha256(value) for value in hashes):
@@ -235,6 +248,7 @@ def metric_batch_from_native(
   if (
     reference.lane_center_source_sha256 == admitted.receipt.trace_sha256
     or reference.lane_edge_source_sha256 == admitted.receipt.trace_sha256
+    or reference.vehicle_geometry_sha256 == admitted.receipt.trace_sha256
   ):
     raise ValueError('REFERENCE_NOT_INDEPENDENT_OF_CLOSED_LOOP_TRACE')
 
@@ -249,7 +263,20 @@ def metric_batch_from_native(
     sample.yaw_rate_rps / frame.speed_mps
     for sample, frame in zip(samples, frames, strict=True)
   )
-  if not all(math.isfinite(value) for value in (*actual_path, *cross_track, *actual_curvature)):
+  lane_center_offset = tuple(
+    actual - center
+    for actual, center in zip(actual_path, reference.lane_center_path_offset_m, strict=True)
+  )
+  lane_edge_margin = tuple(
+    min(actual - left, right - actual) - reference.vehicle_half_width_m
+    for actual, left, right in zip(
+      actual_path, reference.left_lane_edge_offset_m,
+      reference.right_lane_edge_offset_m, strict=True,
+    )
+  )
+  if not all(math.isfinite(value) for value in (
+    *actual_path, *cross_track, *actual_curvature, *lane_center_offset, *lane_edge_margin,
+  )):
     raise ValueError('DERIVED_METRIC_INPUT_INVALID')
 
   observation_source = f'native_metric_observation:{producer_result["metric_observations_sha256"]}'
@@ -267,9 +294,9 @@ def metric_batch_from_native(
     actual_curvature_1pm=_series(times, actual_curvature, '1/m', 'closed_loop_yaw_over_speed'),
     lane_center_offset_m=_series(
       times,
-      reference.lane_center_offset_m,
+      lane_center_offset,
       'm',
-      f'independent_lane:{reference.lane_center_source_sha256}',
+      f'closed_loop_pose_vs_independent_lane:{reference.lane_center_source_sha256}',
     ),
     steering_angle_deg=_series(
       times,
@@ -311,9 +338,9 @@ def metric_batch_from_native(
     ),
     lane_edge_margin_m=_series(
       times,
-      reference.lane_edge_margin_m,
+      lane_edge_margin,
       'm',
-      f'independent_edge:{reference.lane_edge_source_sha256}',
+      f'closed_loop_pose_vs_independent_edges:{reference.lane_edge_source_sha256}',
     ),
     steering_zero_crossing_deadband_ratio_per_s=contract.reversal_deadband_ratio_per_s,
   )
