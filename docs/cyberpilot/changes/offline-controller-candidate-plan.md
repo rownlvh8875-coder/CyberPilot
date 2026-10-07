@@ -49,12 +49,12 @@ candidate schedule immutable tuples; v2 result selector and effective rows SHA.
 Files: new curvature_yaw_screening.py/tests/test_curvature_yaw_screening.py;
 record and aggregate snapshot. Interfaces: frozen request triplet + canonical manifest;
 six native results + independent replay; immutable sanitized report and plot samples.
-- [ ] Freeze synthetic matrix and diagnostic definitions before running.
-- [ ] RED: alias mismatch, basis/manifest drift, candidate no-op, repeatability,
+- [x] Freeze synthetic matrix and diagnostic definitions before running.
+- [x] RED: alias mismatch, basis/manifest drift, candidate no-op, repeatability,
   failed replay, low/high/mirrored curves/S/override/re-engagement.
-- [ ] Implement separate offline-only contract (2 unique controllers + 1 exact alias);
+- [x] Implement separate offline-only contract (2 unique controllers + 1 exact alias);
   structural replay and descriptive curvature/torque/pose diagnostics, never lane RMSE.
-- [ ] GREEN full gates; retain regressions, no best/acceptance; commit.
+- [x] GREEN full gates; retain regressions, no best/acceptance; commit.
 
 ## Task 3: Offline visualizer
 Files: curvature_yaw_visualizer.py + local JS/HTML asset + tests; feature record.
