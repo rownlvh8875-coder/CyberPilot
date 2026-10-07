@@ -1,0 +1,239 @@
+{
+  "candidate_outputs_used_for_reference": false,
+  "environment_sha256": "da5670a1c94fe203335f1ff1b04d1206bfce468097f5ad1e6af2c17c8c4a395e",
+  "evidence_tier": "POST_RESULT_ADAPTER_CORRECTION_DIAGNOSTIC_NOT_QUALIFICATION",
+  "exact_repeatability": true,
+  "frames_per_repetition": 119,
+  "geometry_unavailable_frames": 0,
+  "localization": {
+    "available_frame_ratio": 0.6638655462184874,
+    "detection_failure_rate": 0.1595744680851064,
+    "ego_lane_association_evaluated": false,
+    "false_positive_marking_ratio": 0.6804692428492812,
+    "gt_eligible_frames": 94,
+    "gt_to_pred": {
+      "maximum": 1092.5504938968224,
+      "median": 2.715233780634435,
+      "p90": 178.6479163777251,
+      "p95": 343.3515477869,
+      "p99": 711.1539577006589,
+      "sample_count": 36991
+    },
+    "mask_coverage": 0.5666206502594373,
+    "meter_error": null,
+    "missing_row_support_ratio": 0.11955538629980483,
+    "normalized_gt_to_pred": {
+      "maximum": 0.9386172627979574,
+      "median": 0.002293545794987274,
+      "p90": 0.14748634568384347,
+      "p95": 0.27896220544917927,
+      "p99": 0.5698143421595335,
+      "sample_count": 36991
+    },
+    "normalized_pred_to_gt": {
+      "maximum": 0.9773619825286326,
+      "median": 0.0032411077934479094,
+      "p90": 0.3521385026718235,
+      "p95": 0.5226854466587223,
+      "p99": 0.7031859676730804,
+      "sample_count": 42296
+    },
+    "normalized_unit": "image_width_fraction",
+    "pred_to_gt": {
+      "maximum": 1137.6493476633284,
+      "median": 3.8846122138368457,
+      "p90": 409.88921711000256,
+      "p95": 608.4058599107527,
+      "p99": 818.5084663714657,
+      "sample_count": 42296
+    },
+    "receipt_sha256": "1f55ff3b409b6fd7ef128472c7b507e6a4a538db67291622cf39c3642c05d2dd",
+    "reference_promotable": false,
+    "schema": "LANE_MARKING_LOCALIZATION_DISTRIBUTION_V1",
+    "scope": "PUBLIC_PIXEL_DIAGNOSTIC_NOT_QUALIFICATION",
+    "source_receipts_sha256": "3bce25d3d729c9fb4c3d1b2e2abd6d6d2469370a8f82ab51bf5a67d841343d9b",
+    "total_frames": 119,
+    "unavailable_frames": 40,
+    "unit": "px",
+    "unmatched_gt_ratio": 0.4333793497405627,
+    "usable_frames": 79
+  },
+  "manifest_file_sha256": "f5f58574fa93c0915ce0a9d0f499a278bd89294ab64276049fcc4919411e4bcf",
+  "official_reproduction_status": "DETECTOR_REPRODUCTION_BLOCKED",
+  "openpilot_path_lane_used": false,
+  "prediction_artifact_sha256": "cc3adad1df04b723a90e20e3a58b38e2c8ea07dea5c4c06c64f2bb7336ecdc55",
+  "prior_result_file_sha256": "c46627d71e9cb273482c7a1d5e919ecca4e23be477c0f07222a21b3fbc87ec9e",
+  "private_input_opened": false,
+  "protocol_file_sha256": "1b6a1d3f3dda87a8ae173e3e1a32b9d5c86a488bb2af8a84374348ca45a14f4e",
+  "receipt_sha256": "51184e4182efd3c6b2a7ee5640d4d11a9dc5f4071fabd003e617018885e97888",
+  "reference_promotable": false,
+  "regions": {
+    "far": {
+      "available_frame_ratio": 0.0,
+      "detection_failure_rate": null,
+      "ego_lane_association_evaluated": false,
+      "false_positive_marking_ratio": null,
+      "gt_eligible_frames": 0,
+      "gt_to_pred": {
+        "maximum": null,
+        "median": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "sample_count": 0
+      },
+      "mask_coverage": null,
+      "meter_error": null,
+      "missing_row_support_ratio": null,
+      "normalized_gt_to_pred": {
+        "maximum": null,
+        "median": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "sample_count": 0
+      },
+      "normalized_pred_to_gt": {
+        "maximum": null,
+        "median": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "sample_count": 0
+      },
+      "normalized_unit": "image_width_fraction",
+      "pred_to_gt": {
+        "maximum": null,
+        "median": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "sample_count": 0
+      },
+      "receipt_sha256": "800837f17bba082869933b1a330df27993c9d5ee85b39a30d6f53dc809bd8794",
+      "reference_promotable": false,
+      "schema": "LANE_MARKING_LOCALIZATION_DISTRIBUTION_V1",
+      "scope": "PUBLIC_PIXEL_DIAGNOSTIC_NOT_QUALIFICATION",
+      "source_receipts_sha256": "af2edc734886148beb486325ffd4f43a9578b8ca42d732d1678acb5bec4856d3",
+      "total_frames": 119,
+      "unavailable_frames": 119,
+      "unit": "px",
+      "unmatched_gt_ratio": null,
+      "usable_frames": 0
+    },
+    "mid": {
+      "available_frame_ratio": 0.6638655462184874,
+      "detection_failure_rate": 0.1595744680851064,
+      "ego_lane_association_evaluated": false,
+      "false_positive_marking_ratio": 0.5472904022772437,
+      "gt_eligible_frames": 94,
+      "gt_to_pred": {
+        "maximum": 1092.5504938968224,
+        "median": 2.937212252555014,
+        "p90": 202.9240301720681,
+        "p95": 334.15144422908435,
+        "p99": 622.1827622882635,
+        "sample_count": 27617
+      },
+      "mask_coverage": 0.5342925963488844,
+      "meter_error": null,
+      "missing_row_support_ratio": 0.12471475659229209,
+      "normalized_gt_to_pred": {
+        "maximum": 0.9386172627979574,
+        "median": 0.0024602624886195753,
+        "p90": 0.1686406370728387,
+        "p95": 0.27010033163065067,
+        "p99": 0.4670416372341505,
+        "sample_count": 27617
+      },
+      "normalized_pred_to_gt": {
+        "maximum": 0.9773619825286326,
+        "median": 0.0038304915870994035,
+        "p90": 0.28662200042494046,
+        "p95": 0.38757553338182676,
+        "p99": 0.5949086920923825,
+        "sample_count": 32023
+      },
+      "normalized_unit": "image_width_fraction",
+      "pred_to_gt": {
+        "maximum": 1137.6493476633284,
+        "median": 4.603808366779504,
+        "p90": 333.6280084946307,
+        "p95": 451.1379208564464,
+        "p99": 692.4737175955331,
+        "sample_count": 32023
+      },
+      "receipt_sha256": "66382745a39a6db818b3a1e2235f838c2f369defbab6e203ab9c76976c0d33b5",
+      "reference_promotable": false,
+      "schema": "LANE_MARKING_LOCALIZATION_DISTRIBUTION_V1",
+      "scope": "PUBLIC_PIXEL_DIAGNOSTIC_NOT_QUALIFICATION",
+      "source_receipts_sha256": "786cc1259b0005925876dd71fded1e508f188914534e611b9beb319f31c1dc3b",
+      "total_frames": 119,
+      "unavailable_frames": 40,
+      "unit": "px",
+      "unmatched_gt_ratio": 0.4657074036511156,
+      "usable_frames": 79
+    },
+    "near": {
+      "available_frame_ratio": 0.5630252100840336,
+      "detection_failure_rate": 0.0821917808219178,
+      "ego_lane_association_evaluated": false,
+      "false_positive_marking_ratio": 0.813551589963773,
+      "gt_eligible_frames": 73,
+      "gt_to_pred": {
+        "maximum": 927.6795212814814,
+        "median": 2.2353079441463137,
+        "p90": 57.12668708582071,
+        "p95": 528.5507915160244,
+        "p99": 784.4660996202552,
+        "sample_count": 9374
+      },
+      "mask_coverage": 0.6641177595106098,
+      "meter_error": null,
+      "missing_row_support_ratio": 0.1039954119671191,
+      "normalized_gt_to_pred": {
+        "maximum": 0.7969755337469772,
+        "median": 0.001920367649610235,
+        "p90": 0.04907790986754356,
+        "p95": 0.45408143601033035,
+        "p99": 0.6739399481273671,
+        "sample_count": 9374
+      },
+      "normalized_pred_to_gt": {
+        "maximum": 0.8635818619457196,
+        "median": 0.0022684500442155765,
+        "p90": 0.5854975038119227,
+        "p95": 0.667135788510671,
+        "p99": 0.7597913466657352,
+        "sample_count": 10273
+      },
+      "normalized_unit": "image_width_fraction",
+      "pred_to_gt": {
+        "maximum": 1005.2092873048176,
+        "median": 2.640475851466931,
+        "p90": 681.5190944370779,
+        "p95": 776.546057826421,
+        "p99": 884.3971275189158,
+        "sample_count": 10273
+      },
+      "receipt_sha256": "b046604ca66d10836d3289a992957e25ebe81867b78c92dc94420d9ac3f8c72b",
+      "reference_promotable": false,
+      "schema": "LANE_MARKING_LOCALIZATION_DISTRIBUTION_V1",
+      "scope": "PUBLIC_PIXEL_DIAGNOSTIC_NOT_QUALIFICATION",
+      "source_receipts_sha256": "bb4e8308e08ce96883c99e54dc4eb9f51491b8f0ba2d0663a26b9fce0875ce26",
+      "total_frames": 119,
+      "unavailable_frames": 52,
+      "unit": "px",
+      "unmatched_gt_ratio": 0.3358822404893902,
+      "usable_frames": 67
+    }
+  },
+  "repetitions": 2,
+  "runner_source_sha256": "fad11ac613af5a15884f1ee23267295bc802e79dbc610122578edd4b926f8f01",
+  "runtime_seconds": {
+    "median": 0.02223748099640943,
+    "p95": 0.0340318215108709
+  },
+  "schema": "PUBLIC_CLRERNET_DIAGNOSTIC_RUN_V1",
+  "scope": "INCOMPLETE_PUBLIC_DIAGNOSTIC_NOT_QUALIFICATION"
+}

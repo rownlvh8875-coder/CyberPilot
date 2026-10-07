@@ -1,0 +1,47 @@
+{
+  "A3_rejection_preserved": true,
+  "children": [
+    "OFFICIAL_CULANE_DATASET_DOWNLOAD_QUOTA",
+    "PUBLIC_PIXEL_QUALIFICATION_THRESHOLD_UNJUSTIFIED",
+    "CONFIDENCE_CALIBRATION_NOT_RUN",
+    "METRIC_PUBLIC_GT_UNAVAILABLE",
+    "CAMERA_EXTRINSICS_MODEL_DERIVED",
+    "CAMERA_HEIGHT_UNVERIFIED",
+    "CAMERA_MOUNT_PITCH_UNVERIFIED",
+    "ROAD_PLANE_ASSUMPTION_UNVERIFIED",
+    "CALIBRATION_MEASUREMENT_PENDING",
+    "PRIVATE_DOMAIN_VALIDATION_NOT_RUN",
+    "PRIVATE_HUMAN_LABEL_NOT_RUN",
+    "EGO_LANE_ASSOCIATION_UNVERIFIED",
+    "ROAD_LANE_REGISTRATION_UNVERIFIED",
+    "DESIRED_PATH_PROVENANCE_UNAVAILABLE"
+  ],
+  "comparator_changed": false,
+  "detector_status": "DETECTOR_UNVERIFIED",
+  "human_labels_generated": false,
+  "implemented": [
+    "execution environment freeze",
+    "GPU inference",
+    "119-frame public pixel diagnostic x2",
+    "known-geometry Jacobian checks",
+    "private fail-closed gate",
+    "metadata-only holdout selection tooling"
+  ],
+  "official_receipt_sha256": "4d855a470ed82c51d438e71520dbe3ca885b54e32e0b0921442d1fe50319e570",
+  "official_reproduction": "DETECTOR_REPRODUCTION_BLOCKED",
+  "private_frames_opened": false,
+  "private_gate_sha256": "60dc4b0c5f74b4c6703741fa1975000cff8927cba12d5d1d71f3dc9df81d55d7",
+  "private_human_manifest": null,
+  "production_controller_changed": false,
+  "public_diagnostic_report_sha256": "51184e4182efd3c6b2a7ee5640d4d11a9dc5f4071fabd003e617018885e97888",
+  "qualification": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "schema": "PUBLIC_DETECTOR_REFERENCE_TRACK_BLOCKED_V2",
+  "sealed_reference_JSON_generated": false,
+  "status": "BLOCKED",
+  "v2_REJECTED_preserved": true,
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

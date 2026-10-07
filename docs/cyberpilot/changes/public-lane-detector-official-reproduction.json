@@ -1,0 +1,35 @@
+{
+  "absolute_difference_percentage_points": null,
+  "blockers": [
+    "INCOMPLETE_OFFICIAL_SPLIT",
+    "OFFICIAL_METRIC_NOT_RUN",
+    "OFFICIAL_COMMAND_NOT_RUN"
+  ],
+  "comparison_rule": "NON_EMA_RELEASE_F1_ROUNDED_TWO_DECIMAL_PERCENT_MATCH",
+  "environment_sha256": "da5670a1c94fe203335f1ff1b04d1206bfce468097f5ad1e6af2c17c8c4a395e",
+  "metric_qualification_granted": false,
+  "pixel_qualification_granted": false,
+  "receipt_sha256": "4d855a470ed82c51d438e71520dbe3ca885b54e32e0b0921442d1fe50319e570",
+  "reported_f1_percentage": 81.11,
+  "run": {
+    "command": [
+      "/tmp/cyber-public-reference-track/detector-env/bin/python",
+      "tools/test.py",
+      "configs/clrernet/culane/clrernet_culane_dla34.py",
+      "/tmp/cyber-public-reference-track/clrernet_culane_dla34.pth",
+      "--cfg-options",
+      "test_dataloader.batch_size=1",
+      "test_dataloader.num_workers=0"
+    ],
+    "dataset": "CULane",
+    "dataset_manifest_sha256": "35f71c9133fabbf88f02df5ea23e0d0c4d36e430aa2cadf70d791c657ed7cc4d",
+    "evaluated_frames": 0,
+    "exit_code": null,
+    "expected_frames": 34680,
+    "official_f1_fraction": null,
+    "result_artifact_sha256": "e1f2df9ef4800279d0c1de8f550c57b47d329e70bd5eb159a474f52abcefd332",
+    "split": "test"
+  },
+  "schema": "OFFICIAL_CLRERNET_REPRODUCTION_V1",
+  "status": "DETECTOR_REPRODUCTION_BLOCKED"
+}
