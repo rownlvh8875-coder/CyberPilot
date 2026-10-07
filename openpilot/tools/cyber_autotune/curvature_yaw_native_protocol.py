@@ -25,6 +25,17 @@ SUPPORT_FILES = (
   'openpilot/tools/cyber_autotune/source_imports.py',
   'openpilot/tools/cyber_autotune/worker_resources.py',
 )
+CANDIDATE_FILES = (
+  'openpilot/tools/cyber_autotune/curvature_yaw_candidate.py',
+  'openpilot/tools/cyber_autotune/a1_schedule.py',
+  'openpilot/selfdrive/controls/lib/cyber_lateral/speed_aware_tune.py',
+)
+
+
+def support_paths(request):
+  return SUPPORT_FILES + (CANDIDATE_FILES if request.get('version') == 2 else ())
+
+
 PLANT_KEYS = (
   'dt_s', 'delay_steps', 'min_speed_mps', 'max_speed_mps', 'command_limit',
   'curvature_intercept_1pm', 'curvature_ar', 'command_gain_1pm',
@@ -67,9 +78,13 @@ def _validate_state(state, config):
 
 
 def validate_request(request):
-  _keys(request, ('version', 'native', 'support_files', 'plant_config', 'initial_state', 'controller_to_plant_sign'))
-  if type(request['version']) is not int or request['version'] != 1:
+  if type(request) is not dict or type(request.get('version')) is not int or request['version'] not in (1, 2):
     raise ValueError('UNSUPPORTED_CONTRACT')
+  fields = ('version', 'native', 'support_files', 'plant_config', 'initial_state', 'controller_to_plant_sign')
+  _keys(request, fields + (('controller',) if request['version'] == 2 else ()))
+  if request['version'] == 2:
+    from openpilot.tools.cyber_autotune.curvature_yaw_candidate import validate_controller
+    validate_controller(request['controller'])
   validate_native_request(request['native'])
   frames = request['native']['frames']
   if frames[0]['time_ns'] != 0:
@@ -78,7 +93,7 @@ def validate_request(request):
     raise ValueError('RECORDED_STEERING_INPUT_FORBIDDEN')
 
   support = request['support_files']
-  _keys(support, SUPPORT_FILES)
+  _keys(support, support_paths(request))
   if not all(_sha256(value) for value in support.values()):
     raise ValueError('INVALID_SUPPORT_FILE_BINDING')
 
@@ -99,13 +114,17 @@ def validate_request(request):
 def controller_identity_sha256(request) -> str:
   validate_request(request)
   native = request['native']
-  return digest(canonical({
+  identity = {
     'source_head': native['source']['head'],
     'opendbc_head': native['source']['opendbc_head'],
     'source_files': native['source']['files'],
     'car_params_sha256': native['car_params_sha256'],
     'fingerprint': native['fingerprint'],
-  }))
+  }
+  if request['version'] == 2:
+    identity['controller'] = request['controller']
+    identity['candidate_sources'] = {name: request['support_files'][name] for name in CANDIDATE_FILES}
+  return digest(canonical(identity))
 
 
 def producer_identity_sha256(request) -> str:

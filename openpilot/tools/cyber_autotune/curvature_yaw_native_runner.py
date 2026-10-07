@@ -95,7 +95,19 @@ def validate_response(request: dict, result: dict) -> None:
     'metric_observations', 'metric_observations_sha256',
     'final_state_sha256', 'runtime_accepted', 'promotable',
   )
+  if request['version'] == 2:
+    expected += ('controller_spec', 'controller_config_sha256', 'effective_parameters', 'effective_parameters_sha256')
   _keys(result, expected)
+  if request['version'] == 2:
+    from openpilot.tools.cyber_autotune.curvature_yaw_candidate import effective_parameters
+    parameters = [list(row) for row in effective_parameters(request)]
+    if (
+      result['controller_spec'] != request['controller']
+      or result['controller_config_sha256'] != digest(canonical(request['controller']))
+      or result['effective_parameters'] != parameters
+      or result['effective_parameters_sha256'] != digest(canonical(parameters))
+    ):
+      raise ValueError('CANDIDATE_RESPONSE_BINDING_MISMATCH')
   native = request['native']
   bindings = {
     'status': 'COMPLETED',

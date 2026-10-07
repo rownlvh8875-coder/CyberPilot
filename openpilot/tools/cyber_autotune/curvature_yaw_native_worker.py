@@ -18,7 +18,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from curvature_yaw_native_protocol import (
   MAX_REQUEST_BYTES,
-  SUPPORT_FILES,
+  support_paths,
   controller_identity_sha256,
   decode_request,
   encode_request,
@@ -28,10 +28,11 @@ from native_worker import _verify_source
 from source_imports import source_only_imports
 
 
-def _verify_support_files(root: Path, expected: dict) -> None:
-  if set(expected) != set(SUPPORT_FILES):
+def _verify_support_files(root: Path, request: dict) -> None:
+  expected = request['support_files']
+  if set(expected) != set(support_paths(request)):
     raise ValueError('SUPPORT_FILE_SET_MISMATCH')
-  for name in SUPPORT_FILES:
+  for name in support_paths(request):
     path = (root / name).resolve(strict=True)
     if not path.is_relative_to(root):
       raise ValueError('SUPPORT_FILE_ESCAPE')
@@ -44,7 +45,7 @@ def execute_request(request: dict) -> dict:
   request = decode_request(payload)
   native = request['native']
   root = _verify_source(native['source'])
-  _verify_support_files(root, request['support_files'])
+  _verify_support_files(root, request)
 
   with source_only_imports():
     sys.path[:0] = [str(root), str(root / 'opendbc_repo')]
@@ -130,11 +131,27 @@ def execute_request(request: dict) -> dict:
         ):
           raise ValueError('CP_TUNING_INVALID')
 
+        parameters = ()
+        parameter_observations = []
+        if request['version'] == 2:
+          from openpilot.tools.cyber_autotune.curvature_yaw_candidate import effective_parameters
+          if not Path(inspect.getfile(effective_parameters)).resolve(strict=True).is_relative_to(root):
+            raise ValueError('CANDIDATE_IMPORT_ROOT_MISMATCH')
+          parameters = effective_parameters(request)
         controller = LatControlTorque(cp, LinearConversion(), DT_CTRL)
         model = VehicleModel(cp)
         prior_angle = None
 
         for index, frame in enumerate(native['frames']):
+          if request['version'] == 2:
+            if request['controller']['implementation'] == 'SPEED_SCHEDULE':
+              controller.update_torque_parameters(*parameters[index])
+            actual_parameters = tuple(float(getattr(controller.torque_params, name)) for name in (
+              'latAccelFactor', 'latAccelOffset', 'friction',
+            ))
+            if actual_parameters != parameters[index]:
+              raise ValueError('CANDIDATE_PARAMETER_READBACK_MISMATCH')
+            parameter_observations.append(list(actual_parameters))
           feedback = CurvatureYawControllerFeedback(
             step_index=index,
             time_s=frame['time_ns'] * 1e-9,
@@ -254,7 +271,7 @@ def execute_request(request: dict) -> dict:
 
       transcript_t = tuple(transcript)
       _verify_source(native['source'])
-      _verify_support_files(root, request['support_files'])
+      _verify_support_files(root, request)
       result = {
         'status': 'COMPLETED',
         'scope': 'OFFLINE_NATIVE_CURVATURE_YAW_TRANSCRIPT',
@@ -274,6 +291,13 @@ def execute_request(request: dict) -> dict:
         'runtime_accepted': False,
         'promotable': False,
       }
+      if request['version'] == 2:
+        result.update({
+          'controller_spec': request['controller'],
+          'controller_config_sha256': digest(canonical(request['controller'])),
+          'effective_parameters': parameter_observations,
+          'effective_parameters_sha256': digest(canonical(parameter_observations)),
+        })
       return result
     except Exception as exc:
       raise ValueError('NATIVE_CURVATURE_YAW_EXECUTION_REJECTED') from exc
