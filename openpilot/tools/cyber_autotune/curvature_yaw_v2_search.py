@@ -263,7 +263,7 @@ def run_case(case,*,expected_manifest_sha256,timeout_s=10.):
   case=freeze_case(case,expected_manifest_sha256)
   m=case['manifest']
   plant=m['plant_config']
-  domain=ClosedLoopDomain(digest(canonical(plant)),.01,3.,27.,.02,'PLANT',1.)
+  domain=ClosedLoopDomain(digest(canonical(plant)),plant['dt_s'],3.,27.,plant['delay_steps']*plant['dt_s'],'PLANT',1.)
   arms=[]
   for i,request in enumerate(case['requests']):
     binding=_binding(request,domain,m['environment'])
@@ -375,7 +375,8 @@ def validate_report(report):
         raise ValueError('V2_REPEAT_RECEIPT_MISMATCH')
     result=arm['native_result']
     validate_response(request,result)
-    domain=ClosedLoopDomain(digest(canonical(m['plant_config'])),.01,3.,27.,.02,'PLANT',1.)
+    plant=m['plant_config']
+    domain=ClosedLoopDomain(digest(canonical(plant)),plant['dt_s'],3.,27.,plant['delay_steps']*plant['dt_s'],'PLANT',1.)
     receipt=admit_native_transcript(request,result,domain,_binding(request,domain,m['environment']),
                                     arm=ROLES[i] if i<2 else 'CYBER_CANDIDATE')
     if (receipt.status!='STRUCTURAL_ADMISSION'
