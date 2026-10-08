@@ -41,10 +41,10 @@ AI 설명, model/planner/candidate, approximate geometry를 보여주지 않습�
 
 ## 단축키
 
-L / R: 왼쪽/오른쪽 선택  
-U: 마지막 점 취소  
-P: Pan mode  
-← / →: 이전/다음  
+L / R: 왼쪽/오른쪽 선택
+U: 마지막 점 취소
+P: Pan mode
+← / →: 이전/다음
 J: 미검토 사진 이동
 
 입력 필드에 focus가 있으면 키보드 단축키가 적용되지 않습니다.
@@ -64,6 +64,6 @@ Pixel GT는 meter truth가 아니며 physical calibration과 독립 검증은 �
 
 콘솔에서 Enter를 누르면 로컬 서버를 종료합니다.
 
-CALIBRATION_MEASUREMENT_PENDING / INDEPENDENT_CALIBRATION_VALIDATION_PENDING  
-BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE / sealed reference NOT_GENERATED  
+CALIBRATION_MEASUREMENT_PENDING / INDEPENDENT_CALIBRATION_VALIDATION_PENDING
+BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE / sealed reference NOT_GENERATED
 NOT_READY / REAL_VEHICLE_UNVERIFIED / VEHICLE_ACTIVATION_BLOCKED
