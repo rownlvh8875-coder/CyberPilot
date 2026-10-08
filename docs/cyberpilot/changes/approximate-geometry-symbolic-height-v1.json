@@ -1,0 +1,30 @@
+{
+  "actual_height_m": null,
+  "coordinate_origin": "CAMERA_VERTICAL_FOOTPOINT_X_ZERO_NOT_SURVEYED_VEHICLE_DATUM",
+  "equations": [
+    "forward_from_camera_footpoint_m=h*forward_per_height",
+    "lateral_from_vehicle_center_plane_m=declared_mount_y+h*lateral_per_height"
+  ],
+  "forward_per_height": 4.117778533393392,
+  "independent": false,
+  "lateral_per_height": 0.014504353106546037,
+  "normalized_optical_uv": [
+    0.0,
+    0.2
+  ],
+  "physical_uncertainty": null,
+  "prior_sha256": "bddd081d0b18886d583ddf0154d232d9365a7644bcf4ee5209a970bbc88e69ab",
+  "private_input_allowed": false,
+  "qualification_allowed": false,
+  "ray_diagnostic_road": [
+    0.9909941766848234,
+    0.003490651415223732,
+    -0.24066233010063356
+  ],
+  "receipt_sha256": "5146d13688c0b903535dafe5e568061820cfdeb7d1216bc35b872ec750f6190f",
+  "reference_promotable": false,
+  "scope": "SYMBOLIC_HEIGHT_RELATION",
+  "sealed_reference_allowed": false,
+  "source_sha256": "9a9bc909f75de168659e8532af76735d75e3c6473cbda369f89249e81224896a",
+  "vehicle_activation_allowed": false
+}

@@ -1,0 +1,178 @@
+{
+  "actual_height_m": null,
+  "actual_measurement_count": 0,
+  "actual_physical_uncertainty": null,
+  "artifacts_sha256": {
+    "docs/cyberpilot/changes/approximate-geometry-blocker-snapshot-v1.json": "f1fead4efa0cef8425f8964a3b7e15d85d1c9dd18821eba9847e95b4e2205251",
+    "docs/cyberpilot/changes/approximate-geometry-physical-comparison-pending-v1.json": "32360ed4d0256741a421476108c20a5f9d2f94fabc3b85f1815870cbf22e2a7c",
+    "docs/cyberpilot/changes/approximate-geometry-plan.md": "6371b1272ad849514e5a8dd77e788102767f596dac882db5755efc432e1b61f7",
+    "docs/cyberpilot/changes/approximate-geometry-prior-v1.json": "a50c10635d8220b2ea4401d407750653b798e985d51f571de0b7c9bf0c07df00",
+    "docs/cyberpilot/changes/approximate-geometry-symbolic-height-v1.json": "c624f04991d79081c1591ba8d9d3a903c921d52aa998a241a474bf77c60a24e1",
+    "docs/cyberpilot/changes/approximate-vehicle-geometry-diagnostic.md": "10748ae33434a4431ca0435dad1130bffe1b823c1152e9e2f44a0182939f356a",
+    "openpilot/tools/cyber_autotune/approximate_geometry_assets/app.js": "90bcc67bf80d7646c43c8e689468ab80a7d8d81f7319840c4d6039feeea24e8e",
+    "openpilot/tools/cyber_autotune/approximate_geometry_assets/index.html": "8a426f0abaa8381b1dec312925719a8a87311e29f0e5d26595a797a3c0f8a1ca",
+    "openpilot/tools/cyber_autotune/approximate_geometry_assets/style.css": "42c86d17f9d9f23468c20fa38301856a6010e6647af6bf8f8169adaf84ebb596",
+    "openpilot/tools/cyber_autotune/approximate_geometry_diagnostic.py": "6b3d5c4bbc6f640f97b37baf452e3ea6455179c457afb023236f0a976a7fe311",
+    "openpilot/tools/cyber_autotune/approximate_geometry_visualizer.py": "233b126a1826c887faa31bfd3e768147923af60789e9f72f52a52980e9274ce2",
+    "openpilot/tools/cyber_autotune/tests/test_approximate_geometry_diagnostic.py": "6748e04af2543eda524728ffd42afddc25e87544e6437b99e20a59ac08b8d01c",
+    "openpilot/tools/cyber_autotune/tests/test_approximate_geometry_visualizer.py": "b2cb4cb760f9e3ace9c99691a7ff99818ae8a8ecaf3673ce0a9ed52a195c000a"
+  },
+  "assets_sha256": {
+    "app.js": "90bcc67bf80d7646c43c8e689468ab80a7d8d81f7319840c4d6039feeea24e8e",
+    "index.html": "8a426f0abaa8381b1dec312925719a8a87311e29f0e5d26595a797a3c0f8a1ca",
+    "style.css": "42c86d17f9d9f23468c20fa38301856a6010e6647af6bf8f8169adaf84ebb596"
+  },
+  "baseline_sha": "4190c7c65ad5ee1c58cae37a62846fc06bc22e6e",
+  "branch": "feature/cyber-autotune",
+  "calibration_status": "CALIBRATION_MEASUREMENT_PENDING",
+  "checks": {
+    "authority_privacy": {
+      "allowed_network": "127.0.0.1_ONLY_TEST_DEVELOPMENT_UI_NOT_PRODUCTION",
+      "exit_code": 0,
+      "grep_log_sha256": "d3e8773a7e78c5091a7517837a37896a2f3b205bcbdb2e37899f326f5dd83a6d",
+      "log_sha256": "8e8a14641d215b9fd2c280154b072413c9f3114588399dd0f24c897916343e01",
+      "optional_future_input": "EXPLICIT_EXISTING_STATIONARY_WIZARD_WORKSPACE_ONLY_NO_AUTO_DISCOVERY",
+      "original_tracked_files_changed": false,
+      "private_raw_opened": false,
+      "runtime_authority_added": false,
+      "status": "PASS"
+    },
+    "browser": {
+      "actual_engine": "Chrome154.0.8037.98",
+      "result": {
+        "actual_measurements": false,
+        "bounded_parameter_rows": 48,
+        "browser_version": "154.0.8037.98",
+        "external_requests": [],
+        "failed_resources": [],
+        "height_blank": true,
+        "js_errors": [],
+        "no_private_input": true,
+        "nominal_unknown_preserved": true,
+        "physical_comparison_pending": true,
+        "refresh_prior_preserved": true,
+        "status": "PASS_TEST_ONLY",
+        "symbolic_height": true
+      },
+      "result_sha256": "f7f74d608bb149b1ee048ed490ad83ae8940ad3506fa58b76e5da5828fd4a91c",
+      "server_clean_shutdown": true,
+      "shutdown_log_sha256": "2f9acb02faa121bb2a3621951f57b4c690655337edee2e5ac350be2b3be88ea8",
+      "status": "PASS_TEST_ONLY"
+    },
+    "diff": {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "git diff --check; git diff --cached --check",
+      "status": "PASS"
+    },
+    "focused": {
+      "exit_code": 0,
+      "expanded_log_sha256": "9701734604674b5d78e2175d621649b072ed9138da4fbc604285ba8ef3715c53",
+      "expanded_passed": 105,
+      "log_sha256": "b3430a9c120ec88055f1a5754c610188cf047f91a79373bfb200835cc863626d",
+      "passed": 32,
+      "status": "PASS"
+    },
+    "full_autotune": {
+      "baseline_passed": 1399,
+      "command": ".venv/bin/python tools/test_runner.py -j2 openpilot/tools/cyber_autotune",
+      "elapsed_seconds": 306.91,
+      "exit_code": 0,
+      "failed": 0,
+      "log_sha256": "30a2b4f3e34c77a74091a453841cde390c28307c5aa9aaf12e98731d0f6fcf81",
+      "new_tests": 32,
+      "passed": 1431,
+      "status": "PASS"
+    },
+    "independent_review": {
+      "focused_independently_passed": 32,
+      "limits": "No physical metrology/private accuracy certification; browser and full run executed/inspected by primary",
+      "log_sha256": "63d4fec9f0616294ae29b2ebc93ba6b03d502eb02da4b1efa2aecd28fe6c4ada",
+      "outstanding_critical_important": 0,
+      "role": "SEPARATE_READ_ONLY_CODE_AND_METADATA_REVIEWER",
+      "status": "PASS_AFTER_FIXES"
+    },
+    "publication": {
+      "command": ".venv/bin/python tools/cyberpilot/check_publication.py --repo . --base origin/main",
+      "exit_code": 0,
+      "files": 644,
+      "findings": 0,
+      "log_sha256": "94d8600902c92ab31afffdd094ee19241b6bc94a8aa5d0c13c2333e2aa6efbf2",
+      "status": "PASS"
+    },
+    "publication_final": {
+      "command": ".venv/bin/python tools/cyberpilot/check_publication.py --repo . --base origin/main",
+      "exit_code": 0,
+      "files": 645,
+      "findings": 0,
+      "log_sha256": "b11c75d5c3a667c06827632cf52bdd908ddc1c8c4ff560730d4aa59e56341d83",
+      "status": "PASS"
+    },
+    "ruff": {
+      "command": ".venv/bin/ruff check openpilot/tools/cyber_autotune",
+      "exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "status": "PASS"
+    },
+    "scons": {
+      "command": "export PATH=\"$PWD/.venv/bin:$PATH\"; .venv/bin/scons -j2",
+      "exit_code": 0,
+      "log_sha256": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056",
+      "progress_percent": 100,
+      "status": "PASS"
+    },
+    "syntax": {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "py_compile_four_new_modules_tests; actual_browser_JS_execution",
+      "status": "PASS"
+    },
+    "tdd": {
+      "extra_guard_fixes": [
+        "MODEL_EXECUTED_SOURCE_DRIFT",
+        "NUMERIC_EQUIVALENT_DUPLICATE_GRID"
+      ],
+      "fixed_review_findings": [
+        "UI_HANDLER_EXECUTED_SOURCE_AND_ASSET_DRIFT"
+      ],
+      "red_logs_sha256": {
+        "model-red.log": "0531a14ab65f7be5b4cbc6b9d70bfa6ff77dd01112836d00933af66a93d2f7b7",
+        "model-source-drift-red.log": "ffa42595ecd8f280b373ae9ff4fbb03185b10b469a7622279bbc8cea92824c43",
+        "numeric-duplicate-red.log": "fe3f83288ebf264150b3819a8fe4dc0beb5137e5f85e6fab9a4859fdc43719a5",
+        "source-drift-red.log": "8c433ff869b77b87713d0594254b5d1b5674ccd8abdb209a0066d2ea63bee050",
+        "ui-red.log": "02b8cb9b2ea154cc85daa3e4ecb4e4684d1289ec2a5b6aebda4c16430774a867"
+      },
+      "status": "PASS_RED_THEN_GREEN"
+    }
+  },
+  "diagnostic_status": "APPROX_GEOMETRY_DIAGNOSTIC_AVAILABLE",
+  "environment": {
+    "actual_physical_measurements": false,
+    "browser": "Chrome154.0.8037.98",
+    "driver": "EXISTING_BUNDLED_PLAYWRIGHT",
+    "new_dependencies": false,
+    "os": "Ubuntu24.04_WSL_on_Windows",
+    "python": "3.12.13"
+  },
+  "environment_sha256": "19d08eeed73b22296db6eaf17c03dd82c35c149a0090e320f19b4752b3f9b597",
+  "independent_validation_status": "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+  "prior_completeness": "PARTIAL_APPROX_GEOMETRY",
+  "private_comma4": "NOT_OPENED",
+  "private_input_allowed": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "794e2a40582737dc157f4e29cf01acde4c338143d0f6157c7a7a05ddccd91d09",
+  "reference_promotable": false,
+  "reference_status": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "schema": "APPROX_GEOMETRY_DIAGNOSTIC_VALIDATION_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "source_sha256": "9a9bc909f75de168659e8532af76735d75e3c6473cbda369f89249e81224896a",
+  "vehicle_activation_allowed": false,
+  "vehicle_spec_status": "VEHICLE_SPEC_IDENTITY_PENDING",
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "visualizer_source_sha256": "233b126a1826c887faa31bfd3e768147923af60789e9f72f52a52980e9274ce2"
+}
