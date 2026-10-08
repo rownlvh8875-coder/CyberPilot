@@ -1,0 +1,123 @@
+{
+  "actual_camera_identity": null,
+  "admission_tool_sha256": "6cb9d043fc55418b88aa58dbd37b83a19ba91b5b90c9a8691b7b34cc5d0f653a",
+  "distortion_validation": null,
+  "ground_survey": null,
+  "independence_limitation": "DECLARED_ROLES_AND_HASHES_DO_NOT_VERIFY_REAL_INSTRUMENT_ACCURACY_OR_EXTERIOR_NONCONTAMINATION",
+  "measurement_fields": {
+    "cx_px": {
+      "method": null,
+      "provenance": null,
+      "uncertainty": null,
+      "unit": "px",
+      "value": null
+    },
+    "cy_px": {
+      "method": null,
+      "provenance": null,
+      "uncertainty": null,
+      "unit": "px",
+      "value": null
+    },
+    "fx_px": {
+      "method": null,
+      "provenance": null,
+      "uncertainty": null,
+      "unit": "px",
+      "value": null
+    },
+    "fy_px": {
+      "method": null,
+      "provenance": null,
+      "uncertainty": null,
+      "unit": "px",
+      "value": null
+    },
+    "height_m": {
+      "method": null,
+      "provenance": null,
+      "uncertainty": null,
+      "unit": "m",
+      "value": null
+    },
+    "mount_x_m": {
+      "method": null,
+      "provenance": null,
+      "uncertainty": null,
+      "unit": "m",
+      "value": null
+    },
+    "mount_y_m": {
+      "method": null,
+      "provenance": null,
+      "uncertainty": null,
+      "unit": "m",
+      "value": null
+    },
+    "pitch_rad": {
+      "method": null,
+      "provenance": null,
+      "uncertainty": null,
+      "unit": "rad",
+      "value": null
+    },
+    "roll_rad": {
+      "method": null,
+      "provenance": null,
+      "uncertainty": null,
+      "unit": "rad",
+      "value": null
+    },
+    "yaw_rad": {
+      "method": null,
+      "provenance": null,
+      "uncertainty": null,
+      "unit": "rad",
+      "value": null
+    }
+  },
+  "measurement_schema": {
+    "admission": "STRUCTURE_AND_DECLARED_PROVENANCE_ONLY_NOT_PHYSICAL_OR_METROLOGY_VALIDATION",
+    "angles": "Rz(yaw)Ry(pitch)Rx(roll)_RADIANS",
+    "frames": [
+      "RH_X_RIGHT_Y_DOWN_Z_FORWARD_ORIGIN_OPTICAL_CENTER",
+      "RH_X_FORWARD_Y_LEFT_Z_UP_ORIGIN_SURVEYED_VEHICLE_DATUM"
+    ],
+    "methods": [
+      "SURVEYED_STATIONARY_TARGET",
+      "SURVEYED_CHECKERBOARD",
+      "SURVEYED_APRILTAG",
+      "OPTICAL_CENTER_SURVEY"
+    ],
+    "physical_protocol_sha256": "802bfbdb47543918b6976c35866547ae4620493c20789c8ca75b2781d1c93fbb",
+    "schema": "INDEPENDENT_PHYSICAL_CAMERA_MEASUREMENT_V1",
+    "uncertainty": "POSITIVE_INDEPENDENT_ABSOLUTE_BOUND_NOT_STATISTICAL_QUANTILE",
+    "units": {
+      "cx_px": "px",
+      "cy_px": "px",
+      "fx_px": "px",
+      "fy_px": "px",
+      "height_m": "m",
+      "mount_x_m": "m",
+      "mount_y_m": "m",
+      "pitch_rad": "rad",
+      "roll_rad": "rad",
+      "yaw_rad": "rad"
+    }
+  },
+  "measurement_timestamp": null,
+  "operator_id": null,
+  "receipt_sha256": "d16ce1cb72bbcc329cd66142b766e66c32ea5bd4abcc36ca3cd3742b04f6fae6",
+  "reference_promotable": false,
+  "schema": "PHYSICAL_CALIBRATION_SUBMISSION_PROTOCOL_V1",
+  "schema_sha256": "5ca103987bcf7473f0eaaacdfa1bf9e7a9727d72fadde8ec679868820fc58efd",
+  "static_sources": {
+    "camera": "openpilot/common/transformations/camera.py",
+    "camera_sha256": "1de3f9e6147f28195c71673ae5c8ec38e65ede997ac98d2e1e3b114eda873ec4",
+    "hardware_mapping": "openpilot/common/hardware/comma/hardware.py",
+    "hardware_sha256": "d357b90f878ef7b8ea1df5a537cdf986df2243bc4b20b37c7ed88175020cadd8"
+  },
+  "status": "CALIBRATION_MEASUREMENT_PENDING",
+  "target_device_family": "comma4_mici_narrow_road",
+  "template_submittable": false
+}
