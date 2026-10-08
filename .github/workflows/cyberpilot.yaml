@@ -63,13 +63,14 @@ jobs:
           python3 -m compileall -q openpilot/tools/cyber_autotune tools/cyberpilot
           git diff --check origin/main...HEAD
 
-      - name: Install pytest
-        run: .venv/bin/pip install pytest
+      # unittest module names below correspond to these source files:
+      # openpilot/selfdrive/test/process_replay/test_cyber_lateral_card_replay.py
+      # openpilot/selfdrive/test/process_replay/test_cyber_lateral_native_experiment.py
       - name: Run focused Cyber lateral replay tests
         run: |
-          python3 -m pytest -q \
-            openpilot/selfdrive/test/process_replay/test_cyber_lateral_card_replay.py \
-            openpilot/selfdrive/test/process_replay/test_cyber_lateral_native_experiment.py
+          python3 -m unittest -q \
+            openpilot.selfdrive.test.process_replay.test_cyber_lateral_card_replay \
+            openpilot.selfdrive.test.process_replay.test_cyber_lateral_native_experiment
 
       - name: Validate policy and evidence JSON
         shell: bash
