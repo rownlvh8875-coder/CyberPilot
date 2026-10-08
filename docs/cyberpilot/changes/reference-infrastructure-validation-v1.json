@@ -1,0 +1,159 @@
+{
+  "baseline_sha": "ec1b1e7741adac93675e19cc18d0eef7fcdcb702",
+  "branch": "feature/cyber-autotune",
+  "checks": {
+    "authority_privacy": {
+      "command": "AST imports/calls plus authority grep; pending-artifact equality; original tracked file preservation",
+      "exit_code": 0,
+      "log_sha256": "cb3b7b9f00137510f6aeaa9efe5a36f9a33c58960a4af6f5ab4443d41d19eb97",
+      "status": "PASS"
+    },
+    "browser": {
+      "reason": "No HTML, JS, server or browser workflow changed; previous browser evidence preserved",
+      "status": "NOT_RERUN_NO_UI_CHANGE"
+    },
+    "diff": {
+      "command": "git diff --cached --check; git diff --check",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "PASS"
+    },
+    "focused": {
+      "command": ".venv/bin/python -m pytest -q four new plus four related projection/qualification/assisted suites",
+      "exit_code": 0,
+      "expanded_passed": 98,
+      "log_sha256": "7e92de514a1bc28696200a20905a931f1d729f2257e76a81ce959205e423c3d9",
+      "new_focused_passed": 58,
+      "status": "PASS",
+      "subtests_passed": 33
+    },
+    "full_autotune": {
+      "baseline_passed": 1301,
+      "command": ".venv/bin/python tools/test_runner.py -j2 openpilot/tools/cyber_autotune",
+      "exit_code": 0,
+      "failed": 0,
+      "log_sha256": "a13851054d60baf96eaa02e3e0022f15ef268862e663f6b3747a1498fd75f75a",
+      "new_tests": 58,
+      "passed": 1359,
+      "status": "PASS"
+    },
+    "independent_review": {
+      "fixed_findings": [
+        "DUPLICATE_PROTOCOL_SCHEMA_KEY",
+        "STORE_ROOT_SUBSTITUTION",
+        "UNC_NETWORK_ROOT_ACCEPTANCE",
+        "RECEIPT_INPUT_ALIAS",
+        "MIDPOINT_OVERFLOW",
+        "JSON_ROUNDTRIP_TUPLE_LIST_MISMATCH",
+        "PRIVATE_PENDING_DOC_FIELD_PROVENANCE"
+      ],
+      "focused_reproduced": 58,
+      "limitations": "No reviewer certified actual calibration accuracy, ego truth, public qualification or private domain validity",
+      "private_raw_opened": false,
+      "review_role": "SEPARATE_READ_ONLY_CODE_AND_METADATA_REVIEWER",
+      "status": "PASS_AFTER_FIXES"
+    },
+    "publication": {
+      "command": ".venv/bin/python tools/cyberpilot/check_publication.py --repo . --base origin/main",
+      "exit_code": 0,
+      "log_sha256": "0c2afed8740df813b2895eefd0ceff91a9e9d171dca0a58013561fca378b9763",
+      "status": "PASS"
+    },
+    "publication_final": {
+      "command": ".venv/bin/python tools/cyberpilot/check_publication.py --repo . --base origin/main",
+      "exit_code": 0,
+      "files": 619,
+      "findings": 0,
+      "log_sha256": "efd2d4b5f37887aa8a5fa4b194af742b590a040bd384ed9b603e98bb585d3197",
+      "status": "PASS"
+    },
+    "ruff": {
+      "command": ".venv/bin/ruff check openpilot/tools/cyber_autotune",
+      "exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "status": "PASS"
+    },
+    "scons": {
+      "command": "export PATH=\"$PWD/.venv/bin:$PATH\"; .venv/bin/scons -j2",
+      "exit_code": 0,
+      "log_sha256": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056",
+      "status": "PASS"
+    },
+    "syntax": {
+      "command": "py_compile four new source modules and four corresponding tests",
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  },
+  "environment": {
+    "dependencies_added": false,
+    "platform": "Linux",
+    "python": "3.12.13"
+  },
+  "historical_results_modified": false,
+  "initial_fetch_local_origin_equal": true,
+  "initial_working_tree_clean": true,
+  "interrupted_pre_final_full_run": {
+    "reason": "Added JSON round-trip regression and froze corrected source before final full rerun",
+    "status": "INTERRUPTED_NOT_COMPLETED_NOT_A_REGRESSION_RESULT"
+  },
+  "new_file_sha256": {
+    "docs/cyberpilot/changes/comma10k-label-completeness-dependency-v1.json": "b78c9bd5fa47900e7403867ba460a0c99dcd1fbeca05518112065f9aacedc056",
+    "docs/cyberpilot/changes/independent-calibration-evidence-admission.md": "51ba2c5db309d089bfd93be58d75c63799c03753f19bcf648a374280f1d1d3f2",
+    "docs/cyberpilot/changes/independent-calibration-pending-v1.json": "110700e7125c557813cc571d4c337c64d3e94014bae5f60e563ea291ee8638a8",
+    "docs/cyberpilot/changes/independent-calibration-submission-protocol-v1.json": "1fcb8bea6d0762863ad86c03a1b2f66998d0a17287c661fb6c72cbeacdb452df",
+    "docs/cyberpilot/changes/independent-ego-association-contract-v1.json": "0dae15b20daf9e70fc02986f631bb09be7bee961727f7041cb21950e26fe893e",
+    "docs/cyberpilot/changes/independent-ego-association-contract.md": "4c25b4867b4e6d75d2edc33e41f9cffc149e30e74b01edee457151a635e935c6",
+    "docs/cyberpilot/changes/independent-lane-center-contract-v1.json": "cc3dff47730b2698b2e0067e0f8e6f8cb051c63260e2e1317a956beaae41deda",
+    "docs/cyberpilot/changes/independent-lane-center-pending-v1.json": "12f7426e453805b1858a932909cb29ed77bc0417ebabbad4284356ae2bec7e14",
+    "docs/cyberpilot/changes/independent-lane-center-reference-contract.md": "68e422f073e95989d267cd9abc7933c1c48debba24bc0cc4a1021ab71c1dcc3e",
+    "docs/cyberpilot/changes/independent-projection-budget-pending-v1.json": "4e7d43ca336506fa1dde0fb98d3dcdfba8e3f92f51f1f4f97eb3a8dbaf4f6576",
+    "docs/cyberpilot/changes/independent-reference-critical-path-v2.md": "9f3f749c9e72afccb2e36edd0f11687485a2753fbf299bc9414c4af6f3f42881",
+    "docs/cyberpilot/changes/independent-reference-next-blocker-plan-v2.json": "52f302339f28b00ff446f745fba959037d3a8371837725945070423236d6f8e9",
+    "docs/cyberpilot/changes/independent-road-frame-registration-contract.md": "7092c5c282b8b27e811983ed6e6c44d6ca87a48fce907f6f1145f64b057a2d4b",
+    "docs/cyberpilot/changes/independent-road-registration-pending-v1.json": "13fe3b170ba3d63432be2f0db0f990b5b6156fa3691c8532870f381b2ac0c64e",
+    "docs/cyberpilot/changes/private-pixel-diagnostic-preparation.md": "ab42951e551ca11480ee24a9152575c54eb30107055e56d7e93913c0878a59f2",
+    "docs/cyberpilot/changes/private-pixel-preparation-pending-v1.json": "6daf4be1ba7f6c4c64cde5d2ef4841b1fc48e4d55faaeb1da7505d625d1cc9f7",
+    "docs/cyberpilot/changes/reference-infrastructure-plan.md": "f17f8414ae411311f771e7328f2eb30a8e417b44c7612d65bd33f4f5af926fbb",
+    "openpilot/tools/cyber_autotune/camera_calibration_evidence.py": "014caca5d3edf400120bf8f0c18e067cfe1a861b1f268ab23b9a244b8b6af82d",
+    "openpilot/tools/cyber_autotune/independent_lane_geometry.py": "366750b4b91d7e1360051b74782ffe1478928284e6679afdb26498895fef6429",
+    "openpilot/tools/cyber_autotune/private_lane_diagnostic_preparation.py": "bfc6d2e3e1d19f0cd3ce2d1902a50a03bd6e95463fb19291cc40c66866cf5147",
+    "openpilot/tools/cyber_autotune/reference_infrastructure_readiness.py": "9bbd13580b1d857537d33b2a807c73e806f2f9512e3acdeed55194966a3b68c7",
+    "openpilot/tools/cyber_autotune/tests/test_camera_calibration_evidence.py": "84f1f26f73f35afbd3784062daaa7d685addcd858022877c8fdb2676b780e072",
+    "openpilot/tools/cyber_autotune/tests/test_independent_lane_geometry.py": "16120436ab0f14f4a2e783d469e078ea18a15ed88fdddfe771b63379614ee7ac",
+    "openpilot/tools/cyber_autotune/tests/test_private_lane_diagnostic_preparation.py": "0ed67608e01aa1cdb8f5645abae0ef5bd06cc91793055d1f62c84aecd23165c9",
+    "openpilot/tools/cyber_autotune/tests/test_reference_infrastructure_readiness.py": "82eb1acf59d417f9a850db12a70b7571e571e9f2f020de20db2c9032204d8a21"
+  },
+  "next_required_evidence": [
+    "INDEPENDENT_PHYSICAL_MEASUREMENTS_AND_METROLOGY_REVIEW",
+    "EGO_IDENTITY_GT_AND_ASSOCIATION_VALIDATION",
+    "PROJECTION_REMAINDER_AND_ROAD_GROUND_DOMAIN",
+    "INDEPENDENT_ROAD_TIME_REGISTRATION",
+    "LANE_CENTER_REFERENCE_PROVENANCE",
+    "OFFICIAL_PUBLIC_BENCHMARK_AND_JUSTIFIED_THRESHOLDS",
+    "UNINFORMED_BLIND_REVIEWER"
+  ],
+  "private_comma4": "NOT_OPENED",
+  "private_manifest": "NOT_CREATED_FROM_ACTUAL_INPUTS",
+  "qualification": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "real_measurements_supplied": false,
+  "receipt_sha256": "835aa74715e43fd3488e4e72392ea544a06385e0b7508093c3c6fa7604fc9159",
+  "schema": "REFERENCE_INFRASTRUCTURE_VALIDATION_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "status": "PASS_SOFTWARE_ONLY_PENDING_OBSERVED_EVIDENCE",
+  "tdd_red_log_sha256": {
+    "calibration-red.log": "a6918901c890ca60c082f8cf5d09ddc383033df7281f59200b5cce911b8c8ec3",
+    "geometry-red.log": "50c30af53e1e5042015b9f16f15ce39b75476ba4a3440cc6c74e359f98ebbe8c",
+    "integrity-red.log": "d1294c8c821bb235457d3fee4e72a4b5a64176e657d824436599db299963524d",
+    "json-roundtrip-red.log": "86722c7e7ce261f2d4be9e860f87a2529fce81f97ffaab5116b60aff4c1b4c17",
+    "private-red.log": "c71e16910e6fac913aad8b2b9161355b32989f57e18b1012fe5ff5ffc67ebc48",
+    "readiness-red.log": "00b3baacf040d27093480364902ae36f1d9e2e512b0764ae9785e4ec069ee331",
+    "review-red.log": "53a60b2f2d23851c4f836c585aa3a4f11ff74f784f045e9faf4e55430c034612"
+  },
+  "validated_at": "2026-10-08T02:32:10.194655Z",
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}
