@@ -1,0 +1,30 @@
+{
+  "ego_association_validated": false,
+  "policy": {
+    "algorithm": "EXPLICIT_INDEPENDENT_PROPOSALS_ONLY_NO_NEAREST_SIDE_RULE",
+    "ambiguous_context": [
+      "merge",
+      "split",
+      "intersection",
+      "markings_inconsistent",
+      "outside_validated_range"
+    ],
+    "forbidden_sources": [
+      "modelv2_used",
+      "planner_used",
+      "candidate_used",
+      "steering_command_used"
+    ],
+    "interpolation": false,
+    "previous_frame_carry": false,
+    "reference_promotable": false,
+    "schema": "INDEPENDENT_EGO_ASSOCIATION_POLICY_V1",
+    "validation": "INDEPENDENT_EGO_GT_AND_DOMAIN_VALIDATION_PENDING"
+  },
+  "receipt_sha256": "c1c8088392ac898bddeaf407690b710e04ef5f4b5dcce730cbb2f66fb85148ff",
+  "reference_promotable": false,
+  "schema": "INDEPENDENT_EGO_ASSOCIATION_V1",
+  "status": "ALGORITHM_DEFINED",
+  "tool_sha256": "96862f50e49fd8d0064a60c415c30a7d9b9e8da5adbe73c75d87ca3369b17eb5",
+  "validation": "VALIDATION_PENDING"
+}

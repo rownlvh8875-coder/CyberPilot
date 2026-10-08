@@ -1,0 +1,27 @@
+{
+  "construction": "EXACT_PAIRED_LONGITUDINAL_SAMPLES_MIDPOINT",
+  "definition": "INDEPENDENT_LANE_CENTER_REFERENCE_NOT_OPTIMAL_DRIVING_PATH",
+  "forbidden_sources": [
+    "modelv2_used",
+    "planner_used",
+    "candidate_used",
+    "steering_command_used"
+  ],
+  "gap_interpolation": false,
+  "missing_side_extrapolation": false,
+  "previous_frame_carry": false,
+  "receipt_sha256": "88145a2ad96b9bc9c4504db99a5ff4a6371d168e3df84ca98bf55af72d77a78e",
+  "reference_promotable": false,
+  "required": [
+    "VALIDATED_METRIC_CALIBRATION",
+    "INDEPENDENT_EGO_ASSOCIATION_GT",
+    "INDEPENDENT_ROAD_TIME_REGISTRATION",
+    "CERTIFIED_UNCERTAINTY_AND_COVERAGE",
+    "REVIEWED_LANE_CENTER_REFERENCE_DEFINITION"
+  ],
+  "schema": "INDEPENDENT_LANE_CENTER_REFERENCE_CONTRACT_V1",
+  "smoothing": "NONE",
+  "status": "ALGORITHM_DEFINED",
+  "tool_sha256": "96862f50e49fd8d0064a60c415c30a7d9b9e8da5adbe73c75d87ca3369b17eb5",
+  "validation": "VALIDATION_PENDING"
+}
