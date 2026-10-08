@@ -1,0 +1,30 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Approximate camera geometry diagnostic</title><link rel="stylesheet" href="/style.css"></head><body>
+<h1>APPROXIMATE / NON-QUALIFYING</h1><p>NO PHYSICAL HEIGHT MEASUREMENT · NO METRIC QUALIFICATION · NO INDEPENDENT LANE TRUTH</p>
+<p>Private comma4 NOT_OPENED · sealed reference NOT_GENERATED</p><p>NOT_READY / REAL_VEHICLE_UNVERIFIED / VEHICLE_ACTIVATION_BLOCKED</p>
+<h2>현재 사용자 선언 / model-derived prior</h2><div id="summary"></div>
+<p>camera/device frame FRD → assumed diagnostic road FLU. Inverse source rotation and axis conversion applied.
+이 도로 frame은 실제 survey/registration 결과가 아닙니다.</p><pre id="orientation"></pre>
+<svg viewBox="0 0 600 250" role="img" aria-label="schematic not to scale"><path d="M300 10V240M20 200H580" class="center"/>
+<rect x="270" y="60" width="60" height="30"/><text x="335" y="80">approx centered camera — height UNKNOWN</text>
+<text x="310" y="30">vehicle center plane</text><text x="20" y="230">assumed ground · SCHEMATIC / NOT TO SCALE</text>
+<path id="ray-path" d="M300 90L400 200" class="ray"/><text x="410" y="150">synthetic ray; parametric intersection</text></svg>
+<h2>Height 관계: 실제 pixel 없이 normalized ray</h2>
+<label>normalized optical u (right)<input id="ray-u" type="number" step="any" value="0"></label>
+<label>normalized optical v (down)<input id="ray-v" type="number" step="any" value="0.2"></label>
+<p>위 ray는 수학적 예시이며 실제 camera pixel이 아닙니다.</p><button id="symbolic">Height 함수 표시</button><pre id="symbolic-result"></pre>
+<h2>명시적 algebraic parameter grid</h2>
+<p>입력은 측정값·plausible interval·physical uncertainty가 아닙니다. 실제 height는 UNKNOWN으로 유지합니다.
+Pixel scale은 실제 focal이 없으므로 coefficient / fx 형태입니다. 각 lookahead에서 ray를 다시 계산합니다.</p>
+<label>Height parameters m (comma separated, 기본 없음)<input id="heights" placeholder="명시적 수학 parameter 입력"></label>
+<label>Mount-y parameters m (기본: 사용자 center 선언)<input id="mounts" value="0"></label>
+<label>Reported pitch deg choices (기본: MODEL-DERIVED PRIOR)<input id="pitches" value="2.34"></label>
+<label>Reported roll deg choices (MODEL-DERIVED PRIOR)<input id="rolls" value="0"></label>
+<label>Reported yaw deg choices (MODEL-DERIVED PRIOR)<input id="yaws" value="0.2"></label>
+<label>Range rationale (물리 범위 증거 없으면 algebraic이라고 기록)<input id="rationale" placeholder="값을 자동 채우지 않습니다"></label>
+<button id="evaluate">Diagnostic sensitivity 계산</button><p id="status"></p>
+<div id="table"></div><pre id="policy"></pre>
+<h2>향후 실측 comparison</h2><p>Explicit stationary wizard receipt가 주어졌을 때만 비교합니다.
+같은 device인지 확인되지 않으며, 가까운 값도 LIVE_CALIBRATION_VALIDATED를 의미하지 않습니다.</p><pre id="comparison"></pre>
+<h2>Readiness / blockers</h2><pre id="readiness"></pre>
+<script src="/app.js"></script></body></html>
