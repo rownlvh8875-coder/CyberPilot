@@ -1,0 +1,42 @@
+{
+  "actual_trim_verified": false,
+  "coarse_source_sha256": "d2bb72bf2c0060d1f6e3d5d4d601ed07b248261248a586843c69455fe06caee5",
+  "derived_camera_height_m": null,
+  "independent": false,
+  "official_source": {
+    "html_sha256": "3c5beb191acf89c114b2345279b6f42e7365a7140a854289ea3bc742cc86c5e4",
+    "meaning": "OFFICIAL_VARIANT_SPEC_CONTEXT_NOT_THIS_VEHICLE_PER_UNIT_VERIFICATION",
+    "page_variant": "2021.12 Smartstream D2.2 2WD/FWD",
+    "retrieved_utc_date": "2026-10-08",
+    "url": "https://www.hyundai.com/kr/ko/brand/brandstory/model/santafe-history/2021-santafe"
+  },
+  "overall_height_m": 1.685,
+  "overall_length_m": 4.785,
+  "overall_width_m": 1.9,
+  "physical_measurement": false,
+  "physical_uncertainty": null,
+  "private_input_allowed": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "ab2ca5a31f929f240fea64149e59f7967db31ebb191743ae7a0f0ac694671eac",
+  "reference_promotable": false,
+  "role": "VEHICLE_SPEC_PRIOR",
+  "schema": "SANTA_FE_VEHICLE_GEOMETRY_SANITY_CONTEXT_V1",
+  "sealed_reference_allowed": false,
+  "status": "VEHICLE_SPEC_PROVENANCE_PARTIAL",
+  "tire_geometry": {
+    "calculation": "18*25.4 + 2*(235*0.60) millimeters",
+    "camera_height_measurement": false,
+    "loaded_radius_m": null,
+    "outer_diameter_m": 0.7392000000000001,
+    "scope": "NOMINAL_TIRE_SIZE_ARITHMETIC_NOT_LOADED_WHEEL_CENTER_SURVEY",
+    "sidewall_mm": 141.0,
+    "specification": "235/60 R18",
+    "unloaded_nominal_radius_m": 0.36960000000000004,
+    "wheel_diameter_mm": 457.2
+  },
+  "user_identity_source": "USER_DECLARATION_NOT_VIN_OR_TRIM_VERIFICATION",
+  "user_vehicle_identity": "THE_NEW_SANTA_FE_TM",
+  "user_vehicle_model_year": 2021,
+  "vehicle_activation_allowed": false,
+  "wheelbase_m": 2.765
+}

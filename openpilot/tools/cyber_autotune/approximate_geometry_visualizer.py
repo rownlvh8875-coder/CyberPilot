@@ -6,6 +6,7 @@ from pathlib import Path
 import secrets
 from openpilot.tools.cyber_autotune import approximate_geometry_diagnostic as a
 from openpilot.tools.cyber_autotune import camera_calibration_evidence as c
+from openpilot.tools.cyber_autotune import coarse_camera_height_diagnostic as h
 from openpilot.tools.cyber_autotune import lane_public_storage as storage
 from openpilot.tools.cyber_autotune import physical_calibration_wizard as w
 from openpilot.tools.cyber_autotune.physical_calibration_wizard_ui import strict_json, MAX_JSON_BYTES
@@ -19,6 +20,7 @@ ASSET_SHA = {name: digest(data) for name, data in ASSET_BYTES.items()}
 
 def guard():
   a.identity()
+  h.identity()
   if digest(Path(__file__).read_bytes()) != EXECUTED_SOURCE_SHA:
     raise ValueError('RUNNING_VISUALIZER_SOURCE_CHANGED')
   if {p.name for p in ASSETS.iterdir()} != set(ASSET_BYTES):
@@ -38,6 +40,14 @@ def state(prior, physical=None):
     'effective_physical_euler_rad': a.physical_euler(prior['orientation']['converted_rad']),
     'visualizer_source_sha256': EXECUTED_SOURCE_SHA,
     'assets_sha256': dict(ASSET_SHA),
+    'coarse': {
+      'height_prior': h.height_prior(),
+      'vehicle_context': h.vehicle_context(),
+      'policy': h.frozen_policy(),
+      'result': h.evaluate(h.height_prior(), h.frozen_policy()),
+      'comparison': h.compare_physical(h.height_prior(), physical),
+      'readiness': h.readiness(h.height_prior()),
+    },
   }
 
 

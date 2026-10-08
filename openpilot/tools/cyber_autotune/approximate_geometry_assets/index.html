@@ -2,13 +2,34 @@
 <title>Approximate camera geometry diagnostic</title><link rel="stylesheet" href="/style.css"></head><body>
 <h1>APPROXIMATE / NON-QUALIFYING</h1><p>NO PHYSICAL HEIGHT MEASUREMENT · NO METRIC QUALIFICATION · NO INDEPENDENT LANE TRUTH</p>
 <p>Private comma4 NOT_OPENED · sealed reference NOT_GENERATED</p><p>NOT_READY / REAL_VEHICLE_UNVERIFIED / VEHICLE_ACTIVATION_BLOCKED</p>
-<h2>현재 사용자 선언 / model-derived prior</h2><div id="summary"></div>
-<p>camera/device frame FRD → assumed diagnostic road FLU. Inverse source rotation and axis conversion applied.
+<h2>원래 UNKNOWN-height prior (historical) / model-derived orientation</h2><div id="summary"></div>
+<details><summary>Original orientation / frame-convention receipt</summary><p>camera/device frame FRD → assumed diagnostic road FLU. Inverse source rotation and axis conversion applied.
 이 도로 frame은 실제 survey/registration 결과가 아닙니다.</p><pre id="orientation"></pre>
 <svg viewBox="0 0 600 250" role="img" aria-label="schematic not to scale"><path d="M300 10V240M20 200H580" class="center"/>
 <rect x="270" y="60" width="60" height="30"/><text x="335" y="80">approx centered camera — height UNKNOWN</text>
 <text x="310" y="30">vehicle center plane</text><text x="20" y="230">assumed ground · SCHEMATIC / NOT TO SCALE</text>
-<path id="ray-path" d="M300 90L400 200" class="ray"/><text x="410" y="150">synthetic ray; parametric intersection</text></svg>
+<path id="ray-path" d="M300 90L400 200" class="ray"/><text x="410" y="150">synthetic ray; parametric intersection</text></svg></details>
+<h2>2021 Santa Fe TM — 승인된 coarse diagnostic context</h2>
+<p>APPROXIMATE / NON-QUALIFYING · NOT A PHYSICAL MEASUREMENT</p>
+<div id="coarse-summary"></div><p>Height sensitivity range ≠ measurement uncertainty.
+Pitch/roll/yaw ±0.5°는 MODEL_PRIOR_SENSITIVITY 수학적 probe이며 물리 오차 범위가 아닙니다.</p>
+<svg viewBox="0 0 600 250" role="img" aria-label="Santa Fe diagnostic side-view schematic not to scale">
+<path d="M20 210H580" class="center"/><path d="M70 100L130 42H320L400 100V173H70Z" class="center"/>
+<circle cx="130" cy="173.04" r="36.96" class="center"/><circle cx="345" cy="173.04" r="36.96" class="center"/>
+<rect x="258" y="63" width="24" height="14"/><circle cx="270" cy="70" r="4"/>
+<path id="coarse-ray" d="M270 70L450 210" class="ray"/>
+<text x="20" y="30">vehicle height context 1.685 m</text><text x="300" y="65">optical center 1.40 m COARSE PRIOR</text>
+<text x="300" y="85">band 1.33–1.47 m DIAGNOSTIC RANGE</text><text x="20" y="236">tire nominal diameter 0.7392 m · SCHEMATIC / NOT TO SCALE</text>
+</svg>
+<label>Frozen height m<select id="coarse-height"></select></label>
+<label>Frozen reported pitch deg<select id="coarse-pitch"></select></label>
+<p>Nominal optical rays held fixed across height/pitch. All coordinates are assumed road FLU,
+camera vertical-footpoint origin. Pixel sensitivity = normalized coefficient / actual fx; fx remains UNKNOWN.</p>
+<h3>NOMINAL_APPROX_GEOMETRY_RESULT</h3><div id="coarse-nominal"></div>
+<h3>DIAGNOSTIC_SENSITIVITY_ENVELOPE — sampled grid, not physical uncertainty</h3>
+<div id="coarse-selected"></div><div id="coarse-envelope"></div>
+<h3>Reported roll/yaw 1D — lateral bias diagnostic</h3><div id="coarse-rotation"></div>
+<pre id="coarse-comparison"></pre><pre id="coarse-readiness"></pre>
 <h2>Height 관계: 실제 pixel 없이 normalized ray</h2>
 <label>normalized optical u (right)<input id="ray-u" type="number" step="any" value="0"></label>
 <label>normalized optical v (down)<input id="ray-v" type="number" step="any" value="0.2"></label>
