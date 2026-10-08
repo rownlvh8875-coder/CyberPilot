@@ -1,0 +1,50 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>CyberPilot 물리 calibration wizard</title><link rel="stylesheet" href="/style.css"></head><body>
+<header><h1>정지 상태 물리 calibration</h1><p>LOCAL ONLY · 관측값 자동 생성 없음 · 독립 metrology 검증은 별도입니다.</p>
+<p>NOT_READY / REAL_VEHICLE_UNVERIFIED / VEHICLE_ACTIVATION_BLOCKED</p><p id="readiness"></p></header>
+<nav id="stages"></nav><main>
+<section class="stage" id="stage-0"><h2>A. 실제 device / sensor 확인</h2><p>확인되지 않으면 UNKNOWN / PENDING 그대로 두세요. 해상도만으로 센서를 추정하지 마세요.</p><div id="device"></div><pre id="source"></pre></section>
+<section class="stage" id="stage-1"><h2>B. Optical center 높이와 mount 위치</h2>
+<p>height: 관측한 ground plane에서 camera optical center까지의 수직 거리. Lens housing 끝이나 windshield edge 높이가 아닙니다.</p>
+<svg viewBox="0 0 360 180" role="img" aria-label="차량 datum: X 전방, Y 왼쪽, Z 위"><rect x="130" y="60" width="100" height="110" fill="#263b50" stroke="#9fc"/>
+<path d="M180 120V20M180 20l-6 12m6-12l6 12M180 120H25M25 120l12-6m-12 6l12 6" stroke="#9fc" fill="none"/>
+<text x="190" y="25">+X 전방</text><text x="25" y="105">+Y 왼쪽</text><text x="185" y="140">surveyed datum</text><text x="240" y="80">+Z 위</text></svg>
+<p>datum은 independently surveyed vehicle datum입니다. 실제 원점과 optical center를 문서/사진으로 기록하세요. X/Y 0을 임의로 넣지 마세요.</p><div id="mount"></div><div id="position-obs"></div></section>
+<section class="stage" id="stage-2"><h2>C. 각도와 독립 reference</h2>
+<p>Rz(yaw) Ry(pitch) Rx(roll), 내부 radians. +yaw: X 전방 → Y 왼쪽; +pitch: X 전방 → 아래; +roll: Y 왼쪽 → Z 위. 관측 reference와 동일 convention이어야 합니다.</p>
+<p>TIER A: independently surveyed stationary target / checkerboard / AprilTag.<br>TIER B: independent inclinometer/digital level + surveyed reference.<br>TIER C: phone IMU/informal — 독립 admission 불가.</p>
+<div id="angle-obs"></div><pre id="angle-conversion"></pre></section>
+<section class="stage" id="stage-3"><h2>D. Stationary target / survey method</h2>
+<p>차량 정지, 안전한 평탄한 장소, 실제 instrument/target/reference를 준비하세요.
+SURVEYED_CHECKERBOARD / SURVEYED_APRILTAG / SURVEYED_STATIONARY_TARGET은 target의 실제 width/height/distance,
+vehicle datum까지 geometry, ground survey, 독립 uncertainty 자료가 필요합니다. OPTICAL_CENTER_SURVEY는 optical center 위치와 축을 independently survey한 기록을 요구합니다.</p>
+<p>이 wizard는 사진에서 pose를 solve하거나 calibration fit을 수행하지 않습니다. 측정·fit/holdout 결과를 따로 확보하고 입력하세요.</p><div id="general"></div><div id="target"></div>
+<a href="/measurement-sheet" target="_blank" rel="noopener">Local printable checkerboard / 측정 sheet</a>
+<p>100% / actual size 출력 후 ruler/caliper로 실제 크기를 재측정. Nominal print dimensions는 physical truth가 아닙니다.</p></section>
+<section class="stage" id="stage-4"><h2>E. Ground / distortion evidence</h2>
+<p>“평평해 보임” ≠ 0° slope truth. Ground survey method, observed slope bound, evidence와 vertical approximation bound가 필요합니다.
+ground_vertical_m value=0은 surveyed datum 정의이며 bound는 별도입니다.</p><div id="ground"></div><div id="ground-obs"></div>
+<p>Distortion은 UNKNOWN / PENDING 기본입니다. 실제 independently bounded undistorted residual evidence가 있을 때만 선택하세요.
+distortion_residual_px value=0은 residual 중심 정의이며 zero distortion coefficients를 의미하지 않습니다.</p><div id="distortion"></div><div id="distortion-obs"></div></section>
+<section class="stage" id="stage-5"><h2>F. STATIC_SOURCE_INTRINSICS ≠ INDEPENDENTLY_MEASURED_INTRINSICS</h2>
+<p>실제 device identity / hardware evidence를 입력한 뒤 pinned source를 확인하세요.
+Nominal focal/principal point는 측정값이 아니며 per-unit uncertainty와 distortion을 대신하지 않습니다.</p>
+<button id="static-preview">Pinned intrinsics 확인</button><pre id="intrinsics"></pre>
+<button id="use-static">표시된 nominal source 값을 명시적으로 사용</button><div id="intrinsic-obs"></div></section>
+<section class="stage" id="stage-6"><h2>G. 명시적으로 선택한 local 측정 증거</h2>
+<p>Stationary measurement 사진/target photo/기록/instrument/독립 metrology 문서만 선택하세요.
+Private comma4 route frames/raw logs는 열지 마세요. 파일 이름·경로는 전송하지 않으며 binary는 local/private workspace에만 저장합니다.</p>
+<input id="attachment" type="file" multiple><button id="upload">선택 파일 local 저장</button><pre id="attachments"></pre>
+<p>Uncertainty는 사용자가 conservative absolute bound를 기록합니다.
+줄자 눈금 1 mm가 전체 설치 uncertainty 1 mm를 의미하지 않습니다. instrument resolution과 total bound를 분리하세요.
+METROLOGY_REVIEW 선택은 독립 검토 증거의 선언이며 wizard가 검증을 수행했다는 뜻이 아닙니다.</p></section>
+<section class="stage" id="stage-7"><h2>H. Draft / preflight / immutable receipt</h2>
+<p>값·unit·bound·method·source·evidence hash를 확인하세요. 누락된 ground/distortion/uncertainty는 admission을 막습니다.</p>
+<label><input id="ack" type="checkbox">I confirm these values were physically observed and were not copied from modelV2/live calibration.</label>
+<button id="preflight">Receipt preview / validation</button><pre id="preview"></pre>
+<button id="admit">Immutable structural admission</button><button id="recover">Interrupted admission 복구</button>
+<p>CALIBRATION_EVIDENCE_ADMITTED 이후에도 INDEPENDENT_CALIBRATION_VALIDATION_PENDING입니다.
+기존 admitted 값은 덮어쓸 수 없습니다. 재측정은 새 local session/version입니다.</p>
+<a id="local-export" href="/export/local.json">Local/private submission JSON</a> · <a href="/export/public.json">Public hash/status only JSON</a></section>
+</main><footer><button id="prev">Previous</button><button id="next">Next</button><button id="save-draft">Draft 저장</button><button id="reload">저장된 Draft 다시 열기</button><p id="status" role="status"></p></footer>
+<script src="/app.js"></script></body></html>
