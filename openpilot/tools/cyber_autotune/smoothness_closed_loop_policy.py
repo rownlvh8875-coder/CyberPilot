@@ -72,7 +72,7 @@ def build():
     'performance_threshold': None, 'threshold_status': 'THRESHOLD_UNJUSTIFIED',
   })
   matrix = seal({
-    'schema': 'SMOOTHNESS_CLOSED_LOOP_MATRIX_V1', 'arms': ARMS, 'repeats': 2,
+    'schema': 'SMOOTHNESS_CLOSED_LOOP_MATRIX_V1', 'arms': list(ARMS), 'repeats': 2,
     'current_exact_alias': True, 'allowed_roles': ['ARCHITECTURE_PROBE', 'DEVELOPMENT_SCREEN'],
     'source': 'UNCHANGED_NATIVE_BASELINE', 'sg_mode': 'SG_V0_CANONICAL',
     'policy_sha256': policy['receipt_sha256'], 'ta_enabled': False, 'composition_authorized': False,

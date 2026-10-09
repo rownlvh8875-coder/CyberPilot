@@ -60,3 +60,6 @@ class TestClosedLoopPolicy(unittest.TestCase):
 
   def test_replay_pin(self):
     self.assertEqual(len(p.build()['policy']['frozen_replay_receipt_sha256']), 64)
+
+  def test_serialized_frozen_policy(self):
+    self.assertEqual(p.load(), p.build())
