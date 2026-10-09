@@ -137,21 +137,12 @@ def query(calibration, distance, lateral):
 
 
 def mapping_check(mapping, calibration):
-  c.exact(mapping, ('schema', 'source_wh', 'target_wh', 'scale_x', 'scale_y', 'offset_x_px', 'offset_y_px',
-                    'verified_same_camera', 'verified_crop_resize', 'evidence_sha256', 'mapping_residual_bound_px'))
-  if (mapping['schema'] != 'OBSERVED_PIXEL_CAMERA_MAPPING_V1' or mapping['source_wh'] != pixel_input()['source_wh']
-      or mapping['target_wh'] != calibration['intrinsics']['resolution_wh']
-      or mapping['verified_same_camera'] is not True or mapping['verified_crop_resize'] is not True):
-    raise ValueError('INDEPENDENT_CAMERA_STREAM_PIXEL_MAPPING_REQUIRED')
-  for key in ('scale_x', 'scale_y', 'mapping_residual_bound_px'):
-    c.number(mapping[key], positive=True)
-  for key in ('offset_x_px', 'offset_y_px'):
-    c.number(mapping[key])
-  for dim, scale, off, target in zip(mapping['source_wh'], (mapping['scale_x'], mapping['scale_y']),
-                                    (mapping['offset_x_px'], mapping['offset_y_px']), mapping['target_wh'], strict=True):
-    if off < 0 or off + dim * scale > target + 1e-9:
-      raise ValueError('PIXEL_MAPPING_OUTSIDE_CALIBRATED_IMAGE')
-  c.sha(mapping['evidence_sha256'])
+  from openpilot.tools.cyber_autotune import qcamera_pixel_registration as registration
+  if type(mapping) is not dict or mapping.get('schema') != 'REGISTERED_PIXEL_CAMERA_MAPPING_V1':
+    raise ValueError('VALIDATED_PIXEL_GEOMETRY_REGISTRATION_REQUIRED')
+  expected = registration.projection_mapping(mapping.get('registration'), calibration)
+  if canonical(mapping) != canonical(expected):
+    raise ValueError('REGISTERED_PIXEL_MAPPING_IDENTITY_MISMATCH')
 
 
 def envelope(q, calibration, bounds, mapping):
@@ -227,6 +218,13 @@ def report(calibration, bounds, mapping):
       raise ValueError('MEASUREMENT_REQUIRED_BEFORE_NUMERIC_METER_DIAGNOSTIC')
     return c.seal(base)
   c.validate_admitted(calibration)
+  if type(mapping) is dict and mapping.get('schema') == 'PIXEL_CAMERA_REGISTRATION_PENDING_V1':
+    from openpilot.tools.cyber_autotune import qcamera_pixel_registration as registration
+    expected = registration.projection_mapping(mapping.get('registration'), calibration)
+    if canonical(mapping) != canonical(expected):
+      raise ValueError('PENDING_REGISTRATION_IDENTITY_MISMATCH')
+    return c.seal({**base, 'status': 'PIXEL_GEOMETRY_REGISTRATION_PENDING',
+                   'registration_sha256': mapping['registration']['receipt_sha256']})
   mapping_check(mapping, calibration)
   rows = []
   for distance in DISTANCES_M:

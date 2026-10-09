@@ -4,6 +4,7 @@ import math
 import unittest
 from openpilot.tools.cyber_autotune import camera_calibration_evidence as c
 from openpilot.tools.cyber_autotune.tests.test_camera_calibration_evidence import fixture
+from openpilot.tools.cyber_autotune.tests.test_qcamera_pixel_registration import registered_fixture
 try:
   from openpilot.tools.cyber_autotune import physical_projection_uncertainty as u
 except ImportError:
@@ -17,11 +18,7 @@ class TestPhysicalUncertainty(unittest.TestCase):
     self.cal = c.admit(m, i)
     self.bounds = {'grade_rad': .001, 'camber_rad': .001, 'nonplanarity_m': .002,
                    'annotation_px': .5, 'source_sha256': 'a' * 64}
-    self.mapping = {'schema': 'OBSERVED_PIXEL_CAMERA_MAPPING_V1', 'source_wh': [526, 330],
-                    'target_wh': i['resolution_wh'], 'scale_x': i['resolution_wh'][0] / 526,
-                    'scale_y': i['resolution_wh'][1] / 330, 'offset_x_px': 0., 'offset_y_px': 0.,
-                    'verified_same_camera': True, 'verified_crop_resize': True, 'evidence_sha256': 'b' * 64,
-                    'mapping_residual_bound_px': .1}
+    self.mapping = registered_fixture(self.cal)
 
   def test_absent_measurements_pending_no_meter_numbers(self):
     x = u.report(None, None, None)
