@@ -1,0 +1,34 @@
+{
+  "allowed_roles": [
+    "ARCHITECTURE_PROBE",
+    "DEVELOPMENT_SCREEN"
+  ],
+  "arms": [
+    "UPSTREAM_BASELINE",
+    "CYBER_CURRENT_ALIAS",
+    "SG_V0_CANDIDATE"
+  ],
+  "candidate_acceptance_authorized": false,
+  "composition_authorized": false,
+  "config_sha256": "dc95e2de32daf49780509eb48425d3586b3f21a4d7ce6576fa1e8031693c8a5e",
+  "current_is_exact_baseline_alias": true,
+  "frozen_evaluation_authorized": false,
+  "historical_verdicts": {
+    "CURRENT": "BASELINE_EXACT",
+    "V1": "TRADEOFF_ONLY",
+    "V2": "REJECTED"
+  },
+  "metric_policy_sha256": "547a85da3b30491c2668660e145142773d178d9a6217dfaf65f854f75e0665eb",
+  "production_authority": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "f1425daadedeca3af8a56bccad883f3fee9422213b806a2e8d1dda02e1ec5199",
+  "reference_promotable": false,
+  "repeats": 2,
+  "scenario_policy_sha256": "24114637c730e6bde73501fb46df88043ee547e8bf2599c9f340156842f5eb3e",
+  "schema": "CANDIDATE_EXPERIMENT_MATRIX_SG_V1",
+  "sealed_reference_allowed": false,
+  "search_authorized": false,
+  "source_baseline_sha": "53506f2af49ab52490482d3961044f33b7360235",
+  "ta_enabled": false,
+  "vehicle_activation_allowed": false
+}

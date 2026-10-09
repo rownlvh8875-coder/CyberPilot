@@ -1,0 +1,162 @@
+{
+  "allowed_configs": [
+    "SG_DISABLED",
+    "SG_V0_CANONICAL",
+    "SG_TEST_ONLY_POSITIVE_CONTROL"
+  ],
+  "composition_allowed": false,
+  "config_change_scenario_boundary": "NEW_INSTANCE_ONLY",
+  "dt_s": 0.01,
+  "enabled_output": "Additive SG_STANDALONE_OUTPUT_V1; original disabled-only FinalOfflineTorqueCommand unchanged",
+  "family": "SG-A",
+  "inactive": "require baseline input exact zero; clear last_command; output exact zero",
+  "invariants": [
+    "finite_bounded",
+    "abs_output<=abs_input",
+    "between_previous_output_and_input",
+    "constant_unity",
+    "no_new_sign_reversal",
+    "no_integrator",
+    "no_tail_on_zero"
+  ],
+  "ordinary_step_bound": "abs(output[k]-output[k-1])<=1 ONLY ordinary projection samples; event passthrough exempt",
+  "physical_delay_owner": "PLANT",
+  "physical_queue_allowed": false,
+  "pressed": "clear stale state; current input exact passthrough; rebase last_command",
+  "production_authority": false,
+  "projection": "clip(current_input, last_output-1, last_output+1); fresh=current_input",
+  "qualification_allowed": false,
+  "receipt_sha256": "dc95e2de32daf49780509eb48425d3586b3f21a4d7ce6576fa1e8031693c8a5e",
+  "reference_promotable": false,
+  "release_reengagement": "clear stale state; current input exact passthrough; rebase last_command",
+  "reset_events": [
+    "EXPERIMENT_START",
+    "INACTIVE",
+    "STEERING_PRESSED",
+    "RELEASE",
+    "REENGAGEMENT",
+    "CONFIG_CHANGE",
+    "SCENARIO_BOUNDARY"
+  ],
+  "reset_ownership": [
+    [
+      "TA",
+      "EXPERIMENT_START",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "INACTIVE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "STEERING_PRESSED",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "RELEASE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "REENGAGEMENT",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "CONFIG_CHANGE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "SCENARIO_BOUNDARY",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "EXPERIMENT_START",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "INACTIVE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "STEERING_PRESSED",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "RELEASE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "REENGAGEMENT",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "CONFIG_CHANGE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "SCENARIO_BOUNDARY",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "PLANT",
+      "EXPERIMENT_START",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "PLANT",
+      "INACTIVE",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "STEERING_PRESSED",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "RELEASE",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "REENGAGEMENT",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "CONFIG_CHANGE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "PLANT",
+      "SCENARIO_BOUNDARY",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ]
+  ],
+  "schema": "SMOOTHNESS_V0_CONFIG_V1",
+  "sealed_reference_allowed": false,
+  "search_allowed": false,
+  "source_baseline_sha": "53506f2af49ab52490482d3961044f33b7360235",
+  "state_fields": [
+    "last_command"
+  ],
+  "state_owner": "SG",
+  "state_role": "COMMAND_SHAPING_STATE",
+  "timeline": "contiguous .01s including interventions; explicit events must equal observed boolean transitions",
+  "tv_claim": "TV(output)+abs(input_final-output_final)<=TV(input), full contiguous fresh episode; event passthrough included",
+  "unit_delta": 1.0,
+  "unit_delta_basis": "Minimum radius guaranteeing zero in every previous-output interval; design projection, NOT physical actuator slew limit",
+  "vehicle_activation_allowed": false
+}
