@@ -120,6 +120,8 @@ def make_server(session, *, host='127.0.0.1', port=0):
               'observation_keys': list({**c.UNITS, **w.EXTRA_UNITS}),
               'observation_fields': list(w.OBS_KEYS),
               'forbidden': list(w.FORBIDDEN),
+              'historical_height_observation': w.h.observation(),
+              'height_observation_notice': w.h.NOTICE,
               'static_sources': {
                 'camera_source_file': c.CAMERA_SOURCE,
                 'camera_source_sha256': c.CAMERA_SHA,
@@ -167,6 +169,9 @@ def make_server(session, *, host='127.0.0.1', port=0):
           camera = {k: body[k] for k in ('device', 'hardware_generation', 'sensor', 'view')}
           camera.update(unit_id_sha256=w.opaque(body['unit_id']), hardware_evidence_sha256=w.evidence_ref(session.rows(), body['hardware_evidence_id']))
           value = c.intrinsics(camera)
+        elif self.path == '/api/load-height-observation':
+          c.exact(body, ())
+          value = session.load_height_observation()
         elif self.path in ('/api/admit', '/api/recover'):
           c.exact(body, ())
           value = session.admit() if self.path == '/api/admit' else session.recover()

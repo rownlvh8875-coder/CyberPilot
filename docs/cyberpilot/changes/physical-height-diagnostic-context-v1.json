@@ -1,0 +1,56 @@
+{
+  "coarse_nominal_historical_m": 1.4,
+  "distortion_status": "DISTORTION_UNVERIFIED",
+  "height_role": "PHYSICAL_HEIGHT_OBSERVATION",
+  "height_selection": "REPORTED_PHYSICAL_MEAN_OVER_COARSE_FOR_DIAGNOSTIC_ONLY_NOT_STRICT_ADMISSION",
+  "independent_calibration_validated": false,
+  "intrinsics_applicability": "PENDING",
+  "measurement_uncertainty": null,
+  "mount_y": {
+    "declaration": "USER_DECLARED_APPROX_CENTER_MOUNT",
+    "nominal_m": 0.0,
+    "physical_uncertainty": null,
+    "range": null,
+    "range_role": "DIAGNOSTIC_SENSITIVITY_RANGE_IF_EXPLICITLY_DECLARED",
+    "role": "USER_DECLARED_APPROX_GEOMETRY"
+  },
+  "observation_sha256": "bc6eada2f78d371aaacc34b4c0ce86f46c89056a0574e3f981f32b9807fe7802",
+  "orientation": {
+    "adapter": "R_optical_to_diagnostic_road=F*E(device_from_calib)^T*V(optical_to_device)",
+    "conversion_primary": "USER_REPORTED_DEGREES_APPROXIMATE_NOT_MEASUREMENT_PRECISION",
+    "converted_rad": [
+      0.0,
+      0.04084070449666731,
+      0.003490658503988659
+    ],
+    "independent": false,
+    "observation_timestamp": null,
+    "physical_uncertainty": null,
+    "reported_deg": [
+      0.0,
+      2.34,
+      0.2
+    ],
+    "reported_rounded_rad": [
+      null,
+      0.0408,
+      0.00349
+    ],
+    "road_alignment": "ASSUMED_FOR_DIAGNOSTIC_NOT_REGISTERED_GROUND_TRUTH",
+    "role": "MODEL_DERIVED_EXTRINSICS_PRIOR",
+    "source": "USER_REPORTED_LIVE_CALIBRATION_NOT_LOG_CAPTURE",
+    "source_frame": "CALIB_FRD_X_FORWARD_Y_RIGHT_Z_DOWN",
+    "target_frame": "ASSUMED_ROAD_FLU_X_FORWARD_Y_LEFT_Z_UP_NOT_SURVEYED"
+  },
+  "orientation_mount_prior_sha256": "bddd081d0b18886d583ddf0154d232d9365a7644bcf4ee5209a970bbc88e69ab",
+  "per_unit_device_match_verified": false,
+  "private_input_allowed": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "4b0e969b0c05eb988e77165c1de3b36ee8ba7ea3c37817896d9c447a351b74c3",
+  "reference_promotable": false,
+  "schema": "PHYSICAL_HEIGHT_APPROXIMATE_POSE_CONTEXT_V1",
+  "sealed_reference_allowed": false,
+  "selected_height_m": 1.385,
+  "status": "MIXED_PROVENANCE_DIAGNOSTIC_ONLY",
+  "vehicle_activation_allowed": false
+}

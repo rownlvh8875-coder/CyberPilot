@@ -9,7 +9,10 @@
 <svg viewBox="0 0 360 180" role="img" aria-label="차량 datum: X 전방, Y 왼쪽, Z 위"><rect x="130" y="60" width="100" height="110" fill="#263b50" stroke="#9fc"/>
 <path d="M180 120V20M180 20l-6 12m6-12l6 12M180 120H25M25 120l12-6m-12 6l12 6" stroke="#9fc" fill="none"/>
 <text x="190" y="25">+X 전방</text><text x="25" y="105">+Y 왼쪽</text><text x="185" y="140">surveyed datum</text><text x="240" y="80">+Z 위</text></svg>
-<p>datum은 independently surveyed vehicle datum입니다. 실제 원점과 optical center를 문서/사진으로 기록하세요. X/Y 0을 임의로 넣지 마세요.</p><div id="mount"></div><div id="position-obs"></div></section>
+<p>datum은 independently surveyed vehicle datum입니다. 실제 원점과 optical center를 문서/사진으로 기록하세요. X/Y 0을 임의로 넣지 마세요.</p><div id="mount"></div><p id="height-observation-notice"></p>
+<button id="load-height-observation">Recorded physical mean을 명시적으로 불러오기 (height 입력 교체)</button>
+<p>Height의 기존 uncertainty/method/instrument 입력은 지웁니다. 다른 입력은 유지합니다.
+높이 관측만으로 full calibration admission이나 pixel→meter 계산이 허용되지 않습니다.</p><div id="position-obs"></div></section>
 <section class="stage" id="stage-2"><h2>C. 각도와 독립 reference</h2>
 <p>Rz(yaw) Ry(pitch) Rx(roll), 내부 radians. +yaw: X 전방 → Y 왼쪽; +pitch: X 전방 → 아래; +roll: Y 왼쪽 → Z 위. 관측 reference와 동일 convention이어야 합니다.</p>
 <p>TIER A: independently surveyed stationary target / checkerboard / AprilTag.<br>TIER B: independent inclinometer/digital level + surveyed reference.<br>TIER C: phone IMU/informal — 독립 admission 불가.</p>

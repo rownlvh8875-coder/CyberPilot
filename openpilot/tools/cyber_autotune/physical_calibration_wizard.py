@@ -7,6 +7,7 @@ import stat
 import tempfile
 from openpilot.tools.cyber_autotune import camera_calibration_evidence as c
 from openpilot.tools.cyber_autotune import lane_public_storage as s
+from openpilot.tools.cyber_autotune import physical_height_observation as h
 from openpilot.tools.cyber_autotune.lane_tail_report import unseal
 from openpilot.tools.cyber_autotune.native_protocol import canonical, digest
 
@@ -57,6 +58,7 @@ def identity():
         'assets': asset_hashes(),
         'source': digest(Path(__file__).read_bytes()),
         'admission': c.identity(),
+        'height_observation_source': h.identity(),
         'ui': digest(ui.read_bytes()) if ui.exists() else None,
       }
     )
@@ -352,6 +354,17 @@ class MeasurementSession:
       self.editable()
       s.atomic_json(self.root / 'draft.json', c.seal({'binding_sha256': self.binding['receipt_sha256'], 'draft': draft}))
     return self.state()
+
+  def load_height_observation(self):
+    """Explicit editable import; clear stale height bounds/methods, preserve other inputs."""
+    self.guard()
+    draft = self.draft()
+    row = blank_draft()['observations']['height_m']
+    observed = h.observation()
+    row.update(value=observed['value_m'], unit='m', source_kind='PHYSICAL_OBSERVATION',
+               note=h.NOTICE + '; observation receipt SHA256=' + observed['receipt_sha256'])
+    draft['observations']['height_m'] = row
+    return self.save_draft(draft)
 
   def attach(self, data):
     self.guard()

@@ -45,12 +45,17 @@ function evidenceOptions(){for(const {el,path} of fields.values()){if(!path.at(-
  $('attachments').textContent=JSON.stringify(state.attachments,null,2);}
 function update(s){state=s;evidenceOptions();fill(s.draft);const locked=s.status!=='DRAFT_MEASUREMENT';
  for(const {el} of fields.values())el.disabled=locked;$('ack').disabled=locked;
- for(const id of ['save-draft','admit','upload','use-static'])$(id).disabled=locked;
+ for(const id of ['save-draft','admit','upload','use-static','load-height-observation'])$(id).disabled=locked;
  $('recover').disabled=s.status!=='ADMISSION_INTERRUPTED_PENDING_RECOVERY';
  $('readiness').textContent=s.scope+' / '+s.status+' / '+s.readiness+' / INDEPENDENT_REFERENCE_UNAVAILABLE';
  $('status').textContent='Loaded — '+s.status;}
 async function start(){cfg=await request('/api/config');draft=cfg.state.draft;build();update(cfg.state);navigate(0);
  $('source').textContent=JSON.stringify(cfg.static_sources,null,2);
+ $('height-observation-notice').textContent=cfg.height_observation_notice+' — PHYSICAL_HEIGHT_OBSERVATION / CALIBRATION_UNCERTAINTY_PENDING';
+ $('load-height-observation').onclick=async()=>{try{
+   await request('/api/draft',collect());update(await request('/api/load-height-observation',{}));
+   $('status').textContent=cfg.height_observation_notice;
+ }catch(e){showError(e);}};
  $('prev').onclick=()=>navigate(index-1);$('next').onclick=()=>navigate(index+1);
  $('save-draft').onclick=async()=>{try{update(await request('/api/draft',collect()));$('status').textContent='Editable draft saved locally';}catch(e){showError(e);}};
  $('reload').onclick=async()=>{try{update(await request('/api/state'));}catch(e){showError(e);}};
