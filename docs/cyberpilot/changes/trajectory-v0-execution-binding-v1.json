@@ -1,0 +1,82 @@
+{
+  "car_params_sha256": "fb13c87310903b14558ff169a5f7da6a66c388b690ec8a12aaacb8538c3fec54",
+  "delay_semantics": "native .15 reference alignment unchanged; sole physical queue PLANT .02; innovation horizon .01 is neither",
+  "environment": {
+    "machine": "x86_64",
+    "numpy": "2.5.3",
+    "python": "3.12.13"
+  },
+  "environment_sha256": "cdc5b4f9f15ff04da6bd14538b46f3fa9c88545a00fbb8cc0ed45b930a753d0a",
+  "executed_support_sha256": {
+    "opendbc_repo/opendbc/car/hyundai/values.py": "52ce46aafba6ebc3260b06d39e6263e2e80bf5c15562b13ee68220097aa8228f",
+    "opendbc_repo/opendbc/car/torque_data/override.toml": "357d9fe27d9ed674a8622c0be145199da671027dc26b9d9af5a9abf834f1f8d6",
+    "opendbc_repo/opendbc/car/torque_data/params.toml": "ba2daedaa7927cd6872447b7b188ebf3eb17ee0c5e8a87e7276a8163c10ca132",
+    "opendbc_repo/opendbc/car/torque_data/substitute.toml": "e5ba00fc7f7a03b14bc12d597f975049817dee9896ebd26a71c4e841769d6f7c",
+    "openpilot/common/constants.py": "fc439d59c24b95ed349b84f1a5862df3ea50e0891dbec4ea3cf5e1e0ccff6513",
+    "openpilot/common/filter_simple.py": "5b242cb50a14b0f479eb75b144f38f699f9d6b19969cdc0e0b1a34e6f6532d1d",
+    "openpilot/tools/cyber_autotune/native_protocol.py": "a1dabd82dfdc1e8257f4003a0466866164e92d8b8531aa165bd58e467d679534",
+    "openpilot/tools/cyber_autotune/resolution_candidate_evidence.py": "90aded0a15660645f92e1b956c7ef0d4bd753b12c62c2afedadffb4b242ef24c"
+  },
+  "implementation_commit_sha": "3ab2ab102feeeebea828e33451966b4dc9f0b4c0",
+  "input_output_contract_sha256": "2f236b38fa4c0af58726058823b33f286368e2034c60060b4328830802aadf63",
+  "lat_delay_reference_s": 0.15,
+  "native_software_sha256": "174f8662aa5594c3d19a566b53550be9a2d0543f6c2149a53f8b1545046e442f",
+  "physical_delay_s": 0.02,
+  "plant_config": {
+    "command_gain_1pm": 0.004,
+    "command_inv_speed_gain_per_s": 0.002,
+    "command_limit": 1.0,
+    "command_speed_gain_s_per_m2": 0.0002,
+    "curvature_ar": 0.92,
+    "curvature_intercept_1pm": 0.0,
+    "delay_steps": 2,
+    "dt_s": 0.01,
+    "max_speed_mps": 30.0,
+    "min_speed_mps": 2.5,
+    "roll_gain_1pm_per_rad": 0.001,
+    "yaw_ar": 0.75,
+    "yaw_bias_rad_s": 0.0
+  },
+  "plant_config_sha256": "b819057c9e62be96873ec90f7073c6ac35838cdc0163018893a95cccf8efad1a",
+  "plant_sha256": "3903af91512b339630da18fa1f1baa53f35567afe2e546e487756c3356002881",
+  "policy_receipts": {
+    "config": "fff05b2a400f589dc9889cd63802b15b76651d5b6191c6d83abe7d722dd23b2d",
+    "matrix": "bc0d00fa77f123aed03747a7562398b9b1e92519a2bef883a1c557e01379de9f",
+    "metrics": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+    "policy": "37174f03e13ba4d208829581f5972858ed11bfb67c89984c3da9a1b1054a484c",
+    "scenarios": "71e8acc2d5efdcf4dfb00885768726fde4b48f4137bf8ac4cf2fde20393ad45d",
+    "selection": "e99cee05d2899c3341eb9076ed62923b220e3832e0719f5433df8d146efb8aec"
+  },
+  "production_authority": false,
+  "profile": "SOURCE_HYUNDAI_SANTA_FE_2022_NOT_VEHICLE_ACTIVATION",
+  "qualification_allowed": false,
+  "receipt_sha256": "0d294e3c989c8b2adce885a04ac112f5f3511a06a7fac9cd0d9ec8c38fc80b54",
+  "reference_promotable": false,
+  "reset_policy_sha256": "f838c312c35e98ed37e6436dc2117baaa1a3e484786d021dad4bb4a686e08b6d",
+  "scenario_input_sha256": {
+    "driver_events": "86f64fbdcb88b460f41dfb8bac356f7af324a07140f277506e030aeba0abb336",
+    "gentle_left": "4cfb694146cbdf9b00cf2c26e0c6828e645040d951e01f5e2bc585a9b5612750",
+    "gentle_right": "bd89eb47c5100ff6620e2aac76c762bb61fe224fbbd5d75bdc9de8d6ee9bec0c",
+    "high_speed": "320746c2ea4238e47ef7cc2028a6a7d4925bb30c218e331a8171cec82e6ca2c1",
+    "limit_flags": "2650f869cc267b7dd639cb8201a7f3468501068d1aba7dbaa1c830746c1cbce5",
+    "low_speed": "acdaa3ba5614ee8a34eeee4f2540c6e291e97a35b8918d1430138376b1efa8c5",
+    "medium_speed": "4cfb694146cbdf9b00cf2c26e0c6828e645040d951e01f5e2bc585a9b5612750",
+    "s_reversal": "88b6ce76f7548b9971d66bc996a10328903f0c2e8fa83a95e3685e7c369a3658",
+    "sharp_left": "cdd27e55884960e65858eb4025d9c9af2689a6da1c401972d6b105c3cc497050",
+    "sharp_right": "67c763d416a487cee7eeccc2d13e4b20c43dbcd6d62ae874fdcac79f807f487e",
+    "straight": "d4de97bbf4ce62594920caee8cc71efe91e297b583122c9fadbd13bdcebf3704"
+  },
+  "schema": "TRAJECTORY_V0_EXECUTION_BINDING_V1",
+  "sealed_reference_allowed": false,
+  "source_baseline_sha": "c2d3923d9a13e3e9942352d8a8114cd3203188e2",
+  "source_sha256": {
+    "trajectory_authority_core.py": "56f0d5ef041573b9aa199cd5b753a9ab97bd6cc2a6077173501106d52fc0847e",
+    "trajectory_v0_freeze.py": "4d7be417efb3a5b54a4c9c6f9f8e9bff4c2d43fc708a1ea921dc0b04ba36d9e6",
+    "trajectory_v0_metrics.py": "d92fe8e160704ad1e6dc6e830b3a51c76e24fefb5c7ef51e71036a804e12f75a",
+    "trajectory_v0_screen.py": "7dd40a9a5a51223c06f532d49aebfb2728968aa5e29a4457e076bf0ab911270c"
+  },
+  "state_schema_sha256": "6abd2ba7fb631d1e24dc6dca29f7bfa7e388af341505ad94b8a21046a4d7de23",
+  "status": "FROZEN_BEFORE_CLOSED_LOOP_RUN",
+  "timebase_sha256": "a885da0de9c4e98cee76e6093a2ee702999bc232893944e956971dfa07368502",
+  "vehicle_activation_allowed": false
+}

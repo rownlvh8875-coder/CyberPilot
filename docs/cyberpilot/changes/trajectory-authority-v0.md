@@ -1,7 +1,7 @@
 # Standalone trajectory authority V0
 
 ## Identity and purpose
-Cyber AutoTune / Validation. TA-only offline prototype; development validation pending.
+Cyber AutoTune / Validation. TA-only offline prototype; development screen complete; local regression/build/review PASS.
 Baseline feature/cyber-autotune c2d3923d9a13e3e9942352d8a8114cd3203188e2.
 The user's new authorization permits family selection, one canonical standalone implementation,
 architecture probes and development screening. It excludes search, frozen evaluation, SG,
@@ -13,10 +13,10 @@ were used for family selection, configuration or synthetic scenario construction
 
 ## Original references
 Source: [CyberPilot baseline](https://github.com/rownlvh8875-coder/CyberPilot/tree/c2d3923d9a13e3e9942352d8a8114cd3203188e2),
-existing repository licenses/attribution retained. opendbc source commit
+MIT licenses and comma.ai copyright/attribution retained. opendbc source commit
 4134c0d1f5e8f695e35ea5fedbe88f6d0c3afb76. Source SHA bindings are in
 trajectory-family-selection-policy-v1.json and supplementary execution binding.
-No new dependencies or adapted external algorithms.
+No new dependencies or adapted external algorithms. The source HYUNDAI_SANTA_FE_2022 CarParams profile is an offline fixture, not validated actual-vehicle geometry.
 
 Traced source:
 - openpilot/selfdrive/controls/lib/latcontrol_torque.py: delayed acceleration error,
@@ -81,10 +81,10 @@ Independent reviewer: source/design and implementation review required; no promo
 ## Validation method and actual results
 | Stage | Method | Identity | Result/limits |
 | --- | --- | --- | --- |
-| Focused | unittest new policy/core/screen tests | frozen policy + source hashes | 91 PASS before official screen; final counts below |
-| Unit/regression/build | full AutoTune/controls, replay, Ruff/syntax, SCons | branch source | pending |
-| Replay | existing two Cyber lateral unittest modules | unchanged production | pending |
-| Simulation/closed loop | fixed three-arm descriptive plant, two repeats | execution binding + per-trace SHA | pending |
+| Focused | unittest new policy/core/screen tests | frozen policy + source hashes | 107 new focused/publication PASS; existing architecture81 PASS |
+| Unit/regression/build | full AutoTune/controls, replay, Ruff/syntax, SCons | branch source | AutoTune2148 + controls142 =2290 PASS in888.72s; Ruff/syntax/SCons/publication/privacy PASS |
+| Replay | existing two Cyber lateral unittest modules | unchanged production | lateral replay16 PASS |
+| Simulation/closed loop | fixed three-arm descriptive plant, two repeats | execution binding + per-trace SHA | 66 runs, EXACT repeatability PASS; structural PASS, tradeoff-only |
 | Shadow | no candidate command authority | no runtime integration | NOT RUN, not authorized |
 | Browser | no UI added | command-line prototype only | NOT APPLICABLE |
 
@@ -99,7 +99,39 @@ conditioning from missing saturation observations.
 secondary descriptive context. No meter-envelope acceptance comparison or extrapolation.
 
 ## Handoff
-Effect, repeatability, final test results and limitations will be added after official execution.
+Official execution at 3ab2ab102 completed 11 scenarios × 3 arms × 2 repeats = 66 executions.
+Every full state/prelimit/command/plant trace and metric receipt repeated EXACTLY. Baseline/current
+outputs, state and identity are exact aliases. Straight is exact zero; the other10 scenarios have
+requested/applied/curvature/heading/pose differences. No settings or policies changed after results.
+
+Structural status: TA_STANDALONE_STRUCTURAL_PASS.
+Standalone interpretation: TA_STANDALONE_TRADEOFF_ONLY. No acceptance/winner or tracking-improvement
+claim. Medium/high-speed synthetic responses oscillate and saturate substantially in BOTH arms.
+Numerically lower tracking p95 does not establish stable control. Saturation occupancy worsens:
+gentle/medium .49625→.635, sharp .4975→.635, high .70125→.8325. High-speed requested derivative
+p95 increases176.350233→200 normalized/s; sharp117.573102→121.290819. A requested delta of2 is the
+difference between two individually bounded ±1 commands, not permitted authority expansion.
+
+The high-speed full-run peak same-time pose difference is22.587686m in this descriptive plant.
+It is not a real-vehicle displacement or lane-centering gain, and is not compared with any meter
+diagnostic envelope. Low-speed peak pose difference is0.000003286m. These disparate effects and
+the strong cancellation ratios prohibit a single generalized performance conclusion.
+
+| Scenario | Tracking p95 baseline / TA (1/m) | Requested derivative p95 baseline / TA (normalized/s) | Saturation occupancy baseline / TA |
+| --- | --- | --- | --- |
+
+| straight | 0 / 0 | 0 / 0 | 0 / 0 |
+| gentle_left | 0.014042884 / 0.011976181 | 117.20076 / 116.15777 | 0.49625 / 0.635 |
+| gentle_right | 0.014042884 / 0.011976181 | 117.20076 / 116.15777 | 0.49625 / 0.635 |
+| sharp_left | 0.014078378 / 0.01201802 | 117.5731 / 121.29082 | 0.4975 / 0.635 |
+| sharp_right | 0.014078378 / 0.01201802 | 117.5731 / 121.29082 | 0.4975 / 0.635 |
+| low_speed | 0.0001559933 / 0.00015579631 | 0.033235306 / 0.032811282 | 0 / 0 |
+| medium_speed | 0.014042884 / 0.011976181 | 117.20076 / 116.15777 | 0.49625 / 0.635 |
+| high_speed | 0.022329503 / 0.021234167 | 176.35023 / 200 | 0.70125 / 0.8325 |
+| s_reversal | 0.01403 / 0.012090589 | 117.16902 / 114.95405 | 0.49375 / 0.635 |
+| driver_events | 0.014002343 / 0.011973465 | 116.68685 / 116.14216 | 0.43667 / 0.56 |
+| limit_flags | 0.01404083 / 0.011974809 | 117.19487 / 116.17116 | 0.49625 / 0.635 |
+
 No UI, device, CAN, Params mutation, CarController, planner/model input or deployment path added.
 Source interface imports construct a source-only synthetic CarParams profile; no live profile activation.
 
@@ -110,3 +142,18 @@ CALIBRATION_UNCERTAINTY_PENDING, INDEPENDENT_CALIBRATION_VALIDATION_PENDING,
 PIXEL_GEOMETRY_REGISTRATION_PENDING, METRIC_CALIBRATION_UNAVAILABLE,
 INDEPENDENT_REFERENCE_UNAVAILABLE. Sealed reference NOT_GENERATED; vehicle NOT_READY,
 REAL_VEHICLE_UNVERIFIED, VEHICLE_ACTIVATION_BLOCKED.
+
+Independent source/design, preflight and final aggregate review completed. Review repairs added
+regressions for runtime timestep/filter/model drift, metric time gaps, saturation conditioning,
+event support and support-file binding. Original policies and canonical parameters did not change.
+
+Local checks: AutoTune2148 (previous2041; +107), controls142, existing architecture81,
+new focused/publication107, lateral replay16, privacy/publication tests28, Ruff, syntax,
+publication_check863files/0findings, git diff check and SCons PASS.
+No browser UI was added, so browser validation is not applicable.
+Future native PID/interface changes require a new version and source binding; no silent adaptation.
+
+Public evidence is aggregate NEW synthetic output. Per-sample synthetic traces remain in the
+local execution folder; no private holdout images/coordinates/logs were accessed or published.
+A repeat of the immutable published run uses the exact execution commit/source/environment;
+a changed commit/binding must create a new experiment version, never overwrite receipts.

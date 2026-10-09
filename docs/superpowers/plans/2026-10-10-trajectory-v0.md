@@ -13,13 +13,13 @@ one physical queue, original friction/conversion, unavailable observability and 
 User explicitly authorized autonomous selection/implementation; no additional approval handoff.
 
 ## Tasks
-- [ ] Freeze source-only family selection, canonical config, metric policy, NEW synthetic scenarios/matrix.
+- [x] Freeze source-only family selection, canonical config, metric policy, NEW synthetic scenarios/matrix.
   Test missing/changed source, unknown family/config, role authorization. Commit before algorithm/results.
-- [ ] Write failing native-equivalence, clipped-error innovation, causality/reset/bounds tests.
+- [x] Write failing native-equivalence, clipped-error innovation, causality/reset/bounds tests.
   Implement new offline core using existing exact input/output schemas; no production mutation.
-- [ ] Write metrics/runner accounting tests. Run baseline/current/TA twice on frozen development set.
+- [x] Write metrics/runner accounting tests. Run baseline/current/TA twice on frozen development set.
   Verify full trace equality; report trajectory and smoothness separately with coverage and no thresholds.
-- [ ] Independent review and regression repairs. Focused/full/controls/replay/Ruff/syntax/publication/
+- [x] Independent review and regression repairs. Focused/full/controls/replay/Ruff/syntax/publication/
   privacy/authority/diff/SCons. No UI added: browser not applicable.
 - [ ] Publish additive nonqualifying receipts and feature record; commit/push; verify actual latest CI,
   local/origin equality and clean tree.
