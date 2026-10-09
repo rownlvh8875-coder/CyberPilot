@@ -1,0 +1,412 @@
+{
+  "actual_forward_mapping": null,
+  "actual_inverse_mapping": null,
+  "actual_qcamera_intrinsics": null,
+  "alignment": {
+    "coded_h264_wh": [
+      528,
+      336
+    ],
+    "native_nv12": "SOURCE_GET_NV12_INFO_BUFFER_STRIDE_PADDING_NOT_OPTICAL_CROP",
+    "visible_wh": [
+      526,
+      330
+    ]
+  },
+  "camera_hal": "CUSTOM_OPENPILOT_CAMERAD_IOCTL_PATH_NO_ANDROID_CAMERA_HAL_BINDING_ASSUMED",
+  "camera_pipeline": [
+    "OS04C10_RAW12",
+    "CUSTOM_CAMERAD_IFE_REGISTER_CONFIGURATION",
+    "NV12_VISIONIPC_1344x760",
+    "MSM_VIDC_HFI_FIRMWARE_SCALER",
+    "H264_CODED528x336_VISIBLE526x330"
+  ],
+  "claims": [
+    {
+      "claim": "qcamera opens MSM VIDC encoder; S_FMT capture uses output size and output queue uses NV12 input; crop is only youtube_road branch.",
+      "evidence_role": "SOURCE_TRACE_NOT_EMPIRICAL_GEOMETRY",
+      "id": "ENCODER_INPUT_OUTPUT",
+      "line_spans": [
+        149,
+        267
+      ],
+      "source_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "source_sha256": "57a03f1eab21e345552e6bd38fb506a0b526aee150f90810f20f75f1b66ca643",
+      "source_url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/loggerd/encoder/v4l_encoder.cc"
+    },
+    {
+      "claim": "Capture and output sizes become separate HAL_BUFFER_OUTPUT/INPUT frame-size properties.",
+      "evidence_role": "SOURCE_TRACE_NOT_EMPIRICAL_GEOMETRY",
+      "id": "VIDC_FRAME_SIZE",
+      "line_spans": [
+        2807,
+        2826,
+        2881,
+        2904
+      ],
+      "source_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "source_sha256": "62419745199aa0bf06d673b9fc2655ac8557bf9f15b0be4e5ace5d1524476ab0",
+      "source_url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/msm_venc.c"
+    },
+    {
+      "claim": "HFI frame-size packet contains buffer type,width,height; this packet carries no crop origin or phase.",
+      "evidence_role": "SOURCE_TRACE_NOT_EMPIRICAL_GEOMETRY",
+      "id": "HFI_FRAME_SIZE",
+      "line_spans": [
+        1015,
+        1032
+      ],
+      "source_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "source_sha256": "0394d9f05bc1c3d2c0153e11c80fcdad94013c1277233ce693a00bc10fcbeb15",
+      "source_url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/hfi_packetization.c"
+    },
+    {
+      "claim": "Session property packet enters firmware command queue; firmware is loaded by subsystem_get_with_fwname.",
+      "evidence_role": "SOURCE_TRACE_NOT_EMPIRICAL_GEOMETRY",
+      "id": "HFI_FIRMWARE_BOUNDARY",
+      "line_spans": [
+        1948,
+        1993,
+        4209,
+        4245
+      ],
+      "source_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "source_sha256": "8f38c053b57a01c962dd299f23143970f16d074c7f415a844144cf6c2d6b0c85",
+      "source_url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/venus_hfi.c"
+    },
+    {
+      "claim": "Kernel rotation and flip default NONE; controls translate to VPE properties. Defaults are source evidence only.",
+      "evidence_role": "SOURCE_TRACE_NOT_EMPIRICAL_GEOMETRY",
+      "id": "ROTATION_FLIP_DEFAULT",
+      "line_spans": [
+        570,
+        583,
+        1098,
+        1112,
+        1693,
+        1717
+      ],
+      "source_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "source_sha256": "62419745199aa0bf06d673b9fc2655ac8557bf9f15b0be4e5ace5d1524476ab0",
+      "source_url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/msm_venc.c"
+    },
+    {
+      "claim": "VPE packet supports rotation/flip; no evidence of non-default qcamera use.",
+      "evidence_role": "SOURCE_TRACE_NOT_EMPIRICAL_GEOMETRY",
+      "id": "HFI_ROTATION",
+      "line_spans": [
+        1439,
+        1485
+      ],
+      "source_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "source_sha256": "0394d9f05bc1c3d2c0153e11c80fcdad94013c1277233ce693a00bc10fcbeb15",
+      "source_url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/hfi_packetization.c"
+    },
+    {
+      "claim": "Dimension-ratio capability validation uses Q16 scale limits; it does not define sample phase.",
+      "evidence_role": "SOURCE_TRACE_NOT_EMPIRICAL_GEOMETRY",
+      "id": "SCALING_CAPABILITY",
+      "line_spans": [
+        5521,
+        5605
+      ],
+      "source_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "source_sha256": "f97c285e0037946da6d69a8aa4a1b7b0359a5247aa6dcddc2fe09af3ccc821cc",
+      "source_url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/msm_vidc_common.c"
+    },
+    {
+      "claim": "Road camera configuration uses ISP_IFE_PROCESSED; BPS blobs/CAMERA_ICP alone do not establish this road path.",
+      "evidence_role": "SOURCE_TRACE_NOT_EMPIRICAL_GEOMETRY",
+      "id": "NARROW_ROAD_IFE",
+      "line_spans": [
+        46,
+        57
+      ],
+      "source_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "source_sha256": "9ea256c561dfdda5aa19a152fb208517623b52f42dcf074b41ed098bc46a46f7",
+      "source_url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/camerad/cameras/hw.h"
+    },
+    {
+      "claim": "OS04C10 raw 2688x1520,out_scale2,frame_offset0; sensor register orientation semantics not independently proved.",
+      "evidence_role": "SOURCE_TRACE_NOT_EMPIRICAL_GEOMETRY",
+      "id": "SENSOR_GEOMETRY",
+      "line_spans": [
+        24,
+        45
+      ],
+      "source_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "source_sha256": "8a3463b7c2c38492a0d9fc648c5444b91882cb7294b2523c0eda476d6a4b5ef6",
+      "source_url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/camerad/sensors/os04c10.cc"
+    },
+    {
+      "claim": "Native output dimensions derive from sensor out_scale; IFE input/output rectangles are explicitly configured.",
+      "evidence_role": "SOURCE_TRACE_NOT_EMPIRICAL_GEOMETRY",
+      "id": "VISIONIPC_GEOMETRY",
+      "line_spans": [
+        285,
+        305,
+        1090,
+        1140
+      ],
+      "source_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "source_sha256": "1ce2c217acdcb398a7e562e333a195084899d89d60058146d9e9dea8a5605d1c",
+      "source_url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/camerad/cameras/spectra.cc"
+    },
+    {
+      "claim": "IFE crop/scaler register writes exist. Lens roll-off/vignetting color correction is not geometric undistortion evidence.",
+      "evidence_role": "SOURCE_TRACE_NOT_EMPIRICAL_GEOMETRY",
+      "id": "IFE_CROP_AND_COLOR",
+      "line_spans": [
+        89,
+        100,
+        202,
+        224
+      ],
+      "source_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "source_sha256": "26ce0594b465c7c616d14e3ed5ca74839be40d7d35b2e2a8f8422a614fbe6d93",
+      "source_url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/camerad/cameras/ife.h"
+    },
+    {
+      "claim": "Static fcam OS04C10 source K uses1344x760,focal1141.5,principal672/380; no independent unit calibration/distortion proof.",
+      "evidence_role": "SOURCE_TRACE_NOT_EMPIRICAL_GEOMETRY",
+      "id": "STATIC_K",
+      "line_spans": [
+        19,
+        25,
+        49,
+        71
+      ],
+      "source_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "source_sha256": "3ac87fd236aa9c9e284059c47c9eb96a7c6e0be5106f514a95e6ec06e1060fb5",
+      "source_url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/common/transformations/camera.py"
+    }
+  ],
+  "conditional_envelope": {
+    "assumed_crop": [
+      0,
+      0,
+      1344,
+      760
+    ],
+    "assumed_orientation": "IDENTITY",
+    "exhaustive": false,
+    "hypotheses": {
+      "exhaustive": false,
+      "pruned": [],
+      "reason": "FIRMWARE_SAMPLE_PHASE_AND_EFFECTIVE_CROP_NOT_OBSERVED",
+      "retained": [
+        "CENTER_ALIGNED",
+        "ZERO_ORIGIN",
+        "CORNER_ALIGNED"
+      ]
+    },
+    "maximum_native_xy": [
+      [
+        0.7775665399239544,
+        0.6515151515151516
+      ],
+      [
+        671.5000000000001,
+        379.5
+      ],
+      [
+        1343.0,
+        759.0
+      ]
+    ],
+    "minimum_native_xy": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        670.7224334600761,
+        378.8484848484849
+      ],
+      [
+        1341.4448669201522,
+        757.6969696969697
+      ]
+    ],
+    "physical_uncertainty_bound": false,
+    "qualification_allowed": false,
+    "receipt_sha256": "935de7471503e1e0911b1b9a33010e86e130d6f2a93728394ec822306eed9e81",
+    "reference_promotable": false,
+    "residual_bound_native_px": null,
+    "schema": "CONDITIONAL_MAPPING_ENVELOPE_V1",
+    "sealed_reference_allowed": false,
+    "source_xy": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        262.5,
+        164.5
+      ],
+      [
+        525.0,
+        329.0
+      ]
+    ],
+    "vehicle_activation_allowed": false
+  },
+  "crop_layers": {
+    "application_qcamera_explicit_crop": null,
+    "codec_display_crop_lrtb": [
+      0,
+      2,
+      0,
+      6
+    ],
+    "codec_padding_is_optical_crop": false,
+    "coded_wh": [
+      528,
+      336
+    ],
+    "effective_native_crop": null,
+    "native_input_wh": [
+      1344,
+      760
+    ],
+    "visible_wh": [
+      526,
+      330
+    ]
+  },
+  "dependencies": {
+    "DISTORTION_STAGE_ORDERING_PENDING": [
+      "IFE_GEOMETRIC_REGISTER_SEMANTICS_UNVERIFIED"
+    ],
+    "HARDWARE_EFFECTIVE_CROP_PENDING": [
+      "EFFECTIVE_INPUT_CROP_RUNTIME_UNOBSERVED",
+      "RECORDED_OS_KERNEL_BINDING_PENDING"
+    ],
+    "HARDWARE_RESIZE_PHASE_PENDING": [
+      "HARDWARE_RESIZE_PHASE_FIRMWARE_OPAQUE",
+      "RECORDED_VENUS_FIRMWARE_IDENTITY_PENDING"
+    ],
+    "MAPPING_RESIDUAL_BOUND_PENDING": [
+      "EMPIRICAL_MAPPING_VALIDATION_UNAVAILABLE"
+    ],
+    "NATIVE_INTRINSICS_APPLICABILITY_PENDING": [
+      "STATIC_K_UNIT_AND_DISTORTION_VALIDATION_PENDING"
+    ]
+  },
+  "distortion_status": "DISTORTION_TRANSFORM_UNKNOWN",
+  "effective_native_crop": null,
+  "empirical": {
+    "alternative_test_vector": "NOT_AVAILABLE",
+    "development_source_count": 60,
+    "evidence_role": "EXISTING_INVENTORY_ONLY_NO_RESCAN",
+    "native_pairs_in_existing_inventory": 0,
+    "residual_bound_native_px": null,
+    "same_frame_pair_status": "EMPIRICAL_MAPPING_VALIDATION_UNAVAILABLE"
+  },
+  "encoder_input_format": "NV12",
+  "encoder_output_codec": "H264",
+  "hypotheses": {
+    "exhaustive": false,
+    "pruned": [],
+    "reason": "FIRMWARE_SAMPLE_PHASE_AND_EFFECTIVE_CROP_NOT_OBSERVED",
+    "retained": [
+      "CENTER_ALIGNED",
+      "ZERO_ORIGIN",
+      "CORNER_ALIGNED"
+    ]
+  },
+  "orientation": {
+    "actual_matrix": null,
+    "application_rotation_or_mirror": "NO_QCAMERA_REQUEST_FOUND",
+    "kernel_flip_default": "NONE",
+    "kernel_rotation_default": "NONE",
+    "sensor_orientation_status": "REGISTER_VALUES_AVAILABLE_SEMANTICS_UNVERIFIED",
+    "status": "SOURCE_DEFAULT_ONLY_RUNTIME_UNOBSERVED"
+  },
+  "outcomes": {
+    "DISTORTION_STAGE_ORDERING_PENDING": "BLOCKED",
+    "EFFECTIVE_INPUT_CROP_RUNTIME_UNOBSERVED": "BLOCKED",
+    "EMPIRICAL_MAPPING_VALIDATION_UNAVAILABLE": "BLOCKED",
+    "HARDWARE_EFFECTIVE_CROP_PENDING": "BLOCKED",
+    "HARDWARE_RESIZE_PHASE_FIRMWARE_OPAQUE": "BLOCKED",
+    "HARDWARE_RESIZE_PHASE_PENDING": "BLOCKED",
+    "IFE_GEOMETRIC_REGISTER_SEMANTICS_UNVERIFIED": "BLOCKED",
+    "MAPPING_RESIDUAL_BOUND_PENDING": "BLOCKED",
+    "NATIVE_INTRINSICS_APPLICABILITY_PENDING": "PARTIAL",
+    "QCAMERA_ORIENTATION_RUNTIME_CONFIRMATION_PENDING": "BLOCKED",
+    "QCAMERA_ORIENTATION_SOURCE_DEFAULT_BOUND": "PASS_SOURCE_DEFAULT_ONLY",
+    "STATIC_K_SOURCE_COORDINATE_CONTRACT_BOUND": "PASS_SOURCE_PRIOR_ONLY",
+    "STATIC_K_UNIT_AND_DISTORTION_VALIDATION_PENDING": "BLOCKED"
+  },
+  "physical_height_used_to_infer_phase": false,
+  "pixel_mapping_bound_native_px": null,
+  "public_documentation_audit": [
+    {
+      "role": "OFFICIAL_SOC_OVERVIEW_NO_SCALER_PHASE_SPECIFICATION",
+      "url": "https://www.qualcomm.com/processors/application-processors/products/sdm845"
+    },
+    {
+      "role": "PUBLIC_VIDEO_GUIDE_2025_NOT_BOUND_TO_SDM845_RECORDED_FIRMWARE_NO_PHASE_CLAIM",
+      "url": "https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-20"
+    },
+    {
+      "role": "SDM845_VENUS4XX_CONTEXT_NOT_PHASE_OR_CROP_CONFORMANCE",
+      "url": "https://static.linaro.org/connect/yvr18/presentations/yvr18-413.pdf"
+    }
+  ],
+  "qualification_allowed": false,
+  "receipt_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+  "reference_promotable": false,
+  "resolution_conditions": {
+    "DISTORTION_STAGE_ORDERING_PENDING": "Documented and verified sensor/IFE/encoder geometric transform ordering",
+    "EFFECTIVE_INPUT_CROP_RUNTIME_UNOBSERVED": "Recorded effective input crop/selection/firmware metadata or independently measured position mapping",
+    "EMPIRICAL_MAPPING_VALIDATION_UNAVAILABLE": "Authorized same-frame native/qcamera or independently known hardware test vector",
+    "HARDWARE_EFFECTIVE_CROP_PENDING": "Actual effective native input crop, including firmware defaults; no application crop is not proof",
+    "HARDWARE_RESIZE_PHASE_FIRMWARE_OPAQUE": "Applicable SDM845 Venus firmware specification/conformance or measured phase; HFI dimensions do not specify phase",
+    "HARDWARE_RESIZE_PHASE_PENDING": "Exact-runtime scaler sample-center/interpolation semantics or independent positional registration",
+    "IFE_GEOMETRIC_REGISTER_SEMANTICS_UNVERIFIED": "Applicable IFE register semantics plus observed configuration; absence of rectification calls is insufficient",
+    "MAPPING_RESIDUAL_BOUND_PENDING": "Actual pixel-position residual evidence, paired native/qcamera or validated target/vendor conformance; not synthetic round trip",
+    "NATIVE_INTRINSICS_APPLICABILITY_PENDING": "Source maps OS04C10/mici fcam to VisionIPC dimensions; unit and distortion applicability remain unvalidated",
+    "QCAMERA_ORIENTATION_RUNTIME_CONFIRMATION_PENDING": "Recorded negotiated rotation/flip or independent orientation test; sensor-to-ISP orientation remains separately unverified",
+    "QCAMERA_ORIENTATION_SOURCE_DEFAULT_BOUND": "Encoder has no qcamera rotation/flip control and bound kernel defaults NONE; not a measured orientation matrix",
+    "STATIC_K_SOURCE_COORDINATE_CONTRACT_BOUND": "Recorded camera.py OS04C10 fcam 1344x760 nominal source prior only",
+    "STATIC_K_UNIT_AND_DISTORTION_VALIDATION_PENDING": "Independent native-image intrinsics/distortion applicability evidence for actual camera"
+  },
+  "runtime_sha256": "fbdb4f3fd44387a3f278779458da029ee1ab42007a0702db25ad9ab106cf5fc1",
+  "sampling_phase": "FIRMWARE_OPAQUE_PUBLIC_APPLICABLE_SEMANTICS_NOT_FOUND",
+  "scaler_interface": "HAL_PARAM_FRAME_SIZE_TO_HFI_PROPERTY_PARAM_FRAME_SIZE_TO_VENUS_COMMAND_QUEUE",
+  "schema": "QCAMERA_HARDWARE_SCALER_EVIDENCE_V1",
+  "sealed_reference_allowed": false,
+  "source_absence_is_not_proof": true,
+  "source_registration_sha256": "731604c1ea54f26f9e072e7f903eeb5cba37b0f29b62e9f5b76c7e566c8227a4",
+  "static_intrinsics": {
+    "device": "mici",
+    "distortion_model": "UNVERIFIED",
+    "physically_validated": false,
+    "resolution_wh": [
+      1344,
+      760
+    ],
+    "role": "STATIC_INTRINSICS_PRIOR_POST_IFE_VISIONIPC_SOURCE_CONTRACT",
+    "sensor": "os04c10",
+    "source_matrix": [
+      [
+        1141.5,
+        0,
+        672
+      ],
+      [
+        0,
+        1141.5,
+        380
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  "status": "PIXEL_GEOMETRY_REGISTRATION_PARTIAL",
+  "vehicle_activation_allowed": false
+}

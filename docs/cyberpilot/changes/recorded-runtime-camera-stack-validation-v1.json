@@ -1,0 +1,94 @@
+{
+  "baseline_sha": "d32d5b65dbcfb8e5cabe9c0c54f93b4a4bf9adb5",
+  "checks": {
+    "browser": {
+      "reason": "NO_UI_OR_VISUALIZER_CHANGE",
+      "status": "NOT_RUN_NOT_APPLICABLE"
+    },
+    "focused": {
+      "command": "python -m unittest -q openpilot.tools.cyber_autotune.tests.test_recorded_runtime_camera_stack openpilot.tools.cyber_autotune.tests.test_qcamera_pixel_registration openpilot.tools.cyber_autotune.tests.test_physical_height_observation openpilot.tools.cyber_autotune.tests.test_physical_projection_uncertainty openpilot.tools.cyber_autotune.tests.test_stationary_target_calibration",
+      "count": 104,
+      "exit_code": 0,
+      "output_sha256": "9aba26faced754e0b6288ab6a4b9279ca185439b9bc337353b9e864b0e69a6ca"
+    },
+    "full_regression": {
+      "autotune": 1757,
+      "command": "python tools/test_runner.py openpilot/tools/cyber_autotune/tests openpilot/selfdrive/controls/tests -j 1",
+      "controls": 142,
+      "exit_code": 0,
+      "output_sha256": "05ef8b376a467419d0705be820ef8e0db7ad2a7018bc13af632e5dea186b73ad",
+      "total": 1899
+    },
+    "independent_review": {
+      "finding_resolved": "FORGED_MATCHING_BANNERS_CANNOT_MINT_RELEASE_BUILD_BINDING",
+      "public_source_hashes_checked": 47,
+      "reviewed_module_sha256": "9be911c89e9d56df80f063d253a2461a3668bee0e5e956884e068bd30c5f8054",
+      "reviewer_private_input_access": false,
+      "source_claims_checked": 12,
+      "status": "PASS_AFTER_REGRESSION_FIX"
+    },
+    "privacy_authority": {
+      "command": "python -m unittest -q openpilot.tools.cyber_autotune.tests.test_lane_public_publication openpilot.tools.cyber_autotune.tests.test_publication_check openpilot.tools.cyber_autotune.tests.test_private_pixel_execution openpilot.tools.cyber_autotune.tests.test_private_pixel_executor",
+      "count": 58,
+      "exit_code": 0,
+      "output_sha256": "74dd141c5e6b6369c4cbd4c67e47c268a9f324969510571bacf5064a20b7c995"
+    },
+    "publication": {
+      "command": "python tools/cyberpilot/check_publication.py --base origin/main",
+      "exit_code": 0,
+      "findings": 0,
+      "output_sha256": "76b2304cb6409be4ba7ce6983919644a2d14c790d4d451c27c256e0b34fe2885"
+    },
+    "replay": {
+      "command": "python -m unittest -q openpilot.selfdrive.test.process_replay.test_cyber_lateral_card_replay openpilot.selfdrive.test.process_replay.test_cyber_lateral_native_experiment",
+      "count": 16,
+      "exit_code": 0,
+      "output_sha256": "82711b932736229a405b5e3c94f0cbf367a7ebcbd1edea7c0809b90f4745a1de"
+    },
+    "ruff": {
+      "command": "ruff check tools/cyberpilot openpilot/tools/cyber_autotune openpilot/selfdrive/controls/lib/cyber_lateral openpilot/selfdrive/controls/lib/cyber_long openpilot/selfdrive/controls/tests/test_cyber_*.py openpilot/selfdrive/test/process_replay/*cyber_lateral*.py",
+      "exit_code": 0,
+      "output_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "scons": {
+      "command": "export PATH=\"$PWD/.venv/bin:$PATH\"; .venv/bin/scons -j2",
+      "exit_code": 0,
+      "output_sha256": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056"
+    },
+    "syntax": {
+      "command": "python -m compileall -q tools/cyberpilot openpilot/tools/cyber_autotune openpilot/selfdrive/controls/lib/cyber_lateral openpilot/selfdrive/controls/lib/cyber_long",
+      "exit_code": 0
+    },
+    "whitespace": {
+      "command": "git diff --check; git diff --cached --check",
+      "exit_code": 0
+    }
+  },
+  "environment": {
+    "os": "UBUNTU_24_04_WSL",
+    "python": "3.12.13",
+    "source_root_publication": false
+  },
+  "historical_tracked_files_changed": false,
+  "module_sha256": "9be911c89e9d56df80f063d253a2461a3668bee0e5e956884e068bd30c5f8054",
+  "new_holdout_access": false,
+  "numeric_meter_results": null,
+  "private_images_decoded": false,
+  "qualification_allowed": false,
+  "readiness_receipt_sha256": "fd3f2f4313db50c000914357dbc2e4f7984adf5cd0d1b3501829c0d961afd531",
+  "receipt_sha256": "8de3ca03cd138a6af5f26ad2e979ca1e7b08fee5660230d6939a35b54b461e2b",
+  "reference_promotable": false,
+  "runtime_receipt_sha256": "fbdb4f3fd44387a3f278779458da029ee1ab42007a0702db25ad9ab106cf5fc1",
+  "scaler_receipt_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+  "schema": "RECORDED_RUNTIME_CAMERA_STACK_VALIDATION_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "tdd": {
+    "forged_matching_pair": "RED_THEN_GREEN",
+    "initial_missing_api": "RED_THEN_GREEN",
+    "new_tests": 31,
+    "superseded_full_run": "INTERRUPTED_AFTER_REVIEW_SEMANTIC_FIX_NOT_COMPLETION_EVIDENCE"
+  },
+  "test_source_sha256": "8b531a7831c7a4e80388c492f4ae0ff8d8600d8d7a2c002644234701737bf6f6",
+  "vehicle_activation_allowed": false
+}
