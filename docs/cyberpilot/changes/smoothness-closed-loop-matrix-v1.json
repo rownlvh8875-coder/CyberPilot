@@ -1,0 +1,29 @@
+{
+  "allowed_roles": [
+    "ARCHITECTURE_PROBE",
+    "DEVELOPMENT_SCREEN"
+  ],
+  "arms": [
+    "UPSTREAM_BASELINE_CLOSED_LOOP",
+    "CYBER_CURRENT_ALIAS_CLOSED_LOOP",
+    "SG_A_V0_CLOSED_LOOP"
+  ],
+  "candidate_acceptance_authorized": false,
+  "composition_authorized": false,
+  "current_exact_alias": true,
+  "frozen_evaluation_authorized": false,
+  "policy_sha256": "311dcd680f60a54a14e488e1b47b2904333a9c87ee46493fa5f96f56c39d23bd",
+  "production_authority": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "432dbe16a588b6e665691cfc4120239c0fb4d0a0e1e211fee7a9cc9a9c30137e",
+  "reference_promotable": false,
+  "repeats": 2,
+  "schema": "SMOOTHNESS_CLOSED_LOOP_MATRIX_V1",
+  "sealed_reference_allowed": false,
+  "search_authorized": false,
+  "sg_mode": "SG_V0_CANONICAL",
+  "source": "UNCHANGED_NATIVE_BASELINE",
+  "source_baseline_sha": "cd5561b6c8ee568917fc6a5d2c53a6396d4544fe",
+  "ta_enabled": false,
+  "vehicle_activation_allowed": false
+}

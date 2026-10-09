@@ -1,0 +1,247 @@
+{
+  "blocks": {
+    "constant_tail_block_samples": 100,
+    "constant_tail_blocks": 3,
+    "equivalence": "exact exogenous desired/speed/roll/active/pressed/limit sequence equality",
+    "growth": "strict increase of absolute peak and RMS across equivalent blocks; descriptive flag only",
+    "quarter_ranges_half_open": [
+      [
+        0,
+        200
+      ],
+      [
+        200,
+        400
+      ],
+      [
+        400,
+        600
+      ],
+      [
+        600,
+        800
+      ]
+    ],
+    "state_drift": "report first/last native PID, reference buffer, jerk filter, saturation timer; no convergence claim",
+    "unequal_input_blocks": "report values; growth attribution unavailable"
+  },
+  "bound_rounding": "round each nonnegative envelope toward +infinity with math.nextafter; no fitted tolerance",
+  "boundedness": "source-derived per-step triangle recurrence envelope on curvature/yaw/heading/pose; finite only, not asymptotic stability",
+  "comparison": "existing immutable aggregate and trace SHA only; do not rerun or re-evaluate historical replay",
+  "composition": "recommendation only; never authorization",
+  "dt_s": 0.01,
+  "feedback_adapter": "same NativeBaseline VehicleModel reconstruction all arms; no extra physical delay",
+  "feedback_source": "SAME_ARM_PRE_STEP_PLANT_STATE_ONLY",
+  "feedback_token": "instance-local owner, exact next index and current plant state; no caller-supplied feedback API",
+  "finite_horizon_status": "FINITE_HORIZON_CLOSED_LOOP_STABILITY_DIAGNOSTIC",
+  "frozen_replay_receipt_sha256": "17abb7e82eae7c16c61230299cbb4ae76e2f24af409206922ee2a0decfec96d1",
+  "hard_failures": [
+    "nonfinite",
+    "source_bound_violation",
+    "command_contract",
+    "wrong_feedback_source",
+    "future_feedback",
+    "cross_arm_state",
+    "duplicate_delay",
+    "alias_mismatch",
+    "repeatability",
+    "source_config_metric_drift",
+    "ta_input",
+    "composition",
+    "search",
+    "production_mutation"
+  ],
+  "high_speed_markers": "first exact inequality in own stage; feedback/curvature pre/post timestamps explicit; phase uses frozen phase metrics",
+  "historical_receipts": {
+    "binding": "44026424a77e204b3f336c7cdf980187441a32f8b37682b9ea55aaff75c61222",
+    "readiness": "6a658c860c8b201f059c591e6e6168b3131ba73fa45e1a3bbad46bf5d41663e4",
+    "results": "17abb7e82eae7c16c61230299cbb4ae76e2f24af409206922ee2a0decfec96d1"
+  },
+  "interaction_rule": {
+    "amplifies": "high-speed tracking p95 > replay AND common identified phase lag cost not lower; contradictory evidence => mixed",
+    "artifact": "closed-loop SG trace exactly baseline while replay has nonzero effect",
+    "compensates": "high-speed tracking p95 <= baseline AND phase absolute lag not higher on all identified common supports",
+    "no_numeric_threshold": true,
+    "otherwise": "MIXED_OR_UNRESOLVED",
+    "preserves": "high-speed tracking p95 > baseline and <= replay; other axes still separate"
+  },
+  "intervention_policy_sha256": "dc95e2de32daf49780509eb48425d3586b3f21a4d7ce6576fa1e8031693c8a5e",
+  "isolation": "new exact NativeBaseline, Governor, plant state/delay tuple and pose per arm/repeat/scenario",
+  "metric_policy_sha256": "547a85da3b30491c2668660e145142773d178d9a6217dfaf65f854f75e0665eb",
+  "ordering": [
+    "provide_frozen_exogenous_input_k",
+    "read_own_plant_state_k",
+    "update_own_unchanged_native_core_k",
+    "baseline_current_exact_passthrough",
+    "sg_arm_only_existing_canonical_governor",
+    "deliver_post_command_to_own_plant",
+    "advance_own_delay_curvature_yaw_pose_to_k_plus_1",
+    "next_core_reads_same_arm_state_k_plus_1"
+  ],
+  "performance_threshold": null,
+  "physical_delay_owner": "EACH_ARM_PLANT_ONLY",
+  "pose_comparison": "same-time peak and observed-monotonic-x interpolation separated; no extrapolation or meter-envelope classification",
+  "primary_metrics": "reuse existing exact metric implementation and policy; do not redefine windows or masks",
+  "production_authority": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "311dcd680f60a54a14e488e1b47b2904333a9c87ee46493fa5f96f56c39d23bd",
+  "reference_promotable": false,
+  "reset": "unchanged native and SG event policy; new instances for scenario/config boundary",
+  "samples": 800,
+  "scenario_policy_sha256": "24114637c730e6bde73501fb46df88043ee547e8bf2599c9f340156842f5eb3e",
+  "scenario_rows": [
+    {
+      "curvature_amplitude_1pm": 0.0,
+      "dt_s": 0.01,
+      "duration_s": 8.0,
+      "feedback": "NEW_DESCRIPTIVE_CLOSED_LOOP_ACTUAL_CURVATURE_ONLY",
+      "id": "straight",
+      "initial_state": "ZERO_ALL_NATIVE_AND_PLANT_STATE",
+      "profile": "STRAIGHT",
+      "reset": "FRESH_NATIVE_ON_EACH_FROZEN_TA_EVENT",
+      "samples": 800,
+      "speed_mps": 15.0
+    },
+    {
+      "curvature_amplitude_1pm": 0.001,
+      "dt_s": 0.01,
+      "duration_s": 8.0,
+      "feedback": "NEW_DESCRIPTIVE_CLOSED_LOOP_ACTUAL_CURVATURE_ONLY",
+      "id": "gentle_left",
+      "initial_state": "ZERO_ALL_NATIVE_AND_PLANT_STATE",
+      "profile": "TURN",
+      "reset": "FRESH_NATIVE_ON_EACH_FROZEN_TA_EVENT",
+      "samples": 800,
+      "speed_mps": 15.0
+    },
+    {
+      "curvature_amplitude_1pm": -0.001,
+      "dt_s": 0.01,
+      "duration_s": 8.0,
+      "feedback": "NEW_DESCRIPTIVE_CLOSED_LOOP_ACTUAL_CURVATURE_ONLY",
+      "id": "gentle_right",
+      "initial_state": "ZERO_ALL_NATIVE_AND_PLANT_STATE",
+      "profile": "TURN",
+      "reset": "FRESH_NATIVE_ON_EACH_FROZEN_TA_EVENT",
+      "samples": 800,
+      "speed_mps": 15.0
+    },
+    {
+      "curvature_amplitude_1pm": 0.003,
+      "dt_s": 0.01,
+      "duration_s": 8.0,
+      "feedback": "NEW_DESCRIPTIVE_CLOSED_LOOP_ACTUAL_CURVATURE_ONLY",
+      "id": "sharp_left",
+      "initial_state": "ZERO_ALL_NATIVE_AND_PLANT_STATE",
+      "profile": "TURN",
+      "reset": "FRESH_NATIVE_ON_EACH_FROZEN_TA_EVENT",
+      "samples": 800,
+      "speed_mps": 15.0
+    },
+    {
+      "curvature_amplitude_1pm": -0.003,
+      "dt_s": 0.01,
+      "duration_s": 8.0,
+      "feedback": "NEW_DESCRIPTIVE_CLOSED_LOOP_ACTUAL_CURVATURE_ONLY",
+      "id": "sharp_right",
+      "initial_state": "ZERO_ALL_NATIVE_AND_PLANT_STATE",
+      "profile": "TURN",
+      "reset": "FRESH_NATIVE_ON_EACH_FROZEN_TA_EVENT",
+      "samples": 800,
+      "speed_mps": 15.0
+    },
+    {
+      "curvature_amplitude_1pm": 0.001,
+      "dt_s": 0.01,
+      "duration_s": 8.0,
+      "feedback": "NEW_DESCRIPTIVE_CLOSED_LOOP_ACTUAL_CURVATURE_ONLY",
+      "id": "low_speed",
+      "initial_state": "ZERO_ALL_NATIVE_AND_PLANT_STATE",
+      "profile": "TURN",
+      "reset": "FRESH_NATIVE_ON_EACH_FROZEN_TA_EVENT",
+      "samples": 800,
+      "speed_mps": 5.0
+    },
+    {
+      "curvature_amplitude_1pm": 0.001,
+      "dt_s": 0.01,
+      "duration_s": 8.0,
+      "feedback": "NEW_DESCRIPTIVE_CLOSED_LOOP_ACTUAL_CURVATURE_ONLY",
+      "id": "medium_speed",
+      "initial_state": "ZERO_ALL_NATIVE_AND_PLANT_STATE",
+      "profile": "TURN",
+      "reset": "FRESH_NATIVE_ON_EACH_FROZEN_TA_EVENT",
+      "samples": 800,
+      "speed_mps": 15.0
+    },
+    {
+      "curvature_amplitude_1pm": 0.001,
+      "dt_s": 0.01,
+      "duration_s": 8.0,
+      "feedback": "NEW_DESCRIPTIVE_CLOSED_LOOP_ACTUAL_CURVATURE_ONLY",
+      "id": "high_speed",
+      "initial_state": "ZERO_ALL_NATIVE_AND_PLANT_STATE",
+      "profile": "TURN",
+      "reset": "FRESH_NATIVE_ON_EACH_FROZEN_TA_EVENT",
+      "samples": 800,
+      "speed_mps": 30.0
+    },
+    {
+      "curvature_amplitude_1pm": 0.001,
+      "dt_s": 0.01,
+      "duration_s": 8.0,
+      "feedback": "NEW_DESCRIPTIVE_CLOSED_LOOP_ACTUAL_CURVATURE_ONLY",
+      "id": "s_reversal",
+      "initial_state": "ZERO_ALL_NATIVE_AND_PLANT_STATE",
+      "profile": "REVERSAL",
+      "reset": "FRESH_NATIVE_ON_EACH_FROZEN_TA_EVENT",
+      "samples": 800,
+      "speed_mps": 15.0
+    },
+    {
+      "curvature_amplitude_1pm": 0.001,
+      "dt_s": 0.01,
+      "duration_s": 8.0,
+      "feedback": "NEW_DESCRIPTIVE_CLOSED_LOOP_ACTUAL_CURVATURE_ONLY",
+      "id": "driver_events",
+      "initial_state": "ZERO_ALL_NATIVE_AND_PLANT_STATE",
+      "profile": "DRIVER",
+      "reset": "FRESH_NATIVE_ON_EACH_FROZEN_TA_EVENT",
+      "samples": 800,
+      "speed_mps": 15.0
+    },
+    {
+      "curvature_amplitude_1pm": 0.001,
+      "dt_s": 0.01,
+      "duration_s": 8.0,
+      "feedback": "NEW_DESCRIPTIVE_CLOSED_LOOP_ACTUAL_CURVATURE_ONLY",
+      "id": "limit_flags",
+      "initial_state": "ZERO_ALL_NATIVE_AND_PLANT_STATE",
+      "profile": "LIMITS",
+      "reset": "FRESH_NATIVE_ON_EACH_FROZEN_TA_EVENT",
+      "samples": 800,
+      "speed_mps": 15.0
+    }
+  ],
+  "schema": "SMOOTHNESS_CLOSED_LOOP_EXECUTION_POLICY_V1",
+  "screening_improved": "all affected smoothness axes nonworse, tracking/phase/coverage nonworse and no contradictory direction; else tradeoff",
+  "sealed_reference_allowed": false,
+  "sg_config_sha256": "dc95e2de32daf49780509eb48425d3586b3f21a4d7ce6576fa1e8031693c8a5e",
+  "sg_state": "unchanged last_command only",
+  "source_baseline_sha": "cd5561b6c8ee568917fc6a5d2c53a6396d4544fe",
+  "stability_proof": false,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION_AND_EXECUTION",
+  "threshold_status": "THRESHOLD_UNJUSTIFIED",
+  "unchanged_sources": {
+    "candidate_role_contracts.py": "2f236b38fa4c0af58726058823b33f286368e2034c60060b4328830802aadf63",
+    "curvature_yaw_plant.py": "3903af91512b339630da18fa1f1baa53f35567afe2e546e487756c3356002881",
+    "smoothness_governor_v0.py": "7aa65899d12170bb0aa48710446dfa1105484d0b0f7986dcf6f70410308ad721",
+    "smoothness_v0_baseline.py": "9a8917fccb0d02f583561bf47a25d1295907f10a44793b49992cd07e0a232e29",
+    "smoothness_v0_metrics.py": "8d16dd80916a10e318b5f9ad3125255175bb0543e14ce54cc23d68cae73a1a69",
+    "smoothness_v0_screen.py": "2064e3b73239eb80f360505ea659bfe56cae6fd7824b1f578ce7dfb48cc51f05",
+    "trajectory_authority_core.py": "56f0d5ef041573b9aa199cd5b753a9ab97bd6cc2a6077173501106d52fc0847e",
+    "trajectory_v0_metrics.py": "d92fe8e160704ad1e6dc6e830b3a51c76e24fefb5c7ef51e71036a804e12f75a",
+    "trajectory_v0_screen.py": "7dd40a9a5a51223c06f532d49aebfb2728968aa5e29a4457e076bf0ab911270c"
+  },
+  "vehicle_activation_allowed": false
+}
