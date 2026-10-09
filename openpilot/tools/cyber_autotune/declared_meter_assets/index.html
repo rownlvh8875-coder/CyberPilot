@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Approximate meter diagnostic</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/meter.css"></head><body>
+<nav><a href="/">Geometry visualizer</a> · <a href="/meter">Approximate meter diagnostic</a></nav>
+<h1>CONDITIONAL / NON-QUALIFYING</h1><h2>NO INDEPENDENT METER TRUTH</h2>
+<p>DISTORTION / REGISTRATION / POSE UNCERTAINTY OPEN</p>
+<p>Height 1.385 m: physical observed mean, formal uncertainty pending. Pose 0° / 2.34° / 0.2°:
+model-derived prior. Historical height probes 1.33–1.47 m are not measurement uncertainty.</p>
+<p>All three mappings assume full native input rectangle and identity orientation. The hypothesis set is NOT exhaustive.
+Pinhole / flat-road conditional calculations only. Total physical bound remains null.</p>
+<label>Reference <select id="group"><option value="center">Ego center</option><option value="left">Left</option><option value="right">Right</option></select></label>
+<label>Calculation <select id="view"><option value="fixed_distance">Fixed-distance analytic</option><option value="holdout_projection">Observed matched-point projection</option></select></label>
+<p id="coverage"></p><p id="semantics"></p>
+<h2>Nominal observed height / model pose: all mappings side by side</h2>
+<div class="table-scroll"><table><thead><tr><th>Distance m</th><th>Mapping hypothesis</th><th>p50 cm</th><th>p95 cm</th><th>Samples</th><th>Unavailable / out of domain</th></tr></thead><tbody id="nominal"></tbody></table></div>
+<h2>Declared sampled scenario p95 envelope</h2>
+<p>This is an extrema comparison of sampled hypotheses, not a total physical uncertainty bound.
+Per-point cohorts can differ with scenario; their quantiles do not describe an identical physical population.</p>
+<div class="table-scroll"><table><thead><tr><th>Distance m</th><th>Min p95 cm</th><th>Max p95 cm</th><th>Responsible scenario / mapping</th></tr></thead><tbody id="envelope"></tbody></table></div>
+<h2>Open terms</h2><ul id="open"></ul>
+<p id="status"></p><script src="/meter.js"></script></body></html>
