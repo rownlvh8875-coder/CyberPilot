@@ -1,0 +1,43 @@
+{
+  "alternatives": [
+    {
+      "family": "TA-A",
+      "reason": "Native current FF, delayed-demand alignment, desired jerk/friction already present; no specified nonduplicate predictor",
+      "status": "NOT_SELECTED"
+    },
+    {
+      "family": "TA-C",
+      "reason": "Native P already speed scheduled; no source-canonical new blend; needless attribution/state complexity",
+      "status": "NOT_SELECTED"
+    }
+  ],
+  "candidate_results_used": false,
+  "counterevidence": [
+    "desired component partly overlaps native jerk",
+    "feedback noise amplification",
+    "clipped error loses information",
+    "saturation and smoothness tradeoffs",
+    "one-step prediction is a design definition, not identified optimum"
+  ],
+  "historical_70_used": false,
+  "injection": "Instance-local PID subclass; additive acceleration correction inside native update BEFORE antiwindup and total clip",
+  "mechanism": "ONE_STEP_CLIPPED_ERROR_INNOVATION",
+  "policy_sha256": "37174f03e13ba4d208829581f5972858ed11bfb67c89984c3da9a1b1054a484c",
+  "pre_implementation_independent_review": "Source-only reviewer supports clipped-error variant; no .02/.15 feedback gain inference",
+  "production_authority": false,
+  "qualification_allowed": false,
+  "reason": "Native PID D=0/no error_rate; desired-only jerk lacks measured-error innovation",
+  "receipt_sha256": "e99cee05d2899c3341eb9076ed62923b220e3832e0719f5433df8d146efb8aec",
+  "reference_promotable": false,
+  "schema": "TRAJECTORY_FAMILY_SELECTION_V1",
+  "sealed_reference_allowed": false,
+  "selected_family": "TA-B",
+  "source_baseline_sha": "c2d3923d9a13e3e9942352d8a8114cd3203188e2",
+  "source_evidence": {
+    "interfaces.py": "Existing linear acceleration/torque conversion; factor applied once",
+    "latcontrol_torque.py": "KP/KI; delayed setpoint error; desired-only jerk; pid.update no error_rate; negative converted return",
+    "pid.py": "D defaults 0; native p+i+d+f controls antiwindup and clipping"
+  },
+  "status": "TA_B_SELECTED",
+  "vehicle_activation_allowed": false
+}

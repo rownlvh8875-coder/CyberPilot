@@ -1,0 +1,76 @@
+{
+  "aggregation": "numpy linear quantiles p50/p90/p95/max; separate trajectory/smoothness, no weighted score",
+  "contiguous": "adjacent indices and dt=.01; gaps/reset segments never joined for lag/derivative/spectrum",
+  "coverage": "valid/total/unavailable for every metric and phase; never zero fill",
+  "derivative": "backward difference / .01 on adjacent eligible samples only",
+  "distance": {
+    "coordinate": "observed pose_x_m, updated-heading Euler plant integration",
+    "interpolation": "piecewise linear on strictly increasing observed x; no extrapolation",
+    "queries_m": [
+      5.0,
+      10.0,
+      15.0,
+      20.0,
+      25.0,
+      30.0
+    ],
+    "secondary": "full observed distance descriptive only; no meter envelope classification"
+  },
+  "dt_s": 0.01,
+  "event_windows": {
+    "offset_samples_inclusive": [
+      0,
+      99
+    ],
+    "overlap": "events reported separately",
+    "source": "native one-second history; never posthoc window selection"
+  },
+  "floating_tolerance": {
+    "repeatability": "EXACT_CANONICAL_JSON_BYTES",
+    "time_abs_s": 1e-12
+  },
+  "lag": {
+    "ambiguity": "exact tied maxima -> ambiguous descriptive value; flat/insufficient=null",
+    "cross_phase_or_reset": false,
+    "estimator": "demeaned_normalized_cross_correlation",
+    "search_samples_inclusive": [
+      -100,
+      100
+    ],
+    "search_source": "native 1s demand history / .01s",
+    "sign": "positive means actual follows desired",
+    "tie_break": "max correlation then minimum absolute lag then signed lag"
+  },
+  "minimum_support": {
+    "derivative": 2,
+    "distribution": 1,
+    "lag_pairs": 3,
+    "spectrum": 4
+  },
+  "performance_threshold": null,
+  "phases": "Use frozen exogenous scenario labels ENTRY/APEX/EXIT/REVERSAL/STRAIGHT; never infer from outputs",
+  "production_authority": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+  "reference_promotable": false,
+  "saturation": "explicit abs(pre_limit_accel)>native_authority; separate upstream sat timer bool",
+  "schema": "TRAJECTORY_METRIC_EXECUTION_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "small_sample": "Always disclose n; n<3 marked SMALL_SUPPORT; empty=null",
+  "source_baseline_sha": "c2d3923d9a13e3e9942352d8a8114cd3203188e2",
+  "spectrum": {
+    "band_hz": [
+      1.2,
+      50.0
+    ],
+    "band_source": "native jerk cutoff to 100Hz Nyquist",
+    "detrend": "subtract mean",
+    "energy": "sum squared rFFT magnitudes in inclusive band / N^2",
+    "window": "Hann on each contiguous eligible segment"
+  },
+  "status": "FROZEN_BEFORE_EXECUTION",
+  "threshold_status": "THRESHOLD_UNJUSTIFIED",
+  "valid_mask": "active AND NOT steering_pressed AND finite; event/saturation metrics disclose separate masks",
+  "vehicle_activation_allowed": false,
+  "zero_crossings": "nonzero sign reversal after removing exact zeros within contiguous eligible segment"
+}

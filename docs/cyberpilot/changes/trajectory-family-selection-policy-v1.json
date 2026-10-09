@@ -1,0 +1,59 @@
+{
+  "architecture_receipts": {
+    "composed": "c64122725bdc9d3bc5fce03fe5528ba125d6ecbc9cc705c92533c078c636f622",
+    "decision": "50f5a8f3d07e6819ecd4937222592b2a4af08c3db8b619f352328040bcf05e6f",
+    "matrix": "6021a6c11b764c32a88f7f4d7f839b620fab5eff6537abb8b24a3b90019bd818",
+    "probe": "477f68bcf4377e1276fa2d25f005b829ccebd0cf991c1203a52bd049d5ab9aa8",
+    "readiness": "b0de51af8f38aaa6e2c5a601ef8d95abee60c7b674abfd4b89f0bdc12c0ee520",
+    "smoothness": "8ca2829af7fe5e905f10cee016745a62d9d7876506f185aaece70d6ebf15ed67",
+    "trajectory": "6332e70a53698abe07cf6209e7d3e2796e473f75bf698a13cda6c18b09bd77f0"
+  },
+  "config_justification_required": true,
+  "criteria": [
+    "current_past_inputs_only",
+    "nonduplicate_native_mechanism",
+    "no_second_physical_delay",
+    "causal_phase_tracking_mechanism",
+    "single_state_reset_owner",
+    "observable_before_limits",
+    "minimal_parameter_state_complexity",
+    "production_transfer_risk_disclosed",
+    "source_injection_feasible",
+    "not_arbitrary_scale_bias",
+    "no_lane_model_path_truth",
+    "canonical_config_justified_without_results"
+  ],
+  "families": [
+    "TA-A",
+    "TA-B",
+    "TA-C"
+  ],
+  "historical_70_input_allowed": false,
+  "one_family_required": true,
+  "production_authority": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "37174f03e13ba4d208829581f5972858ed11bfb67c89984c3da9a1b1054a484c",
+  "reference_promotable": false,
+  "result_input_allowed": false,
+  "schema": "TRAJECTORY_FAMILY_SELECTION_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "selection_input": "SOURCE_ONLY_AND_EXISTING_ARCHITECTURE_CONTRACT",
+  "source_baseline_sha": "c2d3923d9a13e3e9942352d8a8114cd3203188e2",
+  "source_bindings": {
+    "opendbc_repo/opendbc/car/car.capnp": "098a19d69e8d233ac653503b53761a94824f31812757a11a7ded1589fe1e0788",
+    "opendbc_repo/opendbc/car/hyundai/interface.py": "c50896b7c1c072e496f486662887e690466b71f032dda1d3d7c1abf8722380a6",
+    "opendbc_repo/opendbc/car/interfaces.py": "89cdec34103a40b6c5a17e44709946968cf3683272df4b203a0ed374e0bfd165",
+    "opendbc_repo/opendbc/car/lateral.py": "94cf2dde92b43590b1d1e5b2a37b3d295e5f2cf9700ca43e3846bcb1c3ef36b6",
+    "opendbc_repo/opendbc/car/vehicle_model.py": "ddc2a93d9c2b2ef6c9a913a5aef4c51e2bc387db1f7640473657e5ade4e50fac",
+    "openpilot/common/pid.py": "87cf8669f4e9ba3ff22c6937393d082de6fa834e4889094ff1c67a0a8738402a",
+    "openpilot/selfdrive/controls/lib/latcontrol.py": "7c373878846854f6964015e07d1eb105477fadaccaecd451e7f08073a103ad20",
+    "openpilot/selfdrive/controls/lib/latcontrol_torque.py": "9489bfd923246906ef543a1c305bf7a7fe534ee9754c94d8195ae98bb3a1f2cd",
+    "openpilot/tools/cyber_autotune/candidate_architecture.py": "7829328937d4d485532486528deee93d82dfb079766db883b8433e0652dcf25a",
+    "openpilot/tools/cyber_autotune/candidate_role_contracts.py": "2f236b38fa4c0af58726058823b33f286368e2034c60060b4328830802aadf63",
+    "openpilot/tools/cyber_autotune/curvature_yaw_plant.py": "3903af91512b339630da18fa1f1baa53f35567afe2e546e487756c3356002881",
+    "openpilot/tools/cyber_autotune/trajectory_v0_policy.py": "ba0758ba22cfd516908289e43fd0ee4cf3004b523c7a55087c72295edfaec6ba"
+  },
+  "status": "FROZEN_BEFORE_IMPLEMENTATION",
+  "unjustified_outcome": "TA_IMPLEMENTATION_BLOCKED",
+  "vehicle_activation_allowed": false
+}
