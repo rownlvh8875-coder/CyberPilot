@@ -17,8 +17,8 @@
 - Threshold unjustified; no search/evaluation/composition/vehicle authority.
 
 ## Tasks
-- [ ] Policy: failing selection/pin/identity tests, source-only policy/config/scenario/matrix freeze commit BEFORE implementation/results.
-- [ ] Governor: failing invariants/firewall/reset/identity tests; minimal SG-A implementation; unchanged inputs and additive strict output; independent preflight.
-- [ ] Screen: failing replay/metrics/coverage tests; frozen command generation, source/execution binding BEFORE any screen; 11x3x2 exact repeats; test-only controls separate.
-- [ ] Publication: additive aggregate results/readiness with source pins, preserved blocker/history bindings, all regressions/build/review.
+- [x] Policy: failing selection/pin/identity tests, source-only policy/config/scenario/matrix freeze commit BEFORE implementation/results.
+- [x] Governor: failing invariants/firewall/reset/identity tests; minimal SG-A implementation; unchanged inputs and additive strict output; independent preflight.
+- [x] Screen: failing replay/metrics/coverage tests; frozen command generation, source/execution binding BEFORE any screen; 11x3x2 exact repeats; test-only controls separate.
+- [x] Publication: additive aggregate results/readiness with source pins, preserved blocker/history bindings, all regressions/build/review.
 - [ ] Commit/push, latest Actions SUCCESS, final HEAD/origin/clean check.

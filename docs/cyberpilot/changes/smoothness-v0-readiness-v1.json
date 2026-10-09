@@ -1,0 +1,1396 @@
+{
+  "arms": 3,
+  "candidate_acceptance_authorized": false,
+  "composition_authorized": false,
+  "composition_recommendation": "COMPOSITION_NOT_RECOMMENDED",
+  "execution_binding_sha256": "44026424a77e204b3f336c7cdf980187441a32f8b37682b9ea55aaff75c61222",
+  "execution_semantics": "FROZEN_BASELINE_COMMAND_REPLAY_DESCRIPTIVE_PLANT",
+  "executions": 66,
+  "family": "SG-A",
+  "feedback_loop_stability_evaluated": false,
+  "frozen_evaluation_authorized": false,
+  "historical_roles": [
+    "MIXED_HISTORICAL",
+    "MIXED_HISTORICAL"
+  ],
+  "historical_ta_readiness_sha256": "db2633df48bce8dbce05033eb512527ea2f81e33908c3368aaf0e87bcb31853a",
+  "historical_verdicts": {
+    "CURRENT": "BASELINE_EXACT",
+    "V1": "TRADEOFF_ONLY",
+    "V2": "REJECTED"
+  },
+  "implementation_commit_sha": "cc87bde04f2d7d026f0f1460a8ddcab3b13f9308",
+  "independent_meter_result": null,
+  "limitations": [
+    "Small chatter and all observed reversal counts unchanged",
+    "Derivative quantile/spectral improvement not a universal mathematical guarantee",
+    "Intervention passthrough exempts event steps from ordinary projection step bound",
+    "Baseline high/medium-speed plant already oscillatory/saturated; no real vehicle dynamics claim",
+    "High-speed same-time peak pose delta61.276370m is descriptive counterevidence, not real vehicle path gain",
+    "Event settling unavailable when input lacks final constant span; no zero-fill",
+    "No meter-envelope performance classification or weighted score"
+  ],
+  "performance_threshold": null,
+  "physical_delay_owner": "PLANT",
+  "private_inputs_opened": false,
+  "production_authority": false,
+  "production_sources_modified": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "6a658c860c8b201f059c591e6e6168b3131ba73fa45e1a3bbad46bf5d41663e4",
+  "recommendation_reason": "High-speed tracking regression and large descriptive replay displacement coexist with derivative/saturation reduction; no feedback stability evidence",
+  "reference_blocker_graph_sha256": "203b8809f92a5924a3d80374ed47fb956d78d3b220ef0d61fb0356c1d80e43ee",
+  "reference_promotable": false,
+  "reference_track": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "reference_track_modified": false,
+  "repeatability": "EXACT_PASS",
+  "repeats": 2,
+  "results_sha256": "17abb7e82eae7c16c61230299cbb4ae76e2f24af409206922ee2a0decfec96d1",
+  "scenarios": 11,
+  "schema": "SMOOTHNESS_V0_READINESS_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "search_authorized": false,
+  "selection_frozen_commit": "8cdb4476f",
+  "source_baseline_sha": "53506f2af49ab52490482d3961044f33b7360235",
+  "source_configuration_changed_after_results": false,
+  "standalone_verdict": "SG_STANDALONE_TRADEOFF_ONLY",
+  "states": [
+    "SG_FAMILY_SELECTED",
+    "SG_V0_IMPLEMENTED",
+    "SG_STANDALONE_STRUCTURAL_PASS",
+    "SG_STANDALONE_EFFECT_PRESENT",
+    "SG_STANDALONE_TRADEOFF_ONLY",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "SEARCH_NOT_AUTHORIZED",
+    "FROZEN_EVALUATION_NOT_AUTHORIZED"
+  ],
+  "status": "SG_STANDALONE_TRADEOFF_ONLY",
+  "structural_status": "SG_STANDALONE_STRUCTURAL_PASS",
+  "summary": [
+    {
+      "baseline": {
+        "applied_derivative_p95_normalized_per_s": 0.0,
+        "core_input_rail_occupancy": 0.0,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.0,
+        "high_frequency_energy": 0.0,
+        "nonzero_reversals": 0,
+        "output_rail_occupancy": 0.0,
+        "requested_derivative_max_normalized_per_s": 0.0,
+        "requested_derivative_p95_normalized_per_s": 0.0,
+        "requested_derivative_rms_normalized_per_s": 0.0,
+        "settling": {
+          "constant_run_start": 0,
+          "settling_s": 0.0,
+          "steady_bias": 0.0,
+          "total": 800,
+          "unavailable": 0,
+          "valid": 800
+        },
+        "total_variation": 0.0,
+        "tracking_p95_1pm": 0.0
+      },
+      "effects": {
+        "acceptance": false,
+        "cancellation_ratio": null,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "feedback_loop_stability_evaluated": false,
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 0.0,
+        "requested_delta_sign_changes": 0,
+        "requested_delta_signed_integral": 0.0,
+        "same_time_peak_absolute_delta": {
+          "applied": 0.0,
+          "curvature": 0.0,
+          "heading": 0.0,
+          "pose_y": 0.0,
+          "requested": 0.0
+        },
+        "same_time_signed_final_delta": {
+          "applied": 0.0,
+          "curvature": 0.0,
+          "heading": 0.0,
+          "pose_y": 0.0,
+          "requested": 0.0
+        },
+        "states": [
+          "NO_OUTPUT_DIFFERENCE",
+          "EVENT_SUPPORT_UNAVAILABLE"
+        ],
+        "tracking_hard_threshold": "THRESHOLD_UNJUSTIFIED"
+      },
+      "scenario": "straight",
+      "sg": {
+        "applied_derivative_p95_normalized_per_s": 0.0,
+        "core_input_rail_occupancy": 0.0,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.0,
+        "high_frequency_energy": 0.0,
+        "nonzero_reversals": 0,
+        "output_rail_occupancy": 0.0,
+        "requested_derivative_max_normalized_per_s": 0.0,
+        "requested_derivative_p95_normalized_per_s": 0.0,
+        "requested_derivative_rms_normalized_per_s": 0.0,
+        "settling": {
+          "constant_run_start": 0,
+          "settling_s": 0.0,
+          "steady_bias": 0.0,
+          "total": 800,
+          "unavailable": 0,
+          "valid": 800
+        },
+        "total_variation": 0.0,
+        "tracking_p95_1pm": 0.0
+      },
+      "tracking_p95_direction": "EXACT_SAME"
+    },
+    {
+      "baseline": {
+        "applied_derivative_p95_normalized_per_s": 117.18588027534462,
+        "core_input_rail_occupancy": 0.49625,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.0,
+        "high_frequency_energy": 0.1387867907284429,
+        "nonzero_reversals": 152,
+        "output_rail_occupancy": 0.49625,
+        "requested_derivative_max_normalized_per_s": 120.36959953975266,
+        "requested_derivative_p95_normalized_per_s": 117.20075685086348,
+        "requested_derivative_rms_normalized_per_s": 58.26792735142644,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 296.2111334155402,
+        "tracking_p95_1pm": 0.014042884493503733
+      },
+      "effects": {
+        "acceptance": false,
+        "cancellation_ratio": 0.940424037960807,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": -3.942242332832834e-05,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": -0.00913362484868792,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": -0.015646957127692963,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "feedback_loop_stability_evaluated": false,
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 0.2095040086284174,
+        "requested_delta_sign_changes": 143,
+        "requested_delta_signed_integral": 0.012481402865105356,
+        "same_time_peak_absolute_delta": {
+          "applied": 0.2036959953975266,
+          "curvature": 0.0016305886467779009,
+          "heading": 0.01631457386480701,
+          "pose_y": 0.9361966985848533,
+          "requested": 0.2036959953975266
+        },
+        "same_time_signed_final_delta": {
+          "applied": 0.0,
+          "curvature": 0.00026010281710352884,
+          "heading": 0.014558881798685336,
+          "pose_y": 0.9361966985848533,
+          "requested": 0.0
+        },
+        "states": [
+          "GOVERNOR_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED",
+          "REQUESTED_DERIVATIVE_EFFECT_PRESENT",
+          "APPLIED_DERIVATIVE_EFFECT_PRESENT",
+          "SATURATION_EFFECT_PRESENT",
+          "EVENT_SUPPORT_UNAVAILABLE"
+        ],
+        "tracking_hard_threshold": "THRESHOLD_UNJUSTIFIED"
+      },
+      "scenario": "gentle_left",
+      "sg": {
+        "applied_derivative_p95_normalized_per_s": 100.0,
+        "core_input_rail_occupancy": 0.49625,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.18125,
+        "high_frequency_energy": 0.1334221311729056,
+        "nonzero_reversals": 152,
+        "output_rail_occupancy": 0.49375,
+        "requested_derivative_max_normalized_per_s": 100.0,
+        "requested_derivative_p95_normalized_per_s": 100.0,
+        "requested_derivative_rms_normalized_per_s": 55.764959031896446,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 296.2111334155402,
+        "tracking_p95_1pm": 0.013825617527970034
+      },
+      "tracking_p95_direction": "LOWER"
+    },
+    {
+      "baseline": {
+        "applied_derivative_p95_normalized_per_s": 117.18588027534462,
+        "core_input_rail_occupancy": 0.49625,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.0,
+        "high_frequency_energy": 0.1387867907284429,
+        "nonzero_reversals": 152,
+        "output_rail_occupancy": 0.49625,
+        "requested_derivative_max_normalized_per_s": 120.36959953975266,
+        "requested_derivative_p95_normalized_per_s": 117.20075685086348,
+        "requested_derivative_rms_normalized_per_s": 58.26792735142644,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 296.2111334155402,
+        "tracking_p95_1pm": 0.014042884493503733
+      },
+      "effects": {
+        "acceptance": false,
+        "cancellation_ratio": 0.940424037960807,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": 3.9422423328328666e-05,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": 0.009133624848687927,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": 0.015646957127692977,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "feedback_loop_stability_evaluated": false,
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 0.2095040086284174,
+        "requested_delta_sign_changes": 143,
+        "requested_delta_signed_integral": -0.012481402865105358,
+        "same_time_peak_absolute_delta": {
+          "applied": 0.2036959953975266,
+          "curvature": 0.0016305886467779009,
+          "heading": 0.01631457386480701,
+          "pose_y": 0.9361966985848533,
+          "requested": 0.2036959953975266
+        },
+        "same_time_signed_final_delta": {
+          "applied": 0.0,
+          "curvature": -0.00026010281710352884,
+          "heading": -0.01455888179868535,
+          "pose_y": -0.9361966985848533,
+          "requested": 0.0
+        },
+        "states": [
+          "GOVERNOR_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED",
+          "REQUESTED_DERIVATIVE_EFFECT_PRESENT",
+          "APPLIED_DERIVATIVE_EFFECT_PRESENT",
+          "SATURATION_EFFECT_PRESENT",
+          "EVENT_SUPPORT_UNAVAILABLE"
+        ],
+        "tracking_hard_threshold": "THRESHOLD_UNJUSTIFIED"
+      },
+      "scenario": "gentle_right",
+      "sg": {
+        "applied_derivative_p95_normalized_per_s": 100.0,
+        "core_input_rail_occupancy": 0.49625,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.18125,
+        "high_frequency_energy": 0.1334221311729056,
+        "nonzero_reversals": 152,
+        "output_rail_occupancy": 0.49375,
+        "requested_derivative_max_normalized_per_s": 100.0,
+        "requested_derivative_p95_normalized_per_s": 100.0,
+        "requested_derivative_rms_normalized_per_s": 55.764959031896446,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 296.2111334155402,
+        "tracking_p95_1pm": 0.013825617527970034
+      },
+      "tracking_p95_direction": "LOWER"
+    },
+    {
+      "baseline": {
+        "applied_derivative_p95_normalized_per_s": 117.57310236739579,
+        "core_input_rail_occupancy": 0.4975,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.0,
+        "high_frequency_energy": 0.13826255120984673,
+        "nonzero_reversals": 152,
+        "output_rail_occupancy": 0.4975,
+        "requested_derivative_max_normalized_per_s": 122.68502756308699,
+        "requested_derivative_p95_normalized_per_s": 117.57310236739579,
+        "requested_derivative_rms_normalized_per_s": 58.33785084764317,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 297.67319644257765,
+        "tracking_p95_1pm": 0.014078377638088837
+      },
+      "effects": {
+        "acceptance": false,
+        "cancellation_ratio": 0.8351261183440254,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": 0.00040261913652050877,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": 0.0108509245689303,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": 0.035971509551718614,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "feedback_loop_stability_evaluated": false,
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 0.2025232302448707,
+        "requested_delta_sign_changes": 132,
+        "requested_delta_signed_integral": 0.033390791095978506,
+        "same_time_peak_absolute_delta": {
+          "applied": 0.2268502756308699,
+          "curvature": 0.0024480455115687685,
+          "heading": 0.044406273605776966,
+          "pose_y": 3.0908450888485994,
+          "requested": 0.2268502756308699
+        },
+        "same_time_signed_final_delta": {
+          "applied": 0.0,
+          "curvature": 0.0003463768885070915,
+          "heading": 0.043034046196350983,
+          "pose_y": 3.0908450888485994,
+          "requested": 0.16625323567814054
+        },
+        "states": [
+          "GOVERNOR_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED",
+          "REQUESTED_DERIVATIVE_EFFECT_PRESENT",
+          "APPLIED_DERIVATIVE_EFFECT_PRESENT",
+          "SATURATION_EFFECT_PRESENT",
+          "EVENT_SUPPORT_UNAVAILABLE"
+        ],
+        "tracking_hard_threshold": "THRESHOLD_UNJUSTIFIED"
+      },
+      "scenario": "sharp_left",
+      "sg": {
+        "applied_derivative_p95_normalized_per_s": 100.0,
+        "core_input_rail_occupancy": 0.4975,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.175,
+        "high_frequency_energy": 0.13336609882440115,
+        "nonzero_reversals": 152,
+        "output_rail_occupancy": 0.49375,
+        "requested_derivative_max_normalized_per_s": 100.0,
+        "requested_derivative_p95_normalized_per_s": 100.0,
+        "requested_derivative_rms_normalized_per_s": 55.88706861218348,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 297.5069432068995,
+        "tracking_p95_1pm": 0.013881690859907496
+      },
+      "tracking_p95_direction": "LOWER"
+    },
+    {
+      "baseline": {
+        "applied_derivative_p95_normalized_per_s": 117.57310236739579,
+        "core_input_rail_occupancy": 0.4975,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.0,
+        "high_frequency_energy": 0.13826255120984673,
+        "nonzero_reversals": 152,
+        "output_rail_occupancy": 0.4975,
+        "requested_derivative_max_normalized_per_s": 122.68502756308699,
+        "requested_derivative_p95_normalized_per_s": 117.57310236739579,
+        "requested_derivative_rms_normalized_per_s": 58.33785084764317,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 297.67319644257765,
+        "tracking_p95_1pm": 0.014078377638088837
+      },
+      "effects": {
+        "acceptance": false,
+        "cancellation_ratio": 0.8351261183440254,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": -0.0004026191365205092,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": -0.010850924568930304,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": -0.035971509551718614,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "feedback_loop_stability_evaluated": false,
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 0.2025232302448707,
+        "requested_delta_sign_changes": 132,
+        "requested_delta_signed_integral": -0.033390791095978506,
+        "same_time_peak_absolute_delta": {
+          "applied": 0.2268502756308699,
+          "curvature": 0.0024480455115687685,
+          "heading": 0.044406273605776966,
+          "pose_y": 3.0908450888485994,
+          "requested": 0.2268502756308699
+        },
+        "same_time_signed_final_delta": {
+          "applied": 0.0,
+          "curvature": -0.0003463768885070915,
+          "heading": -0.043034046196350983,
+          "pose_y": -3.0908450888485994,
+          "requested": -0.16625323567814054
+        },
+        "states": [
+          "GOVERNOR_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED",
+          "REQUESTED_DERIVATIVE_EFFECT_PRESENT",
+          "APPLIED_DERIVATIVE_EFFECT_PRESENT",
+          "SATURATION_EFFECT_PRESENT",
+          "EVENT_SUPPORT_UNAVAILABLE"
+        ],
+        "tracking_hard_threshold": "THRESHOLD_UNJUSTIFIED"
+      },
+      "scenario": "sharp_right",
+      "sg": {
+        "applied_derivative_p95_normalized_per_s": 100.0,
+        "core_input_rail_occupancy": 0.4975,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.175,
+        "high_frequency_energy": 0.13336609882440115,
+        "nonzero_reversals": 152,
+        "output_rail_occupancy": 0.49375,
+        "requested_derivative_max_normalized_per_s": 100.0,
+        "requested_derivative_p95_normalized_per_s": 100.0,
+        "requested_derivative_rms_normalized_per_s": 55.88706861218348,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 297.5069432068995,
+        "tracking_p95_1pm": 0.013881690859907496
+      },
+      "tracking_p95_direction": "LOWER"
+    },
+    {
+      "baseline": {
+        "applied_derivative_p95_normalized_per_s": 0.033235305868253205,
+        "core_input_rail_occupancy": 0.0,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.0,
+        "high_frequency_energy": 2.827585650369855e-08,
+        "nonzero_reversals": 16,
+        "output_rail_occupancy": 0.0,
+        "requested_derivative_max_normalized_per_s": 0.08684133547829365,
+        "requested_derivative_p95_normalized_per_s": 0.033235305868253205,
+        "requested_derivative_rms_normalized_per_s": 0.01553672569114046,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 0.05961377027801623,
+        "tracking_p95_1pm": 0.00015599330097351504
+      },
+      "effects": {
+        "acceptance": false,
+        "cancellation_ratio": null,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "feedback_loop_stability_evaluated": false,
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 0.0,
+        "requested_delta_sign_changes": 0,
+        "requested_delta_signed_integral": 0.0,
+        "same_time_peak_absolute_delta": {
+          "applied": 0.0,
+          "curvature": 0.0,
+          "heading": 0.0,
+          "pose_y": 0.0,
+          "requested": 0.0
+        },
+        "same_time_signed_final_delta": {
+          "applied": 0.0,
+          "curvature": 0.0,
+          "heading": 0.0,
+          "pose_y": 0.0,
+          "requested": 0.0
+        },
+        "states": [
+          "NO_OUTPUT_DIFFERENCE",
+          "EVENT_SUPPORT_UNAVAILABLE"
+        ],
+        "tracking_hard_threshold": "THRESHOLD_UNJUSTIFIED"
+      },
+      "scenario": "low_speed",
+      "sg": {
+        "applied_derivative_p95_normalized_per_s": 0.033235305868253205,
+        "core_input_rail_occupancy": 0.0,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.0,
+        "high_frequency_energy": 2.827585650369855e-08,
+        "nonzero_reversals": 16,
+        "output_rail_occupancy": 0.0,
+        "requested_derivative_max_normalized_per_s": 0.08684133547829365,
+        "requested_derivative_p95_normalized_per_s": 0.033235305868253205,
+        "requested_derivative_rms_normalized_per_s": 0.01553672569114046,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 0.05961377027801623,
+        "tracking_p95_1pm": 0.00015599330097351504
+      },
+      "tracking_p95_direction": "EXACT_SAME"
+    },
+    {
+      "baseline": {
+        "applied_derivative_p95_normalized_per_s": 117.18588027534462,
+        "core_input_rail_occupancy": 0.49625,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.0,
+        "high_frequency_energy": 0.1387867907284429,
+        "nonzero_reversals": 152,
+        "output_rail_occupancy": 0.49625,
+        "requested_derivative_max_normalized_per_s": 120.36959953975266,
+        "requested_derivative_p95_normalized_per_s": 117.20075685086348,
+        "requested_derivative_rms_normalized_per_s": 58.26792735142644,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 296.2111334155402,
+        "tracking_p95_1pm": 0.014042884493503733
+      },
+      "effects": {
+        "acceptance": false,
+        "cancellation_ratio": 0.940424037960807,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": -3.942242332832834e-05,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": -0.00913362484868792,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": -0.015646957127692963,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "feedback_loop_stability_evaluated": false,
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 0.2095040086284174,
+        "requested_delta_sign_changes": 143,
+        "requested_delta_signed_integral": 0.012481402865105356,
+        "same_time_peak_absolute_delta": {
+          "applied": 0.2036959953975266,
+          "curvature": 0.0016305886467779009,
+          "heading": 0.01631457386480701,
+          "pose_y": 0.9361966985848533,
+          "requested": 0.2036959953975266
+        },
+        "same_time_signed_final_delta": {
+          "applied": 0.0,
+          "curvature": 0.00026010281710352884,
+          "heading": 0.014558881798685336,
+          "pose_y": 0.9361966985848533,
+          "requested": 0.0
+        },
+        "states": [
+          "GOVERNOR_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED",
+          "REQUESTED_DERIVATIVE_EFFECT_PRESENT",
+          "APPLIED_DERIVATIVE_EFFECT_PRESENT",
+          "SATURATION_EFFECT_PRESENT",
+          "EVENT_SUPPORT_UNAVAILABLE"
+        ],
+        "tracking_hard_threshold": "THRESHOLD_UNJUSTIFIED"
+      },
+      "scenario": "medium_speed",
+      "sg": {
+        "applied_derivative_p95_normalized_per_s": 100.0,
+        "core_input_rail_occupancy": 0.49625,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.18125,
+        "high_frequency_energy": 0.1334221311729056,
+        "nonzero_reversals": 152,
+        "output_rail_occupancy": 0.49375,
+        "requested_derivative_max_normalized_per_s": 100.0,
+        "requested_derivative_p95_normalized_per_s": 100.0,
+        "requested_derivative_rms_normalized_per_s": 55.764959031896446,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 296.2111334155402,
+        "tracking_p95_1pm": 0.013825617527970034
+      },
+      "tracking_p95_direction": "LOWER"
+    },
+    {
+      "baseline": {
+        "applied_derivative_p95_normalized_per_s": 176.3502331258384,
+        "core_input_rail_occupancy": 0.70125,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.0,
+        "high_frequency_energy": 0.1618132612489125,
+        "nonzero_reversals": 153,
+        "output_rail_occupancy": 0.70125,
+        "requested_derivative_max_normalized_per_s": 200.0,
+        "requested_derivative_p95_normalized_per_s": 176.3502331258384,
+        "requested_derivative_rms_normalized_per_s": 72.31287696817489,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 303.4680448089477,
+        "tracking_p95_1pm": 0.022329503183761163
+      },
+      "effects": {
+        "acceptance": false,
+        "cancellation_ratio": 0.87997257303718,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "feedback_loop_stability_evaluated": false,
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 0.8080747992995978,
+        "requested_delta_sign_changes": 150,
+        "requested_delta_signed_integral": 0.0969911389534279,
+        "same_time_peak_absolute_delta": {
+          "applied": 1.0,
+          "curvature": 0.017590944058800774,
+          "heading": 0.4251558450103077,
+          "pose_y": 61.27637016114314,
+          "requested": 1.0
+        },
+        "same_time_signed_final_delta": {
+          "applied": 0.0,
+          "curvature": -0.0005345974721801088,
+          "heading": 0.37309165963644797,
+          "pose_y": 61.27637016114314,
+          "requested": 0.0
+        },
+        "states": [
+          "GOVERNOR_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED",
+          "REQUESTED_DERIVATIVE_EFFECT_PRESENT",
+          "APPLIED_DERIVATIVE_EFFECT_PRESENT",
+          "SATURATION_EFFECT_PRESENT",
+          "TRACKING_TRADEOFF_PRESENT",
+          "EVENT_SUPPORT_UNAVAILABLE"
+        ],
+        "tracking_hard_threshold": "THRESHOLD_UNJUSTIFIED"
+      },
+      "scenario": "high_speed",
+      "sg": {
+        "applied_derivative_p95_normalized_per_s": 100.0,
+        "core_input_rail_occupancy": 0.70125,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.18875,
+        "high_frequency_energy": 0.13892207112963617,
+        "nonzero_reversals": 153,
+        "output_rail_occupancy": 0.585,
+        "requested_derivative_max_normalized_per_s": 100.0,
+        "requested_derivative_p95_normalized_per_s": 100.0,
+        "requested_derivative_rms_normalized_per_s": 58.818700088417714,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 303.4680448089477,
+        "tracking_p95_1pm": 0.023953503210550085
+      },
+      "tracking_p95_direction": "HIGHER"
+    },
+    {
+      "baseline": {
+        "applied_derivative_p95_normalized_per_s": 117.13035329292558,
+        "core_input_rail_occupancy": 0.49375,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.0,
+        "high_frequency_energy": 0.1387819792365032,
+        "nonzero_reversals": 152,
+        "output_rail_occupancy": 0.49375,
+        "requested_derivative_max_normalized_per_s": 120.36959953975266,
+        "requested_derivative_p95_normalized_per_s": 117.1690168644025,
+        "requested_derivative_rms_normalized_per_s": 58.26255775814582,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 296.2111334155402,
+        "tracking_p95_1pm": 0.01402999952303002
+      },
+      "effects": {
+        "acceptance": false,
+        "cancellation_ratio": 0.9933840400285516,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": -3.942242332832834e-05,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": -0.00913362484868792,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": -0.015646957127692963,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "feedback_loop_stability_evaluated": false,
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 0.20852990064684848,
+        "requested_delta_sign_changes": 145,
+        "requested_delta_signed_integral": 0.0013796254755296627,
+        "same_time_peak_absolute_delta": {
+          "applied": 0.2036959953975266,
+          "curvature": 0.0015146060850646584,
+          "heading": 0.0031173398795559222,
+          "pose_y": 0.06213444735759921,
+          "requested": 0.2036959953975266
+        },
+        "same_time_signed_final_delta": {
+          "applied": 0.0,
+          "curvature": 0.0002565651653659434,
+          "heading": -0.0002464316160397039,
+          "pose_y": -0.06213444735759921,
+          "requested": 0.0
+        },
+        "states": [
+          "GOVERNOR_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED",
+          "REQUESTED_DERIVATIVE_EFFECT_PRESENT",
+          "APPLIED_DERIVATIVE_EFFECT_PRESENT",
+          "SATURATION_EFFECT_PRESENT",
+          "EVENT_SUPPORT_UNAVAILABLE"
+        ],
+        "tracking_hard_threshold": "THRESHOLD_UNJUSTIFIED"
+      },
+      "scenario": "s_reversal",
+      "sg": {
+        "applied_derivative_p95_normalized_per_s": 100.0,
+        "core_input_rail_occupancy": 0.49375,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.1825,
+        "high_frequency_energy": 0.13346294241876208,
+        "nonzero_reversals": 152,
+        "output_rail_occupancy": 0.49125,
+        "requested_derivative_max_normalized_per_s": 100.0,
+        "requested_derivative_p95_normalized_per_s": 100.0,
+        "requested_derivative_rms_normalized_per_s": 55.77193683866756,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 296.2111334155402,
+        "tracking_p95_1pm": 0.013851214377127441
+      },
+      "tracking_p95_direction": "LOWER"
+    },
+    {
+      "baseline": {
+        "applied_derivative_p95_normalized_per_s": 116.57114517568223,
+        "core_input_rail_occupancy": 0.40125,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 3,
+          "eligible": 600,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 200
+        },
+        "governor_limit_occupancy": 0.0,
+        "high_frequency_energy": 0.11354107468406269,
+        "nonzero_reversals": 131,
+        "output_rail_occupancy": 0.40125,
+        "requested_derivative_max_normalized_per_s": 120.55857293486277,
+        "requested_derivative_p95_normalized_per_s": 116.57114517568223,
+        "requested_derivative_rms_normalized_per_s": 52.419562763654575,
+        "settling": {
+          "constant_run_start": 797,
+          "settling_s": 0.0,
+          "steady_bias": 0.0,
+          "total": 3,
+          "unavailable": 0,
+          "valid": 3
+        },
+        "total_variation": 241.9683330269612,
+        "tracking_p95_1pm": 0.014002343223131744
+      },
+      "effects": {
+        "acceptance": false,
+        "cancellation_ratio": 0.9804859376516416,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": -3.942242332832834e-05,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": -0.00913362484868792,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": -0.015646957127692963,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "feedback_loop_stability_evaluated": false,
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 0.13556236613998082,
+        "requested_delta_sign_changes": 94,
+        "requested_delta_signed_integral": 0.0026453724649465786,
+        "same_time_peak_absolute_delta": {
+          "applied": 0.20558572934862757,
+          "curvature": 0.001596936167952227,
+          "heading": 0.006306870313038705,
+          "pose_y": 0.26695763687370366,
+          "requested": 0.20558572934862757
+        },
+        "same_time_signed_final_delta": {
+          "applied": 0.0,
+          "curvature": 0.0010676716980659272,
+          "heading": 0.005379919351029834,
+          "pose_y": 0.26695763687370366,
+          "requested": 0.0
+        },
+        "states": [
+          "GOVERNOR_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED",
+          "REQUESTED_DERIVATIVE_EFFECT_PRESENT",
+          "APPLIED_DERIVATIVE_EFFECT_PRESENT",
+          "SATURATION_EFFECT_PRESENT"
+        ],
+        "tracking_hard_threshold": "THRESHOLD_UNJUSTIFIED"
+      },
+      "scenario": "driver_events",
+      "sg": {
+        "applied_derivative_p95_normalized_per_s": 100.0,
+        "core_input_rail_occupancy": 0.40125,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 3,
+          "eligible": 600,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 200
+        },
+        "governor_limit_occupancy": 0.11875,
+        "high_frequency_energy": 0.11009834916286841,
+        "nonzero_reversals": 131,
+        "output_rail_occupancy": 0.3975,
+        "requested_derivative_max_normalized_per_s": 120.05245675171412,
+        "requested_derivative_p95_normalized_per_s": 100.0,
+        "requested_derivative_rms_normalized_per_s": 50.643756098340006,
+        "settling": {
+          "constant_run_start": 797,
+          "settling_s": 0.0,
+          "steady_bias": 0.0,
+          "total": 3,
+          "unavailable": 0,
+          "valid": 3
+        },
+        "total_variation": 241.9683330269612,
+        "tracking_p95_1pm": 0.013746551806397856
+      },
+      "tracking_p95_direction": "LOWER"
+    },
+    {
+      "baseline": {
+        "applied_derivative_p95_normalized_per_s": 117.17737445572226,
+        "core_input_rail_occupancy": 0.49625,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.0,
+        "high_frequency_energy": 0.13879968446381033,
+        "nonzero_reversals": 152,
+        "output_rail_occupancy": 0.49625,
+        "requested_derivative_max_normalized_per_s": 120.36959953975266,
+        "requested_derivative_p95_normalized_per_s": 117.19486661004582,
+        "requested_derivative_rms_normalized_per_s": 58.27009532110199,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 296.2111334155402,
+        "tracking_p95_1pm": 0.014040830342031059
+      },
+      "effects": {
+        "acceptance": false,
+        "cancellation_ratio": 0.9377670901816927,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": -3.942242332832834e-05,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": -0.00913362484868792,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": -0.015646957127692963,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "feedback_loop_stability_evaluated": false,
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 0.2096822257357253,
+        "requested_delta_sign_changes": 143,
+        "requested_delta_signed_integral": 0.01304913504471336,
+        "same_time_peak_absolute_delta": {
+          "applied": 0.2036959953975266,
+          "curvature": 0.0016397091416022365,
+          "heading": 0.016918970347720927,
+          "pose_y": 0.9709669104701972,
+          "requested": 0.2036959953975266
+        },
+        "same_time_signed_final_delta": {
+          "applied": 0.0,
+          "curvature": 0.00025513035964924886,
+          "heading": 0.015306540957935183,
+          "pose_y": 0.9709669104701972,
+          "requested": 0.0
+        },
+        "states": [
+          "GOVERNOR_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED",
+          "REQUESTED_DERIVATIVE_EFFECT_PRESENT",
+          "APPLIED_DERIVATIVE_EFFECT_PRESENT",
+          "SATURATION_EFFECT_PRESENT",
+          "EVENT_SUPPORT_UNAVAILABLE"
+        ],
+        "tracking_hard_threshold": "THRESHOLD_UNJUSTIFIED"
+      },
+      "scenario": "limit_flags",
+      "sg": {
+        "applied_derivative_p95_normalized_per_s": 100.0,
+        "core_input_rail_occupancy": 0.49625,
+        "eligible_tracking_coverage": {
+          "contiguous_segments": 1,
+          "eligible": 800,
+          "policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+          "total": 800,
+          "unavailable": 0
+        },
+        "governor_limit_occupancy": 0.18125,
+        "high_frequency_energy": 0.13342110478039382,
+        "nonzero_reversals": 152,
+        "output_rail_occupancy": 0.49375,
+        "requested_derivative_max_normalized_per_s": 100.0,
+        "requested_derivative_p95_normalized_per_s": 100.0,
+        "requested_derivative_rms_normalized_per_s": 55.76410935301195,
+        "settling": {
+          "settling_s": null,
+          "steady_bias": null,
+          "total": 1,
+          "unavailable": 1,
+          "valid": 0
+        },
+        "total_variation": 296.2111334155402,
+        "tracking_p95_1pm": 0.013820089355558339
+      },
+      "tracking_p95_direction": "LOWER"
+    }
+  ],
+  "ta_enabled": false,
+  "ta_interpretation": "TA_STANDALONE_TRADEOFF_ONLY",
+  "threshold_status": "THRESHOLD_UNJUSTIFIED",
+  "total_physical_bound": null,
+  "v2_historical_violations": 37,
+  "vehicle_activation_allowed": false,
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}
