@@ -1,0 +1,38 @@
+{
+  "actual_algorithm_implemented": false,
+  "composed_implementation_authorized": false,
+  "governor_contract_sha256": "8ca2829af7fe5e905f10cee016745a62d9d7876506f185aaece70d6ebf15ed67",
+  "parameter_search_allowed": false,
+  "pipeline": [
+    "TA",
+    "SG",
+    "EXISTING_OFFLINE_COMMAND_PATH"
+  ],
+  "production_authority": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "c64122725bdc9d3bc5fce03fe5528ba125d6ecbc9cc705c92533c078c636f622",
+  "requirements": [
+    "TA_STANDALONE_STRUCTURAL_PASS",
+    "SG_STANDALONE_STRUCTURAL_PASS",
+    "BOTH_EXACT_REPEATABILITY",
+    "DISTINCT_IDENTITIES",
+    "NO_DUPLICATE_DELAY",
+    "NO_SHARED_MUTABLE_STATE",
+    "NO_ROLE_VIOLATION",
+    "NEW_EXPLICIT_COMPOSITION_AUTHORIZATION"
+  ],
+  "schema": "COMPOSED_CANDIDATE_CONTRACT_V1",
+  "sealed_reference_allowed": false,
+  "second_physical_delay_allowed": false,
+  "shared_mutable_state_allowed": false,
+  "source_baseline_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+  "status": "COMPOSITION_NOT_AUTHORIZED",
+  "trajectory_contract_sha256": "6332e70a53698abe07cf6209e7d3e2796e473f75bf698a13cda6c18b09bd77f0",
+  "vehicle_activation_allowed": false,
+  "verdict_catalog": [
+    "COMPOSITION_NOT_AUTHORIZED",
+    "COMPOSITION_STRUCTURALLY_VALID",
+    "COMPOSITION_TRADEOFF_ONLY",
+    "COMPOSITION_REJECTED"
+  ]
+}
