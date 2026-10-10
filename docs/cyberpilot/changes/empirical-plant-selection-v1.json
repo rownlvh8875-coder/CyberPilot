@@ -1,0 +1,500 @@
+{
+  "candidate_search_authorized": false,
+  "closed_loop_bias": "OLS_OBSERVATIONAL_NOT_CAUSAL",
+  "composition_authorized": false,
+  "execution_binding_sha256": "ce133b7010d255a6dce9efea6103a7838e94cdc8f0be59290b740f528bcac09c",
+  "fit_exact_repeatability": "PASS",
+  "holdout_selection_input": false,
+  "local_model_sha256": "fd44eea54b2b70e71bae5956e388293cae1f5a230e61d1412b041eaac646dbc3",
+  "performance_acceptance": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "47934437c0abbd9b43e34ad34741a2a0599dc0a45094cecfd1058ebccf33f0f7",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_PLANT_SELECTION_V1",
+  "sealed_reference_allowed": false,
+  "selection": {
+    "HIGH": {
+      "candidate_count": 8,
+      "candidate_dispositions": [
+        {
+          "config": {
+            "delay_samples": 0,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 5,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 10,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 20,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 0,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 5,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 10,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 20,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        }
+      ],
+      "coefficients_public": false,
+      "development": null,
+      "selected_config": null
+    },
+    "LOW": {
+      "candidate_count": 8,
+      "candidate_dispositions": [
+        {
+          "config": {
+            "delay_samples": 0,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "BIAS": -0.002790265355516196,
+            "CORRELATION": 0.9999088782518504,
+            "MAE": 0.024778170135027654,
+            "MEDIAN_ABS": 0.00914896056829373,
+            "P95_ABS": 0.10372382366049618,
+            "RMSE": 0.05602999638979,
+            "count": 9915
+          },
+          "fit_status": "FITTED",
+          "train_count": 26029
+        },
+        {
+          "config": {
+            "delay_samples": 5,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "BIAS": -0.0036902709660435237,
+            "CORRELATION": 0.9999109892723673,
+            "MAE": 0.02560994854692179,
+            "MEDIAN_ABS": 0.010421415924285471,
+            "P95_ABS": 0.10418733062993416,
+            "RMSE": 0.05544766948475777,
+            "count": 9915
+          },
+          "fit_status": "FITTED",
+          "train_count": 26029
+        },
+        {
+          "config": {
+            "delay_samples": 10,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "BIAS": -0.0038251683685251907,
+            "CORRELATION": 0.9999114236224523,
+            "MAE": 0.025768741500152712,
+            "MEDIAN_ABS": 0.010623694011470786,
+            "P95_ABS": 0.10414899408386431,
+            "RMSE": 0.055378412368499996,
+            "count": 9915
+          },
+          "fit_status": "FITTED",
+          "train_count": 26029
+        },
+        {
+          "config": {
+            "delay_samples": 20,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "BIAS": -0.0023920548396804747,
+            "CORRELATION": 0.9999085344823317,
+            "MAE": 0.02459256780330096,
+            "MEDIAN_ABS": 0.008691890648306222,
+            "P95_ABS": 0.10358975937524516,
+            "RMSE": 0.056335842303221986,
+            "count": 9915
+          },
+          "fit_status": "FITTED",
+          "train_count": 26029
+        },
+        {
+          "config": {
+            "delay_samples": 0,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "BIAS": -2.3731521738565875,
+            "CORRELATION": 0.3700366914450193,
+            "MAE": 3.2291102386922326,
+            "MEDIAN_ABS": 2.461648776962032,
+            "P95_ABS": 8.267073158460915,
+            "RMSE": 4.70216170806344,
+            "count": 9915
+          },
+          "fit_status": "FITTED",
+          "train_count": 26029
+        },
+        {
+          "config": {
+            "delay_samples": 5,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "BIAS": -2.383162586412575,
+            "CORRELATION": 0.36549480986613936,
+            "MAE": 3.2364124055943075,
+            "MEDIAN_ABS": 2.4735642850304895,
+            "P95_ABS": 8.375906021746331,
+            "RMSE": 4.712748318129966,
+            "count": 9915
+          },
+          "fit_status": "FITTED",
+          "train_count": 26029
+        },
+        {
+          "config": {
+            "delay_samples": 10,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "BIAS": -2.3799623104580427,
+            "CORRELATION": 0.37147954274796596,
+            "MAE": 3.2308492582693655,
+            "MEDIAN_ABS": 2.4767086393318385,
+            "P95_ABS": 8.35068987837785,
+            "RMSE": 4.699178090395757,
+            "count": 9915
+          },
+          "fit_status": "FITTED",
+          "train_count": 26029
+        },
+        {
+          "config": {
+            "delay_samples": 20,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "BIAS": -2.360741041977566,
+            "CORRELATION": 0.39779132399916123,
+            "MAE": 3.1982467452005308,
+            "MEDIAN_ABS": 2.4599251057654437,
+            "P95_ABS": 8.273234485733303,
+            "RMSE": 4.635828882638329,
+            "count": 9915
+          },
+          "fit_status": "FITTED",
+          "train_count": 26029
+        }
+      ],
+      "coefficients_public": false,
+      "development": {
+        "BIAS": -0.0038251683685251907,
+        "CORRELATION": 0.9999114236224523,
+        "MAE": 0.025768741500152712,
+        "MEDIAN_ABS": 0.010623694011470786,
+        "P95_ABS": 0.10414899408386431,
+        "RMSE": 0.055378412368499996,
+        "count": 9915
+      },
+      "selected_config": {
+        "delay_samples": 10,
+        "family": "ARX1",
+        "input_taps": 1,
+        "intercept": true,
+        "output_lags": 1
+      }
+    },
+    "MEDIUM": {
+      "candidate_count": 8,
+      "candidate_dispositions": [
+        {
+          "config": {
+            "delay_samples": 0,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "BIAS": -0.0005522243591785103,
+            "CORRELATION": 0.9968655731590607,
+            "MAE": 0.02216159710663337,
+            "MEDIAN_ABS": 0.009349867423750213,
+            "P95_ABS": 0.10785881410882141,
+            "RMSE": 0.04924231296775174,
+            "count": 192
+          },
+          "fit_status": "FITTED",
+          "train_count": 1111
+        },
+        {
+          "config": {
+            "delay_samples": 5,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "BIAS": -0.0009881036727350159,
+            "CORRELATION": 0.9968859517284465,
+            "MAE": 0.022163237369388133,
+            "MEDIAN_ABS": 0.00976346064433864,
+            "P95_ABS": 0.10880331119084956,
+            "RMSE": 0.04908970393933353,
+            "count": 192
+          },
+          "fit_status": "FITTED",
+          "train_count": 1111
+        },
+        {
+          "config": {
+            "delay_samples": 10,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "BIAS": -0.0003511831363953227,
+            "CORRELATION": 0.9969108788506409,
+            "MAE": 0.02115301941250408,
+            "MEDIAN_ABS": 0.00864178004881233,
+            "P95_ABS": 0.10616675754367154,
+            "RMSE": 0.048875048086752464,
+            "count": 192
+          },
+          "fit_status": "FITTED",
+          "train_count": 1111
+        },
+        {
+          "config": {
+            "delay_samples": 20,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "BIAS": 0.0012296567657926992,
+            "CORRELATION": 0.9969218039345431,
+            "MAE": 0.018879021853877884,
+            "MEDIAN_ABS": 0.005019306000198176,
+            "P95_ABS": 0.10148226119593706,
+            "RMSE": 0.04878757064078372,
+            "count": 192
+          },
+          "fit_status": "FITTED",
+          "train_count": 1111
+        },
+        {
+          "config": {
+            "delay_samples": 0,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "BIAS": -0.08654196937096842,
+            "CORRELATION": 0.664410124674028,
+            "MAE": 0.5362417135548799,
+            "MEDIAN_ABS": 0.45388706966998993,
+            "P95_ABS": 1.1657500471307323,
+            "RMSE": 0.6953459891846295,
+            "count": 192
+          },
+          "fit_status": "FITTED",
+          "train_count": 1111
+        },
+        {
+          "config": {
+            "delay_samples": 5,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "BIAS": -0.09061426683950675,
+            "CORRELATION": 0.675445589428864,
+            "MAE": 0.5455657301115568,
+            "MEDIAN_ABS": 0.4328430046692106,
+            "P95_ABS": 1.3339063763376473,
+            "RMSE": 0.7065569942423539,
+            "count": 192
+          },
+          "fit_status": "FITTED",
+          "train_count": 1111
+        },
+        {
+          "config": {
+            "delay_samples": 10,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "BIAS": -0.11067067908866869,
+            "CORRELATION": 0.6595119914591375,
+            "MAE": 0.5548319024150662,
+            "MEDIAN_ABS": 0.39559704374264903,
+            "P95_ABS": 1.258623929292025,
+            "RMSE": 0.7343150303504083,
+            "count": 192
+          },
+          "fit_status": "FITTED",
+          "train_count": 1111
+        },
+        {
+          "config": {
+            "delay_samples": 20,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "BIAS": -0.19314899286233586,
+            "CORRELATION": 0.6750303284781234,
+            "MAE": 0.526200103576688,
+            "MEDIAN_ABS": 0.38836017954148083,
+            "P95_ABS": 1.2883322679611702,
+            "RMSE": 0.7127955239752717,
+            "count": 192
+          },
+          "fit_status": "FITTED",
+          "train_count": 1111
+        }
+      ],
+      "coefficients_public": false,
+      "development": null,
+      "selected_config": null
+    }
+  },
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}
