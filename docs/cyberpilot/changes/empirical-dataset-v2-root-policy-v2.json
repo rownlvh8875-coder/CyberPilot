@@ -1,0 +1,48 @@
+{
+  "aliases": "EACH_WINDOWS_WSL_PAIR_ONE_STORAGE_ROOT",
+  "allowed_root_alias_hashes": {
+    "52a91bdfda461379a476af5bf6857ada399c5014712c9eb3f6f66fcec4e1beaf": "c280c1a63ad7101093058ab8c9a32f6ecb51627d34c968d2cd6a4c1a3453df1f",
+    "f3ef71cc0c27a7fe8b106c6f09d43645c6b3919d1bac994e980350e8598b66d9": "b022cc98c4755a9bab7c825e45f0c79328952c4961844f520ff662ac3be3e658"
+  },
+  "archives_opened": false,
+  "baseline_commit": "9d3df6222afcd954fe9ff91d59cb41e3e62113fa",
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "envelope_only_other_messages": true,
+  "holdout_opening_authorized": false,
+  "image_video_opened": false,
+  "maximum_directory_depth": 32,
+  "metadata_payloads": [
+    "initData",
+    "carParams"
+  ],
+  "minimum_routes": 3,
+  "model_fitting_authorized": false,
+  "network_scan": false,
+  "numeric_coverage": null,
+  "numeric_extraction_authorized": false,
+  "numeric_signal_values_opened": false,
+  "parent_scan": false,
+  "previous_policy_sha256": "33f4e9e92d8306ad0982402a5ae25523810d1fb997674e4985a463afeedcec70",
+  "prior_analysis_default": "ROUTE_PRIOR_ANALYSIS_STATUS_UNKNOWN",
+  "prior_analysis_unknown_holdout_allowed": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "cd62e6ffc115a08daa1ec05aec61d3ee47fdf281a4effc330dd26180bce9d0cd",
+  "reference_promotable": false,
+  "root_count": 2,
+  "schema": "EMPIRICAL_DATASET_V2_ROOT_POLICY_V2",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "split_policy_sha256": "ba60c5e59fe5d093abab4c2ec81d96d2373d94e745195779623c84dbf67f0e8b",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}
