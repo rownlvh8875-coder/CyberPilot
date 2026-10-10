@@ -9,6 +9,7 @@ from openpilot.tools.cyber_autotune import empirical_dataset_v2_publication as h
 from openpilot.tools.cyber_autotune import empirical_additional_root_policy as policy
 from openpilot.tools.cyber_autotune import empirical_cross_root_inventory as reader
 from openpilot.tools.cyber_autotune import empirical_export_metadata as exports
+from openpilot.tools.cyber_autotune import empirical_metadata_copy_variants as copies
 from openpilot.tools.cyber_autotune import empirical_dataset_v2_inventory as receipts
 
 PINS = {}
@@ -24,7 +25,7 @@ STATUSES = {
 
 
 def source_identity():
-  return {Path(module.__file__).name: p.sha(Path(module.__file__).read_bytes()) for module in (policy, reader, exports)}
+  return {Path(module.__file__).name: p.sha(Path(module.__file__).read_bytes()) for module in (policy, reader, exports, copies)}
 
 
 def public_generation(generation):
@@ -50,7 +51,7 @@ def public_generation(generation):
   return result
 
 
-def derive(private):
+def derive(private, copy_receipt=None):
   p.verify(private)
   if (
     private.get('schema') != 'EMPIRICAL_CROSS_ROOT_PRIVATE_INVENTORY_V1'
@@ -59,6 +60,28 @@ def derive(private):
     or private.get('holdout_opened') is not False
   ):
     raise ValueError('METADATA_ONLY_RECEIPT_REQUIRED')
+  copy_counts = {'copied_filename_files': 0, 'identical_byte_copy_filename_files': 0, 'unresolved_copy_filename_files': 0}
+  if copy_receipt is not None:
+    p.verify(copy_receipt)
+    if (
+      copy_receipt.get('schema') not in ('EMPIRICAL_COPY_FILENAME_METADATA_V1', 'EMPIRICAL_COPY_FILENAME_METADATA_V2')
+      or copy_receipt.get('parent_inventory_sha256') != private.get('parent_inventory_sha256')
+      or copy_receipt.get('export_inventory_sha256') != private.get('export_inventory_sha256')
+      or copy_receipt.get('source_sha256') != p.sha(Path(copies.__file__).read_bytes())
+      or copy_receipt.get('root_policy_sha256') != policy.root_policy()['receipt_sha256']
+      or copy_receipt.get('numeric_payloads_opened') is not False
+      or copy_receipt.get('decompression_performed') is not False
+    ):
+      raise ValueError('EXACT_HASH_ONLY_COPY_RECEIPT_REQUIRED')
+    for row in copy_receipt['rows']:
+      policy.old.hash_required(row['source_sha256'])
+      if row['status'] not in ('IDENTICAL_BYTE_COPY_OF_ALREADY_INVENTORIED_LOG', 'UNRESOLVED_COPY_FILENAME_METADATA_ONLY'):
+        raise ValueError('COPY_STATUS_ENUM_REQUIRED')
+    copy_counts = {
+      'copied_filename_files': len(copy_receipt['rows']),
+      'identical_byte_copy_filename_files': sum(row['status'] == 'IDENTICAL_BYTE_COPY_OF_ALREADY_INVENTORIED_LOG' for row in copy_receipt['rows']),
+      'unresolved_copy_filename_files': sum(row['status'] == 'UNRESOLVED_COPY_FILENAME_METADATA_ONLY' for row in copy_receipt['rows']),
+    }
   routes = private['routes']
   for route in routes:
     if route['status'] not in STATUSES or route['compatibility'] not in STATUSES:
@@ -109,6 +132,8 @@ def derive(private):
       'private_inventory_sha256': private['receipt_sha256'],
       'binding_sha256': private['binding_sha256'],
       'source_identity': source_identity(),
+      'copy_receipt_sha256': copy_receipt['receipt_sha256'] if copy_receipt else None,
+      **copy_counts,
       **counters,
       'export_log_file_count': private.get('export_log_file_count', 0),
       'export_inventory_sha256': private.get('export_inventory_sha256'),
@@ -143,7 +168,7 @@ def derive(private):
   different = any(x['status'] == 'ROUTE_DIFFERENT_SOURCE_GENERATION' for x in distinct)
   if different:
     status, next_state = 'ADDITIONAL_ROUTES_FOUND_DIFFERENT_GENERATION', 'EMPIRICAL_DATASET_V2_NEW_SOURCE_AUDIT_REQUIRED'
-  elif distinct or private['failed_file_count']:
+  elif distinct or private['failed_file_count'] or copy_counts['unresolved_copy_filename_files']:
     status, next_state = 'ROUTE_IDENTITY_AMBIGUOUS', 'PRIOR_ANALYSIS_AND_METADATA_IDENTITY_REVIEW_REQUIRED'
   elif routes:
     status, next_state = 'ONLY_DUPLICATE_OR_USED_ROUTES_FOUND', 'WAIT_FOR_UNTOUCHED_ROUTE_DATA'

@@ -181,3 +181,32 @@ class TestPublicMetadataRedaction(unittest.TestCase):
     body['split'] = {'status': 'ROUTE_DISJOINT_SPLIT_POSSIBLE', 'routes': []}
     with self.assertRaises(ValueError):
       pub.derive(p.seal(body))
+
+  def test_unresolved_copy_cannot_claim_only_duplicates_or_no_additional_routes(self):
+    from pathlib import Path
+    from openpilot.tools.cyber_autotune import empirical_cross_root_publication as pub
+    from openpilot.tools.cyber_autotune import empirical_metadata_copy_variants as copies
+    from openpilot.tools.cyber_autotune import empirical_additional_root_policy as policy
+
+    for empty in (False, True):
+      body = {k: v for k, v in fixture().items() if k != 'receipt_sha256'}
+      body.update(parent_inventory_sha256='a' * 64, export_inventory_sha256='b' * 64)
+      if empty:
+        body['routes'] = []
+      else:
+        body['routes'][0].update(status='ROUTE_DUPLICATE_EXISTING_V1', v1_overlap=True, prior_analysis='V1_PLANNING_CONTEXT_ONLY')
+      copy_receipt = p.seal(
+        {
+          'schema': 'EMPIRICAL_COPY_FILENAME_METADATA_V1',
+          'parent_inventory_sha256': 'a' * 64,
+          'export_inventory_sha256': 'b' * 64,
+          'source_sha256': p.sha(Path(copies.__file__).read_bytes()),
+          'root_policy_sha256': policy.root_policy()['receipt_sha256'],
+          'numeric_payloads_opened': False,
+          'decompression_performed': False,
+          'rows': [{'source_sha256': 'c' * 64, 'status': 'UNRESOLVED_COPY_FILENAME_METADATA_ONLY'}],
+        }
+      )
+      with self.subTest(empty=empty):
+        docs = pub.derive(p.seal(body), copy_receipt)
+        self.assertEqual(docs['empirical-dataset-v2-route-readiness-v1.json']['status'], 'ROUTE_IDENTITY_AMBIGUOUS')
