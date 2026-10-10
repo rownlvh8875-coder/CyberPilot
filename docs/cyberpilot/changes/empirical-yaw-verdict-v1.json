@@ -1,0 +1,37 @@
+{
+  "binding_sha256": "35e8847f07105059f0a7f8d30f638f4467cabef9e64409f627d7995ad2460202",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "device_frame": "DEVICE_AXIS_CORRESPONDENCE_ONLY",
+  "fitting_allowed": true,
+  "fitting_gates": {
+    "frozen_selection": true,
+    "source_complete": true,
+    "split_disjoint": true,
+    "train_dev_support": true,
+    "unit_supported": true,
+    "untouched_role": true
+  },
+  "gyro_candidate": {
+    "axis": 2,
+    "lag_samples": 10,
+    "sign": -1
+  },
+  "holdout_used_for_selection": false,
+  "hypothesis": "YAW_H1",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "fcfb05bbadb007731bf089a6fa13203479bf18d7d931f6be0aeab6fc3d4130d3",
+  "reference_promotable": false,
+  "rigid_transform": null,
+  "schema": "EMPIRICAL_YAW_VERDICT_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_unit_string": "EMPTY_DBC_UNIT_UNVERIFIED",
+  "status": "YAW_UNIT_SUPPORTED_FRAME_PARTIAL",
+  "ta_execution": false,
+  "unit_status": "YAW_UNIT_EMPIRICALLY_SUPPORTED",
+  "vehicle_activation_allowed": false,
+  "vehicle_frame_calibrated": false
+}

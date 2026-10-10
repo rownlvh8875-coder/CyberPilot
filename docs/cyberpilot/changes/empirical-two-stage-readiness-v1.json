@@ -1,0 +1,40 @@
+{
+  "binding_sha256": "35e8847f07105059f0a7f8d30f638f4467cabef9e64409f627d7995ad2460202",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "full_plant_ready": false,
+  "historical": {
+    "calibration_blockers": [
+      "CALIBRATION_UNCERTAINTY_PENDING",
+      "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+      "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+      "METRIC_CALIBRATION_UNAVAILABLE",
+      "INDEPENDENT_REFERENCE_UNAVAILABLE"
+    ],
+    "composition_authorized": false,
+    "current": "BASELINE_EXACT",
+    "sg": "SG_CLOSED_LOOP_TRADEOFF_ONLY",
+    "sg_execution": false,
+    "stage_a": "STRICT_READY_GATE_FAILED",
+    "stage_a_readiness_sha256": "c58e5da7c9b6056ee97e352a452ece257f4c57d811a25b4c7fc0bffe28564341",
+    "stage_a_validation_sha256": "df7f73c291057e3c2701387d4622e9a83057ca3b8046732efad48e1289b912fc",
+    "ta": "TA_STANDALONE_TRADEOFF_ONLY",
+    "ta_execution": false,
+    "v1": "TRADEOFF_ONLY",
+    "v2": "REJECTED",
+    "v2_violations": 37
+  },
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "c880ea0ce50f2bfae6c392976116559f2f8cce8e130d716bf2f2e4b83bc7fc96",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_TWO_STAGE_READINESS_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "stage_a": "HISTORICAL_STRICT_READY_GATE_FAILED",
+  "stage_b": "EMPIRICAL_YAW_MODEL_REJECTED",
+  "stage_c": "BLOCKED_STAGE_A_GATE_FAILED_NO_COMPOSED_ROLLOUT",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

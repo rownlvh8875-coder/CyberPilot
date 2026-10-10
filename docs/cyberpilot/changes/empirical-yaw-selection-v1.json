@@ -1,0 +1,404 @@
+{
+  "binding_sha256": "35e8847f07105059f0a7f8d30f638f4467cabef9e64409f627d7995ad2460202",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "holdout_selection_input": false,
+  "hypothesis": "YAW_H1",
+  "local_model_sha256": "8749149853f9f35691e5888cf98ade272939f07412a2187ad23a6b543f5536b6",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "7c66341a6711c0b5ff8df4cd5337a120aac1b763267237741102ce2a3bbfeb28",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_YAW_SELECTION_V1",
+  "sealed_reference_allowed": false,
+  "selection": {
+    "HIGH": {
+      "candidate_count": 8,
+      "candidate_dispositions": [
+        {
+          "config": {
+            "delay_samples": 0,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 5,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 10,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 20,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 0,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 5,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 10,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 20,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        }
+      ],
+      "coefficients_public": false,
+      "development": null,
+      "selected_config": null
+    },
+    "LOW": {
+      "candidate_count": 8,
+      "candidate_dispositions": [
+        {
+          "config": {
+            "delay_samples": 0,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 82
+        },
+        {
+          "config": {
+            "delay_samples": 5,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 82
+        },
+        {
+          "config": {
+            "delay_samples": 10,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 82
+        },
+        {
+          "config": {
+            "delay_samples": 20,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 82
+        },
+        {
+          "config": {
+            "delay_samples": 0,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 82
+        },
+        {
+          "config": {
+            "delay_samples": 5,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 82
+        },
+        {
+          "config": {
+            "delay_samples": 10,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 82
+        },
+        {
+          "config": {
+            "delay_samples": 20,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 82
+        }
+      ],
+      "coefficients_public": false,
+      "development": null,
+      "selected_config": null
+    },
+    "MEDIUM": {
+      "candidate_count": 8,
+      "candidate_dispositions": [
+        {
+          "config": {
+            "delay_samples": 0,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 5,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 10,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 20,
+            "family": "ARX1",
+            "input_taps": 1,
+            "intercept": true,
+            "output_lags": 1
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 0,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 5,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 10,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        },
+        {
+          "config": {
+            "delay_samples": 20,
+            "family": "FIR25",
+            "input_taps": 25,
+            "intercept": true,
+            "output_lags": 0
+          },
+          "development": {
+            "RMSE": null,
+            "count": 0
+          },
+          "fit_status": "INSUFFICIENT_SUPPORT",
+          "train_count": 0
+        }
+      ],
+      "coefficients_public": false,
+      "development": null,
+      "selected_config": null
+    }
+  },
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

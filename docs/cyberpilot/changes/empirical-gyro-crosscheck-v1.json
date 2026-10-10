@@ -1,0 +1,2783 @@
+{
+  "bias_corrected": false,
+  "binding_sha256": "35e8847f07105059f0a7f8d30f638f4467cabef9e64409f627d7995ad2460202",
+  "candidate_search_authorized": false,
+  "candidates_evaluated": 144,
+  "composition_authorized": false,
+  "continuous_scale_fit": false,
+  "gyro_candidate": {
+    "axis": 2,
+    "lag_samples": 10,
+    "sign": -1
+  },
+  "hypothesis": "YAW_H1",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "b1754320646ce256fb1d056671b4a4d8b131862894f2f01e22c6f9cd04379db0",
+  "reference_promotable": false,
+  "rejected_sensor_messages": 5518,
+  "roles": {
+    "DEVELOPMENT": {
+      "coverage": {
+        "minimum_support_met": true,
+        "segment_count": 16,
+        "supported_segments": 13,
+        "total": 95990,
+        "unavailable": 75639,
+        "valid": 20351
+      },
+      "gyro": {
+        "BIAS": 0.007730236581847297,
+        "CORRELATION": -0.009710132313444399,
+        "MAE": 0.01322402723826533,
+        "MEDIAN_ABS": 0.010711958268282067,
+        "P95_ABS": 0.03396847083899316,
+        "RMSE": 0.017479017467102134,
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8060775901008409,
+        "count": 20351
+      },
+      "kinematic": {
+        "BIAS": 0.0017538131918389834,
+        "CORRELATION": 0.9577976146750113,
+        "MAE": 0.003160809489060169,
+        "MEDIAN_ABS": 0.0026260176115617314,
+        "P95_ABS": 0.008058058290981183,
+        "RMSE": 0.004048314630771149,
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1714564412485677,
+        "count": 20351
+      },
+      "residual_autocorrelation": {
+        "1": {
+          "correlation": 0.9903637794865519,
+          "count": 13942
+        },
+        "10": {
+          "correlation": 0.7621931280362523,
+          "count": 1479
+        },
+        "11": {
+          "correlation": 0.7484039565531987,
+          "count": 1315
+        },
+        "12": {
+          "correlation": 0.740197894242312,
+          "count": 1166
+        },
+        "13": {
+          "correlation": 0.7384022695934608,
+          "count": 1030
+        },
+        "14": {
+          "correlation": 0.7344411903796725,
+          "count": 916
+        },
+        "15": {
+          "correlation": 0.7226873461256259,
+          "count": 820
+        },
+        "16": {
+          "correlation": 0.7027701584542774,
+          "count": 728
+        },
+        "17": {
+          "correlation": 0.6764094529826072,
+          "count": 640
+        },
+        "18": {
+          "correlation": 0.6679610950974902,
+          "count": 567
+        },
+        "19": {
+          "correlation": 0.6570620704313,
+          "count": 499
+        },
+        "2": {
+          "correlation": 0.9695398706589068,
+          "count": 8963
+        },
+        "20": {
+          "correlation": 0.6458124407808138,
+          "count": 439
+        },
+        "3": {
+          "correlation": 0.9418691547205444,
+          "count": 6492
+        },
+        "4": {
+          "correlation": 0.9111685562274324,
+          "count": 4752
+        },
+        "5": {
+          "correlation": 0.8821480372265226,
+          "count": 3886
+        },
+        "6": {
+          "correlation": 0.8548577428287769,
+          "count": 3128
+        },
+        "7": {
+          "correlation": 0.8292596045818148,
+          "count": 2482
+        },
+        "8": {
+          "correlation": 0.8043015218459069,
+          "count": 2026
+        },
+        "9": {
+          "correlation": 0.780278804286891,
+          "count": 1681
+        }
+      },
+      "segments": [
+        {
+          "gyro": {
+            "BIAS": 0.0037863684749389875,
+            "CORRELATION": -0.4951405099518853,
+            "MAE": 0.012096601941409034,
+            "MEDIAN_ABS": 0.011442814669759447,
+            "P95_ABS": 0.02501929413904151,
+            "RMSE": 0.01443783362473501,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.26977746780697776,
+            "count": 92
+          },
+          "kinematic": {
+            "BIAS": -0.0012596888550310535,
+            "CORRELATION": 0.1737516661071165,
+            "MAE": 0.00181726645933761,
+            "MEDIAN_ABS": 0.001377399042063647,
+            "P95_ABS": 0.004261120960872212,
+            "RMSE": 0.0022921848226923496,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.7312402203425248,
+            "count": 92
+          },
+          "segment_id": "a478f94af76ad32ba0bed905e6243a49798c33190b3e92cf01e921aeef3c329d"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "0366dabb9db05aec66923181afcc095ef74212a2830cff53ffe72873c664a5d2"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.00669042325075585,
+            "CORRELATION": -0.18906692189642618,
+            "MAE": 0.01001820654699669,
+            "MEDIAN_ABS": 0.008824821319042529,
+            "P95_ABS": 0.023772475090276995,
+            "RMSE": 0.0122800754281779,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.33067353750857964,
+            "count": 1310
+          },
+          "kinematic": {
+            "BIAS": -0.0005154353277763258,
+            "CORRELATION": 0.8411745298153336,
+            "MAE": 0.0013977149205161498,
+            "MEDIAN_ABS": 0.001090856283152262,
+            "P95_ABS": 0.0036921567543083088,
+            "RMSE": 0.001806998210901831,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.2424756752343762,
+            "count": 1310
+          },
+          "segment_id": "74f5fe3a0bbeee7e38dec5078f55921b637cbfbea6a9572572bcfdcee887cb9c"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.0473282385761469,
+            "CORRELATION": -0.37589017884753584,
+            "MAE": 0.0473282385761469,
+            "MEDIAN_ABS": 0.04601124342547619,
+            "P95_ABS": 0.06539639521395298,
+            "RMSE": 0.048099262257330765,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 7.223363758145113,
+            "count": 30
+          },
+          "kinematic": {
+            "BIAS": 0.005175715322242135,
+            "CORRELATION": 0.9117859896062528,
+            "MAE": 0.005175715322242135,
+            "MEDIAN_ABS": 0.004443651708796275,
+            "P95_ABS": 0.010836012531648115,
+            "RMSE": 0.005875959005982377,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.137629732128848,
+            "count": 30
+          },
+          "segment_id": "f4aee6883ffdfd95fe8fb5b0eec5a6b4ee0344ae1db3f65c92ca0d02593847a0"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "ba6a1807deb8326d2d28257eb0b3796432db3f35a52beb8b92ee05e3e4d23308"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.024327875412358514,
+            "CORRELATION": -0.15777542602572425,
+            "MAE": 0.024554939042573744,
+            "MEDIAN_ABS": 0.015358897425506605,
+            "P95_ABS": 0.09616327640393775,
+            "RMSE": 0.03628137304680967,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 2.472055781751257,
+            "count": 613
+          },
+          "kinematic": {
+            "BIAS": 0.0032815326058576373,
+            "CORRELATION": 0.9931018436826033,
+            "MAE": 0.0036641096234720123,
+            "MEDIAN_ABS": 0.002294244686031329,
+            "P95_ABS": 0.013625565334284379,
+            "RMSE": 0.0053738968014757265,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.176741373415544,
+            "count": 613
+          },
+          "segment_id": "0d363a640a559afb0ab5b7e3f05164dd8945d2235c8fe4fa95852462bca88e66"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.014142379745876163,
+            "CORRELATION": -0.020136203508359644,
+            "MAE": 0.014142379745876163,
+            "MEDIAN_ABS": 0.014398966233202241,
+            "P95_ABS": 0.02370811553503783,
+            "RMSE": 0.015309100760945216,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.281620055731748,
+            "count": 339
+          },
+          "kinematic": {
+            "BIAS": 0.001483285659803638,
+            "CORRELATION": 0.879707341561558,
+            "MAE": 0.0017503515032252638,
+            "MEDIAN_ABS": 0.0015513709720369345,
+            "P95_ABS": 0.0039486961628731445,
+            "RMSE": 0.002121210711250899,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.8781853360547665,
+            "count": 339
+          },
+          "segment_id": "c5e18673912708b50d7088fbb8329a6062fc44a3198b332cdf94888c88e8add8"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.008994821671471665,
+            "CORRELATION": -0.0073822403732237436,
+            "MAE": 0.009716247099612167,
+            "MEDIAN_ABS": 0.00903207914296211,
+            "P95_ABS": 0.020559978971182752,
+            "RMSE": 0.01134015508977946,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.28108041605165707,
+            "count": 2053
+          },
+          "kinematic": {
+            "BIAS": 0.0008919094091698414,
+            "CORRELATION": 0.8762822457062148,
+            "MAE": 0.0014680955316779627,
+            "MEDIAN_ABS": 0.0012494266428101052,
+            "P95_ABS": 0.0035994008650169465,
+            "RMSE": 0.0018294770071796552,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.3037050467773112,
+            "count": 2053
+          },
+          "segment_id": "c8046e16d589ac05e35f2291ce6a5a19933794c95431b63f5ceaba2f7da12fc7"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.010277953639852549,
+            "CORRELATION": 0.021442623573982193,
+            "MAE": 0.012249927403505933,
+            "MEDIAN_ABS": 0.010450158677835213,
+            "P95_ABS": 0.029526607478442955,
+            "RMSE": 0.015120898604863209,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.49099143853256155,
+            "count": 3093
+          },
+          "kinematic": {
+            "BIAS": 0.0028987551501263,
+            "CORRELATION": 0.9607055099978303,
+            "MAE": 0.0029920128396956863,
+            "MEDIAN_ABS": 0.002884154679248063,
+            "P95_ABS": 0.006021150650358925,
+            "RMSE": 0.0034276182089925883,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1071088934681188,
+            "count": 3093
+          },
+          "segment_id": "c25bb2eede3bb27251623ef50f92c7695c94c65dd858a1d2575916768f00d820"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.007527632696544325,
+            "CORRELATION": -0.07335160239098573,
+            "MAE": 0.009450321402957968,
+            "MEDIAN_ABS": 0.00833394737332182,
+            "P95_ABS": 0.022426389485239152,
+            "RMSE": 0.011701826462922607,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.3111590747179093,
+            "count": 2084
+          },
+          "kinematic": {
+            "BIAS": 0.0026953402116751887,
+            "CORRELATION": 0.8530122836480389,
+            "MAE": 0.002779999454290577,
+            "MEDIAN_ABS": 0.0025758035834103138,
+            "P95_ABS": 0.0056872963820765845,
+            "RMSE": 0.0032207323952156766,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.7248571597249115,
+            "count": 2084
+          },
+          "segment_id": "4716b1094f1a8abe5c2e8c1e8fe2de53edd057759cba1f7c573e5b19ea6ed936"
+        },
+        {
+          "gyro": {
+            "BIAS": -0.007009668895357316,
+            "CORRELATION": 0.08012137550367976,
+            "MAE": 0.009546369225664531,
+            "MEDIAN_ABS": 0.008028513413465447,
+            "P95_ABS": 0.02405500012749262,
+            "RMSE": 0.01163345487064288,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.462086389855361,
+            "count": 1125
+          },
+          "kinematic": {
+            "BIAS": -0.0028258546834979688,
+            "CORRELATION": 0.9791174433764755,
+            "MAE": 0.0028979284773906155,
+            "MEDIAN_ABS": 0.002742901294865055,
+            "P95_ABS": 0.005967421357103401,
+            "RMSE": 0.003380795086747165,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.2093749650380177,
+            "count": 1125
+          },
+          "segment_id": "8aa7065763e2fe294a71f89ac6cc29a3536da6a1743b34902234dae172c4e59c"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "e1bf1ea2097116fdfa67eee5d0df164d4a3119f32a1c9a1f621d0733604b683f"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.005842699119168547,
+            "CORRELATION": 0.0011087142504467313,
+            "MAE": 0.014544957299972995,
+            "MEDIAN_ABS": 0.011453723103750809,
+            "P95_ABS": 0.04269293504166261,
+            "RMSE": 0.01925959336324141,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.7595884552939035,
+            "count": 1875
+          },
+          "kinematic": {
+            "BIAS": 0.0009446036782715065,
+            "CORRELATION": 0.9817304795005812,
+            "MAE": 0.0027339326925058466,
+            "MEDIAN_ABS": 0.0022013549171937033,
+            "P95_ABS": 0.006813782953731453,
+            "RMSE": 0.0034837300766707327,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.2299204406672106,
+            "count": 1875
+          },
+          "segment_id": "0e7b27e77b26ecfab5fe30944dc47e6c5c75f5459ab9a8b4c3da096fc23277f6"
+        },
+        {
+          "gyro": {
+            "BIAS": -0.0024964735670752634,
+            "CORRELATION": 0.018454751949675042,
+            "MAE": 0.010477375727409616,
+            "MEDIAN_ABS": 0.008944812174003215,
+            "P95_ABS": 0.025018203779375643,
+            "RMSE": 0.01323263268784592,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0899971706408789,
+            "count": 2226
+          },
+          "kinematic": {
+            "BIAS": -0.0016243771345241496,
+            "CORRELATION": 0.9794989740989908,
+            "MAE": 0.002536241399783206,
+            "MEDIAN_ABS": 0.0022215915623385375,
+            "P95_ABS": 0.005853768926407226,
+            "RMSE": 0.003178696904929703,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.2578705111787678,
+            "count": 2226
+          },
+          "segment_id": "d4034ad74649cf8d692ec1dcad03608fb7206fe2f591028179f67066e7684a72"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.009064920901922924,
+            "CORRELATION": 0.11043388853523368,
+            "MAE": 0.013391721279887369,
+            "MEDIAN_ABS": 0.011322822673847741,
+            "P95_ABS": 0.033252884563716674,
+            "RMSE": 0.01675818007829289,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.737458271025995,
+            "count": 2608
+          },
+          "kinematic": {
+            "BIAS": 0.0012818912880171594,
+            "CORRELATION": 0.980177039443777,
+            "MAE": 0.0030945133300006363,
+            "MEDIAN_ABS": 0.002913146003774329,
+            "P95_ABS": 0.006350695989199904,
+            "RMSE": 0.0035952519833424065,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.2494810479523881,
+            "count": 2608
+          },
+          "segment_id": "56a9d97d791ec7231671e3471bfe0acb3d32c9dba0b88139b3ec0793dcaf75e9"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.013772349248299856,
+            "CORRELATION": -0.06768420769508696,
+            "MAE": 0.020609194111172655,
+            "MEDIAN_ABS": 0.017998707718668974,
+            "P95_ABS": 0.04744895645941746,
+            "RMSE": 0.025028656114333896,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.7055613180640014,
+            "count": 2903
+          },
+          "kinematic": {
+            "BIAS": 0.006572475398695928,
+            "CORRELATION": 0.9679582593884187,
+            "MAE": 0.006602971710214315,
+            "MEDIAN_ABS": 0.00618905307220699,
+            "P95_ABS": 0.011951982642981087,
+            "RMSE": 0.007232686892280072,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.079871356726246,
+            "count": 2903
+          },
+          "segment_id": "f923e1555620026d2816ec0fcaeb62748314e8ac6dccd1b0a794e4673aa486ca"
+        }
+      ],
+      "speed_bins": {
+        "HIGH": {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          }
+        },
+        "LOW": {
+          "gyro": {
+            "BIAS": 0.008064264607810697,
+            "CORRELATION": -0.0002543418776769789,
+            "MAE": 0.013024941828310344,
+            "MEDIAN_ABS": 0.010559242420292062,
+            "P95_ABS": 0.033222342298539646,
+            "RMSE": 0.017279215909116345,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8336040969922308,
+            "count": 19425
+          },
+          "kinematic": {
+            "BIAS": 0.0014380181216122538,
+            "CORRELATION": 0.9742122599823568,
+            "MAE": 0.0029106279986868796,
+            "MEDIAN_ABS": 0.002503162385958663,
+            "P95_ABS": 0.006920967429390363,
+            "RMSE": 0.0036359925244099267,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.2205824825716445,
+            "count": 19425
+          }
+        },
+        "MEDIUM": {
+          "gyro": {
+            "BIAS": 0.0007232231862327717,
+            "CORRELATION": -0.08828786724626994,
+            "MAE": 0.01740030595141392,
+            "MEDIAN_ABS": 0.015358897255501318,
+            "P95_ABS": 0.04236786823054029,
+            "RMSE": 0.021241428626926556,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.45498816748891024,
+            "count": 926
+          },
+          "kinematic": {
+            "BIAS": 0.008378348007340298,
+            "CORRELATION": 0.8882289778603578,
+            "MAE": 0.008408947124590574,
+            "MEDIAN_ABS": 0.008512575648545212,
+            "P95_ABS": 0.014144902994693976,
+            "RMSE": 0.009102395372698061,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.6176496093315774,
+            "count": 926
+          }
+        }
+      },
+      "time_blocks": {
+        "0": {
+          "gyro": {
+            "BIAS": 0.010966880458145757,
+            "CORRELATION": 0.050819298075732613,
+            "MAE": 0.014610103770677608,
+            "MEDIAN_ABS": 0.011911872558767132,
+            "P95_ABS": 0.03830997657986946,
+            "RMSE": 0.01875939348959961,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8194717408789344,
+            "count": 4032
+          },
+          "kinematic": {
+            "BIAS": 0.0018507713738223862,
+            "CORRELATION": 0.9826742188302899,
+            "MAE": 0.0031762049256945186,
+            "MEDIAN_ABS": 0.002792526740773089,
+            "P95_ABS": 0.007467956356516375,
+            "RMSE": 0.0038716221157887617,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.355227608696485,
+            "count": 4032
+          }
+        },
+        "1": {
+          "gyro": {
+            "BIAS": 0.0099256414475821,
+            "CORRELATION": -0.004744324095939749,
+            "MAE": 0.013181832747220373,
+            "MEDIAN_ABS": 0.010951941049678574,
+            "P95_ABS": 0.03352559284189074,
+            "RMSE": 0.01683465671808671,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.6561600814107557,
+            "count": 6127
+          },
+          "kinematic": {
+            "BIAS": 0.001967936458114021,
+            "CORRELATION": 0.9722349592552578,
+            "MAE": 0.0027355487861215606,
+            "MEDIAN_ABS": 0.002314719050404622,
+            "P95_ABS": 0.006800040268386765,
+            "RMSE": 0.003438860203777723,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.2852932205267373,
+            "count": 6127
+          }
+        },
+        "2": {
+          "gyro": {
+            "BIAS": 0.004925537979161786,
+            "CORRELATION": -0.03398138185472548,
+            "MAE": 0.012521285966579847,
+            "MEDIAN_ABS": 0.009773843037099805,
+            "P95_ABS": 0.03161227638541888,
+            "RMSE": 0.017956204409519946,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.997898645339988,
+            "count": 6253
+          },
+          "kinematic": {
+            "BIAS": 0.0012605894604264067,
+            "CORRELATION": 0.9686249360600009,
+            "MAE": 0.0031208273189301033,
+            "MEDIAN_ABS": 0.00266332276275568,
+            "P95_ABS": 0.007838273270455484,
+            "RMSE": 0.003964528110481095,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1369877442489424,
+            "count": 6253
+          }
+        },
+        "3": {
+          "gyro": {
+            "BIAS": 0.005454630245467498,
+            "CORRELATION": -0.04274249189365909,
+            "MAE": 0.012986430447149682,
+            "MEDIAN_ABS": 0.010930125260908585,
+            "P95_ABS": 0.032748921676346736,
+            "RMSE": 0.016296353721408932,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.6799367309543539,
+            "count": 3939
+          },
+          "kinematic": {
+            "BIAS": 0.002104475631620299,
+            "CORRELATION": 0.8710549419326734,
+            "MAE": 0.0038700012728170767,
+            "MEDIAN_ABS": 0.0030860611480388947,
+            "P95_ABS": 0.011193266900125315,
+            "RMSE": 0.005097529864103912,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0114440304264174,
+            "count": 3939
+          }
+        }
+      },
+      "turn_sign": {
+        "NEGATIVE": {
+          "gyro": {
+            "BIAS": 0.0014036228934747436,
+            "CORRELATION": -0.024208025703545293,
+            "MAE": 0.010069532734303992,
+            "MEDIAN_ABS": 0.008312130778755651,
+            "P95_ABS": 0.025132742047152556,
+            "RMSE": 0.012998196404130288,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.7560498280516509,
+            "count": 11914
+          },
+          "kinematic": {
+            "BIAS": 0.0003096267471279405,
+            "CORRELATION": 0.8764024039627334,
+            "MAE": 0.0026793761214127377,
+            "MEDIAN_ABS": 0.0021365159125579123,
+            "P95_ABS": 0.007213560025675097,
+            "RMSE": 0.003530683493607949,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0746879634014375,
+            "count": 11914
+          }
+        },
+        "POSITIVE": {
+          "gyro": {
+            "BIAS": 0.01723782032502474,
+            "CORRELATION": -0.017465908527292184,
+            "MAE": 0.018169261252652207,
+            "MEDIAN_ABS": 0.015358897381027713,
+            "P95_ABS": 0.04160210393829232,
+            "RMSE": 0.0228618086415367,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.901263971979106,
+            "count": 7823
+          },
+          "kinematic": {
+            "BIAS": 0.003899745170204964,
+            "CORRELATION": 0.9663367880339343,
+            "MAE": 0.003942900222884333,
+            "MEDIAN_ABS": 0.003475686336740485,
+            "P95_ABS": 0.008744913138717468,
+            "RMSE": 0.004745176303771066,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.3138778977457093,
+            "count": 7823
+          }
+        }
+      },
+      "unit": "RAD_PER_S_CONDITIONAL",
+      "vehicle_frame_calibrated": false
+    },
+    "TRAIN": {
+      "coverage": {
+        "minimum_support_met": true,
+        "segment_count": 43,
+        "supported_segments": 32,
+        "total": 257947,
+        "unavailable": 217517,
+        "valid": 40430
+      },
+      "gyro": {
+        "BIAS": 0.0070482777809468145,
+        "CORRELATION": -0.09935087433874398,
+        "MAE": 0.01771544589770928,
+        "MEDIAN_ABS": 0.010842857728992624,
+        "P95_ABS": 0.05109451419268681,
+        "RMSE": 0.03673559666152345,
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.9728466861456742,
+        "count": 40430
+      },
+      "kinematic": {
+        "BIAS": 0.0015320686642906903,
+        "CORRELATION": 0.9917216051957267,
+        "MAE": 0.003299891725669428,
+        "MEDIAN_ABS": 0.0022002120030930874,
+        "P95_ABS": 0.009512276580047097,
+        "RMSE": 0.005071004742707967,
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0864448302562018,
+        "count": 40430
+      },
+      "residual_autocorrelation": {
+        "1": {
+          "correlation": 0.9973813340504978,
+          "count": 27634
+        },
+        "10": {
+          "correlation": 0.8402998197154177,
+          "count": 2732
+        },
+        "11": {
+          "correlation": 0.8231004940878822,
+          "count": 2433
+        },
+        "12": {
+          "correlation": 0.8017890035473261,
+          "count": 2158
+        },
+        "13": {
+          "correlation": 0.7739244976839255,
+          "count": 1911
+        },
+        "14": {
+          "correlation": 0.7274883872288628,
+          "count": 1701
+        },
+        "15": {
+          "correlation": 0.6895545635540284,
+          "count": 1525
+        },
+        "16": {
+          "correlation": 0.665437359133382,
+          "count": 1361
+        },
+        "17": {
+          "correlation": 0.640261306561459,
+          "count": 1205
+        },
+        "18": {
+          "correlation": 0.6324573188192077,
+          "count": 1062
+        },
+        "19": {
+          "correlation": 0.6317619048591716,
+          "count": 938
+        },
+        "2": {
+          "correlation": 0.9904837199724358,
+          "count": 17567
+        },
+        "20": {
+          "correlation": 0.6651576499906672,
+          "count": 836
+        },
+        "3": {
+          "correlation": 0.9795931517740154,
+          "count": 12652
+        },
+        "4": {
+          "correlation": 0.9652798715414396,
+          "count": 9153
+        },
+        "5": {
+          "correlation": 0.9485782862845198,
+          "count": 7450
+        },
+        "6": {
+          "correlation": 0.9291981749304414,
+          "count": 5958
+        },
+        "7": {
+          "correlation": 0.9100166140402951,
+          "count": 4686
+        },
+        "8": {
+          "correlation": 0.8854266030032677,
+          "count": 3796
+        },
+        "9": {
+          "correlation": 0.8575353663980313,
+          "count": 3103
+        }
+      },
+      "segments": [
+        {
+          "gyro": {
+            "BIAS": 0.007615295608014988,
+            "CORRELATION": 0.013221688658858366,
+            "MAE": 0.013943987236541099,
+            "MEDIAN_ABS": 0.01069014168483562,
+            "P95_ABS": 0.04101523649639871,
+            "RMSE": 0.018282935798772822,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.7193496928356088,
+            "count": 1817
+          },
+          "kinematic": {
+            "BIAS": -0.00012179771498451681,
+            "CORRELATION": 0.9730364286704926,
+            "MAE": 0.0019442866384307637,
+            "MEDIAN_ABS": 0.0015270367536624604,
+            "P95_ABS": 0.00527028943471735,
+            "RMSE": 0.002609302798357375,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.067989943423298,
+            "count": 1817
+          },
+          "segment_id": "c185a0deafa7d17f2d99c91ff6aa4f5e243bc817a779521fb8f9686aaa388cb5"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.00820190633475863,
+            "CORRELATION": 0.02050584193137462,
+            "MAE": 0.012226904080831285,
+            "MEDIAN_ABS": 0.010330167388819186,
+            "P95_ABS": 0.027807458252754144,
+            "RMSE": 0.01543277795934859,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.23551709370317678,
+            "count": 650
+          },
+          "kinematic": {
+            "BIAS": -0.0002348544430156662,
+            "CORRELATION": 0.7283612185164883,
+            "MAE": 0.0017444589727551557,
+            "MEDIAN_ABS": 0.0012747100560914209,
+            "P95_ABS": 0.004686449048602602,
+            "RMSE": 0.002353618728752288,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1894328511712582,
+            "count": 650
+          },
+          "segment_id": "9b0e5ed163d8e13eb0636e5f7ef8dcce77fcc51105061b1929fe0dc1413e50c3"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "e62a74f2f052aadc47f75a6d490e98bce59c06dfead15b944d7cc2df7d0a8767"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.0074720588167092586,
+            "CORRELATION": 0.0030729303514996217,
+            "MAE": 0.011099784618758771,
+            "MEDIAN_ABS": 0.009032078992076366,
+            "P95_ABS": 0.029059732554760544,
+            "RMSE": 0.014445284243364375,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.6135538026368436,
+            "count": 2561
+          },
+          "kinematic": {
+            "BIAS": -0.0001757984110340361,
+            "CORRELATION": 0.9701004051222847,
+            "MAE": 0.0014122713870759055,
+            "MEDIAN_ABS": 0.0011383944013171076,
+            "P95_ABS": 0.0035289552054896495,
+            "RMSE": 0.0019681831056394617,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0592031563900945,
+            "count": 2561
+          },
+          "segment_id": "9334c3241a04e95d125e09871a66560deaeec4b0331fa36348bfef08d760e496"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.02301245809382695,
+            "CORRELATION": 0.305534907693633,
+            "MAE": 0.023381343266281444,
+            "MEDIAN_ABS": 0.019024088651529936,
+            "P95_ABS": 0.04682936577693382,
+            "RMSE": 0.027464342824484976,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1692059452419856,
+            "count": 284
+          },
+          "kinematic": {
+            "BIAS": 0.00026037245727802445,
+            "CORRELATION": 0.9827325208593205,
+            "MAE": 0.0022811898317910985,
+            "MEDIAN_ABS": 0.001774771573412369,
+            "P95_ABS": 0.005949353653727149,
+            "RMSE": 0.002935252343032557,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.9713547404360914,
+            "count": 284
+          },
+          "segment_id": "74634236198f0fdbcbbf1e560f91bf7b4f2ed90629c948235982b815a38378e6"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.029140027577026963,
+            "CORRELATION": -0.07342888432920705,
+            "MAE": 0.03367685092599929,
+            "MEDIAN_ABS": 0.03828816172117769,
+            "P95_ABS": 0.04886485561434202,
+            "RMSE": 0.03688762078215265,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.9697942761498386,
+            "count": 169
+          },
+          "kinematic": {
+            "BIAS": 0.0024153094538180036,
+            "CORRELATION": 0.9837188574714752,
+            "MAE": 0.003139862239762021,
+            "MEDIAN_ABS": 0.0032398137516662096,
+            "P95_ABS": 0.006006968136458469,
+            "RMSE": 0.00355991255235903,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1355764567580928,
+            "count": 169
+          },
+          "segment_id": "d90d8a3b9cbfc5bce86abd9bab7eaa6883c357e427b1b4b23bb8e9961060fd15"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "dbf54e6db9de205a797038f0764b7c0f28a623515d1eb675f7dddac734f530a3"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.07984993438550847,
+            "CORRELATION": -0.10193738169199743,
+            "MAE": 0.08407442450425348,
+            "MEDIAN_ABS": 0.022143864788586428,
+            "P95_ABS": 0.3037876463514338,
+            "RMSE": 0.1384892176795533,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 5.125379050435345,
+            "count": 759
+          },
+          "kinematic": {
+            "BIAS": 0.005092017482433059,
+            "CORRELATION": 0.9982185295194499,
+            "MAE": 0.007400654722970589,
+            "MEDIAN_ABS": 0.002838157565401511,
+            "P95_ABS": 0.02613419333625734,
+            "RMSE": 0.011894067954596048,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.085819029160285,
+            "count": 759
+          },
+          "segment_id": "6fca11c67b8a153b84a04a1be311fe56348330980c8737107b7478b5e1a66a1a"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.004338345249409424,
+            "CORRELATION": -0.07952070310216594,
+            "MAE": 0.008617951676882625,
+            "MEDIAN_ABS": 0.00818123101408038,
+            "P95_ABS": 0.018403406165099317,
+            "RMSE": 0.010244111386358801,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.7564913319885924,
+            "count": 2864
+          },
+          "kinematic": {
+            "BIAS": -0.00010994656457326442,
+            "CORRELATION": 0.9799781959294567,
+            "MAE": 0.0016253101747179981,
+            "MEDIAN_ABS": 0.0013424801783296413,
+            "P95_ABS": 0.004219273074057488,
+            "RMSE": 0.0020929262296782675,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.2050483410261905,
+            "count": 2864
+          },
+          "segment_id": "0c915dfcdced8f481cb6ae8b5c47928baa2ab7c5435849e51cb72a08b2d48601"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.0049985170605362636,
+            "CORRELATION": 0.037020909829200054,
+            "MAE": 0.008590138406283716,
+            "MEDIAN_ABS": 0.007963064716641318,
+            "P95_ABS": 0.018123062316745476,
+            "RMSE": 0.010330871793820074,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.7175561048621679,
+            "count": 2727
+          },
+          "kinematic": {
+            "BIAS": -0.00017726557130872414,
+            "CORRELATION": 0.9778724564294179,
+            "MAE": 0.0016739134411685567,
+            "MEDIAN_ABS": 0.001320667124941695,
+            "P95_ABS": 0.004563315398981925,
+            "RMSE": 0.002183797989024083,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.2095989822930275,
+            "count": 2727
+          },
+          "segment_id": "9188bd5bba79e0f81a6a548f3b5808a81864f4aff1558629fcdcbd419706d463"
+        },
+        {
+          "gyro": {
+            "BIAS": -0.008143117247661117,
+            "CORRELATION": -0.17322529064227463,
+            "MAE": 0.011623896554539728,
+            "MEDIAN_ABS": 0.0077776234794192,
+            "P95_ABS": 0.02732531174348793,
+            "RMSE": 0.01952842115815206,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.9147554315510606,
+            "count": 1166
+          },
+          "kinematic": {
+            "BIAS": -0.0019389519479419864,
+            "CORRELATION": 0.9841068143508567,
+            "MAE": 0.0024999244563220745,
+            "MEDIAN_ABS": 0.0019394117855006613,
+            "P95_ABS": 0.006375415750331329,
+            "RMSE": 0.0032256395685511603,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0816056071889144,
+            "count": 1166
+          },
+          "segment_id": "ea95274b5d952f0ef51517131f72ba89eec599effa36f22366a26fd3c4b93fdd"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "c5593c15ca6f1eec87292fd6a682e9a73cd9738deb2094c070befaa504fe3469"
+        },
+        {
+          "gyro": {
+            "BIAS": -0.028787170735330173,
+            "CORRELATION": -0.46761444364245264,
+            "MAE": 0.03706449376549047,
+            "MEDIAN_ABS": 0.011715522671958217,
+            "P95_ABS": 0.17087100968316005,
+            "RMSE": 0.0660526580904109,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 4.479658613011743,
+            "count": 1938
+          },
+          "kinematic": {
+            "BIAS": -0.0035872845842908714,
+            "CORRELATION": 0.9990746949842783,
+            "MAE": 0.004281681942979109,
+            "MEDIAN_ABS": 0.0024374367109113596,
+            "P95_ABS": 0.016560762375871247,
+            "RMSE": 0.006499757902578414,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.104692433698093,
+            "count": 1938
+          },
+          "segment_id": "766d506bfcfd617c675eccc1e1280bdb8b10a342c12eac7170f612fa06d1d578"
+        },
+        {
+          "gyro": {
+            "BIAS": -0.12422244629298751,
+            "CORRELATION": -0.5428815703852685,
+            "MAE": 0.12422244629298751,
+            "MEDIAN_ABS": 0.1291870906695792,
+            "P95_ABS": 0.14292610275734324,
+            "RMSE": 0.12502042901651034,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 16.942994878318604,
+            "count": 64
+          },
+          "kinematic": {
+            "BIAS": -0.01626297643133203,
+            "CORRELATION": 0.9503786778065295,
+            "MAE": 0.01626297643133203,
+            "MEDIAN_ABS": 0.015792682470200423,
+            "P95_ABS": 0.021247075958985583,
+            "RMSE": 0.016518920378212832,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1467925785785515,
+            "count": 64
+          },
+          "segment_id": "158e0614e86b96039f4aa342c73087863769a0c65e425c640396a7289ff716ac"
+        },
+        {
+          "gyro": {
+            "BIAS": -0.005729255492644671,
+            "CORRELATION": -0.08916991555880883,
+            "MAE": 0.01882577441103403,
+            "MEDIAN_ABS": 0.01010109266242228,
+            "P95_ABS": 0.07129669897981622,
+            "RMSE": 0.028432635979982267,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 2.6670383952779124,
+            "count": 966
+          },
+          "kinematic": {
+            "BIAS": -0.0030896279028030152,
+            "CORRELATION": 0.9977498231663494,
+            "MAE": 0.0035200477522791106,
+            "MEDIAN_ABS": 0.0017513153053441448,
+            "P95_ABS": 0.012654683217295026,
+            "RMSE": 0.005401640216787466,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1939551612082737,
+            "count": 966
+          },
+          "segment_id": "ded977b2f9cbb02f9981a3ce2687e14e22c182e7386a3995b77ad719eb6f0865"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.009258886028428299,
+            "CORRELATION": -0.07060143475651372,
+            "MAE": 0.009373561816289068,
+            "MEDIAN_ABS": 0.008933903964533783,
+            "P95_ABS": 0.017660551201973778,
+            "RMSE": 0.010675704148796433,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.24826781049647662,
+            "count": 866
+          },
+          "kinematic": {
+            "BIAS": -0.0006456019084349019,
+            "CORRELATION": 0.8883366306019649,
+            "MAE": 0.0011327199256886895,
+            "MEDIAN_ABS": 0.0009534107935448911,
+            "P95_ABS": 0.0027325832661197584,
+            "RMSE": 0.0014268503784155382,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.4940595355257091,
+            "count": 866
+          },
+          "segment_id": "5c5d5861a09bd7563310165f22d6fd75fd8146653e429589b1e556103fa5d1ff"
+        },
+        {
+          "gyro": {
+            "BIAS": -0.008547162884814745,
+            "CORRELATION": 0.06182111350164524,
+            "MAE": 0.017655988552990776,
+            "MEDIAN_ABS": 0.014180799607270759,
+            "P95_ABS": 0.04736387285860004,
+            "RMSE": 0.023938482883839558,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.9236117018245165,
+            "count": 2891
+          },
+          "kinematic": {
+            "BIAS": 0.0023392329316505676,
+            "CORRELATION": 0.8882068898259134,
+            "MAE": 0.004253688979898309,
+            "MEDIAN_ABS": 0.003202271422233092,
+            "P95_ABS": 0.01099994981968122,
+            "RMSE": 0.005523188800816202,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.931602083997297,
+            "count": 2891
+          },
+          "segment_id": "171b13c4915e3f1a7636098c8442dbe40e9f8ebd8ab99cfc3301529df07aea92"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.008651794254884314,
+            "CORRELATION": -0.17315679716987803,
+            "MAE": 0.01954251562702578,
+            "MEDIAN_ABS": 0.012217304475964598,
+            "P95_ABS": 0.0689623221568432,
+            "RMSE": 0.02997995446492017,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0463699626556457,
+            "count": 2687
+          },
+          "kinematic": {
+            "BIAS": 0.005281707127588386,
+            "CORRELATION": 0.986291140626954,
+            "MAE": 0.006156227346827707,
+            "MEDIAN_ABS": 0.00569244390362803,
+            "P95_ABS": 0.011737681790577336,
+            "RMSE": 0.0072429531788275854,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8308621307223918,
+            "count": 2687
+          },
+          "segment_id": "e1e713d5e0a42320bbe413e644edbd298a567ef2bdc88b27b19ccc4cf113e47f"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.02248750117246661,
+            "CORRELATION": 0.00620981974439488,
+            "MAE": 0.02851001723749529,
+            "MEDIAN_ABS": 0.020125827833951483,
+            "P95_ABS": 0.0757189274018844,
+            "RMSE": 0.037406447253119056,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.4023738017104177,
+            "count": 2664
+          },
+          "kinematic": {
+            "BIAS": 0.006321928657216705,
+            "CORRELATION": 0.9949772794195686,
+            "MAE": 0.006358777816380917,
+            "MEDIAN_ABS": 0.006435879141005697,
+            "P95_ABS": 0.0105488756215307,
+            "RMSE": 0.0068975519030983305,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0425049313062735,
+            "count": 2664
+          },
+          "segment_id": "2cd87a706d6370ef9f946499ca315d87f9413cf2fe7d94aa79ca90f0f5eda192"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.011553906175542724,
+            "CORRELATION": 0.2513022117288102,
+            "MAE": 0.016551511516849995,
+            "MEDIAN_ABS": 0.013439035043120384,
+            "P95_ABS": 0.042956915666831415,
+            "RMSE": 0.021306225377332524,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.2368329292581941,
+            "count": 2113
+          },
+          "kinematic": {
+            "BIAS": 0.006093925690299223,
+            "CORRELATION": 0.7649853332850876,
+            "MAE": 0.006121170855015977,
+            "MEDIAN_ABS": 0.006394946680657768,
+            "P95_ABS": 0.01098821588968852,
+            "RMSE": 0.006865543509947206,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.7872679651850295,
+            "count": 2113
+          },
+          "segment_id": "f3893ffcca2373a7bb9b54a9c672047eb7fe55e347c6295445c9fd7b8c5ed7ef"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.01010589584306504,
+            "CORRELATION": -0.06763680713054718,
+            "MAE": 0.010961735001367033,
+            "MEDIAN_ABS": 0.009992010391976343,
+            "P95_ABS": 0.02661627060751788,
+            "RMSE": 0.013421605309426347,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.18777949881887623,
+            "count": 695
+          },
+          "kinematic": {
+            "BIAS": 0.0009084719465147877,
+            "CORRELATION": 0.7479357770688312,
+            "MAE": 0.0014674821877386675,
+            "MEDIAN_ABS": 0.0012292439367518411,
+            "P95_ABS": 0.003590800029354846,
+            "RMSE": 0.0018413903662159812,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0398785237111865,
+            "count": 695
+          },
+          "segment_id": "274525c157870ee416c266fecfa538de00791eb9866aa2a0dd7e76f22d0f2edd"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.008873930033345653,
+            "CORRELATION": -0.09571638798531917,
+            "MAE": 0.0147527153901716,
+            "MEDIAN_ABS": 0.010897399363236047,
+            "P95_ABS": 0.04237550361928084,
+            "RMSE": 0.02042823843569753,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.21663978073331086,
+            "count": 1514
+          },
+          "kinematic": {
+            "BIAS": 0.00196501654591954,
+            "CORRELATION": 0.6349148247470278,
+            "MAE": 0.002663272805441591,
+            "MEDIAN_ABS": 0.002185110075853359,
+            "P95_ABS": 0.006817714809561098,
+            "RMSE": 0.0036083245548522726,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.9411296529222949,
+            "count": 1514
+          },
+          "segment_id": "e7164b29097c3706d4288e3b688cc7ecfd4baaa040f10326f47d57d13723f445"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.008986170695340244,
+            "CORRELATION": 0.10361728387354227,
+            "MAE": 0.01135428003947181,
+            "MEDIAN_ABS": 0.00949022760359841,
+            "P95_ABS": 0.027283859174161863,
+            "RMSE": 0.014367825741245012,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.2507622596252201,
+            "count": 1333
+          },
+          "kinematic": {
+            "BIAS": 0.00277947707602047,
+            "CORRELATION": 0.8354371874902218,
+            "MAE": 0.0029105497881929576,
+            "MEDIAN_ABS": 0.002785530240440509,
+            "P95_ABS": 0.006078681173756957,
+            "RMSE": 0.003440173488488553,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8554399891481259,
+            "count": 1333
+          },
+          "segment_id": "eb6a7c0aabe82cba12ea9916c5e40e24d09fc3aab730ec9df109bfee4f8ed290"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.013206161445701928,
+            "CORRELATION": -0.014172280677811821,
+            "MAE": 0.013785728271124006,
+            "MEDIAN_ABS": 0.01313360221683979,
+            "P95_ABS": 0.02764165219192353,
+            "RMSE": 0.01593416440386268,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.3263144601739811,
+            "count": 2317
+          },
+          "kinematic": {
+            "BIAS": 0.002061889461868867,
+            "CORRELATION": 0.7935839791887696,
+            "MAE": 0.0021622710881781483,
+            "MEDIAN_ABS": 0.0019972913789628923,
+            "P95_ABS": 0.004800675181776692,
+            "RMSE": 0.0025726056070941752,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.9072001869460329,
+            "count": 2317
+          },
+          "segment_id": "6ce94771e6535b3b0eed18ba2daf576a2bfd7869d318777320c5e68791a7a843"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.01280859736972215,
+            "CORRELATION": -0.1501725021438663,
+            "MAE": 0.013512214390685876,
+            "MEDIAN_ABS": 0.012064588525674578,
+            "P95_ABS": 0.03325070393652352,
+            "RMSE": 0.01649654847295642,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.32156459836092294,
+            "count": 700
+          },
+          "kinematic": {
+            "BIAS": 0.002622932553197056,
+            "CORRELATION": 0.9231180597880967,
+            "MAE": 0.0026595204392201553,
+            "MEDIAN_ABS": 0.0025165935960602664,
+            "P95_ABS": 0.0055215677402429076,
+            "RMSE": 0.0030720363106960117,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.4065722341900375,
+            "count": 700
+          },
+          "segment_id": "61e68ca9380adb050bbedab3343829e7c635d3c65d12de46c7f8151c3a3c6c3e"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.01652875282960118,
+            "CORRELATION": 0.04059206469843626,
+            "MAE": 0.016650667311511765,
+            "MEDIAN_ABS": 0.015227997833647635,
+            "P95_ABS": 0.03275764810784201,
+            "RMSE": 0.018789548749126212,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0157915431560687,
+            "count": 675
+          },
+          "kinematic": {
+            "BIAS": 0.003666793953843509,
+            "CORRELATION": 0.981444282560763,
+            "MAE": 0.003719671356692155,
+            "MEDIAN_ABS": 0.0036608447982301277,
+            "P95_ABS": 0.006802391237671682,
+            "RMSE": 0.004167461441081575,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.501352576832004,
+            "count": 675
+          },
+          "segment_id": "0dcbcb0e26e3fe1af714dbee866ccf5f39eb427fa0b1f9cf4cbfd409d2365d2b"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.002625541385295995,
+            "CORRELATION": -0.30184178660036165,
+            "MAE": 0.009154312929804514,
+            "MEDIAN_ABS": 0.00829031431750184,
+            "P95_ABS": 0.02090468089541796,
+            "RMSE": 0.011041451116753474,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8271153831944602,
+            "count": 1717
+          },
+          "kinematic": {
+            "BIAS": 0.0016513716618570692,
+            "CORRELATION": 0.9662071535868847,
+            "MAE": 0.0021572961463083504,
+            "MEDIAN_ABS": 0.0019850631332087375,
+            "P95_ABS": 0.004858276571199146,
+            "RMSE": 0.0025937744779341754,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.9607607638506228,
+            "count": 1717
+          },
+          "segment_id": "2134858fe0d7d4091feeb2075ac6907c0d267996091d8a47aad19077185f57d8"
+        },
+        {
+          "gyro": {
+            "BIAS": -0.007954152394483134,
+            "CORRELATION": -0.12248604060640592,
+            "MAE": 0.011622314603618653,
+            "MEDIAN_ABS": 0.009664760695210906,
+            "P95_ABS": 0.0270580575223037,
+            "RMSE": 0.014535842871135449,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.78561428612325,
+            "count": 470
+          },
+          "kinematic": {
+            "BIAS": 0.00010931630750739056,
+            "CORRELATION": 0.9793868870684016,
+            "MAE": 0.0014340229045857896,
+            "MEDIAN_ABS": 0.0012105181375520555,
+            "P95_ABS": 0.0035653688877903965,
+            "RMSE": 0.0018186221014796907,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0001013976490631,
+            "count": 470
+          },
+          "segment_id": "d3c27134c792c255a30b97c5056b39cacc3e378c312ec2922f3db7f07fb761fd"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.01768736043260818,
+            "CORRELATION": -0.11766225323396055,
+            "MAE": 0.01811400306843803,
+            "MEDIAN_ABS": 0.01623156231457334,
+            "P95_ABS": 0.0357356166733198,
+            "RMSE": 0.021082417707285465,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.7283002360629576,
+            "count": 734
+          },
+          "kinematic": {
+            "BIAS": 0.003103853088069257,
+            "CORRELATION": 0.9869760870203561,
+            "MAE": 0.0031801015273864,
+            "MEDIAN_ABS": 0.0030480998962157018,
+            "P95_ABS": 0.005922636149136359,
+            "RMSE": 0.0035914116209979524,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.3608729607515906,
+            "count": 734
+          },
+          "segment_id": "308fee815fc9f1d7652134e88282066c7c0a417b90d97cd8ff418d63484268f2"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "51fd2f903791a0497c31ea94635d7331b893d82e9c0bf6076fb28980afa4656c"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "8407d1d69153caf4c01daa1b6cfb0fb2558730a449239ae170705c0a6c70d975"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.002635043303370576,
+            "CORRELATION": 0.011267181626761838,
+            "MAE": 0.00888955912854039,
+            "MEDIAN_ABS": 0.007264932881001882,
+            "P95_ABS": 0.02260201343222261,
+            "RMSE": 0.011314694982120968,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.6210174622071458,
+            "count": 1318
+          },
+          "kinematic": {
+            "BIAS": -0.0009969149818218552,
+            "CORRELATION": 0.9425665427660593,
+            "MAE": 0.0016822021492642384,
+            "MEDIAN_ABS": 0.001429139879964954,
+            "P95_ABS": 0.00408428998176093,
+            "RMSE": 0.002117861886809651,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1990561316399586,
+            "count": 1318
+          },
+          "segment_id": "2548106d6a56540ccb21f3b7a6f228c8935ce2ada52352964c0a16f2f384eb04"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.0093616586664242,
+            "CORRELATION": -0.2505695844749411,
+            "MAE": 0.009535155787457091,
+            "MEDIAN_ABS": 0.00874846297737752,
+            "P95_ABS": 0.019342611767603327,
+            "RMSE": 0.010897030432539744,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.17726007668643004,
+            "count": 337
+          },
+          "kinematic": {
+            "BIAS": 6.214102009384139e-05,
+            "CORRELATION": 0.24502892520229996,
+            "MAE": 0.0011056248431611235,
+            "MEDIAN_ABS": 0.0009231748171034543,
+            "P95_ABS": 0.002854227005527753,
+            "RMSE": 0.0013966661521094248,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.2861358999936143,
+            "count": 337
+          },
+          "segment_id": "4c0644b9a3c1f7f73f4c14878ec6611d0f31bc87cc4600c8ac07155df6b5cc5b"
+        },
+        {
+          "gyro": {
+            "BIAS": -0.01791216564655885,
+            "CORRELATION": 0.17325788236395892,
+            "MAE": 0.03118391017184418,
+            "MEDIAN_ABS": 0.017955075466422672,
+            "P95_ABS": 0.11063205778915292,
+            "RMSE": 0.04630396905774963,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.6160106555098334,
+            "count": 241
+          },
+          "kinematic": {
+            "BIAS": -0.004320772426220288,
+            "CORRELATION": 0.7160542853448623,
+            "MAE": 0.005203725438662929,
+            "MEDIAN_ABS": 0.004960351971713212,
+            "P95_ABS": 0.010133491882385867,
+            "RMSE": 0.006311175937725482,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1911980656851122,
+            "count": 241
+          },
+          "segment_id": "a7cfb7254379e610d363edb6364278b05e64d5996db4c67e5c020969b4f0c33a"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "3be679b1152c8c1c849da77c0f8ad7a658d5013e9fdcc059c225ccc8a144d19b"
+        },
+        {
+          "gyro": {
+            "BIAS": -7.526724550772916e-05,
+            "CORRELATION": 0.37994322024890775,
+            "MAE": 0.001118101559544394,
+            "MEDIAN_ABS": 0.0009490228027918945,
+            "P95_ABS": 0.0022296582238807406,
+            "RMSE": 0.0014477014156966978,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.9866584794104946,
+            "count": 20
+          },
+          "kinematic": {
+            "BIAS": -0.002282359195434581,
+            "CORRELATION": -0.021504169382660667,
+            "MAE": 0.002282359195434581,
+            "MEDIAN_ABS": 0.002307839355191168,
+            "P95_ABS": 0.0035268998841095577,
+            "RMSE": 0.0024019900841529833,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.6409763892024458,
+            "count": 20
+          },
+          "segment_id": "ea2566ab75026251be07b0390bce5ca26d9aa2de4f33dbe7b5ce88cbcaf77fb6"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "ee6185ef92117fbcbda00bbb7119a1082de6170b6bce4fba0afe232e85ddbdd5"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "51ab7fbf118ba5cb4bd198dee855eaa876cc7a8b9d4743875ddebfcff02858e0"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "7518ee90d5c4b290d0b0a36323e819578d696c0f2220fc6d4b376a5ec389b591"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "0380fb72c767f01c49203546fabf677c2ccc2f364f3e83f4612145dd40d126ac"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "359cf22939058259b30ec91be8da17f918252336e60decb7e7db31f5e677d343"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.012923256112346109,
+            "CORRELATION": -0.1494823560838813,
+            "MAE": 0.017035565592658602,
+            "MEDIAN_ABS": 0.01354811843994464,
+            "P95_ABS": 0.04650647956779477,
+            "RMSE": 0.022529383467073203,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.30978703179847616,
+            "count": 890
+          },
+          "kinematic": {
+            "BIAS": 0.0008267895400580127,
+            "CORRELATION": 0.8920694635146195,
+            "MAE": 0.0021690163575353496,
+            "MEDIAN_ABS": 0.0017155623191981461,
+            "P95_ABS": 0.0056636060882075435,
+            "RMSE": 0.0029324004040747853,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1831330469615213,
+            "count": 890
+          },
+          "segment_id": "b634db57e405b0487451a0c6cfc6da34dae1aa72326b19d47816e3e7583bd513"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.09083552209558311,
+            "CORRELATION": -0.4857394507098692,
+            "MAE": 0.09301764620282464,
+            "MEDIAN_ABS": 0.00802851473928596,
+            "P95_ABS": 0.6034257923775802,
+            "RMSE": 0.22456149326224614,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 12.880830976644207,
+            "count": 283
+          },
+          "kinematic": {
+            "BIAS": 0.008554231146106274,
+            "CORRELATION": 0.9996588460007957,
+            "MAE": 0.010323229845049032,
+            "MEDIAN_ABS": 0.0015209680728540257,
+            "P95_ABS": 0.06483227479266611,
+            "RMSE": 0.02387569381036154,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1223038305596422,
+            "count": 283
+          },
+          "segment_id": "b48f5326ec2354db0f167ea052a6ad99f8d87a1b819998efd872b7e583d86481"
+        }
+      ],
+      "speed_bins": {
+        "HIGH": {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          }
+        },
+        "LOW": {
+          "gyro": {
+            "BIAS": 0.005827263720589397,
+            "CORRELATION": -0.12211190863729177,
+            "MAE": 0.016694533243808693,
+            "MEDIAN_ABS": 0.010122909937133915,
+            "P95_ABS": 0.042136611003647975,
+            "RMSE": 0.03826266808329024,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 2.2982275980756226,
+            "count": 32049
+          },
+          "kinematic": {
+            "BIAS": 0.000348597800838962,
+            "CORRELATION": 0.996584021333498,
+            "MAE": 0.0024964413334475797,
+            "MEDIAN_ABS": 0.0017285353776861842,
+            "P95_ABS": 0.006386442777397041,
+            "RMSE": 0.00437187437765279,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1061710445559234,
+            "count": 32049
+          }
+        },
+        "MEDIUM": {
+          "gyro": {
+            "BIAS": 0.011717443706301171,
+            "CORRELATION": -0.045512630919464545,
+            "MAE": 0.02161942270773911,
+            "MEDIAN_ABS": 0.015271630876125387,
+            "P95_ABS": 0.06656249355941361,
+            "RMSE": 0.030191875498646204,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.9968622328800268,
+            "count": 8381
+          },
+          "kinematic": {
+            "BIAS": 0.006057669153822302,
+            "CORRELATION": 0.9864478701455113,
+            "MAE": 0.006372291394004711,
+            "MEDIAN_ABS": 0.006324769239902368,
+            "P95_ABS": 0.011345195772739125,
+            "RMSE": 0.007138657429660426,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.9209022565258388,
+            "count": 8381
+          }
+        }
+      },
+      "time_blocks": {
+        "0": {
+          "gyro": {
+            "BIAS": 0.006145635296373984,
+            "CORRELATION": -0.08675060006778937,
+            "MAE": 0.016080759611998556,
+            "MEDIAN_ABS": 0.010777408313166155,
+            "P95_ABS": 0.057082083861130374,
+            "RMSE": 0.023626461141819627,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1967471453105214,
+            "count": 10852
+          },
+          "kinematic": {
+            "BIAS": 0.0012357201880300694,
+            "CORRELATION": 0.9778132020302671,
+            "MAE": 0.002936550183077342,
+            "MEDIAN_ABS": 0.002017120838429482,
+            "P95_ABS": 0.009148770826652934,
+            "RMSE": 0.004091735566383794,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0470815334485952,
+            "count": 10852
+          }
+        },
+        "1": {
+          "gyro": {
+            "BIAS": 0.011806025351732793,
+            "CORRELATION": -0.03490179071857041,
+            "MAE": 0.02053147860402922,
+            "MEDIAN_ABS": 0.011759155478485422,
+            "P95_ABS": 0.05170865071957195,
+            "RMSE": 0.043374315245637285,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.960826264592415,
+            "count": 10058
+          },
+          "kinematic": {
+            "BIAS": 0.0018856098723652143,
+            "CORRELATION": 0.9931288415081022,
+            "MAE": 0.0036735594245896506,
+            "MEDIAN_ABS": 0.0022485568594963192,
+            "P95_ABS": 0.01056068088644863,
+            "RMSE": 0.005530237294058627,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0867258719277035,
+            "count": 10058
+          }
+        },
+        "2": {
+          "gyro": {
+            "BIAS": 0.006341019615035197,
+            "CORRELATION": -0.13733862314033343,
+            "MAE": 0.018239909842540074,
+            "MEDIAN_ABS": 0.01075559250215672,
+            "P95_ABS": 0.04407610743779703,
+            "RMSE": 0.045875393792730486,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 2.860842312870215,
+            "count": 10379
+          },
+          "kinematic": {
+            "BIAS": 0.001459416920686998,
+            "CORRELATION": 0.9972345331945051,
+            "MAE": 0.0031369598517448465,
+            "MEDIAN_ABS": 0.0021631103960386548,
+            "P95_ABS": 0.007804993250589161,
+            "RMSE": 0.0056135718487944014,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.114314064353874,
+            "count": 10379
+          }
+        },
+        "3": {
+          "gyro": {
+            "BIAS": 0.003687888729378677,
+            "CORRELATION": -0.2105300150536512,
+            "MAE": 0.015962087110811575,
+            "MEDIAN_ABS": 0.010101093081382167,
+            "P95_ABS": 0.045334926331812936,
+            "RMSE": 0.029093412132701786,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.5609564100555535,
+            "count": 9141
+          },
+          "kinematic": {
+            "BIAS": 0.00157737099887437,
+            "CORRELATION": 0.9804341577477512,
+            "MAE": 0.0035050883807326524,
+            "MEDIAN_ABS": 0.002487570613434627,
+            "P95_ABS": 0.010159547521274454,
+            "RMSE": 0.00494250406801613,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0264311809651507,
+            "count": 9141
+          }
+        }
+      },
+      "turn_sign": {
+        "NEGATIVE": {
+          "gyro": {
+            "BIAS": -0.0017550800668576824,
+            "CORRELATION": -0.11163852749623535,
+            "MAE": 0.01393452064200343,
+            "MEDIAN_ABS": 0.00883572955292045,
+            "P95_ABS": 0.04020256841134238,
+            "RMSE": 0.025176759958076427,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.397941845555101,
+            "count": 26086
+          },
+          "kinematic": {
+            "BIAS": 0.0004791499074946379,
+            "CORRELATION": 0.9782929406633759,
+            "MAE": 0.0029974642733929346,
+            "MEDIAN_ABS": 0.0018941628706695352,
+            "P95_ABS": 0.009573342909718873,
+            "RMSE": 0.004366198670972921,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0604527344012356,
+            "count": 26086
+          }
+        },
+        "POSITIVE": {
+          "gyro": {
+            "BIAS": 0.024458759142083456,
+            "CORRELATION": -0.09764047530557968,
+            "MAE": 0.025964278624040847,
+            "MEDIAN_ABS": 0.01559887976348127,
+            "P95_ABS": 0.06705554949657565,
+            "RMSE": 0.053907774714660024,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 2.802550102402576,
+            "count": 12989
+          },
+          "kinematic": {
+            "BIAS": 0.0035912412844734966,
+            "CORRELATION": 0.9956741710342577,
+            "MAE": 0.004005115270726316,
+            "MEDIAN_ABS": 0.002927010400819545,
+            "P95_ABS": 0.009622071704394174,
+            "RMSE": 0.006374536960146757,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.099696154465485,
+            "count": 12989
+          }
+        }
+      },
+      "unit": "RAD_PER_S_CONDITIONAL",
+      "vehicle_frame_calibrated": false
+    },
+    "YAW_HOLDOUT": {
+      "coverage": {
+        "minimum_support_met": true,
+        "segment_count": 19,
+        "supported_segments": 16,
+        "total": 114156,
+        "unavailable": 92529,
+        "valid": 21627
+      },
+      "gyro": {
+        "BIAS": 0.009730012864530577,
+        "CORRELATION": 0.005021454079163095,
+        "MAE": 0.015956279474877304,
+        "MEDIAN_ABS": 0.011933688688783268,
+        "P95_ABS": 0.044645522365895994,
+        "RMSE": 0.02292859555707855,
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8120706086201714,
+        "count": 21627
+      },
+      "kinematic": {
+        "BIAS": 0.002721331822070507,
+        "CORRELATION": 0.9472938121010632,
+        "MAE": 0.0035745968451454508,
+        "MEDIAN_ABS": 0.0021852425550744395,
+        "P95_ABS": 0.012768125907210392,
+        "RMSE": 0.005412940895158678,
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.9979929743067584,
+        "count": 21627
+      },
+      "residual_autocorrelation": {
+        "1": {
+          "correlation": 0.9910918183541052,
+          "count": 14868
+        },
+        "10": {
+          "correlation": 0.7553630006681047,
+          "count": 1580
+        },
+        "11": {
+          "correlation": 0.7391786595032823,
+          "count": 1418
+        },
+        "12": {
+          "correlation": 0.725332088032971,
+          "count": 1266
+        },
+        "13": {
+          "correlation": 0.7087758722792455,
+          "count": 1129
+        },
+        "14": {
+          "correlation": 0.6910892115730042,
+          "count": 1013
+        },
+        "15": {
+          "correlation": 0.676593108324219,
+          "count": 915
+        },
+        "16": {
+          "correlation": 0.6623779262432116,
+          "count": 828
+        },
+        "17": {
+          "correlation": 0.6444091462290126,
+          "count": 746
+        },
+        "18": {
+          "correlation": 0.6240257145170218,
+          "count": 670
+        },
+        "19": {
+          "correlation": 0.5918672826669481,
+          "count": 606
+        },
+        "2": {
+          "correlation": 0.9697782182549598,
+          "count": 9429
+        },
+        "20": {
+          "correlation": 0.5380931784464005,
+          "count": 548
+        },
+        "3": {
+          "correlation": 0.9420537621356092,
+          "count": 6849
+        },
+        "4": {
+          "correlation": 0.9078639203197936,
+          "count": 4966
+        },
+        "5": {
+          "correlation": 0.8773921257153335,
+          "count": 4086
+        },
+        "6": {
+          "correlation": 0.8495363573010178,
+          "count": 3299
+        },
+        "7": {
+          "correlation": 0.8194318589066711,
+          "count": 2621
+        },
+        "8": {
+          "correlation": 0.7950601042144951,
+          "count": 2152
+        },
+        "9": {
+          "correlation": 0.7711657752677394,
+          "count": 1781
+        }
+      },
+      "segments": [
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "cab57279cd9977db5aebfd159cc631a313d2b3614aead82e49d86a438ca316b9"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.0075700859302959365,
+            "CORRELATION": -0.23021702233108396,
+            "MAE": 0.012321553029057516,
+            "MEDIAN_ABS": 0.011235556876465248,
+            "P95_ABS": 0.027396216042649132,
+            "RMSE": 0.014606623164116496,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.2685595200812447,
+            "count": 546
+          },
+          "kinematic": {
+            "BIAS": -0.0008037274819300147,
+            "CORRELATION": 0.8101919656386205,
+            "MAE": 0.0017996839113876718,
+            "MEDIAN_ABS": 0.001423456268873418,
+            "P95_ABS": 0.00487076252365392,
+            "RMSE": 0.00232471899701417,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.5517201612727733,
+            "count": 546
+          },
+          "segment_id": "4ad589abdea2bc3759490883933916944e422f164484da1c3950284e8a427ad2"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "638879b116f5a4f7fe52a529a9a34413201fc250ba273298117cd1760e81c2b4"
+        },
+        {
+          "gyro": {
+            "BIAS": -0.00903813129500963,
+            "CORRELATION": -0.47273099163418125,
+            "MAE": 0.01485373724971985,
+            "MEDIAN_ABS": 0.015969762982442494,
+            "P95_ABS": 0.02636101662114127,
+            "RMSE": 0.016681835663300785,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.87977277988213,
+            "count": 155
+          },
+          "kinematic": {
+            "BIAS": -0.0023308552637407638,
+            "CORRELATION": 0.9751882790981544,
+            "MAE": 0.002979796995709887,
+            "MEDIAN_ABS": 0.0025047571344611295,
+            "P95_ABS": 0.00704750664158022,
+            "RMSE": 0.003742293439868802,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1822709105531888,
+            "count": 155
+          },
+          "segment_id": "70fa38554cb4b0a8f908bb8c256e49aa2d5772665659c3575ce160c47c6567dd"
+        },
+        {
+          "gyro": {
+            "BIAS": -0.05065116365755191,
+            "CORRELATION": 0.03047110451014117,
+            "MAE": 0.05518840953471613,
+            "MEDIAN_ABS": 0.0472875144812825,
+            "P95_ABS": 0.12132765335209189,
+            "RMSE": 0.06883025899942762,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 2.1849681957357276,
+            "count": 286
+          },
+          "kinematic": {
+            "BIAS": -0.00530530953352945,
+            "CORRELATION": 0.9862483104119975,
+            "MAE": 0.006570306865632665,
+            "MEDIAN_ABS": 0.005171537650991768,
+            "P95_ABS": 0.0171125526337727,
+            "RMSE": 0.008509399081671674,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0972134305814782,
+            "count": 286
+          },
+          "segment_id": "057ff0e3efd713aa560909e456c4a57cf8c1d895786e953bad5d2976a3f6e6a2"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.006538886026320877,
+            "CORRELATION": -0.048820664611852325,
+            "MAE": 0.008978133354345831,
+            "MEDIAN_ABS": 0.008443030301673777,
+            "P95_ABS": 0.019089539166478053,
+            "RMSE": 0.010617800697807723,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.47153620748021613,
+            "count": 787
+          },
+          "kinematic": {
+            "BIAS": 0.0010063325088133011,
+            "CORRELATION": 0.928680837443758,
+            "MAE": 0.0017371412200314195,
+            "MEDIAN_ABS": 0.001601257786857503,
+            "P95_ABS": 0.004043196349519185,
+            "RMSE": 0.002126689544314672,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.205174576822578,
+            "count": 787
+          },
+          "segment_id": "2f47a8caaef01bba012a50df5a993d8c1bf03406a7076029df899067d7eb4934"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.011400334712557187,
+            "CORRELATION": -0.18838163236359623,
+            "MAE": 0.013371706896198104,
+            "MEDIAN_ABS": 0.01041743436389357,
+            "P95_ABS": 0.03637702631881104,
+            "RMSE": 0.018023644438998326,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.23243923044453912,
+            "count": 1684
+          },
+          "kinematic": {
+            "BIAS": 0.0006054856757250007,
+            "CORRELATION": 0.7787463246469558,
+            "MAE": 0.0019264690326202417,
+            "MEDIAN_ABS": 0.0014832265532547227,
+            "P95_ABS": 0.004951638901861285,
+            "RMSE": 0.0026332389026586353,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.4591673515309405,
+            "count": 1684
+          },
+          "segment_id": "dcc4b52ca5d2d7ddf4d0c3bfc55b4e8feae4378fd860cdc6f0b93b1417a78412"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.01620045788240251,
+            "CORRELATION": -0.1003211474267439,
+            "MAE": 0.016883583832407126,
+            "MEDIAN_ABS": 0.01638427843486865,
+            "P95_ABS": 0.029334621560915933,
+            "RMSE": 0.018408153605655484,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.6113429513495416,
+            "count": 599
+          },
+          "kinematic": {
+            "BIAS": 0.0026008146674024795,
+            "CORRELATION": 0.920436773467052,
+            "MAE": 0.0027281707668799456,
+            "MEDIAN_ABS": 0.0025617950455599915,
+            "P95_ABS": 0.005764168778999857,
+            "RMSE": 0.0031620319798859077,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.5785450753367356,
+            "count": 599
+          },
+          "segment_id": "1cdaa0890a371580e9069b167392a0028a1f43f6da35f830710b45c675420d39"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.008217552547447111,
+            "CORRELATION": 0.02160296105394879,
+            "MAE": 0.009593541916174127,
+            "MEDIAN_ABS": 0.008704829767705492,
+            "P95_ABS": 0.02112830182324692,
+            "RMSE": 0.011577358757415243,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.28559624240868053,
+            "count": 2772
+          },
+          "kinematic": {
+            "BIAS": 0.0011565520792983196,
+            "CORRELATION": 0.8678632424625488,
+            "MAE": 0.00164270697517617,
+            "MEDIAN_ABS": 0.0014928452217268105,
+            "P95_ABS": 0.003797055752922521,
+            "RMSE": 0.002012797211277062,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0222850749370225,
+            "count": 2772
+          },
+          "segment_id": "1136437af3478827a24645ad61056090422fc807c3df175d03f53ad1c22b703f"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.010015388520443305,
+            "CORRELATION": 0.012719163413934762,
+            "MAE": 0.011103619447876172,
+            "MEDIAN_ABS": 0.010406526082440191,
+            "P95_ABS": 0.02325214900404335,
+            "RMSE": 0.012962983720485105,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.3020953486786576,
+            "count": 2165
+          },
+          "kinematic": {
+            "BIAS": 0.0009759904775782342,
+            "CORRELATION": 0.9088101944231664,
+            "MAE": 0.0016934222624291075,
+            "MEDIAN_ABS": 0.0015201485915485944,
+            "P95_ABS": 0.0037552848463672586,
+            "RMSE": 0.002060989311542104,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.3347031399714957,
+            "count": 2165
+          },
+          "segment_id": "c8bdd753e8fdab0a5ceb70c95f5040b1a7893b6402de33e4858e703a10706193"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.004648039766374473,
+            "CORRELATION": -0.01570993362532658,
+            "MAE": 0.01417111476559357,
+            "MEDIAN_ABS": 0.010722866855661293,
+            "P95_ABS": 0.040750166496829915,
+            "RMSE": 0.018873609428927726,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.3012209831134145,
+            "count": 1784
+          },
+          "kinematic": {
+            "BIAS": 0.00048163874801879393,
+            "CORRELATION": 0.8888454243677777,
+            "MAE": 0.0018114615529973076,
+            "MEDIAN_ABS": 0.0015103980098671555,
+            "P95_ABS": 0.004677901193798415,
+            "RMSE": 0.002323693539713559,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1004133054026444,
+            "count": 1784
+          },
+          "segment_id": "d1ed2a3074752c053bb29d0d5641ec447a2173059f325356cf02da23d3005f2b"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.009949705063110811,
+            "CORRELATION": 0.0030602543977149336,
+            "MAE": 0.01142996645772475,
+            "MEDIAN_ABS": 0.010777408302046432,
+            "P95_ABS": 0.02474004228349925,
+            "RMSE": 0.01357602992641254,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.31659528295913447,
+            "count": 2710
+          },
+          "kinematic": {
+            "BIAS": 0.0021328957331431223,
+            "CORRELATION": 0.8918799075558032,
+            "MAE": 0.002321377561852583,
+            "MEDIAN_ABS": 0.0021038587236393014,
+            "P95_ABS": 0.004981669783231151,
+            "RMSE": 0.0028005027476440524,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.9784491383671774,
+            "count": 2710
+          },
+          "segment_id": "1ea7e10334248ff5d94470050585a3f68ec86f37cd2f3e0f298ba843ce58111e"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.013531618785615906,
+            "CORRELATION": 0.015432011132111446,
+            "MAE": 0.018235305490536702,
+            "MEDIAN_ABS": 0.014660765632515617,
+            "P95_ABS": 0.04973970274059756,
+            "RMSE": 0.0237335956020836,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.3949205358232749,
+            "count": 2507
+          },
+          "kinematic": {
+            "BIAS": 0.004009658908464385,
+            "CORRELATION": 0.9141715902529985,
+            "MAE": 0.004307990977484466,
+            "MEDIAN_ABS": 0.003899379329537402,
+            "P95_ABS": 0.00897346178226759,
+            "RMSE": 0.005109092343641642,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1782896085049128,
+            "count": 2507
+          },
+          "segment_id": "474042030f1305752b923f91977603af84330f0980009c990b7f1d5b4cce669b"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.007661625363408664,
+            "CORRELATION": 0.03326637252552129,
+            "MAE": 0.0246116254262847,
+            "MEDIAN_ABS": 0.018784106601265338,
+            "P95_ABS": 0.07546367259101293,
+            "RMSE": 0.03360320728349088,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8565451779102611,
+            "count": 2759
+          },
+          "kinematic": {
+            "BIAS": 0.010032403278131636,
+            "CORRELATION": 0.9729972211398348,
+            "MAE": 0.010573471713969714,
+            "MEDIAN_ABS": 0.011210411465422145,
+            "P95_ABS": 0.01735627451056797,
+            "RMSE": 0.011718507368834993,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8065461507966319,
+            "count": 2759
+          },
+          "segment_id": "70f6e8c969639c9e439257f444f074ef293d830548f99286fef692078be27fa7"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.011713540385234821,
+            "CORRELATION": 0.15562189832338796,
+            "MAE": 0.013617644056245905,
+            "MEDIAN_ABS": 0.010668324647958864,
+            "P95_ABS": 0.03783001159935812,
+            "RMSE": 0.017871111081027093,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.5515081420207247,
+            "count": 1761
+          },
+          "kinematic": {
+            "BIAS": 0.003228674336719995,
+            "CORRELATION": 0.8996890813939452,
+            "MAE": 0.003419364319252629,
+            "MEDIAN_ABS": 0.0018037485103098673,
+            "P95_ABS": 0.01197918780004689,
+            "RMSE": 0.005199307104290126,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.7027028167010336,
+            "count": 1761
+          },
+          "segment_id": "992eca7a806d00b1a41b6f00136498ad532f6eaccfe719323600d945fb4630d6"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.039572088643735084,
+            "CORRELATION": -0.3748242934174879,
+            "MAE": 0.039572088643735084,
+            "MEDIAN_ABS": 0.03368485478172903,
+            "P95_ABS": 0.08563021479754275,
+            "RMSE": 0.04628632828732069,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.6533430418699675,
+            "count": 161
+          },
+          "kinematic": {
+            "BIAS": 0.004720396428176413,
+            "CORRELATION": 0.9930848328027905,
+            "MAE": 0.004740787206998895,
+            "MEDIAN_ABS": 0.003290231655317515,
+            "P95_ABS": 0.012971034238067329,
+            "RMSE": 0.006296029484438061,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.2391273955195554,
+            "count": 161
+          },
+          "segment_id": "82daa08de3382219c56a6d9f90ba835e9117fcb8541437e94f6b5b6e516d3bf0"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.020645772000661804,
+            "CORRELATION": -0.06675944749966088,
+            "MAE": 0.024939739477371967,
+            "MEDIAN_ABS": 0.022743821394716063,
+            "P95_ABS": 0.05791875318724764,
+            "RMSE": 0.03012457849620886,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.5941300496084712,
+            "count": 782
+          },
+          "kinematic": {
+            "BIAS": 0.0008143809565224924,
+            "CORRELATION": 0.8799379945650847,
+            "MAE": 0.0022911320339287795,
+            "MEDIAN_ABS": 0.0016310119362203683,
+            "P95_ABS": 0.00748407285437512,
+            "RMSE": 0.0033476668708900532,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1113215596517771,
+            "count": 782
+          },
+          "segment_id": "9ecc10af5a81a3eedc5a2ab46d28332cbfddeba92f717140db58c2955a414f6d"
+        },
+        {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "segment_id": "e7df13d87f4da6d94b2ff037680f893c4b51416415f6257e8c9fa67d3a6e8ec3"
+        },
+        {
+          "gyro": {
+            "BIAS": 0.06042905615124935,
+            "CORRELATION": 0.06805712652934566,
+            "MAE": 0.06042905615124935,
+            "MEDIAN_ABS": 0.045269478313036085,
+            "P95_ABS": 0.17243852821022168,
+            "RMSE": 0.07698296066503663,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 3.787089664322343,
+            "count": 169
+          },
+          "kinematic": {
+            "BIAS": 0.006092642523960477,
+            "CORRELATION": 0.9839631615497061,
+            "MAE": 0.008565242858015774,
+            "MEDIAN_ABS": 0.004324781477811766,
+            "P95_ABS": 0.029875642979192516,
+            "RMSE": 0.01292548377277111,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1813507446717144,
+            "count": 169
+          },
+          "segment_id": "f869c8da42a2e57e07c5ae6b9fe758c007434071db0382ed0b8b389a1f618785"
+        }
+      ],
+      "speed_bins": {
+        "HIGH": {
+          "gyro": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          },
+          "kinematic": {
+            "BIAS": null,
+            "CORRELATION": null,
+            "MAE": null,
+            "MEDIAN_ABS": null,
+            "P95_ABS": null,
+            "RMSE": null,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": null,
+            "count": 0
+          }
+        },
+        "LOW": {
+          "gyro": {
+            "BIAS": 0.00980873502953511,
+            "CORRELATION": -0.02172325698203669,
+            "MAE": 0.014476223511743392,
+            "MEDIAN_ABS": 0.011301007229599093,
+            "P95_ABS": 0.037509306438299216,
+            "RMSE": 0.02070860111223459,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.7945347769187415,
+            "count": 18455
+          },
+          "kinematic": {
+            "BIAS": 0.0014768871169754828,
+            "CORRELATION": 0.9765008712672938,
+            "MAE": 0.0023958853051927066,
+            "MEDIAN_ABS": 0.0018726935021663414,
+            "P95_ABS": 0.0064245963461956644,
+            "RMSE": 0.0033919104479767956,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1354274685837276,
+            "count": 18455
+          }
+        },
+        "MEDIUM": {
+          "gyro": {
+            "BIAS": 0.009271999763913104,
+            "CORRELATION": 0.05255292518871497,
+            "MAE": 0.024567386914863543,
+            "MEDIAN_ABS": 0.019231346821004885,
+            "P95_ABS": 0.07159122379704487,
+            "RMSE": 0.033005221630261664,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8498437646077961,
+            "count": 3172
+          },
+          "kinematic": {
+            "BIAS": 0.00996163038213629,
+            "CORRELATION": 0.9731610377551272,
+            "MAE": 0.010432453550639743,
+            "MEDIAN_ABS": 0.010944627919200735,
+            "P95_ABS": 0.017177797108551263,
+            "RMSE": 0.011525285403513486,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8308094603223306,
+            "count": 3172
+          }
+        }
+      },
+      "time_blocks": {
+        "0": {
+          "gyro": {
+            "BIAS": 0.009546342694352752,
+            "CORRELATION": 0.15031820038851015,
+            "MAE": 0.014156130123532474,
+            "MEDIAN_ABS": 0.011606439124557113,
+            "P95_ABS": 0.036555920877611614,
+            "RMSE": 0.017991020541197552,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.4211049063169823,
+            "count": 4985
+          },
+          "kinematic": {
+            "BIAS": 0.0030295123526563324,
+            "CORRELATION": 0.8189632752551207,
+            "MAE": 0.0037195320541031254,
+            "MEDIAN_ABS": 0.0022342141381984267,
+            "P95_ABS": 0.01173233863370897,
+            "RMSE": 0.005304992175308095,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.9437990822266262,
+            "count": 4985
+          }
+        },
+        "1": {
+          "gyro": {
+            "BIAS": 0.012680686445195037,
+            "CORRELATION": -0.02805356450418053,
+            "MAE": 0.015640750290583573,
+            "MEDIAN_ABS": 0.011802789377538309,
+            "P95_ABS": 0.0427452954248891,
+            "RMSE": 0.022948100626754706,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.7787196877690845,
+            "count": 5395
+          },
+          "kinematic": {
+            "BIAS": 0.0031582007289243153,
+            "CORRELATION": 0.9272455888637119,
+            "MAE": 0.003790179337152515,
+            "MEDIAN_ABS": 0.002173095335346995,
+            "P95_ABS": 0.013589881944794498,
+            "RMSE": 0.005840322870312197,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0566020483065923,
+            "count": 5395
+          }
+        },
+        "2": {
+          "gyro": {
+            "BIAS": 0.007627342778411194,
+            "CORRELATION": 0.039767911559909164,
+            "MAE": 0.01774905461351873,
+            "MEDIAN_ABS": 0.012522737842345026,
+            "P95_ABS": 0.05950591180830468,
+            "RMSE": 0.026648066825244746,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1032720758556636,
+            "count": 5464
+          },
+          "kinematic": {
+            "BIAS": 0.0013587929090648732,
+            "CORRELATION": 0.9780879008205243,
+            "MAE": 0.002904282931875099,
+            "MEDIAN_ABS": 0.0018125179188293917,
+            "P95_ABS": 0.012049896493035025,
+            "RMSE": 0.004571239985853351,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.0680758146698817,
+            "count": 5464
+          }
+        },
+        "3": {
+          "gyro": {
+            "BIAS": 0.009122318100776124,
+            "CORRELATION": -0.07930196207868248,
+            "MAE": 0.016108501696593003,
+            "MEDIAN_ABS": 0.011933688642081868,
+            "P95_ABS": 0.050778171968389595,
+            "RMSE": 0.022908994359169307,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.7348434963802216,
+            "count": 5783
+          },
+          "kinematic": {
+            "BIAS": 0.0033354983313591373,
+            "CORRELATION": 0.9496241289489883,
+            "MAE": 0.003881881240974103,
+            "MEDIAN_ABS": 0.0025468699431359706,
+            "P95_ABS": 0.013483702942303924,
+            "RMSE": 0.005809529575122489,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8613068670856621,
+            "count": 5783
+          }
+        }
+      },
+      "turn_sign": {
+        "NEGATIVE": {
+          "gyro": {
+            "BIAS": 0.00334254722670643,
+            "CORRELATION": -0.022311884125597516,
+            "MAE": 0.013237618594982691,
+            "MEDIAN_ABS": 0.009010262679544355,
+            "P95_ABS": 0.03828052507521891,
+            "RMSE": 0.020679657333123724,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8447715259173808,
+            "count": 11048
+          },
+          "kinematic": {
+            "BIAS": 0.0019714903527802644,
+            "CORRELATION": 0.9374197392963014,
+            "MAE": 0.003314140962364807,
+            "MEDIAN_ABS": 0.0017491272672539456,
+            "P95_ABS": 0.012931218711777744,
+            "RMSE": 0.005341511835859278,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.9104552578452183,
+            "count": 11048
+          }
+        },
+        "POSITIVE": {
+          "gyro": {
+            "BIAS": 0.01702865620169393,
+            "CORRELATION": 0.012293560222299514,
+            "MAE": 0.01937787856164857,
+            "MEDIAN_ABS": 0.015489797400743792,
+            "P95_ABS": 0.050280755050483086,
+            "RMSE": 0.025740538148301323,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8023390494976904,
+            "count": 9694
+          },
+          "kinematic": {
+            "BIAS": 0.0035577450644192214,
+            "CORRELATION": 0.9379524529497688,
+            "MAE": 0.0039044225924300363,
+            "MEDIAN_ABS": 0.0026956019647671704,
+            "P95_ABS": 0.012579686133269067,
+            "RMSE": 0.005527023571656254,
+            "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1691605732050017,
+            "count": 9694
+          }
+        }
+      },
+      "unit": "RAD_PER_S_CONDITIONAL",
+      "vehicle_frame_calibrated": false
+    }
+  },
+  "schema": "EMPIRICAL_GYRO_CROSSCHECK_V1",
+  "sealed_reference_allowed": false,
+  "selection_sha256": "6b13c62e30509648106342f6d8e35274ef91e181f5cd0fe2aadb61124ce74759",
+  "sg_execution": false,
+  "status": "YAW_UNIT_AND_AXIS_CORRESPONDENCE_DIAGNOSTIC",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

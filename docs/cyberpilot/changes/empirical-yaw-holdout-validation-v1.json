@@ -1,0 +1,35 @@
+{
+  "binding_sha256": "35e8847f07105059f0a7f8d30f638f4467cabef9e64409f627d7995ad2460202",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "exact_repeatability": "PASS",
+  "fit_reselected": false,
+  "freeze_sha256": "6ebdec3569a47d7daca6204f33b9ac6b4c16fdd5994f3885688d796951b6dc3f",
+  "model_sha256": "8749149853f9f35691e5888cf98ade272939f07412a2187ad23a6b543f5536b6",
+  "opening_sha256": "adbdb4f17d80bf23a450f203ab876980fc3e2d501ed0c0b7ad91b9f62f1dde8e",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "43aad47d90d2889666e1ecb3207b9678e98295928ac91fcc8e1c3d6797e81896",
+  "reference_promotable": false,
+  "results": {
+    "HIGH": {
+      "holdout_runs": 0,
+      "status": "UNAVAILABLE"
+    },
+    "LOW": {
+      "holdout_runs": 5708,
+      "status": "UNAVAILABLE"
+    },
+    "MEDIUM": {
+      "holdout_runs": 1052,
+      "status": "UNAVAILABLE"
+    }
+  },
+  "schema": "EMPIRICAL_YAW_HOLDOUT_VALIDATION_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "unit": "YAW_RAD_PER_S_CONDITIONAL",
+  "vehicle_activation_allowed": false
+}

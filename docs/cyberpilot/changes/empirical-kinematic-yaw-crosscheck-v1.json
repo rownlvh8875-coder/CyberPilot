@@ -1,0 +1,139 @@
+{
+  "angle_offset": "NO_LEARNED_OFFSET_APPLIED_OFFSET_PROVENANCE_PENDING",
+  "binding_sha256": "35e8847f07105059f0a7f8d30f638f4467cabef9e64409f627d7995ad2460202",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "hypotheses_development": {
+    "YAW_H1": {
+      "candidate": {
+        "axis": 2,
+        "lag_samples": 10,
+        "sign": -1
+      },
+      "gyro": {
+        "BIAS": 0.007730236581847297,
+        "CORRELATION": -0.009710132313444399,
+        "MAE": 0.01322402723826533,
+        "MEDIAN_ABS": 0.010711958268282067,
+        "P95_ABS": 0.03396847083899316,
+        "RMSE": 0.017479017467102134,
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8060775901008409,
+        "count": 20351
+      },
+      "kinematic": {
+        "BIAS": 0.0017538131918389834,
+        "CORRELATION": 0.9577976146750113,
+        "MAE": 0.003160809489060169,
+        "MEDIAN_ABS": 0.0026260176115617314,
+        "P95_ABS": 0.008058058290981183,
+        "RMSE": 0.004048314630771149,
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1714564412485677,
+        "count": 20351
+      }
+    },
+    "YAW_H2": {
+      "candidate": {
+        "axis": 2,
+        "lag_samples": 10,
+        "sign": 1
+      },
+      "gyro": {
+        "BIAS": -0.007730236581847297,
+        "CORRELATION": -0.009710132313444399,
+        "MAE": 0.01322402723826533,
+        "MEDIAN_ABS": 0.010711958268282067,
+        "P95_ABS": 0.03396847083899316,
+        "RMSE": 0.017479017467102134,
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 0.8060775901008409,
+        "count": 20351
+      },
+      "kinematic": {
+        "BIAS": 0.004751669816687648,
+        "CORRELATION": -0.9577976146750113,
+        "MAE": 0.01450733645880154,
+        "MEDIAN_ABS": 0.00994170528075567,
+        "P95_ABS": 0.04140625358226428,
+        "RMSE": 0.020834921822634876,
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 1.1714564412485677,
+        "count": 20351
+      }
+    },
+    "YAW_H3": {
+      "candidate": {
+        "axis": 0,
+        "lag_samples": 2,
+        "sign": 1
+      },
+      "gyro": {
+        "BIAS": -0.03868687813332158,
+        "CORRELATION": 0.9966976764891093,
+        "MAE": 0.42938332502253895,
+        "MEDIAN_ABS": 0.25245512649416924,
+        "P95_ABS": 1.3004377260804176,
+        "RMSE": 0.6383386022229983,
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 13.481626090382736,
+        "count": 20351
+      },
+      "kinematic": {
+        "BIAS": -0.08262952459031778,
+        "CORRELATION": 0.9577976146750116,
+        "MAE": 0.43707261922439605,
+        "MEDIAN_ABS": 0.2730036099573342,
+        "P95_ABS": 1.3089970285120938,
+        "RMSE": 0.6448744915631646,
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 67.119509966958,
+        "count": 20351
+      }
+    },
+    "YAW_H4": {
+      "candidate": {
+        "axis": 0,
+        "lag_samples": 2,
+        "sign": -1
+      },
+      "gyro": {
+        "BIAS": 0.03868687813332158,
+        "CORRELATION": 0.9966976764891093,
+        "MAE": 0.42938332502253895,
+        "MEDIAN_ABS": 0.25245512649416924,
+        "P95_ABS": 1.3004377260804176,
+        "RMSE": 0.6383386022229983,
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 13.481626090382736,
+        "count": 20351
+      },
+      "kinematic": {
+        "BIAS": 0.08913500759884442,
+        "CORRELATION": -0.9577976146750116,
+        "MAE": 0.449913346280852,
+        "MEDIAN_ABS": 0.28141691859739326,
+        "P95_ABS": 1.3449377060921122,
+        "RMSE": 0.6631710564379245,
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY": 67.119509966958,
+        "count": 20351
+      }
+    }
+  },
+  "limitations": [
+    "TIRE_SLIP",
+    "COMPLIANCE",
+    "UNDERSTEER",
+    "ANGLE_OFFSET_PENDING",
+    "STATIC_STEER_RATIO",
+    "NO_INDEPENDENT_ROAD_GEOMETRY"
+  ],
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "eb70e459275d8d5511791c6d540c58c367107dfd1832d3d0e31caccbc04cfd3d",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_KINEMATIC_YAW_CROSSCHECK_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "status": "KINEMATIC_YAW_SUPPORTING_DIAGNOSTIC",
+  "steer_ratio": 16.549999237060547,
+  "ta_execution": false,
+  "truth": false,
+  "unit_source": "STATIC_CARPARAMS_AND_DEGREES_SAS11_NOT_MEASURED_KINEMATIC_TRUTH",
+  "vehicle_activation_allowed": false,
+  "wheelbase_m": 2.7660000324249268
+}
