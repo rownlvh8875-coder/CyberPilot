@@ -1,0 +1,29 @@
+{
+  "actual_holdout_created": false,
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "numeric_opening_authorized": false,
+  "old_prior_unknown_allowed": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "965490f3ea177f45261e5354c96ad8d89af29e07f56e49d29be7308a5f968fd7",
+  "reference_promotable": false,
+  "requirements": [
+    "source_equivalent",
+    "same_empirical_profile",
+    "source_audit_complete",
+    "metadata_complete",
+    "numeric_previously_unopened",
+    "role_frozen_before_numeric",
+    "distinct_route",
+    "no_prior_analysis",
+    "complete_lineage",
+    "required_messages"
+  ],
+  "schema": "FUTURE_EMPIRICAL_HOLDOUT_ADMISSION_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

@@ -1,0 +1,240 @@
+{
+  "base": {
+    "candidate_search_authorized": false,
+    "completeness": "ALL_REQUIRED_GROUPS_AND_SCHEMA_IMPORTS_AND_SENSOR_PRODUCERS_REQUIRED",
+    "composition_authorized": false,
+    "equivalence": "FULL_RELEVANT_BYTES_OR_REVIEWED_EXACT_SYMBOL_DIFFERENCES_ONLY",
+    "files": {
+      "can_builder": [
+        "opendbc_repo/opendbc/car/hyundai/hyundaican.py",
+        "selfdrive/car/hyundai/hyundaican.py"
+      ],
+      "canfd_builder": [
+        "opendbc_repo/opendbc/car/hyundai/hyundaicanfd.py",
+        "selfdrive/car/hyundai/hyundaicanfd.py"
+      ],
+      "card": [
+        "openpilot/selfdrive/car/card.py",
+        "selfdrive/car/card.py"
+      ],
+      "carstate": [
+        "opendbc_repo/opendbc/car/hyundai/carstate.py",
+        "selfdrive/car/hyundai/carstate.py"
+      ],
+      "controller": [
+        "opendbc_repo/opendbc/car/hyundai/carcontroller.py",
+        "selfdrive/car/hyundai/carcontroller.py"
+      ],
+      "controller_helpers": [
+        "opendbc_repo/opendbc/car/__init__.py",
+        "selfdrive/car/__init__.py"
+      ],
+      "controller_limits": [
+        "opendbc_repo/opendbc/car/hyundai/values.py",
+        "selfdrive/car/hyundai/values.py"
+      ],
+      "dbc": [
+        "opendbc_repo/opendbc/dbc/hyundai_kia_generic.dbc",
+        "opendbc/hyundai_kia_generic.dbc"
+      ],
+      "interface": [
+        "opendbc_repo/opendbc/car/hyundai/interface.py",
+        "selfdrive/car/hyundai/interface.py"
+      ],
+      "interface_base": [
+        "opendbc_repo/opendbc/car/interfaces.py",
+        "selfdrive/car/interfaces.py"
+      ],
+      "logger": [
+        "openpilot/system/loggerd/logger.cc",
+        "system/loggerd/logger.cc"
+      ],
+      "logger_config": [
+        "openpilot/system/loggerd/loggerd.h",
+        "system/loggerd/loggerd.h"
+      ],
+      "logger_header": [
+        "openpilot/system/loggerd/logger.h",
+        "system/loggerd/logger.h"
+      ],
+      "logger_start": [
+        "openpilot/system/loggerd/loggerd.cc",
+        "system/loggerd/loggerd.cc"
+      ],
+      "schema_car": [
+        "opendbc_repo/opendbc/car/car.capnp",
+        "cereal/car.capnp"
+      ],
+      "schema_custom": [
+        "openpilot/cereal/custom.capnp",
+        "cereal/custom.capnp"
+      ],
+      "schema_deprecated": [
+        "openpilot/cereal/deprecated.capnp",
+        "cereal/deprecated.capnp"
+      ],
+      "schema_log": [
+        "openpilot/cereal/log.capnp",
+        "cereal/log.capnp"
+      ],
+      "sensor_main": [
+        "openpilot/system/sensord/sensord.cc",
+        "system/sensord/sensord.cc"
+      ],
+      "services": [
+        "openpilot/cereal/services.py",
+        "cereal/services.py"
+      ]
+    },
+    "license_paths": [
+      "LICENSE",
+      "LICENSE.md"
+    ],
+    "production_authority": false,
+    "publication_raw_data": false,
+    "qualification_allowed": false,
+    "receipt_sha256": "91f487469290c3e87b9c3fdc4f5acee0fd104b709ce18af0c55f26209b6535a4",
+    "reference_promotable": false,
+    "schema": "EMPIRICAL_SOURCE_MANIFEST_V1",
+    "schema_dependency_extensions": [
+      ".capnp"
+    ],
+    "scope": [
+      "LOGGER",
+      "SCHEMA",
+      "COMMAND_PATH",
+      "MEASURED_STATE",
+      "DBC",
+      "DIRECT_SENSOR",
+      "CAR_PARAMS"
+    ],
+    "sealed_reference_allowed": false,
+    "sensor_dependency_prefixes": [
+      "openpilot/system/sensord/sensors/",
+      "system/sensord/sensors/"
+    ],
+    "sg_execution": false,
+    "ta_execution": false,
+    "unrelated_changes_not_evidence": true,
+    "vehicle_activation_allowed": false
+  },
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "dropped_required_roles": [],
+  "logical_closure": {
+    "candidate_search_authorized": false,
+    "composition_authorized": false,
+    "existing_checksum_closure": [
+      "can_builder",
+      "canfd_builder",
+      "opendbc_repo/opendbc/car/common/crc.py"
+    ],
+    "paths": [
+      "opendbc_repo/opendbc/__init__.py",
+      "opendbc_repo/opendbc/car/carlog.py",
+      "opendbc_repo/opendbc/car/torque_data/params.toml",
+      "opendbc_repo/opendbc/car/torque_data/override.toml",
+      "opendbc_repo/opendbc/car/torque_data/substitute.toml",
+      "openpilot/common/params.py",
+      "openpilot/common/params_pyx.pyx",
+      "openpilot/common/params.h",
+      "openpilot/common/params.cc",
+      "openpilot/common/params_keys.h",
+      "openpilot/common/timing.h",
+      "openpilot/common/realtime.py",
+      "openpilot/common/utils.py",
+      "msgq_repo/msgq/__init__.py",
+      "msgq_repo/msgq/event.cc",
+      "msgq_repo/msgq/event.h",
+      "msgq_repo/msgq/impl_fake.cc",
+      "msgq_repo/msgq/impl_fake.h",
+      "msgq_repo/msgq/impl_msgq.cc",
+      "msgq_repo/msgq/impl_msgq.h",
+      "msgq_repo/msgq/ipc.cc",
+      "msgq_repo/msgq/ipc.h",
+      "msgq_repo/msgq/ipc.pxd",
+      "msgq_repo/msgq/ipc_pyx.pyx",
+      "msgq_repo/msgq/msgq.cc",
+      "msgq_repo/msgq/msgq.h",
+      "msgq_repo/msgq/logger/logger.h",
+      "msgq_repo/pyproject.toml"
+    ],
+    "production_authority": false,
+    "publication_raw_data": false,
+    "qualification_allowed": false,
+    "receipt_sha256": "ced075b88e7f1c7a0586dd2cb6f38c236af0a7b674099d85429587c5357c6382",
+    "reference_promotable": false,
+    "runtime_binary_or_physical_acquisition_equivalence": false,
+    "schema": "EMPIRICAL_SOURCE_LOGICAL_TRANSPORT_CLOSURE_POLICY_V1",
+    "scope": "LEGACY_HYUNDAI_SANTA_FE_2022_SIGNAL_CONTENT_AND_LOGICAL_PUBLICATION_ONLY",
+    "sealed_reference_allowed": false,
+    "sg_execution": false,
+    "ta_execution": false,
+    "vehicle_activation_allowed": false
+  },
+  "path_resolution": [
+    "SENSOR_MAIN_CPP_TO_PYTHON",
+    "COMMON_CRC_TO_CAR_CRC"
+  ],
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "9ad1fa7b5c9121170254b12558231535b168e29cc81d4f4602e615ea96259777",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_SOURCE_MANIFEST_WITH_RESOLUTION_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "supplement": {
+    "base_manifest_role_set_weakened": false,
+    "candidate_search_authorized": false,
+    "composition_authorized": false,
+    "excluded": [
+      "RADAR_DATA",
+      "LIVE_TRACKS",
+      "LONGITUDINAL_BEHAVIOR",
+      "PHYSICAL_SCHEDULING_OR_CAN_ACQUISITION_AGE"
+    ],
+    "paths": [
+      "opendbc_repo/opendbc/can/dbc.py",
+      "opendbc_repo/opendbc/can/parser.py",
+      "opendbc_repo/opendbc/can/packer.py",
+      "opendbc_repo/opendbc/car/structs.py",
+      "opendbc_repo/opendbc/car/common/conversions.py",
+      "opendbc_repo/opendbc/car/common/simple_kalman.py",
+      "opendbc_repo/opendbc/car/common/crc.py",
+      "opendbc_repo/opendbc/car/vehicle_model.py",
+      "opendbc_repo/opendbc/car/hyundai/radar_interface.py",
+      "openpilot/selfdrive/car/cruise.py",
+      "openpilot/selfdrive/pandad/__init__.py",
+      "openpilot/common/i2c.py",
+      "openpilot/common/gpio.py",
+      "openpilot/common/filter_simple.py",
+      "openpilot/cereal/__init__.py",
+      "openpilot/cereal/include/c++.capnp",
+      "openpilot/cereal/messaging/__init__.py",
+      "openpilot/cereal/messaging/messaging.h",
+      "openpilot/system/loggerd/zstd_writer.h",
+      "openpilot/system/loggerd/zstd_writer.cc",
+      "pyproject.toml",
+      "uv.lock"
+    ],
+    "physical_runtime_equivalence": false,
+    "predicate_symbol": [
+      "openpilot/selfdrive/controls/lib/drive_helpers.py",
+      "is_volkswagen_meb"
+    ],
+    "production_authority": false,
+    "publication_raw_data": false,
+    "qualification_allowed": false,
+    "receipt_sha256": "9c60420ea43c1e8127aa115722e6c86e61f471112a410a4c02f179c704ff6777",
+    "reference_promotable": false,
+    "schema": "EMPIRICAL_SOURCE_DEPENDENCY_RESOLUTION_V1",
+    "scope": "LEGACY_HYUNDAI_SANTA_FE_2022_SIGNAL_CONTENT_AND_LOGICAL_PUBLICATION_ONLY",
+    "sealed_reference_allowed": false,
+    "sg_execution": false,
+    "ta_execution": false,
+    "vehicle_activation_allowed": false
+  },
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}
