@@ -84,3 +84,48 @@ class TestClosedLoopPublication(unittest.TestCase):
   def test_exact_replay_pin(self):
     _, b = self.fixture()
     self.assertEqual(b['frozen_replay_receipt_sha256'], historical()['results']['receipt_sha256'])
+
+
+class TestFrozenClosedLoopReceipts(unittest.TestCase):
+  def test_exact_pins(self):
+    rows = p.load()
+    self.assertEqual({k: v['receipt_sha256'] for k, v in rows.items()}, p.PINS)
+
+  def test_resealed_mutation_rejected(self):
+    row = deepcopy(p.load()['readiness'])
+    row['status'] = 'READY_FOR_VEHICLE'
+    row = seal({k: v for k, v in row.items() if k != 'receipt_sha256'})
+    with self.assertRaises(ValueError):
+      p.validate_pinned('readiness', row)
+
+
+class TestPublicationShards(unittest.TestCase):
+  def test_lossless_frozen_results(self):
+    row = p.load()['results']
+    manifest, shards = p.result_transport(row)
+    self.assertEqual(p.reconstruct_result(manifest, shards), row)
+
+  def test_each_file_scannable(self):
+    import json
+    from tools.cyberpilot.check_publication import MAX_TEXT_BYTES
+    manifest, shards = p.result_transport(p.load()['results'])
+    for row in (manifest, *shards.values()):
+      self.assertLessEqual(len((json.dumps(row, sort_keys=True, indent=2) + '\n').encode()), MAX_TEXT_BYTES)
+
+  def test_modified_shard_rejected(self):
+    manifest, shards = p.result_transport(p.load()['results'])
+    first = next(iter(shards))
+    shards[first]['scenario_result']['scenario'] = 'easier_replacement'
+    with self.assertRaises(ValueError):
+      p.reconstruct_result(manifest, shards)
+
+  def test_path_escape_rejected(self):
+    manifest, shards = p.result_transport(p.load()['results'])
+    manifest['scenario_shards'][0]['file'] = '../other.json'
+    manifest = seal({k: v for k, v in manifest.items() if k != 'receipt_sha256'})
+    with self.assertRaises(ValueError):
+      p.reconstruct_result(manifest, shards)
+
+  def test_frozen_full_result_sha_preserved(self):
+    manifest, _ = p.result_transport(p.load()['results'])
+    self.assertEqual(manifest['full_result_receipt_sha256'], p.PINS['results'])

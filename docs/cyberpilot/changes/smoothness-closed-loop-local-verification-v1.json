@@ -1,0 +1,95 @@
+{
+  "autotune_tests": 2369,
+  "browser": "NOT_APPLICABLE_NO_UI_CHANGE",
+  "candidate_acceptance": false,
+  "checks": [
+    {
+      "check": "focused",
+      "count": 124,
+      "log_sha256": "952c787b698c0f2858145e61a51d3ee0445997f9f36ef72cd63d2e7db97039f3",
+      "status": "PASS"
+    },
+    {
+      "check": "autotune_controls_full",
+      "count": 2511,
+      "log_sha256": "53a2104803cfdb68aaa22160b3f055435d7433a8b5ed6be5f8b58d391712eda8",
+      "status": "PASS"
+    },
+    {
+      "check": "controls_separate",
+      "count": 142,
+      "log_sha256": "5654dc6b38b8d53b1260c49f1b757869709a852b10031c924ce43f908923a226",
+      "status": "PASS"
+    },
+    {
+      "check": "lateral_replay",
+      "count": 16,
+      "log_sha256": "de0badc576032652c6c9e6a5a4b6f99f205189cb2e40aa654a13cfac3597fa66",
+      "status": "PASS"
+    },
+    {
+      "check": "privacy_tests",
+      "count": 16,
+      "log_sha256": "7b60986459a6cd04c2c99cb85c4822257e6612e0eff31540023c1d296c1779d7",
+      "status": "PASS"
+    },
+    {
+      "check": "ruff",
+      "count": null,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "status": "PASS"
+    },
+    {
+      "check": "syntax",
+      "count": null,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "PASS"
+    },
+    {
+      "check": "scons",
+      "count": null,
+      "log_sha256": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056",
+      "status": "PASS"
+    },
+    {
+      "check": "publication",
+      "count": 914,
+      "log_sha256": "3fc448c970c43b93a0ee0c8827b240f6c356db45cb397fec7a7b67ed7915529f",
+      "status": "PASS"
+    }
+  ],
+  "closed_loop_receipts": {
+    "binding": "046aaec7019f3aa8125326f95b0df7ad8bdbef1813f3d2037db37fccccb8dc0e",
+    "interaction": "667c6b36f590c6bc4b9a19c6899024461498a812bc147c3622c3e5e359958f11",
+    "readiness": "0326dad0852f57d04615f66975fcb879ba248464d05709b3915e7b3cb8f3657b",
+    "results": "e2369657aa47cb447bdfbaa1dd72bb7eddc712b0747f34d64a94503e54ca5818"
+  },
+  "composition_authorized": false,
+  "controls_tests": 142,
+  "executions": 66,
+  "github_actions": "VERIFIED_SEPARATELY_AFTER_PUSH",
+  "historical_and_production_change": "NONE_ADDITIVE_FILES_ONLY",
+  "independent_review": {
+    "scope": [
+      "preexecution",
+      "actual aggregate and identity",
+      "numerical narrative",
+      "lossless publication packaging"
+    ],
+    "status": "PASS",
+    "unresolved_findings": 0
+  },
+  "private_inputs_opened": false,
+  "production_authority": false,
+  "publication_transport_sha256": "f9c542fcbdfeccce49b738e6290be6961b30f891c9e0c16bb3111b88091cc646",
+  "qualification_allowed": false,
+  "receipt_sha256": "f1d44d1a335aaddfe50fa48858be0f2d7155f5b39d548479d59f21d9566338e3",
+  "reference_promotable": false,
+  "repeat_experiment_after_publication_packaging": false,
+  "repeatability": "EXACT_PASS",
+  "schema": "SMOOTHNESS_CLOSED_LOOP_LOCAL_VERIFICATION_V1",
+  "sealed_reference_allowed": false,
+  "source_baseline_sha": "cd5561b6c8ee568917fc6a5d2c53a6396d4544fe",
+  "status": "LOCAL_CHECKS_PASS",
+  "vehicle_activation_allowed": false
+}

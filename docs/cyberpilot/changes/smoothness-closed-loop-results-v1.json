@@ -1,0 +1,91 @@
+{
+  "full_result_receipt_sha256": "e2369657aa47cb447bdfbaa1dd72bb7eddc712b0747f34d64a94503e54ca5818",
+  "header": {
+    "candidate_acceptance": false,
+    "composed": false,
+    "composition_recommendation": "COMPOSITION_NOT_RECOMMENDED",
+    "execution_binding_sha256": "046aaec7019f3aa8125326f95b0df7ad8bdbef1813f3d2037db37fccccb8dc0e",
+    "execution_semantics": "OWN_FEEDBACK_NATIVE_CORE_SG_PLANT",
+    "executions": 66,
+    "feedback_interaction": "FEEDBACK_COMPENSATES_GOVERNOR_LAG",
+    "feedback_loop_stability_proof": false,
+    "production_authority": false,
+    "qualification_allowed": false,
+    "reference_promotable": false,
+    "repeatability": "EXACT_PASS",
+    "role": "DEVELOPMENT_SCREEN",
+    "schema": "SG_A_CLOSED_LOOP_FEEDBACK_V1",
+    "sealed_reference_allowed": false,
+    "source_baseline_sha": "cd5561b6c8ee568917fc6a5d2c53a6396d4544fe",
+    "standalone_verdict": "SG_CLOSED_LOOP_TRADEOFF_ONLY",
+    "status": "SG_CLOSED_LOOP_STRUCTURAL_PASS",
+    "ta_enabled": false,
+    "threshold_status": "THRESHOLD_UNJUSTIFIED",
+    "vehicle_activation_allowed": false
+  },
+  "production_authority": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "f9c542fcbdfeccce49b738e6290be6961b30f891c9e0c16bb3111b88091cc646",
+  "reference_promotable": false,
+  "scenario_shards": [
+    {
+      "file": "smoothness-closed-loop-result-straight-v1.json",
+      "receipt_sha256": "9c43b0d07404b9142f79c332c42c01cc92b6ccf49436f1255989285480d170f6",
+      "scenario": "straight"
+    },
+    {
+      "file": "smoothness-closed-loop-result-gentle_left-v1.json",
+      "receipt_sha256": "e54f35c6c8ba7fd393df4aa7c9c3c1cb835e68557c196aef321829a2400998a2",
+      "scenario": "gentle_left"
+    },
+    {
+      "file": "smoothness-closed-loop-result-gentle_right-v1.json",
+      "receipt_sha256": "3ae351f90f06e7cfa30f8be7a553b8b90b13b8bc26cdb6922ae77bfef07f109b",
+      "scenario": "gentle_right"
+    },
+    {
+      "file": "smoothness-closed-loop-result-sharp_left-v1.json",
+      "receipt_sha256": "621308c3ab7ce5770aa8f0cb77b9390e884928b10a28068bcf1f405b9cad9bdc",
+      "scenario": "sharp_left"
+    },
+    {
+      "file": "smoothness-closed-loop-result-sharp_right-v1.json",
+      "receipt_sha256": "f86bf7f06627440d7f9b6f8b42516614ec83b710e41d9dd2eca2f084128f2bff",
+      "scenario": "sharp_right"
+    },
+    {
+      "file": "smoothness-closed-loop-result-low_speed-v1.json",
+      "receipt_sha256": "607be83a2e6729ca629a776842f4b257324f639f9b5c788d4bace26b46e1209c",
+      "scenario": "low_speed"
+    },
+    {
+      "file": "smoothness-closed-loop-result-medium_speed-v1.json",
+      "receipt_sha256": "0a5159a40ac259ad807ebcccbfc89aa11466a7428134662d04c61a64336eb3bb",
+      "scenario": "medium_speed"
+    },
+    {
+      "file": "smoothness-closed-loop-result-high_speed-v1.json",
+      "receipt_sha256": "d31c63509e3a26cc680c5a177b37ac1c172bedc7fd28dc910ed88e4b1caec1c5",
+      "scenario": "high_speed"
+    },
+    {
+      "file": "smoothness-closed-loop-result-s_reversal-v1.json",
+      "receipt_sha256": "bb5b89e73f5d687075b4eb77b64e6dfe30686b2ab0a25cb16a35d7b96a8ec213",
+      "scenario": "s_reversal"
+    },
+    {
+      "file": "smoothness-closed-loop-result-driver_events-v1.json",
+      "receipt_sha256": "9feb7609c897e9fd9c86acb7fe6b2a87363aeab5a47c27f8040a34eaae643195",
+      "scenario": "driver_events"
+    },
+    {
+      "file": "smoothness-closed-loop-result-limit_flags-v1.json",
+      "receipt_sha256": "c9c82ba516384b54aad3731a357340b03a8f44787e86f6fd205d5d07a8e98141",
+      "scenario": "limit_flags"
+    }
+  ],
+  "schema": "SMOOTHNESS_CLOSED_LOOP_RESULTS_PUBLICATION_MANIFEST_V1",
+  "sealed_reference_allowed": false,
+  "source_baseline_sha": "cd5561b6c8ee568917fc6a5d2c53a6396d4544fe",
+  "vehicle_activation_allowed": false
+}
