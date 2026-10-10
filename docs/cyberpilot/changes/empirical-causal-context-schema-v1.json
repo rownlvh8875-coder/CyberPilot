@@ -1,0 +1,40 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "future_target_gate_allowed": false,
+  "historical_regeneration_allowed": false,
+  "historical_steering_rate": "UNAVAILABLE_NOT_PRESERVED",
+  "optional_private_fields": {
+    "steeringRateDeg": "ONLY_AFTER_EXPLICIT_FUTURE_READER_AUTHORIZATION"
+  },
+  "production_authority": false,
+  "publication": "PRIVATE_ROWS_NEVER_PUBLISHED",
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "raw_publication_allowed": false,
+  "receipt_sha256": "e615e560ac4c95a748349c6236a7240f7e84a364608367fec9cff00e67145388",
+  "reference_promotable": false,
+  "required_private_fields": [
+    "opaque_route_id",
+    "segment_receipt_sha256",
+    "aligned_row_index",
+    "run_id",
+    "within_run_index",
+    "design_row_index",
+    "model_required_command_history",
+    "past_measured_angle_history",
+    "normalized_command",
+    "speed_context",
+    "mask_reasons",
+    "state_command_control_timestamp_ordering",
+    "rail_context",
+    "intervention_boundary",
+    "source_profile_policy_identity"
+  ],
+  "schema": "EMPIRICAL_CAUSAL_CONTEXT_SCHEMA_V1",
+  "scope": "FUTURE_GENERATIONS_ONLY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}
