@@ -185,3 +185,25 @@ class TestProvenanceRun(unittest.TestCase):
       path.with_name(path.name + '.atomic').write_text(json.dumps(numeric))
       with patch.object(self.r.s, 'events', side_effect=AssertionError('raw reopened')):
         self.assertEqual(self.r.numeric_once(path, expected, Path(t) / 'raw', None, True), numeric)
+
+  def test_gyro_clock_regression_rejects_whole_stream(self):
+    streams = {
+      'state': [],
+      'command': [],
+      'control': [],
+      'settings': [],
+      'gyro_rejected': 0,
+      'gyro': [{'time_ns': 10, 'sensor_ns': 9, 'valid': True, 'xyz': [0.0, 0.0, 0.0]}, {'time_ns': 20, 'sensor_ns': 8, 'valid': True, 'xyz': [0.0, 0.0, 0.0]}],
+    }
+    aligned, rejected, reason = self.r.checked_alignment(streams)
+    self.assertEqual(rejected, 2)
+    self.assertEqual(reason, 'GYRO_TIMELINE_REJECTED_WHOLE_SEGMENT')
+    self.assertEqual(aligned['rows'], [])
+    self.assertEqual(len(streams['gyro']), 2)
+
+  def test_valid_gyro_keeps_exact_alignment(self):
+    streams = {'state': [], 'command': [], 'control': [], 'settings': [], 'gyro_rejected': 0, 'gyro': []}
+    aligned, rejected, reason = self.r.checked_alignment(streams)
+    self.assertEqual(aligned, self.r.r.aligned(streams))
+    self.assertEqual(rejected, 0)
+    self.assertIsNone(reason)

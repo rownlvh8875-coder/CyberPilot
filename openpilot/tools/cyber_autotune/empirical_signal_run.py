@@ -193,6 +193,16 @@ def _limit_comparison(streams):
   }
 
 
+def checked_alignment(streams):
+  try:
+    r.validate_times(streams['gyro'])
+    r.validate_times(streams['gyro'], 'sensor_ns')
+  except ValueError:
+    # Reject the entire direct-sensor segment, never reorder or fill bad clocks.
+    return r.aligned({**streams, 'gyro': []}), len(streams['gyro']), 'GYRO_TIMELINE_REJECTED_WHOLE_SEGMENT'
+  return r.aligned(streams), 0, None
+
+
 def _extract(base, prior, root, segments, metadata, original_source, schema, binding, freeze=None, selection=None):
   results = []
   rejected = []
@@ -241,6 +251,7 @@ def _extract(base, prior, root, segments, metadata, original_source, schema, bin
       profile = meta['metadata']['profiles'][0]
       maximum, known = r.effective_steer_max(profile, settings)
       pairs = [{k: x[k] for k in ['raw', 'normalized', 'valid']} for x in first['command']]
+      aligned, clock_rejected, clock_reason = checked_alignment(first) if yaw else (None, 0, None)
       value = p.seal(
         {
           'schema': 'EMPIRICAL_PROVENANCE_SEGMENT_V1',
@@ -252,9 +263,11 @@ def _extract(base, prior, root, segments, metadata, original_source, schema, bin
           'command_pairs': pairs,
           'bridge': r.command_bridge(pairs, maximum, known),
           'limits': _limit_comparison(first),
-          'gyro_rejected': first['gyro_rejected'],
+          'gyro_rejected': first['gyro_rejected'] + clock_rejected,
+          'gyro_clock_rejected': clock_rejected,
+          'gyro_clock_rejection_reason': clock_reason,
           'gyro_count': len(first['gyro']),
-          'aligned': r.aligned(first) if yaw else None,
+          'aligned': aligned,
         }
       )
       p.persist(cache, value)
@@ -496,6 +509,7 @@ def run(prior, base, source_root):
       'environment': oldrun.environment(),
       'historical': hist,
       'yaw_holdout_initial_state': 'CLOSED_NUMERIC_UNOPENED_OLD_EMBARGO',
+      'previous_attempt_sha256': read(base / 'previous-attempt.json')['receipt_sha256'] if (base / 'previous-attempt.json').exists() else None,
     }
   )
   p.persist(base / 'execution-binding.json', binding)
