@@ -1,0 +1,123 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "pooling_allowed": true,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "f248a6707aeb4610cb837ec4a6134ff43dc807ec2d2ea1ef51322f53849027e5",
+  "reference_promotable": false,
+  "routes": [
+    {
+      "domain_conflicts": 0,
+      "eligible": 415896,
+      "exact_ratio_match_count": 13025,
+      "float32_exact_rate": 1.0,
+      "float32_expected_exact_count": 415896,
+      "invalid": 10,
+      "mismatch_taxonomy": {
+        "FLOAT32_RELATION": 0,
+        "INVALID_OR_NONFINITE": 10,
+        "SIGN": 0,
+        "SOURCE_DOMAIN": 0
+      },
+      "normalized_saturated_count": 11,
+      "pair_count": 415896,
+      "physical_applied_command_acknowledged": false,
+      "raw_saturated_count": 11,
+      "residual": {
+        "BIAS": -2.6972260039028796e-12,
+        "CORRELATION": 0.999999999999999,
+        "MAE": 1.2647771881013413e-09,
+        "MAX_ABS": 2.9729456119120812e-08,
+        "MEDIAN_ABS": 5.829305094184889e-10,
+        "P95_ABS": 4.991342505977769e-09,
+        "RMSE": 2.574083106305404e-09,
+        "count": 415896
+      },
+      "role": "TRAIN",
+      "route_id": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+      "runtime_setting_known": true,
+      "sign_conflicts": 0,
+      "status": "ROUTE_COMMAND_BRIDGE_CONFIRMED",
+      "steer_max": 409,
+      "total": 415906
+    },
+    {
+      "domain_conflicts": 0,
+      "eligible": 501946,
+      "exact_ratio_match_count": 91089,
+      "float32_exact_rate": 1.0,
+      "float32_expected_exact_count": 501946,
+      "invalid": 19,
+      "mismatch_taxonomy": {
+        "FLOAT32_RELATION": 0,
+        "INVALID_OR_NONFINITE": 19,
+        "SIGN": 0,
+        "SOURCE_DOMAIN": 0
+      },
+      "normalized_saturated_count": 41,
+      "pair_count": 501946,
+      "physical_applied_command_acknowledged": false,
+      "raw_saturated_count": 41,
+      "residual": {
+        "BIAS": -4.74637946584095e-12,
+        "CORRELATION": 0.9999999999999982,
+        "MAE": 1.354009366815763e-09,
+        "MAX_ABS": 2.9729456119120812e-08,
+        "MEDIAN_ABS": 5.282807767625908e-10,
+        "P95_ABS": 5.501406691310606e-09,
+        "RMSE": 2.837883002154729e-09,
+        "count": 501946
+      },
+      "role": "TRAIN",
+      "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "runtime_setting_known": true,
+      "sign_conflicts": 0,
+      "status": "ROUTE_COMMAND_BRIDGE_CONFIRMED",
+      "steer_max": 409,
+      "total": 501965
+    },
+    {
+      "domain_conflicts": 0,
+      "eligible": 5495,
+      "exact_ratio_match_count": 5495,
+      "float32_exact_rate": 1.0,
+      "float32_expected_exact_count": 5495,
+      "invalid": 10,
+      "mismatch_taxonomy": {
+        "FLOAT32_RELATION": 0,
+        "INVALID_OR_NONFINITE": 10,
+        "SIGN": 0,
+        "SOURCE_DOMAIN": 0
+      },
+      "normalized_saturated_count": 0,
+      "pair_count": 5495,
+      "physical_applied_command_acknowledged": false,
+      "raw_saturated_count": 0,
+      "residual": {
+        "BIAS": 0.0,
+        "CORRELATION": null,
+        "MAE": 0.0,
+        "MAX_ABS": 0.0,
+        "MEDIAN_ABS": 0.0,
+        "P95_ABS": 0.0,
+        "RMSE": 0.0,
+        "count": 5495
+      },
+      "role": "DEVELOPMENT",
+      "route_id": "eda13cbea550fc80f6153a1d9951fb7f06ce0bb2c6bfc462b7383751512cfe77",
+      "runtime_setting_known": true,
+      "sign_conflicts": 0,
+      "status": "ROUTE_COMMAND_BRIDGE_CONFIRMED",
+      "steer_max": 409,
+      "total": 5505
+    }
+  ],
+  "schema": "EMPIRICAL_PLANT_V2_COMMAND_BRIDGE_V1",
+  "sealed_reference_allowed": false,
+  "semantics": "LOGGED_POST_CONTROLLER_REPRESENTATION_NOT_EPS_ACKNOWLEDGEMENT",
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

@@ -1,0 +1,991 @@
+{
+  "adapters": {
+    "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677": "e89093bb859ccf0db5b0c331fecf0dd56648ce725aa7037645cf56ee6fb52e82",
+    "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c": "e89093bb859ccf0db5b0c331fecf0dd56648ce725aa7037645cf56ee6fb52e82",
+    "eda13cbea550fc80f6153a1d9951fb7f06ce0bb2c6bfc462b7383751512cfe77": "ea5a890bb3c3fa3c288807c0c60974f63412c90614a6313d0831a7b2cfeb68c4"
+  },
+  "candidate_search_authorized": false,
+  "code_sha256": {
+    "empirical_additional_root_policy.py": "56b0754460f0f3e7ac4437db659dbf56180cbc916faeaf12b2499244025f35c2",
+    "empirical_cross_root_inventory.py": "5de8fac45b8469c5f77a7f2b66e4c8f5887e9a0fd28e3380dd663b7066028ccc",
+    "empirical_dataset_v2_inventory.py": "c81de2b26fae46f56f579155806df55c0f6aadf0b81cec6fee978a9ed11b96ed",
+    "empirical_dataset_v2_policy.py": "b24cfb36fe609c4f59e81832c10368f1a50ef930290b16fbeb97d28691a2fd36",
+    "empirical_plant_model.py": "d412012da7a3d3f077b7ecb2c9c9efe64040596d57a64b5b5e46d2d8508bb44a",
+    "empirical_plant_policy.py": "3961101927faca0e64a731ff92484d563082390c001988a156056275743034df",
+    "empirical_plant_signals.py": "0f018b5682f9309f3a913f0e1e8fac6a4a487b2de036c1dadeb50b3ee4a5effd",
+    "empirical_signal_crosscheck.py": "890ab0222b2ac5a0e40a4fc24d1ba7343ee810a265eaae66c18cd12994b85b1f",
+    "empirical_signal_policy.py": "adcc374cbc0886464d9eb47c786deec37e6436adac6901b403ec71c3e992bc90",
+    "empirical_signal_reader.py": "17d16ec35d8cfd968f189dab7bccc6e71ecaa23694c39d9e1f72ec32f66854fa",
+    "empirical_source_execution.py": "b6775a8f93dd1f03b138cd6c9d7514442a624efd0ac58412b5f4acbbb9f5e885",
+    "empirical_source_metadata.py": "590fb2533456ceb57d975c46eb1c11e07480fad52b6fb3a72fed061017d0edc6",
+    "empirical_v2_execution.py": "bc30a9d9e54c05c40aa2f02af615253b61a527a8c649fb2184b4185776dbf53b",
+    "empirical_v2_generation.py": "e83e4e7ed373d0e8088ab4854bfda2f1069541e134a4f6467fe2f9ea38354b83",
+    "empirical_v2_policy.py": "15ad8a28337bc559dfce2d96211afb87c1e7f6a12fc088afbdc2dce47a6ed9da",
+    "empirical_v2_signals.py": "728ec4ecea68308731f2fe239c5c2381c532d2596dcf71b750c7f0bb809050e9"
+  },
+  "composition_authorized": false,
+  "execution_source_sha256": "bc30a9d9e54c05c40aa2f02af615253b61a527a8c649fb2184b4185776dbf53b",
+  "holdout_opening_allowed": false,
+  "policy": {
+    "alignment_policy": {
+      "age_bound_ns": 20000000,
+      "candidate_search_authorized": false,
+      "command_context_query": "TARGET_SELECTED_EVENT_TIME_NOT_GRID_TIME",
+      "composition_authorized": false,
+      "delay": "PUBLISH_TIME_EMPIRICAL_LAG_NOT_PHYSICAL_DELAY_VALIDATION",
+      "duplicates_or_regression": "REJECT_SEGMENT",
+      "forbid_command_after_target_event": true,
+      "grid": "100HZ_INTEGER_NS",
+      "production_authority": false,
+      "publication_raw_data": false,
+      "qualification_allowed": false,
+      "receipt_sha256": "7b8b4bcb66a25dc08d875a3422cbc396b42512f7533a2b3e871a1101253a1dcf",
+      "reference_promotable": false,
+      "repeated_output_event": "MASK_NOT_NEW_MEASUREMENT",
+      "save_actual_selected_event_times": true,
+      "schema": "EMPIRICAL_PLANT_ALIGNMENT_POLICY_V1",
+      "sealed_reference_allowed": false,
+      "sensor_measurement_time": "NOT_IDENTIFIED_PUBLISH_CLOCK_ONLY",
+      "sg_execution": false,
+      "source_gap": "SELECTED_EVENT_PREDECESSOR_DELTA_GT_20MS_MASK_AND_HISTORY_BREAK",
+      "ta_execution": false,
+      "target": "LATEST_PAST_CARSTATE_PUBLISH_EVENT",
+      "vehicle_activation_allowed": false
+    },
+    "baseline": "cfeb0fc293c8f3fd66b904504a9c5c728e8a48af",
+    "break_accounting": "CONTIGUOUS_INVALID_REASON_INTERVAL_STARTS_INCLUDING_INITIAL_SEPARATE_FROM_MASKED_SAMPLE_COUNTS",
+    "calibration_blockers": [
+      "CALIBRATION_UNCERTAINTY_PENDING",
+      "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+      "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+      "METRIC_CALIBRATION_UNAVAILABLE",
+      "INDEPENDENT_REFERENCE_UNAVAILABLE"
+    ],
+    "candidate_search_authorized": false,
+    "composition_authorized": false,
+    "data_policy": {
+      "alignment": "INTEGER_GRID_LATEST_PAST_ONLY_NO_INTERPOLATION",
+      "allowed_payloads": [
+        "initData",
+        "carParams",
+        "carState",
+        "carOutput",
+        "carControl",
+        "pandaStates"
+      ],
+      "boundaries": "NO_SEGMENT_OR_MASK_CROSSING",
+      "calibration_blockers": [
+        "CALIBRATION_UNCERTAINTY_PENDING",
+        "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+        "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+        "METRIC_CALIBRATION_UNAVAILABLE",
+        "INDEPENDENT_REFERENCE_UNAVAILABLE"
+      ],
+      "candidate_search_authorized": false,
+      "command": "carOutput.actuatorsOutput.torqueOutputCan",
+      "command_units": "SIGNED_RAW_CAN_AUTHORITY_NO_384_NORMALIZATION",
+      "composition_authorized": false,
+      "composition_recommendation": "COMPOSITION_NOT_RECOMMENDED",
+      "dt_ns": 10000000,
+      "duplicates": "REJECT_SEGMENT",
+      "forbidden_payloads": [
+        "modelV2",
+        "liveCalibration",
+        "livePose",
+        "cameraOdometry",
+        "lateralPlan",
+        "gpsLocationExternal",
+        "gpsLocation",
+        "roadCameraState",
+        "narrowRoadCameraState"
+      ],
+      "gaps": "MASK_AND_BREAK_ALL_HISTORY",
+      "historical": {
+        "current": "BASELINE_EXACT",
+        "sg": "SG_CLOSED_LOOP_TRADEOFF_ONLY",
+        "ta": "TA_STANDALONE_TRADEOFF_ONLY",
+        "v1": "TRADEOFF_ONLY",
+        "v2": "REJECTED",
+        "v2_violations": 37
+      },
+      "holdout_payload_gate": "MODEL_FROZEN_RECEIPT_REQUIRED",
+      "mask": [
+        "finite",
+        "valid",
+        "lat_active",
+        "no_driver_override",
+        "no_eps_fault",
+        "forward_drive",
+        "supported_command_domain"
+      ],
+      "max_age_ns": 20000000,
+      "minimum_speed_mps": 5.0,
+      "minimum_support": "MAX_201_OR_10_TIMES_PARAMETER_COUNT",
+      "production_authority": false,
+      "publication_raw_data": false,
+      "qualification_allowed": false,
+      "receipt_sha256": "7ea3c5f0f6b8165ea102dcc5f4fb127343d487e1819bd858c722d98033914a56",
+      "reference_promotable": false,
+      "repeatability": "TWO_EXACT_RUNS_HOLDOUT_ONE_OPENING_NO_RESELECTION",
+      "residual_lags": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "rollouts_samples": [
+        25,
+        50,
+        100,
+        200
+      ],
+      "schema": "EMPIRICAL_PLANT_DATA_POLICY_V1",
+      "sealed_reference_allowed": false,
+      "sg_execution": false,
+      "solver": "NUMPY_LSTSQ_RCOND_NONE_FLOAT64_SINGLE_BLAS_THREAD",
+      "speed_basis": "PREDECLARED_ROUND_MPS_REGIMES_NOT_RESULT_SELECTED",
+      "speed_bins": [
+        [
+          "LOW",
+          5.0,
+          15.0
+        ],
+        [
+          "MEDIUM",
+          15.0,
+          25.0
+        ],
+        [
+          "HIGH",
+          25.0,
+          null
+        ]
+      ],
+      "steering": "carState.steeringAngleDeg",
+      "steering_units": "DEGREES_SOURCE_SAS11",
+      "ta_execution": false,
+      "unobserved_limits": "DIAGNOSTIC_MASK_ONLY_NO_CLEAN_PRIMARY_OR_READY",
+      "vehicle_activation_allowed": false,
+      "yaw": "SOURCE_PROVEN_UNIT_AND_FRAME_REQUIRED_OTHERWISE_STAGE_BLOCKED"
+    },
+    "deduplication": "ONE_STREAM_PER_ENVELOPE_SEGMENT_RLOG_BEFORE_QLOG_HASH_LEXICAL",
+    "exact_metadata_route_bindings": {
+      "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677": {
+        "lineage_sha256": "0ea78123869aa75c41fbd9e950fde9b4394d91619be3b476867a800475fef926",
+        "source_commit": "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29",
+        "source_set_sha256": "76a56097dc818d75f7c88d7deac3a2195be93f0fcdd4fac5f5da8abfd7eb4f11"
+      },
+      "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c": {
+        "lineage_sha256": "6d4f6eba35e6e1b58821b11a652067984e7ef520d4ab2a5be4f01339fe48e85e",
+        "source_commit": "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29",
+        "source_set_sha256": "e899bb90190b32fe8a4cf3ad54dc7963a96aa29c7dedcca27010e31275bac5d1"
+      },
+      "eda13cbea550fc80f6153a1d9951fb7f06ce0bb2c6bfc462b7383751512cfe77": {
+        "lineage_sha256": "f0bf29f467e3bff3c64ce7b35e1fa556c7649d7bcc4a6f14a0d677f8520a14fa",
+        "source_commit": "6ca11a4aea8223ebfebb1140bd8094ef1b3c5b90",
+        "source_set_sha256": "29b6db79f88dbb414fa0fe16cfc172cd04342894358195bf6244a90c275f380d"
+      }
+    },
+    "family_policy": {
+      "candidate_search_authorized": false,
+      "candidates": [
+        {
+          "delay_samples": 0,
+          "family": "ARX1",
+          "input_taps": 1,
+          "intercept": true,
+          "output_lags": 1
+        },
+        {
+          "delay_samples": 5,
+          "family": "ARX1",
+          "input_taps": 1,
+          "intercept": true,
+          "output_lags": 1
+        },
+        {
+          "delay_samples": 10,
+          "family": "ARX1",
+          "input_taps": 1,
+          "intercept": true,
+          "output_lags": 1
+        },
+        {
+          "delay_samples": 20,
+          "family": "ARX1",
+          "input_taps": 1,
+          "intercept": true,
+          "output_lags": 1
+        },
+        {
+          "delay_samples": 0,
+          "family": "FIR25",
+          "input_taps": 25,
+          "intercept": true,
+          "output_lags": 0
+        },
+        {
+          "delay_samples": 5,
+          "family": "FIR25",
+          "input_taps": 25,
+          "intercept": true,
+          "output_lags": 0
+        },
+        {
+          "delay_samples": 10,
+          "family": "FIR25",
+          "input_taps": 25,
+          "intercept": true,
+          "output_lags": 0
+        },
+        {
+          "delay_samples": 20,
+          "family": "FIR25",
+          "input_taps": 25,
+          "intercept": true,
+          "output_lags": 0
+        }
+      ],
+      "closed_loop_bias": "OLS_NOT_CAUSAL_INTERVENTION_OR_PHYSICAL_TRUTH",
+      "composition_authorized": false,
+      "holdout_reselection": false,
+      "maximum_candidates": 8,
+      "naive": [
+        "ZERO_RESPONSE",
+        "HOLD_LAST_OUTPUT",
+        "TRAIN_STATIC_GAIN"
+      ],
+      "pole_gate": "ABS_POLE_STRICTLY_LESS_THAN_ONE",
+      "production_authority": false,
+      "publication_raw_data": false,
+      "qualification_allowed": false,
+      "receipt_sha256": "c1c1d5162e7304b13e11ec60fc92fc0be07c04d494c2b697fb4f00f89424e9c1",
+      "reference_promotable": false,
+      "regularization": null,
+      "schema": "EMPIRICAL_PLANT_FAMILY_POLICY_V1",
+      "sealed_reference_allowed": false,
+      "selection": "DEVELOPMENT_RMSE_THEN_PARAMETER_COUNT_THEN_FAMILY_DELAY",
+      "sg_execution": false,
+      "ta_execution": false,
+      "training": "TRAIN_ONLY",
+      "vehicle_activation_allowed": false
+    },
+    "gyro_weak_association": "DO_NOT_ADMIT_FROM_KINEMATIC_ONLY",
+    "holdout_opening_allowed": false,
+    "holdout_role": "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "metric_policy": {
+      "aggregation": "POOLED_SSE_AND_COUNT_NO_SEGMENT_WEIGHT",
+      "amplitude_subsets": "INPUT_ZERO_POSITIVE_NEGATIVE_AND_TRAIN_ABS_QUARTILES",
+      "candidate_search_authorized": false,
+      "candidate_unstable": "EXCLUDE_AND_REPORT_NO_HOLDOUT_RESELECTION",
+      "common_history_samples": 45,
+      "common_support": "ALL_45_HISTORY_SAMPLES_VALID_SAME_SEGMENT_SAME_BIN",
+      "composition_authorized": false,
+      "correlation_constant": "NULL_WITH_SUPPORT_COUNT",
+      "minimum_samples": 201,
+      "one_step": [
+        "MAE",
+        "RMSE",
+        "MEDIAN_ABS",
+        "P95_ABS",
+        "BIAS",
+        "CORRELATION"
+      ],
+      "physical_delay_interpretation": "INCLUDES_SOURCE_PUBLISH_ALIGNMENT_AGE_NOT_PHYSICAL_DELAY_TRUTH",
+      "production_authority": false,
+      "publication_raw_data": false,
+      "qualification_allowed": false,
+      "quantile": "NUMPY_LINEAR",
+      "rank": "FULL_COLUMN_RANK_REQUIRED",
+      "ready_other_gates": [
+        "MEASURED_UNITS_FRAME_PROVEN",
+        "CLEAN_LIMIT_MASK_OBSERVABLE",
+        "EXACT_REPEATABILITY",
+        "STABLE_MODEL",
+        "SUPPORT_201_MINIMUM"
+      ],
+      "ready_primary_horizon_samples": 100,
+      "ready_primary_metrics": [
+        "MAE",
+        "RMSE",
+        "P95_ABS"
+      ],
+      "ready_rule": "STRICTLY_BETTER_THAN_EACH_NAIVE_ON_ONE_STEP_AND_100_STEP_ENDPOINT_COMMON_SUPPORT",
+      "receipt_sha256": "e81b457764f1b7cb50ed1b31911d8f976d38fa819cd5dbd28df9564e9525c4a7",
+      "reference_promotable": false,
+      "rollout_initialization": "OBSERVED_HISTORY_ONCE_THEN_RECURSIVE_PREDICTED_OUTPUT",
+      "rollout_input": "OBSERVED_EXOGENOUS_COMMAND_OVER_HORIZON_NOT_FEEDBACK_TO_MODEL",
+      "rollout_metric": "ENDPOINT_OUTPUT_RESIDUAL_AFTER_H_RECURSIVE_STEPS",
+      "rollout_origins": "EVERY_COMMON_SUPPORT_INDEX_WITH_COMPLETE_VALID_HORIZON",
+      "rollout_samples": [
+        25,
+        50,
+        100,
+        200
+      ],
+      "schema": "EMPIRICAL_PLANT_METRIC_EXECUTION_POLICY_V1",
+      "sealed_reference_allowed": false,
+      "selection_scope": "SEPARATE_STAGE_AND_SPEED_BIN",
+      "selection_target": "ONE_STEP_OUTPUT_RMSE",
+      "sg_execution": false,
+      "ta_execution": false,
+      "time_blocks": "FOUR_EQUAL_INDEX_BLOCKS_PER_SEGMENT_NO_POSTHOC_SELECTION",
+      "unavailable": "NULL_NEVER_ZERO_OR_IMPUTED",
+      "vehicle_activation_allowed": false
+    },
+    "minimum_development_rows": 201,
+    "numeric_routes": 3,
+    "privacy": "PRIVATE_TRACES_COEFFICIENTS_PATHS_TIMESTAMPS_PUBLIC_AGGREGATES_ONLY",
+    "production_authority": false,
+    "publication_raw_data": false,
+    "qualification_allowed": false,
+    "randomness": "NONE",
+    "receipt_sha256": "5354f6f357ba355d7c1737d7db02e5398d4ed02d40f02f4403465f348c85165b",
+    "reference_promotable": false,
+    "role_order": [
+      "TRAIN",
+      "TRAIN",
+      "DEVELOPMENT"
+    ],
+    "role_ordering": "OPAQUE_ROUTE_ID_CANONICAL_LEXICAL",
+    "runtime_steer_max": "RECORDED_CUSTOMSTEERMAX_METADATA_PLUS_SOURCE_BRANCH_NO_SCALE_SEARCH",
+    "schema": "EMPIRICAL_PLANT_V2_TRAIN_DEV_POLICY_V1",
+    "sealed_reference_allowed": false,
+    "segment_accounting": "SEGMENT_RESET_COUNT_AND_ROUTE_SEGMENT_BOUNDARIES_SEPARATE",
+    "sg_execution": false,
+    "signal_whitelist": {
+      "carControl": [
+        "actuators.torque",
+        "latActive"
+      ],
+      "carOutput": [
+        "actuatorsOutput.torqueOutputCan",
+        "actuatorsOutput.torque"
+      ],
+      "carState": [
+        "vEgo",
+        "steeringAngleDeg",
+        "steeringRateDeg",
+        "steeringPressed",
+        "steeringTorque",
+        "steerFaultTemporary",
+        "steerFaultPermanent",
+        "gearShifter",
+        "yawRate",
+        "wheelSpeeds"
+      ],
+      "gyroscope": [
+        "source",
+        "timestamp",
+        "gyroUncalibrated.v"
+      ],
+      "initData": [
+        "params.entries.CustomSteerMax",
+        "params.entries.CustomSteerDeltaUp",
+        "params.entries.CustomSteerDeltaDown",
+        "params.entries.CustomSteerDeltaUpLC",
+        "params.entries.CustomSteerDeltaDownLC"
+      ]
+    },
+    "solver": "NUMPY_LSTSQ_RCOND_NONE_FLOAT64_SINGLE_THREAD_BLAS",
+    "source_age_ns": 20000000,
+    "stage_a_command": "SOURCE_CONFIRMED_RAW_CAN_POST_CONTROLLER",
+    "stage_c": "NOT_RUN",
+    "ta_execution": false,
+    "vehicle_activation_allowed": false,
+    "yaw_additional_admission": "EACH_ROUTE_POSITIVE_GYRO_AND_KINEMATIC_CORRELATION_AND_SELECTED_YAW_BEATS_ZERO_GYRO_RMSE_MAE_P95",
+    "yaw_policy": {
+      "angle_offset": "NO_LEARNED_OFFSET_APPLIED_OFFSET_PROVENANCE_PENDING",
+      "calibration_blockers": [
+        "CALIBRATION_UNCERTAINTY_PENDING",
+        "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+        "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+        "METRIC_CALIBRATION_UNAVAILABLE",
+        "INDEPENDENT_REFERENCE_UNAVAILABLE"
+      ],
+      "candidate_search_authorized": false,
+      "common_support": "ALL_36_GYRO_OPTIONS_AVAILABLE_SAME_TARGET",
+      "composition_authorized": false,
+      "conditional_fit_gates": [
+        "unit_supported",
+        "frozen_selection",
+        "source_complete",
+        "split_disjoint",
+        "train_dev_support",
+        "untouched_role"
+      ],
+      "continuous_scale_fit": false,
+      "diagnostic_subsets": [
+        "LOW_SPEED",
+        "DRIVER_PRESSED",
+        "EPS_FAULT",
+        "INACTIVE",
+        "LIMIT_UNKNOWN"
+      ],
+      "dt_ns": 10000000,
+      "gyro_bias": "NO_CORRECTION_REPORT_BIAS",
+      "gyro_candidates": [
+        {
+          "axis": 0,
+          "lag_samples": 0,
+          "sign": -1
+        },
+        {
+          "axis": 0,
+          "lag_samples": 1,
+          "sign": -1
+        },
+        {
+          "axis": 0,
+          "lag_samples": 2,
+          "sign": -1
+        },
+        {
+          "axis": 0,
+          "lag_samples": 5,
+          "sign": -1
+        },
+        {
+          "axis": 0,
+          "lag_samples": 10,
+          "sign": -1
+        },
+        {
+          "axis": 0,
+          "lag_samples": 20,
+          "sign": -1
+        },
+        {
+          "axis": 0,
+          "lag_samples": 0,
+          "sign": 1
+        },
+        {
+          "axis": 0,
+          "lag_samples": 1,
+          "sign": 1
+        },
+        {
+          "axis": 0,
+          "lag_samples": 2,
+          "sign": 1
+        },
+        {
+          "axis": 0,
+          "lag_samples": 5,
+          "sign": 1
+        },
+        {
+          "axis": 0,
+          "lag_samples": 10,
+          "sign": 1
+        },
+        {
+          "axis": 0,
+          "lag_samples": 20,
+          "sign": 1
+        },
+        {
+          "axis": 1,
+          "lag_samples": 0,
+          "sign": -1
+        },
+        {
+          "axis": 1,
+          "lag_samples": 1,
+          "sign": -1
+        },
+        {
+          "axis": 1,
+          "lag_samples": 2,
+          "sign": -1
+        },
+        {
+          "axis": 1,
+          "lag_samples": 5,
+          "sign": -1
+        },
+        {
+          "axis": 1,
+          "lag_samples": 10,
+          "sign": -1
+        },
+        {
+          "axis": 1,
+          "lag_samples": 20,
+          "sign": -1
+        },
+        {
+          "axis": 1,
+          "lag_samples": 0,
+          "sign": 1
+        },
+        {
+          "axis": 1,
+          "lag_samples": 1,
+          "sign": 1
+        },
+        {
+          "axis": 1,
+          "lag_samples": 2,
+          "sign": 1
+        },
+        {
+          "axis": 1,
+          "lag_samples": 5,
+          "sign": 1
+        },
+        {
+          "axis": 1,
+          "lag_samples": 10,
+          "sign": 1
+        },
+        {
+          "axis": 1,
+          "lag_samples": 20,
+          "sign": 1
+        },
+        {
+          "axis": 2,
+          "lag_samples": 0,
+          "sign": -1
+        },
+        {
+          "axis": 2,
+          "lag_samples": 1,
+          "sign": -1
+        },
+        {
+          "axis": 2,
+          "lag_samples": 2,
+          "sign": -1
+        },
+        {
+          "axis": 2,
+          "lag_samples": 5,
+          "sign": -1
+        },
+        {
+          "axis": 2,
+          "lag_samples": 10,
+          "sign": -1
+        },
+        {
+          "axis": 2,
+          "lag_samples": 20,
+          "sign": -1
+        },
+        {
+          "axis": 2,
+          "lag_samples": 0,
+          "sign": 1
+        },
+        {
+          "axis": 2,
+          "lag_samples": 1,
+          "sign": 1
+        },
+        {
+          "axis": 2,
+          "lag_samples": 2,
+          "sign": 1
+        },
+        {
+          "axis": 2,
+          "lag_samples": 5,
+          "sign": 1
+        },
+        {
+          "axis": 2,
+          "lag_samples": 10,
+          "sign": 1
+        },
+        {
+          "axis": 2,
+          "lag_samples": 20,
+          "sign": 1
+        }
+      ],
+      "gyro_clock": "BOTH_SENSOR_AND_PUBLISH_MUST_PRECEDE_TARGET_MINUS_LAG",
+      "gyro_source": "lsm6ds3_OR_lsm6ds3trc_ONLY_GYROUNCALIBRATED",
+      "gyro_unit": "SOURCE_PRODUCER_RAD_PER_S",
+      "hypotheses": [
+        "YAW_H1",
+        "YAW_H2",
+        "YAW_H3",
+        "YAW_H4"
+      ],
+      "kinematic": "SPEED_OVER_WHEELBASE_TAN_STEERING_DEG_TO_RAD_OVER_STEER_RATIO",
+      "lag_samples": [
+        0,
+        1,
+        2,
+        5,
+        10,
+        20
+      ],
+      "mask": "VALID_FINITE_FORWARD_SPEED_GE5_NO_DRIVER_NO_EPS_FAULT_LATERAL_ACTIVE",
+      "max_age_ns": 20000000,
+      "metrics": [
+        "MAE",
+        "RMSE",
+        "MEDIAN_ABS",
+        "P95_ABS",
+        "BIAS",
+        "CORRELATION",
+        "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY"
+      ],
+      "minimum_support": 201,
+      "new_yaw_holdout": "OLD_EMBARGO_NUMERIC_UNOPENED_BEFORE_THIS_POLICY_NO_ROUTE_INDEPENDENCE",
+      "old_holdout": "COMMAND_BRIDGE_ONLY_NEVER_YAW_SELECTION",
+      "physical_rigid_transform": null,
+      "production_authority": false,
+      "publication_raw_data": false,
+      "qualification_allowed": false,
+      "receipt_sha256": "6e7bafc60c6ff3181ee948a1111dfd59f3660a018601ba927d32307a27393147",
+      "reference_promotable": false,
+      "residual_lags": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "schema": "EMPIRICAL_YAW_HYPOTHESIS_POLICY_V1",
+      "sealed_reference_allowed": false,
+      "selection": "DEVELOPMENT_KINEMATIC_HYPOTHESIS_RMSE_THEN_NAME_GYRO_RMSE_THEN_AXIS_SIGN_LAG",
+      "sg_execution": false,
+      "speed_bins": [
+        [
+          "LOW",
+          5.0,
+          15.0
+        ],
+        [
+          "MEDIUM",
+          15.0,
+          25.0
+        ],
+        [
+          "HIGH",
+          25.0,
+          null
+        ]
+      ],
+      "stage_a": "EMPIRICAL_ACTUATOR_MODEL_ONLY_STRICT_GATE_FAILED",
+      "stage_c_allowed": false,
+      "stationary_bias_estimation": "NOT_APPLIED_UNCALIBRATED_SENSOR_BIAS_OPEN",
+      "ta_execution": false,
+      "unit_support": "TRAIN_AND_DEVELOPMENT_STRICT_COMMON_SUPPORT_RMSE_MAE_P95_UNIT_GROUP_DOMINANCE_GYRO_AND_KINEMATIC",
+      "vehicle_activation_allowed": false,
+      "vehicle_frame": "UNVALIDATED_DEVICE_CORRESPONDENCE_ONLY",
+      "yaw_metric_policy_sha256": "e81b457764f1b7cb50ed1b31911d8f976d38fa819cd5dbd28df9564e9525c4a7",
+      "yaw_model_candidates": [
+        {
+          "delay_samples": 0,
+          "family": "ARX1",
+          "input_taps": 1,
+          "intercept": true,
+          "output_lags": 1
+        },
+        {
+          "delay_samples": 5,
+          "family": "ARX1",
+          "input_taps": 1,
+          "intercept": true,
+          "output_lags": 1
+        },
+        {
+          "delay_samples": 10,
+          "family": "ARX1",
+          "input_taps": 1,
+          "intercept": true,
+          "output_lags": 1
+        },
+        {
+          "delay_samples": 20,
+          "family": "ARX1",
+          "input_taps": 1,
+          "intercept": true,
+          "output_lags": 1
+        },
+        {
+          "delay_samples": 0,
+          "family": "FIR25",
+          "input_taps": 25,
+          "intercept": true,
+          "output_lags": 0
+        },
+        {
+          "delay_samples": 5,
+          "family": "FIR25",
+          "input_taps": 25,
+          "intercept": true,
+          "output_lags": 0
+        },
+        {
+          "delay_samples": 10,
+          "family": "FIR25",
+          "input_taps": 25,
+          "intercept": true,
+          "output_lags": 0
+        },
+        {
+          "delay_samples": 20,
+          "family": "FIR25",
+          "input_taps": 25,
+          "intercept": true,
+          "output_lags": 0
+        }
+      ],
+      "yaw_model_input": "MEASURED_STEERING_AND_SPEED_KINEMATIC_RAD_PER_S_REGRESSOR_NOT_TRUTH"
+    }
+  },
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "fcaee143ecbd280be1ff0c16c19c02b16d47d248b41a6b5b30220f91c680e17a",
+  "reference_promotable": false,
+  "route_set_sha256": "421bf557f69623a6e2a9ac1ca8a5bc2999441976f81d1a122e6ad42e51150a15",
+  "schema": "EMPIRICAL_PLANT_V2_NUMERIC_AUTHORIZATION_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "signal_whitelist": {
+    "carControl": [
+      "actuators.torque",
+      "latActive"
+    ],
+    "carOutput": [
+      "actuatorsOutput.torqueOutputCan",
+      "actuatorsOutput.torque"
+    ],
+    "carState": [
+      "vEgo",
+      "steeringAngleDeg",
+      "steeringRateDeg",
+      "steeringPressed",
+      "steeringTorque",
+      "steerFaultTemporary",
+      "steerFaultPermanent",
+      "gearShifter",
+      "yawRate",
+      "wheelSpeeds"
+    ],
+    "gyroscope": [
+      "source",
+      "timestamp",
+      "gyroUncalibrated.v"
+    ],
+    "initData": [
+      "params.entries.CustomSteerMax",
+      "params.entries.CustomSteerDeltaUp",
+      "params.entries.CustomSteerDeltaDown",
+      "params.entries.CustomSteerDeltaUpLC",
+      "params.entries.CustomSteerDeltaDownLC"
+    ]
+  },
+  "source_sha256": {
+    "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677": "720f52530dfd7773350f5dcc19e7f12547ac0ce075ab3d165e197d536a15590f",
+    "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c": "720f52530dfd7773350f5dcc19e7f12547ac0ce075ab3d165e197d536a15590f",
+    "eda13cbea550fc80f6153a1d9951fb7f06ce0bb2c6bfc462b7383751512cfe77": "e180f1119287aba849c87f974af0b09d30cea5e7fbabb1759cf8686a6ae4e868"
+  },
+  "sources": {
+    "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677": [
+      "029ea09db2852f5212ff585fb925964543f907b58cbd51d308f45318571d13cd",
+      "0403f34bbd10ce1bc367da6506aa8d334f40afeede8d77195251a3e4a059d381",
+      "04924f00025153564fec5da5205df70af79d8e437a48412d9e92ba7967013df8",
+      "04c6de41661d5c1f43c73f3fe77bf058f6531fc778a3ce9bf936202453140f17",
+      "05c56c906a64ff7e42705f2798d1d10899bcd3ce280fe462750deaef56e305b6",
+      "0a24e22f0cf3515487b42841167b657782be38d934628683d8c428cbf6afc17b",
+      "0bb4117baaa509954abc3046fa398ddda5ccd0126fe5e7087eb2772ceb1dc031",
+      "10ae967bec16a00c1dafd45b2e79e94796acbfc97c9fdd18a5a8ffad670721e8",
+      "1106a7bd55fa449983c1236a951021f2003cbe84ee805d846c477e0c2badfc55",
+      "11afe4f183c27fcb9de255b9e24c30deb374aee67de904dba3c418ad5c7e7a85",
+      "184008fccf98cde3e4bdf38c7deeaeec4fdbcc9fff823a1022ae8818da2f8182",
+      "1aa0c45905bfcff850e6749597c6485df5b89c49e453a32a0296c2eb401af512",
+      "1aae45a529d7de4bf38f634d74010665265f89506fb829ed9ca58a5524b1747d",
+      "1fb8ea7e8eec5287c6f15707932a26bfd679c872b21cdbc4566454dd45a125ef",
+      "219d8fec0077a76732c97df88c89075daea0fbe2980e1c6a8e7475b238fe2751",
+      "22740f422d861b051cb46b3dcabfc9fc53971d5830fba16f1254785f3cd6bbf6",
+      "28fca4f81a2e77b8a16ae8dff51413d5457952a68979cd7ca6591b1ad20d1749",
+      "2ba3e709665acfb0a6298f837a72847c3c6dd71046655b97454d1263036924d2",
+      "2d8e938a82c54d61843c3b8a8b5e5f3af518b4561f174ffa1c3c8e73ab0d8088",
+      "320091146de5a23c40eab2821524bcc659dd67fd5a54a8fb28eb910d708a28b1",
+      "34614363f654ee6264a645bd6a0cbfcfab7a68d65300ad8a898f55dce2e49521",
+      "362172a188d928da4692b40f32ff141c51b5de7e3d8566ca79b69635d6280277",
+      "388dd07a3bba6e71b7f83914c7de8ef4cb69c3589e5d6e612c67b15ac84632ff",
+      "3916de64f5cc3d5575cadcef35a3028b63246639c22299efb88e03b3a363862b",
+      "3ce206555eee4eea67e6ddea5e0fc05b2160de2bcdd5a66f1bbe9c22f0d1322f",
+      "48879dbbe5ca3281fb62db6b81cfbc4b846dd62ddf27c74a461478f1e2b3326f",
+      "49f219d266fff7379c275b56ef419bb3f9d6b5b0943719652cbfa63f41366262",
+      "50e92eae2a808fc4d40c0e7a85bfeced3cdc1461911e604eb8f6e208ba2c05f2",
+      "5796e446afb8b650035110fd4cb998561c02ffe405c43dda973000b9a822b6cf",
+      "5b1a80c5452d7e1e609ac32d81fcb6e39f7fe0527d1a92c99f7cd6f618721da0",
+      "5c9ab5daa4b723710914c47b986c09f8ddc9b1c1ec03414ac97b94405725a7a6",
+      "63d72b7bdd865c603388e3eae624ccaa245a8d95b2365750f8541e40539cdb23",
+      "66641d97ef38cf30421cd975ce4d4415135f02340abacba09ecdfb3dddcd571c",
+      "6dafc070a586337bdf0710be47492b8bf11d16ae70c65070889bf6b81335b895",
+      "76ec7841ac45b72e0fd91c76b3469903b580f207d0a9ec878306301b7e74fe10",
+      "788dc6055f8443c77cbfd1f2aaaa3202fd7b988446d2d2fae493d8f5a18ffac3",
+      "7ba4ccbb5ce628b18ba1745a73a2d6d92a3e6eeb9e3295d8f218caedb020c68d",
+      "7e086a257b4cbc01d1bc205ba9192bfb02b7ea01a7c07b2acf1e35220e4c17b0",
+      "7f1ab071092dc509380190e139bdef664c4989d8a4db3adc9e9b94e218c0fa32",
+      "8250a0150d07058e043e77788e3cffffb3cfed1dfb747dca4111e7afcc12789c",
+      "858725b9e6b0fe0c1844204102c5848e58dc14b049473cd39a1a0a3378f5b0aa",
+      "8684f95483fe443faaf3f6c3358c132352bae37141ffa586a135e3f55c9ae23b",
+      "8daafe7d726e25e6832f349297571a63aed0c76c24d20cc5059246616dc4f41b",
+      "9099b3c68be36db34eb1e18aba29517c6640b51597ed180c1bc07e5484d54e5d",
+      "94d7579568dc4842cad073ab009062e7b4eb65c4b156fcb8251cea02729ff46a",
+      "99771172446219c63faa6c83e5329bbd397b1c6d3f00ae80bab6b8592cbed435",
+      "9c606c0280a859e0c160ea8be0ea48a1fc3ab1d246eabc9e705b4995ae6f6a4a",
+      "9ddb18a0d992f9ae53beedc64f0bec02e2eb97394dcd6508d55a1f81546e37fa",
+      "a3e075b181ddeffe53a4fa6c9dcfeb1475950650e8e917c9c9e2fcd69b7e58d5",
+      "b0cb81024bf1d9fe43f87ec3537f1f7f1e2ea47a38e0b8c17815373506f5e51e",
+      "b12430a732e51b5f88ec144fd493132b8d4b920016d6f99fb30895267979a026",
+      "b3adca6c3b42aa0d74026cde96560c68b890025acaaed3eaee60ef63f6be8498",
+      "b4566e81dd0b6602929a3debf81f61b88c8a26aae2ead50f9ff4631dda751523",
+      "b6a84f0a4d3206c111fc4a7c9a8c9c8f14508977292b64389863195147bfdacb",
+      "b76f2dad3d26cebcb49319cdf0666f4e8940350dfa1d05139035b4b38cac52d0",
+      "b95e35e9f05a279269d774e7d15095fb58df0589b522b4b380ed8072a483635c",
+      "bee543cf21c738f18806244b4dd3a3b17424b85788ef0f55a8879b1f4e472bad",
+      "c7a11c0cbb6d9e0729e84f5f3587c2a65730dca11a52482f27e09037e25c1ddc",
+      "cbc1fd304dfcaa7d696ed25c4354ffe31abfef1cc00650c0830d12acfbdb827a",
+      "d1a563b8d139b9e7158c508b36297369852e1faa9b94c097eb7d25bd55d813a7",
+      "d265191ff6b6d88436ec7734b1d4efc53411e88f3eba604d44fad6bd6bd5cb2b",
+      "d2d77e646f46ad3c79a90a5dbefbe643c9d38e04334977e41e01a44e6278a115",
+      "dcbecc3c18c093b42842ca27a1d50892e3db3dae55df46f20ed42a14d1282ce6",
+      "dcc70adccd7ea1b35feac15bc61f7401bdcc1f7ba3476fb7b15bf18d57200eee",
+      "e2844bf3c5f67d1013d41b5f16d16b0f9e03cf51989ab67a970b52efa59dcc10",
+      "ea79539fa27261a74fdd1110b07579c141caf5fc5b279cd00a4e5fb9f24f1ccd",
+      "f5fec8634e77efe7f04b0e943f1a48560e20073c90ebc125ef81a6d30b7d0b09",
+      "f6712ea7bf0adcb536e5a22ca420205ceaf4f54c1295165aef07c5348c53c9a6",
+      "f8016fc1cddb80a31ff993a988687570aa97c31d1473c8f9263878af8a542fda",
+      "f899dddc54d5ee619a5291d57c435430d7ca819bb45ca491406433ff92ba1d61"
+    ],
+    "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c": [
+      "002ed595b77799a7cc88cb4eb01dd19223950b05d72804708c30bb978e0218c0",
+      "009507aa0c908db936d45d1604afe8bc95376c8de65b825489d5293e6594787f",
+      "00d1e92cb64e387c98e6e3e208c722f5e43a2ba8d500000a52fae85a78901ec2",
+      "02d1fcfa298c51ef1a4d34f3fb93de356c546c872b7b5d8f82af4db89396b3f7",
+      "0535b111255d4252d91483ed76983d0390db16c3aa45f7609ee19c735aaae911",
+      "056e231a4cc421002a20427495f8a9d1c2d695358fc3405f2d4913ee9869c419",
+      "06d8682f841d4f772fffa57d608a5e4978456d1affb6893166d9c7eace9e5c22",
+      "0c817b4e8f7c78df75f4b83ce45cd210f8db8520a644ba44a385dd52a1758441",
+      "0e15cee5e47fc9e1b6dee1b23fcbd3eff7650c8431becd31aa61ad9850a13dbf",
+      "0fbec0fb083c79f993c9f2528de57be901c3bacc94e6f7a261d5d39c0ec057f8",
+      "15ca5df29e9fecf967236ff17ec6ba8339264ed411884eac18021386fcc65bbe",
+      "16018b113202adc96b9d98e2356ac3e39f1c85aad918f38b097a7e016de92914",
+      "187241cb0b0b39370f11016616ece212a53ffd3bfa5c30e3fb3015d68b3c5d0e",
+      "18c039cfbe5bc1cf8f4f06d8825bd71e990c5d27c122c6f8cc21665502b4f13f",
+      "1934175ccf8990bcd2d1a9422700841435e1d272e267ee5fd84afbb09494c7af",
+      "1b9c7b09d6c896cae7c47e4d7bcde62863fa73c77d785c70e1f04cf05bea980e",
+      "1d28b8e61ca71e59b286f7f58f35979b03edeb88ea0708f45632f95806f318e6",
+      "203e42314f19a0be72225e37dd6966237f3473eca25a6e003483dfbd6121e65d",
+      "2130021724c5990eaedda90616e6254b4b34ac4ef9ee93a14f22729363c2454e",
+      "217be0e4c3eea3a78b373218be03d61b3838b87bdd2e83005390113467da6814",
+      "224b03cbfea0e2122a3d3f2634cd2171ee0b4d81c41313553fedf9b522110269",
+      "2e4e97924fdb49db370e10cdc2bb2f72369d868f3670be698a78e81db684f90a",
+      "351774934c30a20c50a959b9ef1d238739cc0a785d3f610b7594003ca2e0df62",
+      "3aa41892b0c9efc074db843b52f2dbcfaf47097d9c304d03bec0f31947052361",
+      "3b765211f70a9bf1a267980555939e4e28368bc0e0d98ed7e3eecf2dfb76d0d0",
+      "400982f5200d7a276d85692ce435d72efb5c36c8e85e074a753c1fab13ed8709",
+      "47a630f87794782aaabecb448082898e1eeba2ebdf17838efcaf68b444b11d5e",
+      "51d18c1961506e52c0ef52180f49dca60ecab360f582d5c79c78813068c0872a",
+      "55a71e38b61de719101819bf6ac9f202016b19ad2871e428ef8b3cc7427c8ea4",
+      "56f1806da521dd9902ffdff2d71ebcad9e7ee28f1abc8356cff84e736b689c10",
+      "57b56de299ba56ac5de291fe347a156741039ebd50f0996be03833f9fa3ac65b",
+      "5f0db1a11acd38adcbd1ee8f4b4a9abe311e3aab728a3cc525949b1c4c80258f",
+      "5f9215c22188449319fbd0a92d8915ff069979d736b14d12c65177ad9dfea9c2",
+      "60d76f665e1c3a8822c3bab6c440dda0f50d61a141c09c7d59534b4fa391e25d",
+      "66bf46da9ad308900799de471fe5739f474165700e0fe19c36a87cea66e7f429",
+      "68260e1e5eb71df7fe9a73b7118b8587d6ab9d5a552ffe15d7e2ffd37d848abb",
+      "6c304381fd34777c6095928b9a641ac9f195e086a55b91858aa3566202bcfbcc",
+      "7449e45f71daa29a474767d47637831cd6f20e2603cede25f63b0c1b8d8af9c6",
+      "7d7300bc64e5525540fca5e39fd621cce144b2b39ca78913c3dc77ae7a35b5e6",
+      "7ef27c8506a0c19cf91e25b83ce89d602ebc7ad4862abdf0ffdcf70ed2f46351",
+      "7f41244d3d058b945f9116103d555a7d5ed6e1463e603322417391dc217abf23",
+      "858b9c6a866d5b231043d92b885d2047608c70c0d331847d8ed3ef40de008dce",
+      "85edd911cfb120d97c663189361fb286325e9cf7f5235f497c294b08c8ea907d",
+      "8dabb2dedcf8cf3f9b2d5864b8805f2b79b81049b1f9e067e5cede77631dd329",
+      "928f60d71a61b670c03eaa165b77360d78f8b9c0198528d1cc67cc8c69642a5b",
+      "94f22cd287731e2b63202d3100486abb3305c89e606b0aebaa38cfd2f68c6296",
+      "9d15131678e1cb02658e7b8a299b30bb7de33413c3f142c848223e0f8b379785",
+      "9dea9d374cb962f44d0c21cc4c8ab3ce30b98ee1df2aef5d1768da17202c7e34",
+      "9e0fed0ed7b0376f9ad0ae063d1e3ecb10275e2e23cea14fe94b15bbf3d72f3a",
+      "a39a3b0bc2b553aa23648d4d335ae1ad97edff792218a120d45d1dc85bd23fc2",
+      "a4bcb5bd491d221c7490c1bf06f9cd20d7c933b1e4a3209272830a6e44e0f773",
+      "a86ca5501bfc4249d2443216a30b9a55fbefa8a14fa2eb0d6ccc7e3e7f5118b6",
+      "aa7a86113150182b6f88736013287f8ec2fb846efae4e0c9b7a619d0df8be6bf",
+      "ab4a20d334a8c3f285887c483528b7bfce7fa679c30fa92f31af09cae39ca34a",
+      "aeecf42184817509e75c97a6ff1f99545c912b377c3453408eb825af87067257",
+      "b1b0b6fca6449c01cdabb69a24d706aef37ed22518e10cd7706694a09d76e587",
+      "b3a4d9032ae592850054ff34e7642a28b7defcd016d3240da70a0ff7ac215a5f",
+      "b7dab43085d8db749f6bde7ffa0884bfcbfca92c3c3b7a33a23c0884d01e9ab4",
+      "b8f394fb595f5a066b58b31a1cd416e5045cf72c3110f022d0fcdc25e5346cd1",
+      "b947dcd0d5589a33a143669f8e6ea0de8571a93f80c9f1bbf13cddf64f8bedb9",
+      "bd39f1e2829abf7f4f65c0d0d86b0eb6c870103e9e8ea0be6b69f25006b3a5f7",
+      "c0559bf6bdf84ef93654a7483bd702854f4e1a01ac09fb7df5e93f481e8f4de1",
+      "c2e83cfbb589bf8a761f7a9f57553f58ec96d30548ade1330d8e0e7752603e31",
+      "c49c419a95887ce4ca57c7136a96e36fa26abf46d4d760a8a8f34130633fbb18",
+      "c58091b5feeec48ba494060c2e334476ecf5a3a7fd450467510105728c3e9114",
+      "c5bed5aeedda0164d969306c64d62786e4aa6d10537ed31ab2982d3c2bca12ac",
+      "cb26e3e0aa4e3dc83722a40970f6f2621101eaab07bfd6fcf3869ed775217706",
+      "cebe10ff8dfa322f7110ed3f4ffeadd118576c8ec447f807325ada6c281fede6",
+      "d10c16842ab1c82488ceb53718dad59dfb08122c5e69bdbb2ed73a8fdcccd8af",
+      "d1f820134406b5186c1f217dbf81d4d9adbac2ac730080ddcad400bf28779465",
+      "d699a59b162e72e099e88a6ce82707bff2a95f11703a301f669435cfe0634a4b",
+      "d9248d5b8e20d8df46ceade7820ba0d2017c0e034d694eb7807d1f2a193bc083",
+      "e0d220bf41aeebc33091166bc4cbabbffb91fd45bc57f1d2a5c3384d76182561",
+      "e3fcf91b027d59030eeeb3cfa82dba3bbf6bf6ff4df185205017453b93debf37",
+      "e90adaa2380eb0fa15f81d66826f47a192e281f2327534395f8d4a431816f9a3",
+      "e90cb04a65b033889d2099c879e6457c3d3f29b03aacb1f8038501687d3a480d",
+      "eb21e54eb6731876fea57c1874ba492e7c4274e6d39f565cc37557fe24b1f1c3",
+      "f029e89b1b82bca1a9a0e4c27f08ca067af2e19b0645b2b3938bb04db12c8116",
+      "f3422f0e027cb327b61be74f34cc158f2eab911399083eebd7504a885b63c72f",
+      "f4517e5dfe66ff51a29671deb8c85f7aa086d44304960eaa3410f28f603d1541",
+      "f4f6261fcee0ed219fe09a165d2fea5263d3a7fa2cf5ea2dd9a1815cb7d99f2a",
+      "f802938c1626756f75d5a6a299b816f82338471f3e5ef169ba38a75376617532",
+      "f8e851c2e9bfc0c3a912b951e4007a5578160615f33452de5c659989ec4a71bd",
+      "fe0fa12d7e8f926f2edf37071322245df3e0ace9be98f291743c9bfac1aee96c",
+      "fe7f274c105646076a17d53ca3d5378d2d0ecdf12b42092e06cf07593101f903",
+      "fecbeac705e8ae9ad2ec3d0230d342fd7f07fc14f99d57e1127b8628ab3cef9f"
+    ],
+    "eda13cbea550fc80f6153a1d9951fb7f06ce0bb2c6bfc462b7383751512cfe77": [
+      "03d4bf0006f873f2bdb8be79f6681ce036d122dc2e3a63bb0aeb12541f84540a"
+    ]
+  },
+  "split_sha256": "05bbdae01bcf22bab814ac2545514e18eff28afc346e77f1d1d0bceb8198c81f",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}
