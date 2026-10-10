@@ -1,0 +1,785 @@
+{
+  "baseline": "2c3bdad7d66a62d0de4dbf91a97f1603e8030330",
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_search_authorized": false,
+  "code_sha256": {
+    "empirical_additional_root_policy.py": "56b0754460f0f3e7ac4437db659dbf56180cbc916faeaf12b2499244025f35c2",
+    "empirical_cross_root_inventory.py": "5de8fac45b8469c5f77a7f2b66e4c8f5887e9a0fd28e3380dd663b7066028ccc",
+    "empirical_dataset_v2_inventory.py": "c81de2b26fae46f56f579155806df55c0f6aadf0b81cec6fee978a9ed11b96ed",
+    "empirical_dataset_v2_policy.py": "b24cfb36fe609c4f59e81832c10368f1a50ef930290b16fbeb97d28691a2fd36",
+    "empirical_plant_model.py": "d412012da7a3d3f077b7ecb2c9c9efe64040596d57a64b5b5e46d2d8508bb44a",
+    "empirical_plant_policy.py": "3961101927faca0e64a731ff92484d563082390c001988a156056275743034df",
+    "empirical_plant_signals.py": "0f018b5682f9309f3a913f0e1e8fac6a4a487b2de036c1dadeb50b3ee4a5effd",
+    "empirical_signal_crosscheck.py": "890ab0222b2ac5a0e40a4fc24d1ba7343ee810a265eaae66c18cd12994b85b1f",
+    "empirical_signal_policy.py": "adcc374cbc0886464d9eb47c786deec37e6436adac6901b403ec71c3e992bc90",
+    "empirical_signal_reader.py": "17d16ec35d8cfd968f189dab7bccc6e71ecaa23694c39d9e1f72ec32f66854fa",
+    "empirical_source_execution.py": "b6775a8f93dd1f03b138cd6c9d7514442a624efd0ac58412b5f4acbbb9f5e885",
+    "empirical_source_metadata.py": "590fb2533456ceb57d975c46eb1c11e07480fad52b6fb3a72fed061017d0edc6",
+    "empirical_v2_execution.py": "bc30a9d9e54c05c40aa2f02af615253b61a527a8c649fb2184b4185776dbf53b",
+    "empirical_v2_generation.py": "e83e4e7ed373d0e8088ab4854bfda2f1069541e134a4f6467fe2f9ea38354b83",
+    "empirical_v2_policy.py": "15ad8a28337bc559dfce2d96211afb87c1e7f6a12fc088afbdc2dce47a6ed9da",
+    "empirical_v2_signals.py": "728ec4ecea68308731f2fe239c5c2381c532d2596dcf71b750c7f0bb809050e9",
+    "empirical_v3_cache.py": "762fd15b6e9b4ea71e271a3d1f65748088aab332ba6ca5cb0651ca201562c21b",
+    "empirical_v3_generation.py": "a1f46f3af4943cbf03ac54e128d8bc2dfb8c7a81290b0b2d8dc56b992d7c5a16",
+    "empirical_v3_models.py": "ac1c59d07f352a941a3e527c3cbbe5fcfe7516f8f29cdd011f285a076ceb4aba",
+    "empirical_v3_policy.py": "e1ccc158d5f4b44c448114a22bd6cd7a2b88ecda68cb394514651f9391ef704b"
+  },
+  "composition_authorized": false,
+  "created_after_v2_zero_development_support_known": true,
+  "directional_gate": {
+    "all_endpoints": "POSITIVE_SUPPORT_FINITE_ALL_REFERENCES_SAME_COUNT",
+    "coverage": "EXACT_SHARED_ORIGINS_NO_MODEL_ONLY_MASK",
+    "each_fold": "FINITE_STABLE_MODEL_AND_COMMON_SUPPORT_201",
+    "hold_last": {
+      "MAE": "NO_HIGHER",
+      "P95_ABS": "NO_HIGHER",
+      "RMSE": "STRICTLY_LOWER"
+    },
+    "required_primary_scopes": [
+      "one_step",
+      "endpoint_100"
+    ],
+    "threshold": "NO_PERCENTAGE_OR_ABSOLUTE_EFFECT_THRESHOLD",
+    "zero_static": {
+      "MAE": "NO_HIGHER",
+      "P95_ABS": "NO_HIGHER",
+      "RMSE": "NO_HIGHER"
+    }
+  },
+  "excluded_context": {
+    "route_id": "eda13cbea550fc80f6153a1d9951fb7f06ce0bb2c6bfc462b7383751512cfe77",
+    "state": "V2_ZERO_SUPPORT_DEVELOPMENT_CONTEXT_ONLY"
+  },
+  "family_policy": {
+    "candidate_search_authorized": false,
+    "candidates": [
+      {
+        "delay_samples": 0,
+        "family": "ARX1",
+        "input_taps": 1,
+        "intercept": true,
+        "output_lags": 1
+      },
+      {
+        "delay_samples": 5,
+        "family": "ARX1",
+        "input_taps": 1,
+        "intercept": true,
+        "output_lags": 1
+      },
+      {
+        "delay_samples": 10,
+        "family": "ARX1",
+        "input_taps": 1,
+        "intercept": true,
+        "output_lags": 1
+      },
+      {
+        "delay_samples": 20,
+        "family": "ARX1",
+        "input_taps": 1,
+        "intercept": true,
+        "output_lags": 1
+      },
+      {
+        "delay_samples": 0,
+        "family": "FIR25",
+        "input_taps": 25,
+        "intercept": true,
+        "output_lags": 0
+      },
+      {
+        "delay_samples": 5,
+        "family": "FIR25",
+        "input_taps": 25,
+        "intercept": true,
+        "output_lags": 0
+      },
+      {
+        "delay_samples": 10,
+        "family": "FIR25",
+        "input_taps": 25,
+        "intercept": true,
+        "output_lags": 0
+      },
+      {
+        "delay_samples": 20,
+        "family": "FIR25",
+        "input_taps": 25,
+        "intercept": true,
+        "output_lags": 0
+      }
+    ],
+    "closed_loop_bias": "OLS_NOT_CAUSAL_INTERVENTION_OR_PHYSICAL_TRUTH",
+    "composition_authorized": false,
+    "holdout_reselection": false,
+    "maximum_candidates": 8,
+    "naive": [
+      "ZERO_RESPONSE",
+      "HOLD_LAST_OUTPUT",
+      "TRAIN_STATIC_GAIN"
+    ],
+    "pole_gate": "ABS_POLE_STRICTLY_LESS_THAN_ONE",
+    "production_authority": false,
+    "publication_raw_data": false,
+    "qualification_allowed": false,
+    "receipt_sha256": "c1c1d5162e7304b13e11ec60fc92fc0be07c04d494c2b697fb4f00f89424e9c1",
+    "reference_promotable": false,
+    "regularization": null,
+    "schema": "EMPIRICAL_PLANT_FAMILY_POLICY_V1",
+    "sealed_reference_allowed": false,
+    "selection": "DEVELOPMENT_RMSE_THEN_PARAMETER_COUNT_THEN_FAMILY_DELAY",
+    "sg_execution": false,
+    "ta_execution": false,
+    "training": "TRAIN_ONLY",
+    "vehicle_activation_allowed": false
+  },
+  "final_refit": "ONLY_DIRECTIONAL_GATE_PASS_SAME_STRUCTURE_TWO_ROUTE_POOLED_ONCE_NO_DEVELOPMENT_METRICS",
+  "fold_assignment": "TWO_WHOLE_ROUTES_EXACT_INVERSION_NO_RANDOMNESS",
+  "future_holdout": "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+  "holdout_opening_allowed": false,
+  "limitation": "RETROSPECTIVE_MODEL_DEVELOPMENT",
+  "mask_policy": {
+    "alignment": "INTEGER_GRID_LATEST_PAST_ONLY_NO_INTERPOLATION",
+    "allowed_payloads": [
+      "initData",
+      "carParams",
+      "carState",
+      "carOutput",
+      "carControl",
+      "pandaStates"
+    ],
+    "boundaries": "NO_SEGMENT_OR_MASK_CROSSING",
+    "calibration_blockers": [
+      "CALIBRATION_UNCERTAINTY_PENDING",
+      "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+      "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+      "METRIC_CALIBRATION_UNAVAILABLE",
+      "INDEPENDENT_REFERENCE_UNAVAILABLE"
+    ],
+    "candidate_search_authorized": false,
+    "command": "carOutput.actuatorsOutput.torqueOutputCan",
+    "command_units": "SIGNED_RAW_CAN_AUTHORITY_NO_384_NORMALIZATION",
+    "composition_authorized": false,
+    "composition_recommendation": "COMPOSITION_NOT_RECOMMENDED",
+    "dt_ns": 10000000,
+    "duplicates": "REJECT_SEGMENT",
+    "forbidden_payloads": [
+      "modelV2",
+      "liveCalibration",
+      "livePose",
+      "cameraOdometry",
+      "lateralPlan",
+      "gpsLocationExternal",
+      "gpsLocation",
+      "roadCameraState",
+      "narrowRoadCameraState"
+    ],
+    "gaps": "MASK_AND_BREAK_ALL_HISTORY",
+    "historical": {
+      "current": "BASELINE_EXACT",
+      "sg": "SG_CLOSED_LOOP_TRADEOFF_ONLY",
+      "ta": "TA_STANDALONE_TRADEOFF_ONLY",
+      "v1": "TRADEOFF_ONLY",
+      "v2": "REJECTED",
+      "v2_violations": 37
+    },
+    "holdout_payload_gate": "MODEL_FROZEN_RECEIPT_REQUIRED",
+    "mask": [
+      "finite",
+      "valid",
+      "lat_active",
+      "no_driver_override",
+      "no_eps_fault",
+      "forward_drive",
+      "supported_command_domain"
+    ],
+    "max_age_ns": 20000000,
+    "minimum_speed_mps": 5.0,
+    "minimum_support": "MAX_201_OR_10_TIMES_PARAMETER_COUNT",
+    "production_authority": false,
+    "publication_raw_data": false,
+    "qualification_allowed": false,
+    "receipt_sha256": "7ea3c5f0f6b8165ea102dcc5f4fb127343d487e1819bd858c722d98033914a56",
+    "reference_promotable": false,
+    "repeatability": "TWO_EXACT_RUNS_HOLDOUT_ONE_OPENING_NO_RESELECTION",
+    "residual_lags": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "rollouts_samples": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "schema": "EMPIRICAL_PLANT_DATA_POLICY_V1",
+    "sealed_reference_allowed": false,
+    "sg_execution": false,
+    "solver": "NUMPY_LSTSQ_RCOND_NONE_FLOAT64_SINGLE_BLAS_THREAD",
+    "speed_basis": "PREDECLARED_ROUND_MPS_REGIMES_NOT_RESULT_SELECTED",
+    "speed_bins": [
+      [
+        "LOW",
+        5.0,
+        15.0
+      ],
+      [
+        "MEDIUM",
+        15.0,
+        25.0
+      ],
+      [
+        "HIGH",
+        25.0,
+        null
+      ]
+    ],
+    "steering": "carState.steeringAngleDeg",
+    "steering_units": "DEGREES_SOURCE_SAS11",
+    "ta_execution": false,
+    "unobserved_limits": "DIAGNOSTIC_MASK_ONLY_NO_CLEAN_PRIMARY_OR_READY",
+    "vehicle_activation_allowed": false,
+    "yaw": "SOURCE_PROVEN_UNIT_AND_FRAME_REQUIRED_OTHERWISE_STAGE_BLOCKED"
+  },
+  "metric_policy": {
+    "aggregation": "POOLED_SSE_AND_COUNT_NO_SEGMENT_WEIGHT",
+    "amplitude_subsets": "INPUT_ZERO_POSITIVE_NEGATIVE_AND_TRAIN_ABS_QUARTILES",
+    "candidate_search_authorized": false,
+    "candidate_unstable": "EXCLUDE_AND_REPORT_NO_HOLDOUT_RESELECTION",
+    "common_history_samples": 45,
+    "common_support": "ALL_45_HISTORY_SAMPLES_VALID_SAME_SEGMENT_SAME_BIN",
+    "composition_authorized": false,
+    "correlation_constant": "NULL_WITH_SUPPORT_COUNT",
+    "minimum_samples": 201,
+    "one_step": [
+      "MAE",
+      "RMSE",
+      "MEDIAN_ABS",
+      "P95_ABS",
+      "BIAS",
+      "CORRELATION"
+    ],
+    "physical_delay_interpretation": "INCLUDES_SOURCE_PUBLISH_ALIGNMENT_AGE_NOT_PHYSICAL_DELAY_TRUTH",
+    "production_authority": false,
+    "publication_raw_data": false,
+    "qualification_allowed": false,
+    "quantile": "NUMPY_LINEAR",
+    "rank": "FULL_COLUMN_RANK_REQUIRED",
+    "ready_other_gates": [
+      "MEASURED_UNITS_FRAME_PROVEN",
+      "CLEAN_LIMIT_MASK_OBSERVABLE",
+      "EXACT_REPEATABILITY",
+      "STABLE_MODEL",
+      "SUPPORT_201_MINIMUM"
+    ],
+    "ready_primary_horizon_samples": 100,
+    "ready_primary_metrics": [
+      "MAE",
+      "RMSE",
+      "P95_ABS"
+    ],
+    "ready_rule": "STRICTLY_BETTER_THAN_EACH_NAIVE_ON_ONE_STEP_AND_100_STEP_ENDPOINT_COMMON_SUPPORT",
+    "receipt_sha256": "e81b457764f1b7cb50ed1b31911d8f976d38fa819cd5dbd28df9564e9525c4a7",
+    "reference_promotable": false,
+    "rollout_initialization": "OBSERVED_HISTORY_ONCE_THEN_RECURSIVE_PREDICTED_OUTPUT",
+    "rollout_input": "OBSERVED_EXOGENOUS_COMMAND_OVER_HORIZON_NOT_FEEDBACK_TO_MODEL",
+    "rollout_metric": "ENDPOINT_OUTPUT_RESIDUAL_AFTER_H_RECURSIVE_STEPS",
+    "rollout_origins": "EVERY_COMMON_SUPPORT_INDEX_WITH_COMPLETE_VALID_HORIZON",
+    "rollout_samples": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "schema": "EMPIRICAL_PLANT_METRIC_EXECUTION_POLICY_V1",
+    "sealed_reference_allowed": false,
+    "selection_scope": "SEPARATE_STAGE_AND_SPEED_BIN",
+    "selection_target": "ONE_STEP_OUTPUT_RMSE",
+    "sg_execution": false,
+    "ta_execution": false,
+    "time_blocks": "FOUR_EQUAL_INDEX_BLOCKS_PER_SEGMENT_NO_POSTHOC_SELECTION",
+    "unavailable": "NULL_NEVER_ZERO_OR_IMPUTED",
+    "vehicle_activation_allowed": false
+  },
+  "minimum_development_rows": 201,
+  "privacy": "AGGREGATES_ONLY_NO_COEFFICIENTS_TRACES_PATHS_TIMESTAMPS",
+  "private_arrays": "NPY_EXACT_BYTES_ATOMIC_NO_OVERWRITE",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "randomness": "NONE",
+  "receipt_sha256": "5c47b1a833dad3803f94e822ff9a45f1b0c6bfd6ea6b75299375415a6085f5f8",
+  "reference_promotable": false,
+  "route_set_sha256": "64ca65e9c6e2c3aadceddcd89888c48bc4dec48c93dbe609f0b2d698bcef2e8f",
+  "routes": [
+    {
+      "adapter_sha256": "e89093bb859ccf0db5b0c331fecf0dd56648ce725aa7037645cf56ee6fb52e82",
+      "empirical_profile_sha256": "494ce20b81e7f212ade6f30f89686752817d52d2d0e0e7658ab0a7239c0e35b3",
+      "full_carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+      "lineage_sha256": "0ea78123869aa75c41fbd9e950fde9b4394d91619be3b476867a800475fef926",
+      "metadata_adapter_source_sha256": "590fb2533456ceb57d975c46eb1c11e07480fad52b6fb3a72fed061017d0edc6",
+      "prior_analysis": "ROUTE_PRIOR_ANALYSIS_STATUS_UNKNOWN",
+      "role": "TRAIN",
+      "route_id": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+      "semantic_class_id": "c07dbc19980119034bea832a830d24536551c489b6753547475b0b8a38b7dd1e",
+      "source_commit": "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29",
+      "source_fingerprint_sha256": "720f52530dfd7773350f5dcc19e7f12547ac0ce075ab3d165e197d536a15590f",
+      "source_set_sha256": "76a56097dc818d75f7c88d7deac3a2195be93f0fcdd4fac5f5da8abfd7eb4f11"
+    },
+    {
+      "adapter_sha256": "e89093bb859ccf0db5b0c331fecf0dd56648ce725aa7037645cf56ee6fb52e82",
+      "empirical_profile_sha256": "494ce20b81e7f212ade6f30f89686752817d52d2d0e0e7658ab0a7239c0e35b3",
+      "full_carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+      "lineage_sha256": "6d4f6eba35e6e1b58821b11a652067984e7ef520d4ab2a5be4f01339fe48e85e",
+      "metadata_adapter_source_sha256": "590fb2533456ceb57d975c46eb1c11e07480fad52b6fb3a72fed061017d0edc6",
+      "prior_analysis": "ROUTE_PRIOR_ANALYSIS_STATUS_UNKNOWN",
+      "role": "TRAIN",
+      "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "semantic_class_id": "c07dbc19980119034bea832a830d24536551c489b6753547475b0b8a38b7dd1e",
+      "source_commit": "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29",
+      "source_fingerprint_sha256": "720f52530dfd7773350f5dcc19e7f12547ac0ce075ab3d165e197d536a15590f",
+      "source_set_sha256": "e899bb90190b32fe8a4cf3ad54dc7963a96aa29c7dedcca27010e31275bac5d1"
+    }
+  ],
+  "sample_weighted_metrics": "SUPPORTING_ONLY",
+  "schema": "EMPIRICAL_PLANT_V3_ROUTE_CV_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "selection": [
+    "WORST_ROUTE_DEVELOPMENT_RMSE",
+    "EQUAL_ROUTE_ARITHMETIC_MEAN_RMSE",
+    "LOWER_PARAMETER_COUNT",
+    "FAMILY_LEXICAL",
+    "LOWER_DELAY"
+  ],
+  "sg_execution": false,
+  "solver": "NUMPY_LSTSQ_RCOND_NONE_FLOAT64_SINGLE_THREAD_BLAS",
+  "source_equivalence_sha256": "580fb04a697dc3bc0bf8f06e7cbec690137f0da7ac3d8185c2e11abe8789167e",
+  "stage_c": "STAGE_C_PENDING_FUTURE_HOLDOUT",
+  "ta_execution": false,
+  "timebase_policy": {
+    "age_bound_ns": 20000000,
+    "candidate_search_authorized": false,
+    "command_context_query": "TARGET_SELECTED_EVENT_TIME_NOT_GRID_TIME",
+    "composition_authorized": false,
+    "delay": "PUBLISH_TIME_EMPIRICAL_LAG_NOT_PHYSICAL_DELAY_VALIDATION",
+    "duplicates_or_regression": "REJECT_SEGMENT",
+    "forbid_command_after_target_event": true,
+    "grid": "100HZ_INTEGER_NS",
+    "production_authority": false,
+    "publication_raw_data": false,
+    "qualification_allowed": false,
+    "receipt_sha256": "7b8b4bcb66a25dc08d875a3422cbc396b42512f7533a2b3e871a1101253a1dcf",
+    "reference_promotable": false,
+    "repeated_output_event": "MASK_NOT_NEW_MEASUREMENT",
+    "save_actual_selected_event_times": true,
+    "schema": "EMPIRICAL_PLANT_ALIGNMENT_POLICY_V1",
+    "sealed_reference_allowed": false,
+    "sensor_measurement_time": "NOT_IDENTIFIED_PUBLISH_CLOCK_ONLY",
+    "sg_execution": false,
+    "source_gap": "SELECTED_EVENT_PREDECESSOR_DELTA_GT_20MS_MASK_AND_HISTORY_BREAK",
+    "ta_execution": false,
+    "target": "LATEST_PAST_CARSTATE_PUBLISH_EVENT",
+    "vehicle_activation_allowed": false
+  },
+  "v2_inputs": {
+    "empirical-plant-v2-command-bridge-v1.json": "f248a6707aeb4610cb837ec4a6134ff43dc807ec2d2ea1ef51322f53849027e5",
+    "empirical-plant-v2-execution-integrity-v1.json": "68a8e2b2c410d4bdad80d4a7f3170d81b92f699453f3e8c138d84015efb17b0b",
+    "empirical-plant-v2-model-freeze-v1.json": "0182638b138d4fc1abe590641f294716bfa64d55e1eee3402abe12f51464af50",
+    "empirical-plant-v2-numeric-authorization-v1.json": "fcaee143ecbd280be1ff0c16c19c02b16d47d248b41a6b5b30220f91c680e17a",
+    "empirical-plant-v2-route-coverage-v1.json": "960cddddab147cbd15188683a2bfe4331c6d66e0059d27ef16cd8ef7c3770f11",
+    "empirical-plant-v2-stage-a-selection-v1.json": "8718bf0e0cbf0ce09f117745ee311fa222323b7f4aa4057f48b500b0459e23c8",
+    "empirical-plant-v2-train-dev-readiness-v1.json": "ef8e036fb6963e0461fd0878f4b30e3a2e32a36e6fd51feeb4495de8aff61f06",
+    "empirical-plant-v2-train-dev-split-v1.json": "05bbdae01bcf22bab814ac2545514e18eff28afc346e77f1d1d0bceb8198c81f",
+    "empirical-plant-v2-yaw-admission-v1.json": "941af7be79213d21e3fbcdaac78d86b769d12e9a674f74116c281d416c02c490",
+    "future-empirical-plant-v2-holdout-evaluation-v1.json": "6119dd6a40700318cca9d151ece2effabdab1e850e0cabe807c568e02e2d1cd2"
+  },
+  "vehicle_activation_allowed": false,
+  "yaw_admission": "EACH_ROUTE_EXISTING_CONSERVATIVE_ADMISSION_PLUS_BOTH_FOLD_SAME_HYPOTHESIS_AXIS_SIGN_LAG",
+  "yaw_policy": {
+    "angle_offset": "NO_LEARNED_OFFSET_APPLIED_OFFSET_PROVENANCE_PENDING",
+    "calibration_blockers": [
+      "CALIBRATION_UNCERTAINTY_PENDING",
+      "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+      "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+      "METRIC_CALIBRATION_UNAVAILABLE",
+      "INDEPENDENT_REFERENCE_UNAVAILABLE"
+    ],
+    "candidate_search_authorized": false,
+    "common_support": "ALL_36_GYRO_OPTIONS_AVAILABLE_SAME_TARGET",
+    "composition_authorized": false,
+    "conditional_fit_gates": [
+      "unit_supported",
+      "frozen_selection",
+      "source_complete",
+      "split_disjoint",
+      "train_dev_support",
+      "untouched_role"
+    ],
+    "continuous_scale_fit": false,
+    "diagnostic_subsets": [
+      "LOW_SPEED",
+      "DRIVER_PRESSED",
+      "EPS_FAULT",
+      "INACTIVE",
+      "LIMIT_UNKNOWN"
+    ],
+    "dt_ns": 10000000,
+    "gyro_bias": "NO_CORRECTION_REPORT_BIAS",
+    "gyro_candidates": [
+      {
+        "axis": 0,
+        "lag_samples": 0,
+        "sign": -1
+      },
+      {
+        "axis": 0,
+        "lag_samples": 1,
+        "sign": -1
+      },
+      {
+        "axis": 0,
+        "lag_samples": 2,
+        "sign": -1
+      },
+      {
+        "axis": 0,
+        "lag_samples": 5,
+        "sign": -1
+      },
+      {
+        "axis": 0,
+        "lag_samples": 10,
+        "sign": -1
+      },
+      {
+        "axis": 0,
+        "lag_samples": 20,
+        "sign": -1
+      },
+      {
+        "axis": 0,
+        "lag_samples": 0,
+        "sign": 1
+      },
+      {
+        "axis": 0,
+        "lag_samples": 1,
+        "sign": 1
+      },
+      {
+        "axis": 0,
+        "lag_samples": 2,
+        "sign": 1
+      },
+      {
+        "axis": 0,
+        "lag_samples": 5,
+        "sign": 1
+      },
+      {
+        "axis": 0,
+        "lag_samples": 10,
+        "sign": 1
+      },
+      {
+        "axis": 0,
+        "lag_samples": 20,
+        "sign": 1
+      },
+      {
+        "axis": 1,
+        "lag_samples": 0,
+        "sign": -1
+      },
+      {
+        "axis": 1,
+        "lag_samples": 1,
+        "sign": -1
+      },
+      {
+        "axis": 1,
+        "lag_samples": 2,
+        "sign": -1
+      },
+      {
+        "axis": 1,
+        "lag_samples": 5,
+        "sign": -1
+      },
+      {
+        "axis": 1,
+        "lag_samples": 10,
+        "sign": -1
+      },
+      {
+        "axis": 1,
+        "lag_samples": 20,
+        "sign": -1
+      },
+      {
+        "axis": 1,
+        "lag_samples": 0,
+        "sign": 1
+      },
+      {
+        "axis": 1,
+        "lag_samples": 1,
+        "sign": 1
+      },
+      {
+        "axis": 1,
+        "lag_samples": 2,
+        "sign": 1
+      },
+      {
+        "axis": 1,
+        "lag_samples": 5,
+        "sign": 1
+      },
+      {
+        "axis": 1,
+        "lag_samples": 10,
+        "sign": 1
+      },
+      {
+        "axis": 1,
+        "lag_samples": 20,
+        "sign": 1
+      },
+      {
+        "axis": 2,
+        "lag_samples": 0,
+        "sign": -1
+      },
+      {
+        "axis": 2,
+        "lag_samples": 1,
+        "sign": -1
+      },
+      {
+        "axis": 2,
+        "lag_samples": 2,
+        "sign": -1
+      },
+      {
+        "axis": 2,
+        "lag_samples": 5,
+        "sign": -1
+      },
+      {
+        "axis": 2,
+        "lag_samples": 10,
+        "sign": -1
+      },
+      {
+        "axis": 2,
+        "lag_samples": 20,
+        "sign": -1
+      },
+      {
+        "axis": 2,
+        "lag_samples": 0,
+        "sign": 1
+      },
+      {
+        "axis": 2,
+        "lag_samples": 1,
+        "sign": 1
+      },
+      {
+        "axis": 2,
+        "lag_samples": 2,
+        "sign": 1
+      },
+      {
+        "axis": 2,
+        "lag_samples": 5,
+        "sign": 1
+      },
+      {
+        "axis": 2,
+        "lag_samples": 10,
+        "sign": 1
+      },
+      {
+        "axis": 2,
+        "lag_samples": 20,
+        "sign": 1
+      }
+    ],
+    "gyro_clock": "BOTH_SENSOR_AND_PUBLISH_MUST_PRECEDE_TARGET_MINUS_LAG",
+    "gyro_source": "lsm6ds3_OR_lsm6ds3trc_ONLY_GYROUNCALIBRATED",
+    "gyro_unit": "SOURCE_PRODUCER_RAD_PER_S",
+    "hypotheses": [
+      "YAW_H1",
+      "YAW_H2",
+      "YAW_H3",
+      "YAW_H4"
+    ],
+    "kinematic": "SPEED_OVER_WHEELBASE_TAN_STEERING_DEG_TO_RAD_OVER_STEER_RATIO",
+    "lag_samples": [
+      0,
+      1,
+      2,
+      5,
+      10,
+      20
+    ],
+    "mask": "VALID_FINITE_FORWARD_SPEED_GE5_NO_DRIVER_NO_EPS_FAULT_LATERAL_ACTIVE",
+    "max_age_ns": 20000000,
+    "metrics": [
+      "MAE",
+      "RMSE",
+      "MEDIAN_ABS",
+      "P95_ABS",
+      "BIAS",
+      "CORRELATION",
+      "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY"
+    ],
+    "minimum_support": 201,
+    "new_yaw_holdout": "OLD_EMBARGO_NUMERIC_UNOPENED_BEFORE_THIS_POLICY_NO_ROUTE_INDEPENDENCE",
+    "old_holdout": "COMMAND_BRIDGE_ONLY_NEVER_YAW_SELECTION",
+    "physical_rigid_transform": null,
+    "production_authority": false,
+    "publication_raw_data": false,
+    "qualification_allowed": false,
+    "receipt_sha256": "6e7bafc60c6ff3181ee948a1111dfd59f3660a018601ba927d32307a27393147",
+    "reference_promotable": false,
+    "residual_lags": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "schema": "EMPIRICAL_YAW_HYPOTHESIS_POLICY_V1",
+    "sealed_reference_allowed": false,
+    "selection": "DEVELOPMENT_KINEMATIC_HYPOTHESIS_RMSE_THEN_NAME_GYRO_RMSE_THEN_AXIS_SIGN_LAG",
+    "sg_execution": false,
+    "speed_bins": [
+      [
+        "LOW",
+        5.0,
+        15.0
+      ],
+      [
+        "MEDIUM",
+        15.0,
+        25.0
+      ],
+      [
+        "HIGH",
+        25.0,
+        null
+      ]
+    ],
+    "stage_a": "EMPIRICAL_ACTUATOR_MODEL_ONLY_STRICT_GATE_FAILED",
+    "stage_c_allowed": false,
+    "stationary_bias_estimation": "NOT_APPLIED_UNCALIBRATED_SENSOR_BIAS_OPEN",
+    "ta_execution": false,
+    "unit_support": "TRAIN_AND_DEVELOPMENT_STRICT_COMMON_SUPPORT_RMSE_MAE_P95_UNIT_GROUP_DOMINANCE_GYRO_AND_KINEMATIC",
+    "vehicle_activation_allowed": false,
+    "vehicle_frame": "UNVALIDATED_DEVICE_CORRESPONDENCE_ONLY",
+    "yaw_metric_policy_sha256": "e81b457764f1b7cb50ed1b31911d8f976d38fa819cd5dbd28df9564e9525c4a7",
+    "yaw_model_candidates": [
+      {
+        "delay_samples": 0,
+        "family": "ARX1",
+        "input_taps": 1,
+        "intercept": true,
+        "output_lags": 1
+      },
+      {
+        "delay_samples": 5,
+        "family": "ARX1",
+        "input_taps": 1,
+        "intercept": true,
+        "output_lags": 1
+      },
+      {
+        "delay_samples": 10,
+        "family": "ARX1",
+        "input_taps": 1,
+        "intercept": true,
+        "output_lags": 1
+      },
+      {
+        "delay_samples": 20,
+        "family": "ARX1",
+        "input_taps": 1,
+        "intercept": true,
+        "output_lags": 1
+      },
+      {
+        "delay_samples": 0,
+        "family": "FIR25",
+        "input_taps": 25,
+        "intercept": true,
+        "output_lags": 0
+      },
+      {
+        "delay_samples": 5,
+        "family": "FIR25",
+        "input_taps": 25,
+        "intercept": true,
+        "output_lags": 0
+      },
+      {
+        "delay_samples": 10,
+        "family": "FIR25",
+        "input_taps": 25,
+        "intercept": true,
+        "output_lags": 0
+      },
+      {
+        "delay_samples": 20,
+        "family": "FIR25",
+        "input_taps": 25,
+        "intercept": true,
+        "output_lags": 0
+      }
+    ],
+    "yaw_model_input": "MEASURED_STEERING_AND_SPEED_KINEMATIC_RAD_PER_S_REGRESSOR_NOT_TRUTH"
+  },
+  "yaw_support": "EACH_FOLD_COMMON_DEVELOPMENT_ROWS_201"
+}

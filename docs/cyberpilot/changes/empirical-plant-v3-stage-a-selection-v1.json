@@ -1,0 +1,90 @@
+{
+  "bins": {
+    "HIGH": {
+      "aggregation": {
+        "equal_route_mean_RMSE": 0.038560128786749276,
+        "worst_route_RMSE": 0.03946768454515268
+      },
+      "directional_gate": {
+        "failures": [
+          "FOLD_A:one_step:HOLD_LAST_OUTPUT:MAE",
+          "FOLD_B:one_step:HOLD_LAST_OUTPUT:MAE"
+        ],
+        "passed": false
+      },
+      "final_model_sha256": null,
+      "selected_structure": {
+        "delay_samples": 5,
+        "family": "ARX1",
+        "input_taps": 1,
+        "intercept": true,
+        "output_lags": 1
+      },
+      "state": "STAGE_A_CV_TRADEOFF_ONLY"
+    },
+    "LOW": {
+      "aggregation": {
+        "equal_route_mean_RMSE": 0.08414581500494682,
+        "worst_route_RMSE": 0.08507945368922382
+      },
+      "directional_gate": {
+        "failures": [
+          "FOLD_A:one_step:HOLD_LAST_OUTPUT:MAE",
+          "FOLD_A:one_step:HOLD_LAST_OUTPUT:P95_ABS",
+          "FOLD_A:endpoint_100:HOLD_LAST_OUTPUT:MAE",
+          "FOLD_B:one_step:HOLD_LAST_OUTPUT:MAE"
+        ],
+        "passed": false
+      },
+      "final_model_sha256": null,
+      "selected_structure": {
+        "delay_samples": 5,
+        "family": "ARX1",
+        "input_taps": 1,
+        "intercept": true,
+        "output_lags": 1
+      },
+      "state": "STAGE_A_CV_TRADEOFF_ONLY"
+    },
+    "MEDIUM": {
+      "aggregation": {
+        "equal_route_mean_RMSE": 0.04971276735871043,
+        "worst_route_RMSE": 0.05507389608533466
+      },
+      "directional_gate": {
+        "failures": [
+          "FOLD_A:one_step:HOLD_LAST_OUTPUT:MAE",
+          "FOLD_A:endpoint_100:HOLD_LAST_OUTPUT:RMSE",
+          "FOLD_A:endpoint_100:HOLD_LAST_OUTPUT:MAE",
+          "FOLD_A:endpoint_100:HOLD_LAST_OUTPUT:P95_ABS",
+          "FOLD_B:one_step:HOLD_LAST_OUTPUT:MAE",
+          "FOLD_B:one_step:HOLD_LAST_OUTPUT:P95_ABS"
+        ],
+        "passed": false
+      },
+      "final_model_sha256": null,
+      "selected_structure": {
+        "delay_samples": 5,
+        "family": "ARX1",
+        "input_taps": 1,
+        "intercept": true,
+        "output_lags": 1
+      },
+      "state": "STAGE_A_CV_TRADEOFF_ONLY"
+    }
+  },
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "no_pooled_refit_development_metric": true,
+  "policy_sha256": "5c47b1a833dad3803f94e822ff9a45f1b0c6bfd6ea6b75299375415a6085f5f8",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "997f458ce3a0ad8101cf678c17374a378007b5e16408c433e7848aa2ba9c0478",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_PLANT_V3_STAGE_A_SELECTION_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

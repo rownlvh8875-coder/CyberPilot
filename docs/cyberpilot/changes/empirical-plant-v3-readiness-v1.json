@@ -1,0 +1,70 @@
+{
+  "admissible_models": {
+    "STAGE_A": {},
+    "STAGE_B": {}
+  },
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_evaluation": "NOT_RUN",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "future_holdout": "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+  "historical": {
+    "command_bridge": "RAW_TO_NORMALIZED_COMMAND_CONFIRMED",
+    "composition": "COMPOSITION_NOT_AUTHORIZED",
+    "composition_recommendation": "COMPOSITION_NOT_RECOMMENDED",
+    "current": "BASELINE_EXACT",
+    "frozen_evaluation": "FROZEN_EVALUATION_NOT_AUTHORIZED",
+    "search": "SEARCH_NOT_AUTHORIZED",
+    "sg": "SG_CLOSED_LOOP_TRADEOFF_ONLY",
+    "stage_a": "EMPIRICAL_ACTUATOR_MODEL_ONLY",
+    "ta": "TA_STANDALONE_TRADEOFF_ONLY",
+    "v1": "TRADEOFF_ONLY",
+    "v2": "REJECTED",
+    "v2_violations": 37,
+    "yaw": "EMPIRICAL_YAW_MODEL_BLOCKED",
+    "yaw_signal": "EMPIRICAL_YAW_SIGNAL_PARTIAL",
+    "yaw_unit": "YAW_UNIT_LIKELY_NOT_CONFIRMED"
+  },
+  "holdout_evaluated": false,
+  "holdout_opened": false,
+  "limitation": "RETROSPECTIVE_MODEL_DEVELOPMENT",
+  "model_admission": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+  "one_time_opening_state": "CLOSED",
+  "package_sha256": "3a369b528162f1ea5aaaa504af24ce7e3fea4a0c1d5126947806e30fcf009418",
+  "plant_ready": false,
+  "policy_sha256": "5c47b1a833dad3803f94e822ff9a45f1b0c6bfd6ea6b75299375415a6085f5f8",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "39eb4547a7868dc79ae5b94b053793f6650e7b1686e9bde6ed767d220347758a",
+  "reference_promotable": false,
+  "result_sha256": "f0742550702457583e90ceff16ef1dea6484c533c3083c641b27e4c9e34bd0a8",
+  "schema": "EMPIRICAL_PLANT_V3_READINESS_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "stage_a_states": {
+    "HIGH": "STAGE_A_CV_TRADEOFF_ONLY",
+    "LOW": "STAGE_A_CV_TRADEOFF_ONLY",
+    "MEDIUM": "STAGE_A_CV_TRADEOFF_ONLY"
+  },
+  "stage_b_state": "STAGE_B_SIGNAL_ADMISSION_BLOCKED",
+  "stage_c": "NOT_RUN",
+  "stage_c_state": "STAGE_C_PENDING_FUTURE_HOLDOUT",
+  "status": "EMPIRICAL_PLANT_V3_ROUTE_CV_COMPLETE",
+  "ta_execution": false,
+  "ta_sg_execution": "NOT_RUN",
+  "v2_artifacts_immutable": true,
+  "vehicle": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "vehicle_activation_allowed": false
+}
