@@ -70,6 +70,9 @@ def public_shapes():
     'per_segment_quarter_index_pooled': {str(k): metric for k in range(4)},
     'command_excitation': {'minimum': float, 'maximum': float, 'std': float, 'distinct_count': int},
     'condition_number': float,
+    'condition_status': str,
+    'condition_rank': int,
+    'condition_support': int,
     'saturation_intervention_residual': str,
   }
   evaluated = {

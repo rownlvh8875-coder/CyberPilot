@@ -126,3 +126,29 @@ class TestModel(unittest.TestCase):
     rows = [{'diagnostic_valid': True, 'speed_bin': 'LOW', 'command_raw': i, 'angle_deg': i * 0.1} for i in range(800)]
     blocks = self.m.runs(rows, 'LOW')[0]['blocks']
     self.assertEqual(np.bincount(blocks).tolist(), [200] * 4)
+
+  def test_constant_holdout_serializes(self):
+    from openpilot.tools.cyber_autotune import empirical_plant_policy as p
+
+    f = {'status': 'FITTED', 'config': self.config(), 'coefficients': [0.5, 0.2, 0]}
+    d = {'u': np.zeros(400), 'y': np.zeros(400)}
+    result = self.m.evaluate([d], f, [0, 0], [0, 0, 0])
+    self.assertIsNone(result['residual_diagnostics']['condition_number'])
+    p.seal({'schema': 'SYNTHETIC_VALIDATION', 'result': result})
+
+  def test_no_holdout_support_serializes(self):
+    from openpilot.tools.cyber_autotune import empirical_plant_policy as p
+
+    f = {'status': 'FITTED', 'config': self.config(), 'coefficients': [0.5, 0.2, 0]}
+    r = self.m.evaluate([], f, [0, 0], [0, 0, 0])
+    self.assertEqual(r['one_step']['model']['count'], 0)
+    p.seal({'schema': 'SYNTHETIC_VALIDATION', 'result': r})
+
+  def test_rank_deficient_fir_holdout_serializes(self):
+    from openpilot.tools.cyber_autotune import empirical_plant_policy as p
+
+    c = p.family_policy()['candidates'][4]
+    f = {'status': 'FITTED', 'config': c, 'coefficients': [0.1] * 26}
+    d = {'u': np.zeros(400), 'y': np.zeros(400)}
+    r = self.m.evaluate([d], f, [0, 0], [0, 0, 0])
+    p.seal({'schema': 'SYNTHETIC_VALIDATION', 'result': r})

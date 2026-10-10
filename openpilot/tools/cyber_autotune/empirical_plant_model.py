@@ -183,7 +183,11 @@ def evaluate(data, model, static, quartiles=None):
     'std': float(np.std(u)) if len(u) else None,
     'distinct_count': len(np.unique(u)),
   }
-  diag['condition_number'] = float(np.linalg.cond(x)) if len(x) else None
+  condition = float(np.linalg.cond(x)) if len(x) else None
+  diag['condition_number'] = condition if condition is not None and np.isfinite(condition) else None
+  diag['condition_status'] = 'NO_SUPPORT' if not len(x) else ('FINITE' if np.isfinite(condition) else 'RANK_DEFICIENT_UNDEFINED')
+  diag['condition_rank'] = int(np.linalg.matrix_rank(x)) if len(x) else 0
+  diag['condition_support'] = len(x)
   diag['saturation_intervention_residual'] = 'UNAVAILABLE_CLEAN_LIMIT_MASK_UNOBSERVED_DRIVER_EXCLUDED_DISCLOSED'
   return {
     'status': 'EVALUATED',
