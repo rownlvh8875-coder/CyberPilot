@@ -1,0 +1,51 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "gps_payload_opened": false,
+  "image_video_opened": false,
+  "log_file_count": 95,
+  "metadata_binding_sha256": "a67863d8384a094c27f84a2a0bcb1953618c3f113ac8e665520e04a970767984",
+  "metadata_failure_count": 0,
+  "new_compatible_untouched_routes": 0,
+  "numeric_values_opened": false,
+  "other_file_count_metadata_only": 0,
+  "private_inventory_sha256": "ea213824ccaefd075bbd29c1fa8ade47ac0494e91c84d6fd8c00732049969d61",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "34275cadac3c634c096528011738953272fe0bddbda3a90d72eb837d3e1e3a99",
+  "reference_promotable": false,
+  "root_policy_sha256": "33f4e9e92d8306ad0982402a5ae25523810d1fb997674e4985a463afeedcec70",
+  "route_count": 1,
+  "route_dispositions": [
+    {
+      "route_id": "c931dc270b63e6913cca6623a4cdfcb253ebd79eb58b1f9283b67dcf9317bdda",
+      "segment_count": 95,
+      "status": "V1_PLANNING_CONTEXT_ONLY"
+    }
+  ],
+  "schema": "EMPIRICAL_DATASET_V2_ROUTE_INVENTORY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_generation": {
+    "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+    "control_type": "torque",
+    "fingerprint": "HYUNDAI_SANTA_FE_2022",
+    "flags": 65928,
+    "os_version": "19.8-carrot-bt1",
+    "software_profile_sha256": "21f48b6aa9faac920d56c8bd8707ec58dd88b091d752a2b3bdf25d88824a41c8",
+    "source_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813"
+  },
+  "source_identity": {
+    "empirical_dataset_v2_inventory.py": "c81de2b26fae46f56f579155806df55c0f6aadf0b81cec6fee978a9ed11b96ed",
+    "empirical_dataset_v2_policy.py": "b24cfb36fe609c4f59e81832c10368f1a50ef930290b16fbeb97d28691a2fd36",
+    "empirical_route_eligibility.py": "d884fe70a0488bf3e114b7161239c067c7a5342d8c35e95e73f12a4b739edc8d"
+  },
+  "status": "METADATA_ONLY_COMPLETE",
+  "ta_execution": false,
+  "v1_excluded_routes": 1,
+  "v1_inventory_sha256": "f1deef34e80dfcc5ddda846e19ce5d5ac3659d86c983d0738370a32c1982ec39",
+  "v1_metadata_sha256": "d40ec0d1d7d2eb80a776576a59a151f9b9cbfc421dad125dfb59afef4c2a9f62",
+  "vehicle_activation_allowed": false,
+  "video_file_count_metadata_only": 191
+}
