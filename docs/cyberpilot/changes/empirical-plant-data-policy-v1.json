@@ -1,0 +1,121 @@
+{
+  "alignment": "INTEGER_GRID_LATEST_PAST_ONLY_NO_INTERPOLATION",
+  "allowed_payloads": [
+    "initData",
+    "carParams",
+    "carState",
+    "carOutput",
+    "carControl",
+    "pandaStates"
+  ],
+  "boundaries": "NO_SEGMENT_OR_MASK_CROSSING",
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_search_authorized": false,
+  "command": "carOutput.actuatorsOutput.torqueOutputCan",
+  "command_units": "SIGNED_RAW_CAN_AUTHORITY_NO_384_NORMALIZATION",
+  "composition_authorized": false,
+  "composition_recommendation": "COMPOSITION_NOT_RECOMMENDED",
+  "dt_ns": 10000000,
+  "duplicates": "REJECT_SEGMENT",
+  "forbidden_payloads": [
+    "modelV2",
+    "liveCalibration",
+    "livePose",
+    "cameraOdometry",
+    "lateralPlan",
+    "gpsLocationExternal",
+    "gpsLocation",
+    "roadCameraState",
+    "narrowRoadCameraState"
+  ],
+  "gaps": "MASK_AND_BREAK_ALL_HISTORY",
+  "historical": {
+    "current": "BASELINE_EXACT",
+    "sg": "SG_CLOSED_LOOP_TRADEOFF_ONLY",
+    "ta": "TA_STANDALONE_TRADEOFF_ONLY",
+    "v1": "TRADEOFF_ONLY",
+    "v2": "REJECTED",
+    "v2_violations": 37
+  },
+  "holdout_payload_gate": "MODEL_FROZEN_RECEIPT_REQUIRED",
+  "mask": [
+    "finite",
+    "valid",
+    "lat_active",
+    "no_driver_override",
+    "no_eps_fault",
+    "forward_drive",
+    "supported_command_domain"
+  ],
+  "max_age_ns": 20000000,
+  "minimum_speed_mps": 5.0,
+  "minimum_support": "MAX_201_OR_10_TIMES_PARAMETER_COUNT",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "7ea3c5f0f6b8165ea102dcc5f4fb127343d487e1819bd858c722d98033914a56",
+  "reference_promotable": false,
+  "repeatability": "TWO_EXACT_RUNS_HOLDOUT_ONE_OPENING_NO_RESELECTION",
+  "residual_lags": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "rollouts_samples": [
+    25,
+    50,
+    100,
+    200
+  ],
+  "schema": "EMPIRICAL_PLANT_DATA_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "solver": "NUMPY_LSTSQ_RCOND_NONE_FLOAT64_SINGLE_BLAS_THREAD",
+  "speed_basis": "PREDECLARED_ROUND_MPS_REGIMES_NOT_RESULT_SELECTED",
+  "speed_bins": [
+    [
+      "LOW",
+      5.0,
+      15.0
+    ],
+    [
+      "MEDIUM",
+      15.0,
+      25.0
+    ],
+    [
+      "HIGH",
+      25.0,
+      null
+    ]
+  ],
+  "steering": "carState.steeringAngleDeg",
+  "steering_units": "DEGREES_SOURCE_SAS11",
+  "ta_execution": false,
+  "unobserved_limits": "DIAGNOSTIC_MASK_ONLY_NO_CLEAN_PRIMARY_OR_READY",
+  "vehicle_activation_allowed": false,
+  "yaw": "SOURCE_PROVEN_UNIT_AND_FRAME_REQUIRED_OTHERWISE_STAGE_BLOCKED"
+}

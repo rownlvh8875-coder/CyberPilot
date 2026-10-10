@@ -1,0 +1,28 @@
+{
+  "block_count": 10,
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "counts": {
+    "DEVELOPMENT": 16,
+    "EMBARGO": 20,
+    "HOLDOUT": 16,
+    "TRAIN": 43
+  },
+  "inventory_sha256": "f1deef34e80dfcc5ddda846e19ce5d5ac3659d86c983d0738370a32c1982ec39",
+  "local_split_sha256": "7b4cea5418b90525c836816ff81084b8f3cc9d821576a3df31df5a5f5acba2db",
+  "method": "HASH_SORT_TEN_SEGMENT_TEMPORAL_BLOCKS_EDGE_EMBARGO",
+  "numeric_payload_opened_before_freeze": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "7c52c4ca964863dbab5a0a236e4068403fd25d99a69bcd095b813c31fd7e2ada",
+  "reference_promotable": false,
+  "route_count": 1,
+  "route_independent": false,
+  "schema": "EMPIRICAL_PLANT_SPLIT_PUBLIC_V1",
+  "sealed_reference_allowed": false,
+  "segment_count": 95,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}
