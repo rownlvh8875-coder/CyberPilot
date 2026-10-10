@@ -1,6 +1,6 @@
 """Versioned two-root metadata authority. Existing V2 policy stays immutable."""
 
-from pathlib import Path, PureWindowsPath
+from pathlib import PureWindowsPath
 import re
 
 from openpilot.tools.cyber_autotune import empirical_plant_policy as p
@@ -52,24 +52,33 @@ def approved_root(value):
 
 
 def root_policy():
-  return p.seal({
-    'schema': 'EMPIRICAL_DATASET_V2_ROOT_POLICY_V2',
-    'baseline_commit': BASELINE, 'root_count': 2,
-    'allowed_root_alias_hashes': ROOTS,
-    'aliases': 'EACH_WINDOWS_WSL_PAIR_ONE_STORAGE_ROOT',
-    'previous_policy_sha256': old.root_policy()['receipt_sha256'],
-    'parent_scan': False, 'network_scan': False, 'archives_opened': False,
-    'maximum_directory_depth': 32,
-    'metadata_payloads': ['initData', 'carParams'],
-    'envelope_only_other_messages': True, 'numeric_signal_values_opened': False,
-    'image_video_opened': False, 'numeric_coverage': None,
-    'prior_analysis_default': 'ROUTE_PRIOR_ANALYSIS_STATUS_UNKNOWN',
-    'prior_analysis_unknown_holdout_allowed': False,
-    'split_policy_sha256': old.split_policy()['receipt_sha256'],
-    'minimum_routes': 3, 'numeric_extraction_authorized': False,
-    'model_fitting_authorized': False, 'holdout_opening_authorized': False,
-    'calibration_blockers': p.BLOCKERS,
-  })
+  return p.seal(
+    {
+      'schema': 'EMPIRICAL_DATASET_V2_ROOT_POLICY_V2',
+      'baseline_commit': BASELINE,
+      'root_count': 2,
+      'allowed_root_alias_hashes': ROOTS,
+      'aliases': 'EACH_WINDOWS_WSL_PAIR_ONE_STORAGE_ROOT',
+      'previous_policy_sha256': old.root_policy()['receipt_sha256'],
+      'parent_scan': False,
+      'network_scan': False,
+      'archives_opened': False,
+      'maximum_directory_depth': 32,
+      'metadata_payloads': ['initData', 'carParams'],
+      'envelope_only_other_messages': True,
+      'numeric_signal_values_opened': False,
+      'image_video_opened': False,
+      'numeric_coverage': None,
+      'prior_analysis_default': 'ROUTE_PRIOR_ANALYSIS_STATUS_UNKNOWN',
+      'prior_analysis_unknown_holdout_allowed': False,
+      'split_policy_sha256': old.split_policy()['receipt_sha256'],
+      'minimum_routes': 3,
+      'numeric_extraction_authorized': False,
+      'model_fitting_authorized': False,
+      'holdout_opening_authorized': False,
+      'calibration_blockers': p.BLOCKERS,
+    }
+  )
 
 
 def compatibility(generation):
@@ -95,10 +104,14 @@ def metadata_split(routes):
     if route['compatible'] is True and route['v1_overlap'] is False and route['prior_analysis'] == 'ATTESTED_NOT_USED':
       eligible.append({'route_id': key, 'status': 'ROUTE_METADATA_COMPATIBLE', 'v1_overlap': False})
   split = old.split_routes(eligible)
-  return p.seal({
-    'schema': 'EMPIRICAL_DATASET_V2_METADATA_SPLIT_V1',
-    'status': 'ROUTE_DISJOINT_SPLIT_POSSIBLE' if split['routes'] else 'ROUTE_DISJOINT_SPLIT_UNAVAILABLE',
-    'routes': split['routes'], 'policy_sha256': old.split_policy()['receipt_sha256'],
-    'root_policy_sha256': root_policy()['receipt_sha256'],
-    'numeric_extraction_authorized': False, 'holdout_opened': False,
-  })
+  return p.seal(
+    {
+      'schema': 'EMPIRICAL_DATASET_V2_METADATA_SPLIT_V1',
+      'status': 'ROUTE_DISJOINT_SPLIT_POSSIBLE' if split['routes'] else 'ROUTE_DISJOINT_SPLIT_UNAVAILABLE',
+      'routes': split['routes'],
+      'policy_sha256': old.split_policy()['receipt_sha256'],
+      'root_policy_sha256': root_policy()['receipt_sha256'],
+      'numeric_extraction_authorized': False,
+      'holdout_opened': False,
+    }
+  )
