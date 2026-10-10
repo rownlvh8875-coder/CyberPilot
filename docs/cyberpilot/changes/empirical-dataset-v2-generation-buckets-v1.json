@@ -1,0 +1,1972 @@
+{
+  "buckets": [
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "ee0966e6fcc7ec72525b67c36b00489bb5bf679b3245f0b613b0b537b4eec007",
+        "source_commit": "6ca11a4aea8223ebfebb1140bd8094ef1b3c5b90"
+      },
+      "generation_id": "09ad5a0cc15e858a99aee31995f51e172b8a405e375f97b2e1511f046d8b2b5d",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 4
+      },
+      "prior_analysis_unknown_routes": 4,
+      "route_count": 4,
+      "runtime_steer_max": null,
+      "segment_count": 75,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 3,
+        "ROUTE_DIFFERENT_SOURCE_GENERATION": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "77890256cdfae6e08719e0178b4e748690f32af40475ac01c2f1c92297b863e4",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "33dbdd7702481322450ed224fd60960ff614b672226f5f12c3e5c3ca1e81ec4b",
+        "source_commit": "52a6b61e3e8f24ae498d156de904bc47990a8f6c"
+      },
+      "generation_id": "0e88c7086485847d9838c8af592d4daf5b09f5bcb1a392e29d4c85c8764a97a0",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 87,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "0b171fea1d195b39f6d3b80055bc03cedf52fc26ca970c9930445d6f97dce610",
+        "source_commit": "82f280f4f991bda04a359fc343d95bb32a1836b8"
+      },
+      "generation_id": "0ebdc0a451d08b4e9ff1f2d313b02fd520c4cb3a8ee458512d02ae9c390ab413",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 1,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "ed2e854b9e64bb92ffff5f21b3f9a098688c26f0c9bb54064b05b7067cbc688d",
+        "source_commit": "83179bb22d01898287e2165fd0da9805c0a999fa"
+      },
+      "generation_id": "10d21721bf99c94a1d1303645d5255ee4147328e4544331c15412904d942c955",
+      "log_availability": {
+        "rlog.zst": 2
+      },
+      "prior_analysis_unknown_routes": 2,
+      "route_count": 2,
+      "runtime_steer_max": null,
+      "segment_count": 93,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 2
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "74c8a99f1b6e4ca266119c6590f81654a7db49ccd714bfeaf062c5e28a516016",
+        "source_commit": "6465aae77f25502f5a8dd2b5c960333cc863a3ae"
+      },
+      "generation_id": "10e22b0e70d8da9a0c7a9110baf395d782237af14517ad384c446a1f14ca11af",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 6
+      },
+      "prior_analysis_unknown_routes": 6,
+      "route_count": 6,
+      "runtime_steer_max": null,
+      "segment_count": 115,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 6
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": "19.6.3-carrot",
+        "software_profile_sha256": "f68d39a0d082e4cec446934f658e19504437613993caa1aeb4f159c1add285de",
+        "source_commit": "8a679162c9440d09a6098cb6897c56f87a7a2594"
+      },
+      "generation_id": "1299a100815faae580ff7e994afd8fe365939a46e1d8523b97f249d8ab8f0466",
+      "log_availability": {
+        "qlog.zst": 3
+      },
+      "prior_analysis_unknown_routes": 3,
+      "route_count": 3,
+      "runtime_steer_max": null,
+      "segment_count": 47,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 2,
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "21ba1aca1f365307e5b6ced7bf8ceafa4930e7b187403939082530de0717166f",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "ebc54f51a61abc56255acc90727ccef056a784616180cf350a71585f440435a8",
+        "source_commit": "bbb052c97f1178e9854db27575b603459498d245"
+      },
+      "generation_id": "1514a10df7f6596804e2ae892ddfb1a6b7f4dbb37593939e959b134905c89b57",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 6
+      },
+      "prior_analysis_unknown_routes": 6,
+      "route_count": 6,
+      "runtime_steer_max": null,
+      "segment_count": 171,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 6
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "5d21adb01ad6b924d1ea4ceb9ba2d740139d5b71cd072b77a154a60bf12d61ec",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "f60167bdf19fce5a73b917b98badb09b0d722972c52889257cc19bd19de8d551",
+        "source_commit": "d345076d567f88a35eb8e393efe18bd854dbbf6d"
+      },
+      "generation_id": "154aa01fe00f4dd443842d697391ea20a09556cda7f0161a06b6549d8e0e080a",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 6,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "7407c6d3af0ff4805538a4ff66f23c9303f441fd20893bc2c832a01cd7e1b49e",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "c26fe024a5d4a5c4502dc383befad5571c7ba5556155113c03b69b697d5e6d25",
+        "source_commit": "9a479a8c58a400ca31ac68e3c851231f89941833"
+      },
+      "generation_id": "165473c4812d43c2356880b586016542d14c7818d4411b824c2b49530c430841",
+      "log_availability": {
+        "rlog.zst": 2
+      },
+      "prior_analysis_unknown_routes": 2,
+      "route_count": 2,
+      "runtime_steer_max": null,
+      "segment_count": 5,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 2
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "21ba1aca1f365307e5b6ced7bf8ceafa4930e7b187403939082530de0717166f",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "394f69d5b1ec7fa8b24de7d5fa95ec187d0c6b2d7ede6f0a7cda64c5176174dc",
+        "source_commit": "f30067364b12630cd403200fc19e3246e6c68078"
+      },
+      "generation_id": "1975fd337a1f67e67660b034f4454cea9a3c1e9d87a9be8a695f73105fe15d28",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 10,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "35d16a96a66b4dc438966427ecc9facac0b46ad388c3783a9d231be19e32b6fe",
+        "source_commit": "52a6b61e3e8f24ae498d156de904bc47990a8f6c"
+      },
+      "generation_id": "19e5c85f0a95f36a3bf4a8593518c2b3c693435fb682ac12079a77c90b9fd042",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 3
+      },
+      "prior_analysis_unknown_routes": 3,
+      "route_count": 3,
+      "runtime_steer_max": null,
+      "segment_count": 59,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 3
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "21ba1aca1f365307e5b6ced7bf8ceafa4930e7b187403939082530de0717166f",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "a45f3d26cdc4a9f88e007b6475743492dad2c0c04dc06797875f33a0628f12b9",
+        "source_commit": "82f280f4f991bda04a359fc343d95bb32a1836b8"
+      },
+      "generation_id": "2005d2ff78cbc51162da9a0f16bea97ed3c515ec47f613881901355d99da52d3",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 2,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "35a074b8b849a1a650900ae1267a67d13af70c3b7fdc80f42a17d4bc70d16bb3",
+        "source_commit": "3e74a327c50a3638466aabdaa8f08b434e5d112b"
+      },
+      "generation_id": "23480aa74d4f14f26ed647f84913b4592642fed2d894d166b2049966a24642c5",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 1,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": "19.6.3-carrot",
+        "software_profile_sha256": "a0d0aa6797a6dc293d5f476dcebc9a5dde00d6653ac8720fcca83f28647bd33f",
+        "source_commit": "89cbd54f8a8b0f55239b364154b747bd5aad072a"
+      },
+      "generation_id": "28bd274facaa2e3a9b14ebe32ac56c68948a0eda0a8b33dafc6b601bec974fd7",
+      "log_availability": {
+        "qlog.zst": 9,
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 9,
+      "route_count": 9,
+      "runtime_steer_max": null,
+      "segment_count": 344,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 9
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": "19.8-carrot-bt1",
+        "software_profile_sha256": "21f48b6aa9faac920d56c8bd8707ec58dd88b091d752a2b3bdf25d88824a41c8",
+        "source_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813"
+      },
+      "generation_id": "2cb5b820017860c72f79c70325a3ce01f6abed5c6d0e43d9e82bc599fd884bc8",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 0,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 94,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_DUPLICATE_EXISTING_V1": 1
+      },
+      "steer_max_provenance": "SOURCE_DEFAULT_AND_OVERRIDE_PATH_KNOWN_RUNTIME_UNOBSERVED",
+      "untouched_routes": 0,
+      "v1_route_count": 1
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "7253fc8c4e83d20398205e8c449c265f8d0080d8f4be43db49121a4b569163a8",
+        "source_commit": "b98c469bbe33a7fc9ce052f0ebe144599bdbfad9"
+      },
+      "generation_id": "3282f9915677c9a33cff8e51506da57b7a704a172d401a7d32b7389a9e3d007d",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 64,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "0d543f5ac5a662aaac22c15229bc7469bb52774e18834a92608bd6645f9546f7",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "271738f013a17da4fba6763f4066dac77fb5658fda629733552b351b6dafd4ab",
+        "source_commit": "f5fd296cd1286f0b833d874eea4245bfe31dce81"
+      },
+      "generation_id": "3ad258718eac367e67a4656c8857de5c3eb355f6f4e30e0866b18c941d5e28aa",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 26,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "cf8fbe1a9a2dbbb301e65e7ef2085e7a0cb04caea43e717b22c13b7314813fb2",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "ebc4bd3955f86784d6c314cc12eb5c24d487bf9073401e545fd19deb3e8b32e7",
+        "source_commit": "6ca11a4aea8223ebfebb1140bd8094ef1b3c5b90"
+      },
+      "generation_id": "3f6ba8752deb02a8243c9c8c14179580ab1649a229b097bec0c23c84f84e8206",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 3,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "7407c6d3af0ff4805538a4ff66f23c9303f441fd20893bc2c832a01cd7e1b49e",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "57cf16c3ac368b027e89c6b948d34bb527dfce3eb1fb819693878cdaf5b73fb3",
+        "source_commit": "b29ec5caccfaf30c19fd1e907ef271a258577bfe"
+      },
+      "generation_id": "46f83115f03d4be9e55393cfa864e6549400f5a6d0beee827301eab96b4fcc4b",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 6,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "21ba1aca1f365307e5b6ced7bf8ceafa4930e7b187403939082530de0717166f",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "926ff66f9f04fd6d1dc983a91e92986321d53ee76e9c392d75d0f77d5fed921e",
+        "source_commit": "1dac44b22426711bdec4aa6ed79f0c8d55be1241"
+      },
+      "generation_id": "4e749ac094d4f19648c69d3ce8302bd1e457fd80d26de95eeb6f44b6a4372b2b",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 2
+      },
+      "prior_analysis_unknown_routes": 2,
+      "route_count": 2,
+      "runtime_steer_max": null,
+      "segment_count": 42,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 2
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "261afd519447cf2992433dd4eb7f209f7495ad31f42d64fa1822d7a27627bde2",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "0ba0f4da1cc305c73601545e730b2e997e0b5a0a09d8da7828e2557622a164f7",
+        "source_commit": "f30067364b12630cd403200fc19e3246e6c68078"
+      },
+      "generation_id": "4fc89fd04e2f4b8a69e344d60dbe64f4474559c4c6ec26701b75db96ed054870",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 15,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "e2e87289f96a829f53591bf671e648b473038199b44e7111561ff3d96a9f586e",
+        "source_commit": "bc9614c63347d7475ee00a3317b549430861e438"
+      },
+      "generation_id": "52369c27f9c85247ec95e7d7302e1f38c6fa6e6a979431108f83a78a59087188",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 3
+      },
+      "prior_analysis_unknown_routes": 3,
+      "route_count": 3,
+      "runtime_steer_max": null,
+      "segment_count": 90,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 2,
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": "19.6.3-carrot",
+        "software_profile_sha256": "0e8843ca47e1c86a557607d83315dc703c5b00a84095d8dfc52005c0b856f514",
+        "source_commit": "090943bde3feac14a0b4cf83d8fbae37c1cde0d3"
+      },
+      "generation_id": "54dea133b1b64597c693313a05cf2f388944ece453fcb8ade101eb631535cb72",
+      "log_availability": {
+        "qlog.zst": 5,
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 6,
+      "route_count": 6,
+      "runtime_steer_max": null,
+      "segment_count": 176,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 6
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "7407c6d3af0ff4805538a4ff66f23c9303f441fd20893bc2c832a01cd7e1b49e",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "335ab9d34ba30aefce623d15df871ade1b25231fb9e96f9ce0bf6c13ba969aa8",
+        "source_commit": "d345076d567f88a35eb8e393efe18bd854dbbf6d"
+      },
+      "generation_id": "58f78ba1d578660de6c4ac04d22434fbca8b3481e913602334c6a6d3908c1b23",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 12,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "5d21adb01ad6b924d1ea4ceb9ba2d740139d5b71cd072b77a154a60bf12d61ec",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "633713c0af5b63cc03b01bf7099e96d6efc44735fccaba3b1506346712f2e99b",
+        "source_commit": "b29ec5caccfaf30c19fd1e907ef271a258577bfe"
+      },
+      "generation_id": "59cf8bc840949dc6fa4561b8c04d1501dc114c8b5996d73d321d6b0a7ca2d5f7",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 7,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "21ba1aca1f365307e5b6ced7bf8ceafa4930e7b187403939082530de0717166f",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "1e55c850d85832c13e2970aacdda1c0f29caa67271f5e7692ac9967d34e1ae9f",
+        "source_commit": "6ca11a4aea8223ebfebb1140bd8094ef1b3c5b90"
+      },
+      "generation_id": "62204df822970b7b684c58f60fc2959f964bc202440a9b8f7cadf9f3012e9c8f",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 4
+      },
+      "prior_analysis_unknown_routes": 4,
+      "route_count": 4,
+      "runtime_steer_max": null,
+      "segment_count": 226,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 4
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "7407c6d3af0ff4805538a4ff66f23c9303f441fd20893bc2c832a01cd7e1b49e",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "13daff339a4bfd202ea51c8c9f9c52d87faeb4866dd71d29881881c4e923436c",
+        "source_commit": "cdaa082c541c6856132ad70cb8bfd7c8d9225bd8"
+      },
+      "generation_id": "6312868a4ce820004eddcd0b79a015a1fced4adcdfbaf91ca435541b392e59ad",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 48,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "21ba1aca1f365307e5b6ced7bf8ceafa4930e7b187403939082530de0717166f",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "9aeb64bbecbfd20e30093c4b6fb59f6b98988459d881776677fd4477231c0f4d",
+        "source_commit": "b3c6d94171ebba8a0986ad966ad80e414fdc3ea5"
+      },
+      "generation_id": "66203425a2d54fa143fe2e547f469f7fee9d025f04fd65a18a94ed13dcdb84fa",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 1,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "7407c6d3af0ff4805538a4ff66f23c9303f441fd20893bc2c832a01cd7e1b49e",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "03e39e62fd12a622eb626bb4b698c7e5728a6522c8aa3d0aa7d814312b40f02f",
+        "source_commit": "86c81847b0a3d0392da0b6a50808cce8111493dd"
+      },
+      "generation_id": "67b2135faace6b82d1df9bcef866e271b0bb4472a85cc3b2a3bb01904060d5a1",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 3,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": "19.6.3-carrot",
+        "software_profile_sha256": "13b3fa1e993ec187425de807d321b64d23f796e46e55aefc76174b874d013017",
+        "source_commit": "af421cb1e6a67b59dd879f66c805bf8c6a265380"
+      },
+      "generation_id": "6cc886a66316fdca9876a8a66d5184d92f900c5a7dc4ea06231e4867634a30e3",
+      "log_availability": {
+        "qlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 5,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "f364301bee86c9e4a886964803ecca224f22a04679642d8e1f4d625ab1e54d37",
+        "source_commit": "b3c6d94171ebba8a0986ad966ad80e414fdc3ea5"
+      },
+      "generation_id": "6ddae2efd68073c6bce96646e3bbd9db0aadb3f89bbde20d212f2fc54db5d79b",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 4,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "97cb1c290f5a7719dcea7ca9a904646dce6658b3fc83dd90ffdc03f51a58111b",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "c26dc74db3f0db66029103f138664bc0cac6c3a1cd1c0a6bc6f9964733547fc7",
+        "source_commit": "bbb052c97f1178e9854db27575b603459498d245"
+      },
+      "generation_id": "7b84ce725370c01b339836dde747de5ef82eb37008671a30ea583cfe62e64201",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 20,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "fa094563c3fee7ae8ad9f73ca7b15a1ff760b86f4130a9f380b90bdfc2a7928b",
+        "source_commit": "51763515ecb6d382bcdf5e7544606efe7459c2f8"
+      },
+      "generation_id": "7c3794fe6596f3256e96c8b27407805ecf274796c98152ed0a1f9458cde2215e",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 93,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "8c1fa9f6430c7ea0061c19ff4b877c66c19383c952d037d7b1db7027bea29be3",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "252377e0a0452eefb5c83fe6501e54f0227aa99684045f96388d364e40e06096",
+        "source_commit": "9a479a8c58a400ca31ac68e3c851231f89941833"
+      },
+      "generation_id": "7d4262d92215825b796504d626856de103cbb0e8442ac9f6e76b0a3ae0518cf3",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 11,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "77890256cdfae6e08719e0178b4e748690f32af40475ac01c2f1c92297b863e4",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "915d343770946be6186fe1950eff6d90a02346a803a5a2e9625ddec4d5e34954",
+        "source_commit": "1dac44b22426711bdec4aa6ed79f0c8d55be1241"
+      },
+      "generation_id": "7fe09da912da8bee8f8d7ee521395ab61fa01446972b6156c19f83615a0ccc93",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 34,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "c076bf6c896f540984345acb29a3c5a3b16f61e2c9452750766de7f50dbaa2d3",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "096ed9e68b4983ac5f0d995b725c07352b9574c1d21de321e5a731b62943f7af",
+        "source_commit": "6ca11a4aea8223ebfebb1140bd8094ef1b3c5b90"
+      },
+      "generation_id": "860b6d162fbda799e4a6b4383b9b236ba0501d09b4d30dbf8f1c7a6faa79f365",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 13,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "ec0ab869fce245c1dfbfd1b5c0d17aa28ea3a3e692bd98ce52c7bf015854b4e6",
+        "source_commit": "7c62204a788ca346cd58f622d70ae0de2a598a45"
+      },
+      "generation_id": "8649007649c0647313a1a1d2be0b385eaad98a6b25c3d875bb82229f70ffe5ba",
+      "log_availability": {
+        "rlog.zst": 2
+      },
+      "prior_analysis_unknown_routes": 2,
+      "route_count": 2,
+      "runtime_steer_max": null,
+      "segment_count": 30,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 2
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "4b389159a30be18adbc64a398abd5c354b55f5c5d4007fbd014162d6e8db2c0e",
+        "source_commit": "908882900512051ca88b8d44d99b56132ee48deb"
+      },
+      "generation_id": "8aecf29bd740a1f70d0a4a50cca437b10c211526cb298711c4230ba4e10abad5",
+      "log_availability": {
+        "qlog.zst": 2,
+        "rlog.zst": 5
+      },
+      "prior_analysis_unknown_routes": 5,
+      "route_count": 5,
+      "runtime_steer_max": null,
+      "segment_count": 61,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 5
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "21ba1aca1f365307e5b6ced7bf8ceafa4930e7b187403939082530de0717166f",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "01387878e83c2fcfe28880227ce5011b972af7399841f16128caba43edb73c5c",
+        "source_commit": "d5378e18837e4cc854d413481ba195c9f4baa732"
+      },
+      "generation_id": "91cba8b89a9536f056c42998eb863edb3914b2751221ccd52a4ddbf981b95e45",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 2
+      },
+      "prior_analysis_unknown_routes": 2,
+      "route_count": 2,
+      "runtime_steer_max": null,
+      "segment_count": 206,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 2
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "77890256cdfae6e08719e0178b4e748690f32af40475ac01c2f1c92297b863e4",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "e0906477b0699b84af7d9241606f2658628eb6b5421b591bb85d0b3adc956890",
+        "source_commit": "c97315f3c4822692c73199ae1a21bed98d44dda8"
+      },
+      "generation_id": "9302180caddab9cdd0dbd6a265dd7a26a08a7a0283b79ac55c01ccf39f8239fc",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 56,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "e92c4cb66a75ea78566c7b20fbf31601b9e48f29e3acc8b843a333afe056f087",
+        "source_commit": "0f02e3cf3ab51a48d9c1eaf37c7fe355d7bac5cf"
+      },
+      "generation_id": "9571f4ed3319b3646b4576a49a289281c24d6919602278bbd89fdc60cc5a9ebd",
+      "log_availability": {
+        "qlog.zst": 5,
+        "rlog.zst": 13
+      },
+      "prior_analysis_unknown_routes": 13,
+      "route_count": 13,
+      "runtime_steer_max": null,
+      "segment_count": 284,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 13
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": "19.6.3-carrot",
+        "software_profile_sha256": "7446e6089f698494671381a46f2989365b1823c943f7c92740f70864db881b0a",
+        "source_commit": "10243f29af07abb8cfe3756916647e433d858588"
+      },
+      "generation_id": "986d64d5b7c05d0606217ac5ff8fb46f8230be645ad29b5677a92d8aecaf8d80",
+      "log_availability": {
+        "qlog.zst": 2
+      },
+      "prior_analysis_unknown_routes": 2,
+      "route_count": 2,
+      "runtime_steer_max": null,
+      "segment_count": 78,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 2
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": "19.6.3-carrot",
+        "software_profile_sha256": "b44ec66719b71b57930bc78172cd750f20c05a7d0629444e0ced4354869d0be8",
+        "source_commit": "0d26bffd7bdf6c831607fff1d9c624fb76e7b959"
+      },
+      "generation_id": "9b0b3103c4c46e9ead5759a650d08e87baaeae0c0e2d122a3bb52f89c51ddcfa",
+      "log_availability": {
+        "qlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 1,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "cfc41324aaaa79be9f2b7de5d4fc2afa784e40f2449339c18605f0365a3f8ff7",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "670723045cb915df38d51629e85811a5c813ba44164198404b88369e1a307f72",
+        "source_commit": "1dac44b22426711bdec4aa6ed79f0c8d55be1241"
+      },
+      "generation_id": "9ce8d068017a1e2d5e312f6d22a3ab8f09af1ea6617c891bc2195d330056db8b",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 12,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "2beef841ebda0a0edfdd763294e8e5ff02bcf113ff3eb905e966e20c60efa383",
+        "source_commit": "d63a53ab71925f9abbd24159b717eb48ddd8112c"
+      },
+      "generation_id": "a031527bf760e064888ed27b64769211d9169c28aa9d5007310394cc1188bca9",
+      "log_availability": {
+        "qlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 1,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "145e2613f81e4bd21dfd2977a332ced24da4a1610a6283aca66e22d053f10ca0",
+        "source_commit": "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29"
+      },
+      "generation_id": "a828566c6233fac82e1acd22eb32dc219cf16636141663fb1c09746316945eff",
+      "log_availability": {
+        "qlog.zst": 2,
+        "rlog.zst": 4
+      },
+      "prior_analysis_unknown_routes": 4,
+      "route_count": 4,
+      "runtime_steer_max": null,
+      "segment_count": 197,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 2,
+        "ROUTE_DIFFERENT_SOURCE_GENERATION": 2
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "a22db25d5c46582504ea300d2864c1e9389aadb3ed0144075a084a66e1008b40",
+        "source_commit": "9183feec3874b7ec1fd0544ef82afbe35b2b3734"
+      },
+      "generation_id": "a9b564a4600cf1b7f6343a18cebf9f723c258a7d21582683706680eef2006b11",
+      "log_availability": {
+        "qlog.zst": 2,
+        "rlog.zst": 3
+      },
+      "prior_analysis_unknown_routes": 3,
+      "route_count": 3,
+      "runtime_steer_max": null,
+      "segment_count": 170,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 3
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "f47935727c32b336c2ed84d9742cb5ac882fcd0f54d0fed5f94beac6a3a231d4",
+        "source_commit": "d49b930f1267eb91f6c21165b825f0b9dd0dc371"
+      },
+      "generation_id": "b70c8fe98f56730bc02c9807a506497f95502e6f5c33f064f416cf9c92a38e2f",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 7
+      },
+      "prior_analysis_unknown_routes": 7,
+      "route_count": 7,
+      "runtime_steer_max": null,
+      "segment_count": 261,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 6,
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "98b74d70d73dcfe0f38b39f72a966ad9e7afdd8b7d33bafdc770c68e4ebab4f4",
+        "source_commit": "f30067364b12630cd403200fc19e3246e6c68078"
+      },
+      "generation_id": "bd7232a14e9a93684b0476e912778c38ff33066e1173f0d4b5ecaf110264cf43",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 26,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "ea70d7783e3b7160a7ab7c1f6a9c816d697c39e2af76b366524f1fb85950eee6",
+        "source_commit": "a22d07c42c56881b4ad1ce9ce8ed335a741ddfc9"
+      },
+      "generation_id": "c0460742ca5317708b43dd4fc4bba4e7aa0812f4ebfa2b68a21425f6ddd0fa04",
+      "log_availability": {
+        "qlog.zst": 3,
+        "rlog.zst": 8
+      },
+      "prior_analysis_unknown_routes": 8,
+      "route_count": 8,
+      "runtime_steer_max": null,
+      "segment_count": 200,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 2,
+        "ROUTE_IDENTITY_AMBIGUOUS": 6
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "9920759c5e9ca285e0de1a1e5337a2b1971187c232c90cbf88f1480ea54f80d3",
+        "source_commit": "4fac5e19c039b5b9d87e555067d4cacfc4e929bd"
+      },
+      "generation_id": "c4b212ce0212fab3f0497fdd91ffbcf736254c3828b256fcb7ebfc5c9cf929ac",
+      "log_availability": {
+        "qlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 1,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "88fdd52bd92d0cf23ea27a4126cc72fbbc3f4882dfbfa6595bf9accde48758d2",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "5b94e08ae4dfb4117dc9bc08fc9c35b5c2aea3c0d3d0dc963185b2e7a879ba26",
+        "source_commit": "bbb052c97f1178e9854db27575b603459498d245"
+      },
+      "generation_id": "c59b42781ef5084756f7da7a4019548db3f5b5c957fa9f273b1c94f624153e92",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 16,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "41e79ed4aa1992ac9722aea9d78853d6546ab0c4d913be338020def2ff3d4b23",
+        "source_commit": "668249e8df630f906e59b3da26de81931436a107"
+      },
+      "generation_id": "c6ac915de6d5d22da96368f3b700e2aeeddb29b50a32f6880a25b589c200593a",
+      "log_availability": {
+        "rlog.zst": 2
+      },
+      "prior_analysis_unknown_routes": 2,
+      "route_count": 2,
+      "runtime_steer_max": null,
+      "segment_count": 21,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 2
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "c1ca2be626ca738e3440ee23fcc6899662d29d312cb9f341e920fe16ba5124b6",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "5e28f34c0fbb340b6362c9c7e4364572dc7757f683fea779ffbccd83590be00e",
+        "source_commit": "3e74a327c50a3638466aabdaa8f08b434e5d112b"
+      },
+      "generation_id": "cc150c62eada9646ae868a949ad740d64a599225453db9376a477b71c7103c06",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 80,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "58e1d88d093b383c8ef1a0f7aa7d9f90573c45f48397bc5cf375ef3d04305d58",
+        "source_commit": "1dac44b22426711bdec4aa6ed79f0c8d55be1241"
+      },
+      "generation_id": "d5d5f97a2f0c1828304beb1c5dc9570a04d72b2d8bf2fa0929b878aa49c859fd",
+      "log_availability": {
+        "rlog.zst": 2
+      },
+      "prior_analysis_unknown_routes": 2,
+      "route_count": 2,
+      "runtime_steer_max": null,
+      "segment_count": 21,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 2
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "f8cb75c8bff15f85c1733b8a4ef687a48c7affc10b5270ecd9c8442da3429bba",
+        "source_commit": "defcfe812a64e0e1646d33b4e712f928428f9ef4"
+      },
+      "generation_id": "d80e46cbc165f807dee7feef4169e3892e61d395f70d8554416ed1797c8119d2",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 2
+      },
+      "prior_analysis_unknown_routes": 2,
+      "route_count": 2,
+      "runtime_steer_max": null,
+      "segment_count": 80,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_DIFFERENT_SOURCE_GENERATION": 1,
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "4490afa9170327a6885f7653c89c7faaee8b9aba683709d6160e82c88c80aab8",
+        "source_commit": "bbb052c97f1178e9854db27575b603459498d245"
+      },
+      "generation_id": "ddbebe447e0e8e567ee0b64114e4b0f400de76525bfe6d6d1172e8c5c8092be1",
+      "log_availability": {
+        "qlog.zst": 2,
+        "rlog.zst": 7
+      },
+      "prior_analysis_unknown_routes": 7,
+      "route_count": 7,
+      "runtime_steer_max": null,
+      "segment_count": 176,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 7
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": "19.6.3-carrot",
+        "software_profile_sha256": "14406b7df3f203dcbb18a87ebc4b97562cc2d3fe0a93c857af9304c82423634b",
+        "source_commit": "dfa4b6b9ca68438a319801c0c81888dedbc08e94"
+      },
+      "generation_id": "de6cee6e4269edc60d1560cfc2826c69fa800501c7dfa949b496cf4a89597ce1",
+      "log_availability": {
+        "rlog.zst": 3
+      },
+      "prior_analysis_unknown_routes": 3,
+      "route_count": 3,
+      "runtime_steer_max": null,
+      "segment_count": 94,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1,
+        "ROUTE_IDENTITY_AMBIGUOUS": 2
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "d82353b0b90511d595dc337347cd16a083a3ebec0ca0611fda90df96155e69ce",
+        "source_commit": "a28ba306e4b8e0ea5f84f934fe962ad3d7ba9c7a"
+      },
+      "generation_id": "e018520d932e61f1dc8490a898e89ab1c102a4a600308cbda58439c83659aad4",
+      "log_availability": {
+        "qlog.zst": 2,
+        "rlog.zst": 8
+      },
+      "prior_analysis_unknown_routes": 8,
+      "route_count": 8,
+      "runtime_steer_max": null,
+      "segment_count": 310,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 7,
+        "ROUTE_DIFFERENT_SOURCE_GENERATION": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "75864e6b07c807a6daa585320304eec92e4b7557130e325565264c54567b78ca",
+        "source_commit": "a271d0b69fe5963ecfa12e78ab824151bb97dfba"
+      },
+      "generation_id": "e31a30c71208f17ed476f88ca27ef7150c2e223682b9a844f828510cf7a10a11",
+      "log_availability": {
+        "qlog.zst": 2,
+        "rlog.zst": 7
+      },
+      "prior_analysis_unknown_routes": 7,
+      "route_count": 7,
+      "runtime_steer_max": null,
+      "segment_count": 314,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 6,
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "67022cf00f29dda0ca9b0ef46d2007de36e717403be7d29abdfffab4eaafd276",
+        "source_commit": "ee7aad546746ef28c6fd6748c35b489b503a3702"
+      },
+      "generation_id": "e48c09737649ce93580623940bb8bc04db8b52cd10a8a9374aaee7ccf8122db1",
+      "log_availability": {
+        "qlog.zst": 2,
+        "rlog.zst": 3
+      },
+      "prior_analysis_unknown_routes": 3,
+      "route_count": 3,
+      "runtime_steer_max": null,
+      "segment_count": 187,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1,
+        "ROUTE_IDENTITY_AMBIGUOUS": 2
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "77890256cdfae6e08719e0178b4e748690f32af40475ac01c2f1c92297b863e4",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "7959fd9077f600ebdfd334ed0e57a94652186dffdcc34959b63dec5b64a9ba26",
+        "source_commit": "bbb052c97f1178e9854db27575b603459498d245"
+      },
+      "generation_id": "e70ab15774a6eed1adae0647369733d638916c2b9899cf15304c4f6a6f996a9b",
+      "log_availability": {
+        "rlog.zst": 2
+      },
+      "prior_analysis_unknown_routes": 2,
+      "route_count": 2,
+      "runtime_steer_max": null,
+      "segment_count": 12,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 2
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": "19.6.3-carrot",
+        "software_profile_sha256": "0d97f4a3496608aab3795c59b80a03b24993a68a6d3b99edc39223bbc0953278",
+        "source_commit": "ce3d76301c988db8aa955e1ebc6496f0a0fd2abc"
+      },
+      "generation_id": "e736b95ac0c95fbd7b3b1fc788b4ff6e3770faf34c7dc50549fe17fd16328aa2",
+      "log_availability": {
+        "qlog.zst": 8,
+        "rlog.zst": 3
+      },
+      "prior_analysis_unknown_routes": 10,
+      "route_count": 10,
+      "runtime_steer_max": null,
+      "segment_count": 337,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_IDENTITY_AMBIGUOUS": 10
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "c6ccc1b41ccf1578833b903c99beb469efb1f1f884dc0ecf4b0d3cd718744ddf",
+        "source_commit": "dc174a9b056041235ce352cb464c32be011cb908"
+      },
+      "generation_id": "e7b9c54f094821179f45b44b3f6585225d951b4624c3c76ac4d9a7d7fc07a710",
+      "log_availability": {
+        "qlog.zst": 1,
+        "rlog.zst": 2
+      },
+      "prior_analysis_unknown_routes": 2,
+      "route_count": 2,
+      "runtime_steer_max": null,
+      "segment_count": 69,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1,
+        "ROUTE_IDENTITY_AMBIGUOUS": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "77890256cdfae6e08719e0178b4e748690f32af40475ac01c2f1c92297b863e4",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "b5f97ad84466473a1e226bd0e62c6738d4b18dd6634610ac868570135565926d",
+        "source_commit": "6ca11a4aea8223ebfebb1140bd8094ef1b3c5b90"
+      },
+      "generation_id": "eede6af99c4ff270334bd2307ba952b5babcda4709450b37b1d6c3da119e1297",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 8,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    },
+    {
+      "compatible_routes": 0,
+      "generation": {
+        "carparams_sha256": "5d21adb01ad6b924d1ea4ceb9ba2d740139d5b71cd072b77a154a60bf12d61ec",
+        "control_type": "torque",
+        "fingerprint": "HYUNDAI_SANTA_FE_2022",
+        "flags": 65928,
+        "os_version": null,
+        "os_version_opaque_sha256": "e27411beac83daf2d8c7ceae30cba830e58df45242b2b959bb3453d19a32fa3f",
+        "software_profile_sha256": "ccf682f61ee2e9b7ca9806d49dacd51e906a5691d50acde1525a05fff1eb2105",
+        "source_commit": "9a479a8c58a400ca31ac68e3c851231f89941833"
+      },
+      "generation_id": "fa16a91da9a225928a07f8f8a140de581f8df8bb771699c731e0a9ce895014ea",
+      "log_availability": {
+        "rlog.zst": 1
+      },
+      "prior_analysis_unknown_routes": 1,
+      "route_count": 1,
+      "runtime_steer_max": null,
+      "segment_count": 3,
+      "signal_schema_generation": "PINNED_READER_METADATA_PARSE_ONLY_NOT_SIGNAL_SEMANTICS_VALIDATION",
+      "status_counts": {
+        "ROUTE_CORRUPT_OR_INCOMPLETE": 1
+      },
+      "steer_max_provenance": "NEW_SOURCE_AUDIT_REQUIRED",
+      "untouched_routes": 0,
+      "v1_route_count": 0
+    }
+  ],
+  "candidate_search_authorized": false,
+  "carparams_distribution": {
+    "0d543f5ac5a662aaac22c15229bc7469bb52774e18834a92608bd6645f9546f7": 1,
+    "21ba1aca1f365307e5b6ced7bf8ceafa4930e7b187403939082530de0717166f": 17,
+    "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542": 30,
+    "261afd519447cf2992433dd4eb7f209f7495ad31f42d64fa1822d7a27627bde2": 1,
+    "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da": 107,
+    "5d21adb01ad6b924d1ea4ceb9ba2d740139d5b71cd072b77a154a60bf12d61ec": 3,
+    "7407c6d3af0ff4805538a4ff66f23c9303f441fd20893bc2c832a01cd7e1b49e": 6,
+    "77890256cdfae6e08719e0178b4e748690f32af40475ac01c2f1c92297b863e4": 6,
+    "88fdd52bd92d0cf23ea27a4126cc72fbbc3f4882dfbfa6595bf9accde48758d2": 1,
+    "8c1fa9f6430c7ea0061c19ff4b877c66c19383c952d037d7b1db7027bea29be3": 1,
+    "97cb1c290f5a7719dcea7ca9a904646dce6658b3fc83dd90ffdc03f51a58111b": 1,
+    "c076bf6c896f540984345acb29a3c5a3b16f61e2c9452750766de7f50dbaa2d3": 1,
+    "c1ca2be626ca738e3440ee23fcc6899662d29d312cb9f341e920fe16ba5124b6": 1,
+    "cf8fbe1a9a2dbbb301e65e7ef2085e7a0cb04caea43e717b22c13b7314813fb2": 1,
+    "cfc41324aaaa79be9f2b7de5d4fc2afa784e40f2449339c18605f0365a3f8ff7": 1
+  },
+  "composition_authorized": false,
+  "control_type_distribution": {
+    "torque": 178
+  },
+  "generation_merge_allowed": false,
+  "inventory_sha256": "343b1e17e2ca94fa5f9b9c008678d431053813e04ca1cb5d78852fc10b81f972",
+  "numeric_coverage": null,
+  "os_distribution": {
+    "19.6.3-carrot": 35,
+    "19.8-carrot-bt1": 1,
+    "UNKNOWN_OR_MIXED": 142
+  },
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "991f52570f1b9ab41ed5fcd1daa8f36b4112cd6640773418b4cc6c0ee281f827",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_DATASET_V2_GENERATION_BUCKETS_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_commit_distribution": {
+    "090943bde3feac14a0b4cf83d8fbae37c1cde0d3": 6,
+    "0d26bffd7bdf6c831607fff1d9c624fb76e7b959": 1,
+    "0f02e3cf3ab51a48d9c1eaf37c7fe355d7bac5cf": 13,
+    "10243f29af07abb8cfe3756916647e433d858588": 2,
+    "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29": 4,
+    "1dac44b22426711bdec4aa6ed79f0c8d55be1241": 6,
+    "3e74a327c50a3638466aabdaa8f08b434e5d112b": 2,
+    "4fac5e19c039b5b9d87e555067d4cacfc4e929bd": 1,
+    "51763515ecb6d382bcdf5e7544606efe7459c2f8": 1,
+    "52a6b61e3e8f24ae498d156de904bc47990a8f6c": 4,
+    "5a970f1ad25d9f07d055955d7a7c14603b6b7813": 1,
+    "6465aae77f25502f5a8dd2b5c960333cc863a3ae": 6,
+    "668249e8df630f906e59b3da26de81931436a107": 2,
+    "6ca11a4aea8223ebfebb1140bd8094ef1b3c5b90": 11,
+    "7c62204a788ca346cd58f622d70ae0de2a598a45": 2,
+    "82f280f4f991bda04a359fc343d95bb32a1836b8": 2,
+    "83179bb22d01898287e2165fd0da9805c0a999fa": 2,
+    "86c81847b0a3d0392da0b6a50808cce8111493dd": 1,
+    "89cbd54f8a8b0f55239b364154b747bd5aad072a": 9,
+    "8a679162c9440d09a6098cb6897c56f87a7a2594": 3,
+    "908882900512051ca88b8d44d99b56132ee48deb": 5,
+    "9183feec3874b7ec1fd0544ef82afbe35b2b3734": 3,
+    "9a479a8c58a400ca31ac68e3c851231f89941833": 4,
+    "a22d07c42c56881b4ad1ce9ce8ed335a741ddfc9": 8,
+    "a271d0b69fe5963ecfa12e78ab824151bb97dfba": 7,
+    "a28ba306e4b8e0ea5f84f934fe962ad3d7ba9c7a": 8,
+    "af421cb1e6a67b59dd879f66c805bf8c6a265380": 1,
+    "b29ec5caccfaf30c19fd1e907ef271a258577bfe": 2,
+    "b3c6d94171ebba8a0986ad966ad80e414fdc3ea5": 2,
+    "b98c469bbe33a7fc9ce052f0ebe144599bdbfad9": 1,
+    "bbb052c97f1178e9854db27575b603459498d245": 17,
+    "bc9614c63347d7475ee00a3317b549430861e438": 3,
+    "c97315f3c4822692c73199ae1a21bed98d44dda8": 1,
+    "cdaa082c541c6856132ad70cb8bfd7c8d9225bd8": 1,
+    "ce3d76301c988db8aa955e1ebc6496f0a0fd2abc": 10,
+    "d345076d567f88a35eb8e393efe18bd854dbbf6d": 2,
+    "d49b930f1267eb91f6c21165b825f0b9dd0dc371": 7,
+    "d5378e18837e4cc854d413481ba195c9f4baa732": 2,
+    "d63a53ab71925f9abbd24159b717eb48ddd8112c": 1,
+    "dc174a9b056041235ce352cb464c32be011cb908": 2,
+    "defcfe812a64e0e1646d33b4e712f928428f9ef4": 2,
+    "dfa4b6b9ca68438a319801c0c81888dedbc08e94": 3,
+    "ee7aad546746ef28c6fd6748c35b489b503a3702": 3,
+    "f30067364b12630cd403200fc19e3246e6c68078": 3,
+    "f5fd296cd1286f0b833d874eea4245bfe31dce81": 1
+  },
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

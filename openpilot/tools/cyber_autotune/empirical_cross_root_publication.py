@@ -12,7 +12,12 @@ from openpilot.tools.cyber_autotune import empirical_export_metadata as exports
 from openpilot.tools.cyber_autotune import empirical_metadata_copy_variants as copies
 from openpilot.tools.cyber_autotune import empirical_dataset_v2_inventory as receipts
 
-PINS = {}
+PINS = {
+  'empirical-dataset-v2-cross-root-inventory-v1.json': '343b1e17e2ca94fa5f9b9c008678d431053813e04ca1cb5d78852fc10b81f972',
+  'empirical-dataset-v2-generation-buckets-v1.json': '991f52570f1b9ab41ed5fcd1daa8f36b4112cd6640773418b4cc6c0ee281f827',
+  'empirical-dataset-v2-root-policy-v2.json': 'cd62e6ffc115a08daa1ec05aec61d3ee47fdf281a4effc330dd26180bce9d0cd',
+  'empirical-dataset-v2-route-readiness-v1.json': '7c3fc1fba5f6a748dc2ee77eb56ec11b39d73a5d18f436f8ebc868480af4e569',
+}
 STATUSES = {
   'ROUTE_DUPLICATE_EXISTING_V1',
   'ROUTE_COMPATIBLE_WITH_V1_GENERATION',
