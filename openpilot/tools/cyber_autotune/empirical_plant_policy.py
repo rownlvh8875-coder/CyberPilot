@@ -53,6 +53,8 @@ def verify(row):
 def persist(path, row):
   verify(row)
   path = Path(path)
+  if any(part.is_symlink() for part in (path, *path.parents)):
+    raise ValueError("NO_SYMLINK_STORE")
   path.parent.mkdir(parents=True, exist_ok=True)
   if path.is_symlink():
     raise ValueError('NO_SYMLINK_STORE')
@@ -61,6 +63,18 @@ def persist(path, row):
       raise ValueError('IMMUTABLE_RECEIPT_CONFLICT')
     return
   temporary = path.with_name(path.name + '.atomic')
+  if temporary.is_symlink():
+    raise ValueError('NO_SYMLINK_STORE')
+  if temporary.exists():
+    try:
+      old = verify(json.loads(temporary.read_bytes()))
+    except (ValueError, TypeError, KeyError) as e:
+      raise ValueError('CORRUPT_ATOMIC_RECEIPT') from e
+    if old != row:
+      raise ValueError('STALE_ATOMIC_RECEIPT')
+    os.link(temporary, path)
+    temporary.unlink()
+    return
   with temporary.open('xb') as f:
     f.write(json.dumps(row, sort_keys=True, indent=2, allow_nan=False).encode() + b'\n')
     f.flush()
@@ -204,5 +218,56 @@ def split(rows):
       'block_count': n,
       'split_before_numeric_inspection': True,
       'segments': sorted(assignments, key=lambda r: (r['route_id'], r['ordinal'])),
+    }
+  )
+
+
+def metric_policy():
+  return seal(
+    {
+      'schema': 'EMPIRICAL_PLANT_METRIC_EXECUTION_POLICY_V1',
+      'common_history_samples': 45,
+      'selection_target': 'ONE_STEP_OUTPUT_RMSE',
+      'aggregation': 'POOLED_SSE_AND_COUNT_NO_SEGMENT_WEIGHT',
+      'selection_scope': 'SEPARATE_STAGE_AND_SPEED_BIN',
+      'common_support': 'ALL_45_HISTORY_SAMPLES_VALID_SAME_SEGMENT_SAME_BIN',
+      'candidate_unstable': 'EXCLUDE_AND_REPORT_NO_HOLDOUT_RESELECTION',
+      'minimum_samples': 201,
+      'rank': 'FULL_COLUMN_RANK_REQUIRED',
+      'one_step': ['MAE', 'RMSE', 'MEDIAN_ABS', 'P95_ABS', 'BIAS', 'CORRELATION'],
+      'quantile': 'NUMPY_LINEAR',
+      'rollout_samples': [25, 50, 100, 200],
+      'rollout_origins': 'EVERY_COMMON_SUPPORT_INDEX_WITH_COMPLETE_VALID_HORIZON',
+      'rollout_metric': 'ENDPOINT_OUTPUT_RESIDUAL_AFTER_H_RECURSIVE_STEPS',
+      'rollout_input': 'OBSERVED_EXOGENOUS_COMMAND_OVER_HORIZON_NOT_FEEDBACK_TO_MODEL',
+      'rollout_initialization': 'OBSERVED_HISTORY_ONCE_THEN_RECURSIVE_PREDICTED_OUTPUT',
+      'ready_primary_horizon_samples': 100,
+      'ready_primary_metrics': ['MAE', 'RMSE', 'P95_ABS'],
+      'ready_rule': 'STRICTLY_BETTER_THAN_EACH_NAIVE_ON_ONE_STEP_AND_100_STEP_ENDPOINT_COMMON_SUPPORT',
+      'ready_other_gates': ['MEASURED_UNITS_FRAME_PROVEN', 'CLEAN_LIMIT_MASK_OBSERVABLE', 'EXACT_REPEATABILITY', 'STABLE_MODEL', 'SUPPORT_201_MINIMUM'],
+      'correlation_constant': 'NULL_WITH_SUPPORT_COUNT',
+      'amplitude_subsets': 'INPUT_ZERO_POSITIVE_NEGATIVE_AND_TRAIN_ABS_QUARTILES',
+      'time_blocks': 'FOUR_EQUAL_INDEX_BLOCKS_PER_SEGMENT_NO_POSTHOC_SELECTION',
+      'unavailable': 'NULL_NEVER_ZERO_OR_IMPUTED',
+      'physical_delay_interpretation': 'INCLUDES_SOURCE_PUBLISH_ALIGNMENT_AGE_NOT_PHYSICAL_DELAY_TRUTH',
+    }
+  )
+
+
+def alignment_policy():
+  return seal(
+    {
+      'schema': 'EMPIRICAL_PLANT_ALIGNMENT_POLICY_V1',
+      'grid': '100HZ_INTEGER_NS',
+      'target': 'LATEST_PAST_CARSTATE_PUBLISH_EVENT',
+      'command_context_query': 'TARGET_SELECTED_EVENT_TIME_NOT_GRID_TIME',
+      'forbid_command_after_target_event': True,
+      'save_actual_selected_event_times': True,
+      'age_bound_ns': 20_000_000,
+      'repeated_output_event': 'MASK_NOT_NEW_MEASUREMENT',
+      'source_gap': 'SELECTED_EVENT_PREDECESSOR_DELTA_GT_20MS_MASK_AND_HISTORY_BREAK',
+      'duplicates_or_regression': 'REJECT_SEGMENT',
+      'sensor_measurement_time': 'NOT_IDENTIFIED_PUBLISH_CLOCK_ONLY',
+      'delay': 'PUBLISH_TIME_EMPIRICAL_LAG_NOT_PHYSICAL_DELAY_VALIDATION',
     }
   )

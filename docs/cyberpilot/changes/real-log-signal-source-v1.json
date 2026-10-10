@@ -1,0 +1,37 @@
+{
+  "blobs": {
+    "opendbc_repo/opendbc/car/car.capnp": "33181c75197f6ad0301fed5120a2a3d207b5bf421ba5aa3936343431eda1dd5b",
+    "opendbc_repo/opendbc/car/hyundai/carcontroller.py": "5c51b1c918efab25b728fed0427f455c3145f87e9e456b389048c7fe0a6a706b",
+    "opendbc_repo/opendbc/car/hyundai/carstate.py": "c4d6698da7f00f2ac3049730563f81d23eb0b68fb85a563fc053fb139de0ac30",
+    "opendbc_repo/opendbc/car/hyundai/values.py": "a05ea0745a2001df33aa2020f19faadc53661776dedf2972b6d9c490285849aa",
+    "opendbc_repo/opendbc/dbc/hyundai_kia_generic.dbc": "1590039abb51cbfc3dc8ab4151ab78e7f549088fec878480ab4d6f850b18898a",
+    "openpilot/cereal/custom.capnp": "ec80175cbd08ea865d3b8a7ef0f1a1867b5f593819fb9de8a0165a1b9b22891f",
+    "openpilot/cereal/deprecated.capnp": "65079ff035a29c4c267d07ef7240c316c7eaa81b52f795142ed7603489a61355",
+    "openpilot/cereal/log.capnp": "90a19e0bb80e449e5457cf3e937b954502bb2e3d88ce998dda3cabe41aa3645b",
+    "openpilot/cereal/services.py": "a0745e2ef00036f0eef08b453a4798b4281549ea9ac6dc91c8b348ef76131edb",
+    "openpilot/selfdrive/car/card.py": "ae385e1527ceb54e0115f28b98b394dc7a36fbda7fd2c93fc5fe920a3f71ffdc"
+  },
+  "candidate_search_authorized": false,
+  "command_provenance": "POST_CARCONTROLLER_RATE_LIMIT_LOGGED_NOT_EPS_ACK",
+  "commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+  "composition_authorized": false,
+  "physical_measurement_clock": "CAN_ACQUISITION_TO_PUBLISH_AGE_UNVERIFIED",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "ca01de3be7c30112b9a0c8ac247d63e123742878d0dca1fa15332c64402e0599",
+  "reference_promotable": false,
+  "repository": "https://github.com/ajouatom/openpilot",
+  "schema": "EMPIRICAL_SIGNAL_SOURCE_BINDING_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "steering": "SAS11.SAS_Angle_DBC_Deg",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "yaw": {
+    "frame": "UNVERIFIED",
+    "physical_unit": null,
+    "reason": "SOURCE_COPIES_ESP12_YAW_RATE_DBC_UNIT_EMPTY_NO_RADIANS_CONVERSION",
+    "status": "BLOCKED_UNIT_UNVERIFIED"
+  }
+}

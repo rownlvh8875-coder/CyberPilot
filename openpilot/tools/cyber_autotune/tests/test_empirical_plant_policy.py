@@ -90,3 +90,48 @@ class TestPolicy(unittest.TestCase):
   def test_policy_serialization(self):
     r = self.p.policy()
     self.assertEqual(self.p.verify(json.loads(json.dumps(r))), r)
+
+
+class TestMetricFreeze(unittest.TestCase):
+  def test_common_support(self):
+    from openpilot.tools.cyber_autotune import empirical_plant_policy as p
+
+    self.assertTrue(hasattr(p, 'metric_policy'), 'metric execution policy missing')
+    r = p.metric_policy()
+    self.assertEqual(r['common_history_samples'], 45)
+    self.assertEqual(r['selection_target'], 'ONE_STEP_OUTPUT_RMSE')
+    self.assertEqual(r['aggregation'], 'POOLED_SSE_AND_COUNT_NO_SEGMENT_WEIGHT')
+    self.assertEqual(r['selection_scope'], 'SEPARATE_STAGE_AND_SPEED_BIN')
+    self.assertEqual(r['ready_primary_horizon_samples'], 100)
+
+
+class TestStoreSafety(unittest.TestCase):
+  def test_parent_symlink_rejected(self):
+    from openpilot.tools.cyber_autotune import empirical_plant_policy as p
+
+    with tempfile.TemporaryDirectory() as t:
+      root = Path(t)
+      (root / 'real').mkdir()
+      (root / 'alias').symlink_to(root / 'real', target_is_directory=True)
+      with self.assertRaises(ValueError):
+        p.persist(root / 'alias' / 'new' / 'x.json', p.seal({'v': 1}))
+      self.assertFalse((root / 'real' / 'new').exists())
+
+  def test_atomic_complete_resume(self):
+    from openpilot.tools.cyber_autotune import empirical_plant_policy as p
+
+    with tempfile.TemporaryDirectory() as t:
+      path = Path(t) / 'x.json'
+      row = p.seal({'v': 1})
+      path.with_name('x.json.atomic').write_text(json.dumps(row))
+      p.persist(path, row)
+      self.assertEqual(json.loads(path.read_bytes()), row)
+
+  def test_atomic_corruption_rejected(self):
+    from openpilot.tools.cyber_autotune import empirical_plant_policy as p
+
+    with tempfile.TemporaryDirectory() as t:
+      path = Path(t) / 'x.json'
+      path.with_name('x.json.atomic').write_text('{}')
+      with self.assertRaises(ValueError):
+        p.persist(path, p.seal({'v': 1}))
