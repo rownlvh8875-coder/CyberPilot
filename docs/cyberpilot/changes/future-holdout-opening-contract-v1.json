@@ -1,0 +1,38 @@
+{
+  "actual_opening": "NOT_IMPLEMENTED_OR_AUTHORIZED_HERE",
+  "after_opening": [
+    "NO_REFIT",
+    "NO_RESELECTION",
+    "NO_THRESHOLD_CHANGE",
+    "NO_FAMILY_CHANGE"
+  ],
+  "base_sha256": "965490f3ea177f45261e5354c96ad8d89af29e07f56e49d29be7308a5f968fd7",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "default": "CLOSED",
+  "one_time": true,
+  "opening_allowed": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "f3e08b2dbcace8c89c0b5406b23216b87d104e89736f2d501e64fb5aaac8c649",
+  "reference_promotable": false,
+  "requirements": [
+    "NEW_LOGGER_IDENTITY",
+    "COMPLETE_DISTINCT_LINEAGE",
+    "EXACT_SOURCE_PROFILE_ADAPTER",
+    "NUMERIC_PREVIOUSLY_UNOPENED",
+    "NO_PRIOR_ANALYSIS",
+    "ROLE_RECEIPT_BEFORE_NUMERIC",
+    "REQUIRED_MESSAGES",
+    "FROZEN_FAMILY_CONFIG_MODEL_METRICS_SUPPORT",
+    "ONE_TIME_OPENING_RECEIPT",
+    "SEPARATE_EXPLICIT_AUTHORIZATION"
+  ],
+  "schema": "FUTURE_HOLDOUT_OPENING_CONTRACT_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "unknown_requirement_passes": false,
+  "vehicle_activation_allowed": false
+}

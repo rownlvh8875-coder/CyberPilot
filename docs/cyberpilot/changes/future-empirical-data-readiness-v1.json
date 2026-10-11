@@ -1,0 +1,42 @@
+{
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "fitting": "NOT_RUN",
+  "holdout_opening": "CLOSED",
+  "model_package": "CLOSED_MISSING_ADMISSIBLE_MODEL",
+  "new_route_count": 0,
+  "numeric_coverage": null,
+  "policy_sha256": "f582c1473460571041dab937943fba60b82fc32476cd2ed5e084f47f484b4761",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "f6ff56d3560d891eb48aaeacf33e93fb6e639c322dacb8bc55882885ef23fd2d",
+  "reference_promotable": false,
+  "schema": "FUTURE_EMPIRICAL_DATA_READINESS_V1",
+  "scope": "CONTRACT_AND_SYNTHETIC_VALIDATION_READY_NOT_RAW_EXTRACTOR_OR_MODEL_READINESS",
+  "sealed_reference_allowed": false,
+  "selection": "NOT_RUN",
+  "sg_execution": false,
+  "stage_b": "STAGE_B_SIGNAL_ADMISSION_BLOCKED",
+  "states": [
+    "FUTURE_EMPIRICAL_DATA_PIPELINE_READY",
+    "EMPIRICAL_CAUSAL_CONTEXT_V2_DEFINED",
+    "FUTURE_ROUTE_ADMISSION_READY",
+    "FUTURE_HOLDOUT_CONTRACT_READY",
+    "NO_NEW_ROUTE_ADMITTED",
+    "NO_NUMERIC_EXTRACTION",
+    "NO_MODEL_FITTING",
+    "NO_MODEL_SELECTED",
+    "HOLDOUT_OPENING_CLOSED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED"
+  ],
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

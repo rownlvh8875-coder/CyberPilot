@@ -1,0 +1,78 @@
+{
+  "allowed_private_roots": [
+    "CARROTLOG",
+    "CARROT_LOGS"
+  ],
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "directory_name_identity": false,
+  "history_registry": "COMPLETE_HASH_BOUND_PRIVATE_LOGGER_AND_SEGMENT_REGISTRY_REQUIRED",
+  "identity": [
+    "source_commit",
+    "os_version",
+    "vehicle_fingerprint",
+    "full_carparams_sha256",
+    "empirical_profile_sha256",
+    "logger_start_sha256",
+    "segments",
+    "adapter_sha256",
+    "source_class_sha256",
+    "source_fingerprint_sha256",
+    "envelopes",
+    "prior_analysis",
+    "numeric_opened"
+  ],
+  "known_sources": [
+    {
+      "adapter_sha256": "e89093bb859ccf0db5b0c331fecf0dd56648ce725aa7037645cf56ee6fb52e82",
+      "class_sha256": "c07dbc19980119034bea832a830d24536551c489b6753547475b0b8a38b7dd1e",
+      "commit": "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29",
+      "fingerprint_sha256": "720f52530dfd7773350f5dcc19e7f12547ac0ce075ab3d165e197d536a15590f"
+    },
+    {
+      "adapter_sha256": "ea5a890bb3c3fa3c288807c0c60974f63412c90614a6313d0831a7b2cfeb68c4",
+      "class_sha256": "c07dbc19980119034bea832a830d24536551c489b6753547475b0b8a38b7dd1e",
+      "commit": "6ca11a4aea8223ebfebb1140bd8094ef1b3c5b90",
+      "fingerprint_sha256": "e180f1119287aba849c87f974af0b09d30cea5e7fbabb1759cf8686a6ae4e868"
+    }
+  ],
+  "metadata_reader": "SOURCE_SPECIFIC_SEALED_METADATA_RECEIPTS_ONLY_NO_RAW_READER_IN_THIS_INCREMENT",
+  "numeric_coverage": null,
+  "opening_allowed": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "0ed1d944561bceefbd680b3a21abc927188ce222c8ee44a53c37092fb4c57c30",
+  "reference_promotable": false,
+  "required_messages": [
+    "initData",
+    "carParams",
+    "carState",
+    "carOutput",
+    "carControl"
+  ],
+  "required_stage_a_field_presence": [
+    "requested_torque",
+    "normalized_torque",
+    "raw_command",
+    "runtime_steer_max",
+    "steeringAngleDeg",
+    "steeringRateDeg",
+    "steeringPressed",
+    "driver_torque",
+    "eps_temporary_fault",
+    "eps_permanent_fault",
+    "vEgo",
+    "gear",
+    "latActive",
+    "state_time_ns",
+    "command_time_ns",
+    "control_time_ns"
+  ],
+  "root_aliases": "EXACT_WINDOWS_WSL_ALIASES_SAME_STORAGE",
+  "schema": "FUTURE_ROUTE_ADMISSION_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}
