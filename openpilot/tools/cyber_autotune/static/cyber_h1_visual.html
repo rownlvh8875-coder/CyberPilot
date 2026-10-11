@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CyberPilot · H1 Inspector</title><link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/static/cyber_h1_visual.css">
+<script defer src="/static/cyber_h1_visual.js"></script></head>
+<body>
+<header><div class="brand"><span class="mark">CP</span><div><small>CYBERPILOT / OFFLINE VALIDATION</small><h1>Lateral H1 inspector</h1></div><span id="status">Loading verified pages…</span></div>
+<div class="banner"><strong>T1 DESCRIPTIVE COUNTERFACTUAL</strong><span>NOT VEHICLE QUALIFIED</span><span>NOT A PHYSICAL EPS MODEL</span><span>TA-B / SG-A NOT COMPOSED</span><span>HOLDOUT CLOSED</span></div></header>
+<main>
+<section class="intro"><div><p class="eyebrow">SYNTHETIC TRACE / SINGLE ARM</p><h2 id="scenario">driver_events</h2><p id="runInfo">Awaiting immutable catalog</p></div><div class="identity" id="identity"></div></section>
+<section class="transport" aria-label="Playback controls">
+<button id="prevEvent">← Event</button><button id="prev">← Frame</button><button id="play">Play</button><button id="next">Frame →</button><button id="nextEvent">Event →</button>
+<label>Frame <input id="frameIndex" type="number" min="0" max="799" value="0"></label>
+<label>Speed <select id="speed"><option value=".25">0.25×</option><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label>
+<output id="clock">—</output><input id="scrubber" aria-label="Time scrubber" type="range" min="0" max="799" value="0" step="1">
+</section>
+<div class="grid">
+<section class="panel wide"><div class="panelhead"><h3>Curvature <small>1/m</small></h3><span>PRE-STEP at capture · POST-STEP at completion</span></div>
+<div class="legend"><span class="desired">Desired / INPUT</span><span class="pre">Actual / PRE-STEP</span><span class="post">Plant / POST-STEP</span></div>
+<svg id="curvature" viewBox="0 0 900 235" role="img" aria-label="Curvature chart"></svg><p id="curvatureValue" class="values"></p></section>
+<section class="panel"><div class="panelhead"><h3>Descriptive pose <small>m</small></h3><span>POST-STEP only</span></div>
+<svg id="pose" viewBox="0 0 450 300" role="img" aria-label="Descriptive pose chart"></svg><p id="poseValue" class="values"></p><p class="muted">No map, road or lane reference. Same-arm descriptive plant output.</p></section>
+<section class="panel wide"><div class="panelhead"><h3>Torque <small>normalized</small></h3><span>COMMAND vs delayed POST-STEP application</span></div>
+<div class="legend"><span class="pre">Controller-limited / pre-governor</span><span class="post">Post-governor / final</span><span class="desired">Applied / POST-STEP</span><span>Pre-limit: unavailable</span></div>
+<svg id="torque" viewBox="0 0 900 235" role="img" aria-label="Torque chart"></svg><p id="torqueValue" class="values"></p></section>
+<section class="panel"><h3>State &amp; intervention</h3><dl id="state"></dl><button id="comparison" disabled>Comparison unavailable</button><p class="muted">PAIRED_MULTI_ARM_H1_TRACES_NOT_AVAILABLE</p></section>
+</div>
+<section class="panel"><h3>Unavailable fields <small>Preserved as null — never zero-filled</small></h3><div id="availability" class="availability"></div><details><summary>Message-bus service health</summary><pre id="health"></pre></details></section>
+<section class="panel"><h3>Evidence &amp; blockers</h3><dl id="evidence"></dl><div id="blockers" class="blockers"></div><p class="muted">Read-only observation. No candidate acceptance, search, production observer or vehicle authority.</p></section>
+<footer><span id="loaded">0 / 800 frames</span><span id="diagnostics">UI diagnostics pending</span></footer>
+</main></body></html>

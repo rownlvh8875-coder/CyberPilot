@@ -1,0 +1,47 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "9b4533e9459ad3de3a2be99b13629f36c67df5cecff970114cfeaa4cf65d4a38",
+  "reference_promotable": false,
+  "runs": [
+    {
+      "arm_names": [
+        "UPSTREAM_BASELINE_CLOSED_LOOP"
+      ],
+      "availability_summary": {
+        "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+        "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+        "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+        "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+        "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+        "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+      },
+      "blockers": [
+        "CALIBRATION_UNCERTAINTY_PENDING",
+        "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+        "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+        "METRIC_CALIBRATION_UNAVAILABLE",
+        "INDEPENDENT_REFERENCE_UNAVAILABLE"
+      ],
+      "comparison_ready": false,
+      "comparison_reason": "NO_EXACT_PAIRED_CURRENT_AND_CANDIDATE_H1_TRACES",
+      "duration_ns": 8000000000,
+      "frame_count": 800,
+      "frameset_receipt_sha256": "642d0a53ec39a69937e85612fdf12f7851c92b7cabb79bab22d72aaca7a265c4",
+      "run_id": "f651818fde652313e72ce9aa4a0e075ff2b0eced7d2c5ce0e02a90f40a0a2c19",
+      "scenario": "driver_events",
+      "source_trace_sha256": "e63ca877fd28ea86387f46fe8f3379fd48e01b21694b9a696696fb411323ede4",
+      "tier": "T1_DESCRIPTIVE_COUNTERFACTUAL",
+      "title": "Offline H1 \u00b7 driver_events \u00b7 baseline only",
+      "verdict": "SYNTHETIC_BASELINE_OBSERVATION_ONLY_NOT_ACCEPTANCE"
+    }
+  ],
+  "schema": "CYBER_VISUAL_RUN_CATALOG_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}
