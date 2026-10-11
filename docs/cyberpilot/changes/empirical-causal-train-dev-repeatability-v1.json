@@ -1,0 +1,36 @@
+{
+  "array_dtype_shape_order_bytes": "EXACT",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "dataset_manifest_sha256": "c584e2031baf144103c20ca76974c53a9ea614babdf9c865936675474742bba8",
+  "exact": true,
+  "extracted_segment_count": 154,
+  "historical_store_trees_after": {
+    "source": "5235271facad8b7eb8b9509b14ee8cfbc123cec3a50c1d970a576cbcaefe5e33",
+    "v2": "1269f43d7e2c542d7a9c069caad8d9616b495617b38e05de877751f67318cf78",
+    "v3": "513b75f722bcab24364cbc715b3b77e1d1535e552f83aa1c6002d8fde03570a4"
+  },
+  "historical_store_trees_before": {
+    "source": "5235271facad8b7eb8b9509b14ee8cfbc123cec3a50c1d970a576cbcaefe5e33",
+    "v2": "1269f43d7e2c542d7a9c069caad8d9616b495617b38e05de877751f67318cf78",
+    "v3": "513b75f722bcab24364cbc715b3b77e1d1535e552f83aa1c6002d8fde03570a4"
+  },
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "raw_source_hashes_before_after_exact": true,
+  "receipt_sha256": "51f525ed7b3b560b856fe62018471613935892554b0d86f8ebddb58400b886ad",
+  "reference_promotable": false,
+  "repeats": 2,
+  "replica_tree_sha256": "97d135ddc8e10feba0e25b45e559726c1540ed50603dbb3c75a8842e6734a0c9",
+  "resume_receipt_sha256": "140196cd329c00a8b4b5572b1604387e86404c45dabd31b04468a88cbb00b2b4",
+  "route_count": 2,
+  "row_origin_run_snapshot_config_receipts": "EXACT",
+  "schema": "EMPIRICAL_CAUSAL_TRAIN_DEV_REPEATABILITY_V1",
+  "sealed_reference_allowed": false,
+  "second_execution_model_apis_patched_to_fail": true,
+  "sg_execution": false,
+  "source_hash_check_does_not_decode_events": true,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

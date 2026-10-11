@@ -1,0 +1,63 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "full_historical_segment_set_preserved": false,
+  "historical_results_rewritten": false,
+  "history": 45,
+  "minimum_support": 201,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "b7b22ff622a094f0017b7945ccfdcc03274bab43dc912461730e5843a895ea70",
+  "reference_promotable": false,
+  "routes": [
+    {
+      "checks": {
+        "bridge_counts": true,
+        "diagnostic_valid": true,
+        "full_historical_segment_set": true,
+        "grid_count": true,
+        "per_bin_common_support": true
+      },
+      "excluded_sources": [],
+      "extracted_segment_count": 70,
+      "historical_segment_count": 70,
+      "per_extracted_segment_exact": true,
+      "route_id": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677"
+    },
+    {
+      "checks": {
+        "bridge_counts": false,
+        "diagnostic_valid": true,
+        "full_historical_segment_set": false,
+        "grid_count": false,
+        "per_bin_common_support": true
+      },
+      "excluded_sources": [
+        {
+          "kind": "qlog.zst",
+          "ordinal": 20,
+          "reason": "QLOG_NUMERIC_REOPENING_NOT_AUTHORIZED",
+          "source_sha256": "68260e1e5eb71df7fe9a73b7118b8587d6ab9d5a552ffe15d7e2ffd37d848abb"
+        },
+        {
+          "kind": "qlog.zst",
+          "ordinal": 22,
+          "reason": "QLOG_NUMERIC_REOPENING_NOT_AUTHORIZED",
+          "source_sha256": "400982f5200d7a276d85692ce435d72efb5c36c8e85e074a753c1fab13ed8709"
+        }
+      ],
+      "extracted_segment_count": 84,
+      "historical_segment_count": 86,
+      "per_extracted_segment_exact": true,
+      "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c"
+    }
+  ],
+  "schema": "EMPIRICAL_CAUSAL_LEGACY_REPRODUCTION_V1",
+  "scope": "COUNT_AND_ALIGNMENT_ACCOUNTING_ONLY_NO_MODEL_FIT_OR_DESIGN_ARRAYS",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "status": "LEGACY_ALIGNMENT_REPRODUCTION_CONFLICT",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

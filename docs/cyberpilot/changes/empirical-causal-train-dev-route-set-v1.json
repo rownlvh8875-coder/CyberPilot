@@ -1,0 +1,81 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "numeric_opened_before_route_set": false,
+  "policy_sha256": "661d0dc9d5bdf79e70f69ef9aeb589314ef82fd0c845ac13d72ce208346182fb",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "e1b55f689677f46eabe96e4b0a0b3482543266a3abde3f680459dfaa78fd13d8",
+  "reference_promotable": false,
+  "routes": [
+    {
+      "adapter_sha256": "e89093bb859ccf0db5b0c331fecf0dd56648ce725aa7037645cf56ee6fb52e82",
+      "empirical_profile_sha256": "494ce20b81e7f212ade6f30f89686752817d52d2d0e0e7658ab0a7239c0e35b3",
+      "excluded_sources": [],
+      "full_carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+      "historical_numeric_use": "USED_NUMERIC_TRAIN_AND_RETROSPECTIVE_DEVELOPMENT",
+      "historical_role": "TRAIN",
+      "historical_segment_count": 70,
+      "historical_segment_set_sha256": "76a56097dc818d75f7c88d7deac3a2195be93f0fcdd4fac5f5da8abfd7eb4f11",
+      "holdout_allowed": false,
+      "independent_validation_allowed": false,
+      "lineage_sha256": "0ea78123869aa75c41fbd9e950fde9b4394d91619be3b476867a800475fef926",
+      "metadata_adapter_source_sha256": "590fb2533456ceb57d975c46eb1c11e07480fad52b6fb3a72fed061017d0edc6",
+      "prior_analysis": "ROUTE_PRIOR_ANALYSIS_STATUS_UNKNOWN",
+      "role": "RETROSPECTIVE_TRAIN_DEV_CV_POOL",
+      "route_id": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+      "route_receipt_sha256": "1e2daaa69941fec7f7df4866411a8f1b87cb45de08175bdcb199a131d3a03484",
+      "segment_count": 70,
+      "segment_set_sha256": "76a56097dc818d75f7c88d7deac3a2195be93f0fcdd4fac5f5da8abfd7eb4f11",
+      "semantic_class_id": "c07dbc19980119034bea832a830d24536551c489b6753547475b0b8a38b7dd1e",
+      "source_commit": "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29",
+      "source_fingerprint_sha256": "720f52530dfd7773350f5dcc19e7f12547ac0ce075ab3d165e197d536a15590f",
+      "source_set_sha256": "76a56097dc818d75f7c88d7deac3a2195be93f0fcdd4fac5f5da8abfd7eb4f11"
+    },
+    {
+      "adapter_sha256": "e89093bb859ccf0db5b0c331fecf0dd56648ce725aa7037645cf56ee6fb52e82",
+      "empirical_profile_sha256": "494ce20b81e7f212ade6f30f89686752817d52d2d0e0e7658ab0a7239c0e35b3",
+      "excluded_sources": [
+        {
+          "kind": "qlog.zst",
+          "ordinal": 20,
+          "reason": "QLOG_NUMERIC_REOPENING_NOT_AUTHORIZED",
+          "source_sha256": "68260e1e5eb71df7fe9a73b7118b8587d6ab9d5a552ffe15d7e2ffd37d848abb"
+        },
+        {
+          "kind": "qlog.zst",
+          "ordinal": 22,
+          "reason": "QLOG_NUMERIC_REOPENING_NOT_AUTHORIZED",
+          "source_sha256": "400982f5200d7a276d85692ce435d72efb5c36c8e85e074a753c1fab13ed8709"
+        }
+      ],
+      "full_carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+      "historical_numeric_use": "USED_NUMERIC_TRAIN_AND_RETROSPECTIVE_DEVELOPMENT",
+      "historical_role": "TRAIN",
+      "historical_segment_count": 86,
+      "historical_segment_set_sha256": "e899bb90190b32fe8a4cf3ad54dc7963a96aa29c7dedcca27010e31275bac5d1",
+      "holdout_allowed": false,
+      "independent_validation_allowed": false,
+      "lineage_sha256": "6d4f6eba35e6e1b58821b11a652067984e7ef520d4ab2a5be4f01339fe48e85e",
+      "metadata_adapter_source_sha256": "590fb2533456ceb57d975c46eb1c11e07480fad52b6fb3a72fed061017d0edc6",
+      "prior_analysis": "ROUTE_PRIOR_ANALYSIS_STATUS_UNKNOWN",
+      "role": "RETROSPECTIVE_TRAIN_DEV_CV_POOL",
+      "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "route_receipt_sha256": "700136ee0104333cba3ab900176b78a56a493747707d142a7b4e2ac6bf63989c",
+      "segment_count": 84,
+      "segment_set_sha256": "5bdbcc6316d1049bd0ea3bd58ab694da41459135e04c20d1094a2a7560df029d",
+      "semantic_class_id": "c07dbc19980119034bea832a830d24536551c489b6753547475b0b8a38b7dd1e",
+      "source_commit": "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29",
+      "source_fingerprint_sha256": "720f52530dfd7773350f5dcc19e7f12547ac0ce075ab3d165e197d536a15590f",
+      "source_set_sha256": "e899bb90190b32fe8a4cf3ad54dc7963a96aa29c7dedcca27010e31275bac5d1"
+    }
+  ],
+  "schema": "EMPIRICAL_CAUSAL_TRAIN_DEV_ROUTE_SET_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_semantics_sha256": "580fb04a697dc3bc0bf8f06e7cbec690137f0da7ac3d8185c2e11abe8789167e",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "zero_support_development": "V2_ZERO_SUPPORT_DEVELOPMENT_CONTEXT_ONLY_EXCLUDED"
+}
