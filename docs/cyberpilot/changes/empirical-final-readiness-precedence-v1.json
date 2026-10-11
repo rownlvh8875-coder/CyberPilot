@@ -1,0 +1,35 @@
+{
+  "authoritative_sha256": "cd4591e909d6dd1c074b872f271a1d1d75ae8a5ae70aa17e7a6b88cf5bcad580",
+  "authoritative_source": "empirical-qlog-final-assessment-v1.json",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "fallback_allowed": false,
+  "generation": "EMPIRICAL_FINAL_READINESS_RESOLUTION_V2",
+  "historical_execution_sha256": "a016fd843cd4e5f7478951811127deb581cfee9870611dd9ddccd661e14156ec",
+  "historical_execution_source": "empirical-qlog-reconciliation-readiness-v1.json",
+  "historical_receipts_rewritten": false,
+  "intermediate_sha256": "bb70eee36c9b426e6d04ee4cceca0cd57cabeb8bee39e7736a7c43c37207fecf",
+  "intermediate_source": "empirical-causal-train-dev-readiness-v1.json",
+  "latest_filename_or_mtime_is_not_authority": true,
+  "missing_final_behavior": "FAIL_CLOSED_NO_READY_FALLBACK",
+  "precedence": [
+    "AUTHORITATIVE_FINAL_ASSESSMENT",
+    "EXECUTION_READINESS",
+    "INTERMEDIATE_EXTRACTION_STATE"
+  ],
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "c8cad72fcccb44c0e299ce9f05deae6819ca139d65505d711fa9960b74e64940",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_FINAL_READINESS_PRECEDENCE_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_identities": {
+    "empirical_causal_support_guard": "3ec8ff4b3799e8021bc88a4d5195e19d6829444959171ecbe9f619566a607509",
+    "empirical_final_readiness": "e979cca318f8f4f2373bf6d78fe75092e064cedf97ea34ffa60ab32c2bc375b4",
+    "empirical_final_readiness_publication": "9b5302ba12c3592d1f3dfff186ac5cab8a69a127758ab8bed02d01ede9da9262"
+  },
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}
