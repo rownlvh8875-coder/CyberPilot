@@ -1,0 +1,11 @@
+:root{color-scheme:dark;--bg:#101722;--panel:#192331;--line:#344358;--text:#edf2fa;--muted:#aab9cc;--base:#6bb6ff;--candidate:#f0b866}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px system-ui,sans-serif}
+header,main,footer{max-width:1500px;margin:auto;padding:24px}header{padding-bottom:8px}h1{font-size:32px;margin:8px 0}h2{font-size:18px;margin:0 0 10px}p{color:var(--muted);line-height:1.6}
+.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--base)}.banner{border:1px solid #786343;background:#302b23;padding:12px 16px;line-height:1.9;border-radius:8px;font-weight:600}
+section{padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:10px;margin-bottom:16px;overflow:auto}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid section{margin:0}.grid{margin-bottom:16px}
+.toolbar,.transport{display:flex;flex-wrap:wrap;align-items:center;gap:12px}label{display:flex;align-items:center;gap:8px;color:var(--muted)}select,button,input{background:#111b29;color:var(--text);border:1px solid #53647b;border-radius:5px;padding:9px}button{cursor:pointer}button:hover{border-color:var(--base)}button:disabled{opacity:.5}input[type=number]{width:90px}#scrubber{flex:1;min-width:200px}#clock{width:100%;font-family:monospace;color:var(--muted)}
+svg{display:block;width:100%;background:#121c29;border-radius:6px}svg text{fill:#b4c2d5;font-size:12px}svg .gridline{stroke:#354257;stroke-width:1}.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;margin:12px 0}.legend span{border-bottom:2px solid;padding-bottom:4px}
+pre{font:12px/1.7 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}th,td{text-align:right;padding:10px 12px;border-bottom:1px solid var(--line)}th:first-child,td:first-child{text-align:left}th{color:var(--muted);font-size:12px}
+.null{padding:8px 0;border-bottom:1px solid var(--line);color:var(--muted)}.badge{display:inline-block;background:#303c50;border-radius:4px;padding:5px 8px;margin:4px;color:#c7d6ec}#verdict{color:var(--candidate);font-weight:600}footer{color:var(--muted);padding-top:0}
+@media(max-width:950px){.grid{grid-template-columns:1fr}header,main,footer{padding:14px}}

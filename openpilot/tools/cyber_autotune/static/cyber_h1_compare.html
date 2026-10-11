@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CyberPilot · Paired H1 inspector</title><link rel="stylesheet" href="/static/cyber_h1_compare.css">
+<script defer src="/static/cyber_h1_compare.js"></script></head>
+<body>
+<header><div class="eyebrow">CYBERPILOT / OFFLINE EVIDENCE</div><h1>Paired H1 inspector</h1>
+<p>Frozen standalone campaigns · synchronized descriptive difference</p>
+<div class="banner">T1 DESCRIPTIVE COUNTERFACTUAL · DESCRIPTIVE COUNTERFACTUAL ONLY<br>
+NOT VEHICLE QUALIFIED · NOT A PHYSICAL EPS MODEL · NO INDEPENDENT REFERENCE<br>
+TA-B / SG-A ARE SEPARATE CAMPAIGNS · TA-B + SG-A NOT COMPOSED · HOLDOUT CLOSED</div></header>
+<main>
+<section class="toolbar"><label>Campaign<select id="campaign"></select></label><label>Scenario<select id="scenario"></select></label>
+<div id="status" role="status">Loading local catalog…</div></section>
+<section class="transport"><button id="prevEvent">Previous event</button><button id="prev">← Frame</button>
+<button id="play">Play</button><button id="next">Frame →</button><button id="nextEvent">Next event</button>
+<label>Speed<select id="speed"><option value=".25">0.25×</option><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label>
+<label>Frame<input id="index" type="number" min="0" value="0"></label><input id="scrubber" type="range" min="0" value="0" aria-label="Synchronized time scrubber">
+<div id="clock"></div></section>
+<div class="grid">
+<section><h2>Curvature · 1/m</h2><p>Shared intent · baseline / candidate PRE-STEP at capture k · POST-STEP at completion k+1</p><div id="curvatureLegend" class="legend"></div><svg id="curvature" viewBox="0 0 900 240" aria-label="Curvature overlay"></svg><div id="curvatureValues"></div></section>
+<section><h2>Torque · normalized</h2><p>COMMAND k versus descriptive delayed application at completion k+1</p><div id="torqueLegend" class="legend"></div><svg id="torque" viewBox="0 0 900 240" aria-label="Torque overlay"></svg><div id="torqueValues"></div></section>
+<section><h2>Pose · descriptive metres</h2><p>POST-STEP only · x/y metres · heading rad · no physical displacement claim</p><svg id="pose" viewBox="0 0 900 300" aria-label="Descriptive pose overlay"></svg><div id="poseValues"></div></section>
+<section><h2>Shared state &amp; event</h2><pre id="state"></pre><h2>Availability &amp; provenance</h2><div id="unavailable"></div><details><summary>Service health · unavailable</summary><pre id="health"></pre></details></section>
+</div>
+<section><h2>Candidate minus baseline · descriptive only</h2><p>Same phase subtraction only. Full visible run statistics have no acceptance threshold.</p>
+<table><thead><tr><th>Signal / phase</th><th>Current Δ</th><th>Max |Δ|</th><th>p50 |Δ|</th><th>p95 |Δ|</th><th>Final Δ</th><th>Coverage</th></tr></thead><tbody id="deltas"></tbody></table></section>
+<section><h2>Identity &amp; evidence</h2><div id="verdict"></div><p>No candidate acceptance. Viewer never recomputes a historical verdict.</p><pre id="identity"></pre><div id="blockers"></div></section>
+</main><footer>Local read-only inspector · no controller parameter editing · no vehicle authority</footer>
+</body></html>

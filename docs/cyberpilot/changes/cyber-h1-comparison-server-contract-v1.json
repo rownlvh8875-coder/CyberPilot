@@ -1,0 +1,35 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "cors": false,
+  "csp": "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+  "holdout_opening": "CLOSED",
+  "host_origin_validation": true,
+  "hosts": [
+    "127.0.0.1",
+    "localhost",
+    "::1"
+  ],
+  "methods": [
+    "GET",
+    "HEAD"
+  ],
+  "mutation_status": 405,
+  "opening_count": 0,
+  "optimizer_endpoint": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "16ca11db47de46f94617e7db4941b0834daba6600d63bf43d8846e347bbd4815",
+  "reference_promotable": false,
+  "schema": "CYBER_H1_COMPARISON_SERVER_CONTRACT_V1",
+  "sealed_reference_allowed": false,
+  "single_arm_server_unchanged": true,
+  "source_files": {
+    "cyber_h1_comparison_server.py": "a6d2339a2e668a23c2b81b6262888ef326e4aab77fdf95e66a4482b4bbf56fbf",
+    "static/cyber_h1_compare.css": "47f74f9d90e0a69400ca35eff556cc460adced63d49a61ad51149285495b0a1e",
+    "static/cyber_h1_compare.html": "30e7377a32f947385fef409f852e24345999e7ef134968e4f867fd3c3c08cafb",
+    "static/cyber_h1_compare.js": "6b0c0ba495664661b43e48f09347afc6a98935bde1f82e734d355862fadae266"
+  },
+  "vehicle_activation_allowed": false
+}
