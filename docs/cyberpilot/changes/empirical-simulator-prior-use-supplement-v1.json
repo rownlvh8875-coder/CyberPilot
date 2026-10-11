@@ -1,0 +1,272 @@
+{
+  "candidate_search_authorized": false,
+  "candidate_verdicts_imported": false,
+  "composition_authorized": false,
+  "historical_evaluation_route_count": 2,
+  "holdout_opening": "CLOSED",
+  "matched_route_count": 8,
+  "matched_source_hash_reference_count": 24,
+  "model_metrics_imported": false,
+  "numeric_payloads_opened": false,
+  "opening_count": 0,
+  "pipeline_untouched_not_global": true,
+  "private_store_closure_complete": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_connections": [
+    {
+      "blob_sha": "f2d3bfae6ce4b0897aa2b1ea1b9d604bd1d5c675",
+      "linked_result_sha256": null,
+      "receipt_sha256": "a39659ef9c0101c5e181529e6dc425c5066a15e239c0cf89b4c04179d6d0b0f1",
+      "state": "METADATA_INVENTORY"
+    },
+    {
+      "blob_sha": "35eed284fb5831b60ab12e5ff4606bb2e61fdf4c",
+      "linked_result_sha256": null,
+      "receipt_sha256": "0209324f39925f6844ed839b9d142c1cebc557fa1033dd70e62358a0317b4750",
+      "state": "CURRENT_SETTINGS_LANE_MPC_B25_EXPANDED_PROSPECTIVE_HOLDOUT_PRECOMMITTED"
+    },
+    {
+      "blob_sha": "087079b6f9697e8e7f0903e8ea03b57cae9c5ea4",
+      "linked_result_sha256": "6db7f95ce02c286e1288df0445b1b1df74d65515047f939cfb0bd223ce2f009a",
+      "receipt_sha256": "94b9a1367fcb0cc940e21671d630fe9a179ad0307e9e8335985e5d204c2a2e42",
+      "state": "CURRENT_SETTINGS_LANE_MPC_B26_COMMA_PROSPECTIVE_HOLDOUT_PRECOMMITTED"
+    },
+    {
+      "blob_sha": "0c8280691b05841848eed3764aa26ab344b638e4",
+      "linked_result_sha256": null,
+      "receipt_sha256": "bb0de54e79258609cf14d49c03c11765215415f02a8382af94b50523bf88b05f",
+      "state": "CURRENT_SETTINGS_LONGITUDINAL_S3_SEALED_HOLDOUT_PRECOMMITTED"
+    },
+    {
+      "blob_sha": "80fd8f9565014e5cfca18b50d9015e6e76ed5af8",
+      "linked_result_sha256": null,
+      "receipt_sha256": "957a4a6c35938dd3814b1413372ee88fa409de92eded45d4d83ebeb3defa243e",
+      "state": "CURRENT_SETTINGS_LANE_MPC_B25_PROSPECTIVE_TEMPORAL_POLICY_CONFIRMED_REVALIDATION_REQUIRED"
+    },
+    {
+      "blob_sha": "c133d52eae73ae4f4e77d4f71395f83ba4eea1a6",
+      "linked_result_sha256": null,
+      "receipt_sha256": "39fc42b2436db8c75b78816ba489cc531f1c4d8a06f19600fded089bb755e567",
+      "state": "CURRENT_SETTINGS_LANE_MPC_B25_PROSPECTIVE_HOLDOUT_DATA_INSUFFICIENT_REVALIDATION_REQUIRED"
+    },
+    {
+      "blob_sha": "6ad903b039c5e6c8f9ff013fad2991efa673d92a",
+      "linked_result_sha256": null,
+      "receipt_sha256": "6db7f95ce02c286e1288df0445b1b1df74d65515047f939cfb0bd223ce2f009a",
+      "state": "CURRENT_SETTINGS_LANE_MPC_B26_COMMA_CROSS_AXIS_SUPPLEMENTAL_CONFIRMED_REVALIDATION_REQUIRED"
+    }
+  ],
+  "receipt_sha256": "c291d5313f50aa14aba92ae23b8f08903694430cf3e5b88252ca8884558a6d11",
+  "reference_promotable": false,
+  "remaining_blockers": [
+    "DELETED_OR_UNLOCATED_LOCAL_SIMULATOR_STORE_HISTORY_UNATTESTED",
+    "UNMAPPED_SIMULATOR_RECEIPTS_REMAIN",
+    "NOT_ALL_ROUTE_ALIASES_HAVE_EXACT_CONTENT_HASH_PROOF"
+  ],
+  "repositories": [
+    {
+      "commit": "50af6679956ed4ef0f13214f832b8f65e212e370",
+      "evidence_json_count": 0,
+      "repository": "https://github.com/rownlvh8875-coder/Carrot-comma-SIM",
+      "tree_entries": 102,
+      "tree_sha256": "5123ce7bdc49bc3b1670a1325c870acddbe934884eb942b28a6cc540f9e83da6",
+      "tree_truncated": false
+    },
+    {
+      "commit": "4c2d094f188b072172de6e8d848dfb4a31b23bd9",
+      "evidence_json_count": 403,
+      "repository": "https://github.com/rownlvh8875-coder/carrotsimPrivately-",
+      "tree_entries": 2301,
+      "tree_sha256": "1a249ea8e9c145d6d67c85ac0dfa96e0ef49fdb1b7d361bf0f8c2a06ff596a6f",
+      "tree_truncated": false
+    }
+  ],
+  "reservation_created": false,
+  "route_uses": [
+    {
+      "route_id": "0f9d41da47a7061dc2956bdd050a515a2f4e650cb24be15f67a8cfdbb62259e0",
+      "uses": [
+        {
+          "evaluation_used": true,
+          "fitting_used": null,
+          "generation": "CURRENT_SETTINGS_LANE_MPC_B26_COMMA_PROSPECTIVE_HOLDOUT_PRECOMMITTED",
+          "holdout_used": null,
+          "linked_result_sha256": "6db7f95ce02c286e1288df0445b1b1df74d65515047f939cfb0bd223ce2f009a",
+          "metadata_opened": true,
+          "numeric_opened": true,
+          "project": "CARROT_SIMULATOR_PRIVATE",
+          "receipt_sha256": "94b9a1367fcb0cc940e21671d630fe9a179ad0307e9e8335985e5d204c2a2e42",
+          "role": "HISTORICAL_PRECOMMITTED_COHORT",
+          "selection_used": null,
+          "source_file_hash_match_count": 3,
+          "source_file_hash_set_sha256": "539d8c4e124d814f54db5a89728641c4beb493da35905b06a7522a33ec4caaa2",
+          "source_identity": "4c2d094f188b072172de6e8d848dfb4a31b23bd9",
+          "use_verdict": "SIMULATOR_HISTORICAL_EVALUATION_USED"
+        }
+      ]
+    },
+    {
+      "route_id": "10d150ef99b4b18c802e17cd870fdd63ffcd8a79e70df9954c707089023467d6",
+      "uses": [
+        {
+          "evaluation_used": null,
+          "fitting_used": null,
+          "generation": "CURRENT_SETTINGS_LANE_MPC_B25_EXPANDED_PROSPECTIVE_HOLDOUT_PRECOMMITTED",
+          "holdout_used": null,
+          "linked_result_sha256": null,
+          "metadata_opened": true,
+          "numeric_opened": null,
+          "project": "CARROT_SIMULATOR_PRIVATE",
+          "receipt_sha256": "0209324f39925f6844ed839b9d142c1cebc557fa1033dd70e62358a0317b4750",
+          "role": "HISTORICAL_PRECOMMITTED_COHORT",
+          "selection_used": null,
+          "source_file_hash_match_count": 3,
+          "source_file_hash_set_sha256": "4b6299e9793a314d09ab3cfe49ba638eb49f8ca82a043e0e5d2a25e2a9f1f436",
+          "source_identity": "4c2d094f188b072172de6e8d848dfb4a31b23bd9",
+          "use_verdict": "SIMULATOR_PRECOMMIT_REFERENCE_NUMERIC_STATUS_UNRESOLVED"
+        }
+      ]
+    },
+    {
+      "route_id": "23d926811ba9b9a50d6b6f21a8bd95e70b7a669b24cea97295b0c1829bbbc6f7",
+      "uses": [
+        {
+          "evaluation_used": null,
+          "fitting_used": null,
+          "generation": "CURRENT_SETTINGS_LANE_MPC_B25_EXPANDED_PROSPECTIVE_HOLDOUT_PRECOMMITTED",
+          "holdout_used": null,
+          "linked_result_sha256": null,
+          "metadata_opened": true,
+          "numeric_opened": null,
+          "project": "CARROT_SIMULATOR_PRIVATE",
+          "receipt_sha256": "0209324f39925f6844ed839b9d142c1cebc557fa1033dd70e62358a0317b4750",
+          "role": "HISTORICAL_PRECOMMITTED_COHORT",
+          "selection_used": null,
+          "source_file_hash_match_count": 3,
+          "source_file_hash_set_sha256": "d6cc9cb4a00288fcf0129b6f2126f55e062a25aef57a51c6654624655761fb55",
+          "source_identity": "4c2d094f188b072172de6e8d848dfb4a31b23bd9",
+          "use_verdict": "SIMULATOR_PRECOMMIT_REFERENCE_NUMERIC_STATUS_UNRESOLVED"
+        }
+      ]
+    },
+    {
+      "route_id": "61e0b1f1f500270cd175df415305fce43fbdc61bd7b2123eea5232e2ea1e0a8a",
+      "uses": [
+        {
+          "evaluation_used": true,
+          "fitting_used": null,
+          "generation": "CURRENT_SETTINGS_LANE_MPC_B26_COMMA_PROSPECTIVE_HOLDOUT_PRECOMMITTED",
+          "holdout_used": null,
+          "linked_result_sha256": "6db7f95ce02c286e1288df0445b1b1df74d65515047f939cfb0bd223ce2f009a",
+          "metadata_opened": true,
+          "numeric_opened": true,
+          "project": "CARROT_SIMULATOR_PRIVATE",
+          "receipt_sha256": "94b9a1367fcb0cc940e21671d630fe9a179ad0307e9e8335985e5d204c2a2e42",
+          "role": "HISTORICAL_PRECOMMITTED_COHORT",
+          "selection_used": null,
+          "source_file_hash_match_count": 3,
+          "source_file_hash_set_sha256": "852e77cd3c74dd8469febc02cbd7cbb02e83033de8e8fe7601bc5427364e6f5a",
+          "source_identity": "4c2d094f188b072172de6e8d848dfb4a31b23bd9",
+          "use_verdict": "SIMULATOR_HISTORICAL_EVALUATION_USED"
+        }
+      ]
+    },
+    {
+      "route_id": "b23a874b816a672fc09334d08f5ec00705b33e0a71c18b18d171ec53b3791017",
+      "uses": [
+        {
+          "evaluation_used": null,
+          "fitting_used": null,
+          "generation": "CURRENT_SETTINGS_LANE_MPC_B25_EXPANDED_PROSPECTIVE_HOLDOUT_PRECOMMITTED",
+          "holdout_used": null,
+          "linked_result_sha256": null,
+          "metadata_opened": true,
+          "numeric_opened": null,
+          "project": "CARROT_SIMULATOR_PRIVATE",
+          "receipt_sha256": "0209324f39925f6844ed839b9d142c1cebc557fa1033dd70e62358a0317b4750",
+          "role": "HISTORICAL_PRECOMMITTED_COHORT",
+          "selection_used": null,
+          "source_file_hash_match_count": 3,
+          "source_file_hash_set_sha256": "2703d401a2eb0b0d0ae28639b1df9a509cf5547dfb50bb794f0a630e8b79901c",
+          "source_identity": "4c2d094f188b072172de6e8d848dfb4a31b23bd9",
+          "use_verdict": "SIMULATOR_PRECOMMIT_REFERENCE_NUMERIC_STATUS_UNRESOLVED"
+        }
+      ]
+    },
+    {
+      "route_id": "b310bbdce0446108d64de517aff43eb879805f59045472d8288fb25bdcaedac2",
+      "uses": [
+        {
+          "evaluation_used": null,
+          "fitting_used": null,
+          "generation": "CURRENT_SETTINGS_LANE_MPC_B25_EXPANDED_PROSPECTIVE_HOLDOUT_PRECOMMITTED",
+          "holdout_used": null,
+          "linked_result_sha256": null,
+          "metadata_opened": true,
+          "numeric_opened": null,
+          "project": "CARROT_SIMULATOR_PRIVATE",
+          "receipt_sha256": "0209324f39925f6844ed839b9d142c1cebc557fa1033dd70e62358a0317b4750",
+          "role": "HISTORICAL_PRECOMMITTED_COHORT",
+          "selection_used": null,
+          "source_file_hash_match_count": 3,
+          "source_file_hash_set_sha256": "3b84786bd7882c0df0a1afc287567bbdf98e96b0183325d01a9d90a0257b9fee",
+          "source_identity": "4c2d094f188b072172de6e8d848dfb4a31b23bd9",
+          "use_verdict": "SIMULATOR_PRECOMMIT_REFERENCE_NUMERIC_STATUS_UNRESOLVED"
+        }
+      ]
+    },
+    {
+      "route_id": "fab7270a412cb211f12526eb054a703b1a4421e76f1ac0460e4e1ea9d64b7f69",
+      "uses": [
+        {
+          "evaluation_used": null,
+          "fitting_used": null,
+          "generation": "CURRENT_SETTINGS_LANE_MPC_B25_EXPANDED_PROSPECTIVE_HOLDOUT_PRECOMMITTED",
+          "holdout_used": null,
+          "linked_result_sha256": null,
+          "metadata_opened": true,
+          "numeric_opened": null,
+          "project": "CARROT_SIMULATOR_PRIVATE",
+          "receipt_sha256": "0209324f39925f6844ed839b9d142c1cebc557fa1033dd70e62358a0317b4750",
+          "role": "HISTORICAL_PRECOMMITTED_COHORT",
+          "selection_used": null,
+          "source_file_hash_match_count": 3,
+          "source_file_hash_set_sha256": "a5d345e67449b7c9965a4dabe51ed89663c2c23aa3c9649f0802c379d0a2746c",
+          "source_identity": "4c2d094f188b072172de6e8d848dfb4a31b23bd9",
+          "use_verdict": "SIMULATOR_PRECOMMIT_REFERENCE_NUMERIC_STATUS_UNRESOLVED"
+        }
+      ]
+    },
+    {
+      "route_id": "fc144459bbb6ca07b2be4ce590ea7114ea7f59af2522570c3a5d625f56a530b5",
+      "uses": [
+        {
+          "evaluation_used": null,
+          "fitting_used": null,
+          "generation": "CURRENT_SETTINGS_LANE_MPC_B25_EXPANDED_PROSPECTIVE_HOLDOUT_PRECOMMITTED",
+          "holdout_used": null,
+          "linked_result_sha256": null,
+          "metadata_opened": true,
+          "numeric_opened": null,
+          "project": "CARROT_SIMULATOR_PRIVATE",
+          "receipt_sha256": "0209324f39925f6844ed839b9d142c1cebc557fa1033dd70e62358a0317b4750",
+          "role": "HISTORICAL_PRECOMMITTED_COHORT",
+          "selection_used": null,
+          "source_file_hash_match_count": 3,
+          "source_file_hash_set_sha256": "6be03fa90790569650d578ff212c85d58d7b2d420531b6042ed56ccdf35aaadc",
+          "source_identity": "4c2d094f188b072172de6e8d848dfb4a31b23bd9",
+          "use_verdict": "SIMULATOR_PRECOMMIT_REFERENCE_NUMERIC_STATUS_UNRESOLVED"
+        }
+      ]
+    }
+  ],
+  "schema": "EMPIRICAL_SIMULATOR_PRIOR_USE_SUPPLEMENT_V1",
+  "sealed_reference_allowed": false,
+  "selected_receipts_audited": 7,
+  "sg_execution": false,
+  "ta_execution": false,
+  "untouched_promotions": 0,
+  "vehicle_activation_allowed": false
+}
