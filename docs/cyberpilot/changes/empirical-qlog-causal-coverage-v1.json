@@ -1,0 +1,437 @@
+{
+  "all_aligned_rows_preserved": true,
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "no_gap_fill": true,
+  "physical_rate_unit": "DBC_UNIT_EMPTY_PHYSICAL_RATE_SEMANTICS_UNRESOLVED",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "cd80460b7adc4f5fbe3d9f822ddd39974112ceb51551dfea022870ee2c9186e5",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_QLOG_CAUSAL_COVERAGE_V1",
+  "sealed_reference_allowed": false,
+  "segments": [
+    {
+      "bridge": {
+        "domain_conflicts": 0,
+        "eligible": 600,
+        "exact_ratio_match_count": 19,
+        "float32_exact_rate": 1.0,
+        "float32_expected_exact_count": 600,
+        "invalid": 0,
+        "max_residual": 1.2241540725543842e-08,
+        "median_residual": 4.6452275359598616e-10,
+        "normalized_saturated_count": 0,
+        "p95_residual": 3.1332514915938248e-09,
+        "physical_eps_application_proven": false,
+        "raw_saturated_count": 0,
+        "sign_conflicts": 0,
+        "status": "ROUTE_COMMAND_BRIDGE_CONFIRMED",
+        "steer_max": 409,
+        "total": 600
+      },
+      "cadence": "DOWNSAMPLED_RETAINED_EVENT_SEMANTICS_20MS_POLICY_UNCHANGED",
+      "coverage": {
+        "bins": {
+          "HIGH": {
+            "common_design_rows": 0,
+            "contiguous_runs": 0,
+            "diagnostic_valid": 0,
+            "longest_contiguous_samples": 0,
+            "total_grid_samples": 0
+          },
+          "LOW": {
+            "common_design_rows": 0,
+            "contiguous_runs": 0,
+            "diagnostic_valid": 0,
+            "longest_contiguous_samples": 0,
+            "total_grid_samples": 970
+          },
+          "MEDIUM": {
+            "common_design_rows": 0,
+            "contiguous_runs": 0,
+            "diagnostic_valid": 0,
+            "longest_contiguous_samples": 0,
+            "total_grid_samples": 5019
+          }
+        },
+        "causal_required_valid": 0,
+        "causal_run_length_distribution": {},
+        "causal_runs": 0,
+        "diagnostic_valid": 0,
+        "field_coverage": {
+          "command.normalized": 5989,
+          "command.raw": 5989,
+          "control.lat_active": 0,
+          "control.requested": 0,
+          "gyro.xyz": 0,
+          "state.angle_deg": 1198,
+          "state.driver_pressed": 1198,
+          "state.driver_torque": 1198,
+          "state.eps_fault": 1198,
+          "state.fault_permanent": 1198,
+          "state.fault_temporary": 1198,
+          "state.gear": 1198,
+          "state.rate": 1198,
+          "state.speed_mps": 1198,
+          "state.torque_eps": 1198,
+          "state.wheel_fl": 1198,
+          "state.wheel_fr": 1198,
+          "state.wheel_rl": 1198,
+          "state.wheel_rr": 1198,
+          "state.yaw_raw": 1198
+        },
+        "gyro_acquisition_clock_failures": 0,
+        "gyro_rejected": 0,
+        "gyro_xyz_available": 0,
+        "longest_causal_run": 0,
+        "mask_reason_counts": {
+          "DRIVER_OVERRIDE": 432,
+          "MISSING_OR_GAP": 5989,
+          "REPEATED_OUTPUT_EVENT": 5390,
+          "SOURCE_EVENT_GAP": 5980
+        },
+        "request_output_order": {
+          "REQUEST_BEFORE_OUTPUT": 5980
+        },
+        "required_field_coverage": {
+          "command.normalized": 5989,
+          "command.raw": 5989,
+          "control.lat_active": 0,
+          "control.requested": 0,
+          "state.angle_deg": 1198,
+          "state.driver_pressed": 1198,
+          "state.driver_torque": 1198,
+          "state.fault_permanent": 1198,
+          "state.fault_temporary": 1198,
+          "state.gear": 1198,
+          "state.rate": 1198,
+          "state.speed_mps": 1198
+        },
+        "simultaneous_command_coverage": 0,
+        "source_age": {
+          "command": {
+            "count": 5989,
+            "maximum_ns": 199427,
+            "median_ns": 107656.0,
+            "p95_ns": 139114.0
+          },
+          "control": {
+            "count": 5980,
+            "maximum_ns": 72136563,
+            "median_ns": 68080052.0,
+            "p95_ns": 70062708.0
+          },
+          "gyro": {
+            "count": 5929,
+            "maximum_ns": 1042166249,
+            "median_ns": 510462187.0,
+            "p95_ns": 981402269.7999998
+          },
+          "state": {
+            "count": 5989,
+            "maximum_ns": 101985073,
+            "median_ns": 49999929.0,
+            "p95_ns": 91543084.0
+          }
+        },
+        "source_message_counts": {
+          "command": 600,
+          "control": 600,
+          "gyro": 58,
+          "state": 600
+        },
+        "source_rate_finite_count": 600,
+        "total_grid_samples": 5989,
+        "transitions": {
+          "active_falling": 0,
+          "active_rising": 0,
+          "active_transition": 0,
+          "pressed_falling": 0,
+          "pressed_rising": 0,
+          "pressed_transition": 0,
+          "run_boundary": 0
+        }
+      },
+      "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "segment_sha256": "400982f5200d7a276d85692ce435d72efb5c36c8e85e074a753c1fab13ed8709",
+      "unavailable_fields": {
+        "actual_curvature": "NO_SOURCE_BOUND_MEASUREMENT_OR_RECONSTRUCTION",
+        "curvature_limited": "CURVATURE_LIMITED_UNAVAILABLE",
+        "desired_curvature": "NOT_IN_EXECUTION_WHITELIST",
+        "driver_limit_reason": "DRIVER_LIMIT_REASON_UNAVAILABLE",
+        "live_alive": "LIVE_SUBMASTER_HEALTH_NOT_LOGGED",
+        "live_freqOk": "LIVE_SUBMASTER_HEALTH_NOT_LOGGED",
+        "live_updated": "LIVE_SUBMASTER_HEALTH_NOT_LOGGED",
+        "physical_eps_applied_torque": "NO_PHYSICAL_EPS_ACKNOWLEDGEMENT",
+        "rate_limit_reason": "RATE_LIMIT_REASON_UNAVAILABLE",
+        "roll": "NOT_IN_EXECUTION_WHITELIST",
+        "safety_limited": "SAFETY_LIMITED_UNAVAILABLE",
+        "source_control_transaction_id": "REQUEST_OUTPUT_TRANSACTION_LINK_UNAVAILABLE"
+      }
+    },
+    {
+      "bridge": {
+        "domain_conflicts": 0,
+        "eligible": 601,
+        "exact_ratio_match_count": 16,
+        "float32_exact_rate": 1.0,
+        "float32_expected_exact_count": 601,
+        "invalid": 0,
+        "max_residual": 1.420893119830069e-08,
+        "median_residual": 7.742045823877497e-10,
+        "normalized_saturated_count": 0,
+        "p95_residual": 6.958732978734616e-09,
+        "physical_eps_application_proven": false,
+        "raw_saturated_count": 0,
+        "sign_conflicts": 0,
+        "status": "ROUTE_COMMAND_BRIDGE_CONFIRMED",
+        "steer_max": 409,
+        "total": 601
+      },
+      "cadence": "DOWNSAMPLED_RETAINED_EVENT_SEMANTICS_20MS_POLICY_UNCHANGED",
+      "coverage": {
+        "bins": {
+          "HIGH": {
+            "common_design_rows": 0,
+            "contiguous_runs": 0,
+            "diagnostic_valid": 0,
+            "longest_contiguous_samples": 0,
+            "total_grid_samples": 4080
+          },
+          "LOW": {
+            "common_design_rows": 0,
+            "contiguous_runs": 0,
+            "diagnostic_valid": 0,
+            "longest_contiguous_samples": 0,
+            "total_grid_samples": 50
+          },
+          "MEDIUM": {
+            "common_design_rows": 0,
+            "contiguous_runs": 0,
+            "diagnostic_valid": 0,
+            "longest_contiguous_samples": 0,
+            "total_grid_samples": 1870
+          }
+        },
+        "causal_required_valid": 0,
+        "causal_run_length_distribution": {},
+        "causal_runs": 0,
+        "diagnostic_valid": 0,
+        "field_coverage": {
+          "command.normalized": 6000,
+          "command.raw": 6000,
+          "control.lat_active": 0,
+          "control.requested": 0,
+          "gyro.xyz": 0,
+          "state.angle_deg": 1200,
+          "state.driver_pressed": 1200,
+          "state.driver_torque": 1200,
+          "state.eps_fault": 1200,
+          "state.fault_permanent": 1200,
+          "state.fault_temporary": 1200,
+          "state.gear": 1200,
+          "state.rate": 1200,
+          "state.speed_mps": 1200,
+          "state.torque_eps": 1200,
+          "state.wheel_fl": 1200,
+          "state.wheel_fr": 1200,
+          "state.wheel_rl": 1200,
+          "state.wheel_rr": 1200,
+          "state.yaw_raw": 1200
+        },
+        "gyro_acquisition_clock_failures": 0,
+        "gyro_rejected": 0,
+        "gyro_xyz_available": 0,
+        "longest_causal_run": 0,
+        "mask_reason_counts": {
+          "DRIVER_OVERRIDE": 310,
+          "MISSING_OR_GAP": 6000,
+          "REPEATED_OUTPUT_EVENT": 5400,
+          "SOURCE_EVENT_GAP": 5990
+        },
+        "request_output_order": {
+          "REQUEST_BEFORE_OUTPUT": 5990
+        },
+        "required_field_coverage": {
+          "command.normalized": 6000,
+          "command.raw": 6000,
+          "control.lat_active": 0,
+          "control.requested": 0,
+          "state.angle_deg": 1200,
+          "state.driver_pressed": 1200,
+          "state.driver_torque": 1200,
+          "state.fault_permanent": 1200,
+          "state.fault_temporary": 1200,
+          "state.gear": 1200,
+          "state.rate": 1200,
+          "state.speed_mps": 1200
+        },
+        "simultaneous_command_coverage": 0,
+        "source_age": {
+          "command": {
+            "count": 6000,
+            "maximum_ns": 149583,
+            "median_ns": 106302.0,
+            "p95_ns": 120318.15000000002
+          },
+          "control": {
+            "count": 5990,
+            "maximum_ns": 71851667,
+            "median_ns": 65844584.0,
+            "p95_ns": 67882689.5
+          },
+          "gyro": {
+            "count": 5970,
+            "maximum_ns": 1056001614,
+            "median_ns": 519095364.0,
+            "p95_ns": 985350833.0
+          },
+          "state": {
+            "count": 6000,
+            "maximum_ns": 99074936,
+            "median_ns": 51366468.0,
+            "p95_ns": 98063508.9
+          }
+        },
+        "source_message_counts": {
+          "command": 601,
+          "control": 600,
+          "gyro": 58,
+          "state": 601
+        },
+        "source_rate_finite_count": 601,
+        "total_grid_samples": 6000,
+        "transitions": {
+          "active_falling": 0,
+          "active_rising": 0,
+          "active_transition": 0,
+          "pressed_falling": 0,
+          "pressed_rising": 0,
+          "pressed_transition": 0,
+          "run_boundary": 0
+        }
+      },
+      "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "segment_sha256": "68260e1e5eb71df7fe9a73b7118b8587d6ab9d5a552ffe15d7e2ffd37d848abb",
+      "unavailable_fields": {
+        "actual_curvature": "NO_SOURCE_BOUND_MEASUREMENT_OR_RECONSTRUCTION",
+        "curvature_limited": "CURVATURE_LIMITED_UNAVAILABLE",
+        "desired_curvature": "NOT_IN_EXECUTION_WHITELIST",
+        "driver_limit_reason": "DRIVER_LIMIT_REASON_UNAVAILABLE",
+        "live_alive": "LIVE_SUBMASTER_HEALTH_NOT_LOGGED",
+        "live_freqOk": "LIVE_SUBMASTER_HEALTH_NOT_LOGGED",
+        "live_updated": "LIVE_SUBMASTER_HEALTH_NOT_LOGGED",
+        "physical_eps_applied_torque": "NO_PHYSICAL_EPS_ACKNOWLEDGEMENT",
+        "rate_limit_reason": "RATE_LIMIT_REASON_UNAVAILABLE",
+        "roll": "NOT_IN_EXECUTION_WHITELIST",
+        "safety_limited": "SAFETY_LIMITED_UNAVAILABLE",
+        "source_control_transaction_id": "REQUEST_OUTPUT_TRANSACTION_LINK_UNAVAILABLE"
+      }
+    }
+  ],
+  "service_inventory": [
+    {
+      "envelope_counts": {
+        "accelerometer": 58,
+        "cameraOdometry": 120,
+        "can": 3,
+        "carControl": 600,
+        "carOutput": 601,
+        "carParams": 2,
+        "carState": 601,
+        "clocks": 6,
+        "controlsState": 600,
+        "deviceState": 120,
+        "driverAssistance": 60,
+        "driverCameraState": 60,
+        "driverEncodeIdx": 1200,
+        "drivingModelData": 120,
+        "gpsLocationExternal": 32,
+        "gyroscope": 58,
+        "initData": 1,
+        "lateralPlan": 240,
+        "liveCalibration": 60,
+        "liveDelay": 240,
+        "liveParameters": 240,
+        "livePose": 300,
+        "liveTorqueParameters": 241,
+        "longitudinalPlan": 120,
+        "managerState": 120,
+        "navInstruction": 6,
+        "navInstructionCarrot": 120,
+        "onroadEvents": 88,
+        "pandaStates": 600,
+        "peripheralState": 120,
+        "procLog": 2,
+        "qRoadEncodeIdx": 1200,
+        "radarState": 240,
+        "roadCameraState": 60,
+        "roadEncodeIdx": 1200,
+        "selfdriveState": 600,
+        "sendcan": 43,
+        "sentinel": 2,
+        "soundPressure": 60,
+        "thumbnail": 1,
+        "uiDebug": 1199,
+        "wideRoadCameraState": 60,
+        "wideRoadEncodeIdx": 1200
+      },
+      "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "segment_sha256": "68260e1e5eb71df7fe9a73b7118b8587d6ab9d5a552ffe15d7e2ffd37d848abb"
+    },
+    {
+      "envelope_counts": {
+        "accelerometer": 58,
+        "cameraOdometry": 120,
+        "can": 3,
+        "carControl": 600,
+        "carOutput": 600,
+        "carParams": 1,
+        "carState": 600,
+        "clocks": 6,
+        "controlsState": 600,
+        "deviceState": 120,
+        "driverAssistance": 60,
+        "driverCameraState": 60,
+        "driverEncodeIdx": 1200,
+        "drivingModelData": 120,
+        "gpsLocationExternal": 31,
+        "gyroscope": 58,
+        "initData": 1,
+        "lateralPlan": 240,
+        "liveCalibration": 60,
+        "liveDelay": 240,
+        "liveParameters": 240,
+        "livePose": 301,
+        "liveTorqueParameters": 241,
+        "longitudinalPlan": 120,
+        "managerState": 120,
+        "navInstruction": 6,
+        "navInstructionCarrot": 120,
+        "onroadEvents": 98,
+        "pandaStates": 600,
+        "peripheralState": 120,
+        "procLog": 2,
+        "qRoadEncodeIdx": 1200,
+        "radarState": 240,
+        "roadCameraState": 60,
+        "roadEncodeIdx": 1200,
+        "selfdriveState": 600,
+        "sendcan": 43,
+        "sentinel": 2,
+        "soundPressure": 60,
+        "thumbnail": 1,
+        "uiDebug": 1192,
+        "wideRoadCameraState": 60,
+        "wideRoadEncodeIdx": 1200
+      },
+      "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "segment_sha256": "400982f5200d7a276d85692ce435d72efb5c36c8e85e074a753c1fab13ed8709"
+    }
+  ],
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

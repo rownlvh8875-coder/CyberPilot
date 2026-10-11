@@ -1,0 +1,549 @@
+{
+  "cadence_admission": "RETAIN_100HZ_GRID_20MS_AGE_NULL_GAP_NO_INTERPOLATION",
+  "candidate_search_authorized": false,
+  "commit": "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29",
+  "composition_authorized": false,
+  "equivalence": {
+    "carControl.actuators.torque": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "carControl.latActive": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "carOutput.actuatorsOutput.torque": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "carOutput.actuatorsOutput.torqueOutputCan": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "carParams.alternativeExperience": "EXACT_EQUIVALENT",
+    "carParams.brand": "EXACT_EQUIVALENT",
+    "carParams.carFingerprint": "EXACT_EQUIVALENT",
+    "carParams.carName": "EXACT_EQUIVALENT",
+    "carParams.centerToFront": "EXACT_EQUIVALENT",
+    "carParams.enableBsm": "EXACT_EQUIVALENT",
+    "carParams.extFlags": "EXACT_EQUIVALENT",
+    "carParams.flags": "EXACT_EQUIVALENT",
+    "carParams.lateralTuning": "EXACT_EQUIVALENT",
+    "carParams.mass": "EXACT_EQUIVALENT",
+    "carParams.minSteerSpeed": "EXACT_EQUIVALENT",
+    "carParams.radarUnavailable": "EXACT_EQUIVALENT",
+    "carParams.safetyConfigs": "EXACT_EQUIVALENT",
+    "carParams.steerActuatorDelay": "EXACT_EQUIVALENT",
+    "carParams.steerAtStandstill": "EXACT_EQUIVALENT",
+    "carParams.steerControlType": "EXACT_EQUIVALENT",
+    "carParams.steerLimitTimer": "EXACT_EQUIVALENT",
+    "carParams.steerRatio": "EXACT_EQUIVALENT",
+    "carParams.steerRatioRear": "EXACT_EQUIVALENT",
+    "carParams.steeringAngleDeadzoneDeg": "EXACT_EQUIVALENT",
+    "carParams.tireStiffnessFront": "EXACT_EQUIVALENT",
+    "carParams.tireStiffnessRear": "EXACT_EQUIVALENT",
+    "carParams.transmissionType": "EXACT_EQUIVALENT",
+    "carParams.wheelbase": "EXACT_EQUIVALENT",
+    "carState.gearShifter": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "carState.steerFaultPermanent": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "carState.steerFaultTemporary": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "carState.steeringAngleDeg": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "carState.steeringPressed": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "carState.steeringRateDeg": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "carState.steeringTorque": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "carState.steeringTorqueEps": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "carState.vEgo": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "carState.wheelSpeeds.fl/fr/rl/rr": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "carState.yawRate": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "gyroscope.gyroUncalibrated.v": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "gyroscope.source": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "gyroscope.timestamp": "DOWNSAMPLED_BUT_SEMANTICALLY_EQUIVALENT",
+    "initData.bootlogId": "EXACT_EQUIVALENT",
+    "initData.dirty": "EXACT_EQUIVALENT",
+    "initData.dongleId": "EXACT_EQUIVALENT",
+    "initData.gitBranch": "EXACT_EQUIVALENT",
+    "initData.gitCommit": "EXACT_EQUIVALENT",
+    "initData.gitRemote": "EXACT_EQUIVALENT",
+    "initData.osVersion": "EXACT_EQUIVALENT",
+    "initData.params.entries.ALLOWLIST_ONLY": "EXACT_EQUIVALENT",
+    "initData.version": "EXACT_EQUIVALENT",
+    "initData.wallTimeNanos": "EXACT_EQUIVALENT"
+  },
+  "facts": {
+    "car_params": "DECIMATION_ONE_ALL_PUBLISHED_MESSAGES_RETAINED",
+    "counter_rotation": "COUNTER_PERSISTS_ACROSS_SEGMENT_ROTATION_RESETS_AT_LOGGERD_START",
+    "excluded_services": "DECIMATION_NONE_EXCLUDED_ORDINARY_SERVICE_MESSAGES",
+    "forbidden_services": "MAY_EXIST_IN_QLOG_ENVELOPE_BODY_NEVER_DEREFERENCED",
+    "init_data": "ONCE_PER_LOGGERSTATE_REUSED_EVERY_SEGMENT_BOTH_STREAMS",
+    "message_order": "PER_SERVICE_ARRIVAL_ORDER_NO_GLOBAL_TIMESTAMP_SORT_OR_TRANSACTION_ID",
+    "retained_event": "UNCHANGED_EVENT_BYTES_LOGMONOTIME_VALID_AND_BODY_PRESERVED",
+    "rotation": "RLOG_QLOG_OPEN_TOGETHER_SHARED_ORDINAL_SENTINELS_TO_BOTH",
+    "selection": "PER_SERVICE_COUNTER_MODULO_DECIMATION_FIRST_COUNTER_ZERO"
+  },
+  "files": {
+    "logger": {
+      "file_sha256": "ddf2ffb10b871d466f17d13859e2cdeac4b454573a495f82ebac45f303ef9ccd",
+      "path": "openpilot/system/loggerd/logger.cc",
+      "scope": "EXACT_FULL_FILE_REVIEWED_SLICE",
+      "source_slice_sha256": "ddf2ffb10b871d466f17d13859e2cdeac4b454573a495f82ebac45f303ef9ccd"
+    },
+    "logger_header": {
+      "file_sha256": "66eb66cfa79326994aa2f38953ee48d31bea0f5356ae3d6fe0de1f8c30ed406d",
+      "path": "openpilot/system/loggerd/logger.h",
+      "scope": "EXACT_FULL_FILE_REVIEWED_SLICE",
+      "source_slice_sha256": "66eb66cfa79326994aa2f38953ee48d31bea0f5356ae3d6fe0de1f8c30ed406d"
+    },
+    "loggerd": {
+      "file_sha256": "09b91ed7fc0517b8f0aa34eba2c3278a4ff87d6312fa4afca3cac7fcb8c3b160",
+      "path": "openpilot/system/loggerd/loggerd.cc",
+      "scope": "EXACT_FULL_FILE_REVIEWED_SLICE",
+      "source_slice_sha256": "09b91ed7fc0517b8f0aa34eba2c3278a4ff87d6312fa4afca3cac7fcb8c3b160"
+    },
+    "services": {
+      "file_sha256": "9f44630c58622ad7285de56b80ca357ce9797904e4c2dd46fce19bb60a84c7dd",
+      "path": "openpilot/cereal/services.py",
+      "scope": "EXACT_FULL_FILE_REVIEWED_SLICE",
+      "source_slice_sha256": "9f44630c58622ad7285de56b80ca357ce9797904e4c2dd46fce19bb60a84c7dd"
+    }
+  },
+  "license_status": "EXACT_LICENSE_BLOBS_BOUND_REVIEW_REQUIRED",
+  "licenses": {
+    "LICENSE": "716ce815a0467219c59ec2433e6bce7f32efc45240725c6d3141a52b111d2558"
+  },
+  "live_submaster_health": "NOT_AVAILABLE",
+  "physical_eps_application": "NOT_AVAILABLE",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "66b2f383abc24e150d21c1c615e0487e40adae7e4b3f80cad8bf0e632159d96e",
+  "reference_promotable": false,
+  "repository": "https://github.com/ajouatom/openpilot",
+  "schema": "EMPIRICAL_QLOG_SOURCE_SEMANTICS_V1",
+  "schema_and_signal_semantics": "EXACT_EXISTING_SOURCE_FINGERPRINT_NO_PHYSICAL_UNIT_PROMOTION",
+  "sealed_reference_allowed": false,
+  "services": {
+    "accelerometer": {
+      "decimation": 104,
+      "frequency": 104.0,
+      "should_log": true
+    },
+    "alertDebug": {
+      "decimation": 5,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "androidLog": {
+      "decimation": null,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "audioFeedback": {
+      "decimation": 1,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "bookmarkButton": {
+      "decimation": 1,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "cameraOdometry": {
+      "decimation": 10,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "can": {
+      "decimation": 2053,
+      "frequency": 100.0,
+      "should_log": true
+    },
+    "carControl": {
+      "decimation": 10,
+      "frequency": 100.0,
+      "should_log": true
+    },
+    "carOutput": {
+      "decimation": 10,
+      "frequency": 100.0,
+      "should_log": true
+    },
+    "carParams": {
+      "decimation": 1,
+      "frequency": 0.02,
+      "should_log": true
+    },
+    "carState": {
+      "decimation": 10,
+      "frequency": 100.0,
+      "should_log": true
+    },
+    "carrotMan": {
+      "decimation": null,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "clocks": {
+      "decimation": 1,
+      "frequency": 0.1,
+      "should_log": true
+    },
+    "controlsState": {
+      "decimation": 10,
+      "frequency": 100.0,
+      "should_log": true
+    },
+    "customReservedRawData0": {
+      "decimation": null,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "customReservedRawData1": {
+      "decimation": null,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "customReservedRawData2": {
+      "decimation": null,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "deviceState": {
+      "decimation": 1,
+      "frequency": 2.0,
+      "should_log": true
+    },
+    "driverAssistance": {
+      "decimation": 20,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "driverCameraState": {
+      "decimation": 20,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "driverEncodeData": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "driverEncodeIdx": {
+      "decimation": 1,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "driverMonitoringState": {
+      "decimation": 10,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "driverStateV2": {
+      "decimation": 10,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "drivingModelData": {
+      "decimation": 10,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "errorLogMessage": {
+      "decimation": 1,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "gnssMeasurements": {
+      "decimation": 10,
+      "frequency": 10.0,
+      "should_log": true
+    },
+    "gpsLocation": {
+      "decimation": 1,
+      "frequency": 1.0,
+      "should_log": true
+    },
+    "gpsLocationExternal": {
+      "decimation": 10,
+      "frequency": 10.0,
+      "should_log": true
+    },
+    "gpsNMEA": {
+      "decimation": null,
+      "frequency": 9.0,
+      "should_log": true
+    },
+    "gyroscope": {
+      "decimation": 104,
+      "frequency": 104.0,
+      "should_log": true
+    },
+    "lateralManeuverPlan": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "lateralPlan": {
+      "decimation": 5,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "lightSensor": {
+      "decimation": 100,
+      "frequency": 100.0,
+      "should_log": true
+    },
+    "liveCalibration": {
+      "decimation": 4,
+      "frequency": 4.0,
+      "should_log": true
+    },
+    "liveDelay": {
+      "decimation": 1,
+      "frequency": 4.0,
+      "should_log": true
+    },
+    "liveParameters": {
+      "decimation": 5,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "livePose": {
+      "decimation": 4,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "liveTorqueParameters": {
+      "decimation": 1,
+      "frequency": 4.0,
+      "should_log": true
+    },
+    "liveTracks": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "livestreamDriverEncodeData": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "livestreamDriverEncodeIdx": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "livestreamRoadEncodeData": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "livestreamRoadEncodeIdx": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "livestreamWideRoadEncodeData": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "livestreamWideRoadEncodeIdx": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "logMessage": {
+      "decimation": null,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "longitudinalPlan": {
+      "decimation": 10,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "magnetometer": {
+      "decimation": null,
+      "frequency": 25.0,
+      "should_log": true
+    },
+    "managerState": {
+      "decimation": 1,
+      "frequency": 2.0,
+      "should_log": true
+    },
+    "mapRenderState": {
+      "decimation": 1,
+      "frequency": 2.0,
+      "should_log": true
+    },
+    "modelV2": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "navInstruction": {
+      "decimation": 10,
+      "frequency": 1.0,
+      "should_log": true
+    },
+    "navInstructionCarrot": {
+      "decimation": 10,
+      "frequency": 1.0,
+      "should_log": true
+    },
+    "navModel": {
+      "decimation": 4,
+      "frequency": 2.0,
+      "should_log": true
+    },
+    "navRoute": {
+      "decimation": null,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "navRouteNavd": {
+      "decimation": null,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "navThumbnail": {
+      "decimation": null,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "onroadEvents": {
+      "decimation": 1,
+      "frequency": 1.0,
+      "should_log": true
+    },
+    "pandaStates": {
+      "decimation": 1,
+      "frequency": 10.0,
+      "should_log": true
+    },
+    "peripheralState": {
+      "decimation": 1,
+      "frequency": 2.0,
+      "should_log": true
+    },
+    "procLog": {
+      "decimation": 15,
+      "frequency": 0.5,
+      "should_log": true
+    },
+    "qRoadEncodeData": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "qRoadEncodeIdx": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "qcomGnss": {
+      "decimation": null,
+      "frequency": 2.0,
+      "should_log": true
+    },
+    "radarState": {
+      "decimation": 5,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "rawAudioData": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "roadCameraState": {
+      "decimation": 20,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "roadEncodeData": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "roadEncodeIdx": {
+      "decimation": 1,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "selfdriveState": {
+      "decimation": 10,
+      "frequency": 100.0,
+      "should_log": true
+    },
+    "sendcan": {
+      "decimation": 139,
+      "frequency": 100.0,
+      "should_log": true
+    },
+    "soundPressure": {
+      "decimation": 10,
+      "frequency": 10.0,
+      "should_log": true
+    },
+    "temperatureSensor": {
+      "decimation": 200,
+      "frequency": 2.0,
+      "should_log": true
+    },
+    "testJoystick": {
+      "decimation": null,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "thumbnail": {
+      "decimation": 1,
+      "frequency": 0.016666666666666666,
+      "should_log": true
+    },
+    "touch": {
+      "decimation": 1,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "ubloxGnss": {
+      "decimation": null,
+      "frequency": 10.0,
+      "should_log": true
+    },
+    "ubloxRaw": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "uiDebug": {
+      "decimation": 1,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "uploaderState": {
+      "decimation": 1,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "userBookmark": {
+      "decimation": 1,
+      "frequency": 0.0,
+      "should_log": true
+    },
+    "wideRoadCameraState": {
+      "decimation": 20,
+      "frequency": 20.0,
+      "should_log": true
+    },
+    "wideRoadEncodeData": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "wideRoadEncodeIdx": {
+      "decimation": 1,
+      "frequency": 20.0,
+      "should_log": false
+    },
+    "youtubeRoadEncodeData": {
+      "decimation": null,
+      "frequency": 20.0,
+      "should_log": false
+    }
+  },
+  "sg_execution": false,
+  "source_fingerprint_sha256": "720f52530dfd7773350f5dcc19e7f12547ac0ce075ab3d165e197d536a15590f",
+  "status": "QLOG_SOURCE_SEMANTICS_COMPLETE",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

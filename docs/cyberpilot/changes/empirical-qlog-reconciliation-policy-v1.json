@@ -1,0 +1,143 @@
+{
+  "cadence": "QLOG_DOWNSAMPLED_NOT_100HZ_EQUIVALENT_NO_AGE_RELAXATION",
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_execution": "NOT_RUN",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "dt_ns": 10000000,
+  "executor_sources": {
+    "empirical_qlog_publication": "6e033785d86f720fdba8d9645d6275dcd7e642f41a566d0e1d5835b7e0955b08",
+    "empirical_qlog_reconciliation": "3b37f949973eda350351d4971dc318062ef66585a92b422469f35294a2e89a83",
+    "empirical_qlog_reconciliation_policy": "61efbc38c2200da2fbc43bf16a7120303b87af9c535d69cfa0a83008be54d6d3",
+    "empirical_qlog_source_audit": "8fefeacc82f525371b74358592e1ca59cb3b72eff7024fc4ce12a68d5476f3f3"
+  },
+  "generation": "QLOG_HISTORICAL_RECONCILIATION_V1",
+  "grid": "LATEST_PAST_NO_FILL_NO_INTERPOLATION_ALL_ROWS_SEGMENT_LOCAL",
+  "historical_inputs": {
+    "empirical-causal-command-stages-v1.json": "251a7d82325773534a1f55e86edbd27b922d39d1f5086806515806bcb0cf3e10",
+    "empirical-causal-context-schema-v2-execution-v1.json": "9992b4d67db40484acd642419b6a4cccb776bbc749ea29b0b5291c6969281b31",
+    "empirical-causal-h1-mapping-v1.json": "0998cb9fbd072127d022a54c9417e5b6823864734f5e145309f6f3eaba74219e",
+    "empirical-causal-legacy-reproduction-v1.json": "b7b22ff622a094f0017b7945ccfdcc03274bab43dc912461730e5843a895ea70",
+    "empirical-causal-numeric-authorization-v1.json": "c16b154c4780d9d28199d7a502295dad0396cc48e5bbfc7017890910316c89d2",
+    "empirical-causal-route-coverage-v1.json": "d2f4166bd51ee9e134c5c8126aafe485cd92ee50e48a386f911a65f478c994e1",
+    "empirical-causal-signal-provenance-v1.json": "a9df216a7766b073f5fe55734e679fa3f4bbae029727b0d31227e9f7cde5a719",
+    "empirical-causal-train-dev-policy-v1.json": "661d0dc9d5bdf79e70f69ef9aeb589314ef82fd0c845ac13d72ce208346182fb",
+    "empirical-causal-train-dev-readiness-v1.json": "bb70eee36c9b426e6d04ee4cceca0cd57cabeb8bee39e7736a7c43c37207fecf",
+    "empirical-causal-train-dev-repeatability-v1.json": "51f525ed7b3b560b856fe62018471613935892554b0d86f8ebddb58400b886ad",
+    "empirical-causal-train-dev-route-set-v1.json": "e1b55f689677f46eabe96e4b0a0b3482543266a3abde3f680459dfaa78fd13d8"
+  },
+  "holdout": "HOLDOUT_OPENING_CLOSED",
+  "max_age_ns": 20000000,
+  "merge": "VIRTUAL_READ_ONLY_154_RLOG_REFERENCE_PLUS_TWO_NEW_QLOG_RECEIPTS",
+  "model_fitting": "NOT_RUN",
+  "model_selection": "NOT_RUN",
+  "numeric_scope": "EXACT_TWO_HISTORICALLY_EXCLUDED_QLOGS_ONLY",
+  "opening_count": 0,
+  "origin": "OLD_GLOBAL_INDICES_UNCHANGED_SEPARATE_RECONCILED_GLOBAL_INDEX_OVERLAY",
+  "privacy": "AGGREGATES_HASHES_ONLY_NO_PATH_CLOCK_ROW_SIGNAL_OR_PRIVATE_ARRAY",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "0137693603f08ab22c4939362627b8c472638bb045f13a25424fa12c1f9f8534",
+  "reference_promotable": false,
+  "reservation": "NONE",
+  "reused_executor_sources": {
+    "alignment": "0c02d09781dbb4e9e281f3d59b8ffb68571a90d86d1fc134f54e362c25c0245f",
+    "execution": "2d15c63cd79dbaa6161921bcee58908c2558222d1a522f060b933fef5355c2bc",
+    "policy": "b7613fd4169e8cd9a79b54f9ba6c84d7c3f4361fe2e18b0b7c85b9e8f6d2794b",
+    "reader": "44aaf31270f7ea2e59869ba1a5fd8f486e114cfa071678792c62ba2d8caa6a82",
+    "store": "af72bc24a54029bd1f91f20180e67525f007ca3d420b5a84b336f3825b02390d"
+  },
+  "role": "RETROSPECTIVE_TRAIN_DEV_CV_POOL",
+  "schema": "EMPIRICAL_QLOG_RECONCILIATION_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "signal_whitelist": {
+    "carControl": [
+      "actuators.torque",
+      "latActive"
+    ],
+    "carOutput": [
+      "actuatorsOutput.torque",
+      "actuatorsOutput.torqueOutputCan"
+    ],
+    "carParams": [
+      "carFingerprint",
+      "steerControlType",
+      "steerRatio",
+      "wheelbase",
+      "centerToFront",
+      "extFlags",
+      "steerRatioRear",
+      "steerAtStandstill",
+      "mass",
+      "tireStiffnessFront",
+      "tireStiffnessRear",
+      "lateralTuning",
+      "flags",
+      "safetyConfigs",
+      "minSteerSpeed",
+      "steerActuatorDelay",
+      "steerLimitTimer",
+      "steeringAngleDeadzoneDeg",
+      "brand",
+      "carName",
+      "radarUnavailable",
+      "enableBsm",
+      "transmissionType",
+      "alternativeExperience"
+    ],
+    "carState": [
+      "steeringAngleDeg",
+      "steeringRateDeg",
+      "steeringPressed",
+      "steeringTorque",
+      "steeringTorqueEps",
+      "steerFaultTemporary",
+      "steerFaultPermanent",
+      "vEgo",
+      "wheelSpeeds.fl/fr/rl/rr",
+      "gearShifter",
+      "yawRate"
+    ],
+    "gyroscope": [
+      "source",
+      "timestamp",
+      "gyroUncalibrated.v"
+    ],
+    "initData": [
+      "gitCommit",
+      "gitRemote",
+      "gitBranch",
+      "version",
+      "dirty",
+      "osVersion",
+      "wallTimeNanos",
+      "bootlogId",
+      "dongleId",
+      "params.entries.ALLOWLIST_ONLY"
+    ]
+  },
+  "ta_execution": false,
+  "unavailable_fields": {
+    "actual_curvature": "NO_SOURCE_BOUND_MEASUREMENT_OR_RECONSTRUCTION",
+    "curvature_limited": "CURVATURE_LIMITED_UNAVAILABLE",
+    "desired_curvature": "NOT_IN_EXECUTION_WHITELIST",
+    "driver_limit_reason": "DRIVER_LIMIT_REASON_UNAVAILABLE",
+    "live_alive": "LIVE_SUBMASTER_HEALTH_NOT_LOGGED",
+    "live_freqOk": "LIVE_SUBMASTER_HEALTH_NOT_LOGGED",
+    "live_updated": "LIVE_SUBMASTER_HEALTH_NOT_LOGGED",
+    "physical_eps_applied_torque": "NO_PHYSICAL_EPS_ACKNOWLEDGEMENT",
+    "rate_limit_reason": "RATE_LIMIT_REASON_UNAVAILABLE",
+    "roll": "NOT_IN_EXECUTION_WHITELIST",
+    "safety_limited": "SAFETY_LIMITED_UNAVAILABLE",
+    "source_control_transaction_id": "REQUEST_OUTPUT_TRANSACTION_LINK_UNAVAILABLE"
+  },
+  "vehicle_activation_allowed": false
+}
