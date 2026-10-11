@@ -1,0 +1,83 @@
+{
+  "audit_baseline": "46e41ad2f2e11cd4aee926b47d037c46d226108c",
+  "automatic_tier_promotion": false,
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "device_write_allowed": false,
+  "execution_allowed": false,
+  "fidelity_is_vehicle_qualification": false,
+  "forbidden_claims": [
+    "REAL_VEHICLE_STABLE",
+    "VEHICLE_QUALIFIED",
+    "HOLDOUT_VALIDATED_FROM_SYNTHETIC",
+    "MODEL_V2_INDEPENDENT_REFERENCE",
+    "TUNING_AUTHORITY"
+  ],
+  "future_data_readiness_sha256": "f6ff56d3560d891eb48aaeacf33e93fb6e639c322dacb8bc55882885ef23fd2d",
+  "higher_tiers_available": false,
+  "historical_claim_ceiling_only": {
+    "SG_frozen_command_replay": "T1_DESCRIPTIVE_COUNTERFACTUAL",
+    "SG_own_feedback_descriptive_loop": "T1_DESCRIPTIVE_COUNTERFACTUAL",
+    "TA_B_descriptive_screen": "T1_DESCRIPTIVE_COUNTERFACTUAL",
+    "empirical_one_step_or_CV": "NOT_SIMULATION_OR_CLOSED_LOOP_EVIDENCE",
+    "native_process_replay": "T0_REPLAY"
+  },
+  "historical_verdicts_reinterpreted": false,
+  "implementation_base": "3a3bec6f07fc7c217e4c8a024217e755be065261",
+  "plant_imported": false,
+  "production_authority": false,
+  "production_observer_implemented": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "d9c152d2b39c96bee17153929aaef9f7b66b801b0c8e87b74fca29dce597b096",
+  "reference_promotable": false,
+  "scaffolding_sources": {
+    "simulator_reuse_contracts.py": "184359ca114421440331966dbc97da36ee9ed6626614fec7b4b7b40fb86696cc",
+    "simulator_reuse_scaffolding.py": "ac85cdf6cb0969d82fd5fc1da9c0ccd2afe2d3b216e16f1c605a6d2abbfdab52"
+  },
+  "schema": "CYBER_SIMULATION_FIDELITY_CONTRACT_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "status": "CONTRACT_ONLY",
+  "ta_execution": false,
+  "tiers": {
+    "T0_REPLAY": {
+      "scope": "recorded/process replay; no altered ego-feedback claim"
+    },
+    "T1_DESCRIPTIVE_COUNTERFACTUAL": {
+      "scope": "descriptive plant or frozen-command counterfactual; feedback ordering explicitly labelled"
+    },
+    "T2_EMPIRICAL_PLANT_CLOSED_LOOP": {
+      "requirements": [
+        "admissible frozen empirical plant",
+        "untouched holdout evaluation",
+        "measured unit/frame provenance",
+        "coverage domain",
+        "per-arm feedback/state/delay proof"
+      ],
+      "scope": "empirical plant with own feedback"
+    },
+    "T3_SENSOR_WORLD_CLOSED_LOOP": {
+      "requirements": [
+        "T2 requirements",
+        "sensor and interactive world feedback identities",
+        "separate calibration/reference validation"
+      ],
+      "scope": "sensor/world feedback"
+    }
+  },
+  "vehicle_activation_allowed": false,
+  "vehicle_states": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}
