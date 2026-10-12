@@ -1,0 +1,87 @@
+{
+  "admission_gate_sha256": "fe645a15dfba84dd7fbc5a7756b817d9e61a3bc7bfc5e1ee56234ed2ebd06786",
+  "authority": {
+    "candidate_execution": false,
+    "composition": false,
+    "cv_scoring": false,
+    "device": false,
+    "fitting": false,
+    "holdout_opening": false,
+    "metric_execution": false,
+    "normalizer_fitting": false,
+    "pooled_refit": false,
+    "prediction": false,
+    "private_array_access": false,
+    "production": false,
+    "qlog_support": false,
+    "raw_opening": false,
+    "residual": false,
+    "rollout": false,
+    "selection": false,
+    "sg": false,
+    "ta": false,
+    "vehicle": false
+  },
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "direction": "LEXICOGRAPHIC_ASCENDING",
+  "equal": "EXACT_COMPUTED_FLOAT_EQUALITY_NO_EPSILON",
+  "execution": "NOT_RUN",
+  "forbidden": [
+    "SUBJECTIVE_GRAPH_CHOICE",
+    "ONE_FOLD_OVERRIDE",
+    "LOCAL_SEARCH",
+    "CANDIDATE_ADDITION",
+    "METRIC_CHANGE",
+    "GATE_RELAXATION",
+    "TIE_BREAK_CHANGE",
+    "NON_RAIL_RANKING"
+  ],
+  "holdout_model_admission": false,
+  "independent_validation": false,
+  "input_set": "ONLY_CANDIDATES_PASSING_BOTH_FOLDS_ALL_GATES",
+  "keys": [
+    "WORST_ROLLOUT_RMSE_RATIO",
+    "WORST_ONE_STEP_P95_RATIO",
+    "PARAMETER_COUNT",
+    "L",
+    "d",
+    "CANDIDATE_ID"
+  ],
+  "multiple": {
+    "action": "LEXICOGRAPHIC_MIN_OF_FROZEN_KEYS",
+    "status": "S2_RI_RETROSPECTIVE_CV_SELECTED"
+  },
+  "one": {
+    "action": "SOLE_ADMISSIBLE_ID_RETROSPECTIVE_ONLY",
+    "status": "S2_RI_SINGLE_ADMISSIBLE_CANDIDATE"
+  },
+  "pooled_refit": "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "ratio": {
+    "json_infinity": "POSITIVE_INFINITY_SYMBOL_NOT_NONSTANDARD_JSON_NUMBER",
+    "negative_or_nonfinite_input": "REJECT_METRIC",
+    "positive_denominator": "FLOAT64_NUMERATOR_DIVIDE_DENOMINATOR",
+    "positive_over_zero": "POSITIVE_INFINITY",
+    "zero_over_zero": 1.0
+  },
+  "receipt_sha256": "443a6ddc5aa713cc8efe1ced5cd5dedf35b0256f9cefeeb0adc7d5f893550633",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_S2_RI_SELECTION_RULE_V1",
+  "sealed_reference_allowed": false,
+  "selected_candidate": null,
+  "selection_output": "FUTURE_SELECTED_CONFIGURATION_PLUS_TWO_FOLD_MODEL_RECEIPTS_NOT_FINAL_MODEL",
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "worst_one_step": "MAX_CANDIDATE_NEXT_ANGLE_P95_OVER_HOLD_LAST_NEXT_ANGLE_P95_ACROSS_TWO_FOLDS",
+  "worst_rollout": "MAX_CANDIDATE_RMSE_OVER_HOLD_LAST_RMSE_ACROSS_TWO_FOLDS_FOUR_HORIZONS",
+  "zero": {
+    "next_action": "SEPARATE_REDESIGN_AUTHORIZATION_NO_GATE_RELAXATION_OR_CANDIDATE_EXPANSION",
+    "selected_candidate": null,
+    "selection": "MODEL_SELECTION_FAILED_CLOSED",
+    "status": "S2_RI_NO_ADMISSIBLE_CANDIDATE"
+  }
+}
