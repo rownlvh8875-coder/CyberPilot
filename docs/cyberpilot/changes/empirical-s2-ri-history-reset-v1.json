@@ -1,0 +1,95 @@
+{
+  "allowed_envelope": {
+    "L_delta": [
+      1,
+      45
+    ],
+    "L_u": [
+      1,
+      45
+    ],
+    "d": [
+      0,
+      20
+    ]
+  },
+  "authority": {
+    "candidate": false,
+    "composition": false,
+    "cv_scoring": false,
+    "device": false,
+    "fitting": false,
+    "holdout_opening": false,
+    "optimizer": false,
+    "prediction": false,
+    "production": false,
+    "qlog_support": false,
+    "raw_opening": false,
+    "residual": false,
+    "rollout": false,
+    "selection": false,
+    "sg": false,
+    "ta": false,
+    "vehicle": false
+  },
+  "boundary_forms": [
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      45,
+      45
+    ],
+    [
+      20,
+      1,
+      1
+    ],
+    [
+      20,
+      45,
+      45
+    ]
+  ],
+  "candidate_search_authorized": false,
+  "candidate_set": "CANDIDATE_SET_MUST_BE_PREDECLARED_BEFORE_FITTING",
+  "causal_identity_sha256": "42b8dc61b9fd8673a810a93edeee575c7f7333576ea0908cc09b4602aea30cc5",
+  "command_offset_semantics": "COMMAND_HISTORY_OFFSET_SAMPLES_NOT_PHYSICAL_DELAY",
+  "composition_authorized": false,
+  "equation": "y[k]=beta0+sum(a_i*u[k-d-i])+sum(b_j*delta_tick[k-j])+c*angle_tick[k]+s*vEgo[k]",
+  "historical_generic_causal_identity": "RATE_DEPENDENT_IMMUTABLE_REFERENCE_ONLY",
+  "history": "EVERY_ROW_ELIGIBLE_SAME_RUN_NO_PADDING_NO_CARRY_NO_FUTURE_SOURCE",
+  "past_delta_j_starts_at": 1,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "b3387dc0d9ab0372cfbc6ed2e9bcc337250a4faa92c7c8fa7ab50451b34a1294",
+  "reference_promotable": false,
+  "reset": [
+    "ROUTE",
+    "SEGMENT",
+    "CAUSAL_RUN_BREAK",
+    "GAP",
+    "INACTIVE",
+    "STEERING_PRESSED",
+    "EPS_FAULT",
+    "REENGAGEMENT_HISTORY_RESET"
+  ],
+  "s2_ri_causal_identity": "RATE_FREE_FAMILY_SPECIFIC_IDENTITY",
+  "schema": "EMPIRICAL_S2_RI_HISTORY_RESET_V1",
+  "scopes": [
+    "SCOPE_ALL_ACTIVE_NO_OVERRIDE",
+    "SCOPE_NON_RAIL_ACTIVE_NO_OVERRIDE"
+  ],
+  "sealed_reference_allowed": false,
+  "selected_L_delta": null,
+  "selected_L_u": null,
+  "selected_d": null,
+  "selected_scope": null,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}
