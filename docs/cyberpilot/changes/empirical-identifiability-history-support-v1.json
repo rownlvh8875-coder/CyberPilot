@@ -1,0 +1,3266 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "policy_sha256": "8dee196fc4905bf3da93bc4f31c8359f7030de796019c66a64ae090aa304e9fc",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "72137edb4e291cc6f2a7bc082c52ab146a58ebf9b331def50a2fa61783d0c2a2",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_IDENTIFIABILITY_HISTORY_SUPPORT_V1",
+  "scopes": {
+    "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677": [
+      {
+        "admitted_streaks_contributing": 24028,
+        "causal_runs_contributing": 23962,
+        "eligible_windows": 382025,
+        "history": 1,
+        "minimum_route_support_pass": true,
+        "next_state_available": 357997,
+        "segments_contributing": 70,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 159968,
+          "LOW": 36475,
+          "MEDIUM": 185582
+        },
+        "usable_run_lengths_min_median_max": [
+          1.0,
+          4.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          4.0,
+          5998.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 21056,
+        "causal_runs_contributing": 20991,
+        "eligible_windows": 357997,
+        "history": 2,
+        "minimum_route_support_pass": true,
+        "next_state_available": 336941,
+        "segments_contributing": 70,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 141259,
+          "LOW": 35290,
+          "MEDIUM": 181448
+        },
+        "usable_run_lengths_min_median_max": [
+          2.0,
+          4.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          3.0,
+          5997.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 18498,
+        "causal_runs_contributing": 18434,
+        "eligible_windows": 336941,
+        "history": 3,
+        "minimum_route_support_pass": true,
+        "next_state_available": 318443,
+        "segments_contributing": 70,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 125125,
+          "LOW": 34174,
+          "MEDIUM": 177642
+        },
+        "usable_run_lengths_min_median_max": [
+          3.0,
+          4.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          2.0,
+          5996.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 13052,
+        "causal_runs_contributing": 12988,
+        "eligible_windows": 318443,
+        "history": 4,
+        "minimum_route_support_pass": true,
+        "next_state_available": 305391,
+        "segments_contributing": 70,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 111236,
+          "LOW": 33123,
+          "MEDIUM": 174084
+        },
+        "usable_run_lengths_min_median_max": [
+          4.0,
+          5.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          2.0,
+          5995.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 8309,
+        "causal_runs_contributing": 8246,
+        "eligible_windows": 305391,
+        "history": 5,
+        "minimum_route_support_pass": true,
+        "next_state_available": 297082,
+        "segments_contributing": 70,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 101806,
+          "LOW": 32327,
+          "MEDIUM": 171258
+        },
+        "usable_run_lengths_min_median_max": [
+          5.0,
+          5.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          1.0,
+          5994.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 3348,
+        "causal_runs_contributing": 3285,
+        "eligible_windows": 297082,
+        "history": 6,
+        "minimum_route_support_pass": true,
+        "next_state_available": 293734,
+        "segments_contributing": 70,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 96322,
+          "LOW": 31732,
+          "MEDIUM": 169028
+        },
+        "usable_run_lengths_min_median_max": [
+          6.0,
+          9.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          4.0,
+          5993.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2520,
+        "causal_runs_contributing": 2463,
+        "eligible_windows": 293734,
+        "history": 7,
+        "minimum_route_support_pass": true,
+        "next_state_available": 291214,
+        "segments_contributing": 70,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 94663,
+          "LOW": 31442,
+          "MEDIUM": 167629
+        },
+        "usable_run_lengths_min_median_max": [
+          7.0,
+          14.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          8.0,
+          5992.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2393,
+        "causal_runs_contributing": 2345,
+        "eligible_windows": 291214,
+        "history": 8,
+        "minimum_route_support_pass": true,
+        "next_state_available": 288821,
+        "segments_contributing": 70,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 93756,
+          "LOW": 31177,
+          "MEDIUM": 166281
+        },
+        "usable_run_lengths_min_median_max": [
+          8.0,
+          14.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          7.0,
+          5991.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1976,
+        "causal_runs_contributing": 1930,
+        "eligible_windows": 288821,
+        "history": 9,
+        "minimum_route_support_pass": true,
+        "next_state_available": 286845,
+        "segments_contributing": 66,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 92912,
+          "LOW": 30934,
+          "MEDIUM": 164975
+        },
+        "usable_run_lengths_min_median_max": [
+          9.0,
+          19.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          11.0,
+          5990.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1638,
+        "causal_runs_contributing": 1593,
+        "eligible_windows": 286845,
+        "history": 10,
+        "minimum_route_support_pass": true,
+        "next_state_available": 285207,
+        "segments_contributing": 64,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 92261,
+          "LOW": 30744,
+          "MEDIUM": 163840
+        },
+        "usable_run_lengths_min_median_max": [
+          10.0,
+          25.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          16.0,
+          5989.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1449,
+        "causal_runs_contributing": 1405,
+        "eligible_windows": 285207,
+        "history": 11,
+        "minimum_route_support_pass": true,
+        "next_state_available": 283758,
+        "segments_contributing": 61,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 91738,
+          "LOW": 30569,
+          "MEDIUM": 162900
+        },
+        "usable_run_lengths_min_median_max": [
+          11.0,
+          29.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          19.0,
+          5988.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1414,
+        "causal_runs_contributing": 1371,
+        "eligible_windows": 283758,
+        "history": 12,
+        "minimum_route_support_pass": true,
+        "next_state_available": 282344,
+        "segments_contributing": 61,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 91296,
+          "LOW": 30404,
+          "MEDIUM": 162058
+        },
+        "usable_run_lengths_min_median_max": [
+          12.0,
+          29.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          18.0,
+          5987.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1404,
+        "causal_runs_contributing": 1364,
+        "eligible_windows": 282344,
+        "history": 13,
+        "minimum_route_support_pass": true,
+        "next_state_available": 280940,
+        "segments_contributing": 60,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 90860,
+          "LOW": 30242,
+          "MEDIUM": 161242
+        },
+        "usable_run_lengths_min_median_max": [
+          13.0,
+          29.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          17.0,
+          5986.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1355,
+        "causal_runs_contributing": 1316,
+        "eligible_windows": 280940,
+        "history": 14,
+        "minimum_route_support_pass": true,
+        "next_state_available": 279585,
+        "segments_contributing": 60,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 90425,
+          "LOW": 30083,
+          "MEDIUM": 160432
+        },
+        "usable_run_lengths_min_median_max": [
+          14.0,
+          29.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          16.0,
+          5985.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1115,
+        "causal_runs_contributing": 1076,
+        "eligible_windows": 279585,
+        "history": 15,
+        "minimum_route_support_pass": true,
+        "next_state_available": 278470,
+        "segments_contributing": 58,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 89995,
+          "LOW": 29930,
+          "MEDIUM": 159660
+        },
+        "usable_run_lengths_min_median_max": [
+          15.0,
+          29.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          15.0,
+          5984.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1085,
+        "causal_runs_contributing": 1048,
+        "eligible_windows": 278470,
+        "history": 16,
+        "minimum_route_support_pass": true,
+        "next_state_available": 277385,
+        "segments_contributing": 57,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 89620,
+          "LOW": 29817,
+          "MEDIUM": 159033
+        },
+        "usable_run_lengths_min_median_max": [
+          16.0,
+          30.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          15.0,
+          5983.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1078,
+        "causal_runs_contributing": 1041,
+        "eligible_windows": 277385,
+        "history": 17,
+        "minimum_route_support_pass": true,
+        "next_state_available": 276307,
+        "segments_contributing": 57,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 89249,
+          "LOW": 29711,
+          "MEDIUM": 158425
+        },
+        "usable_run_lengths_min_median_max": [
+          17.0,
+          31.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          15.0,
+          5982.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1061,
+        "causal_runs_contributing": 1024,
+        "eligible_windows": 276307,
+        "history": 18,
+        "minimum_route_support_pass": true,
+        "next_state_available": 275246,
+        "segments_contributing": 57,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 88880,
+          "LOW": 29606,
+          "MEDIUM": 157821
+        },
+        "usable_run_lengths_min_median_max": [
+          18.0,
+          33.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          16.0,
+          5981.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1048,
+        "causal_runs_contributing": 1012,
+        "eligible_windows": 275246,
+        "history": 19,
+        "minimum_route_support_pass": true,
+        "next_state_available": 274198,
+        "segments_contributing": 57,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 88511,
+          "LOW": 29501,
+          "MEDIUM": 157234
+        },
+        "usable_run_lengths_min_median_max": [
+          19.0,
+          33.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          15.0,
+          5980.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 930,
+        "causal_runs_contributing": 897,
+        "eligible_windows": 274198,
+        "history": 20,
+        "minimum_route_support_pass": true,
+        "next_state_available": 273268,
+        "segments_contributing": 56,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 88147,
+          "LOW": 29400,
+          "MEDIUM": 156651
+        },
+        "usable_run_lengths_min_median_max": [
+          20.0,
+          39.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          20.0,
+          5979.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 902,
+        "causal_runs_contributing": 869,
+        "eligible_windows": 273268,
+        "history": 21,
+        "minimum_route_support_pass": true,
+        "next_state_available": 272366,
+        "segments_contributing": 56,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 87817,
+          "LOW": 29305,
+          "MEDIUM": 156146
+        },
+        "usable_run_lengths_min_median_max": [
+          21.0,
+          42.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          22.0,
+          5978.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 896,
+        "causal_runs_contributing": 865,
+        "eligible_windows": 272366,
+        "history": 22,
+        "minimum_route_support_pass": true,
+        "next_state_available": 271470,
+        "segments_contributing": 56,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 87489,
+          "LOW": 29216,
+          "MEDIUM": 155661
+        },
+        "usable_run_lengths_min_median_max": [
+          22.0,
+          43.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          22.0,
+          5977.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 891,
+        "causal_runs_contributing": 861,
+        "eligible_windows": 271470,
+        "history": 23,
+        "minimum_route_support_pass": true,
+        "next_state_available": 270579,
+        "segments_contributing": 56,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 87161,
+          "LOW": 29129,
+          "MEDIUM": 155180
+        },
+        "usable_run_lengths_min_median_max": [
+          23.0,
+          43.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          21.0,
+          5976.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 843,
+        "causal_runs_contributing": 813,
+        "eligible_windows": 270579,
+        "history": 24,
+        "minimum_route_support_pass": true,
+        "next_state_available": 269736,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 86834,
+          "LOW": 29044,
+          "MEDIUM": 154701
+        },
+        "usable_run_lengths_min_median_max": [
+          24.0,
+          47.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          24.0,
+          5975.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 826,
+        "causal_runs_contributing": 796,
+        "eligible_windows": 269736,
+        "history": 25,
+        "minimum_route_support_pass": true,
+        "next_state_available": 268910,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 86516,
+          "LOW": 28968,
+          "MEDIUM": 154252
+        },
+        "usable_run_lengths_min_median_max": [
+          25.0,
+          48.5,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          24.5,
+          5974.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 802,
+        "causal_runs_contributing": 772,
+        "eligible_windows": 268910,
+        "history": 26,
+        "minimum_route_support_pass": true,
+        "next_state_available": 268108,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 86203,
+          "LOW": 28894,
+          "MEDIUM": 153813
+        },
+        "usable_run_lengths_min_median_max": [
+          26.0,
+          50.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          25.0,
+          5973.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 798,
+        "causal_runs_contributing": 769,
+        "eligible_windows": 268108,
+        "history": 27,
+        "minimum_route_support_pass": true,
+        "next_state_available": 267310,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 85896,
+          "LOW": 28822,
+          "MEDIUM": 153390
+        },
+        "usable_run_lengths_min_median_max": [
+          27.0,
+          50.5,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          24.5,
+          5972.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 785,
+        "causal_runs_contributing": 756,
+        "eligible_windows": 267310,
+        "history": 28,
+        "minimum_route_support_pass": true,
+        "next_state_available": 266525,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 85591,
+          "LOW": 28752,
+          "MEDIUM": 152967
+        },
+        "usable_run_lengths_min_median_max": [
+          28.0,
+          53.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          26.0,
+          5971.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 781,
+        "causal_runs_contributing": 753,
+        "eligible_windows": 266525,
+        "history": 29,
+        "minimum_route_support_pass": true,
+        "next_state_available": 265744,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 85287,
+          "LOW": 28685,
+          "MEDIUM": 152553
+        },
+        "usable_run_lengths_min_median_max": [
+          29.0,
+          54.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          26.0,
+          5970.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 545,
+        "causal_runs_contributing": 517,
+        "eligible_windows": 265744,
+        "history": 30,
+        "minimum_route_support_pass": true,
+        "next_state_available": 265199,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 84983,
+          "LOW": 28619,
+          "MEDIUM": 152142
+        },
+        "usable_run_lengths_min_median_max": [
+          30.0,
+          89.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          60.0,
+          5969.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 541,
+        "causal_runs_contributing": 513,
+        "eligible_windows": 265199,
+        "history": 31,
+        "minimum_route_support_pass": true,
+        "next_state_available": 264658,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 84763,
+          "LOW": 28569,
+          "MEDIUM": 151867
+        },
+        "usable_run_lengths_min_median_max": [
+          31.0,
+          89.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          59.0,
+          5968.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 535,
+        "causal_runs_contributing": 507,
+        "eligible_windows": 264658,
+        "history": 32,
+        "minimum_route_support_pass": true,
+        "next_state_available": 264123,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 84544,
+          "LOW": 28520,
+          "MEDIUM": 151594
+        },
+        "usable_run_lengths_min_median_max": [
+          33.0,
+          89.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          2.0,
+          58.0,
+          5967.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 535,
+        "causal_runs_contributing": 507,
+        "eligible_windows": 264123,
+        "history": 33,
+        "minimum_route_support_pass": true,
+        "next_state_available": 263588,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 84327,
+          "LOW": 28472,
+          "MEDIUM": 151324
+        },
+        "usable_run_lengths_min_median_max": [
+          33.0,
+          89.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          57.0,
+          5966.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 518,
+        "causal_runs_contributing": 490,
+        "eligible_windows": 263588,
+        "history": 34,
+        "minimum_route_support_pass": true,
+        "next_state_available": 263070,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 84110,
+          "LOW": 28424,
+          "MEDIUM": 151054
+        },
+        "usable_run_lengths_min_median_max": [
+          34.0,
+          89.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          56.0,
+          5965.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 511,
+        "causal_runs_contributing": 483,
+        "eligible_windows": 263070,
+        "history": 35,
+        "minimum_route_support_pass": true,
+        "next_state_available": 262559,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 83899,
+          "LOW": 28377,
+          "MEDIUM": 150794
+        },
+        "usable_run_lengths_min_median_max": [
+          35.0,
+          90.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          56.0,
+          5964.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 487,
+        "causal_runs_contributing": 459,
+        "eligible_windows": 262559,
+        "history": 36,
+        "minimum_route_support_pass": true,
+        "next_state_available": 262072,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 83690,
+          "LOW": 28331,
+          "MEDIUM": 150538
+        },
+        "usable_run_lengths_min_median_max": [
+          36.0,
+          104.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          69.0,
+          5963.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 486,
+        "causal_runs_contributing": 458,
+        "eligible_windows": 262072,
+        "history": 37,
+        "minimum_route_support_pass": true,
+        "next_state_available": 261586,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 83487,
+          "LOW": 28290,
+          "MEDIUM": 150295
+        },
+        "usable_run_lengths_min_median_max": [
+          37.0,
+          104.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          68.0,
+          5962.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 481,
+        "causal_runs_contributing": 453,
+        "eligible_windows": 261586,
+        "history": 38,
+        "minimum_route_support_pass": true,
+        "next_state_available": 261105,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 83283,
+          "LOW": 28249,
+          "MEDIUM": 150054
+        },
+        "usable_run_lengths_min_median_max": [
+          38.0,
+          111.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          74.0,
+          5961.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 475,
+        "causal_runs_contributing": 447,
+        "eligible_windows": 261105,
+        "history": 39,
+        "minimum_route_support_pass": true,
+        "next_state_available": 260630,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 83079,
+          "LOW": 28210,
+          "MEDIUM": 149816
+        },
+        "usable_run_lengths_min_median_max": [
+          39.0,
+          119.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          81.0,
+          5960.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 459,
+        "causal_runs_contributing": 431,
+        "eligible_windows": 260630,
+        "history": 40,
+        "minimum_route_support_pass": true,
+        "next_state_available": 260171,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 82875,
+          "LOW": 28172,
+          "MEDIUM": 149583
+        },
+        "usable_run_lengths_min_median_max": [
+          40.0,
+          119.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          80.0,
+          5959.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 457,
+        "causal_runs_contributing": 429,
+        "eligible_windows": 260171,
+        "history": 41,
+        "minimum_route_support_pass": true,
+        "next_state_available": 259714,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 82679,
+          "LOW": 28136,
+          "MEDIUM": 149356
+        },
+        "usable_run_lengths_min_median_max": [
+          41.0,
+          119.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          79.0,
+          5958.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 452,
+        "causal_runs_contributing": 424,
+        "eligible_windows": 259714,
+        "history": 42,
+        "minimum_route_support_pass": true,
+        "next_state_available": 259262,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 82485,
+          "LOW": 28100,
+          "MEDIUM": 149129
+        },
+        "usable_run_lengths_min_median_max": [
+          42.0,
+          119.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          78.0,
+          5957.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 450,
+        "causal_runs_contributing": 422,
+        "eligible_windows": 259262,
+        "history": 43,
+        "minimum_route_support_pass": true,
+        "next_state_available": 258812,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 82291,
+          "LOW": 28065,
+          "MEDIUM": 148906
+        },
+        "usable_run_lengths_min_median_max": [
+          43.0,
+          119.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          77.0,
+          5956.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 444,
+        "causal_runs_contributing": 416,
+        "eligible_windows": 258812,
+        "history": 44,
+        "minimum_route_support_pass": true,
+        "next_state_available": 258368,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 82097,
+          "LOW": 28030,
+          "MEDIUM": 148685
+        },
+        "usable_run_lengths_min_median_max": [
+          44.0,
+          120.0,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          77.0,
+          5955.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 426,
+        "causal_runs_contributing": 398,
+        "eligible_windows": 258368,
+        "history": 45,
+        "minimum_route_support_pass": true,
+        "next_state_available": 257942,
+        "segments_contributing": 55,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 81905,
+          "LOW": 27995,
+          "MEDIUM": 148468
+        },
+        "usable_run_lengths_min_median_max": [
+          45.0,
+          139.5,
+          5998.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          95.5,
+          5954.0
+        ]
+      }
+    ],
+    "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c": [
+      {
+        "admitted_streaks_contributing": 14514,
+        "causal_runs_contributing": 14323,
+        "eligible_windows": 328030,
+        "history": 1,
+        "minimum_route_support_pass": true,
+        "next_state_available": 313516,
+        "segments_contributing": 75,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 81496,
+          "LOW": 118882,
+          "MEDIUM": 127652
+        },
+        "usable_run_lengths_min_median_max": [
+          1.0,
+          5.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          5.0,
+          6004.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 12947,
+        "causal_runs_contributing": 12761,
+        "eligible_windows": 313516,
+        "history": 2,
+        "minimum_route_support_pass": true,
+        "next_state_available": 300569,
+        "segments_contributing": 75,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 76553,
+          "LOW": 114662,
+          "MEDIUM": 122301
+        },
+        "usable_run_lengths_min_median_max": [
+          2.0,
+          5.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          4.0,
+          6003.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 12067,
+        "causal_runs_contributing": 11884,
+        "eligible_windows": 300569,
+        "history": 3,
+        "minimum_route_support_pass": true,
+        "next_state_available": 288502,
+        "segments_contributing": 75,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 72227,
+          "LOW": 110975,
+          "MEDIUM": 117367
+        },
+        "usable_run_lengths_min_median_max": [
+          3.0,
+          5.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          3.0,
+          6002.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 9810,
+        "causal_runs_contributing": 9628,
+        "eligible_windows": 288502,
+        "history": 4,
+        "minimum_route_support_pass": true,
+        "next_state_available": 278692,
+        "segments_contributing": 75,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 68257,
+          "LOW": 107580,
+          "MEDIUM": 112665
+        },
+        "usable_run_lengths_min_median_max": [
+          4.0,
+          8.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          5.0,
+          6001.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 7948,
+        "causal_runs_contributing": 7767,
+        "eligible_windows": 278692,
+        "history": 5,
+        "minimum_route_support_pass": true,
+        "next_state_available": 270744,
+        "segments_contributing": 75,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 65031,
+          "LOW": 104811,
+          "MEDIUM": 108850
+        },
+        "usable_run_lengths_min_median_max": [
+          5.0,
+          9.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          5.0,
+          6000.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 5668,
+        "causal_runs_contributing": 5490,
+        "eligible_windows": 270744,
+        "history": 6,
+        "minimum_route_support_pass": true,
+        "next_state_available": 265076,
+        "segments_contributing": 75,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 62332,
+          "LOW": 102622,
+          "MEDIUM": 105790
+        },
+        "usable_run_lengths_min_median_max": [
+          6.0,
+          14.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          9.0,
+          5999.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 5290,
+        "causal_runs_contributing": 5128,
+        "eligible_windows": 265076,
+        "history": 7,
+        "minimum_route_support_pass": true,
+        "next_state_available": 259786,
+        "segments_contributing": 74,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 60182,
+          "LOW": 101122,
+          "MEDIUM": 103772
+        },
+        "usable_run_lengths_min_median_max": [
+          7.0,
+          14.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          8.0,
+          5998.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 5014,
+        "causal_runs_contributing": 4866,
+        "eligible_windows": 259786,
+        "history": 8,
+        "minimum_route_support_pass": true,
+        "next_state_available": 254772,
+        "segments_contributing": 74,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 58182,
+          "LOW": 99742,
+          "MEDIUM": 101862
+        },
+        "usable_run_lengths_min_median_max": [
+          8.0,
+          14.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          7.0,
+          5997.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 4189,
+        "causal_runs_contributing": 4045,
+        "eligible_windows": 254772,
+        "history": 9,
+        "minimum_route_support_pass": true,
+        "next_state_available": 250583,
+        "segments_contributing": 74,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 56310,
+          "LOW": 98465,
+          "MEDIUM": 99997
+        },
+        "usable_run_lengths_min_median_max": [
+          9.0,
+          15.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          7.0,
+          5996.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 3545,
+        "causal_runs_contributing": 3402,
+        "eligible_windows": 250583,
+        "history": 10,
+        "minimum_route_support_pass": true,
+        "next_state_available": 247038,
+        "segments_contributing": 74,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 54598,
+          "LOW": 97449,
+          "MEDIUM": 98536
+        },
+        "usable_run_lengths_min_median_max": [
+          10.0,
+          20.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          11.0,
+          5995.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 3151,
+        "causal_runs_contributing": 3010,
+        "eligible_windows": 247038,
+        "history": 11,
+        "minimum_route_support_pass": true,
+        "next_state_available": 243887,
+        "segments_contributing": 73,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 53203,
+          "LOW": 96580,
+          "MEDIUM": 97255
+        },
+        "usable_run_lengths_min_median_max": [
+          11.0,
+          23.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          13.0,
+          5994.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 3051,
+        "causal_runs_contributing": 2916,
+        "eligible_windows": 243887,
+        "history": 12,
+        "minimum_route_support_pass": true,
+        "next_state_available": 240836,
+        "segments_contributing": 73,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 51902,
+          "LOW": 95830,
+          "MEDIUM": 96155
+        },
+        "usable_run_lengths_min_median_max": [
+          12.0,
+          23.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          12.0,
+          5993.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2998,
+        "causal_runs_contributing": 2869,
+        "eligible_windows": 240836,
+        "history": 13,
+        "minimum_route_support_pass": true,
+        "next_state_available": 237838,
+        "segments_contributing": 73,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 50644,
+          "LOW": 95115,
+          "MEDIUM": 95077
+        },
+        "usable_run_lengths_min_median_max": [
+          13.0,
+          24.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          12.0,
+          5992.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2840,
+        "causal_runs_contributing": 2718,
+        "eligible_windows": 237838,
+        "history": 14,
+        "minimum_route_support_pass": true,
+        "next_state_available": 234998,
+        "segments_contributing": 73,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 49412,
+          "LOW": 94420,
+          "MEDIUM": 94006
+        },
+        "usable_run_lengths_min_median_max": [
+          14.0,
+          25.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          12.0,
+          5991.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2154,
+        "causal_runs_contributing": 2037,
+        "eligible_windows": 234998,
+        "history": 15,
+        "minimum_route_support_pass": true,
+        "next_state_available": 232844,
+        "segments_contributing": 72,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 48288,
+          "LOW": 93753,
+          "MEDIUM": 92957
+        },
+        "usable_run_lengths_min_median_max": [
+          15.0,
+          29.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          15.0,
+          5990.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2061,
+        "causal_runs_contributing": 1945,
+        "eligible_windows": 232844,
+        "history": 16,
+        "minimum_route_support_pass": true,
+        "next_state_available": 230783,
+        "segments_contributing": 72,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 47280,
+          "LOW": 93282,
+          "MEDIUM": 92282
+        },
+        "usable_run_lengths_min_median_max": [
+          16.0,
+          29.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          14.0,
+          5989.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2038,
+        "causal_runs_contributing": 1925,
+        "eligible_windows": 230783,
+        "history": 17,
+        "minimum_route_support_pass": true,
+        "next_state_available": 228745,
+        "segments_contributing": 72,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 46331,
+          "LOW": 92830,
+          "MEDIUM": 91622
+        },
+        "usable_run_lengths_min_median_max": [
+          17.0,
+          29.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          13.0,
+          5988.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1998,
+        "causal_runs_contributing": 1890,
+        "eligible_windows": 228745,
+        "history": 18,
+        "minimum_route_support_pass": true,
+        "next_state_available": 226747,
+        "segments_contributing": 72,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 45392,
+          "LOW": 92388,
+          "MEDIUM": 90965
+        },
+        "usable_run_lengths_min_median_max": [
+          18.0,
+          30.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          13.0,
+          5987.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1960,
+        "causal_runs_contributing": 1854,
+        "eligible_windows": 226747,
+        "history": 19,
+        "minimum_route_support_pass": true,
+        "next_state_available": 224787,
+        "segments_contributing": 72,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 44468,
+          "LOW": 91961,
+          "MEDIUM": 90318
+        },
+        "usable_run_lengths_min_median_max": [
+          19.0,
+          33.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          15.0,
+          5986.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1783,
+        "causal_runs_contributing": 1679,
+        "eligible_windows": 224787,
+        "history": 20,
+        "minimum_route_support_pass": true,
+        "next_state_available": 223004,
+        "segments_contributing": 72,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 43553,
+          "LOW": 91550,
+          "MEDIUM": 89684
+        },
+        "usable_run_lengths_min_median_max": [
+          20.0,
+          35.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          16.0,
+          5985.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1726,
+        "causal_runs_contributing": 1623,
+        "eligible_windows": 223004,
+        "history": 21,
+        "minimum_route_support_pass": true,
+        "next_state_available": 221278,
+        "segments_contributing": 72,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 42741,
+          "LOW": 91172,
+          "MEDIUM": 89091
+        },
+        "usable_run_lengths_min_median_max": [
+          21.0,
+          35.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          15.0,
+          5984.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1698,
+        "causal_runs_contributing": 1598,
+        "eligible_windows": 221278,
+        "history": 22,
+        "minimum_route_support_pass": true,
+        "next_state_available": 219580,
+        "segments_contributing": 71,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 41943,
+          "LOW": 90804,
+          "MEDIUM": 88531
+        },
+        "usable_run_lengths_min_median_max": [
+          22.0,
+          37.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          16.0,
+          5983.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1688,
+        "causal_runs_contributing": 1590,
+        "eligible_windows": 219580,
+        "history": 23,
+        "minimum_route_support_pass": true,
+        "next_state_available": 217892,
+        "segments_contributing": 71,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 41159,
+          "LOW": 90443,
+          "MEDIUM": 87978
+        },
+        "usable_run_lengths_min_median_max": [
+          23.0,
+          38.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          16.0,
+          5982.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1504,
+        "causal_runs_contributing": 1407,
+        "eligible_windows": 217892,
+        "history": 24,
+        "minimum_route_support_pass": true,
+        "next_state_available": 216388,
+        "segments_contributing": 71,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 40379,
+          "LOW": 90086,
+          "MEDIUM": 87427
+        },
+        "usable_run_lengths_min_median_max": [
+          24.0,
+          44.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          21.0,
+          5981.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1485,
+        "causal_runs_contributing": 1388,
+        "eligible_windows": 216388,
+        "history": 25,
+        "minimum_route_support_pass": true,
+        "next_state_available": 214903,
+        "segments_contributing": 71,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 39680,
+          "LOW": 89782,
+          "MEDIUM": 86926
+        },
+        "usable_run_lengths_min_median_max": [
+          25.0,
+          44.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          20.0,
+          5980.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1417,
+        "causal_runs_contributing": 1321,
+        "eligible_windows": 214903,
+        "history": 26,
+        "minimum_route_support_pass": true,
+        "next_state_available": 213486,
+        "segments_contributing": 71,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 38991,
+          "LOW": 89483,
+          "MEDIUM": 86429
+        },
+        "usable_run_lengths_min_median_max": [
+          26.0,
+          45.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          20.0,
+          5979.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1409,
+        "causal_runs_contributing": 1316,
+        "eligible_windows": 213486,
+        "history": 27,
+        "minimum_route_support_pass": true,
+        "next_state_available": 212077,
+        "segments_contributing": 70,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 38343,
+          "LOW": 89194,
+          "MEDIUM": 85949
+        },
+        "usable_run_lengths_min_median_max": [
+          27.0,
+          45.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          19.0,
+          5978.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1391,
+        "causal_runs_contributing": 1299,
+        "eligible_windows": 212077,
+        "history": 28,
+        "minimum_route_support_pass": true,
+        "next_state_available": 210686,
+        "segments_contributing": 70,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 37696,
+          "LOW": 88909,
+          "MEDIUM": 85472
+        },
+        "usable_run_lengths_min_median_max": [
+          28.0,
+          46.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          19.0,
+          5977.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1383,
+        "causal_runs_contributing": 1293,
+        "eligible_windows": 210686,
+        "history": 29,
+        "minimum_route_support_pass": true,
+        "next_state_available": 209303,
+        "segments_contributing": 70,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 37061,
+          "LOW": 88625,
+          "MEDIUM": 85000
+        },
+        "usable_run_lengths_min_median_max": [
+          29.0,
+          47.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          19.0,
+          5976.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1001,
+        "causal_runs_contributing": 913,
+        "eligible_windows": 209303,
+        "history": 30,
+        "minimum_route_support_pass": true,
+        "next_state_available": 208302,
+        "segments_contributing": 70,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 36429,
+          "LOW": 88344,
+          "MEDIUM": 84530
+        },
+        "usable_run_lengths_min_median_max": [
+          30.0,
+          59.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          30.0,
+          5975.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 993,
+        "causal_runs_contributing": 905,
+        "eligible_windows": 208302,
+        "history": 31,
+        "minimum_route_support_pass": true,
+        "next_state_available": 207309,
+        "segments_contributing": 69,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 35936,
+          "LOW": 88156,
+          "MEDIUM": 84210
+        },
+        "usable_run_lengths_min_median_max": [
+          31.0,
+          59.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          29.0,
+          5974.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 983,
+        "causal_runs_contributing": 895,
+        "eligible_windows": 207309,
+        "history": 32,
+        "minimum_route_support_pass": true,
+        "next_state_available": 206326,
+        "segments_contributing": 69,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 35447,
+          "LOW": 87968,
+          "MEDIUM": 83894
+        },
+        "usable_run_lengths_min_median_max": [
+          33.0,
+          59.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          2.0,
+          28.0,
+          5973.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 983,
+        "causal_runs_contributing": 895,
+        "eligible_windows": 206326,
+        "history": 33,
+        "minimum_route_support_pass": true,
+        "next_state_available": 205343,
+        "segments_contributing": 69,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 34966,
+          "LOW": 87780,
+          "MEDIUM": 83580
+        },
+        "usable_run_lengths_min_median_max": [
+          33.0,
+          59.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          27.0,
+          5972.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 941,
+        "causal_runs_contributing": 855,
+        "eligible_windows": 205343,
+        "history": 34,
+        "minimum_route_support_pass": true,
+        "next_state_available": 204402,
+        "segments_contributing": 69,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 34485,
+          "LOW": 87592,
+          "MEDIUM": 83266
+        },
+        "usable_run_lengths_min_median_max": [
+          34.0,
+          65.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          32.0,
+          5971.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 923,
+        "causal_runs_contributing": 838,
+        "eligible_windows": 204402,
+        "history": 35,
+        "minimum_route_support_pass": true,
+        "next_state_available": 203479,
+        "segments_contributing": 69,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 34033,
+          "LOW": 87407,
+          "MEDIUM": 82962
+        },
+        "usable_run_lengths_min_median_max": [
+          35.0,
+          65.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          31.0,
+          5970.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 861,
+        "causal_runs_contributing": 776,
+        "eligible_windows": 203479,
+        "history": 36,
+        "minimum_route_support_pass": true,
+        "next_state_available": 202618,
+        "segments_contributing": 69,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 33594,
+          "LOW": 87224,
+          "MEDIUM": 82661
+        },
+        "usable_run_lengths_min_median_max": [
+          36.0,
+          71.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          36.0,
+          5969.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 857,
+        "causal_runs_contributing": 773,
+        "eligible_windows": 202618,
+        "history": 37,
+        "minimum_route_support_pass": true,
+        "next_state_available": 201761,
+        "segments_contributing": 69,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 33201,
+          "LOW": 87045,
+          "MEDIUM": 82372
+        },
+        "usable_run_lengths_min_median_max": [
+          37.0,
+          72.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          36.0,
+          5968.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 848,
+        "causal_runs_contributing": 765,
+        "eligible_windows": 201761,
+        "history": 38,
+        "minimum_route_support_pass": true,
+        "next_state_available": 200913,
+        "segments_contributing": 69,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 32811,
+          "LOW": 86867,
+          "MEDIUM": 82083
+        },
+        "usable_run_lengths_min_median_max": [
+          38.0,
+          73.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          36.0,
+          5967.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 827,
+        "causal_runs_contributing": 746,
+        "eligible_windows": 200913,
+        "history": 39,
+        "minimum_route_support_pass": true,
+        "next_state_available": 200086,
+        "segments_contributing": 69,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 32426,
+          "LOW": 86690,
+          "MEDIUM": 81797
+        },
+        "usable_run_lengths_min_median_max": [
+          39.0,
+          74.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          36.0,
+          5966.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 789,
+        "causal_runs_contributing": 709,
+        "eligible_windows": 200086,
+        "history": 40,
+        "minimum_route_support_pass": true,
+        "next_state_available": 199297,
+        "segments_contributing": 69,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 32049,
+          "LOW": 86515,
+          "MEDIUM": 81522
+        },
+        "usable_run_lengths_min_median_max": [
+          40.0,
+          76.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          37.0,
+          5965.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 781,
+        "causal_runs_contributing": 702,
+        "eligible_windows": 199297,
+        "history": 41,
+        "minimum_route_support_pass": true,
+        "next_state_available": 198516,
+        "segments_contributing": 69,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 31699,
+          "LOW": 86344,
+          "MEDIUM": 81254
+        },
+        "usable_run_lengths_min_median_max": [
+          41.0,
+          77.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          37.0,
+          5964.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 775,
+        "causal_runs_contributing": 697,
+        "eligible_windows": 198516,
+        "history": 42,
+        "minimum_route_support_pass": true,
+        "next_state_available": 197741,
+        "segments_contributing": 69,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 31355,
+          "LOW": 86174,
+          "MEDIUM": 80987
+        },
+        "usable_run_lengths_min_median_max": [
+          42.0,
+          78.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          37.0,
+          5963.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 772,
+        "causal_runs_contributing": 695,
+        "eligible_windows": 197741,
+        "history": 43,
+        "minimum_route_support_pass": true,
+        "next_state_available": 196969,
+        "segments_contributing": 69,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 31013,
+          "LOW": 86006,
+          "MEDIUM": 80722
+        },
+        "usable_run_lengths_min_median_max": [
+          43.0,
+          79.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          37.0,
+          5962.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 754,
+        "causal_runs_contributing": 679,
+        "eligible_windows": 196969,
+        "history": 44,
+        "minimum_route_support_pass": true,
+        "next_state_available": 196215,
+        "segments_contributing": 69,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 30672,
+          "LOW": 85839,
+          "MEDIUM": 80458
+        },
+        "usable_run_lengths_min_median_max": [
+          44.0,
+          79.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          36.0,
+          5961.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 710,
+        "causal_runs_contributing": 637,
+        "eligible_windows": 196215,
+        "history": 45,
+        "minimum_route_support_pass": true,
+        "next_state_available": 195505,
+        "segments_contributing": 68,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 30345,
+          "LOW": 85675,
+          "MEDIUM": 80195
+        },
+        "usable_run_lengths_min_median_max": [
+          45.0,
+          83.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          39.0,
+          5960.0
+        ]
+      }
+    ],
+    "POOLED": [
+      {
+        "admitted_streaks_contributing": 38542,
+        "causal_runs_contributing": 38285,
+        "eligible_windows": 710055,
+        "history": 1,
+        "minimum_route_support_pass": true,
+        "next_state_available": 671513,
+        "segments_contributing": 145,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 241464,
+          "LOW": 155357,
+          "MEDIUM": 313234
+        },
+        "usable_run_lengths_min_median_max": [
+          1.0,
+          4.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          4.0,
+          6004.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 34003,
+        "causal_runs_contributing": 33752,
+        "eligible_windows": 671513,
+        "history": 2,
+        "minimum_route_support_pass": true,
+        "next_state_available": 637510,
+        "segments_contributing": 145,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 217812,
+          "LOW": 149952,
+          "MEDIUM": 303749
+        },
+        "usable_run_lengths_min_median_max": [
+          2.0,
+          4.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          3.0,
+          6003.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 30565,
+        "causal_runs_contributing": 30318,
+        "eligible_windows": 637510,
+        "history": 3,
+        "minimum_route_support_pass": true,
+        "next_state_available": 606945,
+        "segments_contributing": 145,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 197352,
+          "LOW": 145149,
+          "MEDIUM": 295009
+        },
+        "usable_run_lengths_min_median_max": [
+          3.0,
+          5.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          3.0,
+          6002.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 22862,
+        "causal_runs_contributing": 22616,
+        "eligible_windows": 606945,
+        "history": 4,
+        "minimum_route_support_pass": true,
+        "next_state_available": 584083,
+        "segments_contributing": 145,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 179493,
+          "LOW": 140703,
+          "MEDIUM": 286749
+        },
+        "usable_run_lengths_min_median_max": [
+          4.0,
+          5.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          2.0,
+          6001.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 16257,
+        "causal_runs_contributing": 16013,
+        "eligible_windows": 584083,
+        "history": 5,
+        "minimum_route_support_pass": true,
+        "next_state_available": 567826,
+        "segments_contributing": 145,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 166837,
+          "LOW": 137138,
+          "MEDIUM": 280108
+        },
+        "usable_run_lengths_min_median_max": [
+          5.0,
+          6.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          2.0,
+          6000.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 9016,
+        "causal_runs_contributing": 8775,
+        "eligible_windows": 567826,
+        "history": 6,
+        "minimum_route_support_pass": true,
+        "next_state_available": 558810,
+        "segments_contributing": 145,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 158654,
+          "LOW": 134354,
+          "MEDIUM": 274818
+        },
+        "usable_run_lengths_min_median_max": [
+          6.0,
+          11.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          6.0,
+          5999.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 7810,
+        "causal_runs_contributing": 7591,
+        "eligible_windows": 558810,
+        "history": 7,
+        "minimum_route_support_pass": true,
+        "next_state_available": 551000,
+        "segments_contributing": 144,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 154845,
+          "LOW": 132564,
+          "MEDIUM": 271401
+        },
+        "usable_run_lengths_min_median_max": [
+          7.0,
+          14.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          8.0,
+          5998.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 7407,
+        "causal_runs_contributing": 7211,
+        "eligible_windows": 551000,
+        "history": 8,
+        "minimum_route_support_pass": true,
+        "next_state_available": 543593,
+        "segments_contributing": 144,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 151938,
+          "LOW": 130919,
+          "MEDIUM": 268143
+        },
+        "usable_run_lengths_min_median_max": [
+          8.0,
+          14.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          7.0,
+          5997.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 6165,
+        "causal_runs_contributing": 5975,
+        "eligible_windows": 543593,
+        "history": 9,
+        "minimum_route_support_pass": true,
+        "next_state_available": 537428,
+        "segments_contributing": 140,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 149222,
+          "LOW": 129399,
+          "MEDIUM": 264972
+        },
+        "usable_run_lengths_min_median_max": [
+          9.0,
+          17.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          9.0,
+          5996.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 5183,
+        "causal_runs_contributing": 4995,
+        "eligible_windows": 537428,
+        "history": 10,
+        "minimum_route_support_pass": true,
+        "next_state_available": 532245,
+        "segments_contributing": 138,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 146859,
+          "LOW": 128193,
+          "MEDIUM": 262376
+        },
+        "usable_run_lengths_min_median_max": [
+          10.0,
+          22.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          13.0,
+          5995.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 4600,
+        "causal_runs_contributing": 4415,
+        "eligible_windows": 532245,
+        "history": 11,
+        "minimum_route_support_pass": true,
+        "next_state_available": 527645,
+        "segments_contributing": 134,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 144941,
+          "LOW": 127149,
+          "MEDIUM": 260155
+        },
+        "usable_run_lengths_min_median_max": [
+          11.0,
+          25.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          15.0,
+          5994.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 4465,
+        "causal_runs_contributing": 4287,
+        "eligible_windows": 527645,
+        "history": 12,
+        "minimum_route_support_pass": true,
+        "next_state_available": 523180,
+        "segments_contributing": 134,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 143198,
+          "LOW": 126234,
+          "MEDIUM": 258213
+        },
+        "usable_run_lengths_min_median_max": [
+          12.0,
+          25.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          14.0,
+          5993.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 4402,
+        "causal_runs_contributing": 4233,
+        "eligible_windows": 523180,
+        "history": 13,
+        "minimum_route_support_pass": true,
+        "next_state_available": 518778,
+        "segments_contributing": 133,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 141504,
+          "LOW": 125357,
+          "MEDIUM": 256319
+        },
+        "usable_run_lengths_min_median_max": [
+          13.0,
+          27.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          15.0,
+          5992.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 4195,
+        "causal_runs_contributing": 4034,
+        "eligible_windows": 518778,
+        "history": 14,
+        "minimum_route_support_pass": true,
+        "next_state_available": 514583,
+        "segments_contributing": 133,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 139837,
+          "LOW": 124503,
+          "MEDIUM": 254438
+        },
+        "usable_run_lengths_min_median_max": [
+          14.0,
+          29.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          16.0,
+          5991.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 3269,
+        "causal_runs_contributing": 3113,
+        "eligible_windows": 514583,
+        "history": 15,
+        "minimum_route_support_pass": true,
+        "next_state_available": 511314,
+        "segments_contributing": 130,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 138283,
+          "LOW": 123683,
+          "MEDIUM": 252617
+        },
+        "usable_run_lengths_min_median_max": [
+          15.0,
+          29.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          15.0,
+          5990.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 3146,
+        "causal_runs_contributing": 2993,
+        "eligible_windows": 511314,
+        "history": 16,
+        "minimum_route_support_pass": true,
+        "next_state_available": 508168,
+        "segments_contributing": 129,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 136900,
+          "LOW": 123099,
+          "MEDIUM": 251315
+        },
+        "usable_run_lengths_min_median_max": [
+          16.0,
+          29.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          14.0,
+          5989.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 3116,
+        "causal_runs_contributing": 2966,
+        "eligible_windows": 508168,
+        "history": 17,
+        "minimum_route_support_pass": true,
+        "next_state_available": 505052,
+        "segments_contributing": 129,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 135580,
+          "LOW": 122541,
+          "MEDIUM": 250047
+        },
+        "usable_run_lengths_min_median_max": [
+          17.0,
+          29.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          13.0,
+          5988.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 3059,
+        "causal_runs_contributing": 2914,
+        "eligible_windows": 505052,
+        "history": 18,
+        "minimum_route_support_pass": true,
+        "next_state_available": 501993,
+        "segments_contributing": 129,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 134272,
+          "LOW": 121994,
+          "MEDIUM": 248786
+        },
+        "usable_run_lengths_min_median_max": [
+          18.0,
+          31.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          14.0,
+          5987.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 3008,
+        "causal_runs_contributing": 2866,
+        "eligible_windows": 501993,
+        "history": 19,
+        "minimum_route_support_pass": true,
+        "next_state_available": 498985,
+        "segments_contributing": 129,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 132979,
+          "LOW": 121462,
+          "MEDIUM": 247552
+        },
+        "usable_run_lengths_min_median_max": [
+          19.0,
+          33.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          15.0,
+          5986.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2713,
+        "causal_runs_contributing": 2576,
+        "eligible_windows": 498985,
+        "history": 20,
+        "minimum_route_support_pass": true,
+        "next_state_available": 496272,
+        "segments_contributing": 128,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 131700,
+          "LOW": 120950,
+          "MEDIUM": 246335
+        },
+        "usable_run_lengths_min_median_max": [
+          20.0,
+          35.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          16.0,
+          5985.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2628,
+        "causal_runs_contributing": 2492,
+        "eligible_windows": 496272,
+        "history": 21,
+        "minimum_route_support_pass": true,
+        "next_state_available": 493644,
+        "segments_contributing": 128,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 130558,
+          "LOW": 120477,
+          "MEDIUM": 245237
+        },
+        "usable_run_lengths_min_median_max": [
+          21.0,
+          38.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          18.0,
+          5984.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2594,
+        "causal_runs_contributing": 2463,
+        "eligible_windows": 493644,
+        "history": 22,
+        "minimum_route_support_pass": true,
+        "next_state_available": 491050,
+        "segments_contributing": 127,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 129432,
+          "LOW": 120020,
+          "MEDIUM": 244192
+        },
+        "usable_run_lengths_min_median_max": [
+          22.0,
+          39.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          18.0,
+          5983.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2579,
+        "causal_runs_contributing": 2451,
+        "eligible_windows": 491050,
+        "history": 23,
+        "minimum_route_support_pass": true,
+        "next_state_available": 488471,
+        "segments_contributing": 127,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 128320,
+          "LOW": 119572,
+          "MEDIUM": 243158
+        },
+        "usable_run_lengths_min_median_max": [
+          23.0,
+          39.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          17.0,
+          5982.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2347,
+        "causal_runs_contributing": 2220,
+        "eligible_windows": 488471,
+        "history": 24,
+        "minimum_route_support_pass": true,
+        "next_state_available": 486124,
+        "segments_contributing": 126,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 127213,
+          "LOW": 119130,
+          "MEDIUM": 242128
+        },
+        "usable_run_lengths_min_median_max": [
+          24.0,
+          44.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          21.0,
+          5981.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2311,
+        "causal_runs_contributing": 2184,
+        "eligible_windows": 486124,
+        "history": 25,
+        "minimum_route_support_pass": true,
+        "next_state_available": 483813,
+        "segments_contributing": 126,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 126196,
+          "LOW": 118750,
+          "MEDIUM": 241178
+        },
+        "usable_run_lengths_min_median_max": [
+          25.0,
+          44.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          20.0,
+          5980.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2219,
+        "causal_runs_contributing": 2093,
+        "eligible_windows": 483813,
+        "history": 26,
+        "minimum_route_support_pass": true,
+        "next_state_available": 481594,
+        "segments_contributing": 126,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 125194,
+          "LOW": 118377,
+          "MEDIUM": 240242
+        },
+        "usable_run_lengths_min_median_max": [
+          26.0,
+          47.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          22.0,
+          5979.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2207,
+        "causal_runs_contributing": 2085,
+        "eligible_windows": 481594,
+        "history": 27,
+        "minimum_route_support_pass": true,
+        "next_state_available": 479387,
+        "segments_contributing": 125,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 124239,
+          "LOW": 118016,
+          "MEDIUM": 239339
+        },
+        "usable_run_lengths_min_median_max": [
+          27.0,
+          48.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          22.0,
+          5978.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2176,
+        "causal_runs_contributing": 2055,
+        "eligible_windows": 479387,
+        "history": 28,
+        "minimum_route_support_pass": true,
+        "next_state_available": 477211,
+        "segments_contributing": 125,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 123287,
+          "LOW": 117661,
+          "MEDIUM": 238439
+        },
+        "usable_run_lengths_min_median_max": [
+          28.0,
+          49.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          22.0,
+          5977.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 2164,
+        "causal_runs_contributing": 2046,
+        "eligible_windows": 477211,
+        "history": 29,
+        "minimum_route_support_pass": true,
+        "next_state_available": 475047,
+        "segments_contributing": 125,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 122348,
+          "LOW": 117310,
+          "MEDIUM": 237553
+        },
+        "usable_run_lengths_min_median_max": [
+          29.0,
+          49.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          21.0,
+          5976.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1546,
+        "causal_runs_contributing": 1430,
+        "eligible_windows": 475047,
+        "history": 30,
+        "minimum_route_support_pass": true,
+        "next_state_available": 473501,
+        "segments_contributing": 125,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 121412,
+          "LOW": 116963,
+          "MEDIUM": 236672
+        },
+        "usable_run_lengths_min_median_max": [
+          30.0,
+          65.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          36.0,
+          5975.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1534,
+        "causal_runs_contributing": 1418,
+        "eligible_windows": 473501,
+        "history": 31,
+        "minimum_route_support_pass": true,
+        "next_state_available": 471967,
+        "segments_contributing": 124,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 120699,
+          "LOW": 116725,
+          "MEDIUM": 236077
+        },
+        "usable_run_lengths_min_median_max": [
+          31.0,
+          66.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          36.0,
+          5974.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1518,
+        "causal_runs_contributing": 1402,
+        "eligible_windows": 471967,
+        "history": 32,
+        "minimum_route_support_pass": true,
+        "next_state_available": 470449,
+        "segments_contributing": 124,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 119991,
+          "LOW": 116488,
+          "MEDIUM": 235488
+        },
+        "usable_run_lengths_min_median_max": [
+          33.0,
+          68.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          2.0,
+          37.0,
+          5973.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1518,
+        "causal_runs_contributing": 1402,
+        "eligible_windows": 470449,
+        "history": 33,
+        "minimum_route_support_pass": true,
+        "next_state_available": 468931,
+        "segments_contributing": 124,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 119293,
+          "LOW": 116252,
+          "MEDIUM": 234904
+        },
+        "usable_run_lengths_min_median_max": [
+          33.0,
+          68.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          36.0,
+          5972.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1459,
+        "causal_runs_contributing": 1345,
+        "eligible_windows": 468931,
+        "history": 34,
+        "minimum_route_support_pass": true,
+        "next_state_available": 467472,
+        "segments_contributing": 124,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 118595,
+          "LOW": 116016,
+          "MEDIUM": 234320
+        },
+        "usable_run_lengths_min_median_max": [
+          34.0,
+          73.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          40.0,
+          5971.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1434,
+        "causal_runs_contributing": 1321,
+        "eligible_windows": 467472,
+        "history": 35,
+        "minimum_route_support_pass": true,
+        "next_state_available": 466038,
+        "segments_contributing": 124,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 117932,
+          "LOW": 115784,
+          "MEDIUM": 233756
+        },
+        "usable_run_lengths_min_median_max": [
+          35.0,
+          74.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          40.0,
+          5970.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1348,
+        "causal_runs_contributing": 1235,
+        "eligible_windows": 466038,
+        "history": 36,
+        "minimum_route_support_pass": true,
+        "next_state_available": 464690,
+        "segments_contributing": 124,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 117284,
+          "LOW": 115555,
+          "MEDIUM": 233199
+        },
+        "usable_run_lengths_min_median_max": [
+          36.0,
+          79.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          44.0,
+          5969.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1343,
+        "causal_runs_contributing": 1231,
+        "eligible_windows": 464690,
+        "history": 37,
+        "minimum_route_support_pass": true,
+        "next_state_available": 463347,
+        "segments_contributing": 124,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 116688,
+          "LOW": 115335,
+          "MEDIUM": 232667
+        },
+        "usable_run_lengths_min_median_max": [
+          37.0,
+          79.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          43.0,
+          5968.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1329,
+        "causal_runs_contributing": 1218,
+        "eligible_windows": 463347,
+        "history": 38,
+        "minimum_route_support_pass": true,
+        "next_state_available": 462018,
+        "segments_contributing": 124,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 116094,
+          "LOW": 115116,
+          "MEDIUM": 232137
+        },
+        "usable_run_lengths_min_median_max": [
+          38.0,
+          79.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          42.0,
+          5967.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1302,
+        "causal_runs_contributing": 1193,
+        "eligible_windows": 462018,
+        "history": 39,
+        "minimum_route_support_pass": true,
+        "next_state_available": 460716,
+        "segments_contributing": 124,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 115505,
+          "LOW": 114900,
+          "MEDIUM": 231613
+        },
+        "usable_run_lengths_min_median_max": [
+          39.0,
+          80.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          42.0,
+          5966.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1248,
+        "causal_runs_contributing": 1140,
+        "eligible_windows": 460716,
+        "history": 40,
+        "minimum_route_support_pass": true,
+        "next_state_available": 459468,
+        "segments_contributing": 124,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 114924,
+          "LOW": 114687,
+          "MEDIUM": 231105
+        },
+        "usable_run_lengths_min_median_max": [
+          40.0,
+          88.5,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          49.5,
+          5965.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1238,
+        "causal_runs_contributing": 1131,
+        "eligible_windows": 459468,
+        "history": 41,
+        "minimum_route_support_pass": true,
+        "next_state_available": 458230,
+        "segments_contributing": 124,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 114378,
+          "LOW": 114480,
+          "MEDIUM": 230610
+        },
+        "usable_run_lengths_min_median_max": [
+          41.0,
+          89.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          49.0,
+          5964.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1227,
+        "causal_runs_contributing": 1121,
+        "eligible_windows": 458230,
+        "history": 42,
+        "minimum_route_support_pass": true,
+        "next_state_available": 457003,
+        "segments_contributing": 124,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 113840,
+          "LOW": 114274,
+          "MEDIUM": 230116
+        },
+        "usable_run_lengths_min_median_max": [
+          42.0,
+          89.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          48.0,
+          5963.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1222,
+        "causal_runs_contributing": 1117,
+        "eligible_windows": 457003,
+        "history": 43,
+        "minimum_route_support_pass": true,
+        "next_state_available": 455781,
+        "segments_contributing": 124,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 113304,
+          "LOW": 114071,
+          "MEDIUM": 229628
+        },
+        "usable_run_lengths_min_median_max": [
+          43.0,
+          89.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          47.0,
+          5962.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1198,
+        "causal_runs_contributing": 1095,
+        "eligible_windows": 455781,
+        "history": 44,
+        "minimum_route_support_pass": true,
+        "next_state_available": 454583,
+        "segments_contributing": 124,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 112769,
+          "LOW": 113869,
+          "MEDIUM": 229143
+        },
+        "usable_run_lengths_min_median_max": [
+          44.0,
+          89.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          46.0,
+          5961.0
+        ]
+      },
+      {
+        "admitted_streaks_contributing": 1136,
+        "causal_runs_contributing": 1035,
+        "eligible_windows": 454583,
+        "history": 45,
+        "minimum_route_support_pass": true,
+        "next_state_available": 453447,
+        "segments_contributing": 123,
+        "speed_bins_at_window_endpoint": {
+          "HIGH": 112250,
+          "LOW": 113670,
+          "MEDIUM": 228663
+        },
+        "usable_run_lengths_min_median_max": [
+          45.0,
+          89.0,
+          6004.0
+        ],
+        "windows_per_usable_run_min_median_max": [
+          1.0,
+          45.0,
+          5960.0
+        ]
+      }
+    ]
+  },
+  "sealed_reference_allowed": false,
+  "selected_history": null,
+  "sg_execution": false,
+  "ta_execution": false,
+  "threshold": 201,
+  "threshold_meaning": "ROUTE_DEVELOPMENT_AVAILABILITY_NOT_MODEL_ACCEPTANCE",
+  "vehicle_activation_allowed": false
+}
