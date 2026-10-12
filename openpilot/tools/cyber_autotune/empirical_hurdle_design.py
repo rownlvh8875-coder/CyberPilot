@@ -1,0 +1,277 @@
+"""Public-only additive Hurdle design. No numerical execution path."""
+
+import argparse
+import json
+from pathlib import Path
+from openpilot.tools.cyber_autotune import empirical_plant_policy as p
+from openpilot.tools.cyber_autotune import empirical_hurdle_contracts as c
+
+BASELINE = "49f6909af65874e3c2b3cc2de2c621b137fb04fc"
+SOURCES = ("empirical_hurdle_design.py", "empirical_hurdle_contracts.py")
+PINS = {
+  'empirical-s2-ri-angle-grid-v1.json': {
+    'file_sha256': '23d3595fb73c058f1c965c1d110d828fbe25aa9b1c95f3b64e1e5a04791d1e09',
+    'receipt_sha256': '83ab72d1dc11521547cb5d9588b7350a836a7e3256342b51bb4d0dcd4eef5fff',
+  },
+  'empirical-s2-ri-causal-identity-v1.json': {
+    'file_sha256': '01c31a851c1612c4c3e5c70f2e14a6fdad694fed0fb2031a724ae2942508982b',
+    'receipt_sha256': '42b8dc61b9fd8673a810a93edeee575c7f7333576ea0908cc09b4602aea30cc5',
+  },
+  'empirical-s2-ri-failure-attribution-readiness-v2.json': {
+    'file_sha256': '025b7c74103423228b8885f4985227714cdf398660fa9933511bd78446a7de42',
+    'receipt_sha256': '2625c8d218654e2b19faa2b0c754216cda058ff0dff2f4418912883b0659551a',
+  },
+  'empirical-s2-ri-failure-attribution-validation-v2.json': {
+    'file_sha256': '6ff0a782ee4cb8f37476b95131236bb0f2d471d80ed0a9fa45a1d08991d360c9',
+    'receipt_sha256': 'a5ac026a0e3d2915c4fc6617ace087c86dd4bd18a8269ac6bfceb5ce18ab65bb',
+  },
+  'empirical-s2-ri-fit-cv-readiness-v1.json': {
+    'file_sha256': 'da10e0b46a0f183d77929fdb79ad82bec36231603258dfa9c480ee9c3f197aa9',
+    'receipt_sha256': 'e492e8b68b131ec0c81e1e8043818984ff267035733438e2fed9ca867d1d602a',
+  },
+  'empirical-s2-ri-fitting-feature-contract-v1.json': {
+    'file_sha256': '2974da414426ba7a862f0560db94d618d292dfeec51f1f2c31650f1d42a4a22c',
+    'receipt_sha256': '8812434d0ea3f51b51d5f7c79c72ea4b0c5a585bf9a1b1fda8f274f1f019a1f7',
+  },
+  'empirical-s2-ri-fitting-grid-contract-v1.json': {
+    'file_sha256': '7f079c65e5c75ac9521a829874d17a9ded00e36ac0aa627a2ea8a86d0d515c89',
+    'receipt_sha256': 'ff2b3c0cfa926b029dda87dbfb8fc80ec1cbb57a58b59bb20430bef0c6c7a9af',
+  },
+  'empirical-s2-ri-history-reset-v1.json': {
+    'file_sha256': '86a5405fb184304b6861f0a85ed38814acde0d24a1d22cb122df955435e5008d',
+    'receipt_sha256': 'b3387dc0d9ab0372cfbc6ed2e9bcc337250a4faa92c7c8fa7ab50451b34a1294',
+  },
+  'empirical-s2-ri-hurdle-design-trigger-v2.json': {
+    'file_sha256': 'e601cc17057329da2b3be24ee6f95ababe33e659bb7d6ce154a03052071a4d23',
+    'receipt_sha256': 'a43f44514c8b0099673ba10656c559f3fa98c26270377678ecd2a323868eb20d',
+  },
+  'empirical-s2-ri-mechanism-summary-v2.json': {
+    'file_sha256': 'bdfb19b35ceb4cf4f42ca4fc89ea57b96a40f3d537a0b90e6b851d724522f08d',
+    'receipt_sha256': 'c8eeccdedf0daef873703f2d92d92bed7912bde2ac8d138b48f4b16275cb6c7d',
+  },
+  'empirical-s2-ri-readiness-v1.json': {
+    'file_sha256': '3b6922f67bb096ccba8516e6ead5b4b326b757180582d124e2e6e2aa9c7535c6',
+    'receipt_sha256': 'df79966d0f2daedba0a6e798a91b277ee2325ee9e5e303069e3b4287e695d9b4',
+  },
+  'empirical-s2-ri-route-cv-contract-v1.json': {
+    'file_sha256': 'd3f935674a760754222bf5195312b48dfd90fb1e94ebb26747232c4910a22a09',
+    'receipt_sha256': '4fbcfbaf6c76e70b5fbad43e57624c4ec0917abb1aebcdf96a79d525f99cf31c',
+  },
+  'empirical-s2-ri-row-admission-v1.json': {
+    'file_sha256': 'c3de2b51bfd80e6b7122db15277071e5cb6afbed7ebc8773cb70a97513ae1448',
+    'receipt_sha256': '43e0eb373a31757ba44159bc674b2f5fb483a8e999142cf5c28898ee5f4908fc',
+  },
+  'empirical-s2-ri-selection-result-v1.json': {
+    'file_sha256': '706a1e318660f9875d49d558d39f77736003669dd137dce9eeb20146f18a6f32',
+    'receipt_sha256': 'c5605651cfe7e37e3fa155bc761fe2e1ce706c54caa560a07d834a59c0965cca',
+  },
+  'empirical-s2-ri-signal-contract-v1.json': {
+    'file_sha256': '7362932d9fd0a61905ac99fa2a5674bf11cd82ce716263e7d30a7e9f79dc3f3d',
+    'receipt_sha256': 'e7b422205eba6ee4d1a5839ff8621e91363c2336cab4f302b477479ae32562fa',
+  },
+  'empirical-s2-ri-target-contract-v1.json': {
+    'file_sha256': '225dade0c492beefe5c544d8a9a6e2af83ca2d032490e20a4ba869172efec1c7',
+    'receipt_sha256': 'f871a00be28d345c219e213cd81befc84ee071f153938feb670b2eefac212154',
+  },
+}
+
+
+def safe(path):
+  path = Path(path).absolute()
+  if '..' in path.parts or any(x.is_symlink() for x in (path, *path.parents)):
+    raise ValueError('HURDLE_DESIGN_UNSAFE_PATH')
+  return path
+
+
+def check_evidence(inputs):
+  try:
+    if set(inputs) != set(PINS):
+      raise ValueError('input set')
+    for name, value in inputs.items():
+      p.verify(value)
+      if value['receipt_sha256'] != PINS[name]['receipt_sha256']:
+        raise ValueError('receipt pin')
+    ready = inputs['empirical-s2-ri-failure-attribution-readiness-v2.json']
+    trigger = inputs['empirical-s2-ri-hurdle-design-trigger-v2.json']
+    if ready['status'] != 'S2_RI_FAILURE_ATTRIBUTION_V2_COMPLETE' or 'READ_ONLY_ATTRIBUTION_COMPLETE' not in ready['states']:
+      raise ValueError('readiness')
+    for value in (ready, trigger, inputs['empirical-s2-ri-mechanism-summary-v2.json']):
+      if (
+        value['one_step_outcome'] != 'ZERO_STATIC_TRANSITION_TRADEOFF_STRICT'
+        or value['hurdle_state'] != 'HURDLE_FAMILY_DESIGN_REVIEW_SUPPORTED'
+        or value['pattern_jobs'] != 32
+        or value['total_jobs'] != 32
+        or value['historical_verdict'] != 'S2_RI_NO_ADMISSIBLE_CANDIDATE'
+        or value['hurdle_implementation_authorized']
+        or value['hurdle_fitting_authorized']
+      ):
+        raise ValueError('trigger or historical verdict')
+    return inputs
+  except (ValueError, KeyError, TypeError) as exc:
+    raise ValueError('HURDLE_DESIGN_EVIDENCE_BINDING_CONFLICT') from exc
+
+
+def load_inputs():
+  values = {}
+  for name, pin in PINS.items():
+    raw = safe(p.PUBLIC / name).read_bytes()
+    if p.sha(raw) != pin['file_sha256']:
+      raise ValueError('HURDLE_DESIGN_EVIDENCE_BINDING_CONFLICT')
+    values[name] = json.loads(raw)
+  return check_evidence(values)
+
+
+def filename(label):
+  return 'empirical-hurdle-' + label + '-v1.json'
+
+
+def build():
+  inputs = load_inputs()
+  contracts = c.definitions(inputs)
+  source = {name: p.sha(Path(__file__).with_name(name).read_bytes()) for name in SOURCES}
+  summary = inputs['empirical-s2-ri-mechanism-summary-v2.json']
+  evidence = c.sealed(
+    'design-evidence',
+    baseline=BASELINE,
+    historical_inputs=PINS,
+    source_sha256=source,
+    attribution_status='S2_RI_FAILURE_ATTRIBUTION_V2_COMPLETE',
+    analysis='READ_ONLY_ATTRIBUTION_COMPLETE',
+    one_step_outcome=summary['one_step_outcome'],
+    pattern_jobs=summary['pattern_jobs'],
+    total_jobs=32,
+    trigger='HURDLE_FAMILY_DESIGN_REVIEW_SUPPORTED',
+    trigger_meaning='DESIGN_REVIEW_ONLY',
+    historical_verdict='S2_RI_NO_ADMISSIBLE_CANDIDATE',
+    historical_family_verdict='FROZEN_S2_RI_LINEAR_FAMILY_FAILED_RETROSPECTIVE_DIRECTIONAL_GATE',
+    rollout_by_horizon=summary['rollout_by_horizon'],
+    long_horizon_solution_claim=False,
+    source_discrepancy='PROMPT_100_STEP_16_16_DIFFERS_FROM_PINNED_ARTIFACT_17_15_USE_ARTIFACT',
+    private_inputs='NONE_PUBLIC_CONTRACTS_AND_AGGREGATES_ONLY',
+    old_artifacts_modified=False,
+  )
+  contracts['design-evidence'] = evidence
+  old = inputs['empirical-s2-ri-readiness-v1.json']
+  preserved = {
+    k: old[k]
+    for k in (
+      'dataset',
+      'S1',
+      'S2',
+      'S3',
+      'historical_track',
+      'historical_grid_verdict',
+      'stage_b',
+      'ta',
+      'sg',
+      'composition',
+      'future_holdout',
+      'calibration_blockers',
+      'sealed_reference',
+      'vehicle',
+      'closed_loop_bias',
+    )
+  }
+  readiness = c.sealed(
+    'design-readiness',
+    status=c.READY,
+    states=[
+      c.READY,
+      'HURDLE_MOVE_GATE_TARGET_FROZEN',
+      'HURDLE_CONDITIONAL_DELTA_TARGET_FROZEN',
+      'HURDLE_FEATURE_CONTRACT_FROZEN',
+      'HURDLE_TRAINING_POPULATION_CONTRACT_FROZEN',
+      'HURDLE_HARD_COMPOSITION_FROZEN',
+      'HURDLE_RECURSIVE_SEMANTICS_FROZEN',
+    ],
+    contracts={k: v['receipt_sha256'] for k, v in contracts.items()},
+    evidence_sha256=evidence['receipt_sha256'],
+    source_sha256=source,
+    structural_configurations=16,
+    steering_rate_dependency='NONE',
+    move_gate_threshold='UNSET',
+    move_gate_threshold_policy='NOT_YET_FROZEN',
+    hurdle_acceptance_policy='NOT_YET_FROZEN',
+    model_fitting='NOT_RUN',
+    move_gate_fitting='NOT_RUN',
+    conditional_delta_fitting='NOT_RUN',
+    normalizer_fitting='NOT_RUN',
+    threshold_selection='NOT_RUN',
+    cv_scoring='NOT_RUN',
+    model_selection='NOT_RUN',
+    prediction='NOT_RUN',
+    rollout='NOT_RUN',
+    private_arrays_opened=0,
+    raw_log_openings=0,
+    qlog_openings=0,
+    holdout_openings=0,
+    holdout='HOLDOUT_OPENING_CLOSED',
+    opening_count=0,
+    vehicle_authority=False,
+    historical_verdict='S2_RI_NO_ADMISSIBLE_CANDIDATE',
+    historical_selection='MODEL_SELECTION_FAILED_CLOSED',
+    historical_attribution='ZERO_STATIC_TRANSITION_TRADEOFF_STRICT',
+    no_model_admitted='NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT',
+    search='SEARCH_NOT_AUTHORIZED',
+    final_pooled_refit='FINAL_POOLED_REFIT_NOT_AUTHORIZED',
+    **preserved,
+  )
+  contracts['design-readiness'] = readiness
+  contracts['design-validation'] = c.sealed(
+    'design-validation',
+    status='DESIGN_CONTRACTS_AND_PUBLIC_PINS_VALIDATED',
+    baseline=BASELINE,
+    artifact_receipts={k: v['receipt_sha256'] for k, v in contracts.items()},
+    source_sha256=source,
+    historical_inputs_exact=True,
+    private_arrays_opened=0,
+    fitting_calls=0,
+    predictions_generated=0,
+    thresholds_selected=0,
+    rollout_executions=0,
+    candidates_selected=0,
+    metrics_computed=0,
+    actual_support_counts='NOT_COMPUTED',
+    private_preservation='NOT_ACCESSED_NO_BYTE_SCAN_CLAIM',
+    runtime_regression='SEPARATE_DESIGN_REGRESSION_VALIDATION_RECEIPT',
+  )
+  return {filename(k): v for k, v in contracts.items()}
+
+
+def validate(bundle):
+  expected = build()
+  if type(bundle) is not dict or set(bundle) != set(expected):
+    raise ValueError('HURDLE_DESIGN_CONTRACT_DRIFT')
+  for name, value in bundle.items():
+    p.verify(value)
+    if p.canonical(value) != p.canonical(expected[name]):
+      raise ValueError('HURDLE_DESIGN_CONTRACT_DRIFT')
+  return bundle
+
+
+def publish(output):
+  root = safe(output)
+  bundle = validate(build())
+  encoded = {n: json.dumps(v, sort_keys=True, indent=2, allow_nan=False).encode() + b'\n' for n, v in bundle.items()}
+  for name, data in encoded.items():
+    for target in (root / name, root / (name + '.atomic')):
+      path = safe(target)
+      if path.exists() and (not path.is_file() or path.read_bytes() != data):
+        raise ValueError('HURDLE_DESIGN_IMMUTABLE_OUTPUT_CONFLICT')
+  for name in sorted(bundle, key=lambda n: (n == filename('design-validation'), n)):
+    p.persist(safe(root / name), bundle[name])
+  if any(safe(root / name).read_bytes() != data for name, data in encoded.items()):
+    raise ValueError('HURDLE_DESIGN_PUBLICATION_BYTES_CONFLICT')
+  return bundle
+
+
+def main():
+  parser = argparse.ArgumentParser(description=__doc__)
+  parser.add_argument('--output', required=True, type=Path)
+  args = parser.parse_args()
+  bundle = publish(args.output)
+  print(json.dumps({'status': c.READY, 'artifacts': len(bundle), 'private_arrays_opened': 0, 'model_fitting': 'NOT_RUN'}))
+
+
+if __name__ == '__main__':
+  main()
