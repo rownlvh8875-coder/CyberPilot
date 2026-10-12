@@ -72,20 +72,31 @@ class TestReplay(unittest.TestCase):
     self.assertTrue(np.all(c['speed_bin_code']==2))
 
 
-if __name__=='__main__':
-  unittest.main()
 
 import tempfile
 from pathlib import Path
 from unittest.mock import patch
-import pytest
 from openpilot.tools.cyber_autotune import empirical_s2_ri_reconstruction as execution
 from openpilot.tools.cyber_autotune import empirical_causal_dataset_store as storage
 from openpilot.tools.cyber_autotune import empirical_plant_policy as p
 from openpilot.tools.cyber_autotune import empirical_s2_ri_fit_cv_gates as gates
 
 
-@pytest.mark.parametrize('candidate',old.CANDIDATES)
+
+def cases(names, values):
+  """Local stdlib case metadata; no optional test-runner dependency."""
+  def decorate(function):
+    function.case_values = [(value,) if ',' not in names else tuple(value) for value in values]
+    return function
+  return decorate
+
+
+def assert_raises(exception, match=None):
+  case = unittest.TestCase()
+  return case.assertRaisesRegex(exception, match) if match is not None else case.assertRaises(exception)
+
+
+@cases('candidate',old.CANDIDATES)
 def test_all_frozen_forms_and_rate_free_rollout(candidate):
   d,length=old.parameters(candidate)
   s=segment(550)
@@ -110,7 +121,7 @@ def test_all_frozen_forms_and_rate_free_rollout(candidate):
     np.testing.assert_array_equal(result['observed_path'],s['tick'][ix[:,None]+np.arange(26)])
 
 
-@pytest.mark.parametrize('horizon',(1,*old.HORIZONS))
+@cases('horizon',(1,*old.HORIZONS))
 def test_anchor_divergence_before_prediction(horizon):
   s=segment(550)
   _,digest,n=r.binding([s],'S2RI_D00_L01',horizon)
@@ -119,13 +130,13 @@ def test_anchor_divergence_before_prediction(horizon):
   for key in hist:
     bad={**hist,key:0 if key=='count' else '0'*64}
     with patch.object(old,'predict',side_effect=AssertionError('prediction before anchor')):
-      with pytest.raises(ValueError,match='ANCHOR_DIVERGENCE'):
+      with assert_raises(ValueError,match='ANCHOR_DIVERGENCE'):
         r.require_anchor([s],'S2RI_D00_L01',horizon,bad)
 
 
-@pytest.mark.parametrize('candidate',('S2RI_D01_L01','S2RI_D00_L02','S2RI_D00_L46'))
+@cases('candidate',('S2RI_D01_L01','S2RI_D00_L02','S2RI_D00_L46'))
 def test_candidate_expansion_rejected(candidate):
-  with pytest.raises(ValueError,match='FROZEN_CANDIDATE'):
+  with assert_raises(ValueError,match='FROZEN_CANDIDATE'):
     r.binding([segment()],candidate,1)
 
 
@@ -150,9 +161,9 @@ def test_future_observed_path_not_feature():
   r.exact(a,b,'PATH')
 
 
-@pytest.mark.parametrize('horizon',(25,50,100,200))
+@cases('horizon',(25,50,100,200))
 def test_no_padding(horizon):
-  with pytest.raises(ValueError,match='EXACT_ROLLOUT'):
+  with assert_raises(ValueError,match='EXACT_ROLLOUT'):
     r.recursive_path(np.zeros((1,2),dtype=np.int64),np.zeros((1,horizon-1)),np.zeros((1,horizon)),
                      'S2RI_D00_L01',model(),horizon)
 
@@ -160,17 +171,17 @@ def test_no_padding(horizon):
 def test_qlog_pre_array_rejection():
   auth=p.seal({'frozen_replay_authorized':True,'array_open_before_seal':False,'qlog_deny_content_sha256':['x']})
   with patch.object(execution.read,'read_array',side_effect=AssertionError('array opened')):
-    with pytest.raises(ValueError,match='QLOG_CAUSAL_ADMISSION_FORBIDDEN'):
+    with assert_raises(ValueError,match='QLOG_CAUSAL_ADMISSION_FORBIDDEN'):
       execution.load_routes([(None,{'segment_sha256':'x'},None,None)],auth)
 
 
 def test_seal_required_before_array():
-  with pytest.raises(ValueError,match='SEALED_REPLAY_AUTHORIZATION'):
+  with assert_raises(ValueError,match='SEALED_REPLAY_AUTHORIZATION'):
     execution.load_routes([],p.seal({'frozen_replay_authorized':False,'array_open_before_seal':False}))
 
 
 def test_selector_trapped():
-  with r.firewall(),pytest.raises(ValueError,match='REFIT_FORBIDDEN'):
+  with r.firewall(),assert_raises(ValueError,match='REFIT_FORBIDDEN'):
     gates.select([])
 
 
@@ -179,19 +190,19 @@ def test_atomic_no_overwrite_and_traversal():
     root=Path(tmp)
     storage.atomic_bytes(root/'a',b'a')
     storage.atomic_bytes(root/'a',b'a')
-    with pytest.raises(ValueError):
+    with assert_raises(ValueError):
       storage.atomic_bytes(root/'a',b'b')
-    with pytest.raises(ValueError):
+    with assert_raises(ValueError):
       storage.safe(root/'..'/'escape')
     (root/'link').symlink_to(root/'a')
-    with pytest.raises(ValueError):
+    with assert_raises(ValueError):
       storage.safe(root/'link')
 
 
 def test_store_overlap():
   with tempfile.TemporaryDirectory() as tmp:
     root=Path(tmp)
-    with pytest.raises(ValueError):
+    with assert_raises(ValueError):
       storage.external(root/'nested',[root])
 
 
@@ -278,7 +289,7 @@ def test_job_persistence_and_trapped_resume():
     assert result['context_complete'] and result['path_complete']
 
 
-@pytest.mark.parametrize('part',('model','normalizer'))
+@cases('part',('model','normalizer'))
 def test_modified_frozen_array_rejected(part):
   with tempfile.TemporaryDirectory() as tmp:
     root=Path(tmp)
@@ -286,7 +297,7 @@ def test_modified_frozen_array_rejected(part):
     path=root/'candidates'/job['candidate_id']/job['fold']/part
     name='coefficients.npy' if part=='model' else 'mean.npy'
     (path/name).write_bytes(b'changed')
-    with pytest.raises(ValueError,match='HASH_CONFLICT'):
+    with assert_raises(ValueError,match='HASH_CONFLICT'):
       execution.load_model(path.parent,job)
 
 
@@ -296,17 +307,17 @@ def test_missing_model_rejected():
     job,_=frozen_job_fixture(root)
     path=root/'candidates'/job['candidate_id']/job['fold']
     (path/'model/coefficients.npy').unlink()
-    with pytest.raises(FileNotFoundError):
+    with assert_raises(FileNotFoundError):
       execution.load_model(path,job)
 
 
-@pytest.mark.parametrize('field',('prediction','projected','error','comparator_error'))
+@cases('field',('prediction','projected','error','comparator_error'))
 def test_original_buffer_divergence(field):
   with tempfile.TemporaryDirectory() as tmp:
     root=Path(tmp)
     a=np.array([1.,2.])
     b=storage.array_write(root/(field+'.npy'),a)
-    with pytest.raises(ValueError,match='ONE_STEP_DIVERGENCE'):
+    with assert_raises(ValueError,match='ONE_STEP_DIVERGENCE'):
       execution.compare_original(root,{field:a+1},{field:b['array_sha256']},
                                   {field+'.npy':b['file_sha256']},'ONE_STEP')
 
@@ -317,7 +328,7 @@ def test_mutated_frozen_anchor_rejected_before_model_load():
     job,s=frozen_job_fixture(root/'fit')
     job['rollout']['200']['anchor_sha256']='0'*64
     with patch.object(execution,'load_model',side_effect=AssertionError('too early')):
-      with pytest.raises(ValueError,match='ANCHOR_DIVERGENCE'):
+      with assert_raises(ValueError,match='ANCHOR_DIVERGENCE'):
         execution.job_run(root/'new',root/'fit',job,[s],p.seal({}))
 
 
@@ -332,13 +343,13 @@ def test_prediction_not_used_for_target():
     r.exact(a[key],b[key],'TARGET')
 
 
-@pytest.mark.parametrize('key,value',[
+@cases('key,value',[
   ('dtype','|O'),('shape',{'private_payload':'SECRET'}),('order','F'),('array_sha256','b'*64)])
 def test_resume_array_binding_tamper(key,value):
   with tempfile.TemporaryDirectory() as tmp:
     path=Path(tmp)/'array.npy'
     binding=storage.array_write(path,np.array([1,2],dtype=np.int64))
-    with pytest.raises(ValueError):
+    with assert_raises(ValueError):
       execution.verify_array_bytes(path,{**binding,key:value})
 
 
@@ -346,11 +357,11 @@ def test_resume_payload_hash_connected_to_historical():
   with tempfile.TemporaryDirectory() as tmp:
     path=Path(tmp)/'array.npy'
     binding=storage.array_write(path,np.array([1,2],dtype=np.int64))
-    with pytest.raises(ValueError,match='DIVERGENCE'):
+    with assert_raises(ValueError,match='DIVERGENCE'):
       execution.verify_array_bytes(path,binding,original_sha='0'*64)
 
 
-@pytest.mark.parametrize('horizon',old.HORIZONS)
+@cases('horizon',old.HORIZONS)
 def test_every_projected_path_step_nonconstant(horizon):
   frozen=model()
   frozen['coefficients']=np.array([1.,0.,0.,0.,0.])
@@ -362,3 +373,28 @@ def test_every_projected_path_step_nonconstant(horizon):
   expected=initial[:,-1,None]+np.arange(horizon+1)
   np.testing.assert_array_equal(path,expected)
   r.exact(path[:,-1].copy(),old.recursive(initial,command,speed,'S2RI_D00_L01',frozen,horizon),'ROLLOUT')
+
+
+class TestReconstructionContracts(unittest.TestCase):
+  """Every formerly function-style case is visible to tools/test_runner.py."""
+
+
+def _register_case(name, function, arguments):
+  def run_case(self):
+    function(*arguments)
+  run_case.__name__ = name
+  setattr(TestReconstructionContracts, name, run_case)
+
+
+for _name, _function in tuple(globals().items()):
+  if _name.startswith('test_') and callable(_function):
+    # Optional pytest invocation must not collect the unbound function twice.
+    _function.__test__ = False
+    _values = getattr(_function, 'case_values', [()])
+    for _index, _arguments in enumerate(_values):
+      _case_name = _name + (f'_case_{_index:02d}' if len(_values) > 1 else '')
+      _register_case(_case_name, _function, _arguments)
+
+
+if __name__ == '__main__':
+  unittest.main()
