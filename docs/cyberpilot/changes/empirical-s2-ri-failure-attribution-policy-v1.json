@@ -1,0 +1,80 @@
+{
+  "array_decode_before_complete_input": false,
+  "authorized": {
+    "causal_arrays": false,
+    "fit": false,
+    "holdout": false,
+    "hurdle": false,
+    "predict": false,
+    "qlog": false,
+    "raw_logs": false,
+    "rollout": false,
+    "select": false
+  },
+  "candidate_order": [
+    "S2RI_D00_L01",
+    "S2RI_D00_L05",
+    "S2RI_D00_L15",
+    "S2RI_D00_L45",
+    "S2RI_D05_L01",
+    "S2RI_D05_L05",
+    "S2RI_D05_L15",
+    "S2RI_D05_L45",
+    "S2RI_D10_L01",
+    "S2RI_D10_L05",
+    "S2RI_D10_L15",
+    "S2RI_D10_L45",
+    "S2RI_D20_L01",
+    "S2RI_D20_L05",
+    "S2RI_D20_L15",
+    "S2RI_D20_L45"
+  ],
+  "candidate_ranking": false,
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "counterfactual_gate": false,
+  "fallback": "NONE_NO_TARGET_RECOVERY_FROM_ERRORS_NO_RECOMPUTATION",
+  "fold_order": [
+    "FOLD_A",
+    "FOLD_B"
+  ],
+  "future_design_authorized": false,
+  "holdout": "CLOSED",
+  "horizons": [
+    25,
+    50,
+    100,
+    200
+  ],
+  "hypotheses": [
+    "STATIC_FALSE_MOVEMENT",
+    "MOVE_SSE_REDUCTION",
+    "RECURSIVE_DRIFT"
+  ],
+  "hypotheses_confirmed_in_advance": false,
+  "input_manifest_sha256": "9466e4578842b4c8a300bb843338e53b42a2fc75200879360f8212c7c2605c97",
+  "input_mode": "READ_ONLY_HASH_AND_SEALED_METADATA",
+  "missing_required_arrays": "ATTRIBUTION_INPUT_INSUFFICIENT",
+  "new_thresholds": false,
+  "opening_count": 0,
+  "output": "INPUT_AUDIT_ONLY_WHEN_REQUIRED_STORED_TARGETS_ARE_ABSENT",
+  "p95_additive": false,
+  "production_authority": false,
+  "public_file_sha256": {
+    "candidate-gates": "7413b012048254a8bf7c5e0ba8b51429f1720c4924c1fd91d54bf269a12abd78",
+    "fit-cv-authorization": "18330eeb0ec0b638589fdace76f868234ec336f9a3ee065eebf11e45175797b7",
+    "fit-cv-job-manifest": "24ff4b983f5b944cca8c5c65e904660b25836741692f3fb81021ba40926c88af",
+    "fit-cv-readiness": "da10e0b46a0f183d77929fdb79ad82bec36231603258dfa9c480ee9c3f197aa9",
+    "fit-cv-results": "cdbdbd8c511d7eeb135990eb57f56098c34b34cc7a7d4e7f0b9cce39c24e9107",
+    "selection-result": "706a1e318660f9875d49d558d39f77736003669dd137dce9eeb20146f18a6f32"
+  },
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "e0ae946d9597dd83b2d2bc88945791f3488023e107923bb373f3f0db48efd100",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_S2_RI_FAILURE_ATTRIBUTION_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}
