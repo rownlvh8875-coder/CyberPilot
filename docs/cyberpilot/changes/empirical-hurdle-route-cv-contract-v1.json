@@ -1,0 +1,59 @@
+{
+  "authority": {
+    "candidate_execution": false,
+    "composition": false,
+    "controller_integration": false,
+    "cv_scoring": false,
+    "device": false,
+    "fitting": false,
+    "holdout_opening": false,
+    "logistic_fitting": false,
+    "normalizer_fitting": false,
+    "ols_fitting": false,
+    "pooled_refit": false,
+    "prediction": false,
+    "private_array_access": false,
+    "qlog_opening": false,
+    "raw_opening": false,
+    "rollout": false,
+    "selection": false,
+    "sg": false,
+    "ta": false,
+    "threshold_search": false,
+    "vehicle": false
+  },
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "diagnostic_scope": "NON_RAIL_DIAGNOSTIC_ONLY_NO_ADMISSION_RANK_OR_SELECTION",
+  "family": "HURDLE_RI_V1",
+  "folds": [
+    {
+      "development": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "fold": "FOLD_A",
+      "train": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677"
+    },
+    {
+      "development": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+      "fold": "FOLD_B",
+      "train": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c"
+    }
+  ],
+  "historical_sha256": "4fbcfbaf6c76e70b5fbad43e57624c4ec0917abb1aebcdf96a79d525f99cf31c",
+  "independent_validation": false,
+  "interpretation": "RETROSPECTIVE_ROUTE_LEVEL_DEVELOPMENT_PRIOR_EXPOSURE_BOTH_ROUTES",
+  "pooled_development": false,
+  "primary_scope": "SCOPE_ALL_ACTIVE_NO_OVERRIDE",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "random_split": false,
+  "receipt_sha256": "9e6bddd4f4d0e3dbe1cd02d7cfe2313a17da5459215f4fa397d42b098b406a4a",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_ROUTE_CV_CONTRACT_V1",
+  "sealed_reference_allowed": false,
+  "segment_split": false,
+  "selection_population": "BOTH_FOLDS_SEPARATELY_NO_POOLED_FAILURE_MASKING",
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

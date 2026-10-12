@@ -1,0 +1,278 @@
+{
+  "actual_gate_evaluation": "NOT_RUN",
+  "admissible": "HURDLE_CV_ADMISSIBLE",
+  "arms": [
+    "INTEGRATED_CANDIDATE",
+    "HOLD_LAST_SAME_ANCHORS"
+  ],
+  "authority": {
+    "candidate_execution": false,
+    "composition": false,
+    "controller_integration": false,
+    "cv_scoring": false,
+    "device": false,
+    "fitting": false,
+    "holdout_opening": false,
+    "logistic_fitting": false,
+    "normalizer_fitting": false,
+    "ols_fitting": false,
+    "pooled_refit": false,
+    "prediction": false,
+    "private_array_access": false,
+    "qlog_opening": false,
+    "raw_opening": false,
+    "rollout": false,
+    "selection": false,
+    "sg": false,
+    "ta": false,
+    "threshold_search": false,
+    "vehicle": false
+  },
+  "candidate_search_authorized": false,
+  "clauses": [
+    {
+      "id": "ONE_STEP_RMSE",
+      "metric": "RMSE",
+      "operator": "<",
+      "population": "ALL_ONE_STEP"
+    },
+    {
+      "id": "ONE_STEP_MAE",
+      "metric": "MAE",
+      "operator": "<=",
+      "population": "ALL_ONE_STEP"
+    },
+    {
+      "id": "ONE_STEP_P95",
+      "metric": "P95",
+      "operator": "<=",
+      "population": "ALL_ONE_STEP"
+    },
+    {
+      "id": "ONE_STEP_EXACT_HIT",
+      "metric": "EXACT_HIT",
+      "operator": ">=",
+      "population": "ALL_ONE_STEP"
+    },
+    {
+      "id": "ONE_STEP_WITHIN_ONE_TICK",
+      "metric": "WITHIN_ONE_TICK",
+      "operator": ">=",
+      "population": "ALL_ONE_STEP"
+    },
+    {
+      "id": "MOVE_RMSE",
+      "metric": "RMSE",
+      "operator": "<=",
+      "population": "TRUE_MOVE_ONE_STEP_INTEGRATED"
+    },
+    {
+      "id": "MOVE_MAE",
+      "metric": "MAE",
+      "operator": "<=",
+      "population": "TRUE_MOVE_ONE_STEP_INTEGRATED"
+    },
+    {
+      "id": "MOVE_P95",
+      "metric": "P95",
+      "operator": "<=",
+      "population": "TRUE_MOVE_ONE_STEP_INTEGRATED"
+    },
+    {
+      "horizon_steps": 25,
+      "id": "OVERALL_25_RMSE",
+      "metric": "RMSE",
+      "operator": "<=",
+      "population": "OVERALL_ROLLOUT"
+    },
+    {
+      "horizon_steps": 25,
+      "id": "OVERALL_25_MAE",
+      "metric": "MAE",
+      "operator": "<=",
+      "population": "OVERALL_ROLLOUT"
+    },
+    {
+      "horizon_steps": 25,
+      "id": "OVERALL_25_P95",
+      "metric": "P95",
+      "operator": "<=",
+      "population": "OVERALL_ROLLOUT"
+    },
+    {
+      "horizon_steps": 50,
+      "id": "OVERALL_50_RMSE",
+      "metric": "RMSE",
+      "operator": "<=",
+      "population": "OVERALL_ROLLOUT"
+    },
+    {
+      "horizon_steps": 50,
+      "id": "OVERALL_50_MAE",
+      "metric": "MAE",
+      "operator": "<=",
+      "population": "OVERALL_ROLLOUT"
+    },
+    {
+      "horizon_steps": 50,
+      "id": "OVERALL_50_P95",
+      "metric": "P95",
+      "operator": "<=",
+      "population": "OVERALL_ROLLOUT"
+    },
+    {
+      "horizon_steps": 100,
+      "id": "OVERALL_100_RMSE",
+      "metric": "RMSE",
+      "operator": "<=",
+      "population": "OVERALL_ROLLOUT"
+    },
+    {
+      "horizon_steps": 100,
+      "id": "OVERALL_100_MAE",
+      "metric": "MAE",
+      "operator": "<=",
+      "population": "OVERALL_ROLLOUT"
+    },
+    {
+      "horizon_steps": 100,
+      "id": "OVERALL_100_P95",
+      "metric": "P95",
+      "operator": "<=",
+      "population": "OVERALL_ROLLOUT"
+    },
+    {
+      "horizon_steps": 200,
+      "id": "OVERALL_200_RMSE",
+      "metric": "RMSE",
+      "operator": "<=",
+      "population": "OVERALL_ROLLOUT"
+    },
+    {
+      "horizon_steps": 200,
+      "id": "OVERALL_200_MAE",
+      "metric": "MAE",
+      "operator": "<=",
+      "population": "OVERALL_ROLLOUT"
+    },
+    {
+      "horizon_steps": 200,
+      "id": "OVERALL_200_P95",
+      "metric": "P95",
+      "operator": "<=",
+      "population": "OVERALL_ROLLOUT"
+    },
+    {
+      "horizon_steps": 25,
+      "id": "PATH_MOVED_25_RMSE",
+      "metric": "RMSE",
+      "operator": "<=",
+      "population": "PATH_MOVED_ROLLOUT"
+    },
+    {
+      "horizon_steps": 25,
+      "id": "PATH_MOVED_25_MAE",
+      "metric": "MAE",
+      "operator": "<=",
+      "population": "PATH_MOVED_ROLLOUT"
+    },
+    {
+      "horizon_steps": 25,
+      "id": "PATH_MOVED_25_P95",
+      "metric": "P95",
+      "operator": "<=",
+      "population": "PATH_MOVED_ROLLOUT"
+    },
+    {
+      "horizon_steps": 50,
+      "id": "PATH_MOVED_50_RMSE",
+      "metric": "RMSE",
+      "operator": "<=",
+      "population": "PATH_MOVED_ROLLOUT"
+    },
+    {
+      "horizon_steps": 50,
+      "id": "PATH_MOVED_50_MAE",
+      "metric": "MAE",
+      "operator": "<=",
+      "population": "PATH_MOVED_ROLLOUT"
+    },
+    {
+      "horizon_steps": 50,
+      "id": "PATH_MOVED_50_P95",
+      "metric": "P95",
+      "operator": "<=",
+      "population": "PATH_MOVED_ROLLOUT"
+    },
+    {
+      "horizon_steps": 100,
+      "id": "PATH_MOVED_100_RMSE",
+      "metric": "RMSE",
+      "operator": "<=",
+      "population": "PATH_MOVED_ROLLOUT"
+    },
+    {
+      "horizon_steps": 100,
+      "id": "PATH_MOVED_100_MAE",
+      "metric": "MAE",
+      "operator": "<=",
+      "population": "PATH_MOVED_ROLLOUT"
+    },
+    {
+      "horizon_steps": 100,
+      "id": "PATH_MOVED_100_P95",
+      "metric": "P95",
+      "operator": "<=",
+      "population": "PATH_MOVED_ROLLOUT"
+    },
+    {
+      "horizon_steps": 200,
+      "id": "PATH_MOVED_200_RMSE",
+      "metric": "RMSE",
+      "operator": "<=",
+      "population": "PATH_MOVED_ROLLOUT"
+    },
+    {
+      "horizon_steps": 200,
+      "id": "PATH_MOVED_200_MAE",
+      "metric": "MAE",
+      "operator": "<=",
+      "population": "PATH_MOVED_ROLLOUT"
+    },
+    {
+      "horizon_steps": 200,
+      "id": "PATH_MOVED_200_P95",
+      "metric": "P95",
+      "operator": "<=",
+      "population": "PATH_MOVED_ROLLOUT"
+    }
+  ],
+  "composition_authorized": false,
+  "epsilon": 0,
+  "failure": "NOT_ADMISSIBLE",
+  "family": "HURDLE_RI_V1",
+  "grid_rate_domain": "FINITE_CLOSED_0_1",
+  "inherited_s2ri_gate": false,
+  "no_counterfactual_gate": true,
+  "no_separate_path_flat_gate": true,
+  "no_separate_static_gate": true,
+  "nonfinite_or_negative_error_metric": "WHOLE_FOLD_INVALID",
+  "oracle_admission": false,
+  "policy_basis": "SEPARATELY_PREDECLARED_HURDLE_INTEGRATED_MOVE_AND_PATH_MOVED_PROTECTION",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "quantifier": "ALL_CLAUSES_AND_SUPPORT_AND_NUMERICAL_PRECONDITIONS_IN_BOTH_FOLDS",
+  "receipt_sha256": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60",
+  "reference_promotable": false,
+  "required_folds": [
+    "FOLD_A",
+    "FOLD_B"
+  ],
+  "schema": "EMPIRICAL_HURDLE_ACCEPTANCE_GATE_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "stage_diagnostic_shortcut": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}
