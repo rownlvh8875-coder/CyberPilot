@@ -1,0 +1,49 @@
+{
+  "actual_execution_authorized": false,
+  "anchors": "V2_EQUALS_V1_ORDERED_ANCHOR_SHA_FOR_EACH_HORIZON",
+  "authority": "PUBLIC_POLICY_AND_SYNTHETIC_TESTS_ONLY",
+  "candidate_search_authorized": false,
+  "change_scope": "THRESHOLD_OBJECTIVE_ONLY",
+  "composition_authorized": false,
+  "contract_receipt": "ae1b447a4abdc3c5ba4c34adcfa4c650d3ee35b9229d899a8d6ff557ce09bb92",
+  "decision_policy": "HURDLE_STAGE1_DECISION_POLICY_V2",
+  "exogenous": "LOGGED_EXOGENOUS_COMMAND_CONDITIONED_ROLLOUT",
+  "family": "HURDLE_RI_V1",
+  "forbidden": [
+    "REFIT",
+    "ADAPTIVE_THRESHOLD",
+    "HYSTERESIS",
+    "ONLINE_NORMALIZER_UPDATE",
+    "FORCED_MINIMUM_MOVEMENT"
+  ],
+  "frequency_hz": 100,
+  "gate": "OVERALL_AND_PATH_MOVED_RMSE_MAE_P95_NONWORSE_ALL_FOUR_HORIZONS_BOTH_FOLDS",
+  "horizons": [
+    25,
+    50,
+    100,
+    200
+  ],
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "be033b1e825c835169f5060ba11df78d16d0da7acd9561d3963873175355ceb7",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_STAGE1_V2_ROLLOUT_EXECUTION_CONTRACT",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "state": "PROJECTED_INTEGER_TICK_AND_PROJECTED_DELTA_HISTORY",
+  "steps": [
+    "BUILD_PROJECTED_STATE_HISTORY_FEATURES",
+    "IMMUTABLE_V1_STAGE1_NORMALIZER_MODEL",
+    "P_MOVE_GT_FROZEN_V2_THRESHOLD",
+    "STATIC_EXACT_HOLD_WITHOUT_STAGE2",
+    "MOVE_IMMUTABLE_V1_STAGE2_NORMALIZER_MODEL_AND_DIRECT_HALF_EVEN_PROJECTION",
+    "UPDATE_PROJECTED_DELTA_HISTORY",
+    "ADVANCE_LOGGED_COMMAND_AND_VEGO"
+  ],
+  "strategy": "SAME_ANCHORS_NEW_V2_GATE",
+  "ta_execution": false,
+  "truth": "FUTURE_OBSERVED_ANGLE_DELTA_MOVE_LABEL_SCORING_ONLY_NOT_FEATURE_OR_BRANCH",
+  "vehicle_activation_allowed": false
+}
