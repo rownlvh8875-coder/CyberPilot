@@ -1,0 +1,1426 @@
+{
+  "authorization_sha256": "e4eeaca2f891cc9fdb1370b7ae735d963287af6c09cca85dc689c8e9c560c6ea",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "jobs": [
+    {
+      "candidate_id": "HRI_D00_L01",
+      "diagnostics": {
+        "FN": 14961,
+        "FP": 143280,
+        "TN": 113801,
+        "TP": 28527,
+        "balanced_accuracy": 0.549319996001681,
+        "false_move_rate": 0.5573340698067925,
+        "missed_move_rate": 0.34402593818984545,
+        "precision": 0.16604096457071016,
+        "recall": 0.6559740618101545,
+        "specificity": 0.4426659301932076,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "ff7204692d81ed8534a7e03b0fbacc4d99e601287a47d31af4f078366e6ae5b3",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4035820190044589,
+          "maxabs_gradient": 2.981647771228136e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 336941,
+        "effective_columns": 5,
+        "model_receipt_sha256": "f881b13fb73ee04b1144e69ae62e4694725862402eee05e36356c043dc1fdb15",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "8b5ffa2b21e8ca588998a6f69e8f7ecad9315366c177d371e5b9e18642f45539",
+        "rank": 5,
+        "train_anchor_sha256": "f488b1b1a82a6feebb3217f7ad7265c56eec15f6d9e1cdfe0e4bea26c8e739e6"
+      },
+      "train_move_count": 48231,
+      "train_static_count": 288710
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "diagnostics": {
+        "FN": 44663,
+        "FP": 5406,
+        "TN": 283304,
+        "TP": 3568,
+        "balanced_accuracy": 0.5276263228384448,
+        "false_move_rate": 0.018724671816009144,
+        "missed_move_rate": 0.9260226825071013,
+        "precision": 0.397593046579006,
+        "recall": 0.07397731749289876,
+        "specificity": 0.9812753281839909,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "4986ad168fe35a4bff4a2d6852223410e250e3a018f76c60d7e00226f6626424",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.40692961216905077,
+          "maxabs_gradient": 4.9141382695530806e-14,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 300569,
+        "effective_columns": 5,
+        "model_receipt_sha256": "d6f4e6be8052c60758d2e899cc84974a1cdb3498c45a56afb72cd6fc508d7ded",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "4c3b2b7b99ea61425aece0e9f65faced9af783910217dad4ad8f38ae89658814",
+        "rank": 5,
+        "train_anchor_sha256": "735b1aeec372655038f6ce12967c8b4e8a10a0584f97e7c8d180c3930057d89b"
+      },
+      "train_move_count": 43488,
+      "train_static_count": 257081
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "diagnostics": {
+        "FN": 16042,
+        "FP": 103452,
+        "TN": 123426,
+        "TP": 22156,
+        "balanced_accuracy": 0.56202481036004,
+        "false_move_rate": 0.4559807473620184,
+        "missed_move_rate": 0.4199696319179015,
+        "precision": 0.1763900388510286,
+        "recall": 0.5800303680820985,
+        "specificity": 0.5440192526379817,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "141b07d5cdb4dc20ade69bb71f2bcccdebdf6a487dfd4a2ed4e0b0554dc415b6",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4101395388522347,
+          "maxabs_gradient": 2.0726468257566456e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 293734,
+        "effective_columns": 13,
+        "model_receipt_sha256": "b7699eda914fb6f393bdd70b6b60fffa5c8e3ebdf9bc6b5984e6a43919eef145",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "d0b6ec20cbd5e940a5d40950ec2fde7a52c9d1d424fa9c5f50f5eeb7fdb10322",
+        "rank": 13,
+        "train_anchor_sha256": "7d54dc070e21396e6cfea182ce9561ad2a44b3a5e47f7fb427e96797b9a26d01"
+      },
+      "train_move_count": 43217,
+      "train_static_count": 250517
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "diagnostics": {
+        "FN": 37995,
+        "FP": 6912,
+        "TN": 243605,
+        "TP": 5222,
+        "balanced_accuracy": 0.5466205690182232,
+        "false_move_rate": 0.02759094193208445,
+        "missed_move_rate": 0.8791679200314692,
+        "precision": 0.4303609691775177,
+        "recall": 0.1208320799685309,
+        "specificity": 0.9724090580679156,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "632835ed6fce5936030692854c3d961ba329083ac11a86b7c75eeaf101d71879",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4050405051948839,
+          "maxabs_gradient": 7.466598560099833e-14,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 265076,
+        "effective_columns": 13,
+        "model_receipt_sha256": "66fb963297f274978346be8934cf8e10568654317a071473052e5afcb518775f",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "8ee125f46381f988f159b4972f852cf607a388420475134af067b5700f15178c",
+        "rank": 13,
+        "train_anchor_sha256": "6300d58fbe8680abc8bc1a0f8cf64affcb90428bb52450af9b71e478c021117d"
+      },
+      "train_move_count": 38198,
+      "train_static_count": 226878
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "diagnostics": {
+        "FN": 12999,
+        "FP": 95318,
+        "TN": 102428,
+        "TP": 20038,
+        "balanced_accuracy": 0.5622548388706494,
+        "false_move_rate": 0.48202239236191885,
+        "missed_move_rate": 0.3934679298967824,
+        "precision": 0.1737057456915982,
+        "recall": 0.6065320701032176,
+        "specificity": 0.5179776076380812,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "2f35cfcb2fbe043455d7f32c145d1c56526aa50965d2c13481fa8bf026b2e28d",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.41048733395155784,
+          "maxabs_gradient": 1.860514054087625e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 277385,
+        "effective_columns": 33,
+        "model_receipt_sha256": "af9ccf81ad33619e006318561c90e8ac45b6d1429e06bb3609987d64fe5d4bde",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "ef0f1d55a15ffd6735db8cf0ae1a364114acac7c525df6b2684d4181324b613a",
+        "rank": 33,
+        "train_anchor_sha256": "72dc17bf38f52237f81fb5f19496127034b179fa513d3a8c5c45668df6a14c4b"
+      },
+      "train_move_count": 40822,
+      "train_static_count": 236563
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "diagnostics": {
+        "FN": 36139,
+        "FP": 6078,
+        "TN": 230485,
+        "TP": 4683,
+        "balanced_accuracy": 0.544512304942866,
+        "false_move_rate": 0.025692944374225892,
+        "missed_move_rate": 0.8852824457400421,
+        "precision": 0.43518260384722607,
+        "recall": 0.11471755425995786,
+        "specificity": 0.9743070556257741,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "2c8ed44907bf82da64ab6ab35d4012ae7b20568682fe81efd3be5567f8a4851a",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4028870043147607,
+          "maxabs_gradient": 9.527468246596028e-14,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 230783,
+        "effective_columns": 33,
+        "model_receipt_sha256": "cc02f5128f39575d24469e6c6df2d28d329f2f6b3349cb22ac7deaef53c3aab2",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "e6479503e8882c579c27ba2afd4e7dd03c2d9bacb286f8eb813424e2515f1d1f",
+        "rank": 33,
+        "train_anchor_sha256": "b53750a6bca7957fe129ad8cbe044e16728f5ea1d8fb57345f055a4ffc8466c9"
+      },
+      "train_move_count": 33037,
+      "train_static_count": 197746
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "diagnostics": {
+        "FN": 10576,
+        "FP": 85280,
+        "TN": 81855,
+        "TP": 17096,
+        "balanced_accuracy": 0.5537812035258115,
+        "false_move_rate": 0.5102462081550843,
+        "missed_move_rate": 0.38219138479329284,
+        "precision": 0.1669922638118309,
+        "recall": 0.6178086152067072,
+        "specificity": 0.4897537918449158,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "8d936bbbcb97e20a9a2785710b5275e1d7220ef57c0b2254bb071ae3ec4c53ee",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4116073858147441,
+          "maxabs_gradient": 1.5027377710035305e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 257518,
+        "effective_columns": 93,
+        "model_receipt_sha256": "f3c4c8e92b410e01896b235f97e8c5b921380a83c680b03d1fd33410fe0fd94e",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "cb55a3d6b7c156772969eddc91a39b59e9d0725412e9f59f3a3c573f46a29fc1",
+        "rank": 93,
+        "train_anchor_sha256": "9951eeee975e14976603532ba1eeabac323bf98dc5c9e46ed5f5742fece3f568"
+      },
+      "train_move_count": 38022,
+      "train_static_count": 219496
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "diagnostics": {
+        "FN": 33774,
+        "FP": 6267,
+        "TN": 213229,
+        "TP": 4248,
+        "balanced_accuracy": 0.541586508878742,
+        "false_move_rate": 0.028551773153041513,
+        "missed_move_rate": 0.8882752090894745,
+        "precision": 0.40399429386590585,
+        "recall": 0.11172479091052548,
+        "specificity": 0.9714482268469585,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "9a674cc004ba3d1f92ea70dec7d8263c09ada91af50944716b900732416b0725",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4012970954269313,
+          "maxabs_gradient": 1.219285135775893e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 194807,
+        "effective_columns": 93,
+        "model_receipt_sha256": "1c6f9d33045d138b22a9c1da059136678a697f65aa878e1ccc562b4aa2fbd289",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "b0b71cca2feb8f1844de30cd903b5d3627a43640a851952748be4dd3112ab23e",
+        "rank": 93,
+        "train_anchor_sha256": "33572382fd13feafb5528dbd4326121989419c12aa5dcad12011f1a223a2b912"
+      },
+      "train_move_count": 27672,
+      "train_static_count": 167135
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "diagnostics": {
+        "FN": 16363,
+        "FP": 104638,
+        "TN": 122240,
+        "TP": 21835,
+        "balanced_accuracy": 0.5552092801475335,
+        "false_move_rate": 0.4612082264476944,
+        "missed_move_rate": 0.4283732132572386,
+        "precision": 0.17264554489891124,
+        "recall": 0.5716267867427614,
+        "specificity": 0.5387917735523057,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "298b7ae68c924adcb835426cafa11fa9c52ae2b603d6ac3486f33339f02b25ef",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.41059658259209525,
+          "maxabs_gradient": 1.8654579236677816e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 293734,
+        "effective_columns": 5,
+        "model_receipt_sha256": "03e11a6afc639a21e57cab882a8cc4dc796953035b633d4c0511f3ac8320dbee",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "0abcb4320fc93313765310d2a6ec01c331fbc9fec92179ec5ecd79bea583643c",
+        "rank": 5,
+        "train_anchor_sha256": "7d54dc070e21396e6cfea182ce9561ad2a44b3a5e47f7fb427e96797b9a26d01"
+      },
+      "train_move_count": 43217,
+      "train_static_count": 250517
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "diagnostics": {
+        "FN": 39249,
+        "FP": 6108,
+        "TN": 244409,
+        "TP": 3968,
+        "balanced_accuracy": 0.5337170708853167,
+        "false_move_rate": 0.02438157889484546,
+        "missed_move_rate": 0.9081842793345212,
+        "precision": 0.39380706629614926,
+        "recall": 0.09181572066547886,
+        "specificity": 0.9756184211051545,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "5a9f4b33cb2f04921c26eb3a1677989599243b061ebd5c741b9ba70f05abd93c",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4056062342174798,
+          "maxabs_gradient": 5.553787103541927e-14,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 265076,
+        "effective_columns": 5,
+        "model_receipt_sha256": "ab5b21d9eae408d1f26e1f4d6620dd414f67e4451083487a288578fac97545e1",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "e99ea22129095053342c1d29dff2f271df6b7e64146f47cdf651977b7ace5152",
+        "rank": 5,
+        "train_anchor_sha256": "6300d58fbe8680abc8bc1a0f8cf64affcb90428bb52450af9b71e478c021117d"
+      },
+      "train_move_count": 38198,
+      "train_static_count": 226878
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "diagnostics": {
+        "FN": 14175,
+        "FP": 100244,
+        "TN": 111274,
+        "TP": 21345,
+        "balanced_accuracy": 0.5635012425784222,
+        "false_move_rate": 0.4739265688972097,
+        "missed_move_rate": 0.39907094594594594,
+        "precision": 0.17555041985705944,
+        "recall": 0.6009290540540541,
+        "specificity": 0.5260734311027903,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "63d7ec606f94f74228ed28a4017d37dc6d28ec09915b48e765f2fd66df0ea876",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4104369556482131,
+          "maxabs_gradient": 1.9891742965959417e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 285207,
+        "effective_columns": 13,
+        "model_receipt_sha256": "67636493495445af6edb3b31760a5a16cfdd8394c4e056eefc81e100c197249e",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "73943db3eb19a6af01d85937b945385cedaa2e8fc8a332900facf66b4a2e95d2",
+        "rank": 13,
+        "train_anchor_sha256": "f16c7a331a0eb248d6c5d54f80fad0d91a07c045aaf3fed35cfc4e6788bd2848"
+      },
+      "train_move_count": 41988,
+      "train_static_count": 243219
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "diagnostics": {
+        "FN": 37086,
+        "FP": 6882,
+        "TN": 236337,
+        "TP": 4902,
+        "balanced_accuracy": 0.5442260776999824,
+        "false_move_rate": 0.02829548678351609,
+        "missed_move_rate": 0.883252357816519,
+        "precision": 0.4159877800407332,
+        "recall": 0.11674764218348099,
+        "specificity": 0.9717045132164839,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "a5e336324d635c8f5c2f812561a03bcd53d5fe96eb9b71f541fc022fa0cb54f4",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4042693170648079,
+          "maxabs_gradient": 8.353762363780049e-14,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 247038,
+        "effective_columns": 13,
+        "model_receipt_sha256": "0b341b7998b2d78cc697ba1e813c996a57f634f6167dd356c399c0ace9da3902",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "598f7bae1b6d607025792901f956271293e469bfaea92b5ad9add340610fc61a",
+        "rank": 13,
+        "train_anchor_sha256": "5adb267e1659472eeb902c34cef00c2776a2118e57b45af9edac5086ce7f2d9f"
+      },
+      "train_move_count": 35520,
+      "train_static_count": 211518
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "diagnostics": {
+        "FN": 12685,
+        "FP": 91713,
+        "TN": 99412,
+        "TP": 19194,
+        "balanced_accuracy": 0.5611152092000262,
+        "false_move_rate": 0.4798587311968607,
+        "missed_move_rate": 0.39791085040308666,
+        "precision": 0.17306391841813412,
+        "recall": 0.6020891495969133,
+        "specificity": 0.5201412688031393,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "a9eb3c91eb62137493a9680c63606fe37ef435ef15473576287269a13de48ff4",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.41082656037748444,
+          "maxabs_gradient": 1.7157121275402784e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 273268,
+        "effective_columns": 33,
+        "model_receipt_sha256": "e8d81ede249c01519b260f75af2714cf8b7584460d71aa0127045265f6e5f697",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "a0ea01a6def1bab939ec62b33e0e1ea8d819618ba1e881e4f8b6a0e48de91185",
+        "rank": 33,
+        "train_anchor_sha256": "aa8fc2ddf82ab47ae6c70d7932f99357d5b902e47e643126c28dac60c42a60d0"
+      },
+      "train_move_count": 40237,
+      "train_static_count": 233031
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "diagnostics": {
+        "FN": 35912,
+        "FP": 5908,
+        "TN": 227123,
+        "TP": 4325,
+        "balanced_accuracy": 0.5410676413815446,
+        "false_move_rate": 0.02535285004999335,
+        "missed_move_rate": 0.8925118671869176,
+        "precision": 0.4226522036548422,
+        "recall": 0.10748813281308249,
+        "specificity": 0.9746471499500067,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "c56f493d45911f512f1405f9ce6eb7ec39b61e7d4bf3bac35b96e015962e716d",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.40259822829343656,
+          "maxabs_gradient": 9.914808177950913e-14,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 223004,
+        "effective_columns": 33,
+        "model_receipt_sha256": "e05dfd5edcbae7a25222cd6036118aae6a673d559e12169097ccf641e76f8c1d",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "bf3d797dc0d09112fa0aa37711829cdf922ebac7ad51c9818751f018a2a7050d",
+        "rank": 33,
+        "train_anchor_sha256": "2fe37d7f9a174589ce064b0f9b6cec04c7efa4bae2707bfbc57b406685c8bb0f"
+      },
+      "train_move_count": 31879,
+      "train_static_count": 191125
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "diagnostics": {
+        "FN": 10561,
+        "FP": 83920,
+        "TN": 80897,
+        "TP": 16702,
+        "balanced_accuracy": 0.551727196178758,
+        "false_move_rate": 0.5091707772863237,
+        "missed_move_rate": 0.3873748303561604,
+        "precision": 0.16598755739301543,
+        "recall": 0.6126251696438396,
+        "specificity": 0.4908292227136764,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "9e676b66b95802a149c61d86baa9c67a175d8abbc962bb2c0847f9c2549a6b70",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4115676372125806,
+          "maxabs_gradient": 1.5181052262916994e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 255865,
+        "effective_columns": 93,
+        "model_receipt_sha256": "5022aae74ed562ea7072a7310509e986736c3f55fcd563f8361e0ea08e0b8a67",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "d8074f54bd7a382c3e02fd1baf6bdbec4eee6b3424d2894f9ffeb0db8be62bcc",
+        "rank": 93,
+        "train_anchor_sha256": "baa4e0a12ef05e0460e8964ec1b32721e0af8318d1283c47588d14f3ce58ff9c"
+      },
+      "train_move_count": 37769,
+      "train_static_count": 218096
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "diagnostics": {
+        "FN": 33625,
+        "FP": 6223,
+        "TN": 211873,
+        "TP": 4144,
+        "balanced_accuracy": 0.540593152443795,
+        "false_move_rate": 0.028533306433863988,
+        "missed_move_rate": 0.8902803886785459,
+        "precision": 0.399729912221472,
+        "recall": 0.10971961132145411,
+        "specificity": 0.971466693566136,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "8762604511757702961eba2d13ced983a34692730f852019444ccd94bb4c6c8e",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4010649130530481,
+          "maxabs_gradient": 1.713778177632724e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 192080,
+        "effective_columns": 93,
+        "model_receipt_sha256": "d0871ba29764fc18e74a11581c79e53b84882c4cd21519bd69fff74e273c24c4",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "968748eefeb7875fee7dbeb0b403590e4ce7f008b24ff8d2888045fb991f16ea",
+        "rank": 93,
+        "train_anchor_sha256": "a56add9a016471adba9352723c914ba869f540afeaee9ee11bedd0e854bb175e"
+      },
+      "train_move_count": 27263,
+      "train_static_count": 164817
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "diagnostics": {
+        "FN": 14168,
+        "FP": 100378,
+        "TN": 108473,
+        "TP": 20868,
+        "balanced_accuracy": 0.5574978914268469,
+        "false_move_rate": 0.4806201550387597,
+        "missed_move_rate": 0.4043840621075465,
+        "precision": 0.17211289444600233,
+        "recall": 0.5956159378924535,
+        "specificity": 0.5193798449612403,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "69316f571e418fc81322b86a7b1795e9b0426536d58df35cbf5960002c7fc91a",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.41077804769711485,
+          "maxabs_gradient": 1.764219808740351e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 283758,
+        "effective_columns": 5,
+        "model_receipt_sha256": "fb139d6fffff31c7c5074dbbade3b65f400d469fba091bfba5e800e211d0e437",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "8b7889a973ddd34b650047b9aaa9ce661327acbbb3b87ebd04f5ad8198bf9669",
+        "rank": 5,
+        "train_anchor_sha256": "96422f66972ca971fe8c6b32506760dc43b2a339b5979187dc57cf0701112abc"
+      },
+      "train_move_count": 41763,
+      "train_static_count": 241995
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "diagnostics": {
+        "FN": 37699,
+        "FP": 5811,
+        "TN": 236184,
+        "TP": 4064,
+        "balanced_accuracy": 0.5366490620502481,
+        "false_move_rate": 0.024012892828364222,
+        "missed_move_rate": 0.9026889830711395,
+        "precision": 0.41154430379746837,
+        "recall": 0.09731101692886047,
+        "specificity": 0.9759871071716357,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "f68866b9e4d9637af0fb5c1dc2abd1b0fae89cab47657c4360b21946703828c5",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4043687581938406,
+          "maxabs_gradient": 7.07042492588834e-14,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 243887,
+        "effective_columns": 5,
+        "model_receipt_sha256": "fe96dd27f42af7c59c1416bf405c94e1b0594fe3c8caf754e15b3ecf2ef2258b",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "f368a1836a1a55231c3e6d28b1768596844a34dd5298788b3d170964eddd475f",
+        "rank": 5,
+        "train_anchor_sha256": "ef2c000de2765e90ae34ee226cba7ca1385be86092c8b1c4b1a7e28abfd8d0ef"
+      },
+      "train_move_count": 35036,
+      "train_static_count": 208851
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "diagnostics": {
+        "FN": 13008,
+        "FP": 96555,
+        "TN": 102920,
+        "TP": 20361,
+        "balanced_accuracy": 0.5630657453699626,
+        "false_move_rate": 0.4840456197518486,
+        "missed_move_rate": 0.3898228895082262,
+        "precision": 0.1741506722775326,
+        "recall": 0.6101771104917738,
+        "specificity": 0.5159543802481514,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "a57707120b305cfc495b57a7b630556e39e16309bb17d9ebd8f4cc640433bdce",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4105219704703877,
+          "maxabs_gradient": 1.8683381372295165e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 278470,
+        "effective_columns": 13,
+        "model_receipt_sha256": "d427c53e3aa889498a185baa6f3eeebafa16e41e39b3c492e80dca6916dbe4b4",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "e402a03515768ed1b36f452b267e87797b570274f345d616f4412db86c5c6725",
+        "rank": 13,
+        "train_anchor_sha256": "46018544ebc13321d48fbe7a4cb8cf83a4e48a6960a3e7b3f10d119b52667778"
+      },
+      "train_move_count": 40981,
+      "train_static_count": 237489
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "diagnostics": {
+        "FN": 36483,
+        "FP": 6338,
+        "TN": 231151,
+        "TP": 4498,
+        "balanced_accuracy": 0.5415353143878905,
+        "false_move_rate": 0.026687551844506482,
+        "missed_move_rate": 0.8902418193797126,
+        "precision": 0.41509782207456625,
+        "recall": 0.10975818062028746,
+        "specificity": 0.9733124481554936,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "bb67feee4dd26415350e7758e8dfebc9ee5164f15b63146c85f32a7721bdb30f",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4033775462718625,
+          "maxabs_gradient": 8.761577965503885e-14,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 232844,
+        "effective_columns": 13,
+        "model_receipt_sha256": "c9ed4090ec729825413be714bd05a6199267bf678fa437f1b19011974c85c8f7",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "e1e578b24f1b97a59c892afa4fffe5893c4537df9dbc651a177a3653874ab6c1",
+        "rank": 13,
+        "train_anchor_sha256": "8786c29f0dd5303f23910deb653cc32ace28e37422aeba5ed18c747169fdada6"
+      },
+      "train_move_count": 33369,
+      "train_static_count": 199475
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "diagnostics": {
+        "FN": 11874,
+        "FP": 90379,
+        "TN": 93880,
+        "TP": 18770,
+        "balanced_accuracy": 0.5610090812103593,
+        "false_move_rate": 0.4904997856278391,
+        "missed_move_rate": 0.38748205195144236,
+        "precision": 0.17196676103308323,
+        "recall": 0.6125179480485576,
+        "specificity": 0.509500214372161,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "5ccf2949ed88e3fa0967c11c3d5f32b10e7e6b07a0699dd91fd807b9d0dcdc1c",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4110652771308007,
+          "maxabs_gradient": 1.6414169450544911e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 268910,
+        "effective_columns": 33,
+        "model_receipt_sha256": "c57816c388cb28ebf30c4614f8670b95f36b264846b2c47624364d1c563f6eaa",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "df98f1507ba935a15b184844c2e4a28b24122c41d77ad656a2a5f6cb67a5a80f",
+        "rank": 33,
+        "train_anchor_sha256": "f2ee4822b2adcb7209d29acd82979a7deec3390d5d99d130341f74f3d9f93343"
+      },
+      "train_move_count": 39621,
+      "train_static_count": 229289
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "diagnostics": {
+        "FN": 35632,
+        "FP": 5728,
+        "TN": 223561,
+        "TP": 3989,
+        "balanced_accuracy": 0.5378486797081728,
+        "false_move_rate": 0.024981573472778896,
+        "missed_move_rate": 0.8993210671108756,
+        "precision": 0.4105176494802923,
+        "recall": 0.10067893288912445,
+        "specificity": 0.9750184265272211,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "47277824198546021fc0274b34c53a6fe5de27dc930fea19dc9aa56476e9bd45",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.40207218961059016,
+          "maxabs_gradient": 1.0577062926899499e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 214903,
+        "effective_columns": 33,
+        "model_receipt_sha256": "e8a3b45fbaaffabc0d8861cb4d7ed6362ec153945dfa7422f0148a39632aa5ca",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "46d0aa42efd62114a115455e1640132887f8538b9fff97187e7755eaa4fc0979",
+        "rank": 33,
+        "train_anchor_sha256": "1e6be459bea27b05c542bb716467ee61c0a6c05e6726b6ed82c330c014dacb79"
+      },
+      "train_move_count": 30644,
+      "train_static_count": 184259
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "diagnostics": {
+        "FN": 10078,
+        "FP": 84271,
+        "TN": 77900,
+        "TP": 16692,
+        "balanced_accuracy": 0.5519454801841304,
+        "false_move_rate": 0.5196428461315525,
+        "missed_move_rate": 0.3764661935001868,
+        "precision": 0.16532789239622436,
+        "recall": 0.6235338064998133,
+        "specificity": 0.4803571538684475,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "3ca350d3e7a4a4e39ead329b6a18db42d5c127e2f243998aa26dee260b82a175",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4115871744453639,
+          "maxabs_gradient": 1.5222953619836614e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 253893,
+        "effective_columns": 93,
+        "model_receipt_sha256": "34ebfcaa07ffb070ecfd54697427afb465af011f78a20dd39616d9a957e1c174",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "e3170ee6daef417d81d3c6c65a2f05b77e7f5318c06e1eebbcec0a11e4b4e218",
+        "rank": 93,
+        "train_anchor_sha256": "990bdaae54736bf2ca750f9e1993c82757c9f3b9de6a1307af9732596cbe824e"
+      },
+      "train_move_count": 37475,
+      "train_static_count": 216418
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "diagnostics": {
+        "FN": 33226,
+        "FP": 6621,
+        "TN": 209797,
+        "TP": 4249,
+        "balanced_accuracy": 0.5413943406445354,
+        "false_move_rate": 0.03059357354748681,
+        "missed_move_rate": 0.8866177451634423,
+        "precision": 0.3908923643054278,
+        "recall": 0.1133822548365577,
+        "specificity": 0.9694064264525132,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "75fba3697fed92e6011ef422ccb518a279d1f412ab99118ac4f96f3e865e56f3",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.40058354311794936,
+          "maxabs_gradient": 2.7313441243510377e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 188941,
+        "effective_columns": 93,
+        "model_receipt_sha256": "b8e81f0f1a369dc450253be269cf96358e54c873fd33b097100a52c259f3e9eb",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "96d157c76d2308176c979c7da3cce020d5a26923dd1ec6d26cf3663e692e4e81",
+        "rank": 93,
+        "train_anchor_sha256": "4923fb4545218a71924fb327c9ef8d3d04794ac33203be16e24c9bce6cae2dea"
+      },
+      "train_move_count": 26770,
+      "train_static_count": 162171
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "diagnostics": {
+        "FN": 12339,
+        "FP": 94546,
+        "TN": 95123,
+        "TP": 19270,
+        "balanced_accuracy": 0.555578783426493,
+        "false_move_rate": 0.49847892908171604,
+        "missed_move_rate": 0.39036350406529785,
+        "precision": 0.16930835734870317,
+        "recall": 0.6096364959347021,
+        "specificity": 0.5015210709182839,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "ea0d5cd79711dfc5a419dbc08e621a843b46e116e37e7e68c4e3ec7617c52253",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.41133112849058534,
+          "maxabs_gradient": 1.4610763435289386e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 272366,
+        "effective_columns": 5,
+        "model_receipt_sha256": "1b49b19c764ce6654892ae125c4388d97a060d3306e8883fc9a83d792492f43e",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "54d5813f320e3186cea15c10a90e9e50c23faa5004e764580befb4bb8e8da977",
+        "rank": 5,
+        "train_anchor_sha256": "e3c71037430a468ed4e69515a6d199f8b0bd774d33597af1930b45d1b6cfb8a1"
+      },
+      "train_move_count": 40112,
+      "train_static_count": 232254
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "diagnostics": {
+        "FN": 36196,
+        "FP": 5540,
+        "TN": 226714,
+        "TP": 3916,
+        "balanced_accuracy": 0.536886725092103,
+        "false_move_rate": 0.02385319520869393,
+        "missed_move_rate": 0.9023733546071001,
+        "precision": 0.41412859560067683,
+        "recall": 0.09762664539289988,
+        "specificity": 0.9761468047913061,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "b7293c2c13a69af4a8cea6d6663e5e7d5052bcafa653cdd29e72624a8b5b0cab",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.40271736092549,
+          "maxabs_gradient": 8.602662032850097e-14,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 221278,
+        "effective_columns": 5,
+        "model_receipt_sha256": "3317373d93b420b00268dc53e228a1d0a5f2aa780787d3e9b0f78515ee86c65f",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "ce3198ed7259067baa63d787664a3874717f71ba47d8a7dc49d50e34873f9d33",
+        "rank": 5,
+        "train_anchor_sha256": "4ebb60a895c4210ff69996718f5648ecbeb27b6387009cbf57b2cdcbf7df4e07"
+      },
+      "train_move_count": 31609,
+      "train_static_count": 189669
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "diagnostics": {
+        "FN": 12041,
+        "FP": 89344,
+        "TN": 94915,
+        "TP": 18603,
+        "balanced_accuracy": 0.5610927877764473,
+        "false_move_rate": 0.4848826922972555,
+        "missed_move_rate": 0.3929317321498499,
+        "precision": 0.17233457159531992,
+        "recall": 0.6070682678501501,
+        "specificity": 0.5151173077027446,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "5ac6fab52d4ba2724ab71cbfea55b3c533d85a7978bb1567f3827f0dcb92231a",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4111398291515076,
+          "maxabs_gradient": 1.5890310606967514e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 268910,
+        "effective_columns": 13,
+        "model_receipt_sha256": "584a63b37c1751e45b6f0fd8c60743f3c60fcd59a35617631ac5f78d6c386945",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "e3e487d40e48d8c4ec46a694d7cd4ac7cae1f96dcd6c06072e3070c952875bb3",
+        "rank": 13,
+        "train_anchor_sha256": "f2ee4822b2adcb7209d29acd82979a7deec3390d5d99d130341f74f3d9f93343"
+      },
+      "train_move_count": 39621,
+      "train_static_count": 229289
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "diagnostics": {
+        "FN": 35634,
+        "FP": 5609,
+        "TN": 223680,
+        "TP": 3987,
+        "balanced_accuracy": 0.538082938406285,
+        "false_move_rate": 0.02446257779483534,
+        "missed_move_rate": 0.8993715453925948,
+        "precision": 0.41548561900791997,
+        "recall": 0.10062845460740516,
+        "specificity": 0.9755374222051647,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "84f392d9d51993a263c666f6b0a3c474fd14c964c524e8db524db1e8138dbb16",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.4021618038762788,
+          "maxabs_gradient": 9.770496280905431e-14,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 214903,
+        "effective_columns": 13,
+        "model_receipt_sha256": "a36d4fa245d1dd8506a1cd8fafe07dde4e3db5f59e9364a7ce57dcb11dc9fbdb",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "a8ae34c51d6ab665e51ff62b16e9a39f6fe687ec0ecab689d050dfa605582175",
+        "rank": 13,
+        "train_anchor_sha256": "1e6be459bea27b05c542bb716467ee61c0a6c05e6726b6ed82c330c014dacb79"
+      },
+      "train_move_count": 30644,
+      "train_static_count": 184259
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "diagnostics": {
+        "FN": 11392,
+        "FP": 85705,
+        "TN": 88829,
+        "TP": 17553,
+        "balanced_accuracy": 0.5576877629773731,
+        "false_move_rate": 0.4910504543527336,
+        "missed_move_rate": 0.3935740196925203,
+        "precision": 0.16999167134749849,
+        "recall": 0.6064259803074797,
+        "specificity": 0.5089495456472665,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "4f31205828524295fc08dbd831ba204864fe2a5bb1ebe3d75d0a9846231b6980",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.41151319727303376,
+          "maxabs_gradient": 1.4842931835399671e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 262559,
+        "effective_columns": 33,
+        "model_receipt_sha256": "671260fbfd61ea33db673e13a954fca253444929490a310e71be1a9305574803",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "790a82513c2ec108edc72f17fdcad62ee9fa4ae30b81d9083b1b3a05b79938dc",
+        "rank": 33,
+        "train_anchor_sha256": "443e28485fd326020482a4edadb32cafacfa96a77092ecdca70a57b08185a311"
+      },
+      "train_move_count": 38729,
+      "train_static_count": 223830
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "diagnostics": {
+        "FN": 34969,
+        "FP": 5607,
+        "TN": 218223,
+        "TP": 3760,
+        "balanced_accuracy": 0.5360173052212126,
+        "false_move_rate": 0.02505026135906715,
+        "missed_move_rate": 0.9029151281985076,
+        "precision": 0.4014092025194833,
+        "recall": 0.09708487180149242,
+        "specificity": 0.9749497386409328,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "663369774f0f54b7e801dc312ec0a2afb8867989b1261e6955fe030304e9302a",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.40171722467590026,
+          "maxabs_gradient": 1.0417086415001422e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 203479,
+        "effective_columns": 33,
+        "model_receipt_sha256": "947ece7fcd945f3c2aa76a70323df26881ec1af558e37d2049ee75fae9160503",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "debf5c4aa0c49a9688c8be2847bb5112ca63960e22374a72a2d6c5008c7779db",
+        "rank": 33,
+        "train_anchor_sha256": "1369ed9a20da053f1a0f710c2942052d8418bf3df8287010d8e601966c6ac197"
+      },
+      "train_move_count": 28945,
+      "train_static_count": 174534
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "diagnostics": {
+        "FN": 9424,
+        "FP": 84324,
+        "TN": 73490,
+        "TP": 16473,
+        "balanced_accuracy": 0.5508858134497346,
+        "false_move_rate": 0.5343252182949548,
+        "missed_move_rate": 0.36390315480557595,
+        "precision": 0.1634274829608024,
+        "recall": 0.6360968451944241,
+        "specificity": 0.46567478170504517,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_A",
+      "stage1": {
+        "coefficient_sha256": "298facd497d5f249a247e517bd54d4400fba691e2dc9e0dee50daf0e976fce56",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.41172330906546617,
+          "maxabs_gradient": 1.4876206434284788e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 250451,
+        "effective_columns": 93,
+        "model_receipt_sha256": "c004926f74beba4bb659ebccb4ca59e7badc1bc4aec4c7755ffe16a08503a6d0",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "d86754b6a88d020592066b310cda90380cb21443bf9acb4e6159040ddc00eb43",
+        "rank": 93,
+        "train_anchor_sha256": "f67db93376fdce8d7f7570178523dc9523716a84396f73c40bb83005fd5ea97e"
+      },
+      "train_move_count": 36982,
+      "train_static_count": 213469
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "diagnostics": {
+        "FN": 33000,
+        "FP": 6209,
+        "TN": 207260,
+        "TP": 3982,
+        "balanced_accuracy": 0.5392939065342878,
+        "false_move_rate": 0.029086190500728443,
+        "missed_move_rate": 0.892325996430696,
+        "precision": 0.3907369247375135,
+        "recall": 0.10767400356930398,
+        "specificity": 0.9709138094992715,
+        "status": "DEFINED"
+      },
+      "fold": "FOLD_B",
+      "stage1": {
+        "coefficient_sha256": "d0ba44bfae6462e3773c9cf49953ebd3c76e8d09218c27cb9b76fc967ab78cc6",
+        "condition": null,
+        "constant_columns": 0,
+        "convergence": {
+          "accepted_trial_exponents": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "loss": 0.39924927351914363,
+          "maxabs_gradient": 4.4458397828045203e-13,
+          "status": "CONVERGED",
+          "updates": 5
+        },
+        "count": 183711,
+        "effective_columns": 93,
+        "model_receipt_sha256": "08ab3104764c671a94503b4a5f3e6349cd24044c7457574c8ccd16dffc387097",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "8672a612c473d548295df3c18da173bffe9861c6d4d216422b1df6a9a6cd342b",
+        "rank": 93,
+        "train_anchor_sha256": "35b84de1c9d63327ea25d9e0d4e2f1f4f0261d2c45d8a1c103d091b1145c9bb3"
+      },
+      "train_move_count": 25897,
+      "train_static_count": 157814
+    }
+  ],
+  "private_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "a3a2eb82e70109c9db38d81a07d3147087494f5927eeb540d54f4a2c6abf24be",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_STAGE1_RESULTS_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

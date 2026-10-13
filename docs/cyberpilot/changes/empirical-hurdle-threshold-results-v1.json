@@ -1,0 +1,595 @@
+{
+  "actual_threshold_published": false,
+  "authorization_sha256": "e4eeaca2f891cc9fdb1370b7ae735d963287af6c09cca85dc689c8e9c560c6ea",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "jobs": [
+    {
+      "candidate_id": "HRI_D00_L01",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 15809286042,
+        "FN": 22023,
+        "FP": 117808,
+        "N": 288710,
+        "P": 48231,
+        "TN": 170902,
+        "TP": 26208,
+        "candidate_count": 336889,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "c658972c3477fdcb4dc2f83848879fec3d8ff6365e85c9e75b0bc4c8351082b5"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 12458381299,
+        "FN": 36373,
+        "FP": 12663,
+        "N": 257081,
+        "P": 43488,
+        "TN": 244418,
+        "TP": 7115,
+        "candidate_count": 300541,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "94433ce0479fd61dc5afacabc760184fa12d0c99bff3ec0196279dcbb6009168"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 12478626581,
+        "FN": 25903,
+        "FP": 62138,
+        "N": 250517,
+        "P": 43217,
+        "TN": 188379,
+        "TP": 17314,
+        "candidate_count": 293733,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "3300b90e1ddd54e4b73a63de70dd01737893a933fa784cfaad93768dc6d1abbb"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 10012033810,
+        "FN": 29911,
+        "FP": 13990,
+        "N": 226878,
+        "P": 38198,
+        "TN": 212888,
+        "TP": 8287,
+        "candidate_count": 265077,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "9b15824c47fa7ef7879d6980831680d7828640895b4c67766e0a1419d1a1db73"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 11132941565,
+        "FN": 23775,
+        "FP": 62631,
+        "N": 236563,
+        "P": 40822,
+        "TN": 173932,
+        "TP": 17047,
+        "candidate_count": 277387,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "da7805f8ea4f9432eaf45cd22e97568388be1dcccbc0676cd2cae5f8c6dbef37"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 7579479057,
+        "FN": 25746,
+        "FP": 11963,
+        "N": 197746,
+        "P": 33037,
+        "TN": 185783,
+        "TP": 7291,
+        "candidate_count": 230785,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "8dd2ef7754320b2900681e78d002d6826550d5de0729cfbe4e1f4653413d1062"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 9599625710,
+        "FN": 23425,
+        "FP": 51287,
+        "N": 219496,
+        "P": 38022,
+        "TN": 168209,
+        "TP": 14597,
+        "candidate_count": 257520,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "6bf846bca7b63f96b5c21a7e885f0ef016f3aa13b4bc539b00b3a8032ada750e"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 5341933959,
+        "FN": 21231,
+        "FP": 12993,
+        "N": 167135,
+        "P": 27672,
+        "TN": 154142,
+        "TP": 6441,
+        "candidate_count": 194809,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "6351a277179700ff0aa1ab165709181c10ebb6177b388faf022f2e90e025e14c"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 12328207522,
+        "FN": 26894,
+        "FP": 59874,
+        "N": 250517,
+        "P": 43217,
+        "TN": 190643,
+        "TP": 16323,
+        "candidate_count": 293694,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "9e4e4b6f0c02995aa2ce218ea09f5f03bdfd40cf3b673373ae8193953231736a"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 9751860274,
+        "FN": 30834,
+        "FP": 15319,
+        "N": 226878,
+        "P": 38198,
+        "TN": 211559,
+        "TP": 7364,
+        "candidate_count": 265049,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "b910e0e88b38be65429b5d8d8c974e7864c06d4628f7a4c09870d7b6019364c6"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 11783608881,
+        "FN": 24257,
+        "FP": 65285,
+        "N": 243219,
+        "P": 41988,
+        "TN": 177934,
+        "TP": 17731,
+        "candidate_count": 285206,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "28067c703ac4bb49fcafbc51840527f5b629bbe9d7e5fbeb770210db5b1db00a"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 8690523762,
+        "FN": 27641,
+        "FP": 13771,
+        "N": 211518,
+        "P": 35520,
+        "TN": 197747,
+        "TP": 7879,
+        "candidate_count": 247038,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "12d1c6c7be7b999226f4be1b4dd77142e1381acc728a9f682a8467f6cc13bed3"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 10796794214,
+        "FN": 24264,
+        "FP": 57208,
+        "N": 233031,
+        "P": 40237,
+        "TN": 175823,
+        "TP": 15973,
+        "candidate_count": 273270,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "0ed72c3aff65783c307c720df733e9ec32276136b0fc33606fc4e9bffaa76f4e"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 7042599558,
+        "FN": 24942,
+        "FP": 11798,
+        "N": 191125,
+        "P": 31879,
+        "TN": 179327,
+        "TP": 6937,
+        "candidate_count": 223006,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "0da8d21094b94c9c8944e42fe102078bf43f99e5298eb76b96e373f1d839503f"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 9478067249,
+        "FN": 23586,
+        "FP": 49047,
+        "N": 218096,
+        "P": 37769,
+        "TN": 169049,
+        "TP": 14183,
+        "candidate_count": 255867,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "07dfbf54dfd299651a11c78802f6bfe6afb41e93917a9ecdae24265c040bf04f"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 5185221671,
+        "FN": 21044,
+        "FP": 12221,
+        "N": 164817,
+        "P": 27263,
+        "TN": 152596,
+        "TP": 6219,
+        "candidate_count": 192082,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "57a102867e136dfc49df8427d143a055897da6594d3bd9cb26a2206d29c72d8e"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 11492831568,
+        "FN": 24600,
+        "FP": 66254,
+        "N": 241995,
+        "P": 41763,
+        "TN": 175741,
+        "TP": 17163,
+        "candidate_count": 283716,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "883f59e4f47bbd5c99586d87278c7708e422f576f6c91c6d76cf17ad7a922497"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 8317014765,
+        "FN": 27973,
+        "FP": 13569,
+        "N": 208851,
+        "P": 35036,
+        "TN": 195282,
+        "TP": 7063,
+        "candidate_count": 243871,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "5cc1c024f769354bfecac2a801d7d0202de09f0c17e472dfc8bee953a2796085"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 11213874048,
+        "FN": 23660,
+        "FP": 64230,
+        "N": 237489,
+        "P": 40981,
+        "TN": 173259,
+        "TP": 17321,
+        "candidate_count": 278468,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "c5776650c283663998fe5ea3b9acb6d7bc29225f202805e6296e08052c6ada47"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 7686612697,
+        "FN": 26140,
+        "FP": 12337,
+        "N": 199475,
+        "P": 33369,
+        "TN": 187138,
+        "TP": 7229,
+        "candidate_count": 232845,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "1c458396c5a9e21188651b17fe94f33513dce1358ff2d3522c53f94bc27e1251"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 10470086616,
+        "FN": 23673,
+        "FP": 57325,
+        "N": 229289,
+        "P": 39621,
+        "TN": 171964,
+        "TP": 15948,
+        "candidate_count": 268912,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "01b8bb10d0062ac5d3f528490e102a076e4210936a878e8b8e29c4eb6c52e30d"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 6514156880,
+        "FN": 24028,
+        "FP": 11465,
+        "N": 184259,
+        "P": 30644,
+        "TN": 172794,
+        "TP": 6616,
+        "candidate_count": 214905,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "35d0dcb4c22c07a68cee838ebf2e2cf58be8952f15a217ffb6e012410e5c29eb"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 9325005495,
+        "FN": 22985,
+        "FP": 51265,
+        "N": 216418,
+        "P": 37475,
+        "TN": 165153,
+        "TP": 14490,
+        "candidate_count": 253895,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "580d2889af3adc5b9d6dcb487a91cfcdec5ad1537c201f2af9663be0ad22d1d6"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 5004723499,
+        "FN": 20441,
+        "FP": 13559,
+        "N": 162171,
+        "P": 26770,
+        "TN": 148612,
+        "TP": 6329,
+        "candidate_count": 188943,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "d44a45cf6c823e44f88dd0c7f5ecd958ef00dd9c486d89541ba0b6012cfd7c99"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 10573095630,
+        "FN": 23903,
+        "FP": 62517,
+        "N": 232254,
+        "P": 40112,
+        "TN": 169737,
+        "TP": 16209,
+        "candidate_count": 272327,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "57ab5bdbe7f12ff7743974a4979c7fe374fccc1897f6732e62bcdfcdddc7f6ef"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 6852833828,
+        "FN": 25112,
+        "FP": 11854,
+        "N": 189669,
+        "P": 31609,
+        "TN": 177815,
+        "TP": 6497,
+        "candidate_count": 221261,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "640d52e3eee0aa670fe7ef4577a911b65ea4d3eee645c58778db7dbdb24d7915"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 10473188278,
+        "FN": 24313,
+        "FP": 53543,
+        "N": 229289,
+        "P": 39621,
+        "TN": 175746,
+        "TP": 15308,
+        "candidate_count": 268908,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "0e6f4c8fadc642a514e6ef4759d83589c070cb4f61f310f034baee96b31b723a"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 6497594339,
+        "FN": 24143,
+        "FP": 11314,
+        "N": 184259,
+        "P": 30644,
+        "TN": 172945,
+        "TP": 6501,
+        "candidate_count": 214903,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "bf16726eaae6bb99795ad37399495c152ab98f4bda26d86378093bfcad5e0bd4"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 9979843582,
+        "FN": 24396,
+        "FP": 48982,
+        "N": 223830,
+        "P": 38729,
+        "TN": 174848,
+        "TP": 14333,
+        "candidate_count": 262560,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "cec741084b4b99894572a62f64bf10f9419e1e8ac81674b502147eb42397117a"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 5814440310,
+        "FN": 22750,
+        "FP": 11010,
+        "N": 174534,
+        "P": 28945,
+        "TN": 163524,
+        "TP": 6195,
+        "candidate_count": 203481,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "81778b6970ecb37af9ed8b04804be6b82208ed3c28b3a6d21a779c71385e5c1e"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "fold": "FOLD_A",
+      "threshold": {
+        "BA_NUM": 9078911745,
+        "FN": 22069,
+        "FP": 54055,
+        "N": 213469,
+        "P": 36982,
+        "TN": 159414,
+        "TP": 14913,
+        "candidate_count": 250453,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "f4d041d0d1c566d0be2e2731f2d8d4bd232d52519caab760a30dbca37dda563e"
+      },
+      "train_only_verified": true
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "fold": "FOLD_B",
+      "threshold": {
+        "BA_NUM": 4703205527,
+        "FN": 19966,
+        "FP": 12345,
+        "N": 157814,
+        "P": 25897,
+        "TN": 145469,
+        "TP": 5931,
+        "candidate_count": 183713,
+        "decision": ">",
+        "population": "TRAIN_ONLY",
+        "receipt_sha256": "c462accd3c646305436a89154215a467032236bd316d88e4249a365459cdde4d"
+      },
+      "train_only_verified": true
+    }
+  ],
+  "private_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "543dc8a06914d9ef5baaf9da73254429dba200c207310252a1b522ea6d16b389",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_THRESHOLD_RESULTS_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}
