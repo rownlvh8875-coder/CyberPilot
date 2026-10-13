@@ -1,0 +1,235 @@
+{
+  "alternative_thresholds": false,
+  "array_or_path_output": false,
+  "baseline": "f5ed849bd27287084efc81ba3dd0275ebfc5ca0a",
+  "candidate_ranking": false,
+  "candidate_search_authorized": false,
+  "canonical_one_step_error": "STORED_INTEGRATED_DELTA_MINUS_ACTUAL_DELTA",
+  "chunk_rows": 512,
+  "composition_authorized": false,
+  "counterfactual_admission": false,
+  "empty_subset": "NULL_METRICS",
+  "exact_hit_state": "ALL_32_STATIC_HIT_LOSS_GT_MOVE_HIT_GAIN_AND_HISTORICAL_EXACT_HIT_FAIL",
+  "execution_calls": {
+    "causal_source_openings": 0,
+    "holdout_openings": 0,
+    "model_refit_calls": 0,
+    "model_replay_calls": 0,
+    "normalizer_refit_calls": 0,
+    "qlog_openings": 0,
+    "raw_log_openings": 0,
+    "selection_calls": 0,
+    "threshold_reselection_calls": 0
+  },
+  "expected_historical_failure_counts": {
+    "MOVE_MAE": 0,
+    "MOVE_P95": 0,
+    "MOVE_RMSE": 0,
+    "ONE_STEP_EXACT_HIT": 32,
+    "ONE_STEP_MAE": 20,
+    "ONE_STEP_P95": 16,
+    "ONE_STEP_RMSE": 4,
+    "ONE_STEP_WITHIN_ONE_TICK": 8,
+    "OVERALL_100_MAE": 23,
+    "OVERALL_100_P95": 25,
+    "OVERALL_100_RMSE": 20,
+    "OVERALL_200_MAE": 22,
+    "OVERALL_200_P95": 18,
+    "OVERALL_200_RMSE": 21,
+    "OVERALL_25_MAE": 23,
+    "OVERALL_25_P95": 21,
+    "OVERALL_25_RMSE": 15,
+    "OVERALL_50_MAE": 22,
+    "OVERALL_50_P95": 24,
+    "OVERALL_50_RMSE": 16,
+    "PATH_MOVED_100_MAE": 23,
+    "PATH_MOVED_100_P95": 25,
+    "PATH_MOVED_100_RMSE": 19,
+    "PATH_MOVED_200_MAE": 22,
+    "PATH_MOVED_200_P95": 17,
+    "PATH_MOVED_200_RMSE": 21,
+    "PATH_MOVED_25_MAE": 23,
+    "PATH_MOVED_25_P95": 21,
+    "PATH_MOVED_25_RMSE": 14,
+    "PATH_MOVED_50_MAE": 22,
+    "PATH_MOVED_50_P95": 23,
+    "PATH_MOVED_50_RMSE": 16
+  },
+  "first_event": "ONE_BASED_STEP_ZERO_MEANS_NO_EVENT",
+  "gate_perfect": "ALL_STORED_GATE_STEPS_EQUAL_TRUE_STEPS",
+  "holdout": "CLOSED",
+  "horizons": [
+    25,
+    50,
+    100,
+    200
+  ],
+  "job_order": [
+    [
+      "HRI_D00_L01",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D00_L01",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D00_L05",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D00_L05",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D00_L15",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D00_L15",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D00_L45",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D00_L45",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D05_L01",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D05_L01",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D05_L05",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D05_L05",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D05_L15",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D05_L15",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D05_L45",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D05_L45",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D10_L01",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D10_L01",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D10_L05",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D10_L05",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D10_L15",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D10_L15",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D10_L45",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D10_L45",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D20_L01",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D20_L01",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D20_L05",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D20_L05",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D20_L15",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D20_L15",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D20_L45",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D20_L45",
+      "FOLD_B"
+    ]
+  ],
+  "metrics": "CONTIGUOUS_FLOAT64_ORIGINAL_ANCHOR_ORDER_NUMPY_MEAN_SUM_LINEAR_P95",
+  "opening_count": 0,
+  "oracle": "STORED_DELTA_CONTINUOUS_DIAGNOSTIC_AND_HISTORICAL_GRID_METRICS_NO_REPROJECTION",
+  "output_volume": "D",
+  "partition_reconciliation": "EXACT_ROW_CONTRIBUTIONS_WITH_REDUCTION_ORDER_RESIDUAL_NO_TOLERANCE_GATE",
+  "path_truth": "STORED_OBSERVED_ADJACENT_TICKS_DIFFER",
+  "production_authority": false,
+  "public_input_receipts": {
+    "candidate-gates": "e18ba4ad15e48f8aac860a3366fbb71786de3ef34548f92d2c95c409dc7e4fb4",
+    "fit-cv-authorization": "d93d6bb418a958b998c0308e4ce71a605a4069286029b5539d80b38001a34c6b",
+    "fit-cv-job-manifest": "b13b25f1f5c0f37d8465a24472e126c8f7f1d221643d5411dcf047996f9a7fe0",
+    "fit-cv-readiness": "e00c9da0992fed899e77f9833d0ad04f333acc086e59846644ec164945b06861",
+    "fit-cv-repeatability": "60c262b004f253f6de203404520f9edc8ab3d78c0dba51948dd62759003f35dc",
+    "fit-cv-results": "8d7c45a7a97f73918f927b19b0004c309078239b8b8523e1beac08fa6c53f5c4",
+    "fit-cv-validation": "340cc48499dc7def91e8fa71f4d7202cd0239e455bedca4bc1f1eb69c9cd2004",
+    "selection-result": "cac341f353befbf014726df964009525484e938abc1b5a5dc6d5de4e5a7a6df8",
+    "stage1-results": "a3a2eb82e70109c9db38d81a07d3147087494f5927eeb540d54f4a2c6abf24be",
+    "stage2-diagnostics": "fa7f76fa93c19f77d038ea1f5dadfa786e78ac28bac793ff1c749bcdc4ca7b98",
+    "threshold-results": "543dc8a06914d9ef5baaf9da73254429dba200c207310252a1b522ea6d16b389"
+  },
+  "publication_raw_data": false,
+  "purpose": "PURE_READ_ONLY_FAILURE_ATTRIBUTION",
+  "qualification_allowed": false,
+  "receipt_sha256": "b93b623231dcd763e7588c4986073d4ee0188dac6b4a06b4b0e035317928b96e",
+  "redesign_implementation_authorized": false,
+  "reference_promotable": false,
+  "review_authority": "DESIGN_REVIEW_ONLY",
+  "schema": "EMPIRICAL_HURDLE_FAILURE_ATTRIBUTION_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "small_subset": "NONEMPTY_BELOW_201_DESCRIPTIVE_ONLY_MARKED",
+  "source_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "source_repeatability_sha256": "3b9e8e1f562972268a7a0543f72d3f98fe237a9f3e1c5e045b69e19f9c69949b",
+  "stage1_review_trigger": "ALL_32_TRUE_MOVE_PASS_AND_EXACT_HIT_FAIL_AND_STATIC_LOSS_GT_GAIN_AND_STATIC_PROJECTED_FALSE_MOVE",
+  "ta_execution": false,
+  "threshold_policy_change": false,
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

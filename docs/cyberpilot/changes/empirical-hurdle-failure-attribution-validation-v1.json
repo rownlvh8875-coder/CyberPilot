@@ -1,0 +1,126 @@
+{
+  "attribution_manifest_sha256": "07345517d3bca95e90962e0566a58e2b756a8aa6f5c658b8b312f02d4961f77d",
+  "browser": "NOT_APPLICABLE",
+  "candidate_search_authorized": false,
+  "checks": {
+    "compileall": {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "PASS"
+    },
+    "empirical": {
+      "count": 1628,
+      "exit_code": 0,
+      "log_sha256": "b13aab15da5cfeffda5a868ec0aac6fbc55b28eabc8304e60cd071c595945fcf",
+      "status": "PASS",
+      "subtests": 564
+    },
+    "focused": {
+      "count": 50,
+      "exit_code": 0,
+      "log_sha256": "b0726ece89afc6f85d03acd22cc9c4c7f6c6a19dacfa66fae4b43b0ba9b83817",
+      "status": "PASS",
+      "subtests": 114
+    },
+    "full_autotune_controls": {
+      "count": 4487,
+      "exit_code": 0,
+      "log_sha256": "b28d90f4a56c41595646db03a8a432b83f5592b2cf4d5e6550daafe51617e84d",
+      "status": "PASS"
+    },
+    "git_diff_check": {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "PASS"
+    },
+    "independent_review": {
+      "findings_open": 0,
+      "log_sha256": "2fc011b3e05a123fa7572cc32094d62f62026cd2ec232d46052782859e99c9a3",
+      "status": "PASS"
+    },
+    "json": {
+      "count": 550,
+      "status": "PASS"
+    },
+    "lateral_replay": {
+      "count": 16,
+      "exit_code": 0,
+      "log_sha256": "7a7be75f1df1fa0fe7bb236a9a0f50ad9705393be27b723326b8e9e332ceecd9",
+      "status": "PASS"
+    },
+    "publication_privacy_authority": {
+      "exit_code": 0,
+      "log_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "status": "PASS"
+    },
+    "repeatability": {
+      "receipt_sha256": "aab7ec583b7ae4c9cb6b568293f5d29be5edee8a213889176cffd809f7b91ea3",
+      "status": "PASS"
+    },
+    "ruff": {
+      "exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "status": "PASS"
+    },
+    "scons": {
+      "exit_code": 0,
+      "log_sha256": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056",
+      "status": "PASS"
+    },
+    "trapped_resume": {
+      "status": "PASS"
+    }
+  },
+  "composition_authorized": false,
+  "counts": {
+    "empirical": 1628,
+    "focused": 50,
+    "full_autotune_controls": 4487,
+    "lateral_replay": 16
+  },
+  "head_before_increment": "f5ed849bd27287084efc81ba3dd0275ebfc5ca0a",
+  "historical_selection": "MODEL_SELECTION_FAILED_CLOSED",
+  "historical_verdict": "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+  "holdout": "CLOSED",
+  "independent_review": {
+    "findings_fixed": [
+      "Required saved nested aggregate completeness",
+      "Saved-only resume authorization and lineage",
+      "Legacy execution firewall coverage",
+      "Strict JSON-native aggregate publication",
+      "Synthetic fixture path publication hygiene"
+    ],
+    "findings_open": 0,
+    "status": "PASS"
+  },
+  "initial_run_invalidated": true,
+  "limitations": [
+    "RETROSPECTIVE_ONLY",
+    "GATE_PERFECT_PATH_MOVED_SMALL_SUPPORT",
+    "OVERLAPPING_CANDIDATE_POPULATIONS",
+    "NO_CAUSAL_ATTRIBUTION",
+    "DESIGN_REVIEW_ONLY"
+  ],
+  "opening_count": 0,
+  "policy_sha256": "b93b623231dcd763e7588c4986073d4ee0188dac6b4a06b4b0e035317928b96e",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "reason": "Two development attempts invalidated before two clean complete independent runs; no partial output reuse.",
+  "receipt_sha256": "be092bf97b9f63f69e7dad0b9cfd59df55f4d8d78cae8faa0744eb841a7bb4ec",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_FAILURE_ATTRIBUTION_VALIDATION_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "status": "PASS",
+  "storage": {
+    "copied_source_arrays": 0,
+    "output_bytes": 3538956,
+    "result_volume": "D",
+    "source_write_count": 0
+  },
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

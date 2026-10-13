@@ -1,0 +1,4749 @@
+{
+  "attribution_manifest_sha256": "07345517d3bca95e90962e0566a58e2b756a8aa6f5c658b8b312f02d4961f77d",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "fold_summaries": {
+    "FOLD_A": {
+      "historical_failure_counts": {
+        "MOVE_MAE": 0,
+        "MOVE_P95": 0,
+        "MOVE_RMSE": 0,
+        "ONE_STEP_EXACT_HIT": 16,
+        "ONE_STEP_MAE": 16,
+        "ONE_STEP_P95": 16,
+        "ONE_STEP_RMSE": 4,
+        "ONE_STEP_WITHIN_ONE_TICK": 4,
+        "OVERALL_100_MAE": 16,
+        "OVERALL_100_P95": 16,
+        "OVERALL_100_RMSE": 15,
+        "OVERALL_200_MAE": 16,
+        "OVERALL_200_P95": 10,
+        "OVERALL_200_RMSE": 16,
+        "OVERALL_25_MAE": 16,
+        "OVERALL_25_P95": 16,
+        "OVERALL_25_RMSE": 15,
+        "OVERALL_50_MAE": 16,
+        "OVERALL_50_P95": 16,
+        "OVERALL_50_RMSE": 16,
+        "PATH_MOVED_100_MAE": 16,
+        "PATH_MOVED_100_P95": 16,
+        "PATH_MOVED_100_RMSE": 14,
+        "PATH_MOVED_200_MAE": 16,
+        "PATH_MOVED_200_P95": 10,
+        "PATH_MOVED_200_RMSE": 16,
+        "PATH_MOVED_25_MAE": 16,
+        "PATH_MOVED_25_P95": 16,
+        "PATH_MOVED_25_RMSE": 14,
+        "PATH_MOVED_50_MAE": 16,
+        "PATH_MOVED_50_P95": 16,
+        "PATH_MOVED_50_RMSE": 16
+      },
+      "job_count": 16,
+      "ranges": {
+        "balanced_accuracy": {
+          "max": 0.5635012425784222,
+          "min": 0.549319996001681
+        },
+        "false_move_rate": {
+          "max": 0.5573340698067925,
+          "min": 0.4559807473620184
+        },
+        "missed_move_rate": {
+          "max": 0.4283732132572386,
+          "min": 0.34402593818984545
+        },
+        "move_hit_gain": {
+          "max": 8633,
+          "min": 5141
+        },
+        "static_hit_loss": {
+          "max": 47150,
+          "min": 16319
+        }
+      }
+    },
+    "FOLD_B": {
+      "historical_failure_counts": {
+        "MOVE_MAE": 0,
+        "MOVE_P95": 0,
+        "MOVE_RMSE": 0,
+        "ONE_STEP_EXACT_HIT": 16,
+        "ONE_STEP_MAE": 4,
+        "ONE_STEP_P95": 0,
+        "ONE_STEP_RMSE": 0,
+        "ONE_STEP_WITHIN_ONE_TICK": 4,
+        "OVERALL_100_MAE": 7,
+        "OVERALL_100_P95": 9,
+        "OVERALL_100_RMSE": 5,
+        "OVERALL_200_MAE": 6,
+        "OVERALL_200_P95": 8,
+        "OVERALL_200_RMSE": 5,
+        "OVERALL_25_MAE": 7,
+        "OVERALL_25_P95": 5,
+        "OVERALL_25_RMSE": 0,
+        "OVERALL_50_MAE": 6,
+        "OVERALL_50_P95": 8,
+        "OVERALL_50_RMSE": 0,
+        "PATH_MOVED_100_MAE": 7,
+        "PATH_MOVED_100_P95": 9,
+        "PATH_MOVED_100_RMSE": 5,
+        "PATH_MOVED_200_MAE": 6,
+        "PATH_MOVED_200_P95": 7,
+        "PATH_MOVED_200_RMSE": 5,
+        "PATH_MOVED_25_MAE": 7,
+        "PATH_MOVED_25_P95": 5,
+        "PATH_MOVED_25_RMSE": 0,
+        "PATH_MOVED_50_MAE": 6,
+        "PATH_MOVED_50_P95": 7,
+        "PATH_MOVED_50_RMSE": 0
+      },
+      "job_count": 16,
+      "ranges": {
+        "balanced_accuracy": {
+          "max": 0.5466205690182232,
+          "min": 0.5276263228384448
+        },
+        "false_move_rate": {
+          "max": 0.03059357354748681,
+          "min": 0.018724671816009144
+        },
+        "missed_move_rate": {
+          "max": 0.9260226825071013,
+          "min": 0.8791679200314692
+        },
+        "move_hit_gain": {
+          "max": 1693,
+          "min": 898
+        },
+        "static_hit_loss": {
+          "max": 3767,
+          "min": 1833
+        }
+      }
+    }
+  },
+  "historical_selection": "MODEL_SELECTION_FAILED_CLOSED",
+  "historical_verdict": "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+  "holdout": "CLOSED",
+  "opening_count": 0,
+  "paired_route_transfer_directions": [
+    {
+      "candidate_id": "HRI_D00_L01",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.549319996001681,
+            "count": 300569,
+            "counts": {
+              "FN": 14961,
+              "FP": 143280,
+              "TN": 113801,
+              "TP": 28527
+            },
+            "false_move_rate": 0.5573340698067925,
+            "fractions": {
+              "FN": 0.04977559229328374,
+              "FP": 0.47669586683922827,
+              "TN": 0.3786185534769055,
+              "TP": 0.09490998739058253
+            },
+            "missed_move_rate": 0.34402593818984545,
+            "precision": 0.16604096457071016,
+            "predicted_move_fraction": 0.5716058542298108,
+            "recall": 0.6559740618101545,
+            "specificity": 0.4426659301932076,
+            "true_move_fraction": 0.14468557968386628
+          },
+          "exact_hit": {
+            "candidate_move_hits": 8633,
+            "candidate_static_hits": 209931,
+            "candidate_total_hits": 218564,
+            "hold_move_hits": 0,
+            "hold_static_hits": 257081,
+            "hold_total_hits": 257081,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 8633,
+            "net_hit_delta": -38517,
+            "static_hit_loss": 47150,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "PATH_MOVED_25_RMSE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.7271674723607557,
+              "exact_hit_count": 218564,
+              "mae": 0.3884114200437024,
+              "p95": 1.4103820342151079,
+              "rmse": 0.7828149792247241,
+              "sae": 116744.43211111559,
+              "sse": 184188.47030655804,
+              "within_one_tick": 0.9550419371259179,
+              "within_one_tick_count": 287056
+            },
+            "count": 300569,
+            "delta_sae": 53206.43211111559,
+            "delta_sse": 9302.47030655804,
+            "hold_last": {
+              "exact_hit": 0.8553144203161337,
+              "exact_hit_count": 257081,
+              "mae": 0.21139239242902627,
+              "p95": 1.0,
+              "rmse": 0.7627907696687036,
+              "sae": 63538.0,
+              "sse": 174886.0,
+              "within_one_tick": 0.965771586557496,
+              "within_one_tick_count": 290281
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.01834768396631581,
+              "false_move_rate": 0.1492844698622114,
+              "missed_move_rate": -0.11258910192957983,
+              "recall": 0.11258910192957972,
+              "specificity": -0.14928446986221128
+            },
+            "development": {
+              "balanced_accuracy": 0.549319996001681,
+              "count": 300569,
+              "counts": {
+                "FN": 14961,
+                "FP": 143280,
+                "TN": 113801,
+                "TP": 28527
+              },
+              "false_move_rate": 0.5573340698067925,
+              "fractions": {
+                "FN": 0.04977559229328374,
+                "FP": 0.47669586683922827,
+                "TN": 0.3786185534769055,
+                "TP": 0.09490998739058253
+              },
+              "missed_move_rate": 0.34402593818984545,
+              "precision": 0.16604096457071016,
+              "predicted_move_fraction": 0.5716058542298108,
+              "recall": 0.6559740618101545,
+              "specificity": 0.4426659301932076,
+              "true_move_fraction": 0.14468557968386628
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "c658972c3477fdcb4dc2f83848879fec3d8ff6365e85c9e75b0bc4c8351082b5",
+            "train": {
+              "balanced_accuracy": 0.5676676799679968,
+              "count": 336941,
+              "counts": {
+                "FN": 22023,
+                "FP": 117808,
+                "TN": 170902,
+                "TP": 26208
+              },
+              "false_move_rate": 0.40804959994458107,
+              "fractions": {
+                "FN": 0.06536159149524694,
+                "FP": 0.34963984792589803,
+                "TN": 0.5072163969359621,
+                "TP": 0.07778216364289296
+              },
+              "missed_move_rate": 0.4566150401194253,
+              "precision": 0.18197978002444173,
+              "predicted_move_fraction": 0.42742201156879095,
+              "recall": 0.5433849598805748,
+              "specificity": 0.5919504000554189,
+              "true_move_fraction": 0.1431437551381399
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.5276263228384448,
+            "count": 336941,
+            "counts": {
+              "FN": 44663,
+              "FP": 5406,
+              "TN": 283304,
+              "TP": 3568
+            },
+            "false_move_rate": 0.018724671816009144,
+            "fractions": {
+              "FN": 0.13255436411715998,
+              "FP": 0.016044351978536302,
+              "TN": 0.8408118928833238,
+              "TP": 0.010589391020979935
+            },
+            "missed_move_rate": 0.9260226825071013,
+            "precision": 0.397593046579006,
+            "predicted_move_fraction": 0.026633742999516236,
+            "recall": 0.07397731749289876,
+            "specificity": 0.9812753281839909,
+            "true_move_fraction": 0.1431437551381399
+          },
+          "exact_hit": {
+            "candidate_move_hits": 898,
+            "candidate_static_hits": 285567,
+            "candidate_total_hits": 286465,
+            "hold_move_hits": 0,
+            "hold_static_hits": 288710,
+            "hold_total_hits": 288710,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 898,
+            "net_hit_delta": -2245,
+            "static_hit_loss": 3143,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8501933572940069,
+              "exact_hit_count": 286465,
+              "mae": 0.19494801749318888,
+              "p95": 1.0,
+              "rmse": 0.5759041234164632,
+              "sae": 65685.97996217255,
+              "sse": 111751.7252390419,
+              "within_one_tick": 0.9687868202444938,
+              "within_one_tick_count": 326424
+            },
+            "count": 336941,
+            "delta_sae": 1109.9799621725542,
+            "delta_sse": -14602.274760958098,
+            "hold_last": {
+              "exact_hit": 0.8568562448618601,
+              "exact_hit_count": 288710,
+              "mae": 0.1916537316622198,
+              "p95": 1.0,
+              "rmse": 0.6123751618603424,
+              "sae": 64576.0,
+              "sse": 126354.0,
+              "within_one_tick": 0.9694308499114088,
+              "within_one_tick_count": 326641
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.029549428521822407,
+              "false_move_rate": -0.03053217719266905,
+              "missed_move_rate": 0.08963103423631391,
+              "recall": -0.08963103423631388,
+              "specificity": 0.030532177192669097
+            },
+            "development": {
+              "balanced_accuracy": 0.5276263228384448,
+              "count": 336941,
+              "counts": {
+                "FN": 44663,
+                "FP": 5406,
+                "TN": 283304,
+                "TP": 3568
+              },
+              "false_move_rate": 0.018724671816009144,
+              "fractions": {
+                "FN": 0.13255436411715998,
+                "FP": 0.016044351978536302,
+                "TN": 0.8408118928833238,
+                "TP": 0.010589391020979935
+              },
+              "missed_move_rate": 0.9260226825071013,
+              "precision": 0.397593046579006,
+              "predicted_move_fraction": 0.026633742999516236,
+              "recall": 0.07397731749289876,
+              "specificity": 0.9812753281839909,
+              "true_move_fraction": 0.1431437551381399
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "94433ce0479fd61dc5afacabc760184fa12d0c99bff3ec0196279dcbb6009168",
+            "train": {
+              "balanced_accuracy": 0.5571757513602672,
+              "count": 300569,
+              "counts": {
+                "FN": 36373,
+                "FP": 12663,
+                "TN": 244418,
+                "TP": 7115
+              },
+              "false_move_rate": 0.049256849008678195,
+              "fractions": {
+                "FN": 0.12101381047280325,
+                "FP": 0.04213009325645692,
+                "TN": 0.8131843270596768,
+                "TP": 0.023671769211063017
+              },
+              "missed_move_rate": 0.8363916482707874,
+              "precision": 0.35974314895338255,
+              "predicted_move_fraction": 0.06580186246751994,
+              "recall": 0.16360835172921265,
+              "specificity": 0.9507431509913218,
+              "true_move_fraction": 0.14468557968386628
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.56202481036004,
+            "count": 265076,
+            "counts": {
+              "FN": 16042,
+              "FP": 103452,
+              "TN": 123426,
+              "TP": 22156
+            },
+            "false_move_rate": 0.4559807473620184,
+            "fractions": {
+              "FN": 0.06051849280960932,
+              "FP": 0.3902729783156529,
+              "TN": 0.46562495284371275,
+              "TP": 0.08358357603102506
+            },
+            "missed_move_rate": 0.4199696319179015,
+            "precision": 0.1763900388510286,
+            "predicted_move_fraction": 0.47385655434667795,
+            "recall": 0.5800303680820985,
+            "specificity": 0.5440192526379817,
+            "true_move_fraction": 0.1441020688406344
+          },
+          "exact_hit": {
+            "candidate_move_hits": 8094,
+            "candidate_static_hits": 202592,
+            "candidate_total_hits": 210686,
+            "hold_move_hits": 0,
+            "hold_static_hits": 226878,
+            "hold_total_hits": 226878,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 8094,
+            "net_hit_delta": -16192,
+            "static_hit_loss": 24286,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_RMSE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.7948135629027147,
+              "exact_hit_count": 210686,
+              "mae": 0.28885229816284813,
+              "p95": 1.1291296133790087,
+              "rmse": 0.5914457228572478,
+              "sae": 76567.81178781512,
+              "sse": 92725.71682909963,
+              "within_one_tick": 0.969069248064706,
+              "within_one_tick_count": 256877
+            },
+            "count": 265076,
+            "delta_sae": 21212.811787815124,
+            "delta_sse": -56251.283170900366,
+            "hold_last": {
+              "exact_hit": 0.8558979311593656,
+              "exact_hit_count": 226878,
+              "mae": 0.20882690247325295,
+              "p95": 1.0,
+              "rmse": 0.7496773816067679,
+              "sae": 55355.0,
+              "sse": 148977.0,
+              "within_one_tick": 0.9662851408652613,
+              "within_one_tick_count": 256139
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.014270353001158975,
+              "false_move_rate": 0.20794169212824182,
+              "missed_move_rate": -0.1794009861259238,
+              "recall": 0.17940098612592387,
+              "specificity": -0.20794169212824176
+            },
+            "development": {
+              "balanced_accuracy": 0.56202481036004,
+              "count": 265076,
+              "counts": {
+                "FN": 16042,
+                "FP": 103452,
+                "TN": 123426,
+                "TP": 22156
+              },
+              "false_move_rate": 0.4559807473620184,
+              "fractions": {
+                "FN": 0.06051849280960932,
+                "FP": 0.3902729783156529,
+                "TN": 0.46562495284371275,
+                "TP": 0.08358357603102506
+              },
+              "missed_move_rate": 0.4199696319179015,
+              "precision": 0.1763900388510286,
+              "predicted_move_fraction": 0.47385655434667795,
+              "recall": 0.5800303680820985,
+              "specificity": 0.5440192526379817,
+              "true_move_fraction": 0.1441020688406344
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "3300b90e1ddd54e4b73a63de70dd01737893a933fa784cfaad93768dc6d1abbb",
+            "train": {
+              "balanced_accuracy": 0.576295163361199,
+              "count": 293734,
+              "counts": {
+                "FN": 25903,
+                "FP": 62138,
+                "TN": 188379,
+                "TP": 17314
+              },
+              "false_move_rate": 0.24803905523377656,
+              "fractions": {
+                "FN": 0.08818522881246298,
+                "FP": 0.21154513947993764,
+                "TN": 0.64132514451851,
+                "TP": 0.05894448718908945
+              },
+              "missed_move_rate": 0.5993706180438253,
+              "precision": 0.2179177364949907,
+              "predicted_move_fraction": 0.2704896266690271,
+              "recall": 0.40062938195617465,
+              "specificity": 0.7519609447662234,
+              "true_move_fraction": 0.14712971600155242
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.5466205690182232,
+            "count": 293734,
+            "counts": {
+              "FN": 37995,
+              "FP": 6912,
+              "TN": 243605,
+              "TP": 5222
+            },
+            "false_move_rate": 0.02759094193208445,
+            "fractions": {
+              "FN": 0.1293517263919056,
+              "FP": 0.02353149448140154,
+              "TN": 0.829338789517046,
+              "TP": 0.017777989609646824
+            },
+            "missed_move_rate": 0.8791679200314692,
+            "precision": 0.4303609691775177,
+            "predicted_move_fraction": 0.041309484091048364,
+            "recall": 0.1208320799685309,
+            "specificity": 0.9724090580679156,
+            "true_move_fraction": 0.14712971600155242
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1557,
+            "candidate_static_hits": 247544,
+            "candidate_total_hits": 249101,
+            "hold_move_hits": 0,
+            "hold_static_hits": 250517,
+            "hold_total_hits": 250517,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1557,
+            "net_hit_delta": -1416,
+            "static_hit_loss": 2973,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8480495958928826,
+              "exact_hit_count": 249101,
+              "mae": 0.19225236984413266,
+              "p95": 1.0,
+              "rmse": 0.555760242955839,
+              "sae": 56471.057603796464,
+              "sse": 90725.45833612297,
+              "within_one_tick": 0.972815540591147,
+              "within_one_tick_count": 285749
+            },
+            "count": 293734,
+            "delta_sae": -1598.9423962035362,
+            "delta_sse": -23226.541663877026,
+            "hold_last": {
+              "exact_hit": 0.8528702839984476,
+              "exact_hit_count": 250517,
+              "mae": 0.1976958744986961,
+              "p95": 1.0,
+              "rmse": 0.6228505700654723,
+              "sae": 58070.0,
+              "sse": 113952.0,
+              "within_one_tick": 0.9683148699163189,
+              "within_one_tick_count": 284427
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.03102214841716544,
+              "false_move_rate": -0.034072154533857604,
+              "missed_move_rate": 0.09611645136818836,
+              "recall": -0.0961164513681883,
+              "specificity": 0.03407215453385759
+            },
+            "development": {
+              "balanced_accuracy": 0.5466205690182232,
+              "count": 293734,
+              "counts": {
+                "FN": 37995,
+                "FP": 6912,
+                "TN": 243605,
+                "TP": 5222
+              },
+              "false_move_rate": 0.02759094193208445,
+              "fractions": {
+                "FN": 0.1293517263919056,
+                "FP": 0.02353149448140154,
+                "TN": 0.829338789517046,
+                "TP": 0.017777989609646824
+              },
+              "missed_move_rate": 0.8791679200314692,
+              "precision": 0.4303609691775177,
+              "predicted_move_fraction": 0.041309484091048364,
+              "recall": 0.1208320799685309,
+              "specificity": 0.9724090580679156,
+              "true_move_fraction": 0.14712971600155242
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "9b15824c47fa7ef7879d6980831680d7828640895b4c67766e0a1419d1a1db73",
+            "train": {
+              "balanced_accuracy": 0.5776427174353886,
+              "count": 265076,
+              "counts": {
+                "FN": 29911,
+                "FP": 13990,
+                "TN": 212888,
+                "TP": 8287
+              },
+              "false_move_rate": 0.06166309646594205,
+              "fractions": {
+                "FN": 0.11283933664307595,
+                "FP": 0.05277731669408019,
+                "TN": 0.8031206144652854,
+                "TP": 0.031262732197558436
+              },
+              "missed_move_rate": 0.7830514686632808,
+              "precision": 0.37199802486869865,
+              "predicted_move_fraction": 0.08404004889163863,
+              "recall": 0.2169485313367192,
+              "specificity": 0.938336903534058,
+              "true_move_fraction": 0.1441020688406344
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.5622548388706494,
+            "count": 230783,
+            "counts": {
+              "FN": 12999,
+              "FP": 95318,
+              "TN": 102428,
+              "TP": 20038
+            },
+            "false_move_rate": 0.48202239236191885,
+            "fractions": {
+              "FN": 0.05632563923685887,
+              "FP": 0.4130200231386194,
+              "TN": 0.4438281849182999,
+              "TP": 0.08682615270622186
+            },
+            "missed_move_rate": 0.3934679298967824,
+            "precision": 0.1737057456915982,
+            "predicted_move_fraction": 0.49984617584484126,
+            "recall": 0.6065320701032176,
+            "specificity": 0.5179776076380812,
+            "true_move_fraction": 0.14315179194308073
+          },
+          "exact_hit": {
+            "candidate_move_hits": 7781,
+            "candidate_static_hits": 175031,
+            "candidate_total_hits": 182812,
+            "hold_move_hits": 0,
+            "hold_static_hits": 197746,
+            "hold_total_hits": 197746,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 7781,
+            "net_hit_delta": -14934,
+            "static_hit_loss": 22715,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_RMSE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.7921380690952107,
+              "exact_hit_count": 182812,
+              "mae": 0.2907434938075024,
+              "p95": 1.1282928600791229,
+              "rmse": 0.5844998436138159,
+              "sae": 67098.65573137683,
+              "sse": 78844.71962505783,
+              "within_one_tick": 0.9704830945086943,
+              "within_one_tick_count": 223971
+            },
+            "count": 230783,
+            "delta_sae": 19722.655731376828,
+            "delta_sse": -44879.28037494217,
+            "hold_last": {
+              "exact_hit": 0.8568482080569193,
+              "exact_hit_count": 197746,
+              "mae": 0.20528375140283298,
+              "p95": 1.0,
+              "rmse": 0.7321921508145061,
+              "sae": 47376.0,
+              "sse": 123724.0,
+              "within_one_tick": 0.9668779762807486,
+              "within_one_tick_count": 223139
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.014164889445290263,
+              "false_move_rate": 0.2172683944839751,
+              "missed_move_rate": -0.18893861559339448,
+              "recall": 0.18893861559339448,
+              "specificity": -0.21726839448397506
+            },
+            "development": {
+              "balanced_accuracy": 0.5622548388706494,
+              "count": 230783,
+              "counts": {
+                "FN": 12999,
+                "FP": 95318,
+                "TN": 102428,
+                "TP": 20038
+              },
+              "false_move_rate": 0.48202239236191885,
+              "fractions": {
+                "FN": 0.05632563923685887,
+                "FP": 0.4130200231386194,
+                "TN": 0.4438281849182999,
+                "TP": 0.08682615270622186
+              },
+              "missed_move_rate": 0.3934679298967824,
+              "precision": 0.1737057456915982,
+              "predicted_move_fraction": 0.49984617584484126,
+              "recall": 0.6065320701032176,
+              "specificity": 0.5179776076380812,
+              "true_move_fraction": 0.14315179194308073
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "da7805f8ea4f9432eaf45cd22e97568388be1dcccbc0676cd2cae5f8c6dbef37",
+            "train": {
+              "balanced_accuracy": 0.5764197283159397,
+              "count": 277385,
+              "counts": {
+                "FN": 23775,
+                "FP": 62631,
+                "TN": 173932,
+                "TP": 17047
+              },
+              "false_move_rate": 0.26475399787794374,
+              "fractions": {
+                "FN": 0.0857111956306217,
+                "FP": 0.22579086828775888,
+                "TN": 0.6270418371577411,
+                "TP": 0.06145609892387836
+              },
+              "missed_move_rate": 0.5824065454901769,
+              "precision": 0.21394864328923918,
+              "predicted_move_fraction": 0.2872469672116372,
+              "recall": 0.41759345450982316,
+              "specificity": 0.7352460021220563,
+              "true_move_fraction": 0.14716729455450006
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.544512304942866,
+            "count": 277385,
+            "counts": {
+              "FN": 36139,
+              "FP": 6078,
+              "TN": 230485,
+              "TP": 4683
+            },
+            "false_move_rate": 0.025692944374225892,
+            "fractions": {
+              "FN": 0.130284622456153,
+              "FP": 0.021911783261531807,
+              "TN": 0.8309209221839682,
+              "TP": 0.016882672098347064
+            },
+            "missed_move_rate": 0.8852824457400421,
+            "precision": 0.43518260384722607,
+            "predicted_move_fraction": 0.03879445535987887,
+            "recall": 0.11471755425995786,
+            "specificity": 0.9743070556257741,
+            "true_move_fraction": 0.14716729455450006
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1693,
+            "candidate_static_hits": 233829,
+            "candidate_total_hits": 235522,
+            "hold_move_hits": 0,
+            "hold_static_hits": 236563,
+            "hold_total_hits": 236563,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1693,
+            "net_hit_delta": -1041,
+            "static_hit_loss": 2734,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8490797988355535,
+              "exact_hit_count": 235522,
+              "mae": 0.1879936303973521,
+              "p95": 1.0,
+              "rmse": 0.5374649858852978,
+              "sae": 52146.61316776951,
+              "sse": 80127.81967684858,
+              "within_one_tick": 0.9744362528615462,
+              "within_one_tick_count": 270294
+            },
+            "count": 277385,
+            "delta_sae": -1959.3868322304916,
+            "delta_sse": -20978.18032315142,
+            "hold_last": {
+              "exact_hit": 0.8528327054454999,
+              "exact_hit_count": 236563,
+              "mae": 0.19505741117940767,
+              "p95": 1.0,
+              "rmse": 0.603735868369804,
+              "sae": 54106.0,
+              "sse": 101106.0,
+              "within_one_tick": 0.968898822935631,
+              "within_one_tick_count": 268758
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.03558527131938605,
+              "false_move_rate": -0.03480385454964614,
+              "missed_move_rate": 0.10597439718841817,
+              "recall": -0.1059743971884182,
+              "specificity": 0.034803854549646185
+            },
+            "development": {
+              "balanced_accuracy": 0.544512304942866,
+              "count": 277385,
+              "counts": {
+                "FN": 36139,
+                "FP": 6078,
+                "TN": 230485,
+                "TP": 4683
+              },
+              "false_move_rate": 0.025692944374225892,
+              "fractions": {
+                "FN": 0.130284622456153,
+                "FP": 0.021911783261531807,
+                "TN": 0.8309209221839682,
+                "TP": 0.016882672098347064
+              },
+              "missed_move_rate": 0.8852824457400421,
+              "precision": 0.43518260384722607,
+              "predicted_move_fraction": 0.03879445535987887,
+              "recall": 0.11471755425995786,
+              "specificity": 0.9743070556257741,
+              "true_move_fraction": 0.14716729455450006
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "8dd2ef7754320b2900681e78d002d6826550d5de0729cfbe4e1f4653413d1062",
+            "train": {
+              "balanced_accuracy": 0.580097576262252,
+              "count": 230783,
+              "counts": {
+                "FN": 25746,
+                "FP": 11963,
+                "TN": 185783,
+                "TP": 7291
+              },
+              "false_move_rate": 0.06049679892387204,
+              "fractions": {
+                "FN": 0.11155934362583032,
+                "FP": 0.05183657375109952,
+                "TN": 0.8050116343058198,
+                "TP": 0.0315924483172504
+              },
+              "missed_move_rate": 0.7793080485516239,
+              "precision": 0.3786745611301548,
+              "predicted_move_fraction": 0.08342902206834993,
+              "recall": 0.22069195144837606,
+              "specificity": 0.939503201076128,
+              "true_move_fraction": 0.14315179194308073
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.5537812035258115,
+            "count": 194807,
+            "counts": {
+              "FN": 10576,
+              "FP": 85280,
+              "TN": 81855,
+              "TP": 17096
+            },
+            "false_move_rate": 0.5102462081550843,
+            "fractions": {
+              "FN": 0.05428963024942635,
+              "FP": 0.43776661002941375,
+              "TN": 0.42018510628468175,
+              "TP": 0.08775865343647815
+            },
+            "missed_move_rate": 0.38219138479329284,
+            "precision": 0.1669922638118309,
+            "predicted_move_fraction": 0.5255252634658919,
+            "recall": 0.6178086152067072,
+            "specificity": 0.4897537918449158,
+            "true_move_fraction": 0.1420482836859045
+          },
+          "exact_hit": {
+            "candidate_move_hits": 6699,
+            "candidate_static_hits": 146888,
+            "candidate_total_hits": 153587,
+            "hold_move_hits": 0,
+            "hold_static_hits": 167135,
+            "hold_total_hits": 167135,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 6699,
+            "net_hit_delta": -13548,
+            "static_hit_loss": 20247,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_RMSE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.7884059607714302,
+              "exact_hit_count": 153587,
+              "mae": 0.296073781144513,
+              "p95": 1.1268147505019428,
+              "rmse": 0.5784143758753815,
+              "sae": 57677.24508341914,
+              "sse": 65175.25139705256,
+              "within_one_tick": 0.9711252675725205,
+              "within_one_tick_count": 189182
+            },
+            "count": 194807,
+            "delta_sae": 19215.24508341914,
+            "delta_sse": -26396.74860294744,
+            "hold_last": {
+              "exact_hit": 0.8579517163140955,
+              "exact_hit_count": 167135,
+              "mae": 0.19743643708901631,
+              "p95": 1.0,
+              "rmse": 0.6856130425116428,
+              "sae": 38462.0,
+              "sse": 91572.0,
+              "within_one_tick": 0.9683070936875985,
+              "within_one_tick_count": 188633
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.02134444603036678,
+              "false_move_rate": 0.2765881916080857,
+              "missed_move_rate": -0.233899299547352,
+              "recall": 0.23389929954735206,
+              "specificity": -0.2765881916080856
+            },
+            "development": {
+              "balanced_accuracy": 0.5537812035258115,
+              "count": 194807,
+              "counts": {
+                "FN": 10576,
+                "FP": 85280,
+                "TN": 81855,
+                "TP": 17096
+              },
+              "false_move_rate": 0.5102462081550843,
+              "fractions": {
+                "FN": 0.05428963024942635,
+                "FP": 0.43776661002941375,
+                "TN": 0.42018510628468175,
+                "TP": 0.08775865343647815
+              },
+              "missed_move_rate": 0.38219138479329284,
+              "precision": 0.1669922638118309,
+              "predicted_move_fraction": 0.5255252634658919,
+              "recall": 0.6178086152067072,
+              "specificity": 0.4897537918449158,
+              "true_move_fraction": 0.1420482836859045
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "6bf846bca7b63f96b5c21a7e885f0ef016f3aa13b4bc539b00b3a8032ada750e",
+            "train": {
+              "balanced_accuracy": 0.5751256495561783,
+              "count": 257518,
+              "counts": {
+                "FN": 23425,
+                "FP": 51287,
+                "TN": 168209,
+                "TP": 14597
+              },
+              "false_move_rate": 0.23365801654699858,
+              "fractions": {
+                "FN": 0.09096451510185696,
+                "FP": 0.1991588937472332,
+                "TN": 0.6531931748460302,
+                "TP": 0.05668341630487966
+              },
+              "missed_move_rate": 0.6160906843406448,
+              "precision": 0.22155606824115112,
+              "predicted_move_fraction": 0.2558423100521129,
+              "recall": 0.3839093156593551,
+              "specificity": 0.7663419834530014,
+              "true_move_fraction": 0.14764793140673663
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.541586508878742,
+            "count": 257518,
+            "counts": {
+              "FN": 33774,
+              "FP": 6267,
+              "TN": 213229,
+              "TP": 4248
+            },
+            "false_move_rate": 0.028551773153041513,
+            "fractions": {
+              "FN": 0.13115199714194736,
+              "FP": 0.024336162909000536,
+              "TN": 0.8280159056842629,
+              "TP": 0.016495934264789257
+            },
+            "missed_move_rate": 0.8882752090894745,
+            "precision": 0.40399429386590585,
+            "predicted_move_fraction": 0.04083209717378979,
+            "recall": 0.11172479091052548,
+            "specificity": 0.9714482268469585,
+            "true_move_fraction": 0.14764793140673663
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1576,
+            "candidate_static_hits": 216792,
+            "candidate_total_hits": 218368,
+            "hold_move_hits": 0,
+            "hold_static_hits": 219496,
+            "hold_total_hits": 219496,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1576,
+            "net_hit_delta": -1128,
+            "static_hit_loss": 2704,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8479717922630651,
+              "exact_hit_count": 218368,
+              "mae": 0.1883420256678077,
+              "p95": 1.0,
+              "rmse": 0.5294254282598589,
+              "sae": 48501.461765922504,
+              "sse": 72180.05089580835,
+              "within_one_tick": 0.9745920673506318,
+              "within_one_tick_count": 250975
+            },
+            "count": 257518,
+            "delta_sae": -1199.5382340774959,
+            "delta_sse": -16380.949104191648,
+            "hold_last": {
+              "exact_hit": 0.8523520685932634,
+              "exact_hit_count": 219496,
+              "mae": 0.19300010096381612,
+              "p95": 1.0,
+              "rmse": 0.5864317298958385,
+              "sae": 49701.0,
+              "sse": 88561.0,
+              "within_one_tick": 0.9694662120706126,
+              "within_one_tick_count": 249655
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.03592489472327676,
+              "false_move_rate": -0.04918777870623392,
+              "missed_move_rate": 0.12103756815278766,
+              "recall": -0.12103756815278763,
+              "specificity": 0.04918777870623392
+            },
+            "development": {
+              "balanced_accuracy": 0.541586508878742,
+              "count": 257518,
+              "counts": {
+                "FN": 33774,
+                "FP": 6267,
+                "TN": 213229,
+                "TP": 4248
+              },
+              "false_move_rate": 0.028551773153041513,
+              "fractions": {
+                "FN": 0.13115199714194736,
+                "FP": 0.024336162909000536,
+                "TN": 0.8280159056842629,
+                "TP": 0.016495934264789257
+              },
+              "missed_move_rate": 0.8882752090894745,
+              "precision": 0.40399429386590585,
+              "predicted_move_fraction": 0.04083209717378979,
+              "recall": 0.11172479091052548,
+              "specificity": 0.9714482268469585,
+              "true_move_fraction": 0.14764793140673663
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "6351a277179700ff0aa1ab165709181c10ebb6177b388faf022f2e90e025e14c",
+            "train": {
+              "balanced_accuracy": 0.5775114036020188,
+              "count": 194807,
+              "counts": {
+                "FN": 21231,
+                "FP": 12993,
+                "TN": 154142,
+                "TP": 6441
+              },
+              "false_move_rate": 0.07773955185927543,
+              "fractions": {
+                "FN": 0.10898479007427865,
+                "FP": 0.066696781943154,
+                "TN": 0.7912549343709415,
+                "TP": 0.03306349361162587
+              },
+              "missed_move_rate": 0.7672376409366869,
+              "precision": 0.33142945353504166,
+              "predicted_move_fraction": 0.09976027555477986,
+              "recall": 0.2327623590633131,
+              "specificity": 0.9222604481407246,
+              "true_move_fraction": 0.1420482836859045
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.5552092801475335,
+            "count": 265076,
+            "counts": {
+              "FN": 16363,
+              "FP": 104638,
+              "TN": 122240,
+              "TP": 21835
+            },
+            "false_move_rate": 0.4612082264476944,
+            "fractions": {
+              "FN": 0.06172946626627835,
+              "FP": 0.3947471668502618,
+              "TN": 0.4611507643091038,
+              "TP": 0.08237260257435604
+            },
+            "missed_move_rate": 0.4283732132572386,
+            "precision": 0.17264554489891124,
+            "predicted_move_fraction": 0.47711976942461787,
+            "recall": 0.5716267867427614,
+            "specificity": 0.5387917735523057,
+            "true_move_fraction": 0.1441020688406344
+          },
+          "exact_hit": {
+            "candidate_move_hits": 7093,
+            "candidate_static_hits": 187798,
+            "candidate_total_hits": 194891,
+            "hold_move_hits": 0,
+            "hold_static_hits": 226878,
+            "hold_total_hits": 226878,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 7093,
+            "net_hit_delta": -31987,
+            "static_hit_loss": 39080,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "PATH_MOVED_25_RMSE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.7352268783292338,
+              "exact_hit_count": 194891,
+              "mae": 0.3792418204908805,
+              "p95": 1.4510034522533686,
+              "rmse": 0.8138453453791661,
+              "sae": 100527.90480844064,
+              "sse": 175571.5634044744,
+              "within_one_tick": 0.9525871825438742,
+              "within_one_tick_count": 252508
+            },
+            "count": 265076,
+            "delta_sae": 45172.90480844064,
+            "delta_sse": 26594.563404474407,
+            "hold_last": {
+              "exact_hit": 0.8558979311593656,
+              "exact_hit_count": 226878,
+              "mae": 0.20882690247325295,
+              "p95": 1.0,
+              "rmse": 0.7496773816067679,
+              "sae": 55355.0,
+              "sse": 148977.0,
+              "within_one_tick": 0.9662851408652613,
+              "within_one_tick_count": 256139
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.014139143072324112,
+              "false_move_rate": 0.22220648205509827,
+              "missed_move_rate": -0.19392819591045002,
+              "recall": 0.19392819591045002,
+              "specificity": -0.2222064820550982
+            },
+            "development": {
+              "balanced_accuracy": 0.5552092801475335,
+              "count": 265076,
+              "counts": {
+                "FN": 16363,
+                "FP": 104638,
+                "TN": 122240,
+                "TP": 21835
+              },
+              "false_move_rate": 0.4612082264476944,
+              "fractions": {
+                "FN": 0.06172946626627835,
+                "FP": 0.3947471668502618,
+                "TN": 0.4611507643091038,
+                "TP": 0.08237260257435604
+              },
+              "missed_move_rate": 0.4283732132572386,
+              "precision": 0.17264554489891124,
+              "predicted_move_fraction": 0.47711976942461787,
+              "recall": 0.5716267867427614,
+              "specificity": 0.5387917735523057,
+              "true_move_fraction": 0.1441020688406344
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "9e4e4b6f0c02995aa2ce218ea09f5f03bdfd40cf3b673373ae8193953231736a",
+            "train": {
+              "balanced_accuracy": 0.5693484232198576,
+              "count": 293734,
+              "counts": {
+                "FN": 26894,
+                "FP": 59874,
+                "TN": 190643,
+                "TP": 16323
+              },
+              "false_move_rate": 0.2390017443925961,
+              "fractions": {
+                "FN": 0.0915590295982079,
+                "FP": 0.20383748561623782,
+                "TN": 0.6490327983822097,
+                "TP": 0.055570686403344526
+              },
+              "missed_move_rate": 0.6223014091676886,
+              "precision": 0.21422103232410725,
+              "predicted_move_fraction": 0.25940817201958233,
+              "recall": 0.37769859083231133,
+              "specificity": 0.7609982556074039,
+              "true_move_fraction": 0.14712971600155242
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.5337170708853167,
+            "count": 293734,
+            "counts": {
+              "FN": 39249,
+              "FP": 6108,
+              "TN": 244409,
+              "TP": 3968
+            },
+            "false_move_rate": 0.02438157889484546,
+            "fractions": {
+              "FN": 0.13362089509556266,
+              "FP": 0.020794324116377404,
+              "TN": 0.8320759598820702,
+              "TP": 0.013508820905989772
+            },
+            "missed_move_rate": 0.9081842793345212,
+            "precision": 0.39380706629614926,
+            "predicted_move_fraction": 0.03430314502236718,
+            "recall": 0.09181572066547886,
+            "specificity": 0.9756184211051545,
+            "true_move_fraction": 0.14712971600155242
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1045,
+            "candidate_static_hits": 246752,
+            "candidate_total_hits": 247797,
+            "hold_move_hits": 0,
+            "hold_static_hits": 250517,
+            "hold_total_hits": 250517,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1045,
+            "net_hit_delta": -2720,
+            "static_hit_loss": 3765,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8436102051515998,
+              "exact_hit_count": 247797,
+              "mae": 0.20400197094526537,
+              "p95": 1.0,
+              "rmse": 0.5888369986036462,
+              "sae": 59922.314933636575,
+              "sse": 101846.09929491192,
+              "within_one_tick": 0.9674807819319521,
+              "within_one_tick_count": 284182
+            },
+            "count": 293734,
+            "delta_sae": 1852.314933636575,
+            "delta_sse": -12105.900705088075,
+            "hold_last": {
+              "exact_hit": 0.8528702839984476,
+              "exact_hit_count": 250517,
+              "mae": 0.1976958744986961,
+              "p95": 1.0,
+              "rmse": 0.6228505700654723,
+              "sae": 58070.0,
+              "sse": 113952.0,
+              "within_one_tick": 0.9683148699163189,
+              "within_one_tick_count": 284427
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.028914975272702925,
+              "false_move_rate": -0.043139291352600306,
+              "missed_move_rate": 0.10096924189800616,
+              "recall": -0.10096924189800616,
+              "specificity": 0.043139291352600306
+            },
+            "development": {
+              "balanced_accuracy": 0.5337170708853167,
+              "count": 293734,
+              "counts": {
+                "FN": 39249,
+                "FP": 6108,
+                "TN": 244409,
+                "TP": 3968
+              },
+              "false_move_rate": 0.02438157889484546,
+              "fractions": {
+                "FN": 0.13362089509556266,
+                "FP": 0.020794324116377404,
+                "TN": 0.8320759598820702,
+                "TP": 0.013508820905989772
+              },
+              "missed_move_rate": 0.9081842793345212,
+              "precision": 0.39380706629614926,
+              "predicted_move_fraction": 0.03430314502236718,
+              "recall": 0.09181572066547886,
+              "specificity": 0.9756184211051545,
+              "true_move_fraction": 0.14712971600155242
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "b910e0e88b38be65429b5d8d8c974e7864c06d4628f7a4c09870d7b6019364c6",
+            "train": {
+              "balanced_accuracy": 0.5626320461580196,
+              "count": 265076,
+              "counts": {
+                "FN": 30834,
+                "FP": 15319,
+                "TN": 211559,
+                "TP": 7364
+              },
+              "false_move_rate": 0.06752087024744577,
+              "fractions": {
+                "FN": 0.11632135689387195,
+                "FP": 0.057790973154868794,
+                "TN": 0.7981069580044968,
+                "TP": 0.02778071194676244
+              },
+              "missed_move_rate": 0.807215037436515,
+              "precision": 0.3246484151126394,
+              "predicted_move_fraction": 0.08557168510163123,
+              "recall": 0.192784962563485,
+              "specificity": 0.9324791297525542,
+              "true_move_fraction": 0.1441020688406344
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.5635012425784222,
+            "count": 247038,
+            "counts": {
+              "FN": 14175,
+              "FP": 100244,
+              "TN": 111274,
+              "TP": 21345
+            },
+            "false_move_rate": 0.4739265688972097,
+            "fractions": {
+              "FN": 0.057379836300488186,
+              "FP": 0.4057837255806799,
+              "TN": 0.45043272694889047,
+              "TP": 0.08640371116994147
+            },
+            "missed_move_rate": 0.39907094594594594,
+            "precision": 0.17555041985705944,
+            "predicted_move_fraction": 0.4921874367506214,
+            "recall": 0.6009290540540541,
+            "specificity": 0.5260734311027903,
+            "true_move_fraction": 0.14378354747042965
+          },
+          "exact_hit": {
+            "candidate_move_hits": 8053,
+            "candidate_static_hits": 188283,
+            "candidate_total_hits": 196336,
+            "hold_move_hits": 0,
+            "hold_static_hits": 211518,
+            "hold_total_hits": 211518,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 8053,
+            "net_hit_delta": -15182,
+            "static_hit_loss": 23235,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_RMSE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.7947603202746136,
+              "exact_hit_count": 196336,
+              "mae": 0.285295514171038,
+              "p95": 1.1147801769212942,
+              "rmse": 0.5705303588571571,
+              "sae": 70478.83322978488,
+              "sse": 80412.07710912042,
+              "within_one_tick": 0.9707453913972749,
+              "within_one_tick_count": 239811
+            },
+            "count": 247038,
+            "delta_sae": 19246.833229784883,
+            "delta_sse": -55989.92289087958,
+            "hold_last": {
+              "exact_hit": 0.8562164525295703,
+              "exact_hit_count": 211518,
+              "mae": 0.20738509864879087,
+              "p95": 1.0,
+              "rmse": 0.7430678782450905,
+              "sae": 51232.0,
+              "sse": 136402.0,
+              "within_one_tick": 0.9665436086755884,
+              "within_one_tick_count": 238773
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.01343209677519297,
+              "false_move_rate": 0.20550592741772,
+              "missed_move_rate": -0.17864173386733406,
+              "recall": 0.17864173386733406,
+              "specificity": -0.2055059274177201
+            },
+            "development": {
+              "balanced_accuracy": 0.5635012425784222,
+              "count": 247038,
+              "counts": {
+                "FN": 14175,
+                "FP": 100244,
+                "TN": 111274,
+                "TP": 21345
+              },
+              "false_move_rate": 0.4739265688972097,
+              "fractions": {
+                "FN": 0.057379836300488186,
+                "FP": 0.4057837255806799,
+                "TN": 0.45043272694889047,
+                "TP": 0.08640371116994147
+              },
+              "missed_move_rate": 0.39907094594594594,
+              "precision": 0.17555041985705944,
+              "predicted_move_fraction": 0.4921874367506214,
+              "recall": 0.6009290540540541,
+              "specificity": 0.5260734311027903,
+              "true_move_fraction": 0.14378354747042965
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "28067c703ac4bb49fcafbc51840527f5b629bbe9d7e5fbeb770210db5b1db00a",
+            "train": {
+              "balanced_accuracy": 0.5769333393536151,
+              "count": 285207,
+              "counts": {
+                "FN": 24257,
+                "FP": 65285,
+                "TN": 177934,
+                "TP": 17731
+              },
+              "false_move_rate": 0.2684206414794897,
+              "fractions": {
+                "FN": 0.08505050717549008,
+                "FP": 0.2289039189080212,
+                "TN": 0.6238766930685432,
+                "TP": 0.06216888084794553
+              },
+              "missed_move_rate": 0.57771267981328,
+              "precision": 0.21358533294786547,
+              "predicted_move_fraction": 0.2910727997559667,
+              "recall": 0.42228732018672,
+              "specificity": 0.7315793585205104,
+              "true_move_fraction": 0.14721938802343562
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.5442260776999824,
+            "count": 285207,
+            "counts": {
+              "FN": 37086,
+              "FP": 6882,
+              "TN": 236337,
+              "TP": 4902
+            },
+            "false_move_rate": 0.02829548678351609,
+            "fractions": {
+              "FN": 0.1300318715880045,
+              "FP": 0.02412984253542164,
+              "TN": 0.8286507694411428,
+              "TP": 0.017187516435431108
+            },
+            "missed_move_rate": 0.883252357816519,
+            "precision": 0.4159877800407332,
+            "predicted_move_fraction": 0.04131735897085275,
+            "recall": 0.11674764218348099,
+            "specificity": 0.9717045132164839,
+            "true_move_fraction": 0.14721938802343562
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1667,
+            "candidate_static_hits": 240305,
+            "candidate_total_hits": 241972,
+            "hold_move_hits": 0,
+            "hold_static_hits": 243219,
+            "hold_total_hits": 243219,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1667,
+            "net_hit_delta": -1247,
+            "static_hit_loss": 2914,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_100_P95",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8484083490236916,
+              "exact_hit_count": 241972,
+              "mae": 0.1905399470473021,
+              "p95": 1.0,
+              "rmse": 0.5479707981191496,
+              "sae": 54343.326677519886,
+              "sse": 85639.6750466187,
+              "within_one_tick": 0.973629679495945,
+              "within_one_tick_count": 277686
+            },
+            "count": 285207,
+            "delta_sae": -1817.6733224801137,
+            "delta_sse": -22899.324953381307,
+            "hold_last": {
+              "exact_hit": 0.8527806119765644,
+              "exact_hit_count": 243219,
+              "mae": 0.19691311924321633,
+              "p95": 1.0,
+              "rmse": 0.6168972265824244,
+              "sae": 56161.0,
+              "sse": 108539.0,
+              "within_one_tick": 0.9685000718776187,
+              "within_one_tick_count": 276223
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.03413048404110508,
+              "false_move_rate": -0.036810083428002544,
+              "missed_move_rate": 0.10507105151021268,
+              "recall": -0.1050710515102127,
+              "specificity": 0.036810083428002516
+            },
+            "development": {
+              "balanced_accuracy": 0.5442260776999824,
+              "count": 285207,
+              "counts": {
+                "FN": 37086,
+                "FP": 6882,
+                "TN": 236337,
+                "TP": 4902
+              },
+              "false_move_rate": 0.02829548678351609,
+              "fractions": {
+                "FN": 0.1300318715880045,
+                "FP": 0.02412984253542164,
+                "TN": 0.8286507694411428,
+                "TP": 0.017187516435431108
+              },
+              "missed_move_rate": 0.883252357816519,
+              "precision": 0.4159877800407332,
+              "predicted_move_fraction": 0.04131735897085275,
+              "recall": 0.11674764218348099,
+              "specificity": 0.9717045132164839,
+              "true_move_fraction": 0.14721938802343562
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "12d1c6c7be7b999226f4be1b4dd77142e1381acc728a9f682a8467f6cc13bed3",
+            "train": {
+              "balanced_accuracy": 0.5783565617410875,
+              "count": 247038,
+              "counts": {
+                "FN": 27641,
+                "FP": 13771,
+                "TN": 197747,
+                "TP": 7879
+              },
+              "false_move_rate": 0.06510557021151864,
+              "fractions": {
+                "FN": 0.11188966879589375,
+                "FP": 0.05574446036642136,
+                "TN": 0.800471992163149,
+                "TP": 0.0318938786745359
+              },
+              "missed_move_rate": 0.7781813063063063,
+              "precision": 0.3639260969976905,
+              "predicted_move_fraction": 0.08763833904095726,
+              "recall": 0.2218186936936937,
+              "specificity": 0.9348944297884814,
+              "true_move_fraction": 0.14378354747042965
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.5611152092000262,
+            "count": 223004,
+            "counts": {
+              "FN": 12685,
+              "FP": 91713,
+              "TN": 99412,
+              "TP": 19194
+            },
+            "false_move_rate": 0.4798587311968607,
+            "fractions": {
+              "FN": 0.05688238775986081,
+              "FP": 0.41126168140481784,
+              "TN": 0.44578572581657727,
+              "TP": 0.08607020501874406
+            },
+            "missed_move_rate": 0.39791085040308666,
+            "precision": 0.17306391841813412,
+            "predicted_move_fraction": 0.4973318864235619,
+            "recall": 0.6020891495969133,
+            "specificity": 0.5201412688031393,
+            "true_move_fraction": 0.14295259277860486
+          },
+          "exact_hit": {
+            "candidate_move_hits": 7478,
+            "candidate_static_hits": 169398,
+            "candidate_total_hits": 176876,
+            "hold_move_hits": 0,
+            "hold_static_hits": 191125,
+            "hold_total_hits": 191125,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 7478,
+            "net_hit_delta": -14249,
+            "static_hit_loss": 21727,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_RMSE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.7931516923463257,
+              "exact_hit_count": 176876,
+              "mae": 0.28990321104527217,
+              "p95": 1.1283927576758053,
+              "rmse": 0.5795080291734998,
+              "sae": 64649.57567593988,
+              "sse": 74891.33427869501,
+              "within_one_tick": 0.9700408961274237,
+              "within_one_tick_count": 216323
+            },
+            "count": 223004,
+            "delta_sae": 19091.57567593988,
+            "delta_sse": -42448.66572130499,
+            "hold_last": {
+              "exact_hit": 0.8570474072213952,
+              "exact_hit_count": 191125,
+              "mae": 0.20429229968969168,
+              "p95": 1.0,
+              "rmse": 0.7253819012220947,
+              "sae": 45558.0,
+              "sse": 117340.0,
+              "within_one_tick": 0.9670005919176338,
+              "within_one_tick_count": 215645
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.014623641209170368,
+              "false_move_rate": 0.23436349665725006,
+              "missed_move_rate": -0.20511621423890952,
+              "recall": 0.20511621423890947,
+              "specificity": -0.2343634966572501
+            },
+            "development": {
+              "balanced_accuracy": 0.5611152092000262,
+              "count": 223004,
+              "counts": {
+                "FN": 12685,
+                "FP": 91713,
+                "TN": 99412,
+                "TP": 19194
+              },
+              "false_move_rate": 0.4798587311968607,
+              "fractions": {
+                "FN": 0.05688238775986081,
+                "FP": 0.41126168140481784,
+                "TN": 0.44578572581657727,
+                "TP": 0.08607020501874406
+              },
+              "missed_move_rate": 0.39791085040308666,
+              "precision": 0.17306391841813412,
+              "predicted_move_fraction": 0.4973318864235619,
+              "recall": 0.6020891495969133,
+              "specificity": 0.5201412688031393,
+              "true_move_fraction": 0.14295259277860486
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "0ed72c3aff65783c307c720df733e9ec32276136b0fc33606fc4e9bffaa76f4e",
+            "train": {
+              "balanced_accuracy": 0.5757388504091966,
+              "count": 273268,
+              "counts": {
+                "FN": 24264,
+                "FP": 57208,
+                "TN": 175823,
+                "TP": 15973
+              },
+              "false_move_rate": 0.2454952345396106,
+              "fractions": {
+                "FN": 0.08879195515025542,
+                "FP": 0.20934760015808657,
+                "TN": 0.6434086684134257,
+                "TP": 0.05845177627823236
+              },
+              "missed_move_rate": 0.6030270646419962,
+              "precision": 0.2182670365258742,
+              "predicted_move_fraction": 0.2677993764363189,
+              "recall": 0.3969729353580038,
+              "specificity": 0.7545047654603894,
+              "true_move_fraction": 0.1472437314284878
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.5410676413815446,
+            "count": 273268,
+            "counts": {
+              "FN": 35912,
+              "FP": 5908,
+              "TN": 227123,
+              "TP": 4325
+            },
+            "false_move_rate": 0.02535285004999335,
+            "fractions": {
+              "FN": 0.13141677766880863,
+              "FP": 0.021619801806285404,
+              "TN": 0.8311364667652268,
+              "TP": 0.015826953759679144
+            },
+            "missed_move_rate": 0.8925118671869176,
+            "precision": 0.4226522036548422,
+            "predicted_move_fraction": 0.037446755565964544,
+            "recall": 0.10748813281308249,
+            "specificity": 0.9746471499500067,
+            "true_move_fraction": 0.1472437314284878
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1581,
+            "candidate_static_hits": 230367,
+            "candidate_total_hits": 231948,
+            "hold_move_hits": 0,
+            "hold_static_hits": 233031,
+            "hold_total_hits": 233031,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1581,
+            "net_hit_delta": -1083,
+            "static_hit_loss": 2664,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_50_P95",
+            "OVERALL_100_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8487931261618631,
+              "exact_hit_count": 231948,
+              "mae": 0.18795394270597957,
+              "p95": 1.0,
+              "rmse": 0.5333703010805757,
+              "sae": 51361.79801537762,
+              "sse": 77740.34039374006,
+              "within_one_tick": 0.9744060775502437,
+              "within_one_tick_count": 266274
+            },
+            "count": 273268,
+            "delta_sae": -1684.2019846223775,
+            "delta_sse": -19389.659606259942,
+            "hold_last": {
+              "exact_hit": 0.8527562685715122,
+              "exact_hit_count": 233031,
+              "mae": 0.19411713043605544,
+              "p95": 1.0,
+              "rmse": 0.5961867300060371,
+              "sae": 53046.0,
+              "sse": 97130.0,
+              "within_one_tick": 0.9690926123805202,
+              "within_one_tick_count": 264822
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.03686977390755819,
+              "false_move_rate": -0.036376384743989645,
+              "missed_move_rate": 0.11011593255910612,
+              "recall": -0.11011593255910611,
+              "specificity": 0.03637638474398963
+            },
+            "development": {
+              "balanced_accuracy": 0.5410676413815446,
+              "count": 273268,
+              "counts": {
+                "FN": 35912,
+                "FP": 5908,
+                "TN": 227123,
+                "TP": 4325
+              },
+              "false_move_rate": 0.02535285004999335,
+              "fractions": {
+                "FN": 0.13141677766880863,
+                "FP": 0.021619801806285404,
+                "TN": 0.8311364667652268,
+                "TP": 0.015826953759679144
+              },
+              "missed_move_rate": 0.8925118671869176,
+              "precision": 0.4226522036548422,
+              "predicted_move_fraction": 0.037446755565964544,
+              "recall": 0.10748813281308249,
+              "specificity": 0.9746471499500067,
+              "true_move_fraction": 0.1472437314284878
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "0da8d21094b94c9c8944e42fe102078bf43f99e5298eb76b96e373f1d839503f",
+            "train": {
+              "balanced_accuracy": 0.5779374152891028,
+              "count": 223004,
+              "counts": {
+                "FN": 24942,
+                "FP": 11798,
+                "TN": 179327,
+                "TP": 6937
+              },
+              "false_move_rate": 0.061729234793983,
+              "fractions": {
+                "FN": 0.11184552743448548,
+                "FP": 0.052904880629943855,
+                "TN": 0.8041425265914512,
+                "TP": 0.03110706534411939
+              },
+              "missed_move_rate": 0.7823959346278114,
+              "precision": 0.37026954897251135,
+              "predicted_move_fraction": 0.08401194597406325,
+              "recall": 0.2176040653721886,
+              "specificity": 0.938270765206017,
+              "true_move_fraction": 0.14295259277860486
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.551727196178758,
+            "count": 192080,
+            "counts": {
+              "FN": 10561,
+              "FP": 83920,
+              "TN": 80897,
+              "TP": 16702
+            },
+            "false_move_rate": 0.5091707772863237,
+            "fractions": {
+              "FN": 0.05498229904206581,
+              "FP": 0.43690129112869636,
+              "TN": 0.42116305705955853,
+              "TP": 0.0869533527696793
+            },
+            "missed_move_rate": 0.3873748303561604,
+            "precision": 0.16598755739301543,
+            "predicted_move_fraction": 0.5238546438983757,
+            "recall": 0.6126251696438396,
+            "specificity": 0.4908292227136764,
+            "true_move_fraction": 0.1419356518117451
+          },
+          "exact_hit": {
+            "candidate_move_hits": 6552,
+            "candidate_static_hits": 145076,
+            "candidate_total_hits": 151628,
+            "hold_move_hits": 0,
+            "hold_static_hits": 164817,
+            "hold_total_hits": 164817,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 6552,
+            "net_hit_delta": -13189,
+            "static_hit_loss": 19741,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.7894002498958768,
+              "exact_hit_count": 151628,
+              "mae": 0.2953401135147264,
+              "p95": 1.127136035377397,
+              "rmse": 0.5771263364878453,
+              "sae": 56728.92900390865,
+              "sse": 63977.0091720947,
+              "within_one_tick": 0.9711266139108705,
+              "within_one_tick_count": 186534
+            },
+            "count": 192080,
+            "delta_sae": 18878.929003908648,
+            "delta_sse": -26080.990827905298,
+            "hold_last": {
+              "exact_hit": 0.8580643481882549,
+              "exact_hit_count": 164817,
+              "mae": 0.1970533111203665,
+              "p95": 1.0,
+              "rmse": 0.6847311343615208,
+              "sae": 37850.0,
+              "sse": 90058.0,
+              "within_one_tick": 0.9683881715951687,
+              "within_one_tick_count": 186008
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.023589004017187,
+              "false_move_rate": 0.2842835716521075,
+              "missed_move_rate": -0.2371055636177336,
+              "recall": 0.23710556361773355,
+              "specificity": -0.28428357165210744
+            },
+            "development": {
+              "balanced_accuracy": 0.551727196178758,
+              "count": 192080,
+              "counts": {
+                "FN": 10561,
+                "FP": 83920,
+                "TN": 80897,
+                "TP": 16702
+              },
+              "false_move_rate": 0.5091707772863237,
+              "fractions": {
+                "FN": 0.05498229904206581,
+                "FP": 0.43690129112869636,
+                "TN": 0.42116305705955853,
+                "TP": 0.0869533527696793
+              },
+              "missed_move_rate": 0.3873748303561604,
+              "precision": 0.16598755739301543,
+              "predicted_move_fraction": 0.5238546438983757,
+              "recall": 0.6126251696438396,
+              "specificity": 0.4908292227136764,
+              "true_move_fraction": 0.1419356518117451
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "07dfbf54dfd299651a11c78802f6bfe6afb41e93917a9ecdae24265c040bf04f",
+            "train": {
+              "balanced_accuracy": 0.575316200195945,
+              "count": 255865,
+              "counts": {
+                "FN": 23586,
+                "FP": 49047,
+                "TN": 169049,
+                "TP": 14183
+              },
+              "false_move_rate": 0.22488720563421613,
+              "fractions": {
+                "FN": 0.09218142379770582,
+                "FP": 0.1916909307642702,
+                "TN": 0.6606960701932659,
+                "TP": 0.055431575244757975
+              },
+              "missed_move_rate": 0.624480393973894,
+              "precision": 0.2243080816068322,
+              "predicted_move_fraction": 0.2471225060090282,
+              "recall": 0.37551960602610607,
+              "specificity": 0.7751127943657838,
+              "true_move_fraction": 0.1476129990424638
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.540593152443795,
+            "count": 255865,
+            "counts": {
+              "FN": 33625,
+              "FP": 6223,
+              "TN": 211873,
+              "TP": 4144
+            },
+            "false_move_rate": 0.028533306433863988,
+            "fractions": {
+              "FN": 0.13141695816153048,
+              "FP": 0.024321419498563694,
+              "TN": 0.8280655814589725,
+              "TP": 0.016196040880933304
+            },
+            "missed_move_rate": 0.8902803886785459,
+            "precision": 0.399729912221472,
+            "predicted_move_fraction": 0.040517460379497,
+            "recall": 0.10971961132145411,
+            "specificity": 0.971466693566136,
+            "true_move_fraction": 0.1476129990424638
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1520,
+            "candidate_static_hits": 215395,
+            "candidate_total_hits": 216915,
+            "hold_move_hits": 0,
+            "hold_static_hits": 218096,
+            "hold_total_hits": 218096,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1520,
+            "net_hit_delta": -1181,
+            "static_hit_loss": 2701,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8477712856389111,
+              "exact_hit_count": 216915,
+              "mae": 0.18829821061394497,
+              "p95": 1.0,
+              "rmse": 0.5288097902103015,
+              "sae": 48178.92165873703,
+              "sse": 71550.03594867935,
+              "within_one_tick": 0.9746858695014949,
+              "within_one_tick_count": 249388
+            },
+            "count": 255865,
+            "delta_sae": -1145.078341262968,
+            "delta_sse": -16119.964051320654,
+            "hold_last": {
+              "exact_hit": 0.8523870009575362,
+              "exact_hit_count": 218096,
+              "mae": 0.1927735329177496,
+              "p95": 1.0,
+              "rmse": 0.5853559835012453,
+              "sae": 49324.0,
+              "sse": 87670.0,
+              "within_one_tick": 0.9695190823285718,
+              "within_one_tick_count": 248066
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.03638807514404774,
+              "false_move_rate": -0.04561559810874994,
+              "missed_move_rate": 0.11839174839684541,
+              "recall": -0.11839174839684541,
+              "specificity": 0.04561559810874993
+            },
+            "development": {
+              "balanced_accuracy": 0.540593152443795,
+              "count": 255865,
+              "counts": {
+                "FN": 33625,
+                "FP": 6223,
+                "TN": 211873,
+                "TP": 4144
+              },
+              "false_move_rate": 0.028533306433863988,
+              "fractions": {
+                "FN": 0.13141695816153048,
+                "FP": 0.024321419498563694,
+                "TN": 0.8280655814589725,
+                "TP": 0.016196040880933304
+              },
+              "missed_move_rate": 0.8902803886785459,
+              "precision": 0.399729912221472,
+              "predicted_move_fraction": 0.040517460379497,
+              "recall": 0.10971961132145411,
+              "specificity": 0.971466693566136,
+              "true_move_fraction": 0.1476129990424638
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "57a102867e136dfc49df8427d143a055897da6594d3bd9cb26a2206d29c72d8e",
+            "train": {
+              "balanced_accuracy": 0.5769812275878428,
+              "count": 192080,
+              "counts": {
+                "FN": 21044,
+                "FP": 12221,
+                "TN": 152596,
+                "TP": 6219
+              },
+              "false_move_rate": 0.07414890454261393,
+              "fractions": {
+                "FN": 0.10955851728446481,
+                "FP": 0.06362453144523116,
+                "TN": 0.7944398167430238,
+                "TP": 0.0323771345272803
+              },
+              "missed_move_rate": 0.7718886402817005,
+              "precision": 0.33725596529284163,
+              "predicted_move_fraction": 0.09600166597251146,
+              "recall": 0.22811135971829952,
+              "specificity": 0.9258510954573861,
+              "true_move_fraction": 0.1419356518117451
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.5574978914268469,
+            "count": 243887,
+            "counts": {
+              "FN": 14168,
+              "FP": 100378,
+              "TN": 108473,
+              "TP": 20868
+            },
+            "false_move_rate": 0.4806201550387597,
+            "fractions": {
+              "FN": 0.058092477253810164,
+              "FP": 0.4115758527514792,
+              "TN": 0.44476745377982424,
+              "TP": 0.0855642162148864
+            },
+            "missed_move_rate": 0.4043840621075465,
+            "precision": 0.17211289444600233,
+            "predicted_move_fraction": 0.4971400689663656,
+            "recall": 0.5956159378924535,
+            "specificity": 0.5193798449612403,
+            "true_move_fraction": 0.14365669346869656
+          },
+          "exact_hit": {
+            "candidate_move_hits": 6660,
+            "candidate_static_hits": 170089,
+            "candidate_total_hits": 176749,
+            "hold_move_hits": 0,
+            "hold_static_hits": 208851,
+            "hold_total_hits": 208851,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 6660,
+            "net_hit_delta": -32102,
+            "static_hit_loss": 38762,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "PATH_MOVED_25_RMSE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.7247167745718304,
+              "exact_hit_count": 176749,
+              "mae": 0.3976186006274532,
+              "p95": 1.5117133911414393,
+              "rmse": 0.8485140336708824,
+              "sae": 96974.00765122767,
+              "sse": 175592.80264670623,
+              "within_one_tick": 0.949435599273434,
+              "within_one_tick_count": 231555
+            },
+            "count": 243887,
+            "delta_sae": 46526.00765122767,
+            "delta_sse": 41828.80264670623,
+            "hold_last": {
+              "exact_hit": 0.8563433065313034,
+              "exact_hit_count": 208851,
+              "mae": 0.20684989359826478,
+              "p95": 1.0,
+              "rmse": 0.7405856587651204,
+              "sae": 50448.0,
+              "sse": 133764.0,
+              "within_one_tick": 0.9666812909257156,
+              "within_one_tick_count": 235761
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.011091778583554479,
+              "false_move_rate": 0.20683763887107032,
+              "missed_move_rate": -0.18465408170396125,
+              "recall": 0.1846540817039613,
+              "specificity": -0.2068376388710702
+            },
+            "development": {
+              "balanced_accuracy": 0.5574978914268469,
+              "count": 243887,
+              "counts": {
+                "FN": 14168,
+                "FP": 100378,
+                "TN": 108473,
+                "TP": 20868
+              },
+              "false_move_rate": 0.4806201550387597,
+              "fractions": {
+                "FN": 0.058092477253810164,
+                "FP": 0.4115758527514792,
+                "TN": 0.44476745377982424,
+                "TP": 0.0855642162148864
+              },
+              "missed_move_rate": 0.4043840621075465,
+              "precision": 0.17211289444600233,
+              "predicted_move_fraction": 0.4971400689663656,
+              "recall": 0.5956159378924535,
+              "specificity": 0.5193798449612403,
+              "true_move_fraction": 0.14365669346869656
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "883f59e4f47bbd5c99586d87278c7708e422f576f6c91c6d76cf17ad7a922497",
+            "train": {
+              "balanced_accuracy": 0.5685896700104014,
+              "count": 283758,
+              "counts": {
+                "FN": 24600,
+                "FP": 66254,
+                "TN": 175741,
+                "TP": 17163
+              },
+              "false_move_rate": 0.2737825161676894,
+              "fractions": {
+                "FN": 0.08669359101769818,
+                "FP": 0.23348769021490143,
+                "TN": 0.6193340804488332,
+                "TP": 0.06048463831856723
+              },
+              "missed_move_rate": 0.5890381438115078,
+              "precision": 0.20574942757471498,
+              "predicted_move_fraction": 0.29397232853346866,
+              "recall": 0.4109618561884922,
+              "specificity": 0.7262174838323106,
+              "true_move_fraction": 0.1471782293362654
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.5366490620502481,
+            "count": 283758,
+            "counts": {
+              "FN": 37699,
+              "FP": 5811,
+              "TN": 236184,
+              "TP": 4064
+            },
+            "false_move_rate": 0.024012892828364222,
+            "fractions": {
+              "FN": 0.13285616616976437,
+              "FP": 0.02047871778064407,
+              "TN": 0.8323430528830905,
+              "TP": 0.014322063166501033
+            },
+            "missed_move_rate": 0.9026889830711395,
+            "precision": 0.41154430379746837,
+            "predicted_move_fraction": 0.0348007809471451,
+            "recall": 0.09731101692886047,
+            "specificity": 0.9759871071716357,
+            "true_move_fraction": 0.1471782293362654
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1085,
+            "candidate_static_hits": 238228,
+            "candidate_total_hits": 239313,
+            "hold_move_hits": 0,
+            "hold_static_hits": 241995,
+            "hold_total_hits": 241995,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1085,
+            "net_hit_delta": -2682,
+            "static_hit_loss": 3767,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8433700547649758,
+              "exact_hit_count": 239313,
+              "mae": 0.20348273728907143,
+              "p95": 1.0,
+              "rmse": 0.5845890007190045,
+              "sae": 57739.85456767233,
+              "sse": 96972.67901176467,
+              "within_one_tick": 0.9679339437126002,
+              "within_one_tick_count": 274659
+            },
+            "count": 283758,
+            "delta_sae": 1964.8545676723297,
+            "delta_sse": -10266.320988235326,
+            "hold_last": {
+              "exact_hit": 0.8528217706637345,
+              "exact_hit_count": 241995,
+              "mae": 0.1965583349191917,
+              "p95": 1.0,
+              "rmse": 0.6147553551063946,
+              "sae": 55775.0,
+              "sse": 107239.0,
+              "within_one_tick": 0.9685718111912264,
+              "within_one_tick_count": 274840
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.03166238016472134,
+              "false_move_rate": -0.040956870304203974,
+              "missed_move_rate": 0.1042816306336467,
+              "recall": -0.10428163063364666,
+              "specificity": 0.04095687030420392
+            },
+            "development": {
+              "balanced_accuracy": 0.5366490620502481,
+              "count": 283758,
+              "counts": {
+                "FN": 37699,
+                "FP": 5811,
+                "TN": 236184,
+                "TP": 4064
+              },
+              "false_move_rate": 0.024012892828364222,
+              "fractions": {
+                "FN": 0.13285616616976437,
+                "FP": 0.02047871778064407,
+                "TN": 0.8323430528830905,
+                "TP": 0.014322063166501033
+              },
+              "missed_move_rate": 0.9026889830711395,
+              "precision": 0.41154430379746837,
+              "predicted_move_fraction": 0.0348007809471451,
+              "recall": 0.09731101692886047,
+              "specificity": 0.9759871071716357,
+              "true_move_fraction": 0.1471782293362654
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "5cc1c024f769354bfecac2a801d7d0202de09f0c17e472dfc8bee953a2796085",
+            "train": {
+              "balanced_accuracy": 0.5683114422149694,
+              "count": 243887,
+              "counts": {
+                "FN": 27973,
+                "FP": 13569,
+                "TN": 195282,
+                "TP": 7063
+              },
+              "false_move_rate": 0.06496976313256819,
+              "fractions": {
+                "FN": 0.1146965602922665,
+                "FP": 0.055636421785499025,
+                "TN": 0.8007068847458044,
+                "TP": 0.028960133176430067
+              },
+              "missed_move_rate": 0.7984073524374928,
+              "precision": 0.34233229934082976,
+              "predicted_move_fraction": 0.0845965549619291,
+              "recall": 0.20159264756250714,
+              "specificity": 0.9350302368674318,
+              "true_move_fraction": 0.14365669346869656
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.5630657453699626,
+            "count": 232844,
+            "counts": {
+              "FN": 13008,
+              "FP": 96555,
+              "TN": 102920,
+              "TP": 20361
+            },
+            "false_move_rate": 0.4840456197518486,
+            "fractions": {
+              "FN": 0.05586572984487468,
+              "FP": 0.4146767793028809,
+              "TN": 0.4420126780161825,
+              "TP": 0.08744481283606191
+            },
+            "missed_move_rate": 0.3898228895082262,
+            "precision": 0.1741506722775326,
+            "predicted_move_fraction": 0.5021215921389428,
+            "recall": 0.6101771104917738,
+            "specificity": 0.5159543802481514,
+            "true_move_fraction": 0.1433105426809366
+          },
+          "exact_hit": {
+            "candidate_move_hits": 7509,
+            "candidate_static_hits": 177741,
+            "candidate_total_hits": 185250,
+            "hold_move_hits": 0,
+            "hold_static_hits": 199475,
+            "hold_total_hits": 199475,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 7509,
+            "net_hit_delta": -14225,
+            "static_hit_loss": 21734,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_RMSE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.7955970521035544,
+              "exact_hit_count": 185250,
+              "mae": 0.28890091479365254,
+              "p95": 1.1354192379809205,
+              "rmse": 0.5803477076187556,
+              "sae": 67268.84460421323,
+              "sse": 78422.66524500313,
+              "within_one_tick": 0.9694258817062067,
+              "within_one_tick_count": 225725
+            },
+            "count": 232844,
+            "delta_sae": 19376.844604213227,
+            "delta_sse": -47105.334754996875,
+            "hold_last": {
+              "exact_hit": 0.8566894573190634,
+              "exact_hit_count": 199475,
+              "mae": 0.20568277473329782,
+              "p95": 1.0,
+              "rmse": 0.7342395581687109,
+              "sae": 47892.0,
+              "sse": 125528.0,
+              "within_one_tick": 0.9668318702650702,
+              "within_one_tick_count": 225121
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.01303657940370917,
+              "false_move_rate": 0.21359098816891214,
+              "missed_move_rate": -0.18751782936149397,
+              "recall": 0.18751782936149392,
+              "specificity": -0.2135909881689121
+            },
+            "development": {
+              "balanced_accuracy": 0.5630657453699626,
+              "count": 232844,
+              "counts": {
+                "FN": 13008,
+                "FP": 96555,
+                "TN": 102920,
+                "TP": 20361
+              },
+              "false_move_rate": 0.4840456197518486,
+              "fractions": {
+                "FN": 0.05586572984487468,
+                "FP": 0.4146767793028809,
+                "TN": 0.4420126780161825,
+                "TP": 0.08744481283606191
+              },
+              "missed_move_rate": 0.3898228895082262,
+              "precision": 0.1741506722775326,
+              "predicted_move_fraction": 0.5021215921389428,
+              "recall": 0.6101771104917738,
+              "specificity": 0.5159543802481514,
+              "true_move_fraction": 0.1433105426809366
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "c5776650c283663998fe5ea3b9acb6d7bc29225f202805e6296e08052c6ada47",
+            "train": {
+              "balanced_accuracy": 0.5761023247736717,
+              "count": 278470,
+              "counts": {
+                "FN": 23660,
+                "FP": 64230,
+                "TN": 173259,
+                "TP": 17321
+              },
+              "false_move_rate": 0.2704546315829365,
+              "fractions": {
+                "FN": 0.08496426904154847,
+                "FP": 0.23065321219520954,
+                "TN": 0.6221819226487593,
+                "TP": 0.06220059611448271
+              },
+              "missed_move_rate": 0.5773407188697202,
+              "precision": 0.2123946977964709,
+              "predicted_move_fraction": 0.29285380830969227,
+              "recall": 0.4226592811302799,
+              "specificity": 0.7295453684170635,
+              "true_move_fraction": 0.14716486515603117
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.5415353143878905,
+            "count": 278470,
+            "counts": {
+              "FN": 36483,
+              "FP": 6338,
+              "TN": 231151,
+              "TP": 4498
+            },
+            "false_move_rate": 0.026687551844506482,
+            "fractions": {
+              "FN": 0.13101231730527527,
+              "FP": 0.022760081875965094,
+              "TN": 0.8300750529680038,
+              "TP": 0.016152547850755917
+            },
+            "missed_move_rate": 0.8902418193797126,
+            "precision": 0.41509782207456625,
+            "predicted_move_fraction": 0.038912629726721014,
+            "recall": 0.10975818062028746,
+            "specificity": 0.9733124481554936,
+            "true_move_fraction": 0.14716486515603117
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1476,
+            "candidate_static_hits": 234901,
+            "candidate_total_hits": 236377,
+            "hold_move_hits": 0,
+            "hold_static_hits": 237489,
+            "hold_total_hits": 237489,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1476,
+            "net_hit_delta": -1112,
+            "static_hit_loss": 2588,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "PATH_MOVED_100_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8488418860200381,
+              "exact_hit_count": 236377,
+              "mae": 0.18924448470392566,
+              "p95": 1.0,
+              "rmse": 0.5412099991473195,
+              "sae": 52698.911655502176,
+              "sse": 81566.16404691077,
+              "within_one_tick": 0.9738643300894172,
+              "within_one_tick_count": 271192
+            },
+            "count": 278470,
+            "delta_sae": -1690.0883444978244,
+            "delta_sse": -20610.835953089234,
+            "hold_last": {
+              "exact_hit": 0.8528351348439688,
+              "exact_hit_count": 237489,
+              "mae": 0.1953136783136424,
+              "p95": 1.0,
+              "rmse": 0.6057415524065085,
+              "sae": 54389.0,
+              "sse": 102177.0,
+              "within_one_tick": 0.9688476317017991,
+              "within_one_tick_count": 269795
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.035860109530699846,
+              "false_move_rate": -0.03515979744738473,
+              "missed_move_rate": 0.10688001650878443,
+              "recall": -0.10688001650878444,
+              "specificity": 0.03515979744738473
+            },
+            "development": {
+              "balanced_accuracy": 0.5415353143878905,
+              "count": 278470,
+              "counts": {
+                "FN": 36483,
+                "FP": 6338,
+                "TN": 231151,
+                "TP": 4498
+              },
+              "false_move_rate": 0.026687551844506482,
+              "fractions": {
+                "FN": 0.13101231730527527,
+                "FP": 0.022760081875965094,
+                "TN": 0.8300750529680038,
+                "TP": 0.016152547850755917
+              },
+              "missed_move_rate": 0.8902418193797126,
+              "precision": 0.41509782207456625,
+              "predicted_move_fraction": 0.038912629726721014,
+              "recall": 0.10975818062028746,
+              "specificity": 0.9733124481554936,
+              "true_move_fraction": 0.14716486515603117
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "1c458396c5a9e21188651b17fe94f33513dce1358ff2d3522c53f94bc27e1251",
+            "train": {
+              "balanced_accuracy": 0.5773954239185903,
+              "count": 232844,
+              "counts": {
+                "FN": 26140,
+                "FP": 12337,
+                "TN": 187138,
+                "TP": 7229
+              },
+              "false_move_rate": 0.061847349291891215,
+              "fractions": {
+                "FN": 0.11226400508494958,
+                "FP": 0.052983972101492846,
+                "TN": 0.8037054852175706,
+                "TP": 0.031046537595987012
+              },
+              "missed_move_rate": 0.7833618028709282,
+              "precision": 0.36946744352448124,
+              "predicted_move_fraction": 0.08403050969747985,
+              "recall": 0.2166381971290719,
+              "specificity": 0.9381526507081088,
+              "true_move_fraction": 0.1433105426809366
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.5610090812103593,
+            "count": 214903,
+            "counts": {
+              "FN": 11874,
+              "FP": 90379,
+              "TN": 93880,
+              "TP": 18770
+            },
+            "false_move_rate": 0.4904997856278391,
+            "fractions": {
+              "FN": 0.055252834999976734,
+              "FP": 0.4205571816121692,
+              "TN": 0.4368482524673923,
+              "TP": 0.0873417309204618
+            },
+            "missed_move_rate": 0.38748205195144236,
+            "precision": 0.17196676103308323,
+            "predicted_move_fraction": 0.507898912532631,
+            "recall": 0.6125179480485576,
+            "specificity": 0.509500214372161,
+            "true_move_fraction": 0.1425945659204385
+          },
+          "exact_hit": {
+            "candidate_move_hits": 7105,
+            "candidate_static_hits": 163552,
+            "candidate_total_hits": 170657,
+            "hold_move_hits": 0,
+            "hold_static_hits": 184259,
+            "hold_total_hits": 184259,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 7105,
+            "net_hit_delta": -13602,
+            "static_hit_loss": 20707,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "PATH_MOVED_25_RMSE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.7941117620507857,
+              "exact_hit_count": 170657,
+              "mae": 0.2894268097949842,
+              "p95": 1.1290062529709188,
+              "rmse": 0.5792756289927332,
+              "sae": 62198.68970537149,
+              "sse": 72112.9053394878,
+              "within_one_tick": 0.970102790561323,
+              "within_one_tick_count": 208478
+            },
+            "count": 214903,
+            "delta_sae": 18587.689705371493,
+            "delta_sse": -38140.0946605122,
+            "hold_last": {
+              "exact_hit": 0.8574054340795615,
+              "exact_hit_count": 184259,
+              "mae": 0.20293341647161742,
+              "p95": 1.0,
+              "rmse": 0.7162653935293098,
+              "sae": 43611.0,
+              "sse": 110253.0,
+              "within_one_tick": 0.9671060897242012,
+              "within_one_tick_count": 207834
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.015241831205651257,
+              "false_move_rate": 0.24048779203023957,
+              "missed_move_rate": -0.210004129618937,
+              "recall": 0.210004129618937,
+              "specificity": -0.2404877920302395
+            },
+            "development": {
+              "balanced_accuracy": 0.5610090812103593,
+              "count": 214903,
+              "counts": {
+                "FN": 11874,
+                "FP": 90379,
+                "TN": 93880,
+                "TP": 18770
+              },
+              "false_move_rate": 0.4904997856278391,
+              "fractions": {
+                "FN": 0.055252834999976734,
+                "FP": 0.4205571816121692,
+                "TN": 0.4368482524673923,
+                "TP": 0.0873417309204618
+              },
+              "missed_move_rate": 0.38748205195144236,
+              "precision": 0.17196676103308323,
+              "predicted_move_fraction": 0.507898912532631,
+              "recall": 0.6125179480485576,
+              "specificity": 0.509500214372161,
+              "true_move_fraction": 0.1425945659204385
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "01b8bb10d0062ac5d3f528490e102a076e4210936a878e8b8e29c4eb6c52e30d",
+            "train": {
+              "balanced_accuracy": 0.5762509124160106,
+              "count": 268910,
+              "counts": {
+                "FN": 23673,
+                "FP": 57325,
+                "TN": 171964,
+                "TP": 15948
+              },
+              "false_move_rate": 0.2500119935975995,
+              "fractions": {
+                "FN": 0.08803317094938827,
+                "FP": 0.21317541184783012,
+                "TN": 0.6394853296641999,
+                "TP": 0.05930608753858168
+              },
+              "missed_move_rate": 0.5974861815703794,
+              "precision": 0.21765179534071213,
+              "predicted_move_fraction": 0.2724814993864118,
+              "recall": 0.40251381842962064,
+              "specificity": 0.7499880064024005,
+              "true_move_fraction": 0.14733925848796994
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.5378486797081728,
+            "count": 268910,
+            "counts": {
+              "FN": 35632,
+              "FP": 5728,
+              "TN": 223561,
+              "TP": 3989
+            },
+            "false_move_rate": 0.024981573472778896,
+            "fractions": {
+              "FN": 0.13250529917072626,
+              "FP": 0.02130080696143691,
+              "TN": 0.8313599345505931,
+              "TP": 0.014833959317243687
+            },
+            "missed_move_rate": 0.8993210671108756,
+            "precision": 0.4105176494802923,
+            "predicted_move_fraction": 0.0361347662786806,
+            "recall": 0.10067893288912445,
+            "specificity": 0.9750184265272211,
+            "true_move_fraction": 0.14733925848796994
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1355,
+            "candidate_static_hits": 226872,
+            "candidate_total_hits": 228227,
+            "hold_move_hits": 0,
+            "hold_static_hits": 229289,
+            "hold_total_hits": 229289,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1355,
+            "net_hit_delta": -1062,
+            "static_hit_loss": 2417,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_50_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8487114648023503,
+              "exact_hit_count": 228227,
+              "mae": 0.18789306247511217,
+              "p95": 1.0,
+              "rmse": 0.5316818879660655,
+              "sae": 50526.32343018241,
+              "sse": 76016.99276092279,
+              "within_one_tick": 0.9742330147633037,
+              "within_one_tick_count": 261981
+            },
+            "count": 268910,
+            "delta_sae": -1515.6765698175877,
+            "delta_sse": -18071.00723907721,
+            "hold_last": {
+              "exact_hit": 0.8526607415120301,
+              "exact_hit_count": 229289,
+              "mae": 0.19352943363950764,
+              "p95": 1.0,
+              "rmse": 0.5915121124312472,
+              "sae": 52042.0,
+              "sse": 94088.0,
+              "within_one_tick": 0.9692239039083709,
+              "within_one_tick_count": 260634
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.03898957511128642,
+              "false_move_rate": -0.03724062462880637,
+              "missed_move_rate": 0.11521977485137946,
+              "recall": -0.1152197748513794,
+              "specificity": 0.037240624628806396
+            },
+            "development": {
+              "balanced_accuracy": 0.5378486797081728,
+              "count": 268910,
+              "counts": {
+                "FN": 35632,
+                "FP": 5728,
+                "TN": 223561,
+                "TP": 3989
+              },
+              "false_move_rate": 0.024981573472778896,
+              "fractions": {
+                "FN": 0.13250529917072626,
+                "FP": 0.02130080696143691,
+                "TN": 0.8313599345505931,
+                "TP": 0.014833959317243687
+              },
+              "missed_move_rate": 0.8993210671108756,
+              "precision": 0.4105176494802923,
+              "predicted_move_fraction": 0.0361347662786806,
+              "recall": 0.10067893288912445,
+              "specificity": 0.9750184265272211,
+              "true_move_fraction": 0.14733925848796994
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "35d0dcb4c22c07a68cee838ebf2e2cf58be8952f15a217ffb6e012410e5c29eb",
+            "train": {
+              "balanced_accuracy": 0.5768382548194593,
+              "count": 214903,
+              "counts": {
+                "FN": 24028,
+                "FP": 11465,
+                "TN": 172794,
+                "TP": 6616
+              },
+              "false_move_rate": 0.06222219810158527,
+              "fractions": {
+                "FN": 0.11180858340739776,
+                "FP": 0.05334965077267418,
+                "TN": 0.8040557833068873,
+                "TP": 0.030785982513040766
+              },
+              "missed_move_rate": 0.7841012922594961,
+              "precision": 0.3659089652121011,
+              "predicted_move_fraction": 0.08413563328571495,
+              "recall": 0.21589870774050385,
+              "specificity": 0.9377778018984148,
+              "true_move_fraction": 0.1425945659204385
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.5519454801841304,
+            "count": 188941,
+            "counts": {
+              "FN": 10078,
+              "FP": 84271,
+              "TN": 77900,
+              "TP": 16692
+            },
+            "false_move_rate": 0.5196428461315525,
+            "fractions": {
+              "FN": 0.05333940224726237,
+              "FP": 0.4460175398669426,
+              "TN": 0.41229801895829915,
+              "TP": 0.08834503892749589
+            },
+            "missed_move_rate": 0.3764661935001868,
+            "precision": 0.16532789239622436,
+            "predicted_move_fraction": 0.5343625787944385,
+            "recall": 0.6235338064998133,
+            "specificity": 0.4803571538684475,
+            "true_move_fraction": 0.14168444117475826
+          },
+          "exact_hit": {
+            "candidate_move_hits": 6453,
+            "candidate_static_hits": 142992,
+            "candidate_total_hits": 149445,
+            "hold_move_hits": 0,
+            "hold_static_hits": 162171,
+            "hold_total_hits": 162171,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 6453,
+            "net_hit_delta": -12726,
+            "static_hit_loss": 19179,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.7909611995278949,
+              "exact_hit_count": 149445,
+              "mae": 0.2946051540130219,
+              "p95": 1.1241754467698102,
+              "rmse": 0.5815468262881949,
+              "sae": 55662.99240437437,
+              "sse": 63899.22480439101,
+              "within_one_tick": 0.9710015295780164,
+              "within_one_tick_count": 183462
+            },
+            "count": 188941,
+            "delta_sae": 18520.992404374367,
+            "delta_sse": -24570.775195608992,
+            "hold_last": {
+              "exact_hit": 0.8583155588252417,
+              "exact_hit_count": 162171,
+              "mae": 0.19657988472591972,
+              "p95": 1.0,
+              "rmse": 0.6842816735042078,
+              "sae": 37142.0,
+              "sse": 88470.0,
+              "within_one_tick": 0.96846634663731,
+              "within_one_tick_count": 182983
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.02294362716317555,
+              "false_move_rate": 0.28276328897826586,
+              "missed_move_rate": -0.2368760346519146,
+              "recall": 0.23687603465191465,
+              "specificity": -0.2827632889782658
+            },
+            "development": {
+              "balanced_accuracy": 0.5519454801841304,
+              "count": 188941,
+              "counts": {
+                "FN": 10078,
+                "FP": 84271,
+                "TN": 77900,
+                "TP": 16692
+              },
+              "false_move_rate": 0.5196428461315525,
+              "fractions": {
+                "FN": 0.05333940224726237,
+                "FP": 0.4460175398669426,
+                "TN": 0.41229801895829915,
+                "TP": 0.08834503892749589
+              },
+              "missed_move_rate": 0.3764661935001868,
+              "precision": 0.16532789239622436,
+              "predicted_move_fraction": 0.5343625787944385,
+              "recall": 0.6235338064998133,
+              "specificity": 0.4803571538684475,
+              "true_move_fraction": 0.14168444117475826
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "580d2889af3adc5b9d6dcb487a91cfcdec5ad1537c201f2af9663be0ad22d1d6",
+            "train": {
+              "balanced_accuracy": 0.5748891073473059,
+              "count": 253893,
+              "counts": {
+                "FN": 22985,
+                "FP": 51265,
+                "TN": 165153,
+                "TP": 14490
+              },
+              "false_move_rate": 0.2368795571532867,
+              "fractions": {
+                "FN": 0.09053026274848065,
+                "FP": 0.2019157676659065,
+                "TN": 0.6504826836501991,
+                "TP": 0.05707128593541374
+              },
+              "missed_move_rate": 0.6133422281521014,
+              "precision": 0.22036347045852026,
+              "predicted_move_fraction": 0.25898705360132024,
+              "recall": 0.3866577718478986,
+              "specificity": 0.7631204428467133,
+              "true_move_fraction": 0.14760154868389438
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.5413943406445354,
+            "count": 253893,
+            "counts": {
+              "FN": 33226,
+              "FP": 6621,
+              "TN": 209797,
+              "TP": 4249
+            },
+            "false_move_rate": 0.03059357354748681,
+            "fractions": {
+              "FN": 0.1308661522767465,
+              "FP": 0.02607791471210313,
+              "TN": 0.8263205366040025,
+              "TP": 0.01673539640714789
+            },
+            "missed_move_rate": 0.8866177451634423,
+            "precision": 0.3908923643054278,
+            "predicted_move_fraction": 0.042813311119251025,
+            "recall": 0.1133822548365577,
+            "specificity": 0.9694064264525132,
+            "true_move_fraction": 0.14760154868389438
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1521,
+            "candidate_static_hits": 213770,
+            "candidate_total_hits": 215291,
+            "hold_move_hits": 0,
+            "hold_static_hits": 216418,
+            "hold_total_hits": 216418,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1521,
+            "net_hit_delta": -1127,
+            "static_hit_loss": 2648,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8479595735211289,
+              "exact_hit_count": 215291,
+              "mae": 0.18838053804914953,
+              "p95": 1.0,
+              "rmse": 0.5285232975500003,
+              "sae": 47828.49994691272,
+              "sse": 70921.67747175635,
+              "within_one_tick": 0.9746586160311628,
+              "within_one_tick_count": 247459
+            },
+            "count": 253893,
+            "delta_sae": -1057.5000530872785,
+            "delta_sse": -15618.322528243647,
+            "hold_last": {
+              "exact_hit": 0.8523984513161056,
+              "exact_hit_count": 216418,
+              "mae": 0.19254567869141725,
+              "p95": 1.0,
+              "rmse": 0.5838255294023782,
+              "sae": 48886.0,
+              "sse": 86540.0,
+              "within_one_tick": 0.9695659195015223,
+              "within_one_tick_count": 246166
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.035011704642632036,
+              "false_move_rate": -0.053015703080270316,
+              "missed_move_rate": 0.12303911236553422,
+              "recall": -0.12303911236553419,
+              "specificity": 0.05301570308027026
+            },
+            "development": {
+              "balanced_accuracy": 0.5413943406445354,
+              "count": 253893,
+              "counts": {
+                "FN": 33226,
+                "FP": 6621,
+                "TN": 209797,
+                "TP": 4249
+              },
+              "false_move_rate": 0.03059357354748681,
+              "fractions": {
+                "FN": 0.1308661522767465,
+                "FP": 0.02607791471210313,
+                "TN": 0.8263205366040025,
+                "TP": 0.01673539640714789
+              },
+              "missed_move_rate": 0.8866177451634423,
+              "precision": 0.3908923643054278,
+              "predicted_move_fraction": 0.042813311119251025,
+              "recall": 0.1133822548365577,
+              "specificity": 0.9694064264525132,
+              "true_move_fraction": 0.14760154868389438
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "d44a45cf6c823e44f88dd0c7f5ecd958ef00dd9c486d89541ba0b6012cfd7c99",
+            "train": {
+              "balanced_accuracy": 0.5764060452871674,
+              "count": 188941,
+              "counts": {
+                "FN": 20441,
+                "FP": 13559,
+                "TN": 148612,
+                "TP": 6329
+              },
+              "false_move_rate": 0.08360927662775712,
+              "fractions": {
+                "FN": 0.10818721188095755,
+                "FP": 0.07176314299172758,
+                "TN": 0.7865524158335142,
+                "TP": 0.03349722929380071
+              },
+              "missed_move_rate": 0.763578632797908,
+              "precision": 0.3182320997586484,
+              "predicted_move_fraction": 0.10526037228552829,
+              "recall": 0.2364213672020919,
+              "specificity": 0.9163907233722429,
+              "true_move_fraction": 0.14168444117475826
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.555578783426493,
+            "count": 221278,
+            "counts": {
+              "FN": 12339,
+              "FP": 94546,
+              "TN": 95123,
+              "TP": 19270
+            },
+            "false_move_rate": 0.49847892908171604,
+            "fractions": {
+              "FN": 0.05576243458454975,
+              "FP": 0.4272724807707951,
+              "TN": 0.4298800603765399,
+              "TP": 0.08708502426811522
+            },
+            "missed_move_rate": 0.39036350406529785,
+            "precision": 0.16930835734870317,
+            "predicted_move_fraction": 0.5143575050389103,
+            "recall": 0.6096364959347021,
+            "specificity": 0.5015210709182839,
+            "true_move_fraction": 0.14284745885266498
+          },
+          "exact_hit": {
+            "candidate_move_hits": 5141,
+            "candidate_static_hits": 160506,
+            "candidate_total_hits": 165647,
+            "hold_move_hits": 0,
+            "hold_static_hits": 189669,
+            "hold_total_hits": 189669,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 5141,
+            "net_hit_delta": -24022,
+            "static_hit_loss": 29163,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "PATH_MOVED_25_RMSE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.748592268549065,
+              "exact_hit_count": 165647,
+              "mae": 0.37504339479336707,
+              "p95": 1.4586142341098585,
+              "rmse": 0.795696930974823,
+              "sae": 82988.85231308668,
+              "sse": 140098.5380602259,
+              "within_one_tick": 0.9518117481177524,
+              "within_one_tick_count": 210615
+            },
+            "count": 221278,
+            "delta_sae": 37862.85231308668,
+            "delta_sse": 24298.538060225896,
+            "hold_last": {
+              "exact_hit": 0.8571525411473351,
+              "exact_hit_count": 189669,
+              "mae": 0.20393351349885663,
+              "p95": 1.0,
+              "rmse": 0.7234110878227078,
+              "sae": 45126.0,
+              "sse": 115800.0,
+              "within_one_tick": 0.9670821319787778,
+              "within_one_tick_count": 213994
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.011880422004479696,
+              "false_move_rate": 0.22930380185032284,
+              "missed_move_rate": -0.20554295784136345,
+              "recall": 0.2055429578413635,
+              "specificity": -0.22930380185032284
+            },
+            "development": {
+              "balanced_accuracy": 0.555578783426493,
+              "count": 221278,
+              "counts": {
+                "FN": 12339,
+                "FP": 94546,
+                "TN": 95123,
+                "TP": 19270
+              },
+              "false_move_rate": 0.49847892908171604,
+              "fractions": {
+                "FN": 0.05576243458454975,
+                "FP": 0.4272724807707951,
+                "TN": 0.4298800603765399,
+                "TP": 0.08708502426811522
+              },
+              "missed_move_rate": 0.39036350406529785,
+              "precision": 0.16930835734870317,
+              "predicted_move_fraction": 0.5143575050389103,
+              "recall": 0.6096364959347021,
+              "specificity": 0.5015210709182839,
+              "true_move_fraction": 0.14284745885266498
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "57ab5bdbe7f12ff7743974a4979c7fe374fccc1897f6732e62bcdfcdddc7f6ef",
+            "train": {
+              "balanced_accuracy": 0.5674592054309727,
+              "count": 272366,
+              "counts": {
+                "FN": 23903,
+                "FP": 62517,
+                "TN": 169737,
+                "TP": 16209
+              },
+              "false_move_rate": 0.2691751272313932,
+              "fractions": {
+                "FN": 0.08776058685739042,
+                "FP": 0.22953305478657396,
+                "TN": 0.6231945250141354,
+                "TP": 0.05951183334190024
+              },
+              "missed_move_rate": 0.5959064619066613,
+              "precision": 0.20589131925920282,
+              "predicted_move_fraction": 0.2890448881284742,
+              "recall": 0.40409353809333864,
+              "specificity": 0.7308248727686067,
+              "true_move_fraction": 0.14727242019929065
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.536886725092103,
+            "count": 272366,
+            "counts": {
+              "FN": 36196,
+              "FP": 5540,
+              "TN": 226714,
+              "TP": 3916
+            },
+            "false_move_rate": 0.02385319520869393,
+            "fractions": {
+              "FN": 0.13289470785634036,
+              "FP": 0.02034027742082345,
+              "TN": 0.8323873023798859,
+              "TP": 0.014377712342950294
+            },
+            "missed_move_rate": 0.9023733546071001,
+            "precision": 0.41412859560067683,
+            "predicted_move_fraction": 0.03471798976377374,
+            "recall": 0.09762664539289988,
+            "specificity": 0.9761468047913061,
+            "true_move_fraction": 0.14727242019929065
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1054,
+            "candidate_static_hits": 228766,
+            "candidate_total_hits": 229820,
+            "hold_move_hits": 0,
+            "hold_static_hits": 232254,
+            "hold_total_hits": 232254,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1054,
+            "net_hit_delta": -2434,
+            "static_hit_loss": 3488,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8437910752443404,
+              "exact_hit_count": 229820,
+              "mae": 0.201994602740608,
+              "p95": 1.0,
+              "rmse": 0.574082116204741,
+              "sae": 55016.46197004843,
+              "sse": 89763.73783281243,
+              "within_one_tick": 0.968898467503286,
+              "within_one_tick_count": 263895
+            },
+            "count": 272366,
+            "delta_sae": 2198.4619700484327,
+            "delta_sse": -6490.262167187568,
+            "hold_last": {
+              "exact_hit": 0.8527275798007093,
+              "exact_hit_count": 232254,
+              "mae": 0.19392288317925144,
+              "p95": 1.0,
+              "rmse": 0.5944741119939844,
+              "sae": 52818.0,
+              "sse": 96254.0,
+              "within_one_tick": 0.969129773907169,
+              "within_one_tick_count": 263958
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.03463546129807571,
+              "false_move_rate": -0.03864515718415888,
+              "missed_move_rate": 0.10791607978031026,
+              "recall": -0.10791607978031027,
+              "specificity": 0.03864515718415895
+            },
+            "development": {
+              "balanced_accuracy": 0.536886725092103,
+              "count": 272366,
+              "counts": {
+                "FN": 36196,
+                "FP": 5540,
+                "TN": 226714,
+                "TP": 3916
+              },
+              "false_move_rate": 0.02385319520869393,
+              "fractions": {
+                "FN": 0.13289470785634036,
+                "FP": 0.02034027742082345,
+                "TN": 0.8323873023798859,
+                "TP": 0.014377712342950294
+              },
+              "missed_move_rate": 0.9023733546071001,
+              "precision": 0.41412859560067683,
+              "predicted_move_fraction": 0.03471798976377374,
+              "recall": 0.09762664539289988,
+              "specificity": 0.9761468047913061,
+              "true_move_fraction": 0.14727242019929065
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "640d52e3eee0aa670fe7ef4577a911b65ea4d3eee645c58778db7dbdb24d7915",
+            "train": {
+              "balanced_accuracy": 0.5715221863901787,
+              "count": 221278,
+              "counts": {
+                "FN": 25112,
+                "FP": 11854,
+                "TN": 177815,
+                "TP": 6497
+              },
+              "false_move_rate": 0.06249835239285281,
+              "fractions": {
+                "FN": 0.11348620287602021,
+                "FP": 0.05357062157105542,
+                "TN": 0.8035819195762796,
+                "TP": 0.029361255976644764
+              },
+              "missed_move_rate": 0.7944572748267898,
+              "precision": 0.35404065173560023,
+              "predicted_move_fraction": 0.08293187754770018,
+              "recall": 0.20554272517321015,
+              "specificity": 0.9375016476071472,
+              "true_move_fraction": 0.14284745885266498
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.5610927877764473,
+            "count": 214903,
+            "counts": {
+              "FN": 12041,
+              "FP": 89344,
+              "TN": 94915,
+              "TP": 18603
+            },
+            "false_move_rate": 0.4848826922972555,
+            "fractions": {
+              "FN": 0.05602992978227386,
+              "FP": 0.4157410552667948,
+              "TN": 0.4416643788127667,
+              "TP": 0.08656463613816466
+            },
+            "missed_move_rate": 0.3929317321498499,
+            "precision": 0.17233457159531992,
+            "predicted_move_fraction": 0.5023056914049594,
+            "recall": 0.6070682678501501,
+            "specificity": 0.5151173077027446,
+            "true_move_fraction": 0.1425945659204385
+          },
+          "exact_hit": {
+            "candidate_move_hits": 6066,
+            "candidate_static_hits": 167940,
+            "candidate_total_hits": 174006,
+            "hold_move_hits": 0,
+            "hold_static_hits": 184259,
+            "hold_total_hits": 184259,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 6066,
+            "net_hit_delta": -10253,
+            "static_hit_loss": 16319,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_RMSE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8096955370562533,
+              "exact_hit_count": 174006,
+              "mae": 0.271733955883862,
+              "p95": 1.1085202466630908,
+              "rmse": 0.5645509496485295,
+              "sae": 58396.4423213096,
+              "sse": 68493.40594689647,
+              "within_one_tick": 0.970019031842273,
+              "within_one_tick_count": 208460
+            },
+            "count": 214903,
+            "delta_sae": 14785.442321309602,
+            "delta_sse": -41759.59405310353,
+            "hold_last": {
+              "exact_hit": 0.8574054340795615,
+              "exact_hit_count": 184259,
+              "mae": 0.20293341647161742,
+              "p95": 1.0,
+              "rmse": 0.7162653935293098,
+              "sae": 43611.0,
+              "sse": 110253.0,
+              "within_one_tick": 0.9671060897242012,
+              "within_one_tick_count": 207834
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.01532883340473945,
+              "false_move_rate": 0.2513651663801814,
+              "missed_move_rate": -0.22070749957070235,
+              "recall": 0.22070749957070235,
+              "specificity": -0.25136516638018136
+            },
+            "development": {
+              "balanced_accuracy": 0.5610927877764473,
+              "count": 214903,
+              "counts": {
+                "FN": 12041,
+                "FP": 89344,
+                "TN": 94915,
+                "TP": 18603
+              },
+              "false_move_rate": 0.4848826922972555,
+              "fractions": {
+                "FN": 0.05602992978227386,
+                "FP": 0.4157410552667948,
+                "TN": 0.4416643788127667,
+                "TP": 0.08656463613816466
+              },
+              "missed_move_rate": 0.3929317321498499,
+              "precision": 0.17233457159531992,
+              "predicted_move_fraction": 0.5023056914049594,
+              "recall": 0.6070682678501501,
+              "specificity": 0.5151173077027446,
+              "true_move_fraction": 0.1425945659204385
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "0e6f4c8fadc642a514e6ef4759d83589c070cb4f61f310f034baee96b31b723a",
+            "train": {
+              "balanced_accuracy": 0.5764216211811868,
+              "count": 268910,
+              "counts": {
+                "FN": 24313,
+                "FP": 53543,
+                "TN": 175746,
+                "TP": 15308
+              },
+              "false_move_rate": 0.2335175259170741,
+              "fractions": {
+                "FN": 0.09041314938083374,
+                "FP": 0.19911122680450707,
+                "TN": 0.653549514707523,
+                "TP": 0.05692610910713622
+              },
+              "missed_move_rate": 0.6136392317205522,
+              "precision": 0.22233518757897489,
+              "predicted_move_fraction": 0.2560373359116433,
+              "recall": 0.38636076827944776,
+              "specificity": 0.7664824740829259,
+              "true_move_fraction": 0.14733925848796994
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.538082938406285,
+            "count": 268910,
+            "counts": {
+              "FN": 35634,
+              "FP": 5609,
+              "TN": 223680,
+              "TP": 3987
+            },
+            "false_move_rate": 0.02446257779483534,
+            "fractions": {
+              "FN": 0.13251273660332452,
+              "FP": 0.020858279721840022,
+              "TN": 0.83180246179019,
+              "TP": 0.01482652188464542
+            },
+            "missed_move_rate": 0.8993715453925948,
+            "precision": 0.41548561900791997,
+            "predicted_move_fraction": 0.03568480160648544,
+            "recall": 0.10062845460740516,
+            "specificity": 0.9755374222051647,
+            "true_move_fraction": 0.14733925848796994
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1075,
+            "candidate_static_hits": 227456,
+            "candidate_total_hits": 228531,
+            "hold_move_hits": 0,
+            "hold_static_hits": 229289,
+            "hold_total_hits": 229289,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1075,
+            "net_hit_delta": -758,
+            "static_hit_loss": 1833,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_MAE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8498419545572868,
+              "exact_hit_count": 228531,
+              "mae": 0.18844287225195291,
+              "p95": 1.0,
+              "rmse": 0.535890722930558,
+              "sae": 50674.17277727266,
+              "sse": 77225.26910427361,
+              "within_one_tick": 0.9731136811572645,
+              "within_one_tick_count": 261680
+            },
+            "count": 268910,
+            "delta_sae": -1367.827222727341,
+            "delta_sse": -16862.73089572639,
+            "hold_last": {
+              "exact_hit": 0.8526607415120301,
+              "exact_hit_count": 229289,
+              "mae": 0.19352943363950764,
+              "p95": 1.0,
+              "rmse": 0.5915121124312472,
+              "sae": 52042.0,
+              "sse": 94088.0,
+              "within_one_tick": 0.9692239039083709,
+              "within_one_tick_count": 260634
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.0372886788387633,
+              "false_move_rate": -0.036940121666249326,
+              "missed_move_rate": 0.1115174793437761,
+              "recall": -0.11151747934377615,
+              "specificity": 0.03694012166624938
+            },
+            "development": {
+              "balanced_accuracy": 0.538082938406285,
+              "count": 268910,
+              "counts": {
+                "FN": 35634,
+                "FP": 5609,
+                "TN": 223680,
+                "TP": 3987
+              },
+              "false_move_rate": 0.02446257779483534,
+              "fractions": {
+                "FN": 0.13251273660332452,
+                "FP": 0.020858279721840022,
+                "TN": 0.83180246179019,
+                "TP": 0.01482652188464542
+              },
+              "missed_move_rate": 0.8993715453925948,
+              "precision": 0.41548561900791997,
+              "predicted_move_fraction": 0.03568480160648544,
+              "recall": 0.10062845460740516,
+              "specificity": 0.9755374222051647,
+              "true_move_fraction": 0.14733925848796994
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "bf16726eaae6bb99795ad37399495c152ab98f4bda26d86378093bfcad5e0bd4",
+            "train": {
+              "balanced_accuracy": 0.5753716172450483,
+              "count": 214903,
+              "counts": {
+                "FN": 24143,
+                "FP": 11314,
+                "TN": 172945,
+                "TP": 6501
+              },
+              "false_move_rate": 0.06140269946108467,
+              "fractions": {
+                "FN": 0.1123437085568838,
+                "FP": 0.052647008185088155,
+                "TN": 0.8047584258944733,
+                "TP": 0.03025085736355472
+              },
+              "missed_move_rate": 0.7878540660488187,
+              "precision": 0.36491720460286275,
+              "predicted_move_fraction": 0.08289786554864288,
+              "recall": 0.2121459339511813,
+              "specificity": 0.9385973005389153,
+              "true_move_fraction": 0.1425945659204385
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.5576877629773731,
+            "count": 203479,
+            "counts": {
+              "FN": 11392,
+              "FP": 85705,
+              "TN": 88829,
+              "TP": 17553
+            },
+            "false_move_rate": 0.4910504543527336,
+            "fractions": {
+              "FN": 0.05598612141793502,
+              "FP": 0.4211982563311202,
+              "TN": 0.4365511920149008,
+              "TP": 0.08626443023604402
+            },
+            "missed_move_rate": 0.3935740196925203,
+            "precision": 0.16999167134749849,
+            "predicted_move_fraction": 0.5074626865671642,
+            "recall": 0.6064259803074797,
+            "specificity": 0.5089495456472665,
+            "true_move_fraction": 0.14225055165397904
+          },
+          "exact_hit": {
+            "candidate_move_hits": 6134,
+            "candidate_static_hits": 156090,
+            "candidate_total_hits": 162224,
+            "hold_move_hits": 0,
+            "hold_static_hits": 174534,
+            "hold_total_hits": 174534,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 6134,
+            "net_hit_delta": -12310,
+            "static_hit_loss": 18444,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "PATH_MOVED_25_RMSE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.797251804854555,
+              "exact_hit_count": 162224,
+              "mae": 0.2905287613155034,
+              "p95": 1.1513681616876066,
+              "rmse": 0.5994349040029281,
+              "sae": 59116.50182371732,
+              "sse": 73114.52277559254,
+              "within_one_tick": 0.9680753296408966,
+              "within_one_tick_count": 196983
+            },
+            "count": 203479,
+            "delta_sae": 18367.50182371732,
+            "delta_sse": -26420.477224407456,
+            "hold_last": {
+              "exact_hit": 0.857749448346021,
+              "exact_hit_count": 174534,
+              "mae": 0.20026145204173404,
+              "p95": 1.0,
+              "rmse": 0.699404002103108,
+              "sae": 40749.0,
+              "sse": 99535.0,
+              "within_one_tick": 0.9676674251396951,
+              "within_one_tick_count": 196900
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.017936591679500347,
+              "false_move_rate": 0.2722147308125469,
+              "missed_move_rate": -0.2363415474535459,
+              "recall": 0.23634154745354602,
+              "specificity": -0.27221473081254677
+            },
+            "development": {
+              "balanced_accuracy": 0.5576877629773731,
+              "count": 203479,
+              "counts": {
+                "FN": 11392,
+                "FP": 85705,
+                "TN": 88829,
+                "TP": 17553
+              },
+              "false_move_rate": 0.4910504543527336,
+              "fractions": {
+                "FN": 0.05598612141793502,
+                "FP": 0.4211982563311202,
+                "TN": 0.4365511920149008,
+                "TP": 0.08626443023604402
+              },
+              "missed_move_rate": 0.3935740196925203,
+              "precision": 0.16999167134749849,
+              "predicted_move_fraction": 0.5074626865671642,
+              "recall": 0.6064259803074797,
+              "specificity": 0.5089495456472665,
+              "true_move_fraction": 0.14225055165397904
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "cec741084b4b99894572a62f64bf10f9419e1e8ac81674b502147eb42397117a",
+            "train": {
+              "balanced_accuracy": 0.5756243546568734,
+              "count": 262559,
+              "counts": {
+                "FN": 24396,
+                "FP": 48982,
+                "TN": 174848,
+                "TP": 14333
+              },
+              "false_move_rate": 0.21883572354018674,
+              "fractions": {
+                "FN": 0.09291625882182672,
+                "FP": 0.18655616451921284,
+                "TN": 0.6659379415674191,
+                "TP": 0.05458963509154133
+              },
+              "missed_move_rate": 0.6299155671460662,
+              "precision": 0.22637605622680249,
+              "predicted_move_fraction": 0.24114579961075416,
+              "recall": 0.3700844328539337,
+              "specificity": 0.7811642764598132,
+              "true_move_fraction": 0.14750589391336805
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.5360173052212126,
+            "count": 262559,
+            "counts": {
+              "FN": 34969,
+              "FP": 5607,
+              "TN": 218223,
+              "TP": 3760
+            },
+            "false_move_rate": 0.02505026135906715,
+            "fractions": {
+              "FN": 0.13318530311282417,
+              "FP": 0.021355200164534446,
+              "TN": 0.8311389059220975,
+              "TP": 0.014320590800543877
+            },
+            "missed_move_rate": 0.9029151281985076,
+            "precision": 0.4014092025194833,
+            "predicted_move_fraction": 0.03567579096507833,
+            "recall": 0.09708487180149242,
+            "specificity": 0.9749497386409328,
+            "true_move_fraction": 0.14750589391336805
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1157,
+            "candidate_static_hits": 221670,
+            "candidate_total_hits": 222827,
+            "hold_move_hits": 0,
+            "hold_static_hits": 223830,
+            "hold_total_hits": 223830,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1157,
+            "net_hit_delta": -1003,
+            "static_hit_loss": 2160,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8486740123172316,
+              "exact_hit_count": 222827,
+              "mae": 0.1883475949538242,
+              "p95": 1.0,
+              "rmse": 0.533010900633661,
+              "sae": 49452.356183481126,
+              "sse": 74593.17473759688,
+              "within_one_tick": 0.9739030084666684,
+              "within_one_tick_count": 255707
+            },
+            "count": 262559,
+            "delta_sae": -1307.6438165188738,
+            "delta_sse": -16300.825262403116,
+            "hold_last": {
+              "exact_hit": 0.852494106086632,
+              "exact_hit_count": 223830,
+              "mae": 0.19332797580734234,
+              "p95": 1.0,
+              "rmse": 0.5883749212297239,
+              "sae": 50760.0,
+              "sse": 90894.0,
+              "within_one_tick": 0.9693097551407494,
+              "within_one_tick_count": 254501
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.039454863480245406,
+              "false_move_rate": -0.038032003414558625,
+              "missed_move_rate": 0.11694173037504929,
+              "recall": -0.11694173037504929,
+              "specificity": 0.03803200341455859
+            },
+            "development": {
+              "balanced_accuracy": 0.5360173052212126,
+              "count": 262559,
+              "counts": {
+                "FN": 34969,
+                "FP": 5607,
+                "TN": 218223,
+                "TP": 3760
+              },
+              "false_move_rate": 0.02505026135906715,
+              "fractions": {
+                "FN": 0.13318530311282417,
+                "FP": 0.021355200164534446,
+                "TN": 0.8311389059220975,
+                "TP": 0.014320590800543877
+              },
+              "missed_move_rate": 0.9029151281985076,
+              "precision": 0.4014092025194833,
+              "predicted_move_fraction": 0.03567579096507833,
+              "recall": 0.09708487180149242,
+              "specificity": 0.9749497386409328,
+              "true_move_fraction": 0.14750589391336805
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "81778b6970ecb37af9ed8b04804be6b82208ed3c28b3a6d21a779c71385e5c1e",
+            "train": {
+              "balanced_accuracy": 0.575472168701458,
+              "count": 203479,
+              "counts": {
+                "FN": 22750,
+                "FP": 11010,
+                "TN": 163524,
+                "TP": 6195
+              },
+              "false_move_rate": 0.06308226477362577,
+              "fractions": {
+                "FN": 0.11180514942573927,
+                "FP": 0.05410877780999514,
+                "TN": 0.8036406705360258,
+                "TP": 0.03044540222823977
+              },
+              "missed_move_rate": 0.7859733978234583,
+              "precision": 0.36006974716652135,
+              "predicted_move_fraction": 0.08455418003823491,
+              "recall": 0.2140266021765417,
+              "specificity": 0.9369177352263742,
+              "true_move_fraction": 0.14225055165397904
+            }
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "folds": {
+        "FOLD_A": {
+          "confusion": {
+            "balanced_accuracy": 0.5508858134497346,
+            "count": 183711,
+            "counts": {
+              "FN": 9424,
+              "FP": 84324,
+              "TN": 73490,
+              "TP": 16473
+            },
+            "false_move_rate": 0.5343252182949548,
+            "fractions": {
+              "FN": 0.0512979625607612,
+              "FP": 0.4590035436092558,
+              "TN": 0.4000304826602653,
+              "TP": 0.08966801116971765
+            },
+            "missed_move_rate": 0.36390315480557595,
+            "precision": 0.1634274829608024,
+            "predicted_move_fraction": 0.5486715547789734,
+            "recall": 0.6360968451944241,
+            "specificity": 0.46567478170504517,
+            "true_move_fraction": 0.14096597373047884
+          },
+          "exact_hit": {
+            "candidate_move_hits": 5980,
+            "candidate_static_hits": 140474,
+            "candidate_total_hits": 146454,
+            "hold_move_hits": 0,
+            "hold_static_hits": 157814,
+            "hold_total_hits": 157814,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 5980,
+            "net_hit_delta": -11360,
+            "static_hit_loss": 17340,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_RMSE",
+            "OVERALL_25_MAE",
+            "OVERALL_25_P95",
+            "OVERALL_50_RMSE",
+            "OVERALL_50_MAE",
+            "OVERALL_50_P95",
+            "OVERALL_100_RMSE",
+            "OVERALL_100_MAE",
+            "OVERALL_100_P95",
+            "OVERALL_200_RMSE",
+            "OVERALL_200_MAE",
+            "OVERALL_200_P95",
+            "PATH_MOVED_25_RMSE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95",
+            "PATH_MOVED_50_RMSE",
+            "PATH_MOVED_50_MAE",
+            "PATH_MOVED_50_P95",
+            "PATH_MOVED_100_RMSE",
+            "PATH_MOVED_100_MAE",
+            "PATH_MOVED_100_P95",
+            "PATH_MOVED_200_RMSE",
+            "PATH_MOVED_200_MAE",
+            "PATH_MOVED_200_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.7971977725884678,
+              "exact_hit_count": 146454,
+              "mae": 0.29012219586904664,
+              "p95": 1.1129041766982186,
+              "rmse": 0.6155283012663154,
+              "sae": 53298.63872529843,
+              "sse": 69603.52159649077,
+              "within_one_tick": 0.9715585893060296,
+              "within_one_tick_count": 178486
+            },
+            "count": 183711,
+            "delta_sae": 17459.638725298428,
+            "delta_sse": -15769.47840350923,
+            "hold_last": {
+              "exact_hit": 0.8590340262695212,
+              "exact_hit_count": 157814,
+              "mae": 0.19508358236578105,
+              "p95": 1.0,
+              "rmse": 0.681699053158218,
+              "sae": 35839.0,
+              "sse": 85373.0,
+              "within_one_tick": 0.9687552732280593,
+              "within_one_tick_count": 177971
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.02412841183366643,
+              "false_move_rate": 0.28110343902021234,
+              "missed_move_rate": -0.23284661535287948,
+              "recall": 0.2328466153528796,
+              "specificity": -0.2811034390202124
+            },
+            "development": {
+              "balanced_accuracy": 0.5508858134497346,
+              "count": 183711,
+              "counts": {
+                "FN": 9424,
+                "FP": 84324,
+                "TN": 73490,
+                "TP": 16473
+              },
+              "false_move_rate": 0.5343252182949548,
+              "fractions": {
+                "FN": 0.0512979625607612,
+                "FP": 0.4590035436092558,
+                "TN": 0.4000304826602653,
+                "TP": 0.08966801116971765
+              },
+              "missed_move_rate": 0.36390315480557595,
+              "precision": 0.1634274829608024,
+              "predicted_move_fraction": 0.5486715547789734,
+              "recall": 0.6360968451944241,
+              "specificity": 0.46567478170504517,
+              "true_move_fraction": 0.14096597373047884
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "f4d041d0d1c566d0be2e2731f2d8d4bd232d52519caab760a30dbca37dda563e",
+            "train": {
+              "balanced_accuracy": 0.5750142252834011,
+              "count": 250451,
+              "counts": {
+                "FN": 22069,
+                "FP": 54055,
+                "TN": 159414,
+                "TP": 14913
+              },
+              "false_move_rate": 0.2532217792747425,
+              "fractions": {
+                "FN": 0.08811703686549464,
+                "FP": 0.21583064152269307,
+                "TN": 0.6365077400369733,
+                "TP": 0.05954458157483899
+              },
+              "missed_move_rate": 0.5967497701584554,
+              "precision": 0.21623071569423502,
+              "predicted_move_fraction": 0.27537522309753204,
+              "recall": 0.4032502298415445,
+              "specificity": 0.7467782207252576,
+              "true_move_fraction": 0.14766161844033363
+            }
+          }
+        },
+        "FOLD_B": {
+          "confusion": {
+            "balanced_accuracy": 0.5392939065342878,
+            "count": 250451,
+            "counts": {
+              "FN": 33000,
+              "FP": 6209,
+              "TN": 207260,
+              "TP": 3982
+            },
+            "false_move_rate": 0.029086190500728443,
+            "fractions": {
+              "FN": 0.13176230080933996,
+              "FP": 0.024791276537127024,
+              "TN": 0.8275471050225394,
+              "TP": 0.015899317630993687
+            },
+            "missed_move_rate": 0.892325996430696,
+            "precision": 0.3907369247375135,
+            "predicted_move_fraction": 0.04069059416812071,
+            "recall": 0.10767400356930398,
+            "specificity": 0.9709138094992715,
+            "true_move_fraction": 0.14766161844033363
+          },
+          "exact_hit": {
+            "candidate_move_hits": 1321,
+            "candidate_static_hits": 211190,
+            "candidate_total_hits": 212511,
+            "hold_move_hits": 0,
+            "hold_static_hits": 213469,
+            "hold_total_hits": 213469,
+            "integer_accounting_exact": true,
+            "move_hit_gain": 1321,
+            "net_hit_delta": -958,
+            "static_hit_loss": 2279,
+            "static_loss_exceeds_move_gain": true
+          },
+          "historical_rollout_failures": [
+            "OVERALL_25_MAE",
+            "PATH_MOVED_25_MAE",
+            "PATH_MOVED_25_P95"
+          ],
+          "integrated": {
+            "candidate": {
+              "exact_hit": 0.8485132820392013,
+              "exact_hit_count": 212511,
+              "mae": 0.18841528252495418,
+              "p95": 1.0,
+              "rmse": 0.5308610348447869,
+              "sae": 47188.7959236573,
+              "sse": 70580.45743980023,
+              "within_one_tick": 0.9742025386203289,
+              "within_one_tick_count": 243990
+            },
+            "count": 250451,
+            "delta_sae": -972.2040763426994,
+            "delta_sse": -13924.54256019977,
+            "hold_last": {
+              "exact_hit": 0.8523383815596663,
+              "exact_hit_count": 213469,
+              "mae": 0.1922970960387461,
+              "p95": 1.0,
+              "rmse": 0.580871164714488,
+              "sae": 48161.0,
+              "sse": 84505.0,
+              "within_one_tick": 0.9695669013100366,
+              "within_one_tick_count": 242829
+            },
+            "support_status": "DESCRIPTIVE_ONLY"
+          },
+          "transfer": {
+            "alternative_thresholds_evaluated": 0,
+            "dev_minus_train": {
+              "balanced_accuracy": -0.036104927300031564,
+              "false_move_rate": -0.04913880854878554,
+              "missed_move_rate": 0.12134866314884862,
+              "recall": -0.1213486631488487,
+              "specificity": 0.049138808548785495
+            },
+            "development": {
+              "balanced_accuracy": 0.5392939065342878,
+              "count": 250451,
+              "counts": {
+                "FN": 33000,
+                "FP": 6209,
+                "TN": 207260,
+                "TP": 3982
+              },
+              "false_move_rate": 0.029086190500728443,
+              "fractions": {
+                "FN": 0.13176230080933996,
+                "FP": 0.024791276537127024,
+                "TN": 0.8275471050225394,
+                "TP": 0.015899317630993687
+              },
+              "missed_move_rate": 0.892325996430696,
+              "precision": 0.3907369247375135,
+              "predicted_move_fraction": 0.04069059416812071,
+              "recall": 0.10767400356930398,
+              "specificity": 0.9709138094992715,
+              "true_move_fraction": 0.14766161844033363
+            },
+            "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+            "threshold_receipt_sha256": "c462accd3c646305436a89154215a467032236bd316d88e4249a365459cdde4d",
+            "train": {
+              "balanced_accuracy": 0.5753988338343193,
+              "count": 183711,
+              "counts": {
+                "FN": 19966,
+                "FP": 12345,
+                "TN": 145469,
+                "TP": 5931
+              },
+              "false_move_rate": 0.07822499904951398,
+              "fractions": {
+                "FN": 0.10868157051020352,
+                "FP": 0.06719793588843347,
+                "TN": 0.7918360903810877,
+                "TP": 0.03228440322027532
+              },
+              "missed_move_rate": 0.7709773332818474,
+              "precision": 0.32452396585686144,
+              "predicted_move_fraction": 0.09948233910870878,
+              "recall": 0.2290226667181527,
+              "specificity": 0.921775000950486,
+              "true_move_fraction": 0.14096597373047884
+            }
+          }
+        }
+      }
+    }
+  ],
+  "policy_sha256": "b93b623231dcd763e7588c4986073d4ee0188dac6b4a06b4b0e035317928b96e",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "ranking_performed": false,
+  "receipt_sha256": "2be8f4f8dca3a5abc09fd359ddff2acb04168a28bab8878dec0f10e1a1d2a796",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_FOLD_ASYMMETRY_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

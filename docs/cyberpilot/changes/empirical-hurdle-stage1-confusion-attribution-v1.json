@@ -1,0 +1,1752 @@
+{
+  "attribution_manifest_sha256": "07345517d3bca95e90962e0566a58e2b756a8aa6f5c658b8b312f02d4961f77d",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "historical_selection": "MODEL_SELECTION_FAILED_CLOSED",
+  "historical_verdict": "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+  "holdout": "CLOSED",
+  "jobs": [
+    {
+      "candidate_id": "HRI_D00_L01",
+      "confusion": {
+        "balanced_accuracy": 0.549319996001681,
+        "count": 300569,
+        "counts": {
+          "FN": 14961,
+          "FP": 143280,
+          "TN": 113801,
+          "TP": 28527
+        },
+        "false_move_rate": 0.5573340698067925,
+        "fractions": {
+          "FN": 0.04977559229328374,
+          "FP": 0.47669586683922827,
+          "TN": 0.3786185534769055,
+          "TP": 0.09490998739058253
+        },
+        "missed_move_rate": 0.34402593818984545,
+        "precision": 0.16604096457071016,
+        "predicted_move_fraction": 0.5716058542298108,
+        "recall": 0.6559740618101545,
+        "specificity": 0.4426659301932076,
+        "true_move_fraction": 0.14468557968386628
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 14961,
+          "max": 22.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 14961,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2871465811108882,
+          "p95": 2.0,
+          "rmse": 1.678349535095242,
+          "sae": 19257.0,
+          "sse": 42143.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 96130,
+        "projected_moved_count": 47150,
+        "projected_same_tick_count": 96130,
+        "stage2_invoked_count": 143280,
+        "within_one_tick_count": 138704
+      },
+      "original_job_receipt_sha256": "d89e00d9da1c2a9cd010bc4d665d2b183ed5c3e34d235b3a06f29f1a8852e55d",
+      "receipt_sha256": "4b822b54a5e9ac128d558017d4a9b12fb17268b0ccc778c2449c102079da53c6"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "confusion": {
+        "balanced_accuracy": 0.5276263228384448,
+        "count": 336941,
+        "counts": {
+          "FN": 44663,
+          "FP": 5406,
+          "TN": 283304,
+          "TP": 3568
+        },
+        "false_move_rate": 0.018724671816009144,
+        "fractions": {
+          "FN": 0.13255436411715998,
+          "FP": 0.016044351978536302,
+          "TN": 0.8408118928833238,
+          "TP": 0.010589391020979935
+        },
+        "missed_move_rate": 0.9260226825071013,
+        "precision": 0.397593046579006,
+        "predicted_move_fraction": 0.026633742999516236,
+        "recall": 0.07397731749289876,
+        "specificity": 0.9812753281839909,
+        "true_move_fraction": 0.1431437551381399
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 44663,
+          "max": 18.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 44663,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.259140675727112,
+          "p95": 2.0,
+          "rmse": 1.447891055813424,
+          "sae": 56237.0,
+          "sse": 93631.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 2263,
+        "projected_moved_count": 3143,
+        "projected_same_tick_count": 2263,
+        "stage2_invoked_count": 5406,
+        "within_one_tick_count": 4439
+      },
+      "original_job_receipt_sha256": "2f4025f165c48dd1066273b390e9b1262c5e4253a9b437f6f8d8288d71a39466",
+      "receipt_sha256": "c7d1da1d2ceb30ba57d2048e44efb6e71fdd7aa9d1158d248487c6fdab7db46c"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "confusion": {
+        "balanced_accuracy": 0.56202481036004,
+        "count": 265076,
+        "counts": {
+          "FN": 16042,
+          "FP": 103452,
+          "TN": 123426,
+          "TP": 22156
+        },
+        "false_move_rate": 0.4559807473620184,
+        "fractions": {
+          "FN": 0.06051849280960932,
+          "FP": 0.3902729783156529,
+          "TN": 0.46562495284371275,
+          "TP": 0.08358357603102506
+        },
+        "missed_move_rate": 0.4199696319179015,
+        "precision": 0.1763900388510286,
+        "predicted_move_fraction": 0.47385655434667795,
+        "recall": 0.5800303680820985,
+        "specificity": 0.5440192526379817,
+        "true_move_fraction": 0.1441020688406344
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 16042,
+          "max": 12.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 16042,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2113826206208702,
+          "p95": 2.0,
+          "rmse": 1.3639753935482894,
+          "sae": 19433.0,
+          "sse": 29845.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 79166,
+        "projected_moved_count": 24286,
+        "projected_same_tick_count": 79166,
+        "stage2_invoked_count": 103452,
+        "within_one_tick_count": 101031
+      },
+      "original_job_receipt_sha256": "d24ccb59a2c532ddb5369d9b1b1b0929e6eb4ded5de3d9ed08bba17c22e9093d",
+      "receipt_sha256": "9deb727d6d73355459ce7f95d39b181dee11d8e68364c57f84575060deea73d4"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "confusion": {
+        "balanced_accuracy": 0.5466205690182232,
+        "count": 293734,
+        "counts": {
+          "FN": 37995,
+          "FP": 6912,
+          "TN": 243605,
+          "TP": 5222
+        },
+        "false_move_rate": 0.02759094193208445,
+        "fractions": {
+          "FN": 0.1293517263919056,
+          "FP": 0.02353149448140154,
+          "TN": 0.829338789517046,
+          "TP": 0.017777989609646824
+        },
+        "missed_move_rate": 0.8791679200314692,
+        "precision": 0.4303609691775177,
+        "predicted_move_fraction": 0.041309484091048364,
+        "recall": 0.1208320799685309,
+        "specificity": 0.9724090580679156,
+        "true_move_fraction": 0.14712971600155242
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 37995,
+          "max": 18.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 37995,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2502697723384655,
+          "p95": 2.0,
+          "rmse": 1.4416583277753272,
+          "sae": 47504.0,
+          "sse": 78968.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 3939,
+        "projected_moved_count": 2973,
+        "projected_same_tick_count": 3939,
+        "stage2_invoked_count": 6912,
+        "within_one_tick_count": 6479
+      },
+      "original_job_receipt_sha256": "eedb822907ebca5a62a32c69d11655cc7bac05f997e0100420ad44f30ac90649",
+      "receipt_sha256": "a596d4ab112e361860fa0a1419f797c6845ba3ba8d1b6561a29a2de56e748a3a"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "confusion": {
+        "balanced_accuracy": 0.5622548388706494,
+        "count": 230783,
+        "counts": {
+          "FN": 12999,
+          "FP": 95318,
+          "TN": 102428,
+          "TP": 20038
+        },
+        "false_move_rate": 0.48202239236191885,
+        "fractions": {
+          "FN": 0.05632563923685887,
+          "FP": 0.4130200231386194,
+          "TN": 0.4438281849182999,
+          "TP": 0.08682615270622186
+        },
+        "missed_move_rate": 0.3934679298967824,
+        "precision": 0.1737057456915982,
+        "predicted_move_fraction": 0.49984617584484126,
+        "recall": 0.6065320701032176,
+        "specificity": 0.5179776076380812,
+        "true_move_fraction": 0.14315179194308073
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 12999,
+          "max": 17.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 12999,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.21209323794138,
+          "p95": 2.0,
+          "rmse": 1.38774653639104,
+          "sae": 15756.0,
+          "sse": 25034.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 72603,
+        "projected_moved_count": 22715,
+        "projected_same_tick_count": 72603,
+        "stage2_invoked_count": 95318,
+        "within_one_tick_count": 93086
+      },
+      "original_job_receipt_sha256": "4eb34d0acf5994085c1905bf9bb97e190103d902eaba2907740f659856851619",
+      "receipt_sha256": "79c5460084da3d4a5ccc9204b3dd41925d59d40bd31112f21cf1d33470d55c86"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "confusion": {
+        "balanced_accuracy": 0.544512304942866,
+        "count": 277385,
+        "counts": {
+          "FN": 36139,
+          "FP": 6078,
+          "TN": 230485,
+          "TP": 4683
+        },
+        "false_move_rate": 0.025692944374225892,
+        "fractions": {
+          "FN": 0.130284622456153,
+          "FP": 0.021911783261531807,
+          "TN": 0.8309209221839682,
+          "TP": 0.016882672098347064
+        },
+        "missed_move_rate": 0.8852824457400421,
+        "precision": 0.43518260384722607,
+        "predicted_move_fraction": 0.03879445535987887,
+        "recall": 0.11471755425995786,
+        "specificity": 0.9743070556257741,
+        "true_move_fraction": 0.14716729455450006
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 36139,
+          "max": 18.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 36139,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2377486925482166,
+          "p95": 2.0,
+          "rmse": 1.404071195437494,
+          "sae": 44731.0,
+          "sse": 71245.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 3344,
+        "projected_moved_count": 2734,
+        "projected_same_tick_count": 3344,
+        "stage2_invoked_count": 6078,
+        "within_one_tick_count": 5702
+      },
+      "original_job_receipt_sha256": "3b229ed191267c35df52f3974d830ea3fecd6388cae2fb6162eb5b0afc931efe",
+      "receipt_sha256": "4036248c44ae0f82cf3e7a66d5fd421d5c19cf2a08efc99f5ff1613187660b87"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "confusion": {
+        "balanced_accuracy": 0.5537812035258115,
+        "count": 194807,
+        "counts": {
+          "FN": 10576,
+          "FP": 85280,
+          "TN": 81855,
+          "TP": 17096
+        },
+        "false_move_rate": 0.5102462081550843,
+        "fractions": {
+          "FN": 0.05428963024942635,
+          "FP": 0.43776661002941375,
+          "TN": 0.42018510628468175,
+          "TP": 0.08775865343647815
+        },
+        "missed_move_rate": 0.38219138479329284,
+        "precision": 0.1669922638118309,
+        "predicted_move_fraction": 0.5255252634658919,
+        "recall": 0.6178086152067072,
+        "specificity": 0.4897537918449158,
+        "true_move_fraction": 0.1420482836859045
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 10576,
+          "max": 19.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 10576,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2107602118003025,
+          "p95": 2.0,
+          "rmse": 1.3841754783685458,
+          "sae": 12805.0,
+          "sse": 20263.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 65033,
+        "projected_moved_count": 20247,
+        "projected_same_tick_count": 65033,
+        "stage2_invoked_count": 85280,
+        "within_one_tick_count": 83334
+      },
+      "original_job_receipt_sha256": "db547ea60d56056268a4f78fc54ea7179e267d140182aedaca1fe8cde5c268a2",
+      "receipt_sha256": "06990526ac795509c5b46edeb4aa5998e558650e883aa663d2ff54db1416e97f"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "confusion": {
+        "balanced_accuracy": 0.541586508878742,
+        "count": 257518,
+        "counts": {
+          "FN": 33774,
+          "FP": 6267,
+          "TN": 213229,
+          "TP": 4248
+        },
+        "false_move_rate": 0.028551773153041513,
+        "fractions": {
+          "FN": 0.13115199714194736,
+          "FP": 0.024336162909000536,
+          "TN": 0.8280159056842629,
+          "TP": 0.016495934264789257
+        },
+        "missed_move_rate": 0.8882752090894745,
+        "precision": 0.40399429386590585,
+        "predicted_move_fraction": 0.04083209717378979,
+        "recall": 0.11172479091052548,
+        "specificity": 0.9714482268469585,
+        "true_move_fraction": 0.14764793140673663
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 33774,
+          "max": 11.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 33774,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2308876650678036,
+          "p95": 2.0,
+          "rmse": 1.3788279725335364,
+          "sae": 41572.0,
+          "sse": 64210.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 3563,
+        "projected_moved_count": 2704,
+        "projected_same_tick_count": 3563,
+        "stage2_invoked_count": 6267,
+        "within_one_tick_count": 5922
+      },
+      "original_job_receipt_sha256": "78356632ad8275ffcb509616650e2fcb77514986f9e3a52482a252dcc90dd98c",
+      "receipt_sha256": "2aa105a217fd818227b84d8992a183dacb0ca500cc1dab2219c5eac9f4dcc69b"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "confusion": {
+        "balanced_accuracy": 0.5552092801475335,
+        "count": 265076,
+        "counts": {
+          "FN": 16363,
+          "FP": 104638,
+          "TN": 122240,
+          "TP": 21835
+        },
+        "false_move_rate": 0.4612082264476944,
+        "fractions": {
+          "FN": 0.06172946626627835,
+          "FP": 0.3947471668502618,
+          "TN": 0.4611507643091038,
+          "TP": 0.08237260257435604
+        },
+        "missed_move_rate": 0.4283732132572386,
+        "precision": 0.17264554489891124,
+        "predicted_move_fraction": 0.47711976942461787,
+        "recall": 0.5716267867427614,
+        "specificity": 0.5387917735523057,
+        "true_move_fraction": 0.1441020688406344
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 16363,
+          "max": 17.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 16363,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2754996027623295,
+          "p95": 2.0,
+          "rmse": 1.5698022698454819,
+          "sae": 20871.0,
+          "sse": 40323.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 65558,
+        "projected_moved_count": 39080,
+        "projected_same_tick_count": 65558,
+        "stage2_invoked_count": 104638,
+        "within_one_tick_count": 99884
+      },
+      "original_job_receipt_sha256": "6a83f7cd8ec605e69f0c0d58e60fc16f79fef7c37d670daeecb8ca166a6e6cf4",
+      "receipt_sha256": "2f6e5602ad66cb55089d5bf5c3f93523c9ca860bc4b35e9831e590f67348baee"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "confusion": {
+        "balanced_accuracy": 0.5337170708853167,
+        "count": 293734,
+        "counts": {
+          "FN": 39249,
+          "FP": 6108,
+          "TN": 244409,
+          "TP": 3968
+        },
+        "false_move_rate": 0.02438157889484546,
+        "fractions": {
+          "FN": 0.13362089509556266,
+          "FP": 0.020794324116377404,
+          "TN": 0.8320759598820702,
+          "TP": 0.013508820905989772
+        },
+        "missed_move_rate": 0.9081842793345212,
+        "precision": 0.39380706629614926,
+        "predicted_move_fraction": 0.03430314502236718,
+        "recall": 0.09181572066547886,
+        "specificity": 0.9756184211051545,
+        "true_move_fraction": 0.14712971600155242
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 39249,
+          "max": 18.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 39249,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2553950419118958,
+          "p95": 2.0,
+          "rmse": 1.443907339232873,
+          "sae": 49273.0,
+          "sse": 81829.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 2343,
+        "projected_moved_count": 3765,
+        "projected_same_tick_count": 2343,
+        "stage2_invoked_count": 6108,
+        "within_one_tick_count": 5084
+      },
+      "original_job_receipt_sha256": "41549d7399725ff5233add94b457ad81dd5255ad04a5b50f850613d9803ff92a",
+      "receipt_sha256": "b75feaf4414f23d5d18d08081b745ccc2274a2467e65c6958a2959673fa07e1a"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "confusion": {
+        "balanced_accuracy": 0.5635012425784222,
+        "count": 247038,
+        "counts": {
+          "FN": 14175,
+          "FP": 100244,
+          "TN": 111274,
+          "TP": 21345
+        },
+        "false_move_rate": 0.4739265688972097,
+        "fractions": {
+          "FN": 0.057379836300488186,
+          "FP": 0.4057837255806799,
+          "TN": 0.45043272694889047,
+          "TP": 0.08640371116994147
+        },
+        "missed_move_rate": 0.39907094594594594,
+        "precision": 0.17555041985705944,
+        "predicted_move_fraction": 0.4921874367506214,
+        "recall": 0.6009290540540541,
+        "specificity": 0.5260734311027903,
+        "true_move_fraction": 0.14378354747042965
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 14175,
+          "max": 13.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 14175,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.1889241622574955,
+          "p95": 2.0,
+          "rmse": 1.3044220002936504,
+          "sae": 16853.0,
+          "sse": 24119.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 77009,
+        "projected_moved_count": 23235,
+        "projected_same_tick_count": 77009,
+        "stage2_invoked_count": 100244,
+        "within_one_tick_count": 98034
+      },
+      "original_job_receipt_sha256": "7c548248a7a795850b059f81bd880796b4545ba0b9558454f8971df671da60af",
+      "receipt_sha256": "9a8603e0fcd72e9b5d9c71a79712fd594cdf5596a826d9f095aa96debc600d90"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "confusion": {
+        "balanced_accuracy": 0.5442260776999824,
+        "count": 285207,
+        "counts": {
+          "FN": 37086,
+          "FP": 6882,
+          "TN": 236337,
+          "TP": 4902
+        },
+        "false_move_rate": 0.02829548678351609,
+        "fractions": {
+          "FN": 0.1300318715880045,
+          "FP": 0.02412984253542164,
+          "TN": 0.8286507694411428,
+          "TP": 0.017187516435431108
+        },
+        "missed_move_rate": 0.883252357816519,
+        "precision": 0.4159877800407332,
+        "predicted_move_fraction": 0.04131735897085275,
+        "recall": 0.11674764218348099,
+        "specificity": 0.9717045132164839,
+        "true_move_fraction": 0.14721938802343562
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 37086,
+          "max": 18.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 37086,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.248179906164051,
+          "p95": 2.0,
+          "rmse": 1.4310446153598073,
+          "sae": 46290.0,
+          "sse": 75948.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 3968,
+        "projected_moved_count": 2914,
+        "projected_same_tick_count": 3968,
+        "stage2_invoked_count": 6882,
+        "within_one_tick_count": 6550
+      },
+      "original_job_receipt_sha256": "0a523b3856223e933ce230dbb4a12346b9d7c3d8d841b63b6d338e6e9626d16f",
+      "receipt_sha256": "12211446bdd5ec40036b77764c497e717535ec7e91621869b3702737c6751e48"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "confusion": {
+        "balanced_accuracy": 0.5611152092000262,
+        "count": 223004,
+        "counts": {
+          "FN": 12685,
+          "FP": 91713,
+          "TN": 99412,
+          "TP": 19194
+        },
+        "false_move_rate": 0.4798587311968607,
+        "fractions": {
+          "FN": 0.05688238775986081,
+          "FP": 0.41126168140481784,
+          "TN": 0.44578572581657727,
+          "TP": 0.08607020501874406
+        },
+        "missed_move_rate": 0.39791085040308666,
+        "precision": 0.17306391841813412,
+        "predicted_move_fraction": 0.4973318864235619,
+        "recall": 0.6020891495969133,
+        "specificity": 0.5201412688031393,
+        "true_move_fraction": 0.14295259277860486
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 12685,
+          "max": 11.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 12685,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.1981868348443043,
+          "p95": 2.0,
+          "rmse": 1.3311406224439761,
+          "sae": 15199.0,
+          "sse": 22477.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 69986,
+        "projected_moved_count": 21727,
+        "projected_same_tick_count": 69986,
+        "stage2_invoked_count": 91713,
+        "within_one_tick_count": 89489
+      },
+      "original_job_receipt_sha256": "775c7444e1d1f3e5eb7c96e235fa203d683bbc3253532ae8c10529f356975803",
+      "receipt_sha256": "f88fc99411a380a7908dcd60f9286d35caa5f47d08e2677da3caada8fbbaf8fa"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "confusion": {
+        "balanced_accuracy": 0.5410676413815446,
+        "count": 273268,
+        "counts": {
+          "FN": 35912,
+          "FP": 5908,
+          "TN": 227123,
+          "TP": 4325
+        },
+        "false_move_rate": 0.02535285004999335,
+        "fractions": {
+          "FN": 0.13141677766880863,
+          "FP": 0.021619801806285404,
+          "TN": 0.8311364667652268,
+          "TP": 0.015826953759679144
+        },
+        "missed_move_rate": 0.8925118671869176,
+        "precision": 0.4226522036548422,
+        "predicted_move_fraction": 0.037446755565964544,
+        "recall": 0.10748813281308249,
+        "specificity": 0.9746471499500067,
+        "true_move_fraction": 0.1472437314284878
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 35912,
+          "max": 16.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 35912,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2353252394742704,
+          "p95": 2.0,
+          "rmse": 1.3905750760397362,
+          "sae": 44363.0,
+          "sse": 69443.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 3244,
+        "projected_moved_count": 2664,
+        "projected_same_tick_count": 3244,
+        "stage2_invoked_count": 5908,
+        "within_one_tick_count": 5579
+      },
+      "original_job_receipt_sha256": "7608a1d39165da24772fc57cf3157dc7aa6ccacda2a9c72fc802851d5d40caaf",
+      "receipt_sha256": "9f6e8f36d0b22cf9de316196051579d890153d8d3e0b93746c449090fedca472"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "confusion": {
+        "balanced_accuracy": 0.551727196178758,
+        "count": 192080,
+        "counts": {
+          "FN": 10561,
+          "FP": 83920,
+          "TN": 80897,
+          "TP": 16702
+        },
+        "false_move_rate": 0.5091707772863237,
+        "fractions": {
+          "FN": 0.05498229904206581,
+          "FP": 0.43690129112869636,
+          "TN": 0.42116305705955853,
+          "TP": 0.0869533527696793
+        },
+        "missed_move_rate": 0.3873748303561604,
+        "precision": 0.16598755739301543,
+        "predicted_move_fraction": 0.5238546438983757,
+        "recall": 0.6126251696438396,
+        "specificity": 0.4908292227136764,
+        "true_move_fraction": 0.1419356518117451
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 10561,
+          "max": 14.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 10561,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2160780229144967,
+          "p95": 2.0,
+          "rmse": 1.3828319569604888,
+          "sae": 12843.0,
+          "sse": 20195.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 64179,
+        "projected_moved_count": 19741,
+        "projected_same_tick_count": 64179,
+        "stage2_invoked_count": 83920,
+        "within_one_tick_count": 82024
+      },
+      "original_job_receipt_sha256": "ecc188b64d4b0a9f704125e1abc33bc6d0068b0aa5b7f0b7eddfa63c6bd94bb7",
+      "receipt_sha256": "8ddb0fc2dcfe57f6393efe3b3161ff7f0dc8e42a0780f03a84f1c59d07480edc"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "confusion": {
+        "balanced_accuracy": 0.540593152443795,
+        "count": 255865,
+        "counts": {
+          "FN": 33625,
+          "FP": 6223,
+          "TN": 211873,
+          "TP": 4144
+        },
+        "false_move_rate": 0.028533306433863988,
+        "fractions": {
+          "FN": 0.13141695816153048,
+          "FP": 0.024321419498563694,
+          "TN": 0.8280655814589725,
+          "TP": 0.016196040880933304
+        },
+        "missed_move_rate": 0.8902803886785459,
+        "precision": 0.399729912221472,
+        "predicted_move_fraction": 0.040517460379497,
+        "recall": 0.10971961132145411,
+        "specificity": 0.971466693566136,
+        "true_move_fraction": 0.1476129990424638
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 33625,
+          "max": 11.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 33625,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2301858736059479,
+          "p95": 2.0,
+          "rmse": 1.3776225412539547,
+          "sae": 41365.0,
+          "sse": 63815.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 3522,
+        "projected_moved_count": 2701,
+        "projected_same_tick_count": 3522,
+        "stage2_invoked_count": 6223,
+        "within_one_tick_count": 5919
+      },
+      "original_job_receipt_sha256": "d59c7f886618189394abb0a40bf6d27085ac578332bfd083ea82c3ea98bd64a8",
+      "receipt_sha256": "7fc9a6c4b3fc9941794d174b753b9c0821b05bacc9e29d221bad92384d46a169"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "confusion": {
+        "balanced_accuracy": 0.5574978914268469,
+        "count": 243887,
+        "counts": {
+          "FN": 14168,
+          "FP": 100378,
+          "TN": 108473,
+          "TP": 20868
+        },
+        "false_move_rate": 0.4806201550387597,
+        "fractions": {
+          "FN": 0.058092477253810164,
+          "FP": 0.4115758527514792,
+          "TN": 0.44476745377982424,
+          "TP": 0.0855642162148864
+        },
+        "missed_move_rate": 0.4043840621075465,
+        "precision": 0.17211289444600233,
+        "predicted_move_fraction": 0.4971400689663656,
+        "recall": 0.5956159378924535,
+        "specificity": 0.5193798449612403,
+        "true_move_fraction": 0.14365669346869656
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 14168,
+          "max": 15.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 14168,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2603049124788255,
+          "p95": 2.0,
+          "rmse": 1.5255216360310562,
+          "sae": 17856.0,
+          "sse": 32972.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 61616,
+        "projected_moved_count": 38762,
+        "projected_same_tick_count": 61616,
+        "stage2_invoked_count": 100378,
+        "within_one_tick_count": 95381
+      },
+      "original_job_receipt_sha256": "4a29e097af7d349d736bbea4bb283e2ebd43349e97446995086db86d6566a5da",
+      "receipt_sha256": "22bb5cd34bd3e10dc7f30cbeada80046980ac81867692b0bd27143fc5e57a4fe"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "confusion": {
+        "balanced_accuracy": 0.5366490620502481,
+        "count": 283758,
+        "counts": {
+          "FN": 37699,
+          "FP": 5811,
+          "TN": 236184,
+          "TP": 4064
+        },
+        "false_move_rate": 0.024012892828364222,
+        "fractions": {
+          "FN": 0.13285616616976437,
+          "FP": 0.02047871778064407,
+          "TN": 0.8323430528830905,
+          "TP": 0.014322063166501033
+        },
+        "missed_move_rate": 0.9026889830711395,
+        "precision": 0.41154430379746837,
+        "predicted_move_fraction": 0.0348007809471451,
+        "recall": 0.09731101692886047,
+        "specificity": 0.9759871071716357,
+        "true_move_fraction": 0.1471782293362654
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 37699,
+          "max": 18.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 37699,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.245338072627921,
+          "p95": 2.0,
+          "rmse": 1.4218270234703942,
+          "sae": 46948.0,
+          "sse": 76212.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 2044,
+        "projected_moved_count": 3767,
+        "projected_same_tick_count": 2044,
+        "stage2_invoked_count": 5811,
+        "within_one_tick_count": 4849
+      },
+      "original_job_receipt_sha256": "ca07b6fb623c9191a53d0c9af15d73165acfff8867fc776c37ad3a6511f86685",
+      "receipt_sha256": "1b2af10bf4299b0e6150ac94d8934cf8b3db4aa4ee359ae5194793dc3bf4c386"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "confusion": {
+        "balanced_accuracy": 0.5630657453699626,
+        "count": 232844,
+        "counts": {
+          "FN": 13008,
+          "FP": 96555,
+          "TN": 102920,
+          "TP": 20361
+        },
+        "false_move_rate": 0.4840456197518486,
+        "fractions": {
+          "FN": 0.05586572984487468,
+          "FP": 0.4146767793028809,
+          "TN": 0.4420126780161825,
+          "TP": 0.08744481283606191
+        },
+        "missed_move_rate": 0.3898228895082262,
+        "precision": 0.1741506722775326,
+        "predicted_move_fraction": 0.5021215921389428,
+        "recall": 0.6101771104917738,
+        "specificity": 0.5159543802481514,
+        "true_move_fraction": 0.1433105426809366
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 13008,
+          "max": 13.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 13008,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.1870387453874538,
+          "p95": 2.0,
+          "rmse": 1.304706920193756,
+          "sae": 15441.0,
+          "sse": 22143.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 74821,
+        "projected_moved_count": 21734,
+        "projected_same_tick_count": 74821,
+        "stage2_invoked_count": 96555,
+        "within_one_tick_count": 94259
+      },
+      "original_job_receipt_sha256": "b0eeee6c35b43e64905ed07883dbcebb2520696f08ec3600993f0b6c5eea5fa5",
+      "receipt_sha256": "fdc1085c01c9f08d946c47bf786f46fd23855f62023132d93e516b94582c481b"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "confusion": {
+        "balanced_accuracy": 0.5415353143878905,
+        "count": 278470,
+        "counts": {
+          "FN": 36483,
+          "FP": 6338,
+          "TN": 231151,
+          "TP": 4498
+        },
+        "false_move_rate": 0.026687551844506482,
+        "fractions": {
+          "FN": 0.13101231730527527,
+          "FP": 0.022760081875965094,
+          "TN": 0.8300750529680038,
+          "TP": 0.016152547850755917
+        },
+        "missed_move_rate": 0.8902418193797126,
+        "precision": 0.41509782207456625,
+        "predicted_move_fraction": 0.038912629726721014,
+        "recall": 0.10975818062028746,
+        "specificity": 0.9733124481554936,
+        "true_move_fraction": 0.14716486515603117
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 36483,
+          "max": 18.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 36483,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.239892552695776,
+          "p95": 2.0,
+          "rmse": 1.4084356691664348,
+          "sae": 45235.0,
+          "sse": 72371.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 3750,
+        "projected_moved_count": 2588,
+        "projected_same_tick_count": 3750,
+        "stage2_invoked_count": 6338,
+        "within_one_tick_count": 6057
+      },
+      "original_job_receipt_sha256": "9b22bce1800d5d84133ad9c0855f8eef660aadbe2bc0717fe59e1cd224f26cc8",
+      "receipt_sha256": "20d6730d315b54db932ca6f97ea5c51c31689ad4b6bfb02715aea1c73f33e518"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "confusion": {
+        "balanced_accuracy": 0.5610090812103593,
+        "count": 214903,
+        "counts": {
+          "FN": 11874,
+          "FP": 90379,
+          "TN": 93880,
+          "TP": 18770
+        },
+        "false_move_rate": 0.4904997856278391,
+        "fractions": {
+          "FN": 0.055252834999976734,
+          "FP": 0.4205571816121692,
+          "TN": 0.4368482524673923,
+          "TP": 0.0873417309204618
+        },
+        "missed_move_rate": 0.38748205195144236,
+        "precision": 0.17196676103308323,
+        "predicted_move_fraction": 0.507898912532631,
+        "recall": 0.6125179480485576,
+        "specificity": 0.509500214372161,
+        "true_move_fraction": 0.1425945659204385
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 11874,
+          "max": 11.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 11874,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.194626915950817,
+          "p95": 2.0,
+          "rmse": 1.3245775336236183,
+          "sae": 14185.0,
+          "sse": 20833.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 69672,
+        "projected_moved_count": 20707,
+        "projected_same_tick_count": 69672,
+        "stage2_invoked_count": 90379,
+        "within_one_tick_count": 88228
+      },
+      "original_job_receipt_sha256": "2d0bb7e679f9bea799f549e46e2ea1a298328786a6dacc9441fcc850afbade9b",
+      "receipt_sha256": "aacee0f8dfaf1ced06ab2f338b288fb2b50765218391faa68f70b51d35c51fc6"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "confusion": {
+        "balanced_accuracy": 0.5378486797081728,
+        "count": 268910,
+        "counts": {
+          "FN": 35632,
+          "FP": 5728,
+          "TN": 223561,
+          "TP": 3989
+        },
+        "false_move_rate": 0.024981573472778896,
+        "fractions": {
+          "FN": 0.13250529917072626,
+          "FP": 0.02130080696143691,
+          "TN": 0.8313599345505931,
+          "TP": 0.014833959317243687
+        },
+        "missed_move_rate": 0.8993210671108756,
+        "precision": 0.4105176494802923,
+        "predicted_move_fraction": 0.0361347662786806,
+        "recall": 0.10067893288912445,
+        "specificity": 0.9750184265272211,
+        "true_move_fraction": 0.14733925848796994
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 35632,
+          "max": 11.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 35632,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2343960484957341,
+          "p95": 2.0,
+          "rmse": 1.3841061692447427,
+          "sae": 43984.0,
+          "sse": 68262.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 3311,
+        "projected_moved_count": 2417,
+        "projected_same_tick_count": 3311,
+        "stage2_invoked_count": 5728,
+        "within_one_tick_count": 5477
+      },
+      "original_job_receipt_sha256": "dbbe18d73085ac84b33a56f60244340f1f7b7413a10ae748cba0e00b9565067e",
+      "receipt_sha256": "c969ea60aac4e0e599f4c5cd31139d55d5ff6f8d789d0c9bb47573909c16de6f"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "confusion": {
+        "balanced_accuracy": 0.5519454801841304,
+        "count": 188941,
+        "counts": {
+          "FN": 10078,
+          "FP": 84271,
+          "TN": 77900,
+          "TP": 16692
+        },
+        "false_move_rate": 0.5196428461315525,
+        "fractions": {
+          "FN": 0.05333940224726237,
+          "FP": 0.4460175398669426,
+          "TN": 0.41229801895829915,
+          "TP": 0.08834503892749589
+        },
+        "missed_move_rate": 0.3764661935001868,
+        "precision": 0.16532789239622436,
+        "predicted_move_fraction": 0.5343625787944385,
+        "recall": 0.6235338064998133,
+        "specificity": 0.4803571538684475,
+        "true_move_fraction": 0.14168444117475826
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 10078,
+          "max": 19.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 10078,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.228021432823973,
+          "p95": 2.0,
+          "rmse": 1.440766702905378,
+          "sae": 12376.0,
+          "sse": 20920.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 65092,
+        "projected_moved_count": 19179,
+        "projected_same_tick_count": 65092,
+        "stage2_invoked_count": 84271,
+        "within_one_tick_count": 82424
+      },
+      "original_job_receipt_sha256": "f27a7aef2ab36d7d837a962ef6658bbe5526f826d576890538e804cf93cf7c60",
+      "receipt_sha256": "56bb1403d66e46b7082503e6e6da8aa8740d78a3b5bfe89504530540a68290f5"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "confusion": {
+        "balanced_accuracy": 0.5413943406445354,
+        "count": 253893,
+        "counts": {
+          "FN": 33226,
+          "FP": 6621,
+          "TN": 209797,
+          "TP": 4249
+        },
+        "false_move_rate": 0.03059357354748681,
+        "fractions": {
+          "FN": 0.1308661522767465,
+          "FP": 0.02607791471210313,
+          "TN": 0.8263205366040025,
+          "TP": 0.01673539640714789
+        },
+        "missed_move_rate": 0.8866177451634423,
+        "precision": 0.3908923643054278,
+        "predicted_move_fraction": 0.042813311119251025,
+        "recall": 0.1133822548365577,
+        "specificity": 0.9694064264525132,
+        "true_move_fraction": 0.14760154868389438
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 33226,
+          "max": 11.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 33226,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2301209895864684,
+          "p95": 2.0,
+          "rmse": 1.3772318583466974,
+          "sae": 40872.0,
+          "sse": 63022.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 3973,
+        "projected_moved_count": 2648,
+        "projected_same_tick_count": 3973,
+        "stage2_invoked_count": 6621,
+        "within_one_tick_count": 6361
+      },
+      "original_job_receipt_sha256": "2e0045a46c66b20af01e676f1d655a22357119dc57e3732d936dc94f6282819e",
+      "receipt_sha256": "1e577eda717a0f61f4a695f2bb56e77a7d65f12cdc45bdf968fb45cbc0863b14"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "confusion": {
+        "balanced_accuracy": 0.555578783426493,
+        "count": 221278,
+        "counts": {
+          "FN": 12339,
+          "FP": 94546,
+          "TN": 95123,
+          "TP": 19270
+        },
+        "false_move_rate": 0.49847892908171604,
+        "fractions": {
+          "FN": 0.05576243458454975,
+          "FP": 0.4272724807707951,
+          "TN": 0.4298800603765399,
+          "TP": 0.08708502426811522
+        },
+        "missed_move_rate": 0.39036350406529785,
+        "precision": 0.16930835734870317,
+        "predicted_move_fraction": 0.5143575050389103,
+        "recall": 0.6096364959347021,
+        "specificity": 0.5015210709182839,
+        "true_move_fraction": 0.14284745885266498
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 12339,
+          "max": 13.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 12339,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2603938730853392,
+          "p95": 2.0,
+          "rmse": 1.5062341747190238,
+          "sae": 15552.0,
+          "sse": 27994.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 65383,
+        "projected_moved_count": 29163,
+        "projected_same_tick_count": 65383,
+        "stage2_invoked_count": 94546,
+        "within_one_tick_count": 90861
+      },
+      "original_job_receipt_sha256": "110c8f6d40b878ff4771358e0a1daeae69483c1ccdc88994511e102620433178",
+      "receipt_sha256": "16270e809d25b8f0c46b0b1a1d9f99e32ab05a0058a5ba42213b3f9a85fcda50"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "confusion": {
+        "balanced_accuracy": 0.536886725092103,
+        "count": 272366,
+        "counts": {
+          "FN": 36196,
+          "FP": 5540,
+          "TN": 226714,
+          "TP": 3916
+        },
+        "false_move_rate": 0.02385319520869393,
+        "fractions": {
+          "FN": 0.13289470785634036,
+          "FP": 0.02034027742082345,
+          "TN": 0.8323873023798859,
+          "TP": 0.014377712342950294
+        },
+        "missed_move_rate": 0.9023733546071001,
+        "precision": 0.41412859560067683,
+        "predicted_move_fraction": 0.03471798976377374,
+        "recall": 0.09762664539289988,
+        "specificity": 0.9761468047913061,
+        "true_move_fraction": 0.14727242019929065
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 36196,
+          "max": 11.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 36196,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2339761299591114,
+          "p95": 2.0,
+          "rmse": 1.383732030804909,
+          "sae": 44665.0,
+          "sse": 69305.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 2052,
+        "projected_moved_count": 3488,
+        "projected_same_tick_count": 2052,
+        "stage2_invoked_count": 5540,
+        "within_one_tick_count": 4869
+      },
+      "original_job_receipt_sha256": "4ed7ef5a953d1c478e1c6b5694489245a13725ec15f1310eea39ccdc61ed30c3",
+      "receipt_sha256": "f471ef5a5c855715d6b5077599fa0005a62899b35068e651550cf24e2def0242"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "confusion": {
+        "balanced_accuracy": 0.5610927877764473,
+        "count": 214903,
+        "counts": {
+          "FN": 12041,
+          "FP": 89344,
+          "TN": 94915,
+          "TP": 18603
+        },
+        "false_move_rate": 0.4848826922972555,
+        "fractions": {
+          "FN": 0.05602992978227386,
+          "FP": 0.4157410552667948,
+          "TN": 0.4416643788127667,
+          "TP": 0.08656463613816466
+        },
+        "missed_move_rate": 0.3929317321498499,
+        "precision": 0.17233457159531992,
+        "predicted_move_fraction": 0.5023056914049594,
+        "recall": 0.6070682678501501,
+        "specificity": 0.5151173077027446,
+        "true_move_fraction": 0.1425945659204385
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 12041,
+          "max": 10.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 12041,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.1892699941865295,
+          "p95": 2.0,
+          "rmse": 1.3046778161560693,
+          "sae": 14320.0,
+          "sse": 20496.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 73025,
+        "projected_moved_count": 16319,
+        "projected_same_tick_count": 73025,
+        "stage2_invoked_count": 89344,
+        "within_one_tick_count": 87566
+      },
+      "original_job_receipt_sha256": "a3939f5e689f693c3fce451610438201d2269795b192060d80e8617ff906adda",
+      "receipt_sha256": "3b5b68d231b30e56ebc7d312cedc1f29087157a9db0d12c886bb94358d67e117"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "confusion": {
+        "balanced_accuracy": 0.538082938406285,
+        "count": 268910,
+        "counts": {
+          "FN": 35634,
+          "FP": 5609,
+          "TN": 223680,
+          "TP": 3987
+        },
+        "false_move_rate": 0.02446257779483534,
+        "fractions": {
+          "FN": 0.13251273660332452,
+          "FP": 0.020858279721840022,
+          "TN": 0.83180246179019,
+          "TP": 0.01482652188464542
+        },
+        "missed_move_rate": 0.8993715453925948,
+        "precision": 0.41548561900791997,
+        "predicted_move_fraction": 0.03568480160648544,
+        "recall": 0.10062845460740516,
+        "specificity": 0.9755374222051647,
+        "true_move_fraction": 0.14733925848796994
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 35634,
+          "max": 11.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 35634,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2334568109109278,
+          "p95": 2.0,
+          "rmse": 1.3827386230927134,
+          "sae": 43953.0,
+          "sse": 68131.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 3776,
+        "projected_moved_count": 1833,
+        "projected_same_tick_count": 3776,
+        "stage2_invoked_count": 5609,
+        "within_one_tick_count": 5399
+      },
+      "original_job_receipt_sha256": "378a104535c77bdd84a52ce706de9b80537e1ecd2bb3ef071c1a72735686da3b",
+      "receipt_sha256": "78cdf3e56ef06425c767e2f33b1485cc2bba35f026784bcc4bb81446024fffdd"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "confusion": {
+        "balanced_accuracy": 0.5576877629773731,
+        "count": 203479,
+        "counts": {
+          "FN": 11392,
+          "FP": 85705,
+          "TN": 88829,
+          "TP": 17553
+        },
+        "false_move_rate": 0.4910504543527336,
+        "fractions": {
+          "FN": 0.05598612141793502,
+          "FP": 0.4211982563311202,
+          "TN": 0.4365511920149008,
+          "TP": 0.08626443023604402
+        },
+        "missed_move_rate": 0.3935740196925203,
+        "precision": 0.16999167134749849,
+        "predicted_move_fraction": 0.5074626865671642,
+        "recall": 0.6064259803074797,
+        "specificity": 0.5089495456472665,
+        "true_move_fraction": 0.14225055165397904
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 11392,
+          "max": 17.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 11392,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2041783707865168,
+          "p95": 2.0,
+          "rmse": 1.3705879161713983,
+          "sae": 13718.0,
+          "sse": 21400.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 67261,
+        "projected_moved_count": 18444,
+        "projected_same_tick_count": 67261,
+        "stage2_invoked_count": 85705,
+        "within_one_tick_count": 83441
+      },
+      "original_job_receipt_sha256": "8e77c6fc868e5d94781883bd23f41ec6d3bceb278b1f99ed0cbc168c7e590dc7",
+      "receipt_sha256": "f3d3b48f519f8b3255fcff53b5db092718557e97964265ca292dfc46b2124bc1"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "confusion": {
+        "balanced_accuracy": 0.5360173052212126,
+        "count": 262559,
+        "counts": {
+          "FN": 34969,
+          "FP": 5607,
+          "TN": 218223,
+          "TP": 3760
+        },
+        "false_move_rate": 0.02505026135906715,
+        "fractions": {
+          "FN": 0.13318530311282417,
+          "FP": 0.021355200164534446,
+          "TN": 0.8311389059220975,
+          "TP": 0.014320590800543877
+        },
+        "missed_move_rate": 0.9029151281985076,
+        "precision": 0.4014092025194833,
+        "predicted_move_fraction": 0.03567579096507833,
+        "recall": 0.09708487180149242,
+        "specificity": 0.9749497386409328,
+        "true_move_fraction": 0.14750589391336805
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 34969,
+          "max": 11.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 34969,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.2343790214189712,
+          "p95": 2.0,
+          "rmse": 1.3829191322821384,
+          "sae": 43165.0,
+          "sse": 66877.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 3447,
+        "projected_moved_count": 2160,
+        "projected_same_tick_count": 3447,
+        "stage2_invoked_count": 5607,
+        "within_one_tick_count": 5389
+      },
+      "original_job_receipt_sha256": "7c8920318e52d2bd9fba1f4900b997a2290f52420c2aae3eee6bac69490128b4",
+      "receipt_sha256": "47c012f8ba2f969978c8998f74d84fc421dc73de4d9213a0234da6f1d5fa381e"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "confusion": {
+        "balanced_accuracy": 0.5508858134497346,
+        "count": 183711,
+        "counts": {
+          "FN": 9424,
+          "FP": 84324,
+          "TN": 73490,
+          "TP": 16473
+        },
+        "false_move_rate": 0.5343252182949548,
+        "fractions": {
+          "FN": 0.0512979625607612,
+          "FP": 0.4590035436092558,
+          "TN": 0.4000304826602653,
+          "TP": 0.08966801116971765
+        },
+        "missed_move_rate": 0.36390315480557595,
+        "precision": 0.1634274829608024,
+        "predicted_move_fraction": 0.5486715547789734,
+        "recall": 0.6360968451944241,
+        "specificity": 0.46567478170504517,
+        "true_move_fraction": 0.14096597373047884
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 9424,
+          "max": 20.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 9424,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.285971986417657,
+          "p95": 2.0,
+          "rmse": 1.7799403377956393,
+          "sae": 12119.0,
+          "sse": 29857.0
+        }
+      },
+      "fold": "FOLD_A",
+      "fp": {
+        "exact_hit_count": 66984,
+        "projected_moved_count": 17340,
+        "projected_same_tick_count": 66984,
+        "stage2_invoked_count": 84324,
+        "within_one_tick_count": 82664
+      },
+      "original_job_receipt_sha256": "8cf39cc56ff568a85ec3fe1e761d046f0d921311c6c87c7ac4d88ea92af39d5c",
+      "receipt_sha256": "243f413c0f3a024df2954b3cb936de8c7b6035880e31940ee322e95292920960"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "confusion": {
+        "balanced_accuracy": 0.5392939065342878,
+        "count": 250451,
+        "counts": {
+          "FN": 33000,
+          "FP": 6209,
+          "TN": 207260,
+          "TP": 3982
+        },
+        "false_move_rate": 0.029086190500728443,
+        "fractions": {
+          "FN": 0.13176230080933996,
+          "FP": 0.024791276537127024,
+          "TN": 0.8275471050225394,
+          "TP": 0.015899317630993687
+        },
+        "missed_move_rate": 0.892325996430696,
+        "precision": 0.3907369247375135,
+        "predicted_move_fraction": 0.04069059416812071,
+        "recall": 0.10767400356930398,
+        "specificity": 0.9709138094992715,
+        "true_move_fraction": 0.14766161844033363
+      },
+      "fn": {
+        "actual_delta_magnitude": {
+          "count": 33000,
+          "max": 11.0,
+          "median": 1.0,
+          "min": 1.0,
+          "p95": 2.0
+        },
+        "count": 33000,
+        "integrated_equals_hold": true,
+        "metrics": {
+          "mae": 1.232,
+          "p95": 2.0,
+          "rmse": 1.3799429061531583,
+          "sae": 40656.0,
+          "sse": 62840.0
+        }
+      },
+      "fold": "FOLD_B",
+      "fp": {
+        "exact_hit_count": 3930,
+        "projected_moved_count": 2279,
+        "projected_same_tick_count": 3930,
+        "stage2_invoked_count": 6209,
+        "within_one_tick_count": 5968
+      },
+      "original_job_receipt_sha256": "3137dec9f852c28c44fdd7235ec64725101a94e8b03bf4da2c1314d2e9907bf0",
+      "receipt_sha256": "582b3f5497648e7d4c8e729f90bc44c2e8cf028f646af7db4485565385a6ead7"
+    }
+  ],
+  "opening_count": 0,
+  "policy_sha256": "b93b623231dcd763e7588c4986073d4ee0188dac6b4a06b4b0e035317928b96e",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "18f69a5cd06fe10d9672da465894ed2a6a1f9b4f10fcb28a097895a2b47efbbf",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_STAGE1_CONFUSION_ATTRIBUTION_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

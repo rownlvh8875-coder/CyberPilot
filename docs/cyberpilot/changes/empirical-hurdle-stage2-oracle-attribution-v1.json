@@ -1,0 +1,2585 @@
+{
+  "attribution_manifest_sha256": "07345517d3bca95e90962e0566a58e2b756a8aa6f5c658b8b312f02d4961f77d",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "historical_selection": "MODEL_SELECTION_FAILED_CLOSED",
+  "historical_verdict": "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+  "holdout": "CLOSED",
+  "jobs": [
+    {
+      "candidate_id": "HRI_D00_L01",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.24661975717439294,
+        "within_one_tick": 0.786055923473142
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.4610467255334805,
+        "p95": 3.0,
+        "rmse": 2.0053621092235785,
+        "sae": 63538.0,
+        "sse": 174886.0,
+        "within_one_tick": 0.7634289919058131,
+        "within_one_tick_count": 33200
+      },
+      "integrated": {
+        "exact_hit": 0.19851453274466518,
+        "exact_hit_count": 8633,
+        "mae": 1.163702675487502,
+        "p95": 2.7595422641577994,
+        "rmse": 1.604113965198008,
+        "sae": 50607.10195160048,
+        "sse": 111902.5220010724,
+        "within_one_tick": 0.7944950331125827,
+        "within_one_tick_count": 34551
+      },
+      "metrics": {
+        "mae": 1.1090689176640218,
+        "p95": 2.710708928083399,
+        "rmse": 1.4973709755722762,
+        "sae": 48231.18909137298,
+        "sse": 97505.3075360909
+      },
+      "oracle_to_integrated_delta_sae": 2375.9128602275014,
+      "oracle_to_integrated_delta_sse": 14397.214464981502,
+      "original_job_receipt_sha256": "d89e00d9da1c2a9cd010bc4d665d2b183ed5c3e34d235b3a06f29f1a8852e55d",
+      "receipt_sha256": "4b822b54a5e9ac128d558017d4a9b12fb17268b0ccc778c2449c102079da53c6",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.6966059602649006,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 50607.10195160048,
+            "partition_minus_original": 0.0,
+            "partition_order": 50607.10195160048
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 111902.5220010724,
+            "partition_minus_original": 0.0,
+            "partition_order": 111902.5220010724
+          }
+        },
+        "classes_count": [
+          28527,
+          14961
+        ],
+        "count": 43488,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 63538.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 63538.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 174886.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 174886.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.20358275797723455,
+        "within_one_tick": 0.7632020899421534
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3388899255665443,
+        "p95": 3.0,
+        "rmse": 1.6185695442377868,
+        "sae": 64576.0,
+        "sse": 126354.0,
+        "within_one_tick": 0.7864444029773382,
+        "within_one_tick_count": 37931
+      },
+      "integrated": {
+        "exact_hit": 0.01861873069187867,
+        "exact_hit_count": 898,
+        "mae": 1.268628128848651,
+        "p95": 2.3836998284124804,
+        "rmse": 1.4782774300273045,
+        "sae": 61187.203282499286,
+        "sse": 105399.40494713996,
+        "within_one_tick": 0.8019945678090854,
+        "within_one_tick_count": 38681
+      },
+      "metrics": {
+        "mae": 1.0664391494864531,
+        "p95": 2.4579088297753025,
+        "rmse": 1.2959890253050501,
+        "sae": 51435.42661888112,
+        "sse": 81008.18730304169
+      },
+      "oracle_to_integrated_delta_sae": 9751.776663618162,
+      "oracle_to_integrated_delta_sse": 24391.217644098273,
+      "original_job_receipt_sha256": "2f4025f165c48dd1066273b390e9b1262c5e4253a9b437f6f8d8288d71a39466",
+      "receipt_sha256": "c7d1da1d2ceb30ba57d2048e44efb6e71fdd7aa9d1158d248487c6fdab7db46c",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.681968028861106,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 61187.203282499286,
+            "partition_minus_original": -7.275957614183426e-12,
+            "partition_order": 61187.20328249928
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 105399.40494713996,
+            "partition_minus_original": 1.4551915228366852e-11,
+            "partition_order": 105399.40494713998
+          }
+        },
+        "classes_count": [
+          3568,
+          44663
+        ],
+        "count": 48231,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 64576.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 64576.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 126354.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 126354.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.3319545525943767,
+        "within_one_tick": 0.8709356510812084
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.4491596418660664,
+        "p95": 3.0,
+        "rmse": 1.9748735810247129,
+        "sae": 55355.0,
+        "sse": 148977.0,
+        "within_one_tick": 0.766034870935651,
+        "within_one_tick_count": 29261
+      },
+      "integrated": {
+        "exact_hit": 0.21189591078066913,
+        "exact_hit_count": 8094,
+        "mae": 1.007281607584581,
+        "p95": 2.0513649208225755,
+        "rmse": 1.2496941266180943,
+        "sae": 38476.142846515824,
+        "sse": 59655.16919514347,
+        "within_one_tick": 0.8487355358919315,
+        "within_one_tick_count": 32420
+      },
+      "metrics": {
+        "mae": 0.852248190830387,
+        "p95": 2.103250618942723,
+        "rmse": 1.1020788192242643,
+        "sae": 32554.176393339127,
+        "sse": 46394.43989305343
+      },
+      "oracle_to_integrated_delta_sae": 5921.9664531766975,
+      "oracle_to_integrated_delta_sse": 13260.72930209004,
+      "original_job_receipt_sha256": "d24ccb59a2c532ddb5369d9b1b1b0929e6eb4ded5de3d9ed08bba17c22e9093d",
+      "receipt_sha256": "9deb727d6d73355459ce7f95d39b181dee11d8e68364c57f84575060deea73d4",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8379496308707263,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 38476.142846515824,
+            "partition_minus_original": 0.0,
+            "partition_order": 38476.142846515824
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 59655.16919514347,
+            "partition_minus_original": -7.275957614183426e-12,
+            "partition_order": 59655.16919514346
+          }
+        },
+        "classes_count": [
+          22156,
+          16042
+        ],
+        "count": 38198,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 55355.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 55355.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 148977.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 148977.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.3051808316171877,
+        "within_one_tick": 0.895156998403406
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3436841983478724,
+        "p95": 3.0,
+        "rmse": 1.6238042282528073,
+        "sae": 58070.0,
+        "sse": 113952.0,
+        "within_one_tick": 0.7846449313927389,
+        "within_one_tick_count": 33910
+      },
+      "integrated": {
+        "exact_hit": 0.03602748918249763,
+        "exact_hit_count": 1557,
+        "mae": 1.2155692903573854,
+        "p95": 2.0,
+        "rmse": 1.4149919885240925,
+        "sae": 52533.25802137513,
+        "sse": 86529.17799134317,
+        "within_one_tick": 0.825253950991508,
+        "within_one_tick_count": 35665
+      },
+      "metrics": {
+        "mae": 0.8149763542065562,
+        "p95": 1.8838277791807299,
+        "rmse": 0.9878062525457847,
+        "sae": 35220.83309974474,
+        "sse": 42169.471459234876
+      },
+      "oracle_to_integrated_delta_sae": 17312.424921630387,
+      "oracle_to_integrated_delta_sse": 44359.70653210829,
+      "original_job_receipt_sha256": "eedb822907ebca5a62a32c69d11655cc7bac05f997e0100420ad44f30ac90649",
+      "receipt_sha256": "a596d4ab112e361860fa0a1419f797c6845ba3ba8d1b6561a29a2de56e748a3a",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8462873406298448,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 52533.25802137513,
+            "partition_minus_original": 0.0,
+            "partition_order": 52533.25802137513
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 86529.17799134317,
+            "partition_minus_original": 0.0,
+            "partition_order": 86529.17799134317
+          }
+        },
+        "classes_count": [
+          5222,
+          37995
+        ],
+        "count": 43217,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 58070.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 58070.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 113952.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 113952.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.3672548960256682,
+        "within_one_tick": 0.88446287495838
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.4340285134848807,
+        "p95": 3.0,
+        "rmse": 1.935203650021134,
+        "sae": 47376.0,
+        "sse": 123724.0,
+        "within_one_tick": 0.7686230589944607,
+        "within_one_tick_count": 25393
+      },
+      "integrated": {
+        "exact_hit": 0.23552380664103884,
+        "exact_hit_count": 7781,
+        "mae": 0.969179043542528,
+        "p95": 2.0,
+        "rmse": 1.2128013624601275,
+        "sae": 32018.7680615145,
+        "sse": 48593.69860226671,
+        "within_one_tick": 0.8613675575869479,
+        "within_one_tick_count": 28457
+      },
+      "metrics": {
+        "mae": 0.8037067535873259,
+        "p95": 2.0108568047611795,
+        "rmse": 1.0418429774849276,
+        "sae": 26552.060018264485,
+        "sse": 35859.575222463944
+      },
+      "oracle_to_integrated_delta_sae": 5466.708043250015,
+      "oracle_to_integrated_delta_sse": 12734.123379802768,
+      "original_job_receipt_sha256": "4eb34d0acf5994085c1905bf9bb97e190103d902eaba2907740f659856851619",
+      "receipt_sha256": "79c5460084da3d4a5ccc9204b3dd41925d59d40bd31112f21cf1d33470d55c86",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.846626509670975,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 32018.7680615145,
+            "partition_minus_original": -7.275957614183426e-12,
+            "partition_order": 32018.768061514493
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 48593.69860226671,
+            "partition_minus_original": 0.0,
+            "partition_order": 48593.69860226671
+          }
+        },
+        "classes_count": [
+          20038,
+          12999
+        ],
+        "count": 33037,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 47376.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 47376.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 123724.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 123724.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.35635196707657635,
+        "within_one_tick": 0.9086277007495958
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3254127676253,
+        "p95": 3.0,
+        "rmse": 1.5737702282640689,
+        "sae": 54106.0,
+        "sse": 101106.0,
+        "within_one_tick": 0.788667875165352,
+        "within_one_tick_count": 32195
+      },
+      "integrated": {
+        "exact_hit": 0.04147273528979472,
+        "exact_hit_count": 1693,
+        "mae": 1.1904372819119609,
+        "p95": 2.0,
+        "rmse": 1.367417424737553,
+        "sae": 48596.03072221007,
+        "sse": 76330.21713891244,
+        "within_one_tick": 0.8355053647542992,
+        "within_one_tick_count": 34107
+      },
+      "metrics": {
+        "mae": 0.7641284889959461,
+        "p95": 1.8268621233786335,
+        "rmse": 0.9383571350876924,
+        "sae": 31193.25317779251,
+        "sse": 35944.3471196606
+      },
+      "oracle_to_integrated_delta_sae": 17402.777544417557,
+      "oracle_to_integrated_delta_sse": 40385.870019251844,
+      "original_job_receipt_sha256": "3b229ed191267c35df52f3974d830ea3fecd6388cae2fb6162eb5b0afc931efe",
+      "receipt_sha256": "4036248c44ae0f82cf3e7a66d5fd421d5c19cf2a08efc99f5ff1613187660b87",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8501298319533585,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 48596.03072221007,
+            "partition_minus_original": 0.0,
+            "partition_order": 48596.03072221007
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 76330.21713891244,
+            "partition_minus_original": 0.0,
+            "partition_order": 76330.21713891244
+          }
+        },
+        "classes_count": [
+          4683,
+          36139
+        ],
+        "count": 40822,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 54106.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 54106.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 101106.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 101106.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.3808181555362822,
+        "within_one_tick": 0.8931410812373518
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3899248337669847,
+        "p95": 3.0,
+        "rmse": 1.8191188549678567,
+        "sae": 38462.0,
+        "sse": 91572.0,
+        "within_one_tick": 0.7768863833477884,
+        "within_one_tick_count": 21498
+      },
+      "integrated": {
+        "exact_hit": 0.2420858629661752,
+        "exact_hit_count": 6699,
+        "mae": 0.9509522762906553,
+        "p95": 2.0,
+        "rmse": 1.1818654325495463,
+        "sae": 26314.75138951501,
+        "sse": 38652.41288293972,
+        "within_one_tick": 0.8670497253541486,
+        "within_one_tick_count": 23993
+      },
+      "metrics": {
+        "mae": 0.775164437790059,
+        "p95": 1.9238813623266966,
+        "rmse": 0.9954642342789392,
+        "sae": 21450.350322526512,
+        "sse": 27421.54188271256
+      },
+      "oracle_to_integrated_delta_sae": 4864.401066988499,
+      "oracle_to_integrated_delta_sse": 11230.871000227162,
+      "original_job_receipt_sha256": "db547ea60d56056268a4f78fc54ea7179e267d140182aedaca1fe8cde5c268a2",
+      "receipt_sha256": "06990526ac795509c5b46edeb4aa5998e558650e883aa663d2ff54db1416e97f",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.853642671292281,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 26314.75138951501,
+            "partition_minus_original": 0.0,
+            "partition_order": 26314.75138951501
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 38652.41288293972,
+            "partition_minus_original": -7.275957614183426e-12,
+            "partition_order": 38652.412882939716
+          }
+        },
+        "classes_count": [
+          17096,
+          10576
+        ],
+        "count": 27672,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 38462.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 38462.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 91572.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 91572.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.36673504813003,
+        "within_one_tick": 0.9118405133869865
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.307164273315449,
+        "p95": 3.0,
+        "rmse": 1.5261730389994126,
+        "sae": 49701.0,
+        "sse": 88561.0,
+        "within_one_tick": 0.7931986744516333,
+        "within_one_tick_count": 30159
+      },
+      "integrated": {
+        "exact_hit": 0.0414496870233023,
+        "exact_hit_count": 1576,
+        "mae": 1.1835293680957188,
+        "p95": 2.0,
+        "rmse": 1.3435017777473923,
+        "sae": 45000.15363373542,
+        "sse": 68629.59695338516,
+        "within_one_tick": 0.8369891115669875,
+        "within_one_tick_count": 31824
+      },
+      "metrics": {
+        "mae": 0.753208763681894,
+        "p95": 1.8040324552719766,
+        "rmse": 0.9280108239234319,
+        "sae": 28638.503612712975,
+        "sse": 32744.701884088805
+      },
+      "oracle_to_integrated_delta_sae": 16361.650021022444,
+      "oracle_to_integrated_delta_sse": 35884.895069296355,
+      "original_job_receipt_sha256": "78356632ad8275ffcb509616650e2fcb77514986f9e3a52482a252dcc90dd98c",
+      "receipt_sha256": "2aa105a217fd818227b84d8992a183dacb0ca500cc1dab2219c5eac9f4dcc69b",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8539529745936563,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 45000.15363373542,
+            "partition_minus_original": 0.0,
+            "partition_order": 45000.15363373542
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 68629.59695338516,
+            "partition_minus_original": 0.0,
+            "partition_order": 68629.59695338516
+          }
+        },
+        "classes_count": [
+          4248,
+          33774
+        ],
+        "count": 38022,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 49701.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 49701.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 88561.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 88561.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.2718990523064035,
+        "within_one_tick": 0.7900151840410493
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.4491596418660664,
+        "p95": 3.0,
+        "rmse": 1.9748735810247129,
+        "sae": 55355.0,
+        "sse": 148977.0,
+        "within_one_tick": 0.766034870935651,
+        "within_one_tick_count": 29261
+      },
+      "integrated": {
+        "exact_hit": 0.18569035028011938,
+        "exact_hit_count": 7093,
+        "mae": 1.1845271193840856,
+        "p95": 2.912773959631685,
+        "rmse": 1.6249896632129341,
+        "sae": 45246.5669062333,
+        "sse": 100865.31050915632,
+        "within_one_tick": 0.7954343159327714,
+        "within_one_tick_count": 30384
+      },
+      "metrics": {
+        "mae": 1.0918347325718956,
+        "p95": 2.731549018998108,
+        "rmse": 1.521265515714774,
+        "sae": 41705.903114781264,
+        "sse": 88399.67448983362
+      },
+      "oracle_to_integrated_delta_sae": 3540.6637914520397,
+      "oracle_to_integrated_delta_sse": 12465.636019322701,
+      "original_job_receipt_sha256": "6a83f7cd8ec605e69f0c0d58e60fc16f79fef7c37d670daeecb8ca166a6e6cf4",
+      "receipt_sha256": "2f6e5602ad66cb55089d5bf5c3f93523c9ca860bc4b35e9831e590f67348baee",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.7147494633226871,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 45246.5669062333,
+            "partition_minus_original": 0.0,
+            "partition_order": 45246.5669062333
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 100865.31050915632,
+            "partition_minus_original": -1.4551915228366852e-11,
+            "partition_order": 100865.3105091563
+          }
+        },
+        "classes_count": [
+          21835,
+          16363
+        ],
+        "count": 38198,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 55355.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 55355.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 148977.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 148977.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.21942754008839113,
+        "within_one_tick": 0.77920725640373
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3436841983478724,
+        "p95": 3.0,
+        "rmse": 1.6238042282528073,
+        "sae": 58070.0,
+        "sse": 113952.0,
+        "within_one_tick": 0.7846449313927389,
+        "within_one_tick_count": 33910
+      },
+      "integrated": {
+        "exact_hit": 0.024180299419210034,
+        "exact_hit_count": 1045,
+        "mae": 1.2672228504732141,
+        "p95": 2.8061435246069735,
+        "rmse": 1.4798693052424874,
+        "sae": 54765.56992890089,
+        "sse": 94645.79876160191,
+        "within_one_tick": 0.802670245505241,
+        "within_one_tick_count": 34689
+      },
+      "metrics": {
+        "mae": 1.0363884609804515,
+        "p95": 2.4372335350877856,
+        "rmse": 1.2684039092201307,
+        "sae": 44789.60011819217,
+        "sse": 69529.60462726382
+      },
+      "oracle_to_integrated_delta_sae": 9975.969810708724,
+      "oracle_to_integrated_delta_sse": 25116.19413433809,
+      "original_job_receipt_sha256": "41549d7399725ff5233add94b457ad81dd5255ad04a5b50f850613d9803ff92a",
+      "receipt_sha256": "b75feaf4414f23d5d18d08081b745ccc2274a2467e65c6958a2959673fa07e1a",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.6976421315685957,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 54765.56992890089,
+            "partition_minus_original": 0.0,
+            "partition_order": 54765.56992890089
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 94645.79876160191,
+            "partition_minus_original": 0.0,
+            "partition_order": 94645.79876160191
+          }
+        },
+        "classes_count": [
+          3968,
+          39249
+        ],
+        "count": 43217,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 58070.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 58070.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 113952.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 113952.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.35171734234234237,
+        "within_one_tick": 0.8767173423423423
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.4423423423423423,
+        "p95": 3.0,
+        "rmse": 1.959629147669629,
+        "sae": 51232.0,
+        "sse": 136402.0,
+        "within_one_tick": 0.7673141891891891,
+        "within_one_tick_count": 27255
+      },
+      "integrated": {
+        "exact_hit": 0.22671734234234234,
+        "exact_hit_count": 8053,
+        "mae": 0.971755307653396,
+        "p95": 2.0,
+        "rmse": 1.186250595529323,
+        "sae": 34516.74852784863,
+        "sse": 49983.40568598328,
+        "within_one_tick": 0.8587556306306307,
+        "within_one_tick_count": 30503
+      },
+      "metrics": {
+        "mae": 0.8238794326547546,
+        "p95": 2.0400066265179206,
+        "rmse": 1.0607778010538225,
+        "sae": 29264.197447896884,
+        "sse": 39968.86377476887
+      },
+      "oracle_to_integrated_delta_sae": 5252.551079951743,
+      "oracle_to_integrated_delta_sse": 10014.541911214408,
+      "original_job_receipt_sha256": "7c548248a7a795850b059f81bd880796b4545ba0b9558454f8971df671da60af",
+      "receipt_sha256": "9a8603e0fcd72e9b5d9c71a79712fd594cdf5596a826d9f095aa96debc600d90",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8382601351351351,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 34516.74852784863,
+            "partition_minus_original": 0.0,
+            "partition_order": 34516.74852784863
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 49983.40568598328,
+            "partition_minus_original": 0.0,
+            "partition_order": 49983.40568598328
+          }
+        },
+        "classes_count": [
+          21345,
+          14175
+        ],
+        "count": 35520,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 51232.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 51232.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 136402.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 136402.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.34490806897208726,
+        "within_one_tick": 0.9032342574068781
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3375488234733734,
+        "p95": 3.0,
+        "rmse": 1.6077936672118627,
+        "sae": 56161.0,
+        "sse": 108539.0,
+        "within_one_tick": 0.7860341049823759,
+        "within_one_tick_count": 33004
+      },
+      "integrated": {
+        "exact_hit": 0.039701819567495474,
+        "exact_hit_count": 1667,
+        "mae": 1.2049192161178977,
+        "p95": 2.0,
+        "rmse": 1.3967577923115373,
+        "sae": 50592.148046358285,
+        "sse": 81915.74668812138,
+        "within_one_tick": 0.8287844145946461,
+        "within_one_tick_count": 34799
+      },
+      "metrics": {
+        "mae": 0.7799182147561188,
+        "p95": 1.847191886592039,
+        "rmse": 0.9557169594963875,
+        "sae": 32747.206001179915,
+        "sse": 38351.62534121879
+      },
+      "oracle_to_integrated_delta_sae": 17844.94204517837,
+      "oracle_to_integrated_delta_sse": 43564.12134690259,
+      "original_job_receipt_sha256": "0a523b3856223e933ce230dbb4a12346b9d7c3d8d841b63b6d338e6e9626d16f",
+      "receipt_sha256": "12211446bdd5ec40036b77764c497e717535ec7e91621869b3702737c6751e48",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8426931504239307,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 50592.148046358285,
+            "partition_minus_original": 7.275957614183426e-12,
+            "partition_order": 50592.14804635829
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 81915.74668812138,
+            "partition_minus_original": 0.0,
+            "partition_order": 81915.74668812138
+          }
+        },
+        "classes_count": [
+          4902,
+          37086
+        ],
+        "count": 41988,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 56161.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 56161.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 108539.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 108539.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.37074563192070015,
+        "within_one_tick": 0.8835597101540199
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.4290912512939553,
+        "p95": 3.0,
+        "rmse": 1.918539287720133,
+        "sae": 45558.0,
+        "sse": 117340.0,
+        "within_one_tick": 0.769158380124847,
+        "within_one_tick_count": 24520
+      },
+      "integrated": {
+        "exact_hit": 0.2345744847705386,
+        "exact_hit_count": 7478,
+        "mae": 0.9674845546292168,
+        "p95": 2.0,
+        "rmse": 1.1915572978998294,
+        "sae": 30842.440117024802,
+        "sse": 45262.08454961139,
+        "within_one_tick": 0.8601900937921516,
+        "within_one_tick_count": 27422
+      },
+      "metrics": {
+        "mae": 0.8026932902941926,
+        "p95": 2.012706939496458,
+        "rmse": 1.041516616196669,
+        "sae": 25589.059401288563,
+        "sse": 34580.96399776083
+      },
+      "oracle_to_integrated_delta_sae": 5253.380715736239,
+      "oracle_to_integrated_delta_sse": 10681.12055185056,
+      "original_job_receipt_sha256": "775c7444e1d1f3e5eb7c96e235fa203d683bbc3253532ae8c10529f356975803",
+      "receipt_sha256": "f88fc99411a380a7908dcd60f9286d35caa5f47d08e2677da3caada8fbbaf8fa",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8450704225352113,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 30842.440117024802,
+            "partition_minus_original": 0.0,
+            "partition_order": 30842.440117024802
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 45262.08454961139,
+            "partition_minus_original": -7.275957614183426e-12,
+            "partition_order": 45262.08454961138
+          }
+        },
+        "classes_count": [
+          19194,
+          12685
+        ],
+        "count": 31879,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 45558.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 45558.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 117340.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 117340.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.35700971742426124,
+        "within_one_tick": 0.9071501354474737
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3183388423590228,
+        "p95": 3.0,
+        "rmse": 1.5536883091150733,
+        "sae": 53046.0,
+        "sse": 97130.0,
+        "within_one_tick": 0.7900936948579665,
+        "within_one_tick_count": 31791
+      },
+      "integrated": {
+        "exact_hit": 0.03929219375201928,
+        "exact_hit_count": 1581,
+        "mae": 1.191425499121215,
+        "p95": 2.0,
+        "rmse": 1.3577883361567458,
+        "sae": 47939.38780814032,
+        "sse": 74180.49726442754,
+        "within_one_tick": 0.8343564381042324,
+        "within_one_tick_count": 33572
+      },
+      "metrics": {
+        "mae": 0.7648896468519805,
+        "p95": 1.833317771093485,
+        "rmse": 0.9403267093556831,
+        "sae": 30776.86472038314,
+        "sse": 35578.13160702515
+      },
+      "oracle_to_integrated_delta_sae": 17162.523087757185,
+      "oracle_to_integrated_delta_sse": 38602.36565740239,
+      "original_job_receipt_sha256": "7608a1d39165da24772fc57cf3157dc7aa6ccacda2a9c72fc802851d5d40caaf",
+      "receipt_sha256": "9f6e8f36d0b22cf9de316196051579d890153d8d3e0b93746c449090fedca472",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8450182667693914,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 47939.38780814032,
+            "partition_minus_original": 0.0,
+            "partition_order": 47939.38780814032
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 74180.49726442754,
+            "partition_minus_original": 0.0,
+            "partition_order": 74180.49726442754
+          }
+        },
+        "classes_count": [
+          4325,
+          35912
+        ],
+        "count": 40237,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 53046.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 53046.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 97130.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 97130.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.3807724755162675,
+        "within_one_tick": 0.8923816161097458
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3883285038330337,
+        "p95": 3.0,
+        "rmse": 1.8174996135886405,
+        "sae": 37850.0,
+        "sse": 90058.0,
+        "within_one_tick": 0.7772805634009463,
+        "within_one_tick_count": 21191
+      },
+      "integrated": {
+        "exact_hit": 0.24032571617210138,
+        "exact_hit_count": 6552,
+        "mae": 0.9542662735703021,
+        "p95": 2.0,
+        "rmse": 1.1812439752291124,
+        "sae": 26016.161416347146,
+        "sse": 38041.08160093801,
+        "within_one_tick": 0.8661189157466163,
+        "within_one_tick_count": 23613
+      },
+      "metrics": {
+        "mae": 0.7762583857960003,
+        "p95": 1.93431862880219,
+        "rmse": 0.9980194975012493,
+        "sae": 21163.132371956355,
+        "sse": 27155.118056875708
+      },
+      "oracle_to_integrated_delta_sae": 4853.029044390791,
+      "oracle_to_integrated_delta_sse": 10885.963544062299,
+      "original_job_receipt_sha256": "ecc188b64d4b0a9f704125e1abc33bc6d0068b0aa5b7f0b7eddfa63c6bd94bb7",
+      "receipt_sha256": "8ddb0fc2dcfe57f6393efe3b3161ff7f0dc8e42a0780f03a84f1c59d07480edc",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8514836958515204,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 26016.161416347146,
+            "partition_minus_original": 0.0,
+            "partition_order": 26016.161416347146
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 38041.08160093801,
+            "partition_minus_original": 0.0,
+            "partition_order": 38041.08160093801
+          }
+        },
+        "classes_count": [
+          16702,
+          10561
+        ],
+        "count": 27263,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 37850.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 37850.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 90058.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 90058.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.3634991659826842,
+        "within_one_tick": 0.9096878392332336
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3059387328232148,
+        "p95": 3.0,
+        "rmse": 1.5235536787094959,
+        "sae": 49324.0,
+        "sse": 87670.0,
+        "within_one_tick": 0.7935079033069449,
+        "within_one_tick_count": 29970
+      },
+      "integrated": {
+        "exact_hit": 0.040244645079297835,
+        "exact_hit_count": 1520,
+        "mae": 1.1839753396390973,
+        "p95": 2.0,
+        "rmse": 1.3431712359278971,
+        "sae": 44717.564602829065,
+        "sse": 68139.39165107028,
+        "within_one_tick": 0.83655908284572,
+        "within_one_tick_count": 31596
+      },
+      "metrics": {
+        "mae": 0.7564101908571416,
+        "p95": 1.8103942151460497,
+        "rmse": 0.9316108121405058,
+        "sae": 28568.85649848338,
+        "sse": 32779.66620036589
+      },
+      "oracle_to_integrated_delta_sae": 16148.708104345686,
+      "oracle_to_integrated_delta_sse": 35359.72545070439,
+      "original_job_receipt_sha256": "d59c7f886618189394abb0a40bf6d27085ac578332bfd083ea82c3ea98bd64a8",
+      "receipt_sha256": "7fc9a6c4b3fc9941794d174b753b9c0821b05bacc9e29d221bad92384d46a169",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8490031507320819,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 44717.564602829065,
+            "partition_minus_original": 0.0,
+            "partition_order": 44717.564602829065
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 68139.39165107028,
+            "partition_minus_original": 0.0,
+            "partition_order": 68139.39165107028
+          }
+        },
+        "classes_count": [
+          4144,
+          33625
+        ],
+        "count": 37769,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 49324.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 49324.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 87670.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 87670.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.26989382349583285,
+        "within_one_tick": 0.782966092019637
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.4398903984473113,
+        "p95": 3.0,
+        "rmse": 1.9539451340657312,
+        "sae": 50448.0,
+        "sse": 133764.0,
+        "within_one_tick": 0.7680671309510219,
+        "within_one_tick_count": 26910
+      },
+      "integrated": {
+        "exact_hit": 0.19009019294440005,
+        "exact_hit_count": 6660,
+        "mae": 1.191793468831744,
+        "p95": 2.989521493461701,
+        "rmse": 1.6393012624341718,
+        "sae": 41755.67597398898,
+        "sse": 94152.5451262841,
+        "within_one_tick": 0.7906439091220459,
+        "within_one_tick_count": 27701
+      },
+      "metrics": {
+        "mae": 1.109746772845418,
+        "p95": 2.8190245663587317,
+        "rmse": 1.5587989508123365,
+        "sae": 38881.08793341207,
+        "sse": 85132.37066696337
+      },
+      "oracle_to_integrated_delta_sae": 2874.588040576913,
+      "oracle_to_integrated_delta_sse": 9020.174459320726,
+      "original_job_receipt_sha256": "4a29e097af7d349d736bbea4bb283e2ebd43349e97446995086db86d6566a5da",
+      "receipt_sha256": "22bb5cd34bd3e10dc7f30cbeada80046980ac81867692b0bd27143fc5e57a4fe",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.7144080374471972,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 41755.67597398898,
+            "partition_minus_original": 0.0,
+            "partition_order": 41755.67597398898
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 94152.5451262841,
+            "partition_minus_original": 0.0,
+            "partition_order": 94152.5451262841
+          }
+        },
+        "classes_count": [
+          20868,
+          14168
+        ],
+        "count": 35036,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 50448.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 50448.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 133764.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 133764.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.2122452888920815,
+        "within_one_tick": 0.7747767162320714
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.335512295572636,
+        "p95": 3.0,
+        "rmse": 1.6024354115340511,
+        "sae": 55775.0,
+        "sse": 107239.0,
+        "within_one_tick": 0.7864617005483323,
+        "within_one_tick_count": 32845
+      },
+      "integrated": {
+        "exact_hit": 0.025979934391686423,
+        "exact_hit_count": 1085,
+        "mae": 1.261803094741432,
+        "p95": 2.8468070875997116,
+        "rmse": 1.467704347234198,
+        "sae": 52696.68264568642,
+        "sse": 89964.01915332588,
+        "within_one_tick": 0.8051624643823481,
+        "within_one_tick_count": 33626
+      },
+      "metrics": {
+        "mae": 1.0519979020403945,
+        "p95": 2.458997575998151,
+        "rmse": 1.2829673956564425,
+        "sae": 43934.58838291299,
+        "sse": 68742.1209441527
+      },
+      "oracle_to_integrated_delta_sae": 8762.094262773433,
+      "oracle_to_integrated_delta_sse": 21221.898209173174,
+      "original_job_receipt_sha256": "ca07b6fb623c9191a53d0c9af15d73165acfff8867fc776c37ad3a6511f86685",
+      "receipt_sha256": "1b2af10bf4299b0e6150ac94d8934cf8b3db4aa4ee359ae5194793dc3bf4c386",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.6924071546584297,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 52696.68264568642,
+            "partition_minus_original": 7.275957614183426e-12,
+            "partition_order": 52696.68264568643
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 89964.01915332588,
+            "partition_minus_original": 0.0,
+            "partition_order": 89964.01915332588
+          }
+        },
+        "classes_count": [
+          4064,
+          37699
+        ],
+        "count": 41763,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 55775.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 55775.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 107239.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 107239.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.3466091282327909,
+        "within_one_tick": 0.8725164074440349
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.4352243099883124,
+        "p95": 3.0,
+        "rmse": 1.9395398573119942,
+        "sae": 47892.0,
+        "sse": 125528.0,
+        "within_one_tick": 0.7685576433216459,
+        "within_one_tick_count": 25646
+      },
+      "integrated": {
+        "exact_hit": 0.22502921873595252,
+        "exact_hit_count": 7509,
+        "mae": 0.976972636565125,
+        "p95": 2.0,
+        "rmse": 1.1966490770670923,
+        "sae": 32600.599909541656,
+        "sse": 47783.3740163375,
+        "within_one_tick": 0.855464652821481,
+        "within_one_tick_count": 28546
+      },
+      "metrics": {
+        "mae": 0.833800151358416,
+        "p95": 2.0550046321701636,
+        "rmse": 1.0755145250534326,
+        "sae": 27823.077250678984,
+        "sse": 38598.97320996878
+      },
+      "oracle_to_integrated_delta_sae": 4777.522658862672,
+      "oracle_to_integrated_delta_sse": 9184.400806368714,
+      "original_job_receipt_sha256": "b0eeee6c35b43e64905ed07883dbcebb2520696f08ec3600993f0b6c5eea5fa5",
+      "receipt_sha256": "fdc1085c01c9f08d946c47bf786f46fd23855f62023132d93e516b94582c481b",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8354460727022086,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 32600.599909541656,
+            "partition_minus_original": 0.0,
+            "partition_order": 32600.599909541656
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 47783.3740163375,
+            "partition_minus_original": -7.275957614183426e-12,
+            "partition_order": 47783.37401633749
+          }
+        },
+        "classes_count": [
+          20361,
+          13008
+        ],
+        "count": 33369,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 47892.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 47892.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 125528.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 125528.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.3377418803835924,
+        "within_one_tick": 0.8967082306434689
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.327176008394134,
+        "p95": 3.0,
+        "rmse": 1.5790115175136905,
+        "sae": 54389.0,
+        "sse": 102177.0,
+        "within_one_tick": 0.7883165369317489,
+        "within_one_tick_count": 32306
+      },
+      "integrated": {
+        "exact_hit": 0.036016690661526074,
+        "exact_hit_count": 1476,
+        "mae": 1.2035588736048586,
+        "p95": 2.0,
+        "rmse": 1.3813543681052907,
+        "sae": 49323.04619920071,
+        "sse": 78197.48084371086,
+        "within_one_tick": 0.829262341084893,
+        "within_one_tick_count": 33984
+      },
+      "metrics": {
+        "mae": 0.7945949893580085,
+        "p95": 1.8886697228961067,
+        "rmse": 0.9739628304475266,
+        "sae": 32563.297258880546,
+        "sse": 38874.723930520886
+      },
+      "oracle_to_integrated_delta_sae": 16759.748940320165,
+      "oracle_to_integrated_delta_sse": 39322.75691318997,
+      "original_job_receipt_sha256": "9b22bce1800d5d84133ad9c0855f8eef660aadbe2bc0717fe59e1cd224f26cc8",
+      "receipt_sha256": "20d6730d315b54db932ca6f97ea5c51c31689ad4b6bfb02715aea1c73f33e518",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.838632537029355,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 49323.04619920071,
+            "partition_minus_original": 0.0,
+            "partition_order": 49323.04619920071
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 78197.48084371086,
+            "partition_minus_original": 0.0,
+            "partition_order": 78197.48084371086
+          }
+        },
+        "classes_count": [
+          4498,
+          36483
+        ],
+        "count": 40981,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 54389.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 54389.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 102177.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 102177.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.3627463777574729,
+        "within_one_tick": 0.8825871296175434
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.4231497193577862,
+        "p95": 3.0,
+        "rmse": 1.8968041052945928,
+        "sae": 43611.0,
+        "sse": 110253.0,
+        "within_one_tick": 0.7693186268111213,
+        "within_one_tick_count": 23575
+      },
+      "integrated": {
+        "exact_hit": 0.23185615454901448,
+        "exact_hit_count": 7105,
+        "mae": 0.9683135551905295,
+        "p95": 2.0,
+        "rmse": 1.1914413916307436,
+        "sae": 29673.000585258585,
+        "sse": 43500.1566784911,
+        "within_one_tick": 0.8605273462994387,
+        "within_one_tick_count": 26370
+      },
+      "metrics": {
+        "mae": 0.8106028534644732,
+        "p95": 1.9968872731284177,
+        "rmse": 1.0489331148950882,
+        "sae": 24840.11384156532,
+        "sse": 33716.38826331852
+      },
+      "oracle_to_integrated_delta_sae": 4832.886743693267,
+      "oracle_to_integrated_delta_sse": 9783.768415172577,
+      "original_job_receipt_sha256": "2d0bb7e679f9bea799f549e46e2ea1a298328786a6dacc9441fcc850afbade9b",
+      "receipt_sha256": "aacee0f8dfaf1ced06ab2f338b288fb2b50765218391faa68f70b51d35c51fc6",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8452551886176739,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 29673.000585258585,
+            "partition_minus_original": 3.637978807091713e-12,
+            "partition_order": 29673.00058525859
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 43500.1566784911,
+            "partition_minus_original": 7.275957614183426e-12,
+            "partition_order": 43500.156678491105
+          }
+        },
+        "classes_count": [
+          18770,
+          11874
+        ],
+        "count": 30644,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 43611.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 43611.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 110253.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 110253.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.3451200121147876,
+        "within_one_tick": 0.9045203301279624
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3134953686176523,
+        "p95": 3.0,
+        "rmse": 1.5410062573533865,
+        "sae": 52042.0,
+        "sse": 94088.0,
+        "within_one_tick": 0.7911208702455769,
+        "within_one_tick_count": 31345
+      },
+      "integrated": {
+        "exact_hit": 0.03419903586481916,
+        "exact_hit_count": 1355,
+        "mae": 1.1975612407013798,
+        "p95": 2.0,
+        "rmse": 1.3576183868574563,
+        "sae": 47448.57391782937,
+        "sse": 73026.5619809753,
+        "within_one_tick": 0.8314530173392898,
+        "within_one_tick_count": 32943
+      },
+      "metrics": {
+        "mae": 0.778664613149501,
+        "p95": 1.8571228173057606,
+        "rmse": 0.9542425801216241,
+        "sae": 30851.470637596376,
+        "sse": 36078.04666493616
+      },
+      "oracle_to_integrated_delta_sae": 16597.103280232997,
+      "oracle_to_integrated_delta_sse": 36948.515316039135,
+      "original_job_receipt_sha256": "dbbe18d73085ac84b33a56f60244340f1f7b7413a10ae748cba0e00b9565067e",
+      "receipt_sha256": "c969ea60aac4e0e599f4c5cd31139d55d5ff6f8d789d0c9bb47573909c16de6f",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8423815653315161,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 47448.57391782937,
+            "partition_minus_original": 7.275957614183426e-12,
+            "partition_order": 47448.57391782938
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 73026.5619809753,
+            "partition_minus_original": 1.4551915228366852e-11,
+            "partition_order": 73026.56198097531
+          }
+        },
+        "classes_count": [
+          3989,
+          35632
+        ],
+        "count": 39621,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 52042.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 52042.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 94088.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 94088.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.37396339185655586,
+        "within_one_tick": 0.8892043332088159
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3874486365334329,
+        "p95": 3.0,
+        "rmse": 1.8179160671068397,
+        "sae": 37142.0,
+        "sse": 88470.0,
+        "within_one_tick": 0.7774374299589092,
+        "within_one_tick_count": 20812
+      },
+      "integrated": {
+        "exact_hit": 0.24105341800522972,
+        "exact_hit_count": 6453,
+        "mae": 0.9572772053912347,
+        "p95": 2.0,
+        "rmse": 1.2062170570195365,
+        "sae": 25626.310788323353,
+        "sse": 38949.26818802321,
+        "within_one_tick": 0.8643257377661562,
+        "within_one_tick_count": 23138
+      },
+      "metrics": {
+        "mae": 0.7852536507737838,
+        "p95": 1.9369486659769892,
+        "rmse": 1.0095503343143337,
+        "sae": 21021.240231214193,
+        "sse": 27283.766561054676
+      },
+      "oracle_to_integrated_delta_sae": 4605.07055710916,
+      "oracle_to_integrated_delta_sse": 11665.501626968537,
+      "original_job_receipt_sha256": "f27a7aef2ab36d7d837a962ef6658bbe5526f826d576890538e804cf93cf7c60",
+      "receipt_sha256": "56bb1403d66e46b7082503e6e6da8aa8740d78a3b5bfe89504530540a68290f5",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8507657825924543,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 25626.310788323353,
+            "partition_minus_original": 0.0,
+            "partition_order": 25626.310788323353
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 38949.26818802321,
+            "partition_minus_original": 0.0,
+            "partition_order": 38949.26818802321
+          }
+        },
+        "classes_count": [
+          16692,
+          10078
+        ],
+        "count": 26770,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 37142.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 37142.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 88470.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 88470.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.3515410273515677,
+        "within_one_tick": 0.9057505003335558
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3044963308872581,
+        "p95": 3.0,
+        "rmse": 1.5196291812694669,
+        "sae": 48886.0,
+        "sse": 86540.0,
+        "within_one_tick": 0.793809206137425,
+        "within_one_tick_count": 29748
+      },
+      "integrated": {
+        "exact_hit": 0.04058705803869246,
+        "exact_hit_count": 1521,
+        "mae": 1.1851148349201235,
+        "p95": 2.0,
+        "rmse": 1.3441357083247891,
+        "sae": 44412.17843863163,
+        "sse": 67706.11256970701,
+        "within_one_tick": 0.8352501667778519,
+        "within_one_tick_count": 31301
+      },
+      "metrics": {
+        "mae": 0.7706805146429272,
+        "p95": 1.8423733277477645,
+        "rmse": 0.9463431361535339,
+        "sae": 28881.252286243696,
+        "sse": 33561.310792150354
+      },
+      "oracle_to_integrated_delta_sae": 15530.926152387932,
+      "oracle_to_integrated_delta_sse": 34144.801777556655,
+      "original_job_receipt_sha256": "2e0045a46c66b20af01e676f1d655a22357119dc57e3732d936dc94f6282819e",
+      "receipt_sha256": "1e577eda717a0f61f4a695f2bb56e77a7d65f12cdc45bdf968fb45cbc0863b14",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8449899933288859,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 44412.17843863163,
+            "partition_minus_original": -7.275957614183426e-12,
+            "partition_order": 44412.17843863162
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 67706.11256970701,
+            "partition_minus_original": 0.0,
+            "partition_order": 67706.11256970701
+          }
+        },
+        "classes_count": [
+          4249,
+          33226
+        ],
+        "count": 37475,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 48886.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 48886.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 86540.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 86540.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.21610933594862222,
+        "within_one_tick": 0.7590243285140308
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.4276313708121104,
+        "p95": 3.0,
+        "rmse": 1.9140307093319116,
+        "sae": 45126.0,
+        "sse": 115800.0,
+        "within_one_tick": 0.7695593027302351,
+        "within_one_tick_count": 24325
+      },
+      "integrated": {
+        "exact_hit": 0.16264355088740548,
+        "exact_hit_count": 5141,
+        "mae": 1.2101738182887767,
+        "p95": 2.9848782774300937,
+        "rmse": 1.5922147388086643,
+        "sae": 38252.38422228994,
+        "sse": 80133.48600352387,
+        "within_one_tick": 0.7792400898478281,
+        "within_one_tick_count": 24631
+      },
+      "metrics": {
+        "mae": 1.1646955322501016,
+        "p95": 2.868888262845812,
+        "rmse": 1.5412823413967112,
+        "sae": 36814.86107889346,
+        "sse": 75088.79964778507
+      },
+      "oracle_to_integrated_delta_sae": 1437.52314339648,
+      "oracle_to_integrated_delta_sse": 5044.686355738799,
+      "original_job_receipt_sha256": "110c8f6d40b878ff4771358e0a1daeae69483c1ccdc88994511e102620433178",
+      "receipt_sha256": "16270e809d25b8f0c46b0b1a1d9f99e32ab05a0058a5ba42213b3f9a85fcda50",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.6737638014489544,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 38252.38422228994,
+            "partition_minus_original": 0.0,
+            "partition_order": 38252.38422228994
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 80133.48600352387,
+            "partition_minus_original": 0.0,
+            "partition_order": 80133.48600352387
+          }
+        },
+        "classes_count": [
+          19270,
+          12339
+        ],
+        "count": 31609,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 45126.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 45126.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 115800.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 115800.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.18338651775029916,
+        "within_one_tick": 0.7367620662145992
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3167630634224172,
+        "p95": 3.0,
+        "rmse": 1.5490742503531907,
+        "sae": 52818.0,
+        "sse": 96254.0,
+        "within_one_tick": 0.7903869166334264,
+        "within_one_tick_count": 31704
+      },
+      "integrated": {
+        "exact_hit": 0.026276426007179898,
+        "exact_hit_count": 1054,
+        "mae": 1.2590390529818711,
+        "p95": 2.968107398264859,
+        "rmse": 1.4473759580464176,
+        "sae": 50502.57449320881,
+        "sse": 84030.51503959167,
+        "within_one_tick": 0.8055444754686877,
+        "within_one_tick_count": 32312
+      },
+      "metrics": {
+        "mae": 1.1250481746821812,
+        "p95": 2.5553230403685068,
+        "rmse": 1.3497448177757934,
+        "sae": 45127.93238285165,
+        "sse": 73076.485764693
+      },
+      "oracle_to_integrated_delta_sae": 5374.642110357163,
+      "oracle_to_integrated_delta_sse": 10954.029274898669,
+      "original_job_receipt_sha256": "4ed7ef5a953d1c478e1c6b5694489245a13725ec15f1310eea39ccdc61ed30c3",
+      "receipt_sha256": "f471ef5a5c855715d6b5077599fa0005a62899b35068e651550cf24e2def0242",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.6618218986836857,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 50502.57449320881,
+            "partition_minus_original": 0.0,
+            "partition_order": 50502.57449320881
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 84030.51503959167,
+            "partition_minus_original": 0.0,
+            "partition_order": 84030.51503959167
+          }
+        },
+        "classes_count": [
+          3916,
+          36196
+        ],
+        "count": 40112,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 52818.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 52818.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 96254.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 96254.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.2969912544054301,
+        "within_one_tick": 0.8619958229996084
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.4231497193577862,
+        "p95": 3.0,
+        "rmse": 1.8968041052945928,
+        "sae": 43611.0,
+        "sse": 110253.0,
+        "within_one_tick": 0.7693186268111213,
+        "within_one_tick_count": 23575
+      },
+      "integrated": {
+        "exact_hit": 0.1979506591828743,
+        "exact_hit_count": 6066,
+        "mae": 1.0109426820805192,
+        "p95": 2.0530019061365112,
+        "rmse": 1.2150052655646586,
+        "sae": 30979.327549675432,
+        "sse": 45237.8310007007,
+        "within_one_tick": 0.847767915415742,
+        "within_one_tick_count": 25979
+      },
+      "metrics": {
+        "mae": 0.8865829817433482,
+        "p95": 2.105225725730575,
+        "rmse": 1.1093974434454548,
+        "sae": 27168.44889254316,
+        "sse": 37715.49179646435
+      },
+      "oracle_to_integrated_delta_sae": 3810.8786571322707,
+      "oracle_to_integrated_delta_sse": 7522.339204236356,
+      "original_job_receipt_sha256": "a3939f5e689f693c3fce451610438201d2269795b192060d80e8617ff906adda",
+      "receipt_sha256": "3b5b68d231b30e56ebc7d312cedc1f29087157a9db0d12c886bb94358d67e117",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8207479441326198,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 30979.327549675432,
+            "partition_minus_original": 3.637978807091713e-12,
+            "partition_order": 30979.327549675436
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 45237.8310007007,
+            "partition_minus_original": 0.0,
+            "partition_order": 45237.8310007007
+          }
+        },
+        "classes_count": [
+          18603,
+          12041
+        ],
+        "count": 30644,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 43611.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 43611.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 110253.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 110253.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.2766209838217107,
+        "within_one_tick": 0.8798616895080892
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3134953686176523,
+        "p95": 3.0,
+        "rmse": 1.5410062573533865,
+        "sae": 52042.0,
+        "sse": 94088.0,
+        "within_one_tick": 0.7911208702455769,
+        "within_one_tick_count": 31345
+      },
+      "integrated": {
+        "exact_hit": 0.027132076424118523,
+        "exact_hit_count": 1075,
+        "mae": 1.2141670023152196,
+        "p95": 2.0,
+        "rmse": 1.3735735906142212,
+        "sae": 48106.51079873132,
+        "sse": 74753.11538236612,
+        "within_one_tick": 0.8228212311652912,
+        "within_one_tick_count": 32601
+      },
+      "metrics": {
+        "mae": 0.8628556515390636,
+        "p95": 1.9620222859306091,
+        "rmse": 1.0369431566934855,
+        "sae": 34187.20376962924,
+        "sse": 42602.524237767124
+      },
+      "oracle_to_integrated_delta_sae": 13919.307029102078,
+      "oracle_to_integrated_delta_sse": 32150.59114459899,
+      "original_job_receipt_sha256": "378a104535c77bdd84a52ce706de9b80537e1ecd2bb3ef071c1a72735686da3b",
+      "receipt_sha256": "78cdf3e56ef06425c767e2f33b1485cc2bba35f026784bcc4bb81446024fffdd",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8165871633729588,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 48106.51079873132,
+            "partition_minus_original": 7.275957614183426e-12,
+            "partition_order": 48106.510798731324
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 74753.11538236612,
+            "partition_minus_original": 0.0,
+            "partition_order": 74753.11538236612
+          }
+        },
+        "classes_count": [
+          3987,
+          35634
+        ],
+        "count": 39621,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 52042.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 52042.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 94088.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 94088.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.33073069614786665,
+        "within_one_tick": 0.871722231818967
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.4078079115564002,
+        "p95": 3.0,
+        "rmse": 1.8543902425142924,
+        "sae": 40749.0,
+        "sse": 99535.0,
+        "within_one_tick": 0.7727068578338228,
+        "within_one_tick_count": 22366
+      },
+      "integrated": {
+        "exact_hit": 0.21191915702193817,
+        "exact_hit_count": 6134,
+        "mae": 0.999545978049756,
+        "p95": 2.0308111303423306,
+        "rmse": 1.2359401053026693,
+        "sae": 28931.858334650187,
+        "sse": 44214.87523605736,
+        "within_one_tick": 0.8537916738642253,
+        "within_one_tick_count": 24713
+      },
+      "metrics": {
+        "mae": 0.8498021688678549,
+        "p95": 2.064231150476261,
+        "rmse": 1.0858475459940649,
+        "sae": 24597.52377788006,
+        "sse": 34128.03333197588
+      },
+      "oracle_to_integrated_delta_sae": 4334.334556770129,
+      "oracle_to_integrated_delta_sse": 10086.841904081484,
+      "original_job_receipt_sha256": "8e77c6fc868e5d94781883bd23f41ec6d3bceb278b1f99ed0cbc168c7e590dc7",
+      "receipt_sha256": "f3d3b48f519f8b3255fcff53b5db092718557e97964265ca292dfc46b2124bc1",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8273276904474003,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 28931.858334650187,
+            "partition_minus_original": 0.0,
+            "partition_order": 28931.858334650187
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 44214.87523605736,
+            "partition_minus_original": 0.0,
+            "partition_order": 44214.87523605736
+          }
+        },
+        "classes_count": [
+          17553,
+          11392
+        ],
+        "count": 28945,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 40749.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 40749.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 99535.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 99535.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.31031010353998295,
+        "within_one_tick": 0.8946009450282734
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3106457693201476,
+        "p95": 3.0,
+        "rmse": 1.5319671974368665,
+        "sae": 50760.0,
+        "sse": 90894.0,
+        "within_one_tick": 0.7919388571871208,
+        "within_one_tick_count": 30671
+      },
+      "integrated": {
+        "exact_hit": 0.029874254434661365,
+        "exact_hit_count": 1157,
+        "mae": 1.2054190996371155,
+        "p95": 2.0,
+        "rmse": 1.3637515197058236,
+        "sae": 46684.67630984585,
+        "sse": 72028.8993582653,
+        "within_one_tick": 0.8287071703374732,
+        "within_one_tick_count": 32095
+      },
+      "metrics": {
+        "mae": 0.8200513678393045,
+        "p95": 1.9176792124900894,
+        "rmse": 0.9943642621413459,
+        "sae": 31759.769425048427,
+        "sse": 38293.69710967395
+      },
+      "oracle_to_integrated_delta_sae": 14924.90688479742,
+      "oracle_to_integrated_delta_sse": 33735.202248591355,
+      "original_job_receipt_sha256": "7c8920318e52d2bd9fba1f4900b997a2290f52420c2aae3eee6bac69490128b4",
+      "receipt_sha256": "47c012f8ba2f969978c8998f74d84fc421dc73de4d9213a0234da6f1d5fa381e",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8213741640631051,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 46684.67630984585,
+            "partition_minus_original": 0.0,
+            "partition_order": 46684.67630984585
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 72028.8993582653,
+            "partition_minus_original": 1.4551915228366852e-11,
+            "partition_order": 72028.89935826532
+          }
+        },
+        "classes_count": [
+          3760,
+          34969
+        ],
+        "count": 38729,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 50760.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 50760.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 90894.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 90894.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "fold": "FOLD_A",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.3461790941035641,
+        "within_one_tick": 0.8823415839672549
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.383905471676256,
+        "p95": 3.0,
+        "rmse": 1.8156642520198674,
+        "sae": 35839.0,
+        "sse": 85373.0,
+        "within_one_tick": 0.7783527049465189,
+        "within_one_tick_count": 20157
+      },
+      "integrated": {
+        "exact_hit": 0.2309147777734873,
+        "exact_hit_count": 5980,
+        "mae": 0.9826172341476904,
+        "p95": 2.0,
+        "rmse": 1.3528894448821518,
+        "sae": 25446.838512722738,
+        "sse": 47399.53418735438,
+        "within_one_tick": 0.8623392670965749,
+        "within_one_tick_count": 22332
+      },
+      "metrics": {
+        "mae": 0.813028334677771,
+        "p95": 1.9701197735861318,
+        "rmse": 1.0295777453476833,
+        "sae": 21054.994783150236,
+        "sse": 27451.605552223024
+      },
+      "oracle_to_integrated_delta_sae": 4391.843729572502,
+      "oracle_to_integrated_delta_sse": 19947.928635131357,
+      "original_job_receipt_sha256": "8cf39cc56ff568a85ec3fe1e761d046f0d921311c6c87c7ac4d88ea92af39d5c",
+      "receipt_sha256": "243f413c0f3a024df2954b3cb936de8c7b6035880e31940ee322e95292920960",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8389388732285593,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 25446.838512722738,
+            "partition_minus_original": 0.0,
+            "partition_order": 25446.838512722738
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 47399.53418735438,
+            "partition_minus_original": 0.0,
+            "partition_order": 47399.53418735438
+          }
+        },
+        "classes_count": [
+          16473,
+          9424
+        ],
+        "count": 25897,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 35839.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 35839.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 85373.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 85373.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "fold": "FOLD_B",
+      "grid_provenance": "PINNED_ORIGINAL_JOB_AGGREGATE_NO_PROJECTION_EXECUTION",
+      "historical_grid_metrics": {
+        "exact_hit": 0.32066951489914014,
+        "within_one_tick": 0.8961927424152291
+      },
+      "hold_last": {
+        "exact_hit": 0.0,
+        "exact_hit_count": 0,
+        "mae": 1.3022821913363258,
+        "p95": 3.0,
+        "rmse": 1.5116317525790903,
+        "sae": 48161.0,
+        "sse": 84505.0,
+        "within_one_tick": 0.7938997350062192,
+        "within_one_tick_count": 29360
+      },
+      "integrated": {
+        "exact_hit": 0.03572008003893786,
+        "exact_hit_count": 1321,
+        "mae": 1.1950244895445052,
+        "p95": 2.0,
+        "rmse": 1.3538238702406924,
+        "sae": 44194.3956723349,
+        "sse": 67782.05454714962,
+        "within_one_tick": 0.8318100697636688,
+        "within_one_tick_count": 30762
+      },
+      "metrics": {
+        "mae": 0.8072035185234612,
+        "p95": 1.9020009130897217,
+        "rmse": 0.983143355435326,
+        "sae": 29852.00052203464,
+        "sse": 35745.72344602332
+      },
+      "oracle_to_integrated_delta_sae": 14342.395150300257,
+      "oracle_to_integrated_delta_sse": 32036.331101126292,
+      "original_job_receipt_sha256": "3137dec9f852c28c44fdd7235ec64725101a94e8b03bf4da2c1314d2e9907bf0",
+      "receipt_sha256": "582b3f5497648e7d4c8e729f90bc44c2e8cf028f646af7db4485565385a6ead7",
+      "role": "DIAGNOSTIC_ONLY",
+      "sign_accuracy": 0.8284570872316261,
+      "tp_fn_accounting": {
+        "candidate": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 44194.3956723349,
+            "partition_minus_original": -7.275957614183426e-12,
+            "partition_order": 44194.39567233489
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 67782.05454714962,
+            "partition_minus_original": -1.4551915228366852e-11,
+            "partition_order": 67782.0545471496
+          }
+        },
+        "classes_count": [
+          3982,
+          33000
+        ],
+        "count": 36982,
+        "hold_last": {
+          "sae": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 48161.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 48161.0
+          },
+          "sse": {
+            "contribution_bytes_exact": true,
+            "original_anchor_order": 84505.0,
+            "partition_minus_original": 0.0,
+            "partition_order": 84505.0
+          }
+        },
+        "row_partition_exact": true
+      }
+    }
+  ],
+  "opening_count": 0,
+  "policy_sha256": "b93b623231dcd763e7588c4986073d4ee0188dac6b4a06b4b0e035317928b96e",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "c2a74a82f60a17cee68f03320ee12dc8096917cebc4d507e0c286e108e628fe1",
+  "reference_promotable": false,
+  "role": "DIAGNOSTIC_ONLY",
+  "schema": "EMPIRICAL_HURDLE_STAGE2_ORACLE_ATTRIBUTION_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

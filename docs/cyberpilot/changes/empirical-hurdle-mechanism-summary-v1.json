@@ -1,0 +1,262 @@
+{
+  "attribution_manifest_sha256": "07345517d3bca95e90962e0566a58e2b756a8aa6f5c658b8b312f02d4961f77d",
+  "candidate_search_authorized": false,
+  "causal_claim": false,
+  "composition_authorized": false,
+  "folds": {
+    "FOLD_A": {
+      "historical_failure_counts": {
+        "MOVE_MAE": 0,
+        "MOVE_P95": 0,
+        "MOVE_RMSE": 0,
+        "ONE_STEP_EXACT_HIT": 16,
+        "ONE_STEP_MAE": 16,
+        "ONE_STEP_P95": 16,
+        "ONE_STEP_RMSE": 4,
+        "ONE_STEP_WITHIN_ONE_TICK": 4,
+        "OVERALL_100_MAE": 16,
+        "OVERALL_100_P95": 16,
+        "OVERALL_100_RMSE": 15,
+        "OVERALL_200_MAE": 16,
+        "OVERALL_200_P95": 10,
+        "OVERALL_200_RMSE": 16,
+        "OVERALL_25_MAE": 16,
+        "OVERALL_25_P95": 16,
+        "OVERALL_25_RMSE": 15,
+        "OVERALL_50_MAE": 16,
+        "OVERALL_50_P95": 16,
+        "OVERALL_50_RMSE": 16,
+        "PATH_MOVED_100_MAE": 16,
+        "PATH_MOVED_100_P95": 16,
+        "PATH_MOVED_100_RMSE": 14,
+        "PATH_MOVED_200_MAE": 16,
+        "PATH_MOVED_200_P95": 10,
+        "PATH_MOVED_200_RMSE": 16,
+        "PATH_MOVED_25_MAE": 16,
+        "PATH_MOVED_25_P95": 16,
+        "PATH_MOVED_25_RMSE": 14,
+        "PATH_MOVED_50_MAE": 16,
+        "PATH_MOVED_50_P95": 16,
+        "PATH_MOVED_50_RMSE": 16
+      },
+      "job_count": 16,
+      "ranges": {
+        "balanced_accuracy": {
+          "max": 0.5635012425784222,
+          "min": 0.549319996001681
+        },
+        "false_move_rate": {
+          "max": 0.5573340698067925,
+          "min": 0.4559807473620184
+        },
+        "missed_move_rate": {
+          "max": 0.4283732132572386,
+          "min": 0.34402593818984545
+        },
+        "move_hit_gain": {
+          "max": 8633,
+          "min": 5141
+        },
+        "static_hit_loss": {
+          "max": 47150,
+          "min": 16319
+        }
+      }
+    },
+    "FOLD_B": {
+      "historical_failure_counts": {
+        "MOVE_MAE": 0,
+        "MOVE_P95": 0,
+        "MOVE_RMSE": 0,
+        "ONE_STEP_EXACT_HIT": 16,
+        "ONE_STEP_MAE": 4,
+        "ONE_STEP_P95": 0,
+        "ONE_STEP_RMSE": 0,
+        "ONE_STEP_WITHIN_ONE_TICK": 4,
+        "OVERALL_100_MAE": 7,
+        "OVERALL_100_P95": 9,
+        "OVERALL_100_RMSE": 5,
+        "OVERALL_200_MAE": 6,
+        "OVERALL_200_P95": 8,
+        "OVERALL_200_RMSE": 5,
+        "OVERALL_25_MAE": 7,
+        "OVERALL_25_P95": 5,
+        "OVERALL_25_RMSE": 0,
+        "OVERALL_50_MAE": 6,
+        "OVERALL_50_P95": 8,
+        "OVERALL_50_RMSE": 0,
+        "PATH_MOVED_100_MAE": 7,
+        "PATH_MOVED_100_P95": 9,
+        "PATH_MOVED_100_RMSE": 5,
+        "PATH_MOVED_200_MAE": 6,
+        "PATH_MOVED_200_P95": 7,
+        "PATH_MOVED_200_RMSE": 5,
+        "PATH_MOVED_25_MAE": 7,
+        "PATH_MOVED_25_P95": 5,
+        "PATH_MOVED_25_RMSE": 0,
+        "PATH_MOVED_50_MAE": 6,
+        "PATH_MOVED_50_P95": 7,
+        "PATH_MOVED_50_RMSE": 0
+      },
+      "job_count": 16,
+      "ranges": {
+        "balanced_accuracy": {
+          "max": 0.5466205690182232,
+          "min": 0.5276263228384448
+        },
+        "false_move_rate": {
+          "max": 0.03059357354748681,
+          "min": 0.018724671816009144
+        },
+        "missed_move_rate": {
+          "max": 0.9260226825071013,
+          "min": 0.8791679200314692
+        },
+        "move_hit_gain": {
+          "max": 1693,
+          "min": 898
+        },
+        "static_hit_loss": {
+          "max": 3767,
+          "min": 1833
+        }
+      }
+    }
+  },
+  "historical_failure_counts": {
+    "MOVE_MAE": 0,
+    "MOVE_P95": 0,
+    "MOVE_RMSE": 0,
+    "ONE_STEP_EXACT_HIT": 32,
+    "ONE_STEP_MAE": 20,
+    "ONE_STEP_P95": 16,
+    "ONE_STEP_RMSE": 4,
+    "ONE_STEP_WITHIN_ONE_TICK": 8,
+    "OVERALL_100_MAE": 23,
+    "OVERALL_100_P95": 25,
+    "OVERALL_100_RMSE": 20,
+    "OVERALL_200_MAE": 22,
+    "OVERALL_200_P95": 18,
+    "OVERALL_200_RMSE": 21,
+    "OVERALL_25_MAE": 23,
+    "OVERALL_25_P95": 21,
+    "OVERALL_25_RMSE": 15,
+    "OVERALL_50_MAE": 22,
+    "OVERALL_50_P95": 24,
+    "OVERALL_50_RMSE": 16,
+    "PATH_MOVED_100_MAE": 23,
+    "PATH_MOVED_100_P95": 25,
+    "PATH_MOVED_100_RMSE": 19,
+    "PATH_MOVED_200_MAE": 22,
+    "PATH_MOVED_200_P95": 17,
+    "PATH_MOVED_200_RMSE": 21,
+    "PATH_MOVED_25_MAE": 23,
+    "PATH_MOVED_25_P95": 21,
+    "PATH_MOVED_25_RMSE": 14,
+    "PATH_MOVED_50_MAE": 22,
+    "PATH_MOVED_50_P95": 23,
+    "PATH_MOVED_50_RMSE": 16
+  },
+  "historical_selection": "MODEL_SELECTION_FAILED_CLOSED",
+  "historical_verdict": "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+  "holdout": "CLOSED",
+  "one_step": {
+    "authority": "DESIGN_REVIEW_ONLY",
+    "exact_hit_state": "HURDLE_EXACT_HIT_STATIC_LOSS_ALL_JOBS",
+    "fitting_authorized": false,
+    "implementation_authorized": false,
+    "job_counts": {
+      "exact_hit_fail": 32,
+      "move_protection_pass": 32,
+      "projected_false_move": 32,
+      "static_loss_exceeds_gain": 32
+    },
+    "stage1_design_review": "STAGE1_GATE_REDESIGN_REVIEW_SUPPORTED",
+    "stage2_implementation_authorized": false
+  },
+  "opening_count": 0,
+  "policy_sha256": "b93b623231dcd763e7588c4986073d4ee0188dac6b4a06b4b0e035317928b96e",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "ranking_performed": false,
+  "receipt_sha256": "2d3d1763010ba6144e2318cd8b1377374c3bb22e101dbee6a381806e20294ca9",
+  "reference_promotable": false,
+  "rollout": {
+    "100": {
+      "candidate_p95_nonworse_jobs": 27,
+      "candidate_p95_worse_jobs": 5,
+      "candidate_sse_greater_hold_jobs": 5,
+      "candidate_sse_less_hold_jobs": 24,
+      "gate_mismatch_relations": {
+        "divergence_only": 194,
+        "divergence_precedes_gate": 230707,
+        "gate_mismatch_only": 100905,
+        "gate_precedes_divergence": 992328,
+        "neither": 201545,
+        "same_step": 4879087
+      },
+      "gate_perfect_path_moved_support_jobs": 32,
+      "interpretation": "DESCRIPTIVE_ASSOCIATION_NOT_CAUSAL; POPULATIONS_OVERLAP_ACROSS_STRUCTURES",
+      "small_support_jobs": 32
+    },
+    "200": {
+      "candidate_p95_nonworse_jobs": 2,
+      "candidate_p95_worse_jobs": 0,
+      "candidate_sse_greater_hold_jobs": 0,
+      "candidate_sse_less_hold_jobs": 2,
+      "gate_mismatch_relations": {
+        "divergence_only": 0,
+        "divergence_precedes_gate": 206456,
+        "gate_mismatch_only": 26058,
+        "gate_precedes_divergence": 978288,
+        "neither": 21165,
+        "same_step": 4594252
+      },
+      "gate_perfect_path_moved_support_jobs": 2,
+      "interpretation": "DESCRIPTIVE_ASSOCIATION_NOT_CAUSAL; POPULATIONS_OVERLAP_ACROSS_STRUCTURES",
+      "small_support_jobs": 2
+    },
+    "25": {
+      "candidate_p95_nonworse_jobs": 32,
+      "candidate_p95_worse_jobs": 0,
+      "candidate_sse_greater_hold_jobs": 0,
+      "candidate_sse_less_hold_jobs": 32,
+      "gate_mismatch_relations": {
+        "divergence_only": 8238,
+        "divergence_precedes_gate": 257158,
+        "gate_mismatch_only": 461240,
+        "gate_precedes_divergence": 718825,
+        "neither": 1673992,
+        "same_step": 4107187
+      },
+      "gate_perfect_path_moved_support_jobs": 32,
+      "interpretation": "DESCRIPTIVE_ASSOCIATION_NOT_CAUSAL; POPULATIONS_OVERLAP_ACROSS_STRUCTURES",
+      "small_support_jobs": 8
+    },
+    "50": {
+      "candidate_p95_nonworse_jobs": 28,
+      "candidate_p95_worse_jobs": 4,
+      "candidate_sse_greater_hold_jobs": 4,
+      "candidate_sse_less_hold_jobs": 28,
+      "gate_mismatch_relations": {
+        "divergence_only": 1627,
+        "divergence_precedes_gate": 249257,
+        "gate_mismatch_only": 260378,
+        "gate_precedes_divergence": 884397,
+        "neither": 781023,
+        "same_step": 4680023
+      },
+      "gate_perfect_path_moved_support_jobs": 32,
+      "interpretation": "DESCRIPTIVE_ASSOCIATION_NOT_CAUSAL; POPULATIONS_OVERLAP_ACROSS_STRUCTURES",
+      "small_support_jobs": 32
+    }
+  },
+  "schema": "EMPIRICAL_HURDLE_MECHANISM_SUMMARY_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}
