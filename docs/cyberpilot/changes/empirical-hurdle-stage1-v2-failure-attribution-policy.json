@@ -1,0 +1,258 @@
+{
+  "baseline": "6176dbef998e7957f9ef1a605c081ced0857cb7b",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "execution_calls": {
+    "causal_derived_openings": 0,
+    "holdout_discovery": 0,
+    "holdout_openings": 0,
+    "model_refit_calls": 0,
+    "normalizer_refit_calls": 0,
+    "prediction_replay_calls": 0,
+    "qlog_openings": 0,
+    "raw_log_openings": 0,
+    "rollout_regeneration_calls": 0,
+    "selection_calls": 0,
+    "source_write_count": 0,
+    "threshold_reselection_calls": 0
+  },
+  "final_pooled_refit": "NOT_AUTHORIZED",
+  "historical_v1": "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+  "historical_v2": "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+  "holdout": "CLOSED",
+  "model_admission": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+  "next_execution_authorized": false,
+  "opening_count": 0,
+  "policy": {
+    "auc": "SORTED_EXACT_SCORE_GROUPS_PYTHON_INT_2_CONCORDANT_PLUS_TIED_OVER_2PN",
+    "baseline": "6176dbef998e7957f9ef1a605c081ced0857cb7b",
+    "candidate_ranking": false,
+    "candidate_search_authorized": false,
+    "classifier_review_trigger": "ANY_JOB_TRAIN_AUC_STRICTLY_ABOVE_HALF_AND_DEV_AUC_AT_OR_BELOW_HALF",
+    "composition_authorized": false,
+    "counterfactual_admission": false,
+    "counterfactual_thresholds": false,
+    "execution_calls": {
+      "causal_derived_openings": 0,
+      "holdout_discovery": 0,
+      "holdout_openings": 0,
+      "model_refit_calls": 0,
+      "normalizer_refit_calls": 0,
+      "prediction_replay_calls": 0,
+      "qlog_openings": 0,
+      "raw_log_openings": 0,
+      "rollout_regeneration_calls": 0,
+      "selection_calls": 0,
+      "source_write_count": 0,
+      "threshold_reselection_calls": 0
+    },
+    "expected_failure_counts": {
+      "MOVE_MAE": 0,
+      "MOVE_P95": 0,
+      "MOVE_RMSE": 0,
+      "ONE_STEP_EXACT_HIT": 18,
+      "ONE_STEP_MAE": 1,
+      "ONE_STEP_P95": 0,
+      "ONE_STEP_RMSE": 1,
+      "ONE_STEP_WITHIN_ONE_TICK": 10,
+      "OVERALL_100_MAE": 0,
+      "OVERALL_100_P95": 1,
+      "OVERALL_100_RMSE": 0,
+      "OVERALL_200_MAE": 5,
+      "OVERALL_200_P95": 1,
+      "OVERALL_200_RMSE": 5,
+      "OVERALL_25_MAE": 6,
+      "OVERALL_25_P95": 0,
+      "OVERALL_25_RMSE": 1,
+      "OVERALL_50_MAE": 0,
+      "OVERALL_50_P95": 0,
+      "OVERALL_50_RMSE": 0,
+      "PATH_MOVED_100_MAE": 0,
+      "PATH_MOVED_100_P95": 1,
+      "PATH_MOVED_100_RMSE": 0,
+      "PATH_MOVED_200_MAE": 5,
+      "PATH_MOVED_200_P95": 0,
+      "PATH_MOVED_200_RMSE": 5,
+      "PATH_MOVED_25_MAE": 4,
+      "PATH_MOVED_25_P95": 2,
+      "PATH_MOVED_25_RMSE": 0,
+      "PATH_MOVED_50_MAE": 0,
+      "PATH_MOVED_50_P95": 1,
+      "PATH_MOVED_50_RMSE": 0
+    },
+    "extreme_move_suppression": "DEVELOPMENT_MISSED_MOVE_RATE_STRICTLY_GREATER_THAN_0.95",
+    "first_event": "ONE_BASED_STEP_ZERO_MEANS_NONE",
+    "horizons": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "job_order": [
+      [
+        "HRI_D00_L01",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D00_L01",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D00_L05",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D00_L05",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D00_L15",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D00_L15",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D00_L45",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D00_L45",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D05_L01",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D05_L01",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D05_L05",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D05_L05",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D05_L15",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D05_L15",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D05_L45",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D05_L45",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D10_L01",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D10_L01",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D10_L05",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D10_L05",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D10_L15",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D10_L15",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D10_L45",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D10_L45",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D20_L01",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D20_L01",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D20_L05",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D20_L05",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D20_L15",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D20_L15",
+        "FOLD_B"
+      ],
+      [
+        "HRI_D20_L45",
+        "FOLD_A"
+      ],
+      [
+        "HRI_D20_L45",
+        "FOLD_B"
+      ]
+    ],
+    "output": "D_ONLY_AGGREGATES_NO_ARRAY_DUPLICATION",
+    "production_authority": false,
+    "publication_raw_data": false,
+    "qualification_allowed": false,
+    "rank_comparison": "EXACT_INTEGER_FRACTIONS_NO_EPSILON",
+    "receipt_sha256": "841747ad5af5212426b9a565be82e8fdd3b07c02e2922f9c5031db1ba47d812f",
+    "redesign_authorized": false,
+    "reductions": "CONTIGUOUS_FLOAT64_ORIGINAL_ROW_ORDER_NUMPY_LINEAR_P95",
+    "reference_promotable": false,
+    "review_authority": "DESIGN_REVIEW_ONLY",
+    "schema": "HURDLE_STAGE1_V2_ATTRIBUTION_POLICY",
+    "sealed_reference_allowed": false,
+    "sg_execution": false,
+    "small_support": "NONEMPTY_BELOW_201_SMALL_SUPPORT_DESCRIPTIVE_ONLY; ZERO_EMPTY",
+    "stage2_review": "NO_AUTOMATIC_TRIGGER_REPORT_SUPPORT_GE_201_LONG_HORIZON_REGRESSIONS",
+    "ta_execution": false,
+    "threshold_review_trigger": "ALL_32_EXACT_HIT_IMPROVE_VS_V1_AND_NO_ADMISSIBLE_AND_ALL_32_EXTREME_SUPPRESSION",
+    "train_continuous_error": "SAVED_SELECTED_AGGREGATES_ONLY_NO_PER_ROW_RECONSTRUCTION",
+    "train_truth": "EXACT_ANCHOR_MATCH_OPPOSITE_FOLD_V1_DEVELOPMENT_TRUTH_ONLY",
+    "v1_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+    "v2_manifest_sha256": "7d28c7d07c72a1080e6769165af8539f3568e14688b82f782d0d29aed8d84b9b",
+    "vehicle_activation_allowed": false
+  },
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "c36c991bf6074f4d5677fb514d8c73eba8f7dcc9c62d8a90c78516f98cbb6f27",
+  "reference_promotable": false,
+  "schema": "HURDLE_STAGE1_V2_FAILURE_ATTRIBUTION_V1",
+  "sealed_reference_allowed": false,
+  "selection_state": "MODEL_SELECTION_FAILED_CLOSED",
+  "sg_execution": false,
+  "ta_execution": false,
+  "v1_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "v2_manifest_sha256": "7d28c7d07c72a1080e6769165af8539f3568e14688b82f782d0d29aed8d84b9b",
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

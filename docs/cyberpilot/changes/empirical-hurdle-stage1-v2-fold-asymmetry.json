@@ -1,0 +1,2646 @@
+{
+  "baseline": "6176dbef998e7957f9ef1a605c081ced0857cb7b",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "execution_calls": {
+    "causal_derived_openings": 0,
+    "holdout_discovery": 0,
+    "holdout_openings": 0,
+    "model_refit_calls": 0,
+    "normalizer_refit_calls": 0,
+    "prediction_replay_calls": 0,
+    "qlog_openings": 0,
+    "raw_log_openings": 0,
+    "rollout_regeneration_calls": 0,
+    "selection_calls": 0,
+    "source_write_count": 0,
+    "threshold_reselection_calls": 0
+  },
+  "final_pooled_refit": "NOT_AUTHORIZED",
+  "folds": {
+    "FOLD_A": {
+      "complete_gate_pass_count": 0,
+      "exact_hit_fail_count": 16,
+      "jobs": 16,
+      "ranges": {
+        "dev_auc": {
+          "max": 0.57546156966685,
+          "min": 0.5604248867427358
+        },
+        "dev_brier": {
+          "max": 0.12371438573321582,
+          "min": 0.12280437566540427
+        },
+        "exact_hit_deficit_count": {
+          "max": 375,
+          "min": 1
+        },
+        "exact_hit_surplus_count": {
+          "max": 0,
+          "min": 0
+        },
+        "missed_move_rate": {
+          "max": 0.9994217982075745,
+          "min": 0.9682477222508097
+        },
+        "move_hit_gain": {
+          "max": 211,
+          "min": 5
+        },
+        "predicted_move_fraction": {
+          "max": 0.007881863048838086,
+          "min": 0.00013063997256560576
+        },
+        "static_hit_loss": {
+          "max": 586,
+          "min": 6
+        },
+        "train_auc": {
+          "max": 0.5954599376876506,
+          "min": 0.5897781084633696
+        },
+        "train_brier": {
+          "max": 0.12381607958764687,
+          "min": 0.12065709221885002
+        }
+      },
+      "rank_transfer_counts": {
+        "RANK_TRANSFER_DECREASED": 16,
+        "RANK_TRANSFER_EQUAL": 0,
+        "RANK_TRANSFER_INCREASED": 0
+      },
+      "within_one_tick_fail_count": 10
+    },
+    "FOLD_B": {
+      "complete_gate_pass_count": 14,
+      "exact_hit_fail_count": 2,
+      "jobs": 16,
+      "ranges": {
+        "dev_auc": {
+          "max": 0.5611692227986431,
+          "min": 0.548628958236966
+        },
+        "dev_brier": {
+          "max": 0.12487126023566301,
+          "min": 0.12114254771161634
+        },
+        "exact_hit_deficit_count": {
+          "max": 1,
+          "min": 0
+        },
+        "exact_hit_surplus_count": {
+          "max": 68,
+          "min": 0
+        },
+        "missed_move_rate": {
+          "max": 0.9998990434365614,
+          "min": 0.9940704228788951
+        },
+        "move_hit_gain": {
+          "max": 75,
+          "min": 0
+        },
+        "predicted_move_fraction": {
+          "max": 0.0009264911839695479,
+          "min": 1.8593581495667695e-05
+        },
+        "static_hit_loss": {
+          "max": 10,
+          "min": 1
+        },
+        "train_auc": {
+          "max": 0.5682090466615454,
+          "min": 0.5625272727796523
+        },
+        "train_brier": {
+          "max": 0.12126312331703165,
+          "min": 0.11806436819211127
+        }
+      },
+      "rank_transfer_counts": {
+        "RANK_TRANSFER_DECREASED": 16,
+        "RANK_TRANSFER_EQUAL": 0,
+        "RANK_TRANSFER_INCREASED": 0
+      },
+      "within_one_tick_fail_count": 0
+    }
+  },
+  "historical_v1": "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+  "historical_v2": "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+  "holdout": "CLOSED",
+  "jobs": [
+    {
+      "candidate_id": "HRI_D00_L01",
+      "confusion": {
+        "balanced_accuracy": 0.5128370503684401,
+        "count": 300569,
+        "counts": {
+          "FN": 42316,
+          "FP": 328,
+          "TN": 256753,
+          "TP": 1172
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0012758624713611662,
+        "fractions": {
+          "FN": 0.140786308634623,
+          "FP": 0.0010912635700953857,
+          "TN": 0.8542231567460383,
+          "TP": 0.0038992710492432685
+        },
+        "missed_move_rate": 0.9730500367917586,
+        "move_coverage_ratio": 0.03449227373068433,
+        "precision": 0.7813333333333333,
+        "predicted_move_fraction": 0.004990534619338655,
+        "projected_move_fraction": 0.004867434765394967,
+        "recall": 0.026949963208241355,
+        "specificity": 0.9987241375286389,
+        "true_move_fraction": 0.14468557968386628
+      },
+      "dev_auc": 0.5691793864575353,
+      "exact_hit": {
+        "candidate_exact_hit_count": 256907,
+        "exact_hit_deficit_count": 174,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 257081,
+        "integer_identity_exact": true,
+        "move_hit_gain": 146,
+        "net_hit_delta": -174,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 320
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 1172,
+        "exact_count": 146,
+        "exact_rate": 0.12457337883959044,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.12457337883959044,
+            "exact_hit_count": 146,
+            "mae": 2.838592224652901,
+            "p95": 7.972385821332731,
+            "rmse": 3.807200542087139,
+            "sae": 3326.8300872932,
+            "sse": 16987.877434107606,
+            "within_one_tick": 0.3796928327645051,
+            "within_one_tick_count": 445
+          },
+          "count": 1172,
+          "delta_sae": -3116.1699127068,
+          "delta_sse": -42287.122565892394,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 5.497440273037543,
+            "p95": 16.0,
+            "rmse": 7.1116762135626574,
+            "sae": 6443.0,
+            "sse": 59275.0,
+            "within_one_tick": 0.13993174061433447,
+            "within_one_tick_count": 164
+          },
+          "support_status": "DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9343003412969283,
+        "within_one_tick_rate": 0.3796928327645051
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "confusion": {
+        "balanced_accuracy": 0.5001848701363406,
+        "count": 336941,
+        "counts": {
+          "FN": 48213,
+          "FP": 1,
+          "TN": 288709,
+          "TP": 18
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.4636832808008035e-06,
+        "fractions": {
+          "FN": 0.1430903333224511,
+          "FP": 2.9678786493777843e-06,
+          "TN": 0.8568532769832107,
+          "TP": 5.342181568880012e-05
+        },
+        "missed_move_rate": 0.999626796044038,
+        "move_coverage_ratio": 0.0003939375090709295,
+        "precision": 0.9473684210526315,
+        "predicted_move_fraction": 5.63896943381779e-05,
+        "projected_move_fraction": 5.63896943381779e-05,
+        "recall": 0.0003732039559619332,
+        "specificity": 0.9999965363167193,
+        "true_move_fraction": 0.1431437551381399
+      },
+      "dev_auc": 0.5611692227986431,
+      "exact_hit": {
+        "candidate_exact_hit_count": 288715,
+        "exact_hit_deficit_count": 0,
+        "exact_hit_surplus_count": 5,
+        "hold_exact_hit_count": 288710,
+        "integer_identity_exact": true,
+        "move_hit_gain": 6,
+        "net_hit_delta": 5,
+        "state": "NO_EXACT_HIT_DEFICIT",
+        "static_hit_loss": 1
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": true,
+      "tp": {
+        "count": 18,
+        "exact_count": 6,
+        "exact_rate": 0.3333333333333333,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.3333333333333333,
+            "exact_hit_count": 6,
+            "mae": 1.0374810706726931,
+            "p95": 2.1623970830496893,
+            "rmse": 1.292226004439647,
+            "sae": 18.674659272108478,
+            "sse": 30.05726483790098,
+            "within_one_tick": 0.6666666666666666,
+            "within_one_tick_count": 12
+          },
+          "count": 18,
+          "delta_sae": -161.32534072789153,
+          "delta_sse": -1825.942735162099,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 10.0,
+            "p95": 12.149999999999999,
+            "rmse": 10.154364141151877,
+            "sae": 180.0,
+            "sse": 1856.0,
+            "within_one_tick": 0.0,
+            "within_one_tick_count": 0
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 1.0,
+        "within_one_tick_rate": 0.6666666666666666
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "confusion": {
+        "balanced_accuracy": 0.5023056609670721,
+        "count": 265076,
+        "counts": {
+          "FN": 38003,
+          "FP": 112,
+          "TN": 226766,
+          "TP": 195
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0004936573841447827,
+        "fractions": {
+          "FN": 0.1433664307594803,
+          "FP": 0.0004225203337910637,
+          "TN": 0.8554754108255745,
+          "TP": 0.0007356380811540842
+        },
+        "missed_move_rate": 0.9948950206817111,
+        "move_coverage_ratio": 0.008037070003665114,
+        "precision": 0.6351791530944625,
+        "predicted_move_fraction": 0.0011581584149451477,
+        "projected_move_fraction": 0.0011279783911029289,
+        "recall": 0.005104979318288916,
+        "specificity": 0.9995063426158552,
+        "true_move_fraction": 0.1441020688406344
+      },
+      "dev_auc": 0.5747542559363565,
+      "exact_hit": {
+        "candidate_exact_hit_count": 226790,
+        "exact_hit_deficit_count": 88,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 226878,
+        "integer_identity_exact": true,
+        "move_hit_gain": 20,
+        "net_hit_delta": -88,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 108
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 195,
+        "exact_count": 20,
+        "exact_rate": 0.10256410256410256,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.10256410256410256,
+            "exact_hit_count": 20,
+            "mae": 3.2495143810761857,
+            "p95": 7.653168239245289,
+            "rmse": 3.914920422769324,
+            "sae": 633.6553043098562,
+            "sse": 2988.6873737401866,
+            "within_one_tick": 0.2,
+            "within_one_tick_count": 39
+          },
+          "count": 195,
+          "delta_sae": -548.3446956901438,
+          "delta_sse": -8323.312626259813,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 6.061538461538461,
+            "p95": 15.0,
+            "rmse": 7.616446442420272,
+            "sae": 1182.0,
+            "sse": 11312.0,
+            "within_one_tick": 0.16923076923076924,
+            "within_one_tick_count": 33
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9435897435897436,
+        "within_one_tick_rate": 0.2
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "confusion": {
+        "balanced_accuracy": 0.5005070630626057,
+        "count": 293734,
+        "counts": {
+          "FN": 43173,
+          "FP": 1,
+          "TN": 250516,
+          "TP": 44
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.991745071192774e-06,
+        "fractions": {
+          "FN": 0.14697992060844164,
+          "FP": 3.404440752517584e-06,
+          "TN": 0.852866879557695,
+          "TP": 0.00014979539311077368
+        },
+        "missed_move_rate": 0.9989818821297175,
+        "move_coverage_ratio": 0.0010412569127889488,
+        "precision": 0.9777777777777777,
+        "predicted_move_fraction": 0.00015319983386329126,
+        "projected_move_fraction": 0.00014298651160573852,
+        "recall": 0.0010181178702825277,
+        "specificity": 0.9999960082549288,
+        "true_move_fraction": 0.14712971600155242
+      },
+      "dev_auc": 0.5566559211925701,
+      "exact_hit": {
+        "candidate_exact_hit_count": 250521,
+        "exact_hit_deficit_count": 0,
+        "exact_hit_surplus_count": 4,
+        "hold_exact_hit_count": 250517,
+        "integer_identity_exact": true,
+        "move_hit_gain": 5,
+        "net_hit_delta": 4,
+        "state": "NO_EXACT_HIT_DEFICIT",
+        "static_hit_loss": 1
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": true,
+      "tp": {
+        "count": 44,
+        "exact_count": 5,
+        "exact_rate": 0.11363636363636363,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.11363636363636363,
+            "exact_hit_count": 5,
+            "mae": 1.894688193211043,
+            "p95": 3.6912741713631534,
+            "rmse": 2.406305429619571,
+            "sae": 83.3662805012859,
+            "sse": 254.77345610713172,
+            "within_one_tick": 0.4318181818181818,
+            "within_one_tick_count": 19
+          },
+          "count": 44,
+          "delta_sae": -308.6337194987141,
+          "delta_sse": -3441.2265438928684,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 8.909090909090908,
+            "p95": 11.0,
+            "rmse": 9.16515138991168,
+            "sae": 392.0,
+            "sse": 3696.0,
+            "within_one_tick": 0.0,
+            "within_one_tick_count": 0
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9772727272727273,
+        "within_one_tick_rate": 0.4318181818181818
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "confusion": {
+        "balanced_accuracy": 0.5139291968378409,
+        "count": 230783,
+        "counts": {
+          "FN": 31988,
+          "FP": 770,
+          "TN": 196976,
+          "TP": 1049
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.00389388407350844,
+        "fractions": {
+          "FN": 0.13860639648500972,
+          "FP": 0.003336467590767084,
+          "TN": 0.8535117404661522,
+          "TP": 0.004545395458071002
+        },
+        "missed_move_rate": 0.9682477222508097,
+        "move_coverage_ratio": 0.0550594787662318,
+        "precision": 0.576690489279824,
+        "predicted_move_fraction": 0.007881863048838086,
+        "projected_move_fraction": 0.006581940610876884,
+        "recall": 0.0317522777491903,
+        "specificity": 0.9961061159264916,
+        "true_move_fraction": 0.14315179194308073
+      },
+      "dev_auc": 0.5742087645958651,
+      "exact_hit": {
+        "candidate_exact_hit_count": 197371,
+        "exact_hit_deficit_count": 375,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 197746,
+        "integer_identity_exact": true,
+        "move_hit_gain": 211,
+        "net_hit_delta": -375,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 586
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 1049,
+        "exact_count": 211,
+        "exact_rate": 0.2011439466158246,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.2011439466158246,
+            "exact_hit_count": 211,
+            "mae": 1.6086151562669548,
+            "p95": 4.340804337682287,
+            "rmse": 2.1611929120011673,
+            "sae": 1687.4372989240355,
+            "sse": 4899.621788225406,
+            "within_one_tick": 0.6034318398474738,
+            "within_one_tick_count": 633
+          },
+          "count": 1049,
+          "delta_sae": -2115.5627010759645,
+          "delta_sse": -24327.378211774594,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 3.6253574833174453,
+            "p95": 12.0,
+            "rmse": 5.278425249755322,
+            "sae": 3803.0,
+            "sse": 29227.0,
+            "within_one_tick": 0.3517635843660629,
+            "within_one_tick_count": 369
+          },
+          "support_status": "DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.882745471877979,
+        "within_one_tick_rate": 0.6034318398474738
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "confusion": {
+        "balanced_accuracy": 0.5026633547327147,
+        "count": 277385,
+        "counts": {
+          "FN": 40603,
+          "FP": 9,
+          "TN": 236554,
+          "TP": 219
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.804483372294061e-05,
+        "fractions": {
+          "FN": 0.1463777781783442,
+          "FP": 3.244587847215963e-05,
+          "TN": 0.8528002595670278,
+          "TP": 0.0007895163761558844
+        },
+        "missed_move_rate": 0.9946352457008476,
+        "move_coverage_ratio": 0.005585223653912106,
+        "precision": 0.9605263157894737,
+        "predicted_move_fraction": 0.0008219622546280441,
+        "projected_move_fraction": 0.0007967265713719199,
+        "recall": 0.0053647542991524175,
+        "specificity": 0.9999619551662771,
+        "true_move_fraction": 0.14716729455450006
+      },
+      "dev_auc": 0.5533645795313771,
+      "exact_hit": {
+        "candidate_exact_hit_count": 236624,
+        "exact_hit_deficit_count": 0,
+        "exact_hit_surplus_count": 61,
+        "hold_exact_hit_count": 236563,
+        "integer_identity_exact": true,
+        "move_hit_gain": 69,
+        "net_hit_delta": 61,
+        "state": "NO_EXACT_HIT_DEFICIT",
+        "static_hit_loss": 8
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": true,
+      "tp": {
+        "count": 219,
+        "exact_count": 69,
+        "exact_rate": 0.3150684931506849,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.3150684931506849,
+            "exact_hit_count": 69,
+            "mae": 1.119077022224068,
+            "p95": 2.71236221517528,
+            "rmse": 1.4301153811072485,
+            "sae": 245.0778678670709,
+            "sse": 447.9053707182172,
+            "within_one_tick": 0.7397260273972602,
+            "within_one_tick_count": 162
+          },
+          "count": 219,
+          "delta_sae": -1136.9221321329292,
+          "delta_sse": -10020.094629281783,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 6.310502283105023,
+            "p95": 11.0,
+            "rmse": 6.913688361358998,
+            "sae": 1382.0,
+            "sse": 10468.0,
+            "within_one_tick": 0.0365296803652968,
+            "within_one_tick_count": 8
+          },
+          "support_status": "DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9908675799086758,
+        "within_one_tick_rate": 0.7397260273972602
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "confusion": {
+        "balanced_accuracy": 0.5002561933663716,
+        "count": 194807,
+        "counts": {
+          "FN": 27656,
+          "FP": 11,
+          "TN": 167124,
+          "TP": 16
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 6.581505968229275e-05,
+        "fractions": {
+          "FN": 0.14196615111366634,
+          "FP": 5.64661434137377e-05,
+          "TN": 0.8578952501706818,
+          "TP": 8.213257223816392e-05
+        },
+        "missed_move_rate": 0.9994217982075745,
+        "move_coverage_ratio": 0.0009757155247181266,
+        "precision": 0.5925925925925926,
+        "predicted_move_fraction": 0.00013859871565190162,
+        "projected_move_fraction": 0.00012833214412213113,
+        "recall": 0.0005782017924255566,
+        "specificity": 0.9999341849403177,
+        "true_move_fraction": 0.1420482836859045
+      },
+      "dev_auc": 0.5652332740748713,
+      "exact_hit": {
+        "candidate_exact_hit_count": 167130,
+        "exact_hit_deficit_count": 5,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 167135,
+        "integer_identity_exact": true,
+        "move_hit_gain": 5,
+        "net_hit_delta": -5,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 10
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 16,
+        "exact_count": 5,
+        "exact_rate": 0.3125,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.3125,
+            "exact_hit_count": 5,
+            "mae": 1.287135639164785,
+            "p95": 4.299558981964719,
+            "rmse": 1.8040443578456153,
+            "sae": 20.59417022663656,
+            "sse": 52.07321672119358,
+            "within_one_tick": 0.75,
+            "within_one_tick_count": 12
+          },
+          "count": 16,
+          "delta_sae": -21.40582977336344,
+          "delta_sse": -93.92678327880643,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 2.625,
+            "p95": 4.5,
+            "rmse": 3.020761493398643,
+            "sae": 42.0,
+            "sse": 146.0,
+            "within_one_tick": 0.3125,
+            "within_one_tick_count": 5
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9375,
+        "within_one_tick_rate": 0.75
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "confusion": {
+        "balanced_accuracy": 0.5028022531002097,
+        "count": 257518,
+        "counts": {
+          "FN": 37807,
+          "FP": 11,
+          "TN": 219485,
+          "TP": 215
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 5.011480847031381e-05,
+        "fractions": {
+          "FN": 0.146813038311885,
+          "FP": 4.2715460666827174e-05,
+          "TN": 0.8523093531325966,
+          "TP": 0.0008348930948516221
+        },
+        "missed_move_rate": 0.9943453789911104,
+        "move_coverage_ratio": 0.005943927200042081,
+        "precision": 0.9513274336283186,
+        "predicted_move_fraction": 0.0008776085555184492,
+        "projected_move_fraction": 0.0008504259896395591,
+        "recall": 0.00565462100888959,
+        "specificity": 0.9999498851915297,
+        "true_move_fraction": 0.14764793140673663
+      },
+      "dev_auc": 0.549472202477229,
+      "exact_hit": {
+        "candidate_exact_hit_count": 219551,
+        "exact_hit_deficit_count": 0,
+        "exact_hit_surplus_count": 55,
+        "hold_exact_hit_count": 219496,
+        "integer_identity_exact": true,
+        "move_hit_gain": 65,
+        "net_hit_delta": 55,
+        "state": "NO_EXACT_HIT_DEFICIT",
+        "static_hit_loss": 10
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": true,
+      "tp": {
+        "count": 215,
+        "exact_count": 65,
+        "exact_rate": 0.3023255813953488,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.3023255813953488,
+            "exact_hit_count": 65,
+            "mae": 1.0351964371726163,
+            "p95": 2.662343787623333,
+            "rmse": 1.3318314270526792,
+            "sae": 222.56723399211253,
+            "sse": 381.3616142683128,
+            "within_one_tick": 0.7581395348837209,
+            "within_one_tick_count": 163
+          },
+          "count": 215,
+          "delta_sae": -1065.4327660078875,
+          "delta_sse": -8906.638385731687,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 5.9906976744186045,
+            "p95": 10.299999999999983,
+            "rmse": 6.572670690061994,
+            "sae": 1288.0,
+            "sse": 9288.0,
+            "within_one_tick": 0.027906976744186046,
+            "within_one_tick_count": 6
+          },
+          "support_status": "DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9906976744186047,
+        "within_one_tick_rate": 0.7581395348837209
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "confusion": {
+        "balanced_accuracy": 0.5115407089957971,
+        "count": 265076,
+        "counts": {
+          "FN": 37283,
+          "FP": 198,
+          "TN": 226680,
+          "TP": 915
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0008727157326845265,
+        "fractions": {
+          "FN": 0.1406502286136806,
+          "FP": 0.0007469555900949162,
+          "TN": 0.8551509755692707,
+          "TP": 0.0034518402269537794
+        },
+        "missed_move_rate": 0.9760458662757212,
+        "move_coverage_ratio": 0.029137651185925966,
+        "precision": 0.8221024258760108,
+        "predicted_move_fraction": 0.004198795817048695,
+        "projected_move_fraction": 0.004081848224660098,
+        "recall": 0.023954133724278757,
+        "specificity": 0.9991272842673155,
+        "true_move_fraction": 0.1441020688406344
+      },
+      "dev_auc": 0.5684623775029038,
+      "exact_hit": {
+        "candidate_exact_hit_count": 226811,
+        "exact_hit_deficit_count": 67,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 226878,
+        "integer_identity_exact": true,
+        "move_hit_gain": 125,
+        "net_hit_delta": -67,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 192
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 915,
+        "exact_count": 125,
+        "exact_rate": 0.1366120218579235,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.1366120218579235,
+            "exact_hit_count": 125,
+            "mae": 3.081709033850495,
+            "p95": 8.662285794064182,
+            "rmse": 4.203685269841031,
+            "sae": 2819.7637659732027,
+            "sse": 16168.937410808794,
+            "within_one_tick": 0.3628415300546448,
+            "within_one_tick_count": 332
+          },
+          "count": 915,
+          "delta_sae": -2719.2362340267973,
+          "delta_sse": -37138.062589191206,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 6.053551912568306,
+            "p95": 17.0,
+            "rmse": 7.632759421954987,
+            "sae": 5539.0,
+            "sse": 53307.0,
+            "within_one_tick": 0.0994535519125683,
+            "within_one_tick_count": 91
+          },
+          "support_status": "DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9497267759562842,
+        "within_one_tick_rate": 0.3628415300546448
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "confusion": {
+        "balanced_accuracy": 0.5001136993399965,
+        "count": 293734,
+        "counts": {
+          "FN": 43207,
+          "FP": 1,
+          "TN": 250516,
+          "TP": 10
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.991745071192774e-06,
+        "fractions": {
+          "FN": 0.14709567159402726,
+          "FP": 3.404440752517584e-06,
+          "TN": 0.852866879557695,
+          "TP": 3.404440752517584e-05
+        },
+        "missed_move_rate": 0.9997686095749357,
+        "move_coverage_ratio": 0.0002545294675706319,
+        "precision": 0.9090909090909091,
+        "predicted_move_fraction": 3.744884827769342e-05,
+        "projected_move_fraction": 3.744884827769342e-05,
+        "recall": 0.00023139042506421085,
+        "specificity": 0.9999960082549288,
+        "true_move_fraction": 0.14712971600155242
+      },
+      "dev_auc": 0.5571171473985269,
+      "exact_hit": {
+        "candidate_exact_hit_count": 250520,
+        "exact_hit_deficit_count": 0,
+        "exact_hit_surplus_count": 3,
+        "hold_exact_hit_count": 250517,
+        "integer_identity_exact": true,
+        "move_hit_gain": 4,
+        "net_hit_delta": 3,
+        "state": "NO_EXACT_HIT_DEFICIT",
+        "static_hit_loss": 1
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": true,
+      "tp": {
+        "count": 10,
+        "exact_count": 4,
+        "exact_rate": 0.4,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.4,
+            "exact_hit_count": 4,
+            "mae": 0.7108111086854537,
+            "p95": 1.6230332793904139,
+            "rmse": 0.9029001203258664,
+            "sae": 7.108111086854537,
+            "sse": 8.152286272844641,
+            "within_one_tick": 0.8,
+            "within_one_tick_count": 8
+          },
+          "count": 10,
+          "delta_sae": -93.89188891314546,
+          "delta_sse": -1018.8477137271553,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 10.1,
+            "p95": 11.0,
+            "rmse": 10.134100848126586,
+            "sae": 101.0,
+            "sse": 1027.0,
+            "within_one_tick": 0.0,
+            "within_one_tick_count": 0
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 1.0,
+        "within_one_tick_rate": 0.8
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "confusion": {
+        "balanced_accuracy": 0.511055020427627,
+        "count": 247038,
+        "counts": {
+          "FN": 34648,
+          "FP": 516,
+          "TN": 211002,
+          "TP": 872
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0024395086942955208,
+        "fractions": {
+          "FN": 0.14025372614739431,
+          "FP": 0.002088747480144755,
+          "TN": 0.8541277050494256,
+          "TP": 0.0035298213230353227
+        },
+        "missed_move_rate": 0.9754504504504504,
+        "move_coverage_ratio": 0.03907657657657658,
+        "precision": 0.6282420749279539,
+        "predicted_move_fraction": 0.005618568803180077,
+        "projected_move_fraction": 0.004999230887555761,
+        "recall": 0.02454954954954955,
+        "specificity": 0.9975604913057045,
+        "true_move_fraction": 0.14378354747042965
+      },
+      "dev_auc": 0.57546156966685,
+      "exact_hit": {
+        "candidate_exact_hit_count": 211224,
+        "exact_hit_deficit_count": 294,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 211518,
+        "integer_identity_exact": true,
+        "move_hit_gain": 132,
+        "net_hit_delta": -294,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 426
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 872,
+        "exact_count": 132,
+        "exact_rate": 0.15137614678899083,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.15137614678899083,
+            "exact_hit_count": 132,
+            "mae": 1.8560874873948545,
+            "p95": 4.429583503177886,
+            "rmse": 2.3673266157392625,
+            "sae": 1618.508289008313,
+            "sse": 4886.893186472308,
+            "within_one_tick": 0.5022935779816514,
+            "within_one_tick_count": 438
+          },
+          "count": 872,
+          "delta_sae": -2456.491710991687,
+          "delta_sse": -33282.106813527695,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 4.673165137614679,
+            "p95": 16.0,
+            "rmse": 6.616025165522399,
+            "sae": 4075.0,
+            "sse": 38169.0,
+            "within_one_tick": 0.2809633027522936,
+            "within_one_tick_count": 245
+          },
+          "support_status": "DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.8830275229357798,
+        "within_one_tick_rate": 0.5022935779816514
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "confusion": {
+        "balanced_accuracy": 0.5021093744320256,
+        "count": 285207,
+        "counts": {
+          "FN": 41810,
+          "FP": 5,
+          "TN": 243214,
+          "TP": 178
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 2.055760446346708e-05,
+        "fractions": {
+          "FN": 0.14659527991949706,
+          "FP": 1.753112651512761e-05,
+          "TN": 0.8527630808500493,
+          "TP": 0.0006241081039385428
+        },
+        "missed_move_rate": 0.9957606935314852,
+        "move_coverage_ratio": 0.004358388110888825,
+        "precision": 0.9726775956284153,
+        "predicted_move_fraction": 0.0006416392304536705,
+        "projected_move_fraction": 0.0006206018786355173,
+        "recall": 0.004239306468514814,
+        "specificity": 0.9999794423955365,
+        "true_move_fraction": 0.14721938802343562
+      },
+      "dev_auc": 0.5563448907476677,
+      "exact_hit": {
+        "candidate_exact_hit_count": 243254,
+        "exact_hit_deficit_count": 0,
+        "exact_hit_surplus_count": 35,
+        "hold_exact_hit_count": 243219,
+        "integer_identity_exact": true,
+        "move_hit_gain": 38,
+        "net_hit_delta": 35,
+        "state": "NO_EXACT_HIT_DEFICIT",
+        "static_hit_loss": 3
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": true,
+      "tp": {
+        "count": 178,
+        "exact_count": 38,
+        "exact_rate": 0.21348314606741572,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.21348314606741572,
+            "exact_hit_count": 38,
+            "mae": 1.3188712050166673,
+            "p95": 3.086550179519333,
+            "rmse": 1.6393468835587168,
+            "sae": 234.7590744929668,
+            "sse": 478.36756042479453,
+            "within_one_tick": 0.6348314606741573,
+            "within_one_tick_count": 113
+          },
+          "count": 178,
+          "delta_sae": -997.2409255070332,
+          "delta_sse": -9467.632439575205,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 6.921348314606742,
+            "p95": 11.0,
+            "rmse": 7.4750521399105985,
+            "sae": 1232.0,
+            "sse": 9946.0,
+            "within_one_tick": 0.0056179775280898875,
+            "within_one_tick_count": 1
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9887640449438202,
+        "within_one_tick_rate": 0.6348314606741573
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "confusion": {
+        "balanced_accuracy": 0.5105414428096955,
+        "count": 223004,
+        "counts": {
+          "FN": 31123,
+          "FP": 503,
+          "TN": 190622,
+          "TP": 756
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.002631785480706344,
+        "fractions": {
+          "FN": 0.1395625190579541,
+          "FP": 0.002255564922602285,
+          "TN": 0.8547918422987928,
+          "TP": 0.003390073720650751
+        },
+        "missed_move_rate": 0.9762853288999027,
+        "move_coverage_ratio": 0.03949308322092914,
+        "precision": 0.6004765687053217,
+        "predicted_move_fraction": 0.005645638643253036,
+        "projected_move_fraction": 0.00499542609101182,
+        "recall": 0.023714671100097243,
+        "specificity": 0.9973682145192937,
+        "true_move_fraction": 0.14295259277860486
+      },
+      "dev_auc": 0.5735501841485271,
+      "exact_hit": {
+        "candidate_exact_hit_count": 190843,
+        "exact_hit_deficit_count": 282,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 191125,
+        "integer_identity_exact": true,
+        "move_hit_gain": 131,
+        "net_hit_delta": -282,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 413
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 756,
+        "exact_count": 131,
+        "exact_rate": 0.17328042328042328,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.17328042328042328,
+            "exact_hit_count": 131,
+            "mae": 1.7835429771594873,
+            "p95": 4.76672418265909,
+            "rmse": 2.35440771743049,
+            "sae": 1348.3584907325724,
+            "sse": 4190.686189121564,
+            "within_one_tick": 0.5383597883597884,
+            "within_one_tick_count": 407
+          },
+          "count": 756,
+          "delta_sae": -1758.6415092674276,
+          "delta_sse": -22274.313810878437,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 4.10978835978836,
+            "p95": 15.0,
+            "rmse": 5.91663872115019,
+            "sae": 3107.0,
+            "sse": 26465.0,
+            "within_one_tick": 0.3082010582010582,
+            "within_one_tick_count": 233
+          },
+          "support_status": "DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.8835978835978836,
+        "within_one_tick_rate": 0.5383597883597884
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "confusion": {
+        "balanced_accuracy": 0.5027166371236298,
+        "count": 273268,
+        "counts": {
+          "FN": 40017,
+          "FP": 8,
+          "TN": 233023,
+          "TP": 220
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.433019641163622e-05,
+        "fractions": {
+          "FN": 0.14643866094822666,
+          "FP": 2.9275290191314023e-05,
+          "TN": 0.852726993281321,
+          "TP": 0.0008050704802611356
+        },
+        "missed_move_rate": 0.9945323955563288,
+        "move_coverage_ratio": 0.005666426423441112,
+        "precision": 0.9649122807017544,
+        "predicted_move_fraction": 0.0008343457704524496,
+        "projected_move_fraction": 0.0008160487140828783,
+        "recall": 0.005467604443671248,
+        "specificity": 0.9999656698035884,
+        "true_move_fraction": 0.1472437314284878
+      },
+      "dev_auc": 0.5525531497856183,
+      "exact_hit": {
+        "candidate_exact_hit_count": 233099,
+        "exact_hit_deficit_count": 0,
+        "exact_hit_surplus_count": 68,
+        "hold_exact_hit_count": 233031,
+        "integer_identity_exact": true,
+        "move_hit_gain": 75,
+        "net_hit_delta": 68,
+        "state": "NO_EXACT_HIT_DEFICIT",
+        "static_hit_loss": 7
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": true,
+      "tp": {
+        "count": 220,
+        "exact_count": 75,
+        "exact_rate": 0.3409090909090909,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.3409090909090909,
+            "exact_hit_count": 75,
+            "mae": 1.0619330132113687,
+            "p95": 2.7365182456347905,
+            "rmse": 1.384763219318463,
+            "sae": 233.6252629065011,
+            "sse": 421.86521818699134,
+            "within_one_tick": 0.75,
+            "within_one_tick_count": 165
+          },
+          "count": 220,
+          "delta_sae": -1183.3747370934989,
+          "delta_sse": -10305.134781813009,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 6.4409090909090905,
+            "p95": 11.0,
+            "rmse": 6.982771005058873,
+            "sae": 1417.0,
+            "sse": 10727.0,
+            "within_one_tick": 0.022727272727272728,
+            "within_one_tick_count": 5
+          },
+          "support_status": "DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9954545454545455,
+        "within_one_tick_rate": 0.75
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "confusion": {
+        "balanced_accuracy": 0.5006851941686085,
+        "count": 192080,
+        "counts": {
+          "FN": 27222,
+          "FP": 22,
+          "TN": 164795,
+          "TP": 41
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0001334813763143365,
+        "fractions": {
+          "FN": 0.1417221990837151,
+          "FP": 0.00011453561016243233,
+          "TN": 0.8579498125780924,
+          "TP": 0.0002134527280299875
+        },
+        "missed_move_rate": 0.9984961302864689,
+        "move_coverage_ratio": 0.002310824193962513,
+        "precision": 0.6507936507936508,
+        "predicted_move_fraction": 0.00032798833819241985,
+        "projected_move_fraction": 0.0003123698458975427,
+        "recall": 0.0015038697135311594,
+        "specificity": 0.9998665186236857,
+        "true_move_fraction": 0.1419356518117451
+      },
+      "dev_auc": 0.5634630818329653,
+      "exact_hit": {
+        "candidate_exact_hit_count": 164807,
+        "exact_hit_deficit_count": 10,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 164817,
+        "integer_identity_exact": true,
+        "move_hit_gain": 11,
+        "net_hit_delta": -10,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 21
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 41,
+        "exact_count": 11,
+        "exact_rate": 0.2682926829268293,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.2682926829268293,
+            "exact_hit_count": 11,
+            "mae": 1.2412059282292198,
+            "p95": 4.034518572627341,
+            "rmse": 1.7455747798967485,
+            "sae": 50.88944305739801,
+            "sse": 124.92828380067483,
+            "within_one_tick": 0.7804878048780488,
+            "within_one_tick_count": 32
+          },
+          "count": 41,
+          "delta_sae": -128.110556942602,
+          "delta_sse": -1404.0717161993252,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 4.365853658536586,
+            "p95": 15.0,
+            "rmse": 6.106773528372349,
+            "sae": 179.0,
+            "sse": 1529.0,
+            "within_one_tick": 0.17073170731707318,
+            "within_one_tick_count": 7
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.926829268292683,
+        "within_one_tick_rate": 0.7804878048780488
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "confusion": {
+        "balanced_accuracy": 0.5016789804332578,
+        "count": 255865,
+        "counts": {
+          "FN": 37642,
+          "FP": 1,
+          "TN": 218095,
+          "TP": 127
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 4.585136820482723e-06,
+        "fractions": {
+          "FN": 0.14711664354249313,
+          "FP": 3.908311023391241e-06,
+          "TN": 0.8523830926465128,
+          "TP": 0.0004963554999706877
+        },
+        "missed_move_rate": 0.9966374539966639,
+        "move_coverage_ratio": 0.003389022743519818,
+        "precision": 0.9921875,
+        "predicted_move_fraction": 0.0005002638109940789,
+        "projected_move_fraction": 0.0004924471889472964,
+        "recall": 0.0033625460033360694,
+        "specificity": 0.9999954148631796,
+        "true_move_fraction": 0.1476129990424638
+      },
+      "dev_auc": 0.548628958236966,
+      "exact_hit": {
+        "candidate_exact_hit_count": 218132,
+        "exact_hit_deficit_count": 0,
+        "exact_hit_surplus_count": 36,
+        "hold_exact_hit_count": 218096,
+        "integer_identity_exact": true,
+        "move_hit_gain": 37,
+        "net_hit_delta": 36,
+        "state": "NO_EXACT_HIT_DEFICIT",
+        "static_hit_loss": 1
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": true,
+      "tp": {
+        "count": 127,
+        "exact_count": 37,
+        "exact_rate": 0.29133858267716534,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.29133858267716534,
+            "exact_hit_count": 37,
+            "mae": 1.091681624755594,
+            "p95": 2.9502533380587277,
+            "rmse": 1.4011104031912103,
+            "sae": 138.64356634396046,
+            "sse": 249.31501596519078,
+            "within_one_tick": 0.7322834645669292,
+            "within_one_tick_count": 93
+          },
+          "count": 127,
+          "delta_sae": -785.3564336560396,
+          "delta_sse": -7174.6849840348095,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 7.275590551181103,
+            "p95": 11.0,
+            "rmse": 7.645697673422997,
+            "sae": 924.0,
+            "sse": 7424.0,
+            "within_one_tick": 0.0,
+            "within_one_tick_count": 0
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.984251968503937,
+        "within_one_tick_rate": 0.7322834645669292
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "confusion": {
+        "balanced_accuracy": 0.5126006404253033,
+        "count": 243887,
+        "counts": {
+          "FN": 34120,
+          "FP": 197,
+          "TN": 208654,
+          "TP": 916
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0009432561970016902,
+        "fractions": {
+          "FN": 0.13990085572416733,
+          "FP": 0.00080775113064657,
+          "TN": 0.8555355554006568,
+          "TP": 0.003755837744529229
+        },
+        "missed_move_rate": 0.9738554629523918,
+        "move_coverage_ratio": 0.03176732503710469,
+        "precision": 0.8230008984725966,
+        "predicted_move_fraction": 0.0045635888751757985,
+        "projected_move_fraction": 0.004350375378761475,
+        "recall": 0.026144537047608173,
+        "specificity": 0.9990567438029984,
+        "true_move_fraction": 0.14365669346869656
+      },
+      "dev_auc": 0.569126708779917,
+      "exact_hit": {
+        "candidate_exact_hit_count": 208796,
+        "exact_hit_deficit_count": 55,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 208851,
+        "integer_identity_exact": true,
+        "move_hit_gain": 126,
+        "net_hit_delta": -55,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 181
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 916,
+        "exact_count": 126,
+        "exact_rate": 0.13755458515283842,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.13755458515283842,
+            "exact_hit_count": 126,
+            "mae": 3.0997830750327333,
+            "p95": 8.51733982943067,
+            "rmse": 4.287377704851529,
+            "sae": 2839.4012967299836,
+            "sse": 16837.5525469971,
+            "within_one_tick": 0.36899563318777295,
+            "within_one_tick_count": 338
+          },
+          "count": 916,
+          "delta_sae": -2509.5987032700164,
+          "delta_sse": -33677.4474530029,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 5.8395196506550215,
+            "p95": 17.0,
+            "rmse": 7.426128191235575,
+            "sae": 5349.0,
+            "sse": 50515.0,
+            "within_one_tick": 0.10043668122270742,
+            "within_one_tick_count": 92
+          },
+          "support_status": "DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9443231441048034,
+        "within_one_tick_rate": 0.36899563318777295
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "confusion": {
+        "balanced_accuracy": 0.500261324881524,
+        "count": 283758,
+        "counts": {
+          "FN": 41741,
+          "FP": 1,
+          "TN": 241994,
+          "TP": 22
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 4.132316783404616e-06,
+        "fractions": {
+          "FN": 0.14710069848250976,
+          "FP": 3.524129716166593e-06,
+          "TN": 0.8528182465340184,
+          "TP": 7.753085375566504e-05
+        },
+        "missed_move_rate": 0.9994732179201685,
+        "move_coverage_ratio": 0.0005507267198237674,
+        "precision": 0.9565217391304348,
+        "predicted_move_fraction": 8.105498347183163e-05,
+        "projected_move_fraction": 8.105498347183163e-05,
+        "recall": 0.0005267820798314297,
+        "specificity": 0.9999958676832166,
+        "true_move_fraction": 0.1471782293362654
+      },
+      "dev_auc": 0.5551039963743662,
+      "exact_hit": {
+        "candidate_exact_hit_count": 241996,
+        "exact_hit_deficit_count": 0,
+        "exact_hit_surplus_count": 1,
+        "hold_exact_hit_count": 241995,
+        "integer_identity_exact": true,
+        "move_hit_gain": 2,
+        "net_hit_delta": 1,
+        "state": "NO_EXACT_HIT_DEFICIT",
+        "static_hit_loss": 1
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": true,
+      "tp": {
+        "count": 22,
+        "exact_count": 2,
+        "exact_rate": 0.09090909090909091,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.09090909090909091,
+            "exact_hit_count": 2,
+            "mae": 2.6766395436510115,
+            "p95": 4.581700279141613,
+            "rmse": 3.0000395158119257,
+            "sae": 58.88606996032225,
+            "sse": 198.00521612152718,
+            "within_one_tick": 0.22727272727272727,
+            "within_one_tick_count": 5
+          },
+          "count": 22,
+          "delta_sae": -169.11393003967774,
+          "delta_sse": -2187.994783878473,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 10.363636363636363,
+            "p95": 12.0,
+            "rmse": 10.414151211430793,
+            "sae": 228.0,
+            "sse": 2386.0,
+            "within_one_tick": 0.0,
+            "within_one_tick_count": 0
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 1.0,
+        "within_one_tick_rate": 0.22727272727272727
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "confusion": {
+        "balanced_accuracy": 0.5097284506655708,
+        "count": 232844,
+        "counts": {
+          "FN": 32654,
+          "FP": 393,
+          "TN": 199082,
+          "TP": 715
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.001970171700714375,
+        "fractions": {
+          "FN": 0.14023981721667725,
+          "FP": 0.0016878253251103744,
+          "TN": 0.8550016319939531,
+          "TP": 0.0030707254642593326
+        },
+        "missed_move_rate": 0.9785729269681441,
+        "move_coverage_ratio": 0.03320447121579909,
+        "precision": 0.6453068592057761,
+        "predicted_move_fraction": 0.004758550789369707,
+        "projected_move_fraction": 0.004277542045317895,
+        "recall": 0.021427073031855915,
+        "specificity": 0.9980298282992857,
+        "true_move_fraction": 0.1433105426809366
+      },
+      "dev_auc": 0.5746296404819521,
+      "exact_hit": {
+        "candidate_exact_hit_count": 199245,
+        "exact_hit_deficit_count": 230,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 199475,
+        "integer_identity_exact": true,
+        "move_hit_gain": 100,
+        "net_hit_delta": -230,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 330
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 715,
+        "exact_count": 100,
+        "exact_rate": 0.13986013986013987,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.13986013986013987,
+            "exact_hit_count": 100,
+            "mae": 1.9371538285321879,
+            "p95": 4.963504315451104,
+            "rmse": 2.49401993465381,
+            "sae": 1385.0649874005144,
+            "sse": 4447.396835632177,
+            "within_one_tick": 0.48391608391608393,
+            "within_one_tick_count": 346
+          },
+          "count": 715,
+          "delta_sae": -2094.9350125994856,
+          "delta_sse": -29218.60316436782,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 4.8671328671328675,
+            "p95": 17.0,
+            "rmse": 6.861873992235261,
+            "sae": 3480.0,
+            "sse": 33666.0,
+            "within_one_tick": 0.2699300699300699,
+            "within_one_tick_count": 193
+          },
+          "support_status": "DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.8853146853146853,
+        "within_one_tick_rate": 0.48391608391608393
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "confusion": {
+        "balanced_accuracy": 0.5029332081505125,
+        "count": 278470,
+        "counts": {
+          "FN": 40738,
+          "FP": 15,
+          "TN": 237474,
+          "TP": 243
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 6.316082008008792e-05,
+        "fractions": {
+          "FN": 0.14629223973857147,
+          "FP": 5.386576650985744e-05,
+          "TN": 0.852781269077459,
+          "TP": 0.0008726254174596904
+        },
+        "missed_move_rate": 0.9940704228788951,
+        "move_coverage_ratio": 0.006295600400185452,
+        "precision": 0.9418604651162791,
+        "predicted_move_fraction": 0.0009264911839695479,
+        "projected_move_fraction": 0.000883398570761662,
+        "recall": 0.005929577121104902,
+        "specificity": 0.9999368391799199,
+        "true_move_fraction": 0.14716486515603117
+      },
+      "dev_auc": 0.5557077742125165,
+      "exact_hit": {
+        "candidate_exact_hit_count": 237535,
+        "exact_hit_deficit_count": 0,
+        "exact_hit_surplus_count": 46,
+        "hold_exact_hit_count": 237489,
+        "integer_identity_exact": true,
+        "move_hit_gain": 54,
+        "net_hit_delta": 46,
+        "state": "NO_EXACT_HIT_DEFICIT",
+        "static_hit_loss": 8
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": true,
+      "tp": {
+        "count": 243,
+        "exact_count": 54,
+        "exact_rate": 0.2222222222222222,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.2222222222222222,
+            "exact_hit_count": 54,
+            "mae": 1.2675573239267244,
+            "p95": 2.8738074846436112,
+            "rmse": 1.5670955617378577,
+            "sae": 308.01642971419403,
+            "sse": 596.7566054072936,
+            "within_one_tick": 0.6378600823045267,
+            "within_one_tick_count": 155
+          },
+          "count": 243,
+          "delta_sae": -1229.9835702858059,
+          "delta_sse": -10917.243394592706,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 6.329218106995885,
+            "p95": 11.0,
+            "rmse": 6.883510445214906,
+            "sae": 1538.0,
+            "sse": 11514.0,
+            "within_one_tick": 0.02880658436213992,
+            "within_one_tick_count": 7
+          },
+          "support_status": "DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9958847736625515,
+        "within_one_tick_rate": 0.6378600823045267
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "confusion": {
+        "balanced_accuracy": 0.5017545210149349,
+        "count": 214903,
+        "counts": {
+          "FN": 30522,
+          "FP": 87,
+          "TN": 184172,
+          "TP": 122
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0004721614683678952,
+        "fractions": {
+          "FN": 0.14202686793576638,
+          "FP": 0.00040483380874161833,
+          "TN": 0.8570006002708198,
+          "TP": 0.0005676979846721544
+        },
+        "missed_move_rate": 0.9960187965017622,
+        "move_coverage_ratio": 0.00682025845189923,
+        "precision": 0.583732057416268,
+        "predicted_move_fraction": 0.0009725317934137727,
+        "projected_move_fraction": 0.0009353056960582216,
+        "recall": 0.003981203498237828,
+        "specificity": 0.9995278385316321,
+        "true_move_fraction": 0.1425945659204385
+      },
+      "dev_auc": 0.572841168550056,
+      "exact_hit": {
+        "candidate_exact_hit_count": 184192,
+        "exact_hit_deficit_count": 67,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 184259,
+        "integer_identity_exact": true,
+        "move_hit_gain": 16,
+        "net_hit_delta": -67,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 83
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 122,
+        "exact_count": 16,
+        "exact_rate": 0.13114754098360656,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.13114754098360656,
+            "exact_hit_count": 16,
+            "mae": 3.1268465387246245,
+            "p95": 7.382977675223448,
+            "rmse": 3.833437038887644,
+            "sae": 381.4752777244042,
+            "sse": 1792.819222796112,
+            "within_one_tick": 0.29508196721311475,
+            "within_one_tick_count": 36
+          },
+          "count": 122,
+          "delta_sae": -432.5247222755958,
+          "delta_sse": -7247.180777203888,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 6.672131147540983,
+            "p95": 18.0,
+            "rmse": 8.608040465503034,
+            "sae": 814.0,
+            "sse": 9040.0,
+            "within_one_tick": 0.20491803278688525,
+            "within_one_tick_count": 25
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9672131147540983,
+        "within_one_tick_rate": 0.29508196721311475
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "confusion": {
+        "balanced_accuracy": 0.5025465082184909,
+        "count": 268910,
+        "counts": {
+          "FN": 39418,
+          "FP": 7,
+          "TN": 229282,
+          "TP": 203
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.052915752609153e-05,
+        "fractions": {
+          "FN": 0.14658435907924586,
+          "FP": 2.6031014093934775e-05,
+          "TN": 0.8526347104979362,
+          "TP": 0.0007548994087241084
+        },
+        "missed_move_rate": 0.994876454405492,
+        "move_coverage_ratio": 0.0053002195805254785,
+        "precision": 0.9666666666666667,
+        "predicted_move_fraction": 0.0007809304228180433,
+        "projected_move_fraction": 0.000766055557621509,
+        "recall": 0.005123545594507963,
+        "specificity": 0.9999694708424739,
+        "true_move_fraction": 0.14733925848796994
+      },
+      "dev_auc": 0.5530596228889865,
+      "exact_hit": {
+        "candidate_exact_hit_count": 229348,
+        "exact_hit_deficit_count": 0,
+        "exact_hit_surplus_count": 59,
+        "hold_exact_hit_count": 229289,
+        "integer_identity_exact": true,
+        "move_hit_gain": 66,
+        "net_hit_delta": 59,
+        "state": "NO_EXACT_HIT_DEFICIT",
+        "static_hit_loss": 7
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": true,
+      "tp": {
+        "count": 203,
+        "exact_count": 66,
+        "exact_rate": 0.3251231527093596,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.3251231527093596,
+            "exact_hit_count": 66,
+            "mae": 1.129787524349835,
+            "p95": 2.8071329798518088,
+            "rmse": 1.4700741425288453,
+            "sae": 229.3468674430165,
+            "sse": 438.7069508599797,
+            "within_one_tick": 0.6995073891625616,
+            "within_one_tick_count": 142
+          },
+          "count": 203,
+          "delta_sae": -1097.6531325569836,
+          "delta_sse": -9714.29304914002,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 6.536945812807882,
+            "p95": 11.0,
+            "rmse": 7.072112720052131,
+            "sae": 1327.0,
+            "sse": 10153.0,
+            "within_one_tick": 0.024630541871921183,
+            "within_one_tick_count": 5
+          },
+          "support_status": "DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9901477832512315,
+        "within_one_tick_rate": 0.6995073891625616
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "confusion": {
+        "balanced_accuracy": 0.5017417099080888,
+        "count": 188941,
+        "counts": {
+          "FN": 26668,
+          "FP": 53,
+          "TN": 162118,
+          "TP": 102
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.00032681552188739045,
+        "fractions": {
+          "FN": 0.1411445901101402,
+          "FP": 0.0002805108473015386,
+          "TN": 0.8580350479779402,
+          "TP": 0.0005398510646180554
+        },
+        "missed_move_rate": 0.996189764661935,
+        "move_coverage_ratio": 0.005790063503922301,
+        "precision": 0.6580645161290323,
+        "predicted_move_fraction": 0.0008203619119195939,
+        "projected_move_fraction": 0.0006827528170169524,
+        "recall": 0.0038102353380649982,
+        "specificity": 0.9996731844781126,
+        "true_move_fraction": 0.14168444117475826
+      },
+      "dev_auc": 0.56270222469115,
+      "exact_hit": {
+        "candidate_exact_hit_count": 162165,
+        "exact_hit_deficit_count": 6,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 162171,
+        "integer_identity_exact": true,
+        "move_hit_gain": 28,
+        "net_hit_delta": -6,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 34
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 102,
+        "exact_count": 28,
+        "exact_rate": 0.27450980392156865,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.27450980392156865,
+            "exact_hit_count": 28,
+            "mae": 1.3893701327299246,
+            "p95": 4.356403690473938,
+            "rmse": 1.8748019846890536,
+            "sae": 141.7157535384523,
+            "sse": 358.5180131429895,
+            "within_one_tick": 0.6764705882352942,
+            "within_one_tick_count": 69
+          },
+          "count": 102,
+          "delta_sae": -172.2842464615477,
+          "delta_sse": -1135.4819868570105,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 3.0784313725490198,
+            "p95": 6.949999999999989,
+            "rmse": 3.8271476093207344,
+            "sae": 314.0,
+            "sse": 1494.0,
+            "within_one_tick": 0.22549019607843138,
+            "within_one_tick_count": 23
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9411764705882353,
+        "within_one_tick_rate": 0.6764705882352942
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "confusion": {
+        "balanced_accuracy": 0.5025234716295414,
+        "count": 253893,
+        "counts": {
+          "FN": 37285,
+          "FP": 5,
+          "TN": 216413,
+          "TP": 190
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 2.3103438715818464e-05,
+        "fractions": {
+          "FN": 0.14685320193939966,
+          "FP": 1.9693335381440213e-05,
+          "TN": 0.8523787579807242,
+          "TP": 0.0007483467444947281
+        },
+        "missed_move_rate": 0.9949299533022015,
+        "move_coverage_ratio": 0.005203468979319547,
+        "precision": 0.9743589743589743,
+        "predicted_move_fraction": 0.0007680400798761683,
+        "projected_move_fraction": 0.0007562240786473042,
+        "recall": 0.005070046697798532,
+        "specificity": 0.9999768965612842,
+        "true_move_fraction": 0.14760154868389438
+      },
+      "dev_auc": 0.5490206285564384,
+      "exact_hit": {
+        "candidate_exact_hit_count": 216467,
+        "exact_hit_deficit_count": 0,
+        "exact_hit_surplus_count": 49,
+        "hold_exact_hit_count": 216418,
+        "integer_identity_exact": true,
+        "move_hit_gain": 54,
+        "net_hit_delta": 49,
+        "state": "NO_EXACT_HIT_DEFICIT",
+        "static_hit_loss": 5
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": true,
+      "tp": {
+        "count": 190,
+        "exact_count": 54,
+        "exact_rate": 0.28421052631578947,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.28421052631578947,
+            "exact_hit_count": 54,
+            "mae": 1.1433851110898108,
+            "p95": 2.7522340010275976,
+            "rmse": 1.443587712991861,
+            "sae": 217.24317110706406,
+            "sse": 395.9496421692037,
+            "within_one_tick": 0.6894736842105263,
+            "within_one_tick_count": 131
+          },
+          "count": 190,
+          "delta_sae": -974.7568288929359,
+          "delta_sse": -8328.050357830796,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 6.273684210526316,
+            "p95": 10.549999999999983,
+            "rmse": 6.77611905692958,
+            "sae": 1192.0,
+            "sse": 8724.0,
+            "within_one_tick": 0.015789473684210527,
+            "within_one_tick_count": 3
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9947368421052631,
+        "within_one_tick_rate": 0.6894736842105263
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "confusion": {
+        "balanced_accuracy": 0.5129578434457743,
+        "count": 221278,
+        "counts": {
+          "FN": 30761,
+          "FP": 173,
+          "TN": 189496,
+          "TP": 848
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0009121153166832746,
+        "fractions": {
+          "FN": 0.13901517548061715,
+          "FP": 0.000781821961514475,
+          "TN": 0.8563707191858205,
+          "TP": 0.003832283372047831
+        },
+        "missed_move_rate": 0.9731721977917681,
+        "move_coverage_ratio": 0.03230092695118479,
+        "precision": 0.8305582761998042,
+        "predicted_move_fraction": 0.0046141053335623065,
+        "projected_move_fraction": 0.0045056444834100096,
+        "recall": 0.026827802208231832,
+        "specificity": 0.9990878846833168,
+        "true_move_fraction": 0.14284745885266498
+      },
+      "dev_auc": 0.5690625894854123,
+      "exact_hit": {
+        "candidate_exact_hit_count": 189634,
+        "exact_hit_deficit_count": 35,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 189669,
+        "integer_identity_exact": true,
+        "move_hit_gain": 137,
+        "net_hit_delta": -35,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 172
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 848,
+        "exact_count": 137,
+        "exact_rate": 0.1615566037735849,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.1615566037735849,
+            "exact_hit_count": 137,
+            "mae": 2.7271510951333715,
+            "p95": 7.375810464368481,
+            "rmse": 3.71365391398718,
+            "sae": 2312.624128673099,
+            "sse": 11694.959133155713,
+            "within_one_tick": 0.41391509433962265,
+            "within_one_tick_count": 351
+          },
+          "count": 848,
+          "delta_sae": -2454.375871326901,
+          "delta_sse": -31894.040866844287,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 5.621462264150943,
+            "p95": 17.0,
+            "rmse": 7.169527365280743,
+            "sae": 4767.0,
+            "sse": 43589.0,
+            "within_one_tick": 0.10377358490566038,
+            "within_one_tick_count": 88
+          },
+          "support_status": "DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9540094339622641,
+        "within_one_tick_rate": 0.41391509433962265
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "confusion": {
+        "balanced_accuracy": 0.5002222189436225,
+        "count": 272366,
+        "counts": {
+          "FN": 40094,
+          "FP": 1,
+          "TN": 232253,
+          "TP": 18
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 4.305630904096377e-06,
+        "fractions": {
+          "FN": 0.1472063326553241,
+          "FP": 3.671530220365244e-06,
+          "TN": 0.8527239082704889,
+          "TP": 6.608754396657439e-05
+        },
+        "missed_move_rate": 0.9995512564818508,
+        "move_coverage_ratio": 0.0004736737136019146,
+        "precision": 0.9473684210526315,
+        "predicted_move_fraction": 6.975907418693964e-05,
+        "projected_move_fraction": 6.975907418693964e-05,
+        "recall": 0.0004487435181491823,
+        "specificity": 0.9999956943690959,
+        "true_move_fraction": 0.14727242019929065
+      },
+      "dev_auc": 0.5529071541184077,
+      "exact_hit": {
+        "candidate_exact_hit_count": 232253,
+        "exact_hit_deficit_count": 1,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 232254,
+        "integer_identity_exact": true,
+        "move_hit_gain": 0,
+        "net_hit_delta": -1,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 1
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 18,
+        "exact_count": 0,
+        "exact_rate": 0.0,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 3.1258350234967254,
+            "p95": 4.552785773021546,
+            "rmse": 3.294745843466202,
+            "sae": 56.26503042294106,
+            "sse": 195.39630311468068,
+            "within_one_tick": 0.05555555555555555,
+            "within_one_tick_count": 1
+          },
+          "count": 18,
+          "delta_sae": -130.73496957705893,
+          "delta_sse": -1771.6036968853193,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 10.38888888888889,
+            "p95": 12.0,
+            "rmse": 10.45360118704448,
+            "sae": 187.0,
+            "sse": 1967.0,
+            "within_one_tick": 0.0,
+            "within_one_tick_count": 0
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 1.0,
+        "within_one_tick_rate": 0.05555555555555555
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "confusion": {
+        "balanced_accuracy": 0.5020537134539553,
+        "count": 214903,
+        "counts": {
+          "FN": 30502,
+          "FP": 97,
+          "TN": 184162,
+          "TP": 142
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0005264329015136303,
+        "fractions": {
+          "FN": 0.1419338026923775,
+          "FP": 0.0004513664304360572,
+          "TN": 0.8569540676491254,
+          "TP": 0.0006607632280610322
+        },
+        "missed_move_rate": 0.9953661401905757,
+        "move_coverage_ratio": 0.007799242918679024,
+        "precision": 0.5941422594142259,
+        "predicted_move_fraction": 0.0011121296584970894,
+        "projected_move_fraction": 0.0010702502989720943,
+        "recall": 0.004633859809424357,
+        "specificity": 0.9994735670984863,
+        "true_move_fraction": 0.1425945659204385
+      },
+      "dev_auc": 0.5732621129030435,
+      "exact_hit": {
+        "candidate_exact_hit_count": 184190,
+        "exact_hit_deficit_count": 69,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 184259,
+        "integer_identity_exact": true,
+        "move_hit_gain": 22,
+        "net_hit_delta": -69,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 91
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 142,
+        "exact_count": 22,
+        "exact_rate": 0.15492957746478872,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.15492957746478872,
+            "exact_hit_count": 22,
+            "mae": 2.2957627905593596,
+            "p95": 6.022441339064744,
+            "rmse": 2.9151766578835594,
+            "sae": 325.9983162594291,
+            "sse": 1206.7522024270206,
+            "within_one_tick": 0.4154929577464789,
+            "within_one_tick_count": 59
+          },
+          "count": 142,
+          "delta_sae": -633.0016837405709,
+          "delta_sse": -9930.24779757298,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 6.753521126760563,
+            "p95": 18.0,
+            "rmse": 8.856047508047183,
+            "sae": 959.0,
+            "sse": 11137.0,
+            "within_one_tick": 0.20422535211267606,
+            "within_one_tick_count": 29
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9507042253521126,
+        "within_one_tick_rate": 0.4154929577464789
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "confusion": {
+        "balanced_accuracy": 0.5000482976276103,
+        "count": 268910,
+        "counts": {
+          "FN": 39617,
+          "FP": 1,
+          "TN": 229288,
+          "TP": 4
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 4.361308218013075e-06,
+        "fractions": {
+          "FN": 0.14732438362277342,
+          "FP": 3.718716299133539e-06,
+          "TN": 0.852657022795731,
+          "TP": 1.4874865196534156e-05
+        },
+        "missed_move_rate": 0.9998990434365614,
+        "move_coverage_ratio": 0.00012619570429822568,
+        "precision": 0.8,
+        "predicted_move_fraction": 1.8593581495667695e-05,
+        "projected_move_fraction": 1.8593581495667695e-05,
+        "recall": 0.00010095656343858056,
+        "specificity": 0.999995638691782,
+        "true_move_fraction": 0.14733925848796994
+      },
+      "dev_auc": 0.5534983604678249,
+      "exact_hit": {
+        "candidate_exact_hit_count": 229288,
+        "exact_hit_deficit_count": 1,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 229289,
+        "integer_identity_exact": true,
+        "move_hit_gain": 0,
+        "net_hit_delta": -1,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 1
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 4,
+        "exact_count": 0,
+        "exact_rate": 0.0,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 1.5399983422566148,
+            "p95": 1.9082963994420703,
+            "rmse": 1.6441594354486224,
+            "sae": 6.159993369026459,
+            "sse": 10.81304099669893,
+            "within_one_tick": 0.25,
+            "within_one_tick_count": 1
+          },
+          "count": 4,
+          "delta_sae": -36.84000663097354,
+          "delta_sse": -454.18695900330107,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 10.75,
+            "p95": 11.85,
+            "rmse": 10.781929326423912,
+            "sae": 43.0,
+            "sse": 465.0,
+            "within_one_tick": 0.0,
+            "within_one_tick_count": 0
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 1.0,
+        "within_one_tick_rate": 0.25
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "confusion": {
+        "balanced_accuracy": 0.5013393017293423,
+        "count": 203479,
+        "counts": {
+          "FN": 28861,
+          "FP": 39,
+          "TN": 174495,
+          "TP": 84
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.00022345216404826565,
+        "fractions": {
+          "FN": 0.14183773264071475,
+          "FP": 0.00019166597044412446,
+          "TN": 0.8575577823755769,
+          "TP": 0.0004128190132642681
+        },
+        "missed_move_rate": 0.9970979443772672,
+        "move_coverage_ratio": 0.004249438590430126,
+        "precision": 0.6829268292682927,
+        "predicted_move_fraction": 0.0006044849837083925,
+        "projected_move_fraction": 0.0005749979113323733,
+        "recall": 0.002902055622732769,
+        "specificity": 0.9997765478359517,
+        "true_move_fraction": 0.14225055165397904
+      },
+      "dev_auc": 0.5689963008928409,
+      "exact_hit": {
+        "candidate_exact_hit_count": 174503,
+        "exact_hit_deficit_count": 31,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 174534,
+        "integer_identity_exact": true,
+        "move_hit_gain": 6,
+        "net_hit_delta": -31,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 37
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 84,
+        "exact_count": 6,
+        "exact_rate": 0.07142857142857142,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.07142857142857142,
+            "exact_hit_count": 6,
+            "mae": 3.0541459884113262,
+            "p95": 7.4035561235597775,
+            "rmse": 3.818159671722556,
+            "sae": 256.5482630265514,
+            "sse": 1224.5808354165538,
+            "within_one_tick": 0.35714285714285715,
+            "within_one_tick_count": 30
+          },
+          "count": 84,
+          "delta_sae": -265.4517369734486,
+          "delta_sse": -4165.419164583446,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 6.214285714285714,
+            "p95": 17.0,
+            "rmse": 8.010409893798611,
+            "sae": 522.0,
+            "sse": 5390.0,
+            "within_one_tick": 0.15476190476190477,
+            "within_one_tick_count": 13
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9404761904761905,
+        "within_one_tick_rate": 0.35714285714285715
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "confusion": {
+        "balanced_accuracy": 0.502301994441488,
+        "count": 262559,
+        "counts": {
+          "FN": 38550,
+          "FP": 4,
+          "TN": 223826,
+          "TP": 179
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 1.7870705446097486e-05,
+        "fractions": {
+          "FN": 0.14682414238323577,
+          "FP": 1.5234671064408381e-05,
+          "TN": 0.8524788714155676,
+          "TP": 0.0006817515301322751
+        },
+        "missed_move_rate": 0.9953781404115779,
+        "move_coverage_ratio": 0.004725141366934338,
+        "precision": 0.9781420765027322,
+        "predicted_move_fraction": 0.0006969862011966834,
+        "projected_move_fraction": 0.0006855601978983771,
+        "recall": 0.004621859588422113,
+        "specificity": 0.9999821292945539,
+        "true_move_fraction": 0.14750589391336805
+      },
+      "dev_auc": 0.5522123843017432,
+      "exact_hit": {
+        "candidate_exact_hit_count": 223878,
+        "exact_hit_deficit_count": 0,
+        "exact_hit_surplus_count": 48,
+        "hold_exact_hit_count": 223830,
+        "integer_identity_exact": true,
+        "move_hit_gain": 51,
+        "net_hit_delta": 48,
+        "state": "NO_EXACT_HIT_DEFICIT",
+        "static_hit_loss": 3
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": true,
+      "tp": {
+        "count": 179,
+        "exact_count": 51,
+        "exact_rate": 0.2849162011173184,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.2849162011173184,
+            "exact_hit_count": 51,
+            "mae": 1.2323542758995258,
+            "p95": 3.0881299484953995,
+            "rmse": 1.5690628741682695,
+            "sae": 220.59141538601511,
+            "sse": 440.6905362536812,
+            "within_one_tick": 0.659217877094972,
+            "within_one_tick_count": 118
+          },
+          "count": 179,
+          "delta_sae": -966.4085846139849,
+          "delta_sse": -8510.309463746318,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 6.631284916201118,
+            "p95": 11.0,
+            "rmse": 7.07146283255302,
+            "sae": 1187.0,
+            "sse": 8951.0,
+            "within_one_tick": 0.0111731843575419,
+            "within_one_tick_count": 2
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.994413407821229,
+        "within_one_tick_rate": 0.659217877094972
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "confusion": {
+        "balanced_accuracy": 0.5003285208816965,
+        "count": 183711,
+        "counts": {
+          "FN": 25879,
+          "FP": 6,
+          "TN": 157808,
+          "TP": 18
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.80194406072972e-05,
+        "fractions": {
+          "FN": 0.14086799375105463,
+          "FP": 3.265999314140144e-05,
+          "TN": 0.8590013662763798,
+          "TP": 9.797997942420431e-05
+        },
+        "missed_move_rate": 0.9993049387959996,
+        "move_coverage_ratio": 0.0009267482720006178,
+        "precision": 0.75,
+        "predicted_move_fraction": 0.00013063997256560576,
+        "projected_move_fraction": 0.00010886664380467146,
+        "recall": 0.0006950612040004634,
+        "specificity": 0.9999619805593927,
+        "true_move_fraction": 0.14096597373047884
+      },
+      "dev_auc": 0.5604248867427358,
+      "exact_hit": {
+        "candidate_exact_hit_count": 157813,
+        "exact_hit_deficit_count": 1,
+        "exact_hit_surplus_count": 0,
+        "hold_exact_hit_count": 157814,
+        "integer_identity_exact": true,
+        "move_hit_gain": 5,
+        "net_hit_delta": -1,
+        "state": "MOVE_GAIN_DEFICIT_DOMINATES",
+        "static_hit_loss": 6
+      },
+      "fold": "FOLD_A",
+      "historical_gate_pass": false,
+      "tp": {
+        "count": 18,
+        "exact_count": 5,
+        "exact_rate": 0.2777777777777778,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.2777777777777778,
+            "exact_hit_count": 5,
+            "mae": 0.9839893495816752,
+            "p95": 2.173137988738466,
+            "rmse": 1.2729690136307907,
+            "sae": 17.711808292470153,
+            "sse": 29.16810197395467,
+            "within_one_tick": 0.8333333333333334,
+            "within_one_tick_count": 15
+          },
+          "count": 18,
+          "delta_sae": -34.28819170752985,
+          "delta_sse": -156.83189802604534,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 2.888888888888889,
+            "p95": 5.0,
+            "rmse": 3.2145502536643185,
+            "sae": 52.0,
+            "sse": 186.0,
+            "within_one_tick": 0.2777777777777778,
+            "within_one_tick_count": 5
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.8888888888888888,
+        "within_one_tick_rate": 0.8333333333333334
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "confusion": {
+        "balanced_accuracy": 0.5019780843138116,
+        "count": 250451,
+        "counts": {
+          "FN": 36835,
+          "FP": 4,
+          "TN": 213465,
+          "TP": 147
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 1.873808374986532e-05,
+        "fractions": {
+          "FN": 0.14707467728218293,
+          "FP": 1.597118797688969e-05,
+          "TN": 0.8523224103716894,
+          "TP": 0.0005869411581506961
+        },
+        "missed_move_rate": 0.9960250932886269,
+        "move_coverage_ratio": 0.004083067438213185,
+        "precision": 0.9735099337748344,
+        "predicted_move_fraction": 0.0006029123461275858,
+        "projected_move_fraction": 0.0005869411581506961,
+        "recall": 0.0039749067113731005,
+        "specificity": 0.9999812619162501,
+        "true_move_fraction": 0.14766161844033363
+      },
+      "dev_auc": 0.5493075365648272,
+      "exact_hit": {
+        "candidate_exact_hit_count": 213504,
+        "exact_hit_deficit_count": 0,
+        "exact_hit_surplus_count": 35,
+        "hold_exact_hit_count": 213469,
+        "integer_identity_exact": true,
+        "move_hit_gain": 37,
+        "net_hit_delta": 35,
+        "state": "NO_EXACT_HIT_DEFICIT",
+        "static_hit_loss": 2
+      },
+      "fold": "FOLD_B",
+      "historical_gate_pass": true,
+      "tp": {
+        "count": 147,
+        "exact_count": 37,
+        "exact_rate": 0.25170068027210885,
+        "metrics": {
+          "candidate": {
+            "exact_hit": 0.25170068027210885,
+            "exact_hit_count": 37,
+            "mae": 1.2120484796242972,
+            "p95": 2.781177004387039,
+            "rmse": 1.4959255261624211,
+            "sae": 178.17112650477168,
+            "sse": 328.9555974341745,
+            "within_one_tick": 0.6598639455782312,
+            "within_one_tick_count": 97
+          },
+          "count": 147,
+          "delta_sae": -767.8288734952283,
+          "delta_sse": -6711.044402565825,
+          "hold_last": {
+            "exact_hit": 0.0,
+            "exact_hit_count": 0,
+            "mae": 6.4353741496598635,
+            "p95": 11.0,
+            "rmse": 6.920343666508552,
+            "sae": 946.0,
+            "sse": 7040.0,
+            "within_one_tick": 0.006802721088435374,
+            "within_one_tick_count": 1
+          },
+          "support_status": "SMALL_SUPPORT_DESCRIPTIVE_ONLY"
+        },
+        "sign_accuracy": 0.9931972789115646,
+        "within_one_tick_rate": 0.6598639455782312
+      }
+    }
+  ],
+  "model_admission": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+  "next_execution_authorized": false,
+  "opening_count": 0,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "dd379dab97aec8b852764f532ed3a2c1e98d2a2be4968a6fec47821017699721",
+  "reference_promotable": false,
+  "schema": "HURDLE_STAGE1_V2_FAILURE_ATTRIBUTION_V1",
+  "sealed_reference_allowed": false,
+  "selection_state": "MODEL_SELECTION_FAILED_CLOSED",
+  "sg_execution": false,
+  "ta_execution": false,
+  "v1_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "v2_manifest_sha256": "7d28c7d07c72a1080e6769165af8539f3568e14688b82f782d0d29aed8d84b9b",
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

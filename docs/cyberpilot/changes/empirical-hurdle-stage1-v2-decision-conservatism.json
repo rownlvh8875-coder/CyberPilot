@@ -1,0 +1,2090 @@
+{
+  "baseline": "6176dbef998e7957f9ef1a605c081ced0857cb7b",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "execution_calls": {
+    "causal_derived_openings": 0,
+    "holdout_discovery": 0,
+    "holdout_openings": 0,
+    "model_refit_calls": 0,
+    "normalizer_refit_calls": 0,
+    "prediction_replay_calls": 0,
+    "qlog_openings": 0,
+    "raw_log_openings": 0,
+    "rollout_regeneration_calls": 0,
+    "selection_calls": 0,
+    "source_write_count": 0,
+    "threshold_reselection_calls": 0
+  },
+  "final_pooled_refit": "NOT_AUTHORIZED",
+  "historical_v1": "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+  "historical_v2": "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+  "holdout": "CLOSED",
+  "jobs": [
+    {
+      "candidate_id": "HRI_D00_L01",
+      "development": {
+        "balanced_accuracy": 0.5128370503684401,
+        "count": 300569,
+        "counts": {
+          "FN": 42316,
+          "FP": 328,
+          "TN": 256753,
+          "TP": 1172
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0012758624713611662,
+        "fractions": {
+          "FN": 0.140786308634623,
+          "FP": 0.0010912635700953857,
+          "TN": 0.8542231567460383,
+          "TP": 0.0038992710492432685
+        },
+        "missed_move_rate": 0.9730500367917586,
+        "move_coverage_ratio": 0.03449227373068433,
+        "precision": 0.7813333333333333,
+        "predicted_move_fraction": 0.004990534619338655,
+        "projected_move_fraction": 0.004867434765394967,
+        "recall": 0.026949963208241355,
+        "specificity": 0.9987241375286389,
+        "true_move_fraction": 0.14468557968386628
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 288744,
+        "exact_move_hit_count": 44,
+        "predicted_move_count": 424,
+        "projected_move_count": 406,
+        "static_projected_false_move_count": 10,
+        "within_one_tick_count": 326746
+      },
+      "train": {
+        "balanced_accuracy": 0.5042745270771583,
+        "count": 336941,
+        "counts": {
+          "FN": 47817,
+          "FP": 10,
+          "TN": 288700,
+          "TP": 414
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.463683280800803e-05,
+        "fractions": {
+          "FN": 0.1419150533772975,
+          "FP": 2.9678786493777843e-05,
+          "TN": 0.8568265660753663,
+          "TP": 0.0012287017608424028
+        },
+        "missed_move_rate": 0.9914163090128756,
+        "move_coverage_ratio": 0.008791026518214427,
+        "precision": 0.9764150943396226,
+        "predicted_move_fraction": 0.0012583805473361804,
+        "projected_move_fraction": 0.0012049587316473804,
+        "recall": 0.008583690987124463,
+        "specificity": 0.999965363167192,
+        "true_move_fraction": 0.1431437551381399
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "development": {
+        "balanced_accuracy": 0.5001848701363406,
+        "count": 336941,
+        "counts": {
+          "FN": 48213,
+          "FP": 1,
+          "TN": 288709,
+          "TP": 18
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.4636832808008035e-06,
+        "fractions": {
+          "FN": 0.1430903333224511,
+          "FP": 2.9678786493777843e-06,
+          "TN": 0.8568532769832107,
+          "TP": 5.342181568880012e-05
+        },
+        "missed_move_rate": 0.999626796044038,
+        "move_coverage_ratio": 0.0003939375090709295,
+        "precision": 0.9473684210526315,
+        "predicted_move_fraction": 5.63896943381779e-05,
+        "projected_move_fraction": 5.63896943381779e-05,
+        "recall": 0.0003732039559619332,
+        "specificity": 0.9999965363167193,
+        "true_move_fraction": 0.1431437551381399
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 257093,
+        "exact_move_hit_count": 14,
+        "predicted_move_count": 174,
+        "projected_move_count": 174,
+        "static_projected_false_move_count": 2,
+        "within_one_tick_count": 290318
+      },
+      "train": {
+        "balanced_accuracy": 0.501973667202618,
+        "count": 300569,
+        "counts": {
+          "FN": 43316,
+          "FP": 2,
+          "TN": 257079,
+          "TP": 172
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 7.779649215616868e-06,
+        "fractions": {
+          "FN": 0.1441133317141821,
+          "FP": 6.6540461591182056e-06,
+          "TN": 0.8553077662699746,
+          "TP": 0.0005722479696841657
+        },
+        "missed_move_rate": 0.9960448859455482,
+        "move_coverage_ratio": 0.0040011037527593815,
+        "precision": 0.9885057471264368,
+        "predicted_move_fraction": 0.0005789020158432839,
+        "projected_move_fraction": 0.0005789020158432839,
+        "recall": 0.0039551140544518025,
+        "specificity": 0.9999922203507844,
+        "true_move_fraction": 0.14468557968386628
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "development": {
+        "balanced_accuracy": 0.5023056609670721,
+        "count": 265076,
+        "counts": {
+          "FN": 38003,
+          "FP": 112,
+          "TN": 226766,
+          "TP": 195
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0004936573841447827,
+        "fractions": {
+          "FN": 0.1433664307594803,
+          "FP": 0.0004225203337910637,
+          "TN": 0.8554754108255745,
+          "TP": 0.0007356380811540842
+        },
+        "missed_move_rate": 0.9948950206817111,
+        "move_coverage_ratio": 0.008037070003665114,
+        "precision": 0.6351791530944625,
+        "predicted_move_fraction": 0.0011581584149451477,
+        "projected_move_fraction": 0.0011279783911029289,
+        "recall": 0.005104979318288916,
+        "specificity": 0.9995063426158552,
+        "true_move_fraction": 0.1441020688406344
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 250518,
+        "exact_move_hit_count": 2,
+        "predicted_move_count": 20,
+        "projected_move_count": 16,
+        "static_projected_false_move_count": 1,
+        "within_one_tick_count": 284430
+      },
+      "train": {
+        "balanced_accuracy": 0.5002178250312754,
+        "count": 293734,
+        "counts": {
+          "FN": 43198,
+          "FP": 1,
+          "TN": 250516,
+          "TP": 19
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.991745071192774e-06,
+        "fractions": {
+          "FN": 0.1470650316272546,
+          "FP": 3.404440752517584e-06,
+          "TN": 0.852866879557695,
+          "TP": 6.46843742978341e-05
+        },
+        "missed_move_rate": 0.999560358192378,
+        "move_coverage_ratio": 0.0004627808501284217,
+        "precision": 0.95,
+        "predicted_move_fraction": 6.808881505035168e-05,
+        "projected_move_fraction": 5.4471052040281346e-05,
+        "recall": 0.0004396418076220006,
+        "specificity": 0.9999960082549288,
+        "true_move_fraction": 0.14712971600155242
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "development": {
+        "balanced_accuracy": 0.5005070630626057,
+        "count": 293734,
+        "counts": {
+          "FN": 43173,
+          "FP": 1,
+          "TN": 250516,
+          "TP": 44
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.991745071192774e-06,
+        "fractions": {
+          "FN": 0.14697992060844164,
+          "FP": 3.404440752517584e-06,
+          "TN": 0.852866879557695,
+          "TP": 0.00014979539311077368
+        },
+        "missed_move_rate": 0.9989818821297175,
+        "move_coverage_ratio": 0.0010412569127889488,
+        "precision": 0.9777777777777777,
+        "predicted_move_fraction": 0.00015319983386329126,
+        "projected_move_fraction": 0.00014298651160573852,
+        "recall": 0.0010181178702825277,
+        "specificity": 0.9999960082549288,
+        "true_move_fraction": 0.14712971600155242
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 226894,
+        "exact_move_hit_count": 55,
+        "predicted_move_count": 288,
+        "projected_move_count": 282,
+        "static_projected_false_move_count": 39,
+        "within_one_tick_count": 256228
+      },
+      "train": {
+        "balanced_accuracy": 0.5031122095999953,
+        "count": 265076,
+        "counts": {
+          "FN": 37953,
+          "FP": 43,
+          "TN": 226835,
+          "TP": 245
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0001895291742698719,
+        "fractions": {
+          "FN": 0.14317780561046642,
+          "FP": 0.00016221762815192624,
+          "TN": 0.8557357135312137,
+          "TP": 0.0009242632301679518
+        },
+        "missed_move_rate": 0.9935860516257395,
+        "move_coverage_ratio": 0.007539661762395937,
+        "precision": 0.8506944444444444,
+        "predicted_move_fraction": 0.001086480858319878,
+        "projected_move_fraction": 0.001063845840438214,
+        "recall": 0.006413948374260433,
+        "specificity": 0.9998104708257302,
+        "true_move_fraction": 0.1441020688406344
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "development": {
+        "balanced_accuracy": 0.5139291968378409,
+        "count": 230783,
+        "counts": {
+          "FN": 31988,
+          "FP": 770,
+          "TN": 196976,
+          "TP": 1049
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.00389388407350844,
+        "fractions": {
+          "FN": 0.13860639648500972,
+          "FP": 0.003336467590767084,
+          "TN": 0.8535117404661522,
+          "TP": 0.004545395458071002
+        },
+        "missed_move_rate": 0.9682477222508097,
+        "move_coverage_ratio": 0.0550594787662318,
+        "precision": 0.576690489279824,
+        "predicted_move_fraction": 0.007881863048838086,
+        "projected_move_fraction": 0.006581940610876884,
+        "recall": 0.0317522777491903,
+        "specificity": 0.9961061159264916,
+        "true_move_fraction": 0.14315179194308073
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 236576,
+        "exact_move_hit_count": 53,
+        "predicted_move_count": 308,
+        "projected_move_count": 242,
+        "static_projected_false_move_count": 40,
+        "within_one_tick_count": 268858
+      },
+      "train": {
+        "balanced_accuracy": 0.5026809712745169,
+        "count": 277385,
+        "counts": {
+          "FN": 40590,
+          "FP": 76,
+          "TN": 236487,
+          "TP": 232
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0003212674847714985,
+        "fractions": {
+          "FN": 0.14633091190943995,
+          "FP": 0.000273987418209348,
+          "TN": 0.8525587180272906,
+          "TP": 0.000836382645060115
+        },
+        "missed_move_rate": 0.9943167899661947,
+        "move_coverage_ratio": 0.007544951251776003,
+        "precision": 0.7532467532467533,
+        "predicted_move_fraction": 0.001110370063269463,
+        "projected_move_fraction": 0.0008724336211402923,
+        "recall": 0.005683210033805301,
+        "specificity": 0.9996787325152285,
+        "true_move_fraction": 0.14716729455450006
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "development": {
+        "balanced_accuracy": 0.5026633547327147,
+        "count": 277385,
+        "counts": {
+          "FN": 40603,
+          "FP": 9,
+          "TN": 236554,
+          "TP": 219
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.804483372294061e-05,
+        "fractions": {
+          "FN": 0.1463777781783442,
+          "FP": 3.244587847215963e-05,
+          "TN": 0.8528002595670278,
+          "TP": 0.0007895163761558844
+        },
+        "missed_move_rate": 0.9946352457008476,
+        "move_coverage_ratio": 0.005585223653912106,
+        "precision": 0.9605263157894737,
+        "predicted_move_fraction": 0.0008219622546280441,
+        "projected_move_fraction": 0.0007967265713719199,
+        "recall": 0.0053647542991524175,
+        "specificity": 0.9999619551662771,
+        "true_move_fraction": 0.14716729455450006
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 197820,
+        "exact_move_hit_count": 198,
+        "predicted_move_count": 805,
+        "projected_move_count": 729,
+        "static_projected_false_move_count": 124,
+        "within_one_tick_count": 223470
+      },
+      "train": {
+        "balanced_accuracy": 0.5090746141836244,
+        "count": 230783,
+        "counts": {
+          "FN": 32408,
+          "FP": 176,
+          "TN": 197570,
+          "TP": 629
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0008900306453733577,
+        "fractions": {
+          "FN": 0.14042628789815542,
+          "FP": 0.000762621163603905,
+          "TN": 0.8560855868933154,
+          "TP": 0.0027255040449253197
+        },
+        "missed_move_rate": 0.9809607409873778,
+        "move_coverage_ratio": 0.02436661924508884,
+        "precision": 0.7813664596273292,
+        "predicted_move_fraction": 0.0034881252085292246,
+        "projected_move_fraction": 0.00315881152424572,
+        "recall": 0.01903925901262221,
+        "specificity": 0.9991099693546266,
+        "true_move_fraction": 0.14315179194308073
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "development": {
+        "balanced_accuracy": 0.5002561933663716,
+        "count": 194807,
+        "counts": {
+          "FN": 27656,
+          "FP": 11,
+          "TN": 167124,
+          "TP": 16
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 6.581505968229275e-05,
+        "fractions": {
+          "FN": 0.14196615111366634,
+          "FP": 5.64661434137377e-05,
+          "TN": 0.8578952501706818,
+          "TP": 8.213257223816392e-05
+        },
+        "missed_move_rate": 0.9994217982075745,
+        "move_coverage_ratio": 0.0009757155247181266,
+        "precision": 0.5925925925925926,
+        "predicted_move_fraction": 0.00013859871565190162,
+        "projected_move_fraction": 0.00012833214412213113,
+        "recall": 0.0005782017924255566,
+        "specificity": 0.9999341849403177,
+        "true_move_fraction": 0.1420482836859045
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 219499,
+        "exact_move_hit_count": 3,
+        "predicted_move_count": 7,
+        "projected_move_count": 7,
+        "static_projected_false_move_count": 0,
+        "within_one_tick_count": 249658
+      },
+      "train": {
+        "balanced_accuracy": 0.5000920519699121,
+        "count": 257518,
+        "counts": {
+          "FN": 38015,
+          "FP": 0,
+          "TN": 219496,
+          "TP": 7
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0,
+        "fractions": {
+          "FN": 0.1476207488408577,
+          "FP": 0.0,
+          "TN": 0.8523520685932634,
+          "TP": 2.718256587889002e-05
+        },
+        "missed_move_rate": 0.9998158960601757,
+        "move_coverage_ratio": 0.00018410393982431223,
+        "precision": 1.0,
+        "predicted_move_fraction": 2.718256587889002e-05,
+        "projected_move_fraction": 2.718256587889002e-05,
+        "recall": 0.00018410393982431223,
+        "specificity": 1.0,
+        "true_move_fraction": 0.14764793140673663
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "development": {
+        "balanced_accuracy": 0.5028022531002097,
+        "count": 257518,
+        "counts": {
+          "FN": 37807,
+          "FP": 11,
+          "TN": 219485,
+          "TP": 215
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 5.011480847031381e-05,
+        "fractions": {
+          "FN": 0.146813038311885,
+          "FP": 4.2715460666827174e-05,
+          "TN": 0.8523093531325966,
+          "TP": 0.0008348930948516221
+        },
+        "missed_move_rate": 0.9943453789911104,
+        "move_coverage_ratio": 0.005943927200042081,
+        "precision": 0.9513274336283186,
+        "predicted_move_fraction": 0.0008776085555184492,
+        "projected_move_fraction": 0.0008504259896395591,
+        "recall": 0.00565462100888959,
+        "specificity": 0.9999498851915297,
+        "true_move_fraction": 0.14764793140673663
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 167179,
+        "exact_move_hit_count": 238,
+        "predicted_move_count": 1008,
+        "projected_move_count": 860,
+        "static_projected_false_move_count": 194,
+        "within_one_tick_count": 188980
+      },
+      "train": {
+        "balanced_accuracy": 0.5117478137733922,
+        "count": 194807,
+        "counts": {
+          "FN": 26971,
+          "FP": 307,
+          "TN": 166828,
+          "TP": 701
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0018368384838603523,
+        "fractions": {
+          "FN": 0.13844985036471996,
+          "FP": 0.0015759187298197703,
+          "TN": 0.8563757975842757,
+          "TP": 0.003598433321184557
+        },
+        "missed_move_rate": 0.9746675339693553,
+        "move_coverage_ratio": 0.03642671292281006,
+        "precision": 0.6954365079365079,
+        "predicted_move_fraction": 0.005174352051004328,
+        "projected_move_fraction": 0.004414625757801311,
+        "recall": 0.025332466030644697,
+        "specificity": 0.9981631615161396,
+        "true_move_fraction": 0.1420482836859045
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "development": {
+        "balanced_accuracy": 0.5115407089957971,
+        "count": 265076,
+        "counts": {
+          "FN": 37283,
+          "FP": 198,
+          "TN": 226680,
+          "TP": 915
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0008727157326845265,
+        "fractions": {
+          "FN": 0.1406502286136806,
+          "FP": 0.0007469555900949162,
+          "TN": 0.8551509755692707,
+          "TP": 0.0034518402269537794
+        },
+        "missed_move_rate": 0.9760458662757212,
+        "move_coverage_ratio": 0.029137651185925966,
+        "precision": 0.8221024258760108,
+        "predicted_move_fraction": 0.004198795817048695,
+        "projected_move_fraction": 0.004081848224660098,
+        "recall": 0.023954133724278757,
+        "specificity": 0.9991272842673155,
+        "true_move_fraction": 0.1441020688406344
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 250540,
+        "exact_move_hit_count": 27,
+        "predicted_move_count": 351,
+        "projected_move_count": 336,
+        "static_projected_false_move_count": 4,
+        "within_one_tick_count": 284501
+      },
+      "train": {
+        "balanced_accuracy": 0.5040066403847216,
+        "count": 293734,
+        "counts": {
+          "FN": 42870,
+          "FP": 4,
+          "TN": 250513,
+          "TP": 347
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 1.5966980284771095e-05,
+        "fractions": {
+          "FN": 0.14594837506042882,
+          "FP": 1.3617763010070337e-05,
+          "TN": 0.8528566662354375,
+          "TP": 0.0011813409411236017
+        },
+        "missed_move_rate": 0.9919707522502719,
+        "move_coverage_ratio": 0.008121803919753801,
+        "precision": 0.9886039886039886,
+        "predicted_move_fraction": 0.001194958704133672,
+        "projected_move_fraction": 0.0011438920928459081,
+        "recall": 0.008029247749728116,
+        "specificity": 0.9999840330197153,
+        "true_move_fraction": 0.14712971600155242
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "development": {
+        "balanced_accuracy": 0.5001136993399965,
+        "count": 293734,
+        "counts": {
+          "FN": 43207,
+          "FP": 1,
+          "TN": 250516,
+          "TP": 10
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.991745071192774e-06,
+        "fractions": {
+          "FN": 0.14709567159402726,
+          "FP": 3.404440752517584e-06,
+          "TN": 0.852866879557695,
+          "TP": 3.404440752517584e-05
+        },
+        "missed_move_rate": 0.9997686095749357,
+        "move_coverage_ratio": 0.0002545294675706319,
+        "precision": 0.9090909090909091,
+        "predicted_move_fraction": 3.744884827769342e-05,
+        "projected_move_fraction": 3.744884827769342e-05,
+        "recall": 0.00023139042506421085,
+        "specificity": 0.9999960082549288,
+        "true_move_fraction": 0.14712971600155242
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 226891,
+        "exact_move_hit_count": 15,
+        "predicted_move_count": 179,
+        "projected_move_count": 179,
+        "static_projected_false_move_count": 2,
+        "within_one_tick_count": 256181
+      },
+      "train": {
+        "balanced_accuracy": 0.502312467573854,
+        "count": 265076,
+        "counts": {
+          "FN": 38021,
+          "FP": 2,
+          "TN": 226876,
+          "TP": 177
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 8.815310431156834e-06,
+        "fractions": {
+          "FN": 0.14343433581312529,
+          "FP": 7.5450059605547085e-06,
+          "TN": 0.8558903861534051,
+          "TP": 0.0006677330275090917
+        },
+        "missed_move_rate": 0.9953662495418608,
+        "move_coverage_ratio": 0.00468610922037803,
+        "precision": 0.9888268156424581,
+        "predicted_move_fraction": 0.0006752780334696464,
+        "projected_move_fraction": 0.0006752780334696464,
+        "recall": 0.00463375045813917,
+        "specificity": 0.9999911846895688,
+        "true_move_fraction": 0.1441020688406344
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "development": {
+        "balanced_accuracy": 0.511055020427627,
+        "count": 247038,
+        "counts": {
+          "FN": 34648,
+          "FP": 516,
+          "TN": 211002,
+          "TP": 872
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0024395086942955208,
+        "fractions": {
+          "FN": 0.14025372614739431,
+          "FP": 0.002088747480144755,
+          "TN": 0.8541277050494256,
+          "TP": 0.0035298213230353227
+        },
+        "missed_move_rate": 0.9754504504504504,
+        "move_coverage_ratio": 0.03907657657657658,
+        "precision": 0.6282420749279539,
+        "predicted_move_fraction": 0.005618568803180077,
+        "projected_move_fraction": 0.004999230887555761,
+        "recall": 0.02454954954954955,
+        "specificity": 0.9975604913057045,
+        "true_move_fraction": 0.14378354747042965
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 243230,
+        "exact_move_hit_count": 38,
+        "predicted_move_count": 202,
+        "projected_move_count": 168,
+        "static_projected_false_move_count": 27,
+        "within_one_tick_count": 276288
+      },
+      "train": {
+        "balanced_accuracy": 0.5017910364898701,
+        "count": 285207,
+        "counts": {
+          "FN": 41830,
+          "FP": 44,
+          "TN": 243175,
+          "TP": 158
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.00018090691927851032,
+        "fractions": {
+          "FN": 0.1466654044255576,
+          "FP": 0.00015427391333312296,
+          "TN": 0.8526263380632313,
+          "TP": 0.0005539835978780324
+        },
+        "missed_move_rate": 0.9962370201009813,
+        "move_coverage_ratio": 0.00481089835191007,
+        "precision": 0.7821782178217822,
+        "predicted_move_fraction": 0.0007082575112111554,
+        "projected_move_fraction": 0.0005890458509082877,
+        "recall": 0.0037629798990187675,
+        "specificity": 0.9998190930807215,
+        "true_move_fraction": 0.14721938802343562
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "development": {
+        "balanced_accuracy": 0.5021093744320256,
+        "count": 285207,
+        "counts": {
+          "FN": 41810,
+          "FP": 5,
+          "TN": 243214,
+          "TP": 178
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 2.055760446346708e-05,
+        "fractions": {
+          "FN": 0.14659527991949706,
+          "FP": 1.753112651512761e-05,
+          "TN": 0.8527630808500493,
+          "TP": 0.0006241081039385428
+        },
+        "missed_move_rate": 0.9957606935314852,
+        "move_coverage_ratio": 0.004358388110888825,
+        "precision": 0.9726775956284153,
+        "predicted_move_fraction": 0.0006416392304536705,
+        "projected_move_fraction": 0.0006206018786355173,
+        "recall": 0.004239306468514814,
+        "specificity": 0.9999794423955365,
+        "true_move_fraction": 0.14721938802343562
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 211551,
+        "exact_move_hit_count": 142,
+        "predicted_move_count": 706,
+        "projected_move_count": 642,
+        "static_projected_false_move_count": 109,
+        "within_one_tick_count": 239000
+      },
+      "train": {
+        "balanced_accuracy": 0.5073075924085945,
+        "count": 247038,
+        "counts": {
+          "FN": 34974,
+          "FP": 160,
+          "TN": 211358,
+          "TP": 546
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0007564368044327196,
+        "fractions": {
+          "FN": 0.14157336118329975,
+          "FP": 0.0006476736372541877,
+          "TN": 0.8555687788923162,
+          "TP": 0.002210186287129915
+        },
+        "missed_move_rate": 0.9846283783783784,
+        "move_coverage_ratio": 0.019876126126126128,
+        "precision": 0.773371104815864,
+        "predicted_move_fraction": 0.002857859924384103,
+        "projected_move_fraction": 0.002598790469482428,
+        "recall": 0.015371621621621622,
+        "specificity": 0.9992435631955673,
+        "true_move_fraction": 0.14378354747042965
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "development": {
+        "balanced_accuracy": 0.5105414428096955,
+        "count": 223004,
+        "counts": {
+          "FN": 31123,
+          "FP": 503,
+          "TN": 190622,
+          "TP": 756
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.002631785480706344,
+        "fractions": {
+          "FN": 0.1395625190579541,
+          "FP": 0.002255564922602285,
+          "TN": 0.8547918422987928,
+          "TP": 0.003390073720650751
+        },
+        "missed_move_rate": 0.9762853288999027,
+        "move_coverage_ratio": 0.03949308322092914,
+        "precision": 0.6004765687053217,
+        "predicted_move_fraction": 0.005645638643253036,
+        "projected_move_fraction": 0.00499542609101182,
+        "recall": 0.023714671100097243,
+        "specificity": 0.9973682145192937,
+        "true_move_fraction": 0.14295259277860486
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 233043,
+        "exact_move_hit_count": 38,
+        "predicted_move_count": 200,
+        "projected_move_count": 163,
+        "static_projected_false_move_count": 26,
+        "within_one_tick_count": 264890
+      },
+      "train": {
+        "balanced_accuracy": 0.5017858182185788,
+        "count": 273268,
+        "counts": {
+          "FN": 40085,
+          "FP": 48,
+          "TN": 232983,
+          "TP": 152
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0002059811784698173,
+        "fractions": {
+          "FN": 0.14668750091485283,
+          "FP": 0.00017565174114788412,
+          "TN": 0.8525806168303643,
+          "TP": 0.0005562305136349664
+        },
+        "missed_move_rate": 0.9962223823843726,
+        "move_coverage_ratio": 0.004970549494246589,
+        "precision": 0.76,
+        "predicted_move_fraction": 0.0007318822547828505,
+        "projected_move_fraction": 0.0005964840376480231,
+        "recall": 0.0037776176156274076,
+        "specificity": 0.9997940188215302,
+        "true_move_fraction": 0.1472437314284878
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "development": {
+        "balanced_accuracy": 0.5027166371236298,
+        "count": 273268,
+        "counts": {
+          "FN": 40017,
+          "FP": 8,
+          "TN": 233023,
+          "TP": 220
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.433019641163622e-05,
+        "fractions": {
+          "FN": 0.14643866094822666,
+          "FP": 2.9275290191314023e-05,
+          "TN": 0.852726993281321,
+          "TP": 0.0008050704802611356
+        },
+        "missed_move_rate": 0.9945323955563288,
+        "move_coverage_ratio": 0.005666426423441112,
+        "precision": 0.9649122807017544,
+        "predicted_move_fraction": 0.0008343457704524496,
+        "projected_move_fraction": 0.0008160487140828783,
+        "recall": 0.005467604443671248,
+        "specificity": 0.9999656698035884,
+        "true_move_fraction": 0.1472437314284878
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 191194,
+        "exact_move_hit_count": 198,
+        "predicted_move_count": 803,
+        "projected_move_count": 734,
+        "static_projected_false_move_count": 129,
+        "within_one_tick_count": 215956
+      },
+      "train": {
+        "balanced_accuracy": 0.5093004268039276,
+        "count": 223004,
+        "counts": {
+          "FN": 31256,
+          "FP": 180,
+          "TN": 190945,
+          "TP": 623
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0009417920209287116,
+        "fractions": {
+          "FN": 0.14015892091621676,
+          "FP": 0.0008071604096787501,
+          "TN": 0.8562402468117164,
+          "TP": 0.0027936718623881186
+        },
+        "missed_move_rate": 0.9804573543712162,
+        "move_coverage_ratio": 0.025188995890711753,
+        "precision": 0.775840597758406,
+        "predicted_move_fraction": 0.0036008322720668686,
+        "projected_move_fraction": 0.0032914207816900146,
+        "recall": 0.01954264562878384,
+        "specificity": 0.9990582079790713,
+        "true_move_fraction": 0.14295259277860486
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "development": {
+        "balanced_accuracy": 0.5006851941686085,
+        "count": 192080,
+        "counts": {
+          "FN": 27222,
+          "FP": 22,
+          "TN": 164795,
+          "TP": 41
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0001334813763143365,
+        "fractions": {
+          "FN": 0.1417221990837151,
+          "FP": 0.00011453561016243233,
+          "TN": 0.8579498125780924,
+          "TP": 0.0002134527280299875
+        },
+        "missed_move_rate": 0.9984961302864689,
+        "move_coverage_ratio": 0.002310824193962513,
+        "precision": 0.6507936507936508,
+        "predicted_move_fraction": 0.00032798833819241985,
+        "projected_move_fraction": 0.0003123698458975427,
+        "recall": 0.0015038697135311594,
+        "specificity": 0.9998665186236857,
+        "true_move_fraction": 0.1419356518117451
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 218098,
+        "exact_move_hit_count": 3,
+        "predicted_move_count": 18,
+        "projected_move_count": 17,
+        "static_projected_false_move_count": 1,
+        "within_one_tick_count": 248071
+      },
+      "train": {
+        "balanced_accuracy": 0.5002227597231517,
+        "count": 255865,
+        "counts": {
+          "FN": 37752,
+          "FP": 1,
+          "TN": 218095,
+          "TP": 17
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 4.585136820482723e-06,
+        "fractions": {
+          "FN": 0.14754655775506614,
+          "FP": 3.908311023391241e-06,
+          "TN": 0.8523830926465128,
+          "TP": 6.644128739765111e-05
+        },
+        "missed_move_rate": 0.9995498954168762,
+        "move_coverage_ratio": 0.0004765813233074744,
+        "precision": 0.9444444444444444,
+        "predicted_move_fraction": 7.034959842104235e-05,
+        "projected_move_fraction": 6.644128739765111e-05,
+        "recall": 0.0004501045831237258,
+        "specificity": 0.9999954148631796,
+        "true_move_fraction": 0.1476129990424638
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "development": {
+        "balanced_accuracy": 0.5016789804332578,
+        "count": 255865,
+        "counts": {
+          "FN": 37642,
+          "FP": 1,
+          "TN": 218095,
+          "TP": 127
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 4.585136820482723e-06,
+        "fractions": {
+          "FN": 0.14711664354249313,
+          "FP": 3.908311023391241e-06,
+          "TN": 0.8523830926465128,
+          "TP": 0.0004963554999706877
+        },
+        "missed_move_rate": 0.9966374539966639,
+        "move_coverage_ratio": 0.003389022743519818,
+        "precision": 0.9921875,
+        "predicted_move_fraction": 0.0005002638109940789,
+        "projected_move_fraction": 0.0004924471889472964,
+        "recall": 0.0033625460033360694,
+        "specificity": 0.9999954148631796,
+        "true_move_fraction": 0.1476129990424638
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 164863,
+        "exact_move_hit_count": 112,
+        "predicted_move_count": 485,
+        "projected_move_count": 436,
+        "static_projected_false_move_count": 66,
+        "within_one_tick_count": 186206
+      },
+      "train": {
+        "balanced_accuracy": 0.5067361113972249,
+        "count": 192080,
+        "counts": {
+          "FN": 26879,
+          "FP": 101,
+          "TN": 164716,
+          "TP": 384
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0006128008639885449,
+        "fractions": {
+          "FN": 0.13993648479800083,
+          "FP": 0.0005258225739275302,
+          "TN": 0.8575385256143274,
+          "TP": 0.001999167013744273
+        },
+        "missed_move_rate": 0.9859149763415618,
+        "move_coverage_ratio": 0.017789678318600302,
+        "precision": 0.7917525773195876,
+        "predicted_move_fraction": 0.002524989587671803,
+        "projected_move_fraction": 0.002269887546855477,
+        "recall": 0.014085023658438176,
+        "specificity": 0.9993871991360115,
+        "true_move_fraction": 0.1419356518117451
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "development": {
+        "balanced_accuracy": 0.5126006404253033,
+        "count": 243887,
+        "counts": {
+          "FN": 34120,
+          "FP": 197,
+          "TN": 208654,
+          "TP": 916
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0009432561970016902,
+        "fractions": {
+          "FN": 0.13990085572416733,
+          "FP": 0.00080775113064657,
+          "TN": 0.8555355554006568,
+          "TP": 0.003755837744529229
+        },
+        "missed_move_rate": 0.9738554629523918,
+        "move_coverage_ratio": 0.03176732503710469,
+        "precision": 0.8230008984725966,
+        "predicted_move_fraction": 0.0045635888751757985,
+        "projected_move_fraction": 0.004350375378761475,
+        "recall": 0.026144537047608173,
+        "specificity": 0.9990567438029984,
+        "true_move_fraction": 0.14365669346869656
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 242015,
+        "exact_move_hit_count": 27,
+        "predicted_move_count": 333,
+        "projected_move_count": 319,
+        "static_projected_false_move_count": 7,
+        "within_one_tick_count": 274907
+      },
+      "train": {
+        "balanced_accuracy": 0.5038885132100092,
+        "count": 283758,
+        "counts": {
+          "FN": 41437,
+          "FP": 7,
+          "TN": 241988,
+          "TP": 326
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 2.892621748383231e-05,
+        "fractions": {
+          "FN": 0.1460293630487951,
+          "FP": 2.466890801316615e-05,
+          "TN": 0.8527971017557214,
+          "TP": 0.0011488662874703092
+        },
+        "missed_move_rate": 0.9921940473624979,
+        "move_coverage_ratio": 0.007973565117448459,
+        "precision": 0.978978978978979,
+        "predicted_move_fraction": 0.0011735351954834754,
+        "projected_move_fraction": 0.001124197379457143,
+        "recall": 0.007805952637502095,
+        "specificity": 0.9999710737825162,
+        "true_move_fraction": 0.1471782293362654
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "development": {
+        "balanced_accuracy": 0.500261324881524,
+        "count": 283758,
+        "counts": {
+          "FN": 41741,
+          "FP": 1,
+          "TN": 241994,
+          "TP": 22
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 4.132316783404616e-06,
+        "fractions": {
+          "FN": 0.14710069848250976,
+          "FP": 3.524129716166593e-06,
+          "TN": 0.8528182465340184,
+          "TP": 7.753085375566504e-05
+        },
+        "missed_move_rate": 0.9994732179201685,
+        "move_coverage_ratio": 0.0005507267198237674,
+        "precision": 0.9565217391304348,
+        "predicted_move_fraction": 8.105498347183163e-05,
+        "projected_move_fraction": 8.105498347183163e-05,
+        "recall": 0.0005267820798314297,
+        "specificity": 0.9999958676832166,
+        "true_move_fraction": 0.1471782293362654
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 208871,
+        "exact_move_hit_count": 22,
+        "predicted_move_count": 191,
+        "projected_move_count": 191,
+        "static_projected_false_move_count": 2,
+        "within_one_tick_count": 235808
+      },
+      "train": {
+        "balanced_accuracy": 0.5026924376081747,
+        "count": 243887,
+        "counts": {
+          "FN": 34847,
+          "FP": 2,
+          "TN": 208849,
+          "TP": 189
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 9.576205045702439e-06,
+        "fractions": {
+          "FN": 0.14288174441442145,
+          "FP": 8.200519092858578e-06,
+          "TN": 0.8563351060122105,
+          "TP": 0.0007749490542751356
+        },
+        "missed_move_rate": 0.9946055485786048,
+        "move_coverage_ratio": 0.005451535563420482,
+        "precision": 0.9895287958115183,
+        "predicted_move_fraction": 0.0007831495733679942,
+        "projected_move_fraction": 0.0007831495733679942,
+        "recall": 0.005394451421395136,
+        "specificity": 0.9999904237949543,
+        "true_move_fraction": 0.14365669346869656
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "development": {
+        "balanced_accuracy": 0.5097284506655708,
+        "count": 232844,
+        "counts": {
+          "FN": 32654,
+          "FP": 393,
+          "TN": 199082,
+          "TP": 715
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.001970171700714375,
+        "fractions": {
+          "FN": 0.14023981721667725,
+          "FP": 0.0016878253251103744,
+          "TN": 0.8550016319939531,
+          "TP": 0.0030707254642593326
+        },
+        "missed_move_rate": 0.9785729269681441,
+        "move_coverage_ratio": 0.03320447121579909,
+        "precision": 0.6453068592057761,
+        "predicted_move_fraction": 0.004758550789369707,
+        "projected_move_fraction": 0.004277542045317895,
+        "recall": 0.021427073031855915,
+        "specificity": 0.9980298282992857,
+        "true_move_fraction": 0.1433105426809366
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 237492,
+        "exact_move_hit_count": 21,
+        "predicted_move_count": 156,
+        "projected_move_count": 126,
+        "static_projected_false_move_count": 18,
+        "within_one_tick_count": 269842
+      },
+      "train": {
+        "balanced_accuracy": 0.5015027492253356,
+        "count": 278470,
+        "counts": {
+          "FN": 40853,
+          "FP": 28,
+          "TN": 237461,
+          "TP": 128
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.00011790019748283078,
+        "fractions": {
+          "FN": 0.14670521061514705,
+          "FP": 0.00010054943081840054,
+          "TN": 0.8527345854131504,
+          "TP": 0.0004596545408841168
+        },
+        "missed_move_rate": 0.996876601351846,
+        "move_coverage_ratio": 0.003806642102437715,
+        "precision": 0.8205128205128205,
+        "predicted_move_fraction": 0.0005602039717025173,
+        "projected_move_fraction": 0.0004524724386828025,
+        "recall": 0.0031233986481540225,
+        "specificity": 0.9998820998025172,
+        "true_move_fraction": 0.14716486515603117
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "development": {
+        "balanced_accuracy": 0.5029332081505125,
+        "count": 278470,
+        "counts": {
+          "FN": 40738,
+          "FP": 15,
+          "TN": 237474,
+          "TP": 243
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 6.316082008008792e-05,
+        "fractions": {
+          "FN": 0.14629223973857147,
+          "FP": 5.386576650985744e-05,
+          "TN": 0.852781269077459,
+          "TP": 0.0008726254174596904
+        },
+        "missed_move_rate": 0.9940704228788951,
+        "move_coverage_ratio": 0.006295600400185452,
+        "precision": 0.9418604651162791,
+        "predicted_move_fraction": 0.0009264911839695479,
+        "projected_move_fraction": 0.000883398570761662,
+        "recall": 0.005929577121104902,
+        "specificity": 0.9999368391799199,
+        "true_move_fraction": 0.14716486515603117
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 199533,
+        "exact_move_hit_count": 194,
+        "predicted_move_count": 871,
+        "projected_move_count": 786,
+        "static_projected_false_move_count": 136,
+        "within_one_tick_count": 225412
+      },
+      "train": {
+        "balanced_accuracy": 0.5096053976475025,
+        "count": 232844,
+        "counts": {
+          "FN": 32695,
+          "FP": 197,
+          "TN": 199278,
+          "TP": 674
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0009875924301290888,
+        "fractions": {
+          "FN": 0.14041590077476765,
+          "FP": 0.0008460600230197041,
+          "TN": 0.8558433972960438,
+          "TP": 0.002894641906168937
+        },
+        "missed_move_rate": 0.9798016122748658,
+        "move_coverage_ratio": 0.026102070784260842,
+        "precision": 0.7738231917336394,
+        "predicted_move_fraction": 0.0037407019291886413,
+        "projected_move_fraction": 0.0033756506502207488,
+        "recall": 0.020198387725134107,
+        "specificity": 0.9990124075698709,
+        "true_move_fraction": 0.1433105426809366
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "development": {
+        "balanced_accuracy": 0.5017545210149349,
+        "count": 214903,
+        "counts": {
+          "FN": 30522,
+          "FP": 87,
+          "TN": 184172,
+          "TP": 122
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0004721614683678952,
+        "fractions": {
+          "FN": 0.14202686793576638,
+          "FP": 0.00040483380874161833,
+          "TN": 0.8570006002708198,
+          "TP": 0.0005676979846721544
+        },
+        "missed_move_rate": 0.9960187965017622,
+        "move_coverage_ratio": 0.00682025845189923,
+        "precision": 0.583732057416268,
+        "predicted_move_fraction": 0.0009725317934137727,
+        "projected_move_fraction": 0.0009353056960582216,
+        "recall": 0.003981203498237828,
+        "specificity": 0.9995278385316321,
+        "true_move_fraction": 0.1425945659204385
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 229288,
+        "exact_move_hit_count": 0,
+        "predicted_move_count": 4,
+        "projected_move_count": 4,
+        "static_projected_false_move_count": 1,
+        "within_one_tick_count": 260634
+      },
+      "train": {
+        "balanced_accuracy": 0.5000356780571804,
+        "count": 268910,
+        "counts": {
+          "FN": 39618,
+          "FP": 1,
+          "TN": 229288,
+          "TP": 3
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 4.361308218013075e-06,
+        "fractions": {
+          "FN": 0.14732810233907256,
+          "FP": 3.718716299133539e-06,
+          "TN": 0.852657022795731,
+          "TP": 1.1156148897400617e-05
+        },
+        "missed_move_rate": 0.999924282577421,
+        "move_coverage_ratio": 0.00010095656343858056,
+        "precision": 0.75,
+        "predicted_move_fraction": 1.4874865196534156e-05,
+        "projected_move_fraction": 1.4874865196534156e-05,
+        "recall": 7.57174225789354e-05,
+        "specificity": 0.999995638691782,
+        "true_move_fraction": 0.14733925848796994
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "development": {
+        "balanced_accuracy": 0.5025465082184909,
+        "count": 268910,
+        "counts": {
+          "FN": 39418,
+          "FP": 7,
+          "TN": 229282,
+          "TP": 203
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.052915752609153e-05,
+        "fractions": {
+          "FN": 0.14658435907924586,
+          "FP": 2.6031014093934775e-05,
+          "TN": 0.8526347104979362,
+          "TP": 0.0007548994087241084
+        },
+        "missed_move_rate": 0.994876454405492,
+        "move_coverage_ratio": 0.0053002195805254785,
+        "precision": 0.9666666666666667,
+        "predicted_move_fraction": 0.0007809304228180433,
+        "projected_move_fraction": 0.000766055557621509,
+        "recall": 0.005123545594507963,
+        "specificity": 0.9999694708424739,
+        "true_move_fraction": 0.14733925848796994
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 184323,
+        "exact_move_hit_count": 178,
+        "predicted_move_count": 757,
+        "projected_move_count": 689,
+        "static_projected_false_move_count": 114,
+        "within_one_tick_count": 208117
+      },
+      "train": {
+        "balanced_accuracy": 0.5092496340409822,
+        "count": 214903,
+        "counts": {
+          "FN": 30050,
+          "FP": 163,
+          "TN": 184096,
+          "TP": 594
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0008846243602754818,
+        "fractions": {
+          "FN": 0.13983052819178884,
+          "FP": 0.0007584817336193538,
+          "TN": 0.8566469523459421,
+          "TP": 0.0027640377286496697
+        },
+        "missed_move_rate": 0.9806161075577601,
+        "move_coverage_ratio": 0.024703041378410128,
+        "precision": 0.7846763540290621,
+        "predicted_move_fraction": 0.003522519462269024,
+        "projected_move_fraction": 0.003206097634746839,
+        "recall": 0.019383892442239918,
+        "specificity": 0.9991153756397245,
+        "true_move_fraction": 0.1425945659204385
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "development": {
+        "balanced_accuracy": 0.5017417099080888,
+        "count": 188941,
+        "counts": {
+          "FN": 26668,
+          "FP": 53,
+          "TN": 162118,
+          "TP": 102
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.00032681552188739045,
+        "fractions": {
+          "FN": 0.1411445901101402,
+          "FP": 0.0002805108473015386,
+          "TN": 0.8580350479779402,
+          "TP": 0.0005398510646180554
+        },
+        "missed_move_rate": 0.996189764661935,
+        "move_coverage_ratio": 0.005790063503922301,
+        "precision": 0.6580645161290323,
+        "predicted_move_fraction": 0.0008203619119195939,
+        "projected_move_fraction": 0.0006827528170169524,
+        "recall": 0.0038102353380649982,
+        "specificity": 0.9996731844781126,
+        "true_move_fraction": 0.14168444117475826
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 216419,
+        "exact_move_hit_count": 9,
+        "predicted_move_count": 53,
+        "projected_move_count": 49,
+        "static_projected_false_move_count": 8,
+        "within_one_tick_count": 246176
+      },
+      "train": {
+        "balanced_accuracy": 0.5005662649438481,
+        "count": 253893,
+        "counts": {
+          "FN": 37431,
+          "FP": 9,
+          "TN": 216409,
+          "TP": 44
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 4.158618968847323e-05,
+        "fractions": {
+          "FN": 0.14742824733253773,
+          "FP": 3.544800368659238e-05,
+          "TN": 0.852363003312419,
+          "TP": 0.00017330135135667387
+        },
+        "missed_move_rate": 0.9988258839226151,
+        "move_coverage_ratio": 0.0014142761841227484,
+        "precision": 0.8301886792452831,
+        "predicted_move_fraction": 0.00020874935504326626,
+        "projected_move_fraction": 0.0001929946867381141,
+        "recall": 0.0011741160773849233,
+        "specificity": 0.9999584138103115,
+        "true_move_fraction": 0.14760154868389438
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "development": {
+        "balanced_accuracy": 0.5025234716295414,
+        "count": 253893,
+        "counts": {
+          "FN": 37285,
+          "FP": 5,
+          "TN": 216413,
+          "TP": 190
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 2.3103438715818464e-05,
+        "fractions": {
+          "FN": 0.14685320193939966,
+          "FP": 1.9693335381440213e-05,
+          "TN": 0.8523787579807242,
+          "TP": 0.0007483467444947281
+        },
+        "missed_move_rate": 0.9949299533022015,
+        "move_coverage_ratio": 0.005203468979319547,
+        "precision": 0.9743589743589743,
+        "predicted_move_fraction": 0.0007680400798761683,
+        "projected_move_fraction": 0.0007562240786473042,
+        "recall": 0.005070046697798532,
+        "specificity": 0.9999768965612842,
+        "true_move_fraction": 0.14760154868389438
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 162242,
+        "exact_move_hit_count": 191,
+        "predicted_move_count": 814,
+        "projected_move_count": 711,
+        "static_projected_false_move_count": 120,
+        "within_one_tick_count": 183276
+      },
+      "train": {
+        "balanced_accuracy": 0.5109819929394847,
+        "count": 188941,
+        "counts": {
+          "FN": 26150,
+          "FP": 194,
+          "TN": 161977,
+          "TP": 620
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.001196268136719882,
+        "fractions": {
+          "FN": 0.13840299352707988,
+          "FP": 0.0010267755542735563,
+          "TN": 0.8572887832709681,
+          "TP": 0.0032814476476783756
+        },
+        "missed_move_rate": 0.9768397459843108,
+        "move_coverage_ratio": 0.03040717220769518,
+        "precision": 0.7616707616707616,
+        "predicted_move_fraction": 0.004308223201951932,
+        "projected_move_fraction": 0.0037630794798376214,
+        "recall": 0.023160254015689205,
+        "specificity": 0.9988037318632801,
+        "true_move_fraction": 0.14168444117475826
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "development": {
+        "balanced_accuracy": 0.5129578434457743,
+        "count": 221278,
+        "counts": {
+          "FN": 30761,
+          "FP": 173,
+          "TN": 189496,
+          "TP": 848
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0009121153166832746,
+        "fractions": {
+          "FN": 0.13901517548061715,
+          "FP": 0.000781821961514475,
+          "TN": 0.8563707191858205,
+          "TP": 0.003832283372047831
+        },
+        "missed_move_rate": 0.9731721977917681,
+        "move_coverage_ratio": 0.03230092695118479,
+        "precision": 0.8305582761998042,
+        "predicted_move_fraction": 0.0046141053335623065,
+        "projected_move_fraction": 0.0045056444834100096,
+        "recall": 0.026827802208231832,
+        "specificity": 0.9990878846833168,
+        "true_move_fraction": 0.14284745885266498
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 232269,
+        "exact_move_hit_count": 21,
+        "predicted_move_count": 240,
+        "projected_move_count": 238,
+        "static_projected_false_move_count": 6,
+        "within_one_tick_count": 264016
+      },
+      "train": {
+        "balanced_accuracy": 0.5029039159752574,
+        "count": 272366,
+        "counts": {
+          "FN": 39878,
+          "FP": 6,
+          "TN": 232248,
+          "TP": 234
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 2.5833785424578262e-05,
+        "fractions": {
+          "FN": 0.1464132821277252,
+          "FP": 2.2029181322191462e-05,
+          "TN": 0.8527055506193871,
+          "TP": 0.000859138071565467
+        },
+        "missed_move_rate": 0.9941663342640606,
+        "move_coverage_ratio": 0.005983246908655764,
+        "precision": 0.975,
+        "predicted_move_fraction": 0.0008811672528876585,
+        "projected_move_fraction": 0.000873824192446928,
+        "recall": 0.005833665735939369,
+        "specificity": 0.9999741662145755,
+        "true_move_fraction": 0.14727242019929065
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "development": {
+        "balanced_accuracy": 0.5002222189436225,
+        "count": 272366,
+        "counts": {
+          "FN": 40094,
+          "FP": 1,
+          "TN": 232253,
+          "TP": 18
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 4.305630904096377e-06,
+        "fractions": {
+          "FN": 0.1472063326553241,
+          "FP": 3.671530220365244e-06,
+          "TN": 0.8527239082704889,
+          "TP": 6.608754396657439e-05
+        },
+        "missed_move_rate": 0.9995512564818508,
+        "move_coverage_ratio": 0.0004736737136019146,
+        "precision": 0.9473684210526315,
+        "predicted_move_fraction": 6.975907418693964e-05,
+        "projected_move_fraction": 6.975907418693964e-05,
+        "recall": 0.0004487435181491823,
+        "specificity": 0.9999956943690959,
+        "true_move_fraction": 0.14727242019929065
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 189692,
+        "exact_move_hit_count": 25,
+        "predicted_move_count": 162,
+        "projected_move_count": 162,
+        "static_projected_false_move_count": 2,
+        "within_one_tick_count": 214041
+      },
+      "train": {
+        "balanced_accuracy": 0.5025256523937547,
+        "count": 221278,
+        "counts": {
+          "FN": 31449,
+          "FP": 2,
+          "TN": 189667,
+          "TP": 160
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 1.0544685742003174e-05,
+        "fractions": {
+          "FN": 0.14212438651831633,
+          "FP": 9.038404179358092e-06,
+          "TN": 0.8571435027431556,
+          "TP": 0.0007230723343486474
+        },
+        "missed_move_rate": 0.9949381505267487,
+        "move_coverage_ratio": 0.00512512259166693,
+        "precision": 0.9876543209876543,
+        "predicted_move_fraction": 0.0007321107385280055,
+        "projected_move_fraction": 0.0007321107385280055,
+        "recall": 0.005061849473251289,
+        "specificity": 0.999989455314258,
+        "true_move_fraction": 0.14284745885266498
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "development": {
+        "balanced_accuracy": 0.5020537134539553,
+        "count": 214903,
+        "counts": {
+          "FN": 30502,
+          "FP": 97,
+          "TN": 184162,
+          "TP": 142
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0005264329015136303,
+        "fractions": {
+          "FN": 0.1419338026923775,
+          "FP": 0.0004513664304360572,
+          "TN": 0.8569540676491254,
+          "TP": 0.0006607632280610322
+        },
+        "missed_move_rate": 0.9953661401905757,
+        "move_coverage_ratio": 0.007799242918679024,
+        "precision": 0.5941422594142259,
+        "predicted_move_fraction": 0.0011121296584970894,
+        "projected_move_fraction": 0.0010702502989720943,
+        "recall": 0.004633859809424357,
+        "specificity": 0.9994735670984863,
+        "true_move_fraction": 0.1425945659204385
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 229288,
+        "exact_move_hit_count": 0,
+        "predicted_move_count": 9,
+        "projected_move_count": 6,
+        "static_projected_false_move_count": 1,
+        "within_one_tick_count": 260635
+      },
+      "train": {
+        "balanced_accuracy": 0.5000839756847908,
+        "count": 268910,
+        "counts": {
+          "FN": 39614,
+          "FP": 2,
+          "TN": 229287,
+          "TP": 7
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 8.72261643602615e-06,
+        "fractions": {
+          "FN": 0.147313227473876,
+          "FP": 7.437432598267078e-06,
+          "TN": 0.8526533040794317,
+          "TP": 2.6031014093934775e-05
+        },
+        "missed_move_rate": 0.9998233260139825,
+        "move_coverage_ratio": 0.00022715226773680625,
+        "precision": 0.7777777777777778,
+        "predicted_move_fraction": 3.346844669220185e-05,
+        "projected_move_fraction": 2.2312297794801235e-05,
+        "recall": 0.00017667398601751598,
+        "specificity": 0.999991277383564,
+        "true_move_fraction": 0.14733925848796994
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "development": {
+        "balanced_accuracy": 0.5000482976276103,
+        "count": 268910,
+        "counts": {
+          "FN": 39617,
+          "FP": 1,
+          "TN": 229288,
+          "TP": 4
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 4.361308218013075e-06,
+        "fractions": {
+          "FN": 0.14732438362277342,
+          "FP": 3.718716299133539e-06,
+          "TN": 0.852657022795731,
+          "TP": 1.4874865196534156e-05
+        },
+        "missed_move_rate": 0.9998990434365614,
+        "move_coverage_ratio": 0.00012619570429822568,
+        "precision": 0.8,
+        "predicted_move_fraction": 1.8593581495667695e-05,
+        "projected_move_fraction": 1.8593581495667695e-05,
+        "recall": 0.00010095656343858056,
+        "specificity": 0.999995638691782,
+        "true_move_fraction": 0.14733925848796994
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 184285,
+        "exact_move_hit_count": 28,
+        "predicted_move_count": 129,
+        "projected_move_count": 129,
+        "static_projected_false_move_count": 2,
+        "within_one_tick_count": 207909
+      },
+      "train": {
+        "balanced_accuracy": 0.5020667566447027,
+        "count": 214903,
+        "counts": {
+          "FN": 30517,
+          "FP": 2,
+          "TN": 184257,
+          "TP": 127
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 1.0854286629147015e-05,
+        "fractions": {
+          "FN": 0.14200360162491915,
+          "FP": 9.306524338887778e-06,
+          "TN": 0.8573961275552225,
+          "TP": 0.0005909642955193739
+        },
+        "missed_move_rate": 0.9958556324239656,
+        "move_coverage_ratio": 0.004209633207153113,
+        "precision": 0.9844961240310077,
+        "predicted_move_fraction": 0.0006002708198582617,
+        "projected_move_fraction": 0.0006002708198582617,
+        "recall": 0.00414436757603446,
+        "specificity": 0.9999891457133708,
+        "true_move_fraction": 0.1425945659204385
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "development": {
+        "balanced_accuracy": 0.5013393017293423,
+        "count": 203479,
+        "counts": {
+          "FN": 28861,
+          "FP": 39,
+          "TN": 174495,
+          "TP": 84
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.00022345216404826565,
+        "fractions": {
+          "FN": 0.14183773264071475,
+          "FP": 0.00019166597044412446,
+          "TN": 0.8575577823755769,
+          "TP": 0.0004128190132642681
+        },
+        "missed_move_rate": 0.9970979443772672,
+        "move_coverage_ratio": 0.004249438590430126,
+        "precision": 0.6829268292682927,
+        "predicted_move_fraction": 0.0006044849837083925,
+        "projected_move_fraction": 0.0005749979113323733,
+        "recall": 0.002902055622732769,
+        "specificity": 0.9997765478359517,
+        "true_move_fraction": 0.14225055165397904
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 223829,
+        "exact_move_hit_count": 0,
+        "predicted_move_count": 3,
+        "projected_move_count": 3,
+        "static_projected_false_move_count": 1,
+        "within_one_tick_count": 254500
+      },
+      "train": {
+        "balanced_accuracy": 0.5000235866064473,
+        "count": 262559,
+        "counts": {
+          "FN": 38727,
+          "FP": 1,
+          "TN": 223829,
+          "TP": 2
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 4.4676763615243716e-06,
+        "fractions": {
+          "FN": 0.14749827657783585,
+          "FP": 3.8086677661020952e-06,
+          "TN": 0.8524902974188658,
+          "TP": 7.6173355322041905e-06
+        },
+        "missed_move_rate": 0.9999483591107439,
+        "move_coverage_ratio": 7.746133388416948e-05,
+        "precision": 0.6666666666666666,
+        "predicted_move_fraction": 1.1426003298306285e-05,
+        "projected_move_fraction": 1.1426003298306285e-05,
+        "recall": 5.164088925611299e-05,
+        "specificity": 0.9999955323236385,
+        "true_move_fraction": 0.14750589391336805
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "development": {
+        "balanced_accuracy": 0.502301994441488,
+        "count": 262559,
+        "counts": {
+          "FN": 38550,
+          "FP": 4,
+          "TN": 223826,
+          "TP": 179
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 1.7870705446097486e-05,
+        "fractions": {
+          "FN": 0.14682414238323577,
+          "FP": 1.5234671064408381e-05,
+          "TN": 0.8524788714155676,
+          "TP": 0.0006817515301322751
+        },
+        "missed_move_rate": 0.9953781404115779,
+        "move_coverage_ratio": 0.004725141366934338,
+        "precision": 0.9781420765027322,
+        "predicted_move_fraction": 0.0006969862011966834,
+        "projected_move_fraction": 0.0006855601978983771,
+        "recall": 0.004621859588422113,
+        "specificity": 0.9999821292945539,
+        "true_move_fraction": 0.14750589391336805
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 174562,
+        "exact_move_hit_count": 159,
+        "predicted_move_count": 731,
+        "projected_move_count": 679,
+        "static_projected_false_move_count": 131,
+        "within_one_tick_count": 197178
+      },
+      "train": {
+        "balanced_accuracy": 0.5092239206682276,
+        "count": 203479,
+        "counts": {
+          "FN": 28383,
+          "FP": 169,
+          "TN": 174365,
+          "TP": 562
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0009682927108758179,
+        "fractions": {
+          "FN": 0.13948859587475856,
+          "FP": 0.000830552538591206,
+          "TN": 0.8569188958074297,
+          "TP": 0.0027619557792204603
+        },
+        "missed_move_rate": 0.9805838659526689,
+        "move_coverage_ratio": 0.025254793574019694,
+        "precision": 0.7688098495212038,
+        "predicted_move_fraction": 0.003592508317811666,
+        "projected_move_fraction": 0.0033369536905528334,
+        "recall": 0.019416134047331144,
+        "specificity": 0.9990317072891242,
+        "true_move_fraction": 0.14225055165397904
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "development": {
+        "balanced_accuracy": 0.5003285208816965,
+        "count": 183711,
+        "counts": {
+          "FN": 25879,
+          "FP": 6,
+          "TN": 157808,
+          "TP": 18
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 3.80194406072972e-05,
+        "fractions": {
+          "FN": 0.14086799375105463,
+          "FP": 3.265999314140144e-05,
+          "TN": 0.8590013662763798,
+          "TP": 9.797997942420431e-05
+        },
+        "missed_move_rate": 0.9993049387959996,
+        "move_coverage_ratio": 0.0009267482720006178,
+        "precision": 0.75,
+        "predicted_move_fraction": 0.00013063997256560576,
+        "projected_move_fraction": 0.00010886664380467146,
+        "recall": 0.0006950612040004634,
+        "specificity": 0.9999619805593927,
+        "true_move_fraction": 0.14096597373047884
+      },
+      "fold": "FOLD_A",
+      "selected_objective": {
+        "exact_hit_count": 213469,
+        "exact_move_hit_count": 0,
+        "predicted_move_count": 1,
+        "projected_move_count": 1,
+        "static_projected_false_move_count": 0,
+        "within_one_tick_count": 242830
+      },
+      "train": {
+        "balanced_accuracy": 0.500013520090855,
+        "count": 250451,
+        "counts": {
+          "FN": 36981,
+          "FP": 0,
+          "TN": 213469,
+          "TP": 1
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0,
+        "fractions": {
+          "FN": 0.14765762564333942,
+          "FP": 0.0,
+          "TN": 0.8523383815596663,
+          "TP": 3.992796994222422e-06
+        },
+        "missed_move_rate": 0.9999729598182899,
+        "move_coverage_ratio": 2.7040181710021093e-05,
+        "precision": 1.0,
+        "predicted_move_fraction": 3.992796994222422e-06,
+        "projected_move_fraction": 3.992796994222422e-06,
+        "recall": 2.7040181710021093e-05,
+        "specificity": 1.0,
+        "true_move_fraction": 0.14766161844033363
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "development": {
+        "balanced_accuracy": 0.5019780843138116,
+        "count": 250451,
+        "counts": {
+          "FN": 36835,
+          "FP": 4,
+          "TN": 213465,
+          "TP": 147
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 1.873808374986532e-05,
+        "fractions": {
+          "FN": 0.14707467728218293,
+          "FP": 1.597118797688969e-05,
+          "TN": 0.8523224103716894,
+          "TP": 0.0005869411581506961
+        },
+        "missed_move_rate": 0.9960250932886269,
+        "move_coverage_ratio": 0.004083067438213185,
+        "precision": 0.9735099337748344,
+        "predicted_move_fraction": 0.0006029123461275858,
+        "projected_move_fraction": 0.0005869411581506961,
+        "recall": 0.0039749067113731005,
+        "specificity": 0.9999812619162501,
+        "true_move_fraction": 0.14766161844033363
+      },
+      "fold": "FOLD_B",
+      "selected_objective": {
+        "exact_hit_count": 157874,
+        "exact_move_hit_count": 143,
+        "predicted_move_count": 640,
+        "projected_move_count": 582,
+        "static_projected_false_move_count": 83,
+        "within_one_tick_count": 178228
+      },
+      "train": {
+        "balanced_accuracy": 0.5095247252862967,
+        "count": 183711,
+        "counts": {
+          "FN": 25383,
+          "FP": 126,
+          "TN": 157688,
+          "TP": 514
+        },
+        "extreme_move_suppression": true,
+        "false_move_rate": 0.0007984082527532412,
+        "fractions": {
+          "FN": 0.13816810098469878,
+          "FP": 0.0006858598559694302,
+          "TN": 0.8583481664135517,
+          "TP": 0.002797872745780057
+        },
+        "missed_move_rate": 0.9801521411746534,
+        "move_coverage_ratio": 0.02471328725334981,
+        "precision": 0.803125,
+        "predicted_move_fraction": 0.003483732601749487,
+        "projected_move_fraction": 0.0031680193347159396,
+        "recall": 0.019847858825346565,
+        "specificity": 0.9992015917472468,
+        "true_move_fraction": 0.14096597373047884
+      }
+    }
+  ],
+  "model_admission": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+  "next_execution_authorized": false,
+  "opening_count": 0,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "934719c387f069d9c9d0971f155393f6540e624d1f3345ca220b524fa18b84fe",
+  "reference_promotable": false,
+  "schema": "HURDLE_STAGE1_V2_FAILURE_ATTRIBUTION_V1",
+  "sealed_reference_allowed": false,
+  "selection_state": "MODEL_SELECTION_FAILED_CLOSED",
+  "sg_execution": false,
+  "ta_execution": false,
+  "v1_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "v2_manifest_sha256": "7d28c7d07c72a1080e6769165af8539f3568e14688b82f782d0d29aed8d84b9b",
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}
