@@ -15,6 +15,7 @@ from openpilot.tools.cyber_autotune import empirical_plant_policy as p
 from openpilot.tools.cyber_autotune import empirical_hurdle_v3_policy as policy
 from openpilot.tools.cyber_autotune import empirical_hurdle_v2_io as legacy
 from openpilot.tools.cyber_autotune import empirical_hurdle_attribution_io as verified
+from openpilot.tools.cyber_autotune import empirical_hurdle_v3_external_storage as external
 from openpilot.tools.cyber_autotune.empirical_hurdle_v3_scaffold import validate_reference
 
 AUTH_SCHEMA = 'EMPIRICAL_HURDLE_STAGE1_V3_RETROSPECTIVE_EXECUTION_AUTHORIZATION'
@@ -127,7 +128,9 @@ def validate_authorization(auth, expected, head, pack):
   if auth is None:
     raise ValueError('V3_PRIVATE_EXECUTION_NOT_AUTHORIZED')
   try:
-    require(type(auth) is dict and set(auth) == AUTH_FIELDS)
+    require(type(auth) is dict)
+    amended = auth.get('storage_volume') == 'E_EXTERNAL_SSD'
+    require(set(auth) == AUTH_FIELDS | (external.AUTH_FIELDS if amended else set()))
     p.verify(auth)
     require(type(expected) is str and auth['receipt_sha256'] == expected)
     require(auth['schema'] == AUTH_SCHEMA and auth['head'] == head)
@@ -153,6 +156,8 @@ def validate_authorization(auth, expected, head, pack):
     require(set(auth['capacity_preflight']) == set(estimate) | {'free_bytes'})
     require(all(auth['capacity_preflight'][k] == v for k, v in estimate.items()))
     require(type(auth['capacity_preflight']['free_bytes']) is int and auth['capacity_preflight']['free_bytes'] >= estimate['required_bytes'])
+    if amended:
+      external.validate_bindings(auth)
   except (ValueError, KeyError, TypeError, AttributeError) as exc:
     raise ValueError('V3_EXECUTION_AUTHORIZATION_CONFLICT') from exc
 
@@ -163,8 +168,9 @@ def roots_explicit(source, causal, derived, output, auth):
   require(output is not None, 'V3_OUTPUT_ROOT_INVALID')
   try:
     roots = {key: safe(value) for key, value in zip(ROOT_KEYS, (source, causal, derived, output), strict=True)}
-    for root in roots.values():
-      reject_mount_aliases(root)
+    if 'storage_volume' not in auth:
+      for root in roots.values():
+        reject_mount_aliases(root)
     require({key: p.sha(str(value).encode()) for key, value in roots.items()} == auth['root_identities'])
     require(all(roots[key].is_dir() for key in ('source', 'causal', 'derived')), 'V3_PRIVATE_SOURCE_UNRESOLVED')
     return roots
@@ -252,7 +258,10 @@ def preflight(*, authorization, authorization_sha256, source_root=None, causal_r
       raise ValueError('V3_EXECUTION_AUTHORIZATION_CONFLICT') from exc
   validate_authorization(authorization, authorization_sha256, head, pack)
   roots = roots_explicit(source_root, causal_root, derived_root, output_root, authorization)
-  prove_d(roots['output'])
+  if 'storage_volume' in authorization:
+    external.roots_checked(roots, authorization)
+  else:
+    prove_d(roots['output'])
   non_overlap(roots)
   require(free_bytes(roots['output']) >= capacity(pack['jobs'])['required_bytes'], 'V3_STORAGE_CAPACITY_BLOCKED')
   require(environment() == authorization['environment'], 'V3_EXECUTION_ENVIRONMENT_CONFLICT')
@@ -298,6 +307,10 @@ def permit_valid(permit):
   p.verify(permit.authorization)
   require(permit.authorization['receipt_sha256'] == permit.trusted_sha256)
   require({k: p.sha(str(v).encode()) for k, v in permit.roots.items()} == permit.authorization['root_identities'])
+  if 'storage_volume' in permit.authorization:
+    external.check_live_volume(permit.authorization['volume_identity_sha256'])
+    for root in permit.roots.values():
+      external.prove_authorized_external_volume(root, expected_mount=permit.authorization['mount_identity_sha256'])
   require([job_identity(j) for j in permit.jobs] == permit.authorization['jobs'])
   require(records_identity(permit.records) == permit.record_sha256, 'V3_ANCHOR_IDENTITY_CONFLICT')
   require(set(permit.pins) == {'v1', 'causal', 'derived'})
@@ -305,6 +318,31 @@ def permit_valid(permit):
     require(p.sha(p.canonical(permit.pins[key])) == permit.authorization['source_manifests'][binding])
   for job in permit.jobs:
     p.verify(job)
+
+
+@contextmanager
+def execution_storage(permit):
+  permit_valid(permit)
+  if 'storage_volume' in permit.authorization:
+    with external.output_scope(permit.authorization, permit.roots['output']):
+      yield
+  else:
+    yield
+
+
+def validate_saved_storage(output, auth):
+  if 'storage_volume' in auth:
+    external.verify_saved_output(output, auth)
+
+
+@contextmanager
+def saved_storage(output, auth):
+  validate_saved_storage(output, auth)
+  if 'storage_volume' in auth:
+    with external.output_scope(auth, output):
+      yield
+  else:
+    yield
 
 
 def metadata_member(root, name, pins, expected=None):

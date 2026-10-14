@@ -1,4 +1,4 @@
-"""D-only immutable V3 payloads: array → receipt → job/run manifest."""
+"""Immutable V3 payloads; explicit E amendment or historical D authority."""
 
 from pathlib import Path
 import gzip
@@ -12,7 +12,8 @@ p = io.p
 
 def checked_output(path, required=0):
   path = io.safe(path)
-  io.prove_d(path)
+  if not io.external.checked_bound_output(path):
+    io.prove_d(path)
   io.require(io.free_bytes(path) >= required + io.legacy.RESERVE, 'V3_STORAGE_CAPACITY_BLOCKED')
   return path
 

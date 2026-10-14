@@ -1,0 +1,51 @@
+{
+  "authorization_minting": false,
+  "authorized_roots": [
+    "source",
+    "causal",
+    "derived",
+    "output"
+  ],
+  "base_policy_receipts": {
+    "execution-policy": "9f46c3ff85df88eff84f36c126eb847cd7a1b509a0de25bac1193c707e8e9461",
+    "fitting-policy": "e9991c5ea12ecf5f52b07651c08ad66be0fe1d23fccafbe90b68216ab1c1e09f",
+    "policy": "c6795b87374f696d9701e30eaaa675ec88e2e1de5e60d381bc33efd90be20925"
+  },
+  "baseline": "3acd6543eff2b88b8128f6fb71a2b60f08ac5617",
+  "candidate_search_authorized": false,
+  "change_scope": "STORAGE_AUTHORITY_ONLY",
+  "composition_authorized": false,
+  "compression": {
+    "filename": "",
+    "format": "NPY_GZIP_V1",
+    "level": 1,
+    "mtime": 0,
+    "order": "C"
+  },
+  "external_trusted_receipt_required": true,
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "migration": "EXACT_MANIFEST_LISTED_MEMBERS_ONLY_NO_REBUILD",
+  "mount_rule": "UNIQUE_E_9P_ROOT_SLASH_SAME_DEVICE_NO_NESTED_MOUNT_NO_ALIAS",
+  "numerical_semantics": "UNCHANGED",
+  "opening_count": 0,
+  "overlap": "SOURCE_CAUSAL_DERIVED_OUTPUT_REPOSITORY_DISJOINT",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "5b109186575c4b50b7095a4e99d6028fd8a8f21e4e944fb6ca5ec59d6a4a26e5",
+  "reference_promotable": false,
+  "resume": "SAVED_OUTPUT_ONLY_MOUNT_IDENTITY_STILL_REQUIRED",
+  "root_identity": "EXPLICIT_ABSOLUTE_RESOLVED_PATH_SHA256",
+  "run2_cleanup": "ELIGIBILITY_ONLY_RETAIN_BY_DEFAULT",
+  "schema": "HURDLE_STAGE1_V3_EXTERNAL_STORAGE_AMENDMENT_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "status": "HURDLE_STAGE1_V3_EXTERNAL_STORAGE_AMENDMENT_V1_FROZEN",
+  "storage_binding_rechecked": "EACH_NUMERIC_PERMIT_AND_EACH_OUTPUT_WRITE",
+  "storage_volume": "E_EXTERNAL_SSD",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE",
+  "volume_identity": "LIVE_WINDOWS_UNIQUE_ID_AND_KERNEL_MOUNT_ID_BOUND"
+}

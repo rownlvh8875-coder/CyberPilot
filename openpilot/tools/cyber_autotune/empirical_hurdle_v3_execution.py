@@ -244,6 +244,11 @@ def select(jobs, clauses):
 
 def run(*, authorization, authorization_sha256, replica, **roots):
   permit = io.preflight(authorization=authorization, authorization_sha256=authorization_sha256, **roots)
+  with io.execution_storage(permit):
+    return _run_admitted(permit, replica)
+
+
+def _run_admitted(permit, replica):
   io.permit_valid(permit)
   io.require(replica in ('repeat-1', 'repeat-2'))
   io.require([(j['candidate_id'], j['fold']) for j in permit.jobs] == list(io.JOBS), 'V3_ANCHOR_IDENTITY_CONFLICT')
@@ -280,6 +285,7 @@ def resume(root, authorization_sha256, manifest_sha256):
     io.require(manifest['schema'] == 'V3_RUN_MANIFEST' and manifest['status'] == SUCCESS and manifest['job_count'] == 32)
     auth = io.read_json(root.parent / 'authorization.json', authorization_sha256)
     io.require(auth['root_identities']['output'] == p.sha(str(root.parent).encode()))
+    io.validate_saved_storage(root.parent, auth)
     io.require(store.verify_manifest(root) == manifest)
     bindings = io.read_json(root / 'bindings.json', manifest['bindings_sha256'])
     result = io.read_json(root / 'results.json', manifest['results_sha256'])
@@ -330,6 +336,13 @@ def trapped_resume(root, authorization_sha256, manifest_sha256):
 
 def repeatability(output, authorization_sha256, run1_sha256, run2_sha256):
   output = io.safe(Path(output))
+  auth = io.read_json(output / 'authorization.json', authorization_sha256)
+  with io.saved_storage(output, auth):
+    return _repeatability(output, authorization_sha256, run1_sha256, run2_sha256)
+
+
+def _repeatability(output, authorization_sha256, run1_sha256, run2_sha256):
+  output = io.safe(Path(output))
   try:
     first = trapped_resume(output / 'repeat-1', authorization_sha256, run1_sha256)
     second = trapped_resume(output / 'repeat-2', authorization_sha256, run2_sha256)
@@ -354,15 +367,24 @@ def repeatability(output, authorization_sha256, run1_sha256, run2_sha256):
 def cleanup_eligibility(output, authorization_sha256, run1_sha256, run2_sha256, source_roots):
   """Verify eligibility only. This module performs no scratch deletion."""
   output = io.safe(Path(output))
-  io.prove_d(output)
   auth = io.read_json(output / 'authorization.json', authorization_sha256)
+  if 'storage_volume' in auth:
+    io.validate_saved_storage(output, auth)
+  else:
+    io.prove_d(output)
   io.require(set(source_roots) == {'source', 'causal', 'derived'}, 'V3_OUTPUT_ROOT_INVALID')
   scratch = io.safe(output / 'repeat-2')
-  io.reject_mount_aliases(scratch)
+  if 'storage_volume' in auth:
+    io.external.prove_authorized_external_volume(scratch, expected_mount=auth['mount_identity_sha256'])
+  else:
+    io.reject_mount_aliases(scratch)
   io.require(scratch.is_dir() and scratch.parent == output, 'V3_OUTPUT_ROOT_INVALID')
   for key, path in source_roots.items():
     root = io.safe(Path(path))
-    io.reject_mount_aliases(root)
+    if 'storage_volume' in auth:
+      io.external.prove_authorized_external_volume(root, expected_mount=auth['mount_identity_sha256'])
+    else:
+      io.reject_mount_aliases(root)
     io.require(p.sha(str(root).encode()) == auth['root_identities'][key], 'V3_OUTPUT_ROOT_INVALID')
     io.require(not scratch.is_relative_to(root) and not root.is_relative_to(scratch), 'V3_OUTPUT_ROOT_INVALID')
     io.require(not any(a.exists() and b.exists() and a.samefile(b) for a in (scratch, *scratch.parents) for b in (root,)),
