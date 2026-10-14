@@ -1,0 +1,131 @@
+{
+  "actual_execution_authorized": false,
+  "actual_model": "NOT_FIT",
+  "actual_rollout_calls": 0,
+  "architecture_frozen": true,
+  "baseline": "da23b158fa2ff6eecf1ca8d33ae5e2190fcba078",
+  "candidate_search_authorized": false,
+  "component": "representation-equivalence",
+  "composition_authorized": false,
+  "dual_head_not_fixed_score_two_threshold": "CONTEXT_SPECIFIC_FEATURE_COEFFICIENTS_CAN_CHANGE_WITHIN_CONTEXT_ORDER",
+  "dual_head_vs_full_interaction": "w_base=w_static; w_delta=w_move-w_static; SAME_REAL_LOGITS",
+  "fitting_policy_frozen": false,
+  "floating_caveat": "REAL_MATH_EQUIVALENCE_NOT_BIT_EXACT_TRANSFORM_EVALUATION; SIGMOID_SATURATION_CAN_CREATE_TIES",
+  "global_or_per_state_nondecreasing_calibration": "PRESERVES_OR_COARSENS_WITHIN_STATE_ORDER_NOT_NEW_RANK_INFORMATION",
+  "historical_states_preserved": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "holdout_openings": 0,
+  "hugging_face": {
+    "download": 0,
+    "login": "NOT_RUN",
+    "repo": "NOT_CREATED",
+    "setup": "NOT_RUN",
+    "upload": 0
+  },
+  "model_fit_calls": 0,
+  "model_selection_calls": 0,
+  "negative_controls": {
+    "state_affine": {
+      "negative_order": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "negative_slope_usefulness_established": false,
+      "old_order": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "positive_order": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "zero_slope": "CONSTANT_WITHIN_STATE"
+    },
+    "state_intercept": {
+      "endpoint_cases": "ALL_OR_NONE; BINARY64_SIGMOID_SATURATION_CAN_COARSEN_TIES",
+      "equivalent_logit_cut_decisions": [
+        false,
+        false,
+        true,
+        true,
+        true
+      ],
+      "real_math": "sigmoid(eta+b*z)>tau iff eta>logit(tau)-b*z for 0<tau<1",
+      "transformed_decisions": [
+        false,
+        false,
+        true,
+        true,
+        true
+      ],
+      "within_state_order_preserved": true
+    }
+  },
+  "normalizer_fit_calls": 0,
+  "opening_count": 0,
+  "ordinary_global_linear_refit": "SAME_FUNCTION_CLASS_AS_EXISTING_LOGISTIC; NEW_FITTING_POLICY_NOT_NEW_ARCHITECTURE",
+  "pooled_refit": "NOT_AUTHORIZED",
+  "positive_affine": "a_z>0 => same strict ordering within z; zero slope constant; negative slope reverses but usefulness unsupported",
+  "prediction_replay_calls": 0,
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "HOLDOUT_OPENING_CLOSED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED",
+    "SEARCH_NOT_AUTHORIZED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "prior_review_states_preserved": [
+    "GLOBAL_SINGLE_THRESHOLD_FAMILY_RETROSPECTIVELY_EXHAUSTED",
+    "V4_ARCHITECTURE_REDESIGN_INCONCLUSIVE",
+    "V4_TWO_CONTEXT_CAUSAL_STATE_CONTRACT_ESTABLISHED",
+    "V4_TWO_CONTEXT_EXACT_FITTING_EXACT_BUT_CARTESIAN_WORST_CASE",
+    "OPTION_A_ALGORITHMIC_ELIGIBILITY_NOT_ESTABLISHED",
+    "SEPARABLE_TWO_CONTEXT_FITTING_ALGORITHMICALLY_FEASIBLE_POLICY_UNFROZEN",
+    "V4_TWO_CONTEXT_POLICY_DECISION_INCONCLUSIVE"
+  ],
+  "private_numeric_array_opens": 0,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qlog_openings": 0,
+  "qualification_allowed": false,
+  "raw_log_openings": 0,
+  "receipt_sha256": "207790ad42c3ca9d6a59a9b377c1f3e134b71adda50b18c0d3f1eb9435cd58a3",
+  "reference_promotable": false,
+  "schema": "BOUNDED_STAGE1_REPRESENTATION_ARCHITECTURE_REVIEW_V1",
+  "scope": "PUBLIC_STATIC_SYNTHETIC_ARCHITECTURE_ONLY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_writes": 0,
+  "ta_execution": false,
+  "threshold_search_calls": 0,
+  "two_threshold_equivalence": "sigmoid(old_eta+b_z)>tau iff old_eta>logit(tau)-b_z, 0<tau<1",
+  "v4": {
+    "cv": "NOT_RUN",
+    "development": "NOT_RUN",
+    "fitting": "NOT_RUN",
+    "performance": "NOT_RUN",
+    "rollout": "NOT_RUN",
+    "selection": "NOT_RUN"
+  },
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}
