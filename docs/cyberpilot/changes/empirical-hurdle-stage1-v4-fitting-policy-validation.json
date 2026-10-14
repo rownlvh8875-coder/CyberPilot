@@ -1,0 +1,444 @@
+{
+  "actual_coefficients": "NOT_GENERATED",
+  "actual_execution_authorized": false,
+  "actual_model": "NOT_FIT",
+  "architecture": "FROZEN",
+  "baseline": "e722342fdd30fcaff80c6d9f94dd7d3465c8a447",
+  "candidate_search_authorized": false,
+  "checks": {
+    "causal_authority_review": "APPROVED",
+    "combined_empirical": {
+      "passed": 2083
+    },
+    "compileall": "PASS",
+    "full_autotune_controls": {
+      "passed": 4942
+    },
+    "git_diff_check": "PASS",
+    "json": {
+      "passed": 718
+    },
+    "lateral_replay": {
+      "passed": 16
+    },
+    "new_focused": {
+      "passed": 51
+    },
+    "numerical_statistical_review": "APPROVED",
+    "prior_v3_v4_focused": {
+      "passed": 264
+    },
+    "publication_privacy_authority": "PASS",
+    "ruff": "PASS",
+    "scons": "PASS"
+  },
+  "component": "fitting-policy-validation",
+  "composition_authorized": false,
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "blas_build_identity_sha256": "704bde2afe24c22d171cc7d2508517db81b7db455743b2cb0e5de9dda88da7a2",
+    "dtype": "float64",
+    "numpy": "2.5.3",
+    "order": "C",
+    "python": "3.12.13",
+    "rng": "NONE"
+  },
+  "family": "HURDLE_STAGE1_CONTEXT_CONDITIONAL_LOGISTIC_V4",
+  "fitting_policy": "FROZEN",
+  "historical_states_preserved": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "holdout_openings": 0,
+  "hugging_face": {
+    "download": 0,
+    "login": "NOT_RUN",
+    "repo": "NOT_CREATED",
+    "setup": "NOT_RUN",
+    "status": "HUGGING_FACE_NOT_REQUIRED_FOR_MODEL_SIZE",
+    "upload": 0
+  },
+  "legacy_d_fixture_isolation": "PRIVATE_TMPFS_MOUNT_NAMESPACE_NO_GLOBAL_STORAGE_GUARD_CHANGE",
+  "model_fit_calls": 0,
+  "normalizer_fit_calls": 0,
+  "observed_validation_evidence": {
+    "combined": {
+      "command_argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_additional_root_policy.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_causal_analysis.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_causal_dataset.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_causal_policy.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_causal_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_causal_recovery.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_causal_support_guard_v1.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_cross_root_inventory.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_cross_root_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_dataset_v2_inventory.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_dataset_v2_policy.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_dataset_v2_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_export_metadata.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_final_readiness_v2.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_grid_analysis.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_grid_emission.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_grid_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_attribution.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_compressed_storage.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_decision_policy_v2.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_design.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_fit_cv_execution.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_fit_cv_math.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_fitting_policy.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v2_attribution.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v2_execution.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v2_execution_policy.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v2_threshold.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_actual_evidence.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_authorization.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_execution.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_executor_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_external_storage.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_store.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_temporal.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_threshold.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_fitting_policy.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_policy_review.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_representation_review.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_review.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_two_context.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_identifiability_contract.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_identifiability_execution.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_identifiability_schema.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_identifiability_v1.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_metadata_copy_variants.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_plant_inventory.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_plant_model.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_plant_policy.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_plant_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_plant_run.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_plant_signals.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_prior_use.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_qlog_reconciliation.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_route_eligibility.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_admission.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_attribution_v2.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_attribution_v2_layout.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_contract.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_execution.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_failure_attribution.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_fit_cv_execution.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_fit_cv_gates.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_fit_cv_math.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_fit_cv_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_fit_cv_rollout.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_fit_cv_store.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_fitting_policy.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_fitting_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_math.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_reconstruction.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_salvage_policy.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_salvage_pools.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_salvage_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_salvage_receipts.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_salvage_sources.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_signal_crosscheck.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_signal_policy.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_signal_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_signal_reader.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_signal_run.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_simulator_prior_use.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_source_dependencies.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_source_execution.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_source_fingerprint.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_source_metadata.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_source_policy.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_source_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_stage_a_attribution.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_stage_a_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_stage_a_regime.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_v2_evidence.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_v2_execution.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_v2_generation.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_v2_policy.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_v2_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_v2_signals.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_v3.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_v3_publication.py"
+      ],
+      "command_expansion": "SHELL_GLOB_test_empirical_STAR_py",
+      "exit_code": 0,
+      "log_sha256": "901ee03972f6e2ca0868b451e9b8106769658cfa3cc3bf0715469614d15dacd6",
+      "passed": 2083
+    },
+    "compileall": {
+      "command_argv": [
+        "python",
+        "-B",
+        "-m",
+        "compileall",
+        "-q",
+        "tools/cyberpilot",
+        "openpilot/tools/cyber_autotune"
+      ],
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": null
+    },
+    "diff-check": {
+      "command_argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": null
+    },
+    "environment": {
+      "command_argv": [
+        "python",
+        "-B",
+        "-"
+      ],
+      "exit_code": 0,
+      "log_sha256": "c34324245ec415d0958cd81534819f9c5c31d57c898ac0977383f252198b3ed6",
+      "passed": null,
+      "stdin_script_lines": [
+        "import platform, numpy as np, os",
+        "from openpilot.tools.cyber_autotune import empirical_plant_policy as p",
+        "assert platform.python_version() == '3.12.13'",
+        "assert np.__version__ == '2.5.3'",
+        "assert os.environ['OPENBLAS_NUM_THREADS'] == '1'",
+        "assert os.environ['OMP_NUM_THREADS'] == '1'",
+        "expected = '704bde2afe24c22d171cc7d2508517db81b7db455743b2cb0e5de9dda88da7a2'",
+        "assert p.sha(p.canonical(np.show_config(mode='dicts'))) == expected"
+      ]
+    },
+    "focused": {
+      "command_argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_fitting_policy.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "5be3c91d51044ffd888b83d0655e96b864f829b53fdb6911f642488a13c28631",
+      "passed": 51
+    },
+    "full": {
+      "command_argv": [
+        "python",
+        "-B",
+        "tools/test_runner.py",
+        "openpilot/tools/cyber_autotune/tests",
+        "openpilot/selfdrive/controls/tests",
+        "-j4"
+      ],
+      "exit_code": 0,
+      "log_sha256": "f46da13381fea6bc2d9b578a50ceab456c4a3ba8be8355dabdcc57e055fb7d03",
+      "passed": 4942
+    },
+    "independent_reviews": {
+      "causal_authority_reproducibility": "APPROVED",
+      "numerical_statistical": "APPROVED",
+      "reviewed_numerical_and_test_source_hashes": {
+        "openpilot/tools/cyber_autotune/empirical_hurdle_v4_fitting_policy.py": "529c6c14832a18bc18eb51409e1637ca2c003892d62aa883f900c238d59be76f",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_fitting_policy.py": "fd3a4d59cc127e49aa8aa5d63ec0b90d871b084d7d715c89dd24e20c32b34fe5"
+      },
+      "scope": "POLICY_NUMERICS_AUTHORITY_BODY; OBSERVED_BROADER_CHECKS_RECORDED_SEPARATELY"
+    },
+    "json": {
+      "command_argv": [
+        "python",
+        "-B",
+        "-"
+      ],
+      "exit_code": 0,
+      "log_sha256": "f3b094193c08f722d2e74d149cb1a7ef238556c3daf0a1312e7f48ddf07590fa",
+      "passed": 718,
+      "stdin_script_lines": [
+        "import json",
+        "from pathlib import Path",
+        "files = list(Path('docs/cyberpilot/policies').glob('*.json'))",
+        "files += list(Path('docs/cyberpilot/changes').glob('*.json'))",
+        "for path in files: json.loads(path.read_bytes())",
+        "print('JSON', len(files), 'PASS')"
+      ]
+    },
+    "lateral": {
+      "command_argv": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "-q",
+        "openpilot.selfdrive.test.process_replay.test_cyber_lateral_card_replay",
+        "openpilot.selfdrive.test.process_replay.test_cyber_lateral_native_experiment"
+      ],
+      "exit_code": 0,
+      "log_sha256": "14d0d8bfab949eded61d86c5cd53df93ba18a93da46bdf7a821f68b281017f81",
+      "passed": 16
+    },
+    "prior": {
+      "command_argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_actual_evidence.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_authorization.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_execution.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_executor_publication.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_external_storage.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_store.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_temporal.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v3_threshold.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_review.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_two_context.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_policy_review.py",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_representation_review.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "530f849179c9b0d86727b1d1f73a8455e62aa7995fe6f8a0ab97588359a42661",
+      "passed": 264
+    },
+    "publication": {
+      "command_argv": [
+        "python",
+        "-B",
+        "tools/cyberpilot/check_publication.py",
+        "--base",
+        "origin/main",
+        "--json"
+      ],
+      "exit_code": 0,
+      "log_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "passed": null
+    },
+    "ruff": {
+      "command_argv": [
+        "ruff",
+        "check",
+        "tools/cyberpilot",
+        "openpilot/tools/cyber_autotune",
+        "openpilot/selfdrive/controls/lib/cyber_lateral",
+        "openpilot/selfdrive/controls/lib/cyber_long",
+        "openpilot/selfdrive/controls/tests/test_cyber_lateral.py",
+        "openpilot/selfdrive/controls/tests/test_cyber_lateral_command_domain.py",
+        "openpilot/selfdrive/controls/tests/test_cyber_lateral_integration.py",
+        "openpilot/selfdrive/controls/tests/test_cyber_lateral_jerk_observer.py",
+        "openpilot/selfdrive/controls/tests/test_cyber_lateral_metrics.py",
+        "openpilot/selfdrive/controls/tests/test_cyber_lateral_model_coordinates.py",
+        "openpilot/selfdrive/controls/tests/test_cyber_lateral_optimizer.py",
+        "openpilot/selfdrive/controls/tests/test_cyber_lateral_params.py",
+        "openpilot/selfdrive/controls/tests/test_cyber_lateral_path_observer.py",
+        "openpilot/selfdrive/controls/tests/test_cyber_lateral_path_tracking.py",
+        "openpilot/selfdrive/controls/tests/test_cyber_long.py",
+        "openpilot/selfdrive/controls/tests/test_cyber_long_boundary.py",
+        "openpilot/selfdrive/controls/tests/test_cyber_long_feedback.py",
+        "openpilot/selfdrive/controls/tests/test_cyber_long_integration.py",
+        "openpilot/selfdrive/controls/tests/test_cyber_long_params.py",
+        "openpilot/selfdrive/test/process_replay/cyber_lateral_card.py",
+        "openpilot/selfdrive/test/process_replay/cyber_lateral_native_experiment.py",
+        "openpilot/selfdrive/test/process_replay/cyber_lateral_replay.py",
+        "openpilot/selfdrive/test/process_replay/test_cyber_lateral_card_replay.py",
+        "openpilot/selfdrive/test/process_replay/test_cyber_lateral_native_experiment.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "passed": null
+    },
+    "scons": {
+      "command_argv": [
+        "scons",
+        "-u",
+        "-j2"
+      ],
+      "exit_code": 0,
+      "log_sha256": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056",
+      "passed": null
+    },
+    "source_stability": {
+      "after_sha256": "0444439021b5ba2a382dd91cad45ebccd68d8d5e8f0c3f2ea43d9555c77cce1a",
+      "before_sha256": "0444439021b5ba2a382dd91cad45ebccd68d8d5e8f0c3f2ea43d9555c77cce1a",
+      "equal": true,
+      "exit_code": 0
+    }
+  },
+  "opening_count": 0,
+  "operation_counter_scope": "ACTUAL_EMPIRICAL_OPERATIONS_ONLY; AUTHORIZED_SYNTHETIC_TEST_OPERATIONS_SEPARATE",
+  "pooled_refit": "NOT_AUTHORIZED",
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "HOLDOUT_OPENING_CLOSED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED",
+    "SEARCH_NOT_AUTHORIZED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "prior_review_states_preserved": [
+    "GLOBAL_SINGLE_THRESHOLD_FAMILY_RETROSPECTIVELY_EXHAUSTED",
+    "V4_ARCHITECTURE_REDESIGN_INCONCLUSIVE",
+    "V4_TWO_CONTEXT_CAUSAL_STATE_CONTRACT_ESTABLISHED",
+    "V4_TWO_CONTEXT_EXACT_FITTING_EXACT_BUT_CARTESIAN_WORST_CASE",
+    "OPTION_A_ALGORITHMIC_ELIGIBILITY_NOT_ESTABLISHED",
+    "SEPARABLE_TWO_CONTEXT_FITTING_ALGORITHMICALLY_FEASIBLE_POLICY_UNFROZEN",
+    "V4_TWO_CONTEXT_POLICY_DECISION_INCONCLUSIVE"
+  ],
+  "private_executor_implemented": false,
+  "private_numeric_array_opens": 0,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qlog_openings": 0,
+  "qualification_allowed": false,
+  "raw_log_openings": 0,
+  "receipt_sha256": "45b417009d31998bbb4c8c4c603caf75627e4296e6675417a0e0e07d83741127",
+  "reference_promotable": false,
+  "schema": "HURDLE_STAGE1_CONTEXT_CONDITIONAL_LOGISTIC_V4_FITTING_POLICY_V1",
+  "scope": "PUBLIC_POLICY_AND_SYNTHETIC_REFERENCE_ONLY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_writes": 0,
+  "status": "HURDLE_STAGE1_V4_FITTING_POLICY_REVIEW_COMPLETE",
+  "synthetic_operations": {
+    "actual_large_certificate_generation": "NOT_IMPLEMENTED",
+    "exact_certificate_verification": "PASS_SUPPLIED_SYNTHETIC_WITNESSES",
+    "head_fitting": "EXECUTED_SYNTHETIC_ONLY",
+    "threshold_sweeps": "EXECUTED_SYNTHETIC_ONLY"
+  },
+  "synthetic_two_runs": "BYTE_EXACT_RESULT_IDENTITY_PASS_NOT_ACTUAL_MODEL_REPEATABILITY",
+  "ta_execution": false,
+  "threshold_search_calls": 0,
+  "v4": {
+    "cv": "NOT_RUN",
+    "development": "NOT_RUN",
+    "fitting": "NOT_RUN",
+    "performance": "NOT_RUN",
+    "rollout": "NOT_RUN",
+    "selection": "NOT_RUN"
+  },
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}
