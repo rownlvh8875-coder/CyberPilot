@@ -1,0 +1,148 @@
+{
+  "actual_execution_authorized": false,
+  "baseline": "b7e91e57c3d19be827c8757d9803e4744ddcf4a9",
+  "candidate_search_authorized": false,
+  "component": "architecture-options",
+  "composition_authorized": false,
+  "dominance_scope": "STRUCTURAL_REPRESENTATION_COMPLEXITY_NOT_EMPIRICAL_PERFORMANCE",
+  "historical_states_preserved": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "no_best_candidate_or_actual_v4_performance_ranking": true,
+  "opening_count": 0,
+  "options": [
+    {
+      "blocking": [
+        "EXACT_PRACTICALLY_BOUNDED_TWO_THRESHOLD_OPTIMIZER_NOT_ESTABLISHED",
+        "TWO_THRESHOLD_TOTAL_TIE_ORDER_UNRESOLVED",
+        "TRAIN_OBJECTIVE_AND_FEASIBILITY_MUST_BE_PREDECLARED_NOT_ASSUMED_INHERITED"
+      ],
+      "cost": [
+        1,
+        2,
+        0
+      ],
+      "effective_decision_parameters": 2,
+      "eligible": false,
+      "equivalent_to_global": false,
+      "family": "CAUSAL_PREVIOUS_STATE_TWO_THRESHOLD_GATE",
+      "function": "z=1[prior_source_grid_delta!=0]; MOVE_IFF_score>theta_z",
+      "id": "A",
+      "new_model_fit": false,
+      "risks": [
+        "ONSET_IS_MAJORITY_OF_TRUE_MOVE",
+        "WITHIN_STATE_RANK_STILL_WEAK",
+        "OBSERVED_TO_PROJECTED_STATE_DISTRIBUTION_SHIFT"
+      ],
+      "state_bits": 1,
+      "support": "PERSISTENCE_BOTH_ROUTES_AND_STATE_CONDITIONAL_SCORE_RANKING"
+    },
+    {
+      "blocking": [
+        "MONOTONE_BINARY_CONTEXT_FORM_REPARAMETERIZES_A",
+        "OTHER_TRANSFORM_OR_INTERACTION_UNSUPPORTED_UNSPECIFIED"
+      ],
+      "cost": null,
+      "effective_decision_parameters": "2_IF_WITHIN_STATE_MONOTONE_OTHERWISE_UNSPECIFIED",
+      "eligible": false,
+      "equivalent_to_global": "IF_GLOBAL_INCREASING",
+      "family": "CAUSAL_SCORE_RECALIBRATION_LAYER",
+      "id": "B",
+      "new_model_fit": "IF_CALIBRATION_COEFFICIENTS_FITTED",
+      "state_bits": "1_IF_BINARY_CONTEXT"
+    },
+    {
+      "blocking": [
+        "FIXED_SCORE_STATE_INTERCEPT_FORM_EQUIVALENT_TO_A",
+        "REFITTED_WEIGHTS_OR_INTERACTIONS_NEED_REPRESENTATION_AND_FITTING_CONTRACT_NOT_JUSTIFIED_AS_MINIMUM"
+      ],
+      "cost": null,
+      "effective_decision_parameters": "UNFROZEN_DEPENDS_ON_WEIGHT_REUSE_AND_INTERACTIONS",
+      "eligible": false,
+      "equivalent_to_global": false,
+      "family": "EXPLICIT_TEMPORAL_STAGE1_LOGISTIC_V4",
+      "id": "C",
+      "new_model_fit": true,
+      "state_bits": "1_BINARY_INPUT"
+    },
+    {
+      "blocking": [
+        "NO_EVIDENCE_IDENTIFIES_MINIMUM_NONLINEAR_FAMILY_OR_TERMS",
+        "HYPERPARAMETER_OPTIMIZER_SUPPORT_UNFROZEN"
+      ],
+      "cost": null,
+      "effective_decision_parameters": "UNSPECIFIED",
+      "eligible": false,
+      "equivalent_to_global": false,
+      "family": "BOUNDED_NONLINEAR_STAGE1_V4",
+      "id": "D",
+      "new_model_fit": true,
+      "state_bits": "UNSPECIFIED"
+    },
+    {
+      "blocking": [
+        "ARBITRARY_WINDOW_TARGET_RESET_UPDATE_REQUIRED",
+        "UNLABELED_SCORE_SHIFT_DOES_NOT_IDENTIFY_LABEL_CONDITIONAL_SHIFT"
+      ],
+      "cost": null,
+      "effective_decision_parameters": "UNSPECIFIED",
+      "eligible": false,
+      "equivalent_to_global": false,
+      "family": "ONLINE_UNLABELED_ADAPTIVE_GATE",
+      "id": "E",
+      "new_model_fit": false,
+      "state_bits": "BOUNDED_WINDOW_NOT_DEFINED"
+    },
+    {
+      "blocking": [
+        "OBSERVED_PERSISTENCE_IS_NOT_PREDICTED_GATE_PERSISTENCE_EVIDENCE",
+        "ERROR_FEEDBACK_AND_ONSET_ENTRY_RISK",
+        "EXACT_STATE_DEPENDENT_FITTING_NOT_ESTABLISHED"
+      ],
+      "cost": [
+        1,
+        2,
+        0
+      ],
+      "effective_decision_parameters": 2,
+      "eligible": false,
+      "equivalent_to_global": false,
+      "family": "STATEFUL_HYSTERESIS_GATE",
+      "id": "F",
+      "new_model_fit": false,
+      "state_bits": 1
+    }
+  ],
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "HOLDOUT_OPENING_CLOSED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED",
+    "SEARCH_NOT_AUTHORIZED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "b1014606100ba57f429c562e4fd9718ad9f9074f596c3f83625d74102ab2fb77",
+  "reference_promotable": false,
+  "schema": "STAGE1_V4_ARCHITECTURE_REVIEW_V1",
+  "scope": "RESEARCH_DESIGN_REVIEW_ONLY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "v4_performance": "NOT_RUN",
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}
