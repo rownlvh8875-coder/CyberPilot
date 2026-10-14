@@ -1,0 +1,85 @@
+{
+  "actual_execution_authorized": false,
+  "actual_local_ba_v2_or_tp_policy_adopted": false,
+  "architecture_frozen": false,
+  "architecture_status_preserved": "V4_ARCHITECTURE_REDESIGN_INCONCLUSIVE",
+  "baseline": "ae8c2b9e7d602c655d352abeb4983b10ab4c320b",
+  "candidate_search_authorized": false,
+  "complexity": "O(NlogN+T0+T1)",
+  "component": "two-context-separable-policy-review",
+  "composition_authorized": false,
+  "historical_states_preserved": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "holdout_openings": 0,
+  "hugging_face": "NOT_NEEDED",
+  "implemented_benchmark": "UNCONSTRAINED_ADDITIVE_INTEGER_LEXICOGRAPHIC_OBJECTIVE_WITH_EXTERNAL_AXIS_TIE",
+  "information_lost_by_local_feasibility": "CROSS_CONTEXT_TRADEOFFS_POOLED_P95_GLOBAL_FEASIBILITY_AND_GLOBAL_OBJECTIVE",
+  "new_design_decision_required": true,
+  "opening_count": 0,
+  "pooled_policy_equivalent": false,
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "HOLDOUT_OPENING_CLOSED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED",
+    "SEARCH_NOT_AUTHORIZED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "private_numeric_array_opens": 0,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qlog_openings": 0,
+  "qualification_allowed": false,
+  "raw_log_openings": 0,
+  "receipt_sha256": "06ce2bc737b5b07d720151baa01ce83e502dfa95890b1048eed39b0a7d64ea58",
+  "reference_promotable": false,
+  "schema": "HURDLE_STAGE1_V4_TWO_CONTEXT_FEASIBILITY_REVIEW_V1",
+  "scope": "PUBLIC_STATIC_SYNTHETIC_ONLY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_writes": 0,
+  "status": "SEPARABLE_TWO_CONTEXT_FITTING_ALGORITHMICALLY_FEASIBLE_POLICY_UNFROZEN",
+  "ta_execution": false,
+  "v4": {
+    "development": "NOT_RUN",
+    "fitting": "NOT_RUN",
+    "performance": "NOT_RUN",
+    "rollout": "NOT_RUN",
+    "selection": "NOT_RUN"
+  },
+  "v4_fitting_policy_frozen": false,
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE",
+  "witness": {
+    "context0_actual_deltas": [
+      1,
+      1
+    ],
+    "context0_branch_deltas": [
+      5.0,
+      5.0
+    ],
+    "context0_strict_rmse_improvement_possible": false,
+    "context1_actual_deltas": [
+      10,
+      10
+    ],
+    "context1_branch_deltas": [
+      10.0,
+      10.0
+    ],
+    "joint_rmse_improvement_possible": true
+  }
+}
