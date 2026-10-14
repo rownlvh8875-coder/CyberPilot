@@ -237,10 +237,10 @@ Observed local validation:
 
 | Check | Result |
 |---|---:|
-| New certificate/executor focused | 54 PASS |
+| New certificate/executor focused | 56 PASS |
 | Historical V3/V4 including fitting policy | 315 PASS |
-| Combined empirical | 2,137 PASS |
-| Full AutoTune + controls | 4,996 PASS |
+| Combined empirical | 2,139 PASS |
+| Full AutoTune + controls | 4,998 PASS |
 | Lateral replay | 16 PASS |
 | Policy/change JSON | 731 PASS |
 | Ruff / compileall / publication / diff-check / SCons | PASS |
@@ -251,6 +251,14 @@ validation driver omitted the existing venv bin directory from PATH, so cythoniz
 and capnpc were not found. Restoring the established venv PATH and correct PWD
 made the same build command pass; no dependency or product source changed.
 Both attempts and their log hashes are retained in the validation record.
+
+The first pushed CI run (38649629594) reported 4,989 passes and seven errors:
+the synthetic authorization fixture accidentally queried the actual pinned
+execution environment on the generic CI host. The test-only correction uses
+explicit synthetic environment/repository probes; production environment and
+authorization guards are unchanged. New regression tests require that the
+fixture never probes the live environment and that actual Python/NumPy/BLAS
+mismatches are rejected. Full validation was rerun after this correction.
 
 Legacy historical D-shaped synthetic fixtures ran in an isolated mount namespace
 with a temporary in-memory filesystem. No D-to-E alias or retired D payload tree

@@ -39,6 +39,24 @@
   },
   "normalizer_fit_calls": 0,
   "observed_checks": {
+    "ci_first_attempt": {
+      "cause": "Synthetic authorization fixture probed actual pinned fitting environment on a different CI host.",
+      "error_family": "TestFirewallMutations.fixture -> prior.environment -> HURDLE_FROZEN_EXECUTION_ENVIRONMENT_REQUIRED",
+      "errors": 7,
+      "fix_scope": "TEST_FIXTURE_ONLY_SYNTHETIC_ENV_AND_REPOSITORY_PROBES",
+      "head": "fbf278f4786543126cb9a9eff184ad2955cdfe6e",
+      "job_id": 116144928983,
+      "new_regressions": [
+        "fixture_never_probes_actual_environment",
+        "actual_environment_gate_rejects_python_numpy_blas_mismatch"
+      ],
+      "numerical_policy_changed": false,
+      "passed": 4989,
+      "production_environment_guard_changed": false,
+      "review_B": "APPROVED",
+      "run_id": 38649629594,
+      "status": "FAILURE"
+    },
     "combined": {
       "command_argv": [
         "python",
@@ -155,8 +173,8 @@
       ],
       "exit_code": 0,
       "isolated_legacy_tmpfs": true,
-      "log_sha256": "d4d881df4a7977a072986d7d1b78dd1cd3ec53d25320e5d4a451ae5cf4facf7a",
-      "passed": 2137
+      "log_sha256": "9788320f3e5d19813dc6fb981af40886f3666338640e76da2da084f72660f35b",
+      "passed": 2139
     },
     "compileall": {
       "command_argv": [
@@ -211,8 +229,8 @@
       ],
       "exit_code": 0,
       "isolated_legacy_tmpfs": false,
-      "log_sha256": "6ae316aeadbe8e64fa6be605d0236a1f61a51ffa492203b35e8bfb9518bc1237",
-      "passed": 54
+      "log_sha256": "737a9a718739acfd015081ad5e533529bff0217f389abb57470dd5c82e7aaf6a",
+      "passed": 56
     },
     "full": {
       "command_argv": [
@@ -225,8 +243,8 @@
       ],
       "exit_code": 0,
       "isolated_legacy_tmpfs": true,
-      "log_sha256": "e684ae0273ff856e6422ae5efb54178de4326f6a6d884fce54297d6afc75813b",
-      "passed": 4996
+      "log_sha256": "de4dde6508060db44123d3bd1cd544de17abc33b84556f3046dc6c2895f686f1",
+      "passed": 4998
     },
     "json": {
       "command_argv": [
@@ -258,7 +276,7 @@
       ],
       "exit_code": 0,
       "isolated_legacy_tmpfs": false,
-      "log_sha256": "55171998993e450b31521db6b8f77ebf39320223b430fff03a8b225f079e5b85",
+      "log_sha256": "4f136d3e10a55c03f8187997e2c00f4484785a1da02b3d2d3b668b7eba43b060",
       "passed": 16
     },
     "legacy_fixture_isolation": {
@@ -290,7 +308,7 @@
       ],
       "exit_code": 0,
       "isolated_legacy_tmpfs": true,
-      "log_sha256": "5e50a2c31fb8c970ea15d731360fa8d53d711fd7543ba9fcb4aeed42401573b3",
+      "log_sha256": "155e22da42d24b7c5f44ac78d66bf3e65135cc22beea47f546cebfaac7809c72",
       "passed": 315
     },
     "publication": {
@@ -361,7 +379,8 @@
         "log_sha256": "ee990fced848c48cf833d1e52153124b217f04e2f4528909b98586eb458d38fb",
         "passed": null
       },
-      "log_sha256": "de071117d656a840bcd2d1f3679fee298382189da1ae42bbf32edadb3f3b6ffd",
+      "isolated_legacy_tmpfs": false,
+      "log_sha256": "a84d8cd4aee8dd89446ba154e692bcaaffdaebd73dd82f2277d17790da5ab60f",
       "passed": null
     },
     "source_immutability": {
@@ -373,7 +392,7 @@
         "openpilot/tools/cyber_autotune/empirical_hurdle_v4_execution.py": "847a6a5b2bca16b7e18dd35dcafbdfd33dc6232d8286b900e1c3114f089e5e8b",
         "openpilot/tools/cyber_autotune/empirical_hurdle_v4_io.py": "e1bb255654980e0559d7af1becedac8c3aabf0c2a01e6da179307afe9a7b5d70",
         "openpilot/tools/cyber_autotune/empirical_hurdle_v4_store.py": "f541ebb4686a6032892f327a820ea3e22ad1bffb5c38b73bb649305a448c7935",
-        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_authorization.py": "b3236df04a2e1a65dacf7a8938524ec2547640e860cd8aa6c6f8897b3e51e706",
+        "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_authorization.py": "79673dc1081eb0a8bafff87c99bf726de4dcb76b95ddd926e25b1cefee5623f1",
         "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_certificate.py": "e194430318c227cd1e7886888f5ac42003ffbece595649c6d220a13531fd015e",
         "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_execution.py": "6a9fac6a5e14537d50a7d153a61211481e8b87c199502cb3a6f2350cf67d2ffb",
         "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_executor_publication.py": "e6e379924e5f07a0f0604e4efeecc035d7fbe15d6ec9def07b6e6bab4f033295",
@@ -389,7 +408,7 @@
   "qlog_openings": 0,
   "qualification_allowed": false,
   "raw_log_openings": 0,
-  "receipt_sha256": "b47d5421c174fcf308e34df30a6c18fd8a9765cf678219201127724c7d079b94",
+  "receipt_sha256": "dbb93be4c1bb92bdc5f8b9bb252c26aec81f1670fbb064ede8c3f7bbaa424317",
   "reference_promotable": false,
   "schema": "HURDLE_STAGE1_V4_EXECUTOR_IMPLEMENTATION_REVIEW_V1",
   "scope": "IMPLEMENTATION_AND_SYNTHETIC_VALIDATION_ONLY",

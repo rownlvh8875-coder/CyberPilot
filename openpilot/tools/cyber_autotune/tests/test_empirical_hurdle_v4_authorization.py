@@ -37,6 +37,10 @@ class TestAuthorization(unittest.TestCase):
 
 
 class TestFirewallMutations(unittest.TestCase):
+  def setUp(self):
+    # Synthetic external identity, independent of CI's detached checkout.
+    self.enterContext(patch.object(a, 'repository_identity', return_value=(a.REPOSITORY, a.BRANCH)))
+
   def fixture(self):
     """SYNTHETIC_AUTHORIZATION_ONLY: external probes are mocked, no real grant."""
     from openpilot.tools.cyber_autotune import empirical_plant_policy as p
@@ -77,7 +81,18 @@ class TestFirewallMutations(unittest.TestCase):
       'mount_identity_sha256': '1' * 64,
       'volume_identity_sha256': '2' * 64,
       'root_identities': {**migration['destination_root_sha256'], 'output': '3' * 64},
-      'environment': a.prior.environment(),
+      'environment': {
+        'python': '3.12.13',
+        'numpy': '2.5.3',
+        'OPENBLAS_NUM_THREADS': '1',
+        'OMP_NUM_THREADS': '1',
+        'blas_build_identity_sha256': a.prior.legacy.BLAS_SHA,
+        'private_build_metadata': 'SYNTHETIC_AUTHORIZATION_ONLY',
+        'dtype': 'float64',
+        'order': 'C',
+        'rng': 'NONE',
+        'zlib_runtime_version': 'SYNTHETIC_ONLY',
+      },
       'resource_budget': budget,
       'capacity_preflight': {**estimate, 'free_bytes': estimate['required_bytes']},
       'source_manifests': dict.fromkeys(a.prior.MANIFEST_KEYS, '4' * 64),
@@ -195,3 +210,16 @@ class TestFirewallMutations(unittest.TestCase):
       permit.pack['policies']['bad'] = 'mutated'
       with self.assertRaises(ValueError):
         a.valid(permit)
+
+  def test_synthetic_fixture_never_probes_actual_execution_environment(self):
+    with patch.object(a.prior, 'environment', side_effect=ValueError('CI_IS_NOT_PRIVATE_FITTING_ENVIRONMENT')):
+      auth = self.fixture()
+      self.assertEqual(auth['environment']['python'], '3.12.13')
+      self.assertEqual(auth['environment']['private_build_metadata'], 'SYNTHETIC_AUTHORIZATION_ONLY')
+
+  def test_actual_environment_gate_still_rejects_mismatch(self):
+    auth = self.fixture()
+    for key, value in (('python', 'WRONG'), ('numpy', 'WRONG'), ('blas_build_identity_sha256', '0' * 64)):
+      with self.subTest(key=key), patch.object(a.prior, 'environment', return_value={**auth['environment'], key: value}):
+        with self.assertRaisesRegex(ValueError, 'V4_EXECUTION_ENVIRONMENT_CONFLICT'):
+          a.environment_valid(auth)
