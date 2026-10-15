@@ -125,6 +125,7 @@ AUTH_FIELDS = {
   'compression',
   'environment',
   'executor_sources',
+  'executor_contract_receipts',
   'firewall_sha256',
   'head',
   'holdout',
@@ -172,6 +173,34 @@ def need(ok, status='V4_EXECUTION_AUTHORIZATION_CONFLICT'):
     raise ValueError(status)
 
 
+EXECUTOR_CONTRACT_COMPONENTS = (
+  'rank-certificate-design',
+  'rank-certificate-validation',
+  'separation-certificate-design',
+  'separation-certificate-validation',
+  'certificate-stress',
+  'executor-authorization-policy',
+  'executor-storage-policy',
+  'executor-code-map',
+  'executor-synthetic-results',
+  'executor-repeatability',
+  'executor-resume',
+  'executor-readiness',
+  'executor-validation',
+)
+
+
+def executor_contract_receipts():
+  """Current public executor document identities, independently bound by the caller."""
+  result = {}
+  for component in EXECUTOR_CONTRACT_COMPONENTS:
+    name = 'empirical-hurdle-stage1-v4-' + component + '.json'
+    raw = (p.PUBLIC / name).read_bytes()
+    row = p.verify(__import__('json').loads(raw))
+    result[name] = {'file_sha256': p.sha(raw), 'receipt_sha256': row['receipt_sha256']}
+  return result
+
+
 def contracts():
   bodies = {}
   try:
@@ -187,6 +216,7 @@ def contracts():
     need([(j['candidate_id'], j['fold']) for j in jobs] == list(prior.JOBS))
     return {
       'policies': {k: v[1] for k, v in POLICY_PINS.items()},
+      'executor_contract_receipts': executor_contract_receipts(),
       'bodies': bodies,
       'jobs': jobs,
       'clauses': bodies['empirical-hurdle-acceptance-gate-v1.json']['clauses'],
@@ -318,6 +348,9 @@ def preflight(authorization, trusted_sha256, *, replica, roots=None):
     need(auth['receipt_sha256'] == trusted_sha256 and type(trusted_sha256) is str)
     need(repository_identity() == (REPOSITORY, BRANCH), 'V4_EXECUTION_REPOSITORY_CONFLICT')
     need(auth['schema'] == SCHEMA and auth['repository'] == REPOSITORY and auth['branch'] == BRANCH)
+    need(auth['executor_contract_receipts'] == pack['executor_contract_receipts'])
+    code_map = prior.read_json(p.PUBLIC / 'empirical-hurdle-stage1-v4-executor-code-map.json')
+    need(code_map['source_sha256'] == auth['executor_sources'], 'V4_EXECUTOR_SOURCE_CONFLICT')
     need(auth['policies'] == pack['policies'] and auth['jobs'] == [prior.job_identity(j) for j in pack['jobs']])
     need(
       auth['v1_manifest_sha256'] == prior.verified.SOURCE_SHA
@@ -374,6 +407,7 @@ def valid(permit):
     and permit.authorization['receipt_sha256'] == permit.trusted_sha256
   )
   need(prior.current_head() == permit.authorization['head'] and sources() == permit.authorization['executor_sources'])
+  need(executor_contract_receipts() == permit.authorization['executor_contract_receipts'], 'V4_EXECUTOR_POLICY_INPUT_CONFLICT')
   storage_roots(permit.roots, permit.authorization)
   environment_valid(permit.authorization)
   need(permit.replica in permit.authorization['replicas'])

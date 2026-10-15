@@ -30,8 +30,32 @@ def probability(x, model):
   return result
 
 
+def bounded_failed_certificates(certificates, bits):
+  """Retain proof identity when an operational cap forbids saving its integers."""
+  if bits is None:
+    return certificates
+  result = {}
+  for label, proofs in certificates.items():
+    result[label] = {}
+    for kind, proof in proofs.items():
+      values = (
+        [int(v) for v in proof.get('determinant', [])]
+        if kind == 'rank'
+        else [proof.get('D', 0), *proof.get('direction', []), *[q for _, q in proof.get('active', [])]]
+      )
+      result[label][kind] = (
+        proof
+        if all(abs(v).bit_length() <= bits for v in values)
+        else {'status': proof['status'], 'certificate_sha256': proof.get('certificate_sha256'), 'payload_status': 'OMITTED_RESOURCE_BOUND'}
+      )
+  return result
+
+
 def train(x, y, norm, *, candidate, normalizer_sha, certificate_bits=None):
   """Pure numeric TRAIN implementation; no readers, no private authority grant."""
+  head_checks = {label: {key: {'status': 'NOT_REACHED'} for key in ('support', 'rank', 'separation', 'convergence')} for label in ('STATIC', 'MOVE')}
+  certificates = {}
+  current_check = None
   try:
     f.matrix(x)
     y = f.labels(y, len(x))
@@ -46,19 +70,32 @@ def train(x, y, norm, *, candidate, normalizer_sha, certificate_bits=None):
     prepared = {}
     # Certify BOTH heads before fitting either one.
     for state in (0, 1):
+      label = ('STATIC', 'MOVE')[state]
+      checks = head_checks[label]
+      certificates[label] = {}
+      current_check = checks['support']
       mask = z == state
       positions = f.basis(norm, candidate, state)
       design = np.ascontiguousarray(transformed[mask][:, positions])
       target = y[mask]
       positive, negative = int(target.sum()), int(np.count_nonzero(target == 0))
+      current_check.update(positive=positive, negative=negative, count=len(target), parameters=len(positions))
       a.need(min(positive, negative) >= m.SUPPORT and len(target) > len(positions), 'V4_STAGE1_HEAD_SUPPORT_FAILURE')
+      current_check['status'] = 'PASS'
+      current_check = checks['rank']
       rank = c.rank_generate(design, binding={'basis': positions, 'normalizer_sha256': normalizer_sha})
+      certificates[label]['rank'] = rank
+      current_check.update(status=rank['status'], generated_status=rank['status'], certificate_sha256=rank.get('certificate_sha256'))
       a.need(
         rank['status'] == 'RANK_CERTIFICATE_PASS' and c.rank_verify(design, rank, binding={'basis': positions, 'normalizer_sha256': normalizer_sha}),
         'V4_STAGE1_HEAD_RANK_FAILURE',
       )
+      current_check = checks['separation']
       separation = c.separation_generate(design, target)
-      a.need(separation['status'] == 'NO_SEPARATION' and c.separation_verify(design, target, separation)['status'] == 'NO_SEPARATION', separation['status'])
+      certificates[label]['separation'] = separation
+      current_check.update(status=separation['status'], certificate_sha256=separation.get('certificate_sha256'))
+      a.need(separation['status'] == 'NO_SEPARATION', separation['status'])
+      a.need(c.separation_verify(design, target, separation)['status'] == 'NO_SEPARATION', 'V4_STAGE1_HEAD_SEPARATION_CERTIFICATE_FAILURE')
       if certificate_bits is not None:
         proof_ints = [int(v) for v in rank['determinant']] + [separation['D']] + [v for row in separation['active'] for v in row]
         a.need(all(abs(v).bit_length() <= certificate_bits for v in proof_ints), 'V4_CERTIFICATE_RESOURCE_BOUND')
@@ -73,9 +110,12 @@ def train(x, y, norm, *, candidate, normalizer_sha, certificate_bits=None):
     heads = {}
     for state in (0, 1):
       row = prepared[state]
+      current_check = head_checks[('STATIC', 'MOVE')[state]]['convergence']
       coefficients, convergence = m.newton(row['design'], row['target'].astype(np.float64))
+      current_check.update(status=convergence['status'], updates=convergence['updates'])
       heads[state] = {k: v for k, v in row.items() if k not in ('design', 'target')}
       heads[state].update(coefficients=coefficients, convergence=convergence)
+    current_check = None
     model = {'normalizer': norm, 'heads': heads}
     prob = probability(x, model)  # Exactly one assignment per original TRAIN row.
     threshold = m.threshold(prob, y, role='TRAIN')
@@ -88,9 +128,25 @@ def train(x, y, norm, *, candidate, normalizer_sha, certificate_bits=None):
       'normalizer_sha256': normalizer_sha,
       'row_order': 'ORIGINAL_TRAIN',
       'fallback': False,
+      'head_checks': head_checks,
     }
   except (ValueError, FloatingPointError, np.linalg.LinAlgError) as exc:
-    return {'status': FAIL, 'cause': str(exc), 'fallback': False}
+    # Unknown/identity/authority errors are infrastructure aborts, never model verdicts.
+    if isinstance(exc, ValueError) and not str(exc).startswith(
+      ('MOVE_GATE_', 'V4_STAGE1_', 'SEPARATION_', 'V4_CERTIFICATE_RESOURCE_BOUND', 'HURDLE_NUMERICAL_FAILURE')
+    ):
+      raise
+    if current_check is not None:
+      if current_check['status'] in ('NOT_REACHED', 'PASS', 'CONVERGED', 'RANK_CERTIFICATE_PASS', 'NO_SEPARATION'):
+        current_check['status'] = 'FAIL'
+      current_check['failure'] = str(exc)
+    return {
+      'status': FAIL,
+      'cause': str(exc),
+      'fallback': False,
+      'head_checks': head_checks,
+      'failed_certificates': bounded_failed_certificates(certificates, certificate_bits),
+    }
 
 
 def integrated(x, current, model, threshold, stage2):
@@ -240,8 +296,11 @@ def execute_job(permit, historical):
     'train_count': len(x),
     'authorization_sha256': permit.trusted_sha256,
     'failure': fit.get('cause'),
+    'head_checks': fit['head_checks'],
     'fallback': False,
   }
+  if fit['status'] != 'TRAIN_COMPLETE':
+    result['failed_certificates'] = fit['failed_certificates']
   if fit['status'] == 'TRAIN_COMPLETE':
     row, manifest = save_train(
       root / 'train',
@@ -294,7 +353,16 @@ def execute_job(permit, historical):
         if metric['status'] != 'COMPLETE':
           result['status'] = 'ROLLOUT_FAILURE'
     except (ValueError, FloatingPointError) as exc:
-      if 'ANCHOR_IDENTITY' in str(exc):
+      if isinstance(exc, ValueError) and not str(exc).startswith(
+        (
+          'HURDLE_NUMERICAL_FAILURE',
+          'S2_RI_NUMERICAL_FAILURE',
+          'V4_DEVELOPMENT_SUPPORT_FAILURE',
+          'V4_ROLLOUT_SUPPORT_FAILURE',
+          'V4_NUMERICAL_FAILURE',
+          'V4_STAGE1_NUMERICAL_FAILURE',
+        )
+      ):
         raise
       result['status'], result['failure'] = 'DEVELOPMENT_OR_ROLLOUT_FAILURE', str(exc)
   result['gate'] = gates.fold_gate(result, permit.pack['clauses'])
