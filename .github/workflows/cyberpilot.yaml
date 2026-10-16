@@ -54,12 +54,14 @@ jobs:
             openpilot/selfdrive/controls/tests/test_cyber_*.py \
             openpilot/selfdrive/test/process_replay/*cyber_lateral*.py
 
+      - name: Install attribution test runner in CI
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          uv pip install --python .venv/bin/python pytest==9.1.1
+
       - name: Run AutoTune and controls regression suite
         run: >-
           python3 tools/test_runner.py openpilot/tools/cyber_autotune/tests openpilot/selfdrive/controls/tests -j 1
-
-      - name: Install attribution test runner in CI
-        run: uv pip install --python .venv/bin/python pytest==9.1.1
 
       - name: Run Stage1 V4 saved-evidence attribution tests
         env:

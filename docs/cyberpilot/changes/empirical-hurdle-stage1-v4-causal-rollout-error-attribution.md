@@ -361,7 +361,7 @@ L이 길어질수록 모든 metric이 좋아지는 일관된 패턴은 없다. S
 Both independent attribution replicas: 32/32 COMPLETE; byte-exact repeatability PASS; verify-only resume both PASS, recompute_calls=0.
 Source/V4 actual/V1 reference/source-manifest immutability PASS; source writes=0. Original actual replicas and both attribution replicas retained.
 
-The legacy full runner uses unittest discovery: 5,018 tests passed. The new 95 pytest cases passed separately and are now an explicit exact-HEAD CI step with CI-only pinned pytest 9.1.1 (the already-existing local version). The actual local analysis environment was not changed. The combined pytest suite includes all 2,254 empirical cases. An initial Ruff failure was an unused variable in a new test; removing it was followed by another 95-case pass and Ruff PASS. No bound analysis source changed.
+The legacy full runner uses unittest discovery: 5,018 tests passed. The new 95 pytest cases passed separately and are now an explicit exact-HEAD CI step with CI-only pinned pytest 9.1.1 (the already-existing local version). The CI-only installation precedes legacy unittest collection, because collection imports the pytest file even without executing its functions. Both independent reviewers approved this ordering correction. The actual local analysis environment was not changed. The combined pytest suite includes all 2,254 empirical cases. An initial Ruff failure was an unused variable in a new test; removing it was followed by another 95-case pass and Ruff PASS. No bound analysis source changed.
 
 Publication validation status: **PASS**.
 
@@ -369,6 +369,7 @@ Publication validation status: **PASS**.
 | --- | --- | --- |
 | attribution_after_test_cleanup | 0 | 95 |
 | attribution_focused | 0 | 95 |
+| ci_collection_order | 0 | - |
 | combined | 0 | 2254 |
 | compileall | 0 | None |
 | diff-check | 0 | None |
