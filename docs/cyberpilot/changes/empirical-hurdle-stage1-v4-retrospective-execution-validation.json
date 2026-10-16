@@ -1,0 +1,188 @@
+{
+  "actual_integrity": "PASS",
+  "authorization_sha256": "a23e88b37ba1b2b57f5eb29bc37508166a6a392354826d00bb4444d8efcdc34c",
+  "candidate_search_authorized": false,
+  "checks": {
+    "actual_focused": {
+      "exit_code": 0,
+      "log_sha256": "367c362b610a44da437b9f5ee4f61b947af55e447988f596208ef21d3c8ce2ed",
+      "passed": 12
+    },
+    "combined": {
+      "exit_code": 0,
+      "log_sha256": "2a09f87826c9df2270fc55fa920c606d43af6ebaa5c371dec35ee4611dcfbd97",
+      "passed": 2159
+    },
+    "compileall": {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": null
+    },
+    "diff-check": {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": null
+    },
+    "full": {
+      "exit_code": 0,
+      "log_sha256": "e2e1885dfab8218ebd632f9e375633dc661a4599a75e797fe282fb1126105215",
+      "passed": 5018
+    },
+    "historical_immutability": {
+      "exit_code": 0,
+      "files_verified": 10
+    },
+    "json": {
+      "exit_code": 0,
+      "passed": 744
+    },
+    "lateral": {
+      "exit_code": 0,
+      "log_sha256": "daad548f8b95a1062837761d147ac10d1b7a562afad8b4d2dc1c98abf8eba568",
+      "passed": 16
+    },
+    "prior": {
+      "exit_code": 0,
+      "log_sha256": "977e94215bfbb1392d62caa8ce0947a88e6789c3cfcf84bc77c61a9acbb4df99",
+      "passed": 315
+    },
+    "publication": {
+      "exit_code": 0,
+      "log_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "passed": null
+    },
+    "publication_serialization": {
+      "exit_code": 0,
+      "parsed_object_unchanged": true,
+      "remediation_receipt_sha256": "275fe770b64ef776cecc183c846b6d8b6c605c0f5d4d1d4d830f80f7f60bab08"
+    },
+    "ruff": {
+      "exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "passed": null
+    },
+    "scons": {
+      "exit_code": 0,
+      "log_sha256": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056",
+      "passed": null
+    },
+    "source_immutability": {
+      "before_after_equal": true,
+      "exit_code": 0
+    },
+    "v4_executor": {
+      "exit_code": 0,
+      "log_sha256": "a1ce97a55b3f88e419ca5dff78253c61cacae6d33f3f6874cc8dfbfcae2d33a7",
+      "passed": 64
+    }
+  },
+  "coefficients_public": false,
+  "component": "retrospective-execution-validation",
+  "composition_authorized": false,
+  "delta_tick_semantics": "SOURCE_GRID_TICK_INCREMENT_CHANGE_NOT_PHYSICAL_EPS_MOVEMENT",
+  "execution_head": "bd8045ef2a0da62a92603439f38e7740f5923622",
+  "family": "HURDLE_STAGE1_CONTEXT_CONDITIONAL_LOGISTIC_V4",
+  "final_pooled_refit": "NOT_AUTHORIZED",
+  "historical_artifacts_unchanged": true,
+  "historical_states_preserved": [
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "initial_failed_publication_log_retained_privately": true,
+  "logged_command_semantics": "POST_CARCONTROLLER_NORMALIZED_COMMAND_NOT_PHYSICAL_EPS_APPLIED_TORQUE",
+  "model_admission": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+  "normalizer_refit_calls": 0,
+  "numeric_executor_sources_unchanged": true,
+  "opening_count": 0,
+  "pooled_refit_calls": 0,
+  "post_review_changes": [
+    "VALIDATION_STATUS_AND_REVIEW_RECEIPTS_ONLY",
+    "REPORT_VALIDATION_TABLES_ONLY"
+  ],
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "private_manifest_sha256": "fd3639f93944edecfdfa573818d29fbc8a91ab23208e2d561f8a69726eb0dc64",
+  "production_authority": false,
+  "publication_builder_mode": "SAVED_JSON_ONLY_WITH_RECOMPUTATION_TRAPS",
+  "publication_head_ci": "REQUIRED_ON_CONTAINING_PUBLICATION_COMMIT",
+  "publication_raw_data": false,
+  "publication_validation": "PASS",
+  "qualification_allowed": false,
+  "rate_semantics": [
+    "SOURCE_NATIVE_RATE_CODE_ONLY",
+    "RATE_SOURCE_CONTRACT_PARTIAL"
+  ],
+  "receipt_sha256": "80e4c563a1d61ad92688cff0e58e4fe5d45e89bb59df48c9c6c4711b8d10e707",
+  "reference_promotable": false,
+  "resolved_publication_size_failure": {
+    "actual_evidence_modified": false,
+    "artifact": "empirical-hurdle-stage1-v4-v1-v2-v3-comparison.json",
+    "new_bytes": 857896,
+    "old_bytes": 1670706,
+    "parsed_object_unchanged": true,
+    "receipt_sha256": "275fe770b64ef776cecc183c846b6d8b6c605c0f5d4d1d4d830f80f7f60bab08",
+    "scanner_limit_bytes": 1048576,
+    "semantic_receipt_sha256": "fe2f7382bbb2507813e781dbe1679a0362a8b4a05c3dd763a16281a08b9b6435"
+  },
+  "result_publication_head": {
+    "resolution": "CONTAINING_GIT_COMMIT"
+  },
+  "reviews": {
+    "authority": {
+      "metadata_only": true,
+      "report_sha256": "29a86adb08713b7b0d0f8e9b94cb95d0ecd260c210cb1437f1f3f4d67b0deb2b",
+      "scientific_recomputation_calls": 0,
+      "scope": "AUTHORITY_STORAGE_PRIVACY",
+      "status": "APPROVED"
+    },
+    "numerical": {
+      "metadata_only": true,
+      "report_sha256": "0d92b3b134620d44d75f8530dad9a5a6ecd5f8ced71f41493642b2788bd77fa3",
+      "scientific_recomputation_calls": 0,
+      "scope": "NUMERICAL_RESULT",
+      "status": "APPROVED"
+    }
+  },
+  "schema": "HURDLE_STAGE1_V4_ACTUAL_RETROSPECTIVE_PUBLIC_EVIDENCE",
+  "scientific_artifact_receipts": {
+    "candidate-gates": "f49ceabf47c6248fd2398b849217b24c7d43b88b55b9b71caac0bf1d62ce5359",
+    "development-results": "fa691c1a68c0ff5c55af91ebf7e7d8fd4d60e9c9e8cf50acefc68f17b50c9f14",
+    "fit-results": "ec35d64565cbb548748d32a3c8b647916b813a1d3b646639ece4a9db29c3472e",
+    "job-manifest": "9a0c5b7a6eee597f6ea764ca4c731fd3eef37acb3465320ea3bd52fd6d78c011",
+    "repeatability-actual": "180dd29ce55911c721a9dfe1ce37d6a8757e8aea8aa7ccb8180c0d924673eaa7",
+    "resume-actual": "40505c29ef7b56fe7535642e786db3d711e32d7c633396d0778d76700466d630",
+    "retrospective-execution-authorization": "b9d512ffd23f7f3ef9df87622642c3bfdabc59292e6188c43596cf3b00267237",
+    "rollout-results": "970f1729aff5cfd495c38acb33e178601dddf824ebd6dc57bddfef55fe65be25",
+    "selection-result": "d36b172441d620d93a4db4d6563fe4055affb94778487365726364e6a15ca05f",
+    "v1-v2-v3-comparison": "fe2f7382bbb2507813e781dbe1679a0362a8b4a05c3dd763a16281a08b9b6435"
+  },
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "stage2_refit_calls": 0,
+  "storage_amendment_receipt_sha256": "5b109186575c4b50b7095a4e99d6028fd8a8f21e4e944fb6ca5ec59d6a4a26e5",
+  "storage_migration_receipt_sha256": "f147cb4121a5e34f57d663c8fa631ab26805d30c9157515802f7a0cf7529adc9",
+  "storage_volume": "E_EXTERNAL_SSD",
+  "ta_execution": false,
+  "threshold_values_public": false,
+  "validation_source_set_sha256": "6db1981e9e5d51a141d202a23570d1ad4ca58251f4bbf3e3fec283304ea15445",
+  "vehicle": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

@@ -1,0 +1,6509 @@
+{
+  "authorization_sha256": "a23e88b37ba1b2b57f5eb29bc37508166a6a392354826d00bb4444d8efcdc34c",
+  "candidate_search_authorized": false,
+  "clause_count": 32,
+  "coefficients_public": false,
+  "component": "candidate-gates",
+  "composition_authorized": false,
+  "delta_tick_semantics": "SOURCE_GRID_TICK_INCREMENT_CHANGE_NOT_PHYSICAL_EPS_MOVEMENT",
+  "evaluated_failure_counts": {
+    "MOVE_MAE": 0,
+    "MOVE_P95": 0,
+    "MOVE_RMSE": 0,
+    "ONE_STEP_EXACT_HIT": 32,
+    "ONE_STEP_MAE": 20,
+    "ONE_STEP_P95": 20,
+    "ONE_STEP_RMSE": 4,
+    "ONE_STEP_WITHIN_ONE_TICK": 8,
+    "OVERALL_100_MAE": 32,
+    "OVERALL_100_P95": 32,
+    "OVERALL_100_RMSE": 32,
+    "OVERALL_200_MAE": 32,
+    "OVERALL_200_P95": 30,
+    "OVERALL_200_RMSE": 32,
+    "OVERALL_25_MAE": 32,
+    "OVERALL_25_P95": 32,
+    "OVERALL_25_RMSE": 27,
+    "OVERALL_50_MAE": 32,
+    "OVERALL_50_P95": 32,
+    "OVERALL_50_RMSE": 32,
+    "PATH_MOVED_100_MAE": 32,
+    "PATH_MOVED_100_P95": 32,
+    "PATH_MOVED_100_RMSE": 32,
+    "PATH_MOVED_200_MAE": 32,
+    "PATH_MOVED_200_P95": 30,
+    "PATH_MOVED_200_RMSE": 32,
+    "PATH_MOVED_25_MAE": 32,
+    "PATH_MOVED_25_P95": 32,
+    "PATH_MOVED_25_RMSE": 25,
+    "PATH_MOVED_50_MAE": 32,
+    "PATH_MOVED_50_P95": 32,
+    "PATH_MOVED_50_RMSE": 32
+  },
+  "evaluated_job_counts": {
+    "MOVE_MAE": 32,
+    "MOVE_P95": 32,
+    "MOVE_RMSE": 32,
+    "ONE_STEP_EXACT_HIT": 32,
+    "ONE_STEP_MAE": 32,
+    "ONE_STEP_P95": 32,
+    "ONE_STEP_RMSE": 32,
+    "ONE_STEP_WITHIN_ONE_TICK": 32,
+    "OVERALL_100_MAE": 32,
+    "OVERALL_100_P95": 32,
+    "OVERALL_100_RMSE": 32,
+    "OVERALL_200_MAE": 32,
+    "OVERALL_200_P95": 32,
+    "OVERALL_200_RMSE": 32,
+    "OVERALL_25_MAE": 32,
+    "OVERALL_25_P95": 32,
+    "OVERALL_25_RMSE": 32,
+    "OVERALL_50_MAE": 32,
+    "OVERALL_50_P95": 32,
+    "OVERALL_50_RMSE": 32,
+    "PATH_MOVED_100_MAE": 32,
+    "PATH_MOVED_100_P95": 32,
+    "PATH_MOVED_100_RMSE": 32,
+    "PATH_MOVED_200_MAE": 32,
+    "PATH_MOVED_200_P95": 32,
+    "PATH_MOVED_200_RMSE": 32,
+    "PATH_MOVED_25_MAE": 32,
+    "PATH_MOVED_25_P95": 32,
+    "PATH_MOVED_25_RMSE": 32,
+    "PATH_MOVED_50_MAE": 32,
+    "PATH_MOVED_50_P95": 32,
+    "PATH_MOVED_50_RMSE": 32
+  },
+  "execution_head": "bd8045ef2a0da62a92603439f38e7740f5923622",
+  "failure_counts": {
+    "MOVE_MAE": 0,
+    "MOVE_P95": 0,
+    "MOVE_RMSE": 0,
+    "ONE_STEP_EXACT_HIT": 32,
+    "ONE_STEP_MAE": 20,
+    "ONE_STEP_P95": 20,
+    "ONE_STEP_RMSE": 4,
+    "ONE_STEP_WITHIN_ONE_TICK": 8,
+    "OVERALL_100_MAE": 32,
+    "OVERALL_100_P95": 32,
+    "OVERALL_100_RMSE": 32,
+    "OVERALL_200_MAE": 32,
+    "OVERALL_200_P95": 30,
+    "OVERALL_200_RMSE": 32,
+    "OVERALL_25_MAE": 32,
+    "OVERALL_25_P95": 32,
+    "OVERALL_25_RMSE": 27,
+    "OVERALL_50_MAE": 32,
+    "OVERALL_50_P95": 32,
+    "OVERALL_50_RMSE": 32,
+    "PATH_MOVED_100_MAE": 32,
+    "PATH_MOVED_100_P95": 32,
+    "PATH_MOVED_100_RMSE": 32,
+    "PATH_MOVED_200_MAE": 32,
+    "PATH_MOVED_200_P95": 30,
+    "PATH_MOVED_200_RMSE": 32,
+    "PATH_MOVED_25_MAE": 32,
+    "PATH_MOVED_25_P95": 32,
+    "PATH_MOVED_25_RMSE": 25,
+    "PATH_MOVED_50_MAE": 32,
+    "PATH_MOVED_50_P95": 32,
+    "PATH_MOVED_50_RMSE": 32
+  },
+  "family": "HURDLE_STAGE1_CONTEXT_CONDITIONAL_LOGISTIC_V4",
+  "final_pooled_refit": "NOT_AUTHORIZED",
+  "historical_states_preserved": [
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "jobs": [
+    {
+      "candidate_id": "HRI_D00_L01",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_RMSE",
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_RMSE",
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": true
+          }
+        ],
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": true
+          }
+        ],
+        "failures": [
+          "ONE_STEP_RMSE",
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_RMSE",
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "fold": "FOLD_A",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "fold": "FOLD_B",
+      "gate": {
+        "clauses": [
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_EXACT_HIT",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "ONE_STEP_WITHIN_ONE_TICK",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_RMSE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_MAE",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "MOVE_P95",
+            "pass": true
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "OVERALL_200_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_25_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_50_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_100_P95",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_RMSE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_MAE",
+            "pass": false
+          },
+          {
+            "evaluated": true,
+            "id": "PATH_MOVED_200_P95",
+            "pass": false
+          }
+        ],
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "status": "EXECUTED_COMPLETE"
+    }
+  ],
+  "logged_command_semantics": "POST_CARCONTROLLER_NORMALIZED_COMMAND_NOT_PHYSICAL_EPS_APPLIED_TORQUE",
+  "model_admission": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+  "normalizer_refit_calls": 0,
+  "opening_count": 0,
+  "pooled_refit_calls": 0,
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "private_manifest_sha256": "fd3639f93944edecfdfa573818d29fbc8a91ab23208e2d561f8a69726eb0dc64",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "rate_semantics": [
+    "SOURCE_NATIVE_RATE_CODE_ONLY",
+    "RATE_SOURCE_CONTRACT_PARTIAL"
+  ],
+  "receipt_sha256": "f49ceabf47c6248fd2398b849217b24c7d43b88b55b9b71caac0bf1d62ce5359",
+  "reference_promotable": false,
+  "result_publication_head": {
+    "resolution": "CONTAINING_GIT_COMMIT"
+  },
+  "schema": "HURDLE_STAGE1_V4_ACTUAL_RETROSPECTIVE_PUBLIC_EVIDENCE",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "stage2_refit_calls": 0,
+  "storage_amendment_receipt_sha256": "5b109186575c4b50b7095a4e99d6028fd8a8f21e4e944fb6ca5ec59d6a4a26e5",
+  "storage_migration_receipt_sha256": "f147cb4121a5e34f57d663c8fa631ab26805d30c9157515802f7a0cf7529adc9",
+  "storage_volume": "E_EXTERNAL_SSD",
+  "ta_execution": false,
+  "threshold_values_public": false,
+  "vehicle": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

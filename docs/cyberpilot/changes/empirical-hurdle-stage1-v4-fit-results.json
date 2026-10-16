@@ -1,0 +1,1745 @@
+{
+  "authorization_sha256": "a23e88b37ba1b2b57f5eb29bc37508166a6a392354826d00bb4444d8efcdc34c",
+  "candidate_search_authorized": false,
+  "coefficients_public": false,
+  "component": "fit-results",
+  "composition_authorized": false,
+  "convergence_update_ranges": {
+    "MOVE": [
+      3,
+      5
+    ],
+    "STATIC": [
+      5,
+      5
+    ]
+  },
+  "delta_tick_semantics": "SOURCE_GRID_TICK_INCREMENT_CHANGE_NOT_PHYSICAL_EPS_MOVEMENT",
+  "execution_head": "bd8045ef2a0da62a92603439f38e7740f5923622",
+  "family": "HURDLE_STAGE1_CONTEXT_CONDITIONAL_LOGISTIC_V4",
+  "final_pooled_refit": "NOT_AUTHORIZED",
+  "head_preconditions": {
+    "MOVE": {
+      "convergence": {
+        "CONVERGED": 32
+      },
+      "rank": {
+        "RANK_CERTIFICATE_PASS": 32
+      },
+      "separation": {
+        "NO_SEPARATION": 32
+      },
+      "support": {
+        "PASS": 32
+      }
+    },
+    "STATIC": {
+      "convergence": {
+        "CONVERGED": 32
+      },
+      "rank": {
+        "RANK_CERTIFICATE_PASS": 32
+      },
+      "separation": {
+        "NO_SEPARATION": 32
+      },
+      "support": {
+        "PASS": 32
+      }
+    }
+  },
+  "historical_states_preserved": [
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "jobs": [
+    {
+      "candidate_id": "HRI_D00_L01",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "baed287d18fbd97d824bd00db6fa9989e3ca60b7c28981eed34df78fcc8e9319",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "05701cb97df66d729ceb6f1c164079e641882e846e181a7be8997d482cc87e9f",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 5,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "310b0e802807bf9d93b55452c7affba52494af05a1c08930f2adcb4401bf3f6b",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "77896799cc0226c4120e6569b9f1b459770c543ece33e6112ee9e7839f4a2298",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 4,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 4
+          },
+          "rank": {
+            "certificate_sha256": "7c4a905555dd964b33f92bbd92291712dff2270a79740991fd4bf38b9f780a18",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "a610b886d9f580c9284da6c647a0476de6cafe0626e561e7c516cb9c85a2d211",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 5,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "abe6d467d0feb738a308c5298df15ba7a850eaf5424ad245d6c45f5a8faff3b6",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "c5878c46be25027557cbe67f093ee98c5c37fb173affcd8efb4a2b62f825139b",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 4,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "3aaaecd670a0702aae93c2032114402378aeedfcf2f29cfca959221128e4c932",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "a897fa20c729f694fdfe170926e9495202925d28faca8f93eb2d7c8d899c8210",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 13,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "376083b93812e3e248eba354ab96040e1e0714f7b8d3fd13a5cab8517c92587f",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "e242fce61d7e3dc162d0cd77beef608b597b0377c341b10aa02b2f4029e48fd6",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 12,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 4
+          },
+          "rank": {
+            "certificate_sha256": "f9b180b9756619ff17682b393113781c8949aef5fa3da7f2d2e690607957f628",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "029f81bf24ac011f8f6fc5644d9fbfbb11c3d65d18e6136187c10f48a41e549f",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 13,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "0d7215b616281d2ec9c2e363a19b0880a4c35695639b3b53adec4618c39ab001",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "ef1281744d8d516339f12c576b3c6979d7b7040ca5fa3318b32e168477cc2faa",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 12,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "f156c01694e465a6b28ff991d7df33d439756f4abb8cc1e1559394b723624b0e",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "63197c28160dc37a74f636b82a6e25d712a520b33766fd6663865be9b85bcdd0",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 33,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "278a4abd58c2cf50f6a08aeb26f9ffc64ddd052749d95cc9a82c55cb73185e58",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "72a97e99e180587b477e2b84e8b90c5808bbbbdcf056219c9842ed49076723c4",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 32,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 4
+          },
+          "rank": {
+            "certificate_sha256": "43abc6562656de4dfb32d9d4d11081ca4c9276efcdb8b29607009d29fe4842e1",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "b02efa12afd940d8d09864d007c44d4b3e653b78cae0b7da0a5732d5f33411f1",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 33,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "f900d3a38a23e0207e7281ea14f9bd85a21ab0e52ff4846a0915403ba1653d90",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "d41a7face6db008d42ec2846796f91c115bad03384ba149637d317ee6bb91194",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 32,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "ae84ef8984358a02be699b75bc30f874ce68d92c81f0af759688c16ab70457e9",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "dd9671e642ca4220c47362ad4187a6bd6d12ebb3eba0f527ef5b66ea9930c60d",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 93,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "96e770bdd4ca7c2b69f3c3b053cee5525400ca5c1e43c33c47232c42517a5b05",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "f78ab8ffd830de7882b65e93a38c470170ac197ff0050b108b8fbef299105324",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 92,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 4
+          },
+          "rank": {
+            "certificate_sha256": "35ef20060967a11d7529f790510c6f22ffecca0dabbf47e0ae592071210b00e4",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "2cbeabc1a2b6b2bf53750088a36435989ab6e178ac58c6e500742ce7a74d6848",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 93,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "250b11c1650b0f05722c8529f8031db0026782f1d7fad92641850fed9f68b51e",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "61e0544020032734d0d63ba5721f16c389d200053c0cf85b94f3f1e407fa1646",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 92,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "1e21f2031222d6f5567403c3851bbfc5cbdbb51ba1ac3260a31b973a6353c2d0",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "4c735d2207b5d7837f013f5ef24eb4db652b2898eb858f6ef41debe80e52e88d",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 5,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "2b9d2b3758b58cd0a8c33b85d34a6eb4e69baa142a6216a3947ff8fceb3f3bba",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "739d594c1f37f9ed738a0462119377bf58069684efc8c97f1e6114c9e9369b5e",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 4,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 4
+          },
+          "rank": {
+            "certificate_sha256": "c6f418cfc06e9cb5a18d956122f29f51a02a46ba7d5c2c31bc90c9357353adba",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "26aa435e0dc54b790a43ff4745c64fbe35d69cc730452c40ee004a21c62d9d37",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 5,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "2da6a934f83121deb7015712e5145ec8532890acb1f27e5a621e0071c787ffe6",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "2e34ac864e675acdcbb2c71c0c1e9c3caba48091143462c7881733cb2bbe8a2b",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 4,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "564fa108a6b3fd8d917bf132f94032f2aac9905e69c0b0494a0f20415a0821db",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "ec46072392c53728d625715bd5a45ebc15ce6fd078a9cd1a4ba1ea2b3108b9f3",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 13,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "7f1d4b7e3bfc928476f268c740905bfb3eeca8664bbfdc7bf6fc02712e1cc269",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "da99fc6c73a7e979c8790f7b8a196b82eb775fb16b76c6a10a55e61849aa6312",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 12,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 4
+          },
+          "rank": {
+            "certificate_sha256": "36f28fec9df665866eb98393932030a28938d6496ce750c66bbf0a22288177f3",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "0055e670f8930256c1067cdfba2a669f35bb931692504192185f8c1024194abe",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 13,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "e34c289429a4dcdd1b8120ce634deb1b3fed29ff3ad50828ae64842249832715",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "cfd6898fcfee721d7557729bb04a391576ae8c031f2dcc5b73de314afb344ac9",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 12,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "4df5766db1e752b92fb36d3cc611cc452ad69f8f0c100996fb2fc2779cfce9af",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "ce471b9deca3ad0a4e4be6a9d34d87b77c01011dabc338acf77f4767deb397e7",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 33,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "971aea9067055bd0364629d6245c53e5f630c7413575b03ae444f2d8e8df4ec4",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "18905a1e04e38ab1b41a48c80bdb74fbc5e03ee58b7751cf37d00a9fb0ab9571",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 32,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 4
+          },
+          "rank": {
+            "certificate_sha256": "0f31bc85fb3079cd89d2057e438c6b459ceb88f3afa07894ae40770a59f05d79",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "f55dc2842b014ddd90c2d36088d926bb08909a7990de75fc1f74cb093441d010",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 33,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "4827a4d8765d9258449a26edc47b675d2260d6c91aaeecedadb2a2bf3a833771",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "95e6522c65334f3214ea6ae21fc2e1f6e5842ca1a2a643adad34eb248300f57d",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 32,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "f623fcf89ac800ba1f0a1185baaa14daab574fe800a13828b7a1a57e48c4d409",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "712a794ed48d4f7fbb0ccc4d1a756643ccc354aaa681b3dcfd3ae13fec1c6485",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 93,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "212761d238288ec9f71966faa97730665266841114facf7a3933118f2562b79b",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "3401982565d1998d35cc614f706698e174b0a9cb7a59b6850da2cd1f1c136354",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 92,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "f9899eaac32df12aa60597a0bf7454508a0a06b2b20196a99a97471e058c653e",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "80a1aeb5285a55fd976c8cc7b0b5a9cfc4c7b9ed60f106413f6cf15ac7c93c9a",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 93,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "be42d31ce7c9bfd208026ebbc4a07c0aea27f9706870b915d0270e41c0e64f81",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "d03c0d773ffdb40317c794b5f9046796b2dbf679b89205420d6397d5fbd684e7",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 92,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "4670c2d66c0fd13507f57c70250cc39105040d098ea9e9c4553ab865a2846604",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "5ae3d902c6c037514794ec36711bdd71238dd3266540e099057898bbf7cd418d",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 5,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "44a11e0d6fe0efef0f0c09d7ae21faada1185da7328251f1458ade248d77a280",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "1d4175a58c9d2fc582438d7d070fb9af6f0bc7751f91072faf4b2ccb7ba3b9b1",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 4,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 4
+          },
+          "rank": {
+            "certificate_sha256": "f708d4ee3761b21fa0ab98665f051f26a7b4dfc2404a48ba7b1d8eb05d140ff0",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "fff56f6a0959e18fc0965854da1e891fff9d2b3079b1ab6097f6421ef4c5b04d",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 5,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "b2efb79d7390f4c5f56239be4f4a211c1cfa1f94ad9d1c5b1a3d2d238b76dd73",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "d382a368c72158cdb22a392654bdab713e5c7fb34c4e961a0f62ecceea4b62bf",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 4,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "825882bdb5f325c4785e4881ba6b764c634fccaa20aada69143d37ed6c471953",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "2dbcce428b6d80c82f6d133a832ca04ffe68d2d71f600d6110c67bebd4980524",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 13,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "34273e2113bfa30876a1e95c873e573294e163dd9c7add80f90540c108fabe5c",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "a71659ed1770a619e3f78f0d7be530513c6e3c0789e8086ce0cc84a92e69a0e8",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 12,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 4
+          },
+          "rank": {
+            "certificate_sha256": "126a71b6019c6689367c2c9313d3b826b795b1de4a872bd9f6e07a51db146b74",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "c5599f9270c0809e87b827456c3b0646a4908c1e88c1b5d38fb3e977f8f6ac6f",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 13,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "10e8b81bf9a845e643684509bac815b657fa2ae216c78c762e7c86ec9b505142",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "0781bde55b477984bbc779e8ef38e1a00a7a948f9134605232f491f44726a35c",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 12,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "581959b2015f4e55577811042dc85cca1bc430e2a2fbabb36e8e659d107fcc65",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "e5f5419f6184c027b649c1b5761a5d3d767d76da92d2e1d05862487e94d52382",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 33,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "8a2fe77cd1f87c0b6f9a16741f4601df652b552f2935fa8d3995c095810bfef1",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "77880f5f9023dd8ad5cef6fd1b22b3c1e9c1b1892c4ed993c84598e20be2a074",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 32,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 4
+          },
+          "rank": {
+            "certificate_sha256": "96b07698329fb2ca6243c8e8d9d397bb0bc9d13575781cf4f989ed32a64b22dd",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "66580111fd09e90cad7a4a91a4634feac57c593af20964e80e5446f6ec171f06",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 33,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "700b2a92fb67b745564d6baec8f348e0ebbb2984519bc05a41bcb456eac49405",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "039ee1d040ee30baa78ec66b02c55f6f2779887c8be822f89ecdb26d83015058",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 32,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "426914cb8985c7de06917407151b07ccc00cfc4633c266c0ccc0314cd1503bde",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "4509c9bb43e2f9e0a76f5f2dde12a15a6fd3f7e6397e98880ce67c236b24e43a",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 93,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "a262897c1b204c770e84edf17ca5c07cf0efa4874bda399d843ea24ed9a7a9f8",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "da7e74b8e1a9ddcb7298e4e4ba8bb0beb6e8cb777594c08909fbdebc2bffebc9",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 92,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "1ab6911c138df53ca2d76e01d4e905ec20b7527601655d23e7324d35b2eabc55",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "3d063600161812dd38c690dd567fc8ccab76b09f03d72bc81b7d0165381072ea",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 93,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "d15ec2d76fe84a4111f2e34d7501e1622af8016d0d3d0a393261787164eac839",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "ce5f89ed834e7b4ed4983964b5a4d39c91a100c1c5850fa01f746fba45371173",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 92,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "c8d7a6352cca2952463737bf1645b26a3afff0d0c813cc37f802000a28fd6178",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "848a7972f48c3e99fca33bef138ced4f06d33aa86f8498a2ea206704bc7caf98",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 5,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "b2a7fdb6dee59bf4564bf0bfd780c808783de4dd1fd2aa91f294207c7a5145f8",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "b4eef645a4afe07a9f051306dd122de1c1ce5fa562123af0eb514ec8207304aa",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 4,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 4
+          },
+          "rank": {
+            "certificate_sha256": "abdb41e9b890fabe4e0eaaeae2592528e7f2f9f31416be3ecb44fc235a43f294",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "b87bcdf8ea11df7daa78be57999dd41e7bd5274ba61d866d983e4ddbd7c31de7",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 5,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "2b86248e08330e4d50911f88f41198837fb34d7d77c5645bc0fa228d8f2ac943",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "f0ccc39235758b24488ab056f4405cc75f91f8b1acbe9afb3fb0a6fc08ba03f6",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 4,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "ea4d10614e4f63984a959395eda9ad256089a4daabdd60c28035be24742f7a64",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "86ee4cee5ebba558d28ec0852c762687e9db8cd8863e69e10112cead99b89e59",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 13,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "55f6971a9c6230e6826e8c4ee840afae9c4f6e364dafda8fcedb4d2c436e076f",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "1eaff2266f5abb2e6bd590e0d37a151bc1122373e58177d2ec6bbab4a30b2bdb",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 12,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 4
+          },
+          "rank": {
+            "certificate_sha256": "75fc01c3aaa09487e1bdf338e92b53503f6f8f41514ab0250c301fb269b0fad1",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "6cb124994388beb5482dc5f6ec39f7b6bedb46748765fe7bb52d71dde7641173",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 13,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "f3efac729b41612bba0a144ee8c364ea863cd69299c255627dcc03da365f4000",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "201757f4d0c5a62f8d6cd04b1685e3d4135f0939da0e379b6c3111857b9ce266",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 12,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "a1525d685eedf3d492bde137151f0b37fdf9171c9a6e3032342b3db763f178e1",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "0f0533a507b6c10888e5a3485e3421e9f36183422dceb3fc4be9de666a17578e",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 33,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "f368df823b6915485235d2fe966cf9ad1b730f1d2b1d91a548caef9b3e791966",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "a4090843b8ce6f9c10d84e3fadf8ba340bf8485ac042f10ecf804d0161cd87fa",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 32,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 4
+          },
+          "rank": {
+            "certificate_sha256": "77417ca00d8261967e9dec2340c9a90e099f868c3fb29b6721c48fe4541394e7",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "13144f85f3143aca2369ed5971ac2e70b64cc4bcfbd9e9b02bf4a7904740cb1a",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 33,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "839533a9a2cd7d45de5cba064e8b0906d2908317ead9834ec06ded6dc0c44411",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "30f25222482ed4ed971cbc4fa5f232592ad524f18048654714ef59249c151a0b",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 32,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_A",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 3
+          },
+          "rank": {
+            "certificate_sha256": "36ca0f1ecd163f42215afce5a2cc180084b4468a0e4a884e55ceafad0878c94d",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "5d39811891c972315a599b7fcbd489033590daeeb70c951bb9e3200d938be4c5",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 93,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "218ee3ac13e84f8a1422363dcbbec646664a575946d933cac7a5043043057f93",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "64644783c800a2046efc6c7f478cd0c0b38d3f1db4ad8ab1757ffdfcc9fb5ddf",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 92,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "failure": null,
+      "fallback": false,
+      "fold": "FOLD_B",
+      "head_checks": {
+        "MOVE": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "cea5acc238dba960f6fa9f46ae56cab7c62548a3201a6fe1c475763b326156af",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "7d8e5859a24def0d6da35fb1868910b095280796ef36f0c95dd763c05d81c887",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 93,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        },
+        "STATIC": {
+          "convergence": {
+            "status": "CONVERGED",
+            "updates": 5
+          },
+          "rank": {
+            "certificate_sha256": "a665a631912c7567225a5c747c8c23e4364ea0100c76b52d4f53646758c8a8ae",
+            "generated_status": "RANK_CERTIFICATE_PASS",
+            "status": "RANK_CERTIFICATE_PASS"
+          },
+          "separation": {
+            "certificate_sha256": "5029e12ebcf71f8f4ed0f9c11d8852153aa296e08ec082f095f20e6e698c4132",
+            "status": "NO_SEPARATION"
+          },
+          "support": {
+            "class_minimum_pass": true,
+            "parameters": 92,
+            "rows_exceed_parameters": true,
+            "status": "PASS"
+          }
+        }
+      },
+      "status": "EXECUTED_COMPLETE"
+    }
+  ],
+  "logged_command_semantics": "POST_CARCONTROLLER_NORMALIZED_COMMAND_NOT_PHYSICAL_EPS_APPLIED_TORQUE",
+  "model_admission": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+  "move_all_v1_effective_columns_retained": true,
+  "normalizer_refit_calls": 0,
+  "opening_count": 0,
+  "pooled_refit_calls": 0,
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "private_manifest_sha256": "fd3639f93944edecfdfa573818d29fbc8a91ab23208e2d561f8a69726eb0dc64",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "rate_semantics": [
+    "SOURCE_NATIVE_RATE_CODE_ONLY",
+    "RATE_SOURCE_CONTRACT_PARTIAL"
+  ],
+  "receipt_sha256": "ec35d64565cbb548748d32a3c8b647916b813a1d3b646639ece4a9db29c3472e",
+  "reference_promotable": false,
+  "regularization": "NONE",
+  "result_publication_head": {
+    "resolution": "CONTAINING_GIT_COMMIT"
+  },
+  "schema": "HURDLE_STAGE1_V4_ACTUAL_RETROSPECTIVE_PUBLIC_EVIDENCE",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "stage1_normalizer_byte_identical_v1": true,
+  "stage2_model_and_normalizer_byte_identical_v1": true,
+  "stage2_refit_calls": 0,
+  "static_latest_prior_delta_column_removed": true,
+  "storage_amendment_receipt_sha256": "5b109186575c4b50b7095a4e99d6028fd8a8f21e4e944fb6ca5ec59d6a4a26e5",
+  "storage_migration_receipt_sha256": "f147cb4121a5e34f57d663c8fa631ab26805d30c9157515802f7a0cf7529adc9",
+  "storage_volume": "E_EXTERNAL_SSD",
+  "support_minimum_each_class_each_head": 201,
+  "ta_execution": false,
+  "threshold_policy": "ONE_GLOBAL_NEW_COMBINED_V4_TRAIN_SCORE_PER_JOB_V1_BA",
+  "threshold_values_public": false,
+  "vehicle": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

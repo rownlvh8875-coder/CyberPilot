@@ -1,0 +1,352 @@
+{
+  "authorization_sha256": "a23e88b37ba1b2b57f5eb29bc37508166a6a392354826d00bb4444d8efcdc34c",
+  "candidate_search_authorized": false,
+  "coefficients_public": false,
+  "component": "retrospective-execution-readiness",
+  "composition_authorized": false,
+  "delta_tick_semantics": "SOURCE_GRID_TICK_INCREMENT_CHANGE_NOT_PHYSICAL_EPS_MOVEMENT",
+  "execution_ci": {
+    "conclusion": "success",
+    "head": "bd8045ef2a0da62a92603439f38e7740f5923622",
+    "receipt_sha256": "d2af0d43cfbcaf3e75a7bd2c64310dff723a95b92f947103e89df00ff6993c42",
+    "status": "completed",
+    "url": "https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/38665133775"
+  },
+  "execution_head": "bd8045ef2a0da62a92603439f38e7740f5923622",
+  "execution_integrity_complete": true,
+  "family": "HURDLE_STAGE1_CONTEXT_CONDITIONAL_LOGISTIC_V4",
+  "final_pooled_refit": "NOT_AUTHORIZED",
+  "free_bytes_after": 51017584640,
+  "historical_states_preserved": [
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "holdout_openings": 0,
+  "hugging_face": "NOT_REQUIRED_NOT_USED",
+  "logged_command_semantics": "POST_CARCONTROLLER_NORMALIZED_COMMAND_NOT_PHYSICAL_EPS_APPLIED_TORQUE",
+  "model_admission": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+  "next_recommended_single_step": "SEPARATE_REPORT_ONLY_CAUSAL_ROLLOUT_AND_STAGE1_ERROR_ATTRIBUTION_REVIEW",
+  "normalizer_refit_calls": 0,
+  "opening_count": 0,
+  "pooled_refit_calls": 0,
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "private_manifest_sha256": "fd3639f93944edecfdfa573818d29fbc8a91ab23208e2d561f8a69726eb0dc64",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "publication_validation": "PASS",
+  "qlog_openings": 0,
+  "qualification_allowed": false,
+  "rate_semantics": [
+    "SOURCE_NATIVE_RATE_CODE_ONLY",
+    "RATE_SOURCE_CONTRACT_PARTIAL"
+  ],
+  "raw_log_openings": 0,
+  "receipt_sha256": "8af277dacba8d872396ebff3d6771da066eb70cc474028f6968b2428b46565e2",
+  "reference_promotable": false,
+  "replicas": [
+    {
+      "elapsed_seconds": 52753.949778345006,
+      "manifest_sha256": "fd3639f93944edecfdfa573818d29fbc8a91ab23208e2d561f8a69726eb0dc64",
+      "max_rss_kib": 1922120,
+      "process_identity_sha256": "ab99a3268270ef16c972ff10dc36395e5c22bc7b60411f56d59e4290536284bf",
+      "receipt_sha256": "f6e1182ed25074427c9a8a6238df5ad9cb315242193e09c7f9e4ec58d96df1e9",
+      "replica": "repeat-1",
+      "status": "COMPLETE"
+    },
+    {
+      "elapsed_seconds": 53153.587871282005,
+      "manifest_sha256": "fd3639f93944edecfdfa573818d29fbc8a91ab23208e2d561f8a69726eb0dc64",
+      "max_rss_kib": 1972416,
+      "process_identity_sha256": "5802d70096265ecdf723ab4d353c17656735f972dc9a8f2c2aa4c587d20c8f3e",
+      "receipt_sha256": "95506471077609dd053f6a943601cf83b5e71e1195bcb4d4652e0d45811b10c9",
+      "replica": "repeat-2",
+      "status": "COMPLETE"
+    }
+  ],
+  "result_publication_head": {
+    "resolution": "CONTAINING_GIT_COMMIT"
+  },
+  "schema": "HURDLE_STAGE1_V4_ACTUAL_RETROSPECTIVE_PUBLIC_EVIDENCE",
+  "scientific_outcome": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "stage2_refit_calls": 0,
+  "status": "HURDLE_STAGE1_V4_RETROSPECTIVE_EXECUTION_COMPLETE",
+  "storage_amendment_receipt_sha256": "5b109186575c4b50b7095a4e99d6028fd8a8f21e4e944fb6ca5ec59d6a4a26e5",
+  "storage_migration_receipt_sha256": "f147cb4121a5e34f57d663c8fa631ab26805d30c9157515802f7a0cf7529adc9",
+  "storage_volume": "E_EXTERNAL_SSD",
+  "summary": {
+    "admissible_candidate_count": 0,
+    "clause_counts": {
+      "MOVE_MAE": {
+        "evaluated": 32,
+        "failed_closed": 0,
+        "failed_evaluated": 0,
+        "not_evaluated": 0
+      },
+      "MOVE_P95": {
+        "evaluated": 32,
+        "failed_closed": 0,
+        "failed_evaluated": 0,
+        "not_evaluated": 0
+      },
+      "MOVE_RMSE": {
+        "evaluated": 32,
+        "failed_closed": 0,
+        "failed_evaluated": 0,
+        "not_evaluated": 0
+      },
+      "ONE_STEP_EXACT_HIT": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "ONE_STEP_MAE": {
+        "evaluated": 32,
+        "failed_closed": 20,
+        "failed_evaluated": 20,
+        "not_evaluated": 0
+      },
+      "ONE_STEP_P95": {
+        "evaluated": 32,
+        "failed_closed": 20,
+        "failed_evaluated": 20,
+        "not_evaluated": 0
+      },
+      "ONE_STEP_RMSE": {
+        "evaluated": 32,
+        "failed_closed": 4,
+        "failed_evaluated": 4,
+        "not_evaluated": 0
+      },
+      "ONE_STEP_WITHIN_ONE_TICK": {
+        "evaluated": 32,
+        "failed_closed": 8,
+        "failed_evaluated": 8,
+        "not_evaluated": 0
+      },
+      "OVERALL_100_MAE": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "OVERALL_100_P95": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "OVERALL_100_RMSE": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "OVERALL_200_MAE": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "OVERALL_200_P95": {
+        "evaluated": 32,
+        "failed_closed": 30,
+        "failed_evaluated": 30,
+        "not_evaluated": 0
+      },
+      "OVERALL_200_RMSE": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "OVERALL_25_MAE": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "OVERALL_25_P95": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "OVERALL_25_RMSE": {
+        "evaluated": 32,
+        "failed_closed": 27,
+        "failed_evaluated": 27,
+        "not_evaluated": 0
+      },
+      "OVERALL_50_MAE": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "OVERALL_50_P95": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "OVERALL_50_RMSE": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "PATH_MOVED_100_MAE": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "PATH_MOVED_100_P95": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "PATH_MOVED_100_RMSE": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "PATH_MOVED_200_MAE": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "PATH_MOVED_200_P95": {
+        "evaluated": 32,
+        "failed_closed": 30,
+        "failed_evaluated": 30,
+        "not_evaluated": 0
+      },
+      "PATH_MOVED_200_RMSE": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "PATH_MOVED_25_MAE": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "PATH_MOVED_25_P95": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "PATH_MOVED_25_RMSE": {
+        "evaluated": 32,
+        "failed_closed": 25,
+        "failed_evaluated": 25,
+        "not_evaluated": 0
+      },
+      "PATH_MOVED_50_MAE": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "PATH_MOVED_50_P95": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      },
+      "PATH_MOVED_50_RMSE": {
+        "evaluated": 32,
+        "failed_closed": 32,
+        "failed_evaluated": 32,
+        "not_evaluated": 0
+      }
+    },
+    "evaluated_job_count": 32,
+    "failure_subcauses": {},
+    "folds": {
+      "FOLD_A": {
+        "complete_gate_pass_count": 0,
+        "evaluated_job_count": 16,
+        "job_count": 16
+      },
+      "FOLD_B": {
+        "complete_gate_pass_count": 0,
+        "evaluated_job_count": 16,
+        "job_count": 16
+      }
+    },
+    "head_preconditions": {
+      "MOVE": {
+        "convergence": {
+          "CONVERGED": 32
+        },
+        "rank": {
+          "RANK_CERTIFICATE_PASS": 32
+        },
+        "separation": {
+          "NO_SEPARATION": 32
+        },
+        "support": {
+          "PASS": 32
+        }
+      },
+      "STATIC": {
+        "convergence": {
+          "CONVERGED": 32
+        },
+        "rank": {
+          "RANK_CERTIFICATE_PASS": 32
+        },
+        "separation": {
+          "NO_SEPARATION": 32
+        },
+        "support": {
+          "PASS": 32
+        }
+      }
+    },
+    "job_count": 32,
+    "selected_candidate": null,
+    "status_distribution": {
+      "DEVELOPMENT_OR_ROLLOUT_FAILURE": 0,
+      "EXECUTED_COMPLETE": 32,
+      "ROLLOUT_FAILURE": 0,
+      "V4_STAGE1_FIT_FAILED_CLOSED": 0
+    }
+  },
+  "ta_execution": false,
+  "telemetry_authoritative": false,
+  "threshold_values_public": false,
+  "validation_receipt_sha256": "80e4c563a1d61ad92688cff0e58e4fe5d45e89bb59df48c9c6c4711b8d10e707",
+  "vehicle": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}
