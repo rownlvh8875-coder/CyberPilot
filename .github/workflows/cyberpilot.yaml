@@ -58,6 +58,15 @@ jobs:
         run: >-
           python3 tools/test_runner.py openpilot/tools/cyber_autotune/tests openpilot/selfdrive/controls/tests -j 1
 
+      - name: Install attribution test runner in CI
+        run: uv pip install --python .venv/bin/python pytest==9.1.1
+
+      - name: Run Stage1 V4 saved-evidence attribution tests
+        env:
+          OPENBLAS_NUM_THREADS: 1
+          OMP_NUM_THREADS: 1
+        run: python3 -m pytest -q openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_attribution.py
+
       - name: Check Python syntax and branch whitespace
         run: |
           python3 -m compileall -q openpilot/tools/cyber_autotune tools/cyberpilot
