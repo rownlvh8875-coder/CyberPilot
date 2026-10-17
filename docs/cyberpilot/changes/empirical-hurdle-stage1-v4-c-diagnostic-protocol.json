@@ -1,0 +1,229 @@
+{
+  "D_AUTHORIZED": false,
+  "E_AUTHORIZED": false,
+  "F_AUTHORIZED": false,
+  "V5_AUTHORIZED": false,
+  "alignment_scope": "RECORDED_ORIGINAL_ORDER_PROVENANCE; NOT_FRESH_PER_ROW_RECONSTRUCTION",
+  "baseline_head": "8689ab0445b7de0c1785315e7ec90daccc684e59",
+  "environment": {
+    "numpy": "2.5.3",
+    "python": "3.12.13"
+  },
+  "execution_gate": "CLEAN_PROTOCOL_COMMIT_EXACT_HEAD_CI_SUCCESS; TWO_BYTE_BOUND_APPROVED_REVIEWS; PRIVATE_BINDING_CURRENT_HUMAN_C_GRANT",
+  "fields": {
+    "DEV": [
+      "V4/p_move",
+      "V4/predicted_gate",
+      "V1_REFERENCE/true_move",
+      "V1_REFERENCE/prior_delta_tick"
+    ],
+    "TRAIN": [
+      "V4/combined_probability",
+      "V1_REFERENCE/move_label",
+      "V1_REFERENCE/prior_delta_tick"
+    ]
+  },
+  "holdout": "CLOSED",
+  "hugging_face": "NOT_REQUIRED_NOT_USED",
+  "jobs": {
+    "delays": [
+      0,
+      5,
+      10,
+      20
+    ],
+    "folds": [
+      "FOLD_A",
+      "FOLD_B"
+    ],
+    "history_lengths": [
+      1,
+      5,
+      15,
+      45
+    ],
+    "order": "DELAY_THEN_HISTORY_THEN_FOLD; PUBLIC_FROZEN_JOB_MANIFEST",
+    "ordered_jobs": 32
+  },
+  "lineage": "B0_MANIFEST_PINS -> B1_192_FIELDS + B1_TRAIN_32 -> EXACT_224_RAW_NPY_PAYLOAD_HASHES_AND_RECORDED_ORIGINAL_ORDER",
+  "metrics": {
+    "auc": "EXACT_INTEGER_PAIR_NUMERATOR/(2*POSITIVE*NEGATIVE); MIDRANK_TIES; NO_SCORE_ROUNDING",
+    "contexts": [
+      "OVERALL",
+      "PREVIOUS_STATIC",
+      "PREVIOUS_MOVE"
+    ],
+    "dev_saved_gate": [
+      "TP",
+      "FP",
+      "TN",
+      "FN",
+      "PRECISION",
+      "RECALL",
+      "FPR",
+      "FNR"
+    ],
+    "dev_transitions": "MOVE_GATE_COUNT/N; COMPLEMENT_RATE; BOTH_COUNTS; NO_STAGE2_REALIZATION_CLAIM",
+    "float_reduction": "FLOAT64_ELEMENTWISE; PYTHON_MATH_FSUM_OF_SAVED_OR_DERIVED_VALUES; NO_FITTING",
+    "fold_summary": [
+      "MEDIAN",
+      "MINIMUM",
+      "MAXIMUM",
+      "VALID_JOBS"
+    ],
+    "reliability_closure": "LEFT_CLOSED_RIGHT_OPEN; FINAL_BIN_INCLUDES_ONE",
+    "reliability_edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "reliability_outputs": [
+      "COUNT",
+      "MEAN_PROBABILITY",
+      "OBSERVED_MOVE_RATE"
+    ],
+    "score_quality": [
+      "MEAN_PROBABILITY",
+      "TRUE_MOVE_PREVALENCE",
+      "MEAN_SQUARED_PROBABILITY_ERROR",
+      "MEAN_PROBABILITY_MINUS_PREVALENCE"
+    ],
+    "support": "FOUR_DISJOINT_TRANSITIONS; POSITIVE_NEGATIVE_COUNTS",
+    "transfer": [
+      "DEV_MINUS_TRAIN_AUC",
+      "DEV_MINUS_TRAIN_BRIER",
+      "DEV_MINUS_TRAIN_CALIBRATION_BIAS",
+      "DEV_MINUS_TRAIN_PREVALENCE"
+    ],
+    "undefined": "NULL_WITH_NOT_IDENTIFIABLE; NEVER_IMPUTED"
+  },
+  "mission": "STAGE1_V4_C_DIAGNOSTIC_AGGREGATION",
+  "populations": {
+    "MOVE_CONTINUATION": [
+      1,
+      1
+    ],
+    "MOVE_ONSET": [
+      0,
+      1
+    ],
+    "MOVE_TERMINATION": [
+      1,
+      0
+    ],
+    "STATIC_HOLD": [
+      0,
+      0
+    ]
+  },
+  "previous_state": "prior_delta_tick != 0; SOURCE_GRID_ONLY",
+  "prior_consistency": {
+    "auc_pair_counts_and_gate_counts": "EXACT",
+    "float_roundoff_absolute_allowance": 2e-15,
+    "new_run_not_substituted_by_prior_aggregates": true,
+    "population": "MATCHING_TRAIN_AND_ONE_STEP_DEV_ONLY; NO_H200_COMPARISON",
+    "sources": [
+      "state-conditional-ranking",
+      "stage1-confusion-attribution"
+    ]
+  },
+  "privacy": {
+    "complementary_suppression": "IF_ANY_CONTEXT_UNSAFE_HIDE_ALL_SCORE_AND_TRANSFER_CONTEXTS_IN_BOTH_FOLDS; TRANSITION_FAMILY_CROSS_FOLD_HIDE_IF_ANY_JOB_UNSAFE; NO_CELL_TOTALS",
+    "minimum_support": 201,
+    "no_private_paths_hashes_thresholds_coefficients": true,
+    "no_row_outputs": true,
+    "public_bins": "ALL_WITHHELD",
+    "public_counts": "ALL_SCIENTIFIC_CELLS_AND_POPULATION_TOTALS_WITHHELD",
+    "public_score_summary": "FOLD_JOB_MEDIAN_MIN_MAX_ONLY; EVERY_TRAIN_DEV_CONTEXT_IN_BOTH_FOLDS_HAS_EACH_TRUTH_CLASS_AT_LEAST_201",
+    "public_transition_summary": "EVERY_JOB_IN_BOTH_FOLDS_N_AT_LEAST_201; EVENT_AND_COMPLEMENT_EITHER_ZERO_OR_AT_LEAST_201",
+    "purpose": "PUBLICATION_SUPPRESSION_ONLY; NOT_ACCEPTANCE_CUTOFF"
+  },
+  "private_caller_sha256": "df0d7b0f5986889d0c5be3c6aee44564c2cc241d5620c74e7a8b63987cf181ac",
+  "private_numeric_input_observed_at_freeze": false,
+  "private_output": "EXCLUSIVE_0600_IN_DISJOINT_0700_PARENT_ON_DIFFERENT_DEVICE_FROM_SOURCE; AGGREGATES_ONLY; NO_ARRAY_COPIES",
+  "public_inputs": {
+    "empirical-hurdle-fit-cv-authorization-v1.json": {
+      "raw_sha256": "54b879120e55c805df5f4094bf04637553bf6faafcfecef69f052d160a29ccb2",
+      "receipt_sha256": "d93d6bb418a958b998c0308e4ce71a605a4069286029b5539d80b38001a34c6b"
+    },
+    "empirical-hurdle-fit-cv-results-v1.json": {
+      "raw_sha256": "72e0179a96a8885e7ffab57bf1c579ef75536769bc1a03990a007b3b4e2ac272",
+      "receipt_sha256": "8d7c45a7a97f73918f927b19b0004c309078239b8b8523e1beac08fa6c53f5c4"
+    },
+    "empirical-hurdle-stage1-v4-b1-saved-evidence-results.json": {
+      "raw_sha256": "31a9fe285d3ca1c4df5600fa94aa37a5b1bcefa34e89729f0887680031ff9fc0",
+      "receipt_sha256": "9f60fcf0464aeeaaa3d852566244c0ec3eb1239067def94849bc41afd9f37c15"
+    },
+    "empirical-hurdle-stage1-v4-b1-train-score-results.json": {
+      "raw_sha256": "7309c4450cfa8d5bb0c6008f090df582240fd0878bb1f0d5a123e5213664848c",
+      "receipt_sha256": "74a0fd1a091525b3afd26dd30399837eb8fc57bf00df9d8d4576893d79d9c6f5"
+    },
+    "empirical-hurdle-stage1-v4-development-results.json": {
+      "raw_sha256": "3bf0fd91ec8f0d40bd6df8115a7da3209fee4070ca498bcc8f6fdfe07f2fb30c",
+      "receipt_sha256": "fa691c1a68c0ff5c55af91ebf7e7d8fd4d60e9c9e8cf50acefc68f17b50c9f14"
+    },
+    "empirical-hurdle-stage1-v4-job-manifest.json": {
+      "raw_sha256": "484a67e4f183ede512af89c99b73be2ed63643057a84382c90729f5d71819e03",
+      "receipt_sha256": "9a0c5b7a6eee597f6ea764ca4c731fd3eef37acb3465320ea3bd52fd6d78c011"
+    },
+    "empirical-hurdle-stage1-v4-retrospective-execution-authorization.json": {
+      "raw_sha256": "99ba2f5218a38b72a47e72883546dcd0ad67cba822752197419fc4e76f9ca5d9",
+      "receipt_sha256": "b9d512ffd23f7f3ef9df87622642c3bfdabc59292e6188c43596cf3b00267237"
+    },
+    "empirical-hurdle-stage1-v4-stage1-confusion-attribution.json": {
+      "raw_sha256": "208ee39a06ea49455e4b54b4a0b9a4ac5129b649258af77f057980eaf6cde16b",
+      "receipt_sha256": "3bbde8d5f7df0b55133c9b16262000f9fa30816564fca305e019c826c2288670"
+    },
+    "empirical-hurdle-stage1-v4-state-conditional-ranking.json": {
+      "raw_sha256": "f78caeceaa4ea720697e9f59de63fcd4b6d318f67a7c6f6efc58c8518a041d7d",
+      "receipt_sha256": "88aa1de56187d48ee8576bf9e24286eab78162e2e3109b4f591d36da78cb445e"
+    }
+  },
+  "receipt_sha256": "7f09da07b2267aa1bc1b032d55ebe5d26ec5cbb27ce9f96160aa13895b297721",
+  "replica": "V4_REPEAT_1_ONLY; INHERIT_B1_FIELD_SCOPED_EQUALITY; NO_REPEAT_2_REREAD",
+  "resource_limits": {
+    "address_space_bytes": 2147483648,
+    "concurrent_jobs": 1,
+    "cpu_seconds": 900,
+    "decompression": "ONE_GZIP_MEMBER; CRC_EOF_NO_TRAILING; EXACT_NPY_HEADER_AND_FULL_PAYLOAD",
+    "max_population_rows": 336941,
+    "per_file_raw": "B1_FIXED_PUBLIC_N_AND_DTYPE_BYTE_CAPS",
+    "private_reserve_bytes": 16777216,
+    "private_result_bytes": 8388608,
+    "private_total_output_upper_bytes": 16777216,
+    "public_projection_bytes": 65536,
+    "threads": 1,
+    "wall_seconds": 1200
+  },
+  "resume": "SAVED_RESULT_RAW_SHA_AND_CANONICAL_SEAL; SOURCE_REOPEN_AND_RECOMPUTE_TRAPPED",
+  "schema": "CYBERPILOT_V4_C_PROTOCOL_V1",
+  "scientific_result": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
+  "scope": "C_READ_ONLY_PREDECLARED_DESCRIPTIVE_AGGREGATION",
+  "selected_candidate": null,
+  "selection": "MODEL_SELECTION_FAILED_CLOSED",
+  "sources": {
+    "empirical_hurdle_v4_c_diagnostics.py": "6465fc17e32d8b15b41266e40b8de256bbac509d921aa373b5962fc9cf78f70c",
+    "empirical_hurdle_v4_c_math.py": "be4d3317ef3d4bba7d6a11ece131b43e982fcd688fd3a6fafbbb7df22af826a4",
+    "tests/test_empirical_hurdle_v4_c_diagnostics.py": "62fd495d1d852c029f866bf1b960201f0231283ee989596215710ff13ab01e76"
+  },
+  "statistical_interpretation": [
+    "OVERLAPPING_CORRELATED_JOBS",
+    "NO_POOLED_AUC",
+    "NO_INDEPENDENCE_CLAIM",
+    "NO_P_VALUE_OR_CI",
+    "SUMMED_COUNTS_ARE_JOB_ROW_EXPOSURES_ONLY",
+    "NO_CAUSAL_OR_ALTERNATIVE_POLICY_EFFECT"
+  ],
+  "train_rowwise_gate": "NOT_SAVED; NEVER_RECONSTRUCTED",
+  "vehicle_authority": "NONE",
+  "version": "V4_C_DIAGNOSTIC_PROTOCOL_V1",
+  "whole_replica": "REPLICA_PAYLOAD_EQUALITY_NOT_FULLY_REVERIFIED"
+}
