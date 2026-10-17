@@ -1,0 +1,1916 @@
+{
+  "C_AUTHORIZED": false,
+  "D_AUTHORIZED": false,
+  "E_AUTHORIZED": false,
+  "F_AUTHORIZED": false,
+  "actual_target_file_openings": {
+    "array": 256,
+    "metadata": 195,
+    "total": 451
+  },
+  "array_verification": "256_MANIFEST_AND_SAFE_DESCRIPTOR_HASHES_FULL_N_C_ORDER_EXACT_DTYPE_PASS",
+  "automatic_advance": false,
+  "b0_control_identity_reverification": "PASS_EXISTING_HANDOFF_AND_B0_SEALS_AND_BINDINGS",
+  "b1_private_execution": "COMPLETED_AUTHORIZED_SUBSET; REQUESTED_TRAIN_SCORE_NOT_OPENED",
+  "baseline_head": "de418c9300c33b716609ba1e5c3415d13202974d",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "dev_aligned_jobs": 32,
+  "field_status_counts": {
+    "AUTHORITY_BLOCKED": 32,
+    "PASS": 192
+  },
+  "fields": [
+    {
+      "candidate_id": "HRI_D00_L01",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "field": "combined_probability",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "field": "move_label",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "field": "p_move",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "field": "predicted_gate",
+      "fold": "FOLD_A",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "field": "true_move",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_A",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "field": "combined_probability",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "TRAIN",
+      "status": "AUTHORITY_BLOCKED"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "field": "move_label",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "TRAIN",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "field": "p_move",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "field": "predicted_gate",
+      "fold": "FOLD_B",
+      "owner": "V4",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "field": "true_move",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "field": "prior_delta_tick",
+      "fold": "FOLD_B",
+      "owner": "V1_REFERENCE",
+      "role": "DEV",
+      "status": "PASS"
+    }
+  ],
+  "forbidden_attempts": 0,
+  "holdout": "CLOSED",
+  "hugging_face": "NOT_REQUIRED_NOT_USED",
+  "independent_reviews": {
+    "authority_privacy": "APPROVED_EXACT_READER_TEST_AND_PRIVATE_CALLER_BYTES_BEFORE_TARGET_ACCESS",
+    "integrity": "APPROVED_EXACT_READER_TEST_AND_PRIVATE_CALLER_BYTES_BEFORE_TARGET_ACCESS",
+    "private_review_receipts_retained": true
+  },
+  "local_validation": {
+    "compileall": "PASS",
+    "final_publication_audit": "PASS",
+    "full_autotune_controls_passed": 5252,
+    "lateral_passed": 16,
+    "private_caller_synthetic": 9,
+    "reader_synthetic": 45,
+    "regression_real_e_masked": true,
+    "ruff": "PASS",
+    "scons": "PASS",
+    "v4_attribution_passed": 95
+  },
+  "mixed_carrier": {
+    "blocked_job_fields": 32,
+    "required_evidence": "SEPARATELY_APPROVED_PROVENANCE_BOUND_MINIMAL_TRAIN_DESCRIPTOR",
+    "status": "B1_MIXED_CARRIER_ACCESS_NOT_AUTHORIZED"
+  },
+  "model_selection": "MODEL_SELECTION_FAILED_CLOSED",
+  "next_authorization": "SEPARATE_C_PROTOCOL_AND_HUMAN_GRANT; RESOLVE_OR_EXPLICITLY_EXCLUDE_TRAIN_SCORE_FIRST",
+  "operation_counters": {
+    "calibration_fit_calls": 0,
+    "candidate_search_calls": 0,
+    "holdout_discovery": 0,
+    "holdout_openings": 0,
+    "model_refit_calls": 0,
+    "normalizer_refit_calls": 0,
+    "prediction_replay_calls": 0,
+    "private_aggregate_generation_calls": 0,
+    "qlog_openings": 0,
+    "raw_log_openings": 0,
+    "rollout_regeneration_calls": 0,
+    "selection_calls": 0,
+    "source_write_count": 0,
+    "stage2_refit_calls": 0,
+    "threshold_application_calls": 0,
+    "threshold_readings": 0,
+    "threshold_reselection_calls": 0,
+    "vehicle_activation_calls": 0
+  },
+  "production_authority": false,
+  "public_references": [
+    "empirical-hurdle-stage1-v4-evidence-access-field-allowlist.json",
+    "empirical-hurdle-stage1-v4-job-manifest.json",
+    "empirical-hurdle-stage1-v4-development-results.json",
+    "empirical-hurdle-fit-cv-results-v1.json",
+    "empirical-hurdle-fit-cv-job-manifest-v1.json"
+  ],
+  "public_source_identity": {
+    "ordering_sources": {
+      "empirical_hurdle_fit_cv_data.py": "9e104a83a928c6b997a914a606820f2d2190fa56917e4042856474f747b900ac",
+      "empirical_hurdle_fit_cv_execution.py": "a952eb4986f47e0335bf355ee74868755f14b592d05070008a0b117979d4e635",
+      "empirical_hurdle_v4_execution.py": "f7ae1ae98c645de4997e56d1bcd73b76e2f4f153090b65e5fd6bb8d207f7fd0e",
+      "empirical_s2_ri_reconstruction_math.py": "e6bb2f276b3e87104f1aedb0ecbafae7175147c60e9b03aaba19b77a49db0055",
+      "empirical_s2_ri_schema.py": "6f8fd733b6634738db6c01b3bc3bc0a4330733cb6363326b4c3994318065e31a"
+    },
+    "reader_sha256": "5d1e89e0d70c5a494d8c2110f1cf4ab6095bbd12c9910fa3533067485732ec41",
+    "tests_sha256": "76b5d5a043e3df10963e357ec17d726382b19db1db2ba5c0a3a66ea3dff70544",
+    "unchanged_b0_reader_sha256": "767b1bc9ae993eda007c7dc17b8e2d9eb2194dd250e13d0718c1287fb12c7622"
+  },
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "9f60fcf0464aeeaaa3d852566244c0ec3eb1239067def94849bc41afd9f37c15",
+  "reference_promotable": false,
+  "replica_payload_equality": "REPLICA_PAYLOAD_EQUALITY_NOT_FULLY_REVERIFIED",
+  "resume": {
+    "recompute_calls": 0,
+    "retained_result_reloaded": true,
+    "source_file_openings": 0,
+    "status": "B1_VERIFY_ONLY_PASS"
+  },
+  "row_alignment_scope": "IMMUTABLE_RECORDED_ORIGINAL_ORDER_PROVENANCE; NO_ROW_ID_RECONSTRUCTION",
+  "schema": "CYBERPILOT_V4_B1_PUBLIC_TECHNICAL_RESULT_V1",
+  "scientific_result": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
+  "scope": "B1_RESTRICTED_READ_ONLY_INTEGRITY_AND_ALIGNMENT",
+  "sealed_reference_allowed": false,
+  "selected_candidate": null,
+  "sg_execution": false,
+  "source_immutability_scope": "READ_ONLY_OPENS_AND_SAME_FD_STAMPS; NO_FULL_STORE_OR_ATIME_CLAIM",
+  "source_writes": 0,
+  "status": "B1_MIXED_CARRIER_ACCESS_BLOCKED",
+  "ta_execution": false,
+  "train_rowwise_gate": "NOT_SAVED",
+  "train_three_field_aligned_jobs": 0,
+  "v4_dev_equal_field_pairs": 64,
+  "vehicle": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}
