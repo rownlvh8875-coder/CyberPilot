@@ -1,0 +1,339 @@
+{
+  "D2_compatibility": {
+    "Q3_filters_or_reselects_candidates": false,
+    "additional_calls": "Post-selection validation only, never per candidate-threshold Stage2 inference.",
+    "decision_recipe_changed": false,
+    "dispute_status": "E2_V2_POLICY_SEMANTICS_AMENDMENT_REQUIRED if final independent review finds a substantive frozen-policy change; do not mask as approval.",
+    "objective_guards_candidate_set_changed": false,
+    "policy_semantics_amendment_required": false,
+    "proof_scope": "Nonempty feasible decision set proof remains conditional on common cache/Q1. It does NOT guarantee the winning D2 gate passes Q3; numerical eligibility may fail after a mathematically feasible optimum.",
+    "reason": "D2 frozen policy already uses the same frozen selected-row Stage2 inference for realized MOVE and the common all-row cache for TRAIN losses. Q3 checks that the chosen winner has those same bytes; it does not optimize, filter the decision grid, change guards or replace Stage2. Failure stops execution instead of selecting another decision."
+  },
+  "acceptance_unchanged": {
+    "D0_comparison": "MANDATORY_PAIRED_DESCRIPTIVE_REFERENCE_NOT_REPLACEMENT_ACCEPTANCE_COMPARATOR",
+    "clause_count": 32,
+    "clauses_body_sha256": "570e39ff35dfc8716069ac055e00bc3cd343d694f954077e464d02acaf540682",
+    "comparator": "HOLD_LAST_SAME_ANCHORS",
+    "diagnostics_replace_gate": false,
+    "epsilon": 0,
+    "file": "empirical-hurdle-acceptance-gate-v1.json",
+    "folds": [
+      "FOLD_A",
+      "FOLD_B"
+    ],
+    "new_numeric_cutoffs": [],
+    "new_transition_hard_gate": "SEPARATE_EXPLICIT_POLICY_AMENDMENT_BEFORE_E_EXECUTION_IF_REQUIRED",
+    "quantifier": "ALL_CLAUSES_AND_SUPPORT_AND_NUMERICAL_PRECONDITIONS_IN_BOTH_FOLDS",
+    "raw_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+    "receipt_sha256": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60",
+    "support": "EXISTING_SUPPORT_201; SAME_ANCHORS_AND_COMPARATOR_ANCHORS; NO_RELAXATION"
+  },
+  "actual_operation_counters": {
+    "D0_TRAIN_reconstruction_on_private_data": 0,
+    "D2_DEV_one_step": 0,
+    "D2_TRAIN_decision_selection": 0,
+    "D2_recursive_rollout": 0,
+    "additional_policy_search": 0,
+    "calibration_fit": 0,
+    "holdout_discovery": 0,
+    "holdout_openings": 0,
+    "model_refit": 0,
+    "new_scientific_aggregations": 0,
+    "normalizer_refit": 0,
+    "original_source_writes": 0,
+    "posthoc_tuning": 0,
+    "private_array_openings": 0,
+    "private_diagnostic_reexecution": 0,
+    "private_manifest_openings": 0,
+    "private_model_loadings": 0,
+    "qlog_openings": 0,
+    "raw_log_openings": 0,
+    "stage2_refit": 0,
+    "threshold_application_on_private_data": 0,
+    "threshold_readings": 0,
+    "vehicle_activation": 0
+  },
+  "baseline_head": "93bc9db25565bcd8b6bd988550c4488ad1c42500",
+  "changes_from_V1": [
+    {
+      "V1": "B/A mandatory before C/A",
+      "V2": "Q2 diagnostic, default no private call",
+      "pointer": "/Stage2_qualification/comparison/0"
+    },
+    {
+      "V1": "C/A mandatory after B/A",
+      "V2": "Q1 mandatory all32 before selection, same exactness",
+      "pointer": "/Stage2_qualification/comparison/1"
+    },
+    {
+      "V1": "No separate winning D2 selected-path hard gate",
+      "V2": "Mandatory all32 after64 decisions before seal and DEV",
+      "pointer": "/Stage2_qualification/Q3"
+    },
+    {
+      "V1": "Combined TRAIN phases",
+      "V2": "Explicit A-H barriers for Q1/Q3, unchanged downstream experiment",
+      "pointer": "/phases"
+    },
+    {
+      "V1": "No post-winning D2 selected call bound",
+      "V2": "Static extra32-call bound and conservative memory liveness review; original hard limits retained, fresh capacity proof required",
+      "pointer": "/resources"
+    },
+    {
+      "V1": "Historical E2V1 grant",
+      "V2": "Design-only; fresh E2V2 implementation/execution grant required",
+      "pointer": "/current_explicit_grant"
+    }
+  ],
+  "counter_evidence": "Only exact tracked public files are read; new files are two public contracts, one public report and one synthetic test. Tests use synthetic in-memory fixtures; full regression runs with private SSD mounts hidden in isolated namespace. Changed-file allowlist and all V1/source pins verified before publication.",
+  "executor_modified": false,
+  "future_E2_granted": false,
+  "future_execution_requirements": [
+    "Separate explicit grant for additive V2 implementation and two fresh E2 repeats, with Q1/Q3 calls and unchanged scientific scope.",
+    "Final reviewed V2 caller/source raw hashes, synthetic/regression qualification and pre-execution exact-head CI SUCCESS.",
+    "Fresh exact private binding to V2 raw/receipt identities, historical source/model/member locks and approved private output/capacity; no discovery.",
+    "Resource/caller liveness proof before numeric access within retained hard caps; otherwise E2_RESOURCE_PREFLIGHT_BLOCKED.",
+    "No resume of failed V1 or old diagnostic; old evidence immutable; no policy adoption/HOLDOUT/vehicle grant."
+  ],
+  "historical_evidence": {
+    "B_A": "FLOAT_AND_BYTE_MISMATCH",
+    "C_A": "BYTE_EXACT",
+    "W_A": "BYTE_EXACT",
+    "cause": "BATCH_LAYOUT_SENSITIVE_MATMUL_DIFFERENCE; EXACT_BLAS_KERNEL_FMA_UNTRACED",
+    "limits": [
+      "NOT_32_JOB_QUALIFICATION",
+      "NOT_D2_SELECTED_PATH_EVIDENCE",
+      "NOT_RETROACTIVE_V1_PASS",
+      "ONE_ULP_CAN_CHANGE_PROJECTED_TICK_IN_SEPARATE_SYNTHETIC_BOUNDARY"
+    ],
+    "paths": {
+      "A": "original segment/order512 all-row cache",
+      "B": "chunk-local D0 selected rows",
+      "C": "original whole-job D0 selected rows",
+      "W": "whole-job all rows"
+    },
+    "projected_ticks": "EQUAL_IN_THIS_ONE_JOB_ONLY",
+    "scope": {
+      "candidate": "HRI_D00_L01",
+      "fold": "FOLD_B",
+      "jobs": 1,
+      "role": "TRAIN"
+    },
+    "synthetic": {
+      "alignment": "MISMATCH_REPRODUCED_WITH_MATCHED64BYTE_ALIGNMENT",
+      "base_fixture_count": 60,
+      "chunk_rows": 512,
+      "fixed_control_B_A_mismatch": 44,
+      "fixed_control_count": 60,
+      "fixture_seed": 20261018,
+      "immutability": "Original harness/test/result bytes locked; no seed search or fixture replacement.",
+      "max_control_ULP": 80,
+      "rows": 1537
+    },
+    "transformed_rows": "BYTE_EXACT"
+  },
+  "historical_failure_reclassified": false,
+  "historical_status": "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+  "input_lock": [
+    {
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-execution-protocol.json",
+      "raw_sha256": "177925af0d9a70fecaeb2f8d848dbdee9c620f92047a9d8320e0ed6e1e7ef7db",
+      "receipt_sha256": "e0a820a681389e09449737ee191fd5bcfcb02b4cc040ee78922900cf96ba78c2"
+    },
+    {
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-d2-loss-aware-policy.json",
+      "raw_sha256": "51eea816f6f2d3f648a9030dc6cf2d1718fb456bf3d0e6e9903ac34ae2e6bba7",
+      "receipt_sha256": "cc7c3ba36f1bd3f1930c801b023d37858cdb86d26263fe4ab8881018b608da60"
+    },
+    {
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-d2-evaluation-contract.json",
+      "raw_sha256": "52f6fdf8e05c9f950aecf2a610cc4ea9220d6c01a96afd1a9afb3ed58a114004",
+      "receipt_sha256": "eb7aa2c671d2d185685bcf450d4084b0aab5a6b19ad72695277d624788c760be"
+    },
+    {
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-numerical-root-cause.json",
+      "raw_sha256": "10e82e45e0678dd8ded3ff9b837508c522e2672cf576f277c859a0582d44d8c4",
+      "receipt_sha256": "09c9058e6ebf9005544caf98ee994a48e5a08fb3c168b58477b273a7dc37573c"
+    },
+    {
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-numerical-diagnostic-protocol.json",
+      "raw_sha256": "b5d44171530648cc2f2aaa9faf665a49c803bdf8ad44c8d965bfe6179d01acf3",
+      "receipt_sha256": "68f04481e66819e7cbf9761b4aa567c09377c311904f9dc1d0e1166a635bc455"
+    },
+    {
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-numerical-synthetic.json",
+      "raw_sha256": "10c7d976f41b2bd99e59cc5ca5907e12057bab5fd18d2976f1fa3727ac2165da",
+      "receipt_sha256": "45cfc3e24e36b130b39147775eea72f7b3a8b31ee71e97458d2d79fb4d3fff91"
+    },
+    {
+      "path": "docs/cyberpilot/changes/empirical-hurdle-acceptance-gate-v1.json",
+      "raw_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+      "receipt_sha256": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60"
+    },
+    {
+      "path": "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_numerical_diagnostic.py",
+      "raw_sha256": "650ff2e7a8bed63c690d5e0d032d9c927bb21197b479ffb039931015cc6c83b6"
+    },
+    {
+      "path": "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_numerical_diagnostic_private.py",
+      "raw_sha256": "6ba6f910bef290a568d3fdea91c1f14d284f710891c4cd504c31805bf2f04d7c"
+    },
+    {
+      "path": "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_numerical_diagnostic.py",
+      "raw_sha256": "5bc50d23e5e81ac4970bceec37cfc3764aba92266438cf42a11421c0b38f413e"
+    }
+  ],
+  "mission": "STAGE1_V4_E2_NUMERICAL_QUALIFICATION_CONTRACT_V2",
+  "phases": [
+    {
+      "id": "A",
+      "name": "EXACT_INPUT_PREFLIGHT",
+      "requirement": "Exact approved host/member/model/source/ordered anchors and resource binding; no DEV numeric/results."
+    },
+    {
+      "id": "B",
+      "name": "ALL32_D0_TRAIN_RECONSTRUCTION",
+      "requirement": "Reconstruct original combined TRAIN BA decision independently for all32 jobs; no unread private threshold."
+    },
+    {
+      "id": "C",
+      "name": "ALL32_FIXED512_ALL_ROW_POTENTIALS",
+      "requirement": "Original segment/order512 chunks, full TRAIN including STATIC; finite/range/normalizer/projection checks on every row."
+    },
+    {
+      "id": "D",
+      "name": "ALL32_Q1_ORIGINAL_D0_BYTE_QUALIFICATION",
+      "requirement": "All32 Q1 qualified before any D2 selection; first failure terminates repeat."
+    },
+    {
+      "id": "E",
+      "name": "ALL64_D2_TRAIN_DECISION_SELECTION",
+      "requirement": "Frozen objective/guards/tree, two contexts each job. Decisions remain provisional pending Q3; no DEV."
+    },
+    {
+      "id": "F",
+      "name": "ALL32_Q3_D2_SELECTED_BYTE_QUALIFICATION",
+      "requirement": "Apply both selected context decisions in original whole-job row order; one selected-row call per nonempty job. No reselection."
+    },
+    {
+      "id": "G",
+      "name": "DURABLE_TRAIN_SEAL_AND_READBACK",
+      "requirement": "All64 decisions and all32 Q1/Q3 proofs, exclusive fsync file+directory and verified seal/hash readback."
+    },
+    {
+      "id": "H",
+      "name": "DEV_BARRIER_RELEASE",
+      "requirement": "Only after all prior phases. Original three-arm comparison/horizons/acceptance/repeats/publication remain unchanged."
+    }
+  ],
+  "preserved": {
+    "D1_result": "E_EXECUTION_COMPLETE_D1_NOT_ADMISSIBLE",
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "E2_V1": "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+    "holdout": "CLOSED",
+    "holdout_discovery": 0,
+    "holdout_opening_count": 0,
+    "hugging_face": "NOT_REQUIRED_NOT_USED",
+    "replica": "REPLICA_PAYLOAD_EQUALITY_NOT_FULLY_REVERIFIED",
+    "root_cause": "E2_NUMERICAL_ROOT_CAUSE_IDENTIFIED",
+    "scientific_result": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
+    "selected_candidate": null,
+    "selected_policy": null,
+    "selection": "MODEL_SELECTION_FAILED_CLOSED",
+    "states": [
+      "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+      "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+      "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+      "COMPOSITION_NOT_AUTHORIZED",
+      "NOT_READY",
+      "REAL_VEHICLE_UNVERIFIED",
+      "VEHICLE_ACTIVATION_BLOCKED"
+    ],
+    "train_rowwise_gate": "NOT_SAVED",
+    "vehicle_authority": "NONE"
+  },
+  "privacy": {
+    "composition": "Inherit joint complementary suppression across D0/D1/D2, both folds, existing C/E releases, minimum201. No private mismatch counts, row indices, decisions, hashes, paths, score/tick/model values.",
+    "private_receipts_reopened": false,
+    "public_only_this_increment": true,
+    "qualification_row_telemetry_private": true
+  },
+  "qualifications": {
+    "Q1": {
+      "all_move_gate": "One whole-job selected call on all rows; compare all bytes; never infer PASS from gate support.",
+      "cache": "A[D0_gate] from original-segment/order512 all-row cache",
+      "empty_gate": {
+        "proof": "Exact full-N bool gate has no selected rows, selected/cache views float64 shape[0], original integrated skips predict_delta, full integrated delta is positive float64 zero and projected ticks HOLD current in original order; record source/anchor/model/gate bindings and explicit no-op verification. Missing proof is NOT_EXECUTED/BLOCKED, never unconditional PASS.",
+        "stage2_calls": 0,
+        "status": "VERIFIED_EMPTY_GATE_ORIGINAL_INTEGRATED_NOOP"
+      },
+      "epsilon_allowed": false,
+      "exactness": [
+        "FLOAT64_DTYPE",
+        "EXACT_SHAPE",
+        "ORIGINAL_ROW_ORDER",
+        "RAW_BYTES_INCLUDING_SIGNED_ZERO",
+        "SAME_FROZEN_MODEL_NORMALIZER_SOURCE_ANCHOR"
+      ],
+      "failure": "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+      "identity_conflict": "E2_INPUT_CONFLICT_FAIL_CLOSED",
+      "population": "EACH_OF_ALL32_TRAIN_JOBS",
+      "projection_only_substitute_allowed": false,
+      "rebatching_retry_allowed": false,
+      "reference": "frozen_predict_delta(ascontiguousarray(x_full[D0_gate]), frozen_stage2)",
+      "role": "MANDATORY_HARD_GATE",
+      "routing": "NEW_E2_RECONSTRUCTED_D0_TRAIN_GATE_FROM_ORIGINAL_COMBINED_TRAIN_BA_RECIPE",
+      "timing": "ALL32_BEFORE_ANY_D2_SELECTION",
+      "tolerance_allowed": false
+    },
+    "Q2": {
+      "cache": "A chunk values selected at same rows",
+      "claim_limit": "B is not the original whole-job D0 numerical path; neither necessary nor sufficient for C/A equality.",
+      "default_private_calls": 0,
+      "default_private_status": "NOT_EXECUTED_DIAGNOSTIC",
+      "evidence": "Existing frozen60+60 synthetic fixtures and public root-cause projection; no private rerun in this increment.",
+      "future_optional_private_diagnostic": "Requires separate exact bounded diagnostic binding/resource/privacy approval; absent from default V2 runner allowlist.",
+      "mismatch": "DIAGNOSTIC_MISMATCH_NOT_Q1_FAILURE_OR_PASS; never overrides Q1/Q3",
+      "omission": "Record NOT_EXECUTED_DIAGNOSTIC, never PASS; no fresh private telemetry from historical evidence.",
+      "reference": "B = frozen_predict_delta(part[D0_gate_in_part], frozen_stage2)",
+      "role": "NON_AUTHORITATIVE_DIAGNOSTIC"
+    },
+    "Q3": {
+      "all_move_gate": "One whole-job selected call on all rows; compare all bytes; never infer PASS from gate support.",
+      "cache": "SAME_A[D2_gate] used for objective/guards",
+      "empty_gate": {
+        "proof": "Exact full-N bool gate has no selected rows, selected/cache views float64 shape[0], original integrated skips predict_delta, full integrated delta is positive float64 zero and projected ticks HOLD current in original order; record source/anchor/model/gate bindings and explicit no-op verification. Missing proof is NOT_EXECUTED/BLOCKED, never unconditional PASS.",
+        "stage2_calls": 0,
+        "status": "VERIFIED_EMPTY_GATE_ORIGINAL_INTEGRATED_NOOP"
+      },
+      "epsilon_allowed": false,
+      "exactness": [
+        "FLOAT64_DTYPE",
+        "EXACT_SHAPE",
+        "ORIGINAL_ROW_ORDER",
+        "RAW_BYTES_INCLUDING_SIGNED_ZERO",
+        "SAME_FROZEN_MODEL_NORMALIZER_SOURCE_ANCHOR"
+      ],
+      "failure": "E2_D2_TRAIN_SELECTED_PATH_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+      "failure_meaning": "NUMERICAL_SEMANTICS_NOT_QUALIFIED_NOT_D2_PERFORMANCE_FAILURE; no DEV/rollout, fallback, re-batching, relaxation or second-best candidate.",
+      "identity_conflict": "E2_INPUT_CONFLICT_FAIL_CLOSED",
+      "population": "EACH_OF_ALL32_TRAIN_JOBS",
+      "projection_only_substitute_allowed": false,
+      "rebatching_retry_allowed": false,
+      "reference": "frozen_predict_delta(ascontiguousarray(x_full[D2_gate]), frozen_stage2)",
+      "reselection_allowed": false,
+      "role": "MANDATORY_POST_SELECTION_HARD_GATE",
+      "routing": "D2_gate = p > selected_context_decision, causal prior zero/nonzero, both contexts merged by immutable original row positions",
+      "selection_calls": "ONE_POST_WINNER_WHOLE_JOB_SELECTED_PATH_CALL_IF_NONEMPTY; NOT_PER_THRESHOLD_OR_PER_CONTEXT",
+      "timing": "AFTER_ALL64_D2_DECISIONS_BEFORE_FINAL_TRAIN_SEAL_READBACK_AND_ANY_DEV_ACCESS",
+      "tolerance_allowed": false
+    }
+  },
+  "receipt_sha256": "dfca44a4a0658f09568d657b4961a565b28be29c60d6634e3ff3ec972d796755",
+  "schema": "CYBERPILOT_E2_NUMERICAL_QUALIFICATION_AMENDMENT_V2",
+  "scope": "CONTRACT_DESIGN_AND_SYNTHETIC_VALIDATION_ONLY",
+  "status": "E2_NUMERICAL_QUALIFICATION_V2_CONTRACT_FROZEN_REEXECUTION_PENDING",
+  "verification_record": "Actual local tests, two final-byte independent review receipts, final HEAD and exact-head CI are recorded in companion design report/final handoff; contract traceability is not performance acceptance.",
+  "version": "V4_E2_NUMERICAL_QUALIFICATION_CONTRACT_V2"
+}
