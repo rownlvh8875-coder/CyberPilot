@@ -1,0 +1,631 @@
+{
+  "D_policy_receipt_sha256": "55e5dc12ac7553365ee2e32b9cc05c14b406cc74eb2708d0516a5279dc66601e",
+  "F_AUTHORIZED": false,
+  "V5_AUTHORIZED": false,
+  "acceptance": {
+    "D0_comparison": "MANDATORY_PAIRED_DESCRIPTIVE_REFERENCE_NOT_REPLACEMENT_ACCEPTANCE_COMPARATOR",
+    "clause_count": 32,
+    "clauses_body_sha256": "570e39ff35dfc8716069ac055e00bc3cd343d694f954077e464d02acaf540682",
+    "comparator": "HOLD_LAST_SAME_ANCHORS",
+    "diagnostics_replace_gate": false,
+    "epsilon": 0,
+    "file": "empirical-hurdle-acceptance-gate-v1.json",
+    "folds": [
+      "FOLD_A",
+      "FOLD_B"
+    ],
+    "new_numeric_cutoffs": [],
+    "new_transition_hard_gate": "SEPARATE_EXPLICIT_POLICY_AMENDMENT_BEFORE_E_EXECUTION_IF_REQUIRED",
+    "quantifier": "ALL_CLAUSES_AND_SUPPORT_AND_NUMERICAL_PRECONDITIONS_IN_BOTH_FOLDS",
+    "raw_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+    "receipt_sha256": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60",
+    "support": "EXISTING_SUPPORT_201; SAME_ANCHORS_AND_COMPARATOR_ANCHORS; NO_RELAXATION"
+  },
+  "automatic_adoption": false,
+  "baseline_head": "4e5760f12d6f37401f2752b91d2223a336d353a7",
+  "causal_state": {
+    "boundaries": "ORIGINAL_SEGMENT_ELIGIBILITY_NO_PADDING_RESET_EVERY_PATH_HORIZON",
+    "exogenous": "ORIGINAL_DELAYED_COMMAND_SPEED_INDEXING; SUPPLIED_INPUT_CONDITIONAL_NOT_VEHICLE_CLOSED_LOOP",
+    "one_step": "OBSERVED_RAW_PRIOR_DELTA_ROUTES_HEAD_AND_DECISION",
+    "projection": "FROZEN_STAGE2_SIGNED_DELTA_TIES_EVEN_SIGNED16_FAIL_CLOSED_NO_CLIP_OR_FORCED_MOVE",
+    "recursive": "INITIAL_OBSERVED_FULL_HISTORY_THEN_ACTUAL_PROJECTED_TICK_DIFFERENCE_AND_FULL_HISTORY; NO_GATE_BIT_SUBSTITUTION"
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "blas_build_identity_sha256": "704bde2afe24c22d171cc7d2508517db81b7db455743b2cb0e5de9dda88da7a2",
+    "dtype": "float64",
+    "numpy": "2.5.3",
+    "order": "C",
+    "python": "3.12.13",
+    "rng": "NONE",
+    "zlib_runtime_version": "1.3.2"
+  },
+  "evaluation": {
+    "D0_equivalence": "SAVED_STAGE1_BYTE_EQUAL; FROZEN_STAGE2_DELTA_PROJECTION; ORIGINAL_PUBLIC_METRICS_ANCHORS_ALL_HORIZONS; NO_D0_THRESHOLD_READ",
+    "PATH_MOVED": "ANY_OBSERVED_TICK_DIFFERS_FROM_INITIAL_NOT_GATE_DEFINED",
+    "TRUE_MOVE": "ORIGINAL_INTEGRATED_GATED_CONTINUOUS_DELTA_RMSE_MAE_P95",
+    "drift": "PRIVATE_STEP_CONTEXT_MOVEMENT_TICK_FULL_INPUT_HISTORY_MISMATCH; EXACT_NEXT_BIT_LAG; FIRST_EVENTS; MOVED_GATE_PERFECT_AND_MOVEMENT_PERFECT_FULL_SMALL_EMPTY; ASSOCIATION_ONLY",
+    "exact_hit": "CANDIDATE_HITS=HOLD_LAST_HITS-STATIC_LOSS+MOVE_GAIN;NET=MOVE_GAIN-STATIC_LOSS",
+    "four_transitions": [
+      "STATIC_HOLD",
+      "MOVE_ONSET",
+      "MOVE_TERMINATION",
+      "MOVE_CONTINUATION"
+    ],
+    "gate_vs_realization": "SEPARATE_GATE_MOVE_REALIZED_MOVE_EXACT_HIT; FP=PROJECTED_HOLD+HARMFUL",
+    "horizons": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "populations": [
+      "OVERALL",
+      "PATH_MOVED"
+    ],
+    "residual": "GATE_TP_CONTINUOUS_AND_PROJECTED_STEP_RESIDUAL_SEPARATE_ONSET_CONTINUATION_SUPPORT201",
+    "score": "OVERALL_PREVIOUS_STATIC_PREVIOUS_MOVE_AUC_BRIER_MEAN_PREVALENCE_BIAS; MIDRANK_TIES; MISSING_CLASS_NOT_IDENTIFIABLE"
+  },
+  "execution_prerequisites": [
+    "CURRENT_EXPLICIT_E_GRANT",
+    "EXACT_PRIVATE_BINDINGS",
+    "PROTOCOL_SOURCE_CALLER_FROZEN",
+    "SYNTHETIC_REGRESSION_PASS",
+    "TWO_EXACT_BYTE_INDEPENDENT_APPROVALS",
+    "PREEXECUTION_EXACT_HEAD_CI_SUCCESS",
+    "CLEAN_LOCAL_ORIGIN",
+    "PRIVATE0700_0600_EXCLUSIVE_OUTPUT_CAPACITY_RESERVE"
+  ],
+  "failure_states": {
+    "D1_numerical": "SCIENTIFIC_NONPASS_ENTIRE_POPULATION_NO_ROW_DROP",
+    "identity": "E_INPUT_CONFLICT_FAIL_CLOSED",
+    "missing": "E_INPUT_INSUFFICIENT",
+    "pending": "E_IMPLEMENTATION_READY_INPUT_PENDING",
+    "support": "NOT_IDENTIFIABLE_REQUIRED_CLAUSE_NONPASS"
+  },
+  "forbidden_operations": [
+    "stage1_model_refit",
+    "stage2_model_refit",
+    "normalizer_refit",
+    "calibration_fit",
+    "additional_policy_search",
+    "posthoc_threshold_tuning",
+    "additional_candidate_generation",
+    "pooled_refit",
+    "composition",
+    "raw_log_openings",
+    "qlog_openings",
+    "holdout_openings",
+    "holdout_discovery",
+    "controller_changes",
+    "vehicle_activation",
+    "source_writes"
+  ],
+  "input_scope": {
+    "CAUSAL": [
+      "command.normalized",
+      "state.speed_mps"
+    ],
+    "D0_rollout": [
+      "projected_path",
+      "predicted_gate_path",
+      "candidate_error"
+    ],
+    "DERIVED": [
+      "angle_tick",
+      "streak_all",
+      "model_eligible",
+      "rail",
+      "s2_ri_causal_run_id",
+      "within_s2_ri_causal_run_index"
+    ],
+    "DEV": [
+      "V4.p_move",
+      "V4.predicted_gate",
+      "V4.integrated_delta",
+      "V4.projected_next_tick",
+      "V4.candidate_error",
+      "V1.true_move",
+      "V1.prior_delta_tick"
+    ],
+    "TRAIN": [
+      "V4.combined_probability",
+      "V1.move_label",
+      "V1.prior_delta_tick"
+    ],
+    "bootstrap": "V1_AUTH_CANONICAL_PIN; V1_INPUT_PINS_CANONICAL_FILE_SET_MATCH_ORIGINAL_AUTH_AND_PUBLIC_V4; NO_HISTORICAL_RAW_HASH_CLAIM_FOR_THESE_TWO_FILES",
+    "metadata": "ONLY_MEMBER_CLASSES_IN_PINNED_E_INPUTS; EXACT_MANIFEST_FINALIZED_NORMALIZER_STAGE2_DEV_ROLLOUT_SOURCE_AUTH_INDEX_ADMISSION_SEGMENT_RECEIPTS",
+    "mixed_carrier": "train/receipt.json NEVER_OPENED; HEAD_ARRAYS_RAW_HASH_BOUND_ROOT_AND_TRAIN_MANIFEST; ORIGINAL_MIXED_DESCRIPTOR_UNREAD",
+    "models": [
+      "V4.STATIC_coefficients",
+      "V4.MOVE_coefficients",
+      "V1.STAGE1_normalizer_5_fields",
+      "V1.STAGE2_normalizer_5_fields",
+      "V1.STAGE2_coefficients"
+    ],
+    "replica": "V4_REPEAT1_V1_REFERENCE_REPEAT1; PRIOR_FIELD_SCOPED_EQUALITY_REUSED; REPEAT2_NOT_REREAD",
+    "roots": "EXACT_RECOVERED_PRIVATE_HANDOFF_ONLY; PUBLIC_ROOT_DIGEST_BINDINGS; NO_DISCOVERY",
+    "timestamp_values": "NEVER_OPENED; FROZEN_STREAK_RUN_WITHIN_PLUS_EXACT_ORDERED_ANCHOR_DIGESTS; NO_RE_ADMISSION_OR_LOG_RECONSTRUCTION"
+  },
+  "interpretation": "RETROSPECTIVE_ALREADY_OBSERVED_DEV; OVERLAPPING_JOBS_NOT_INDEPENDENT_TRIALS; NO_BLINDED_OR_CAUSAL_SHARE_CLAIM",
+  "jobs": [
+    {
+      "candidate_id": "HRI_D00_L01",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "fold": "FOLD_B"
+    }
+  ],
+  "original_execution_head": "bd8045ef2a0da62a92603439f38e7740f5923622",
+  "policy_arms": [
+    "D0",
+    "D1"
+  ],
+  "preserved": {
+    "holdout": "CLOSED",
+    "holdout_discovery": 0,
+    "holdout_opening_count": 0,
+    "hugging_face": "NOT_REQUIRED_NOT_USED",
+    "replica": "REPLICA_PAYLOAD_EQUALITY_NOT_FULLY_REVERIFIED",
+    "scientific_result": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
+    "selected_candidate": null,
+    "selection": "MODEL_SELECTION_FAILED_CLOSED",
+    "states": [
+      "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+      "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+      "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+      "COMPOSITION_NOT_AUTHORIZED",
+      "NOT_READY",
+      "REAL_VEHICLE_UNVERIFIED",
+      "VEHICLE_ACTIVATION_BLOCKED"
+    ],
+    "train_rowwise_gate": "NOT_SAVED",
+    "vehicle_authority": "NONE"
+  },
+  "private_caller_sha256": "4911c2968ff503ad4c0b0568c0741136c6fa0e6fd44e7435309a930490f594c2",
+  "public_inputs": {
+    "empirical-causal-train-dev-readiness-v1.json": {
+      "raw_sha256": "6919175355e306cb113bddf22af6f845172c79df38681be1eb8061442b264c40",
+      "receipt_sha256": "bb70eee36c9b426e6d04ee4cceca0cd57cabeb8bee39e7736a7c43c37207fecf"
+    },
+    "empirical-hurdle-acceptance-gate-v1.json": {
+      "raw_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+      "receipt_sha256": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60"
+    },
+    "empirical-hurdle-fit-cv-authorization-v1.json": {
+      "raw_sha256": "54b879120e55c805df5f4094bf04637553bf6faafcfecef69f052d160a29ccb2",
+      "receipt_sha256": "d93d6bb418a958b998c0308e4ce71a605a4069286029b5539d80b38001a34c6b"
+    },
+    "empirical-hurdle-fit-cv-results-v1.json": {
+      "raw_sha256": "72e0179a96a8885e7ffab57bf1c579ef75536769bc1a03990a007b3b4e2ac272",
+      "receipt_sha256": "8d7c45a7a97f73918f927b19b0004c309078239b8b8523e1beac08fa6c53f5c4"
+    },
+    "empirical-hurdle-stage1-v4-c-diagnostic-protocol.json": {
+      "raw_sha256": "0549292dd5101c39b118839d881720a23037cc6db6e516c6fa5d8bcda04b742f",
+      "receipt_sha256": "7f09da07b2267aa1bc1b032d55ebe5d26ec5cbb27ce9f96160aa13895b297721"
+    },
+    "empirical-hurdle-stage1-v4-c-diagnostic-results.json": {
+      "raw_sha256": "852a4145d2f1055df75854250328a731d887c61b2257ff9f4596206a4e34f514",
+      "receipt_sha256": "dbaf3292fd3562e9ce2b36d54f4ed3541a55e4803c0c9f5342f2f6fc13c97d84"
+    },
+    "empirical-hurdle-stage1-v4-d-offline-evaluation-contract.json": {
+      "raw_sha256": "20c44c27209d92fa7d5f20657d055fb806f673d9e30fedd8b210e4b69bc7e207",
+      "receipt_sha256": "8d558a28c1da9066d4df8725fdb4a6122beaf08700de6c765606d8763728b4f7"
+    },
+    "empirical-hurdle-stage1-v4-d-transition-aware-policy.json": {
+      "raw_sha256": "eb78f52f2f511771ee506d307ed8928d115208355b0f696c9d88a20e458e88b9",
+      "receipt_sha256": "55e5dc12ac7553365ee2e32b9cc05c14b406cc74eb2708d0516a5279dc66601e"
+    },
+    "empirical-hurdle-stage1-v4-development-results.json": {
+      "raw_sha256": "3bf0fd91ec8f0d40bd6df8115a7da3209fee4070ca498bcc8f6fdfe07f2fb30c",
+      "receipt_sha256": "fa691c1a68c0ff5c55af91ebf7e7d8fd4d60e9c9e8cf50acefc68f17b50c9f14"
+    },
+    "empirical-hurdle-stage1-v4-job-manifest.json": {
+      "raw_sha256": "484a67e4f183ede512af89c99b73be2ed63643057a84382c90729f5d71819e03",
+      "receipt_sha256": "9a0c5b7a6eee597f6ea764ca4c731fd3eef37acb3465320ea3bd52fd6d78c011"
+    },
+    "empirical-hurdle-stage1-v4-retrospective-execution-authorization.json": {
+      "raw_sha256": "99ba2f5218a38b72a47e72883546dcd0ad67cba822752197419fc4e76f9ca5d9",
+      "receipt_sha256": "b9d512ffd23f7f3ef9df87622642c3bfdabc59292e6188c43596cf3b00267237"
+    },
+    "empirical-hurdle-stage1-v4-rollout-results.json": {
+      "raw_sha256": "9ebd165a24465743820d6579a1f5f796bb1afb53bac5d34ed26b44338ab9e1dc",
+      "receipt_sha256": "970f1729aff5cfd495c38acb33e178601dddf824ebd6dc57bddfef55fe65be25"
+    }
+  },
+  "publication": {
+    "allowed": "SAFE_FOLD_MEDIAN_MIN_MAX_RMSE_MAE_P95; SAFE_STATIC_HOLD_TERMINATION_RATES; JOB_CLAUSE_STATUSES",
+    "bins_cells_source_ids_private_hashes": "WITHHELD",
+    "exact_hit_and_within_tick": "WITHHELD_RARE_CELL_PROTECTION",
+    "forbidden": "PRIVATE_PATHS_DECISIONS_COEFFICIENTS_NORMALIZER_VALUES_ROW_ARRAYS_COMMAND_GPS_TIMESTAMPS; NO_C_SUPPRESSION_BYPASS",
+    "joint_suppression": "BOTH_ARMS_BOTH_FOLDS_ALLJOBS; CELL_COMPLEMENT_PAIRED_CHANGE",
+    "minimum_support": 201,
+    "onset_continuation": "ALWAYS_WITHHELD_INHERITED_C",
+    "projection": "empirical_hurdle_v4_e_publication.py"
+  },
+  "receipt_sha256": "57c07ef4954290164262e35d2b02386b1c8c6da885a3c2da1487ea6f0db9d2e4",
+  "repeats": {
+    "comparison": "BYTE_EXACT_CANONICAL_PAYLOAD_RUN_ENVELOPES_SEPARATE",
+    "count": 2,
+    "failure": "E_REPEATABILITY_FAILED_NO_TUNING",
+    "fresh_process": true,
+    "independent_TRAIN_decisions": true,
+    "independent_one_step_rollout": true,
+    "separate_exclusive_private_roots": true,
+    "verify_only": "OWN_SEAL_32JOBS_ARMS_HORIZONS_CLAUSES_BINDING_ENVELOPE_HEAD_PROTOCOL; SOURCE_INFERENCE_RECOMPUTE0"
+  },
+  "resources": {
+    "TRAIN_DEV_row_upper_bound": 336941,
+    "address_space_bytes": 8589934592,
+    "chunk_rows": 512,
+    "control_bytes": 8388608,
+    "cpu_seconds_per_repeat": 21600,
+    "derivation": "PUBLIC_TRAIN_N_MAX336941; PUBLIC_CAUSAL_READINESS_TOTAL916535; ORIGINAL_P93_H200_CHUNK512. METADATA637*32MiB<20GiB;32*SUM(H+1)*336941*3_BYTE_PATHS<16GiB; REMAINING_ARRAY_CAPS<4GiB; GLOBAL64GiB. AS8GiB_BOUNDS_DESIGN_AND_DECODE_COPIES; CPU_WALL_FIXED_NO_POSTHOC_ENLARGEMENT.",
+    "features_max": 93,
+    "header_bytes": 65536,
+    "horizon_max": 200,
+    "input_bytes_limit_per_repeat": 68719476736,
+    "input_open_limit_per_repeat": 2989,
+    "jobs_parallel": 1,
+    "metadata_bytes_per_file": 33554432,
+    "output_total_bytes": 402653184,
+    "reserve_bytes": 2147483648,
+    "result_bytes_per_file": 33554432,
+    "source_total_row_upper_bound": 916535,
+    "threads": 1,
+    "wall_seconds_per_repeat": 43200
+  },
+  "schema": "CYBERPILOT_V4_E_EXECUTION_PROTOCOL_V1",
+  "selection": {
+    "DEV_retuning": false,
+    "all64_before_DEV": "EXCLUSIVE_FSYNC_ARTIFACT_DIGEST_READBACK_THEN_DEV_CAPABILITY",
+    "both_classes_required": true,
+    "candidate_set": "{0,1} UNION UNIQUE_FINITE_CONTEXT_TRAIN_SCORES; SIGNED_ZERO_SAME_NUMBER",
+    "comparison": "STRICT_SCORE>DECISION; EQUALITY_STATIC",
+    "decisions_per_job": 2,
+    "fallback": false,
+    "label": "V1_EXACT_BINARY",
+    "objective": "PYTHON_EXACT_INTEGER_TP*NEGATIVE+TN*POSITIVE",
+    "population": "TRAIN_ORIGINAL_ORDER_BY_INT64_PRIOR_DELTA_ZERO_VS_NONZERO; NO_DEV_SELECTION",
+    "score": "FROZEN_V4_FLOAT64_FINITE_0_TO_1",
+    "tie_order": [
+      "MAX_BA_NUM",
+      "MAX_TN",
+      "MAX_DECISION"
+    ]
+  },
+  "source_policy_receipt_sha256": "2a32ee18b757b7fa6dde62360b226bef42d7a203d6f15f509b94d5b18910c454",
+  "source_sha256": {
+    "empirical_causal_dataset_store.py": "af72bc24a54029bd1f91f20180e67525f007ca3d420b5a84b336f3825b02390d",
+    "empirical_hurdle_attribution_io.py": "13bfc34ddc4e7cdf2bf98e01c53a937f7f0362d92493ca0254e52df8efcea4f6",
+    "empirical_hurdle_fit_cv_data.py": "9e104a83a928c6b997a914a606820f2d2190fa56917e4042856474f747b900ac",
+    "empirical_hurdle_fit_cv_gates.py": "7529884d62ee5773bc163a301a9d96c641ff2a2e2e911d3e3e4f0a5c1a6828c2",
+    "empirical_hurdle_fit_cv_math.py": "b410b2f0138848faf4e976094a1bd4f3cc3ac44418b54a24310717c6261e0e73",
+    "empirical_hurdle_fit_cv_store.py": "37afd091349396b7f1eb2610b13bbd4ef81f89b977feab3e7875c8eaec5b5fcd",
+    "empirical_hurdle_v2_execution.py": "31642388236f91ff96e16c886395bfcc7dbdf1a6e741a84f690c6437b358fcc5",
+    "empirical_hurdle_v2_io.py": "10b8e902eeb718eeb2b2d96b5baf7a295b4e354485d1167a65c4f0c81ac234b5",
+    "empirical_hurdle_v2_publication.py": "e9e10876788b75a7cfa667aee4dca026ba5d42ce858c4e19cc710cfd498aadc2",
+    "empirical_hurdle_v2_threshold.py": "d54423a83fe0e72b4ee816a695f04fd44c156caf53df135db02f86a64e8b650b",
+    "empirical_hurdle_v3_execution.py": "e5b73d8436607938044e5a02d05ba79ba85db5ff1f9a95005871c74eb0fd02eb",
+    "empirical_hurdle_v3_executor_publication.py": "5b5b1ac84651f382189207b55fdf56c325fb1e9b66ab60c8cf51a70aa8a29194",
+    "empirical_hurdle_v3_external_storage.py": "fddf87bf1837e773c0e00b23d8b9446a6de511bf437b90832c15d94da1331d6c",
+    "empirical_hurdle_v3_io.py": "1fb772477eed0be39653d92247edf31cdfab109069afb6b56fbadbb65cd06b3d",
+    "empirical_hurdle_v3_policy.py": "0a9ef783a79927fcfda0877bcec74e164e27b992ab8d457f780d68602ad3de5d",
+    "empirical_hurdle_v3_publication.py": "474a8f39dd1f27be87fec650a193ca8452fd0fe9443b444695e04b952f50c9c2",
+    "empirical_hurdle_v3_scaffold.py": "85a9e2e6b9abdbcab2b3847887a4548d00c84802f64aba7ad6224de7685fecf9",
+    "empirical_hurdle_v3_store.py": "eadb505681a5e46f6cf447afcf4ccc1d68c6977c5a0c2e2ded8944465450567b",
+    "empirical_hurdle_v3_temporal.py": "cd41e15cb62c2b81653ac80ac004a5142ac4fb8b81328e86deed328b0cb34f0a",
+    "empirical_hurdle_v3_temporal_binding.py": "193a432a0baa3da856e55efabf4d87ca39271b354960c30efc8adaa07e2030b8",
+    "empirical_hurdle_v3_temporal_math.py": "677094d107b6351baf9e39a7bd5b50e010c1a0331dacf10aa0c4fece845527a8",
+    "empirical_hurdle_v3_threshold.py": "7ae8b57db1575d59d2a80b01cb97ea28ab0af99beab0b6a9652c768311b99b5f",
+    "empirical_hurdle_v4_authorization.py": "27d198ddb164aa6942f56fa942180ed9245020cad89462ddb435ef3e783cfb65",
+    "empirical_hurdle_v4_b0_metadata.py": "767b1bc9ae993eda007c7dc17b8e2d9eb2194dd250e13d0718c1287fb12c7622",
+    "empirical_hurdle_v4_b1_evidence.py": "5d1e89e0d70c5a494d8c2110f1cf4ab6095bbd12c9910fa3533067485732ec41",
+    "empirical_hurdle_v4_b1_train_score.py": "07048fabd46e78edbd405f4215d39205f2ea29f164e61cda0959313b093a2258",
+    "empirical_hurdle_v4_c_diagnostics.py": "6465fc17e32d8b15b41266e40b8de256bbac509d921aa373b5962fc9cf78f70c",
+    "empirical_hurdle_v4_c_math.py": "be4d3317ef3d4bba7d6a11ece131b43e982fcd688fd3a6fafbbb7df22af826a4",
+    "empirical_hurdle_v4_certificate.py": "2eec8b0c3939893d7788fd672472af4f7e0cb788a3a9c444de6a6824655f6f1b",
+    "empirical_hurdle_v4_e_bootstrap.py": "ecf4f5b4ec447a39474ff25db2edb02c33d172703444834c55295ef45e75d1ef",
+    "empirical_hurdle_v4_e_decision.py": "dd9ce02c5950c3533f11e0a3e054b6e0beb44e1fb829741be726720847fed70f",
+    "empirical_hurdle_v4_e_evaluation.py": "64579a97487607506861b46624186516c040ce74770a8eaa522cd6b68e2c3db5",
+    "empirical_hurdle_v4_e_inputs.py": "a7496a76b25a58f7d5700b00c5620bdee83f58da715ed9d41aaf59a9961e23c6",
+    "empirical_hurdle_v4_e_publication.py": "bc895cf9cb9843d691563fd37f94e1378152cbfae8b2fbc18646d0dc0d87ebc7",
+    "empirical_hurdle_v4_execution.py": "f7ae1ae98c645de4997e56d1bcd73b76e2f4f153090b65e5fd6bb8d207f7fd0e",
+    "empirical_hurdle_v4_fitting_policy.py": "529c6c14832a18bc18eb51409e1637ca2c003892d62aa883f900c238d59be76f",
+    "empirical_hurdle_v4_io.py": "e1bb255654980e0559d7af1becedac8c3aabf0c2a01e6da179307afe9a7b5d70",
+    "empirical_hurdle_v4_state_contract.py": "3a21944b47ee82f4401b6742742924b7458741f17959e3ed2c2d41df67f68793",
+    "empirical_hurdle_v4_store.py": "f541ebb4686a6032892f327a820ea3e22ad1bffb5c38b73bb649305a448c7935",
+    "empirical_identifiability_execution.py": "2a421f797870667b583d3c938d2106ec803e54c0532283b6195ad71f999c8311",
+    "empirical_plant_policy.py": "3961101927faca0e64a731ff92484d563082390c001988a156056275743034df",
+    "empirical_s2_ri_execution.py": "4f3b0711a44a32f157546076f1d02035f0730495a453a0af0481b00332dd82d4",
+    "empirical_s2_ri_fit_cv_math.py": "a1c1203c8222df067064ff1891aafa82cdafd997338c7ca7687a321c66777f29",
+    "empirical_s2_ri_policy.py": "5764626e066e0d45c4f650e8dac3961e58c9610916c240ff6d592f10c70bd048",
+    "empirical_s2_ri_reconstruction_math.py": "e6bb2f276b3e87104f1aedb0ecbafae7175147c60e9b03aaba19b77a49db0055"
+  },
+  "startup_repair": {
+    "DEV_accesses": 0,
+    "blocked_attempts_distinct_from_completed_operations": true,
+    "cause": "PUBLIC_NUMPY_UNIQUE_LAZY_IMPORT_FIND_SPEC_TRIGGERS_DIRECTORY_LOOKUP_BLOCKED_BY_GLOBAL_FIREWALL",
+    "firewall_relaxed": false,
+    "new_preexecution_exact_byte_reviews_and_CI_required": true,
+    "original_attempt_array_bytes": 2575042,
+    "original_attempt_array_reads": 3,
+    "original_attempt_completed_jobs": 0,
+    "original_attempt_metadata_bytes": 1242951,
+    "original_attempt_metadata_reads": 4,
+    "original_attempt_preserved": true,
+    "parent_protocol_raw_sha256": "b9d2ab3fff5296169b3f90499ba7b1e0d2f6d4c644df395ecc86c5b761da424f",
+    "policy_or_metric_change": false,
+    "pre_source_dependency_preparation": "PUBLIC_NUMPY_MASKED_ARRAY_AND_LINALG_IMPORTS_ONLY_NO_PRIVATE_DATA",
+    "retry_scope": "ONE_CONTROLLED_IMPLEMENTATION_REPAIR; TWO_FRESH_INDEPENDENT_RUNS_NEW_EXCLUSIVE_OUTPUT_ROOT; NO_PARAMETER_TUNING_OR_AUTOMATIC_RETRY",
+    "scientific_decisions_completed": 0,
+    "stronger_runtime_traps": [
+      "pickle.load",
+      "pickle.loads",
+      "pickle.Unpickler",
+      "pickle.dump",
+      "pickle.dumps",
+      "numpy.load",
+      "numpy.save"
+    ]
+  },
+  "stop": "TWO_REPEATS_VERIFY_ONLY_PUBLICATION_FINAL_CI_CLEAN_THEN_STOP_NO_F_V5_ADOPTION",
+  "validation_domains": [
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 1,
+      "source_pointer": "/domains/0",
+      "verification": "Bind policy/code/environment/model/normalizer/source/ordered anchors, original V4 and C/B0/B1 identities; no old grant reuse."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 2,
+      "source_pointer": "/domains/1",
+      "verification": "Apply unchanged32clauses to each policy/candidate/fold with HOLD_LAST on exact same anchors; D0 paired comparison is additional."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 3,
+      "source_pointer": "/domains/2",
+      "verification": "Report STATIC_HOLD gateFP/TN and harmful tick movement plus STATIC exact-hit loss."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 4,
+      "source_pointer": "/domains/3",
+      "verification": "Report MOVE_ONSET recall/FN/missed rate and projected tick correctness."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 5,
+      "source_pointer": "/domains/4",
+      "verification": "Report MOVE_TERMINATION false-MOVE/TN and FP-to-HOLD versus harmful movement."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 6,
+      "source_pointer": "/domains/5",
+      "verification": "Report MOVE_CONTINUATION recall/FN jointly with termination; no recall-only success."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 7,
+      "source_pointer": "/domains/6",
+      "verification": "All4truth states confusion/counts/denominators; routing vs truth separated in recursion; ratios undefined=>NOT_IDENTIFIABLE."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 8,
+      "source_pointer": "/domains/7",
+      "verification": "Verify STATIC_HIT_LOSS,MOVE_HIT_GAIN,NET and exact identity candidate_hits=hold_last_hits-static_loss+move_gain."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 9,
+      "source_pointer": "/domains/8",
+      "verification": "GateFP count=projected-HOLD+harmful movement; report fraction only if defined; never force MOVE realization."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 10,
+      "source_pointer": "/domains/9",
+      "verification": "Describe TRAIN/DEV overall/previous-state AUC with ties/support; unchanged one-step scores expected D0/D1; no AUC acceptance shortcut."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 11,
+      "source_pointer": "/domains/10",
+      "verification": "Describe Brier/mean probability/prevalence/bias; unchanged one-step scores; no calibration fit or calibration-proof claim."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 12,
+      "source_pointer": "/domains/11",
+      "verification": "Seal D1 two TRAIN decisions before DEV reading; report context TRAIN/DEV saved-or-E-generated gates separately; no DEV retuning."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 13,
+      "source_pointer": "/domains/12",
+      "verification": "Each fold independently reports metrics/clause results; both required per model candidate; no averaging away fold failure."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 14,
+      "source_pointer": "/domains/13",
+      "verification": "TRUE_MOVE integrated gated delta RMSE/MAE/p95 with frozen support/comparator; no oracle substitution."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 15,
+      "source_pointer": "/domains/14",
+      "verification": "GateTP onset/continuation magnitude/step-delta residual; preserve model/integration/quantization/confounding limits."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 16,
+      "source_pointer": "/domains/15",
+      "verification": "Test finite signed delta, ties-even integer ticks, signed16 range and STATIC hold; no clipping, repair or forced nonzero."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 17,
+      "source_pointer": "/domains/16",
+      "verification": "Track realized movement/context divergence and full projected numeric history; descriptive association not causal share."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 18,
+      "source_pointer": "/domains/17",
+      "verification": "OVERALL terminal errors RMSE/MAE/p95 on each H25/50/100/200 with frozen support, anchors, comparator and full-state recursion."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 19,
+      "source_pointer": "/domains/18",
+      "verification": "PATH_MOVED uses observed truth path definition, not policy projected movement; all4horizons support and numeric errors required."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 20,
+      "source_pointer": "/domains/19",
+      "verification": "Predeclare two independent full evaluation repeats, byte-exact outputs, verify-only resume with source/inference/recompute trapped; source writes0."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 21,
+      "source_pointer": "/domains/20",
+      "verification": "Keep HOLDOUT closed/no discovery; observed DEV is retrospective and cannot optimize future untouched acceptance."
+    },
+    {
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 22,
+      "source_pointer": "/domains/21",
+      "verification": "Vehicle/controller/planner/actuator untouched; no integration, flashing or activation; no physical EPS performance claim."
+    }
+  ],
+  "version": "V4_E_D0_D1_PROTOCOL_V2"
+}
