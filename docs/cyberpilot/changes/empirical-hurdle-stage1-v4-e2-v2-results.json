@@ -1,0 +1,272 @@
+{
+  "D2_performance": "PERFORMANCE_NOT_EVALUATED",
+  "Q2": {
+    "private_calls": 0,
+    "status": "NOT_EXECUTED_DIAGNOSTIC"
+  },
+  "TRAIN_durable_seal": "NOT_CREATED_Q1_BARRIER",
+  "additive_source_sha256": {
+    "empirical_hurdle_v4_e2_v2_execution.py": "69833d5594632d2dd97dbf8e6c6eb47465f3210e9b30aeb02a1875bf9afb37c2",
+    "empirical_hurdle_v4_e2_v2_qualification.py": "3349d72cb59d88dbef7e04a7f0d6bc125508800be474a0bbe098fe34162ecc0b",
+    "tests/test_empirical_hurdle_v4_e2_v2_execution.py": "543aa37116f94135e29dd995c5f26e2e70283aa88dc1e18ce2f780dee823a574"
+  },
+  "all22_validation_domains": [
+    {
+      "frozen_protocol_pointer": "/validation_domains/0",
+      "order": 1,
+      "performance_pass": null,
+      "status": "TRAIN_PREFLIGHT_VERIFIED_Q1_INCOMPLETE_DEV_NOT_READ"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/1",
+      "order": 2,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/2",
+      "order": 3,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/3",
+      "order": 4,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/4",
+      "order": 5,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/5",
+      "order": 6,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/6",
+      "order": 7,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/7",
+      "order": 8,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/8",
+      "order": 9,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/9",
+      "order": 10,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/10",
+      "order": 11,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/11",
+      "order": 12,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/12",
+      "order": 13,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/13",
+      "order": 14,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/14",
+      "order": 15,
+      "performance_pass": null,
+      "status": "TRAIN_CACHE_COMPUTED_Q1_NOT_PROVEN_DEV_NOT_EXECUTED"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/15",
+      "order": 16,
+      "performance_pass": null,
+      "status": "TRAIN_PROJECTION_CHECKED_DEV_NOT_EXECUTED"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/16",
+      "order": 17,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/17",
+      "order": 18,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/18",
+      "order": 19,
+      "performance_pass": null,
+      "status": "NOT_EXECUTED_Q1_BARRIER"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/19",
+      "order": 20,
+      "performance_pass": null,
+      "status": "ABORT_RECEIPT_VERIFIED_FULL_REPEATABILITY_NOT_EXECUTED"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/20",
+      "order": 21,
+      "performance_pass": null,
+      "status": "VERIFIED_HOLDOUT_CLOSED"
+    },
+    {
+      "frozen_protocol_pointer": "/validation_domains/21",
+      "order": 22,
+      "performance_pass": null,
+      "status": "VERIFIED_VEHICLE_AUTHORITY_NONE"
+    }
+  ],
+  "baseline_head": "63f74c22d2c30978bf51dc7c00fca3eb423e45c1",
+  "both_fold_qualifying_candidate_count": null,
+  "execution_head": "2335a8d618530185f09781ea6cb44bceb921516c",
+  "execution_projection": {
+    "DEV_access": false,
+    "completed_job_count": 0,
+    "decision_completeness": {
+      "D2": 0,
+      "required": 64
+    },
+    "qualified_job_counts": {
+      "Q1": 2,
+      "Q3": 0,
+      "required_each": 32
+    },
+    "source_writes": 0,
+    "stage": "Q1",
+    "status": "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED"
+  },
+  "forbidden_operation_counters": {
+    "V5_execution": 0,
+    "additional_policy_search": 0,
+    "calibration_fit": 0,
+    "candidate_grid_change": 0,
+    "composition": 0,
+    "controller_changes": 0,
+    "extra_tolerance": 0,
+    "guard_relaxation": 0,
+    "holdout_discovery": 0,
+    "holdout_openings": 0,
+    "new_policy_arm": 0,
+    "normalizer_refit": 0,
+    "original_source_writes": 0,
+    "pooled_refit": 0,
+    "posthoc_threshold_tuning": 0,
+    "qlog_openings": 0,
+    "raw_log_openings": 0,
+    "rebatching_retry": 0,
+    "stage1_refit": 0,
+    "stage2_refit": 0,
+    "vehicle_activation": 0
+  },
+  "frozen32_acceptance": "NOT_EXECUTED",
+  "implementation_lock_raw_sha256": "dccaedbfbbd7cda932ff802760c37e03b99b78f5ae4dbdfb94f58ff66e46be35",
+  "independent_reviews": {
+    "authority": {
+      "approval": "APPROVED",
+      "receipt_sha256": "fb97f438d2740330e4066e2e678a4e3bf0ff49fd8ad36df78d464cc642e326c7"
+    },
+    "science": {
+      "approval": "APPROVED",
+      "receipt_sha256": "ed9f713dd4585d4f3d5fa8695f17eea6d0e8f953467e3052d5de590ffd7d20db"
+    }
+  },
+  "interpretation": "Q1 whole-job D0 selected-row float64 dtype/shape/raw-byte equivalence did not pass. This is not D2 model performance failure. No cause or projected-tick equality is inferred from historical chunk-local diagnostics.",
+  "local_validation": {
+    "Ruff": "PASS",
+    "SCons": "PASS",
+    "compileall": "PASS",
+    "full_AutoTune_controls": {
+      "passed": 5641,
+      "private_drives_masked": true,
+      "seconds": 598.46
+    },
+    "implementation_publication_findings": 0,
+    "lateral_synthetic": 16,
+    "new_focused": 60,
+    "public_json_parsed_at_execution_freeze": 825,
+    "related_focused": 471,
+    "source_pins": {
+      "additive": 3,
+      "original": 50,
+      "public": 17
+    },
+    "superseded_mutating_worktree_run": {
+      "errors": 2,
+      "passed": 5629,
+      "reason": "Existing comfort/history snapshot guards detected concurrent review edits/staging. Fixed-source full rerun passed5641; no failing result relabelled."
+    }
+  },
+  "mission": "STAGE1_V4_E2_V2_ADDITIVE_RUNNER_AND_FRESH_EXECUTION",
+  "next_required_authorization": "Separate bounded TRAIN Q1 mismatch diagnosis for the exact sealed failing job and exact source/model/anchor; no automatic retry, rebatching, tolerance, policy amendment or E2 resume.",
+  "preexecution_ci": {
+    "conclusion": "success",
+    "head": "2335a8d618530185f09781ea6cb44bceb921516c",
+    "id": 39170090328,
+    "status": "completed",
+    "url": "https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/39170090328"
+  },
+  "preserved": {
+    "D0": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
+    "D1": "E_EXECUTION_COMPLETE_D1_NOT_ADMISSIBLE",
+    "E2_V1": "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+    "HOLDOUT": "CLOSED",
+    "Hugging_Face": "NOT_REQUIRED / NOT_USED",
+    "composition": "NOT_AUTHORIZED",
+    "historical_TRAIN_gate": "NOT_SAVED",
+    "original_replica": "REPLICA_PAYLOAD_EQUALITY_NOT_FULLY_REVERIFIED",
+    "pooled_refit": "NOT_AUTHORIZED",
+    "root_cause_historical": "E2_NUMERICAL_ROOT_CAUSE_IDENTIFIED",
+    "selected_candidate": null,
+    "selected_policy": null,
+    "vehicle": "NOT_READY / REAL_VEHICLE_UNVERIFIED / VEHICLE_ACTIVATION_BLOCKED",
+    "vehicle_authority": "NONE"
+  },
+  "private_telemetry": "Input files/bytes, resource measurements, exact failed job, qualification identity and gate-dependent numerical calls sealed privately; no paths/rows/private hashes published.",
+  "protocol_raw_sha256": "7a4e02966d921759430a4b6c3c9ca1f343f400a293e4f79f1a9a73fb8aaeeb2f",
+  "qualification_raw_sha256": "7a51775da2ec0edd18c21abf73d78123f940cff3c8e125ddac0cd43857427ccf",
+  "receipt_sha256": "a79c8dd16753126f9e784d45078a063cc53fca0403a306cd37b0ddb659a57705",
+  "repeats": {
+    "complete_canonical_byte_comparison": "NOT_EXECUTED",
+    "repeat_1": "ABORTED_Q1",
+    "repeat_2": "NOT_STARTED_MANDATORY_STOP"
+  },
+  "schema": "CYBERPILOT_E2_V2_SAFE_OUTCOME_V1",
+  "stop": "SCIENTIFIC_EXECUTION_STOPPED_AFTER_FIRST_Q1_MISMATCH; PUBLICATION_AND_FINAL_CI_ONLY",
+  "verify_only": {
+    "inference_calls": 0,
+    "recompute_calls": 0,
+    "scientific_source_rereads": 0,
+    "scope": "SEALED_ABORT_RECEIPT_ONLY_NOT_COMPLETE_SCIENTIFIC_RESULT",
+    "source_writes": 0,
+    "status": "E2_V2_ABORT_RECEIPT_VERIFIED"
+  },
+  "version": "V4_E2_V2_Q1_BLOCKER_OUTCOME_V1"
+}
