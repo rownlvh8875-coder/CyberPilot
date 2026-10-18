@@ -1,0 +1,176 @@
+{
+  "baseline_head": "7adba76d5b1400f35fbd03c420e5f331cf0c7272",
+  "contract_changes": {
+    "D2_objective": false,
+    "Stage2": false,
+    "acceptance": false,
+    "epsilon": false,
+    "projection": false,
+    "qualification_removal": false,
+    "tolerance": false
+  },
+  "diagnostic_source_sha256": {
+    "empirical_hurdle_v4_e2_numerical_diagnostic.py": "650ff2e7a8bed63c690d5e0d032d9c927bb21197b479ffb039931015cc6c83b6",
+    "empirical_hurdle_v4_e2_numerical_diagnostic_private.py": "6ba6f910bef290a568d3fdea91c1f14d284f710891c4cd504c31805bf2f04d7c",
+    "tests/test_empirical_hurdle_v4_e2_numerical_diagnostic.py": "5bc50d23e5e81ac4970bceec37cfc3764aba92266438cf42a11421c0b38f413e"
+  },
+  "frozen_E2_protocol_raw_sha256": "177925af0d9a70fecaeb2f8d848dbdee9c620f92047a9d8320e0ed6e1e7ef7db",
+  "job": [
+    "HRI_D00_L01",
+    "FOLD_B"
+  ],
+  "job_index": 1,
+  "metrics": [
+    "RAW_BYTE_EQUALITY",
+    "EXACT_FLOAT_EQUALITY",
+    "BIT_MISMATCH_COUNT",
+    "NUMERIC_MISMATCH_COUNT",
+    "MAX_ABSOLUTE_DIFFERENCE",
+    "MAX_RELATIVE_DIFFERENCE",
+    "MAX_ULP_DISTANCE",
+    "SIGNED_ZERO_DIFFERENCE",
+    "PROJECTED_TICK_MISMATCH_COUNT",
+    "TRANSFORMED_ROW_BYTE_EQUALITY"
+  ],
+  "mission": "STAGE1_V4_E2_STAGE2_NUMERICAL_EQUIVALENCE_ROOT_CAUSE",
+  "original_source_map_sha256": "1f0b50a621459f7b93482bd34dce8606275ee4c1f335b1eb0f6f389f550cd2e8",
+  "outcome_rule": "ROOT_CAUSE_IDENTIFIED_REQUIRES_ACTUAL_TARGET_B_VS_A_BYTE_MISMATCH_AND_TRANSFORMED_ROWS_BYTE_EQUAL;AUXILIARY_DIFFERENCE_IS_NOT_TARGET_REPRODUCTION",
+  "paths": {
+    "A": "ORIGINAL_SEGMENT_ORDER_512_ALL_ROW_CACHE",
+    "B": "EACH_CHUNK_D0_SELECTED_ROWS",
+    "C": "ORIGINAL_WHOLE_JOB_D0_SELECTED_ROWS",
+    "control": "WHOLE_JOB_ALL_ROWS"
+  },
+  "prerequisites": [
+    "SOURCE_PINS_PASS",
+    "FIXED_SYNTHETIC_TESTS_PASS",
+    "TWO_EXACT_BYTE_REVIEWS_APPROVED",
+    "PREEXEC_EXACT_HEAD_CI_SUCCESS",
+    "TRUSTED_CONTROL_ROOT_MOUNT_IDENTITY",
+    "NEW_CURRENT_HUMAN_GRANT_BINDING",
+    "EXACT_ALLOWLIST",
+    "EXCLUSIVE_PRIVATE_OUTPUT_RESERVE"
+  ],
+  "preserved": {
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "E2": "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+    "HOLDOUT": "CLOSED",
+    "Hugging_Face": "NOT_REQUIRED / NOT_USED",
+    "TRAIN_gate": "NOT_SAVED",
+    "selected_candidate": null,
+    "selected_policy": null,
+    "vehicle_authority": "NONE"
+  },
+  "private_output": {
+    "exclusive": true,
+    "mode_directory": "0700",
+    "mode_file": "0600",
+    "no_decision_value": true,
+    "no_overwrite": true,
+    "no_rows": true,
+    "one_shot_binding_latch": true,
+    "output_names": [
+      "execution-binding.json",
+      "canonical-result.json",
+      "execution-envelope.json"
+    ],
+    "private_paths": "REDACTED_PRIVATE_REFERENCE"
+  },
+  "private_scope": {
+    "D0": "ONE_JOB_ORIGINAL_TRAIN_THRESHOLD_RECONSTRUCTION_NO_ORIGINAL_THRESHOLD_READ",
+    "D2_selection": false,
+    "DEV": false,
+    "E2_resume": false,
+    "TRAIN_only": true,
+    "conditional": "ONLY_IF_SYNTHETIC_CANNOT_CONFIRM_ACTUAL_FOLD_B",
+    "fields": {
+      "CAUSAL": [
+        "command.normalized",
+        "state.speed_mps"
+      ],
+      "DERIVED": [
+        "angle_tick",
+        "streak_all",
+        "model_eligible",
+        "rail",
+        "s2_ri_causal_run_id",
+        "within_s2_ri_causal_run_index"
+      ],
+      "V1_STAGE2": [
+        "normalizer.mean",
+        "normalizer.std",
+        "normalizer.constant",
+        "normalizer.effective",
+        "normalizer.constant_reference",
+        "model.coefficients"
+      ],
+      "V1_TRAIN": [
+        "move_label",
+        "prior_delta_tick"
+      ],
+      "V4_TRAIN": [
+        "combined_probability"
+      ]
+    },
+    "metadata": "EXACT_BOUND_ROOT_MANIFESTS_V1_AUTH_INPUT_PINS_CAUSAL_AUTH_MANIFEST_DERIVED_INDEX_RESULT_ADMISSION_NAMED_TRAIN_SOURCE_RECEIPTS_JOB_STAGE2_RECEIPTS",
+    "mixed_train_receipt": false,
+    "one_fresh_diagnostic": true,
+    "source_route": "PUBLIC_REFERENCE_JOB_INDEX1_TRAIN_ROUTE_ONLY"
+  },
+  "publication": {
+    "complementary_suppression": "PRESERVE_C_E_PUBLICATION_RESTRICTIONS",
+    "minimum_support": 201,
+    "private_diagnostic_payload": "NOT_PUBLISHED",
+    "public": "QUALITATIVE_CLASSIFICATION_AND_SAFE_COUNTS_ONLY_AFTER_COMPOSITE_PRIVACY_REVIEW",
+    "sensitive_telemetry": "PRIVATE_ONLY"
+  },
+  "receipt_sha256": "68f04481e66819e7cbf9761b4aa567c09377c311904f9dc1d0e1166a635bc455",
+  "resources": {
+    "address_space_bytes": 2147483648,
+    "cpu_seconds": 300,
+    "derivation": "ONE_ROUTE_SUBSET_OF154_SEGMENTS;8SOURCE_FIELDS<=50*916535BYTES;X+Z+SELECTED_COPIES<100*N*5;A/B/C+COMPARE_BUFFERS<200*N;2GiB_AS_INCLUDES_INTERPRETER;1600READS_EXCEEDS_FULL154_SEGMENT_METADATA_ARRAY_BOUND;NO_NXN_MATRIX",
+    "feature_dimension": 5,
+    "input_bytes_limit": 8589934592,
+    "input_open_limit": 1600,
+    "max_TRAIN_N": 336941,
+    "output_bytes": 8388608,
+    "reserve_bytes": 2147483648,
+    "source_row_bound": 916535,
+    "threads": 1,
+    "wall_seconds": 600
+  },
+  "schema": "V4_E2_NUMERICAL_DIAGNOSTIC_PROTOCOL",
+  "stop": "ROOT_CAUSE_AND_REMEDY_ASSESSMENT_ONLY_NO_E2_RESTART",
+  "synthetic": {
+    "L": [
+      1,
+      5,
+      15,
+      45
+    ],
+    "chunk": 512,
+    "coefficient_scales": [
+      1e-06,
+      1.0,
+      100.0
+    ],
+    "fixtures": 60,
+    "masks": [
+      "low",
+      "medium",
+      "high",
+      "alternating",
+      "contiguous"
+    ],
+    "no_seed_search": true,
+    "parity_followup": {
+      "fixtures": 60,
+      "original60_preserved": true,
+      "rule": "UNCHANGED_BASE60_MATRICES_AND_SEED;FLIP_FIRST_MASK_BIT_EACH_FULL512CHUNK;LEAVE_TAIL;PREFROZEN_FOLLOWUP_NO_SEED_SEARCH",
+      "same_alignment_control": true
+    },
+    "rows": 1537,
+    "seed": 20261018
+  },
+  "version": "V4_E2_NUMERICAL_DIAGNOSTIC_PROTOCOL_V1"
+}
