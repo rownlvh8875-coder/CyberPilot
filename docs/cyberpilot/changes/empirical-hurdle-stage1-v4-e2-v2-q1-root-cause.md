@@ -2,7 +2,8 @@
 
 ## Identity and purpose
 
-Cyber Validation; additive one-job numerical diagnostic, pre-execution validation.
+Cyber Validation; additive one-job diagnostic, metadata-stage abort.
+Final diagnostic outcome: `E2_V2_Q1_DIAGNOSTIC_UNRESOLVED`.
 Mission `STAGE1_V4_E2_V2_Q1_REFERENCE_PATH_DIAGNOSTIC`; baseline
 `45d1425047c725aab27f3075964f881190929f1a`, branch `feature/cyber-autotune`.
 Identify the failed TRAIN job from the sealed abort, never from public Q1 2/32.
@@ -90,9 +91,12 @@ cannot establish the actual private failed job or another job's Q1/Q3 status.
 New focused synthetic contract tests: 41 PASS. Metadata lifecycle covers exact
 route/field plan, pre-readback array denial, descriptor/model/anchor/count mutation,
 review/CI/source-policy failure before historical controls, and forbidden paths.
-Existing focused suites, full AutoTune/controls, lateral, Ruff, compileall, SCons,
-publication/source pins and exact-head CI are required; final results follow after
-execution/publication. Replay, simulation/closed-loop, shadow and road use are
+Related focused suites: 516 PASS. Full AutoTune/controls: 5,682 PASS in 589.81s,
+with D/E masked in a mount namespace. Synthetic lateral: 40 PASS. Ruff,
+compileall, SCons, pre-execution JSON827, publication/source pins and whitespace
+checks PASS. Commit A `5a4a02f555d107ab04f26bf31ef2094c81cecbc7` passed
+[exact-head CI39178054492](https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/39178054492)
+before the fresh attempt. Replay, simulation/closed-loop, shadow and road use are
 not authorized and not performed; unit/CI success cannot substitute for them.
 
 ## Numerical feasibility and remedies (assessment, no adoption)
@@ -111,9 +115,73 @@ selected-row computation. Original D0 numerical meaning plus a universally
 batch-independent cache is NOT_PROVEN. Changing only storage does not prove it.
 No option, tolerance, canonical kernel, new decision or policy is implemented.
 
+Determinism/cost/evidence boundaries: A preserves a fixed-call reference, with
+O(NP) qualification, but does not prove arbitrary-mask equality. B could define
+fixed per-row arithmetic in O(NP); its changed output needs separate numerical
+qualification, historical D0/D1 comparability and D2 loss/guard review. C needs
+an approved error-impact contract; projection equality cannot certify continuous
+loss, exact guards or the selected winner. D has no proven cache-only solution;
+per-mask reinference could invalidate fixed loss leaves and the frozen bounded
+sweep. All require separate approval before any additional private experiment.
+
+## Actual one-shot attempt and implementation blocker
+
+The sealed historical abort and its exact failed job/model/source identity were
+authenticated. A fresh current grant, both exact-byte reviews and successful
+Commit A CI preceded the one attempted diagnostic process. It stopped during
+Stage2 metadata planning with `E2_CONTROL_CONFLICT`, before a new durable binding,
+array access, frozen model loading, D0 reconstruction or A/C numerical calls.
+The last recorded source read is the allowed Stage2 model receipt. No retry,
+reader modification, alternative batch or numerical-contract change followed.
+
+Public source exposes an incompatible new reader assumption:
+
+- Frozen `empirical_hurdle_fit_cv_execution.save_model` always saves descriptors
+  for `coefficients` and `nominal_coefficients`; it additionally saves
+  `singular_values` when present.
+- New `Provider.prepare` requires the model descriptor keys to be exactly
+  `{'coefficients'}`. This is stricter than the frozen writer contract and the
+  existing Stage2 reader, which loads only the approved coefficient array.
+- The metadata guard therefore rejects legitimate writer-shaped metadata.
+  Synthetic planning fixtures omitted those additional declared descriptors;
+  their passing tests and pre-execution reviews did not catch this defect.
+  This is an implementation defect, not proof of source/model corruption.
+
+Producer source SHA256 `a952eb4986f47e0335bf355ee74868755f14b592d05070008a0b117979d4e635`
+was separately verified unchanged from original V4 HEAD. It is not part of the
+runtime diagnostic source57 map; the next protocol must explicitly pin this
+producer and use its actual receipt builder in synthetic fixtures.
+
+The abort has a generic reason rather than a predicate/line trace. The source
+contract incompatibility is established statically and consistent with the stop
+position; the actual failed job's A/C float cause remains unclassified. No
+actual transformed-row, ULP, signed-zero or projected-tick observation was made.
+Synthetic evidence must not be promoted to actual Q1 root-cause confirmation.
+
+Source-reader metadata counts/bytes and abort identity are sealed privately.
+Numeric reads, model loads, D0/A/C/D2/DEV/rollout calls and original source writes
+are all zero. The diagnostic process wrote one exclusive 0600 abort file; a
+separate metadata-only handoff was sealed/read back afterward. This is not a
+completed scientific result, a successful numerical verify-only or repeatability
+proof. Abort telemetry does not retain preflight control-file read events or
+CPU/RSS/wall measurements; no complete private-read total or measured resource
+utilization is invented. The fixed limits were applied; there was no resource
+limit failure. Private rows, source IDs, model values and file paths remain absent
+from public artifacts.
+
+Minimum next grant: repair only the descriptor schema guard to match the frozen
+writer while keeping the numerical allowlist at `coefficients` only; add a
+writer-produced synthetic receipt fixture and predicate-specific abort telemetry;
+pin the producer and refreeze source/protocol, obtain two final-byte reviews and exact-head CI, then
+authorize a separate fresh one-job A/C diagnostic in a new exclusive output root.
+Do not read nominal coefficients/singular values or resume this failed attempt.
+No numerical remedy or E2/D2 performance execution is authorized by that repair.
+
 ## Handoff and preserved state
 
-Private diagnostic: PENDING final reviews, Commit A and exact-head CI.
+Private numerical diagnostic: NOT_EXECUTED after the metadata-stage abort.
+Pre-execution independent reviews were APPROVED; observed reader readiness is now
+BLOCKED. Historical approvals cannot authorize reuse of repaired, different bytes.
 Public output is restricted to qualitative classification, never failed-job ID,
 row counts/positions, ULP values, private hashes, decisions or model values.
 This preserves joint C/E/E2 complementary suppression without adding private cells.
