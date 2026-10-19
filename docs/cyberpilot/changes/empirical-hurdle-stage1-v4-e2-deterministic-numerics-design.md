@@ -21,7 +21,7 @@ Original `empirical_hurdle_fit_cv_math.predict_delta` calls
 The caller gathers whole-job MOVE rows in their original order. The E2 cache calls
 that same function on original segment/order 512-row all-row chunks.
 The original upstream openpilot/CyberPilot source and its existing license notices
-are preserved; this design copies no third-party native kernel. There are no new
+are preserved (root LICENSE: MIT, Copyright 2018 Comma.ai, Inc.); this design copies no third-party native kernel. There are no new
 submodule or dependency revisions.
 
 The prior public one-job Q1 finding is immutable:
@@ -126,7 +126,9 @@ Rollback here is simply non-adoption: no production hook exists.
 
 Fresh public synthetic checks ran on WSL Ubuntu-24.04, CPython 3.12.13,
 NumPy 2.5.3, OpenBLAS 0.3.34.106.0, x86_64, one worker/BLAS thread.
-Seeds/shapes/scales/masks were declared in the contract before execution;
+The 60 mask configurations reuse 12 unique `(L, scale)` full input/model pairs
+(and four full X populations). These descriptive counts include repeated inputs,
+not 60 independent samples. Seeds/shapes/scales/masks were declared before execution;
 there was no adaptive seed or batch search. Original60, Parity60 and Aligned60
 were rerun; their present results are not substituted for earlier observations.
 
@@ -156,7 +158,10 @@ One timed scalar pass per declared benchmark:
 | 336,941 × 93 | 5.38050 s | 5.63041 s | 532,816 KiB | 250,684,104 / 2,695,528 |
 
 Peak RSS includes synthetic input generation. Time is O(NP); additional oracle
-storage is O(N+P) excluding the input and optional transformed-row diagnostics.
+storage for the fold/output is O(N+P). The current test oracle also allocates an
+O(NP) finite-validation boolean temporary (max 31,335,513 bytes); optional
+transformed-row diagnostics are O(NP) too. Total auxiliary complexity of this
+test implementation is therefore O(NP), excluding the input.
 A linear estimate gives 172.18 seconds for one max-N/max-P pass over 32 jobs,
 or 516.53 seconds for three worst-case TRAIN passes (cache/Q1/Q3). These are
 estimates, not measurements or a complete E2 resource guarantee. Feature
@@ -173,7 +178,8 @@ vehicle simulation and shadow validation are NOT RUN and NOT AUTHORIZED.
 - Lateral closed-loop/gate/plant/scenarios synthetic modules: 40 PASS.
 - Ruff on AutoTune: PASS; compileall: PASS; local `scons -u -j4`: PASS (prepared workspace, not a fresh LFS fetch).
 - JSON parse: 833 files PASS; canonical receipts/source/index-pointer pins are asserted by the new tests.
-- Full local regression, final-byte reviews and new-head Actions observation: pending publication-stage verification.
+- Full local AutoTune/controls: 5,737 PASS at `bbb7ee02e61fd394a817ef6d69ef4a776cfc5b12`, with four workers and E/D mounts masked read-only. This is `LOCAL_FULL_REGRESSION`, not GitHub FULL_CI.
+- Final independent approvals bind the five final file digests in the publication commit and final handoff. Final exact-head Actions outcome is observed after push and reported there; no success is inferred in advance.
 - All actual private/scientific forbidden-operation counters in the numerical contract are zero.
 
 

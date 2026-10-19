@@ -327,7 +327,7 @@
       "receipt_sha256": "1861bddece3525dc8dcb6bdc2db7e844176f6b9eeeac7205e09c424a6f60e0ec"
     }
   },
-  "receipt_sha256": "0b1a3cfb4751d78ef635bd28fc21e0c3ba285682fe1f867cc25ef19f6fcc5559",
+  "receipt_sha256": "d099e817f6aa3eae1a2a5d6db242c6ed10da7b2312b5a3ea6d1f785cfab899c2",
   "recommended_definition": {
     "authority": "PROPOSED_PROSPECTIVE_NUMERICAL_SEMANTICS_ONLY",
     "constant_columns": "EXCLUDED_BY_FROZEN_EFFECTIVE;constant_reference_IS_IDENTITY_VALIDATION_ONLY_NOT_A_TRANSFORM_OPERAND",
@@ -378,11 +378,12 @@
       33,
       93
     ],
-    "auxiliary_memory": "O(N+P)_WITHOUT_FULL_TRANSFORM_OUTPUT;OPTIONAL_TEST_Z_IS_O(N*P)",
+    "auxiliary_memory": "CURRENT_TEST_ORACLE_O(N*P)_FINITE_VALIDATION_BOOLEAN_TEMP_PLUS_O(N+P)_FOLD_OUTPUT;OPTIONAL_TRANSFORM_Z_ALSO_O(N*P)",
     "binary64_output_bytes_max": 2695528,
     "existing_8GiB_limit": "NOT_REQUALIFIED_BY_THIS_STANDALONE_SYNTHETIC_BENCHMARK",
     "full_E2_CPU_RSS_feasible": "NOT_PROVEN;FEATURE_ASSEMBLY_SELECTOR_STAGE1_RECURSIVE_COST_NOT_MEASURED",
     "max_N": 336941,
+    "max_finite_validation_boolean_bytes": 31335513,
     "native_speedup_estimate": "NO_SUPPORTED_MEASURED_ESTIMATE",
     "new_native_kernel_needed_for_feasibility": "NOT_SHOWN_NECESSARY_BY_TRAIN_SCALAR_TIMING;NATIVE_OPTION_REQUIRES_SEPARATE_QUALIFICATION",
     "one_pass_32_jobs_P93_seconds_linear_estimate": 172.175987136,
@@ -403,6 +404,9 @@
     "V5": "NOT_AUTHORIZED",
     "VEHICLE_ACTIVATION_BLOCKED": true,
     "composition": "NOT_AUTHORIZED",
+    "historical_D0_selection": "MODEL_SELECTION_FAILED_CLOSED",
+    "historical_TRAIN_gate": "NOT_SAVED",
+    "original_replica": "REPLICA_PAYLOAD_EQUALITY_NOT_FULLY_REVERIFIED",
     "pooled_refit": "NOT_AUTHORIZED",
     "selected_candidate": null,
     "selected_policy": null,
@@ -457,6 +461,7 @@
       "unrelated_adjacent_rows",
       "Fortran_layout"
     ],
+    "configuration_unit": "60_MASK_CONFIGURATIONS_REUSE_12_UNIQUE_L_SCALE_FULL_INPUT_MODEL_PAIRS;4_FULL_X_POPULATIONS;NOT_INDEPENDENT_SAMPLES",
     "dimensions": [
       5,
       13,
@@ -519,6 +524,23 @@
       "wall_seconds": 10.398999212000007
     },
     "half_tick_boundary": "DEDICATED_SYNTHETIC_ONE_ULP_CAN_CHANGE_PROJECTED_TICK;NOT_OBSERVED_IN_60_CURRENT_RANDOM_FIXTURES",
+    "local_validation": {
+      "E_D_mounts": "MASKED_READ_ONLY",
+      "JSON_parse_count": 833,
+      "Ruff": "PASS",
+      "SCons": "PASS_PREPARED_LOCAL_WORKSPACE_NOT_CLEAN_FETCH",
+      "compileall": "PASS",
+      "final_byte_reviews": "RECORDED_WITH_FINAL_FILE_DIGESTS_IN_PUBLICATION_COMMIT_AND_FINAL_HANDOFF",
+      "full_AutoTune_controls_passed": 5737,
+      "full_regression_head": "bbb7ee02e61fd394a817ef6d69ef4a776cfc5b12",
+      "lateral_synthetic_passed": 40,
+      "new_focused_passed": 21,
+      "original_sources_workflows_models": "UNCHANGED;ADDITIVE_ONLY",
+      "publication_findings": 0,
+      "related_focused_modules": 15,
+      "related_focused_passed": 520,
+      "workers": 4
+    },
     "native_performance": "NOT_IMPLEMENTED_NOT_MEASURED",
     "scope": "PUBLIC_SYNTHETIC_ONLY_NOT_D2_PERFORMANCE",
     "synthetic": {

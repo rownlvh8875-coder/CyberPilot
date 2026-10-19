@@ -130,7 +130,8 @@ remains FAILURE even if a future run passes.
 - Lateral closed-loop/gate/plant/scenarios synthetic modules: 40 PASS.
 - Ruff on AutoTune: PASS; compileall: PASS; local `scons -u -j4`: PASS (prepared workspace, not a fresh LFS fetch).
 - JSON parse: 833 files PASS; canonical receipts/source/index-pointer pins are asserted by the new tests.
-- Full local regression, final-byte reviews and new-head Actions observation: pending publication-stage verification.
+- Full local AutoTune/controls: 5,737 PASS at `bbb7ee02e61fd394a817ef6d69ef4a776cfc5b12`, with four workers and E/D mounts masked read-only. This is `LOCAL_FULL_REGRESSION`, not GitHub FULL_CI.
+- Final independent approvals bind the five final file digests in the publication commit and final handoff. Final exact-head Actions outcome is observed after push and reported there; no success is inferred in advance.
 - All actual private/scientific forbidden-operation counters in the numerical contract are zero.
 
 

@@ -14,6 +14,12 @@
     "confirmed_response": "15_DISTINCT_OIDS_HTTP404_OBJECT_DOES_NOT_EXIST;3_PULL_ATTEMPTS",
     "head": "602855e53fe1f66bbb8c4a99e6d8841b4a6c2afc",
     "job_id": 117880505991,
+    "public_404_excerpt": {
+      "bytes": 6615,
+      "lines": 45,
+      "oid_occurrences_each": 3,
+      "sha256": "d26c8f6ff8e314342355037154fb0d02748c5b6f9fe3b48acda4a0854a7bb5d4"
+    },
     "run_id": 39196436306,
     "status": "completed",
     "step": "Set up openpilot development environment",
@@ -31,7 +37,7 @@
       "openpilot/selfdrive/modeld/models/big_driving_tinygrad.pkl"
     ]
   },
-  "final_exact_head_ci": "PENDING_NEW_COMMIT;DO_NOT_SUBSTITUTE_LOCAL_OR_PRIOR_SUCCESS",
+  "final_exact_head_ci": "READ_AFTER_PUSH_AND_REPORTED_IN_FINAL_HANDOFF;FULL_CI_SUCCESS_NOT_ASSERTED_AT_FREEZE",
   "frozen_git_reference": "602855e53fe1f66bbb8c4a99e6d8841b4a6c2afc",
   "future_validation": [
     "EXACT_OID_PATH_POINTER_SIZE",
@@ -2781,6 +2787,12 @@
     "run_id": 39193687093,
     "substitutes_for_final_head": false
   },
+  "local_validation": {
+    "SCons": "PASS_PREPARED_WORKSPACE",
+    "does_not_prove_fresh_LFS_fetch_or_optional_dependency_closure": true,
+    "full_regression": "5737_PASS;LOCAL_FULL_REGRESSION_ONLY",
+    "full_regression_head": "bbb7ee02e61fd394a817ef6d69ef4a776cfc5b12"
+  },
   "missing_declared_bytes": 95348970,
   "missing_oid_count": 15,
   "pointer_count": 252,
@@ -2788,7 +2800,7 @@
     "https://github.com/git-lfs/git-lfs/blob/v3.6.1/docs/man/git-lfs-pull.adoc",
     "https://github.com/git-lfs/git-lfs/blob/v3.6.1/docs/man/git-lfs-config.adoc"
   ],
-  "receipt_sha256": "34168d172375458c4ca7f68c987602eebb0342842b0f1e2f4613705c17412cac",
+  "receipt_sha256": "b8a80d1f9a1d5d63295f6552e4297cf688728e0b8b2557ed23821d2f3e927600",
   "remedies": {
     "A": {
       "available_source_verified": false,
