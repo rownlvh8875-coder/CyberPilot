@@ -264,19 +264,19 @@
   "input_binding": "INPUT_CONTRACT_UNRESOLVED_ACTUAL_BINDING_PENDING",
   "memory_status": "CANONICAL_E2_RESOURCE_PREFLIGHT_UNPROVEN",
   "private_execution_authorized": false,
-  "receipt_sha256": "ec2c49e8fa8ad224481cc1d2153eff529f03e91eb9cd4ae5228907605243b014",
+  "receipt_sha256": "d598a58592cf5cba02ce22984bc8d6b16509b0fc91f94415039c9766f490b98d",
   "reference_payload_binding": "Frozen readiness scientific binding preserved solely for exact numerical result comparison. Additional execution.json binds new caller/source/lock, outside scientific payload.",
   "reviews": "FINAL_EXACT_BYTE_RECEIPTS_IN_COMMIT_MESSAGE_NO_HASH_CYCLE",
   "runtime_status": "CANONICAL_E2_RUNTIME_BOUND_UNPROVEN",
   "scope": "PUBLIC_SYNTHETIC_BOUNDED_LIFETIME_AND_BINDING_DESIGN_ONLY",
   "source_sha256": {
     ".github/workflows/cyberpilot-canonical-bounded.yaml": "d9b14091ce7a920100abb0c0dd33cbcbadb50401ba550e48fe3414a0ae60b4b1",
-    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-bounded-resource-contract.json": "b7bbd9b1f4983f68ceac288671403199aadc854e93e2cc8af8886aa765859fad",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-bounded-resource-contract.json": "480ba601b615d40b03cdd5063eadb5be8a05fc67a718b1eb4a3637152b37046c",
     "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-exact-input-capability-v1.json": "32654a2d93c9ee689c4ecb37fe0ac5ea5480c0552bedf950d00508467149d0c1",
     "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_bounded.py": "11e94639dbdc5a3a59a761fd3f87acaf868e0b8334f948d4ff99e869b1529cc7",
-    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_bounded_inputs.py": "ed5bef0825e0f487955f1dae216a3e5b12f59a3f724a14881b95c28ae5c006c9",
-    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_resources.py": "be25aa9cb34a1a4b2184941f1be035f6b96641f063256545882d47852d1f7212",
-    "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_bounded.py": "8a610d01b76e49b12a0d44a2bbec64e727f32540cfedfb64dd728cf197280e4c",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_bounded_inputs.py": "61ad4e245a7542fa18d1b9f1312d503db5ceabc3752c76d38be264212e8eec3a",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_resources.py": "6e9f2a330c201c1d55f22f00cba6ecfea2b665eacce35107beb5ce1e02da0ceb",
+    "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_bounded.py": "a8cc4c04511625a7b51679c9aedb1270373eb3d9fd54bae7fabc7a154816d101",
     "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_capability.py": "d1f75ac5bac030244f74e9e27bd8d87c9d9a82302e1e5729fa81aa41bda98497",
     "tools/cyberpilot/canonical_bounded_fixture.py": "8bb3cc615bc75400bd517005122d5170d067428f166a6ced10b785734a71b310",
     "tools/cyberpilot/run_canonical_bounded.py": "3e17fb4bb247186578bf2d46921e9edf23c8a3ac502d278f554ab80c3245822b"
@@ -285,12 +285,13 @@
     "actual_private_execution": false,
     "all32_frozen_clauses_evaluated_in_supported_multisegment_fixture": true,
     "lateral_SCons_static": {
-      "Ruff_compileall_publication": "PRE_OWNER_FIX_PASS_FINAL_CHECK_PENDING",
-      "SCons": "ACTIVATED_ENVIRONMENT_BUILD_IN_PROGRESS",
-      "attribution": 95,
-      "lateral": 16
+      "Ruff_compileall_publication": "PASS_FINAL_COUPLED_SOURCE",
+      "SCons": "PASS_PREPARED_ENVIRONMENT; Python-only admission validation changes afterward",
+      "attribution_tests": 95,
+      "lateral_tests": 16,
+      "publication_findings": 0
     },
-    "local_full_regression": "PENDING_CLEAN_SOURCE_COMMIT",
+    "local_full_regression": "PREVIOUS_SOURCE_5849_PASS611.40s_SUPERSEDED; CORRECTED_CLEAN_SOURCE_RUN_PENDING",
     "multisegment_horizon_anchor_counts": [
       784,
       734,
@@ -298,7 +299,7 @@
       434
     ],
     "new_focused_success": true,
-    "new_focused_tests": 27,
+    "new_focused_tests": 30,
     "old91_and29": "FRESH_91_AND29_PASS",
     "old_eager_vs_bounded": [
       "train.json RAW_BYTE_EXACT",
@@ -332,7 +333,7 @@
         }
       ]
     },
-    "two_reviews": "FINAL_EXACT_MANIFEST_REVIEW_PENDING"
+    "two_reviews": "CORRECTED_SOURCE_FREEZE_EXACT_APPROVAL_PENDING"
   },
   "version": "V4_E2_CANONICAL_BOUNDED_IMPLEMENTATION_LOCK_V1"
 }

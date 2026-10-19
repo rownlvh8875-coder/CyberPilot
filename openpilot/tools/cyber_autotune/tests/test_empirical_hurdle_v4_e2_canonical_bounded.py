@@ -150,6 +150,66 @@ class TestBounded(unittest.TestCase):
     self.assertIs(checkout['with']['lfs'], False)
     self.assertIs(checkout['with']['submodules'], False)
 
+  def test_admission_couples_train_metadata_model_identity_and_source(self):
+    from tools.cyberpilot.canonical_bounded_fixture import provider
+    from openpilot.tools.cyber_autotune import empirical_hurdle_v4_e2_canonical_bounded_inputs as q
+
+    for field in ('stage2', 'fold', 'anchor', 'source_id', 'binding', 'stage1', 'current'):
+      p = provider()
+      train = p._specs['TRAIN']
+      dev = p._specs['DEV']
+      meta = train[0]['train_meta']
+      if field == 'stage2':
+        wrong = {**train[0]['stage2'], 'coefficients': train[0]['stage2']['coefficients'] + 0.125}
+        train[0]['stage2'] = q.immutable(wrong)
+        dev[0]['stage2'] = q.immutable(wrong)
+      elif field == 'stage1':
+        meta[field] = dev[0]['stage1']
+      elif field == 'fold':
+        meta[field] = 'FOLD_B'
+      elif field == 'current':
+        meta[field] = q.immutable(meta[field] + 1)
+      else:
+        meta[field] = 'f' * 64
+      with self.subTest(field=field), self.assertRaises(ValueError):
+        q.BoundedSyntheticProvider(train, dev)
+
+  def test_fresh_rebound_target_cannot_contradict_source(self):
+    from tools.cyberpilot.canonical_bounded_fixture import provider
+    from openpilot.tools.cyber_autotune import empirical_hurdle_v4_e2_canonical_bounded_inputs as q
+
+    p = provider()
+    train = p._specs['TRAIN']
+    dev = p._specs['DEV']
+    s = train[0]
+    meta = s['train_meta']
+    target = meta['target'].copy()
+    target[0] += 1
+    meta['target'] = q.immutable(target)
+    meta['y'] = q.immutable(target != meta['current'])
+    x = q.assemble(s['parts'], s['candidate'])
+    identity = q.digest({k: v for k, v in {**meta, 'x': x}.items() if k != 'binding'})
+    meta['binding'] = identity
+    s['expected_binding'] = identity
+    with self.assertRaisesRegex(ValueError, 'TRAIN_SOURCE_JOIN'):
+      q.BoundedSyntheticProvider(train, dev)
+
+  def test_retired_train_model_owner_cannot_be_replaced(self):
+    from tools.cyberpilot.canonical_bounded_fixture import provider
+    from openpilot.tools.cyber_autotune import empirical_hurdle_v4_e2_canonical_bounded as q
+
+    p = provider()
+    with tempfile.TemporaryDirectory() as tmp:
+      with q.out.Store(Path(tmp) / 'run') as store:
+        run = q.BoundedRun(p, store, q.old.synthetic_binding('1' * 40))
+        run.train()
+        p.unlock(run.train_digest, store.read('train.json', run.train_digest))
+        p.retire_train()
+        p._specs['TRAIN'][0]['stage2'] = q.inputs.immutable(p._specs['TRAIN'][0]['stage2'])
+        with self.assertRaises(ValueError):
+          with p.dev_job(0, run.train_digest):
+            pass
+
   def test_dev_unlock_requires_durable_complete_train_proof(self):
     from tools.cyberpilot.canonical_bounded_fixture import provider
 

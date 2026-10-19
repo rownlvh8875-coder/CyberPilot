@@ -26,6 +26,10 @@ def digest(value):
   return b._hash(value)
 
 
+def require_array_bytes(actual, expected, reason):
+  need(type(actual) is type(expected) is np.ndarray and b.d2.byte_equal(actual, expected), reason)
+
+
 def immutable(value):
   if type(value) is np.ndarray:
     need(value.dtype.kind in 'bifu', 'CANONICAL_BOUNDED_ARRAY_TYPE')
@@ -303,6 +307,7 @@ class BoundedSyntheticProvider:
     self._dev_key, self._active_dev, self.failed = None, None, False
     self._dev_score_token = None
     self._train_tokens = []
+    self._train_model_sha = {}
     self.counters = {}
     unique = {}
     logical_sources = {}
@@ -359,6 +364,25 @@ class BoundedSyntheticProvider:
           need(s['horizon_rows'] is None, 'CANONICAL_BOUNDED_TRAIN_PATH_PAYLOAD')
         if role == 'TRAIN':
           need(s['stage1'] is None and set(s['train_meta']) == b.JOB_FIELDS - {'x'} | {'binding'}, 'CANONICAL_BOUNDED_TRAIN_META')
+          meta = s['train_meta']
+          need(
+            all(meta[k] == s[k] for k in ('candidate', 'fold', 'role', 'source_id', 'anchor'))
+            and meta['scope'] == b.SCOPE
+            and meta['binding'] == s['expected_binding']
+            and meta['stage1'] is None,
+            'CANONICAL_BOUNDED_TRAIN_IDENTITY_COUPLING',
+          )
+          need(digest(meta['stage2']) == digest(s['stage2']), 'CANONICAL_BOUNDED_TRAIN_MODEL_COUPLING')
+          need(digest(meta['p']) == s['score_sha256'], 'CANONICAL_BOUNDED_TRAIN_SCORE_COUPLING')
+          self._train_model_sha[index] = digest(meta['stage2'])
+          joined = source_vectors(s['parts'])
+          for field, expected in zip(('current', 'target', 'prior'), joined, strict=True):
+            require_array_bytes(meta[field], expected, 'CANONICAL_BOUNDED_TRAIN_SOURCE_JOIN')
+          require_array_bytes(meta['y'], joined[1] != joined[0], 'CANONICAL_BOUNDED_TRAIN_LABEL_JOIN')
+          require_array_bytes(meta['row_ids'], np.arange(n, dtype=np.int64), 'CANONICAL_BOUNDED_TRAIN_ROW_ORDER')
+          need(meta['segment_stops'] == tuple(np.cumsum([len(ix) for _, ix in s['parts']]).tolist()), 'CANONICAL_BOUNDED_TRAIN_SEGMENT_ORDER')
+          joined = expected = None
+
         else:
           need(s['train_meta'] is None, 'CANONICAL_BOUNDED_DEV_PRELOAD')
         self._spec_hashes[role, index] = self._spec_hash(s)
@@ -458,9 +482,15 @@ class BoundedSyntheticProvider:
     self._dev_key = train_digest
 
   def retire_train(self):
-    need(not self.failed and self._dev_key is not None, 'CANONICAL_BOUNDED_RETIRE_BEFORE_SEAL')
-    for s in self._specs['TRAIN']:
+    need(not self.failed and self._dev_key is not None and len(self._train_tokens) == 32, 'CANONICAL_BOUNDED_RETIRE_BEFORE_SEAL_OR_RETRY')
+    for index in range(32):
+      self._check(index, 'TRAIN')
+    for index, s in enumerate(self._specs['TRAIN']):
       s['train_meta'].clear()
+      # A planned retirement transition changes only the row dictionary. Keep
+      # the remaining source/model stamps valid and retain the admitted digest.
+      self._spec_hashes['TRAIN', index] = self._spec_hash(s)
+      self._spec_stamps['TRAIN', index] = self._spec_stamp(s)
     for token in self._train_tokens:
       self.lifetime.release(token)
     self._train_tokens.clear()
@@ -472,7 +502,8 @@ class BoundedSyntheticProvider:
     try:
       need(self._dev_key is not None and key == self._dev_key and self._active_dev is None, 'CANONICAL_BOUNDED_DEV_BEFORE_SEAL')
       s = self._check(index, 'DEV')
-      need(digest(s['stage2']) == digest(self._specs['TRAIN'][index]['stage2']), 'CANONICAL_BOUNDED_MODEL_ROLE_CONFLICT')
+      self._check(index, 'TRAIN')
+      need(digest(s['stage2']) == self._train_model_sha[index], 'CANONICAL_BOUNDED_MODEL_ROLE_CONFLICT')
       current, target, prior = source_vectors(s['parts'])
       n = len(current)
       data = {k: s[k] for k in ('candidate', 'fold', 'role', 'source_id', 'anchor', 'stage1', 'stage2')}

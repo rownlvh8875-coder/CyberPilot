@@ -51,6 +51,11 @@
       "Measured synthetic throughput is not a worst-case CPU/wall guarantee."
     ],
     "phase_buffers": {
+      "A_ADMISSION": {
+        "model_hash_and_identity": 8388608,
+        "source_hash_copy": 7332280,
+        "source_vector_join_and_validation": 32346336
+      },
       "C_POTENTIAL": {
         "feature": 250684104,
         "feature_chunk": 380928,
@@ -89,6 +94,7 @@
       }
     },
     "phase_totals": {
+      "A_ADMISSION": 3797372664,
       "C_POTENTIAL": 4789149353,
       "D_G_QUALIFICATION": 5044843585,
       "F_SELECTION": 3915869504,
@@ -121,8 +127,8 @@
   },
   "caller_source_sha256": {
     "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_bounded.py": "11e94639dbdc5a3a59a761fd3f87acaf868e0b8334f948d4ff99e869b1529cc7",
-    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_bounded_inputs.py": "ed5bef0825e0f487955f1dae216a3e5b12f59a3f724a14881b95c28ae5c006c9",
-    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_resources.py": "be25aa9cb34a1a4b2184941f1be035f6b96641f063256545882d47852d1f7212"
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_bounded_inputs.py": "61ad4e245a7542fa18d1b9f1312d503db5ceabc3752c76d38be264212e8eec3a",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_resources.py": "6e9f2a330c201c1d55f22f00cba6ecfea2b665eacce35107beb5ce1e02da0ceb"
   },
   "copy_accounting": [
     "immutable source admission and retained caller alias",
@@ -169,6 +175,7 @@
         "digest C-order tobytes copies",
         "fixture preparation peak outside provider lease census"
       ],
+      "metadata_source_join": "TRAIN metadata/spec identities, scope, Stage1None, model/score hashes, current/target/prior/y, row order and segment stops are joined before D0. Compact admitted TRAIN Stage2 hash survives retirement; source/model stamps are resealed only at the single planned retirement transition.",
       "retained": "immutable SourceBlock bytes owners, exact row indices, tiny models, TRAIN saved vectors"
     },
     "after_job": "DEV rows/score/features/horizon trace released; only JSON aggregates/models/source blocks remain",
@@ -176,14 +183,14 @@
   },
   "memory_status": "CANONICAL_E2_RESOURCE_PREFLIGHT_UNPROVEN",
   "private_execution_authorized": false,
-  "receipt_sha256": "e829515e492b9e92e757462bd40a17241e6c3328dcbf2aa05ad1fc181b67967b",
+  "receipt_sha256": "5c9924d2dfa9e841aa8d4d00b0ddd51872d0e22e8ca3bf6af3ef97f453f0aee9",
   "scenario_interpretation": "Conservative logical scenario deliberately includes retained TRAIN vectors/caches also in DEV totals even after actual retirement. It is a conditional accounting scenario, not total peak AS certification.",
   "scope": "PUBLIC_SYNTHETIC_ONLY",
   "synthetic_evidence": {
     "development_measurement_count": 1,
-    "final_capped_measurement_count": 2,
+    "final_capped_measurement_count": 3,
     "maxshape": {
-      "CPU_seconds": 29.601939269,
+      "CPU_seconds": 24.472272712000002,
       "N": 336941,
       "P": 93,
       "Q1": {
@@ -233,14 +240,14 @@
       },
       "private_execution_authorized": false,
       "resources": {
-        "CPU_system_seconds": 1.2131859999999999,
-        "CPU_user_seconds": 28.540316,
-        "Linux_peak_RSS_KiB": 1077228,
-        "VmPeak_KiB": 1164696
+        "CPU_system_seconds": 0.8965869999999999,
+        "CPU_user_seconds": 23.686217,
+        "Linux_peak_RSS_KiB": 1077548,
+        "VmPeak_KiB": 1164992
       },
       "runtime_worst_case_certified": false,
       "scope": "MAX_SHAPE_SINGLE_JOB_UNIT_NOT_GLOBAL_E2",
-      "wall_seconds": 29.201537057999985
+      "wall_seconds": 24.102629651999905
     },
     "maxshape_worker_caps": {
       "AS_bytes": 8589934592,
@@ -251,6 +258,7 @@
     "measurement_scope": "Includes public fixture/admission preparation and original selectors. Periodic commands, all rows and unmodified candidate set. Other public tests ran concurrently; timing is not isolated worst-case performance qualification.",
     "no_native_allocator_or_private_host_proof": true,
     "previous_capped_measurement_superseded_by_owner_fix": true,
+    "previous_capped_measurements_superseded_by_validation_fixes": true,
     "small_32_job_repeats": [
       {
         "lifetime": {
@@ -291,58 +299,58 @@
           "feature_materializations": 128,
           "feature_rows": 26624
         },
-        "output_bytes": 1732196,
+        "output_bytes": 1732204,
         "phase_timings": {
           "B_ALL32_D0": {
-            "CPU_seconds": 0.016005643000000014,
-            "wall_seconds": 0.01826517300003161
+            "CPU_seconds": 0.020314341000000014,
+            "wall_seconds": 0.01858706400025767
           },
           "COMPLETE_SYNTHETIC_REPEAT": {
             "CPU_seconds": 0.0,
-            "wall_seconds": 9.240000053978292e-07
+            "wall_seconds": 7.899998308857903e-07
           },
           "C_ALL32_POTENTIALS": {
-            "CPU_seconds": 0.131985845,
-            "wall_seconds": 0.1306420649999609
+            "CPU_seconds": 0.10559090700000001,
+            "wall_seconds": 0.10486939000020357
           },
           "D_ALL32_Q1": {
-            "CPU_seconds": 0.09994028099999996,
-            "wall_seconds": 0.09983462100001361
+            "CPU_seconds": 0.08529410799999992,
+            "wall_seconds": 0.08295881200001531
           },
           "E_ALL64_D1": {
-            "CPU_seconds": 0.012000081000000051,
-            "wall_seconds": 0.013357174000020677
+            "CPU_seconds": 0.012185885000000063,
+            "wall_seconds": 0.013814067000112118
           },
           "F_ALL64_D2": {
-            "CPU_seconds": 0.14798344799999996,
-            "wall_seconds": 0.1475629649999064
+            "CPU_seconds": 0.12995758999999996,
+            "wall_seconds": 0.129883639000127
           },
           "G_ALL32_Q3": {
-            "CPU_seconds": 0.10922906499999996,
-            "wall_seconds": 0.10681296099994597
+            "CPU_seconds": 0.08528449300000007,
+            "wall_seconds": 0.08220891099972505
           },
           "H_DURABLE_TRAIN": {
-            "CPU_seconds": 0.007874993000000052,
-            "wall_seconds": 0.015671829999973852
+            "CPU_seconds": 0.008537534999999985,
+            "wall_seconds": 0.015250348999870766
           },
           "I_DEV_UNLOCK": {
-            "CPU_seconds": 0.024359543999999955,
-            "wall_seconds": 0.02608961500004625
+            "CPU_seconds": 0.03655179999999991,
+            "wall_seconds": 0.03439308199995139
           },
           "J_THREE_ARM_DEV": {
-            "CPU_seconds": 7.9008315300000005,
-            "wall_seconds": 7.783615058999999
+            "CPU_seconds": 6.7624045530000005,
+            "wall_seconds": 6.728696741000022
           },
           "K_FROZEN32_22": {
             "CPU_seconds": 0.0,
-            "wall_seconds": 3.050999907827645e-06
+            "wall_seconds": 2.5589997676433995e-06
           }
         },
         "resources": {
-          "CPU_system_seconds": 0.10965599999999999,
-          "CPU_user_seconds": 8.817154,
-          "Linux_peak_RSS_KiB": 81636,
-          "VmPeak_KiB": 157692
+          "CPU_system_seconds": 0.04425,
+          "CPU_user_seconds": 7.635232,
+          "Linux_peak_RSS_KiB": 80232,
+          "VmPeak_KiB": 157696
         }
       },
       {
@@ -384,62 +392,62 @@
           "feature_materializations": 128,
           "feature_rows": 26624
         },
-        "output_bytes": 1732193,
+        "output_bytes": 1732182,
         "phase_timings": {
           "B_ALL32_D0": {
-            "CPU_seconds": 0.025138523999999995,
-            "wall_seconds": 0.02357717000006687
+            "CPU_seconds": 0.019975125000000038,
+            "wall_seconds": 0.01798390899966762
           },
           "COMPLETE_SYNTHETIC_REPEAT": {
             "CPU_seconds": 0.0,
-            "wall_seconds": 9.499999578110874e-07
+            "wall_seconds": 1.455000074201962e-06
           },
           "C_ALL32_POTENTIALS": {
-            "CPU_seconds": 0.117301989,
-            "wall_seconds": 0.11351212200008831
+            "CPU_seconds": 0.09598193299999996,
+            "wall_seconds": 0.09765907200016954
           },
           "D_ALL32_Q1": {
-            "CPU_seconds": 0.10054610200000003,
-            "wall_seconds": 0.09410595700001068
+            "CPU_seconds": 0.07599306,
+            "wall_seconds": 0.07491713599983996
           },
           "E_ALL64_D1": {
-            "CPU_seconds": 0.012568739999999967,
-            "wall_seconds": 0.01228928000000451
+            "CPU_seconds": 0.011985654999999984,
+            "wall_seconds": 0.012188629999855038
           },
           "F_ALL64_D2": {
-            "CPU_seconds": 0.15079443299999995,
-            "wall_seconds": 0.14613350600006925
+            "CPU_seconds": 0.147985928,
+            "wall_seconds": 0.14938720800000738
           },
           "G_ALL32_Q3": {
-            "CPU_seconds": 0.12149247500000004,
-            "wall_seconds": 0.11555540999995628
+            "CPU_seconds": 0.08399794100000002,
+            "wall_seconds": 0.08310349200019118
           },
           "H_DURABLE_TRAIN": {
-            "CPU_seconds": 0.009328242000000042,
-            "wall_seconds": 0.018532004000007873
+            "CPU_seconds": 0.008973140000000046,
+            "wall_seconds": 0.023149976000240713
           },
           "I_DEV_UNLOCK": {
-            "CPU_seconds": 0.025126668999999935,
-            "wall_seconds": 0.025037991999965925
+            "CPU_seconds": 0.031997440000000044,
+            "wall_seconds": 0.03169669199996861
           },
           "J_THREE_ARM_DEV": {
-            "CPU_seconds": 8.063204736,
-            "wall_seconds": 7.8645827440000176
+            "CPU_seconds": 6.861056231,
+            "wall_seconds": 6.514607148999858
           },
           "K_FROZEN32_22": {
             "CPU_seconds": 0.0,
-            "wall_seconds": 3.5619999607661157e-06
+            "wall_seconds": 3.000000106112566e-06
           }
         },
         "resources": {
-          "CPU_system_seconds": 0.074053,
-          "CPU_user_seconds": 9.067479,
-          "Linux_peak_RSS_KiB": 81636,
-          "VmPeak_KiB": 157816
+          "CPU_system_seconds": 0.058651999999999996,
+          "CPU_user_seconds": 7.704382,
+          "Linux_peak_RSS_KiB": 80232,
+          "VmPeak_KiB": 157696
         }
       }
     ],
-    "status": "MEASURED_FINAL_OWNER_ACCOUNTING_PUBLIC_SYNTHETIC_ONLY"
+    "status": "MEASURED_FINAL_COUPLED_PUBLIC_SYNTHETIC_ONLY"
   },
   "version": "V4_E2_CANONICAL_BOUNDED_RESOURCE_CONTRACT_V1"
 }

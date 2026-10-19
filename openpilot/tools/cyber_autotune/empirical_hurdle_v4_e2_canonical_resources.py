@@ -125,6 +125,7 @@ def resource_contract(n=N_MAX, p=P_MAX, source_rows=SOURCE_MAX):
     'Python_native_allocator_reserve_assumption': 2 * 1024**3,
   }
   phases = {
+    'A_ADMISSION': {'source_vector_join_and_validation': n * 96, 'source_hash_copy': source_rows * 8, 'model_hash_and_identity': 8 * 1024**2},
     'C_POTENTIAL': {
       'feature': x,
       'feature_chunk': CHUNK * p * 8,
