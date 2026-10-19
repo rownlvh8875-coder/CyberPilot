@@ -1,0 +1,55 @@
+name: CyberPilot Offline Static Numerical CI
+
+'on':
+  push:
+    branches: [feature/cyber-autotune]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  GIT_LFS_SKIP_SMUDGE: '1'
+  PYTHONDONTWRITEBYTECODE: '1'
+  OPENBLAS_NUM_THREADS: '1'
+  OMP_NUM_THREADS: '1'
+  MKL_NUM_THREADS: '1'
+  NUMEXPR_NUM_THREADS: '1'
+
+jobs:
+  numerical:
+    name: OFFLINE_STATIC_NUMERICAL_CI
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout public sources without asset materialization
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+          lfs: false
+          submodules: false
+          persist-credentials: false
+      - name: Set up exact qualified Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12.13'
+          architecture: x64
+          check-latest: false
+      - name: Install only pinned public numerical wheels
+        run: |
+          python -m pip --isolated install --index-url https://pypi.org/simple --only-binary=:all: --require-hashes -r tools/cyberpilot/numerical-offline-requirements.txt
+      - name: Qualify standalone arithmetic and public synthetic contracts
+        run: python -B tools/cyberpilot/run_numerical_offline.py
+      - name: Scoped Ruff and syntax
+        run: |
+          python -m ruff check openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_stage2.py openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_stage2.py tools/cyberpilot/run_numerical_offline.py
+          python -m compileall -q openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_stage2.py openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_stage2.py tools/cyberpilot/run_numerical_offline.py
+      - name: Audit public changes and whitespace
+        run: |
+          python -B tools/cyberpilot/check_publication.py --base d9d6b6f2747925fc386af4dbf44145861d8c6a01
+          git diff --check d9d6b6f2747925fc386af4dbf44145861d8c6a01 HEAD
+      - name: Confirm clean workspace and distinct validation scope
+        run: |
+          test -z "$(git status --porcelain)"
+          echo 'OFFLINE_STATIC_NUMERICAL_CI; does not certify FULL_CI or E2 performance'
