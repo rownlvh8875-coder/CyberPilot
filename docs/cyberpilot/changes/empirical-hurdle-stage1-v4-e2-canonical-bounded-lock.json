@@ -263,8 +263,18 @@
   },
   "input_binding": "INPUT_CONTRACT_UNRESOLVED_ACTUAL_BINDING_PENDING",
   "memory_status": "CANONICAL_E2_RESOURCE_PREFLIGHT_UNPROVEN",
+  "outcomes": {
+    "actual_binding": "INPUT_CONTRACT_UNRESOLVED_ACTUAL_BINDING_PENDING",
+    "actual_private_execution": "NOT_EXECUTED",
+    "capability": "CANONICAL_E2_INPUT_CAPABILITY_SCHEMA_FROZEN",
+    "implementation": "CANONICAL_E2_BOUNDED_LIFETIME_SYNTHETIC_QUALIFIED",
+    "memory": "CANONICAL_E2_RESOURCE_PREFLIGHT_UNPROVEN",
+    "numerical_equivalence": "CANONICAL_BOUNDED_REFERENCE_BYTE_EXACT_PASS",
+    "private_execution": "CANONICAL_E2_PRIVATE_EXECUTION_NOT_AUTHORIZED",
+    "runtime": "CANONICAL_E2_RUNTIME_BOUND_UNPROVEN"
+  },
   "private_execution_authorized": false,
-  "receipt_sha256": "d598a58592cf5cba02ce22984bc8d6b16509b0fc91f94415039c9766f490b98d",
+  "receipt_sha256": "42ab1cbf258826d52862ff68228e7189a55a17259268e1eb8965b4418cf56c2f",
   "reference_payload_binding": "Frozen readiness scientific binding preserved solely for exact numerical result comparison. Additional execution.json binds new caller/source/lock, outside scientific payload.",
   "reviews": "FINAL_EXACT_BYTE_RECEIPTS_IN_COMMIT_MESSAGE_NO_HASH_CYCLE",
   "runtime_status": "CANONICAL_E2_RUNTIME_BOUND_UNPROVEN",
@@ -285,13 +295,25 @@
     "actual_private_execution": false,
     "all32_frozen_clauses_evaluated_in_supported_multisegment_fixture": true,
     "lateral_SCons_static": {
-      "Ruff_compileall_publication": "PASS_FINAL_COUPLED_SOURCE",
-      "SCons": "PASS_PREPARED_ENVIRONMENT; Python-only admission validation changes afterward",
+      "Ruff": "ALL_CYBER_SOURCES_PASS",
+      "SCons": "PASS_PREPARED_ACTIVATED_ENVIRONMENT; native sources unchanged by later Python admission-only fix",
+      "SCons_initial_attempt": "FAILED_TOOL_PATH_NOT_ACTIVATED; activated rerun passed",
       "attribution_tests": 95,
+      "compileall": "PASS",
+      "git_diff_check": "PASS",
       "lateral_tests": 16,
-      "publication_findings": 0
+      "new_source_contract_checks": "PASS",
+      "publication_findings": 0,
+      "source_pins_frozen": 208
     },
-    "local_full_regression": "PREVIOUS_SOURCE_5849_PASS611.40s_SUPERSEDED; CORRECTED_CLEAN_SOURCE_RUN_PENDING",
+    "local_full_regression": {
+      "D_E_scientific_volumes": "EMPTY_READONLY_MOUNTS_IN_ISOLATED_USER_MOUNT_NAMESPACE",
+      "elapsed_seconds": 604.8,
+      "passed": 5852,
+      "scope": "LOCAL_FULL_REGRESSION",
+      "source_freeze_commit": "578867e40888976499f4186bfb611f9143fc9286",
+      "workers": 4
+    },
     "multisegment_horizon_anchor_counts": [
       784,
       734,
@@ -306,6 +328,39 @@
       "result.json RAW_BYTE_EXACT",
       "complete.json RAW_BYTE_EXACT"
     ],
+    "source_freeze_CI": {
+      "Bounded150": {
+        "run": 39246034657,
+        "status": "COMPLETED_SUCCESS"
+      },
+      "Full": {
+        "cause": "UPSTREAM_LFS_HTTP404",
+        "failed_step": "Set up openpilot development environment",
+        "missing_OIDs": 15,
+        "run": 39246034663,
+        "status": "COMPLETED_FAILURE",
+        "subsequent_build_and_tests": "NOT_EXECUTED"
+      },
+      "Offline120": {
+        "run": 39246034693,
+        "status": "COMPLETED_SUCCESS"
+      },
+      "final_head_runs": "SEPARATE_FINAL_HANDOFF",
+      "head": "578867e40888976499f4186bfb611f9143fc9286"
+    },
+    "source_freeze_reviews": {
+      "authority_receipt": "17d11daa53564f7dc078fe92ff95355d05295ef781eef13ccc28ecdfc7a07820",
+      "manifest_sha256": "3823991fda9bdb6726adcfa51e68130ff97909cbff1132af01b937b953a4332d",
+      "previous_ebdefed_source_approval": "SUPERSEDED",
+      "science_receipt": "43d12de03d337f93fa66e1b55937c935b38fa99ba10b05a12f285af32c32069e",
+      "status": "APPROVED"
+    },
+    "superseded_full_regression": {
+      "elapsed_seconds": 611.4,
+      "head": "033bfb4a3d69207208f9cdf3e294797b32878d27",
+      "passed": 5849,
+      "reason": "Later admission probes exposed model/source coupling gaps; corrected source tested separately."
+    },
     "two_fresh_synthetic_repeats": {
       "byte_exact": true,
       "coverage_each": {
@@ -333,7 +388,7 @@
         }
       ]
     },
-    "two_reviews": "CORRECTED_SOURCE_FREEZE_EXACT_APPROVAL_PENDING"
+    "two_reviews": "FINAL_EVIDENCE_DELTA_EXACT_RECEIPTS_IN_COMMIT_MESSAGE"
   },
   "version": "V4_E2_CANONICAL_BOUNDED_IMPLEMENTATION_LOCK_V1"
 }
