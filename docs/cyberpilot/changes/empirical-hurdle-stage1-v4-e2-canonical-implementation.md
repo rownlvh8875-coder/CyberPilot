@@ -148,12 +148,15 @@ Original60/Parity60/Aligned60 are executed with unchanged seeds/shapes/masks.
 - Full-population oracle parity60/60, batch conditions600/600 and oracle normalization vs original transform60/60 PASS. A separate test observes the new kernel normalization locals for three rows at each of four dimensions, with constant exclusion and unscaled intercept, and compares their bytes directly with original transform and the independent oracle.
 - New vs historical BLAS: byte mismatch60/60, max7,261 ULP and max absolute1.3642420526593924e-12 in this observed fixed run. Projected tick differences0/60; this is not a required equality or a physical-accuracy verdict.
 - Lateral synthetic40 PASS. AutoTune Ruff, compileall and prepared-workspace SCons PASS.
-- Full local AutoTune/controls regression: PENDING_FRESH_RUN. Final JSON/privacy and final-byte reviews are completed before publication; final receipts are in the publication commit/handoff.
+- Fresh LOCAL_FULL_REGRESSION: **5,763 PASS / 614.21s**, exit0, skipped0, at implementation HEAD `92098ebd331ed2a19945847a8db37fc7eec4b94f`. Command: `python -B tools/test_runner.py openpilot/tools/cyber_autotune/tests openpilot/selfdrive/controls/tests -j4`. D/E mount roots were masked read-only in a mount namespace. It includes relevant E/D2/Q1/Q3/B0/B1/C/E1/attribution and controls tests; it does not constitute private empirical replay or full E2 evaluation. No executable source changed after this run.
+- Initial implementation-head [offline CI 39209370644](https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/39209370644): completed/SUCCESS, 61 PASS / 24.338s, private adapters imported0, Ruff/syntax/publication/clean checks PASS.
+- Same-head [FULL_CI 39209370573](https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/39209370573): completed/FAILURE at `Set up openpilot development environment`, 15 unique LFS OIDs returned HTTP404. Later build/test steps were skipped by setup failure. No LFS or workflow remedy was applied.
+- Source-freeze scientific and authority reviews: both APPROVED for exact seven-file aggregate `6e28fb52e25dd1828a28e25ffb194ee4ee143711559d664ab741767b8daee656`. Review receipt SHA256 values are in the lock. The two-document actual-result delta is independently re-reviewed before publication; final review receipts belong in that commit/handoff, avoiding a self-referential receipt cycle. Final exact-head CI remains separately observed after publication.
 
 
 Empirical replay, vehicle simulation and shadow validation are NOT RUN and NOT
 AUTHORIZED. Offline CI SUCCESS, if observed, cannot stand in for FULL_CI or
-LOCAL_FULL_REGRESSION. Existing full CI is observed separately after push;
+LOCAL_FULL_REGRESSION. Final exact-head offline and full CI are observed separately after publication;
 its upstream LFS failure history and missing15/252-pointer inventory are unchanged.
 
 ## Future canonical D0/D1/D2 qualification plan

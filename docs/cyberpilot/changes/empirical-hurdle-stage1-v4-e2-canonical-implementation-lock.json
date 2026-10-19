@@ -71,6 +71,20 @@
     "V5_EXECUTION": 0,
     "VEHICLE_ACTIVATION": 0
   },
+  "full_CI_observation": {
+    "classification": "FULL_CI_FAILURE_UPSTREAM_LFS",
+    "conclusion": "failure",
+    "failed_step": "Set up openpilot development environment",
+    "final_exact_head": "OBSERVE_POST_PUBLICATION_IN_FINAL_HANDOFF",
+    "head": "92098ebd331ed2a19945847a8db37fc7eec4b94f",
+    "later_build_and_test_steps": "SKIPPED_BY_SETUP_FAILURE",
+    "original_full_workflow_modified": false,
+    "remediation_applied": false,
+    "run_id": 39209370573,
+    "status": "completed",
+    "unique_LFS_OIDs_HTTP404": 15,
+    "url": "https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/39209370573"
+  },
   "future_experiment": {
     "Q1": "CANONICAL_CACHE_VS_CANONICAL_WHOLE_JOB_D0_SELECTED_BYTES",
     "Q3": "CANONICAL_CACHE_VS_FINAL_CANONICAL_D2_SELECTED_BYTES",
@@ -200,6 +214,17 @@
     ],
     "final_run_result": "OBSERVE_POST_PUSH_IN_FINAL_HANDOFF;NOT_IN_SELF_REFERENTIAL_LOCK",
     "full_CI_substitution": false,
+    "initial_implementation_observation": {
+      "conclusion": "success",
+      "full_CI_certified": false,
+      "head": "92098ebd331ed2a19945847a8db37fc7eec4b94f",
+      "private_adapters_imported": 0,
+      "run_id": 39209370644,
+      "status": "completed",
+      "test_seconds": 24.338,
+      "tests_passed": 61,
+      "url": "https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/39209370644"
+    },
     "isolation": "PYTHON_AUDIT_IMPORT_BOUNDARY;NOT_OS_AIR_GAP;CHECKOUT_AND_PACKAGE_INSTALL_USE_NETWORK",
     "name": "CyberPilot Offline Static Numerical CI",
     "public_legacy_helpers": "TRANSITIVE_PUBLIC_READER_EXECUTOR_DEFINITIONS_IMPORTED_WITHOUT_ENTRYPOINT_EXECUTION;PRIVATE_ADAPTERS_DENIED",
@@ -212,7 +237,13 @@
     "path": "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_deterministic_numerics_design.py",
     "raw_sha256": "85f4cb7363b28c1dafd8f9e2b3b479400f2b83f0d0080ea050d5b53f547be39e"
   },
-  "receipt_sha256": "cdc390f5e1469a98711b7479a83c8bf0e3316f7324d242f022c8cb92dff07a0c",
+  "outcomes": {
+    "full_CI": "INITIAL_IMPLEMENTATION_HEAD_FAILURE_UPSTREAM_LFS;FINAL_HEAD_RESULT_IN_HANDOFF",
+    "integration_authority": "CANONICAL_IMPLEMENTATION_INTEGRATION_NOT_AUTHORIZED",
+    "numerical": "CANONICAL_STAGE2_IMPLEMENTED_SYNTHETIC_QUALIFIED",
+    "offline_CI": "INITIAL_IMPLEMENTATION_HEAD_SUCCESS;FINAL_HEAD_RESULT_IN_HANDOFF"
+  },
+  "receipt_sha256": "61dabf50a7471132b2591adc263ae92b1455339b182d0b1702e682590c964c0c",
   "safety": {
     "D0": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
     "D1": "E_EXECUTION_COMPLETE_D1_NOT_ADMISSIBLE",
@@ -265,11 +296,31 @@
   },
   "validation": {
     "SCons_Ruff_compile_JSON_privacy": "RUFF_COMPILE_SCONS_JSON_PRIVACY_PASS",
-    "full_local_regression": "PENDING_NEW_RUN",
+    "full_local_regression": {
+      "command": "python -B tools/test_runner.py openpilot/tools/cyber_autotune/tests openpilot/selfdrive/controls/tests -j4",
+      "elapsed_seconds": 614.21,
+      "execution_head": "92098ebd331ed2a19945847a8db37fc7eec4b94f",
+      "exit_code": 0,
+      "failed": 0,
+      "log_sha256": "99ae13ee8795b480246dee7f612f3ea29c29a9ac09c46cecc5aec1af4b5ddb57",
+      "passed": 5763,
+      "private_drive_access": "D_AND_E_MOUNT_ROOTS_MASKED_READONLY_IN_MOUNT_NAMESPACE",
+      "scope": "LOCAL_FULL_REGRESSION",
+      "skipped": 0,
+      "source_code_changes_after_run": 0
+    },
     "lateral_synthetic": "40_PASS",
     "offline_clean_venv": "61_PASS_20.957_SECONDS",
     "private_adapter_imports": 0,
     "reviews": "FINAL_BYTE_APPROVAL_REQUIRED;RECEIPTS_RECORDED_IN_PUBLICATION_COMMIT_AND_HANDOFF",
+    "source_freeze_reviews": {
+      "authority_approval": "APPROVED",
+      "authority_receipt_sha256": "2f9a1c889167bdd382b8b0970a2a2b2d1f9008b21073539f6db6468ac48b67c8",
+      "file_set_sha256": "6e28fb52e25dd1828a28e25ffb194ee4ee143711559d664ab741767b8daee656",
+      "final_document_delta_reviews": "RECEIPTS_IN_PUBLICATION_COMMIT_AND_FINAL_HANDOFF_TO_AVOID_SELF_HASH_CYCLE",
+      "science_approval": "APPROVED",
+      "science_receipt_sha256": "0174d8ee4dcafcc12842538a052cf7d3f68fdfe3d18fc50082e27e0f68c4f29d"
+    },
     "standalone_tests": "26_PASS_IN_OFFLINE61"
   },
   "version": "V4_E2_CANONICAL_STAGE2_IMPLEMENTATION_V1"
