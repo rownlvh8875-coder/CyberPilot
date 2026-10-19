@@ -21,6 +21,7 @@ SUITES = (
   'openpilot.tools.cyber_autotune.tests.test_empirical_hurdle_v4_e2_canonical_stage2',
   'openpilot.tools.cyber_autotune.tests.test_empirical_hurdle_v4_e2_deterministic_numerics_design',
   'openpilot.tools.cyber_autotune.tests.test_empirical_hurdle_v4_e2_numerical_diagnostic.TestNumericalDiagnostic',
+  'openpilot.tools.cyber_autotune.tests.test_empirical_hurdle_v4_e2_canonical_bridge',
 )
 
 

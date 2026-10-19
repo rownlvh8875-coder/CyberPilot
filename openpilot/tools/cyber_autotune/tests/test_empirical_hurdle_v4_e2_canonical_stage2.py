@@ -8,6 +8,7 @@ import importlib
 import importlib.util
 import inspect
 import json
+import subprocess
 from pathlib import Path
 import unittest
 from unittest.mock import patch
@@ -340,8 +341,20 @@ class TestOfflineContract(unittest.TestCase):
     lock = json.loads(path.read_text())
     receipt = lock.pop('receipt_sha256')
     self.assertEqual(receipt, hashlib.sha256(json.dumps(lock, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()).hexdigest())
+    # Preserve this immutable historical receipt. Current authorized CI-extension
+    # bytes are independently bound by the new canonical bridge lock/test.
+    extension_paths = {
+      '.github/workflows/cyberpilot-numerical-offline.yaml',
+      'tools/cyberpilot/run_numerical_offline.py',
+      'openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_stage2.py',
+    }
     for name, sha in lock['source_sha256'].items():
-      self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), sha)
+      raw = (
+        subprocess.check_output(['git', 'show', '99cd6aa62d00bfb2a27b8d5fcf08cf06cdb129cb:' + name], cwd=ROOT)
+        if name in extension_paths
+        else (ROOT / name).read_bytes()
+      )
+      self.assertEqual(hashlib.sha256(raw).hexdigest(), sha)
     for name, sha in lock['historical_sha256'].items():
       self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), sha)
     self.assertFalse(lock['authority']['private_access'])
