@@ -1,0 +1,558 @@
+{
+  "D2_implications": {
+    "Stage1": "NOT_CHANGED_OR_QUALIFIED_BY_THIS_STAGE2_DESIGN",
+    "fair_evaluation": "QUALIFY_SAME_ANCHOR_NEW_KERNEL_D0_D1_AND_D2;REPORT_HISTORICAL_VS_PROSPECTIVE_SEPARATELY;NO_DIRECT_IDENTICAL_CONDITION_CLAIM",
+    "fixed_row_loss_possible": "YES_IF_SAME_CANONICAL_KERNEL_AND_INPUTS_USED_FOR_ALL_TRAIN_POTENTIALS_AND_SELECTED_INFERENCE",
+    "guard_baseline_amendment_required": "NEW_CANONICAL_D0_TRAIN_NUMERICAL_REFERENCE_SAME_D0_GATE;NOT_THE_HISTORICAL_BLAS_DELTA_REFERENCE",
+    "guard_recipes_preserved": [
+      "TRUE_MOVE_TP>=D0",
+      "TRUE_MOVE_SSE<=D0",
+      "TRUE_MOVE_SAE<=D0",
+      "harmful_STATIC_movement<=D0"
+    ],
+    "historical_comparison": "KEEP_HISTORICAL_D0_D1_IMMUTABLE;NEW_CANONICAL_D0_D1_REPLAYS_ARE_DISTINCT_NUMERICAL_REFERENCES_WITH_SAME_POLICIES_NOT_NEW_POLICY_ARMS",
+    "objective_recipe_unchanged_but_numeric_values_may_change": [
+      "NET_PROJECTED_TICK_EXACT_HIT_GAIN",
+      "overall_SSE",
+      "overall_SAE",
+      "harmful_STATIC_realized_movement",
+      "larger_TRAIN_decision"
+    ],
+    "winner_stability": "NOT_PROVEN;TIEBREAK_FEASIBILITY_AND_PROJECTED_HIT_COUNTS_CAN_CHANGE"
+  },
+  "E2_execution_authorized": false,
+  "acceptance": {
+    "amended_by_this_document": false,
+    "both_folds": true,
+    "clauses": 32,
+    "comparator": "SAME_ANCHOR_HOLD_LAST",
+    "epsilon": 0,
+    "families": [
+      5,
+      3,
+      24
+    ],
+    "horizons": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "populations": [
+      "OVERALL",
+      "PATH_MOVED"
+    ],
+    "raw_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+    "support": 201
+  },
+  "baseline_head": "602855e53fe1f66bbb8c4a99e6d8841b4a6c2afc",
+  "batch_invariant": {
+    "Q1_Q3": "DO_NOT_DELETE;NEW_VERSION_CHECKS_CANONICAL_CACHE_VS_CANONICAL_D0_AND_FINAL_D2_SELECTED_PATHS_DTYPE_SHAPE_ORDER_SIGNED_ZERO_BYTES;OLD_BLAS_Q1_STAYS_FAILED",
+    "integration_still_required": [
+      "normalizer_identity",
+      "feature_assembly",
+      "original_order",
+      "cache_indexing",
+      "gate_mapping",
+      "head_routing",
+      "Stage1_score_repeatability",
+      "projection",
+      "recursive_state",
+      "caller_binary_identity"
+    ],
+    "scope": "ONLY_QUALIFIED_ENVIRONMENTS_AND_INPUT_DOMAIN;NOT_HISTORICAL_BLAS_BYTE_EQUALITY",
+    "statement": "FOR_IDENTICAL_ROW_VALUES_AND_FROZEN_MODEL,canonical(full)[mask]_BYTES_EQUAL_canonical(selected_original_order);ARBITRARY_APPROVED_BATCH_PARTITION_AND_ADJACENT_ROWS_DO_NOT_CHANGE_RESULT"
+  },
+  "environments": {
+    "candidate_native_flags": [
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-fno-associative-math",
+      "-frounding-math"
+    ],
+    "flags_sufficient_without_tests": false,
+    "initial_qualification": "CPYTHON3.12.13_LINUX_X86_64_BINARY64_FENV_NEAREST;NUMPY2.5.3_FOR_ARRAY_AND_FROZEN_PROJECTION",
+    "native_future": "NOT_IMPLEMENTED_OR_BENCHMARKED;VERIFY_DOUBLE_FORMAT_FENV_FTZ_DAZ_COMPILER_BINARY_AND_GENERATED_CODE;SEPARATE_PRODUCT_ADD_NO_COLUMN_REDUCTION_REASSOCIATION",
+    "scalar_reference": "TEST_LOCAL_SEPARATE_PYFLOAT_OPCODES;BUILD_ABI_AND_ENV_PIN_REQUIRED;NO_UNIVERSAL_PORTABILITY_CLAIM",
+    "single_BLAS_thread_sufficient": false
+  },
+  "failure_semantics": [
+    "INVALID_MODEL_INPUT_OR_ENV=>QUALIFICATION_FAIL_CLOSED",
+    "CANONICAL_BATCH_BYTE_MISMATCH=>DESIGN_OR_IMPLEMENTATION_UNRESOLVED",
+    "OLD_BLAS_MISMATCH_IS_COMPARISON_NOT_NEW_PASS",
+    "NO_TOLERANCE_OR_FALLBACK",
+    "MISSING_PRIVATE_FUTURE_INPUT=>INPUT_INSUFFICIENT",
+    "NO_NEW_SOURCE_OR_GRANT=>NO_PRIVATE_EXECUTION"
+  ],
+  "forbidden_operation_counters": {
+    "CALIBRATION_FIT": 0,
+    "D2_DEV_ONE_STEP": 0,
+    "D2_RECURSIVE_ROLLOUT": 0,
+    "D2_TRAIN_DECISION_SELECTION": 0,
+    "E2_Q1_Q3_NEW_PRIVATE_CALLS": 0,
+    "FAKE_CI_SUCCESS": 0,
+    "HOLDOUT_DISCOVERY": 0,
+    "HOLDOUT_OPENINGS": 0,
+    "LFS_POINTER_REPLACEMENT": 0,
+    "NEW_CANDIDATE_SEARCH": 0,
+    "NEW_POLICY_ARM": 0,
+    "NORMALIZER_REFIT": 0,
+    "ORIGINAL_SCIENTIFIC_SOURCE_WRITES": 0,
+    "POSTHOC_THRESHOLD_TUNING": 0,
+    "PRIVATE_MODEL_READS": 0,
+    "PRIVATE_SCIENTIFIC_ARRAY_READS": 0,
+    "RAW_LOG_QLOG_OPENINGS": 0,
+    "SKIP_REQUIRED_CI_ASSETS": 0,
+    "STAGE1_STAGE2_REFIT": 0,
+    "STAGE2_RUNTIME_REPLACEMENT": 0,
+    "UNAUTHORIZED_LFS_UPLOAD": 0,
+    "VEHICLE_ACTIVATION": 0,
+    "WORKFLOW_VALIDATION_BYPASS": 0
+  },
+  "future_execution": {
+    "D2_decisions": 64,
+    "folds": [
+      "FOLD_A",
+      "FOLD_B"
+    ],
+    "jobs": 32,
+    "phase_order": [
+      "EXPLICIT_NEW_SOURCE_POLICY_NUMERICAL_CONTRACT_APPROVAL",
+      "APPROVED_NATIVE_OR_SCALAR_IMPLEMENTATION_AND_SYNTHETIC_FINAL_BYTE_REVIEWS_CI",
+      "FRESH_PRIVATE_BINDING_RESOURCE_ALLOWLIST_GRANT",
+      "QUALIFY_MODEL_SOURCE_NORMALIZER_ORDER_AND_D0_CANONICAL_REFERENCE",
+      "ALL32_CACHE_SELECTED_D0_QUALIFICATION",
+      "TRAIN_ONLY64_DECISIONS_UNCHANGED_RECIPE",
+      "ALL32_FINAL_D2_SELECTED_QUALIFICATION",
+      "DURABLE_TRAIN_SEAL_READBACK",
+      "DEV_BARRIER",
+      "ONE_STEP_ALL_HORIZONS_ALL22_FROZEN32",
+      "TWO_FRESH_INDEPENDENT_REPEATS_BYTE_EXACT",
+      "VERIFY_ONLY_NO_SOURCE_OR_INFERENCE",
+      "PRIVACY_SAFE_PUBLICATION_STOP"
+    ],
+    "policies": [
+      "D0",
+      "D1",
+      "D2"
+    ],
+    "policy_adoption": false,
+    "private_execution_authorized_now": false
+  },
+  "future_validation_domains": {
+    "count": 22,
+    "raw_sha256": "52f6fdf8e05c9f950aecf2a610cc4ea9220d6c01a96afd1a9afb3ed58a114004",
+    "source_file": "empirical-hurdle-stage1-v4-d2-evaluation-contract.json",
+    "traceability": [
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 1,
+        "source_pointer": "/validation_domains/0"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 2,
+        "source_pointer": "/validation_domains/1"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 3,
+        "source_pointer": "/validation_domains/2"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 4,
+        "source_pointer": "/validation_domains/3"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 5,
+        "source_pointer": "/validation_domains/4"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 6,
+        "source_pointer": "/validation_domains/5"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 7,
+        "source_pointer": "/validation_domains/6"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 8,
+        "source_pointer": "/validation_domains/7"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 9,
+        "source_pointer": "/validation_domains/8"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 10,
+        "source_pointer": "/validation_domains/9"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 11,
+        "source_pointer": "/validation_domains/10"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 12,
+        "source_pointer": "/validation_domains/11"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 13,
+        "source_pointer": "/validation_domains/12"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 14,
+        "source_pointer": "/validation_domains/13"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 15,
+        "source_pointer": "/validation_domains/14"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 16,
+        "source_pointer": "/validation_domains/15"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 17,
+        "source_pointer": "/validation_domains/16"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 18,
+        "source_pointer": "/validation_domains/17"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 19,
+        "source_pointer": "/validation_domains/18"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 20,
+        "source_pointer": "/validation_domains/19"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 21,
+        "source_pointer": "/validation_domains/20"
+      },
+      {
+        "additional_requirement": "BIND_NEW_NUMERICAL_BRANCH_AND_QUALIFY_CANONICAL_PATH_IDENTITY_WHERE_APPLICABLE",
+        "legacy_verification_and_failure_behavior": "UNCHANGED",
+        "order": 22,
+        "source_pointer": "/validation_domains/21"
+      }
+    ]
+  },
+  "historical": {
+    "A": "ORIGINAL_SEGMENT_ORDER_FIXED512_ALL_ROW_BLAS_CACHE",
+    "C": "ORIGINAL_WHOLE_JOB_D0_SELECTED_ROW_BLAS",
+    "E2_V1_V2": "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+    "Q1": "E2_V2_Q1_BATCH_LAYOUT_NUMERICAL_DIFFERENCE_CONFIRMED",
+    "no_retroactive_pass": true,
+    "observation": "ONE_PUBLICLY_REPORTED_AUTHENTICATED_TRAIN_JOB;X_Z_COEFFICIENT_NORMALIZER_EQUAL;FLOAT_BITS_AND_VALUES_DIFFER;TICKS_EQUAL",
+    "original_V4_head": "bd8045ef2a0da62a92603439f38e7740f5923622",
+    "relative_physical_accuracy": "NOT_IDENTIFIED",
+    "specific_kernel_FMA": "NOT_IDENTIFIED"
+  },
+  "implementation_authorized": false,
+  "mission": "STAGE1_V4_E2_DETERMINISTIC_NUMERICS_DESIGN_AND_CI_LFS_TRIAGE",
+  "primary_references": [
+    "https://numpy.org/doc/stable/reference/generated/numpy.matmul.html",
+    "https://docs.python.org/3.12/tutorial/floatingpoint.html",
+    "https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html"
+  ],
+  "private_access_authorized": false,
+  "public_identity": {
+    "empirical-hurdle-acceptance-gate-v1.json": {
+      "raw_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+      "receipt_sha256": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60"
+    },
+    "empirical-hurdle-stage1-v4-d2-evaluation-contract.json": {
+      "raw_sha256": "52f6fdf8e05c9f950aecf2a610cc4ea9220d6c01a96afd1a9afb3ed58a114004",
+      "receipt_sha256": "eb7aa2c671d2d185685bcf450d4084b0aab5a6b19ad72695277d624788c760be"
+    },
+    "empirical-hurdle-stage1-v4-d2-loss-aware-policy.json": {
+      "raw_sha256": "51eea816f6f2d3f648a9030dc6cf2d1718fb456bf3d0e6e9903ac34ae2e6bba7",
+      "receipt_sha256": "cc7c3ba36f1bd3f1930c801b023d37858cdb86d26263fe4ab8881018b608da60"
+    },
+    "empirical-hurdle-stage1-v4-e2-execution-protocol-v2.json": {
+      "raw_sha256": "7a4e02966d921759430a4b6c3c9ca1f343f400a293e4f79f1a9a73fb8aaeeb2f",
+      "receipt_sha256": "be0bc8005695b03bff57a128374cf535eee76989d4b52c3239f29d1f1967bd08"
+    },
+    "empirical-hurdle-stage1-v4-e2-numerical-qualification-v2.json": {
+      "raw_sha256": "7a51775da2ec0edd18c21abf73d78123f940cff3c8e125ddac0cd43857427ccf",
+      "receipt_sha256": "dfca44a4a0658f09568d657b4961a565b28be29c60d6634e3ff3ec972d796755"
+    },
+    "empirical-hurdle-stage1-v4-e2-v2-q1-diagnostic-protocol-v2.json": {
+      "raw_sha256": "d33b3be20b84b6f0cf1848799e6c1e3c299dac227ddbeea8cc2c1cd28bbae725",
+      "receipt_sha256": "e08aa2a648d237fc6e45d09ef7f6c8b55b4658115e35cf4ccf43f43438d5f129"
+    },
+    "empirical-hurdle-stage1-v4-e2-v2-q1-reader-repair-results.json": {
+      "raw_sha256": "e41ef762b9ce7d6b166c97d7bac0111d65d9184b74f8cfb92e1cd5a39fd30913",
+      "receipt_sha256": "1861bddece3525dc8dcb6bdc2db7e844176f6b9eeeac7205e09c424a6f60e0ec"
+    }
+  },
+  "receipt_sha256": "0b1a3cfb4751d78ef635bd28fc21e0c3ba285682fe1f867cc25ef19f6fcc5559",
+  "recommended_definition": {
+    "authority": "PROPOSED_PROSPECTIVE_NUMERICAL_SEMANTICS_ONLY",
+    "constant_columns": "EXCLUDED_BY_FROZEN_EFFECTIVE;constant_reference_IS_IDENTITY_VALIDATION_ONLY_NOT_A_TRANSFORM_OPERAND",
+    "constant_std_validation": "FROZEN_std[constant]==0;constant_reference_IDENTITY_ONLY",
+    "data": "SAME_ORIGINAL_COEFFICIENTS_NORMALIZER_FEATURE_ORDER_EFFECTIVE_COLUMNS;NO_REFIT",
+    "dot": [
+      "acc=POSITIVE_BINARY64_ZERO",
+      "FOR_EACH_EFFECTIVE_COLUMN_IN_FIXED_ORDER",
+      "product=RN64(z[column]*beta[column])",
+      "acc=RN64(acc+product)"
+    ],
+    "effective_order": "EXACT_FROZEN_ASCENDING_UNIQUE_EFFECTIVE_INDEX;FIRST_COLUMN0;NO_SORT_AT_EXECUTION",
+    "feature_dimensions": [
+      5,
+      13,
+      33,
+      93
+    ],
+    "input_dtype": "IEEE754_BINARY64",
+    "intercept": "z[0]=POSITIVE_BINARY64_ONE;DO_NOT_SUBTRACT_MEAN_OR_DIVIDE_STD_FOR_INTERCEPT",
+    "invalid": "REJECT_NONFINITE_INPUT_OR_ANY_INTERMEDIATE;STD_EFFECTIVE_NONINTERCEPT_MUST_BE_POSITIVE;NO_CLIP_OR_ROW_DROP",
+    "name": "CANONICAL_STAGE2_SEPARATE_BINARY64_LEFT_FOLD_V1",
+    "nonintercept": [
+      "difference=RN64(x[column]-mean[column])",
+      "z=RN64(difference/std[column])"
+    ],
+    "not_allowed": [
+      "matmul",
+      "BLAS",
+      "np.sum",
+      "Python_sum",
+      "math.fsum",
+      "FMA",
+      "reassociation",
+      "fast_math",
+      "lower_precision",
+      "new_normalization"
+    ],
+    "projection": "ORIGINAL_PROJECT_RN64(current_tick+delta),np.rint_TIES_EVEN,SIGNED16_FAIL_CLOSED;UNCHANGED",
+    "rounding": "ROUND_TO_NEAREST_TIES_EVEN_EACH_SUB_DIV_MUL_ADD",
+    "signed_zero": "IEEE754_OPERATION_RESULTS_PRESERVED;NO_POSTHOC_ZERO_REWRITE;RAW_BYTES_INCLUDE_ZERO_SIGN",
+    "subnormal": "GRADUAL_UNDERFLOW_REQUIRED;NO_FTZ_OR_DAZ;UNDERFLOW_TO_SIGNED_ZERO_IS_RN64_NOT_ROW_REPAIR"
+  },
+  "resource_design": {
+    "P": [
+      5,
+      13,
+      33,
+      93
+    ],
+    "auxiliary_memory": "O(N+P)_WITHOUT_FULL_TRANSFORM_OUTPUT;OPTIONAL_TEST_Z_IS_O(N*P)",
+    "binary64_output_bytes_max": 2695528,
+    "existing_8GiB_limit": "NOT_REQUALIFIED_BY_THIS_STANDALONE_SYNTHETIC_BENCHMARK",
+    "full_E2_CPU_RSS_feasible": "NOT_PROVEN;FEATURE_ASSEMBLY_SELECTOR_STAGE1_RECURSIVE_COST_NOT_MEASURED",
+    "max_N": 336941,
+    "native_speedup_estimate": "NO_SUPPORTED_MEASURED_ESTIMATE",
+    "new_native_kernel_needed_for_feasibility": "NOT_SHOWN_NECESSARY_BY_TRAIN_SCALAR_TIMING;NATIVE_OPTION_REQUIRES_SEPARATE_QUALIFICATION",
+    "one_pass_32_jobs_P93_seconds_linear_estimate": 172.175987136,
+    "one_pass_dimension_aware_seconds_linear_estimate": 66.64876921393548,
+    "test_reference_full_input_bytes_max": 250684104,
+    "time": "O(N*P)",
+    "train_cache_Q1_Q3_worst_three_pass_seconds_linear_estimate": 516.527961408
+  },
+  "safety": {
+    "D0": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
+    "D1": "E_EXECUTION_COMPLETE_D1_NOT_ADMISSIBLE",
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED": true,
+    "HOLDOUT": "CLOSED",
+    "Hugging_Face": "NOT_USED_FOR_PRIVATE_SCIENTIFIC_INPUT",
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT": true,
+    "REAL_VEHICLE_UNVERIFIED": true,
+    "V5": "NOT_AUTHORIZED",
+    "VEHICLE_ACTIVATION_BLOCKED": true,
+    "composition": "NOT_AUTHORIZED",
+    "pooled_refit": "NOT_AUTHORIZED",
+    "selected_candidate": null,
+    "selected_policy": null,
+    "vehicle": "NOT_READY",
+    "vehicle_authority": "NONE"
+  },
+  "schema": "CYBERPILOT_V4_DETERMINISTIC_NUMERICS_DESIGN_V1",
+  "scope": "PUBLIC_STATIC_ANALYSIS_AND_SYNTHETIC_DESIGN_ONLY",
+  "source_sha256": {
+    "empirical_hurdle_fit_cv_execution.py": "a952eb4986f47e0335bf355ee74868755f14b592d05070008a0b117979d4e635",
+    "empirical_hurdle_fit_cv_math.py": "b410b2f0138848faf4e976094a1bd4f3cc3ac44418b54a24310717c6261e0e73",
+    "empirical_hurdle_v4_e2_decision.py": "689c3ab3afe34719fa517aa59fc0fee09ef70bc70a3dac954b62a0a0dbdf61b1",
+    "empirical_hurdle_v4_e2_numerical_diagnostic.py": "650ff2e7a8bed63c690d5e0d032d9c927bb21197b479ffb039931015cc6c83b6",
+    "empirical_hurdle_v4_e2_v2_q1_diagnostic.py": "315473ced53da08ae35e5efc0a8d4118c96a8af05473c260b9d03c0ff0609db5",
+    "empirical_hurdle_v4_e2_v2_qualification.py": "3349d72cb59d88dbef7e04a7f0d6bc125508800be474a0bbe098fe34162ecc0b",
+    "empirical_hurdle_v4_fitting_policy.py": "529c6c14832a18bc18eb51409e1637ca2c003892d62aa883f900c238d59be76f",
+    "empirical_s2_ri_fit_cv_math.py": "a1c1203c8222df067064ff1891aafa82cdafd997338c7ca7687a321c66777f29",
+    "tests/test_empirical_hurdle_v4_e2_deterministic_numerics_design.py": "85f4cb7363b28c1dafd8f9e2b3b479400f2b83f0d0080ea050d5b53f547be39e"
+  },
+  "status": "E2_DETERMINISTIC_NUMERICS_DESIGN_FROZEN_IMPLEMENTATION_PENDING",
+  "synthetic_predeclaration": {
+    "aligned60": "UNCHANGED_EXISTING_synthetic_controls",
+    "benchmarks": {
+      "N": [
+        8192,
+        336941
+      ],
+      "P": 93,
+      "native_wall": "NOT_MEASURED_NOT_IMPLEMENTED",
+      "repetitions_each": 1,
+      "seed": 20261019
+    },
+    "boundaries": [
+      "ONE_ULP_HALF_TICK",
+      "SIGNED_ZERO",
+      "FMA_COUNTEREXAMPLE",
+      "SUBNORMAL",
+      "NONFINITE",
+      "OVERFLOW",
+      "CONSTANT_COLUMNS",
+      "EMPTY_GATE"
+    ],
+    "conditions": [
+      "single_row",
+      "fixed512",
+      "full1537",
+      "fixture_mask",
+      "sparse",
+      "dense",
+      "alternating",
+      "first_last",
+      "unrelated_adjacent_rows",
+      "Fortran_layout"
+    ],
+    "dimensions": [
+      5,
+      13,
+      33,
+      93
+    ],
+    "inputs": "EXACT_ORIGINAL60_FIXTURE_INPUTS;NO_NEW_SEED_SEARCH",
+    "new_batch_oracle_fixtures": 60,
+    "no_runtime_use": true,
+    "original60": "UNCHANGED_SEED20261018_LENGTHS1_5_15_45_SCALES_1e-6_1_100_MASKS_LOW_MEDIUM_HIGH_ALTERNATING_CONTIGUOUS",
+    "parity60": "UNCHANGED_EXISTING_parity_control",
+    "partitions": [
+      0,
+      1,
+      511,
+      512,
+      513,
+      1025,
+      1536,
+      1537
+    ],
+    "row_count": 1537,
+    "synthetic_targets": "(row_index%5)-2;current_tick=0;NO_REAL_TRUTH"
+  },
+  "validation_results": {
+    "benchmark": [
+      {
+        "CPU_seconds_process": 0.15051570400000003,
+        "N": 8192,
+        "P": 93,
+        "input_bytes": 6094848,
+        "output_bytes": 65536,
+        "output_sha256": "97b7dcf48160245e243f94c653bca721d79cfeb6473afd92a4f1244d6b1d7806",
+        "peak_RSS_KiB": 55252,
+        "wall_seconds_kernel": 0.1364512020000035
+      },
+      {
+        "CPU_seconds_process": 5.630413234,
+        "N": 336941,
+        "P": 93,
+        "input_bytes": 250684104,
+        "output_bytes": 2695528,
+        "output_sha256": "52e7be5b814baca867d5877d73d3dc8bf1510731d30a0b7df55e52a0e54ff0ae",
+        "peak_RSS_KiB": 532816,
+        "wall_seconds_kernel": 5.380499598
+      }
+    ],
+    "benchmark_note": "ONE_TIMED_PASS_EACH;PEAK_RSS_INCLUDES_INPUT_GENERATION;NOT_FULL_RUNNER_OR_ROLLOUT_MEASUREMENT",
+    "environment": {
+      "BLAS": "OpenBLAS 0.3.34.106.0 USE64BITINT DYNAMIC_ARCH Haswell",
+      "BLAS_threads": 1,
+      "architecture": "x86_64",
+      "numpy": "2.5.3",
+      "python": "3.12.13",
+      "workers": 1
+    },
+    "fixture_measurement": {
+      "cpu_seconds": 10.384845889000001,
+      "peak_RSS_KiB": 55684,
+      "wall_seconds": 10.398999212000007
+    },
+    "half_tick_boundary": "DEDICATED_SYNTHETIC_ONE_ULP_CAN_CHANGE_PROJECTED_TICK;NOT_OBSERVED_IN_60_CURRENT_RANDOM_FIXTURES",
+    "native_performance": "NOT_IMPLEMENTED_NOT_MEASURED",
+    "scope": "PUBLIC_SYNTHETIC_ONLY_NOT_D2_PERFORMANCE",
+    "synthetic": {
+      "aligned60": {
+        "C_vs_A_byte_mismatch_fixtures": 21,
+        "fixtures": 60,
+        "max_C_vs_A_ULP": 12
+      },
+      "canonical60": {
+        "SAE_different_fixtures": 10,
+        "SSE_different_fixtures": 10,
+        "all_batch_checks_PASS": true,
+        "batch_checks_per_fixture": 10,
+        "fixtures": 60,
+        "historical_BLAS_byte_mismatch_fixtures": 60,
+        "max_ULP": 7261,
+        "max_absolute_difference": 1.3642420526593924e-12,
+        "max_relative_difference": 1.1940812267672278e-12,
+        "normalization_byte_parity_fixtures": 60,
+        "projection_mismatch_fixture_count": 0
+      },
+      "original60": {
+        "B_vs_A_byte_mismatch_fixtures": 0,
+        "C_vs_A_byte_mismatch_fixtures": 21,
+        "fixtures": 60,
+        "max_B_vs_A_ULP": 0
+      },
+      "parity60": {
+        "B_vs_A_byte_mismatch_fixtures": 44,
+        "C_vs_A_byte_mismatch_fixtures": 42,
+        "fixtures": 60,
+        "max_B_vs_A_ULP": 80
+      }
+    }
+  },
+  "version": "V4_E2_CANONICAL_STAGE2_NUMERICAL_DESIGN_V1"
+}
