@@ -239,12 +239,16 @@
     "protocol": "CANONICAL_E2_PRIVATE_PROTOCOL_FROZEN"
   },
   "private_execution_authorized": false,
-  "receipt_sha256": "8c16d06220573b326ce6fb53a7eeed9d23b6dea3c3ebfc2a37b2f6d6a0f57533",
+  "receipt_sha256": "4d9cee94a642fa4370f105ed0c2c8eb4ae6ac9eaf64d7834d30861a0fbf2ceef",
+  "source_freeze_reviews": {
+    "authority": "773148846640b1ccadb7078d052cbf064a16fa837c1e732a4c1a2aa5f7be44bf",
+    "science": "ba4f25a9e3f5af03e1b4dcd69b5a0e39d15b7aff5a210ad0c501590a99e549d7"
+  },
   "source_sha256": {
     ".github/workflows/cyberpilot-numerical-offline.yaml": "fb4a30fbe4377998bae4f9d1f07fb21ca3da6197074766729a89c16f02885918",
     "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-private-readiness-contract.json": "8497df17570a34941af97d774282c8981f918f5b8c728b7343cee8106a7cf993",
     "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-private-readiness-protocol.json": "b83a7ae832f09ef31ae9308f992e086b2c41b123a936999a825492435ef4b7f7",
-    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-readiness.md": "bb2b3a87717eecaba9b98bfd4d4d262e7c7c139887e49c34702581cbb37d29ea",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-readiness.md": "c1f6a8fe8decc1761c2aca5741109958a7812832110f63cc5d0847ce62581d3c",
     "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_evaluation.py": "fa91fd508094c69af377ef2c3d06c191f0898ed10730af8cbef480cc32c6cac8",
     "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_execution.py": "232e95b2cdd819382375a26055bf2de385b10a2efde06970f861217204852382",
     "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_inputs.py": "18334770e930675947249cd9d7bc2bc6f378f270cb84ca5029be643ec32ca567",
@@ -254,17 +258,170 @@
     "tools/cyberpilot/canonical_readiness_fixture.py": "df9793960b9cb57a6f2b355337844d95829ba7e5970a62337cab5b2d222ec690",
     "tools/cyberpilot/run_canonical_readiness.py": "d98c95248fcaa6320d039ab464c20805a7921bd650c86f116c2275d58a895ae5"
   },
-  "two_reviews": "FINAL_EXACT_BYTES_REQUIRED_IN_COMMIT_HANDOFF",
+  "two_reviews": "FINAL_EXACT_MANIFEST_REVIEW_RECEIPTS_IN_PUBLICATION_COMMIT_MESSAGE",
   "validation": {
     "Ruff": "PASS",
     "SCons": "PASS_EXISTING_ENVIRONMENT",
+    "commit_a_exact_head_CI": {
+      "full": {
+        "conclusion": "failure",
+        "downstream_checks": "SKIPPED",
+        "failing_step": "Set up openpilot development environment",
+        "failure": "UPSTREAM_LFS_HTTP404",
+        "head_sha": "d8888e6df82a320ffac218159965b1a6d938377b",
+        "html_url": "https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/39227226841",
+        "id": 39227226841,
+        "missing_oid_count": 15,
+        "status": "completed"
+      },
+      "head": "d8888e6df82a320ffac218159965b1a6d938377b",
+      "offline": {
+        "conclusion": "success",
+        "head_sha": "d8888e6df82a320ffac218159965b1a6d938377b",
+        "html_url": "https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/39227227008",
+        "id": 39227227008,
+        "status": "completed"
+      },
+      "offline_91_log_lines": [
+        "2026-10-19T09:04:37.8023134Z Ran 91 tests in 34.487s",
+        "2026-10-19T09:04:57.2021696Z Ran 29 tests in 18.746s"
+      ],
+      "offline_log_summary": {
+        "FULL_CI_certified": false,
+        "audit": {
+          "denied": 6,
+          "resource_stats": {
+            "CPU_system_seconds": 0.024036,
+            "CPU_user_seconds": 0.578881,
+            "Linux_peak_RSS_KiB": 76556,
+            "VmPeak_KiB": 131104
+          }
+        },
+        "comparison": "BYTE_EXACT_SYNTHETIC_REPEATS",
+        "private_execution_authorized": false,
+        "repeat_envelopes": [
+          {
+            "binding": {
+              "HOLDOUT": "CLOSED",
+              "head": "d8888e6df82a320ffac218159965b1a6d938377b",
+              "implementation_lock_raw_sha256": "239e4c1e5585d5fa2c84e1240dc2396fe14fad61a220558d9db352b688f407e5",
+              "private_authority": false,
+              "protocol_receipt": "0825a9485cc290d8f9e31d104a37ad78f442907c9f61ca0ba663f37ac728e9b6",
+              "protocol_sha256": "b83a7ae832f09ef31ae9308f992e086b2c41b123a936999a825492435ef4b7f7",
+              "scope": "SYNTHETIC_ONLY",
+              "source_sha256": {
+                "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_evaluation.py": "fa91fd508094c69af377ef2c3d06c191f0898ed10730af8cbef480cc32c6cac8",
+                "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_execution.py": "232e95b2cdd819382375a26055bf2de385b10a2efde06970f861217204852382",
+                "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_inputs.py": "18334770e930675947249cd9d7bc2bc6f378f270cb84ca5029be643ec32ca567",
+                "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_output.py": "bc3ecf9729eb241a3129410ba4eab18f5e2681a512cc408947ac4c598a693f15",
+                "tools/cyberpilot/canonical_readiness_fixture.py": "df9793960b9cb57a6f2b355337844d95829ba7e5970a62337cab5b2d222ec690",
+                "tools/cyberpilot/run_canonical_readiness.py": "d98c95248fcaa6320d039ab464c20805a7921bd650c86f116c2275d58a895ae5"
+              },
+              "vehicle_authority": "NONE"
+            },
+            "completion_digest": "c2beca65884bb301daec502e19d9cb0ce011e53af891f9328dfe666bf5c1bfc3",
+            "output_bytes": 1727446,
+            "output_file_count": 3,
+            "resources": {
+              "CPU_system_seconds": 0.071995,
+              "CPU_user_seconds": 8.281459,
+              "Linux_peak_RSS_KiB": 76556,
+              "VmPeak_KiB": 151556
+            },
+            "wall_seconds": 7.816411207000002
+          },
+          {
+            "binding": {
+              "HOLDOUT": "CLOSED",
+              "head": "d8888e6df82a320ffac218159965b1a6d938377b",
+              "implementation_lock_raw_sha256": "239e4c1e5585d5fa2c84e1240dc2396fe14fad61a220558d9db352b688f407e5",
+              "private_authority": false,
+              "protocol_receipt": "0825a9485cc290d8f9e31d104a37ad78f442907c9f61ca0ba663f37ac728e9b6",
+              "protocol_sha256": "b83a7ae832f09ef31ae9308f992e086b2c41b123a936999a825492435ef4b7f7",
+              "scope": "SYNTHETIC_ONLY",
+              "source_sha256": {
+                "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_evaluation.py": "fa91fd508094c69af377ef2c3d06c191f0898ed10730af8cbef480cc32c6cac8",
+                "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_execution.py": "232e95b2cdd819382375a26055bf2de385b10a2efde06970f861217204852382",
+                "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_inputs.py": "18334770e930675947249cd9d7bc2bc6f378f270cb84ca5029be643ec32ca567",
+                "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_output.py": "bc3ecf9729eb241a3129410ba4eab18f5e2681a512cc408947ac4c598a693f15",
+                "tools/cyberpilot/canonical_readiness_fixture.py": "df9793960b9cb57a6f2b355337844d95829ba7e5970a62337cab5b2d222ec690",
+                "tools/cyberpilot/run_canonical_readiness.py": "d98c95248fcaa6320d039ab464c20805a7921bd650c86f116c2275d58a895ae5"
+              },
+              "vehicle_authority": "NONE"
+            },
+            "completion_digest": "c2beca65884bb301daec502e19d9cb0ce011e53af891f9328dfe666bf5c1bfc3",
+            "output_bytes": 1727446,
+            "output_file_count": 3,
+            "resources": {
+              "CPU_system_seconds": 0.089975,
+              "CPU_user_seconds": 8.224734,
+              "Linux_peak_RSS_KiB": 76556,
+              "VmPeak_KiB": 151552
+            },
+            "wall_seconds": 7.789125460999998
+          }
+        ],
+        "repeat_validation_domain20": "VERIFIED_TWO_FRESH_PROCESSES",
+        "scope": "CANONICAL_SYNTHETIC_READINESS_CI",
+        "stress": {
+          "N": 336941,
+          "P": 93,
+          "byte_exact": true,
+          "finite_boolean_bytes_upper": 31335513,
+          "fixed512_calls": 659,
+          "full_private_capacity_certified": false,
+          "input_bytes": 250684104,
+          "output_bytes": 4043296,
+          "resources": {
+            "CPU_system_seconds": 0.050990999999999995,
+            "CPU_user_seconds": 12.51601,
+            "Linux_peak_RSS_KiB": 431800,
+            "VmPeak_KiB": 509040
+          },
+          "scope": "MAX_SHAPE_SYNTHETIC_KERNEL_ONLY",
+          "selected_copy_bytes": 125342424,
+          "wall_seconds": 11.960814986000003,
+          "whole_selected_calls": 1
+        },
+        "success": true,
+        "tests": 29,
+        "two_fresh_processes": true,
+        "verify_only": [
+          {
+            "inference_calls": 0,
+            "scientific_recomputations": 0,
+            "source_rereads": 0,
+            "source_writes": 0,
+            "status": "VERIFIED_SYNTHETIC_ONLY"
+          },
+          {
+            "inference_calls": 0,
+            "scientific_recomputations": 0,
+            "source_rereads": 0,
+            "source_writes": 0,
+            "status": "VERIFIED_SYNTHETIC_ONLY"
+          }
+        ]
+      }
+    },
     "compileall": "PASS",
     "focused": {
       "passed": 29,
       "seconds": 17.388,
       "tests": 29
     },
-    "full_local": "PENDING_FRESH_CLEAN_COMMIT",
+    "full_local": {
+      "changed_sources_after_run": false,
+      "command": "python -B tools/test_runner.py openpilot/tools/cyber_autotune/tests openpilot/selfdrive/controls/tests -j4",
+      "head": "d8888e6df82a320ffac218159965b1a6d938377b",
+      "log_raw_sha256": "8e017dbdc9e0b810a2e7189549d0494c8d98d8d6fc6bf3af417a90c62c2b814d",
+      "passed": 5822,
+      "private_drive_guard": "Fresh user/mount namespace; /mnt/d and /mnt/e replaced by empty read-only tmpfs; no original drive reads",
+      "runtime": "prepared Ubuntu24.04 CPython3.12.13 environment",
+      "scope": "LOCAL_FULL_REGRESSION",
+      "seconds": 615.69,
+      "status": "PASS"
+    },
     "lateral": {
       "passed": 16,
       "seconds": 0.107,
@@ -276,7 +433,12 @@
       "seconds": 29.904,
       "tests": 91
     },
-    "publication": "PENDING_FINAL_AUDIT",
+    "publication": {
+      "files": 13,
+      "final_head_observation": "REQUIRED_IN_FINAL_HANDOFF",
+      "findings": 0,
+      "scope": "PUBLIC_SYNTHETIC_ONLY"
+    },
     "source_bound_synthetic_measurement": {
       "FULL_CI_certified": false,
       "audit": {
@@ -419,7 +581,7 @@
         }
       ]
     },
-    "two_reviews": "FINAL_EXACT_BYTES_REQUIRED"
+    "two_reviews": "SOURCE_FREEZE_APPROVED_FINAL_DELTA_RECEIPTS_REQUIRED_IN_COMMIT_MESSAGE"
   },
   "version": "V4_E2_CANONICAL_READINESS_IMPLEMENTATION_LOCK_V1"
 }
