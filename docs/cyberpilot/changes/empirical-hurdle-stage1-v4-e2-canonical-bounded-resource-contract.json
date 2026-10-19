@@ -1,0 +1,445 @@
+{
+  "CPU_wall": {
+    "D2": "Original O(N log N), worst-case unique N scores; periodic stress does not measure that case.",
+    "Stage1_head_calls": "Two logistic heads per recursive bridge call; row subsets depend on projected context.",
+    "Stage2_calls": "At most one selected canonical call per recursive step/chunk; upper bound assumes all MOVE.",
+    "all_N_all_horizon_anchors_assumed": true,
+    "horizons": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "required_Stage2_terms_per_CPU_second_before_other_work": 52225855.0,
+    "status": "CANONICAL_E2_RUNTIME_BOUND_UNPROVEN",
+    "throughput": "Synthetic extrapolation is an estimate only; no6h CPU/12h wall guarantee."
+  },
+  "IO_capacity": {
+    "disk_reserve": "2GiB future host preflight required; no private host inspected.",
+    "input_caps_unchanged": true,
+    "no_private_reads_in_mission": true,
+    "output_durable_store_cap_bytes": 402653184,
+    "source_reread_authorized": false,
+    "status": "UNPROVEN_ACTUAL_BINDING_PENDING"
+  },
+  "baseline_head": "14be3988381171db1921158283472d0c4ae32892",
+  "calculation": {
+    "hard_caps": {
+      "AS_bytes": 8589934592,
+      "BLAS_threads": 1,
+      "CPU_seconds": 21600,
+      "disk_reserve_bytes": 2147483648,
+      "input_bytes": 68719476736,
+      "input_opens": 3000,
+      "output_bytes": 402653184,
+      "wall_seconds": 43200,
+      "workers": 1
+    },
+    "lease_limits": {
+      "cache": 32,
+      "dev_vectors": 1,
+      "feature": 1,
+      "horizon": 1,
+      "selected": 1,
+      "trace": 1
+    },
+    "logical_buffer_scenario_bytes": 6016244488,
+    "memory_status": "CANONICAL_E2_RESOURCE_PREFLIGHT_UNPROVEN",
+    "not_proven": [
+      "Native/BLAS/allocator retention is not bounded by logical lease counts.",
+      "Actual private source/model/member/anchor counts and I/O chain have not been opened.",
+      "Measured synthetic throughput is not a worst-case CPU/wall guarantee."
+    ],
+    "phase_buffers": {
+      "C_POTENTIAL": {
+        "feature": 250684104,
+        "feature_chunk": 380928,
+        "feature_hash_copy": 250684104,
+        "finite_boolean": 31335513,
+        "history_validation_upper": 485195040,
+        "potential_projection_vectors": 21564224
+      },
+      "D_G_QUALIFICATION": {
+        "feature": 250684104,
+        "feature_hash_copy": 250684104,
+        "finite_boolean": 31335513,
+        "history_validation_upper": 485195040,
+        "reference_expected_projection_vectors": 26955280,
+        "selected": 250684104
+      },
+      "F_SELECTION": {
+        "context_copies": 32346336,
+        "four_channel_tree_sort_sweep": 134217728
+      },
+      "J_ONE_STEP": {
+        "DEV_vectors": 26955280,
+        "feature": 250684104,
+        "feature_hash_copy": 250684104,
+        "history_validation_upper": 485195040,
+        "normalization_and_Stage1_workspace": 1002736416,
+        "selected": 250684104
+      },
+      "J_RECURSIVE": {
+        "DEV_metadata": 26955280,
+        "drift_and_validation": 13107200,
+        "horizon_chunk": 2830336,
+        "metric_vectors_and_original_P95_copies": 32346336,
+        "recursive_feature_workspace": 3047424,
+        "trace": 39526400
+      }
+    },
+    "phase_totals": {
+      "C_POTENTIAL": 4789149353,
+      "D_G_QUALIFICATION": 5044843585,
+      "F_SELECTION": 3915869504,
+      "J_ONE_STEP": 6016244488,
+      "J_RECURSIVE": 3867118416
+    },
+    "private_execution_ready": false,
+    "retained": {
+      "DEV_horizon_anchor_indices_32": 345027584,
+      "DEV_source_indices_32": 86256896,
+      "Python_native_allocator_reserve_assumption": 2147483648,
+      "TRAIN_cache_32": 172513792,
+      "TRAIN_metadata_and_indices_32": 528323488,
+      "models_receipts": 8388608,
+      "result_and_serialization": 402653184,
+      "source_snapshot_and_admission_copy": 58658240
+    },
+    "runtime_status": "CANONICAL_E2_RUNTIME_BOUND_UNPROVEN",
+    "status": "CANONICAL_E2_RESOURCE_PREFLIGHT_UNPROVEN",
+    "worst_case": {
+      "D2_sorted_sweep_node_channel_work_upper": 1638881024,
+      "Q1_selected_calls_upper": 32,
+      "Q3_selected_calls_upper": 32,
+      "all_row_calls_upper": 25984,
+      "recursive_Stage1_calls": 23724000,
+      "recursive_Stage2_calls_upper": 23724000,
+      "recursive_Stage2_terms_upper": 1128078468000,
+      "recursive_row_steps": 12129876000
+    }
+  },
+  "caller_source_sha256": {
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_bounded.py": "11e94639dbdc5a3a59a761fd3f87acaf868e0b8334f948d4ff99e869b1529cc7",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_bounded_inputs.py": "ed5bef0825e0f487955f1dae216a3e5b12f59a3f724a14881b95c28ae5c006c9",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_resources.py": "be25aa9cb34a1a4b2184941f1be035f6b96641f063256545882d47852d1f7212"
+  },
+  "copy_accounting": [
+    "immutable source admission and retained caller alias",
+    "advanced-index selected x creates whole copy; ascontiguousarray does not create second when already C",
+    "feature/cache/source hashing tobytes creates transient copies",
+    "normalization/finite-validation boolean NxP",
+    "original Stage1/history validation workspaces",
+    "four-channel fixed tree/context/sort copies",
+    "full-vector exact P95 copies",
+    "canonical JSON serialization/readback copies",
+    "Store file/input/output byte caps",
+    "Python/native allocator reserve is an assumption, not a proof"
+  ],
+  "graph_enforcement": {
+    "DEV_TRAIN_cache_count_after_retirement": 0,
+    "TRAIN_cache_bytes_upper": 172513792,
+    "actual_code": [
+      "BoundedTrainPipeline.cache_potentials/_qualification",
+      "BoundedRun.evaluate unlock/retire_train",
+      "BoundedSyntheticProvider.features/dev_job/horizon_chunk",
+      "Lifetime owner dedup/weakref release"
+    ],
+    "allocator_caveat": "del/weakref death does not imply RSS or virtual-memory return. Native allocations and allocator retention remain unbounded by the census.",
+    "lease_census": "Post-allocation logical owner checks, not an allocator interceptor or OS sandbox. Worker RLIMIT_AS is independent. Owners shared by views are counted once.",
+    "maximum_active_horizon_chunk": 1,
+    "maximum_active_recursive_trace": 1,
+    "maximum_full_feature_matrices": 1,
+    "maximum_whole_selected_feature_copies": 1,
+    "owner_base_accounting": "Admitted view and ultimate ndarray owner weakrefs; final immutable bytes owner kept once in registry until final owning lease. CPython reference-count check rejects retained raw bytes aliases. Borrowed owners with another admitted lease remain counted there. No RSS return claim.",
+    "runtime_constraint": "Owner-alias release accounting requires CPython; separately validated on CPython3.12.13. Other runtimes fail closed."
+  },
+  "lifetime_graph": {
+    "B": "all32 saved TRAIN D0 decisions; no feature matrix retained",
+    "C": "one full job feature +512 assembly workspace; all32 u/move_tick caches retained; feature lease ends each job",
+    "D": "one rematerialized full feature plus one whole-selected copy; Q1 across all32 before D2",
+    "E_F": "no feature matrix; original D1 and D2 context sorts/four-channel tree at one context at a time",
+    "G": "same full+selected lifetime as Q1; final winners immutable; no reselection",
+    "H_I": "durable TRAIN proof/readback; compute compact TRAIN score summaries; clear all32 caches and TRAIN vector dictionaries; weakref-dead required before DEV processing",
+    "J_one_step": "one DEV metadata and full feature lease; arms sequential; only aggregate metrics survive",
+    "J_recursive": "per arm/horizon exact full error/baseline/moved vectors retained to preserve original P95/reduction; one globally ordered512 anchor source chunk and one trace; no full paths for other horizons/jobs",
+    "admission": {
+      "copy_risks": [
+        "caller source plus immutable snapshot copy during admission",
+        "digest C-order tobytes copies",
+        "fixture preparation peak outside provider lease census"
+      ],
+      "retained": "immutable SourceBlock bytes owners, exact row indices, tiny models, TRAIN saved vectors"
+    },
+    "after_job": "DEV rows/score/features/horizon trace released; only JSON aggregates/models/source blocks remain",
+    "repeat": "fresh process and exclusive output; no reuse of prior results"
+  },
+  "memory_status": "CANONICAL_E2_RESOURCE_PREFLIGHT_UNPROVEN",
+  "private_execution_authorized": false,
+  "receipt_sha256": "e829515e492b9e92e757462bd40a17241e6c3328dcbf2aa05ad1fc181b67967b",
+  "scenario_interpretation": "Conservative logical scenario deliberately includes retained TRAIN vectors/caches also in DEV totals even after actual retirement. It is a conditional accounting scenario, not total peak AS certification.",
+  "scope": "PUBLIC_SYNTHETIC_ONLY",
+  "synthetic_evidence": {
+    "development_measurement_count": 1,
+    "final_capped_measurement_count": 2,
+    "maxshape": {
+      "CPU_seconds": 29.601939269,
+      "N": 336941,
+      "P": 93,
+      "Q1": {
+        "mode": "WHOLE_JOB_SELECTED_ROWS",
+        "selected_stage2_calls": 1,
+        "status": "PASS"
+      },
+      "Q3": {
+        "mode": "WHOLE_JOB_SELECTED_ROWS",
+        "selected_stage2_calls": 1,
+        "status": "PASS"
+      },
+      "counter": {
+        "D0_TRAIN_reconstruction_calls": 1,
+        "Q1_selected_calls": 1,
+        "Q1_selected_calls_rows": 140392,
+        "Q3_selected_calls": 1,
+        "Q3_selected_calls_rows": 196548,
+        "canonical_all_row_calls": 659,
+        "canonical_all_row_calls_rows": 336941,
+        "canonical_all_row_projection_calls": 1,
+        "canonical_all_row_projection_calls_rows": 336941
+      },
+      "lifetime": {
+        "allocations": {
+          "cache": 1,
+          "feature": 1,
+          "selected": 2,
+          "source": 1,
+          "train_vectors": 1
+        },
+        "allocator_return_claimed": false,
+        "live_counts": {
+          "cache": 1,
+          "source": 1,
+          "train_vectors": 1
+        },
+        "live_owner_bytes": 29999434,
+        "peak_counts": {
+          "cache": 1,
+          "feature": 1,
+          "selected": 1,
+          "source": 1,
+          "train_vectors": 1
+        },
+        "peak_tracked_owner_bytes": 426915250
+      },
+      "private_execution_authorized": false,
+      "resources": {
+        "CPU_system_seconds": 1.2131859999999999,
+        "CPU_user_seconds": 28.540316,
+        "Linux_peak_RSS_KiB": 1077228,
+        "VmPeak_KiB": 1164696
+      },
+      "runtime_worst_case_certified": false,
+      "scope": "MAX_SHAPE_SINGLE_JOB_UNIT_NOT_GLOBAL_E2",
+      "wall_seconds": 29.201537057999985
+    },
+    "maxshape_worker_caps": {
+      "AS_bytes": 8589934592,
+      "CPU_seconds": 900,
+      "parent_wall_timeout_seconds": 1800,
+      "single_BLAS_thread": true
+    },
+    "measurement_scope": "Includes public fixture/admission preparation and original selectors. Periodic commands, all rows and unmodified candidate set. Other public tests ran concurrently; timing is not isolated worst-case performance qualification.",
+    "no_native_allocator_or_private_host_proof": true,
+    "previous_capped_measurement_superseded_by_owner_fix": true,
+    "small_32_job_repeats": [
+      {
+        "lifetime": {
+          "allocations": {
+            "cache": 32,
+            "dev_score": 32,
+            "dev_vectors": 32,
+            "feature": 128,
+            "horizon": 384,
+            "indices_models": 64,
+            "selected": 64,
+            "source": 64,
+            "trace": 384,
+            "train_vectors": 32
+          },
+          "allocator_return_claimed": false,
+          "live_counts": {
+            "indices_models": 64,
+            "source": 64
+          },
+          "live_owner_bytes": 1145984,
+          "peak_counts": {
+            "cache": 32,
+            "dev_score": 1,
+            "dev_vectors": 1,
+            "feature": 1,
+            "horizon": 1,
+            "indices_models": 64,
+            "selected": 1,
+            "source": 64,
+            "trace": 1,
+            "train_vectors": 32
+          },
+          "peak_tracked_owner_bytes": 1873928
+        },
+        "materialization_counters": {
+          "DEV_probability_validation_calls": 64,
+          "feature_materializations": 128,
+          "feature_rows": 26624
+        },
+        "output_bytes": 1732196,
+        "phase_timings": {
+          "B_ALL32_D0": {
+            "CPU_seconds": 0.016005643000000014,
+            "wall_seconds": 0.01826517300003161
+          },
+          "COMPLETE_SYNTHETIC_REPEAT": {
+            "CPU_seconds": 0.0,
+            "wall_seconds": 9.240000053978292e-07
+          },
+          "C_ALL32_POTENTIALS": {
+            "CPU_seconds": 0.131985845,
+            "wall_seconds": 0.1306420649999609
+          },
+          "D_ALL32_Q1": {
+            "CPU_seconds": 0.09994028099999996,
+            "wall_seconds": 0.09983462100001361
+          },
+          "E_ALL64_D1": {
+            "CPU_seconds": 0.012000081000000051,
+            "wall_seconds": 0.013357174000020677
+          },
+          "F_ALL64_D2": {
+            "CPU_seconds": 0.14798344799999996,
+            "wall_seconds": 0.1475629649999064
+          },
+          "G_ALL32_Q3": {
+            "CPU_seconds": 0.10922906499999996,
+            "wall_seconds": 0.10681296099994597
+          },
+          "H_DURABLE_TRAIN": {
+            "CPU_seconds": 0.007874993000000052,
+            "wall_seconds": 0.015671829999973852
+          },
+          "I_DEV_UNLOCK": {
+            "CPU_seconds": 0.024359543999999955,
+            "wall_seconds": 0.02608961500004625
+          },
+          "J_THREE_ARM_DEV": {
+            "CPU_seconds": 7.9008315300000005,
+            "wall_seconds": 7.783615058999999
+          },
+          "K_FROZEN32_22": {
+            "CPU_seconds": 0.0,
+            "wall_seconds": 3.050999907827645e-06
+          }
+        },
+        "resources": {
+          "CPU_system_seconds": 0.10965599999999999,
+          "CPU_user_seconds": 8.817154,
+          "Linux_peak_RSS_KiB": 81636,
+          "VmPeak_KiB": 157692
+        }
+      },
+      {
+        "lifetime": {
+          "allocations": {
+            "cache": 32,
+            "dev_score": 32,
+            "dev_vectors": 32,
+            "feature": 128,
+            "horizon": 384,
+            "indices_models": 64,
+            "selected": 64,
+            "source": 64,
+            "trace": 384,
+            "train_vectors": 32
+          },
+          "allocator_return_claimed": false,
+          "live_counts": {
+            "indices_models": 64,
+            "source": 64
+          },
+          "live_owner_bytes": 1145984,
+          "peak_counts": {
+            "cache": 32,
+            "dev_score": 1,
+            "dev_vectors": 1,
+            "feature": 1,
+            "horizon": 1,
+            "indices_models": 64,
+            "selected": 1,
+            "source": 64,
+            "trace": 1,
+            "train_vectors": 32
+          },
+          "peak_tracked_owner_bytes": 1873928
+        },
+        "materialization_counters": {
+          "DEV_probability_validation_calls": 64,
+          "feature_materializations": 128,
+          "feature_rows": 26624
+        },
+        "output_bytes": 1732193,
+        "phase_timings": {
+          "B_ALL32_D0": {
+            "CPU_seconds": 0.025138523999999995,
+            "wall_seconds": 0.02357717000006687
+          },
+          "COMPLETE_SYNTHETIC_REPEAT": {
+            "CPU_seconds": 0.0,
+            "wall_seconds": 9.499999578110874e-07
+          },
+          "C_ALL32_POTENTIALS": {
+            "CPU_seconds": 0.117301989,
+            "wall_seconds": 0.11351212200008831
+          },
+          "D_ALL32_Q1": {
+            "CPU_seconds": 0.10054610200000003,
+            "wall_seconds": 0.09410595700001068
+          },
+          "E_ALL64_D1": {
+            "CPU_seconds": 0.012568739999999967,
+            "wall_seconds": 0.01228928000000451
+          },
+          "F_ALL64_D2": {
+            "CPU_seconds": 0.15079443299999995,
+            "wall_seconds": 0.14613350600006925
+          },
+          "G_ALL32_Q3": {
+            "CPU_seconds": 0.12149247500000004,
+            "wall_seconds": 0.11555540999995628
+          },
+          "H_DURABLE_TRAIN": {
+            "CPU_seconds": 0.009328242000000042,
+            "wall_seconds": 0.018532004000007873
+          },
+          "I_DEV_UNLOCK": {
+            "CPU_seconds": 0.025126668999999935,
+            "wall_seconds": 0.025037991999965925
+          },
+          "J_THREE_ARM_DEV": {
+            "CPU_seconds": 8.063204736,
+            "wall_seconds": 7.8645827440000176
+          },
+          "K_FROZEN32_22": {
+            "CPU_seconds": 0.0,
+            "wall_seconds": 3.5619999607661157e-06
+          }
+        },
+        "resources": {
+          "CPU_system_seconds": 0.074053,
+          "CPU_user_seconds": 9.067479,
+          "Linux_peak_RSS_KiB": 81636,
+          "VmPeak_KiB": 157816
+        }
+      }
+    ],
+    "status": "MEASURED_FINAL_OWNER_ACCOUNTING_PUBLIC_SYNTHETIC_ONLY"
+  },
+  "version": "V4_E2_CANONICAL_BOUNDED_RESOURCE_CONTRACT_V1"
+}
