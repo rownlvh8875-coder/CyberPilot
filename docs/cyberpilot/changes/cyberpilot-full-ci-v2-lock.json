@@ -1,0 +1,21 @@
+{
+  "baseline_head": "5af7b52d9fd16f43e1def6f9b75e9f7913d14f53",
+  "native_production_integration_authorized": false,
+  "private_execution_authorized": false,
+  "receipt_sha256": "1df4b404396f2f724b634ccd5e68281ec4a92940fe4c7d25aa952efba994ea64",
+  "self_referential_commit_or_ci_run": false,
+  "source_pin_rewrites": 0,
+  "source_sha256": {
+    ".github/workflows/cyberpilot-full-validation-v2.yaml": "51aaab6fcc427a65a315da846900554e6d0987048380527a5a55f49c5faae0a0",
+    "docs/cyberpilot/changes/cyberpilot-full-ci-lfs-recovery-inventory.json": "993de4536578a5f6474383a3d83248c90699468cf82adeb045d8ef9340fa2d64",
+    "docs/cyberpilot/changes/cyberpilot-full-ci-v2-baseline-test-ids.txt": "e293db84c944594175ed50bba9d98408692ecd63054e17c96656a2bf004c870b",
+    "docs/cyberpilot/changes/cyberpilot-full-ci-v2-contract.json": "246bf463c1260813595e0f87791de7625a6830779f414bd14b1dafb560e8629c",
+    "docs/cyberpilot/changes/cyberpilot-full-ci-v2-source-pin-amendment.json": "3e11dc232c0473437205d4ec1ce00877de6b0f4d3c8d13e881e6f7084e11d9ff",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-native-bounded-contract-v1.json": "a1dcd09942a9f7df0f57cac9b6443f0abe0789063d94941d1f5e9df7136e3f16",
+    "openpilot/tools/cyber_autotune/tests/test_full_ci_v2.py": "41c3b5b953dd4dae48d2c60f3dfb9d7b790f5cd5752a9c8c08749b1205346f74",
+    "tools/cyberpilot/full_ci_test_manifest.py": "9b06609f51a2504de3b24c602a30ccf2b0598ddb24d267c0ffe58f661e2f686b",
+    "tools/cyberpilot/verify_full_ci_coverage.py": "e548bffd22980340b254bbdeb1ff3f4fddc39f8a24a82adfbbbc5016a85e66ef",
+    "tools/test_runner.py": "179982db2be8c21a87551a51ec3d608755447d052ae831f7cfaabe3efa8a115b"
+  },
+  "version": "CYBERPILOT_FULL_CI_V2_IMPLEMENTATION_LOCK_V1"
+}

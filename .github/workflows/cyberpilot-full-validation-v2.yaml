@@ -1,0 +1,198 @@
+name: CyberPilot Full Validation V2
+
+on:
+  push:
+    branches: [feature/cyber-autotune]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: cyberpilot-full-v2-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CI: 1
+  PYTHONPATH: ${{ github.workspace }}
+  PYTHONDONTWRITEBYTECODE: 1
+  OPENBLAS_NUM_THREADS: 1
+  OMP_NUM_THREADS: 1
+  MKL_NUM_THREADS: 1
+  GIT_CONFIG_COUNT: 1
+  GIT_CONFIG_KEY_0: lfs.fetchexclude
+  GIT_CONFIG_VALUE_0: openpilot/selfdrive/modeld/models/big_driving_tinygrad.pkl
+
+jobs:
+  validate:
+    name: Original full coverage with two workers
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    outputs:
+      artifact_id: ${{ steps.evidence_upload.outputs.artifact-id }}
+      evidence_sha256: ${{ steps.evidence_capture.outputs.evidence_sha256 }}
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Set up openpilot development environment
+        id: setup
+        run: ./tools/op.sh setup
+
+      - name: Audit publication before build
+        id: publication_before
+        run: |
+          git fetch --no-tags origin main:refs/remotes/origin/main
+          python3 tools/cyberpilot/check_publication.py --base origin/main
+
+      - name: Verify frozen source pins and materialized original LFS assets
+        id: source_lfs
+        run: python3 -B tools/cyberpilot/full_ci_test_manifest.py sources --output "$RUNNER_TEMP/full-ci-v2/source-before.json"
+
+      - name: Build openpilot
+        id: build
+        run: scons -j2
+
+      - name: Ruff CyberPilot sources
+        id: ruff
+        run: |
+          ruff check \
+            tools/cyberpilot \
+            openpilot/tools/cyber_autotune \
+            openpilot/selfdrive/controls/lib/cyber_lateral \
+            openpilot/selfdrive/controls/lib/cyber_long \
+            openpilot/selfdrive/controls/tests/test_cyber_*.py \
+            openpilot/selfdrive/test/process_replay/*cyber_lateral*.py
+
+      - name: Install attribution test runner in CI
+        id: test_dependency
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          uv pip install --python .venv/bin/python pytest==9.1.1
+
+      - name: Build fresh verified public Native C11 fixture
+        id: native_build
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(gcc-13 -dumpfullversion)" = '13.3.0'
+          python3 -B tools/cyberpilot/run_canonical_runtime_feasibility.py --build "$RUNNER_TEMP/cyberpilot-full-ci-native"
+          python3 -B - <<'PY'
+          import hashlib
+          import os
+          from pathlib import Path
+          receipt = Path(os.environ['RUNNER_TEMP']) / 'cyberpilot-full-ci-native/build.json'
+          assert receipt.is_absolute() and '\n' not in str(receipt)
+          digest = hashlib.sha256(receipt.read_bytes()).hexdigest()
+          with open(os.environ['GITHUB_ENV'], 'a') as output:
+            output.write('CYBERPILOT_PUBLIC_NATIVE_RECEIPT=' + str(receipt) + '\n')
+            output.write('CYBERPILOT_PUBLIC_NATIVE_RECEIPT_SHA256=' + digest + '\n')
+          PY
+
+      - name: Verify explicit Native receipt binary ABI and numerical environment
+        id: native_verify
+        run: python3 -B tools/cyberpilot/full_ci_test_manifest.py native --output "$RUNNER_TEMP/full-ci-v2/native-verified.json"
+
+      - name: Run all AutoTune and controls tests with exact ID coverage
+        id: autotune_controls
+        run: python3 -B tools/cyberpilot/full_ci_test_manifest.py run --workers 2 --output "$RUNNER_TEMP/full-ci-v2/regression"
+
+      - name: Run Stage1 V4 saved-evidence attribution tests
+        id: attribution
+        run: python3 -m pytest -q openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_attribution.py
+
+      - name: Check Python syntax and branch whitespace
+        id: syntax
+        run: |
+          python3 -m compileall -q openpilot/tools/cyber_autotune tools/cyberpilot
+          git diff --check origin/main...HEAD
+
+      - name: Run focused Cyber lateral replay tests
+        id: lateral
+        run: |
+          python3 -m unittest -q \
+            openpilot.selfdrive.test.process_replay.test_cyber_lateral_card_replay \
+            openpilot.selfdrive.test.process_replay.test_cyber_lateral_native_experiment
+
+      - name: Validate policy and evidence JSON
+        id: json
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            python3 -m json.tool "$file" >/dev/null
+          done < <(find docs/cyberpilot/policies docs/cyberpilot/changes -type f -name '*.json' -print0)
+
+      - name: Audit changed files for private evidence and credentials
+        id: publication_after
+        run: |
+          git fetch --no-tags origin main:refs/remotes/origin/main
+          python3 tools/cyberpilot/check_publication.py --base origin/main
+
+      - name: Verify final source pins and original LFS assets
+        id: source_after
+        run: python3 -B tools/cyberpilot/full_ci_test_manifest.py sources --output "$RUNNER_TEMP/full-ci-v2/source-after.json"
+
+      - name: Verify clean working tree
+        id: clean
+        run: |
+          git diff --exit-code
+          git diff --cached --exit-code
+          test -z "$(git status --porcelain)"
+
+      - name: Capture complete stage evidence even on failure
+        id: evidence_capture
+        if: always()
+        env:
+          CI_V2_STEPS_JSON: ${{ toJSON(steps) }}
+        run: python3 -B tools/cyberpilot/verify_full_ci_coverage.py capture --directory "$RUNNER_TEMP/full-ci-v2" --evidence "$RUNNER_TEMP/full-ci-v2/evidence.json"
+
+      - name: Upload same-run public coverage evidence without binaries
+        id: evidence_upload
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: full-ci-v2-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/full-ci-v2/evidence.json
+            ${{ runner.temp }}/full-ci-v2/regression/regression.log
+            ${{ runner.temp }}/full-ci-v2/regression/resources.json
+          if-no-files-found: error
+          retention-days: 14
+
+  complete:
+    name: CYBERPILOT_FULL_CI_V2_COMPLETE_COVERAGE_GATE
+    needs: validate
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact source only for evidence verification
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+          lfs: false
+          submodules: false
+
+      - name: Require exact producing job artifact ID and SHA before download
+        env:
+          CI_V2_NEEDS_JSON: ${{ toJSON(needs) }}
+        run: python3 -B tools/cyberpilot/verify_full_ci_coverage.py preflight
+
+      - name: Download exact producing-job artifact from this run
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          artifact-ids: ${{ needs.validate.outputs.artifact_id }}
+          path: ${{ runner.temp }}/full-ci-v2-gate
+
+      - name: Require all stages jobs and exact test IDs to have succeeded
+        env:
+          CI_V2_NEEDS_JSON: ${{ toJSON(needs) }}
+          CI_V2_EXPECTED_EVIDENCE_SHA256: ${{ needs.validate.outputs.evidence_sha256 }}
+        run: python3 -B tools/cyberpilot/verify_full_ci_coverage.py verify --directory "$RUNNER_TEMP/full-ci-v2-gate" --evidence "$RUNNER_TEMP/full-ci-v2-gate/evidence.json"

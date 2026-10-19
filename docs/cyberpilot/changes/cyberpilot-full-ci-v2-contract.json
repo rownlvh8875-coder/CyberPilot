@@ -1,0 +1,106 @@
+{
+  "authority": {
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "HOLDOUT": "CLOSED",
+    "native_production": false,
+    "private_e2": false,
+    "private_train_dev_metadata_models": false,
+    "vehicle_authority": "NONE"
+  },
+  "baseline_collection_errors": 0,
+  "baseline_count": 5927,
+  "baseline_head": "5af7b52d9fd16f43e1def6f9b75e9f7913d14f53",
+  "baseline_id_manifest": "docs/cyberpilot/changes/cyberpilot-full-ci-v2-baseline-test-ids.txt",
+  "baseline_sorted_ids_sha256": "e293db84c944594175ed50bba9d98408692ecd63054e17c96656a2bf004c870b",
+  "coverage": [
+    "complete current collection",
+    "baseline IDs subset of final",
+    "each collected ID once passed",
+    "missing0",
+    "duplicate0",
+    "collectionError0",
+    "skip0",
+    "xfailed0",
+    "xpassed0",
+    "no filters",
+    "no test removal"
+  ],
+  "final_gate": {
+    "always_runs": true,
+    "artifact_binding": [
+      "exact producer artifact ID",
+      "job-output bundle SHA256",
+      "same GitHub run ID",
+      "exact HEAD",
+      "canonical receipt",
+      "all required stages success"
+    ],
+    "json_evidence_only_no_binary_transfer": true,
+    "name": "CYBERPILOT_FULL_CI_V2_COMPLETE_COVERAGE_GATE",
+    "requires_validate_job_success": true,
+    "separate_job": true
+  },
+  "fixture_semantics": "Unmodified original collect/make_batches/run_parallel/run_batch; class/module fixture grouping retained",
+  "initial_parallel_workers": 2,
+  "job_timeout_minutes": 45,
+  "legacy_workflow_sha256": "30fbd6d6138fd4b44b9371ce0f803ed500bf662d287463d4a28a0585654d28d4",
+  "measurement_limits": [
+    "local host is not GitHub VM",
+    "subprocess-family RSS/VM sums double-count shared pages",
+    "250ms sampler can miss transients",
+    "unmodified runner does not expose individual worker exit codes",
+    "no worst-case private E2 capacity claim"
+  ],
+  "mission": "CYBERPILOT_FULL_CI_RUNTIME_SHARDING_AND_NATIVE_FIXTURE_PREPARATION",
+  "native_fixture": {
+    "binary_upload_or_cache": false,
+    "compiler_version": "13.3.0",
+    "existing_builder_unchanged": true,
+    "existing_flags_receipt_ABI_unchanged": true,
+    "fresh_each_validate_job": true,
+    "private_execution_authorized": false,
+    "runtime_integration_authorized": false,
+    "source_sha256": "1af1bfa0ce165b47104980ed917375de5fd1c2385c7c0d8429c6f8b7d0e7115e",
+    "wrapper_sha256": "a89a4473e3d9cacf3a42ca5056a656c42b757dc12f1358a071a7e28545215092"
+  },
+  "new_workflow": ".github/workflows/cyberpilot-full-validation-v2.yaml",
+  "original_targets": [
+    "openpilot/tools/cyber_autotune/tests",
+    "openpilot/selfdrive/controls/tests"
+  ],
+  "receipt_sha256": "d23025e60554e402573aa41092b3a8a0da90dba7e8b505fa9fffac3024e92e33",
+  "required_stages": [
+    "checkout",
+    "setup",
+    "publication_before",
+    "source_lfs",
+    "build",
+    "ruff",
+    "test_dependency",
+    "native_build",
+    "native_verify",
+    "autotune_controls",
+    "attribution",
+    "syntax",
+    "lateral",
+    "json",
+    "publication_after",
+    "source_after",
+    "clean"
+  ],
+  "runner": "tools/test_runner.py",
+  "runner_raw_sha256": "179982db2be8c21a87551a51ec3d608755447d052ae831f7cfaabe3efa8a115b",
+  "scope": "PUBLIC_FULL_CI_RUNTIME_AND_NATIVE_FIXTURE_REPAIR_ONLY",
+  "sharding": "NOT_APPLIED; only if stable two-worker evidence insufficient",
+  "unchanged": [
+    "231 original source pins",
+    "252 LFS pointer bytes",
+    "original full workflow",
+    "four independent numerical workflows",
+    "D0/D1/D2/scientific sources",
+    "historical results",
+    "Native source/wrapper/compiler flags"
+  ],
+  "validation_scope": "FULL_CI_V2",
+  "version": "CYBERPILOT_FULL_CI_V2_CONTRACT_V1"
+}
