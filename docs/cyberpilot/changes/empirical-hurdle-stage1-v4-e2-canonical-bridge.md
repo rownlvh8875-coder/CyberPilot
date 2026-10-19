@@ -9,7 +9,7 @@
 
 ## Identity and purpose
 
-Area: Cyber Validation / AutoTune research. Branch feature/cyber-autotune, baseline `99cd6aa62d00bfb2a27b8d5fcf08cf06cdb129cb`. Status: source frozen and public synthetic qualified; fresh full local regression and exact-head publication pending. Standalone bridge status: EXPERIMENTAL_CANONICAL_RESEARCH_NON_WIRED.
+Area: Cyber Validation / AutoTune research. Branch feature/cyber-autotune, baseline `99cd6aa62d00bfb2a27b8d5fcf08cf06cdb129cb`. Status: CANONICAL_D0_D1_D2_RESEARCH_BRIDGE_SYNTHETIC_QUALIFIED; CANONICAL_SOURCE_GUARD_CONTRACT_FROZEN. Final exact-head CI observation remains in handoff. Standalone bridge status: EXPERIMENTAL_CANONICAL_RESEARCH_NON_WIRED.
 The scenario is a fair future comparison of three existing policy recipes under one new Stage2 arithmetic definition. Historical BLAS references remain immutable. This increment uses public synthetic inputs only and neither demonstrates D2 driving improvement nor admits a model.
 
 ## Original references
@@ -60,9 +60,11 @@ Historical failures, D2 PERFORMANCE_NOT_EVALUATED, selectionsnull, HOLDOUT CLOSE
 ## Validation method and actual results
 
 - TDD: absent module test failed with CANONICAL_RESEARCH_BRIDGE_NOT_IMPLEMENTED; initial16 focused checks passed. Three additional RED cases exposed missing float64 qualification, mutable final winner and mutable D0 guard reference; implementation then passed20 checks.
-- Full32 pipeline Q1 32/32, D2 64/64, Q3 32/32, three-arm one-step and all four recursive horizons passed. Final bridge focused suite:30 PASS (9.549s). Minimal pinned environment Offline suite:91 PASS (30.911s), comprising all prior61 plus30 bridge tests; private adapters imported0. Fresh full local regression and exact-head CI: PENDING_NEW_RUN.
+- Full32 pipeline Q1 32/32, D2 64/64, Q3 32/32, three-arm one-step and all four recursive horizons passed. Final bridge focused suite:30 PASS (9.549s). Minimal pinned environment Offline suite:91 PASS (30.911s), comprising all prior61 plus30 bridge tests; private adapters imported0. Fresh LOCAL_FULL_REGRESSION: 5793 PASS in 607.08s on clean source commit `ac0ea44cc87f3c98bfc0b973d6e0223deb159b6a`, four workers, D/E mount points masked by empty read-only filesystems. Includes B0/B1/C/D/E1/E2, attribution, numerical/threshold/loss-tree and controls/lateral public synthetic tests. No skips or test removal. Final exact-head CI remains separately observed.
 - Qualified final bridge raw `5add917e1b56ed308bdfe9eaa06dfd77f3ef21f3630cd15836277bafc0d07322`: predeclared synthetic benchmark wall8.092192216s, process CPU8.061672201s, Linux peak RSS69,636KiB. Retained unique array owners20,873,408 bytes (snapshots11,052,544; potentials532,480; one-step3,863,552; traces5,691,072; component counts may overlap); maximum selected feature copy773,760 bytes, four-channel tree65,536 bytes/context and temporary loss leaves49,920 bytes. Source-qualified once on these final arithmetic bytes; older developmental measurements are kept separate. Synthetic384 path/horizon calls cover36,000 recursive steps. No full private E2 capacity claim.
 - Broad scoped Ruff and compileall passed. Lateral card/native public synthetic tests16 PASS. SCons passed in the existing activated development environment; an earlier invocation without its PATH could not locate cythonize/capnpc and was an environment setup failure, not a code/test failure.
+- Additional unmasked H1 check initially returned73/74 PASS: an existing host symlink made the safety predicate reject earlier with a different expected exception category. No source was modified; the same case passes in the isolated full regression.
+- Source-freeze exact-head GitHub Offline CI `39218360059` SUCCESS91; Full CI `39218360277` FAILURE in development-environment setup, upstream Hugging Face LFS15 OIDs HTTP404, all build/test steps skipped. These are source-freeze records, not substitutes for the final publication commit. Final run IDs/status belong in handoff to avoid receipt cycles.
 - Empirical/private E2, vehicle replay/simulation/shadow: NOT RUN / NOT AUTHORIZED. Synthetic recursion is no vehicle closed-loop validation. Source-grid tick is not physical EPS movement; logged normalized command is not applied EPS torque.
 
 ## Handoff
