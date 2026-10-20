@@ -8,6 +8,7 @@ import argparse
 from collections import Counter
 import json
 from pathlib import Path
+from typing import NotRequired, TypedDict
 
 from openpilot.tools.cyber_autotune.contracts import finite_number
 from openpilot.tools.cyber_autotune.native_protocol import _unique_pairs, canonical, digest
@@ -40,9 +41,19 @@ def metric_delta(baseline, candidate, direction: str) -> dict:
   return {**result, 'oriented_delta': delta, 'relative_improvement': relative, 'status': status}
 
 
+class _AxisDiagnostics(TypedDict):
+  completed_variants: int
+  rejected_input_variants: int
+  changed_trace_variants: int
+  changed_car_params_variants: int
+  regression_count: int
+  regressions_by_metric: dict[str, int]
+  effect_status: NotRequired[str]
+
+
 def _candidate(base, candidate, verdict, policy):
   variants = []
-  axes = {axis: {'completed_variants': 0, 'rejected_input_variants': 0, 'changed_trace_variants': 0,
+  axes: dict[str, _AxisDiagnostics] = {axis: {'completed_variants': 0, 'rejected_input_variants': 0, 'changed_trace_variants': 0,
                  'changed_car_params_variants': 0, 'regression_count': 0, 'regressions_by_metric': Counter()}
           for axis in ('lateral', 'longitudinal')}
   for before, after in zip(base['results'], candidate['results'], strict=True):
