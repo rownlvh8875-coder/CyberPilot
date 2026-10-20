@@ -143,7 +143,8 @@ jobs:
         mkdir -p "$RUNNER_TEMP/cyberpilot-upstream-unit"
         python3 -B tools/cyberpilot/full_ci_test_manifest.py native --output "$RUNNER_TEMP/cyberpilot-upstream-unit/native-verified.json"
     - name: Run unit tests
-      timeout-minutes: ${{ contains(runner.name, 'nsc') && 2 || 20 }}
+      # Public run 39495056599 needed 19m27s; retain bounded headroom without changing the namespace branch.
+      timeout-minutes: ${{ contains(runner.name, 'nsc') && 2 || 30 }}
       env:
         RAYLIB_BACKEND: headless
       run: tools/op.sh test
