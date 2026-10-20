@@ -79,3 +79,11 @@ Actual5954 sorted-ID digest 2885fda977a795a36b64fe713f859d1c0b2bf4bccd652057ef19
 Longest reported test: openpilot.tools.cyber_autotune.tests.test_empirical_hurdle_v3_execution.TestV3CompleteRuns.test_32_jobs_two_independent_runs_and_trapped_resume (75.38s). Original runner does not expose fixture-inclusive per-module wall or individual worker exits; those values are not inferred. SCons-j2, attribution95, lateral16, focused27 and compileall were actually rerun successfully in this increment. Original Python/Native/scientific source hashes remain unchanged.
 
 The failed initial development probe remains in results as5926 PASS/1ERROR with source mutation; it is not reused as a passing regression. No matrix shards are introduced unless actual GitHub worker2 evidence proves insufficient. Final GitHub run IDs/results are reported in the immutable final handoff to avoid a commit/run hash cycle.
+
+## CI contract revision2: public YAML dependency
+
+First exact-head V2 run39343266604 at4513f7fe1d3d2eee3908ff9f27cd3ac8529da31a failed:5950 PASS /4ERROR in1240.52s. All four errors were ModuleNotFoundError: yaml in unchanged scientific workflow-integrity tests. Setup, original LFS/source checks, SCons, Ruff and fresh Native build/verification passed. Required postchecks were skipped after failure, and the final gate correctly failed. This result is preserved and is not Full CI success.
+
+The prepared local environment already had PyYAML6.0.3, which the initial explicit CI dependency preparation omitted. Revision2 installs exactly pytest9.1.1 and PyYAML6.0.3 and verifies both versions before the full runner. A new assertion in the existing CI infrastructure test first failed on the missing pin, then passes with the repair. No test ID, scientific assertion, worker setting, timeout, original workflow or Native source is removed or changed. Previous additive CI bytes remain pinned at the immutable4513f7fe1 commit; the source-pin amendment and lock advance toV2 without rewriting historical231 pins.
+
+The earlier source-frozen5954 local PASS above belongs to revision1. Revision2 source-frozen full local regression and clean GitHub execution are pending at this prepublication snapshot; final actual outcomes are recorded separately after commit/push.

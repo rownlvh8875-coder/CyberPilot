@@ -262,6 +262,8 @@ class TestCompleteGate(unittest.TestCase):
     text = (root / '.github/workflows/cyberpilot-full-validation-v2.yaml').read_text()
     self.assertIn('timeout-minutes: 45', text)
     self.assertIn('--workers 2', text)
+    self.assertIn('pytest==9.1.1 PyYAML==6.0.3', text)
+    self.assertIn("assert yaml.__version__ == '6.0.3'", text)
     self.assertIn('if: always()', text)
     self.assertNotIn('continue-on-error', text)
     self.assertNotIn(' -k ', text)

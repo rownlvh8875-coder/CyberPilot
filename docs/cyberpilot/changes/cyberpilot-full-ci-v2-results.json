@@ -17,6 +17,24 @@
     "preserve_original_log": true,
     "status": "FAILED_SOURCE_SNAPSHOT_CHANGED; not parallelism qualification"
   },
+  "current_revision_full_local_regression": "PENDING_FRESH_SOURCE_FROZEN_RUN_AFTER_FINAL_BYTES_AND_COMMIT",
+  "first_exact_head_github_run": {
+    "Ruff": "SUCCESS",
+    "SCons": "SUCCESS",
+    "conclusion": "FAILURE",
+    "coverage_gate": "FAILURE; no partial-success acceptance",
+    "downstream_postchecks": "SKIPPED_AFTER_TEST_FAILURE",
+    "head": "4513f7fe1d3d2eee3908ff9f27cd3ac8529da31a",
+    "native_fixture_build_verify": "SUCCESS",
+    "regression": {
+      "errors": 4,
+      "passed": 5950,
+      "wall_seconds": 1240.52
+    },
+    "repair": "Explicit PyYAML==6.0.3 install/version check; no assertion or test removed",
+    "root_cause": "ModuleNotFoundError: yaml in four unchanged scientific workflow-integrity tests",
+    "run_id": 39343266604
+  },
   "forbidden_actual_operations": {
     "CONTROLLER_MODIFICATIONS": 0,
     "D2_POLICY_CHANGE": 0,
@@ -46,7 +64,7 @@
     "V5_EXECUTION": 0,
     "VEHICLE_ACTIVATION": 0
   },
-  "github_full_ci_v2": "NOT_EXECUTED_AT_PREPUBLICATION_SNAPSHOT; final exact-head outcome recorded separately after push",
+  "github_full_ci_v2": "REVISION2_NOT_EXECUTED_AT_PREPUBLICATION_SNAPSHOT; final exact-head outcomes in handoff/Actions artifact",
   "legacy_workflow_unchanged": true,
   "local_additional_checks": {
     "SCons_j2": "PASS",
@@ -97,10 +115,9 @@
     "count": 27,
     "status": "PASS"
   },
-  "receipt_sha256": "78354979e01bf237d04b5e85b3adc8be232fc74d3bbccbb4a82644f24e71cd6d",
+  "receipt_sha256": "29d012b933021d3087709458da42ac091acb0b7b53c2b39504abfc179e777541",
   "resource_limits": "Local sampled subprocess-family RSS/VM sums double-count shared pages and can miss 250ms transients; not whole-job maxima or private E2 capacity evidence",
-  "snapshot": "PREPUBLICATION; exact-head Actions results are recorded in final handoff",
-  "stable_complete_local_regression": {
+  "revision1_source_frozen_local_regression": {
     "actual_test_count": 5954,
     "baseline_ids_retained": 5927,
     "collection_errors": 0,
@@ -133,6 +150,7 @@
       "wall_seconds": 1116.718452015,
       "worker_exit_codes": "NOT_EXPOSED_BY_UNMODIFIED_RUNNER"
     },
+    "revision": "FIRST_ADDITIVE_CI_VERSION; not claimed as revision2 exact-head execution",
     "slowest_reported_tests": [
       {
         "id": "openpilot.tools.cyber_autotune.tests.test_empirical_hurdle_v3_execution.TestV3CompleteRuns.test_32_jobs_two_independent_runs_and_trapped_resume",
@@ -193,5 +211,6 @@
     "wall_seconds": 1124.706782069,
     "working_tree_binding": "BASELINE_HEAD_PLUS_EXACT_REVIEWED_ADDITIVE_SOURCE_LOCK; precommit verification, not a GitHub exact-head result"
   },
-  "version": "CYBERPILOT_FULL_CI_V2_RESULTS_V1"
+  "snapshot": "PREPUBLICATION; exact-head Actions results are recorded in final handoff",
+  "version": "CYBERPILOT_FULL_CI_V2_RESULTS_V2"
 }

@@ -9,10 +9,17 @@
   "historical_workflow_raw_sha256": "30fbd6d6138fd4b44b9371ce0f803ed500bf662d287463d4a28a0585654d28d4",
   "legacy_success_reinterpreted": false,
   "new_ci_source": ".github/workflows/cyberpilot-full-validation-v2.yaml",
-  "new_ci_source_raw_sha256": "51aaab6fcc427a65a315da846900554e6d0987048380527a5a55f49c5faae0a0",
+  "new_ci_source_raw_sha256": "32d865c6051f2591fd386ab0cddfe9201188067d3fbff569e0abcc95c86df070",
   "new_current_lock": "docs/cyberpilot/changes/cyberpilot-full-ci-v2-lock.json",
+  "previous_additive_ci_revision": {
+    "contract_raw_sha256": "246bf463c1260813595e0f87791de7625a6830779f414bd14b1dafb560e8629c",
+    "head": "4513f7fe1d3d2eee3908ff9f27cd3ac8529da31a",
+    "lock_raw_sha256": "95336d2ecf9a785220702cebc04839b969f3c2a1c617636688999851e4105487",
+    "source_pin_amendment_raw_sha256": "3e11dc232c0473437205d4ec1ce00877de6b0f4d3c8d13e881e6f7084e11d9ff",
+    "workflow_raw_sha256": "51aaab6fcc427a65a315da846900554e6d0987048380527a5a55f49c5faae0a0"
+  },
   "private_execution_authority_created": false,
-  "receipt_sha256": "30d0ed9219298a28826040d1ae11eb927765ecb15755dd5628bf6ac0137f0f06",
+  "receipt_sha256": "60b059deef576bb17f71314da4b7eee6714a11c08990fef116eca7a4d95535f7",
   "scientific_source_modifications": 0,
   "separate_statuses": [
     "LEGACY_FULL_CI",
@@ -20,5 +27,5 @@
     "OFFLINE_NUMERICAL_CI",
     "NATIVE_RUNTIME_LAB"
   ],
-  "version": "CYBERPILOT_FULL_CI_V2_SOURCE_PIN_AMENDMENT_V1"
+  "version": "CYBERPILOT_FULL_CI_V2_SOURCE_PIN_AMENDMENT_V2"
 }

@@ -70,11 +70,17 @@ jobs:
             openpilot/selfdrive/controls/tests/test_cyber_*.py \
             openpilot/selfdrive/test/process_replay/*cyber_lateral*.py
 
-      - name: Install attribution test runner in CI
+      - name: Install exact public full-suite test dependencies
         id: test_dependency
         run: |
           export PATH="$HOME/.local/bin:$PATH"
-          uv pip install --python .venv/bin/python pytest==9.1.1
+          uv pip install --python .venv/bin/python pytest==9.1.1 PyYAML==6.0.3
+          python3 -B - <<'PY'
+          import pytest
+          import yaml
+          assert pytest.__version__ == '9.1.1'
+          assert yaml.__version__ == '6.0.3'
+          PY
 
       - name: Build fresh verified public Native C11 fixture
         id: native_build

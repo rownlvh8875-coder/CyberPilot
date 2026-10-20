@@ -68,7 +68,21 @@
     "openpilot/tools/cyber_autotune/tests",
     "openpilot/selfdrive/controls/tests"
   ],
-  "receipt_sha256": "d23025e60554e402573aa41092b3a8a0da90dba7e8b505fa9fffac3024e92e33",
+  "previous_additive_ci_revision": {
+    "contract_raw_sha256": "246bf463c1260813595e0f87791de7625a6830779f414bd14b1dafb560e8629c",
+    "head": "4513f7fe1d3d2eee3908ff9f27cd3ac8529da31a",
+    "lock_raw_sha256": "95336d2ecf9a785220702cebc04839b969f3c2a1c617636688999851e4105487",
+    "source_pin_amendment_raw_sha256": "3e11dc232c0473437205d4ec1ce00877de6b0f4d3c8d13e881e6f7084e11d9ff",
+    "workflow_raw_sha256": "51aaab6fcc427a65a315da846900554e6d0987048380527a5a55f49c5faae0a0"
+  },
+  "public_test_dependencies": {
+    "PyYAML": "6.0.3",
+    "explicit_import_version_preflight": true,
+    "installed_into": ".venv/bin/python",
+    "no_test_omission_or_skip": true,
+    "pytest": "9.1.1"
+  },
+  "receipt_sha256": "be4f91aea5ffff76a573c9c46ccc9dfe02fbde3ebc964f370fa557f087c587f1",
   "required_stages": [
     "checkout",
     "setup",
@@ -102,5 +116,5 @@
     "Native source/wrapper/compiler flags"
   ],
   "validation_scope": "FULL_CI_V2",
-  "version": "CYBERPILOT_FULL_CI_V2_CONTRACT_V1"
+  "version": "CYBERPILOT_FULL_CI_V2_CONTRACT_V2"
 }
