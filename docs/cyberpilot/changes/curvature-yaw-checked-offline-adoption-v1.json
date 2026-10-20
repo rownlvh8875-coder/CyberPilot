@@ -1,0 +1,78 @@
+{
+  "version": "CYBERPILOT_CHECKED_DIAGNOSTIC_OFFLINE_ADOPTION_V1",
+  "scope": "PUBLIC_SYNTHETIC_OFFLINE_ONLY",
+  "baseline_head": "bb06771140feac9926b72e9a7e144a7d6806728f",
+  "default_enabled": false,
+  "option": "offline_publication_v1",
+  "enabled_value": "exact built-in bool True only",
+  "cli_option": "--offline-publication-v1",
+  "entrypoints": [
+    "curvature_yaw_publication.produce_diagnostics",
+    "curvature_yaw_publication.admit_publication",
+    "curvature_yaw_publication.DiagnosticChannel",
+    "curvature_yaw_publication.seal_bundle",
+    "curvature_yaw_publication.read_bundle",
+    "curvature_yaw_publication.publish_bundle",
+    "curvature_yaw_publication.read_evaluation_context",
+    "curvature_yaw_diagnostics_offline_v1.run_diagnostics",
+    "curvature_yaw_diagnostics_offline_v1.validate_diagnostics",
+    "curvature_yaw_diagnostics_offline_v1.checked_diagnostics_snapshot",
+    "curvature_yaw_diagnostics_offline_v1.checked_diagnostics_view",
+    "curvature_yaw_diagnostics_offline_v1.DiagnosticSnapshotOwner",
+    "curvature_yaw_rejection_offline_v1.run_investigation",
+    "curvature_yaw_rejection_export_offline_v1.export_results",
+    "curvature_yaw_rejection_visualizer_offline_v1.render_html"
+  ],
+  "gate_error": "OFFLINE_PUBLICATION_OPT_IN_REQUIRED",
+  "qualified_flow": [
+    "exclusive private decode of immutable request bytes",
+    "private original Native transcript and diagnostic workers",
+    "complete canonical exact-source publication",
+    "runtime validation before frozen scalar records",
+    "single archive with independent evaluation context",
+    "export and run-directory render from same checked bundle"
+  ],
+  "archive_contract": "CHECKED_DIAGNOSTIC_ARCHIVE_BUNDLE_V1",
+  "publication_contract": "CHECKED_DIAGNOSTIC_OWNED_PUBLICATION_V1",
+  "source_binding": "exact six-filename/source-SHA256 tuple plus canonical receipt; version alone never suffices",
+  "legacy_source_sha256": {
+    "curvature_yaw_diagnostics": "71520f943c09a2ed93f9f505b6956ce848dbb5c2f8b28fac7a279f701bec8f42",
+    "curvature_yaw_rejection": "c8d570c156cc98beb7573ef561f801341bf53d532406278b82da090dc113380e",
+    "curvature_yaw_rejection_export": "ecd6eed4f7c911254248bd2ae88a9e51adc3d752fa17df4356ff392846cac700",
+    "curvature_yaw_rejection_visualizer": "c24624faddff681c6b6a8dfc5fbf65a634980929ed7d4558d157c412900a2bae"
+  },
+  "new_source_sha256": {
+    "openpilot/tools/cyber_autotune/curvature_yaw_rejection_offline_v1.py": "4490c5efa87817b616d3ec7c8ae892789f407608cab00daafdb70de4fba164ae",
+    "openpilot/tools/cyber_autotune/curvature_yaw_rejection_export_offline_v1.py": "b574b5715cdb9e0998fb4fa5aff4303aa008bac8e134cfc1af3f4e4c77b37a9c",
+    "openpilot/tools/cyber_autotune/curvature_yaw_diagnostics_offline_v1.py": "03b01d9493284ee3b6b0d211b2e743b61c0717d7f1927816938c4f3f84864b5e",
+    "openpilot/tools/cyber_autotune/curvature_yaw_rejection_visualizer_offline_v1.py": "82e12b894daef216f3edf9bcc13e87e2365158911a0fbce96f75a113118ba2d3",
+    "openpilot/tools/cyber_autotune/curvature_yaw_publication.py": "3f4097717cb090a8853ece9dd447c20f9b77bb39c4285daa02b093ab0e45a7c0",
+    "openpilot/tools/cyber_autotune/tests/test_curvature_yaw_owned_publication.py": "26dc9fda9cf8d2528711268bbc41ea8ddfebe851f9d2df1cecbdd48637d59bb2"
+  },
+  "legacy_policy": "original four modules, historical archive bytes and eight historical receipt/source bindings remain unchanged; use original verifier for original records",
+  "cross_source_policy": "legacy/new and wrong version/source/receipt combinations reject; no compatibility fallback or identity substitution",
+  "evaluation_context": "independently supplied canonical evaluation-envelope.json with exact keys evaluation, selection, evaluation_freeze; must match admitted archive",
+  "scope_limits": [
+    "pure calculation, metadata inspection and file-reader helpers do not activate an owned run and need not accept the opt-in flag",
+    "standalone mutable raw adapters retain validation compatibility but do not establish atomic external ownership",
+    "DiagnosticSnapshotOwner.read returns previously owned immutable state after enabled construction",
+    "ordinary Python immutability and supported API ownership; arbitrary reflection or malicious same-process code is not sandboxed",
+    "new renderer requires both run_dir and evaluation_dir; legacy standalone raw renderer remains unchanged"
+  ],
+  "static_expectation": {
+    "legacy_total": 1156,
+    "legacy_target": 49,
+    "new_file_diagnostics": 0,
+    "no_static_exclusions": true
+  },
+  "ci_collection": "existing Unit and V2 discover new six-test module without workflow or baseline-ID changes",
+  "rollback": "disable opt-in; retain separately versioned archives; if required, revert this adoption commit normally and rerun CI without history rewrite",
+  "authority": {
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "PRIVATE_E2": "NOT_AUTHORIZED",
+    "HOLDOUT": "CLOSED",
+    "VEHICLE": "NONE",
+    "selected_candidate": null,
+    "selected_policy": null
+  }
+}
