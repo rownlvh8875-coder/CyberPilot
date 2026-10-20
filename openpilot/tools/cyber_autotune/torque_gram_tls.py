@@ -42,7 +42,7 @@ class TorqueGramReport:
   promotable: bool = field(default=False, init=False)
 
 
-def _valid_request(request) -> bool:
+def _valid_request(request) -> bool | np.bool_:
   if (type(request) is not TorqueGramInput or type(request.point_count) is not int or
       not MIN_POINTS <= request.point_count <= MAX_POINTS or
       type(request.gram_xtx) is not tuple or len(request.gram_xtx) != 3 or

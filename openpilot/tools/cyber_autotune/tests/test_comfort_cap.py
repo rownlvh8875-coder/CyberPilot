@@ -1,6 +1,7 @@
 """Offline positive-acceleration hypothesis; never vehicle qualification."""
 from dataclasses import replace
 import importlib
+import importlib.util
 from pathlib import Path
 import unittest
 from unittest.mock import patch

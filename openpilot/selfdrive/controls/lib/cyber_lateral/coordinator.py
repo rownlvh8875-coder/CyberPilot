@@ -1,7 +1,7 @@
 """Exactly-once native-controller seam and read-only observation lifecycle."""
 from collections.abc import Callable
 import math
-from typing import TypeVar
+from typing import TypeVar, cast
 
 from openpilot.selfdrive.controls.lib.cyber_lateral.path_tracking import observe_path_tracking
 from openpilot.selfdrive.controls.lib.cyber_lateral.types import (
@@ -39,9 +39,9 @@ class CyberLateralCoordinator:
     if context is not None:
       timestamps = self._timestamps(context)
       if all(type(value) is int and value > 0 for value in timestamps):
-        self._times = timestamps if self._times is None else tuple(
+        self._times = timestamps if self._times is None else cast(tuple[int, int, int, int], tuple(
           max(old, new) for old, new in zip(self._times, timestamps, strict=True)
-        )
+        ))
 
   def observe(self, context: LateralContext) -> None:
     if self.config.mode == CyberLateralMode.DISABLED:
@@ -55,9 +55,9 @@ class CyberLateralCoordinator:
       return
 
     previous_times = self._times
-    self._times = timestamps if previous_times is None else tuple(
+    self._times = timestamps if previous_times is None else cast(tuple[int, int, int, int], tuple(
       max(old, new) for old, new in zip(previous_times, timestamps, strict=True)
-    )
+    ))
     numeric = (
       context.v_ego_mps, context.desired_curvature_1pm, context.current_curvature_1pm,
       context.roll_rad, context.lateral_delay_s, context.native_result.steer,

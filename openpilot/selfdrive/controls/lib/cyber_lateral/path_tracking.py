@@ -6,6 +6,7 @@ access, actuator authority, or vehicle write path.
 """
 from dataclasses import dataclass
 import math
+from typing import cast
 
 from openpilot.selfdrive.controls.lib.cyber_lateral.path_observer import PathQualityObservation
 
@@ -45,7 +46,7 @@ def observe_path_tracking(*, model_mono_time_ns: int, car_state_mono_time_ns: in
     return _invalid('missing_path_reference', model_mono_time_ns, car_state_mono_time_ns)
   if (not isinstance(path_quality, PathQualityObservation) or not path_quality.valid or
       type(path_quality.model_to_lane_center_bias_m) not in (int, float) or
-      not math.isfinite(path_quality.model_to_lane_center_bias_m)):
+      not math.isfinite(cast(float, path_quality.model_to_lane_center_bias_m))):
     return _invalid('invalid_path_reference', model_mono_time_ns, car_state_mono_time_ns)
 
   tracking_error = float(current_curvature_1pm - desired_curvature_1pm)
@@ -57,6 +58,6 @@ def observe_path_tracking(*, model_mono_time_ns: int, car_state_mono_time_ns: in
     reason='ok',
     model_mono_time_ns=model_mono_time_ns,
     car_state_mono_time_ns=car_state_mono_time_ns,
-    model_to_lane_center_bias_m=float(path_quality.model_to_lane_center_bias_m),
+    model_to_lane_center_bias_m=float(cast(float, path_quality.model_to_lane_center_bias_m)),
     curvature_tracking_error_1pm=tracking_error,
   )

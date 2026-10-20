@@ -7,6 +7,7 @@ an evidence-bound native controller adapter is supplied in a later change.
 """
 from dataclasses import dataclass
 import math
+from typing import cast
 
 from openpilot.selfdrive.controls.lib.cyber_lateral.experiments import (
   LateralExperimentVariant, OfflineLateralFeatures, features_for_variant,
@@ -50,7 +51,7 @@ class OfflineOptimizerConfig:
         self.baseline_max_magnitude_increase_per_s,
         self.baseline_max_magnitude_decrease_per_s,
       )
-      if not all(type(value) in (int, float) and math.isfinite(value) and value > 0 for value in rates):
+      if not all(type(value) in (int, float) and math.isfinite(cast(float, value)) and cast(float, value) > 0 for value in rates):
         raise ValueError('Rate-control variants require finite positive baseline rates')
     elif any(value is not None for value in (
       self.rate_limits,
@@ -165,8 +166,8 @@ class CyberLateralOptimizer:
       previous = data.applied_command if self._previous_candidate is None else self._previous_candidate
       rate = evaluate_steering_rate_candidate(
         candidate, previous, data.dt_s, self.config.rate_limits,
-        baseline_max_magnitude_increase_per_s=self.config.baseline_max_magnitude_increase_per_s,
-        baseline_max_magnitude_decrease_per_s=self.config.baseline_max_magnitude_decrease_per_s,
+        baseline_max_magnitude_increase_per_s=cast(float, self.config.baseline_max_magnitude_increase_per_s),
+        baseline_max_magnitude_decrease_per_s=cast(float, self.config.baseline_max_magnitude_decrease_per_s),
       )
       candidate = rate.candidate
       self._previous_candidate = candidate

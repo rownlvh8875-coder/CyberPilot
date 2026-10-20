@@ -1,5 +1,6 @@
 """Non-actuating stock observer; state and fault reasons stay in memory only."""
 import math
+from typing import cast
 
 from openpilot.selfdrive.controls.lib.cyber_long.types import CyberLongConfig, CyberLongMode, LongContext, LongObservation
 
@@ -23,7 +24,9 @@ class CyberLongPolicy:
     if context is not None:
       timestamps = (context.model_mono_time_ns, context.car_state_mono_time_ns, context.radar_mono_time_ns)
       if all(type(t) is int and t > 0 for t in timestamps):
-        self._times = timestamps if self._times is None else tuple(max(a, b) for a, b in zip(self._times, timestamps, strict=True))
+        self._times = timestamps if self._times is None else cast(
+          tuple[int, int, int], tuple(max(a, b) for a, b in zip(self._times, timestamps, strict=True)),
+        )
 
   def observe(self, context: LongContext) -> None:
     """Return no candidate. Rejected frames clear diagnostics, never hold them.
@@ -42,7 +45,9 @@ class CyberLongPolicy:
       self.last_reset_reason = 'invalid_timestamp'
       return
     previous_times = self._times
-    self._times = timestamps if previous_times is None else tuple(max(a, b) for a, b in zip(previous_times, timestamps, strict=True))
+    self._times = timestamps if previous_times is None else cast(
+      tuple[int, int, int], tuple(max(a, b) for a, b in zip(previous_times, timestamps, strict=True)),
+    )
     previous_binding = self._binding
     self._binding = context.binding
 
