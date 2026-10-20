@@ -14,7 +14,7 @@ def serve(html,*,port=0):
     raise ValueError('INVALID_LOOPBACK_PORT')
 
   class Handler(BaseHTTPRequestHandler):
-    def log_message(self, *args: object, **_kwargs: object) -> None:
+    def log_message(self,*args):
       pass
 
     def do_GET(self):

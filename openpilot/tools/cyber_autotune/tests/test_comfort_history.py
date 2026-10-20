@@ -1,6 +1,5 @@
 """Candidate-history coverage, not acceptance of the rejected comfort tune."""
 import importlib
-import importlib.util
 import unittest
 from unittest.mock import patch
 
