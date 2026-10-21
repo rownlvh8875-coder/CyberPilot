@@ -4,6 +4,7 @@ import argparse
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 import secrets
+from typing import override
 from openpilot.tools.cyber_autotune import approximate_geometry_diagnostic as a
 from openpilot.tools.cyber_autotune import camera_calibration_evidence as c
 from openpilot.tools.cyber_autotune import coarse_camera_height_diagnostic as h
@@ -69,7 +70,8 @@ def make_server(*, host='127.0.0.1', port=0, physical=None):
     a.compare_physical(prior, physical)
 
   class Handler(BaseHTTPRequestHandler):
-    def log_message(self, *args):
+    @override
+    def log_message(self, format: object = None, *args: object) -> None:
       pass
 
     def origin(self):

@@ -8,6 +8,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
 import argparse
+from typing import override
 
 from openpilot.tools.cyber_autotune import private_pixel_execution as p
 from openpilot.tools.cyber_autotune import lane_public_storage as storage
@@ -87,7 +88,8 @@ def server(root, *, bind='127.0.0.1', port=0):
   model, rows = view_model(root)
 
   class Handler(BaseHTTPRequestHandler):
-    def log_message(self, *_args):
+    @override
+    def log_message(self, format: object = None, *_args: object) -> None:
       pass
 
     def do_GET(self):
