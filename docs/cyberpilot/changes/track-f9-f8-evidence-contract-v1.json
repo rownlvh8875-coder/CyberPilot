@@ -1,0 +1,142 @@
+{
+  "adapter_version": 1,
+  "authority": {
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "HOLDOUT": "CLOSED",
+    "Private E2": "NOT_AUTHORIZED",
+    "Vehicle authority": "NONE"
+  },
+  "cohort": {
+    "executed_frames": 740000,
+    "executions": 298,
+    "fixture_id_count_changes": 0,
+    "main_arm_conditions": 148,
+    "main_blocked_pairs": 3,
+    "main_executed_pairs": 145,
+    "repeat_pairs": 149,
+    "reset_pairs": 4,
+    "scenarios": 37,
+    "unique_frames": 370000
+  },
+  "diagnostic_only": true,
+  "effective": false,
+  "evidence_source_head": "03cffd30998551b56ad7774223b8bdd0b790d228",
+  "f7": {
+    "contract_receipt": "ed5fe97d2e4a634da12e629a30251db7cf15c13619f1c806fea82fbd69c6b393",
+    "gate_count": 10,
+    "historical_gate_execution_on_f8": "NOT_RUN_DIFFERENT_SCHEMA",
+    "mapping_scope": "VERIFIED_FROZEN_FRAME_AND_PURE_METRICS_ONLY",
+    "metric_count": 28,
+    "six_unavailable_unchanged": true,
+    "source_sha256": {
+      "docs/cyberpilot/changes/track-f7-offline-multiobjective-contract.json": "8e944560d7fd369b7f345a72ad031c1e090e4d8b4e5bafbf43e4fde61eacb2a9",
+      "tools/cyberpilot/offline_multiobjective_gates_v1.py": "2bb9f18db2e309d5b07bac878cc6eaa41feddfb3bee534d592e633a919564bad",
+      "tools/cyberpilot/offline_multiobjective_metrics_v1.py": "48bce622d18d6dc1ebfee608900511e6c350c8fbb972904e322aabfd89f65cbd",
+      "tools/cyberpilot/offline_multiobjective_v1.py": "ca5a54477f494dde2cbb680e822a72238ba90c2ba369d537b59322071f31eb61"
+    }
+  },
+  "field_mapping": {
+    "active": "input.active",
+    "actual": "pose_after",
+    "applied": "applied",
+    "command": "command delivered",
+    "controller_feedback": "measurement.curvature_1pm, not plant truth substitution",
+    "curvature": "plant_after.curvature_1pm truth",
+    "desired": "input.desired_curvature_1pm",
+    "driver": "input.steering_pressed",
+    "native": "native_request",
+    "reference": "reference_pose",
+    "reset": "bool(reset_events)",
+    "roll": "input.roll_rad",
+    "sequence": "sequence",
+    "speed": "input.speed_mps",
+    "time_s": "(sequence+1)*0.01 physical post-step",
+    "yaw": "plant_after.yaw_rate_rad_s truth"
+  },
+  "historical_evidence_changed": false,
+  "metric_assumptions": {
+    "F7_prior_delivered_and_applied": 0.0,
+    "embedded_gate_labels": "HG05/HG06 are inherited F7 metric references only; F8 validator is identified separately in every record",
+    "heading_integral": "heading change; initial heading offset is separately retained",
+    "physical_delay_steps": 2,
+    "physical_initial_prior_applied": "F8 initial.applied_last, separately reported in sidecar",
+    "reference_origin": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sample_dt_s": 0.01
+  },
+  "metric_evidence_status": {
+    "frequency_response": "ADDITIONAL_EXCITATION_REQUIRED",
+    "initial_state_coverage": "EVIDENCE_OBTAINED_DIAGNOSTIC_ONLY",
+    "measurement_robustness": "MEASUREMENT_CONTRACT_UNVERIFIED",
+    "settling_time": "DEFINITION_APPROVAL_REQUIRED",
+    "speed_and_disturbance": "EVIDENCE_OBTAINED_DIAGNOSTIC_ONLY",
+    "transition_and_s_curve": "EVIDENCE_OBTAINED_DIAGNOSTIC_ONLY"
+  },
+  "original_sources": {
+    "openpilot/common/pid.py": "87cf8669f4e9ba3ff22c6937393d082de6fa834e4889094ff1c67a0a8738402a",
+    "openpilot/selfdrive/controls/lib/cyber_lateral/command_domain.py": "ec623c11bbed72b028849401e88ca398c7d5fb1ddeebcf9505ef644a7a3bba08",
+    "openpilot/selfdrive/controls/lib/cyber_lateral/experiments.py": "e68d05aac0b8d4c5ac19ea900919ff9999e19b31b8031f007f5391de11e14cec",
+    "openpilot/selfdrive/controls/lib/cyber_lateral/optimizer.py": "3967788c144d639375570de1d5a8a6e464e2fbb6addf4cc4671ac04073debf22",
+    "openpilot/selfdrive/controls/lib/cyber_lateral/speed_aware_tune.py": "c12618cb5af38615f81063f13221764c9a7496114f321591bd6ab111d9c941fd",
+    "openpilot/selfdrive/controls/lib/cyber_lateral/steering_rate.py": "2256385aa73708d0c74e7becc5981899e34548fc10a03a04feffdfb024f6369a",
+    "openpilot/selfdrive/controls/lib/cyber_lateral/torque_authority.py": "928277a18be5b2ae194eed68af5d0eef59b9d2cdadfad7e2552f6f4477dd634b",
+    "openpilot/selfdrive/controls/lib/latcontrol_torque.py": "9489bfd923246906ef543a1c305bf7a7fe534ee9754c94d8195ae98bb3a1f2cd",
+    "openpilot/selfdrive/controls/tests/test_cyber_lateral_optimizer.py": "d766b55e23635d736bef84d2d954f886b4745408ba00ecc3717b17b5ed141436",
+    "openpilot/selfdrive/test/process_replay/cyber_lateral_native_experiment.py": "f724433458b83ae6b093c190f7225481e0f802ddec5deef386a30973386f7b7f",
+    "openpilot/tools/cyber_autotune/curvature_yaw_plant.py": "3903af91512b339630da18fa1f1baa53f35567afe2e546e487756c3356002881",
+    "openpilot/tools/cyber_autotune/smoothness_governor_v0.py": "7aa65899d12170bb0aa48710446dfa1105484d0b0f7986dcf6f70410308ad721",
+    "openpilot/tools/cyber_autotune/trajectory_authority_core.py": "56f0d5ef041573b9aa199cd5b753a9ab97bd6cc2a6077173501106d52fc0847e"
+  },
+  "performance_qualified": false,
+  "performance_status": "PERFORMANCE_NOT_QUALIFIED",
+  "processing_scope": "One decoded row trace and bounded frozen Frames at a time; derived per-trace JSON files, bounded summary, no all-raw cohort in memory",
+  "raw_f8_publication_authorized": false,
+  "reader_limits": {
+    "archive_bytes": 335544320,
+    "compression_ratio": 200,
+    "entries": 512,
+    "frames": 4000,
+    "inner_total_bytes": 5368709120,
+    "inner_trace_bytes": 41943040,
+    "json_depth": 64,
+    "member_bytes": 4194304,
+    "outer_total_bytes": 402653184,
+    "output_file_bytes": 8388608,
+    "output_total_bytes": 134217728,
+    "processed_member_bytes": 805306368
+  },
+  "reader_mutation_scope": "No-follow held fd, per-buffer member hashes, before/after fstat and final whole-file hash; trusted local immutable file assumption, no claim of coordination with arbitrary writers",
+  "receipt_sha256": "59586ad975b99097689f053547a78f792a1e8078763c8c0f25ef59f7424909d9",
+  "reset_modes": {
+    "NO_EXPLICIT_RESET": "other scenarios retain original event/reset semantics",
+    "RESET_MODE_A": "SG-A main initial_reset: Native fresh, Governor retained",
+    "RESET_MODE_B": "reset-v2: Native and CandidatePolicy reconstructed, physical state/queue/pose retained",
+    "SOURCE_DEFINED_OPTIMIZER_EVENT_RESET": "A0/A2/A3 main initial_reset: Native fresh, optimizer reset on existing event"
+  },
+  "runtime_authorized": false,
+  "schema": "CYBERPILOT_F8_PUBLIC_SYNTHETIC_EVIDENCE_V1",
+  "selected_candidate": null,
+  "selected_policy": null,
+  "severe_observation": {
+    "arm": "A0",
+    "label": "SEVERE_TRACKING_DEVIATION_OBSERVED",
+    "normal_rms_m": 134.18535449526564,
+    "rule": "EXACT_PINNED_OBSERVATION_NOT_NUMERICAL_THRESHOLD_OR_VEHICLE_SAFETY_DECISION",
+    "scenario": "speed_30p0",
+    "stock_rail_occupancy": 0.777,
+    "trace_sha256": "09d90a226f06835fe6478557c891c6e15abb8f03ba2e2898c517b00daa92b28a"
+  },
+  "threshold_status": "THRESHOLD_APPROVAL_REQUIRED",
+  "trust_root": {
+    "archive_sha256": "2bca346bd8af0bdf1278fc65b6dca0f2cf9a5facdf32d6a1cb5cd399ed0e75c0",
+    "authentication": "PINNED_PREVIOUSLY_AUDITED_LOCAL_CONTENT_NOT_EXTERNAL_SIGNER",
+    "f8_receipt": "7cd794d1ba3bb0235f5c24f95df8764696bcd7061bf7f4aea1d8b03fd0d739d9",
+    "manifest_records": 472,
+    "manifest_sha256": "c40ec405a12a37adcee0bb25e09684c30091c6af764069959130dcbb7653ea62",
+    "zip_entries": 473
+  },
+  "vehicle_authority": "NONE"
+}
