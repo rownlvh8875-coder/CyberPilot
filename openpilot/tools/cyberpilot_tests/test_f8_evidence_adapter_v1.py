@@ -65,7 +65,8 @@ class ReaderTests(unittest.TestCase):
           self.reader(pins)
 
   def test_duplicate_entry(self):
-    pins = self.make(extra=lambda z: z.writestr('data.json', b'{}'))
+    with self.assertWarnsRegex(UserWarning, r"Duplicate name: 'data\.json'"):
+      pins = self.make(extra=lambda z: z.writestr('data.json', b'{}'))
     with self.assertRaises(F8Error):
       self.reader(pins)
 
