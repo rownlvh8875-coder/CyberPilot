@@ -64,6 +64,7 @@ def capture_native_inputs(
   values = (current_curvature_1pm, final_desired_curvature_1pm, *native_result)
   if len(native_result) != 2 or any(type(v) not in (int, float) or not math.isfinite(v) for v in values):
     raise ValueError("FINITE_SOURCE_VALUES_REQUIRED")
+  native_steer, native_lateral = native_result
   if not isinstance(binding, LateralBinding) or type(actuator_bytes) is not bytes:
     raise ValueError("IMMUTABLE_SOURCE_VALUES_REQUIRED")
   identities = (
@@ -96,7 +97,7 @@ def capture_native_inputs(
     float(current_curvature_1pm),
     float(final_desired_curvature_1pm),
     curvature_limited,
-    tuple(float(v) for v in native_result),
+    (float(native_steer), float(native_lateral)),
     bytes(actuator_bytes),
     (*identities, binding.configuration_epoch),
     lat_active,
