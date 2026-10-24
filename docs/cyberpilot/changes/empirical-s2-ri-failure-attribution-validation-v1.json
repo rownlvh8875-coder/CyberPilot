@@ -1,0 +1,102 @@
+{
+  "attribution_manifest_sha256": "a72853588e5315f06076aedb22b4ea4ec67ba33a3299c755700dfd71b4ff9c77",
+  "baseline": "a50d008e76b651d02ced30dbfcd810a141850170",
+  "baseline_exact_head_ci": 38209781271,
+  "browser": "NOT_APPLICABLE",
+  "candidate_search_authorized": false,
+  "checks": {
+    "JSON_receipts": "PASS",
+    "Ruff": "PASS",
+    "SCons": "PASS",
+    "authority": "PASS",
+    "compileall": "PASS",
+    "git_diff_check": "PASS",
+    "input_audit_exact_repeatability": "PASS",
+    "privacy": "PASS",
+    "publication": "PASS",
+    "syntax": "PASS",
+    "verify_only_resume": "PASS"
+  },
+  "commands": {
+    "build": "scons -u -j2",
+    "combined_empirical": "pytest -q openpilot/tools/cyber_autotune/tests/*empirical*.py",
+    "focused": "pytest -q openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_failure_attribution.py",
+    "full": "python tools/test_runner.py openpilot/tools/cyber_autotune/tests openpilot/selfdrive/controls/tests -j 1",
+    "publication": "python tools/cyberpilot/check_publication.py --base origin/main",
+    "syntax": "python -m compileall -q openpilot/tools/cyber_autotune tools/cyberpilot"
+  },
+  "composition_authorized": false,
+  "execution": {
+    "candidate_selection": 0,
+    "input_audit_replicas": 2,
+    "jobs_verified_each": 32,
+    "manifest_files_hashed_each": 834,
+    "new_model_fit": 0,
+    "numeric_attribution": "NOT_RUN",
+    "prediction_generation": 0,
+    "private_array_decodes": 0,
+    "resume_traps": 12,
+    "rollout_generation": 0,
+    "source_reinspection_trapped_resume": true
+  },
+  "full_runner_exit_code": 0,
+  "full_runner_seconds": 1588.49,
+  "historical_tracked_changes": 0,
+  "holdout": "CLOSED",
+  "hurdle_implementation": false,
+  "independent_review": {
+    "findings": 2,
+    "fixed": 2,
+    "fixes": [
+      "STALE_SAVED_BUNDLE_REJECTED",
+      "NESTED_PUBLIC_JOB_ALLOWLIST"
+    ],
+    "full_regression_after_fixes": "PASS",
+    "new_regression_tests_red_then_green": true,
+    "status": "REVIEWED_FINDINGS_FIXED_WITH_REGRESSION"
+  },
+  "input_immutability": "MANIFEST_LISTED_FIT_FILES_AND_MANIFEST_HASH_VERIFIED_BEFORE_AFTER",
+  "input_manifest_sha256": "9466e4578842b4c8a300bb843338e53b42a2fc75200879360f8212c7c2605c97",
+  "minimum_ancestor_verified": true,
+  "numeric_partition_and_trajectory_tests": "NOT_APPLICABLE_NO_NUMERIC_ATTRIBUTION_IMPLEMENTED",
+  "opening_count": 0,
+  "other_historical_private_stores": "NOT_OPENED_NOT_BYTE_SCANNED_NO_WRITES_BY_EXECUTOR",
+  "production_authority": false,
+  "publication_before_validation_receipt": {
+    "branch_files": 1381,
+    "findings": 0,
+    "new_files": 15
+  },
+  "publication_raw_data": false,
+  "publication_scan_fixes": {
+    "private_path_literals_removed": 2,
+    "regression_tests": "PASS"
+  },
+  "qualification_allowed": false,
+  "readiness_sha256": "a7002448c7d3bf3222c34a20a4cb73203b7598ac240b8adf6c07eb137ae29b1b",
+  "receipt_sha256": "011434faf4b6d8dfb048c7ac8615008c15d2557ff2de4ecde5d4e667ee11ab30",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_S2_RI_FAILURE_ATTRIBUTION_VALIDATION_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "startup_clean_and_local_origin_equal": true,
+  "status": "INPUT_AUDIT_VALIDATION_PASS_NUMERICAL_ATTRIBUTION_INSUFFICIENT",
+  "ta_execution": false,
+  "tests": {
+    "combined_empirical": 1380,
+    "combined_empirical_subtests": 321,
+    "controls": 142,
+    "focused_attribution_input": 34,
+    "focused_subtests": 18,
+    "full_autotune": 4012,
+    "full_runner_total": 4154,
+    "lateral_replay": 16
+  },
+  "validation_source_sha256": {
+    "openpilot/tools/cyber_autotune/empirical_s2_ri_failure_attribution.py": "2d487fa014d218821b50d092c4287534f5026d387ad28224267e8a33bc90772b",
+    "openpilot/tools/cyber_autotune/empirical_s2_ri_failure_attribution_publication.py": "1ae86ece9c2ca1ce7ff0d1794eb80534c8c54d32af541fe5d5ba9e19ad17eed6",
+    "openpilot/tools/cyber_autotune/tests/test_empirical_s2_ri_failure_attribution.py": "402a1014fa4a646e3d04e8efc4e0a281e79ec6fc5f94f16c4c476c41eb104b48"
+  },
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": false
+}

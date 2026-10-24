@@ -1,0 +1,2008 @@
+{
+  "attribution_manifest_sha256": "07345517d3bca95e90962e0566a58e2b756a8aa6f5c658b8b312f02d4961f77d",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "historical_selection": "MODEL_SELECTION_FAILED_CLOSED",
+  "historical_verdict": "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+  "holdout": "CLOSED",
+  "jobs": [
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D00_L01",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.01834768396631581,
+        "false_move_rate": 0.1492844698622114,
+        "missed_move_rate": -0.11258910192957983,
+        "recall": 0.11258910192957972,
+        "specificity": -0.14928446986221128
+      },
+      "development": {
+        "balanced_accuracy": 0.549319996001681,
+        "count": 300569,
+        "counts": {
+          "FN": 14961,
+          "FP": 143280,
+          "TN": 113801,
+          "TP": 28527
+        },
+        "false_move_rate": 0.5573340698067925,
+        "fractions": {
+          "FN": 0.04977559229328374,
+          "FP": 0.47669586683922827,
+          "TN": 0.3786185534769055,
+          "TP": 0.09490998739058253
+        },
+        "missed_move_rate": 0.34402593818984545,
+        "precision": 0.16604096457071016,
+        "predicted_move_fraction": 0.5716058542298108,
+        "recall": 0.6559740618101545,
+        "specificity": 0.4426659301932076,
+        "true_move_fraction": 0.14468557968386628
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "d89e00d9da1c2a9cd010bc4d665d2b183ed5c3e34d235b3a06f29f1a8852e55d",
+      "receipt_sha256": "4b822b54a5e9ac128d558017d4a9b12fb17268b0ccc778c2449c102079da53c6",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "c658972c3477fdcb4dc2f83848879fec3d8ff6365e85c9e75b0bc4c8351082b5",
+      "train": {
+        "balanced_accuracy": 0.5676676799679968,
+        "count": 336941,
+        "counts": {
+          "FN": 22023,
+          "FP": 117808,
+          "TN": 170902,
+          "TP": 26208
+        },
+        "false_move_rate": 0.40804959994458107,
+        "fractions": {
+          "FN": 0.06536159149524694,
+          "FP": 0.34963984792589803,
+          "TN": 0.5072163969359621,
+          "TP": 0.07778216364289296
+        },
+        "missed_move_rate": 0.4566150401194253,
+        "precision": 0.18197978002444173,
+        "predicted_move_fraction": 0.42742201156879095,
+        "recall": 0.5433849598805748,
+        "specificity": 0.5919504000554189,
+        "true_move_fraction": 0.1431437551381399
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D00_L01",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.029549428521822407,
+        "false_move_rate": -0.03053217719266905,
+        "missed_move_rate": 0.08963103423631391,
+        "recall": -0.08963103423631388,
+        "specificity": 0.030532177192669097
+      },
+      "development": {
+        "balanced_accuracy": 0.5276263228384448,
+        "count": 336941,
+        "counts": {
+          "FN": 44663,
+          "FP": 5406,
+          "TN": 283304,
+          "TP": 3568
+        },
+        "false_move_rate": 0.018724671816009144,
+        "fractions": {
+          "FN": 0.13255436411715998,
+          "FP": 0.016044351978536302,
+          "TN": 0.8408118928833238,
+          "TP": 0.010589391020979935
+        },
+        "missed_move_rate": 0.9260226825071013,
+        "precision": 0.397593046579006,
+        "predicted_move_fraction": 0.026633742999516236,
+        "recall": 0.07397731749289876,
+        "specificity": 0.9812753281839909,
+        "true_move_fraction": 0.1431437551381399
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "2f4025f165c48dd1066273b390e9b1262c5e4253a9b437f6f8d8288d71a39466",
+      "receipt_sha256": "c7d1da1d2ceb30ba57d2048e44efb6e71fdd7aa9d1158d248487c6fdab7db46c",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "94433ce0479fd61dc5afacabc760184fa12d0c99bff3ec0196279dcbb6009168",
+      "train": {
+        "balanced_accuracy": 0.5571757513602672,
+        "count": 300569,
+        "counts": {
+          "FN": 36373,
+          "FP": 12663,
+          "TN": 244418,
+          "TP": 7115
+        },
+        "false_move_rate": 0.049256849008678195,
+        "fractions": {
+          "FN": 0.12101381047280325,
+          "FP": 0.04213009325645692,
+          "TN": 0.8131843270596768,
+          "TP": 0.023671769211063017
+        },
+        "missed_move_rate": 0.8363916482707874,
+        "precision": 0.35974314895338255,
+        "predicted_move_fraction": 0.06580186246751994,
+        "recall": 0.16360835172921265,
+        "specificity": 0.9507431509913218,
+        "true_move_fraction": 0.14468557968386628
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D00_L05",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.014270353001158975,
+        "false_move_rate": 0.20794169212824182,
+        "missed_move_rate": -0.1794009861259238,
+        "recall": 0.17940098612592387,
+        "specificity": -0.20794169212824176
+      },
+      "development": {
+        "balanced_accuracy": 0.56202481036004,
+        "count": 265076,
+        "counts": {
+          "FN": 16042,
+          "FP": 103452,
+          "TN": 123426,
+          "TP": 22156
+        },
+        "false_move_rate": 0.4559807473620184,
+        "fractions": {
+          "FN": 0.06051849280960932,
+          "FP": 0.3902729783156529,
+          "TN": 0.46562495284371275,
+          "TP": 0.08358357603102506
+        },
+        "missed_move_rate": 0.4199696319179015,
+        "precision": 0.1763900388510286,
+        "predicted_move_fraction": 0.47385655434667795,
+        "recall": 0.5800303680820985,
+        "specificity": 0.5440192526379817,
+        "true_move_fraction": 0.1441020688406344
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "d24ccb59a2c532ddb5369d9b1b1b0929e6eb4ded5de3d9ed08bba17c22e9093d",
+      "receipt_sha256": "9deb727d6d73355459ce7f95d39b181dee11d8e68364c57f84575060deea73d4",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "3300b90e1ddd54e4b73a63de70dd01737893a933fa784cfaad93768dc6d1abbb",
+      "train": {
+        "balanced_accuracy": 0.576295163361199,
+        "count": 293734,
+        "counts": {
+          "FN": 25903,
+          "FP": 62138,
+          "TN": 188379,
+          "TP": 17314
+        },
+        "false_move_rate": 0.24803905523377656,
+        "fractions": {
+          "FN": 0.08818522881246298,
+          "FP": 0.21154513947993764,
+          "TN": 0.64132514451851,
+          "TP": 0.05894448718908945
+        },
+        "missed_move_rate": 0.5993706180438253,
+        "precision": 0.2179177364949907,
+        "predicted_move_fraction": 0.2704896266690271,
+        "recall": 0.40062938195617465,
+        "specificity": 0.7519609447662234,
+        "true_move_fraction": 0.14712971600155242
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D00_L05",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.03102214841716544,
+        "false_move_rate": -0.034072154533857604,
+        "missed_move_rate": 0.09611645136818836,
+        "recall": -0.0961164513681883,
+        "specificity": 0.03407215453385759
+      },
+      "development": {
+        "balanced_accuracy": 0.5466205690182232,
+        "count": 293734,
+        "counts": {
+          "FN": 37995,
+          "FP": 6912,
+          "TN": 243605,
+          "TP": 5222
+        },
+        "false_move_rate": 0.02759094193208445,
+        "fractions": {
+          "FN": 0.1293517263919056,
+          "FP": 0.02353149448140154,
+          "TN": 0.829338789517046,
+          "TP": 0.017777989609646824
+        },
+        "missed_move_rate": 0.8791679200314692,
+        "precision": 0.4303609691775177,
+        "predicted_move_fraction": 0.041309484091048364,
+        "recall": 0.1208320799685309,
+        "specificity": 0.9724090580679156,
+        "true_move_fraction": 0.14712971600155242
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "eedb822907ebca5a62a32c69d11655cc7bac05f997e0100420ad44f30ac90649",
+      "receipt_sha256": "a596d4ab112e361860fa0a1419f797c6845ba3ba8d1b6561a29a2de56e748a3a",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "9b15824c47fa7ef7879d6980831680d7828640895b4c67766e0a1419d1a1db73",
+      "train": {
+        "balanced_accuracy": 0.5776427174353886,
+        "count": 265076,
+        "counts": {
+          "FN": 29911,
+          "FP": 13990,
+          "TN": 212888,
+          "TP": 8287
+        },
+        "false_move_rate": 0.06166309646594205,
+        "fractions": {
+          "FN": 0.11283933664307595,
+          "FP": 0.05277731669408019,
+          "TN": 0.8031206144652854,
+          "TP": 0.031262732197558436
+        },
+        "missed_move_rate": 0.7830514686632808,
+        "precision": 0.37199802486869865,
+        "predicted_move_fraction": 0.08404004889163863,
+        "recall": 0.2169485313367192,
+        "specificity": 0.938336903534058,
+        "true_move_fraction": 0.1441020688406344
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D00_L15",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.014164889445290263,
+        "false_move_rate": 0.2172683944839751,
+        "missed_move_rate": -0.18893861559339448,
+        "recall": 0.18893861559339448,
+        "specificity": -0.21726839448397506
+      },
+      "development": {
+        "balanced_accuracy": 0.5622548388706494,
+        "count": 230783,
+        "counts": {
+          "FN": 12999,
+          "FP": 95318,
+          "TN": 102428,
+          "TP": 20038
+        },
+        "false_move_rate": 0.48202239236191885,
+        "fractions": {
+          "FN": 0.05632563923685887,
+          "FP": 0.4130200231386194,
+          "TN": 0.4438281849182999,
+          "TP": 0.08682615270622186
+        },
+        "missed_move_rate": 0.3934679298967824,
+        "precision": 0.1737057456915982,
+        "predicted_move_fraction": 0.49984617584484126,
+        "recall": 0.6065320701032176,
+        "specificity": 0.5179776076380812,
+        "true_move_fraction": 0.14315179194308073
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "4eb34d0acf5994085c1905bf9bb97e190103d902eaba2907740f659856851619",
+      "receipt_sha256": "79c5460084da3d4a5ccc9204b3dd41925d59d40bd31112f21cf1d33470d55c86",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "da7805f8ea4f9432eaf45cd22e97568388be1dcccbc0676cd2cae5f8c6dbef37",
+      "train": {
+        "balanced_accuracy": 0.5764197283159397,
+        "count": 277385,
+        "counts": {
+          "FN": 23775,
+          "FP": 62631,
+          "TN": 173932,
+          "TP": 17047
+        },
+        "false_move_rate": 0.26475399787794374,
+        "fractions": {
+          "FN": 0.0857111956306217,
+          "FP": 0.22579086828775888,
+          "TN": 0.6270418371577411,
+          "TP": 0.06145609892387836
+        },
+        "missed_move_rate": 0.5824065454901769,
+        "precision": 0.21394864328923918,
+        "predicted_move_fraction": 0.2872469672116372,
+        "recall": 0.41759345450982316,
+        "specificity": 0.7352460021220563,
+        "true_move_fraction": 0.14716729455450006
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D00_L15",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.03558527131938605,
+        "false_move_rate": -0.03480385454964614,
+        "missed_move_rate": 0.10597439718841817,
+        "recall": -0.1059743971884182,
+        "specificity": 0.034803854549646185
+      },
+      "development": {
+        "balanced_accuracy": 0.544512304942866,
+        "count": 277385,
+        "counts": {
+          "FN": 36139,
+          "FP": 6078,
+          "TN": 230485,
+          "TP": 4683
+        },
+        "false_move_rate": 0.025692944374225892,
+        "fractions": {
+          "FN": 0.130284622456153,
+          "FP": 0.021911783261531807,
+          "TN": 0.8309209221839682,
+          "TP": 0.016882672098347064
+        },
+        "missed_move_rate": 0.8852824457400421,
+        "precision": 0.43518260384722607,
+        "predicted_move_fraction": 0.03879445535987887,
+        "recall": 0.11471755425995786,
+        "specificity": 0.9743070556257741,
+        "true_move_fraction": 0.14716729455450006
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "3b229ed191267c35df52f3974d830ea3fecd6388cae2fb6162eb5b0afc931efe",
+      "receipt_sha256": "4036248c44ae0f82cf3e7a66d5fd421d5c19cf2a08efc99f5ff1613187660b87",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "8dd2ef7754320b2900681e78d002d6826550d5de0729cfbe4e1f4653413d1062",
+      "train": {
+        "balanced_accuracy": 0.580097576262252,
+        "count": 230783,
+        "counts": {
+          "FN": 25746,
+          "FP": 11963,
+          "TN": 185783,
+          "TP": 7291
+        },
+        "false_move_rate": 0.06049679892387204,
+        "fractions": {
+          "FN": 0.11155934362583032,
+          "FP": 0.05183657375109952,
+          "TN": 0.8050116343058198,
+          "TP": 0.0315924483172504
+        },
+        "missed_move_rate": 0.7793080485516239,
+        "precision": 0.3786745611301548,
+        "predicted_move_fraction": 0.08342902206834993,
+        "recall": 0.22069195144837606,
+        "specificity": 0.939503201076128,
+        "true_move_fraction": 0.14315179194308073
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D00_L45",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.02134444603036678,
+        "false_move_rate": 0.2765881916080857,
+        "missed_move_rate": -0.233899299547352,
+        "recall": 0.23389929954735206,
+        "specificity": -0.2765881916080856
+      },
+      "development": {
+        "balanced_accuracy": 0.5537812035258115,
+        "count": 194807,
+        "counts": {
+          "FN": 10576,
+          "FP": 85280,
+          "TN": 81855,
+          "TP": 17096
+        },
+        "false_move_rate": 0.5102462081550843,
+        "fractions": {
+          "FN": 0.05428963024942635,
+          "FP": 0.43776661002941375,
+          "TN": 0.42018510628468175,
+          "TP": 0.08775865343647815
+        },
+        "missed_move_rate": 0.38219138479329284,
+        "precision": 0.1669922638118309,
+        "predicted_move_fraction": 0.5255252634658919,
+        "recall": 0.6178086152067072,
+        "specificity": 0.4897537918449158,
+        "true_move_fraction": 0.1420482836859045
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "db547ea60d56056268a4f78fc54ea7179e267d140182aedaca1fe8cde5c268a2",
+      "receipt_sha256": "06990526ac795509c5b46edeb4aa5998e558650e883aa663d2ff54db1416e97f",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "6bf846bca7b63f96b5c21a7e885f0ef016f3aa13b4bc539b00b3a8032ada750e",
+      "train": {
+        "balanced_accuracy": 0.5751256495561783,
+        "count": 257518,
+        "counts": {
+          "FN": 23425,
+          "FP": 51287,
+          "TN": 168209,
+          "TP": 14597
+        },
+        "false_move_rate": 0.23365801654699858,
+        "fractions": {
+          "FN": 0.09096451510185696,
+          "FP": 0.1991588937472332,
+          "TN": 0.6531931748460302,
+          "TP": 0.05668341630487966
+        },
+        "missed_move_rate": 0.6160906843406448,
+        "precision": 0.22155606824115112,
+        "predicted_move_fraction": 0.2558423100521129,
+        "recall": 0.3839093156593551,
+        "specificity": 0.7663419834530014,
+        "true_move_fraction": 0.14764793140673663
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D00_L45",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.03592489472327676,
+        "false_move_rate": -0.04918777870623392,
+        "missed_move_rate": 0.12103756815278766,
+        "recall": -0.12103756815278763,
+        "specificity": 0.04918777870623392
+      },
+      "development": {
+        "balanced_accuracy": 0.541586508878742,
+        "count": 257518,
+        "counts": {
+          "FN": 33774,
+          "FP": 6267,
+          "TN": 213229,
+          "TP": 4248
+        },
+        "false_move_rate": 0.028551773153041513,
+        "fractions": {
+          "FN": 0.13115199714194736,
+          "FP": 0.024336162909000536,
+          "TN": 0.8280159056842629,
+          "TP": 0.016495934264789257
+        },
+        "missed_move_rate": 0.8882752090894745,
+        "precision": 0.40399429386590585,
+        "predicted_move_fraction": 0.04083209717378979,
+        "recall": 0.11172479091052548,
+        "specificity": 0.9714482268469585,
+        "true_move_fraction": 0.14764793140673663
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "78356632ad8275ffcb509616650e2fcb77514986f9e3a52482a252dcc90dd98c",
+      "receipt_sha256": "2aa105a217fd818227b84d8992a183dacb0ca500cc1dab2219c5eac9f4dcc69b",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "6351a277179700ff0aa1ab165709181c10ebb6177b388faf022f2e90e025e14c",
+      "train": {
+        "balanced_accuracy": 0.5775114036020188,
+        "count": 194807,
+        "counts": {
+          "FN": 21231,
+          "FP": 12993,
+          "TN": 154142,
+          "TP": 6441
+        },
+        "false_move_rate": 0.07773955185927543,
+        "fractions": {
+          "FN": 0.10898479007427865,
+          "FP": 0.066696781943154,
+          "TN": 0.7912549343709415,
+          "TP": 0.03306349361162587
+        },
+        "missed_move_rate": 0.7672376409366869,
+        "precision": 0.33142945353504166,
+        "predicted_move_fraction": 0.09976027555477986,
+        "recall": 0.2327623590633131,
+        "specificity": 0.9222604481407246,
+        "true_move_fraction": 0.1420482836859045
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D05_L01",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.014139143072324112,
+        "false_move_rate": 0.22220648205509827,
+        "missed_move_rate": -0.19392819591045002,
+        "recall": 0.19392819591045002,
+        "specificity": -0.2222064820550982
+      },
+      "development": {
+        "balanced_accuracy": 0.5552092801475335,
+        "count": 265076,
+        "counts": {
+          "FN": 16363,
+          "FP": 104638,
+          "TN": 122240,
+          "TP": 21835
+        },
+        "false_move_rate": 0.4612082264476944,
+        "fractions": {
+          "FN": 0.06172946626627835,
+          "FP": 0.3947471668502618,
+          "TN": 0.4611507643091038,
+          "TP": 0.08237260257435604
+        },
+        "missed_move_rate": 0.4283732132572386,
+        "precision": 0.17264554489891124,
+        "predicted_move_fraction": 0.47711976942461787,
+        "recall": 0.5716267867427614,
+        "specificity": 0.5387917735523057,
+        "true_move_fraction": 0.1441020688406344
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "6a83f7cd8ec605e69f0c0d58e60fc16f79fef7c37d670daeecb8ca166a6e6cf4",
+      "receipt_sha256": "2f6e5602ad66cb55089d5bf5c3f93523c9ca860bc4b35e9831e590f67348baee",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "9e4e4b6f0c02995aa2ce218ea09f5f03bdfd40cf3b673373ae8193953231736a",
+      "train": {
+        "balanced_accuracy": 0.5693484232198576,
+        "count": 293734,
+        "counts": {
+          "FN": 26894,
+          "FP": 59874,
+          "TN": 190643,
+          "TP": 16323
+        },
+        "false_move_rate": 0.2390017443925961,
+        "fractions": {
+          "FN": 0.0915590295982079,
+          "FP": 0.20383748561623782,
+          "TN": 0.6490327983822097,
+          "TP": 0.055570686403344526
+        },
+        "missed_move_rate": 0.6223014091676886,
+        "precision": 0.21422103232410725,
+        "predicted_move_fraction": 0.25940817201958233,
+        "recall": 0.37769859083231133,
+        "specificity": 0.7609982556074039,
+        "true_move_fraction": 0.14712971600155242
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D05_L01",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.028914975272702925,
+        "false_move_rate": -0.043139291352600306,
+        "missed_move_rate": 0.10096924189800616,
+        "recall": -0.10096924189800616,
+        "specificity": 0.043139291352600306
+      },
+      "development": {
+        "balanced_accuracy": 0.5337170708853167,
+        "count": 293734,
+        "counts": {
+          "FN": 39249,
+          "FP": 6108,
+          "TN": 244409,
+          "TP": 3968
+        },
+        "false_move_rate": 0.02438157889484546,
+        "fractions": {
+          "FN": 0.13362089509556266,
+          "FP": 0.020794324116377404,
+          "TN": 0.8320759598820702,
+          "TP": 0.013508820905989772
+        },
+        "missed_move_rate": 0.9081842793345212,
+        "precision": 0.39380706629614926,
+        "predicted_move_fraction": 0.03430314502236718,
+        "recall": 0.09181572066547886,
+        "specificity": 0.9756184211051545,
+        "true_move_fraction": 0.14712971600155242
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "41549d7399725ff5233add94b457ad81dd5255ad04a5b50f850613d9803ff92a",
+      "receipt_sha256": "b75feaf4414f23d5d18d08081b745ccc2274a2467e65c6958a2959673fa07e1a",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "b910e0e88b38be65429b5d8d8c974e7864c06d4628f7a4c09870d7b6019364c6",
+      "train": {
+        "balanced_accuracy": 0.5626320461580196,
+        "count": 265076,
+        "counts": {
+          "FN": 30834,
+          "FP": 15319,
+          "TN": 211559,
+          "TP": 7364
+        },
+        "false_move_rate": 0.06752087024744577,
+        "fractions": {
+          "FN": 0.11632135689387195,
+          "FP": 0.057790973154868794,
+          "TN": 0.7981069580044968,
+          "TP": 0.02778071194676244
+        },
+        "missed_move_rate": 0.807215037436515,
+        "precision": 0.3246484151126394,
+        "predicted_move_fraction": 0.08557168510163123,
+        "recall": 0.192784962563485,
+        "specificity": 0.9324791297525542,
+        "true_move_fraction": 0.1441020688406344
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D05_L05",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.01343209677519297,
+        "false_move_rate": 0.20550592741772,
+        "missed_move_rate": -0.17864173386733406,
+        "recall": 0.17864173386733406,
+        "specificity": -0.2055059274177201
+      },
+      "development": {
+        "balanced_accuracy": 0.5635012425784222,
+        "count": 247038,
+        "counts": {
+          "FN": 14175,
+          "FP": 100244,
+          "TN": 111274,
+          "TP": 21345
+        },
+        "false_move_rate": 0.4739265688972097,
+        "fractions": {
+          "FN": 0.057379836300488186,
+          "FP": 0.4057837255806799,
+          "TN": 0.45043272694889047,
+          "TP": 0.08640371116994147
+        },
+        "missed_move_rate": 0.39907094594594594,
+        "precision": 0.17555041985705944,
+        "predicted_move_fraction": 0.4921874367506214,
+        "recall": 0.6009290540540541,
+        "specificity": 0.5260734311027903,
+        "true_move_fraction": 0.14378354747042965
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "7c548248a7a795850b059f81bd880796b4545ba0b9558454f8971df671da60af",
+      "receipt_sha256": "9a8603e0fcd72e9b5d9c71a79712fd594cdf5596a826d9f095aa96debc600d90",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "28067c703ac4bb49fcafbc51840527f5b629bbe9d7e5fbeb770210db5b1db00a",
+      "train": {
+        "balanced_accuracy": 0.5769333393536151,
+        "count": 285207,
+        "counts": {
+          "FN": 24257,
+          "FP": 65285,
+          "TN": 177934,
+          "TP": 17731
+        },
+        "false_move_rate": 0.2684206414794897,
+        "fractions": {
+          "FN": 0.08505050717549008,
+          "FP": 0.2289039189080212,
+          "TN": 0.6238766930685432,
+          "TP": 0.06216888084794553
+        },
+        "missed_move_rate": 0.57771267981328,
+        "precision": 0.21358533294786547,
+        "predicted_move_fraction": 0.2910727997559667,
+        "recall": 0.42228732018672,
+        "specificity": 0.7315793585205104,
+        "true_move_fraction": 0.14721938802343562
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D05_L05",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.03413048404110508,
+        "false_move_rate": -0.036810083428002544,
+        "missed_move_rate": 0.10507105151021268,
+        "recall": -0.1050710515102127,
+        "specificity": 0.036810083428002516
+      },
+      "development": {
+        "balanced_accuracy": 0.5442260776999824,
+        "count": 285207,
+        "counts": {
+          "FN": 37086,
+          "FP": 6882,
+          "TN": 236337,
+          "TP": 4902
+        },
+        "false_move_rate": 0.02829548678351609,
+        "fractions": {
+          "FN": 0.1300318715880045,
+          "FP": 0.02412984253542164,
+          "TN": 0.8286507694411428,
+          "TP": 0.017187516435431108
+        },
+        "missed_move_rate": 0.883252357816519,
+        "precision": 0.4159877800407332,
+        "predicted_move_fraction": 0.04131735897085275,
+        "recall": 0.11674764218348099,
+        "specificity": 0.9717045132164839,
+        "true_move_fraction": 0.14721938802343562
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "0a523b3856223e933ce230dbb4a12346b9d7c3d8d841b63b6d338e6e9626d16f",
+      "receipt_sha256": "12211446bdd5ec40036b77764c497e717535ec7e91621869b3702737c6751e48",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "12d1c6c7be7b999226f4be1b4dd77142e1381acc728a9f682a8467f6cc13bed3",
+      "train": {
+        "balanced_accuracy": 0.5783565617410875,
+        "count": 247038,
+        "counts": {
+          "FN": 27641,
+          "FP": 13771,
+          "TN": 197747,
+          "TP": 7879
+        },
+        "false_move_rate": 0.06510557021151864,
+        "fractions": {
+          "FN": 0.11188966879589375,
+          "FP": 0.05574446036642136,
+          "TN": 0.800471992163149,
+          "TP": 0.0318938786745359
+        },
+        "missed_move_rate": 0.7781813063063063,
+        "precision": 0.3639260969976905,
+        "predicted_move_fraction": 0.08763833904095726,
+        "recall": 0.2218186936936937,
+        "specificity": 0.9348944297884814,
+        "true_move_fraction": 0.14378354747042965
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D05_L15",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.014623641209170368,
+        "false_move_rate": 0.23436349665725006,
+        "missed_move_rate": -0.20511621423890952,
+        "recall": 0.20511621423890947,
+        "specificity": -0.2343634966572501
+      },
+      "development": {
+        "balanced_accuracy": 0.5611152092000262,
+        "count": 223004,
+        "counts": {
+          "FN": 12685,
+          "FP": 91713,
+          "TN": 99412,
+          "TP": 19194
+        },
+        "false_move_rate": 0.4798587311968607,
+        "fractions": {
+          "FN": 0.05688238775986081,
+          "FP": 0.41126168140481784,
+          "TN": 0.44578572581657727,
+          "TP": 0.08607020501874406
+        },
+        "missed_move_rate": 0.39791085040308666,
+        "precision": 0.17306391841813412,
+        "predicted_move_fraction": 0.4973318864235619,
+        "recall": 0.6020891495969133,
+        "specificity": 0.5201412688031393,
+        "true_move_fraction": 0.14295259277860486
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "775c7444e1d1f3e5eb7c96e235fa203d683bbc3253532ae8c10529f356975803",
+      "receipt_sha256": "f88fc99411a380a7908dcd60f9286d35caa5f47d08e2677da3caada8fbbaf8fa",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "0ed72c3aff65783c307c720df733e9ec32276136b0fc33606fc4e9bffaa76f4e",
+      "train": {
+        "balanced_accuracy": 0.5757388504091966,
+        "count": 273268,
+        "counts": {
+          "FN": 24264,
+          "FP": 57208,
+          "TN": 175823,
+          "TP": 15973
+        },
+        "false_move_rate": 0.2454952345396106,
+        "fractions": {
+          "FN": 0.08879195515025542,
+          "FP": 0.20934760015808657,
+          "TN": 0.6434086684134257,
+          "TP": 0.05845177627823236
+        },
+        "missed_move_rate": 0.6030270646419962,
+        "precision": 0.2182670365258742,
+        "predicted_move_fraction": 0.2677993764363189,
+        "recall": 0.3969729353580038,
+        "specificity": 0.7545047654603894,
+        "true_move_fraction": 0.1472437314284878
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D05_L15",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.03686977390755819,
+        "false_move_rate": -0.036376384743989645,
+        "missed_move_rate": 0.11011593255910612,
+        "recall": -0.11011593255910611,
+        "specificity": 0.03637638474398963
+      },
+      "development": {
+        "balanced_accuracy": 0.5410676413815446,
+        "count": 273268,
+        "counts": {
+          "FN": 35912,
+          "FP": 5908,
+          "TN": 227123,
+          "TP": 4325
+        },
+        "false_move_rate": 0.02535285004999335,
+        "fractions": {
+          "FN": 0.13141677766880863,
+          "FP": 0.021619801806285404,
+          "TN": 0.8311364667652268,
+          "TP": 0.015826953759679144
+        },
+        "missed_move_rate": 0.8925118671869176,
+        "precision": 0.4226522036548422,
+        "predicted_move_fraction": 0.037446755565964544,
+        "recall": 0.10748813281308249,
+        "specificity": 0.9746471499500067,
+        "true_move_fraction": 0.1472437314284878
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "7608a1d39165da24772fc57cf3157dc7aa6ccacda2a9c72fc802851d5d40caaf",
+      "receipt_sha256": "9f6e8f36d0b22cf9de316196051579d890153d8d3e0b93746c449090fedca472",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "0da8d21094b94c9c8944e42fe102078bf43f99e5298eb76b96e373f1d839503f",
+      "train": {
+        "balanced_accuracy": 0.5779374152891028,
+        "count": 223004,
+        "counts": {
+          "FN": 24942,
+          "FP": 11798,
+          "TN": 179327,
+          "TP": 6937
+        },
+        "false_move_rate": 0.061729234793983,
+        "fractions": {
+          "FN": 0.11184552743448548,
+          "FP": 0.052904880629943855,
+          "TN": 0.8041425265914512,
+          "TP": 0.03110706534411939
+        },
+        "missed_move_rate": 0.7823959346278114,
+        "precision": 0.37026954897251135,
+        "predicted_move_fraction": 0.08401194597406325,
+        "recall": 0.2176040653721886,
+        "specificity": 0.938270765206017,
+        "true_move_fraction": 0.14295259277860486
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D05_L45",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.023589004017187,
+        "false_move_rate": 0.2842835716521075,
+        "missed_move_rate": -0.2371055636177336,
+        "recall": 0.23710556361773355,
+        "specificity": -0.28428357165210744
+      },
+      "development": {
+        "balanced_accuracy": 0.551727196178758,
+        "count": 192080,
+        "counts": {
+          "FN": 10561,
+          "FP": 83920,
+          "TN": 80897,
+          "TP": 16702
+        },
+        "false_move_rate": 0.5091707772863237,
+        "fractions": {
+          "FN": 0.05498229904206581,
+          "FP": 0.43690129112869636,
+          "TN": 0.42116305705955853,
+          "TP": 0.0869533527696793
+        },
+        "missed_move_rate": 0.3873748303561604,
+        "precision": 0.16598755739301543,
+        "predicted_move_fraction": 0.5238546438983757,
+        "recall": 0.6126251696438396,
+        "specificity": 0.4908292227136764,
+        "true_move_fraction": 0.1419356518117451
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "ecc188b64d4b0a9f704125e1abc33bc6d0068b0aa5b7f0b7eddfa63c6bd94bb7",
+      "receipt_sha256": "8ddb0fc2dcfe57f6393efe3b3161ff7f0dc8e42a0780f03a84f1c59d07480edc",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "07dfbf54dfd299651a11c78802f6bfe6afb41e93917a9ecdae24265c040bf04f",
+      "train": {
+        "balanced_accuracy": 0.575316200195945,
+        "count": 255865,
+        "counts": {
+          "FN": 23586,
+          "FP": 49047,
+          "TN": 169049,
+          "TP": 14183
+        },
+        "false_move_rate": 0.22488720563421613,
+        "fractions": {
+          "FN": 0.09218142379770582,
+          "FP": 0.1916909307642702,
+          "TN": 0.6606960701932659,
+          "TP": 0.055431575244757975
+        },
+        "missed_move_rate": 0.624480393973894,
+        "precision": 0.2243080816068322,
+        "predicted_move_fraction": 0.2471225060090282,
+        "recall": 0.37551960602610607,
+        "specificity": 0.7751127943657838,
+        "true_move_fraction": 0.1476129990424638
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D05_L45",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.03638807514404774,
+        "false_move_rate": -0.04561559810874994,
+        "missed_move_rate": 0.11839174839684541,
+        "recall": -0.11839174839684541,
+        "specificity": 0.04561559810874993
+      },
+      "development": {
+        "balanced_accuracy": 0.540593152443795,
+        "count": 255865,
+        "counts": {
+          "FN": 33625,
+          "FP": 6223,
+          "TN": 211873,
+          "TP": 4144
+        },
+        "false_move_rate": 0.028533306433863988,
+        "fractions": {
+          "FN": 0.13141695816153048,
+          "FP": 0.024321419498563694,
+          "TN": 0.8280655814589725,
+          "TP": 0.016196040880933304
+        },
+        "missed_move_rate": 0.8902803886785459,
+        "precision": 0.399729912221472,
+        "predicted_move_fraction": 0.040517460379497,
+        "recall": 0.10971961132145411,
+        "specificity": 0.971466693566136,
+        "true_move_fraction": 0.1476129990424638
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "d59c7f886618189394abb0a40bf6d27085ac578332bfd083ea82c3ea98bd64a8",
+      "receipt_sha256": "7fc9a6c4b3fc9941794d174b753b9c0821b05bacc9e29d221bad92384d46a169",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "57a102867e136dfc49df8427d143a055897da6594d3bd9cb26a2206d29c72d8e",
+      "train": {
+        "balanced_accuracy": 0.5769812275878428,
+        "count": 192080,
+        "counts": {
+          "FN": 21044,
+          "FP": 12221,
+          "TN": 152596,
+          "TP": 6219
+        },
+        "false_move_rate": 0.07414890454261393,
+        "fractions": {
+          "FN": 0.10955851728446481,
+          "FP": 0.06362453144523116,
+          "TN": 0.7944398167430238,
+          "TP": 0.0323771345272803
+        },
+        "missed_move_rate": 0.7718886402817005,
+        "precision": 0.33725596529284163,
+        "predicted_move_fraction": 0.09600166597251146,
+        "recall": 0.22811135971829952,
+        "specificity": 0.9258510954573861,
+        "true_move_fraction": 0.1419356518117451
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D10_L01",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.011091778583554479,
+        "false_move_rate": 0.20683763887107032,
+        "missed_move_rate": -0.18465408170396125,
+        "recall": 0.1846540817039613,
+        "specificity": -0.2068376388710702
+      },
+      "development": {
+        "balanced_accuracy": 0.5574978914268469,
+        "count": 243887,
+        "counts": {
+          "FN": 14168,
+          "FP": 100378,
+          "TN": 108473,
+          "TP": 20868
+        },
+        "false_move_rate": 0.4806201550387597,
+        "fractions": {
+          "FN": 0.058092477253810164,
+          "FP": 0.4115758527514792,
+          "TN": 0.44476745377982424,
+          "TP": 0.0855642162148864
+        },
+        "missed_move_rate": 0.4043840621075465,
+        "precision": 0.17211289444600233,
+        "predicted_move_fraction": 0.4971400689663656,
+        "recall": 0.5956159378924535,
+        "specificity": 0.5193798449612403,
+        "true_move_fraction": 0.14365669346869656
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "4a29e097af7d349d736bbea4bb283e2ebd43349e97446995086db86d6566a5da",
+      "receipt_sha256": "22bb5cd34bd3e10dc7f30cbeada80046980ac81867692b0bd27143fc5e57a4fe",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "883f59e4f47bbd5c99586d87278c7708e422f576f6c91c6d76cf17ad7a922497",
+      "train": {
+        "balanced_accuracy": 0.5685896700104014,
+        "count": 283758,
+        "counts": {
+          "FN": 24600,
+          "FP": 66254,
+          "TN": 175741,
+          "TP": 17163
+        },
+        "false_move_rate": 0.2737825161676894,
+        "fractions": {
+          "FN": 0.08669359101769818,
+          "FP": 0.23348769021490143,
+          "TN": 0.6193340804488332,
+          "TP": 0.06048463831856723
+        },
+        "missed_move_rate": 0.5890381438115078,
+        "precision": 0.20574942757471498,
+        "predicted_move_fraction": 0.29397232853346866,
+        "recall": 0.4109618561884922,
+        "specificity": 0.7262174838323106,
+        "true_move_fraction": 0.1471782293362654
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D10_L01",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.03166238016472134,
+        "false_move_rate": -0.040956870304203974,
+        "missed_move_rate": 0.1042816306336467,
+        "recall": -0.10428163063364666,
+        "specificity": 0.04095687030420392
+      },
+      "development": {
+        "balanced_accuracy": 0.5366490620502481,
+        "count": 283758,
+        "counts": {
+          "FN": 37699,
+          "FP": 5811,
+          "TN": 236184,
+          "TP": 4064
+        },
+        "false_move_rate": 0.024012892828364222,
+        "fractions": {
+          "FN": 0.13285616616976437,
+          "FP": 0.02047871778064407,
+          "TN": 0.8323430528830905,
+          "TP": 0.014322063166501033
+        },
+        "missed_move_rate": 0.9026889830711395,
+        "precision": 0.41154430379746837,
+        "predicted_move_fraction": 0.0348007809471451,
+        "recall": 0.09731101692886047,
+        "specificity": 0.9759871071716357,
+        "true_move_fraction": 0.1471782293362654
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "ca07b6fb623c9191a53d0c9af15d73165acfff8867fc776c37ad3a6511f86685",
+      "receipt_sha256": "1b2af10bf4299b0e6150ac94d8934cf8b3db4aa4ee359ae5194793dc3bf4c386",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "5cc1c024f769354bfecac2a801d7d0202de09f0c17e472dfc8bee953a2796085",
+      "train": {
+        "balanced_accuracy": 0.5683114422149694,
+        "count": 243887,
+        "counts": {
+          "FN": 27973,
+          "FP": 13569,
+          "TN": 195282,
+          "TP": 7063
+        },
+        "false_move_rate": 0.06496976313256819,
+        "fractions": {
+          "FN": 0.1146965602922665,
+          "FP": 0.055636421785499025,
+          "TN": 0.8007068847458044,
+          "TP": 0.028960133176430067
+        },
+        "missed_move_rate": 0.7984073524374928,
+        "precision": 0.34233229934082976,
+        "predicted_move_fraction": 0.0845965549619291,
+        "recall": 0.20159264756250714,
+        "specificity": 0.9350302368674318,
+        "true_move_fraction": 0.14365669346869656
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D10_L05",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.01303657940370917,
+        "false_move_rate": 0.21359098816891214,
+        "missed_move_rate": -0.18751782936149397,
+        "recall": 0.18751782936149392,
+        "specificity": -0.2135909881689121
+      },
+      "development": {
+        "balanced_accuracy": 0.5630657453699626,
+        "count": 232844,
+        "counts": {
+          "FN": 13008,
+          "FP": 96555,
+          "TN": 102920,
+          "TP": 20361
+        },
+        "false_move_rate": 0.4840456197518486,
+        "fractions": {
+          "FN": 0.05586572984487468,
+          "FP": 0.4146767793028809,
+          "TN": 0.4420126780161825,
+          "TP": 0.08744481283606191
+        },
+        "missed_move_rate": 0.3898228895082262,
+        "precision": 0.1741506722775326,
+        "predicted_move_fraction": 0.5021215921389428,
+        "recall": 0.6101771104917738,
+        "specificity": 0.5159543802481514,
+        "true_move_fraction": 0.1433105426809366
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "b0eeee6c35b43e64905ed07883dbcebb2520696f08ec3600993f0b6c5eea5fa5",
+      "receipt_sha256": "fdc1085c01c9f08d946c47bf786f46fd23855f62023132d93e516b94582c481b",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "c5776650c283663998fe5ea3b9acb6d7bc29225f202805e6296e08052c6ada47",
+      "train": {
+        "balanced_accuracy": 0.5761023247736717,
+        "count": 278470,
+        "counts": {
+          "FN": 23660,
+          "FP": 64230,
+          "TN": 173259,
+          "TP": 17321
+        },
+        "false_move_rate": 0.2704546315829365,
+        "fractions": {
+          "FN": 0.08496426904154847,
+          "FP": 0.23065321219520954,
+          "TN": 0.6221819226487593,
+          "TP": 0.06220059611448271
+        },
+        "missed_move_rate": 0.5773407188697202,
+        "precision": 0.2123946977964709,
+        "predicted_move_fraction": 0.29285380830969227,
+        "recall": 0.4226592811302799,
+        "specificity": 0.7295453684170635,
+        "true_move_fraction": 0.14716486515603117
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D10_L05",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.035860109530699846,
+        "false_move_rate": -0.03515979744738473,
+        "missed_move_rate": 0.10688001650878443,
+        "recall": -0.10688001650878444,
+        "specificity": 0.03515979744738473
+      },
+      "development": {
+        "balanced_accuracy": 0.5415353143878905,
+        "count": 278470,
+        "counts": {
+          "FN": 36483,
+          "FP": 6338,
+          "TN": 231151,
+          "TP": 4498
+        },
+        "false_move_rate": 0.026687551844506482,
+        "fractions": {
+          "FN": 0.13101231730527527,
+          "FP": 0.022760081875965094,
+          "TN": 0.8300750529680038,
+          "TP": 0.016152547850755917
+        },
+        "missed_move_rate": 0.8902418193797126,
+        "precision": 0.41509782207456625,
+        "predicted_move_fraction": 0.038912629726721014,
+        "recall": 0.10975818062028746,
+        "specificity": 0.9733124481554936,
+        "true_move_fraction": 0.14716486515603117
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "9b22bce1800d5d84133ad9c0855f8eef660aadbe2bc0717fe59e1cd224f26cc8",
+      "receipt_sha256": "20d6730d315b54db932ca6f97ea5c51c31689ad4b6bfb02715aea1c73f33e518",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "1c458396c5a9e21188651b17fe94f33513dce1358ff2d3522c53f94bc27e1251",
+      "train": {
+        "balanced_accuracy": 0.5773954239185903,
+        "count": 232844,
+        "counts": {
+          "FN": 26140,
+          "FP": 12337,
+          "TN": 187138,
+          "TP": 7229
+        },
+        "false_move_rate": 0.061847349291891215,
+        "fractions": {
+          "FN": 0.11226400508494958,
+          "FP": 0.052983972101492846,
+          "TN": 0.8037054852175706,
+          "TP": 0.031046537595987012
+        },
+        "missed_move_rate": 0.7833618028709282,
+        "precision": 0.36946744352448124,
+        "predicted_move_fraction": 0.08403050969747985,
+        "recall": 0.2166381971290719,
+        "specificity": 0.9381526507081088,
+        "true_move_fraction": 0.1433105426809366
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D10_L15",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.015241831205651257,
+        "false_move_rate": 0.24048779203023957,
+        "missed_move_rate": -0.210004129618937,
+        "recall": 0.210004129618937,
+        "specificity": -0.2404877920302395
+      },
+      "development": {
+        "balanced_accuracy": 0.5610090812103593,
+        "count": 214903,
+        "counts": {
+          "FN": 11874,
+          "FP": 90379,
+          "TN": 93880,
+          "TP": 18770
+        },
+        "false_move_rate": 0.4904997856278391,
+        "fractions": {
+          "FN": 0.055252834999976734,
+          "FP": 0.4205571816121692,
+          "TN": 0.4368482524673923,
+          "TP": 0.0873417309204618
+        },
+        "missed_move_rate": 0.38748205195144236,
+        "precision": 0.17196676103308323,
+        "predicted_move_fraction": 0.507898912532631,
+        "recall": 0.6125179480485576,
+        "specificity": 0.509500214372161,
+        "true_move_fraction": 0.1425945659204385
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "2d0bb7e679f9bea799f549e46e2ea1a298328786a6dacc9441fcc850afbade9b",
+      "receipt_sha256": "aacee0f8dfaf1ced06ab2f338b288fb2b50765218391faa68f70b51d35c51fc6",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "01b8bb10d0062ac5d3f528490e102a076e4210936a878e8b8e29c4eb6c52e30d",
+      "train": {
+        "balanced_accuracy": 0.5762509124160106,
+        "count": 268910,
+        "counts": {
+          "FN": 23673,
+          "FP": 57325,
+          "TN": 171964,
+          "TP": 15948
+        },
+        "false_move_rate": 0.2500119935975995,
+        "fractions": {
+          "FN": 0.08803317094938827,
+          "FP": 0.21317541184783012,
+          "TN": 0.6394853296641999,
+          "TP": 0.05930608753858168
+        },
+        "missed_move_rate": 0.5974861815703794,
+        "precision": 0.21765179534071213,
+        "predicted_move_fraction": 0.2724814993864118,
+        "recall": 0.40251381842962064,
+        "specificity": 0.7499880064024005,
+        "true_move_fraction": 0.14733925848796994
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D10_L15",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.03898957511128642,
+        "false_move_rate": -0.03724062462880637,
+        "missed_move_rate": 0.11521977485137946,
+        "recall": -0.1152197748513794,
+        "specificity": 0.037240624628806396
+      },
+      "development": {
+        "balanced_accuracy": 0.5378486797081728,
+        "count": 268910,
+        "counts": {
+          "FN": 35632,
+          "FP": 5728,
+          "TN": 223561,
+          "TP": 3989
+        },
+        "false_move_rate": 0.024981573472778896,
+        "fractions": {
+          "FN": 0.13250529917072626,
+          "FP": 0.02130080696143691,
+          "TN": 0.8313599345505931,
+          "TP": 0.014833959317243687
+        },
+        "missed_move_rate": 0.8993210671108756,
+        "precision": 0.4105176494802923,
+        "predicted_move_fraction": 0.0361347662786806,
+        "recall": 0.10067893288912445,
+        "specificity": 0.9750184265272211,
+        "true_move_fraction": 0.14733925848796994
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "dbbe18d73085ac84b33a56f60244340f1f7b7413a10ae748cba0e00b9565067e",
+      "receipt_sha256": "c969ea60aac4e0e599f4c5cd31139d55d5ff6f8d789d0c9bb47573909c16de6f",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "35d0dcb4c22c07a68cee838ebf2e2cf58be8952f15a217ffb6e012410e5c29eb",
+      "train": {
+        "balanced_accuracy": 0.5768382548194593,
+        "count": 214903,
+        "counts": {
+          "FN": 24028,
+          "FP": 11465,
+          "TN": 172794,
+          "TP": 6616
+        },
+        "false_move_rate": 0.06222219810158527,
+        "fractions": {
+          "FN": 0.11180858340739776,
+          "FP": 0.05334965077267418,
+          "TN": 0.8040557833068873,
+          "TP": 0.030785982513040766
+        },
+        "missed_move_rate": 0.7841012922594961,
+        "precision": 0.3659089652121011,
+        "predicted_move_fraction": 0.08413563328571495,
+        "recall": 0.21589870774050385,
+        "specificity": 0.9377778018984148,
+        "true_move_fraction": 0.1425945659204385
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D10_L45",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.02294362716317555,
+        "false_move_rate": 0.28276328897826586,
+        "missed_move_rate": -0.2368760346519146,
+        "recall": 0.23687603465191465,
+        "specificity": -0.2827632889782658
+      },
+      "development": {
+        "balanced_accuracy": 0.5519454801841304,
+        "count": 188941,
+        "counts": {
+          "FN": 10078,
+          "FP": 84271,
+          "TN": 77900,
+          "TP": 16692
+        },
+        "false_move_rate": 0.5196428461315525,
+        "fractions": {
+          "FN": 0.05333940224726237,
+          "FP": 0.4460175398669426,
+          "TN": 0.41229801895829915,
+          "TP": 0.08834503892749589
+        },
+        "missed_move_rate": 0.3764661935001868,
+        "precision": 0.16532789239622436,
+        "predicted_move_fraction": 0.5343625787944385,
+        "recall": 0.6235338064998133,
+        "specificity": 0.4803571538684475,
+        "true_move_fraction": 0.14168444117475826
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "f27a7aef2ab36d7d837a962ef6658bbe5526f826d576890538e804cf93cf7c60",
+      "receipt_sha256": "56bb1403d66e46b7082503e6e6da8aa8740d78a3b5bfe89504530540a68290f5",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "580d2889af3adc5b9d6dcb487a91cfcdec5ad1537c201f2af9663be0ad22d1d6",
+      "train": {
+        "balanced_accuracy": 0.5748891073473059,
+        "count": 253893,
+        "counts": {
+          "FN": 22985,
+          "FP": 51265,
+          "TN": 165153,
+          "TP": 14490
+        },
+        "false_move_rate": 0.2368795571532867,
+        "fractions": {
+          "FN": 0.09053026274848065,
+          "FP": 0.2019157676659065,
+          "TN": 0.6504826836501991,
+          "TP": 0.05707128593541374
+        },
+        "missed_move_rate": 0.6133422281521014,
+        "precision": 0.22036347045852026,
+        "predicted_move_fraction": 0.25898705360132024,
+        "recall": 0.3866577718478986,
+        "specificity": 0.7631204428467133,
+        "true_move_fraction": 0.14760154868389438
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D10_L45",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.035011704642632036,
+        "false_move_rate": -0.053015703080270316,
+        "missed_move_rate": 0.12303911236553422,
+        "recall": -0.12303911236553419,
+        "specificity": 0.05301570308027026
+      },
+      "development": {
+        "balanced_accuracy": 0.5413943406445354,
+        "count": 253893,
+        "counts": {
+          "FN": 33226,
+          "FP": 6621,
+          "TN": 209797,
+          "TP": 4249
+        },
+        "false_move_rate": 0.03059357354748681,
+        "fractions": {
+          "FN": 0.1308661522767465,
+          "FP": 0.02607791471210313,
+          "TN": 0.8263205366040025,
+          "TP": 0.01673539640714789
+        },
+        "missed_move_rate": 0.8866177451634423,
+        "precision": 0.3908923643054278,
+        "predicted_move_fraction": 0.042813311119251025,
+        "recall": 0.1133822548365577,
+        "specificity": 0.9694064264525132,
+        "true_move_fraction": 0.14760154868389438
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "2e0045a46c66b20af01e676f1d655a22357119dc57e3732d936dc94f6282819e",
+      "receipt_sha256": "1e577eda717a0f61f4a695f2bb56e77a7d65f12cdc45bdf968fb45cbc0863b14",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "d44a45cf6c823e44f88dd0c7f5ecd958ef00dd9c486d89541ba0b6012cfd7c99",
+      "train": {
+        "balanced_accuracy": 0.5764060452871674,
+        "count": 188941,
+        "counts": {
+          "FN": 20441,
+          "FP": 13559,
+          "TN": 148612,
+          "TP": 6329
+        },
+        "false_move_rate": 0.08360927662775712,
+        "fractions": {
+          "FN": 0.10818721188095755,
+          "FP": 0.07176314299172758,
+          "TN": 0.7865524158335142,
+          "TP": 0.03349722929380071
+        },
+        "missed_move_rate": 0.763578632797908,
+        "precision": 0.3182320997586484,
+        "predicted_move_fraction": 0.10526037228552829,
+        "recall": 0.2364213672020919,
+        "specificity": 0.9163907233722429,
+        "true_move_fraction": 0.14168444117475826
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D20_L01",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.011880422004479696,
+        "false_move_rate": 0.22930380185032284,
+        "missed_move_rate": -0.20554295784136345,
+        "recall": 0.2055429578413635,
+        "specificity": -0.22930380185032284
+      },
+      "development": {
+        "balanced_accuracy": 0.555578783426493,
+        "count": 221278,
+        "counts": {
+          "FN": 12339,
+          "FP": 94546,
+          "TN": 95123,
+          "TP": 19270
+        },
+        "false_move_rate": 0.49847892908171604,
+        "fractions": {
+          "FN": 0.05576243458454975,
+          "FP": 0.4272724807707951,
+          "TN": 0.4298800603765399,
+          "TP": 0.08708502426811522
+        },
+        "missed_move_rate": 0.39036350406529785,
+        "precision": 0.16930835734870317,
+        "predicted_move_fraction": 0.5143575050389103,
+        "recall": 0.6096364959347021,
+        "specificity": 0.5015210709182839,
+        "true_move_fraction": 0.14284745885266498
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "110c8f6d40b878ff4771358e0a1daeae69483c1ccdc88994511e102620433178",
+      "receipt_sha256": "16270e809d25b8f0c46b0b1a1d9f99e32ab05a0058a5ba42213b3f9a85fcda50",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "57ab5bdbe7f12ff7743974a4979c7fe374fccc1897f6732e62bcdfcdddc7f6ef",
+      "train": {
+        "balanced_accuracy": 0.5674592054309727,
+        "count": 272366,
+        "counts": {
+          "FN": 23903,
+          "FP": 62517,
+          "TN": 169737,
+          "TP": 16209
+        },
+        "false_move_rate": 0.2691751272313932,
+        "fractions": {
+          "FN": 0.08776058685739042,
+          "FP": 0.22953305478657396,
+          "TN": 0.6231945250141354,
+          "TP": 0.05951183334190024
+        },
+        "missed_move_rate": 0.5959064619066613,
+        "precision": 0.20589131925920282,
+        "predicted_move_fraction": 0.2890448881284742,
+        "recall": 0.40409353809333864,
+        "specificity": 0.7308248727686067,
+        "true_move_fraction": 0.14727242019929065
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D20_L01",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.03463546129807571,
+        "false_move_rate": -0.03864515718415888,
+        "missed_move_rate": 0.10791607978031026,
+        "recall": -0.10791607978031027,
+        "specificity": 0.03864515718415895
+      },
+      "development": {
+        "balanced_accuracy": 0.536886725092103,
+        "count": 272366,
+        "counts": {
+          "FN": 36196,
+          "FP": 5540,
+          "TN": 226714,
+          "TP": 3916
+        },
+        "false_move_rate": 0.02385319520869393,
+        "fractions": {
+          "FN": 0.13289470785634036,
+          "FP": 0.02034027742082345,
+          "TN": 0.8323873023798859,
+          "TP": 0.014377712342950294
+        },
+        "missed_move_rate": 0.9023733546071001,
+        "precision": 0.41412859560067683,
+        "predicted_move_fraction": 0.03471798976377374,
+        "recall": 0.09762664539289988,
+        "specificity": 0.9761468047913061,
+        "true_move_fraction": 0.14727242019929065
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "4ed7ef5a953d1c478e1c6b5694489245a13725ec15f1310eea39ccdc61ed30c3",
+      "receipt_sha256": "f471ef5a5c855715d6b5077599fa0005a62899b35068e651550cf24e2def0242",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "640d52e3eee0aa670fe7ef4577a911b65ea4d3eee645c58778db7dbdb24d7915",
+      "train": {
+        "balanced_accuracy": 0.5715221863901787,
+        "count": 221278,
+        "counts": {
+          "FN": 25112,
+          "FP": 11854,
+          "TN": 177815,
+          "TP": 6497
+        },
+        "false_move_rate": 0.06249835239285281,
+        "fractions": {
+          "FN": 0.11348620287602021,
+          "FP": 0.05357062157105542,
+          "TN": 0.8035819195762796,
+          "TP": 0.029361255976644764
+        },
+        "missed_move_rate": 0.7944572748267898,
+        "precision": 0.35404065173560023,
+        "predicted_move_fraction": 0.08293187754770018,
+        "recall": 0.20554272517321015,
+        "specificity": 0.9375016476071472,
+        "true_move_fraction": 0.14284745885266498
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D20_L05",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.01532883340473945,
+        "false_move_rate": 0.2513651663801814,
+        "missed_move_rate": -0.22070749957070235,
+        "recall": 0.22070749957070235,
+        "specificity": -0.25136516638018136
+      },
+      "development": {
+        "balanced_accuracy": 0.5610927877764473,
+        "count": 214903,
+        "counts": {
+          "FN": 12041,
+          "FP": 89344,
+          "TN": 94915,
+          "TP": 18603
+        },
+        "false_move_rate": 0.4848826922972555,
+        "fractions": {
+          "FN": 0.05602992978227386,
+          "FP": 0.4157410552667948,
+          "TN": 0.4416643788127667,
+          "TP": 0.08656463613816466
+        },
+        "missed_move_rate": 0.3929317321498499,
+        "precision": 0.17233457159531992,
+        "predicted_move_fraction": 0.5023056914049594,
+        "recall": 0.6070682678501501,
+        "specificity": 0.5151173077027446,
+        "true_move_fraction": 0.1425945659204385
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "a3939f5e689f693c3fce451610438201d2269795b192060d80e8617ff906adda",
+      "receipt_sha256": "3b5b68d231b30e56ebc7d312cedc1f29087157a9db0d12c886bb94358d67e117",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "0e6f4c8fadc642a514e6ef4759d83589c070cb4f61f310f034baee96b31b723a",
+      "train": {
+        "balanced_accuracy": 0.5764216211811868,
+        "count": 268910,
+        "counts": {
+          "FN": 24313,
+          "FP": 53543,
+          "TN": 175746,
+          "TP": 15308
+        },
+        "false_move_rate": 0.2335175259170741,
+        "fractions": {
+          "FN": 0.09041314938083374,
+          "FP": 0.19911122680450707,
+          "TN": 0.653549514707523,
+          "TP": 0.05692610910713622
+        },
+        "missed_move_rate": 0.6136392317205522,
+        "precision": 0.22233518757897489,
+        "predicted_move_fraction": 0.2560373359116433,
+        "recall": 0.38636076827944776,
+        "specificity": 0.7664824740829259,
+        "true_move_fraction": 0.14733925848796994
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D20_L05",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.0372886788387633,
+        "false_move_rate": -0.036940121666249326,
+        "missed_move_rate": 0.1115174793437761,
+        "recall": -0.11151747934377615,
+        "specificity": 0.03694012166624938
+      },
+      "development": {
+        "balanced_accuracy": 0.538082938406285,
+        "count": 268910,
+        "counts": {
+          "FN": 35634,
+          "FP": 5609,
+          "TN": 223680,
+          "TP": 3987
+        },
+        "false_move_rate": 0.02446257779483534,
+        "fractions": {
+          "FN": 0.13251273660332452,
+          "FP": 0.020858279721840022,
+          "TN": 0.83180246179019,
+          "TP": 0.01482652188464542
+        },
+        "missed_move_rate": 0.8993715453925948,
+        "precision": 0.41548561900791997,
+        "predicted_move_fraction": 0.03568480160648544,
+        "recall": 0.10062845460740516,
+        "specificity": 0.9755374222051647,
+        "true_move_fraction": 0.14733925848796994
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "378a104535c77bdd84a52ce706de9b80537e1ecd2bb3ef071c1a72735686da3b",
+      "receipt_sha256": "78cdf3e56ef06425c767e2f33b1485cc2bba35f026784bcc4bb81446024fffdd",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "bf16726eaae6bb99795ad37399495c152ab98f4bda26d86378093bfcad5e0bd4",
+      "train": {
+        "balanced_accuracy": 0.5753716172450483,
+        "count": 214903,
+        "counts": {
+          "FN": 24143,
+          "FP": 11314,
+          "TN": 172945,
+          "TP": 6501
+        },
+        "false_move_rate": 0.06140269946108467,
+        "fractions": {
+          "FN": 0.1123437085568838,
+          "FP": 0.052647008185088155,
+          "TN": 0.8047584258944733,
+          "TP": 0.03025085736355472
+        },
+        "missed_move_rate": 0.7878540660488187,
+        "precision": 0.36491720460286275,
+        "predicted_move_fraction": 0.08289786554864288,
+        "recall": 0.2121459339511813,
+        "specificity": 0.9385973005389153,
+        "true_move_fraction": 0.1425945659204385
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D20_L15",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.017936591679500347,
+        "false_move_rate": 0.2722147308125469,
+        "missed_move_rate": -0.2363415474535459,
+        "recall": 0.23634154745354602,
+        "specificity": -0.27221473081254677
+      },
+      "development": {
+        "balanced_accuracy": 0.5576877629773731,
+        "count": 203479,
+        "counts": {
+          "FN": 11392,
+          "FP": 85705,
+          "TN": 88829,
+          "TP": 17553
+        },
+        "false_move_rate": 0.4910504543527336,
+        "fractions": {
+          "FN": 0.05598612141793502,
+          "FP": 0.4211982563311202,
+          "TN": 0.4365511920149008,
+          "TP": 0.08626443023604402
+        },
+        "missed_move_rate": 0.3935740196925203,
+        "precision": 0.16999167134749849,
+        "predicted_move_fraction": 0.5074626865671642,
+        "recall": 0.6064259803074797,
+        "specificity": 0.5089495456472665,
+        "true_move_fraction": 0.14225055165397904
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "8e77c6fc868e5d94781883bd23f41ec6d3bceb278b1f99ed0cbc168c7e590dc7",
+      "receipt_sha256": "f3d3b48f519f8b3255fcff53b5db092718557e97964265ca292dfc46b2124bc1",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "cec741084b4b99894572a62f64bf10f9419e1e8ac81674b502147eb42397117a",
+      "train": {
+        "balanced_accuracy": 0.5756243546568734,
+        "count": 262559,
+        "counts": {
+          "FN": 24396,
+          "FP": 48982,
+          "TN": 174848,
+          "TP": 14333
+        },
+        "false_move_rate": 0.21883572354018674,
+        "fractions": {
+          "FN": 0.09291625882182672,
+          "FP": 0.18655616451921284,
+          "TN": 0.6659379415674191,
+          "TP": 0.05458963509154133
+        },
+        "missed_move_rate": 0.6299155671460662,
+        "precision": 0.22637605622680249,
+        "predicted_move_fraction": 0.24114579961075416,
+        "recall": 0.3700844328539337,
+        "specificity": 0.7811642764598132,
+        "true_move_fraction": 0.14750589391336805
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D20_L15",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.039454863480245406,
+        "false_move_rate": -0.038032003414558625,
+        "missed_move_rate": 0.11694173037504929,
+        "recall": -0.11694173037504929,
+        "specificity": 0.03803200341455859
+      },
+      "development": {
+        "balanced_accuracy": 0.5360173052212126,
+        "count": 262559,
+        "counts": {
+          "FN": 34969,
+          "FP": 5607,
+          "TN": 218223,
+          "TP": 3760
+        },
+        "false_move_rate": 0.02505026135906715,
+        "fractions": {
+          "FN": 0.13318530311282417,
+          "FP": 0.021355200164534446,
+          "TN": 0.8311389059220975,
+          "TP": 0.014320590800543877
+        },
+        "missed_move_rate": 0.9029151281985076,
+        "precision": 0.4014092025194833,
+        "predicted_move_fraction": 0.03567579096507833,
+        "recall": 0.09708487180149242,
+        "specificity": 0.9749497386409328,
+        "true_move_fraction": 0.14750589391336805
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "7c8920318e52d2bd9fba1f4900b997a2290f52420c2aae3eee6bac69490128b4",
+      "receipt_sha256": "47c012f8ba2f969978c8998f74d84fc421dc73de4d9213a0234da6f1d5fa381e",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "81778b6970ecb37af9ed8b04804be6b82208ed3c28b3a6d21a779c71385e5c1e",
+      "train": {
+        "balanced_accuracy": 0.575472168701458,
+        "count": 203479,
+        "counts": {
+          "FN": 22750,
+          "FP": 11010,
+          "TN": 163524,
+          "TP": 6195
+        },
+        "false_move_rate": 0.06308226477362577,
+        "fractions": {
+          "FN": 0.11180514942573927,
+          "FP": 0.05410877780999514,
+          "TN": 0.8036406705360258,
+          "TP": 0.03044540222823977
+        },
+        "missed_move_rate": 0.7859733978234583,
+        "precision": 0.36006974716652135,
+        "predicted_move_fraction": 0.08455418003823491,
+        "recall": 0.2140266021765417,
+        "specificity": 0.9369177352263742,
+        "true_move_fraction": 0.14225055165397904
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D20_L45",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.02412841183366643,
+        "false_move_rate": 0.28110343902021234,
+        "missed_move_rate": -0.23284661535287948,
+        "recall": 0.2328466153528796,
+        "specificity": -0.2811034390202124
+      },
+      "development": {
+        "balanced_accuracy": 0.5508858134497346,
+        "count": 183711,
+        "counts": {
+          "FN": 9424,
+          "FP": 84324,
+          "TN": 73490,
+          "TP": 16473
+        },
+        "false_move_rate": 0.5343252182949548,
+        "fractions": {
+          "FN": 0.0512979625607612,
+          "FP": 0.4590035436092558,
+          "TN": 0.4000304826602653,
+          "TP": 0.08966801116971765
+        },
+        "missed_move_rate": 0.36390315480557595,
+        "precision": 0.1634274829608024,
+        "predicted_move_fraction": 0.5486715547789734,
+        "recall": 0.6360968451944241,
+        "specificity": 0.46567478170504517,
+        "true_move_fraction": 0.14096597373047884
+      },
+      "fold": "FOLD_A",
+      "original_job_receipt_sha256": "8cf39cc56ff568a85ec3fe1e761d046f0d921311c6c87c7ac4d88ea92af39d5c",
+      "receipt_sha256": "243f413c0f3a024df2954b3cb936de8c7b6035880e31940ee322e95292920960",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "f4d041d0d1c566d0be2e2731f2d8d4bd232d52519caab760a30dbca37dda563e",
+      "train": {
+        "balanced_accuracy": 0.5750142252834011,
+        "count": 250451,
+        "counts": {
+          "FN": 22069,
+          "FP": 54055,
+          "TN": 159414,
+          "TP": 14913
+        },
+        "false_move_rate": 0.2532217792747425,
+        "fractions": {
+          "FN": 0.08811703686549464,
+          "FP": 0.21583064152269307,
+          "TN": 0.6365077400369733,
+          "TP": 0.05954458157483899
+        },
+        "missed_move_rate": 0.5967497701584554,
+        "precision": 0.21623071569423502,
+        "predicted_move_fraction": 0.27537522309753204,
+        "recall": 0.4032502298415445,
+        "specificity": 0.7467782207252576,
+        "true_move_fraction": 0.14766161844033363
+      }
+    },
+    {
+      "alternative_thresholds_evaluated": 0,
+      "candidate_id": "HRI_D20_L45",
+      "dev_minus_train": {
+        "balanced_accuracy": -0.036104927300031564,
+        "false_move_rate": -0.04913880854878554,
+        "missed_move_rate": 0.12134866314884862,
+        "recall": -0.1213486631488487,
+        "specificity": 0.049138808548785495
+      },
+      "development": {
+        "balanced_accuracy": 0.5392939065342878,
+        "count": 250451,
+        "counts": {
+          "FN": 33000,
+          "FP": 6209,
+          "TN": 207260,
+          "TP": 3982
+        },
+        "false_move_rate": 0.029086190500728443,
+        "fractions": {
+          "FN": 0.13176230080933996,
+          "FP": 0.024791276537127024,
+          "TN": 0.8275471050225394,
+          "TP": 0.015899317630993687
+        },
+        "missed_move_rate": 0.892325996430696,
+        "precision": 0.3907369247375135,
+        "predicted_move_fraction": 0.04069059416812071,
+        "recall": 0.10767400356930398,
+        "specificity": 0.9709138094992715,
+        "true_move_fraction": 0.14766161844033363
+      },
+      "fold": "FOLD_B",
+      "original_job_receipt_sha256": "3137dec9f852c28c44fdd7235ec64725101a94e8b03bf4da2c1314d2e9907bf0",
+      "receipt_sha256": "582b3f5497648e7d4c8e729f90bc44c2e8cf028f646af7db4485565385a6ead7",
+      "threshold_lineage": "SAME_FROZEN_TRAIN_THRESHOLD",
+      "threshold_receipt_sha256": "c462accd3c646305436a89154215a467032236bd316d88e4249a365459cdde4d",
+      "train": {
+        "balanced_accuracy": 0.5753988338343193,
+        "count": 183711,
+        "counts": {
+          "FN": 19966,
+          "FP": 12345,
+          "TN": 145469,
+          "TP": 5931
+        },
+        "false_move_rate": 0.07822499904951398,
+        "fractions": {
+          "FN": 0.10868157051020352,
+          "FP": 0.06719793588843347,
+          "TN": 0.7918360903810877,
+          "TP": 0.03228440322027532
+        },
+        "missed_move_rate": 0.7709773332818474,
+        "precision": 0.32452396585686144,
+        "predicted_move_fraction": 0.09948233910870878,
+        "recall": 0.2290226667181527,
+        "specificity": 0.921775000950486,
+        "true_move_fraction": 0.14096597373047884
+      }
+    }
+  ],
+  "opening_count": 0,
+  "policy_sha256": "b93b623231dcd763e7588c4986073d4ee0188dac6b4a06b4b0e035317928b96e",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "6b16edc9542da46764648bc1acd6edc33dc9400167eb4126ecd64fe3dfb82c83",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_STAGE1_TRANSFER_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

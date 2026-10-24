@@ -1,0 +1,45 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "forbidden_inputs": [
+    "modelV2",
+    "planner",
+    "path",
+    "lane",
+    "liveCalibration",
+    "cameraOdometry",
+    "liveLocationKalman",
+    "future_target",
+    "candidate_result_label"
+  ],
+  "historical_regeneration": false,
+  "mappings": {
+    "causal_origin": "ROUTE_SEGMENT_ALIGNED_RUN_WITHIN_RUN_DESIGN_ROW_RECEIPT",
+    "controller_limited_torque": "POST_CARCONTROLLER_NORMALIZED_TORQUE",
+    "driver_context": "STEERING_PRESSED_DRIVER_TORQUE_ACTIVE_RESET_INTERVENTION",
+    "requested_torque": "SOURCE_PROVEN_REQUESTED_NORMALIZED_TORQUE_NOT_POST_LIMIT_INTENT",
+    "source_identity": "EXACT_SOURCE_CLASS_CONFIG_PROFILE_ADAPTER_POLICY_SHA",
+    "steering_angle_rate": "ACTUAL_SOURCE_SAMPLES_WITH_HISTORY_NOT_FINITE_COUNTS",
+    "time_order": "LATEST_PAST_100_HZ_MAX_20_MS_NO_FUTURE_SAMPLE",
+    "torque_output_can": "LOGGED_POST_CONTROLLER_REPRESENTATION_NOT_EPS_ACK",
+    "yaw_gyro": "RAW_MEASUREMENT_SOURCE_UNITS_AXES_ACQUISITION_AND_PUBLISH_CLOCKS"
+  },
+  "missing": "NULL_WITH_REASON_NEVER_FALSE_OR_ZERO",
+  "numeric_extraction_executed": false,
+  "parents_file_sha256": {
+    "cyber-lateral-observability-contract-v1.json": "b23e40d55e381da46ed340d6705642c86ef0c4eef48a19d655db81b1cc7a401f",
+    "empirical-causal-context-schema-v2.json": "61398b5483120528ae29aea95d1877049ef63656c14f5125f7d6fc2ed455036c"
+  },
+  "production_authority": false,
+  "production_observer_implemented": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "0d120d0b8ec5406049b0463b6ee2859520296ebd9f7ace53278751b82415cfa9",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_CAUSAL_H1_SALVAGE_MAPPING_V1",
+  "scope": "FUTURE_GENERATIONS_ONLY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

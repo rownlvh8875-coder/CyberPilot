@@ -1,0 +1,30 @@
+{
+  "policy": {
+    "components": "8_CONNECTED_PAINT_EXACT_CELL_SUPPORT_MANY_TO_MANY",
+    "confidence_edges": [
+      0.0,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ],
+    "directional_metric": "UNCHANGED_SAME_ROW_RUN_MIDPOINT",
+    "ego_lane_identity": false,
+    "meter_conversion": false,
+    "private_input_allowed": false,
+    "reference_promotable": false,
+    "scope": "DIAGNOSTIC_PUBLIC_GT",
+    "spatial_metric": "EUCLIDEAN_NEAREST_ROW_RUN_MIDPOINT_NO_FILL",
+    "spatial_resolved_width_fraction": 0.05,
+    "symmetric_metric": "POOLED_DIRECTIONAL_SAMPLES_NOT_BALANCED_F1",
+    "tail_cut_rationale": "DIAGNOSTIC_GEOMETRY_BIN_ONLY_NOT_ACCEPTANCE_THRESHOLD",
+    "tail_width_fraction": 0.25,
+    "unit": "px",
+    "version": "POST_RESULT_COMMA10K_TAIL_V1",
+    "y_bins": "far=[0,H//3);mid=[H//3,2H//3);near=[2H//3,H)"
+  },
+  "policy_sha256": "cac00d0936765b289298142d84a477bf86f3d795e49b053eb00c5d62dcde11ff",
+  "prior_results_already_opened": true,
+  "selection_unchanged": true
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "synthetic-stress-candidate-v2",
+  "status": "FROZEN_BEFORE_V2_CANDIDATE_EXECUTION",
+  "scope": "GENERIC_SYNTHETIC_ONLY",
+  "catalog_sha256": "30cafc16d93e006fd00fc67377edeec2083f294381f169697ebbee583e2f3de4",
+  "candidate_grid": {
+    "identity": {"lateral_kp_scale": 1.0, "longitudinal_ki_scale": 1.0},
+    "gentle": {"lateral_kp_scale": 0.95, "longitudinal_ki_scale": 0.95},
+    "firm": {"lateral_kp_scale": 1.05, "longitudinal_ki_scale": 1.05}
+  },
+  "relative_regression_allowance": 0.0,
+  "absolute_numeric_allowance": 1e-9,
+  "minimum_primary_improvement_fraction": 0.01,
+  "required_repetitions_per_arm": 2,
+  "require_all_declared_cases_and_delay_variants": true,
+  "require_identical_inputs_plant_reset_metric_policy": true,
+  "maximum_lateral_command_abs": 1.0,
+  "longitudinal_native_pid_envelope_mps2": [-3.5, 2.0],
+  "require_no_new_faults_or_unresolved_events": true,
+  "require_identity_current_matches_baseline": true,
+  "primary_metrics": ["center_rms_m", "acceleration_tracking_rms_mps2"],
+  "lower_is_better": [
+    "center_rms_m", "center_p95_abs_m", "center_max_abs_m", "left_curve_rms_m", "right_curve_rms_m", "left_right_rms_asymmetry_m",
+    "heading_error_rms_rad", "curvature_tracking_rms_1pm", "yaw_tracking_rms_rps",
+    "command_derivative_rms_per_s", "requested_command_jerk_rms_per_s3",
+    "applied_command_jerk_rms_per_s3", "steering_jerk_rms_deg_s3", "steering_tracking_rms_deg",
+    "saturation_ratio", "rate_limited_duration_s", "override_recovery_s", "unresolved_recoveries",
+    "maximum_command_step", "acceleration_tracking_rms_mps2", "braking_overshoot_mps2",
+    "actual_jerk_rms_mps3", "command_jerk_rms_mps3", "stopping_overshoot_m", "stopping_error_abs_m", "lead_distance_rms_m", "unresolved_stops",
+    "restart_delay_s", "unresolved_restarts", "cut_in_response_s", "unresolved_cut_ins",
+    "false_stop_frames", "false_braking_frames", "maximum_acceleration_command_step_mps2"
+  ],
+  "higher_is_better": ["lane_edge_minimum_margin_m", "minimum_ttc_s"],
+  "diagnostic_not_ranking": ["command_crossing_pair_frequency_hz", "command_zero_crossings", "center_mean_m", "curve_inside_bias_m", "stopping_error_m", "maximum_deceleration_mps2"],
+  "real_vehicle_verified": false,
+  "runtime_accepted": false,
+  "active_profile_enabled": false,
+  "vehicle_write_enabled": false,
+  "can_write_enabled": false,
+  "promotable_to_vehicle": false
+}

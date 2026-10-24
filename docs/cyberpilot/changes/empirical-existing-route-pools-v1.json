@@ -1,0 +1,42 @@
+{
+  "candidate_search_authorized": false,
+  "compatible_train_dev_candidate_count": 3,
+  "composition_authorized": false,
+  "development_pool_expanded": false,
+  "ledger_sha256": "962e4acd39c1a916f9270c3bb97f0b7513f0ee02fa8c23a04e65252e5a71d583",
+  "numeric_coverage": null,
+  "numeric_split_created": false,
+  "pipeline_holdout_candidates": [],
+  "pools": [
+    {
+      "candidate_pool_overlap_not_role_assignment": true,
+      "development_candidates": [
+        "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+        "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+        "eda13cbea550fc80f6153a1d9951fb7f06ce0bb2c6bfc462b7383751512cfe77"
+      ],
+      "empirical_profile_sha256": "494ce20b81e7f212ade6f30f89686752817d52d2d0e0e7658ab0a7239c0e35b3",
+      "full_carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+      "future_train_dev_assignment_must_be_route_disjoint": true,
+      "retrospective_development_limitation": true,
+      "source_class_sha256": "c07dbc19980119034bea832a830d24536551c489b6753547475b0b8a38b7dd1e",
+      "train_candidates": [
+        "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+        "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+        "eda13cbea550fc80f6153a1d9951fb7f06ce0bb2c6bfc462b7383751512cfe77"
+      ]
+    }
+  ],
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "7e818fe5a5122fecb40fb2e877953000f85174a58962b114f32471054452ec0c",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_EXISTING_ROUTE_POOLS_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "strict_independent_holdout_created": false,
+  "ta_execution": false,
+  "train_pool_expanded": false,
+  "vehicle_activation_allowed": false
+}

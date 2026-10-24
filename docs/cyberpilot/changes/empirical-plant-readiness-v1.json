@@ -1,0 +1,53 @@
+{
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_search": "NOT_AUTHORIZED",
+  "candidate_search_authorized": false,
+  "clean_primary_evaluation_available": false,
+  "closed_loop_identification_bias": "UNRESOLVED_OBSERVATIONAL_OLS",
+  "comparison_sha256": "27a46ca0a6fdcd509d61ffe94f36dab29ce1e4e7d36619fe78e730807bdc64d8",
+  "composition_authorization": "NOT_AUTHORIZED",
+  "composition_authorized": false,
+  "composition_recommendation": "COMPOSITION_NOT_RECOMMENDED",
+  "counterfactual_use": "NOT_ADMITTED_NO_TA_SG_EXECUTION",
+  "frozen_candidate_evaluation": "NOT_AUTHORIZED",
+  "full_plant_ready": false,
+  "historical": {
+    "current": "BASELINE_EXACT",
+    "sg": "SG_CLOSED_LOOP_TRADEOFF_ONLY",
+    "ta": "TA_STANDALONE_TRADEOFF_ONLY",
+    "v1": "TRADEOFF_ONLY",
+    "v2": "REJECTED",
+    "v2_violations": 37
+  },
+  "holdout_state": "HOLDOUT_EVALUATED",
+  "local_model_sha256": "fd44eea54b2b70e71bae5956e388293cae1f5a230e61d1412b041eaac646dbc3",
+  "ordinary_limit_unobserved": true,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "c58e5da7c9b6056ee97e352a452ece257f4c57d811a25b4c7fc0bffe28564341",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_PLANT_READINESS_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "signal_audit_sha256": "788d9382f669056fb6085c7619bb1f4934e11487f0f4051d733bc9c3ba8de495",
+  "signal_provenance": "TIER_B",
+  "single_route_generalization": "UNAVAILABLE",
+  "status": "EMPIRICAL_ACTUATOR_MODEL_ONLY",
+  "ta_execution": false,
+  "validation_sha256": "df7f73c291057e3c2701387d4622e9a83057ca3b8046732efad48e1289b912fc",
+  "vehicle": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "vehicle_activation_allowed": false,
+  "yaw_model": "BLOCKED_UNIT_AND_FRAME_UNVERIFIED"
+}

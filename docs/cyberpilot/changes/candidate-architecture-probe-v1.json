@@ -1,0 +1,126 @@
+{
+  "actual_algorithm_implemented": false,
+  "candidate_selection_allowed": false,
+  "execution_environment": {
+    "implementation": "CPython",
+    "machine": "x86_64",
+    "python": "3.12.13",
+    "scope": "CURRENT_PURE_PYTHON_FIXTURE_EXECUTION"
+  },
+  "fixture_policy": {
+    "arc_length_m": 10.0,
+    "basis": "EXACT_ANALYTIC_DIRECTION_AND_OBSERVER_NEGATIVE_CONTROL; NOT_PLANT_GAIN",
+    "constant_normalized": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "curvatures_1pm": [
+      -0.002,
+      -0.001,
+      0.0,
+      0.001,
+      0.002
+    ],
+    "dt_s": 0.01,
+    "oscillation_normalized": [
+      0.0,
+      0.25,
+      -0.25,
+      0.25,
+      -0.25,
+      0.0
+    ]
+  },
+  "negative": {
+    "current_alias": {
+      "CURRENT": "BASELINE_EXACT",
+      "V1": "TRADEOFF_ONLY",
+      "V2": "REJECTED"
+    },
+    "disabled_passthrough_exact": true,
+    "identical_reset_exact": true
+  },
+  "parameter_search_allowed": false,
+  "performance_claim_allowed": false,
+  "production_authority": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "477f68bcf4377e1276fa2d25f005b829ccebd0cf991c1203a52bd049d5ab9aa8",
+  "schema": "CANDIDATE_ARCHITECTURE_PROBE_V1",
+  "scope": "FIXTURE_OBSERVABILITY_ONLY_NO_CANDIDATE_ALGORITHM",
+  "sealed_reference_allowed": false,
+  "smoothness": {
+    "constant_control": {
+      "absolute_integral": 0.0,
+      "cancellation_ratio": null,
+      "count": 6,
+      "maximum_absolute": 0.0,
+      "maximum_derivative_per_s": 0.0,
+      "sign_changes": 0,
+      "signed_integral": 0.0
+    },
+    "derivative_and_reversals_detected": true,
+    "enabled_governor_tested": false,
+    "monotonic_shaping_and_phase_tradeoff": "IMPLEMENTATION_PENDING",
+    "observations": {
+      "absolute_integral": 0.01,
+      "cancellation_ratio": 1.0,
+      "count": 6,
+      "maximum_absolute": 0.25,
+      "maximum_derivative_per_s": 50.0,
+      "sign_changes": 3,
+      "signed_integral": 0.0
+    }
+  },
+  "source_baseline_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+  "trajectory": {
+    "actual_trajectory_algorithm_tested": false,
+    "analytic_sign_and_amplitude_order": true,
+    "arcs": [
+      [
+        -0.002,
+        {
+          "heading_rad": -0.02,
+          "pose_x_m": 9.999333346666539,
+          "pose_y_m": -0.0999966667111108
+        }
+      ],
+      [
+        -0.001,
+        {
+          "heading_rad": -0.01,
+          "pose_x_m": 9.999833334166665,
+          "pose_y_m": -0.049999583334722215
+        }
+      ],
+      [
+        0.0,
+        {
+          "heading_rad": 0.0,
+          "pose_x_m": 10.0,
+          "pose_y_m": 0.0
+        }
+      ],
+      [
+        0.001,
+        {
+          "heading_rad": 0.01,
+          "pose_x_m": 9.999833334166665,
+          "pose_y_m": 0.049999583334722215
+        }
+      ],
+      [
+        0.002,
+        {
+          "heading_rad": 0.02,
+          "pose_x_m": 9.999333346666539,
+          "pose_y_m": 0.0999966667111108
+        }
+      ]
+    ]
+  },
+  "vehicle_activation_allowed": false
+}

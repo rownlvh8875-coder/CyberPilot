@@ -1,0 +1,96 @@
+{
+  "actual_execution_authorized": false,
+  "actual_threshold_publication": false,
+  "authority": "REPORT_ONLY",
+  "automatic_design_success": false,
+  "candidate_admissibility": "V1_AND_V2_FACTUAL_RESULTS_ONLY_NO_COUNTERFACTUAL_GATE",
+  "candidate_search_authorized": false,
+  "change_scope": "THRESHOLD_OBJECTIVE_ONLY",
+  "clauses": [
+    "CLAUSES_RECOVERED",
+    "CLAUSES_NEWLY_FAILED",
+    "CLAUSES_UNCHANGED_PASS",
+    "CLAUSES_UNCHANGED_FAIL"
+  ],
+  "composition_authorized": false,
+  "decision_policy": "HURDLE_STAGE1_DECISION_POLICY_V2",
+  "descriptive_states": [
+    "V2_EXACT_HIT_IMPROVED",
+    "V2_STATIC_PROJECTED_FALSE_MOVE_REDUCED",
+    "V2_TRUE_MOVE_PROTECTION_PRESERVED",
+    "V2_LONG_HORIZON_IMPROVED"
+  ],
+  "development": [
+    "ALL_RMSE",
+    "ALL_MAE",
+    "ALL_P95",
+    "ALL_EXACT_HIT",
+    "ALL_WITHIN_ONE_TICK",
+    "TRUE_MOVE_INTEGRATED_RMSE",
+    "TRUE_MOVE_INTEGRATED_MAE",
+    "TRUE_MOVE_INTEGRATED_P95",
+    "FALSE_MOVE_RATE",
+    "MISSED_MOVE_RATE",
+    "PREDICTED_MOVE_FRACTION",
+    "BALANCED_ACCURACY"
+  ],
+  "family": "HURDLE_RI_V1",
+  "identity": [
+    "candidate_id",
+    "fold",
+    "ordered_anchor_sha256"
+  ],
+  "interpretation": "RETROSPECTIVE_DEVELOPMENT_THRESHOLD_EFFECT_ISOLATION_NOT_INDEPENDENT_CAUSAL_VALIDATION",
+  "mismatch": "V2_V1_COMPARISON_IDENTITY_CONFLICT",
+  "missing_comparison_lineage": "FAIL_CLOSED_NO_INVENTED_AGGREGATES_NO_REBUILD_NO_THRESHOLD_SEARCH",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "da0893f5c20b622268ba470114fdf08702fd6c028e61df1c98d753bfd549806d",
+  "reference_promotable": false,
+  "rollout": {
+    "horizons": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "metrics": [
+      "RMSE",
+      "MAE",
+      "P95",
+      "CLAUSE_PASS_FAIL"
+    ],
+    "populations": [
+      "OVERALL",
+      "PATH_MOVED"
+    ]
+  },
+  "schema": "EMPIRICAL_HURDLE_STAGE1_V2_V1_COMPARISON_CONTRACT",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "train": [
+    "THRESHOLD_RECEIPT_ID",
+    "THRESHOLD_CANDIDATE_COUNT",
+    "PREDICTED_MOVE_FRACTION",
+    "TP",
+    "TN",
+    "FP",
+    "FN",
+    "FALSE_MOVE_RATE",
+    "MISSED_MOVE_RATE",
+    "BALANCED_ACCURACY",
+    "ALL_RMSE",
+    "ALL_EXACT_HIT",
+    "ALL_WITHIN_ONE_TICK",
+    "STATIC_PROJECTED_FALSE_MOVE_COUNT",
+    "TRUE_MOVE_RMSE",
+    "TRUE_MOVE_MAE",
+    "TRUE_MOVE_P95"
+  ],
+  "v1_metrics_selection_authority": false,
+  "v1_threshold_compartment": "READ_ONLY_COMPARISON_AFTER_V2_FINALIZATION_NEVER_SELECTOR_INPUT",
+  "v1_train_metrics": "USE_RECEIPT_BOUND_AGGREGATES_OR_COMPARISON_ONLY_FIXED_V1_THRESHOLD_ON_SAME_REPLAY_AFTER_V2_FINALIZATION",
+  "vehicle_activation_allowed": false
+}

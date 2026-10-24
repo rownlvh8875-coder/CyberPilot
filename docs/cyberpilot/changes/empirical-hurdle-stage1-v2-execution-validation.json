@@ -1,0 +1,88 @@
+{
+  "candidate_search_authorized": false,
+  "change_scope": "THRESHOLD_OBJECTIVE_ONLY",
+  "composition_authorized": false,
+  "decision_policy": "HURDLE_STAGE1_DECISION_POLICY_V2",
+  "family": "HURDLE_RI_V1",
+  "final_pooled_refit": "NOT_AUTHORIZED",
+  "historical_tracked_artifacts": "UNCHANGED_ADDITIVE_ONLY",
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "model_admission": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+  "model_strategy": "REUSE_BYTE_IDENTICAL_V1_FITTED_MODELS",
+  "opening_count": 0,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "c80f1eceba21589b9be03f3d3e82a3d8613084d0861963fb722973b563fb90da",
+  "reference_promotable": false,
+  "repeatability_sha256": "a6c3e3852d585d089b14ce36b853429afefeb1646aeb8d8008042c092ebe6aae",
+  "schema": "EMPIRICAL_HURDLE_STAGE1_V2_EXECUTION_VALIDATION",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "validation": {
+    "combined_empirical": {
+      "status": "PASS",
+      "subtests": 625,
+      "tests": 1732
+    },
+    "compileall": {
+      "status": "PASS",
+      "subtests": 0,
+      "tests": 0
+    },
+    "diff_check": {
+      "status": "PASS",
+      "subtests": 0,
+      "tests": 0
+    },
+    "focused": {
+      "status": "PASS",
+      "subtests": 9,
+      "tests": 40
+    },
+    "full_autotune_controls": {
+      "status": "PASS",
+      "subtests": 0,
+      "tests": 4591
+    },
+    "independent_review": {
+      "status": "PASS",
+      "subtests": 0,
+      "tests": 0
+    },
+    "json": {
+      "status": "PASS",
+      "subtests": 0,
+      "tests": 0
+    },
+    "lateral_replay": {
+      "status": "PASS",
+      "subtests": 0,
+      "tests": 16
+    },
+    "publication": {
+      "status": "PASS",
+      "subtests": 0,
+      "tests": 0
+    },
+    "ruff": {
+      "status": "PASS",
+      "subtests": 0,
+      "tests": 0
+    },
+    "scons": {
+      "status": "PASS",
+      "subtests": 0,
+      "tests": 0
+    }
+  },
+  "vehicle": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

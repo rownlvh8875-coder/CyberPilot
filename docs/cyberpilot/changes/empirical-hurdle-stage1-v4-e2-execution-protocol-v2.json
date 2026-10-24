@@ -1,0 +1,999 @@
+{
+  "D0_reconstruction": {
+    "historical_gate": "NOT_SAVED",
+    "new_artifact": "NEW_E2_RECONSTRUCTED_D0_TRAIN_GATE",
+    "objective": "EXACT_PYTHON_INTEGER_TP*NEGATIVE+TN*POSITIVE",
+    "original_private_threshold_read": false,
+    "original_threshold_byte_identity_claim": false,
+    "source": "empirical_hurdle_fit_cv_math.py::threshold",
+    "source_role": "TRAIN_COMBINED_ORIGINAL_ORDER",
+    "ties": [
+      "MAX_TN",
+      "MAX_DECISION"
+    ]
+  },
+  "D2_contract_receipt_sha256": "eb7aa2c671d2d185685bcf450d4084b0aab5a6b19ad72695277d624788c760be",
+  "D2_policy_receipt_sha256": "cc7c3ba36f1bd3f1930c801b023d37858cdb86d26263fe4ab8881018b608da60",
+  "E1_protocol_raw_sha256": "2933aaf1eb40addcd1e872e831901da3ff6b778147cdfe46150fc4c1251a37a5",
+  "F_AUTHORIZED": false,
+  "Stage2_qualification": {
+    "Q1": {
+      "all_move_gate": "One whole-job selected call on all rows; compare all bytes; never infer PASS from gate support.",
+      "cache": "A[D0_gate] from original-segment/order512 all-row cache",
+      "empty_gate": {
+        "proof": "Exact full-N bool gate has no selected rows, selected/cache views float64 shape[0], original integrated skips predict_delta, full integrated delta is positive float64 zero and projected ticks HOLD current in original order; record source/anchor/model/gate bindings and explicit no-op verification. Missing proof is NOT_EXECUTED/BLOCKED, never unconditional PASS.",
+        "stage2_calls": 0,
+        "status": "VERIFIED_EMPTY_GATE_ORIGINAL_INTEGRATED_NOOP"
+      },
+      "epsilon_allowed": false,
+      "exactness": [
+        "FLOAT64_DTYPE",
+        "EXACT_SHAPE",
+        "ORIGINAL_ROW_ORDER",
+        "RAW_BYTES_INCLUDING_SIGNED_ZERO",
+        "SAME_FROZEN_MODEL_NORMALIZER_SOURCE_ANCHOR"
+      ],
+      "failure": "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+      "identity_conflict": "E2_INPUT_CONFLICT_FAIL_CLOSED",
+      "population": "EACH_OF_ALL32_TRAIN_JOBS",
+      "projection_only_substitute_allowed": false,
+      "rebatching_retry_allowed": false,
+      "reference": "frozen_predict_delta(ascontiguousarray(x_full[D0_gate]), frozen_stage2)",
+      "role": "MANDATORY_HARD_GATE",
+      "routing": "NEW_E2_RECONSTRUCTED_D0_TRAIN_GATE_FROM_ORIGINAL_COMBINED_TRAIN_BA_RECIPE",
+      "timing": "ALL32_BEFORE_ANY_D2_SELECTION",
+      "tolerance_allowed": false
+    },
+    "Q2": {
+      "cache": "A chunk values selected at same rows",
+      "claim_limit": "B is not the original whole-job D0 numerical path; neither necessary nor sufficient for C/A equality.",
+      "default_private_calls": 0,
+      "default_private_status": "NOT_EXECUTED_DIAGNOSTIC",
+      "evidence": "Existing frozen60+60 synthetic fixtures and public root-cause projection; no private rerun in this increment.",
+      "future_optional_private_diagnostic": "Requires separate exact bounded diagnostic binding/resource/privacy approval; absent from default V2 runner allowlist.",
+      "mismatch": "DIAGNOSTIC_MISMATCH_NOT_Q1_FAILURE_OR_PASS; never overrides Q1/Q3",
+      "omission": "Record NOT_EXECUTED_DIAGNOSTIC, never PASS; no fresh private telemetry from historical evidence.",
+      "reference": "B = frozen_predict_delta(part[D0_gate_in_part], frozen_stage2)",
+      "role": "NON_AUTHORITATIVE_DIAGNOSTIC"
+    },
+    "Q3": {
+      "all_move_gate": "One whole-job selected call on all rows; compare all bytes; never infer PASS from gate support.",
+      "cache": "SAME_A[D2_gate] used for objective/guards",
+      "empty_gate": {
+        "proof": "Exact full-N bool gate has no selected rows, selected/cache views float64 shape[0], original integrated skips predict_delta, full integrated delta is positive float64 zero and projected ticks HOLD current in original order; record source/anchor/model/gate bindings and explicit no-op verification. Missing proof is NOT_EXECUTED/BLOCKED, never unconditional PASS.",
+        "stage2_calls": 0,
+        "status": "VERIFIED_EMPTY_GATE_ORIGINAL_INTEGRATED_NOOP"
+      },
+      "epsilon_allowed": false,
+      "exactness": [
+        "FLOAT64_DTYPE",
+        "EXACT_SHAPE",
+        "ORIGINAL_ROW_ORDER",
+        "RAW_BYTES_INCLUDING_SIGNED_ZERO",
+        "SAME_FROZEN_MODEL_NORMALIZER_SOURCE_ANCHOR"
+      ],
+      "failure": "E2_D2_TRAIN_SELECTED_PATH_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+      "failure_meaning": "NUMERICAL_SEMANTICS_NOT_QUALIFIED_NOT_D2_PERFORMANCE_FAILURE; no DEV/rollout, fallback, re-batching, relaxation or second-best candidate.",
+      "identity_conflict": "E2_INPUT_CONFLICT_FAIL_CLOSED",
+      "population": "EACH_OF_ALL32_TRAIN_JOBS",
+      "projection_only_substitute_allowed": false,
+      "rebatching_retry_allowed": false,
+      "reference": "frozen_predict_delta(ascontiguousarray(x_full[D2_gate]), frozen_stage2)",
+      "reselection_allowed": false,
+      "role": "MANDATORY_POST_SELECTION_HARD_GATE",
+      "routing": "D2_gate = p > selected_context_decision, causal prior zero/nonzero, both contexts merged by immutable original row positions",
+      "selection_calls": "ONE_POST_WINNER_WHOLE_JOB_SELECTED_PATH_CALL_IF_NONEMPTY; NOT_PER_THRESHOLD_OR_PER_CONTEXT",
+      "timing": "AFTER_ALL64_D2_DECISIONS_BEFORE_FINAL_TRAIN_SEAL_READBACK_AND_ANY_DEV_ACCESS",
+      "tolerance_allowed": false
+    },
+    "all_rows": "FROZEN_PREDICT_DELTA_ORIGINAL_SEGMENT_ORDER_512_CHUNKS_INCLUDING_STATIC; FULL_CAUSAL_FEATURES_2L+3",
+    "exactness": "DTYPE_SHAPE_RAW_BYTES_EQUAL_INCLUDING_SIGNED_ZERO_NO_TOLERANCE; SAME_MODEL_NORMALIZER",
+    "no_runtime_change_this_increment": true,
+    "per_row": "FINITE_FLOAT64; CURRENT_TARGET_SIGNED16; MOVE_TICK_FROZEN_PROJECT_C_PLUS_U_TIES_EVEN_NO_CLIP; FULL_N_ORDER_PRIOR_TRUTH_MATCH"
+  },
+  "V1_lineage": {
+    "file": "empirical-hurdle-stage1-v4-e2-execution-protocol.json",
+    "historical_failure": "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+    "raw_sha256": "177925af0d9a70fecaeb2f8d848dbdee9c620f92047a9d8320e0ed6e1e7ef7db",
+    "receipt_sha256": "e0a820a681389e09449737ee191fd5bcfcb02b4cc040ee78922900cf96ba78c2",
+    "retroactive_pass": false
+  },
+  "V2_changed_keys": [
+    "Stage2_qualification",
+    "V1_lineage",
+    "V2_changed_keys",
+    "baseline_head",
+    "current_explicit_grant",
+    "current_scope",
+    "execution_authorized",
+    "execution_prerequisites",
+    "failure_states",
+    "future_implementation_lock",
+    "inheritance",
+    "phases",
+    "qualification_amendment",
+    "qualification_repeat_scope",
+    "resource_review",
+    "resources",
+    "schema",
+    "version"
+  ],
+  "V5_AUTHORIZED": false,
+  "acceptance": {
+    "D0_comparison": "MANDATORY_PAIRED_DESCRIPTIVE_REFERENCE_NOT_REPLACEMENT_ACCEPTANCE_COMPARATOR",
+    "clause_count": 32,
+    "clauses_body_sha256": "570e39ff35dfc8716069ac055e00bc3cd343d694f954077e464d02acaf540682",
+    "comparator": "HOLD_LAST_SAME_ANCHORS",
+    "diagnostics_replace_gate": false,
+    "epsilon": 0,
+    "file": "empirical-hurdle-acceptance-gate-v1.json",
+    "folds": [
+      "FOLD_A",
+      "FOLD_B"
+    ],
+    "new_numeric_cutoffs": [],
+    "new_transition_hard_gate": "SEPARATE_EXPLICIT_POLICY_AMENDMENT_BEFORE_E_EXECUTION_IF_REQUIRED",
+    "quantifier": "ALL_CLAUSES_AND_SUPPORT_AND_NUMERICAL_PRECONDITIONS_IN_BOTH_FOLDS",
+    "raw_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+    "receipt_sha256": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60",
+    "support": "EXISTING_SUPPORT_201; SAME_ANCHORS_AND_COMPARATOR_ANCHORS; NO_RELAXATION"
+  },
+  "automatic_adoption": false,
+  "baseline_head": "93bc9db25565bcd8b6bd988550c4488ad1c42500",
+  "causal_state": {
+    "boundaries": "ORIGINAL_SEGMENT_ELIGIBILITY_NO_PADDING_RESET_EVERY_PATH_HORIZON",
+    "exogenous": "ORIGINAL_DELAYED_COMMAND_SPEED_INDEXING; SUPPLIED_INPUT_CONDITIONAL_NOT_VEHICLE_CLOSED_LOOP",
+    "one_step": "OBSERVED_RAW_PRIOR_DELTA_ROUTES_HEAD_AND_DECISION",
+    "projection": "FROZEN_STAGE2_SIGNED_DELTA_TIES_EVEN_SIGNED16_FAIL_CLOSED_NO_CLIP_OR_FORCED_MOVE",
+    "recursive": "INITIAL_OBSERVED_FULL_HISTORY_THEN_ACTUAL_PROJECTED_TICK_DIFFERENCE_AND_FULL_HISTORY; NO_GATE_BIT_SUBSTITUTION"
+  },
+  "current_explicit_grant": "STAGE1_V4_E2_NUMERICAL_QUALIFICATION_CONTRACT_V2_DESIGN_ONLY",
+  "current_scope": "CONTRACT_DESIGN_AND_SYNTHETIC_VALIDATION_ONLY",
+  "environment": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "blas_build_identity_sha256": "704bde2afe24c22d171cc7d2508517db81b7db455743b2cb0e5de9dda88da7a2",
+    "dtype": "float64",
+    "numpy": "2.5.3",
+    "order": "C",
+    "python": "3.12.13",
+    "rng": "NONE",
+    "rounding": "FE_TONEAREST_BINARY64_NO_FMA_ELEMENTWISE_LEAVES_FIXED_TREE",
+    "source_bound_BLAS": true,
+    "zlib_runtime_version": "1.3.2"
+  },
+  "evaluation": {
+    "D0_equivalence": "SAVED_STAGE1_BYTE_EQUAL; FROZEN_STAGE2_DELTA_PROJECTION; ORIGINAL_PUBLIC_METRICS_ANCHORS_ALL_HORIZONS; NO_D0_THRESHOLD_READ",
+    "PATH_MOVED": "ANY_OBSERVED_TICK_DIFFERS_FROM_INITIAL_NOT_GATE_DEFINED",
+    "TRUE_MOVE": "ORIGINAL_INTEGRATED_GATED_CONTINUOUS_DELTA_RMSE_MAE_P95",
+    "drift": "PRIVATE_STEP_CONTEXT_MOVEMENT_TICK_FULL_INPUT_HISTORY_MISMATCH; EXACT_NEXT_BIT_LAG; FIRST_EVENTS; MOVED_GATE_PERFECT_AND_MOVEMENT_PERFECT_FULL_SMALL_EMPTY; ASSOCIATION_ONLY",
+    "exact_hit": "CANDIDATE_HITS=HOLD_LAST_HITS-STATIC_LOSS+MOVE_GAIN;NET=MOVE_GAIN-STATIC_LOSS",
+    "four_transitions": [
+      "STATIC_HOLD",
+      "MOVE_ONSET",
+      "MOVE_TERMINATION",
+      "MOVE_CONTINUATION"
+    ],
+    "gate_vs_realization": "SEPARATE_GATE_MOVE_REALIZED_MOVE_EXACT_HIT; FP=PROJECTED_HOLD+HARMFUL",
+    "horizons": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "populations": [
+      "OVERALL",
+      "PATH_MOVED"
+    ],
+    "residual": "GATE_TP_CONTINUOUS_AND_PROJECTED_STEP_RESIDUAL_SEPARATE_ONSET_CONTINUATION_SUPPORT201",
+    "score": "OVERALL_PREVIOUS_STATIC_PREVIOUS_MOVE_AUC_BRIER_MEAN_PREVALENCE_BIAS; MIDRANK_TIES; MISSING_CLASS_NOT_IDENTIFIABLE"
+  },
+  "execution_authorized": false,
+  "execution_prerequisites": [
+    "FRESH_EXPLICIT_E2_V2_GRANT",
+    "V2_ADDITIVE_CALLER_SOURCE_HASHES_AND_TWO_FINAL_BYTE_APPROVALS",
+    "EXACT_PRIVATE_BINDINGS",
+    "SYNTHETIC_REGRESSION_PASS",
+    "TWO_EXACT_BYTE_INDEPENDENT_APPROVALS",
+    "PREEXECUTION_EXACT_HEAD_CI_SUCCESS",
+    "CLEAN_LOCAL_ORIGIN",
+    "PRIVATE0700_0600_EXCLUSIVE_OUTPUT_CAPACITY_RESERVE",
+    "STATIC_CALLER_RESOURCE_LIVENESS_PROOF_WITHIN_V2_HARD_CAPS",
+    "ALL32_Q1_THEN64_SELECTIONS_THEN_ALL32_Q3_THEN_DURABLE_SEAL_READBACK_BEFORE_DEV"
+  ],
+  "failure_states": [
+    "E2_INPUT_INSUFFICIENT",
+    "E2_INPUT_CONFLICT_FAIL_CLOSED",
+    "E2_RESOURCE_PREFLIGHT_BLOCKED",
+    "E2_IMPLEMENTATION_READY_INPUT_PENDING",
+    "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+    "D2_TRAIN_FEASIBILITY_CONTRACT_UNRESOLVED",
+    "E2_TRAIN_NUMERICAL_FAILURE_JOB_NONPASS",
+    "E2_REPEATABILITY_FAILED",
+    "E2_EXECUTION_COMPLETE_D2_NOT_ADMISSIBLE",
+    "E2_EXECUTION_COMPLETE_RETROSPECTIVE_GATE_PASS_ONLY",
+    "E2_D2_TRAIN_SELECTED_PATH_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+    "E2_V2_D2_NUMERICAL_SEMANTICS_CONTRACT_UNRESOLVED",
+    "E2_V2_POLICY_SEMANTICS_AMENDMENT_REQUIRED"
+  ],
+  "forbidden_operations": [
+    "stage1_refit",
+    "stage2_refit",
+    "normalizer_refit",
+    "calibration_fit",
+    "additional_policy_search",
+    "extra_policy_arm",
+    "posthoc_threshold_tuning",
+    "guard_relaxation",
+    "candidate_grid_change",
+    "pooled_refit",
+    "composition",
+    "raw_log_openings",
+    "qlog_openings",
+    "holdout_openings",
+    "holdout_discovery",
+    "controller_changes",
+    "vehicle_activation",
+    "source_writes"
+  ],
+  "future_implementation_lock": {
+    "feature_liveness": "Retain immutable admitted TRAIN source blocks within original bound; deterministically rebuild the SAME original-order x_full for Q1/Q3 from resident blocks. No private source rereads or alternate batching. Retain all TRAIN caches through Q3; discard selection tree/context temporaries before selected-row verification. If impossible within bounds, block before numeric reads.",
+    "model_locks": "Same inherited exact manifest-bound models/normalizers and source_sha256/public_inputs. No broader input access.",
+    "old_executor": "IMMUTABLE_V1_REFERENCE_NOT_A_V2_RUNNER",
+    "required": "Future separately authorized additive V2 caller/adapter and tests must be source-hashed in fresh private binding, independently approved at exact bytes and pre-execution CI SUCCESS. These implementation hashes are not invented here."
+  },
+  "inheritance": {
+    "equal_keys": [
+      "D0_reconstruction",
+      "D2_contract_receipt_sha256",
+      "D2_policy_receipt_sha256",
+      "E1_protocol_raw_sha256",
+      "F_AUTHORIZED",
+      "V5_AUTHORIZED",
+      "acceptance",
+      "automatic_adoption",
+      "causal_state",
+      "environment",
+      "evaluation",
+      "forbidden_operations",
+      "input_scope",
+      "interpretation",
+      "jobs",
+      "original_execution_head",
+      "policy_arms",
+      "preserved",
+      "private_output",
+      "public_inputs",
+      "publication",
+      "repeats",
+      "requirements_traceability",
+      "runtime_security",
+      "selection",
+      "source_policy_receipt_sha256",
+      "source_sha256",
+      "stop",
+      "validation_domains"
+    ],
+    "exact_changes": "All other changed/additive top-level keys enumerated in /V2_changed_keys; inherited equal_keys are deep-equal, not replacement scientific semantics."
+  },
+  "input_scope": {
+    "CAUSAL": [
+      "command.normalized",
+      "state.speed_mps"
+    ],
+    "D0_rollout": [
+      "candidate_error"
+    ],
+    "DERIVED": [
+      "angle_tick",
+      "streak_all",
+      "model_eligible",
+      "rail",
+      "s2_ri_causal_run_id",
+      "within_s2_ri_causal_run_index"
+    ],
+    "DEV": [
+      "V4.p_move",
+      "V4.predicted_gate",
+      "V4.integrated_delta",
+      "V4.projected_next_tick",
+      "V4.candidate_error",
+      "V1.true_move",
+      "V1.prior_delta_tick"
+    ],
+    "E1_results": "SEALED_E1_BINDING_ENVELOPE_LINEAGE_ONLY_PREFLIGHT; CANONICAL_RESULT_READ_ONCE_AFTER64_D2_DECISIONS_DURABLY_SEALED; D0_D1_ROLLOUT_NOT_REEXECUTED",
+    "TRAIN": [
+      "V4.combined_probability",
+      "V1.move_label",
+      "V1.prior_delta_tick"
+    ],
+    "TRAIN_additional": [
+      "CAUSAL.command.normalized",
+      "CAUSAL.state.speed_mps",
+      "DERIVED.angle_tick",
+      "DERIVED.streak_all",
+      "DERIVED.model_eligible",
+      "DERIVED.rail",
+      "DERIVED.s2_ri_causal_run_id",
+      "DERIVED.within_s2_ri_causal_run_index",
+      "V1.STAGE2_normalizer_5_fields",
+      "V1.STAGE2_coefficients"
+    ],
+    "bootstrap": "V1_AUTH_CANONICAL_PIN; V1_INPUT_PINS_CANONICAL_FILE_SET_MATCH_ORIGINAL_AUTH_AND_PUBLIC_V4; NO_HISTORICAL_RAW_HASH_CLAIM_FOR_THESE_TWO_FILES",
+    "exact_paths": "PRIVATE_CONTROL_REFERENCES_V1_FROM_HISTORICAL_E1_RECORD_ONLY; NO_DISCOVERY; ROOT_CANONICAL_MEMBER_MAP_PLUS_NAMED_DESCRIPTOR_HASHES; ROLE_JOB_CAPABILITY_BEFORE_OPEN",
+    "metadata": "ONLY_MEMBER_CLASSES_IN_PINNED_E_INPUTS; EXACT_MANIFEST_FINALIZED_NORMALIZER_STAGE2_DEV_ROLLOUT_SOURCE_AUTH_INDEX_ADMISSION_SEGMENT_RECEIPTS",
+    "mixed_carrier": "train/receipt.json NEVER_OPENED; HEAD_ARRAYS_RAW_HASH_BOUND_ROOT_AND_TRAIN_MANIFEST; ORIGINAL_MIXED_DESCRIPTOR_UNREAD",
+    "models": [
+      "V4.STATIC_coefficients",
+      "V4.MOVE_coefficients",
+      "V1.STAGE1_normalizer_5_fields",
+      "V1.STAGE2_normalizer_5_fields",
+      "V1.STAGE2_coefficients"
+    ],
+    "numeric_train_categories": [
+      "TRAIN_CURRENT_TARGET",
+      "TRAIN_CAUSAL_FEATURES",
+      "TRAIN_ELIGIBILITY_AND_ORDER",
+      "TRAIN_SAVED_SCORE_LABEL_PRIOR",
+      "FROZEN_STAGE2_MODEL_NORMALIZER",
+      "STAGE2_ALL_TRAIN_POTENTIALS",
+      "CAUSAL_DERIVED_PRIVATE_BINDINGS",
+      "D0_TRAIN_REFERENCE"
+    ],
+    "replica": "V4_REPEAT1_V1_REFERENCE_REPEAT1; PRIOR_FIELD_SCOPED_EQUALITY_REUSED; REPEAT2_NOT_REREAD",
+    "roots": "EXACT_RECOVERED_PRIVATE_HANDOFF_ONLY; PUBLIC_ROOT_DIGEST_BINDINGS; NO_DISCOVERY",
+    "source_role_overlap": "FOLD_A_TRAIN_ROUTE_EQUALS_FOLD_B_DEV_ROUTE_AND_VICE_VERSA; PHYSICAL_CAUSAL_DERIVED_SOURCE_ROWS_ADMITTED_FOR_NAMED_TRAIN_JOBS; NO_DEV_SAVED_SCORES_GATES_METRICS_OR_E1_CANONICAL_BEFORE_BARRIER. THIS_IS_NOT_BLINDED_VALIDATION.",
+    "timestamp_values": "NEVER_OPENED; FROZEN_STREAK_RUN_WITHIN_PLUS_EXACT_ORDERED_ANCHOR_DIGESTS; NO_RE_ADMISSION_OR_LOG_RECONSTRUCTION"
+  },
+  "interpretation": "RETROSPECTIVE_ALREADY_OBSERVED_DEV; OVERLAPPING_JOBS_NOT_INDEPENDENT_TRIALS; NO_BLINDED_OR_CAUSAL_SHARE_CLAIM",
+  "jobs": [
+    {
+      "candidate_id": "HRI_D00_L01",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "fold": "FOLD_B"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "fold": "FOLD_A"
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "fold": "FOLD_B"
+    }
+  ],
+  "original_execution_head": "bd8045ef2a0da62a92603439f38e7740f5923622",
+  "phases": [
+    "EXACT_INPUT_PREFLIGHT",
+    "ALL32_D0_TRAIN_RECONSTRUCTION",
+    "ALL32_FIXED512_ALL_ROW_POTENTIALS",
+    "ALL32_Q1_ORIGINAL_D0_BYTE_QUALIFICATION",
+    "ALL64_D2_TRAIN_DECISION_SELECTION",
+    "ALL32_Q3_D2_SELECTED_BYTE_QUALIFICATION",
+    "DURABLE_TRAIN_SEAL_AND_READBACK",
+    "DEV_BARRIER_RELEASE",
+    "D2_32_ONESTEP_AND_ALL_HORIZONS_WITH_SEALED_D0_D1_REFERENCE",
+    "SECOND_FRESH_PROCESS_IDENTICAL_PROTOCOL_NO_TUNING",
+    "BYTE_EXACT_COMPARE_AND_SOURCEFREE_VERIFY_ONLY",
+    "PRIVACY_SAFE_PUBLICATION_FINAL_CI_CLEAN_STOP"
+  ],
+  "policy_arms": [
+    "D0",
+    "D1",
+    "D2"
+  ],
+  "preserved": {
+    "D1_result": "E_EXECUTION_COMPLETE_D1_NOT_ADMISSIBLE",
+    "holdout": "CLOSED",
+    "holdout_discovery": 0,
+    "holdout_opening_count": 0,
+    "hugging_face": "NOT_REQUIRED_NOT_USED",
+    "replica": "REPLICA_PAYLOAD_EQUALITY_NOT_FULLY_REVERIFIED",
+    "scientific_result": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
+    "selected_candidate": null,
+    "selected_policy": null,
+    "selection": "MODEL_SELECTION_FAILED_CLOSED",
+    "states": [
+      "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+      "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+      "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+      "COMPOSITION_NOT_AUTHORIZED",
+      "NOT_READY",
+      "REAL_VEHICLE_UNVERIFIED",
+      "VEHICLE_ACTIVATION_BLOCKED"
+    ],
+    "train_rowwise_gate": "NOT_SAVED",
+    "vehicle_authority": "NONE"
+  },
+  "private_output": "APPROVED_SEPARATE_PRIVATE_WORK0700_EXACT_NAMED_RECORDS0600_EXCLUSIVE_FSYNC_NO_OVERWRITE_NO_DUPLICATED_ARRAYS_BOUNDED; CONTROL_READ_EVENTS_AND_ORIGINAL_INPUT_READ_EVENTS_SEPARATE",
+  "public_inputs": {
+    "empirical-causal-train-dev-readiness-v1.json": {
+      "raw_sha256": "6919175355e306cb113bddf22af6f845172c79df38681be1eb8061442b264c40",
+      "receipt_sha256": "bb70eee36c9b426e6d04ee4cceca0cd57cabeb8bee39e7736a7c43c37207fecf"
+    },
+    "empirical-hurdle-acceptance-gate-v1.json": {
+      "raw_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+      "receipt_sha256": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60"
+    },
+    "empirical-hurdle-fit-cv-authorization-v1.json": {
+      "raw_sha256": "54b879120e55c805df5f4094bf04637553bf6faafcfecef69f052d160a29ccb2",
+      "receipt_sha256": "d93d6bb418a958b998c0308e4ce71a605a4069286029b5539d80b38001a34c6b"
+    },
+    "empirical-hurdle-fit-cv-results-v1.json": {
+      "raw_sha256": "72e0179a96a8885e7ffab57bf1c579ef75536769bc1a03990a007b3b4e2ac272",
+      "receipt_sha256": "8d7c45a7a97f73918f927b19b0004c309078239b8b8523e1beac08fa6c53f5c4"
+    },
+    "empirical-hurdle-stage1-v4-c-diagnostic-protocol.json": {
+      "raw_sha256": "0549292dd5101c39b118839d881720a23037cc6db6e516c6fa5d8bcda04b742f",
+      "receipt_sha256": "7f09da07b2267aa1bc1b032d55ebe5d26ec5cbb27ce9f96160aa13895b297721"
+    },
+    "empirical-hurdle-stage1-v4-c-diagnostic-results.json": {
+      "raw_sha256": "852a4145d2f1055df75854250328a731d887c61b2257ff9f4596206a4e34f514",
+      "receipt_sha256": "dbaf3292fd3562e9ce2b36d54f4ed3541a55e4803c0c9f5342f2f6fc13c97d84"
+    },
+    "empirical-hurdle-stage1-v4-d-offline-evaluation-contract.json": {
+      "raw_sha256": "20c44c27209d92fa7d5f20657d055fb806f673d9e30fedd8b210e4b69bc7e207",
+      "receipt_sha256": "8d558a28c1da9066d4df8725fdb4a6122beaf08700de6c765606d8763728b4f7"
+    },
+    "empirical-hurdle-stage1-v4-d-transition-aware-policy.json": {
+      "raw_sha256": "eb78f52f2f511771ee506d307ed8928d115208355b0f696c9d88a20e458e88b9",
+      "receipt_sha256": "55e5dc12ac7553365ee2e32b9cc05c14b406cc74eb2708d0516a5279dc66601e"
+    },
+    "empirical-hurdle-stage1-v4-d2-evaluation-contract.json": {
+      "raw_sha256": "52f6fdf8e05c9f950aecf2a610cc4ea9220d6c01a96afd1a9afb3ed58a114004",
+      "receipt_sha256": "eb7aa2c671d2d185685bcf450d4084b0aab5a6b19ad72695277d624788c760be"
+    },
+    "empirical-hurdle-stage1-v4-d2-loss-aware-policy.json": {
+      "raw_sha256": "51eea816f6f2d3f648a9030dc6cf2d1718fb456bf3d0e6e9903ac34ae2e6bba7",
+      "receipt_sha256": "cc7c3ba36f1bd3f1930c801b023d37858cdb86d26263fe4ab8881018b608da60"
+    },
+    "empirical-hurdle-stage1-v4-development-results.json": {
+      "raw_sha256": "3bf0fd91ec8f0d40bd6df8115a7da3209fee4070ca498bcc8f6fdfe07f2fb30c",
+      "receipt_sha256": "fa691c1a68c0ff5c55af91ebf7e7d8fd4d60e9c9e8cf50acefc68f17b50c9f14"
+    },
+    "empirical-hurdle-stage1-v4-e-execution-protocol-v2.json": {
+      "raw_sha256": "2933aaf1eb40addcd1e872e831901da3ff6b778147cdfe46150fc4c1251a37a5",
+      "receipt_sha256": "57c07ef4954290164262e35d2b02386b1c8c6da885a3c2da1487ea6f0db9d2e4"
+    },
+    "empirical-hurdle-stage1-v4-e-results.json": {
+      "raw_sha256": "318a0f46e295c161de4980e06478cabb94c1b0b098f3602cc0c2fe103d61db52",
+      "receipt_sha256": "396ea99f3b45cefcfebbeb151650d0882e5ee8069cb91da8ed0fa33ce78075fc"
+    },
+    "empirical-hurdle-stage1-v4-e-validation.json": {
+      "raw_sha256": "813d1a500a8567f25e111dcc828d0d53b15e38b39cb7ade9d922ca267838a0d8",
+      "receipt_sha256": "154f1dae52feada42bf5567823bcb96b7af8e6effad641c2fa3143bcd913da55"
+    },
+    "empirical-hurdle-stage1-v4-job-manifest.json": {
+      "raw_sha256": "484a67e4f183ede512af89c99b73be2ed63643057a84382c90729f5d71819e03",
+      "receipt_sha256": "9a0c5b7a6eee597f6ea764ca4c731fd3eef37acb3465320ea3bd52fd6d78c011"
+    },
+    "empirical-hurdle-stage1-v4-retrospective-execution-authorization.json": {
+      "raw_sha256": "99ba2f5218a38b72a47e72883546dcd0ad67cba822752197419fc4e76f9ca5d9",
+      "receipt_sha256": "b9d512ffd23f7f3ef9df87622642c3bfdabc59292e6188c43596cf3b00267237"
+    },
+    "empirical-hurdle-stage1-v4-rollout-results.json": {
+      "raw_sha256": "9ebd165a24465743820d6579a1f5f796bb1afb53bac5d34ed26b44338ab9e1dc",
+      "receipt_sha256": "970f1729aff5cfd495c38acb33e178601dddf824ebd6dc57bddfef55fe65be25"
+    }
+  },
+  "publication": {
+    "D2_D1_changed_rows": "WITHOUT_D1_REPLAY_USE_TRIANGLE_INEQUALITY_LOWER_BOUND_ABS(N_D1_VS_D0-N_D2_VS_D0); EQUAL_NONZERO_COUNTS_UNKNOWN_NOT_ZERO; ONLY_IDENTICAL_GLOBAL_POLICY_OR_BOTH_ZERO_PROVE_ZERO; NONZERO_LOWERBOUND_MUST_BE_AT_LEAST201",
+    "allowed": "SAFE_FOLD_MEDIAN_MIN_MAX_RMSE_MAE_P95; SAFE_STATIC_HOLD_TERMINATION_RATES; JOB_CLAUSE_STATUSES",
+    "bins_cells_source_ids_private_hashes": "WITHHELD",
+    "complement_families": "ONE_STEP_TRUE_MOVE_AND_EACH_H_OVERALL_PATH_MOVED_CO_SUPPRESSED_UNLESS_STATIC_COMPLEMENT_SUPPORT_AND_ALL_THREE_PAIR_CHANGED_ROW_COUNTS_PROVEN_SAFE; HISTORICAL_RELEASES_CONSIDERED",
+    "exact_hit_and_within_tick": "WITHHELD_RARE_CELL_PROTECTION",
+    "forbidden": "PRIVATE_PATHS_DECISIONS_COEFFICIENTS_NORMALIZER_VALUES_ROW_ARRAYS_COMMAND_GPS_TIMESTAMPS; NO_C_SUPPRESSION_BYPASS",
+    "harmful_counts": "ALWAYS_WITHHELD_TO_PREVENT_RARE_FP_TO_PROJECTED_HOLD_RECONSTRUCTION_FROM_C_E_GATE_RATES",
+    "joint_suppression": "THREE_ARMS_BOTH_FOLDS_ALLJOBS_AND_EXISTING_C_E_RELEASE; MIN201; ONSET_CONTINUATION_ALWAYS_WITHHELD; RARE_EXACT_COUNTS_WITHHELD; OPERATION_ROW_TELEMETRY_PRIVATE",
+    "minimum_support": 201,
+    "no_public_input_paths": true,
+    "onset_continuation": "ALWAYS_WITHHELD_INHERITED_C",
+    "projection": "empirical_hurdle_v4_e2_publication.py"
+  },
+  "qualification_amendment": {
+    "file": "empirical-hurdle-stage1-v4-e2-numerical-qualification-v2.json",
+    "raw_sha256": "7a51775da2ec0edd18c21abf73d78123f940cff3c8e125ddac0cd43857427ccf",
+    "receipt_sha256": "dfca44a4a0658f09568d657b4961a565b28be29c60d6634e3ff3ec972d796755"
+  },
+  "qualification_repeat_scope": "INDEPENDENT_Q1_Q3_ALL32_PER_FRESH_REPEAT",
+  "receipt_sha256": "be0bc8005695b03bff57a128374cf535eee76989d4b52c3239f29d1f1967bd08",
+  "repeats": {
+    "comparison": "BYTE_EXACT_CANONICAL_PAYLOAD_RUN_ENVELOPES_SEPARATE",
+    "count": 2,
+    "failure": "E2_REPEATABILITY_FAILED_NO_AUTOMATIC_RETRY",
+    "fresh_process": true,
+    "independent_D0_reconstruction": true,
+    "independent_D2_decisions": 64,
+    "independent_TRAIN_decisions": true,
+    "independent_TRAIN_potentials": true,
+    "independent_one_step_rollout": true,
+    "separate_exclusive_private_roots": true,
+    "verify_only": "OWN_SEAL_32JOBS_ARMS_HORIZONS_CLAUSES_BINDING_ENVELOPE_HEAD_PROTOCOL; SOURCE_INFERENCE_RECOMPUTE0"
+  },
+  "requirements_traceability": {
+    "file": "empirical-hurdle-stage1-v4-d2-loss-aware-policy.json",
+    "ids": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "R09",
+      "R10",
+      "R11",
+      "R12",
+      "R13",
+      "R14",
+      "R15",
+      "R16",
+      "R17"
+    ],
+    "meaning": "EXECUTION_AND_EVIDENCE_TRACEABILITY_NOT_ASSUMED_PERFORMANCE_PASS",
+    "pointer": "/requirements_traceability"
+  },
+  "resource_review": {
+    "Q1_calls_upper_bound_per_repeat": 32,
+    "Q1_selected_rows_upper_bound_per_repeat": 10782112,
+    "Q2_private_calls_default": 0,
+    "Q3_calls_upper_bound_per_repeat": 32,
+    "Q3_selected_rows_upper_bound_per_repeat": 10782112,
+    "V1_calls": "K all-row calls + B selected chunk calls (0..K) + C nonempty whole-job D0 calls (0..32); B selected row volume <=32*Nmax.",
+    "V2_calls": "Same K all-row calls + Q1 nonempty whole-job D0 calls (0..32) + Q3 nonempty whole-job D2 calls (0..32); default Q2=0.",
+    "all_row_chunk_calls_upper_bound_per_repeat": 25984,
+    "analytical_peak_including_runtime_reserve_bytes": 5574680630,
+    "call_delta": "At most+32 whole-job selected calls if old B had0 calls; usually removal of many B calls, but no runtime speedup guarantee. Replacing B row-volume upper bound with Q3 preserves 32*Nmax bound; BLAS timing is not derived from row counts.",
+    "capacity_certified_by_private_measurement": false,
+    "chunk_bound_derivation": "At most154 admitted nonempty segments per job; sum ceil(n_s/512) <= ceil(N/512)+153. Global source segment upper bound inherited from public E input contract.",
+    "comparison_vector_derivation": "Selected delta, selected cache, and both tobytes copies, each <=8*Nmax; do not retain selected arrays across jobs.",
+    "comparison_vector_workspace_bytes": 10782112,
+    "disclosure": "Actual gate-dependent call/row counts and resource telemetry remain private under joint suppression.",
+    "future_capacity_and_caller_liveness_proof_required": true,
+    "input_budget": "No additional source reads: Q1/Q3 consume resident same-order TRAIN features/model/cache. Same3000 opens/64GiB cap. No private diagnostic opens by default.",
+    "method": "STATIC_BOUND_FROM_FROZEN_SHAPES_AND_CALL_PATHS_NOT_PRIVATE_MEASUREMENT",
+    "qualification_matrix_derivation": "Eight Nmax*Pmax*8 buffers reserved: x_full, selected x, transform output, advanced-index copy, subtraction temp, division temp, up to two assembly/transient work buffers. Verify exact caller peak liveness before execution; no hidden concatenation/BLAS workspace beyond allowance.",
+    "qualification_matrix_workspace_bytes": 2005472832,
+    "qualification_private_receipt_growth_bytes": 262144,
+    "receipt_derivation": "At most4096 canonical bytes per job per Q1/Q3 proof, no transformed/prediction/row arrays; <=256KiB per repeat included in unchanged32MiB result and384MiB total caps.",
+    "runtime_reserve_bytes": 2147483648,
+    "time_budget": "CPU21600s/wall43200s per repeat are unchanged hard ABORT caps, NOT proof that V2 will finish. Qualify approved runner capacity/environment and frozen caller liveness before future private numeric reads; insufficient evidence=>E2_RESOURCE_PREFLIGHT_BLOCKED; never auto-extend."
+  },
+  "resources": {
+    "TRAIN_DEV_row_upper_bound": 336941,
+    "TRAIN_cache_bytes": 539105600,
+    "TRAIN_cache_bytes_per_row": 50,
+    "address_space_bytes": 8589934592,
+    "chunk_rows": 512,
+    "control_bytes": 8388608,
+    "cpu_seconds_per_repeat": 21600,
+    "derivation": "V1 original buffer bound1410679894 + conservative extra8*N336941*P93*8 matrix workspace +32*N comparison bytes +262144 qualification proof bytes +2GiB runtime reserve; intentional double-count of V1 design work for safety. This bound is below unchanged8GiB address-space cap but is conditional on future exact-caller liveness/BLAS workspace proof. CPU6h/wall12h/input3000opens64GiB/output384MiB/reserve2GiB remain hard caps; no private capacity measurement or completion guarantee.",
+    "features_max": 93,
+    "header_bytes": 65536,
+    "horizon_max": 200,
+    "input_bytes_limit_per_repeat": 68719476736,
+    "input_open_limit_per_repeat": 3000,
+    "jobs_parallel": 1,
+    "loss_leaf_and_context_copy_bound_bytes": 67388200,
+    "loss_tree_live_instances": 1,
+    "max_loss_tree_bytes_per_tree": 33554432,
+    "metadata_bytes_per_file": 33554432,
+    "output_total_bytes": 402653184,
+    "peak_live_buffer_bound_bytes": 5574680630,
+    "reserve_bytes": 2147483648,
+    "result_bytes_per_file": 33554432,
+    "source_total_row_upper_bound": 916535,
+    "threads": 1,
+    "wall_seconds_per_repeat": 43200
+  },
+  "runtime_security": "EXACT_OPENAT2_NOFOLLOW_NO_MAGICLINK_NO_XDEV_INODES_NO_ALIASES; GLOBAL_PYTHON_AUDIT_DENIES_DIRECTORY_ENUMERATION_SUBPROCESS_SOURCE_WRITES; FIT_SELECTION_DESERIALIZATION_TRAPS; NOT_AN_OS_SANDBOX",
+  "schema": "CYBERPILOT_V4_E2_EXECUTION_PROTOCOL_V2",
+  "selection": {
+    "D2": {
+      "algorithm": {
+        "candidate_row_matrix_allowed": false,
+        "group_equals_before_evaluation": true,
+        "memory": "O(N)",
+        "method": "SORTED_SCORE_GROUP_SWEEP_WITH_FIXED_ORIGINAL_ROW_LOSS_TREES",
+        "resource_gate": "E2 freezes actual N/dtype/chunk/feature sizes, all buffer formulas and hard RAM/CPU/wall/disk/reserve caps against verified capacity BEFORE NUMERIC READ; inability=>E2_INPUT_INSUFFICIENT",
+        "steps": [
+          "Validate full job/provenance/model/labels/counts/context support and all-row potential outcomes before any selection.",
+          "Reconstruct combined D0 once from saved TRAIN p/y; numerical-qualify common potentials; build each context D0 reference with canonical tree.",
+          "Stable sort scalar (score,original_row_position); canonicalize numeric zero and group exact-equal scores. Only index views sort; original arrays are never reordered.",
+          "Initialize all MOVE leaves and exact counters; for ascending distinct candidates in {0,1}+scores replace every p<=candidate newly crossing row by HOLD leaf; remove full equal-score group before evaluation.",
+          "Update exact integer gain/TP/harm counts and recompute affected tree ancestors from children. Test four guards and lexicographic key; retain only best state and private decision.",
+          "No per-candidate row materialization, numeric-score grid refinement, weight tuning, margins, mixing or automatic retries. Seal all decisions before DEV."
+        ],
+        "time": "O(N log N)",
+        "tree_memory_bound": "4 channels * 2*M * 8 bytes = 64*M bytes < 128*N bytes for N>1; N=1 uses64bytes; plus O(N) frozen input/potential/index buffers."
+      },
+      "guards": [
+        {
+          "comparison": "D2 >= D0",
+          "metric": "TRUE_MOVE_GATE_TP"
+        },
+        {
+          "comparison": "D2 <= D0",
+          "metric": "TRUE_MOVE_CONTINUOUS_SSE"
+        },
+        {
+          "comparison": "D2 <= D0",
+          "metric": "TRUE_MOVE_CONTINUOUS_SAE"
+        },
+        {
+          "comparison": "D2 <= D0",
+          "metric": "HARMFUL_NEXT_STATIC_REALIZED_MOVEMENT_COUNT"
+        }
+      ],
+      "numerics": {
+        "acceptance_reduction": "TRAIN_TREE_ONLY; EXISTING_DEV_ACCEPTANCE_MATH_AND_OPERATORS_UNCHANGED",
+        "baseline": "SAME_CACHED_POTENTIAL_BYTES_SAME_LEAF_OPERATIONS_SAME_TREE_TOPOLOGY",
+        "comparison": "EXACT_REPRESENTED_FLOAT64_ORDER_NO_EPSILON; COUNTS_EXACT_INTS",
+        "failure": "ANY_NONFINITE_U_PROJECT_ERROR_LEAF_OR_INTERNAL_SUM=>WHOLE_JOB_FAIL_CLOSED; NO_ROW_DROP",
+        "leaf_arithmetic": [
+          "truth_delta = int(t_i)-int(c_i), then exact float64 conversion",
+          "e = float64((u_i if MOVE else +0.0) - float64(truth_delta))",
+          "sq = float64(e*e); ab = abs(e); no fused operations",
+          "true_move leaf uses same sq/ab if t_i != c_i else +0.0"
+        ],
+        "loss_tree_channels": [
+          "overall_sse",
+          "overall_sae",
+          "true_move_sse",
+          "true_move_sae"
+        ],
+        "potential_cache": "COMPUTE_U_AND_PROJECT_ONCE_PER_ROW_IN_MEMORY_OR_APPROVED_BOUNDED_PRIVATE_SCRATCH; SAME_BITS_FOR_D0_AND_ALL_D2_CANDIDATES; NEVER_REINFER_PER_CANDIDATE",
+        "reduction": "ORIGINAL_ROW_FIXED_BINARY_TREE",
+        "rounding": "IEEE754_BINARY64_ROUND_TO_NEAREST_TIES_EVEN_EACH_OPERATION_NO_FMA",
+        "subtractive_running_loss_sum": false,
+        "tree_layout": "For context N, compact immutable original row order; M=next_power_of_two(N); leaves 0..N-1 original-order values and N..M-1 +0.0; each parent fl64(left+right), fixed topology.",
+        "u_generation": "ORIGINAL_PREDICT_DELTA_ON_ORIGINAL_ORDER_FIXED_512_ROW_SEGMENT_CHUNKS_INCLUDING_STATIC_ROWS; NO_CONTEXT_REBATCHING; PIN_NUMPY_BLAS_THREADS_ENVIRONMENT_AND_VERIFY_TWO_REPEATS_IN_E2",
+        "updates": "REPLACE_LEAF_AND_RECOMPUTE_ALL_ANCESTORS_FROM_CHILDREN; GROUP_EQUALS_BEFORE_COMPARISON"
+      }
+    },
+    "DEV_retuning": false,
+    "all64_durable_before_DEV": true,
+    "both_classes_required": true,
+    "candidate_set": "{0,1} UNION UNIQUE_FINITE_CONTEXT_TRAIN_SCORES; SIGNED_ZERO_ONE_NUMERIC_VALUE",
+    "comparison": "STRICT_P>DECISION_EQUALITY_STATIC",
+    "context": "RAW_INT64_PRIOR_ZERO_OR_NONZERO_COMPACT_ORIGINAL_ORDER",
+    "fallback": false,
+    "objective_order": [
+      "MAX_NET_TICK_EXACT_HIT_GAIN",
+      "MIN_OVERALL_CONTINUOUS_SSE",
+      "MIN_OVERALL_CONTINUOUS_SAE",
+      "MIN_HARMFUL_STATIC_REALIZED_COUNT",
+      "MAX_DECISION"
+    ],
+    "policy_source": "empirical-hurdle-stage1-v4-d2-loss-aware-policy.json",
+    "recipe_unmodified": true
+  },
+  "source_policy_receipt_sha256": "2a32ee18b757b7fa6dde62360b226bef42d7a203d6f15f509b94d5b18910c454",
+  "source_sha256": {
+    "empirical_causal_dataset_store.py": "af72bc24a54029bd1f91f20180e67525f007ca3d420b5a84b336f3825b02390d",
+    "empirical_hurdle_attribution_io.py": "13bfc34ddc4e7cdf2bf98e01c53a937f7f0362d92493ca0254e52df8efcea4f6",
+    "empirical_hurdle_fit_cv_data.py": "9e104a83a928c6b997a914a606820f2d2190fa56917e4042856474f747b900ac",
+    "empirical_hurdle_fit_cv_gates.py": "7529884d62ee5773bc163a301a9d96c641ff2a2e2e911d3e3e4f0a5c1a6828c2",
+    "empirical_hurdle_fit_cv_math.py": "b410b2f0138848faf4e976094a1bd4f3cc3ac44418b54a24310717c6261e0e73",
+    "empirical_hurdle_fit_cv_store.py": "37afd091349396b7f1eb2610b13bbd4ef81f89b977feab3e7875c8eaec5b5fcd",
+    "empirical_hurdle_v2_execution.py": "31642388236f91ff96e16c886395bfcc7dbdf1a6e741a84f690c6437b358fcc5",
+    "empirical_hurdle_v2_io.py": "10b8e902eeb718eeb2b2d96b5baf7a295b4e354485d1167a65c4f0c81ac234b5",
+    "empirical_hurdle_v2_publication.py": "e9e10876788b75a7cfa667aee4dca026ba5d42ce858c4e19cc710cfd498aadc2",
+    "empirical_hurdle_v2_threshold.py": "d54423a83fe0e72b4ee816a695f04fd44c156caf53df135db02f86a64e8b650b",
+    "empirical_hurdle_v3_execution.py": "e5b73d8436607938044e5a02d05ba79ba85db5ff1f9a95005871c74eb0fd02eb",
+    "empirical_hurdle_v3_executor_publication.py": "5b5b1ac84651f382189207b55fdf56c325fb1e9b66ab60c8cf51a70aa8a29194",
+    "empirical_hurdle_v3_external_storage.py": "fddf87bf1837e773c0e00b23d8b9446a6de511bf437b90832c15d94da1331d6c",
+    "empirical_hurdle_v3_io.py": "1fb772477eed0be39653d92247edf31cdfab109069afb6b56fbadbb65cd06b3d",
+    "empirical_hurdle_v3_policy.py": "0a9ef783a79927fcfda0877bcec74e164e27b992ab8d457f780d68602ad3de5d",
+    "empirical_hurdle_v3_publication.py": "474a8f39dd1f27be87fec650a193ca8452fd0fe9443b444695e04b952f50c9c2",
+    "empirical_hurdle_v3_scaffold.py": "85a9e2e6b9abdbcab2b3847887a4548d00c84802f64aba7ad6224de7685fecf9",
+    "empirical_hurdle_v3_store.py": "eadb505681a5e46f6cf447afcf4ccc1d68c6977c5a0c2e2ded8944465450567b",
+    "empirical_hurdle_v3_temporal.py": "cd41e15cb62c2b81653ac80ac004a5142ac4fb8b81328e86deed328b0cb34f0a",
+    "empirical_hurdle_v3_temporal_binding.py": "193a432a0baa3da856e55efabf4d87ca39271b354960c30efc8adaa07e2030b8",
+    "empirical_hurdle_v3_temporal_math.py": "677094d107b6351baf9e39a7bd5b50e010c1a0331dacf10aa0c4fece845527a8",
+    "empirical_hurdle_v3_threshold.py": "7ae8b57db1575d59d2a80b01cb97ea28ab0af99beab0b6a9652c768311b99b5f",
+    "empirical_hurdle_v4_authorization.py": "27d198ddb164aa6942f56fa942180ed9245020cad89462ddb435ef3e783cfb65",
+    "empirical_hurdle_v4_b0_metadata.py": "767b1bc9ae993eda007c7dc17b8e2d9eb2194dd250e13d0718c1287fb12c7622",
+    "empirical_hurdle_v4_b1_evidence.py": "5d1e89e0d70c5a494d8c2110f1cf4ab6095bbd12c9910fa3533067485732ec41",
+    "empirical_hurdle_v4_b1_train_score.py": "07048fabd46e78edbd405f4215d39205f2ea29f164e61cda0959313b093a2258",
+    "empirical_hurdle_v4_c_diagnostics.py": "6465fc17e32d8b15b41266e40b8de256bbac509d921aa373b5962fc9cf78f70c",
+    "empirical_hurdle_v4_c_math.py": "be4d3317ef3d4bba7d6a11ece131b43e982fcd688fd3a6fafbbb7df22af826a4",
+    "empirical_hurdle_v4_certificate.py": "2eec8b0c3939893d7788fd672472af4f7e0cb788a3a9c444de6a6824655f6f1b",
+    "empirical_hurdle_v4_e2_decision.py": "689c3ab3afe34719fa517aa59fc0fee09ef70bc70a3dac954b62a0a0dbdf61b1",
+    "empirical_hurdle_v4_e2_evaluation.py": "d6045b38c2615a589964286d0c35500bbeb977acbba2baab38dc90d4a1053883",
+    "empirical_hurdle_v4_e2_execution.py": "a1986d904f2b1cdf3f686b44caeeef7f662139b80f045766e721cc0cdc072b43",
+    "empirical_hurdle_v4_e2_inputs.py": "9bca06d7de4e5fdce61f1e7c50f612417b856a2b395322b145d231a2ae7d6d9f",
+    "empirical_hurdle_v4_e2_publication.py": "406a26ef86429023f658dc219689e23368f308f75a61e94b63d5c739f0ce23e1",
+    "empirical_hurdle_v4_e_bootstrap.py": "ecf4f5b4ec447a39474ff25db2edb02c33d172703444834c55295ef45e75d1ef",
+    "empirical_hurdle_v4_e_decision.py": "dd9ce02c5950c3533f11e0a3e054b6e0beb44e1fb829741be726720847fed70f",
+    "empirical_hurdle_v4_e_evaluation.py": "64579a97487607506861b46624186516c040ce74770a8eaa522cd6b68e2c3db5",
+    "empirical_hurdle_v4_e_inputs.py": "a7496a76b25a58f7d5700b00c5620bdee83f58da715ed9d41aaf59a9961e23c6",
+    "empirical_hurdle_v4_e_publication.py": "bc895cf9cb9843d691563fd37f94e1378152cbfae8b2fbc18646d0dc0d87ebc7",
+    "empirical_hurdle_v4_execution.py": "f7ae1ae98c645de4997e56d1bcd73b76e2f4f153090b65e5fd6bb8d207f7fd0e",
+    "empirical_hurdle_v4_fitting_policy.py": "529c6c14832a18bc18eb51409e1637ca2c003892d62aa883f900c238d59be76f",
+    "empirical_hurdle_v4_io.py": "e1bb255654980e0559d7af1becedac8c3aabf0c2a01e6da179307afe9a7b5d70",
+    "empirical_hurdle_v4_state_contract.py": "3a21944b47ee82f4401b6742742924b7458741f17959e3ed2c2d41df67f68793",
+    "empirical_hurdle_v4_store.py": "f541ebb4686a6032892f327a820ea3e22ad1bffb5c38b73bb649305a448c7935",
+    "empirical_identifiability_execution.py": "2a421f797870667b583d3c938d2106ec803e54c0532283b6195ad71f999c8311",
+    "empirical_plant_policy.py": "3961101927faca0e64a731ff92484d563082390c001988a156056275743034df",
+    "empirical_s2_ri_execution.py": "4f3b0711a44a32f157546076f1d02035f0730495a453a0af0481b00332dd82d4",
+    "empirical_s2_ri_fit_cv_math.py": "a1c1203c8222df067064ff1891aafa82cdafd997338c7ca7687a321c66777f29",
+    "empirical_s2_ri_policy.py": "5764626e066e0d45c4f650e8dac3961e58c9610916c240ff6d592f10c70bd048",
+    "empirical_s2_ri_reconstruction_math.py": "e6bb2f276b3e87104f1aedb0ecbafae7175147c60e9b03aaba19b77a49db0055"
+  },
+  "stop": "COMPLETE_OR_FAIL_CLOSED_NO_AUTOMATIC_RECOVERY_OR_NEW_ARM; FINAL_SAFE_PUBLICATION_EXACT_CI_CLEAN_THEN_STOP",
+  "validation_domains": [
+    {
+      "D2_addendum": "E2 exact additional TRAIN feature/potential/model input provenance and original source pins; no private access in D2.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 1,
+      "source_pointer": "/domains/0",
+      "verification": "Bind policy/code/environment/model/normalizer/source/ordered anchors, original V4 and C/B0/B1 identities; no old grant reuse."
+    },
+    {
+      "D2_addendum": "Apply unchanged gate to D2; TRAIN feasibility guard is not acceptance.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 2,
+      "source_pointer": "/domains/1",
+      "verification": "Apply unchanged32clauses to each policy/candidate/fold with HOLD_LAST on exact same anchors; D0 paired comparison is additional."
+    },
+    {
+      "D2_addendum": "Three-arm gate versus realized STATIC loss, privacy suppressed jointly.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 3,
+      "source_pointer": "/domains/2",
+      "verification": "Report STATIC_HOLD gateFP/TN and harmful tick movement plus STATIC exact-hit loss."
+    },
+    {
+      "D2_addendum": "TRAIN per-context TP guards separately protect onset TP in PREVIOUS_STATIC and continuation TP in PREVIOUS_MOVE; no corresponding DEV guarantee; report DEV onset separately.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 4,
+      "source_pointer": "/domains/3",
+      "verification": "Report MOVE_ONSET recall/FN/missed rate and projected tick correctness."
+    },
+    {
+      "D2_addendum": "Harmful STATIC guard includes termination; gate termination reduction not guaranteed.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 5,
+      "source_pointer": "/domains/4",
+      "verification": "Report MOVE_TERMINATION false-MOVE/TN and FP-to-HOLD versus harmful movement."
+    },
+    {
+      "D2_addendum": "Joint continuation/termination tradeoff; no claim TP guard protects magnitude in DEV.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 6,
+      "source_pointer": "/domains/5",
+      "verification": "Report MOVE_CONTINUATION recall/FN jointly with termination; no recall-only success."
+    },
+    {
+      "D2_addendum": "Same four truth populations for all three arms; no truth-based routing.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 7,
+      "source_pointer": "/domains/6",
+      "verification": "All4truth states confusion/counts/denominators; routing vs truth separated in recursion; ratios undefined=>NOT_IDENTIFIABLE."
+    },
+    {
+      "D2_addendum": "Potential outcome exact-hit gain versus realized STATIC loss and MOVE gain, same-anchor identity.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 8,
+      "source_pointer": "/domains/7",
+      "verification": "Verify STATIC_HIT_LOSS,MOVE_HIT_GAIN,NET and exact identity candidate_hits=hold_last_hits-static_loss+move_gain."
+    },
+    {
+      "D2_addendum": "Separate gate FP-to-HOLD from harmful movement; Stage2 STATIC potential extrapolation risk.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 9,
+      "source_pointer": "/domains/8",
+      "verification": "GateFP count=projected-HOLD+harmful movement; report fraction only if defined; never force MOVE realization."
+    },
+    {
+      "D2_addendum": "D2 uses same one-step scores; recursive state changes can change later scores.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 10,
+      "source_pointer": "/domains/9",
+      "verification": "Describe TRAIN/DEV overall/previous-state AUC with ties/support; unchanged one-step scores expected D0/D1; no AUC acceptance shortcut."
+    },
+    {
+      "D2_addendum": "No calibration fitting; same one-step score diagnostics; private C suppression preserved.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 11,
+      "source_pointer": "/domains/10",
+      "verification": "Describe Brier/mean probability/prevalence/bias; unchanged one-step scores; no calibration fit or calibration-proof claim."
+    },
+    {
+      "D2_addendum": "Seal D0 reconstruction, D1 provenance and all64 D2 decisions before DEV; no DEV tuning.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 12,
+      "source_pointer": "/domains/11",
+      "verification": "Seal D1 two TRAIN decisions before DEV reading; report context TRAIN/DEV saved-or-E-generated gates separately; no DEV retuning."
+    },
+    {
+      "D2_addendum": "D2 per-fold complete gate; no averaging failures.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 13,
+      "source_pointer": "/domains/12",
+      "verification": "Each fold independently reports metrics/clause results; both required per model candidate; no averaging away fold failure."
+    },
+    {
+      "D2_addendum": "D0 relative TRAIN SSE/SAE tree guard does not replace frozen DEV TRUE MOVE clauses.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 14,
+      "source_pointer": "/domains/13",
+      "verification": "TRUE_MOVE integrated gated delta RMSE/MAE/p95 with frozen support/comparator; no oracle substitution."
+    },
+    {
+      "D2_addendum": "All-row Stage2 TRAIN potential-output numerical qualification plus actual gated DEV model residual.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 15,
+      "source_pointer": "/domains/14",
+      "verification": "GateTP onset/continuation magnitude/step-delta residual; preserve model/integration/quantization/confounding limits."
+    },
+    {
+      "D2_addendum": "Fixed original projection, finite check, ties-even and range; invalid TRAIN potentials abort whole job.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 16,
+      "source_pointer": "/domains/15",
+      "verification": "Test finite signed delta, ties-even integer ticks, signed16 range and STATIC hold; no clipping, repair or forced nonzero."
+    },
+    {
+      "D2_addendum": "Actual projected state/history updated under D2; no gate-bit substitution or oracle potentials.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 17,
+      "source_pointer": "/domains/16",
+      "verification": "Track realized movement/context divergence and full projected numeric history; descriptive association not causal share."
+    },
+    {
+      "D2_addendum": "D2 all four OVERALL horizons, support and frozen comparator unchanged.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 18,
+      "source_pointer": "/domains/17",
+      "verification": "OVERALL terminal errors RMSE/MAE/p95 on each H25/50/100/200 with frozen support, anchors, comparator and full-state recursion."
+    },
+    {
+      "D2_addendum": "D2 observed-truth PATH_MOVED all horizons, support unchanged.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 19,
+      "source_pointer": "/domains/18",
+      "verification": "PATH_MOVED uses observed truth path definition, not policy projected movement; all4horizons support and numeric errors required."
+    },
+    {
+      "D2_addendum": "Two fresh full E2 repeats and sealed verify-only, predeclared reduction/resource caps; source writes zero.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 20,
+      "source_pointer": "/domains/19",
+      "verification": "Predeclare two independent full evaluation repeats, byte-exact outputs, verify-only resume with source/inference/recompute trapped; source writes0."
+    },
+    {
+      "D2_addendum": "Repeated DEV exploratory evidence; HOLDOUT CLOSED no promotion.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 21,
+      "source_pointer": "/domains/20",
+      "verification": "Keep HOLDOUT closed/no discovery; observed DEV is retrospective and cannot optimize future untouched acceptance."
+    },
+    {
+      "D2_addendum": "No controller/vehicle/actuator paths; authority NONE.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 22,
+      "source_pointer": "/domains/21",
+      "verification": "Vehicle/controller/planner/actuator untouched; no integration, flashing or activation; no physical EPS performance claim."
+    }
+  ],
+  "version": "V4_E2_D0_D1_D2_PROTOCOL_V2"
+}

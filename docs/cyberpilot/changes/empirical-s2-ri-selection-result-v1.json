@@ -1,0 +1,675 @@
+{
+  "admissible_count": 0,
+  "authorization_sha256": "4080b8deed3ecef6de5af4da4385896eae0a269786d90029005d9407140e3943",
+  "candidate_search_authorized": false,
+  "candidates": [
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D00_L01",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ONE_STEP_WITHIN_ONE_TICK",
+            "ROLLOUT_25_RMSE",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_RMSE",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D00_L05",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_RMSE",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D00_L15",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D00_L45",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D05_L01",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ONE_STEP_WITHIN_ONE_TICK",
+            "ROLLOUT_25_RMSE",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_RMSE",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D05_L05",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_RMSE",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D05_L15",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_RMSE",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D05_L45",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_RMSE",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D10_L01",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ONE_STEP_WITHIN_ONE_TICK",
+            "ROLLOUT_25_RMSE",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_RMSE",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D10_L05",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_RMSE",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_RMSE",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D10_L15",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_RMSE",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D10_L45",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_RMSE",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D20_L01",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_MAE"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ONE_STEP_WITHIN_ONE_TICK",
+            "ROLLOUT_25_RMSE",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_RMSE",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D20_L05",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_RMSE",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_RMSE",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D20_L15",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_RMSE",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_RMSE",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    },
+    {
+      "admissible": false,
+      "candidate_id": "S2RI_D20_L45",
+      "fold_gates": [
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        },
+        {
+          "failed": [
+            "ONE_STEP_MAE",
+            "ONE_STEP_P95",
+            "ONE_STEP_EXACT_HIT",
+            "ROLLOUT_25_RMSE",
+            "ROLLOUT_25_MAE",
+            "ROLLOUT_25_P95",
+            "ROLLOUT_50_RMSE",
+            "ROLLOUT_50_MAE",
+            "ROLLOUT_50_P95",
+            "ROLLOUT_100_RMSE",
+            "ROLLOUT_100_MAE",
+            "ROLLOUT_100_P95",
+            "ROLLOUT_200_RMSE",
+            "ROLLOUT_200_MAE",
+            "ROLLOUT_200_P95"
+          ],
+          "pass": false
+        }
+      ],
+      "ranking_key": null
+    }
+  ],
+  "composition_authorized": false,
+  "final_pooled_refit": "NOT_AUTHORIZED",
+  "future_holdout_model_admitted": false,
+  "interpretation": "RETROSPECTIVE_ROUTE_LEVEL_DEVELOPMENT_SELECTION",
+  "multiplicity": "MODEL_SELECTION_FAILED_CLOSED",
+  "policy_sha256": "05cf63752587105d188bff2f81baec32e8192a689cbf09543caf1f954656ac96",
+  "private_manifest_sha256": "9466e4578842b4c8a300bb843338e53b42a2fc75200879360f8212c7c2605c97",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "c5605651cfe7e37e3fa155bc761fe2e1ce706c54caa560a07d834a59c0965cca",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_S2_RI_PUBLIC_SELECTION_RESULT_V1",
+  "sealed_reference_allowed": false,
+  "selected_candidate": null,
+  "sg_execution": false,
+  "status": "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

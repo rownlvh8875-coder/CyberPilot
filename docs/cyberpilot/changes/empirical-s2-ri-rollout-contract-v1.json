@@ -1,0 +1,92 @@
+{
+  "anchor": "k_LAST_OBSERVED_ANGLE",
+  "authority": {
+    "candidate_execution": false,
+    "composition": false,
+    "cv_scoring": false,
+    "device": false,
+    "fitting": false,
+    "holdout_opening": false,
+    "metric_execution": false,
+    "normalizer_fitting": false,
+    "pooled_refit": false,
+    "prediction": false,
+    "private_array_access": false,
+    "production": false,
+    "qlog_support": false,
+    "raw_opening": false,
+    "residual": false,
+    "rollout": false,
+    "selection": false,
+    "sg": false,
+    "ta": false,
+    "vehicle": false
+  },
+  "boundary": "ANCHOR_HORIZON_UNAVAILABLE_BEFORE_PREDICTION_NO_SHORT_PADDING",
+  "candidate_search_authorized": false,
+  "command_index": "u[k+h-1-d-i]_FOR_i_0_TO_L_MINUS_1",
+  "composition_authorized": false,
+  "continuous_feedback": "FORBIDDEN",
+  "dt_ns": 10000000,
+  "endpoint": "H_UPDATES_COMPARE_PROJECTED_TICK_AT_k_PLUS_H_TO_OBSERVED_TICK_AT_k_PLUS_H",
+  "execution": "NOT_RUN",
+  "exogenous": [
+    "RECORDED_LOGGED_POST_CARCONTROLLER_NORMALIZED_COMMAND",
+    "RECORDED_VEGO"
+  ],
+  "exogenous_semantics": "LOGGED_SEQUENCE_CONDITIONING_NOT_AUTONOMOUS_FUTURE_DRIVING",
+  "feature_sha256": "8812434d0ea3f51b51d5f7c79c72ea4b0c5a585bf9a1b1fda8f274f1f019a1f7",
+  "first_step": "FEATURES_AT_k_PREDICT_k_PLUS_1",
+  "future_input_bound": "COMMAND_AND_SPEED_SOURCE_TIME_AT_OR_BEFORE_EACH_RECORDED_STEP_STATE",
+  "grid_policy_sha256": "ff2b3c0cfa926b029dda87dbfb8fc80ec1cbb57a58b59bb20430bef0c6c7a9af",
+  "horizons": [
+    {
+      "seconds": 0.25,
+      "steps": 25
+    },
+    {
+      "seconds": 0.5,
+      "steps": 50
+    },
+    {
+      "seconds": 1.0,
+      "steps": 100
+    },
+    {
+      "seconds": 2.0,
+      "steps": 200
+    }
+  ],
+  "initial_history": "OBSERVED_ANGLE_TICKS_AND_PAST_DELTAS_THROUGH_k_ONLY",
+  "measured_future_angle": "SCORING_ONLY_NEVER_RECURSIVE_FEATURE",
+  "measured_future_delta": "FORBIDDEN",
+  "name": "LOGGED_EXOGENOUS_COMMAND_CONDITIONED_ROLLOUT",
+  "normalizer_sha256": "934e9526d961d86f552c9951388ad242de638399276cd2ae4b29221847ab82cc",
+  "numerical_failure": "INVALIDATE_CANDIDATE_FOLD_NO_CLIPPING_NO_SAMPLE_REMOVAL",
+  "past_delta_update": "PROJECTED_TICK_NEW_MINUS_PROJECTED_TICK_PREVIOUS",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "80e1da374da289effe6fe58b8e5ef807021bf2f557701ec391d99771bf6ecb97",
+  "recursive_state": "PROJECTED_SOURCE_GRID",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_S2_RI_ROLLOUT_CONTRACT_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "speed_index": "vEgo[k+h-1]",
+  "start_after_reset": "REBUILD_ALL_REQUIRED_HISTORY_NO_CARRY",
+  "state_ownership": "INDEPENDENT_CANDIDATE_FOLD_ANCHOR_NO_CROSS_ANCHOR_STATE",
+  "steering_rate": "FORBIDDEN",
+  "support": "EVERY_HISTORY_AND_HORIZON_ROW_SAME_ROUTE_SEGMENT_S2_RI_RUN_ELIGIBLE_EXACT_100HZ",
+  "ta_execution": false,
+  "transition_order": [
+    "BUILD_CAUSAL_FEATURES_AT_k_PLUS_h_MINUS_1",
+    "APPLY_FROZEN_TRAIN_NORMALIZER",
+    "DECLARE_CONTINUOUS_DELTA_FROM_FROZEN_MODEL",
+    "ADD_DELTA_TO_CURRENT_PROJECTED_TICK",
+    "DIRECT_TICK_HALF_TO_EVEN_PROJECTION",
+    "APPEND_PROJECTED_TICK_DIFFERENCE_TO_DELTA_HISTORY",
+    "ADVANCE_ONE_GRID_STEP"
+  ],
+  "vehicle_activation_allowed": false
+}

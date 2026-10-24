@@ -1,0 +1,2105 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "matrices": [
+    {
+      "card_order": "STATE_UPDATE_PUBLISHES_PREVIOUS_LAST_ACTUATORS_THEN_CURRENT_CONTROLS_UPDATE",
+      "carstate_selected_dbc": [
+        "ESP12.YAW_RATE",
+        "SAS11.SAS_Angle",
+        "SAS11.SAS_Speed",
+        "WHL_SPD11.WHL_SPD_FL",
+        "WHL_SPD11.WHL_SPD_FR",
+        "WHL_SPD11.WHL_SPD_RL",
+        "WHL_SPD11.WHL_SPD_RR"
+      ],
+      "command": "POST_CARCONTROLLER_LOGGED_REPRESENTATION_NOT_EPS_ACK",
+      "commit": "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29",
+      "dbc_signal_definitions": {
+        "ESP12.LAT_ACCEL": {
+          "address": 544,
+          "definition": "SG_ LAT_ACCEL : 0|11@1+ (0.01,-10.23) [-10.23|10.24] \"m/s^2\"  _4WD,ECS,IBOX,LCA,LDWS_LKAS,MDPS,PSB,SCC,TCU",
+          "message": "ESP12",
+          "signal": "LAT_ACCEL",
+          "source_slice_sha256": "c5f98791ef03551086e3789da8a7b50122d79c3ce9e5d6b28a93b30dc2a47e53"
+        },
+        "ESP12.YAW_RATE": {
+          "address": 544,
+          "definition": "SG_ YAW_RATE : 40|13@1+ (0.01,-40.95) [-40.95|40.96] \"\"  _4WD,AFLS,IBOX,LCA,LDWS_LKAS,MDPS,PSB,SCC,SPAS,TCU",
+          "message": "ESP12",
+          "signal": "YAW_RATE",
+          "source_slice_sha256": "8eccb35b6a4a6eb017108bc01f88828d3a8de0a6ce2b803a20000395861384d2"
+        },
+        "MDPS12.CF_Mdps_ToiFlt": {
+          "address": 593,
+          "definition": "SG_ CF_Mdps_ToiFlt : 14|1@1+ (1.0,0.0) [0.0|1.0] \"\"  LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CF_Mdps_ToiFlt",
+          "source_slice_sha256": "1d9d5d462a568129bc9ab83515a95fe936fc4b944559d13e7d46fcd979337893"
+        },
+        "MDPS12.CF_Mdps_ToiUnavail": {
+          "address": 593,
+          "definition": "SG_ CF_Mdps_ToiUnavail : 12|1@1+ (1.0,0.0) [0.0|1.0] \"\"  LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CF_Mdps_ToiUnavail",
+          "source_slice_sha256": "35a27b1bcdfc57e45880b250a0601555da24fbf560915e272da3ef073c3bc660"
+        },
+        "MDPS12.CR_Mdps_OutTq": {
+          "address": 593,
+          "definition": "SG_ CR_Mdps_OutTq : 52|12@1+ (0.1,-204.8) [-204.8|204.7] \"\"  ESC,LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CR_Mdps_OutTq",
+          "source_slice_sha256": "d2157915ae7179fe407cbc0b5edcb01519e9b359ba71a613608ea72eae7e5251"
+        },
+        "MDPS12.CR_Mdps_StrColTq": {
+          "address": 593,
+          "definition": "SG_ CR_Mdps_StrColTq : 0|11@1+ (1.0,-1024.0) [-1024.0|1024.0] \"\"  LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CR_Mdps_StrColTq",
+          "source_slice_sha256": "a8365271cb7efed8f495a15547b12ac4f8dcdab074a3a629db9111b7212076bd"
+        },
+        "SAS11.SAS_Angle": {
+          "address": 688,
+          "definition": "SG_ SAS_Angle : 0|16@1- (0.1,0.0) [-3276.8|3276.7] \"Deg\"  _4WD,ACU,AFLS,AVM,CLU,ECS,EMS,ESC,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SPAS,TCU,_4WD,ACU,AFLS,AVM,BCM,CLU,ECS,EMS,ESC,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SPAS,TCU",
+          "message": "SAS11",
+          "signal": "SAS_Angle",
+          "source_slice_sha256": "d4eb8e08e3c56fa37d9c97506eea05448fdf2eeb683aec601a28d85ca8202e4f"
+        },
+        "SAS11.SAS_Speed": {
+          "address": 688,
+          "definition": "SG_ SAS_Speed : 16|8@1+ (4.0,0.0) [0.0|1016.0] \"\"  AFLS,ECS,ESC,IBOX,LDWS_LKAS,SCC,SPAS,TCU,AFLS,ECS,ESC,IBOX,LDWS_LKAS,SCC,SPAS,TCU",
+          "message": "SAS11",
+          "signal": "SAS_Speed",
+          "source_slice_sha256": "ad22d9f2cc37e78fc16c20b2617c9afb65ef7e0ab7f7553666addc9d98f03e63"
+        },
+        "WHL_SPD11.WHL_SPD_FL": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_FL : 0|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,AFLS,AHLS,AVM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_FL",
+          "source_slice_sha256": "ea018261230e220a783791d2cf5eef39c470bb5291881b7980c9af6f2a81e2d2"
+        },
+        "WHL_SPD11.WHL_SPD_FR": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_FR : 16|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,ACU,AFLS,AHLS,AVM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_FR",
+          "source_slice_sha256": "c84579ba4a54089946c5072d8e91d78fc945a5df300ee513ca9cf47a7de9d404"
+        },
+        "WHL_SPD11.WHL_SPD_RL": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_RL : 32|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,AFLS,AHLS,AVM,BCM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,BCM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_RL",
+          "source_slice_sha256": "8eec854b9142b78bd238f8a49795d1b2691bb51e75960e9156b815a1ed05c9a8"
+        },
+        "WHL_SPD11.WHL_SPD_RR": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_RR : 48|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,AFLS,AHLS,AVM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_RR",
+          "source_slice_sha256": "1786235b44b6dd420f492fae524721262dacd489383be27291a1b8fc982f19a5"
+        },
+        "WHL_SPD12_FS.WHL_SPD_FL": {
+          "address": 910,
+          "definition": "SG_ WHL_SPD_FL : 12|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD12_FS",
+          "signal": "WHL_SPD_FL",
+          "source_slice_sha256": "9ba411e09dbddbdb5c6483aacfc1f96a9a51ea9836295fe39b6510c3c8b54a2d"
+        },
+        "WHL_SPD12_FS.WHL_SPD_FR": {
+          "address": 910,
+          "definition": "SG_ WHL_SPD_FR : 26|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD12_FS",
+          "signal": "WHL_SPD_FR",
+          "source_slice_sha256": "bbc6deca25336c9dd262e8448ff426e63c297e8807d3d97a9040acf395f1ca7e"
+        },
+        "WHL_SPD13_FS.WHL_SPD_RL": {
+          "address": 911,
+          "definition": "SG_ WHL_SPD_RL : 12|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD13_FS",
+          "signal": "WHL_SPD_RL",
+          "source_slice_sha256": "ac7e5954408560a4a85d4ef7df558cec1e577d3d7da2f7169c4c8c4a9355e940"
+        },
+        "WHL_SPD13_FS.WHL_SPD_RR": {
+          "address": 911,
+          "definition": "SG_ WHL_SPD_RR : 26|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD13_FS",
+          "signal": "WHL_SPD_RR",
+          "source_slice_sha256": "092576f0c2197d6c61b9bf40c011050ed6109b962d5f3ccddb7dce65143006d9"
+        }
+      },
+      "field_ids_and_types": {
+        "schema_car": {
+          "carControl": [],
+          "carOutput": [],
+          "carState": [],
+          "gyroUncalibrated": [],
+          "gyroscope": [],
+          "latActive": [
+            [
+              "11",
+              "Bool"
+            ]
+          ],
+          "sensorEvents": [],
+          "steerFaultPermanent": [
+            [
+              "36",
+              "Bool"
+            ]
+          ],
+          "steerFaultTemporary": [
+            [
+              "35",
+              "Bool"
+            ]
+          ],
+          "steeringAngleDeg": [
+            [
+              "7",
+              "Float32"
+            ],
+            [
+              "3",
+              "Float32"
+            ]
+          ],
+          "steeringPressed": [
+            [
+              "9",
+              "Bool"
+            ]
+          ],
+          "steeringRateDeg": [
+            [
+              "15",
+              "Float32"
+            ]
+          ],
+          "timestamp": [],
+          "torque": [
+            [
+              "2",
+              "Float32"
+            ],
+            [
+              "67",
+              "LateralTorqueTuning"
+            ]
+          ],
+          "torqueOutputCan": [
+            [
+              "8",
+              "Float32"
+            ]
+          ],
+          "vEgo": [
+            [
+              "1",
+              "Float32"
+            ]
+          ],
+          "wheelSpeeds": [
+            [
+              "2",
+              "WheelSpeeds"
+            ]
+          ],
+          "yawRate": [
+            [
+              "22",
+              "Float32"
+            ]
+          ]
+        },
+        "schema_deprecated": {
+          "carControl": [],
+          "carOutput": [],
+          "carState": [],
+          "gyroUncalibrated": [],
+          "gyroscope": [],
+          "latActive": [],
+          "sensorEvents": [],
+          "steerFaultPermanent": [],
+          "steerFaultTemporary": [],
+          "steeringAngleDeg": [
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "1",
+              "Float32"
+            ]
+          ],
+          "steeringPressed": [],
+          "steeringRateDeg": [
+            [
+              "2",
+              "Float32"
+            ]
+          ],
+          "timestamp": [
+            [
+              "0",
+              "UInt64"
+            ],
+            [
+              "5",
+              "Int64"
+            ]
+          ],
+          "torque": [],
+          "torqueOutputCan": [],
+          "vEgo": [
+            [
+              "1",
+              "List(Float32)"
+            ]
+          ],
+          "wheelSpeeds": [],
+          "yawRate": [
+            [
+              "3",
+              "List(Float32)"
+            ]
+          ]
+        },
+        "schema_log": {
+          "carControl": [
+            [
+              "23",
+              "Car.CarControl"
+            ]
+          ],
+          "carOutput": [
+            [
+              "127",
+              "Car.CarOutput"
+            ]
+          ],
+          "carState": [
+            [
+              "22",
+              "Car.CarState"
+            ]
+          ],
+          "gyroUncalibrated": [
+            [
+              "12",
+              "SensorVec"
+            ]
+          ],
+          "gyroscope": [
+            [
+              "99",
+              "SensorEventData"
+            ]
+          ],
+          "latActive": [],
+          "sensorEvents": [],
+          "steerFaultPermanent": [],
+          "steerFaultTemporary": [],
+          "steeringAngleDeg": [
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "8",
+              "Float32"
+            ]
+          ],
+          "steeringPressed": [],
+          "steeringRateDeg": [
+            [
+              "2",
+              "Float32"
+            ],
+            [
+              "13",
+              "Float32"
+            ]
+          ],
+          "timestamp": [
+            [
+              "0",
+              "Int64"
+            ],
+            [
+              "3",
+              "Int64"
+            ],
+            [
+              "8",
+              "UInt64"
+            ]
+          ],
+          "torque": [],
+          "torqueOutputCan": [],
+          "vEgo": [
+            [
+              "0",
+              "Float32"
+            ]
+          ],
+          "wheelSpeeds": [],
+          "yawRate": [
+            [
+              "7",
+              "Float32"
+            ]
+          ]
+        }
+      },
+      "gyro_frame": "DEVICE_AXIS_MAPPING_NOT_INDEPENDENT_VEHICLE_FRAME_CALIBRATION",
+      "gyro_producer": "LSM6DS3_8_75_MDPS_PER_LSB_TIMES_PI_OVER_180_AXES_Y_NEG_X_Z_IRQ_TIMESTAMP",
+      "metadata_message_presence": {
+        "carControl": true,
+        "carOutput": true,
+        "carParams": true,
+        "carState": true,
+        "gyroscope": true,
+        "initData": true,
+        "sensorEvents": false
+      },
+      "runtime_steer_max": "RUNTIME_STEER_MAX_UNAVAILABLE_NUMERIC_CONFIRMATION_PENDING",
+      "signals": {
+        "acquisition_publish_age": "SEMANTICS_PENDING",
+        "active_driver_fault_context": "AVAILABLE_BY_SOURCE",
+        "direct_gyro": "AVAILABLE_BY_SOURCE_RAD_PER_S_DEVICE_AXES",
+        "lateral_acceleration": "SEMANTICS_PENDING",
+        "normalized_output_torque": "AVAILABLE_BY_SOURCE_RUNTIME_BRIDGE_NOT_RUN",
+        "requested_torque": "AVAILABLE_BY_SOURCE",
+        "safety_curvature_limit_reason": "SEMANTICS_PENDING_NO_FALSE_DEFAULT",
+        "steering_angle": "AVAILABLE_BY_SOURCE_SAS11_DEGREES",
+        "steering_rate": "AVAILABLE_BY_SOURCE_SAS11",
+        "torqueOutputCan": "AVAILABLE_BY_SOURCE_NOT_RUNTIME_VERIFIED",
+        "wheel_speeds": "AVAILABLE_BY_SOURCE",
+        "yaw": "SEMANTICS_PENDING_DBC_UNIT_EMPTY"
+      },
+      "source_fingerprint_sha256": "720f52530dfd7773350f5dcc19e7f12547ac0ce075ab3d165e197d536a15590f",
+      "source_roles": {
+        "can_builder": {
+          "file_sha256": "341f8321a597f8aafc23f64fc3177173cacd2f86f73f8b9951eb6aafa1c21c89",
+          "path": "opendbc_repo/opendbc/car/hyundai/hyundaican.py"
+        },
+        "canfd_builder": {
+          "file_sha256": "b635acd77d90544da12563791a336ca34503e73e3363fd39be471fc85ef082f2",
+          "path": "opendbc_repo/opendbc/car/hyundai/hyundaicanfd.py"
+        },
+        "card": {
+          "file_sha256": "6630e7c50f016112e7591e980a68b7cfd223a5d9fee8f15bb4466cda9ab78e4f",
+          "path": "openpilot/selfdrive/car/card.py"
+        },
+        "carstate": {
+          "file_sha256": "018ba9c239f8ab378de26354e3dd9c7eafe40ac513be1213d38f59a4c3a9e374",
+          "path": "opendbc_repo/opendbc/car/hyundai/carstate.py"
+        },
+        "controller": {
+          "file_sha256": "ced1c209e3ef5661add16a97e5b1ff7af7d5f8f96438f6ce9cb56c02c54b87f6",
+          "path": "opendbc_repo/opendbc/car/hyundai/carcontroller.py"
+        },
+        "controller_helpers": {
+          "file_sha256": "f56a23742d37395f5869f9c63a367375e038e2b47966efaed7a9679307c01e5e",
+          "path": "opendbc_repo/opendbc/car/__init__.py"
+        },
+        "controller_limits": {
+          "file_sha256": "2310c5ba7aa8d2b201915a4a392bd18615da3c00b3e5223b268699ae20b57c02",
+          "path": "opendbc_repo/opendbc/car/hyundai/values.py"
+        },
+        "dbc": {
+          "file_sha256": "1590039abb51cbfc3dc8ab4151ab78e7f549088fec878480ab4d6f850b18898a",
+          "path": "opendbc_repo/opendbc/dbc/hyundai_kia_generic.dbc"
+        },
+        "interface": {
+          "file_sha256": "123f14680dfb50c9133bbda35e309c93ed57ae81dec12dd28835e5e6a3dd1e8b",
+          "path": "opendbc_repo/opendbc/car/hyundai/interface.py"
+        },
+        "interface_base": {
+          "file_sha256": "9a7787c3450da2a0677023246b4a6770470b797f82e9a15db8f83f001b5a5d7f",
+          "path": "opendbc_repo/opendbc/car/interfaces.py"
+        },
+        "logger": {
+          "file_sha256": "ddf2ffb10b871d466f17d13859e2cdeac4b454573a495f82ebac45f303ef9ccd",
+          "path": "openpilot/system/loggerd/logger.cc"
+        },
+        "logger_config": {
+          "file_sha256": "558130ae6fd4f3d0f48e215f36b2b72d31c6d33f19dbff497acf76d8868320f6",
+          "path": "openpilot/system/loggerd/loggerd.h"
+        },
+        "logger_header": {
+          "file_sha256": "66eb66cfa79326994aa2f38953ee48d31bea0f5356ae3d6fe0de1f8c30ed406d",
+          "path": "openpilot/system/loggerd/logger.h"
+        },
+        "logger_start": {
+          "file_sha256": "09b91ed7fc0517b8f0aa34eba2c3278a4ff87d6312fa4afca3cac7fcb8c3b160",
+          "path": "openpilot/system/loggerd/loggerd.cc"
+        },
+        "schema_car": {
+          "file_sha256": "db5444005dcff5fdbbecf617ea031eb90852e51a848a9d832a02756ddc6bc024",
+          "path": "opendbc_repo/opendbc/car/car.capnp"
+        },
+        "schema_custom": {
+          "file_sha256": "e0740a219a7ffc605a4bd7d98180587b140f6c037a14e68b5afcb9a0b0d91749",
+          "path": "openpilot/cereal/custom.capnp"
+        },
+        "schema_dependency:opendbc_repo/opendbc/car/car.capnp": {
+          "file_sha256": "db5444005dcff5fdbbecf617ea031eb90852e51a848a9d832a02756ddc6bc024",
+          "path": "opendbc_repo/opendbc/car/car.capnp"
+        },
+        "schema_dependency:opendbc_repo/opendbc/car/include/c++.capnp": {
+          "file_sha256": "fb306076cd38c27af1aed20fac6395e9a46fbe5b5df6a248b5f1b6845a079c44",
+          "path": "opendbc_repo/opendbc/car/include/c++.capnp"
+        },
+        "schema_dependency:opendbc_repo/opendbc/car/rlog.capnp": {
+          "file_sha256": "0f4a316832f333bdd17d4af32f0102844fa569b97a417ada3ffbe0d2de5cbd21",
+          "path": "opendbc_repo/opendbc/car/rlog.capnp"
+        },
+        "schema_dependency:openpilot/cereal/custom.capnp": {
+          "file_sha256": "e0740a219a7ffc605a4bd7d98180587b140f6c037a14e68b5afcb9a0b0d91749",
+          "path": "openpilot/cereal/custom.capnp"
+        },
+        "schema_dependency:openpilot/cereal/deprecated.capnp": {
+          "file_sha256": "65079ff035a29c4c267d07ef7240c316c7eaa81b52f795142ed7603489a61355",
+          "path": "openpilot/cereal/deprecated.capnp"
+        },
+        "schema_dependency:openpilot/cereal/include/c++.capnp": {
+          "file_sha256": "fb306076cd38c27af1aed20fac6395e9a46fbe5b5df6a248b5f1b6845a079c44",
+          "path": "openpilot/cereal/include/c++.capnp"
+        },
+        "schema_dependency:openpilot/cereal/log.capnp": {
+          "file_sha256": "806c923f67487fd9144db78d583e56ad6d44215a0754481962e0438361e13671",
+          "path": "openpilot/cereal/log.capnp"
+        },
+        "schema_deprecated": {
+          "file_sha256": "65079ff035a29c4c267d07ef7240c316c7eaa81b52f795142ed7603489a61355",
+          "path": "openpilot/cereal/deprecated.capnp"
+        },
+        "schema_log": {
+          "file_sha256": "806c923f67487fd9144db78d583e56ad6d44215a0754481962e0438361e13671",
+          "path": "openpilot/cereal/log.capnp"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/__init__.py": {
+          "file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "openpilot/system/sensord/sensors/__init__.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/i2c_sensor.py": {
+          "file_sha256": "d3b9327073f1a96ef15c3f5ca3838d38d9aae3efcb5a1561891f7571c1f75bce",
+          "path": "openpilot/system/sensord/sensors/i2c_sensor.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_accel.py": {
+          "file_sha256": "02c66b9ff99df050d801f0d87ae741ed0b9ec34010de4731fabd56a7b67d9204",
+          "path": "openpilot/system/sensord/sensors/lsm6ds3_accel.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_gyro.py": {
+          "file_sha256": "cd864538b75ca84ff4758bf88893492afa17a1cb32e0fff9237e24567553eb0f",
+          "path": "openpilot/system/sensord/sensors/lsm6ds3_gyro.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_temp.py": {
+          "file_sha256": "1a982fb7fcc119000e851746c0e2db4d0742f96f9e4be2670491cb3e34a03b79",
+          "path": "openpilot/system/sensord/sensors/lsm6ds3_temp.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/mmc5603nj_magn.py": {
+          "file_sha256": "c5b78dec273b49916c9d361b257fb923ba25774e3d4d2c76fa1a04798638d965",
+          "path": "openpilot/system/sensord/sensors/mmc5603nj_magn.py"
+        },
+        "sensor_main": {
+          "file_sha256": "3f3db5796ffcc429c396a3e6ef900c85bd6262517c457d1fed28db58936ec4a5",
+          "path": "openpilot/system/sensord/sensord.py"
+        },
+        "services": {
+          "file_sha256": "9f44630c58622ad7285de56b80ca357ce9797904e4c2dd46fce19bb60a84c7dd",
+          "path": "openpilot/cereal/services.py"
+        }
+      },
+      "static_steer_max": "STATIC_STEER_MAX_SOURCE_BOUND_PROFILE_BRANCH_REVIEW_REQUIRED"
+    },
+    {
+      "card_order": "STATE_UPDATE_PUBLISHES_PREVIOUS_LAST_ACTUATORS_THEN_CURRENT_CONTROLS_UPDATE",
+      "carstate_selected_dbc": [
+        "ESP12.YAW_RATE",
+        "SAS11.SAS_Angle",
+        "SAS11.SAS_Speed",
+        "WHL_SPD11.WHL_SPD_FL",
+        "WHL_SPD11.WHL_SPD_FR",
+        "WHL_SPD11.WHL_SPD_RL",
+        "WHL_SPD11.WHL_SPD_RR"
+      ],
+      "command": "POST_CARCONTROLLER_LOGGED_REPRESENTATION_NOT_EPS_ACK",
+      "commit": "6ca11a4aea8223ebfebb1140bd8094ef1b3c5b90",
+      "dbc_signal_definitions": {
+        "ESP12.LAT_ACCEL": {
+          "address": 544,
+          "definition": "SG_ LAT_ACCEL : 0|11@1+ (0.01,-10.23) [-10.23|10.24] \"m/s^2\"  _4WD,ECS,IBOX,LCA,LDWS_LKAS,MDPS,PSB,SCC,TCU",
+          "message": "ESP12",
+          "signal": "LAT_ACCEL",
+          "source_slice_sha256": "c5f98791ef03551086e3789da8a7b50122d79c3ce9e5d6b28a93b30dc2a47e53"
+        },
+        "ESP12.YAW_RATE": {
+          "address": 544,
+          "definition": "SG_ YAW_RATE : 40|13@1+ (0.01,-40.95) [-40.95|40.96] \"\"  _4WD,AFLS,IBOX,LCA,LDWS_LKAS,MDPS,PSB,SCC,SPAS,TCU",
+          "message": "ESP12",
+          "signal": "YAW_RATE",
+          "source_slice_sha256": "8eccb35b6a4a6eb017108bc01f88828d3a8de0a6ce2b803a20000395861384d2"
+        },
+        "MDPS12.CF_Mdps_ToiFlt": {
+          "address": 593,
+          "definition": "SG_ CF_Mdps_ToiFlt : 14|1@1+ (1.0,0.0) [0.0|1.0] \"\"  LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CF_Mdps_ToiFlt",
+          "source_slice_sha256": "1d9d5d462a568129bc9ab83515a95fe936fc4b944559d13e7d46fcd979337893"
+        },
+        "MDPS12.CF_Mdps_ToiUnavail": {
+          "address": 593,
+          "definition": "SG_ CF_Mdps_ToiUnavail : 12|1@1+ (1.0,0.0) [0.0|1.0] \"\"  LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CF_Mdps_ToiUnavail",
+          "source_slice_sha256": "35a27b1bcdfc57e45880b250a0601555da24fbf560915e272da3ef073c3bc660"
+        },
+        "MDPS12.CR_Mdps_OutTq": {
+          "address": 593,
+          "definition": "SG_ CR_Mdps_OutTq : 52|12@1+ (0.1,-204.8) [-204.8|204.7] \"\"  ESC,LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CR_Mdps_OutTq",
+          "source_slice_sha256": "d2157915ae7179fe407cbc0b5edcb01519e9b359ba71a613608ea72eae7e5251"
+        },
+        "MDPS12.CR_Mdps_StrColTq": {
+          "address": 593,
+          "definition": "SG_ CR_Mdps_StrColTq : 0|11@1+ (1.0,-1024.0) [-1024.0|1024.0] \"\"  LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CR_Mdps_StrColTq",
+          "source_slice_sha256": "a8365271cb7efed8f495a15547b12ac4f8dcdab074a3a629db9111b7212076bd"
+        },
+        "SAS11.SAS_Angle": {
+          "address": 688,
+          "definition": "SG_ SAS_Angle : 0|16@1- (0.1,0.0) [-3276.8|3276.7] \"Deg\"  _4WD,ACU,AFLS,AVM,CLU,ECS,EMS,ESC,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SPAS,TCU,_4WD,ACU,AFLS,AVM,BCM,CLU,ECS,EMS,ESC,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SPAS,TCU",
+          "message": "SAS11",
+          "signal": "SAS_Angle",
+          "source_slice_sha256": "d4eb8e08e3c56fa37d9c97506eea05448fdf2eeb683aec601a28d85ca8202e4f"
+        },
+        "SAS11.SAS_Speed": {
+          "address": 688,
+          "definition": "SG_ SAS_Speed : 16|8@1+ (4.0,0.0) [0.0|1016.0] \"\"  AFLS,ECS,ESC,IBOX,LDWS_LKAS,SCC,SPAS,TCU,AFLS,ECS,ESC,IBOX,LDWS_LKAS,SCC,SPAS,TCU",
+          "message": "SAS11",
+          "signal": "SAS_Speed",
+          "source_slice_sha256": "ad22d9f2cc37e78fc16c20b2617c9afb65ef7e0ab7f7553666addc9d98f03e63"
+        },
+        "WHL_SPD11.WHL_SPD_FL": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_FL : 0|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,AFLS,AHLS,AVM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_FL",
+          "source_slice_sha256": "ea018261230e220a783791d2cf5eef39c470bb5291881b7980c9af6f2a81e2d2"
+        },
+        "WHL_SPD11.WHL_SPD_FR": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_FR : 16|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,ACU,AFLS,AHLS,AVM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_FR",
+          "source_slice_sha256": "c84579ba4a54089946c5072d8e91d78fc945a5df300ee513ca9cf47a7de9d404"
+        },
+        "WHL_SPD11.WHL_SPD_RL": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_RL : 32|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,AFLS,AHLS,AVM,BCM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,BCM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_RL",
+          "source_slice_sha256": "8eec854b9142b78bd238f8a49795d1b2691bb51e75960e9156b815a1ed05c9a8"
+        },
+        "WHL_SPD11.WHL_SPD_RR": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_RR : 48|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,AFLS,AHLS,AVM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_RR",
+          "source_slice_sha256": "1786235b44b6dd420f492fae524721262dacd489383be27291a1b8fc982f19a5"
+        },
+        "WHL_SPD12_FS.WHL_SPD_FL": {
+          "address": 910,
+          "definition": "SG_ WHL_SPD_FL : 12|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD12_FS",
+          "signal": "WHL_SPD_FL",
+          "source_slice_sha256": "9ba411e09dbddbdb5c6483aacfc1f96a9a51ea9836295fe39b6510c3c8b54a2d"
+        },
+        "WHL_SPD12_FS.WHL_SPD_FR": {
+          "address": 910,
+          "definition": "SG_ WHL_SPD_FR : 26|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD12_FS",
+          "signal": "WHL_SPD_FR",
+          "source_slice_sha256": "bbc6deca25336c9dd262e8448ff426e63c297e8807d3d97a9040acf395f1ca7e"
+        },
+        "WHL_SPD13_FS.WHL_SPD_RL": {
+          "address": 911,
+          "definition": "SG_ WHL_SPD_RL : 12|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD13_FS",
+          "signal": "WHL_SPD_RL",
+          "source_slice_sha256": "ac7e5954408560a4a85d4ef7df558cec1e577d3d7da2f7169c4c8c4a9355e940"
+        },
+        "WHL_SPD13_FS.WHL_SPD_RR": {
+          "address": 911,
+          "definition": "SG_ WHL_SPD_RR : 26|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD13_FS",
+          "signal": "WHL_SPD_RR",
+          "source_slice_sha256": "092576f0c2197d6c61b9bf40c011050ed6109b962d5f3ccddb7dce65143006d9"
+        }
+      },
+      "field_ids_and_types": {
+        "schema_car": {
+          "carControl": [],
+          "carOutput": [],
+          "carState": [],
+          "gyroUncalibrated": [],
+          "gyroscope": [],
+          "latActive": [
+            [
+              "11",
+              "Bool"
+            ]
+          ],
+          "sensorEvents": [],
+          "steerFaultPermanent": [
+            [
+              "36",
+              "Bool"
+            ]
+          ],
+          "steerFaultTemporary": [
+            [
+              "35",
+              "Bool"
+            ]
+          ],
+          "steeringAngleDeg": [
+            [
+              "7",
+              "Float32"
+            ],
+            [
+              "3",
+              "Float32"
+            ]
+          ],
+          "steeringPressed": [
+            [
+              "9",
+              "Bool"
+            ]
+          ],
+          "steeringRateDeg": [
+            [
+              "15",
+              "Float32"
+            ]
+          ],
+          "timestamp": [],
+          "torque": [
+            [
+              "2",
+              "Float32"
+            ],
+            [
+              "67",
+              "LateralTorqueTuning"
+            ]
+          ],
+          "torqueOutputCan": [
+            [
+              "8",
+              "Float32"
+            ]
+          ],
+          "vEgo": [
+            [
+              "1",
+              "Float32"
+            ]
+          ],
+          "wheelSpeeds": [
+            [
+              "2",
+              "WheelSpeeds"
+            ]
+          ],
+          "yawRate": [
+            [
+              "22",
+              "Float32"
+            ]
+          ]
+        },
+        "schema_deprecated": {
+          "carControl": [],
+          "carOutput": [],
+          "carState": [],
+          "gyroUncalibrated": [],
+          "gyroscope": [],
+          "latActive": [],
+          "sensorEvents": [],
+          "steerFaultPermanent": [],
+          "steerFaultTemporary": [],
+          "steeringAngleDeg": [
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "1",
+              "Float32"
+            ]
+          ],
+          "steeringPressed": [],
+          "steeringRateDeg": [
+            [
+              "2",
+              "Float32"
+            ]
+          ],
+          "timestamp": [
+            [
+              "0",
+              "UInt64"
+            ],
+            [
+              "5",
+              "Int64"
+            ]
+          ],
+          "torque": [],
+          "torqueOutputCan": [],
+          "vEgo": [
+            [
+              "1",
+              "List(Float32)"
+            ]
+          ],
+          "wheelSpeeds": [],
+          "yawRate": [
+            [
+              "3",
+              "List(Float32)"
+            ]
+          ]
+        },
+        "schema_log": {
+          "carControl": [
+            [
+              "23",
+              "Car.CarControl"
+            ]
+          ],
+          "carOutput": [
+            [
+              "127",
+              "Car.CarOutput"
+            ]
+          ],
+          "carState": [
+            [
+              "22",
+              "Car.CarState"
+            ]
+          ],
+          "gyroUncalibrated": [
+            [
+              "12",
+              "SensorVec"
+            ]
+          ],
+          "gyroscope": [
+            [
+              "99",
+              "SensorEventData"
+            ]
+          ],
+          "latActive": [],
+          "sensorEvents": [],
+          "steerFaultPermanent": [],
+          "steerFaultTemporary": [],
+          "steeringAngleDeg": [
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "8",
+              "Float32"
+            ]
+          ],
+          "steeringPressed": [],
+          "steeringRateDeg": [
+            [
+              "2",
+              "Float32"
+            ],
+            [
+              "13",
+              "Float32"
+            ]
+          ],
+          "timestamp": [
+            [
+              "0",
+              "Int64"
+            ],
+            [
+              "3",
+              "Int64"
+            ],
+            [
+              "8",
+              "UInt64"
+            ]
+          ],
+          "torque": [],
+          "torqueOutputCan": [],
+          "vEgo": [
+            [
+              "0",
+              "Float32"
+            ]
+          ],
+          "wheelSpeeds": [],
+          "yawRate": [
+            [
+              "7",
+              "Float32"
+            ]
+          ]
+        }
+      },
+      "gyro_frame": "DEVICE_AXIS_MAPPING_NOT_INDEPENDENT_VEHICLE_FRAME_CALIBRATION",
+      "gyro_producer": "LSM6DS3_8_75_MDPS_PER_LSB_TIMES_PI_OVER_180_AXES_Y_NEG_X_Z_IRQ_TIMESTAMP",
+      "metadata_message_presence": {
+        "carControl": true,
+        "carOutput": true,
+        "carParams": true,
+        "carState": true,
+        "gyroscope": true,
+        "initData": true,
+        "sensorEvents": false
+      },
+      "runtime_steer_max": "RUNTIME_STEER_MAX_UNAVAILABLE_NUMERIC_CONFIRMATION_PENDING",
+      "signals": {
+        "acquisition_publish_age": "SEMANTICS_PENDING",
+        "active_driver_fault_context": "AVAILABLE_BY_SOURCE",
+        "direct_gyro": "AVAILABLE_BY_SOURCE_RAD_PER_S_DEVICE_AXES",
+        "lateral_acceleration": "SEMANTICS_PENDING",
+        "normalized_output_torque": "AVAILABLE_BY_SOURCE_RUNTIME_BRIDGE_NOT_RUN",
+        "requested_torque": "AVAILABLE_BY_SOURCE",
+        "safety_curvature_limit_reason": "SEMANTICS_PENDING_NO_FALSE_DEFAULT",
+        "steering_angle": "AVAILABLE_BY_SOURCE_SAS11_DEGREES",
+        "steering_rate": "AVAILABLE_BY_SOURCE_SAS11",
+        "torqueOutputCan": "AVAILABLE_BY_SOURCE_NOT_RUNTIME_VERIFIED",
+        "wheel_speeds": "AVAILABLE_BY_SOURCE",
+        "yaw": "SEMANTICS_PENDING_DBC_UNIT_EMPTY"
+      },
+      "source_fingerprint_sha256": "e180f1119287aba849c87f974af0b09d30cea5e7fbabb1759cf8686a6ae4e868",
+      "source_roles": {
+        "can_builder": {
+          "file_sha256": "341f8321a597f8aafc23f64fc3177173cacd2f86f73f8b9951eb6aafa1c21c89",
+          "path": "opendbc_repo/opendbc/car/hyundai/hyundaican.py"
+        },
+        "canfd_builder": {
+          "file_sha256": "b635acd77d90544da12563791a336ca34503e73e3363fd39be471fc85ef082f2",
+          "path": "opendbc_repo/opendbc/car/hyundai/hyundaicanfd.py"
+        },
+        "card": {
+          "file_sha256": "6630e7c50f016112e7591e980a68b7cfd223a5d9fee8f15bb4466cda9ab78e4f",
+          "path": "openpilot/selfdrive/car/card.py"
+        },
+        "carstate": {
+          "file_sha256": "018ba9c239f8ab378de26354e3dd9c7eafe40ac513be1213d38f59a4c3a9e374",
+          "path": "opendbc_repo/opendbc/car/hyundai/carstate.py"
+        },
+        "controller": {
+          "file_sha256": "ced1c209e3ef5661add16a97e5b1ff7af7d5f8f96438f6ce9cb56c02c54b87f6",
+          "path": "opendbc_repo/opendbc/car/hyundai/carcontroller.py"
+        },
+        "controller_helpers": {
+          "file_sha256": "f56a23742d37395f5869f9c63a367375e038e2b47966efaed7a9679307c01e5e",
+          "path": "opendbc_repo/opendbc/car/__init__.py"
+        },
+        "controller_limits": {
+          "file_sha256": "2310c5ba7aa8d2b201915a4a392bd18615da3c00b3e5223b268699ae20b57c02",
+          "path": "opendbc_repo/opendbc/car/hyundai/values.py"
+        },
+        "dbc": {
+          "file_sha256": "1590039abb51cbfc3dc8ab4151ab78e7f549088fec878480ab4d6f850b18898a",
+          "path": "opendbc_repo/opendbc/dbc/hyundai_kia_generic.dbc"
+        },
+        "interface": {
+          "file_sha256": "123f14680dfb50c9133bbda35e309c93ed57ae81dec12dd28835e5e6a3dd1e8b",
+          "path": "opendbc_repo/opendbc/car/hyundai/interface.py"
+        },
+        "interface_base": {
+          "file_sha256": "9a7787c3450da2a0677023246b4a6770470b797f82e9a15db8f83f001b5a5d7f",
+          "path": "opendbc_repo/opendbc/car/interfaces.py"
+        },
+        "logger": {
+          "file_sha256": "ddf2ffb10b871d466f17d13859e2cdeac4b454573a495f82ebac45f303ef9ccd",
+          "path": "openpilot/system/loggerd/logger.cc"
+        },
+        "logger_config": {
+          "file_sha256": "558130ae6fd4f3d0f48e215f36b2b72d31c6d33f19dbff497acf76d8868320f6",
+          "path": "openpilot/system/loggerd/loggerd.h"
+        },
+        "logger_header": {
+          "file_sha256": "66eb66cfa79326994aa2f38953ee48d31bea0f5356ae3d6fe0de1f8c30ed406d",
+          "path": "openpilot/system/loggerd/logger.h"
+        },
+        "logger_start": {
+          "file_sha256": "09b91ed7fc0517b8f0aa34eba2c3278a4ff87d6312fa4afca3cac7fcb8c3b160",
+          "path": "openpilot/system/loggerd/loggerd.cc"
+        },
+        "schema_car": {
+          "file_sha256": "478d9e1e45fe1744e3ed12375a60c4deb3b825b52841cd96b25a72364cf5b019",
+          "path": "opendbc_repo/opendbc/car/car.capnp"
+        },
+        "schema_custom": {
+          "file_sha256": "e0740a219a7ffc605a4bd7d98180587b140f6c037a14e68b5afcb9a0b0d91749",
+          "path": "openpilot/cereal/custom.capnp"
+        },
+        "schema_dependency:opendbc_repo/opendbc/car/car.capnp": {
+          "file_sha256": "478d9e1e45fe1744e3ed12375a60c4deb3b825b52841cd96b25a72364cf5b019",
+          "path": "opendbc_repo/opendbc/car/car.capnp"
+        },
+        "schema_dependency:opendbc_repo/opendbc/car/include/c++.capnp": {
+          "file_sha256": "fb306076cd38c27af1aed20fac6395e9a46fbe5b5df6a248b5f1b6845a079c44",
+          "path": "opendbc_repo/opendbc/car/include/c++.capnp"
+        },
+        "schema_dependency:opendbc_repo/opendbc/car/rlog.capnp": {
+          "file_sha256": "0f4a316832f333bdd17d4af32f0102844fa569b97a417ada3ffbe0d2de5cbd21",
+          "path": "opendbc_repo/opendbc/car/rlog.capnp"
+        },
+        "schema_dependency:openpilot/cereal/custom.capnp": {
+          "file_sha256": "e0740a219a7ffc605a4bd7d98180587b140f6c037a14e68b5afcb9a0b0d91749",
+          "path": "openpilot/cereal/custom.capnp"
+        },
+        "schema_dependency:openpilot/cereal/deprecated.capnp": {
+          "file_sha256": "65079ff035a29c4c267d07ef7240c316c7eaa81b52f795142ed7603489a61355",
+          "path": "openpilot/cereal/deprecated.capnp"
+        },
+        "schema_dependency:openpilot/cereal/include/c++.capnp": {
+          "file_sha256": "fb306076cd38c27af1aed20fac6395e9a46fbe5b5df6a248b5f1b6845a079c44",
+          "path": "openpilot/cereal/include/c++.capnp"
+        },
+        "schema_dependency:openpilot/cereal/log.capnp": {
+          "file_sha256": "806c923f67487fd9144db78d583e56ad6d44215a0754481962e0438361e13671",
+          "path": "openpilot/cereal/log.capnp"
+        },
+        "schema_deprecated": {
+          "file_sha256": "65079ff035a29c4c267d07ef7240c316c7eaa81b52f795142ed7603489a61355",
+          "path": "openpilot/cereal/deprecated.capnp"
+        },
+        "schema_log": {
+          "file_sha256": "806c923f67487fd9144db78d583e56ad6d44215a0754481962e0438361e13671",
+          "path": "openpilot/cereal/log.capnp"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/__init__.py": {
+          "file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "openpilot/system/sensord/sensors/__init__.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/i2c_sensor.py": {
+          "file_sha256": "d3b9327073f1a96ef15c3f5ca3838d38d9aae3efcb5a1561891f7571c1f75bce",
+          "path": "openpilot/system/sensord/sensors/i2c_sensor.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_accel.py": {
+          "file_sha256": "02c66b9ff99df050d801f0d87ae741ed0b9ec34010de4731fabd56a7b67d9204",
+          "path": "openpilot/system/sensord/sensors/lsm6ds3_accel.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_gyro.py": {
+          "file_sha256": "cd864538b75ca84ff4758bf88893492afa17a1cb32e0fff9237e24567553eb0f",
+          "path": "openpilot/system/sensord/sensors/lsm6ds3_gyro.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_temp.py": {
+          "file_sha256": "1a982fb7fcc119000e851746c0e2db4d0742f96f9e4be2670491cb3e34a03b79",
+          "path": "openpilot/system/sensord/sensors/lsm6ds3_temp.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/mmc5603nj_magn.py": {
+          "file_sha256": "c5b78dec273b49916c9d361b257fb923ba25774e3d4d2c76fa1a04798638d965",
+          "path": "openpilot/system/sensord/sensors/mmc5603nj_magn.py"
+        },
+        "sensor_main": {
+          "file_sha256": "3f3db5796ffcc429c396a3e6ef900c85bd6262517c457d1fed28db58936ec4a5",
+          "path": "openpilot/system/sensord/sensord.py"
+        },
+        "services": {
+          "file_sha256": "9f44630c58622ad7285de56b80ca357ce9797904e4c2dd46fce19bb60a84c7dd",
+          "path": "openpilot/cereal/services.py"
+        }
+      },
+      "static_steer_max": "STATIC_STEER_MAX_SOURCE_BOUND_PROFILE_BRANCH_REVIEW_REQUIRED"
+    },
+    {
+      "card_order": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+      "carstate_selected_dbc": [
+        "ESP12.YAW_RATE",
+        "SAS11.SAS_Angle",
+        "SAS11.SAS_Speed",
+        "WHL_SPD11.WHL_SPD_FL",
+        "WHL_SPD11.WHL_SPD_FR",
+        "WHL_SPD11.WHL_SPD_RL",
+        "WHL_SPD11.WHL_SPD_RR"
+      ],
+      "command": "POST_CARCONTROLLER_LOGGED_REPRESENTATION_NOT_EPS_ACK",
+      "commit": "a28ba306e4b8e0ea5f84f934fe962ad3d7ba9c7a",
+      "dbc_signal_definitions": {
+        "ESP12.LAT_ACCEL": {
+          "address": 544,
+          "definition": "SG_ LAT_ACCEL : 0|11@1+ (0.01,-10.23) [-10.23|10.24] \"m/s^2\"  _4WD,ECS,IBOX,LCA,LDWS_LKAS,MDPS,PSB,SCC,TCU",
+          "message": "ESP12",
+          "signal": "LAT_ACCEL",
+          "source_slice_sha256": "c5f98791ef03551086e3789da8a7b50122d79c3ce9e5d6b28a93b30dc2a47e53"
+        },
+        "ESP12.YAW_RATE": {
+          "address": 544,
+          "definition": "SG_ YAW_RATE : 40|13@1+ (0.01,-40.95) [-40.95|40.96] \"\"  _4WD,AFLS,IBOX,LCA,LDWS_LKAS,MDPS,PSB,SCC,SPAS,TCU",
+          "message": "ESP12",
+          "signal": "YAW_RATE",
+          "source_slice_sha256": "8eccb35b6a4a6eb017108bc01f88828d3a8de0a6ce2b803a20000395861384d2"
+        },
+        "MDPS12.CF_Mdps_ToiFlt": {
+          "address": 593,
+          "definition": "SG_ CF_Mdps_ToiFlt : 14|1@1+ (1.0,0.0) [0.0|1.0] \"\"  LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CF_Mdps_ToiFlt",
+          "source_slice_sha256": "1d9d5d462a568129bc9ab83515a95fe936fc4b944559d13e7d46fcd979337893"
+        },
+        "MDPS12.CF_Mdps_ToiUnavail": {
+          "address": 593,
+          "definition": "SG_ CF_Mdps_ToiUnavail : 12|1@1+ (1.0,0.0) [0.0|1.0] \"\"  LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CF_Mdps_ToiUnavail",
+          "source_slice_sha256": "35a27b1bcdfc57e45880b250a0601555da24fbf560915e272da3ef073c3bc660"
+        },
+        "MDPS12.CR_Mdps_OutTq": {
+          "address": 593,
+          "definition": "SG_ CR_Mdps_OutTq : 52|12@1+ (0.1,-204.8) [-204.8|204.7] \"\"  ESC,LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CR_Mdps_OutTq",
+          "source_slice_sha256": "d2157915ae7179fe407cbc0b5edcb01519e9b359ba71a613608ea72eae7e5251"
+        },
+        "MDPS12.CR_Mdps_StrColTq": {
+          "address": 593,
+          "definition": "SG_ CR_Mdps_StrColTq : 0|11@1+ (1.0,-1024.0) [-1024.0|1024.0] \"\"  LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CR_Mdps_StrColTq",
+          "source_slice_sha256": "a8365271cb7efed8f495a15547b12ac4f8dcdab074a3a629db9111b7212076bd"
+        },
+        "SAS11.SAS_Angle": {
+          "address": 688,
+          "definition": "SG_ SAS_Angle : 0|16@1- (0.1,0.0) [-3276.8|3276.7] \"Deg\"  _4WD,ACU,AFLS,AVM,CLU,ECS,EMS,ESC,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SPAS,TCU,_4WD,ACU,AFLS,AVM,BCM,CLU,ECS,EMS,ESC,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SPAS,TCU",
+          "message": "SAS11",
+          "signal": "SAS_Angle",
+          "source_slice_sha256": "d4eb8e08e3c56fa37d9c97506eea05448fdf2eeb683aec601a28d85ca8202e4f"
+        },
+        "SAS11.SAS_Speed": {
+          "address": 688,
+          "definition": "SG_ SAS_Speed : 16|8@1+ (4.0,0.0) [0.0|1016.0] \"\"  AFLS,ECS,ESC,IBOX,LDWS_LKAS,SCC,SPAS,TCU,AFLS,ECS,ESC,IBOX,LDWS_LKAS,SCC,SPAS,TCU",
+          "message": "SAS11",
+          "signal": "SAS_Speed",
+          "source_slice_sha256": "ad22d9f2cc37e78fc16c20b2617c9afb65ef7e0ab7f7553666addc9d98f03e63"
+        },
+        "WHL_SPD11.WHL_SPD_FL": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_FL : 0|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,AFLS,AHLS,AVM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_FL",
+          "source_slice_sha256": "ea018261230e220a783791d2cf5eef39c470bb5291881b7980c9af6f2a81e2d2"
+        },
+        "WHL_SPD11.WHL_SPD_FR": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_FR : 16|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,ACU,AFLS,AHLS,AVM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_FR",
+          "source_slice_sha256": "c84579ba4a54089946c5072d8e91d78fc945a5df300ee513ca9cf47a7de9d404"
+        },
+        "WHL_SPD11.WHL_SPD_RL": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_RL : 32|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,AFLS,AHLS,AVM,BCM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,BCM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_RL",
+          "source_slice_sha256": "8eec854b9142b78bd238f8a49795d1b2691bb51e75960e9156b815a1ed05c9a8"
+        },
+        "WHL_SPD11.WHL_SPD_RR": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_RR : 48|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,AFLS,AHLS,AVM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_RR",
+          "source_slice_sha256": "1786235b44b6dd420f492fae524721262dacd489383be27291a1b8fc982f19a5"
+        },
+        "WHL_SPD12_FS.WHL_SPD_FL": {
+          "address": 910,
+          "definition": "SG_ WHL_SPD_FL : 12|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD12_FS",
+          "signal": "WHL_SPD_FL",
+          "source_slice_sha256": "9ba411e09dbddbdb5c6483aacfc1f96a9a51ea9836295fe39b6510c3c8b54a2d"
+        },
+        "WHL_SPD12_FS.WHL_SPD_FR": {
+          "address": 910,
+          "definition": "SG_ WHL_SPD_FR : 26|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD12_FS",
+          "signal": "WHL_SPD_FR",
+          "source_slice_sha256": "bbc6deca25336c9dd262e8448ff426e63c297e8807d3d97a9040acf395f1ca7e"
+        },
+        "WHL_SPD13_FS.WHL_SPD_RL": {
+          "address": 911,
+          "definition": "SG_ WHL_SPD_RL : 12|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD13_FS",
+          "signal": "WHL_SPD_RL",
+          "source_slice_sha256": "ac7e5954408560a4a85d4ef7df558cec1e577d3d7da2f7169c4c8c4a9355e940"
+        },
+        "WHL_SPD13_FS.WHL_SPD_RR": {
+          "address": 911,
+          "definition": "SG_ WHL_SPD_RR : 26|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD13_FS",
+          "signal": "WHL_SPD_RR",
+          "source_slice_sha256": "092576f0c2197d6c61b9bf40c011050ed6109b962d5f3ccddb7dce65143006d9"
+        }
+      },
+      "field_ids_and_types": {
+        "schema_car": {
+          "carControl": [],
+          "carOutput": [],
+          "carState": [],
+          "gyroUncalibrated": [],
+          "gyroscope": [],
+          "latActive": [
+            [
+              "11",
+              "Bool"
+            ]
+          ],
+          "sensorEvents": [],
+          "steerFaultPermanent": [
+            [
+              "36",
+              "Bool"
+            ]
+          ],
+          "steerFaultTemporary": [
+            [
+              "35",
+              "Bool"
+            ]
+          ],
+          "steeringAngleDeg": [
+            [
+              "7",
+              "Float32"
+            ],
+            [
+              "3",
+              "Float32"
+            ]
+          ],
+          "steeringPressed": [
+            [
+              "9",
+              "Bool"
+            ]
+          ],
+          "steeringRateDeg": [
+            [
+              "15",
+              "Float32"
+            ]
+          ],
+          "timestamp": [],
+          "torque": [
+            [
+              "2",
+              "Float32"
+            ],
+            [
+              "67",
+              "LateralTorqueTuning"
+            ]
+          ],
+          "torqueOutputCan": [
+            [
+              "8",
+              "Float32"
+            ]
+          ],
+          "vEgo": [
+            [
+              "1",
+              "Float32"
+            ]
+          ],
+          "wheelSpeeds": [
+            [
+              "2",
+              "WheelSpeeds"
+            ]
+          ],
+          "yawRate": [
+            [
+              "22",
+              "Float32"
+            ]
+          ]
+        },
+        "schema_deprecated": {
+          "carControl": [],
+          "carOutput": [],
+          "carState": [],
+          "gyroUncalibrated": [],
+          "gyroscope": [],
+          "latActive": [],
+          "sensorEvents": [],
+          "steerFaultPermanent": [],
+          "steerFaultTemporary": [],
+          "steeringAngleDeg": [
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "1",
+              "Float32"
+            ]
+          ],
+          "steeringPressed": [],
+          "steeringRateDeg": [
+            [
+              "2",
+              "Float32"
+            ]
+          ],
+          "timestamp": [
+            [
+              "0",
+              "UInt64"
+            ],
+            [
+              "5",
+              "Int64"
+            ]
+          ],
+          "torque": [],
+          "torqueOutputCan": [],
+          "vEgo": [
+            [
+              "1",
+              "List(Float32)"
+            ]
+          ],
+          "wheelSpeeds": [],
+          "yawRate": [
+            [
+              "3",
+              "List(Float32)"
+            ]
+          ]
+        },
+        "schema_log": {
+          "carControl": [
+            [
+              "23",
+              "Car.CarControl"
+            ]
+          ],
+          "carOutput": [
+            [
+              "127",
+              "Car.CarOutput"
+            ]
+          ],
+          "carState": [
+            [
+              "22",
+              "Car.CarState"
+            ]
+          ],
+          "gyroUncalibrated": [
+            [
+              "12",
+              "SensorVec"
+            ]
+          ],
+          "gyroscope": [
+            [
+              "99",
+              "SensorEventData"
+            ]
+          ],
+          "latActive": [],
+          "sensorEvents": [],
+          "steerFaultPermanent": [],
+          "steerFaultTemporary": [],
+          "steeringAngleDeg": [
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "8",
+              "Float32"
+            ]
+          ],
+          "steeringPressed": [],
+          "steeringRateDeg": [
+            [
+              "2",
+              "Float32"
+            ],
+            [
+              "13",
+              "Float32"
+            ]
+          ],
+          "timestamp": [
+            [
+              "0",
+              "Int64"
+            ],
+            [
+              "3",
+              "Int64"
+            ],
+            [
+              "8",
+              "UInt64"
+            ]
+          ],
+          "torque": [],
+          "torqueOutputCan": [],
+          "vEgo": [
+            [
+              "0",
+              "Float32"
+            ]
+          ],
+          "wheelSpeeds": [],
+          "yawRate": [
+            [
+              "7",
+              "Float32"
+            ]
+          ]
+        }
+      },
+      "gyro_frame": "DEVICE_AXIS_MAPPING_NOT_INDEPENDENT_VEHICLE_FRAME_CALIBRATION",
+      "gyro_producer": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+      "metadata_message_presence": {
+        "carControl": true,
+        "carOutput": true,
+        "carParams": true,
+        "carState": true,
+        "gyroscope": true,
+        "initData": true,
+        "sensorEvents": false
+      },
+      "runtime_steer_max": "RUNTIME_STEER_MAX_UNAVAILABLE_NUMERIC_CONFIRMATION_PENDING",
+      "signals": {
+        "acquisition_publish_age": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "active_driver_fault_context": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "direct_gyro": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "lateral_acceleration": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "normalized_output_torque": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "requested_torque": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "safety_curvature_limit_reason": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "steering_angle": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "steering_rate": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "torqueOutputCan": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "wheel_speeds": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "yaw": "SEMANTICS_PENDING_DBC_UNIT_EMPTY"
+      },
+      "source_fingerprint_sha256": "37af721237d723318a8947e76d6d5d1b726768e6037e75b385c9a9847fffa540",
+      "source_roles": {
+        "can_builder": {
+          "file_sha256": "341f8321a597f8aafc23f64fc3177173cacd2f86f73f8b9951eb6aafa1c21c89",
+          "path": "opendbc_repo/opendbc/car/hyundai/hyundaican.py"
+        },
+        "canfd_builder": {
+          "file_sha256": "b635acd77d90544da12563791a336ca34503e73e3363fd39be471fc85ef082f2",
+          "path": "opendbc_repo/opendbc/car/hyundai/hyundaicanfd.py"
+        },
+        "card": {
+          "file_sha256": "117362a7ca57c98c6f9725225d2fe8f4e0e476eda7a43059e7f0e94fb8336be4",
+          "path": "openpilot/selfdrive/car/card.py"
+        },
+        "carstate": {
+          "file_sha256": "15495f9fa8aabdb9afc09f8bdfb43d28ff67f410716953da51973c2e5d2c1765",
+          "path": "opendbc_repo/opendbc/car/hyundai/carstate.py"
+        },
+        "controller": {
+          "file_sha256": "5e138ae767c8eb2a5f6ff5259e09357e2e696b7a03d9a07ab504a796dd42cd26",
+          "path": "opendbc_repo/opendbc/car/hyundai/carcontroller.py"
+        },
+        "controller_helpers": {
+          "file_sha256": "f56a23742d37395f5869f9c63a367375e038e2b47966efaed7a9679307c01e5e",
+          "path": "opendbc_repo/opendbc/car/__init__.py"
+        },
+        "controller_limits": {
+          "file_sha256": "95bf7c7ddb960dab09cfd88b00799669458b46f476cbac8633df3456f7866fcf",
+          "path": "opendbc_repo/opendbc/car/hyundai/values.py"
+        },
+        "dbc": {
+          "file_sha256": "1590039abb51cbfc3dc8ab4151ab78e7f549088fec878480ab4d6f850b18898a",
+          "path": "opendbc_repo/opendbc/dbc/hyundai_kia_generic.dbc"
+        },
+        "interface": {
+          "file_sha256": "b97da088da5f58356f9ff8dfc50b4018691500d58c5ba41f538aa49cd5fdd4a3",
+          "path": "opendbc_repo/opendbc/car/hyundai/interface.py"
+        },
+        "interface_base": {
+          "file_sha256": "9a7787c3450da2a0677023246b4a6770470b797f82e9a15db8f83f001b5a5d7f",
+          "path": "opendbc_repo/opendbc/car/interfaces.py"
+        },
+        "logger": {
+          "file_sha256": "ddf2ffb10b871d466f17d13859e2cdeac4b454573a495f82ebac45f303ef9ccd",
+          "path": "openpilot/system/loggerd/logger.cc"
+        },
+        "logger_config": {
+          "file_sha256": "f10d00fc14a425e5e1f58e183557c5c459eef9f308ebb8c5c44a28cffe42923c",
+          "path": "openpilot/system/loggerd/loggerd.h"
+        },
+        "logger_header": {
+          "file_sha256": "66eb66cfa79326994aa2f38953ee48d31bea0f5356ae3d6fe0de1f8c30ed406d",
+          "path": "openpilot/system/loggerd/logger.h"
+        },
+        "logger_start": {
+          "file_sha256": "09b91ed7fc0517b8f0aa34eba2c3278a4ff87d6312fa4afca3cac7fcb8c3b160",
+          "path": "openpilot/system/loggerd/loggerd.cc"
+        },
+        "schema_car": {
+          "file_sha256": "e32c569511e7c78430fde236f173dfe96dbb057e3fdabacbb1bd1c0d91b1ab5a",
+          "path": "opendbc_repo/opendbc/car/car.capnp"
+        },
+        "schema_custom": {
+          "file_sha256": "831509fed53639714c37ff996532445295388cc712febf6049e35b771a5f803a",
+          "path": "openpilot/cereal/custom.capnp"
+        },
+        "schema_dependency:opendbc_repo/opendbc/car/car.capnp": {
+          "file_sha256": "e32c569511e7c78430fde236f173dfe96dbb057e3fdabacbb1bd1c0d91b1ab5a",
+          "path": "opendbc_repo/opendbc/car/car.capnp"
+        },
+        "schema_dependency:opendbc_repo/opendbc/car/include/c++.capnp": {
+          "file_sha256": "fb306076cd38c27af1aed20fac6395e9a46fbe5b5df6a248b5f1b6845a079c44",
+          "path": "opendbc_repo/opendbc/car/include/c++.capnp"
+        },
+        "schema_dependency:opendbc_repo/opendbc/car/rlog.capnp": {
+          "file_sha256": "0f4a316832f333bdd17d4af32f0102844fa569b97a417ada3ffbe0d2de5cbd21",
+          "path": "opendbc_repo/opendbc/car/rlog.capnp"
+        },
+        "schema_dependency:openpilot/cereal/custom.capnp": {
+          "file_sha256": "831509fed53639714c37ff996532445295388cc712febf6049e35b771a5f803a",
+          "path": "openpilot/cereal/custom.capnp"
+        },
+        "schema_dependency:openpilot/cereal/deprecated.capnp": {
+          "file_sha256": "65079ff035a29c4c267d07ef7240c316c7eaa81b52f795142ed7603489a61355",
+          "path": "openpilot/cereal/deprecated.capnp"
+        },
+        "schema_dependency:openpilot/cereal/include/c++.capnp": {
+          "file_sha256": "fb306076cd38c27af1aed20fac6395e9a46fbe5b5df6a248b5f1b6845a079c44",
+          "path": "openpilot/cereal/include/c++.capnp"
+        },
+        "schema_dependency:openpilot/cereal/log.capnp": {
+          "file_sha256": "4839cd400533e0b75197a1daafe9fcd17159e64202850d721ca8bf2c6c5f42db",
+          "path": "openpilot/cereal/log.capnp"
+        },
+        "schema_deprecated": {
+          "file_sha256": "65079ff035a29c4c267d07ef7240c316c7eaa81b52f795142ed7603489a61355",
+          "path": "openpilot/cereal/deprecated.capnp"
+        },
+        "schema_log": {
+          "file_sha256": "4839cd400533e0b75197a1daafe9fcd17159e64202850d721ca8bf2c6c5f42db",
+          "path": "openpilot/cereal/log.capnp"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/__init__.py": {
+          "file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "openpilot/system/sensord/sensors/__init__.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/i2c_sensor.py": {
+          "file_sha256": "d3b9327073f1a96ef15c3f5ca3838d38d9aae3efcb5a1561891f7571c1f75bce",
+          "path": "openpilot/system/sensord/sensors/i2c_sensor.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_accel.py": {
+          "file_sha256": "02c66b9ff99df050d801f0d87ae741ed0b9ec34010de4731fabd56a7b67d9204",
+          "path": "openpilot/system/sensord/sensors/lsm6ds3_accel.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_gyro.py": {
+          "file_sha256": "cd864538b75ca84ff4758bf88893492afa17a1cb32e0fff9237e24567553eb0f",
+          "path": "openpilot/system/sensord/sensors/lsm6ds3_gyro.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_temp.py": {
+          "file_sha256": "1a982fb7fcc119000e851746c0e2db4d0742f96f9e4be2670491cb3e34a03b79",
+          "path": "openpilot/system/sensord/sensors/lsm6ds3_temp.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/mmc5603nj_magn.py": {
+          "file_sha256": "c5b78dec273b49916c9d361b257fb923ba25774e3d4d2c76fa1a04798638d965",
+          "path": "openpilot/system/sensord/sensors/mmc5603nj_magn.py"
+        },
+        "sensor_main": {
+          "file_sha256": "3f3db5796ffcc429c396a3e6ef900c85bd6262517c457d1fed28db58936ec4a5",
+          "path": "openpilot/system/sensord/sensord.py"
+        },
+        "services": {
+          "file_sha256": "abd1327bbfc77445cb4d01182e3b1f1b2d88f96f2576e8237febe10f7dd8573b",
+          "path": "openpilot/cereal/services.py"
+        }
+      },
+      "static_steer_max": "STATIC_STEER_MAX_SOURCE_BOUND_PROFILE_BRANCH_REVIEW_REQUIRED"
+    },
+    {
+      "card_order": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+      "carstate_selected_dbc": [
+        "ESP12.YAW_RATE",
+        "SAS11.SAS_Angle",
+        "SAS11.SAS_Speed",
+        "WHL_SPD11.WHL_SPD_FL",
+        "WHL_SPD11.WHL_SPD_FR",
+        "WHL_SPD11.WHL_SPD_RL",
+        "WHL_SPD11.WHL_SPD_RR"
+      ],
+      "command": "POST_CARCONTROLLER_LOGGED_REPRESENTATION_NOT_EPS_ACK",
+      "commit": "defcfe812a64e0e1646d33b4e712f928428f9ef4",
+      "dbc_signal_definitions": {
+        "ESP12.LAT_ACCEL": {
+          "address": 544,
+          "definition": "SG_ LAT_ACCEL : 0|11@1+ (0.01,-10.23) [-10.23|10.24] \"m/s^2\"  _4WD,ECS,IBOX,LCA,LDWS_LKAS,MDPS,PSB,SCC,TCU",
+          "message": "ESP12",
+          "signal": "LAT_ACCEL",
+          "source_slice_sha256": "c5f98791ef03551086e3789da8a7b50122d79c3ce9e5d6b28a93b30dc2a47e53"
+        },
+        "ESP12.YAW_RATE": {
+          "address": 544,
+          "definition": "SG_ YAW_RATE : 40|13@1+ (0.01,-40.95) [-40.95|40.96] \"\"  _4WD,AFLS,IBOX,LCA,LDWS_LKAS,MDPS,PSB,SCC,SPAS,TCU",
+          "message": "ESP12",
+          "signal": "YAW_RATE",
+          "source_slice_sha256": "8eccb35b6a4a6eb017108bc01f88828d3a8de0a6ce2b803a20000395861384d2"
+        },
+        "MDPS12.CF_Mdps_ToiFlt": {
+          "address": 593,
+          "definition": "SG_ CF_Mdps_ToiFlt : 14|1@1+ (1.0,0.0) [0.0|1.0] \"\"  LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CF_Mdps_ToiFlt",
+          "source_slice_sha256": "1d9d5d462a568129bc9ab83515a95fe936fc4b944559d13e7d46fcd979337893"
+        },
+        "MDPS12.CF_Mdps_ToiUnavail": {
+          "address": 593,
+          "definition": "SG_ CF_Mdps_ToiUnavail : 12|1@1+ (1.0,0.0) [0.0|1.0] \"\"  LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CF_Mdps_ToiUnavail",
+          "source_slice_sha256": "35a27b1bcdfc57e45880b250a0601555da24fbf560915e272da3ef073c3bc660"
+        },
+        "MDPS12.CR_Mdps_OutTq": {
+          "address": 593,
+          "definition": "SG_ CR_Mdps_OutTq : 52|12@1+ (0.1,-204.8) [-204.8|204.7] \"\"  ESC,LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CR_Mdps_OutTq",
+          "source_slice_sha256": "d2157915ae7179fe407cbc0b5edcb01519e9b359ba71a613608ea72eae7e5251"
+        },
+        "MDPS12.CR_Mdps_StrColTq": {
+          "address": 593,
+          "definition": "SG_ CR_Mdps_StrColTq : 0|11@1+ (1.0,-1024.0) [-1024.0|1024.0] \"\"  LDWS_LKAS",
+          "message": "MDPS12",
+          "signal": "CR_Mdps_StrColTq",
+          "source_slice_sha256": "a8365271cb7efed8f495a15547b12ac4f8dcdab074a3a629db9111b7212076bd"
+        },
+        "SAS11.SAS_Angle": {
+          "address": 688,
+          "definition": "SG_ SAS_Angle : 0|16@1- (0.1,0.0) [-3276.8|3276.7] \"Deg\"  _4WD,ACU,AFLS,AVM,CLU,ECS,EMS,ESC,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SPAS,TCU,_4WD,ACU,AFLS,AVM,BCM,CLU,ECS,EMS,ESC,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SPAS,TCU",
+          "message": "SAS11",
+          "signal": "SAS_Angle",
+          "source_slice_sha256": "d4eb8e08e3c56fa37d9c97506eea05448fdf2eeb683aec601a28d85ca8202e4f"
+        },
+        "SAS11.SAS_Speed": {
+          "address": 688,
+          "definition": "SG_ SAS_Speed : 16|8@1+ (4.0,0.0) [0.0|1016.0] \"\"  AFLS,ECS,ESC,IBOX,LDWS_LKAS,SCC,SPAS,TCU,AFLS,ECS,ESC,IBOX,LDWS_LKAS,SCC,SPAS,TCU",
+          "message": "SAS11",
+          "signal": "SAS_Speed",
+          "source_slice_sha256": "ad22d9f2cc37e78fc16c20b2617c9afb65ef7e0ab7f7553666addc9d98f03e63"
+        },
+        "WHL_SPD11.WHL_SPD_FL": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_FL : 0|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,AFLS,AHLS,AVM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_FL",
+          "source_slice_sha256": "ea018261230e220a783791d2cf5eef39c470bb5291881b7980c9af6f2a81e2d2"
+        },
+        "WHL_SPD11.WHL_SPD_FR": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_FR : 16|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,ACU,AFLS,AHLS,AVM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_FR",
+          "source_slice_sha256": "c84579ba4a54089946c5072d8e91d78fc945a5df300ee513ca9cf47a7de9d404"
+        },
+        "WHL_SPD11.WHL_SPD_RL": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_RL : 32|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,AFLS,AHLS,AVM,BCM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,BCM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_RL",
+          "source_slice_sha256": "8eec854b9142b78bd238f8a49795d1b2691bb51e75960e9156b815a1ed05c9a8"
+        },
+        "WHL_SPD11.WHL_SPD_RR": {
+          "address": 902,
+          "definition": "SG_ WHL_SPD_RR : 48|14@1+ (0.03125,0.0) [0.0|511.96875] \"km/h\"  _4WD,AFLS,AHLS,AVM,CLU,CUBIS,ECS,EMS,EPB,IBOX,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS,_4WD,ACU,AFLS,AHLS,AVM,CLU,ECS,EMS,EPB,IBOX,LCA,LDWS_LKAS,PGS,PSB,SCC,SMK,SPAS,TCU,TPMS",
+          "message": "WHL_SPD11",
+          "signal": "WHL_SPD_RR",
+          "source_slice_sha256": "1786235b44b6dd420f492fae524721262dacd489383be27291a1b8fc982f19a5"
+        },
+        "WHL_SPD12_FS.WHL_SPD_FL": {
+          "address": 910,
+          "definition": "SG_ WHL_SPD_FL : 12|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD12_FS",
+          "signal": "WHL_SPD_FL",
+          "source_slice_sha256": "9ba411e09dbddbdb5c6483aacfc1f96a9a51ea9836295fe39b6510c3c8b54a2d"
+        },
+        "WHL_SPD12_FS.WHL_SPD_FR": {
+          "address": 910,
+          "definition": "SG_ WHL_SPD_FR : 26|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD12_FS",
+          "signal": "WHL_SPD_FR",
+          "source_slice_sha256": "bbc6deca25336c9dd262e8448ff426e63c297e8807d3d97a9040acf395f1ca7e"
+        },
+        "WHL_SPD13_FS.WHL_SPD_RL": {
+          "address": 911,
+          "definition": "SG_ WHL_SPD_RL : 12|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD13_FS",
+          "signal": "WHL_SPD_RL",
+          "source_slice_sha256": "ac7e5954408560a4a85d4ef7df558cec1e577d3d7da2f7169c4c8c4a9355e940"
+        },
+        "WHL_SPD13_FS.WHL_SPD_RR": {
+          "address": 911,
+          "definition": "SG_ WHL_SPD_RR : 26|14@1+ (0.03125,0) [0|511.96875] \"km/h\" Vector__XXX",
+          "message": "WHL_SPD13_FS",
+          "signal": "WHL_SPD_RR",
+          "source_slice_sha256": "092576f0c2197d6c61b9bf40c011050ed6109b962d5f3ccddb7dce65143006d9"
+        }
+      },
+      "field_ids_and_types": {
+        "schema_car": {
+          "carControl": [],
+          "carOutput": [],
+          "carState": [],
+          "gyroUncalibrated": [],
+          "gyroscope": [],
+          "latActive": [
+            [
+              "11",
+              "Bool"
+            ]
+          ],
+          "sensorEvents": [],
+          "steerFaultPermanent": [
+            [
+              "36",
+              "Bool"
+            ]
+          ],
+          "steerFaultTemporary": [
+            [
+              "35",
+              "Bool"
+            ]
+          ],
+          "steeringAngleDeg": [
+            [
+              "7",
+              "Float32"
+            ],
+            [
+              "3",
+              "Float32"
+            ]
+          ],
+          "steeringPressed": [
+            [
+              "9",
+              "Bool"
+            ]
+          ],
+          "steeringRateDeg": [
+            [
+              "15",
+              "Float32"
+            ]
+          ],
+          "timestamp": [],
+          "torque": [
+            [
+              "2",
+              "Float32"
+            ],
+            [
+              "67",
+              "LateralTorqueTuning"
+            ]
+          ],
+          "torqueOutputCan": [
+            [
+              "8",
+              "Float32"
+            ]
+          ],
+          "vEgo": [
+            [
+              "1",
+              "Float32"
+            ]
+          ],
+          "wheelSpeeds": [
+            [
+              "2",
+              "WheelSpeeds"
+            ]
+          ],
+          "yawRate": [
+            [
+              "22",
+              "Float32"
+            ]
+          ]
+        },
+        "schema_deprecated": {
+          "carControl": [],
+          "carOutput": [],
+          "carState": [],
+          "gyroUncalibrated": [],
+          "gyroscope": [],
+          "latActive": [],
+          "sensorEvents": [],
+          "steerFaultPermanent": [],
+          "steerFaultTemporary": [],
+          "steeringAngleDeg": [
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "1",
+              "Float32"
+            ]
+          ],
+          "steeringPressed": [],
+          "steeringRateDeg": [
+            [
+              "2",
+              "Float32"
+            ]
+          ],
+          "timestamp": [
+            [
+              "0",
+              "UInt64"
+            ],
+            [
+              "5",
+              "Int64"
+            ]
+          ],
+          "torque": [],
+          "torqueOutputCan": [],
+          "vEgo": [
+            [
+              "1",
+              "List(Float32)"
+            ]
+          ],
+          "wheelSpeeds": [],
+          "yawRate": [
+            [
+              "3",
+              "List(Float32)"
+            ]
+          ]
+        },
+        "schema_log": {
+          "carControl": [
+            [
+              "23",
+              "Car.CarControl"
+            ]
+          ],
+          "carOutput": [
+            [
+              "127",
+              "Car.CarOutput"
+            ]
+          ],
+          "carState": [
+            [
+              "22",
+              "Car.CarState"
+            ]
+          ],
+          "gyroUncalibrated": [
+            [
+              "12",
+              "SensorVec"
+            ]
+          ],
+          "gyroscope": [
+            [
+              "99",
+              "SensorEventData"
+            ]
+          ],
+          "latActive": [],
+          "sensorEvents": [],
+          "steerFaultPermanent": [],
+          "steerFaultTemporary": [],
+          "steeringAngleDeg": [
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "1",
+              "Float32"
+            ],
+            [
+              "8",
+              "Float32"
+            ]
+          ],
+          "steeringPressed": [],
+          "steeringRateDeg": [
+            [
+              "2",
+              "Float32"
+            ],
+            [
+              "13",
+              "Float32"
+            ]
+          ],
+          "timestamp": [
+            [
+              "0",
+              "Int64"
+            ],
+            [
+              "3",
+              "Int64"
+            ],
+            [
+              "8",
+              "UInt64"
+            ]
+          ],
+          "torque": [],
+          "torqueOutputCan": [],
+          "vEgo": [
+            [
+              "0",
+              "Float32"
+            ]
+          ],
+          "wheelSpeeds": [],
+          "yawRate": [
+            [
+              "7",
+              "Float32"
+            ]
+          ]
+        }
+      },
+      "gyro_frame": "DEVICE_AXIS_MAPPING_NOT_INDEPENDENT_VEHICLE_FRAME_CALIBRATION",
+      "gyro_producer": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+      "metadata_message_presence": {
+        "carControl": true,
+        "carOutput": true,
+        "carParams": true,
+        "carState": true,
+        "gyroscope": true,
+        "initData": true,
+        "sensorEvents": false
+      },
+      "runtime_steer_max": "RUNTIME_STEER_MAX_UNAVAILABLE_NUMERIC_CONFIRMATION_PENDING",
+      "signals": {
+        "acquisition_publish_age": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "active_driver_fault_context": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "direct_gyro": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "lateral_acceleration": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "normalized_output_torque": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "requested_torque": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "safety_curvature_limit_reason": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "steering_angle": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "steering_rate": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "torqueOutputCan": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "wheel_speeds": "SEMANTICS_PENDING_SOURCE_DIFF_NOT_REVIEWED",
+        "yaw": "SEMANTICS_PENDING_DBC_UNIT_EMPTY"
+      },
+      "source_fingerprint_sha256": "2a2f09772fa1d4f56ffaeee179487adcf0e61fd46b9c12c06c6816af854dd004",
+      "source_roles": {
+        "can_builder": {
+          "file_sha256": "341f8321a597f8aafc23f64fc3177173cacd2f86f73f8b9951eb6aafa1c21c89",
+          "path": "opendbc_repo/opendbc/car/hyundai/hyundaican.py"
+        },
+        "canfd_builder": {
+          "file_sha256": "8354f636b6e1c0ccd37eae3de7c9f2a97eaf25cfcb0afa3ad5f0aea47cccc27e",
+          "path": "opendbc_repo/opendbc/car/hyundai/hyundaicanfd.py"
+        },
+        "card": {
+          "file_sha256": "117362a7ca57c98c6f9725225d2fe8f4e0e476eda7a43059e7f0e94fb8336be4",
+          "path": "openpilot/selfdrive/car/card.py"
+        },
+        "carstate": {
+          "file_sha256": "15495f9fa8aabdb9afc09f8bdfb43d28ff67f410716953da51973c2e5d2c1765",
+          "path": "opendbc_repo/opendbc/car/hyundai/carstate.py"
+        },
+        "controller": {
+          "file_sha256": "5a69532cc4820a2f8edca306000350d10d85d1c31b96b361ca37afd992242895",
+          "path": "opendbc_repo/opendbc/car/hyundai/carcontroller.py"
+        },
+        "controller_helpers": {
+          "file_sha256": "f56a23742d37395f5869f9c63a367375e038e2b47966efaed7a9679307c01e5e",
+          "path": "opendbc_repo/opendbc/car/__init__.py"
+        },
+        "controller_limits": {
+          "file_sha256": "95bf7c7ddb960dab09cfd88b00799669458b46f476cbac8633df3456f7866fcf",
+          "path": "opendbc_repo/opendbc/car/hyundai/values.py"
+        },
+        "dbc": {
+          "file_sha256": "1590039abb51cbfc3dc8ab4151ab78e7f549088fec878480ab4d6f850b18898a",
+          "path": "opendbc_repo/opendbc/dbc/hyundai_kia_generic.dbc"
+        },
+        "interface": {
+          "file_sha256": "b97da088da5f58356f9ff8dfc50b4018691500d58c5ba41f538aa49cd5fdd4a3",
+          "path": "opendbc_repo/opendbc/car/hyundai/interface.py"
+        },
+        "interface_base": {
+          "file_sha256": "9a7787c3450da2a0677023246b4a6770470b797f82e9a15db8f83f001b5a5d7f",
+          "path": "opendbc_repo/opendbc/car/interfaces.py"
+        },
+        "logger": {
+          "file_sha256": "ddf2ffb10b871d466f17d13859e2cdeac4b454573a495f82ebac45f303ef9ccd",
+          "path": "openpilot/system/loggerd/logger.cc"
+        },
+        "logger_config": {
+          "file_sha256": "f10d00fc14a425e5e1f58e183557c5c459eef9f308ebb8c5c44a28cffe42923c",
+          "path": "openpilot/system/loggerd/loggerd.h"
+        },
+        "logger_header": {
+          "file_sha256": "66eb66cfa79326994aa2f38953ee48d31bea0f5356ae3d6fe0de1f8c30ed406d",
+          "path": "openpilot/system/loggerd/logger.h"
+        },
+        "logger_start": {
+          "file_sha256": "09b91ed7fc0517b8f0aa34eba2c3278a4ff87d6312fa4afca3cac7fcb8c3b160",
+          "path": "openpilot/system/loggerd/loggerd.cc"
+        },
+        "schema_car": {
+          "file_sha256": "b195fed220c7c70daa33838563b449371fc3fad4394db3178453f789c8df07e3",
+          "path": "opendbc_repo/opendbc/car/car.capnp"
+        },
+        "schema_custom": {
+          "file_sha256": "831509fed53639714c37ff996532445295388cc712febf6049e35b771a5f803a",
+          "path": "openpilot/cereal/custom.capnp"
+        },
+        "schema_dependency:opendbc_repo/opendbc/car/car.capnp": {
+          "file_sha256": "b195fed220c7c70daa33838563b449371fc3fad4394db3178453f789c8df07e3",
+          "path": "opendbc_repo/opendbc/car/car.capnp"
+        },
+        "schema_dependency:opendbc_repo/opendbc/car/include/c++.capnp": {
+          "file_sha256": "fb306076cd38c27af1aed20fac6395e9a46fbe5b5df6a248b5f1b6845a079c44",
+          "path": "opendbc_repo/opendbc/car/include/c++.capnp"
+        },
+        "schema_dependency:opendbc_repo/opendbc/car/rlog.capnp": {
+          "file_sha256": "0f4a316832f333bdd17d4af32f0102844fa569b97a417ada3ffbe0d2de5cbd21",
+          "path": "opendbc_repo/opendbc/car/rlog.capnp"
+        },
+        "schema_dependency:openpilot/cereal/custom.capnp": {
+          "file_sha256": "831509fed53639714c37ff996532445295388cc712febf6049e35b771a5f803a",
+          "path": "openpilot/cereal/custom.capnp"
+        },
+        "schema_dependency:openpilot/cereal/deprecated.capnp": {
+          "file_sha256": "65079ff035a29c4c267d07ef7240c316c7eaa81b52f795142ed7603489a61355",
+          "path": "openpilot/cereal/deprecated.capnp"
+        },
+        "schema_dependency:openpilot/cereal/include/c++.capnp": {
+          "file_sha256": "fb306076cd38c27af1aed20fac6395e9a46fbe5b5df6a248b5f1b6845a079c44",
+          "path": "openpilot/cereal/include/c++.capnp"
+        },
+        "schema_dependency:openpilot/cereal/log.capnp": {
+          "file_sha256": "4839cd400533e0b75197a1daafe9fcd17159e64202850d721ca8bf2c6c5f42db",
+          "path": "openpilot/cereal/log.capnp"
+        },
+        "schema_deprecated": {
+          "file_sha256": "65079ff035a29c4c267d07ef7240c316c7eaa81b52f795142ed7603489a61355",
+          "path": "openpilot/cereal/deprecated.capnp"
+        },
+        "schema_log": {
+          "file_sha256": "4839cd400533e0b75197a1daafe9fcd17159e64202850d721ca8bf2c6c5f42db",
+          "path": "openpilot/cereal/log.capnp"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/__init__.py": {
+          "file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "path": "openpilot/system/sensord/sensors/__init__.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/i2c_sensor.py": {
+          "file_sha256": "d3b9327073f1a96ef15c3f5ca3838d38d9aae3efcb5a1561891f7571c1f75bce",
+          "path": "openpilot/system/sensord/sensors/i2c_sensor.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_accel.py": {
+          "file_sha256": "02c66b9ff99df050d801f0d87ae741ed0b9ec34010de4731fabd56a7b67d9204",
+          "path": "openpilot/system/sensord/sensors/lsm6ds3_accel.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_gyro.py": {
+          "file_sha256": "cd864538b75ca84ff4758bf88893492afa17a1cb32e0fff9237e24567553eb0f",
+          "path": "openpilot/system/sensord/sensors/lsm6ds3_gyro.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_temp.py": {
+          "file_sha256": "1a982fb7fcc119000e851746c0e2db4d0742f96f9e4be2670491cb3e34a03b79",
+          "path": "openpilot/system/sensord/sensors/lsm6ds3_temp.py"
+        },
+        "sensor_dependency:openpilot/system/sensord/sensors/mmc5603nj_magn.py": {
+          "file_sha256": "c5b78dec273b49916c9d361b257fb923ba25774e3d4d2c76fa1a04798638d965",
+          "path": "openpilot/system/sensord/sensors/mmc5603nj_magn.py"
+        },
+        "sensor_main": {
+          "file_sha256": "3f3db5796ffcc429c396a3e6ef900c85bd6262517c457d1fed28db58936ec4a5",
+          "path": "openpilot/system/sensord/sensord.py"
+        },
+        "services": {
+          "file_sha256": "abd1327bbfc77445cb4d01182e3b1f1b2d88f96f2576e8237febe10f7dd8573b",
+          "path": "openpilot/cereal/services.py"
+        }
+      },
+      "static_steer_max": "STATIC_STEER_MAX_SOURCE_BOUND_PROFILE_BRANCH_REVIEW_REQUIRED"
+    }
+  ],
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "67773d7c89d8900dd6760a7c9bd43a78a437708f05b61b6abb9b98ede6ed57ab",
+  "reference_promotable": false,
+  "runtime_numeric_verification": "NOT_RUN",
+  "schema": "EMPIRICAL_SOURCE_SIGNAL_MATRIX_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

@@ -1,0 +1,25 @@
+{
+  "bias": "stride100 samples only e marker in paired imgs2; f marker excluded; capture/sequence/semantics not stratified",
+  "capture_level_independence": false,
+  "dataset_commit": "6c205fe4c43cc53b2b1befafb1060d0606555027",
+  "full_imgs2_e": 1000,
+  "full_imgs2_f": 1000,
+  "full_road_pairs": 11888,
+  "initial_selection_before_detector_and_GT_inspection": true,
+  "qualification_holdout": false,
+  "random_seed": null,
+  "receipt_sha256": "f029e3aed7981da97931e7df798e73351223405c6d96d05b97e13868d8ed8549",
+  "reference_promotable": false,
+  "schema": "COMMA10K_METADATA_SELECTION_AUDIT_V1",
+  "selection": "SORT_PUBLIC_ROAD_PATHS_THEN_INDICES_0_100_200_ETC",
+  "subset_imgs2_view_marker_counts": {
+    "e": 20
+  },
+  "subset_pairs": 119,
+  "subset_parent_counts": {
+    "imgs": 99,
+    "imgs2": 20
+  },
+  "tail_analysis_after_results_inspected": true,
+  "tree_metadata_sha256": "e34b96b6bfcdf8c660fa5d907471828b5e52b9822c10e4f7dd26f6d77f0529e3"
+}

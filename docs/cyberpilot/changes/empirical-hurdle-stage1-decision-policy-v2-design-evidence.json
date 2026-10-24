@@ -1,0 +1,360 @@
+{
+  "actual_execution_authorized": false,
+  "attribution_manifest_sha256": "07345517d3bca95e90962e0566a58e2b756a8aa6f5c658b8b312f02d4961f77d",
+  "authority": "DECLARATIVE_DESIGN_AND_SYNTHETIC_TESTS_ONLY",
+  "baseline": "13e1ac7c8b892d3bd61b5e2eab9deba8f4dc08d6",
+  "candidate_search_authorized": false,
+  "change_scope": "THRESHOLD_OBJECTIVE_ONLY",
+  "composition_authorized": false,
+  "decision_policy": "HURDLE_STAGE1_DECISION_POLICY_V2",
+  "evidence_usage": "POLICY_DESIGN_RATIONALE_ONLY_NEVER_THRESHOLD_NUMERICAL_INPUT",
+  "family": "HURDLE_RI_V1",
+  "fold_transfer": {
+    "FOLD_A": {
+      "historical_failure_counts": {
+        "MOVE_MAE": 0,
+        "MOVE_P95": 0,
+        "MOVE_RMSE": 0,
+        "ONE_STEP_EXACT_HIT": 16,
+        "ONE_STEP_MAE": 16,
+        "ONE_STEP_P95": 16,
+        "ONE_STEP_RMSE": 4,
+        "ONE_STEP_WITHIN_ONE_TICK": 4,
+        "OVERALL_100_MAE": 16,
+        "OVERALL_100_P95": 16,
+        "OVERALL_100_RMSE": 15,
+        "OVERALL_200_MAE": 16,
+        "OVERALL_200_P95": 10,
+        "OVERALL_200_RMSE": 16,
+        "OVERALL_25_MAE": 16,
+        "OVERALL_25_P95": 16,
+        "OVERALL_25_RMSE": 15,
+        "OVERALL_50_MAE": 16,
+        "OVERALL_50_P95": 16,
+        "OVERALL_50_RMSE": 16,
+        "PATH_MOVED_100_MAE": 16,
+        "PATH_MOVED_100_P95": 16,
+        "PATH_MOVED_100_RMSE": 14,
+        "PATH_MOVED_200_MAE": 16,
+        "PATH_MOVED_200_P95": 10,
+        "PATH_MOVED_200_RMSE": 16,
+        "PATH_MOVED_25_MAE": 16,
+        "PATH_MOVED_25_P95": 16,
+        "PATH_MOVED_25_RMSE": 14,
+        "PATH_MOVED_50_MAE": 16,
+        "PATH_MOVED_50_P95": 16,
+        "PATH_MOVED_50_RMSE": 16
+      },
+      "job_count": 16,
+      "ranges": {
+        "balanced_accuracy": {
+          "max": 0.5635012425784222,
+          "min": 0.549319996001681
+        },
+        "false_move_rate": {
+          "max": 0.5573340698067925,
+          "min": 0.4559807473620184
+        },
+        "missed_move_rate": {
+          "max": 0.4283732132572386,
+          "min": 0.34402593818984545
+        },
+        "move_hit_gain": {
+          "max": 8633,
+          "min": 5141
+        },
+        "static_hit_loss": {
+          "max": 47150,
+          "min": 16319
+        }
+      }
+    },
+    "FOLD_B": {
+      "historical_failure_counts": {
+        "MOVE_MAE": 0,
+        "MOVE_P95": 0,
+        "MOVE_RMSE": 0,
+        "ONE_STEP_EXACT_HIT": 16,
+        "ONE_STEP_MAE": 4,
+        "ONE_STEP_P95": 0,
+        "ONE_STEP_RMSE": 0,
+        "ONE_STEP_WITHIN_ONE_TICK": 4,
+        "OVERALL_100_MAE": 7,
+        "OVERALL_100_P95": 9,
+        "OVERALL_100_RMSE": 5,
+        "OVERALL_200_MAE": 6,
+        "OVERALL_200_P95": 8,
+        "OVERALL_200_RMSE": 5,
+        "OVERALL_25_MAE": 7,
+        "OVERALL_25_P95": 5,
+        "OVERALL_25_RMSE": 0,
+        "OVERALL_50_MAE": 6,
+        "OVERALL_50_P95": 8,
+        "OVERALL_50_RMSE": 0,
+        "PATH_MOVED_100_MAE": 7,
+        "PATH_MOVED_100_P95": 9,
+        "PATH_MOVED_100_RMSE": 5,
+        "PATH_MOVED_200_MAE": 6,
+        "PATH_MOVED_200_P95": 7,
+        "PATH_MOVED_200_RMSE": 5,
+        "PATH_MOVED_25_MAE": 7,
+        "PATH_MOVED_25_P95": 5,
+        "PATH_MOVED_25_RMSE": 0,
+        "PATH_MOVED_50_MAE": 6,
+        "PATH_MOVED_50_P95": 7,
+        "PATH_MOVED_50_RMSE": 0
+      },
+      "job_count": 16,
+      "ranges": {
+        "balanced_accuracy": {
+          "max": 0.5466205690182232,
+          "min": 0.5276263228384448
+        },
+        "false_move_rate": {
+          "max": 0.03059357354748681,
+          "min": 0.018724671816009144
+        },
+        "missed_move_rate": {
+          "max": 0.9260226825071013,
+          "min": 0.8791679200314692
+        },
+        "move_hit_gain": {
+          "max": 1693,
+          "min": 898
+        },
+        "static_hit_loss": {
+          "max": 3767,
+          "min": 1833
+        }
+      }
+    }
+  },
+  "gate_perfect_rollout": {
+    "100": {
+      "candidate_p95_nonworse_jobs": 27,
+      "candidate_p95_worse_jobs": 5,
+      "candidate_sse_greater_hold_jobs": 5,
+      "candidate_sse_less_hold_jobs": 24,
+      "gate_mismatch_relations": {
+        "divergence_only": 194,
+        "divergence_precedes_gate": 230707,
+        "gate_mismatch_only": 100905,
+        "gate_precedes_divergence": 992328,
+        "neither": 201545,
+        "same_step": 4879087
+      },
+      "gate_perfect_path_moved_support_jobs": 32,
+      "interpretation": "DESCRIPTIVE_ASSOCIATION_NOT_CAUSAL; POPULATIONS_OVERLAP_ACROSS_STRUCTURES",
+      "small_support_jobs": 32
+    },
+    "200": {
+      "candidate_p95_nonworse_jobs": 2,
+      "candidate_p95_worse_jobs": 0,
+      "candidate_sse_greater_hold_jobs": 0,
+      "candidate_sse_less_hold_jobs": 2,
+      "gate_mismatch_relations": {
+        "divergence_only": 0,
+        "divergence_precedes_gate": 206456,
+        "gate_mismatch_only": 26058,
+        "gate_precedes_divergence": 978288,
+        "neither": 21165,
+        "same_step": 4594252
+      },
+      "gate_perfect_path_moved_support_jobs": 2,
+      "interpretation": "DESCRIPTIVE_ASSOCIATION_NOT_CAUSAL; POPULATIONS_OVERLAP_ACROSS_STRUCTURES",
+      "small_support_jobs": 2
+    },
+    "25": {
+      "candidate_p95_nonworse_jobs": 32,
+      "candidate_p95_worse_jobs": 0,
+      "candidate_sse_greater_hold_jobs": 0,
+      "candidate_sse_less_hold_jobs": 32,
+      "gate_mismatch_relations": {
+        "divergence_only": 8238,
+        "divergence_precedes_gate": 257158,
+        "gate_mismatch_only": 461240,
+        "gate_precedes_divergence": 718825,
+        "neither": 1673992,
+        "same_step": 4107187
+      },
+      "gate_perfect_path_moved_support_jobs": 32,
+      "interpretation": "DESCRIPTIVE_ASSOCIATION_NOT_CAUSAL; POPULATIONS_OVERLAP_ACROSS_STRUCTURES",
+      "small_support_jobs": 8
+    },
+    "50": {
+      "candidate_p95_nonworse_jobs": 28,
+      "candidate_p95_worse_jobs": 4,
+      "candidate_sse_greater_hold_jobs": 4,
+      "candidate_sse_less_hold_jobs": 28,
+      "gate_mismatch_relations": {
+        "divergence_only": 1627,
+        "divergence_precedes_gate": 249257,
+        "gate_mismatch_only": 260378,
+        "gate_precedes_divergence": 884397,
+        "neither": 781023,
+        "same_step": 4680023
+      },
+      "gate_perfect_path_moved_support_jobs": 32,
+      "interpretation": "DESCRIPTIVE_ASSOCIATION_NOT_CAUSAL; POPULATIONS_OVERLAP_ACROSS_STRUCTURES",
+      "small_support_jobs": 32
+    }
+  },
+  "historical_failure_counts": {
+    "MOVE_MAE": 0,
+    "MOVE_P95": 0,
+    "MOVE_RMSE": 0,
+    "ONE_STEP_EXACT_HIT": 32,
+    "ONE_STEP_MAE": 20,
+    "ONE_STEP_P95": 16,
+    "ONE_STEP_RMSE": 4,
+    "ONE_STEP_WITHIN_ONE_TICK": 8,
+    "OVERALL_100_MAE": 23,
+    "OVERALL_100_P95": 25,
+    "OVERALL_100_RMSE": 20,
+    "OVERALL_200_MAE": 22,
+    "OVERALL_200_P95": 18,
+    "OVERALL_200_RMSE": 21,
+    "OVERALL_25_MAE": 23,
+    "OVERALL_25_P95": 21,
+    "OVERALL_25_RMSE": 15,
+    "OVERALL_50_MAE": 22,
+    "OVERALL_50_P95": 24,
+    "OVERALL_50_RMSE": 16,
+    "PATH_MOVED_100_MAE": 23,
+    "PATH_MOVED_100_P95": 25,
+    "PATH_MOVED_100_RMSE": 19,
+    "PATH_MOVED_200_MAE": 22,
+    "PATH_MOVED_200_P95": 17,
+    "PATH_MOVED_200_RMSE": 21,
+    "PATH_MOVED_25_MAE": 23,
+    "PATH_MOVED_25_P95": 21,
+    "PATH_MOVED_25_RMSE": 14,
+    "PATH_MOVED_50_MAE": 22,
+    "PATH_MOVED_50_P95": 23,
+    "PATH_MOVED_50_RMSE": 16
+  },
+  "historical_family_verdict": "FROZEN_HURDLE_RI_V1_FAILED_RETROSPECTIVE_GATE",
+  "historical_inputs": {
+    "empirical-hurdle-acceptance-gate-v1.json": {
+      "file_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+      "receipt_sha256": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60"
+    },
+    "empirical-hurdle-candidate-set-v1.json": {
+      "file_sha256": "7c337dd1fee7ca7947513788e91c88fe32092aa8c808213ac13787681a494b2b",
+      "receipt_sha256": "eff4ff37f74e06520e917f017c509175733a108df9399ebab8f2e93fa6a871f4"
+    },
+    "empirical-hurdle-comparator-contract-v1.json": {
+      "file_sha256": "5bc595c87a5a146256f6c36bc581fcd6fdb19dbedcef9de590dc9313191c9461",
+      "receipt_sha256": "80561a7f863363fa5ce6ed6710e2c29cae58ff985f2597bb0761faf86e27cf00"
+    },
+    "empirical-hurdle-composition-contract-v1.json": {
+      "file_sha256": "9c0f48ffada6ce8e905d85d9d72df21a3997f9ce6dc757bb96d9291218046948",
+      "receipt_sha256": "046d0ba328c7a52421aedfff504ed20ad27114785d67054f6e78fd8547eccc67"
+    },
+    "empirical-hurdle-failure-attribution-readiness-v1.json": {
+      "file_sha256": "095ac7f7a02cb7178d1d47087a70a03ff7919d99eced7f56a3c75027589046bc",
+      "receipt_sha256": "dd03dedbab42fa3e4cdf262234bb24f4a62fb94c4dbbd8d9f203d5ec6506b7c6"
+    },
+    "empirical-hurdle-family-contract-v1.json": {
+      "file_sha256": "cccaba738cb55c2506269976d1cb86510a90ba2d20f41004493d05f1aeab1d41",
+      "receipt_sha256": "c780fa1e75bdb3d13480f4863b6dabb7c7dbfe68797032fce582b7854d45dfe3"
+    },
+    "empirical-hurdle-feature-contract-v1.json": {
+      "file_sha256": "8676c89bcfe629d6bcc60706172ca29f79ee42430e67893c8ee837a7da672488",
+      "receipt_sha256": "517288519b2ae0ef9edaa4b2a0c5e5a1b296389e4381ac4af0a2bddfec41be3a"
+    },
+    "empirical-hurdle-fit-cv-readiness-v1.json": {
+      "file_sha256": "8613634aa79641de3f2512ce06882393cfa9c1a5d2749043631fa757cbf56499",
+      "receipt_sha256": "e00c9da0992fed899e77f9833d0ad04f333acc086e59846644ec164945b06861"
+    },
+    "empirical-hurdle-fitting-policy-readiness-v1.json": {
+      "file_sha256": "9a0811e62916b6f3dbadc579ce6e3db64f888cd07e68474da1265e6efa984195",
+      "receipt_sha256": "cde321da593da445d5df34a7a2a9212555209c7d66b2979b7ef01987c230cefb"
+    },
+    "empirical-hurdle-fitting-policy-v1.json": {
+      "file_sha256": "e1b566d18a55cc72fe9378d37f0763d3a5de107cff2b6ff884cebcd238b376d6",
+      "receipt_sha256": "3824973d9851ebfffbfd47e9f95b9f49580326b75f652e55c1ca21808d624104"
+    },
+    "empirical-hurdle-mechanism-summary-v1.json": {
+      "file_sha256": "eec5066f40a17818bb9e3da1ff7bd2bf40d8dd2711f35618956eedd20949911c",
+      "receipt_sha256": "2d3d1763010ba6144e2318cd8b1377374c3bb22e101dbee6a381806e20294ca9"
+    },
+    "empirical-hurdle-metric-contract-v1.json": {
+      "file_sha256": "82f88fac1d31d3e4a24dfa717877cfd1d60da62bff4108b8d58cfbba7c446639",
+      "receipt_sha256": "98df562961a9c60cd43531694cd0dfbbde19b528c856bf6562ea6d5c6aad17e5"
+    },
+    "empirical-hurdle-next-design-trigger-v1.json": {
+      "file_sha256": "c12dc439d4c0d5550ca57dd0dbd4eb127f37d3d4f984a825edc700da9f3668af",
+      "receipt_sha256": "00566fbfac6d05929a17202aa9c6d889454449c4a7e7e9274128d6f85b92b320"
+    },
+    "empirical-hurdle-rollout-contract-v1.json": {
+      "file_sha256": "772d5febe8894c189c8332836365149467c0c5870bd630d0db1be7372ebc3d04",
+      "receipt_sha256": "ae1b447a4abdc3c5ba4c34adcfa4c650d3ee35b9229d899a8d6ff557ce09bb92"
+    },
+    "empirical-hurdle-route-cv-contract-v1.json": {
+      "file_sha256": "a40183e88f0ae7b830d353cdce3a692f56111d31a5c27cd1394d205d77e5e6f8",
+      "receipt_sha256": "9e6bddd4f4d0e3dbe1cd02d7cfe2313a17da5459215f4fa397d42b098b406a4a"
+    },
+    "empirical-hurdle-selection-result-v1.json": {
+      "file_sha256": "3e1d72ec6d114c03e289dac3a8406126f17d6594fc73ebcbb7b2302c32beed46",
+      "receipt_sha256": "cac341f353befbf014726df964009525484e938abc1b5a5dc6d5de4e5a7a6df8"
+    },
+    "empirical-hurdle-selection-rule-v1.json": {
+      "file_sha256": "aeb3e51e85039660be702517dfd79e4c932eb72bde0b1a9d9bdc4bbaad36586c",
+      "receipt_sha256": "9622e7134b56f0c48153cba1a23dd690bdc6d578a433c6f77b34e3f7a3cf70f0"
+    },
+    "empirical-hurdle-stage-normalization-v1.json": {
+      "file_sha256": "d0cd13c7afa4d35e55ee2e1d9316474cbdb50099d7674de0da8ff6fde46a1b26",
+      "receipt_sha256": "4704b839037042084da818cc72eecd651b7a1d7ac12fa5d74f1531bb2517e549"
+    },
+    "empirical-hurdle-stage1-convergence-v1.json": {
+      "file_sha256": "4014c3bbd0d47ed53ee05bde279e9c72f7f9c20e07b2bd1291f6278246f78ba3",
+      "receipt_sha256": "4a2c377be5379c1a03d65dbb9c06070619d60cedee3ab6d4af331aba8426a82a"
+    },
+    "empirical-hurdle-stage1-fit-method-v1.json": {
+      "file_sha256": "5d6246624f7a3e49701f6db62185ed97ff5e2b34b99f59faca29c6f54636283f",
+      "receipt_sha256": "6c644678deb454008c3a3146cece0a24393642e2025707dbacbe47e3355a7b9a"
+    },
+    "empirical-hurdle-stage2-fit-method-v1.json": {
+      "file_sha256": "7757e2b582a914f1fe802b6db1a731871c15d07c9e746ede84a7a3a6da53daaf",
+      "receipt_sha256": "31761a5961b755f3d0ca719bb88355b560c8b47e8b00df5f6f04e17ad8b986b4"
+    },
+    "empirical-hurdle-threshold-policy-v1.json": {
+      "file_sha256": "563ccf3805c33fa5eb588d210106aaf089c441d1fc5e35ca503ef66463a7cbd1",
+      "receipt_sha256": "56c8ce9eeba90be17d5ec4bd73ec604447dfcc9463dce7b38b8f6a1769706841"
+    },
+    "empirical-hurdle-training-population-v1.json": {
+      "file_sha256": "e7646168c73759c63cc78de43b57936be062f29c54b2afca3c449431409b8a24",
+      "receipt_sha256": "98b9296594b087df720b626389438c76072148c7a4d5709b11bca4df04507a0c"
+    }
+  },
+  "historical_selection": "MODEL_SELECTION_FAILED_CLOSED",
+  "historical_states": {
+    "authority": "DESIGN_REVIEW_ONLY",
+    "exact_hit_state": "HURDLE_EXACT_HIT_STATIC_LOSS_ALL_JOBS",
+    "fitting_authorized": false,
+    "implementation_authorized": false,
+    "job_counts": {
+      "exact_hit_fail": 32,
+      "move_protection_pass": 32,
+      "projected_false_move": 32,
+      "static_loss_exceeds_gain": 32
+    },
+    "stage1_design_review": "STAGE1_GATE_REDESIGN_REVIEW_SUPPORTED",
+    "stage2_implementation_authorized": false
+  },
+  "historical_verdict": "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "rationale": "REDUCE_STATIC_PROJECTED_HIT_LOSS_WHILE_PROTECTING_INTEGRATED_MOVE_BENEFIT",
+  "receipt_sha256": "1276f6851b07bb846b409d626a970d4d8ba9820ea6c6ed56c0908adad928d9f4",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_STAGE1_DECISION_POLICY_V2_DESIGN_EVIDENCE",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "small_support": "SMALL_SUPPORT_DESCRIPTIVE_ONLY_NOT_STAGE2_VALIDATION_OR_REDESIGN_AUTHORIZATION",
+  "source_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

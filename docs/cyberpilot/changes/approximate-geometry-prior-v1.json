@@ -1,0 +1,93 @@
+{
+  "actual_sensor": null,
+  "camera_family": "comma4/mici_USER_REPORTED_NOT_PER_UNIT_VERIFIED",
+  "camera_height_m": null,
+  "convention_sources_sha256": {
+    "openpilot/common/transformations/camera.py": "1de3f9e6147f28195c71673ae5c8ec38e65ede997ac98d2e1e3b114eda873ec4",
+    "openpilot/common/transformations/model.py": "c87aad27074362fe9fe361a71da92c1fc90daf63bcfd4d8c47d65d3a936ec15e",
+    "openpilot/common/transformations/orientation.py": "fbc8f802474e87c87db242b0dc916f2469439247fd67cd058b69b61605c0e139",
+    "openpilot/common/transformations/transformations.py": "5c2e2b43c0ea5ce07550a37b0594edc2b680f042ecd88824e9134e63c30efbd8",
+    "openpilot/selfdrive/locationd/calibrationd.py": "6b549b24af33f9d1c7926459a00b46df606ccfaed2e3d8fec845475ff16f8413"
+  },
+  "independent": false,
+  "labels": [
+    "APPROXIMATE_GEOMETRY_DIAGNOSTIC",
+    "NO_PHYSICAL_HEIGHT_MEASUREMENT",
+    "NO_METRIC_QUALIFICATION"
+  ],
+  "mount_x_m": null,
+  "mount_y": {
+    "declaration": "USER_DECLARED_APPROX_CENTER_MOUNT",
+    "nominal_m": 0.0,
+    "physical_uncertainty": null,
+    "range": null,
+    "range_role": "DIAGNOSTIC_SENSITIVITY_RANGE_IF_EXPLICITLY_DECLARED",
+    "role": "USER_DECLARED_APPROX_GEOMETRY"
+  },
+  "orientation": {
+    "adapter": "R_optical_to_diagnostic_road=F*E(device_from_calib)^T*V(optical_to_device)",
+    "conversion_primary": "USER_REPORTED_DEGREES_APPROXIMATE_NOT_MEASUREMENT_PRECISION",
+    "converted_rad": [
+      0.0,
+      0.04084070449666731,
+      0.003490658503988659
+    ],
+    "independent": false,
+    "observation_timestamp": null,
+    "physical_uncertainty": null,
+    "reported_deg": [
+      0.0,
+      2.34,
+      0.2
+    ],
+    "reported_rounded_rad": [
+      null,
+      0.0408,
+      0.00349
+    ],
+    "road_alignment": "ASSUMED_FOR_DIAGNOSTIC_NOT_REGISTERED_GROUND_TRUTH",
+    "role": "MODEL_DERIVED_EXTRINSICS_PRIOR",
+    "source": "USER_REPORTED_LIVE_CALIBRATION_NOT_LOG_CAPTURE",
+    "source_frame": "CALIB_FRD_X_FORWARD_Y_RIGHT_Z_DOWN",
+    "target_frame": "ASSUMED_ROAD_FLU_X_FORWARD_Y_LEFT_Z_UP_NOT_SURVEYED"
+  },
+  "physical_uncertainty": null,
+  "private_input_allowed": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "bddd081d0b18886d583ddf0154d232d9365a7644bcf4ee5209a970bbc88e69ab",
+  "reference_promotable": false,
+  "roles": [
+    "INDEPENDENT_PHYSICAL_MEASUREMENT",
+    "STATIC_HARDWARE_SOURCE",
+    "USER_DECLARED_APPROX_GEOMETRY",
+    "VEHICLE_SPEC_PRIOR",
+    "MODEL_DERIVED_EXTRINSICS_PRIOR"
+  ],
+  "schema": "APPROX_GEOMETRY_DIAGNOSTIC_V1",
+  "sealed_reference_allowed": false,
+  "source_sha256": "9a9bc909f75de168659e8532af76735d75e3c6473cbda369f89249e81224896a",
+  "static_intrinsics": {
+    "actual_sensor_mapping_pending": true,
+    "distortion": "UNKNOWN_NOT_ASSUMED_ZERO",
+    "matrix": null,
+    "role": "STATIC_HARDWARE_SOURCE",
+    "source_sha256": "1de3f9e6147f28195c71673ae5c8ec38e65ede997ac98d2e1e3b114eda873ec4"
+  },
+  "status": "PARTIAL_APPROX_GEOMETRY",
+  "user_declaration": "comma4 mounted below interior rear-view mirror; approximately vehicle center plane",
+  "user_declaration_sha256": "78cd4e19a84782d68c5fc1c7033ea1bd6bc139324380534834ab0d7e010da82c",
+  "vehicle": {
+    "camera_height_estimate_m": null,
+    "model_identity": null,
+    "overall_height_m": null,
+    "overall_length_m": null,
+    "overall_width_m": null,
+    "repository_candidate": "HYUNDAI_SANTA_FE_2022_FIXED_REPLAY_TEST_TARGET_ONLY",
+    "role": "VEHICLE_SPEC_PRIOR",
+    "spec_source_sha256": null,
+    "spec_source_url": null,
+    "status": "VEHICLE_SPEC_IDENTITY_PENDING",
+    "wheelbase_m": null
+  },
+  "vehicle_activation_allowed": false
+}

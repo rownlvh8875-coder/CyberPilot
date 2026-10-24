@@ -101,11 +101,50 @@ jobs:
       || fromJSON('["ubuntu-24.04"]') }}
     steps:
     - uses: actions/checkout@v7
+      with:
+        fetch-depth: 0
+        submodules: recursive
     - run: ./tools/op.sh setup
     - name: Build openpilot
       run: scons
+    - name: Install pinned public test dependencies
+      shell: bash
+      run: |
+        set -euo pipefail
+        export PATH="$HOME/.local/bin:$PATH"
+        uv pip install --python .venv/bin/python pytest==9.1.1 PyYAML==6.0.3
+        python3 -B - <<'PY'
+        import pytest
+        import yaml
+        assert pytest.__version__ == '9.1.1'
+        assert yaml.__version__ == '6.0.3'
+        PY
+    - name: Build fresh public Native C11 fixture and export explicit receipt
+      shell: bash
+      run: |
+        set -euo pipefail
+        test "$(gcc-13 -dumpfullversion)" = '13.3.0'
+        python3 -B tools/cyberpilot/run_canonical_runtime_feasibility.py --build "$RUNNER_TEMP/cyberpilot-upstream-native"
+        python3 -B - <<'PY'
+        import hashlib
+        import os
+        from pathlib import Path
+        receipt = Path(os.environ['RUNNER_TEMP']) / 'cyberpilot-upstream-native/build.json'
+        assert receipt.is_file() and receipt.is_absolute() and '\n' not in str(receipt)
+        digest = hashlib.sha256(receipt.read_bytes()).hexdigest()
+        with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as output:
+          output.write('CYBERPILOT_PUBLIC_NATIVE_RECEIPT=' + str(receipt) + '\n')
+          output.write('CYBERPILOT_PUBLIC_NATIVE_RECEIPT_SHA256=' + digest + '\n')
+        PY
+    - name: Verify explicit Native receipt before original unit runner
+      shell: bash
+      run: |
+        set -euo pipefail
+        mkdir -p "$RUNNER_TEMP/cyberpilot-upstream-unit"
+        python3 -B tools/cyberpilot/full_ci_test_manifest.py native --output "$RUNNER_TEMP/cyberpilot-upstream-unit/native-verified.json"
     - name: Run unit tests
-      timeout-minutes: ${{ contains(runner.name, 'nsc') && 2 || 20 }}
+      # Public run 39495056599 needed 19m27s; retain bounded headroom without changing the namespace branch.
+      timeout-minutes: ${{ contains(runner.name, 'nsc') && 2 || 30 }}
       env:
         RAYLIB_BACKEND: headless
       run: tools/op.sh test

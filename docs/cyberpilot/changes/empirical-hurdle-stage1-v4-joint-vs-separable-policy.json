@@ -1,0 +1,117 @@
+{
+  "actual_execution_authorized": false,
+  "actual_pair_search_calls": 0,
+  "architecture_frozen": false,
+  "baseline": "cfea011d68f28a5c907a3cef17a76e1fa29bf58a",
+  "candidate_search_authorized": false,
+  "component": "joint-vs-separable-policy",
+  "composition_authorized": false,
+  "fitting_policy_frozen": false,
+  "historical_states_preserved": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "holdout_openings": 0,
+  "hugging_face": {
+    "download": 0,
+    "login": "NOT_RUN",
+    "repo": "NOT_CREATED",
+    "setup": "NOT_RUN",
+    "upload": 0
+  },
+  "joint": {
+    "compensation": "ALLOWED",
+    "fit_population": "FULL_ORIGINAL_ORDER_TRAIN",
+    "metrics": [
+      "GLOBAL_RMSE_MAE_P95_EXACT_WITHIN_ONE",
+      "GLOBAL_TRUE_MOVE_METRICS",
+      "GLOBAL_COUNTS"
+    ],
+    "parameters": "ONE_PAIR(theta0,theta1)"
+  },
+  "joint_practical_status": "NOT_ESTABLISHED_NOT_IMPOSSIBLE",
+  "joint_retention_verdict": "GLOBAL_FINAL_EVALUATION_ESSENTIAL_JOINT_TRAIN_OBJECTIVE_NOT_LOGICALLY_MANDATORY",
+  "model_fit_calls": 0,
+  "model_selection_calls": 0,
+  "normalizer_fit_calls": 0,
+  "not_universally_inequivalent": "UNCONSTRAINED_ADDITIVE_OBJECTIVES_CAN_SEPARATE_EXACTLY",
+  "opening_count": 0,
+  "pooled_ba_identity": {
+    "adopted": false,
+    "context_contribution": "N_GLOBAL*TP_z+P_GLOBAL*TN_z",
+    "context_local_ba": "TP_z/(2*P_z)+TN_z/(2*N_z); DIFFERENT_WEIGHTS",
+    "identity": "BA=(N_GLOBAL*TP+P_GLOBAL*TN)/(2*P_GLOBAL*N_GLOBAL)",
+    "not_equivalent_to_integrated_task_feasibility": true,
+    "proof": "POSITIVE_CONSTANT_GLOBAL_DENOMINATOR; ADDITIVE_INTEGER_NUMERATOR; UNCOUPLED_DOMAIN_MAX_SEPARATES",
+    "support_requirement": "P_z_AND_N_z_POSITIVE_FOR_LOCAL_BA_NO_UNDEFINED_IMPUTATION"
+  },
+  "pooled_refit": "NOT_AUTHORIZED",
+  "prediction_replay_calls": 0,
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "HOLDOUT_OPENING_CLOSED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED",
+    "SEARCH_NOT_AUTHORIZED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "prior_review_states_preserved": [
+    "GLOBAL_SINGLE_THRESHOLD_FAMILY_RETROSPECTIVELY_EXHAUSTED",
+    "V4_ARCHITECTURE_REDESIGN_INCONCLUSIVE",
+    "V4_TWO_CONTEXT_CAUSAL_STATE_CONTRACT_ESTABLISHED",
+    "V4_TWO_CONTEXT_EXACT_FITTING_EXACT_BUT_CARTESIAN_WORST_CASE",
+    "OPTION_A_ALGORITHMIC_ELIGIBILITY_NOT_ESTABLISHED",
+    "SEPARABLE_TWO_CONTEXT_FITTING_ALGORITHMICALLY_FEASIBLE_POLICY_UNFROZEN"
+  ],
+  "private_numeric_array_opens": 0,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qlog_openings": 0,
+  "qualification_allowed": false,
+  "raw_log_openings": 0,
+  "receipt_sha256": "e743c4c73e5ea618065da1a7c2472b3a15cb44d53c35be8ac1609fc96029038c",
+  "reference_promotable": false,
+  "rollout_calls": 0,
+  "schema": "HURDLE_STAGE1_V4_FITTING_POLICY_DECISION_REVIEW_V1",
+  "scope": "PUBLIC_STATIC_SYNTHETIC_POLICY_REVIEW_ONLY",
+  "sealed_reference_allowed": false,
+  "separable": {
+    "compensation_during_fitting": "DISALLOWED_FOR_CONTEXT_LOCAL_CONSTRAINTS",
+    "fit_population": "EACH_CONTEXT_ONLY",
+    "parameters": "SAME_TWO_RUNTIME_CUTOFFS",
+    "runtime_models_separate": false
+  },
+  "sg_execution": false,
+  "source_writes": 0,
+  "surrogate_adoption": "UNFROZEN_ACCEPTABILITY_AND_TASK_ALIGNMENT_UNRESOLVED",
+  "surrogate_principles": [
+    "TRAIN_ONLY",
+    "CAUSAL",
+    "DETERMINISTIC",
+    "NO_DEV_TUNING",
+    "NO_ARBITRARY_TARGET",
+    "INDEPENDENT_LOSS_ALIGNMENT_PRINCIPLE",
+    "UNCHANGED_FINAL_GATE"
+  ],
+  "ta_execution": false,
+  "threshold_fitting_calls": 0,
+  "v4": {
+    "development": "NOT_RUN",
+    "fitting": "NOT_RUN",
+    "performance": "NOT_RUN",
+    "rollout": "NOT_RUN",
+    "selection": "NOT_RUN"
+  },
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

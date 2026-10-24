@@ -1,0 +1,26 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "descriptive": "NORMALIZED_TORQUE_TO_CURVATURE_YAW_POSE",
+  "descriptive_results_recomputed": false,
+  "empirical": "RAW_CAN_COMMAND_TO_STEERING_ANGLE_DEGREES",
+  "local_model_sha256": "fd44eea54b2b70e71bae5956e388293cae1f5a230e61d1412b041eaac646dbc3",
+  "missing_bridge": [
+    "SOURCE_BOUND_RAW_TO_NORMALIZED_APPLIED_COMMAND",
+    "PROVEN_MEASURED_YAW_UNIT_FRAME"
+  ],
+  "physical_delay_validation": null,
+  "physical_gain_comparison": null,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "27a46ca0a6fdcd509d61ffe94f36dab29ce1e4e7d36619fe78e730807bdc64d8",
+  "reference_promotable": false,
+  "schema": "DESCRIPTIVE_VS_EMPIRICAL_PLANT_DIAGNOSTIC_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "status": "UNCOMPARABLE_COORDINATE_BASIS",
+  "ta_execution": false,
+  "ta_sg_executed": false,
+  "vehicle_activation_allowed": false
+}

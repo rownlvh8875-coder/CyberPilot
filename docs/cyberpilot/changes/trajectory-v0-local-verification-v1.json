@@ -1,0 +1,61 @@
+{
+  "checks": {
+    "autotune": {
+      "passed": 2148,
+      "previous": 2041
+    },
+    "browser": "NOT_APPLICABLE_NO_UI",
+    "combined_full": {
+      "duration_s": 888.72,
+      "passed": 2290
+    },
+    "controls": {
+      "passed": 142
+    },
+    "diff": "PASS",
+    "existing_architecture": {
+      "passed": 81
+    },
+    "independent_review": "PASS_AFTER_REGRESSION_REPAIRS",
+    "lateral_replay": {
+      "passed": 16
+    },
+    "new_focused_publication": {
+      "passed": 107
+    },
+    "privacy_publication": {
+      "passed": 28
+    },
+    "publication": "863_FILES_0_FINDINGS",
+    "ruff": "PASS",
+    "scons": "PASS",
+    "syntax": "PASS"
+  },
+  "ci_status": "PENDING_PUSH_SEPARATE_GITHUB_ACTIONS_CHECK",
+  "commands": [
+    "python tools/test_runner.py openpilot/tools/cyber_autotune/tests openpilot/selfdrive/controls/tests -j 1",
+    "python -m unittest -q openpilot.selfdrive.test.process_replay.test_cyber_lateral_card_replay openpilot.selfdrive.test.process_replay.test_cyber_lateral_native_experiment",
+    "ruff check CyberPilot sources",
+    "python -m compileall -q openpilot/tools/cyber_autotune tools/cyberpilot",
+    "python tools/cyberpilot/check_publication.py --base origin/main",
+    "scons -j2",
+    "git diff --check"
+  ],
+  "log_sha256": {
+    "controls.log": "17f6fba3cb037b1effdbd2a1de76700819139067f65c5b5a73f3a0f49a25a4fc",
+    "full.log": "2349eed4fde6955eadc57bce8edb4393bf94c1baa92df8bfbf2ff41d6925594f",
+    "replay.log": "9bdfda5b5b4a70974ee2359e39d42f3c5b824413fc31f8aa3ac6985e6d979ef4",
+    "scons.log": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056"
+  },
+  "production_authority": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "147fd11a862ab418f9fa529633f6122cd7cc1ecc84d922059a5dd8db3d0a4d91",
+  "reference_promotable": false,
+  "results_sha256": "77bbf44c0bfcce5d7ce0e76a4ea5f488d84e3184fe984c3d92891f9c51a383fb",
+  "schema": "TRAJECTORY_V0_LOCAL_VERIFICATION_V1",
+  "sealed_reference_allowed": false,
+  "source_baseline_sha": "c2d3923d9a13e3e9942352d8a8114cd3203188e2",
+  "status": "PASS_LOCAL_CHECKS",
+  "vehicle_activation_allowed": false,
+  "vehicle_qualification": false
+}

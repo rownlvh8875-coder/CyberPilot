@@ -1,0 +1,107 @@
+{
+  "authorization_sealed_before_array_access": true,
+  "authorization_sha256": "4080b8deed3ecef6de5af4da4385896eae0a269786d90029005d9407140e3943",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "contract_receipts": {
+    "empirical-s2-ri-acceptance-gate-v1.json": "fe645a15dfba84dd7fbc5a7756b817d9e61a3bc7bfc5e1ee56234ed2ebd06786",
+    "empirical-s2-ri-candidate-set-v1.json": "c0fe2284a0b9ba0f89cf72151ef450528be716ec3a953b64d2d17b696ae4d3c8",
+    "empirical-s2-ri-comparator-contract-v1.json": "8fa891ac1333d17abd031ad8b3b644d973f971fdca056837bbc17347b36ad9ba",
+    "empirical-s2-ri-fit-method-v1.json": "9af82f1c15b087f76af18c577babf327edab30caab3703d85bf48064c6c01e35",
+    "empirical-s2-ri-fitting-feature-contract-v1.json": "8812434d0ea3f51b51d5f7c79c72ea4b0c5a585bf9a1b1fda8f274f1f019a1f7",
+    "empirical-s2-ri-fitting-grid-contract-v1.json": "ff2b3c0cfa926b029dda87dbfb8fc80ec1cbb57a58b59bb20430bef0c6c7a9af",
+    "empirical-s2-ri-fitting-metric-contract-v1.json": "a554c0fa7848890ffc8e756874eddcd12c3a0e91b0a4b39c3eb3c3404db3bd70",
+    "empirical-s2-ri-fitting-policy-readiness-v1.json": "efa0fde78a71f401aa3730e7f843a4efc738eece76cfed2086e139da5febebcb",
+    "empirical-s2-ri-fitting-policy-v1.json": "05cf63752587105d188bff2f81baec32e8192a689cbf09543caf1f954656ac96",
+    "empirical-s2-ri-fitting-policy-validation-v1.json": "e98cef2ee98bc76e2b890e95e0068efcd1ef2d7824bc5c4514a286ac1eecc299",
+    "empirical-s2-ri-normalization-contract-v1.json": "934e9526d961d86f552c9951388ad242de638399276cd2ae4b29221847ab82cc",
+    "empirical-s2-ri-rollout-contract-v1.json": "80e1da374da289effe6fe58b8e5ef807021bf2f557701ec391d99771bf6ecb97",
+    "empirical-s2-ri-selection-rule-v1.json": "443a6ddc5aa713cc8efe1ced5cd5dedf35b0256f9cefeeb0adc7d5f893550633"
+  },
+  "derived_file_set_sha256": "12a4a40ffa7c31b56b522e6b9b25faef5497eed7a4b0121007eb47e5a521d872",
+  "derived_result_sha256": "58546988e7458ce3406c64e015edee0f2c09ec1af681fb99eb62840ece61526c",
+  "executor_sources": {
+    "empirical_s2_ri_fit_cv_execution.py": "1933516bceb61fe9815886810848367193e96f02cc7f1ed00fb957b40862adba",
+    "empirical_s2_ri_fit_cv_gates.py": "af08611a69fadc2c8d69f388d08559a4cc5dd820afaf147fcbc1ecece081f117",
+    "empirical_s2_ri_fit_cv_math.py": "a1c1203c8222df067064ff1891aafa82cdafd997338c7ca7687a321c66777f29",
+    "empirical_s2_ri_fit_cv_store.py": "0fc91d2b788078dacb6042d1495ead4605ee8ab27045ba5cdc62a1c73ba02dfb"
+  },
+  "historical_design_pins": {
+    "empirical-s2-ri-angle-grid-v1.json": {
+      "file_sha256": "23d3595fb73c058f1c965c1d110d828fbe25aa9b1c95f3b64e1e5a04791d1e09",
+      "receipt_sha256": "83ab72d1dc11521547cb5d9588b7350a836a7e3256342b51bb4d0dcd4eef5fff"
+    },
+    "empirical-s2-ri-causal-identity-v1.json": {
+      "file_sha256": "01c31a851c1612c4c3e5c70f2e14a6fdad694fed0fb2031a724ae2942508982b",
+      "receipt_sha256": "42b8dc61b9fd8673a810a93edeee575c7f7333576ea0908cc09b4602aea30cc5"
+    },
+    "empirical-s2-ri-design-policy-v1.json": {
+      "file_sha256": "02395f01d11a8b9a7779914ba7064f05a5c7609458c64699f07dc5e9a6bab522",
+      "receipt_sha256": "2a32ee18b757b7fa6dde62360b226bef42d7a203d6f15f509b94d5b18910c454"
+    },
+    "empirical-s2-ri-future-metric-contract-v1.json": {
+      "file_sha256": "1b402dfca196630905649ab327195dc5e1761daeeb993a3c86373ff6a80b896e",
+      "receipt_sha256": "9a92fe4d1b2dfaaab00059f69ec78f5d04145e705e20094ef21131cee49874d2"
+    },
+    "empirical-s2-ri-history-reset-v1.json": {
+      "file_sha256": "86a5405fb184304b6861f0a85ed38814acde0d24a1d22cb122df955435e5008d",
+      "receipt_sha256": "b3387dc0d9ab0372cfbc6ed2e9bcc337250a4faa92c7c8fa7ab50451b34a1294"
+    },
+    "empirical-s2-ri-readiness-v1.json": {
+      "file_sha256": "3b6922f67bb096ccba8516e6ead5b4b326b757180582d124e2e6e2aa9c7535c6",
+      "receipt_sha256": "df79966d0f2daedba0a6e798a91b277ee2325ee9e5e303069e3b4287e695d9b4"
+    },
+    "empirical-s2-ri-regression-validation-v1.json": {
+      "file_sha256": "650401647bbd7a7ecb8a7188dc208b7125849f5af5c5862b0bf31a68e9b9efca",
+      "receipt_sha256": "cf8cba4e55c4a8f3268d2e19c1228187c4419ed70513ad765ebd253f8de5082e"
+    },
+    "empirical-s2-ri-route-cv-contract-v1.json": {
+      "file_sha256": "d3f935674a760754222bf5195312b48dfd90fb1e94ebb26747232c4910a22a09",
+      "receipt_sha256": "4fbcfbaf6c76e70b5fbad43e57624c4ec0917abb1aebcdf96a79d525f99cf31c"
+    },
+    "empirical-s2-ri-row-admission-v1.json": {
+      "file_sha256": "c3de2b51bfd80e6b7122db15277071e5cb6afbed7ebc8773cb70a97513ae1448",
+      "receipt_sha256": "43e0eb373a31757ba44159bc674b2f5fb483a8e999142cf5c28898ee5f4908fc"
+    },
+    "empirical-s2-ri-signal-contract-v1.json": {
+      "file_sha256": "7362932d9fd0a61905ac99fa2a5674bf11cd82ce716263e7d30a7e9f79dc3f3d",
+      "receipt_sha256": "e7b422205eba6ee4d1a5839ff8621e91363c2336cab4f302b477479ae32562fa"
+    },
+    "empirical-s2-ri-structural-diagnostics-v1.json": {
+      "file_sha256": "65df72e30a020a9593638d2ff1370af090f287a5d173745b182d93cb3f863622",
+      "receipt_sha256": "3f24defe8e6a3049b279c3b4a80386f97326a393da460a70e05ed7bd3308e807"
+    },
+    "empirical-s2-ri-support-v1.json": {
+      "file_sha256": "1569a72bae5dece07a7572fc6e5c20d5dfa6900b38e91e07cd3f525d15a1276f",
+      "receipt_sha256": "e0b8f3719c9907d7b1b647ce2313c11eda4ed24d686c1cb92ee88236501c7392"
+    },
+    "empirical-s2-ri-target-contract-v1.json": {
+      "file_sha256": "225dade0c492beefe5c544d8a9a6e2af83ca2d032490e20a4ba869172efec1c7",
+      "receipt_sha256": "f871a00be28d345c219e213cd81befc84ee071f153938feb670b2eefac212154"
+    },
+    "empirical-s2-ri-validation-v1.json": {
+      "file_sha256": "5707ce441cf320459c5f92b19eb3279e3b37b7b18bb8a01a1742f5d01d62f5c5",
+      "receipt_sha256": "8f2d8be144c28bdb9c9192fca3e8e60b64a95b6937f2e501b0c620aa5df0a191"
+    }
+  },
+  "holdout": "CLOSED",
+  "metric_clarification": "USER_CONFIRMED_FROZEN_DELTA_ERROR_PRIMITIVE_SHARED_CONTINUOUS_BUFFER",
+  "opening_count": 0,
+  "policy_sha256": "05cf63752587105d188bff2f81baec32e8192a689cbf09543caf1f954656ac96",
+  "pooled_refit_authorized": false,
+  "private_manifest_sha256": "9466e4578842b4c8a300bb843338e53b42a2fc75200879360f8212c7c2605c97",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qlog_support": 0,
+  "qualification_allowed": false,
+  "receipt_sha256": "85f3af559d789eaf761b7bb2d47efbe85a6cc770daadd7c7e0224cb8c70b7063",
+  "reference_promotable": false,
+  "retrospective_execution_authorized": true,
+  "rlog_manifest_sha256": "c584e2031baf144103c20ca76974c53a9ea614babdf9c865936675474742bba8",
+  "schema": "EMPIRICAL_S2_RI_FIT_CV_PUBLIC_AUTHORIZATION_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_file_set_sha256": "ac4d1450074bc4e4bfc5d9798013d73011f0bf663e62332535b52f204f40dc9a",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

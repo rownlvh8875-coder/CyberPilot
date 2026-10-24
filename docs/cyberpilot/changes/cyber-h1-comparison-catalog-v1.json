@@ -1,0 +1,474 @@
+{
+  "campaigns": [
+    {
+      "blockers": [
+        "CALIBRATION_UNCERTAINTY_PENDING",
+        "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+        "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+        "METRIC_CALIBRATION_UNAVAILABLE",
+        "INDEPENDENT_REFERENCE_UNAVAILABLE"
+      ],
+      "campaign_id": "CYBER_H1_TA_B_STANDALONE_COMPARISON",
+      "campaign_receipt_sha256": "3cf145b5633762af4a7e3dd3336db4ad48482fdca3bb9dbf87326fe75408dbfe",
+      "candidate_arm": "TA_B_V0",
+      "comparison_ready": true,
+      "evidence_tier": "T1_DESCRIPTIVE_COUNTERFACTUAL",
+      "historical_verdict": "TA_STANDALONE_TRADEOFF_ONLY",
+      "kind": "TA_B",
+      "scenario_count": 11,
+      "scenarios": [
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "95bf873326019fbcfb9ea3f8fd990989f7231a655ca1a897affbc1a19ebcd6d3",
+          "candidate_trace_sha256": "631e769586f39ad28d5e9741f7fe917a7bbb58bd90ffa88487d730c336814054",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "beff72abefb4117e75db37249ff9fac54546308e164866768696b13edc5273fc",
+          "paired_frameset_sha256": "595dbcc65d6340a9fe214eaf2486b521d17392a860aeffea457cb2fe02801156",
+          "sample_count": 800,
+          "scenario": "straight",
+          "verdict": "TA_STANDALONE_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "5bc61cf9cf5d067c19645b319ea2ca13b56490b5ae78d6a36fc4d61c4925b977",
+          "candidate_trace_sha256": "1320d8ca47ea62af37af47ecea6a5d3e1f6d592a8bda58f0e720464c318799c6",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "d4d4ed9ada30ade34ac93d700ea80eea906d40b5d672ea06f387725bb3a053aa",
+          "paired_frameset_sha256": "944f3d706fccc6f09523964c3c3442969270177ec74dedf4ddc88b725fdf0688",
+          "sample_count": 800,
+          "scenario": "gentle_left",
+          "verdict": "TA_STANDALONE_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "5cad8a0705f75faac209bfc98287281af5219bae0b75086af0f6fbff41535baa",
+          "candidate_trace_sha256": "9496b94bf8e542a5211f7fed43ee08d249e111a54b445cbeb0f0b500023991ef",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "c29694124f5b5b2f0e55eab0e726940077f164c58ae72db73979a9b22ee45864",
+          "paired_frameset_sha256": "160e6a8038cb20c05cd6804fdcc6509b3bc8053cfbe4f030c578d5cad7da3efa",
+          "sample_count": 800,
+          "scenario": "gentle_right",
+          "verdict": "TA_STANDALONE_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "615c0b0277f7a5244304ced57fdf8a97eb8087e105c3b461cb82667bf4291702",
+          "candidate_trace_sha256": "2a128823eea73085022706c5795716efbc217b94c2466ac5eeee584f162c5025",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "d8bfca0b1a0aabccfc2c351751356e8dcebf2ba0ae696b58fe6ec5b968df1bc0",
+          "paired_frameset_sha256": "dc08a46ea19694eb3894542218ab3b3f73513e12dced41bca8d283d8af2b92da",
+          "sample_count": 800,
+          "scenario": "sharp_left",
+          "verdict": "TA_STANDALONE_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "dbbb030ce68557d6aac83caac112095e9a1de41b9a810150730c489580f4049a",
+          "candidate_trace_sha256": "2096690752a68a8e6a1150be9e8aefa62a2909a16c8e59eb9650847ff75963f5",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "214dfefee98a5432a56b70b5b12a9eebf0a354a493cc4849815d7db7d6362705",
+          "paired_frameset_sha256": "bec9141a156312de3711fba3563bb9e7cbebe629e99e8aec49c08636ce50a2a7",
+          "sample_count": 800,
+          "scenario": "sharp_right",
+          "verdict": "TA_STANDALONE_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "69d1f1addf4731c5fbcb1005c6a825962d82e20cddf20fb29a2b4e662439577b",
+          "candidate_trace_sha256": "f1009723b7b45cc099e9f38ddbb45307758e993e56061dce274a0ec981854861",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "c59fde011de4088725aed72573bf4f24e1f7b1221080afa68d260b7e1523c872",
+          "paired_frameset_sha256": "ada6a246ca32ef0512edb1cba01a74f699316a893cdef62efa5f774b1ed70870",
+          "sample_count": 800,
+          "scenario": "low_speed",
+          "verdict": "TA_STANDALONE_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "b6a61409bbfb6420f4f3d1ef6c699f72bf1e9d8d19c52480129b36ade571a075",
+          "candidate_trace_sha256": "e5bb5821baf07e299eaf1baabd28f90e254d8cc68a286aee765e1ebf37d53607",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "fbf1edd60603361d71a2610113f098d8cbb0a7c671f7420565788d6a0c7e93c3",
+          "paired_frameset_sha256": "cb6ad0120a86ac10e55c9afc5287ec028cdc0994a9ad6fe1c11ce11f6c5df84d",
+          "sample_count": 800,
+          "scenario": "medium_speed",
+          "verdict": "TA_STANDALONE_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "8aa6ad7b8baebaae4db368bce8e4f2b86e974f912cac6e31e7ac32e796c007de",
+          "candidate_trace_sha256": "8c85510b20c8b299cbfcedfe1b2fbe67895af38d5e435a68c87615fb25017ad2",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "c20236e809759a7e23de3a81ee9449cc8d2c521a48c8a3c077bd2317b3aa3abe",
+          "paired_frameset_sha256": "c3510e4fc388f1aec5f56eade79170d6d36c06932875e4daf116ad595740f66c",
+          "sample_count": 800,
+          "scenario": "high_speed",
+          "verdict": "TA_STANDALONE_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "87bcaf1cf7ae800ef22cbb3949ef440f55b0bc637ccf1ce8d8eb68be87ee316e",
+          "candidate_trace_sha256": "deec9680dfd8506fa2cb34e4e8970fb6b3b4aeb74cb2cd4d824a3375628a034f",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "4546cb376e467eb267fffe914cad0e0809d36f46fb5c575f730fac4c535d360e",
+          "paired_frameset_sha256": "55a87f60fe45a1051357021b5f646724b77d226341063018fcc3ff4f32b5d3a2",
+          "sample_count": 800,
+          "scenario": "s_reversal",
+          "verdict": "TA_STANDALONE_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "dba23ce82f73d37327e9491084a56f0c977290c01d9467079acce7dda8e578bc",
+          "candidate_trace_sha256": "45993bf96172533f4a112fc10d27744d00a90af46e20b59fb655e2afa2cbe2c3",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "8a628221da7ef8fff15aa77e8ee5370ff06b56b91b54253d789471256891e634",
+          "paired_frameset_sha256": "ed1753635b22578e8fdb173559aa97016baa1579429f0ae455dbbe136526657d",
+          "sample_count": 800,
+          "scenario": "driver_events",
+          "verdict": "TA_STANDALONE_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "b2f85b36175334187dae49941c86b0cd2bfede3910c491724bb28f182d9c4ccc",
+          "candidate_trace_sha256": "8a44cec127c919322e586d91ba823a4d3eb0a68b89f0ddba240001c0ff12245a",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "25c0e59ade41da07a8314893cdcbb5bd8855840629b4e6277513d390b7c91dd3",
+          "paired_frameset_sha256": "0eb787ee2bfc9a52f02e869214bd41a0647104b41427e0a42fb784df36196139",
+          "sample_count": 800,
+          "scenario": "limit_flags",
+          "verdict": "TA_STANDALONE_TRADEOFF_ONLY"
+        }
+      ],
+      "title": "Trajectory Authority \u00b7 TA-B"
+    },
+    {
+      "blockers": [
+        "CALIBRATION_UNCERTAINTY_PENDING",
+        "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+        "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+        "METRIC_CALIBRATION_UNAVAILABLE",
+        "INDEPENDENT_REFERENCE_UNAVAILABLE"
+      ],
+      "campaign_id": "CYBER_H1_SG_A_STANDALONE_COMPARISON",
+      "campaign_receipt_sha256": "27286f2a8c5f230b4ceda5bc1e5f19b916902ef9ea5ad56d9d5ba23eda9437c3",
+      "candidate_arm": "SG_A_V0",
+      "comparison_ready": true,
+      "evidence_tier": "T1_DESCRIPTIVE_COUNTERFACTUAL",
+      "historical_verdict": "SG_CLOSED_LOOP_TRADEOFF_ONLY",
+      "kind": "SG_A",
+      "scenario_count": 11,
+      "scenarios": [
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "5b10fc676cb5e76b709297608c65556cd92016cf9e893b6efb507dc2ac6e44f0",
+          "candidate_trace_sha256": "8e800bdb86fea7e136b705ff2c2d9a2f1f099ebbd24453336cfe909351e609e9",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "5d1eb6ef213991affb257b06769bcd2385aa7ea9c8ade0dfd5941520a438eb49",
+          "paired_frameset_sha256": "ae39f9db9f440696f484a282b74a5a0e2db43ea66043e8506197c922d03c9fa3",
+          "sample_count": 800,
+          "scenario": "straight",
+          "verdict": "SG_CLOSED_LOOP_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "b2e555c1b8fb3c2cd683451ca34bfa6652b609adbcfcc0d99c760bc4ba657905",
+          "candidate_trace_sha256": "f88b4e50f17bc98b021fbc6bb44d86fa61891b0e385ba9ca4e2367c963f63c8e",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "994aad86917606d7193acf7db77e8f77b604610a86c8a588a96699ec079a74ac",
+          "paired_frameset_sha256": "108beafc3b607ffd03a8294382d5f2e25bbbc5dbd06c1f657243d170d8381cc2",
+          "sample_count": 800,
+          "scenario": "gentle_left",
+          "verdict": "SG_CLOSED_LOOP_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "4c58c898689f8762fa3184ab297055659987debdbc31defba829c18ec5457a7d",
+          "candidate_trace_sha256": "c8b847bb885f2c07bfb889d198388472e07e9d780e5ec5828170e1f4ef22f56a",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "9337ef80d06f25fdc24c0fb2cef2a4849e8681b2c664bae16d579d11ce3f5098",
+          "paired_frameset_sha256": "f2c9023b705562a80138edfa10a2f910da4c5e884d86f18a73829a62a6277daa",
+          "sample_count": 800,
+          "scenario": "gentle_right",
+          "verdict": "SG_CLOSED_LOOP_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "6f596f2952cb01e019ee1db75cbc103e65cb8d08d785b106b6b06ba5209be2a6",
+          "candidate_trace_sha256": "2ade43a0b438199625b4811d54c288a3c2ba3f9c43801327d7338d9fd2ecb4f8",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "bd583da856e6c17919cf574c74caa3e91e7467e0d44e353296220acf74e39bd4",
+          "paired_frameset_sha256": "144cda0d40385e50ca66f5ff5ce2f5c9b612ea3299902a6ed1736cf64b89a8b9",
+          "sample_count": 800,
+          "scenario": "sharp_left",
+          "verdict": "SG_CLOSED_LOOP_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "73911f912e9add30548ddf22ae5d34f18ed80f449b66325ce7b008b05fe334ce",
+          "candidate_trace_sha256": "ea003dbf2685a9691af06371859ff1e69fdd6bca03eb66b4cf420d6fb3696f7e",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "89405345267dc5cfaae7ddf3c00b5b5dd37cb6c4846c86baf0a6aef8d1d5fd25",
+          "paired_frameset_sha256": "0daa7e847381e8d955caffc4aa77572174d0fddd9ad362f34847343f9e1f41e8",
+          "sample_count": 800,
+          "scenario": "sharp_right",
+          "verdict": "SG_CLOSED_LOOP_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "78afeb3fbafd4a00b276ee87044ea130758ecc45b8e34d1bb1b0c80675940579",
+          "candidate_trace_sha256": "68fabd83116548816cf3fae895bc58f4c3a8d9eff79de6cc0b545c4b3f634197",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "b5c821e7be72eaa1ec09fd5a08bd16ec4e2e4a704a20e43699510259e9213a33",
+          "paired_frameset_sha256": "badbef8346e17e0d0bd75464afad63f50d8ba19eca3dd9cc86a7082c5911db02",
+          "sample_count": 800,
+          "scenario": "low_speed",
+          "verdict": "SG_CLOSED_LOOP_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "f843941ba364e73a9625576049fd5191dd991a85a069c122fb35e92da7ec9a3b",
+          "candidate_trace_sha256": "85c73aae270f6dc3aad9aab06fcc452018e9d5c72b17a60cf47667edeaedcec2",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "04a86eb3231bc0dbbfea8aac3d643b7e6857b070d0d14bc3d2e6f1fa5028b3b8",
+          "paired_frameset_sha256": "0a7b320c0f4dea8318dcaae481e7dfc89afeff60980e2bf648ed9ae4d470ae64",
+          "sample_count": 800,
+          "scenario": "medium_speed",
+          "verdict": "SG_CLOSED_LOOP_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "f360f6b398daec71f356553602ae762fce504bc0737a4f89ddc34b4096b52404",
+          "candidate_trace_sha256": "890f1b3ca1ccf124fc2bc51d55a3223bf0e9bbfa780aa96ff5a07aabd9c40725",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "d03de34f11d833f1e6fd63523c4e99616f57bf5cc6cfb8eda1560295679319d0",
+          "paired_frameset_sha256": "1150c4c96318fb53abe26f4f6aee729b80c9b376b8ae20cdf6acf23fb8509d2c",
+          "sample_count": 800,
+          "scenario": "high_speed",
+          "verdict": "SG_CLOSED_LOOP_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "d6fd0a7493318f521358f228e997a92495c89fcd10a7fbba15bc482caa88306f",
+          "candidate_trace_sha256": "7cc0d4eb3f00d69b4efb1047abb53ca034dee786ecf981c93c590527effe01db",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "5464c3b5bda13b4764408b64a4c0bc87dedb3ed99adbd939b8b8c34de4fa9d22",
+          "paired_frameset_sha256": "46efcfe99caef9e00e5b9b56dd2c8bf5aec8d75bbd82200d642ed94667cd98cf",
+          "sample_count": 800,
+          "scenario": "s_reversal",
+          "verdict": "SG_CLOSED_LOOP_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "0b89d2e6293a8f44127ca7d4450a9847eb17d5c7d7b6e70ee69c6d8e66ab12d7",
+          "candidate_trace_sha256": "ebeb159d61d3805d9579f54a2befa437296165b3c4a32228d037aa89597c1e85",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "6499362260f40e6e1b00965afb027cdf8943fce41fe31f9cfa797f49013ea96c",
+          "paired_frameset_sha256": "b9b221337a0b05bbc49438fb7e2248ad1ab56970efc80033c58023180369116c",
+          "sample_count": 800,
+          "scenario": "driver_events",
+          "verdict": "SG_CLOSED_LOOP_TRADEOFF_ONLY"
+        },
+        {
+          "availability_summary": {
+            "driver_torque": "NO_DRIVER_TORQUE_SENSOR_IN_SYNTHETIC_SCENARIO",
+            "pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "requested_pre_limit_torque": "PRE_LIMIT_NATIVE_INTENT_NOT_OBSERVED",
+            "steering_angle_deg": "NO_MEASURED_STEERING_SENSOR_IN_DESCRIPTIVE_PLANT",
+            "steering_rate_deg_s": "NO_MEASURED_STEERING_RATE_IN_DESCRIPTIVE_PLANT",
+            "torque_output_can": "NO_CARCONTROLLER_OR_CAN_IN_OFFLINE_EXPERIMENT"
+          },
+          "baseline_trace_sha256": "9ec7d543f0dfb60be4d62fcf91334b37fac81310554f14d949851be5550ca899",
+          "candidate_trace_sha256": "936fa4f25b3dcf9eb828e21a535ee4f05d602ef6cf8f331d08e88f4bc024f36c",
+          "duration_ns": 8000000000,
+          "exact_pairing": true,
+          "pair_receipt_sha256": "de4e3b1284bab6b28f01971728682cc190ea5a76782aa5a82d510f397efd3cad",
+          "paired_frameset_sha256": "27c007ebb690febf746be7d1563bf08ccdf8f3a210569cdd2f5721002b391e47",
+          "sample_count": 800,
+          "scenario": "limit_flags",
+          "verdict": "SG_CLOSED_LOOP_TRADEOFF_ONLY"
+        }
+      ],
+      "title": "Smoothness Governor \u00b7 SG-A"
+    }
+  ],
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "holdout_opening": "CLOSED",
+  "opening_count": 0,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "90c5a923ee471ee05bff21b50af640fb05ff018f62f32dab039b6cf5b4bcbfe1",
+  "reference_promotable": false,
+  "schema": "CYBER_VISUAL_CAMPAIGN_CATALOG_V1",
+  "sealed_reference_allowed": false,
+  "vehicle_activation_allowed": false
+}

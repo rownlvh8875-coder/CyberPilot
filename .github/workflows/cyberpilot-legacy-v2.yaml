@@ -1,0 +1,304 @@
+name: CyberPilot Legacy V2 Validation
+
+on:
+  push:
+    branches:
+      - feature/cyber-autotune
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cyberpilot-legacy-v2-shadow-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CI: 1
+  PYTHONPATH: ${{ github.workspace }}
+  GIT_CONFIG_COUNT: 1
+  GIT_CONFIG_KEY_0: lfs.fetchexclude
+  GIT_CONFIG_VALUE_0: openpilot/selfdrive/modeld/models/big_driving_tinygrad.pkl
+
+jobs:
+  legacy_v2_shadow:
+    name: LEGACY_V2_SHADOW_FULL_VALIDATION
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Set up openpilot development environment
+        id: setup
+        run: ./tools/op.sh setup
+
+      - name: Audit publication before build
+        id: publication_before
+        run: |
+          git fetch --no-tags origin main:refs/remotes/origin/main
+          python3 tools/cyberpilot/check_publication.py --base origin/main
+
+      - name: Verify original frozen source and LFS before build
+        id: source_lfs
+        run: python3 -B tools/cyberpilot/full_ci_test_manifest.py sources --output "$RUNNER_TEMP/legacy-v2-shadow/source-before.json"
+
+      - name: Build openpilot
+        id: build
+        run: scons -j2
+
+      - name: Ruff CyberPilot sources
+        id: ruff
+        run: |
+          ruff check \
+            tools/cyberpilot \
+            openpilot/tools/cyber_autotune \
+            openpilot/selfdrive/controls/lib/cyber_lateral \
+            openpilot/selfdrive/controls/lib/cyber_long \
+            openpilot/selfdrive/controls/tests/test_cyber_*.py \
+            openpilot/selfdrive/test/process_replay/*cyber_lateral*.py
+
+      - name: Install attribution test runner in CI
+        id: test_dependency
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          uv pip install --python .venv/bin/python pytest==9.1.1 PyYAML==6.0.3
+          python3 -B - <<'PY'
+          import pytest
+          import yaml
+          assert pytest.__version__ == '9.1.1'
+          assert yaml.__version__ == '6.0.3'
+          PY
+
+      - name: Build fresh verified public Native fixture for Legacy
+        id: native_build
+        run: |
+          set -euo pipefail
+          test "$(gcc-13 -dumpfullversion)" = '13.3.0'
+          python3 -B tools/cyberpilot/run_canonical_runtime_feasibility.py --build "$RUNNER_TEMP/cyberpilot-legacy-v2-native"
+          python3 -B - <<'PY'
+          import hashlib
+          import os
+          from pathlib import Path
+          receipt = Path(os.environ['RUNNER_TEMP']) / 'cyberpilot-legacy-v2-native/build.json'
+          assert receipt.is_absolute() and '\n' not in str(receipt)
+          digest = hashlib.sha256(receipt.read_bytes()).hexdigest()
+          with open(os.environ['GITHUB_ENV'], 'a') as output:
+            output.write('CYBERPILOT_PUBLIC_NATIVE_RECEIPT=' + str(receipt) + '\n')
+            output.write('CYBERPILOT_PUBLIC_NATIVE_RECEIPT_SHA256=' + digest + '\n')
+          PY
+
+      - name: Verify explicit Legacy Native receipt
+        id: native_verify
+        run: |
+          python3 -B tools/cyberpilot/full_ci_test_manifest.py native --output "$RUNNER_TEMP/legacy-v2-shadow/native-verified.json"
+          python3 -B - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          proof = json.loads((Path(os.environ['RUNNER_TEMP']) / 'legacy-v2-shadow/native-verified.json').read_text())
+          assert proof['receipt_sha256'] == 'fe50c846b466df21fe0e68a415518e3a8bb61d8564a63684cf53762e8e418628'
+          assert proof['binary_sha256'] == 'd9f2a5b8a36a19944ed75d2f334731790d6b474a63632930db9fff9397daa52d'
+          PY
+
+      - name: Verify Shadow contract exact test IDs and fixture ownership
+        id: shadow_preflight
+        run: |
+          python3 -B - <<'PY'
+          from collections import Counter, defaultdict
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import sys
+          import subprocess
+          import unittest
+          from tools import test_runner as runner
+          from tools.cyberpilot import full_ci_test_manifest as m
+          contract_path = Path('docs/cyberpilot/changes/cyberpilot-legacy-v2-shadow-contract-v1.json')
+          contract = m.read_json(contract_path)
+          m.check_seal(contract)
+          m.need(contract['schema'] == 'CYBERPILOT_LEGACY_V2_SHADOW_CONTRACT_V1'
+                 and contract['workflow_path'] == '.github/workflows/cyberpilot-legacy-v2.yaml'
+                 and contract['job_identity'] == 'LEGACY_V2_SHADOW_FULL_VALIDATION', 'SHADOW_CONTRACT_SCHEMA')
+          head = m.git('rev-parse', 'HEAD')
+          m.need(head == os.environ['GITHUB_SHA'], 'SHADOW_CHECKOUT_HEAD')
+          for path in (contract['workflow_path'], str(contract_path)):
+            committed = subprocess.check_output(['git', 'show', head + ':' + path])
+            m.need(committed == Path(path).read_bytes(), 'SHADOW_UNCOMMITTED_CONTRACT_SOURCE')
+          m.need(hashlib.sha256(Path(contract['workflow_path']).read_bytes()).hexdigest() == contract['workflow_sha256'], 'SHADOW_WORKFLOW_IDENTITY')
+          native = m.read_json(Path(os.environ['RUNNER_TEMP']) / 'legacy-v2-shadow/native-verified.json')
+          m.need(native['receipt_sha256'] == contract['native_receipt_sha256'] and native['binary_sha256'] == contract['native_binary_sha256'], 'SHADOW_QUALIFIED_NATIVE_IDENTITY')
+          tests, errors = runner.collect(list(m.TARGETS), None)
+          m.need(not errors, 'SHADOW_COLLECTION_ERROR')
+          ids = [test.id() for test in tests]
+          m.need(len(ids) == len(set(ids)) == contract['expected_test_count'] and m.ids_hash(sorted(ids)) == contract['expected_ids_sha256'], 'SHADOW_EXACT_TEST_SET')
+          batches = runner.make_batches(tests, m.WORKERS)
+          m.need(Counter(test_id for batch in batches for test_id in batch) == Counter(ids), 'SHADOW_BATCH_IDS')
+          assignment = {test_id: index for index, batch in enumerate(batches) for test_id in batch}
+          groups = defaultdict(list)
+          for test in tests:
+            cls = type(test)
+            module = sys.modules[cls.__module__]
+            if hasattr(module, 'setUpModule') or hasattr(module, 'tearDownModule'):
+              key = ('module', cls.__module__)
+            else:
+              owners = [next((base for base in cls.__mro__ if name in base.__dict__), None) for name in ('setUpClass', 'tearDownClass')]
+              if not any(owner not in (None, unittest.TestCase) for owner in owners):
+                continue
+              key = ('class', cls.__module__, cls.__qualname__)
+            groups[key].append(test.id())
+          m.need(len(groups) == contract['expected_fixture_groups'] and all(len({assignment[test_id] for test_id in members}) == 1 for members in groups.values()), 'SHADOW_FIXTURE_SPLIT_OR_DRIFT')
+          proof = m.seal({'schema': 'LEGACY_V2_SHADOW_FIXTURE_V1', 'head': head, 'workers': m.WORKERS,
+                          'count': len(ids), 'ids_sha256': m.ids_hash(sorted(ids)), 'fixture_groups': len(groups),
+                          'split_groups': 0, 'batch_count': len(batches),
+                          'batch_assignment_sha256': hashlib.sha256(m.canonical(batches)).hexdigest()})
+          m.write_json(Path(os.environ['RUNNER_TEMP']) / 'legacy-v2-shadow/fixture.json', proof)
+          print(json.dumps(proof, sort_keys=True))
+          PY
+
+      - name: Run AutoTune and controls regression suite
+        id: autotune_controls
+        run: python3 -B tools/cyberpilot/full_ci_test_manifest.py run --workers 2 --output "$RUNNER_TEMP/legacy-v2-shadow/regression"
+
+      - name: Run Stage1 V4 saved-evidence attribution tests
+        id: attribution
+        env:
+          OPENBLAS_NUM_THREADS: 1
+          OMP_NUM_THREADS: 1
+        run: python3 -m pytest -q openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_attribution.py
+
+      - name: Check Python syntax and branch whitespace
+        id: syntax
+        run: |
+          python3 -m compileall -q openpilot/tools/cyber_autotune tools/cyberpilot
+          git diff --check origin/main...HEAD
+
+      # unittest module names below correspond to these source files:
+      # openpilot/selfdrive/test/process_replay/test_cyber_lateral_card_replay.py
+      # openpilot/selfdrive/test/process_replay/test_cyber_lateral_native_experiment.py
+      - name: Run focused Cyber lateral replay tests
+        id: lateral
+        run: |
+          python3 -m unittest -q \
+            openpilot.selfdrive.test.process_replay.test_cyber_lateral_card_replay \
+            openpilot.selfdrive.test.process_replay.test_cyber_lateral_native_experiment
+
+      - name: Validate policy and evidence JSON
+        id: json
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            python3 -m json.tool "$file" >/dev/null
+          done < <(find docs/cyberpilot/policies docs/cyberpilot/changes \
+            -type f -name '*.json' -print0)
+
+      - name: Audit changed files for private evidence and credentials
+        id: publication_after
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main:refs/remotes/origin/main
+          python3 tools/cyberpilot/check_publication.py --base origin/main
+
+      - name: Verify original frozen source and LFS after validation
+        id: source_after
+        run: python3 -B tools/cyberpilot/full_ci_test_manifest.py sources --output "$RUNNER_TEMP/legacy-v2-shadow/source-after.json"
+
+      - name: Verify clean working tree
+        id: clean
+        run: |
+          git diff --exit-code
+          git diff --cached --exit-code
+          test -z "$(git status --porcelain)"
+      - name: Verify complete Legacy V2 Shadow stage and test evidence
+        id: shadow_complete
+        if: always()
+        env:
+          LEGACY_SHADOW_STEPS_JSON: ${{ toJSON(steps) }}
+          SHADOW_PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          SHADOW_PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          python3 -B - <<'PY'
+          from pathlib import Path
+          import hashlib
+          import json
+          import os
+          from tools.cyberpilot import full_ci_test_manifest as m
+          from tools.cyberpilot import verify_full_ci_coverage as v
+
+
+          def verify_shadow(steps, contract, manifest, regression, fixture, native, source_before, source_after, baseline, head):
+            m.check_seal(contract)
+            m.need(contract['schema'] == 'CYBERPILOT_LEGACY_V2_SHADOW_CONTRACT_V1', 'SHADOW_CONTRACT_SCHEMA')
+            required = ('checkout', 'setup', 'publication_before', 'source_lfs', 'build', 'ruff', 'test_dependency',
+                        'native_build', 'native_verify', 'shadow_preflight', 'autotune_controls', 'attribution',
+                        'syntax', 'lateral', 'json', 'publication_after', 'source_after', 'clean')
+            m.need(contract['required_stages'] == list(required), 'SHADOW_STAGE_CONTRACT_CONFLICT')
+            m.need(all(steps.get(k, {}).get('outcome') == steps.get(k, {}).get('conclusion') == 'success' for k in required), 'SHADOW_REQUIRED_STAGE_INCOMPLETE')
+            v.verify_regression(manifest, regression, head)
+            m.check_seal(fixture)
+            m.need(fixture['schema'] == 'LEGACY_V2_SHADOW_FIXTURE_V1' and fixture['head'] == head and fixture['workers'] == 2
+                   and fixture['count'] == manifest['count'] == contract['expected_test_count']
+                   and fixture['ids_sha256'] == manifest['sorted_ids_sha256'] == contract['expected_ids_sha256']
+                   and fixture['fixture_groups'] == contract['expected_fixture_groups'] and fixture['split_groups'] == 0
+                   and fixture['batch_assignment_sha256'] == manifest['batch_assignment_sha256'], 'SHADOW_FIXTURE_OR_IDS_CONFLICT')
+            m.need(len(baseline) == m.BASELINE_COUNT and m.ids_hash(baseline) == m.BASELINE_IDS_SHA
+                   and manifest['baseline_count'] == m.BASELINE_COUNT and manifest['baseline_ids_sha256'] == m.BASELINE_IDS_SHA
+                   and set(baseline) <= set(manifest['test_ids']), 'SHADOW_BASELINE_IDS_CONFLICT')
+            m.need(native['verified'] is True and native['receipt_sha256'] == contract['native_receipt_sha256']
+                   and native['binary_sha256'] == contract['native_binary_sha256'] and native['compiler_version'] == '13.3.0'
+                   and native['source_sha256'] == m.NATIVE_SOURCE_SHA and native['wrapper_sha256'] == m.NATIVE_WRAPPER_SHA
+                   and native['ABI'] == m.NATIVE_ABI and native['flags'] == list(m.NATIVE_FLAGS)
+                   and native['private_execution_authorized'] is False and native['runtime_integration_authorized'] is False, 'SHADOW_NATIVE_CONFLICT')
+            m.need(source_before == source_after and source_after['frozen_source_pins'] == 231 and source_after['pointer_count'] == 252
+                   and source_after['lfs_materialized_verified'] == 251 and source_after['conflicts'] == [], 'SHADOW_SOURCE_OR_LFS_CONFLICT')
+            return {'test_count': manifest['count'], 'final_ids_sha256': manifest['sorted_ids_sha256'],
+                    'baseline_count': m.BASELINE_COUNT, 'baseline_ids_sha256': m.BASELINE_IDS_SHA,
+                    'missing_ids': 0, 'duplicate_ids': 0, 'unapproved_skips': 0, 'collection_errors': 0,
+                    'fixture_groups': fixture['fixture_groups'], 'regression_receipt_sha256': regression['receipt_sha256'],
+                    'manifest_receipt_sha256': manifest['receipt_sha256'], 'runner_seconds': regression['runner_elapsed_seconds']}
+
+
+          def main():
+            directory = Path(os.environ['RUNNER_TEMP']) / 'legacy-v2-shadow'
+            steps = json.loads(os.environ['LEGACY_SHADOW_STEPS_JSON'])
+            contract = m.read_json('docs/cyberpilot/changes/cyberpilot-legacy-v2-shadow-contract-v1.json')
+            states = {key: {'outcome': steps.get(key, {}).get('outcome', 'missing'), 'conclusion': steps.get(key, {}).get('conclusion', 'missing')} for key in contract['required_stages']}
+            head = m.git('rev-parse', 'HEAD')
+            binding = {'head': head, 'github_sha': os.environ['GITHUB_SHA'], 'run_id': os.environ['GITHUB_RUN_ID'],
+                       'run_attempt': os.environ['GITHUB_RUN_ATTEMPT'], 'event': os.environ['GITHUB_EVENT_NAME'],
+                       'workflow': os.environ['GITHUB_WORKFLOW'], 'job': os.environ['GITHUB_JOB'],
+                       'pr_head': os.environ.get('SHADOW_PR_HEAD_SHA', ''), 'pr_base': os.environ.get('SHADOW_PR_BASE_SHA', '')}
+            print('LEGACY_SHADOW_STAGE_STATUS ' + json.dumps({'binding': binding, 'stages': states}, sort_keys=True), flush=True)
+            m.need(head == os.environ['GITHUB_SHA'], 'SHADOW_FINAL_HEAD_CONFLICT')
+            m.need(all(x['outcome'] == x['conclusion'] == 'success' for x in states.values()), 'SHADOW_REQUIRED_STAGE_INCOMPLETE')
+            manifest = m.read_json(directory / 'regression/manifest.json')
+            regression = m.read_json(directory / 'regression/regression.json')
+            native = m.read_json(directory / 'native-verified.json')
+            m.need(native == m.verify_native(os.environ.get('CYBERPILOT_PUBLIC_NATIVE_RECEIPT', ''), os.environ.get('CYBERPILOT_PUBLIC_NATIVE_RECEIPT_SHA256', ''))
+                   and native == m.read_json(directory / 'regression/native.json'), 'SHADOW_NATIVE_CHANGED')
+            summary = verify_shadow(steps, contract, manifest, regression, m.read_json(directory / 'fixture.json'), native,
+                                    m.read_json(directory / 'source-before.json'), m.read_json(directory / 'source-after.json'),
+                                    (m.ROOT / m.BASELINE_IDS_FILE).read_text().splitlines(), head)
+            log = (directory / 'regression/regression.log').read_text()
+            m.need(m.parse_log(manifest, log, 0) == regression, 'SHADOW_RAW_LOG_RESULT_CONFLICT')
+            proof = m.seal({'schema': 'CYBERPILOT_LEGACY_V2_SHADOW_EVIDENCE_V1', 'status': 'SHADOW_ALL_REQUIRED_STAGES_VERIFIED',
+                            **binding, **summary, 'contract_receipt_sha256': contract['receipt_sha256'],
+                            'workflow_sha256': hashlib.sha256(Path(contract['workflow_path']).read_bytes()).hexdigest(),
+                            'stages': states, 'native': native, 'source_integrity': m.read_json(directory / 'source-after.json'),
+                            'resources': m.read_json(directory / 'regression/resources.json')})
+            m.write_json(directory / 'shadow-evidence.json', proof)
+            print('LEGACY_V2_SHADOW_VERIFIED ' + json.dumps(proof, sort_keys=True), flush=True)
+            for record in regression['records']:
+              print('SHADOW_TEST ' + json.dumps(record, sort_keys=True))
+
+
+          if __name__ == '__main__':
+            main()
+          PY

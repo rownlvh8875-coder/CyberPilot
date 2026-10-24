@@ -1,0 +1,29 @@
+{
+  "approval_sha256": "55973a2523c83a952a97c298407e85cfef54d1a87fd9d2fc3ada28dadc54207d",
+  "coarse_source_sha256": "d2bb72bf2c0060d1f6e3d5d4d601ed07b248261248a586843c69455fe06caee5",
+  "derivation": "EXPLICIT_USER_APPROVAL_NOT_VEHICLE_HEIGHT_RATIO_OR_TIRE_DERIVATION",
+  "diagnostic_sensitivity_range": [
+    1.33,
+    1.47
+  ],
+  "independent": false,
+  "measurement_uncertainty": null,
+  "nominal_height_m": 1.4,
+  "parameter_role": "USER_APPROVED_COARSE_GEOMETRY_PRIOR",
+  "physical_height_measured": false,
+  "physical_measurement": false,
+  "physical_uncertainty": null,
+  "private_input_allowed": false,
+  "qualification_allowed": false,
+  "range_role": "DIAGNOSTIC_SENSITIVITY_RANGE",
+  "receipt_sha256": "90673057619b2c15416dee64bee5f76336ec4f386b9f83d887a39ade186daf9c",
+  "reference_promotable": false,
+  "schema": "COARSE_CAMERA_HEIGHT_PRIOR_V1",
+  "sealed_reference_allowed": false,
+  "source_role": "USER_APPROVED_DIAGNOSTIC_ESTIMATE",
+  "status": "COARSE_CAMERA_HEIGHT_PRIOR_AVAILABLE",
+  "sweep_max_m": 1.47,
+  "sweep_min_m": 1.33,
+  "vehicle_activation_allowed": false,
+  "vehicle_context_sha256": "ab2ca5a31f929f240fea64149e59f7967db31ebb191743ae7a0f0ac694671eac"
+}

@@ -1,0 +1,499 @@
+{
+  "schema": "CYBERPILOT_OFFLINE_MULTI_OBJECTIVE_PROPOSAL_V1",
+  "status": "PROPOSED_NOT_EFFECTIVE",
+  "effective": false,
+  "promotion_enabled": false,
+  "scope": "PUBLIC_SYNTHETIC_OFFLINE_CHARACTERIZATION_ONLY",
+  "feature_head": "66bb193e13ca9f17beb73badb6f2a94a67faa2da",
+  "evidence_package_manifest_sha256": "37bb761c4eb6eeb92bf68db7d34577831b409103c5bc3ee05ceae6bfc58ee681",
+  "axes": [
+    "Tracking Accuracy",
+    "Control Smoothness",
+    "Control Feasibility",
+    "Robustness"
+  ],
+  "hard_gates": [
+    {
+      "id": "HG01",
+      "name": "Source/provenance identity",
+      "constraint": "Exact source, policy, Plant, input, state hashes and sealed result identity; historical records immutable",
+      "source": "F5 manifest/runtime-lock; pinned repository"
+    },
+    {
+      "id": "HG02",
+      "name": "Input and comparison integrity",
+      "constraint": "Finite non-boolean numbers, same exogenous arrays/initial physical state/timebase, no missing/duplicate frames or arbitrary time shift",
+      "source": "LatSample and original producer"
+    },
+    {
+      "id": "HG03",
+      "name": "Declared normalized command domain",
+      "constraint": "Current Native and synthetic Plant normalized commands in [-1,1]; finite; no new authority",
+      "source": "NativeBaseline._call and CurvatureYawPlantConfig.command_limit"
+    },
+    {
+      "id": "HG04",
+      "name": "Plant mathematical domain",
+      "constraint": "Use actual config speed 2.5..30m/s, dt=.01 and delay2; report physical accuracy UNPROVEN",
+      "source": "Pinned trajectory_v0_screen PLANT and observe_curvature_yaw_step"
+    },
+    {
+      "id": "HG05",
+      "name": "Feedback/delay/reset",
+      "constraint": "Own-arm feedback and one physical queue; reset Native/policy per actual event while preserving physical state when declared",
+      "source": "F3 advance / F5 external adapter"
+    },
+    {
+      "id": "HG06",
+      "name": "Applicable rate/envelope contracts",
+      "constraint": "A3 optional rate arithmetic exact when claimed; SG radius1 and sign/magnitude contract; no fabricated global rate constraint",
+      "source": "steering_rate.py, SG source; actual downstream evidence still incomplete"
+    },
+    {
+      "id": "HG07",
+      "name": "A2 static necessary feasibility",
+      "constraint": "At source envelope v5..10, static required command must fit unchanged envelope for eligible evaluation. Failure = DOMAIN_INSUFFICIENT, diagnostic only",
+      "source": "Development fixture envelope and declared synthetic Plant equation"
+    },
+    {
+      "id": "HG08",
+      "name": "Execution and repeat evidence",
+      "constraint": "Actual historical Native/Plant call evidence bound to source; exact repeated bytes; independent arithmetic; never claim new calls from trace reads",
+      "source": "Recorded source function profiles and 65 trace pairs"
+    },
+    {
+      "id": "HG09",
+      "name": "Authority and publication",
+      "constraint": "No CAN/vehicle/Params writes, ACTIVE mode, private E2/HOLDOUT access, source changes, selection or public upload",
+      "source": "Explicit user authorization boundary"
+    },
+    {
+      "id": "HG10",
+      "name": "Scope and unresolved conditions",
+      "constraint": "Unverified downstream safety/physical Plant/thresholds prevent promotion claims; only exploratory diagnostics available",
+      "source": "Existing authority restrictions and incomplete evidence"
+    }
+  ],
+  "metrics": [
+    {
+      "axis": "Tracking Accuracy",
+      "name": "curvature_rmse",
+      "unit": "m^-1",
+      "definition": "sqrt(mean((actual_curvature-reference_curvature)^2)), common frames",
+      "source_or_evidence": "F3/F4/F5 trace and F6 independent kinematics",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Tracking Accuracy",
+      "name": "curvature_p95",
+      "unit": "m^-1",
+      "definition": "p95 absolute curvature error, no time shift",
+      "source_or_evidence": "F3/F4/F5 trace and F6 independent kinematics",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Tracking Accuracy",
+      "name": "curvature_max",
+      "unit": "m^-1",
+      "definition": "maximum absolute curvature error",
+      "source_or_evidence": "F3/F4/F5 trace and F6 independent kinematics",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Tracking Accuracy",
+      "name": "signed_curvature_area",
+      "unit": "s/m",
+      "definition": "signed sum(error*dt), positive/negative/absolute area also mandatory",
+      "source_or_evidence": "F3/F4/F5 trace and F6 independent kinematics",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Tracking Accuracy",
+      "name": "heading_error",
+      "unit": "rad",
+      "definition": "unwrapped actual-reference heading: RMS/end/absolute peak",
+      "source_or_evidence": "F3/F4/F5 trace and F6 independent kinematics",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Tracking Accuracy",
+      "name": "normal_position",
+      "unit": "m",
+      "definition": "time-aligned error projected onto reference normal: RMS/p95/maximum",
+      "source_or_evidence": "F3/F4/F5 trace and F6 independent kinematics",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Tracking Accuracy",
+      "name": "along_position",
+      "unit": "m",
+      "definition": "time-aligned error projected onto reference tangent: RMS/p95/maximum",
+      "source_or_evidence": "F3/F4/F5 trace and F6 independent kinematics",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Tracking Accuracy",
+      "name": "euclidean_position",
+      "unit": "m",
+      "definition": "time-aligned XY distance: RMS/p95/maximum",
+      "source_or_evidence": "F3/F4/F5 trace and F6 independent kinematics",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Tracking Accuracy",
+      "name": "geometric_polyline_distance",
+      "unit": "m",
+      "definition": "auxiliary closest finite reference-polyline distance; never substitutes time-aligned metrics",
+      "source_or_evidence": "F3/F4/F5 trace and F6 independent kinematics",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Control Smoothness",
+      "name": "command_magnitude",
+      "unit": "normalized torque",
+      "definition": "RMS/p95 absolute/maximum of delivered and applied",
+      "source_or_evidence": "F5 original source; F6 time/frequency analysis",
+      "comparison_relation": "CONDITIONAL_ON_TRACKING_AND_AUTHORITY",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Control Smoothness",
+      "name": "command_variation",
+      "unit": "normalized torque",
+      "definition": "sum(abs(u[n]-u[n-1])), u[-1]=0",
+      "source_or_evidence": "F5 original source; F6 time/frequency analysis",
+      "comparison_relation": "NO_SINGLE_METRIC_PASS",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Control Smoothness",
+      "name": "command_derivative",
+      "unit": "normalized torque/s",
+      "definition": "first difference/dt: RMS/p95/max, resets and transitions retained",
+      "source_or_evidence": "F5 original source; F6 time/frequency analysis",
+      "comparison_relation": "NO_SINGLE_METRIC_PASS",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Control Smoothness",
+      "name": "direction_reversals",
+      "unit": "count",
+      "definition": "nonzero sign reversals, zeros bridged; measured horizon mandatory",
+      "source_or_evidence": "F5 original source; F6 time/frequency analysis",
+      "comparison_relation": "NO_MONOTONIC_SAFETY_ORDER_BY_COUNT_ALONE",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Control Smoothness",
+      "name": "oscillation_spectrum",
+      "unit": "Hz and normalized^2/Hz",
+      "definition": "full declared-window spectra, amplitude/power/mean and Parseval; full excitation identity",
+      "source_or_evidence": "F5 original source; F6 time/frequency analysis",
+      "comparison_relation": "NO_SINGLE_PEAK_FREQUENCY_PASS",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Control Smoothness",
+      "name": "frequency_response",
+      "unit": "gain/rad",
+      "definition": "identify scope/excitation/estimator; S-curve one-frequency sequence phase is descriptive only",
+      "source_or_evidence": "F5 original source; F6 time/frequency analysis",
+      "comparison_relation": "EVIDENCE_INCOMPLETE_FOR_FULL_RESPONSE",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Control Smoothness",
+      "name": "settling_time",
+      "unit": "s",
+      "definition": "definition/tolerance/sustained duration need explicit approval; F5 5%/1s is descriptive only",
+      "source_or_evidence": "F5 original source; F6 time/frequency analysis",
+      "comparison_relation": "DEFINITION_AND_THRESHOLD_APPROVAL_REQUIRED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Control Feasibility",
+      "name": "saturation_fraction",
+      "unit": "fraction",
+      "definition": "exact source rail occupancy, not newly chosen near-saturation threshold",
+      "source_or_evidence": "Pinned Native/A3/SG source plus immutable Plant config",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Control Feasibility",
+      "name": "saturation_events",
+      "unit": "count and s",
+      "definition": "contiguous rail/sign runs; duration/maximum/p95 and reversals",
+      "source_or_evidence": "Pinned Native/A3/SG source plus immutable Plant config",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Control Feasibility",
+      "name": "rate_contract_scope",
+      "unit": "normalized torque/s or raw/tick",
+      "definition": "compare only the applicable declared source contract; native fallback not falsely certified",
+      "source_or_evidence": "Pinned Native/A3/SG source plus immutable Plant config",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Control Feasibility",
+      "name": "lateral_acceleration",
+      "unit": "m/s^2",
+      "definition": "both curvature*v^2 and yaw*v, named sign convention and Plant scope",
+      "source_or_evidence": "Pinned Native/A3/SG source plus immutable Plant config",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Control Feasibility",
+      "name": "actuator_delay",
+      "unit": "s",
+      "definition": "one declared queue; controller prediction distinguished; measured entry crossing is not settling",
+      "source_or_evidence": "Pinned Native/A3/SG source plus immutable Plant config",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Control Feasibility",
+      "name": "reset_behavior",
+      "unit": "event/frame",
+      "definition": "explicit state ownership; inactive/driver flags; physical state retention by declared event",
+      "source_or_evidence": "Pinned Native/A3/SG source plus immutable Plant config",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Robustness",
+      "name": "transition_and_s_curve",
+      "unit": "declared scenario/frame evidence",
+      "definition": "fixed entry/exit/reversal/ramp/S-curve inputs and complete report",
+      "source_or_evidence": "F3/F4/F5 identities; gaps explicitly EVIDENCE_INCOMPLETE",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Robustness",
+      "name": "speed_and_disturbance",
+      "unit": "declared scenario/frame evidence",
+      "definition": "constant-speed levels plus varying-speed/roll/measurement uncertainty evidence separately",
+      "source_or_evidence": "F3/F4/F5 identities; gaps explicitly EVIDENCE_INCOMPLETE",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Robustness",
+      "name": "initial_state_coverage",
+      "unit": "declared scenario/frame evidence",
+      "definition": "zero initial state and reset do not replace nonzero initial-state variation",
+      "source_or_evidence": "F3/F4/F5 identities; gaps explicitly EVIDENCE_INCOMPLETE",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Robustness",
+      "name": "horizon_sensitivity",
+      "unit": "declared scenario/frame evidence",
+      "definition": "common 10/20/40/80s prefixes where archived; missing = NOT_AVAILABLE",
+      "source_or_evidence": "F3/F4/F5 identities; gaps explicitly EVIDENCE_INCOMPLETE",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Robustness",
+      "name": "long_term_accumulation",
+      "unit": "declared scenario/frame evidence",
+      "definition": "signed integrals, heading and both position metrics over declared full horizon",
+      "source_or_evidence": "F3/F4/F5 identities; gaps explicitly EVIDENCE_INCOMPLETE",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    },
+    {
+      "axis": "Robustness",
+      "name": "measurement_robustness",
+      "unit": "declared scenario/frame evidence",
+      "definition": "noise/bias/latency/coordinate/freshness contracts require separate evidence",
+      "source_or_evidence": "F3/F4/F5 identities; gaps explicitly EVIDENCE_INCOMPLETE",
+      "comparison_relation": "DESCRIPTIVE_LOWER_WITH_OTHER_AXES_PRESERVED",
+      "acceptance_threshold": null,
+      "threshold_status": "THRESHOLD_APPROVAL_REQUIRED"
+    }
+  ],
+  "eligibility": [
+    {
+      "candidate": "A0",
+      "classifications": [
+        "REFERENCE_ONLY",
+        "EVIDENCE_INCOMPLETE"
+      ],
+      "usable": "All archived mathematical-domain baseline cases",
+      "unusable": "Vehicle-performance qualification from this synthetic cutpoint alone",
+      "better": "No self-comparison superiority",
+      "worse": "Observed oscillation/bias versus some candidates; no broad vehicle conclusion",
+      "dependency": "Horizon, CP/Plant match, source reset and reference transition",
+      "runtime_inputs": "Existing Stock source; this is not a full vehicle pipeline",
+      "source_identity": "5bf4fea76542e5854ae3a9599a86791dd17994bb48307b1bedda87c11bccffcc",
+      "selected": false,
+      "runtime_activation_allowed": false
+    },
+    {
+      "candidate": "A2",
+      "classifications": [
+        "DOMAIN_INSUFFICIENT",
+        "EXPLORATORY_ONLY",
+        "NOT_PROMOTABLE"
+      ],
+      "usable": "Diagnostic replay of unchanged development envelope at 5..10m/s",
+      "unusable": "v outside 5..10 or required static command above envelope; sharp case fails gate",
+      "better": "Lower command variation in sharp diagnostic",
+      "worse": "Sharp tracking/heading/position versus A0",
+      "dependency": "Envelope calibration and dynamic demand, not just speed interpolation",
+      "runtime_inputs": "Speed/request available but approved vehicle envelope missing",
+      "source_identity": "6d7639a9d108fb92561d2dd93bf693cc4198ab9bb3b8082116f7f5e51368f894",
+      "selected": false,
+      "runtime_activation_allowed": false
+    },
+    {
+      "candidate": "A3",
+      "classifications": [
+        "EXPLORATORY_ONLY",
+        "REGRESSION_OBSERVED",
+        "NOT_PROMOTABLE"
+      ],
+      "usable": "Archived source-consistent DT/rate/Plant cases",
+      "unusable": "Unqualified active Runtime or vehicle promotion",
+      "better": "Many curvature/smoothness metrics",
+      "worse": "Entry short-horizon position and initial signed area; some v5 tracking",
+      "dependency": "First frame/anchor/reset and evaluation horizon",
+      "runtime_inputs": "Existing optimizer has command/applied/speed; active Runtime unavailable",
+      "source_identity": "1ec02c34b633b6b0b7756c90cf4fd15f27918c12e5bb788dfecb72cf8cc93542",
+      "selected": false,
+      "runtime_activation_allowed": false
+    },
+    {
+      "candidate": "SG-A",
+      "classifications": [
+        "EXPLORATORY_ONLY",
+        "REGRESSION_OBSERVED",
+        "NOT_PROMOTABLE"
+      ],
+      "usable": "Exact pinned baseline source/config, ordinary projection and reset contracts",
+      "unusable": "Identity/source mismatch, malformed input, unsupported composition",
+      "better": "Variation/rate RMS lower in positive control",
+      "worse": "Positive-control curvature/heading/position versus A0",
+      "dependency": "Previous-output gap>1; identity region is not independent improvement",
+      "runtime_inputs": "Offline command/state available; no active Runtime authorization",
+      "source_identity": "0bdcd314f3cfe3b11114a8d521208d91b5bdb0fc19ccf697c61df6d604619c96",
+      "selected": false,
+      "runtime_activation_allowed": false
+    },
+    {
+      "candidate": "A3-R1",
+      "classifications": [
+        "REGRESSION_OBSERVED",
+        "EXPLORATORY_ONLY",
+        "NOT_PROMOTABLE"
+      ],
+      "usable": "F5 frozen prototype for diagnostic analysis only",
+      "unusable": "Adoption; general bumpless rejoin unverified",
+      "better": "Some narrow metrics versus A0; continuous_s is numeric identity with A0",
+      "worse": "Rejoin signed area/position; no broad non-deterioration",
+      "dependency": "Reference exact-change trigger, 58-tick synthetic decay window, state and delay",
+      "runtime_inputs": "Current curvature/flags available; synthetic decay constant not vehicle calibration",
+      "source_identity": "b8052fa050ae74dd06f2f22febe3ba175aec4e3fad2749b1c0a12f561d9d11d3",
+      "selected": false,
+      "runtime_activation_allowed": false
+    },
+    {
+      "candidate": "A3-R2",
+      "classifications": [
+        "REGRESSION_OBSERVED",
+        "EXPLORATORY_ONLY",
+        "NOT_PROMOTABLE"
+      ],
+      "usable": "F5 frozen prototype for cancellation/oscillation diagnostics only",
+      "unusable": "Adoption; low position RMS cannot compensate tracking/rate/saturation regression",
+      "better": "Many position metrics",
+      "worse": "Curvature, command magnitude/derivatives, rail occupancy",
+      "dependency": "Causal yaw-debt gating, last selected anchor, delay and ideal measurements",
+      "runtime_inputs": "Calibrated yaw raw data exists, but LateralContext freshness/coordinate/reset binding missing",
+      "source_identity": "2e13c8400a05188557b6af996031b1a453b07d9e8702f2b9caccf8550753c7f4",
+      "selected": false,
+      "runtime_activation_allowed": false
+    }
+  ],
+  "allowed_classifications": [
+    "REFERENCE_ONLY",
+    "EXPLORATORY_ONLY",
+    "REGRESSION_OBSERVED",
+    "DOMAIN_INSUFFICIENT",
+    "EVIDENCE_INCOMPLETE",
+    "NOT_PROMOTABLE"
+  ],
+  "rate_limit_scope": {
+    "A3_optional_source_rate": "NOT_A_GLOBAL_VEHICLE_RAW_RATE_LIMIT",
+    "actual_downstream_safety_verification": "EVIDENCE_INCOMPLETE"
+  },
+  "comparison": {
+    "weighted_sum": false,
+    "automatic_selection": false,
+    "time_shift": false,
+    "all_axes_reported": true,
+    "tradeoffs_preserved": true,
+    "numeric_recalculation_abs_rel_2e_12": "ARITHMETIC_CHECK_ONLY_NOT_ACCEPTANCE_BUDGET",
+    "relative_non_deterioration": "DESCRIPTIVE_ONLY; no automatic adoption even if all reported metrics improve"
+  },
+  "authority": {
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "Private E2": "NOT_AUTHORIZED",
+    "HOLDOUT": "CLOSED",
+    "Vehicle authority": "NONE"
+  },
+  "selected_candidate": null,
+  "selected_policy": null,
+  "required_approvals": [
+    "Performance metric definitions/thresholds and scope",
+    "Additional public robustness validation",
+    "Separate quality-cleanup source identity and regression",
+    "Any original tool/source adoption separately"
+  ],
+  "original_contracts_changed": false,
+  "receipt_sha256": "ed5fe97d2e4a634da12e629a30251db7cf15c13619f1c806fea82fbd69c6b393"
+}

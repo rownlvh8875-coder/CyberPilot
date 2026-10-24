@@ -1,0 +1,216 @@
+{
+  "baseline_count": 5927,
+  "baseline_ids_sha256": "e293db84c944594175ed50bba9d98408692ecd63054e17c96656a2bf004c870b",
+  "baseline_parallel_probe": {
+    "actual": {
+      "CPU_system_seconds": 56.968743,
+      "CPU_user_seconds": 1999.9173720000001,
+      "duplicate_ids": 0,
+      "errors": 1,
+      "executed_ids": 5927,
+      "expected_ids": 5927,
+      "missing_ids": 0,
+      "passed": 5926,
+      "wall_seconds": 1116.792270786
+    },
+    "observed_test_error": "SOURCE_CHANGED_DURING_COMFORT_MATRIX; new test file edited during probe",
+    "preserve_original_log": true,
+    "status": "FAILED_SOURCE_SNAPSHOT_CHANGED; not parallelism qualification"
+  },
+  "current_revision_full_local_regression": "PENDING_FRESH_SOURCE_FROZEN_RUN_AFTER_FINAL_BYTES_AND_COMMIT",
+  "first_exact_head_github_run": {
+    "Ruff": "SUCCESS",
+    "SCons": "SUCCESS",
+    "conclusion": "FAILURE",
+    "coverage_gate": "FAILURE; no partial-success acceptance",
+    "downstream_postchecks": "SKIPPED_AFTER_TEST_FAILURE",
+    "head": "4513f7fe1d3d2eee3908ff9f27cd3ac8529da31a",
+    "native_fixture_build_verify": "SUCCESS",
+    "regression": {
+      "errors": 4,
+      "passed": 5950,
+      "wall_seconds": 1240.52
+    },
+    "repair": "Explicit PyYAML==6.0.3 install/version check; no assertion or test removed",
+    "root_cause": "ModuleNotFoundError: yaml in four unchanged scientific workflow-integrity tests",
+    "run_id": 39343266604
+  },
+  "forbidden_actual_operations": {
+    "CONTROLLER_MODIFICATIONS": 0,
+    "D2_POLICY_CHANGE": 0,
+    "DUPLICATED_TEST_ID_ACCEPTANCE": 0,
+    "GUARD_RELAXATION": 0,
+    "HISTORICAL_EVIDENCE_OVERWRITE": 0,
+    "HOLDOUT_OPENINGS": 0,
+    "LFS_POINTER_REPLACEMENT": 0,
+    "LFS_REQUIRED_ASSET_EXCLUSION": 0,
+    "MISSING_TEST_ID_ACCEPTANCE": 0,
+    "NATIVE_COMPILER_FLAG_CHANGE": 0,
+    "NATIVE_FIXTURE_FALLBACK": 0,
+    "NUMERICAL_TOLERANCE_CHANGE": 0,
+    "PARTIAL_FULL_CI_SUCCESS": 0,
+    "PRIVATE_DEV_READS": 0,
+    "PRIVATE_HANDOFF_OPENINGS": 0,
+    "PRIVATE_METADATA_READS": 0,
+    "PRIVATE_MODEL_READS": 0,
+    "PRIVATE_TRAIN_READS": 0,
+    "REAL_E2_EXECUTION": 0,
+    "SCIENTIFIC_SOURCE_CHANGE": 0,
+    "TEST_FILTERING": 0,
+    "TEST_REMOVAL": 0,
+    "UNAUTHORIZED_LFS_UPLOAD": 0,
+    "UNAUTHORIZED_TEST_SKIP": 0,
+    "UNVERIFIED_NATIVE_BINARY": 0,
+    "V5_EXECUTION": 0,
+    "VEHICLE_ACTIVATION": 0
+  },
+  "github_full_ci_v2": "REVISION2_NOT_EXECUTED_AT_PREPUBLICATION_SNAPSHOT; final exact-head outcomes in handoff/Actions artifact",
+  "legacy_workflow_unchanged": true,
+  "local_additional_checks": {
+    "SCons_j2": "PASS",
+    "attribution": {
+      "passed": 95
+    },
+    "lateral": {
+      "passed": 16
+    },
+    "materialized_LFS_bytes": 122052386,
+    "materialized_LFS_payloads": 251,
+    "new_focused": {
+      "passed": 27
+    },
+    "pointer_bytes": 252,
+    "source_pins": 231,
+    "syntax_compileall": "PASS"
+  },
+  "native_fixture": {
+    "ABI": "C11_LINUX_X86_64_DOUBLE_SIZE_T_INT64_V1",
+    "binary_sha256": "d9f2a5b8a36a19944ed75d2f334731790d6b474a63632930db9fff9397daa52d",
+    "compiler_version": "13.3.0",
+    "flags": [
+      "-O2",
+      "-std=c11",
+      "-fPIC",
+      "-shared",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-fno-associative-math",
+      "-frounding-math",
+      "-fexcess-precision=standard",
+      "-fno-tree-vectorize",
+      "-mfpmath=sse",
+      "-msse2",
+      "-Wall",
+      "-Wextra",
+      "-Werror"
+    ],
+    "private_execution_authorized": false,
+    "receipt_sha256": "fe50c846b466df21fe0e68a415518e3a8bb61d8564a63684cf53762e8e418628",
+    "runtime_integration_authorized": false,
+    "source_sha256": "1af1bfa0ce165b47104980ed917375de5fd1c2385c7c0d8429c6f8b7d0e7115e",
+    "verified": true,
+    "wrapper_sha256": "a89a4473e3d9cacf3a42ca5056a656c42b757dc12f1358a071a7e28545215092"
+  },
+  "new_focused_tests": {
+    "count": 27,
+    "status": "PASS"
+  },
+  "receipt_sha256": "29d012b933021d3087709458da42ac091acb0b7b53c2b39504abfc179e777541",
+  "resource_limits": "Local sampled subprocess-family RSS/VM sums double-count shared pages and can miss 250ms transients; not whole-job maxima or private E2 capacity evidence",
+  "revision1_source_frozen_local_regression": {
+    "actual_test_count": 5954,
+    "baseline_ids_retained": 5927,
+    "collection_errors": 0,
+    "duplicate_ids": 0,
+    "errors": 0,
+    "exit": 0,
+    "failures": 0,
+    "head": "5af7b52d9fd16f43e1def6f9b75e9f7913d14f53",
+    "ids_sha256": "2885fda977a795a36b64fe713f859d1c0b2bf4bccd652057ef1946872aa8cd47",
+    "lock_receipt_sha256": "1df4b404396f2f724b634ccd5e68281ec4a92940fe4c7d25aa952efba994ea64",
+    "manifest_receipt_sha256": "8be0af7af4b1278e8629781ee781ed22414d90f83d8f7947bb4ad7c6beebb1e2",
+    "missing_ids": 0,
+    "new_test_ids": 27,
+    "passed": 5954,
+    "private_mounts_visible": false,
+    "regression_log_sha256": "33e976125fb41259636844d37dd2ace9482c9df28b95d2ad6d8428087b6ca7bc",
+    "regression_receipt_sha256": "66e1fab4ba6125b72570dd2d5b090e4d17fafaecd011323ffbb338111e3a54ff",
+    "resources": {
+      "host_cpu_count": 12,
+      "host_memory_bytes": 8181653504,
+      "runner_exit_code": 0,
+      "sample_interval_seconds": 0.25,
+      "sampled_family_peak_RSS_KiB": 1313476,
+      "sampled_family_peak_virtual_KiB": 3364616,
+      "sampled_peak_processes": 8,
+      "shared_pages_double_counted": true,
+      "system_cpu_seconds": 57.483157,
+      "transient_allocations_may_be_missed": true,
+      "user_cpu_seconds": 2001.154762,
+      "wall_seconds": 1116.718452015,
+      "worker_exit_codes": "NOT_EXPOSED_BY_UNMODIFIED_RUNNER"
+    },
+    "revision": "FIRST_ADDITIVE_CI_VERSION; not claimed as revision2 exact-head execution",
+    "slowest_reported_tests": [
+      {
+        "id": "openpilot.tools.cyber_autotune.tests.test_empirical_hurdle_v3_execution.TestV3CompleteRuns.test_32_jobs_two_independent_runs_and_trapped_resume",
+        "seconds": 75.38,
+        "status": "passed"
+      },
+      {
+        "id": "openpilot.tools.cyber_autotune.tests.test_empirical_hurdle_v3_external_storage.TestExternalCompleteRuns.test_amended_synthetic_32_by_two_repeat_resume_never_uses_d_writer",
+        "seconds": 75.15,
+        "status": "passed"
+      },
+      {
+        "id": "openpilot.tools.cyber_autotune.tests.test_empirical_hurdle_v4_e2_canonical_caller_profile.TestGranularSourceCosts.test_complete_job_phase_chunk_records_and_missing_evidence_rejected",
+        "seconds": 48.23,
+        "status": "passed"
+      },
+      {
+        "id": "openpilot.tools.cyber_autotune.tests.test_empirical_hurdle_v4_e2_canonical_native_bounded.TestNativeBounded.test_all32_seals_scientific_payloads_and_intermediate_audits_exact",
+        "seconds": 47.73,
+        "status": "passed"
+      },
+      {
+        "id": "openpilot.tools.cyber_autotune.tests.test_cyber_h1_visual_adapter.TestVisualAdapter.test_resealed_metadata_drift",
+        "seconds": 41.03,
+        "status": "passed"
+      }
+    ],
+    "source_binding_before": {
+      "catalog_sha256": "30cafc16d93e006fd00fc67377edeec2083f294381f169697ebbee583e2f3de4",
+      "file_count": 1101,
+      "files_sha256": "6028c91d1d9fc07263c603bd45b903356fcbf2eb57a0918e755cd87d9e895f4b",
+      "metric_sha256": "8000dcf1bc7a3666fc6f72f929e568c498de5f75263b554fd0f7dba9ea5fc2bc",
+      "numpy": "2.5.3",
+      "platform": "x86_64",
+      "policy_sha256": "4ff9dcfaa369cbdcee53f56a8db9c160efb3005a50f463e4125a1f41b74e8d35",
+      "pycapnp": "2.1.0",
+      "python": "3.12.13",
+      "source_scope": [
+        "openpilot/tools/cyber_autotune",
+        "openpilot/common",
+        "openpilot/selfdrive/controls/lib",
+        "openpilot/cereal",
+        "opendbc_repo/opendbc/car",
+        "opendbc_repo/opendbc/can",
+        "openpilot/__init__.py",
+        "openpilot/selfdrive/__init__.py",
+        "openpilot/selfdrive/controls/__init__.py",
+        "openpilot/selfdrive/modeld/__init__.py",
+        "openpilot/selfdrive/modeld/constants.py",
+        "openpilot/tools/__init__.py",
+        "opendbc_repo/opendbc/__init__.py"
+      ]
+    },
+    "source_binding_equal": true,
+    "source_edits_during_run": false,
+    "status": "ALL_5954_IDS_EXACTLY_ONCE_PASSED",
+    "unapproved_skips": 0,
+    "wall_seconds": 1124.706782069,
+    "working_tree_binding": "BASELINE_HEAD_PLUS_EXACT_REVIEWED_ADDITIVE_SOURCE_LOCK; precommit verification, not a GitHub exact-head result"
+  },
+  "snapshot": "PREPUBLICATION; exact-head Actions results are recorded in final handoff",
+  "version": "CYBERPILOT_FULL_CI_V2_RESULTS_V2"
+}

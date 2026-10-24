@@ -1,0 +1,38 @@
+{
+  "allocation": "LEXICAL_WHOLE_ROUTE_FLOOR_60_20_REMAINDER_MIN_ONE_EACH",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "history_splitting_allowed": false,
+  "minimum_routes": 3,
+  "numeric_opening_allowed": false,
+  "one_route_one_role": true,
+  "order": [
+    "METADATA",
+    "SOURCE_PROFILE",
+    "DISTINCTNESS",
+    "PRIOR_ANALYSIS",
+    "ASSIGN",
+    "IMMUTABLE_RECEIPT",
+    "FUTURE_AUTHORIZED_OPENING"
+  ],
+  "preferred_routes": 5,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "quality_based_reassignment": false,
+  "receipt_sha256": "3b82a414cb27cb2fdeb064cc9736d091bcf5c2705d1510bb09cfc3be5b84792c",
+  "reference_promotable": false,
+  "role_receipt_overwrite_allowed": false,
+  "roles": [
+    "TRAIN",
+    "DEVELOPMENT",
+    "HOLDOUT",
+    "REJECTED",
+    "METADATA_ONLY_PENDING"
+  ],
+  "schema": "FUTURE_ROUTE_ROLE_ASSIGNMENT_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

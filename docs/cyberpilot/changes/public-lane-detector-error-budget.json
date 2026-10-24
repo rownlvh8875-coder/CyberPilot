@@ -1,0 +1,32 @@
+{
+  "calibration_error_m": null,
+  "detector_error_m": null,
+  "diagnostic_detector_px": {
+    "maximum": 1137.6493476633284,
+    "median": 3.8846122138368457,
+    "p90": 409.88921711000256,
+    "p95": 608.4058599107527,
+    "p99": 818.5084663714657,
+    "sample_count": 42296
+  },
+  "diagnostic_detector_report_sha256": "51184e4182efd3c6b2a7ee5640d4d11a9dc5f4071fabd003e617018885e97888",
+  "formula": "sum_i abs(J_i(K,R,C,point))*independently_observed_bound_i + certified_projection_remainder",
+  "height_uncertainty_m": null,
+  "intrinsic_uncertainty": null,
+  "known_geometry_fixture_file_sha256": "9e6902b646adc2f4faae85deeb7245c96565f608f890191189ceb14834416ce2",
+  "longitudinal_distance_buckets_m": [
+    5,
+    10,
+    20,
+    30
+  ],
+  "p95_is_not_a_hard_bound": true,
+  "pitch_uncertainty_rad": null,
+  "projection_error_m": null,
+  "public_pixel_diagnostic_is_not_private_comma4_error": true,
+  "reference_promotable": false,
+  "roll_uncertainty_rad": null,
+  "schema": "PUBLIC_DETECTOR_SYMBOLIC_ERROR_BUDGET_V1",
+  "status": "BLOCKED_INDEPENDENT_CALIBRATION_AND_METRIC_GT",
+  "total_conservative_uncertainty_m": null
+}

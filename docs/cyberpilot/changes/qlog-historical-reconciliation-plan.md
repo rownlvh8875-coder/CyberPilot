@@ -1,0 +1,11 @@
+# Qlog historical reconciliation implementation plan
+
+The approved brief is QLOG_HISTORICAL_RECONCILIATION_V1. This is a bounded extension of the existing causal extractor. Implement in this session; preserve every historical source/artifact/store. No models, candidates, holdout, media or location payloads.
+
+1. Add policy/source-audit modules and failing admission tests. Resolve exactly two exclusions from the sealed causal route set and full historical V2 manifest. Bind source/profile/adapter, ordinal, metadata/opening/cache receipts, size/content hash. Audit exact logger/services public blobs; parse service policy without executing upstream code. Prove byte-copy preservation, independent decimation phases, persistent counters and repeated initData.
+2. Add failing extraction/storage tests, then exact-qlog authorization and source-bound reader. Reuse the immutable whitelist/alignment implementation. Persist every aligned row, actual rate values, source clocks/availability and legacy checks. No interpolation, relaxed ages or generic schema.
+3. Add failing reconciliation tests, then a virtual merged manifest. Validate all 154 existing segment receipts/arrays read-only and the two qlog extractions. Preserve original indices; define separately named full-route logical indices. Reconcile full source sets, clocks/counts/support/bridge with V2/V3. Cadence and contiguous causal support remain explicit.
+4. Freeze policy and conditional numeric authorization before decoder invocation; obtain independent pre-opening review. Extract twice independently, trap fitting APIs, verify exact arrays/receipts/merged manifest, resume with decoder forbidden, and verify all input-store/raw hashes unchanged.
+5. Publish only source facts, opaque IDs, aggregate coverage/reproduction/repeatability/readiness and limitations. Test the publication chain/privacy gates; run full AutoTune, controls, empirical focused, lateral replay, Ruff, syntax, SCons, diff and independent final review. Commit/push; confirm exact-HEAD CI success and clean local/origin equality.
+
+Review focus: no alternate qlog/path discovery; stale authorization/schema/source rejection; no rlog raw reopening; downsampling is not 100 Hz observability; old route-global indices cannot be silently renumbered; no ready promotion from legacy counts alone.

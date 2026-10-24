@@ -1,0 +1,58 @@
+{
+  "candidate_search_authorized": false,
+  "classes": [
+    {
+      "class_id": "c07dbc19980119034bea832a830d24536551c489b6753547475b0b8a38b7dd1e",
+      "closure_review_sha256": "76b27aeb86b355e82b6bbf6b4b9b5a590faf36e52de034acb8f098ffccb08f82",
+      "global_behavior_equivalent": false,
+      "members": [
+        "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29",
+        "6ca11a4aea8223ebfebb1140bd8094ef1b3c5b90"
+      ],
+      "physical_runtime_equivalent": false,
+      "review_sha256": "380cd79ebaba089a5e704a4ac564d2a65a58a8555a8b6c3205754ef29e569e71",
+      "scope": "LEGACY_HYUNDAI_SANTA_FE_2022_SIGNAL_CONTENT_AND_LOGICAL_PUBLICATION_ONLY",
+      "status": "EMPIRICAL_SIGNAL_SEMANTICS_EQUIVALENT",
+      "unsupported": [
+        "PHYSICAL_YAW_UNIT",
+        "RUNTIME_STEER_MAX",
+        "ACQUISITION_AGE",
+        "VEHICLE_GYRO_FRAME"
+      ]
+    },
+    {
+      "class_id": "c24b7dce2b504ee71e022055ae1c23326c2295c6b81429eec5f5fa38f9642216",
+      "members": [
+        "a28ba306e4b8e0ea5f84f934fe962ad3d7ba9c7a"
+      ],
+      "scope": "EXACT_FILES_AND_SOURCE_METADATA_IDENTITY_REVIEWED_UNREVIEWED_SIGNAL_DIFFERENCES",
+      "status": "SOURCE_AUDIT_PARTIAL",
+      "unsupported": [
+        "COMPLETE_RELEVANT_DIFF_REVIEW_TO_OTHER_SELECTED_COMMITS"
+      ]
+    },
+    {
+      "class_id": "8b2ba0e2ce6c2e0bf7f9d4773fadf0ce757d09fe31b509a8f82cbd51f7e4cbde",
+      "members": [
+        "defcfe812a64e0e1646d33b4e712f928428f9ef4"
+      ],
+      "scope": "EXACT_FILES_AND_SOURCE_METADATA_IDENTITY_REVIEWED_UNREVIEWED_SIGNAL_DIFFERENCES",
+      "status": "SOURCE_AUDIT_PARTIAL",
+      "unsupported": [
+        "COMPLETE_RELEVANT_DIFF_REVIEW_TO_OTHER_SELECTED_COMMITS"
+      ]
+    }
+  ],
+  "composition_authorized": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "580fb04a697dc3bc0bf8f06e7cbec690137f0da7ac3d8185c2e11abe8789167e",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_SIGNAL_SEMANTICS_EQUIVALENCE_CLASS_V1",
+  "scope_restriction": "SOURCE_CONTENT_LOGICAL_PUBLICATION_NOT_PHYSICAL_RUNTIME",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

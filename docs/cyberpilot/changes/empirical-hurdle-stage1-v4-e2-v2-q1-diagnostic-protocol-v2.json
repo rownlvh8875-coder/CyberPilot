@@ -1,0 +1,380 @@
+{
+  "V2_protocol_raw_sha256": "7a4e02966d921759430a4b6c3c9ca1f343f400a293e4f79f1a9a73fb8aaeeb2f",
+  "V2_qualification_raw_sha256": "7a51775da2ec0edd18c21abf73d78123f940cff3c8e125ddac0cd43857427ccf",
+  "baseline_head": "5032e7197ed84fc58e236152f4a3ba30b1a3f7e3",
+  "current_user_grant_required": true,
+  "diagnostic_source_sha256": {
+    "empirical_hurdle_v4_e2_v2_q1_reader_repair.py": "9e825e596dd45d3e3238140ad859492f3f3d715d1e6d9d7ca202341c127df02e",
+    "tests/test_empirical_hurdle_v4_e2_v2_q1_reader_repair.py": "6bf4e6b91d54be4ef7338d333cb14db5fb800687df3677208ad6d172e6995dd0"
+  },
+  "execution_authorized_by_document": false,
+  "failed_execution_head": "2335a8d618530185f09781ea6cb44bceb921516c",
+  "failed_job": {
+    "count": 1,
+    "count_is_not_identity_source": true,
+    "on_missing": "E2_Q1_DIAGNOSTIC_INPUT_BINDING_INSUFFICIENT",
+    "ordered_anchor_model_source_count_route": "EXACT_MATCH_BEFORE_NUMERIC_ALLOWLIST_ENABLE",
+    "previous_qualified_count": 2,
+    "public_identity": null,
+    "role": "TRAIN",
+    "source": "SEALED_ABORT_FAILED_JOB_AND_LAST_QUALIFICATION_IDENTITY_LINKED_TO_OLD_BINDING_AND_FROZEN_PUBLIC_MANIFEST"
+  },
+  "failed_public_result_raw_sha256": "214cd245d2df485d41a879e90f940bcc76a8e6710b6140e71bd7ef2762c8ce17",
+  "implementation_lock_raw_sha256": "dccaedbfbbd7cda932ff802760c37e03b99b78f5ae4dbdfb94f58ff66e46be35",
+  "input_authority": {
+    "current_mission_grant_required": true,
+    "fresh_gate_binds": [
+      "HEAD",
+      "protocol_raw_SHA256",
+      "two_review_receipts",
+      "sealed_failed_reference_raw_SHA256",
+      "exact_failed_job",
+      "source_SHA256s",
+      "Writer_raw_SHA256",
+      "versioned_Reader_raw_SHA256",
+      "exact_output_root",
+      "current_user_mission"
+    ],
+    "host_volume": "UNCHANGED_TRUSTED_WSL_UBUNTU24_04_CYBERPILOT_E_EXTERNAL_SSD_BINDING",
+    "old_grants_identity_only": true,
+    "output": "CURRENT_GATE_REVIEWS_EXACT_DISJOINT_APPROVED_HOME_OUTPUT_AUTHORIZATION_BEFORE_LATCH;LATCH_BEFORE_HISTORICAL_CONTROLS_OR_ORIGINAL_METADATA;NO_RETRY",
+    "pre_execution_exact_head_CI_success_required": true,
+    "two_exact_byte_reviews_required": true
+  },
+  "mission": "STAGE1_V4_E2_V2_Q1_READER_SCHEMA_REPAIR_AND_FRESH_DIAGNOSTIC",
+  "original_V4_execution_head": "bd8045ef2a0da62a92603439f38e7740f5923622",
+  "outcomes": {
+    "A_C_equal": "E2_V2_Q1_DIAGNOSTIC_REPRODUCTION_CONFLICT",
+    "input_transform_conflict": "E2_V2_Q1_INPUT_OR_TRANSFORM_CONFLICT",
+    "matmul_difference": "E2_V2_Q1_BATCH_LAYOUT_NUMERICAL_DIFFERENCE_CONFIRMED",
+    "metadata_guard_failure": "E2_V2_Q1_READER_REPAIR_BLOCKED",
+    "resource_blocked": "E2_Q1_DIAGNOSTIC_RESOURCE_PREFLIGHT_BLOCKED",
+    "signed_zero_only": "E2_V2_Q1_ROOT_CAUSE_IDENTIFIED",
+    "unresolved": "E2_V2_Q1_DIAGNOSTIC_UNRESOLVED"
+  },
+  "paths": {
+    "A": "UNCHANGED_V2_potentials_ORIGINAL_SEGMENT_ORDER_FIXED512_ALL_ROWS",
+    "B_private_calls": 0,
+    "C": "UNCHANGED_V2_qualification_Q1_full_design_FULL_JOB_D0_SELECTED_ROWS_ONE_CALL",
+    "W_private_calls": 0,
+    "allocation_limit": "OBSERVATION_WITNESSES_CAN_CHANGE_ALLOCATOR_CONTEXT;LAYOUTS_RECORDED;NO_RETRY_IF_REPRODUCTION_CONFLICT",
+    "canonical_private_calls": 0,
+    "instrumentation": "WRAPPERS_CALL_FROZEN_FUNCTIONS_AND_RETURN_EXACT_ORIGINAL_TRANSFORM_AND_OUTPUT_OBJECTS;RAM_ONLY_xa_za_xc_zc_WITNESSES;NO_NUMERICAL_SUBSTITUTION"
+  },
+  "prior_diagnostic_execution_head": "5a4a02f555d107ab04f26bf31ef2094c81cecbc7",
+  "prior_diagnostic_protocol_raw_sha256": "f7202811102013c842901d23dae7786debf10d36b0d6553fea3e471c892f20c0",
+  "prior_diagnostic_protocol_receipt_sha256": "ff70253e5f1e154071aadf517dbcc94a3da7ab689b23385279b6bccdabc311ec",
+  "prior_diagnostic_status": "E2_V2_Q1_DIAGNOSTIC_UNRESOLVED",
+  "private_result_schema": {
+    "contents": [
+      "A_C_SOURCE_AND_TRANSFORM_BYTE_EQUALITY",
+      "RAW_FLOAT_BYTES_NUMERIC_ULP_DIFFERENCES",
+      "PROJECTION_AGGREGATES_AND_PRIVATE_DIGESTS",
+      "PRIVATE_LAYOUTS",
+      "EXACT_INPUT_AND_COMPUTE_COUNTS",
+      "ENVIRONMENT",
+      "SOURCE_AND_ABORT_BINDING",
+      "ZERO_FORBIDDEN_COUNTERS",
+      "PREDICATE_SPECIFIC_ABORT_TELEMETRY"
+    ],
+    "row_arrays_saved": false,
+    "schema": "V4_E2_V2_Q1_PRIVATE_DIAGNOSTIC_RESULT_V2"
+  },
+  "private_scope": {
+    "D0": "ONE_ORIGINAL_TRAIN_BA_RECONSTRUCTION_NO_PRIVATE_THRESHOLD_READ",
+    "D2": false,
+    "DEV": false,
+    "TRAIN_fields": {
+      "CAUSAL": [
+        "command.normalized",
+        "state.speed_mps"
+      ],
+      "DERIVED": [
+        "angle_tick",
+        "streak_all",
+        "model_eligible",
+        "rail",
+        "s2_ri_causal_run_id",
+        "within_s2_ri_causal_run_index"
+      ],
+      "V1": [
+        "move_label",
+        "prior_delta_tick"
+      ],
+      "V1_STAGE2": [
+        "model.coefficients",
+        "normalizer.mean",
+        "normalizer.std",
+        "normalizer.constant",
+        "normalizer.effective",
+        "normalizer.constant_reference"
+      ],
+      "V4": [
+        "combined_probability"
+      ]
+    },
+    "discovery": false,
+    "exact_array_allowlist": "AUTHENTICATED_METADATA_PLAN_RAW_HASH_DTYPE_SHAPE_ORDER_CAP_BEFORE_EXCLUSIVE_BINDING_FSYNC_DIR_FSYNC_READBACK_AND_ENABLE",
+    "metadata": "EXACT_ROOT_MANIFESTS_V1_AUTH_INPUT_PINS_CAUSAL_AUTH_MANIFEST_DERIVED_INDEX_RESULT_ADMISSION_ONLY_FAILED_TRAIN_ROUTE_SEGMENT_RECEIPTS_AND_EXACT_JOB_STAGE2_RECEIPTS",
+    "mixed_carrier": false,
+    "one_fresh_process": true,
+    "source_writes": 0
+  },
+  "publication": {
+    "allowed": [
+      "status",
+      "one_job_scope",
+      "source_and_transform_equal",
+      "Stage2_byte_equal",
+      "signed_zero_only",
+      "projected_tick_changed",
+      "classification",
+      "specific_kernel_NOT_IDENTIFIED",
+      "D2_NOT_EVALUATED",
+      "forbidden_zero",
+      "CI_tests_reviews"
+    ],
+    "forbidden": [
+      "job_identity",
+      "N",
+      "selected_N",
+      "row_position",
+      "row_values",
+      "ULP_value",
+      "absolute_relative_difference",
+      "private_hash",
+      "model_values",
+      "gate_dependent_invocation_counts",
+      "private_paths",
+      "source_identifiers"
+    ],
+    "joint_suppression": "NO_NEW_PRIVATE_CELL_OR_COUNT_PUBLICATION;PRESERVE_ALL_C_E_E2_COMPLEMENTARY_SUPPRESSION",
+    "projection": "QUALITATIVE_WHITELIST_ONLY_NO_PRIVATE_NUMERIC_TELEMETRY"
+  },
+  "reader_schema": {
+    "descriptor": "EXACT_WRITER_NPY_GZIP_V1_FIELDS_DTYPE_SHAPE_ORDER_FILENAME_SHA256_FORMAT_LOSSLESS_DECLARATION_AND_ROOT_MEMBER_HASH",
+    "metadata_only_model_fields": [
+      "nominal_coefficients",
+      "singular_values"
+    ],
+    "model_anchor": "ORIGINAL_MOVE_ONLY_STAGE2_FIT_SUBSET_FROM_FROZEN_V1_REFERENCE_NOT_FULL_TRAIN_ANCHOR",
+    "model_optional": [
+      "singular_values"
+    ],
+    "model_required": [
+      "coefficients",
+      "nominal_coefficients"
+    ],
+    "normalizer_required": [
+      "mean",
+      "std",
+      "constant",
+      "effective",
+      "constant_reference"
+    ],
+    "numeric_model_fields": [
+      "coefficients"
+    ],
+    "unknown_array_keys": "REJECT",
+    "unopened_payload_claim": "NO_CONTENT_OR_NUMERICAL_VALIDITY_CLAIM_FOR_UNOPENED_ARRAYS",
+    "writer": "empirical_hurdle_fit_cv_execution.py::save_model"
+  },
+  "receipt_sha256": "e08aa2a648d237fc6e45d09ef7f6c8b55b4658115e35cf4ccf43f43438d5f129",
+  "resources": {
+    "address_space_bytes": 8589934592,
+    "analytical_live_bound_bytes": 6086568806,
+    "chunk_rows": 512,
+    "cpu_seconds": 900,
+    "derivation": "UNCHANGED_6086568806_LIVE_BOUND;MAX154_SEGMENTS;CONTROL_RECORDS_AND_SOURCE_READS_SHARE1600_OPENS_AND8GiB;AT_MOST5_EXCLUSIVE_OUTPUT_FILES_EACH8MiB_WITH_HARD32MiB_TOTAL;TWO_EXTRA_SMALL_TELEMETRY_LATCH_RECORDS_FIT_EXISTING_RUNTIME_RESERVE;NO_ARRAY_REREAD",
+    "feature_dimension_max": 93,
+    "input_bytes_limit": 8589934592,
+    "input_open_limit": 1600,
+    "max_TRAIN_N": 336941,
+    "output_files_max": 5,
+    "output_total_bytes": 33554432,
+    "reserve_bytes": 2147483648,
+    "result_bytes_per_file": 8388608,
+    "runtime_reserve_bytes": 2147483648,
+    "segments_max": 154,
+    "source_row_bound": 916535,
+    "threads": 1,
+    "wall_seconds": 1800,
+    "workers": 1
+  },
+  "schema": "CYBERPILOT_V4_E2_V2_Q1_DIAGNOSTIC_PROTOCOL_V2",
+  "source_sha256": {
+    "empirical_causal_dataset_store.py": "af72bc24a54029bd1f91f20180e67525f007ca3d420b5a84b336f3825b02390d",
+    "empirical_hurdle_attribution_io.py": "13bfc34ddc4e7cdf2bf98e01c53a937f7f0362d92493ca0254e52df8efcea4f6",
+    "empirical_hurdle_fit_cv_data.py": "9e104a83a928c6b997a914a606820f2d2190fa56917e4042856474f747b900ac",
+    "empirical_hurdle_fit_cv_execution.py": "a952eb4986f47e0335bf355ee74868755f14b592d05070008a0b117979d4e635",
+    "empirical_hurdle_fit_cv_gates.py": "7529884d62ee5773bc163a301a9d96c641ff2a2e2e911d3e3e4f0a5c1a6828c2",
+    "empirical_hurdle_fit_cv_math.py": "b410b2f0138848faf4e976094a1bd4f3cc3ac44418b54a24310717c6261e0e73",
+    "empirical_hurdle_fit_cv_store.py": "37afd091349396b7f1eb2610b13bbd4ef81f89b977feab3e7875c8eaec5b5fcd",
+    "empirical_hurdle_v2_execution.py": "31642388236f91ff96e16c886395bfcc7dbdf1a6e741a84f690c6437b358fcc5",
+    "empirical_hurdle_v2_io.py": "10b8e902eeb718eeb2b2d96b5baf7a295b4e354485d1167a65c4f0c81ac234b5",
+    "empirical_hurdle_v2_publication.py": "e9e10876788b75a7cfa667aee4dca026ba5d42ce858c4e19cc710cfd498aadc2",
+    "empirical_hurdle_v2_threshold.py": "d54423a83fe0e72b4ee816a695f04fd44c156caf53df135db02f86a64e8b650b",
+    "empirical_hurdle_v3_execution.py": "e5b73d8436607938044e5a02d05ba79ba85db5ff1f9a95005871c74eb0fd02eb",
+    "empirical_hurdle_v3_executor_publication.py": "5b5b1ac84651f382189207b55fdf56c325fb1e9b66ab60c8cf51a70aa8a29194",
+    "empirical_hurdle_v3_external_storage.py": "fddf87bf1837e773c0e00b23d8b9446a6de511bf437b90832c15d94da1331d6c",
+    "empirical_hurdle_v3_io.py": "1fb772477eed0be39653d92247edf31cdfab109069afb6b56fbadbb65cd06b3d",
+    "empirical_hurdle_v3_policy.py": "0a9ef783a79927fcfda0877bcec74e164e27b992ab8d457f780d68602ad3de5d",
+    "empirical_hurdle_v3_publication.py": "474a8f39dd1f27be87fec650a193ca8452fd0fe9443b444695e04b952f50c9c2",
+    "empirical_hurdle_v3_scaffold.py": "85a9e2e6b9abdbcab2b3847887a4548d00c84802f64aba7ad6224de7685fecf9",
+    "empirical_hurdle_v3_store.py": "eadb505681a5e46f6cf447afcf4ccc1d68c6977c5a0c2e2ded8944465450567b",
+    "empirical_hurdle_v3_temporal.py": "cd41e15cb62c2b81653ac80ac004a5142ac4fb8b81328e86deed328b0cb34f0a",
+    "empirical_hurdle_v3_temporal_binding.py": "193a432a0baa3da856e55efabf4d87ca39271b354960c30efc8adaa07e2030b8",
+    "empirical_hurdle_v3_temporal_math.py": "677094d107b6351baf9e39a7bd5b50e010c1a0331dacf10aa0c4fece845527a8",
+    "empirical_hurdle_v3_threshold.py": "7ae8b57db1575d59d2a80b01cb97ea28ab0af99beab0b6a9652c768311b99b5f",
+    "empirical_hurdle_v4_authorization.py": "27d198ddb164aa6942f56fa942180ed9245020cad89462ddb435ef3e783cfb65",
+    "empirical_hurdle_v4_b0_metadata.py": "767b1bc9ae993eda007c7dc17b8e2d9eb2194dd250e13d0718c1287fb12c7622",
+    "empirical_hurdle_v4_b1_evidence.py": "5d1e89e0d70c5a494d8c2110f1cf4ab6095bbd12c9910fa3533067485732ec41",
+    "empirical_hurdle_v4_b1_train_score.py": "07048fabd46e78edbd405f4215d39205f2ea29f164e61cda0959313b093a2258",
+    "empirical_hurdle_v4_c_diagnostics.py": "6465fc17e32d8b15b41266e40b8de256bbac509d921aa373b5962fc9cf78f70c",
+    "empirical_hurdle_v4_c_math.py": "be4d3317ef3d4bba7d6a11ece131b43e982fcd688fd3a6fafbbb7df22af826a4",
+    "empirical_hurdle_v4_certificate.py": "2eec8b0c3939893d7788fd672472af4f7e0cb788a3a9c444de6a6824655f6f1b",
+    "empirical_hurdle_v4_e2_decision.py": "689c3ab3afe34719fa517aa59fc0fee09ef70bc70a3dac954b62a0a0dbdf61b1",
+    "empirical_hurdle_v4_e2_evaluation.py": "d6045b38c2615a589964286d0c35500bbeb977acbba2baab38dc90d4a1053883",
+    "empirical_hurdle_v4_e2_execution.py": "a1986d904f2b1cdf3f686b44caeeef7f662139b80f045766e721cc0cdc072b43",
+    "empirical_hurdle_v4_e2_inputs.py": "9bca06d7de4e5fdce61f1e7c50f612417b856a2b395322b145d231a2ae7d6d9f",
+    "empirical_hurdle_v4_e2_numerical_diagnostic.py": "650ff2e7a8bed63c690d5e0d032d9c927bb21197b479ffb039931015cc6c83b6",
+    "empirical_hurdle_v4_e2_publication.py": "406a26ef86429023f658dc219689e23368f308f75a61e94b63d5c739f0ce23e1",
+    "empirical_hurdle_v4_e2_v2_execution.py": "69833d5594632d2dd97dbf8e6c6eb47465f3210e9b30aeb02a1875bf9afb37c2",
+    "empirical_hurdle_v4_e2_v2_q1_diagnostic.py": "315473ced53da08ae35e5efc0a8d4118c96a8af05473c260b9d03c0ff0609db5",
+    "empirical_hurdle_v4_e2_v2_q1_diagnostic_private.py": "571408151cc891cd51a335a0493912e9736964ec60da1fc03973ba9d29cce41d",
+    "empirical_hurdle_v4_e2_v2_qualification.py": "3349d72cb59d88dbef7e04a7f0d6bc125508800be474a0bbe098fe34162ecc0b",
+    "empirical_hurdle_v4_e_bootstrap.py": "ecf4f5b4ec447a39474ff25db2edb02c33d172703444834c55295ef45e75d1ef",
+    "empirical_hurdle_v4_e_decision.py": "dd9ce02c5950c3533f11e0a3e054b6e0beb44e1fb829741be726720847fed70f",
+    "empirical_hurdle_v4_e_evaluation.py": "64579a97487607506861b46624186516c040ce74770a8eaa522cd6b68e2c3db5",
+    "empirical_hurdle_v4_e_inputs.py": "a7496a76b25a58f7d5700b00c5620bdee83f58da715ed9d41aaf59a9961e23c6",
+    "empirical_hurdle_v4_e_publication.py": "bc895cf9cb9843d691563fd37f94e1378152cbfae8b2fbc18646d0dc0d87ebc7",
+    "empirical_hurdle_v4_execution.py": "f7ae1ae98c645de4997e56d1bcd73b76e2f4f153090b65e5fd6bb8d207f7fd0e",
+    "empirical_hurdle_v4_fitting_policy.py": "529c6c14832a18bc18eb51409e1637ca2c003892d62aa883f900c238d59be76f",
+    "empirical_hurdle_v4_io.py": "e1bb255654980e0559d7af1becedac8c3aabf0c2a01e6da179307afe9a7b5d70",
+    "empirical_hurdle_v4_state_contract.py": "3a21944b47ee82f4401b6742742924b7458741f17959e3ed2c2d41df67f68793",
+    "empirical_hurdle_v4_store.py": "f541ebb4686a6032892f327a820ea3e22ad1bffb5c38b73bb649305a448c7935",
+    "empirical_identifiability_execution.py": "2a421f797870667b583d3c938d2106ec803e54c0532283b6195ad71f999c8311",
+    "empirical_plant_policy.py": "3961101927faca0e64a731ff92484d563082390c001988a156056275743034df",
+    "empirical_s2_ri_execution.py": "4f3b0711a44a32f157546076f1d02035f0730495a453a0af0481b00332dd82d4",
+    "empirical_s2_ri_fit_cv_math.py": "a1c1203c8222df067064ff1891aafa82cdafd997338c7ca7687a321c66777f29",
+    "empirical_s2_ri_policy.py": "5764626e066e0d45c4f650e8dac3961e58c9610916c240ff6d592f10c70bd048",
+    "empirical_s2_ri_reconstruction_math.py": "e6bb2f276b3e87104f1aedb0ecbafae7175147c60e9b03aaba19b77a49db0055",
+    "tests/test_empirical_hurdle_v4_e2_v2_execution.py": "543aa37116f94135e29dd995c5f26e2e70283aa88dc1e18ce2f780dee823a574",
+    "tests/test_empirical_hurdle_v4_e2_v2_q1_diagnostic.py": "7b1c2a090985167258370dbc1076c66b5fcb0ddf9c4f6f63b6fc9fc55a491868"
+  },
+  "stop": {
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "D2_selection": false,
+    "DEV_rollout": false,
+    "HOLDOUT": false,
+    "V5": false,
+    "historical_result": "IMMUTABLE_E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+    "one_attempt": true,
+    "rebatch": false,
+    "remedy_implementation": false,
+    "resume": false,
+    "retry": false,
+    "selected_candidate": null,
+    "selected_policy": null,
+    "tolerance": false,
+    "vehicle": false
+  },
+  "synthetic": {
+    "additional60": {
+      "L": [
+        1,
+        5,
+        15,
+        45
+      ],
+      "dimension": [
+        5,
+        13,
+        33,
+        93
+      ],
+      "masks": [
+        "low",
+        "medium",
+        "high",
+        "alternating",
+        "contiguous"
+      ],
+      "purpose": "64BYTE_ALIGNMENT_A_C_CONTROL_AND_SYNTHETIC_ONLY_SEPARATE_MULTIPLY_ADD_LEFT_TO_RIGHT_REFERENCE",
+      "rows": 1537,
+      "scales": [
+        1e-06,
+        1.0,
+        100.0
+      ],
+      "seed": 20261018
+    },
+    "edge_cases": [
+      "SIGNED_ZERO",
+      "ONE_ULP_HALF_TICK_BOUNDARY",
+      "ONE_ULP_SAME_TICK",
+      "INVALID_INPUT",
+      "ORIGINAL_ORDER",
+      "EXACT_MODEL_IDENTITY"
+    ],
+    "fixed_count": 180,
+    "no_seed_search": true,
+    "original60_and_parity60": "UNCHANGED_PREVIOUS_FIXTURE_FUNCTIONS_AND_SEED20261018",
+    "writer_produced_fixtures": {
+      "negative": [
+        "missing_nominal",
+        "unknown_array",
+        "corrupt_descriptor",
+        "normalizer_hash",
+        "candidate_fold_anchor",
+        "forbidden_numeric_nominal_singular",
+        "numeric_before_durable_readback"
+      ],
+      "no_private_data": true,
+      "positive": [
+        "required_coefficients_and_nominal",
+        "optional_singular_values"
+      ],
+      "writer_raw_sha256": "a952eb4986f47e0335bf355ee74868755f14b592d05070008a0b117979d4e635"
+    }
+  },
+  "telemetry": {
+    "contents": [
+      "phase",
+      "predicate",
+      "HEAD_protocol_source_current_grant_failed_reference_binding",
+      "source_metadata_files_bytes",
+      "source_numeric_files_bytes",
+      "control_read_attempts_completed_files_bytes_unknown_failed_read_bytes",
+      "model_loads",
+      "A_C_calls",
+      "wall",
+      "process_CPU_user_system_seconds",
+      "Linux_peak_RSS_KiB_process_lifetime",
+      "output_count_bytes_including_final_telemetry",
+      "source_writes",
+      "forbidden_counters",
+      "durable_array_allowlist_enabled",
+      "A_C_started"
+    ],
+    "finalization": "AFTER_OUTPUT_AUTHORIZATION_AND_ATTEMPT_LATCH:SUCCESS_OR_ABORT_FINALLY_SEALED;PREAUTHORIZATION_REJECTION:NO_OUTPUT_TO_UNAUTHORIZED_ROOT_NO_DURABLE_LEDGER;OS_FATAL_TERMINATION_CANNOT_GUARANTEE_FINALLY",
+    "initialization": "PROCESS_ENTRY_BEFORE_PREFLIGHT",
+    "missing": "FAILED_CONTROL_READ_OPENINGS_AND_BYTES_NOT_OBSERVED_BY_ORIGINAL_HELPER_ARE_NOT_RECORDED;CONTROL_TOTALS_COMPLETE_FALSE;NO_RETROACTIVE_RECORDS",
+    "predicate_categories": [
+      "Q1_MODEL_DESCRIPTOR_SET_CONFLICT",
+      "Q1_MODEL_DESCRIPTOR_FORMAT_CONFLICT",
+      "Q1_MODEL_NORMALIZER_IDENTITY_CONFLICT",
+      "Q1_MODEL_SOURCE_HASH_CONFLICT",
+      "Q1_METADATA_BINDING_CONFLICT",
+      "Q1_NUMERIC_ALLOWLIST_NOT_ENABLED",
+      "Q1_NUMERIC_INPUT_READ_FAILURE",
+      "Q1_DIAGNOSTIC_NUMERICAL_REPRODUCTION_CONFLICT",
+      "Q1_DIAGNOSTIC_NUMERICAL_EXECUTION_INCOMPLETE",
+      "Q1_OUTPUT_SCOPE_CONFLICT",
+      "Q1_DIAGNOSTIC_RESOURCE_BOUND"
+    ],
+    "storage": "PRIVATE_ONLY_0700_0600_EXCLUSIVE_FSYNC_DIRECTORY_FSYNC_CANONICAL_SEAL;NO_ROWS"
+  },
+  "version": "V4_E2_V2_Q1_DIAGNOSTIC_PROTOCOL_V2",
+  "writer_source_sha256": "a952eb4986f47e0335bf355ee74868755f14b592d05070008a0b117979d4e635"
+}

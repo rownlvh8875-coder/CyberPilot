@@ -1,0 +1,2436 @@
+{
+  "all_head_pointers": [
+    {
+      "git_blob_sha1": "304454837ad1ebf28147382bdcce9c43e3f6a44c",
+      "oid": "9e019ed5af500e8820d05934d47e0380728e1b30e01a179f786dc4edb1eccbd7",
+      "path": "docs/assets/favicon.svg",
+      "pointer_raw_sha256": "5d3b614cc453587a33b630bb866a50da61be5ef31841d069bf45c1ca0a3c0435",
+      "size": 349
+    },
+    {
+      "git_blob_sha1": "448b20b937788215a903a8905dd7348fab98b9f9",
+      "oid": "3142658fa2782d266028dcab491e02ab329a2cadcf9efb1846a5f9631d64cac1",
+      "path": "docs/assets/icon-star-empty.svg",
+      "pointer_raw_sha256": "adcce4fddc4fba7b0b50f7e0b1f43505ca15c846ff7bf38db5b4668d2ce84e60",
+      "size": 1947
+    },
+    {
+      "git_blob_sha1": "0e0bf52cd8461c715d5ec92a6f8b49f39429cbd9",
+      "oid": "5fdcc85f3d8c9d0c2fb76b98ddd9f118c0e4a12c859a4281a04a0870d5de12c8",
+      "path": "docs/assets/icon-star-full.svg",
+      "pointer_raw_sha256": "07b3c63789f4a22edc9161e2175f0e861debe648199a0fbead0d8dfe82fbdab6",
+      "size": 1950
+    },
+    {
+      "git_blob_sha1": "11398fa6f1b7efee21d778f49f42a9abebce312f",
+      "oid": "cdf5e7ae57626f4cda35973873a4696252babbbe473913fe0aafdd8ba39d7fc3",
+      "path": "docs/assets/icon-star-half.svg",
+      "pointer_raw_sha256": "c8bcf415cc05e6f4d69b28c2bd5ab58f9caf1a3bc9ccb806c59e8775306b7a40",
+      "size": 2508
+    },
+    {
+      "git_blob_sha1": "f738dca10a6f097ac9d6ab82057e6a98f7c3843a",
+      "oid": "6cb64f9da10b818c56763a7c48347f6043da20a2a77fb14f6d60d9457c575b6b",
+      "path": "docs/assets/icon-youtube.svg",
+      "pointer_raw_sha256": "9f8db853ff5ff6de51a7b1d253ed65e3a1b2658f5151dc1a60012130f30174a9",
+      "size": 1278
+    },
+    {
+      "git_blob_sha1": "4dfeeeb46a502afda9b258b48ec02e0097330d46",
+      "oid": "8a5245f9458982b608fee67fc689d899ca638a405ff62bf9db5e4978b177ef3e",
+      "path": "docs/assets/three-back.svg",
+      "pointer_raw_sha256": "ff817892ac18f1f21b24703e188774a654ece46b788a52cc339299fbf09e6876",
+      "size": 121394
+    },
+    {
+      "git_blob_sha1": "241d0fc1688841faa248cd5446a1451853eb19aa",
+      "oid": "f92c0a9b41613e063b6a1cd086729f5555d9df6482249e171ed1e276272cad7d",
+      "path": "openpilot/common/hardware/comma/updater",
+      "pointer_raw_sha256": "df3a1e55e16833f40bd6586e92ff56209df2b85a5cbffb4560ca7d5cfe870a17",
+      "size": 24709520
+    },
+    {
+      "git_blob_sha1": "cc22fd9b128e32df9c3df8daef633fa81cd162f2",
+      "oid": "a4b3f7e9bc5cf058c3daaca23f99c0aafe4324eb4b2e0f8ccb3759b252a8101d",
+      "path": "openpilot/selfdrive/assets/body/awake.gif",
+      "pointer_raw_sha256": "c7bbd00953322c4bc7bef1ac04b4ea295b916f9fb47f861e0079a5f7bf2c7c54",
+      "size": 69319
+    },
+    {
+      "git_blob_sha1": "fcc0b4ed50b379e4ba3f48c23de5add68a5e9a03",
+      "oid": "3481857356714833aa196a89c47de3246dd395a51fbfd9e0dff53058c109ced8",
+      "path": "openpilot/selfdrive/assets/body/sleep.gif",
+      "pointer_raw_sha256": "5868f527d584c8dcf037e75c9f96f5c63a59983823fdc2bb513481079904972c",
+      "size": 400908
+    },
+    {
+      "git_blob_sha1": "6bfd108896d3aca30ebd49019de2c88f5851c701",
+      "oid": "05f95cac81f1d97b3fad925cb03e835be1fa46b6fe1e8ef8160b01aca5f8c3a6",
+      "path": "openpilot/selfdrive/assets/fonts/Inter-Black.ttf",
+      "pointer_raw_sha256": "7f4b9b47d7f3de9f6cc0408e49a0279525b3499ccf1969f319bdb21c1903cc7a",
+      "size": 294396
+    },
+    {
+      "git_blob_sha1": "240f73d3440f124346a6df63749cd4e7c5b35224",
+      "oid": "d597e753e78d8bf9db34c13343146545fb3be5a1c99a175bc381fe3f6f787f31",
+      "path": "openpilot/selfdrive/assets/fonts/Inter-Bold.ttf",
+      "pointer_raw_sha256": "b7bdda4e3c25499baa41ef6d21278b312d10e93d302c7f7d0509239ed75bf484",
+      "size": 293448
+    },
+    {
+      "git_blob_sha1": "8cb343bc4023455e916487ce24f654026262db5f",
+      "oid": "d3f3fb6225a0eacaa537f65bbd8980136c7abaf7eb76e95ceac098d866b1b124",
+      "path": "openpilot/selfdrive/assets/fonts/Inter-ExtraBold.ttf",
+      "pointer_raw_sha256": "82edfd475655f702f1af35ec4f606849f7b1cdcb7af91c7f5c36036e206cdd4c",
+      "size": 294072
+    },
+    {
+      "git_blob_sha1": "9ab6117be95316a2aa448eacba7180f7c81b6309",
+      "oid": "a95896c2a2e7d4edfb5ce3e977b404e9e374e4ede57340f5cda4c0b1e5709a67",
+      "path": "openpilot/selfdrive/assets/fonts/Inter-ExtraLight.ttf",
+      "pointer_raw_sha256": "4fe1ef47c5412b349e201b998db836bc57f83b2f65cff421840c15a9ee3119e0",
+      "size": 288400
+    },
+    {
+      "git_blob_sha1": "a09fccdb3d11cd05e2c22a3f3e2504ed35e54788",
+      "oid": "d1c68fe19e331437dfcae5cbf37fd30db294ba80959f6bd824c239eee761e9ba",
+      "path": "openpilot/selfdrive/assets/fonts/Inter-Light.ttf",
+      "pointer_raw_sha256": "8171bc117f38a2a42b467353a42ce83f1d697fa7337fffe9e50a6bf5cc8b919e",
+      "size": 288088
+    },
+    {
+      "git_blob_sha1": "e3a0591ed1a2566d9f790c2292ffef383a72ba39",
+      "oid": "5249ae5f8ddfded34c98c6e3cf09e08f178f234e1bfa28a68f98f6f957628418",
+      "path": "openpilot/selfdrive/assets/fonts/Inter-Medium.ttf",
+      "pointer_raw_sha256": "872409ae2b8ecd0d13b12b40daed6682d4e7848196f7f9270125f2d3767a9ccc",
+      "size": 292140
+    },
+    {
+      "git_blob_sha1": "3d153fa5679fd40b160481f4a522ac1dad5a57f9",
+      "oid": "1041a8cf17dab7579acef0cc46b21f6497ec1ae01918ddc3495416efb81a4780",
+      "path": "openpilot/selfdrive/assets/fonts/Inter-Regular.ttf",
+      "pointer_raw_sha256": "e05c8fabeacbaf745a62c4e0eda8c3ebf42cc3a83102eea29551076084f1a192",
+      "size": 287928
+    },
+    {
+      "git_blob_sha1": "ec7ef519d07e7c525d89e6593a615367bae88b6a",
+      "oid": "98542636e6c900d04e987ca7a37e160a407df344be073fb041fd88f2cd90085a",
+      "path": "openpilot/selfdrive/assets/fonts/Inter-SemiBold.ttf",
+      "pointer_raw_sha256": "6c78fe5744e5e992f943da54a3956d0ea1aa51583f76d9605328fdfaf2691f90",
+      "size": 293028
+    },
+    {
+      "git_blob_sha1": "abcfac0b75b5636cf816517776054dc9e9df87cd",
+      "oid": "83be1891f3a7b9db4579ebdfe550741d0aebf45b2c845b6081d4c161924e7df1",
+      "path": "openpilot/selfdrive/assets/fonts/Inter-Thin.ttf",
+      "pointer_raw_sha256": "4dd7c310f8fdeb8f675f28bb27325a084c3751a5656977d394d49350ab41c553",
+      "size": 288568
+    },
+    {
+      "git_blob_sha1": "34cd543d94d461a0b368eb7b92380ca6f7b28fd6",
+      "oid": "64708889e701acf7f2f43fd9c3696eb7f2c849ae67693ce581ad8f92433b3b24",
+      "path": "openpilot/selfdrive/assets/fonts/JetBrainsMono-Medium.ttf",
+      "pointer_raw_sha256": "e7c6944e943b3a2cbca6fa0caf7148433f014f0d461fe518476da9067bcbe836",
+      "size": 204140
+    },
+    {
+      "git_blob_sha1": "045f73ba40854f01423660417b219645d85f7862",
+      "oid": "80135e7ab71496c3b744047ef9100f5d24edaa275d248a3e0488bc769e453baa",
+      "path": "openpilot/selfdrive/assets/fonts/NotoSansCJKjp-Regular.otf",
+      "pointer_raw_sha256": "211f6cacdd525fe68f6d91036fd8b1b67d6a0c87d0db7abc6a3bad34581b46a8",
+      "size": 240500
+    },
+    {
+      "git_blob_sha1": "f06e31bae8209a663e6b73d8da22591ab229b7b9",
+      "oid": "e86fb33e127558b845aec3016d46c36118811a1e30fd9dacc374840ad3001221",
+      "path": "openpilot/selfdrive/assets/fonts/NotoSansCJKkr-Regular.otf",
+      "pointer_raw_sha256": "4f72ad1670e8ebdc48fa61bf95f545ffbb16dbe57c21c80eb1e8c6137471885d",
+      "size": 109356
+    },
+    {
+      "git_blob_sha1": "ccd161ef62372c1d7bc38b0c5eff004d41cd85f6",
+      "oid": "71933d4233b691fb499524cbf9b3d74ccdf6465c81791687e661667aefa8e660",
+      "path": "openpilot/selfdrive/assets/fonts/NotoSansCJKsc-Regular.otf",
+      "pointer_raw_sha256": "7a4561e3a51c65646ccfc905f0ac86f5f9403ab6b7e04ebc03b233ad78b50d1c",
+      "size": 196068
+    },
+    {
+      "git_blob_sha1": "fec43d0c6f01ae4e8208df5166ebcf56044eb859",
+      "oid": "292f8ad096fd0a47e4016bd3607cb4edcd3b1f97634f67a115c0b0973ba5002f",
+      "path": "openpilot/selfdrive/assets/fonts/NotoSansCJKtc-Regular.otf",
+      "pointer_raw_sha256": "d113e2336163811ac1a5c8c647af2882959279c9076575f6b8fb56cda615dd2d",
+      "size": 245884
+    },
+    {
+      "git_blob_sha1": "c0a05b3965b063980ad52d3044b270abf4916955",
+      "oid": "8656eb9e4e182333e58c59cd07ae0dd82c913d31c29b0d2726887ffbbef137a2",
+      "path": "openpilot/selfdrive/assets/fonts/NotoSansThai-Regular.ttf",
+      "pointer_raw_sha256": "27cd338f68662d8f709e3b8e60e7c3e6abddd4728a5f86a1ce8eda3685929763",
+      "size": 26536
+    },
+    {
+      "git_blob_sha1": "b85597b1f4c3e3cf231621a4f7594fdc37ed3cbc",
+      "oid": "9712a9bc089af7ddc06e0826aa84f2ee23ed2f1a1dddaf2a89c2483e753a8475",
+      "path": "openpilot/selfdrive/assets/fonts/unifont.otf",
+      "pointer_raw_sha256": "771e535b9173dbdfb34dc3f25efdd594e70f9e008255f1a806655f8bcfc39631",
+      "size": 5321484
+    },
+    {
+      "git_blob_sha1": "b275134f648bd8322746fac9fad7fce6dc338bc6",
+      "oid": "0a999d5f3e616eeafc310689accdd26efb90769596604a62c460ef8acece18bc",
+      "path": "openpilot/selfdrive/assets/icons/arrow-right.png",
+      "pointer_raw_sha256": "c4bcd7a9f4a3b27785061b8a7c82b4ae7f917258de75543e910aa4796b58dd88",
+      "size": 1734
+    },
+    {
+      "git_blob_sha1": "16686be6f54fd03b4a32deab0765d4fd57f5b4c7",
+      "oid": "576da562df8eb513e64ccb614ec727b257cbca8b5507974d01efc0f64c5382c2",
+      "path": "openpilot/selfdrive/assets/icons/backspace.png",
+      "pointer_raw_sha256": "884ac5cde2685e099028995e1e6149d0eaad662c72622615afcf0ba3fec986f7",
+      "size": 6267
+    },
+    {
+      "git_blob_sha1": "d2a098ba5a5fc2d34fb0e9b1570da29fdbdf0d61",
+      "oid": "0d68f2739bd1b8fc990e0d171923c58c382714c7d8ec6cd43f1f808ac87f963c",
+      "path": "openpilot/selfdrive/assets/icons/calibration.png",
+      "pointer_raw_sha256": "8924d096cd221fc917c8991943d615191817c43f27d878ad4285910973317294",
+      "size": 8910
+    },
+    {
+      "git_blob_sha1": "66854e78f228bd7057b297276b4b7769d3d82ab1",
+      "oid": "6872a1047f1a534a037be7b1367640fe1bfb205a6e1c50420a2d1a946cda78ed",
+      "path": "openpilot/selfdrive/assets/icons/capslock-fill.png",
+      "pointer_raw_sha256": "555f8302a656276ebc5521a0de0a2bd741f6c1e4852242930a8b902c13c33639",
+      "size": 4397
+    },
+    {
+      "git_blob_sha1": "0f9a802a35b5b2251ca717b52b43d6f613be27c7",
+      "oid": "dc472f0e575e314c4006cb6e9845fb9fb9a13cf08fe74fbe1593dee53c20d977",
+      "path": "openpilot/selfdrive/assets/icons/checkmark.png",
+      "pointer_raw_sha256": "118bfebfd0db4924744ec8b1d47148557d9bf410d0adee115221b55594fd303c",
+      "size": 4329
+    },
+    {
+      "git_blob_sha1": "26480698cd3721b907be03903d84bd853c784586",
+      "oid": "17a135c18634647a73734300f5d0ad98082b07779b5553e72b99686857380ee7",
+      "path": "openpilot/selfdrive/assets/icons/checkmark.svg",
+      "pointer_raw_sha256": "18d2f0baffb39412eaee686d2dc48f43e411b436167897e9246015049d932319",
+      "size": 244
+    },
+    {
+      "git_blob_sha1": "46baa1324058c78ec23aa8997966ded0933d66ee",
+      "oid": "d4909d776263e223853ee49d9101e18dd220909cc8667c45bb040ea1d213ddf4",
+      "path": "openpilot/selfdrive/assets/icons/chevron_right.png",
+      "pointer_raw_sha256": "4e2d7cd9348321bf7f82a01226147cf59fbf89d5e259692cd0f99e0fd5fa208a",
+      "size": 1420
+    },
+    {
+      "git_blob_sha1": "570ba4ee827622ba6bf003e0a167c73f9150caa6",
+      "oid": "ed3225588c896efa7105778a5652962b18b2bc2d18e839b38a1753456671860d",
+      "path": "openpilot/selfdrive/assets/icons/chffr_wheel.png",
+      "pointer_raw_sha256": "1e5dfbd9f94c560429fc1d903fc23ff0d7961c7c75e2c4f4e26d154862323617",
+      "size": 16884
+    },
+    {
+      "git_blob_sha1": "7611bc821f4730d9cfd27a85d383abdd96ac0dd5",
+      "oid": "fdb0be280ac3a78bf95f5b92fafe94de5084ecc06836459c3a9fe1912a5b2454",
+      "path": "openpilot/selfdrive/assets/icons/circled_check.png",
+      "pointer_raw_sha256": "609936c735e87bf95431f47683ba94672faf1e8ad4c5926f0616084ae1f9e4ec",
+      "size": 10479
+    },
+    {
+      "git_blob_sha1": "aab06ec1e0f6f04a0a68c74180e0b8bbee63ce72",
+      "oid": "5c88458f6326265965626cbc97c2219bd513b15a6468b08f80b43ef014b7904b",
+      "path": "openpilot/selfdrive/assets/icons/circled_check.svg",
+      "pointer_raw_sha256": "a311bf4e7d7e6913e0fe04e51aef3f6a6252ae5a3a2a4ff6dc826c9247df8e26",
+      "size": 372
+    },
+    {
+      "git_blob_sha1": "74a9b342f67f41a2225af010038b8e5995a489e4",
+      "oid": "e2a992a83eaa87762e12dc226f36af48e1cdbfc3b83ef75b6a2fc4103e3697a0",
+      "path": "openpilot/selfdrive/assets/icons/circled_slash.png",
+      "pointer_raw_sha256": "d52da8a39f19b9f5c6f54af09fb0ef63176b416a653147e244da199f4aeccf3b",
+      "size": 9120
+    },
+    {
+      "git_blob_sha1": "89c6e2b1aed8a2f3bc6770cde99b88494b4e8526",
+      "oid": "4d91c86028af58cbe2770799d0fe7e55d143f9b3f67fdebcb47d328d6e410285",
+      "path": "openpilot/selfdrive/assets/icons/circled_slash.svg",
+      "pointer_raw_sha256": "dfa4f0d82942997c2cdda6d7620a46e997c01bb9f92f52401fe81e76731272ce",
+      "size": 223
+    },
+    {
+      "git_blob_sha1": "66d15456321663ff3f947e35e54dbe5d80e5f695",
+      "oid": "7c11f831c17080a8ffaa8469cf91a079a4abfb72e5238afe02b92bceb3442db0",
+      "path": "openpilot/selfdrive/assets/icons/close.png",
+      "pointer_raw_sha256": "feafe18e603b954dfe2ef880792a6076c5d78cb1c22da4c3225451a24d728f20",
+      "size": 2656
+    },
+    {
+      "git_blob_sha1": "e6db01321a82e7a3d65733ea6a76b52cfa7d0463",
+      "oid": "a28a4dcaba33d800d109cc5f9a810065203d3bfccd104b2e503f6fe3fc5b6f91",
+      "path": "openpilot/selfdrive/assets/icons/close.svg",
+      "pointer_raw_sha256": "50ecd09589ef94b061d33e4782872a1baba4d83e0c86a860e9ccf6ca00a5d862",
+      "size": 250
+    },
+    {
+      "git_blob_sha1": "4497c97547daf3d4c641ed59bdde44d3cd6d0406",
+      "oid": "cbfed12ddb5731b7b568539fe59f382356b46fdd146a9e0a1b768d3e5efd0378",
+      "path": "openpilot/selfdrive/assets/icons/close2.png",
+      "pointer_raw_sha256": "1ea92fb64bd385417fc4b5021b5900d2c8d7c616e7e1a28f29b18489bbe28ac5",
+      "size": 4350
+    },
+    {
+      "git_blob_sha1": "56a36cecd58bd26273f97f40c01f5fd9a76ec571",
+      "oid": "7d2a7cd3913ab97a386e946969f6a684895adf5d641c38dfd8f5efa0197a6c58",
+      "path": "openpilot/selfdrive/assets/icons/close2.svg",
+      "pointer_raw_sha256": "4fb2af2f85ebb3a136db28c53e8876cfd391edb27a35d71382aedcf0a8144c5e",
+      "size": 513
+    },
+    {
+      "git_blob_sha1": "677ad0f9eef6dc44026214816466f4742c8e0dc8",
+      "oid": "911f59f248015600da7ecc689398103d47dfc57f6be17ac8c8e543a726a6c64b",
+      "path": "openpilot/selfdrive/assets/icons/couch.png",
+      "pointer_raw_sha256": "0d3e208d1c5b4cf589064ef01f8184400a18fc4398ab766f066c45ca8b217ba8",
+      "size": 3311
+    },
+    {
+      "git_blob_sha1": "f56970f289774b6e8fed8cda4d3afc9efa62c24a",
+      "oid": "dd5d8d3fce5e30662797f7eeed224f5775b2cabcc055f01f5ebf6e7b2657b616",
+      "path": "openpilot/selfdrive/assets/icons/couch.svg",
+      "pointer_raw_sha256": "981ed95bbfe3c07d80256b3af45827774cdc85acc9b727a1458d13b3bc84d520",
+      "size": 1801
+    },
+    {
+      "git_blob_sha1": "41348344489c011e9fddb14409e9b45e83527149",
+      "oid": "f23fabbf60fff6ef88ba6f27f2775b1ae6be172a994e41267983a9ec0f984bfc",
+      "path": "openpilot/selfdrive/assets/icons/disengage_on_accelerator.png",
+      "pointer_raw_sha256": "8a7c8cdd2b67c9e2f60d25aa43e033231fb1e924554a8ddf6be0d8f3745d974e",
+      "size": 15059
+    },
+    {
+      "git_blob_sha1": "eef5181935f586f4ea5ee2b3f99dcfcf69ac1a38",
+      "oid": "baac01efc894527c8234b774c89cc57b69460d60ad81691a6d50ce0904c60ba7",
+      "path": "openpilot/selfdrive/assets/icons/disengage_on_accelerator.svg",
+      "pointer_raw_sha256": "a6aa3b7b9217625dbd4c32d40b5bca79cacfb9165fb53bb9480b6e74d822a612",
+      "size": 3638
+    },
+    {
+      "git_blob_sha1": "8b6f515b1f82878d548cc8ff37bc9f62305c4359",
+      "oid": "63a9d5027779d9f1e82da718628933eb31e5072097337c42b09bf368b642ecb7",
+      "path": "openpilot/selfdrive/assets/icons/driver_face.png",
+      "pointer_raw_sha256": "86af164df09f9af02776e76c747b42172774881d6d78d90074fb5aca0ea9bc72",
+      "size": 3769
+    },
+    {
+      "git_blob_sha1": "2332fe11d05acc633c3a7abd37ae7aeabc422e34",
+      "oid": "1e58deb1778cf2826339f27e9f09eecc79ea137c1436210c14b71c352a649c77",
+      "path": "openpilot/selfdrive/assets/icons/experimental.png",
+      "pointer_raw_sha256": "9d74f1c66b4c9085f63b13962ec09380fea72c7289a03bd5470f08e17c7968de",
+      "size": 34953
+    },
+    {
+      "git_blob_sha1": "8a97cdeac101b9e804de8bc1149345b55c04e5bf",
+      "oid": "b7ab989c9fe22e7d2119bac5284cdccfba2889477d69f5f6c6b4470c7ee0aab3",
+      "path": "openpilot/selfdrive/assets/icons/experimental.svg",
+      "pointer_raw_sha256": "a2d57f81e6afce5a8acf977bd6e232c1f0a4ba0a30a6fb68b17f43d2ef1bb056",
+      "size": 1801
+    },
+    {
+      "git_blob_sha1": "058c3e135811ff0bb58680a0514852288ff9a0f1",
+      "oid": "8f37a02dd914405c6f86f415700dd5985eb976b923e7abd6580d2da76533594e",
+      "path": "openpilot/selfdrive/assets/icons/experimental_grey.png",
+      "pointer_raw_sha256": "cc40dbf68ff04468e5057dd5fde46c379a6a31b7ba6ee4de23995d6392a4ce2d",
+      "size": 9466
+    },
+    {
+      "git_blob_sha1": "25ab33f388b234ca6006901062d24a1bab5333b3",
+      "oid": "90d441310f8e1833c661d8a4f0546aab2eb50eb21cc21beb0aff0d27b5ee6066",
+      "path": "openpilot/selfdrive/assets/icons/experimental_grey.svg",
+      "pointer_raw_sha256": "5724a6c0bf44b9ae7beb9ab8227837e5722c271d9ee330a151d956724f65b8e2",
+      "size": 1571
+    },
+    {
+      "git_blob_sha1": "6a9cfc44078bfa64d06e1c6bf94345558a4ea028",
+      "oid": "6b2dad33fead9f064c3a548651d6ef37daf82b6127c329683f538ec6e986ecbc",
+      "path": "openpilot/selfdrive/assets/icons/experimental_white.png",
+      "pointer_raw_sha256": "03ef0a5c2c2ec65cd47ae42df626b82a1df1c0ba0b7e959d5802348def768483",
+      "size": 11204
+    },
+    {
+      "git_blob_sha1": "51d769894783809e0cd9d1624b7e69d8458efab7",
+      "oid": "82648254da89edb0cf65ef63fc5e6e0741414051bfea8a40449132fd61b1ed0f",
+      "path": "openpilot/selfdrive/assets/icons/experimental_white.svg",
+      "pointer_raw_sha256": "6fcb9c8c507eb9f70aa4fc8e7c10e0e57e4d95071a8b6aca149188c6ab4e8599",
+      "size": 1533
+    },
+    {
+      "git_blob_sha1": "8eba02e600887453b106696fcee632bc363e3a15",
+      "oid": "64d9dc106172d3a54088ef51a27a48145154ca040c43ecbc8d626fa42e38886e",
+      "path": "openpilot/selfdrive/assets/icons/eye_closed.png",
+      "pointer_raw_sha256": "b2d06265f3e206f6773295c272b560521eabe52bdc94ecf345457185bad9a63a",
+      "size": 9352
+    },
+    {
+      "git_blob_sha1": "a9cb925186426369995217816c451ca04038e006",
+      "oid": "fcb0db3b77d6057b94544b6d91b6078fbd91b8f2de189322b90feae3d1ac29da",
+      "path": "openpilot/selfdrive/assets/icons/eye_closed.svg",
+      "pointer_raw_sha256": "84f6dde9590e84ee234b3c51b1a1a8a57b6b6c8dff0570e4ad61a33ee293af71",
+      "size": 1054
+    },
+    {
+      "git_blob_sha1": "9783716ff3476bdcc03009b6d3bf31370230bd45",
+      "oid": "94246db66e774cbaee618931f76ecc38ecb72eca097d1e6c20a8dec2a5f8cd29",
+      "path": "openpilot/selfdrive/assets/icons/eye_open.png",
+      "pointer_raw_sha256": "0206f2377d6f9a3fe23b72bd8e1e9b0e18611593aa0c0c44f292127aed7abbce",
+      "size": 7087
+    },
+    {
+      "git_blob_sha1": "2befa13adb1f0f6bf745ca31f2f4d979d68b96db",
+      "oid": "411774f4a80831833a344e58932c23a6ebd1db73a6327a63259deca2c6f53613",
+      "path": "openpilot/selfdrive/assets/icons/eye_open.svg",
+      "pointer_raw_sha256": "0158355a76193c3b58aa1af0d03bc2b40a14d99bdee5e102cdebc078a74e25df",
+      "size": 597
+    },
+    {
+      "git_blob_sha1": "af2122cd9ac2dd335dc7bbe9032265a218a5439d",
+      "oid": "4def42b5faffc6a8f747c210d24c3a1a8a7f82891738ff7f3317091e63326ba5",
+      "path": "openpilot/selfdrive/assets/icons/eyes_crossed.png",
+      "pointer_raw_sha256": "56b4a136819f15006e95fec7b7c29d2e4ae96e8bcbaddedf4477ceea9665db6c",
+      "size": 1083
+    },
+    {
+      "git_blob_sha1": "ad9afc3a3e01b035b2d5a8ee6feccdc4bf1ab17b",
+      "oid": "52019b72834e478588114584820313af866d2d7a737591a166c413ccaab6acf5",
+      "path": "openpilot/selfdrive/assets/icons/eyes_open.png",
+      "pointer_raw_sha256": "842f77886603a7ea499c1d54806827e12a013e1d8a0c9569da964ecdc055866a",
+      "size": 931
+    },
+    {
+      "git_blob_sha1": "a9a1a9babe06687865936c109f58b2577221cf17",
+      "oid": "d4ae6b5f666de71c8af94e8dcace3c4ca0259070cb6e8b2bbb9ba648c28a80e1",
+      "path": "openpilot/selfdrive/assets/icons/fire.png",
+      "pointer_raw_sha256": "9bc4093433b6945609d7a394b0df3d8015b7dc609c57427bf940e321ce35b83e",
+      "size": 5926
+    },
+    {
+      "git_blob_sha1": "8a795c05b8fa7bbcfdf784ef77629396392e46c1",
+      "oid": "a69514fe68dd1b4c73f28771640dcba10fc40989d1c7e771cb48bfd830fef206",
+      "path": "openpilot/selfdrive/assets/icons/link.png",
+      "pointer_raw_sha256": "00450880ee4c9b4bc489f6ef55e79bbc616b7ea5fa637ae1fb8c9ae5d5eec929",
+      "size": 5713
+    },
+    {
+      "git_blob_sha1": "21e67957374fda249bd62239d937728f081f54b1",
+      "oid": "3b89b8803bb610515aef051c93b833dc62f8c847558873cfd50a0b240c968449",
+      "path": "openpilot/selfdrive/assets/icons/lock_closed.png",
+      "pointer_raw_sha256": "905166bf114176dff0299c68b01cb5bb2d33ba5cd9deb121b6ba0a3e5321b4e7",
+      "size": 4911
+    },
+    {
+      "git_blob_sha1": "22a510d1c2c210c59a3b3ce198bd52ed37068c35",
+      "oid": "64e8fc90b79c725a8bf5bbc99643989ae885570997092762e216738805649ade",
+      "path": "openpilot/selfdrive/assets/icons/lock_closed.svg",
+      "pointer_raw_sha256": "0b7e1ea73305614b0a5ec56a3cb3ac6debfad819381d1f76d1c4a218e185f2e4",
+      "size": 492
+    },
+    {
+      "git_blob_sha1": "d43db96cd8accf5d0f789cc1865b1606a22f02de",
+      "oid": "ae8c4922909415dcf51cca6ac54790d3019cc934bf719bda112aa7a9cba8eae3",
+      "path": "openpilot/selfdrive/assets/icons/menu.png",
+      "pointer_raw_sha256": "45a164e4ecd3fd776749a6f0fceae73da665fbc6a6d7ccf8293b8682231da736",
+      "size": 635
+    },
+    {
+      "git_blob_sha1": "0d38b0478f36b0e4862a453f3f617ad1be1cd732",
+      "oid": "f27f3dfeaa105c7757b5211cbee99b8e0c86cd059f13ac7e9a0807374f1633e7",
+      "path": "openpilot/selfdrive/assets/icons/metric.png",
+      "pointer_raw_sha256": "90e1a5b3cb1c8bb9f66fb21a4337da7eb7928b30b0ec232f971b6f354c27f154",
+      "size": 604
+    },
+    {
+      "git_blob_sha1": "6cb9cc02543757fb5b5dd263811873c4feb14525",
+      "oid": "9fc1f7f31d41f26ea7d6f52b3096f7a91844a3b897bc233a8489253c46f0403b",
+      "path": "openpilot/selfdrive/assets/icons/microphone.png",
+      "pointer_raw_sha256": "b0bdc6c785d42b2f5a9f1b1672cab6e9ba32d46855e9d6d5210719017b04d108",
+      "size": 6324
+    },
+    {
+      "git_blob_sha1": "c2abe3ae90f886400badfb049f8bde179a0dfbda",
+      "oid": "8d2c5640258911c94475615b9c4abc1485c74239f65bef70e0bab9ca84619772",
+      "path": "openpilot/selfdrive/assets/icons/minus.png",
+      "pointer_raw_sha256": "fe4108258c0ee601791bc4eca4677dc09b6c9361d7aee7631d6ae0f44e1f467d",
+      "size": 2577
+    },
+    {
+      "git_blob_sha1": "39d52de13d6b4d98a70d2e6d9318a65445b789b7",
+      "oid": "0bcd5b336b2112f43a6f63937aedec4a85047f14a8c3f482e0f85988e1abbeea",
+      "path": "openpilot/selfdrive/assets/icons/monitoring.png",
+      "pointer_raw_sha256": "f97a20dc6c35963ccbb544878b79b37abd444543ad1e6b926e231938757d3fab",
+      "size": 58679
+    },
+    {
+      "git_blob_sha1": "71ccc89aacd56dfffece5a53171aec71e8f500fb",
+      "oid": "6eec8334979c2ba5751560a9b6b322d2a5852970b0f783b68112e92bb7c82826",
+      "path": "openpilot/selfdrive/assets/icons/network.png",
+      "pointer_raw_sha256": "b4b3374f8c42203f793497394a3fdeb8397fdc05de4955bfd1079ea4e604e88b",
+      "size": 39872
+    },
+    {
+      "git_blob_sha1": "7e460dc0d0732f4c6aeee4119a348514e0deb385",
+      "oid": "735fa47333bddaa91af6d120fd2f76dc562657962abdc55de810d9a77d6e5516",
+      "path": "openpilot/selfdrive/assets/icons/road.png",
+      "pointer_raw_sha256": "05117168d2a89c2f59cb5077e3632cff3ad57834cc691ef2bd7b3788e5aaba5c",
+      "size": 6674
+    },
+    {
+      "git_blob_sha1": "3d8159acc66b1c6e49f047d588df5e49fa9992cd",
+      "oid": "a522be46c662753063fce319bd29f252df1b2ec082eb4dbd6518d59bdf6a5fa4",
+      "path": "openpilot/selfdrive/assets/icons/settings.png",
+      "pointer_raw_sha256": "e5d6e6073ad55afc443550399632776f608a6b3427b9b7a5c247b3364fda32ee",
+      "size": 13369
+    },
+    {
+      "git_blob_sha1": "ea4faf89b9754b12476aead369bc15d40b38629b",
+      "oid": "c37ee59b9d273193cedae3408ce29b22d8b2d27732235c62065e78c5eca5812d",
+      "path": "openpilot/selfdrive/assets/icons/shell.png",
+      "pointer_raw_sha256": "c521f2b97ea9e4c04bcc12e0de6cf8f8fe308b5c7d79968c92fec1dd972acd40",
+      "size": 42462
+    },
+    {
+      "git_blob_sha1": "1ce02d58225e9c31189da7d76ffab292a1f3cc06",
+      "oid": "e625ca991746abaaac375b095aa9a586601982232f4aae0fc2b17b2a524e9ce9",
+      "path": "openpilot/selfdrive/assets/icons/shift-fill.png",
+      "pointer_raw_sha256": "2cca6ac7e13892fdb8abe5392eb138c6b051945e9f55b8ddc8c82b282ee22be4",
+      "size": 3946
+    },
+    {
+      "git_blob_sha1": "de2a68b482c3ae93a70859df0a5be9f45808e7d2",
+      "oid": "a93dd816bd0600ad47d10ebe530326bfa725dc31e4d5e1ee275f39b10f17a59d",
+      "path": "openpilot/selfdrive/assets/icons/shift.png",
+      "pointer_raw_sha256": "a4708ce0ac0f3f092ca069c48eec26ebc63bcd542cc27fbf52f804389b2a22e5",
+      "size": 4931
+    },
+    {
+      "git_blob_sha1": "d4c662cfc0ae30dc84796041e2c70e29448abbb8",
+      "oid": "28a131696208124a61d08f49f2ad6f76e783a405354a8c52a7fa1b9d87fd4e51",
+      "path": "openpilot/selfdrive/assets/icons/speed_limit.png",
+      "pointer_raw_sha256": "51636339718ed45ce3968457f39f2832d345393b6efcd3496d2ec30ddad79115",
+      "size": 3321
+    },
+    {
+      "git_blob_sha1": "47ff24f200305b0cc5d70b1adf379792e9265f17",
+      "oid": "5f2745ce89c926e507888ea7c6df1884aab045887048cf0d813407396a2e6b18",
+      "path": "openpilot/selfdrive/assets/icons/triangle.png",
+      "pointer_raw_sha256": "1c2c4e9eb0b7876508b50b707f03359a7ed08f00fef09bfb975a3d42a595b206",
+      "size": 5894
+    },
+    {
+      "git_blob_sha1": "233eb5e979a701040aab6f1f8b4756ac52f658ee",
+      "oid": "a83c9a78673429caf16d02917be4c8afedadff17b6ceb8c248703ad1120116ed",
+      "path": "openpilot/selfdrive/assets/icons/triangle.svg",
+      "pointer_raw_sha256": "142b1f8e83c5d618039a948456b884d839c885a8dd0ea8a0eb097835f430985f",
+      "size": 394
+    },
+    {
+      "git_blob_sha1": "583f9c2443ac6f1b6e11224c2d191a47e60ef850",
+      "oid": "1535245dbb4e102e07edda7c41e3f993a521e8a18711c6c797ec82c2a94e7db8",
+      "path": "openpilot/selfdrive/assets/icons/warning.png",
+      "pointer_raw_sha256": "1fef06cdb617241e5e8adbe5a325a7d4c95847a88a2c7a739e6b1ef7c6a11875",
+      "size": 8002
+    },
+    {
+      "git_blob_sha1": "1a710f29676de8fa4aae374463e88398b2022ac8",
+      "oid": "8b7f0971cf612b905ccb338e40921932773538517fc9f0f7a4a847ad596287a9",
+      "path": "openpilot/selfdrive/assets/icons/wifi_strength_full.png",
+      "pointer_raw_sha256": "a26c9be9bbc12f9df3e77a57d52a6c195ee72f99b920db14ae3ad36d28813967",
+      "size": 7171
+    },
+    {
+      "git_blob_sha1": "4137d3cd4c1d6aab6c01cc63eb65085fa4347bd7",
+      "oid": "3c16c005d666dea64ba6f85de50dfcf161353176eca3d9f475677cbc04fd0382",
+      "path": "openpilot/selfdrive/assets/icons/wifi_strength_full.svg",
+      "pointer_raw_sha256": "5aa646d01cf0cc2578054c83687b55e89a961aed6f045b708343a21879cbcbc8",
+      "size": 1161
+    },
+    {
+      "git_blob_sha1": "2d360968b630a198db2b2d8e05aa65c456416b7e",
+      "oid": "a2afacf302bcdc3f5e0d2f734508e8fea6f803813098d52fa6b878c765ba7a58",
+      "path": "openpilot/selfdrive/assets/icons/wifi_strength_high.png",
+      "pointer_raw_sha256": "8d642502a0a4f9e1349171799282aad35998226db42359a9cefee5e29883ea57",
+      "size": 9360
+    },
+    {
+      "git_blob_sha1": "17d721fe31d4a3f9cdaa4fe2e83bcffcc875d188",
+      "oid": "0f207b9a1f4ab6009e261f03edd1d05a9d485217415664cba0253d32381e3a03",
+      "path": "openpilot/selfdrive/assets/icons/wifi_strength_high.svg",
+      "pointer_raw_sha256": "ee1e41e8658e0f37491c3468282b0633fb6ffa08abdb294922b1d3b4f317ba6d",
+      "size": 1164
+    },
+    {
+      "git_blob_sha1": "d0165283043bb5f15e08024fd9db63ad871e75ad",
+      "oid": "7dfe50815c76d459dc104ce4a5e4b5dfd882e11b65e07706cacd336e69e788f4",
+      "path": "openpilot/selfdrive/assets/icons/wifi_strength_low.png",
+      "pointer_raw_sha256": "87acfa1fcfcdb9a1787ddd9936863067863da6436c922efd2335940e454c1c97",
+      "size": 9756
+    },
+    {
+      "git_blob_sha1": "4088866370cc88f2e043605e3a0288e252a8c66b",
+      "oid": "6835937483e5a539618a94e3ec8fad661ae2f7afb39c958e6c8b007b8f4b9b2c",
+      "path": "openpilot/selfdrive/assets/icons/wifi_strength_low.svg",
+      "pointer_raw_sha256": "f298892285af6e57a4d1773be675b1ea62e6b727501b2f35ac50a720b57014d3",
+      "size": 1198
+    },
+    {
+      "git_blob_sha1": "9c943543a4500d11bd096120d5dc0307d9c4e873",
+      "oid": "304ab97ac9724a7a133a36c2d14da9fe8ab660c9a29abb99cc0a4828f94d8801",
+      "path": "openpilot/selfdrive/assets/icons/wifi_strength_medium.png",
+      "pointer_raw_sha256": "62b12bb3526feab1263d961f1217dfb59181374e314f7007a7e24a3828daaa37",
+      "size": 9627
+    },
+    {
+      "git_blob_sha1": "f0c029dedd64e26372bca871c6b333a8a6dc55d4",
+      "oid": "7ebb1fb5539d9f8ea9899acf4f9cb359503dbe22cd38a3461ad43936348475b9",
+      "path": "openpilot/selfdrive/assets/icons/wifi_strength_medium.svg",
+      "pointer_raw_sha256": "a269a0b45d9de989b0002dcbb734f33f1197513eca4e523215e0b982e15e1210",
+      "size": 1167
+    },
+    {
+      "git_blob_sha1": "19d9bf36ce167fe0b5e89338da5445134c4fc1d3",
+      "oid": "8eac201013322db1580649a253da7ae38eb9f16f6089234e769b746951e874ee",
+      "path": "openpilot/selfdrive/assets/icons/wifi_uploading.png",
+      "pointer_raw_sha256": "3e3c3507eeec363538881a1a56de35f54ba1aea0cc8bb00f4580dd2bc5124e11",
+      "size": 7171
+    },
+    {
+      "git_blob_sha1": "07a14a59f4c6b079f4bc6da7c4c0edccf0496967",
+      "oid": "e7cfefbda22b53f7eb72a25893ab41c00dabea49f690cafb1d224375a669e608",
+      "path": "openpilot/selfdrive/assets/icons/wifi_uploading.svg",
+      "pointer_raw_sha256": "e421902e244bd40fc1a98e1411eef974b4ce0f1b0fd086727d0840a756a8e597",
+      "size": 1170
+    },
+    {
+      "git_blob_sha1": "4300b5728a110b61fb07faa08be881d4f0adb68e",
+      "oid": "a3f14ff386f5e3e8e01ac64231b77154729516aa96a8baf85fdd98fa6be20839",
+      "path": "openpilot/selfdrive/assets/icons/yellow_warning.png",
+      "pointer_raw_sha256": "84385317fc6446f81904764037f0f0175a6fd89d6a2a7fa35e548773d0fb0acf",
+      "size": 2341
+    },
+    {
+      "git_blob_sha1": "c49226c858a7554ac0ca1f2328580f5ef033665e",
+      "oid": "263598da73c577c01cebd31ae78f45969ef8b335be1a5f55d54a696bb2982c0a",
+      "path": "openpilot/selfdrive/assets/icons_mici/adb_short.png",
+      "pointer_raw_sha256": "a0d390c07211afeb2a00f204d1ca153aa383c6b6b3268e77d92e50e4cb67563d",
+      "size": 2062
+    },
+    {
+      "git_blob_sha1": "5d775425ebfe7c54d44357285b24b671f56875d1",
+      "oid": "4ce1d357acadd798939b398cce1761ceb05564b44f2a5bc6865c7842e60e79f2",
+      "path": "openpilot/selfdrive/assets/icons_mici/alerts_bell.png",
+      "pointer_raw_sha256": "1b299df154941bbceb17cb5ef98b0f29d6d12c9efc8d5b5d533e32673c302bd3",
+      "size": 1474
+    },
+    {
+      "git_blob_sha1": "29ab2ad5b3fa507c9c5b0feda63912a2dfc0eb6b",
+      "oid": "b3fe73cd1a24c05346a9b4a02e4f900a314c83a422beb38b0f88f91389582cd4",
+      "path": "openpilot/selfdrive/assets/icons_mici/alerts_pill.png",
+      "pointer_raw_sha256": "3bdf37e8c7104df82ec0d92b82b5e420a8e1a7d0056fc6e1d66a30ef62c0fbdb",
+      "size": 3960
+    },
+    {
+      "git_blob_sha1": "2f7bb779d18e0757d21d32c3270d77d43113344c",
+      "oid": "6b45f88128430fb50ef51c8e08b8e2a1c8fbe0b5c3a08de9f5d9d59bc1edc82e",
+      "path": "openpilot/selfdrive/assets/icons_mici/body.png",
+      "pointer_raw_sha256": "6dab1adb8592b41511e1345db7d660b0546eba38eb5e2e8f3ce2ec325dc07bba",
+      "size": 4545
+    },
+    {
+      "git_blob_sha1": "b6f4cc9d12b0fdd553fd453fd0ead7c19243d8d5",
+      "oid": "f92e5f0b7fc50c3b64bd18ecee8a8d518017b5461104de76dee6feb0f4f0d70d",
+      "path": "openpilot/selfdrive/assets/icons_mici/buttons/button_circle.png",
+      "pointer_raw_sha256": "7850a78d5cb9c444f4f18cafc2485f97798970e0db0d8db5104939466384c270",
+      "size": 7496
+    },
+    {
+      "git_blob_sha1": "d2104df4e1c891f485730d354ae712395a60d8b3",
+      "oid": "947aa3beb7eff6afb44101daf0aeaae7b7f31961c273df00eec0ca8359233c56",
+      "path": "openpilot/selfdrive/assets/icons_mici/buttons/button_circle_disabled.png",
+      "pointer_raw_sha256": "240855205a44526eed65a75013af7d8a6d966256d375ba6a1021e0d0f2caca62",
+      "size": 5175
+    },
+    {
+      "git_blob_sha1": "9db0c2cd811ca9ab5b598964042957395ec56b52",
+      "oid": "70d4236bcfd3aa8f100b81179c1e0f193c6ffbd84769c4a516be4381e62b270a",
+      "path": "openpilot/selfdrive/assets/icons_mici/buttons/button_circle_pressed.png",
+      "pointer_raw_sha256": "f41b3f1a193175ff6da35630480cb80a4a9d244a8e792a782242ea6a94af9dd2",
+      "size": 18666
+    },
+    {
+      "git_blob_sha1": "68ae400b1eb4ec218e09b8440dd3eb7429bec585",
+      "oid": "b48d8a191979f27dae8a336f99d944008e2536f698c58cffa5f3dddc17429b45",
+      "path": "openpilot/selfdrive/assets/icons_mici/buttons/button_circle_red.png",
+      "pointer_raw_sha256": "04cfb43bb5d30e1a0aeef465ad534bafd091b4c1a6b012a5e539c338b833c9dd",
+      "size": 11451
+    },
+    {
+      "git_blob_sha1": "e61a678c1c34a08b0b8dfc6e1d3a3af206e47c36",
+      "oid": "ed07f72339cf1c3926a2cb7314f9baa099bcdb3f8bc89a9084661b71334b0526",
+      "path": "openpilot/selfdrive/assets/icons_mici/buttons/button_circle_red_pressed.png",
+      "pointer_raw_sha256": "994c833621c42aba1843e24236801595e2ec2413ceb46ae8db0c68fefb3af378",
+      "size": 32599
+    },
+    {
+      "git_blob_sha1": "4ccf6995b193e54dcccfdb8c2e153d103f42db7d",
+      "oid": "5dedb4139a7ddeafcdaf050144769e490643820db726201a15250e1042eb6d15",
+      "path": "openpilot/selfdrive/assets/icons_mici/buttons/button_rectangle.png",
+      "pointer_raw_sha256": "bab1bb7882a3fab8a2ce6f7850af77b4dc0115aa4ae8f529e8857e3867274b3a",
+      "size": 7982
+    },
+    {
+      "git_blob_sha1": "5e891588f5f22e462f39f4630163f0cd6f1bd3f4",
+      "oid": "d527dcff61fa66902681706b4916586244b8cf0520086ac980ff782ab2d99ce7",
+      "path": "openpilot/selfdrive/assets/icons_mici/buttons/button_rectangle_disabled.png",
+      "pointer_raw_sha256": "af06e62d18e45235d58394b7cfeee1cfa76b4f9a4478a701f9fa4679ffa8a63b",
+      "size": 4778
+    },
+    {
+      "git_blob_sha1": "2cbf1cedb87ea7a92e41c172a2477bec1e1491ab",
+      "oid": "c6b1b0f1270a596b5ac150dee8ade54794de55b2033a529d4a17176f688aa6f0",
+      "path": "openpilot/selfdrive/assets/icons_mici/buttons/button_rectangle_pressed.png",
+      "pointer_raw_sha256": "8d2f50c38d3c4adbeb8864719643c32b94af95c2f3b0514114cc2fcaf9f4838a",
+      "size": 56738
+    },
+    {
+      "git_blob_sha1": "9164f74bad14b95db8e2cfd9530bbf5df07c3c65",
+      "oid": "1ca620a05e9e69351b9bbcfcf021dae11fde26be50d7f1a39257d319f6303616",
+      "path": "openpilot/selfdrive/assets/icons_mici/buttons/slider_bg.png",
+      "pointer_raw_sha256": "28057bf58e82f369ae77082d51a29f75e3fd36c688a2182ffd13f57bda1cf792",
+      "size": 9779
+    },
+    {
+      "git_blob_sha1": "1ff4db45a55f8a85ec2ddc78dc21ecdb7718f43b",
+      "oid": "89ac033d879beeb0a7fa1919838e0ec64b1a625a4aafc14f7b990c607a79b676",
+      "path": "openpilot/selfdrive/assets/icons_mici/buttons/toggle_dot_disabled.png",
+      "pointer_raw_sha256": "a2a84dc65d0707969a475d42dbd735b24e5b8fee6e42bb57c057df6b67e4a96d",
+      "size": 2220
+    },
+    {
+      "git_blob_sha1": "5bb4d778f8132d29553267bea90b092c74920001",
+      "oid": "532bf0e8535e3f9bc13af13029a27d6c14ae788d52224b6c65623334f62fada0",
+      "path": "openpilot/selfdrive/assets/icons_mici/buttons/toggle_dot_enabled.png",
+      "pointer_raw_sha256": "d9088f7fef95df3afc4296eeaa7df87a476a01af9ace3d0700928bfad74b0e01",
+      "size": 6048
+    },
+    {
+      "git_blob_sha1": "555c16e095f71dc6920f11cbb9f7b569d470443a",
+      "oid": "7891a628bd9cedc1097114e89fcec4a50a88021c7d6c63f1329d087be9e1783e",
+      "path": "openpilot/selfdrive/assets/icons_mici/buttons/toggle_pill_disabled.png",
+      "pointer_raw_sha256": "482534164d75ea7d5f54a0f7d9aa171f84adc9609d4f3ccc3b4abf36685941b1",
+      "size": 3065
+    },
+    {
+      "git_blob_sha1": "d95039da9282fcba13e95379fad36743cac520f7",
+      "oid": "ad31da78544edd18d0ac154670f22d1cd1ac57f50576002f04701d22c59502a8",
+      "path": "openpilot/selfdrive/assets/icons_mici/buttons/toggle_pill_enabled.png",
+      "pointer_raw_sha256": "1eb4d1c1fba3e44c3866af617bad1c3f724023cc7b8b1398de55275513d792ea",
+      "size": 8257
+    },
+    {
+      "git_blob_sha1": "92df6d0f17e8cf0e4e9b6c4f1dc2fab24f55d4da",
+      "oid": "d05f85ba6e53417260335bb52e2f4c492311a1eb4136e7fa1fc49aa14095bcaf",
+      "path": "openpilot/selfdrive/assets/icons_mici/chestnut.png",
+      "pointer_raw_sha256": "4343913dd61fcd0dae4cc78022df47c1bc90c3545ad49d268ecdfbb407365327",
+      "size": 1914
+    },
+    {
+      "git_blob_sha1": "41397eeb2af16ce35cd9ab1d1d96f30c1818d228",
+      "oid": "336230790162965fb0b1c88551c4715fe6adea0d7b39940205d7f7b871865ed7",
+      "path": "openpilot/selfdrive/assets/icons_mici/chestnut_green.png",
+      "pointer_raw_sha256": "4995d54446c81cf2f7f01329d2433b86d039e700d2557bc8fb90026596e0e124",
+      "size": 10911
+    },
+    {
+      "git_blob_sha1": "41316e610c035b7c7838aa9d38132cb304cd7a14",
+      "oid": "bf97a6738b294ac0aed9b2d075916cee0b7d3215bcd23381760900ede6a92748",
+      "path": "openpilot/selfdrive/assets/icons_mici/chestnut_orange.png",
+      "pointer_raw_sha256": "62f985b09655d896678d4d3229316beff52ce97b7d62dd061bd757f07b7f4a1c",
+      "size": 13256
+    },
+    {
+      "git_blob_sha1": "ede3b638bc3615cb8d0dc33e00f2fb5c2ebdd155",
+      "oid": "254b7f753b70c964847b686f0f71af751f2f49beea6ede4aeb333fe06062a257",
+      "path": "openpilot/selfdrive/assets/icons_mici/exclamation_point.png",
+      "pointer_raw_sha256": "7be11320efc4a4a8e263bbc2e1fcf5dd2c6045cfe1a0a612d6ff006dd3aadece",
+      "size": 2289
+    },
+    {
+      "git_blob_sha1": "75850d08f51f0435f1d1a5bf1728b57fc2b4db4d",
+      "oid": "01841b602632c66ab14a8e52b874a1623f09641dc2ef0620f4e2d00bb4a913f3",
+      "path": "openpilot/selfdrive/assets/icons_mici/experimental_mode.png",
+      "pointer_raw_sha256": "bfa1c4ee59f0ee497a2329f570a4c1d979ae4012ca653b65ad7b545cc5a09e1e",
+      "size": 16243
+    },
+    {
+      "git_blob_sha1": "9af8f2f455290d49f70c3edb7da3e691d626aa44",
+      "oid": "744dbaa68ee74e300cd46439bad79449c860e1c5c027304b0f382bd5383fba77",
+      "path": "openpilot/selfdrive/assets/icons_mici/microphone.png",
+      "pointer_raw_sha256": "b1e0cf75973fb674e943da958cc8ad64ab2b2ef7febb77f5bcd4edfb2a72e92d",
+      "size": 6817
+    },
+    {
+      "git_blob_sha1": "142367d0e68eae84562d23a437681eb90a6ed287",
+      "oid": "aeee7f049879caff52320fab5f286cf3fd6a52c820cd8e150ff242e53a14176f",
+      "path": "openpilot/selfdrive/assets/icons_mici/offroad_alerts/big_alert.png",
+      "pointer_raw_sha256": "4e3fbfee53389e0fba9032dd992e2715569c69097cb35dc782e694d933495a14",
+      "size": 14774
+    },
+    {
+      "git_blob_sha1": "2ff01024d9f6dfdca0750a8263d6e0f306ba3662",
+      "oid": "0b59ddada9c9e0e7972ead27396ebe6c10fd2352687b18ff6b476f61f74d80bf",
+      "path": "openpilot/selfdrive/assets/icons_mici/offroad_alerts/big_alert_pressed.png",
+      "pointer_raw_sha256": "1c2ad6473966895f7d5a39ee6bd3335cab4ff61844cb928cfb64d222561b8c47",
+      "size": 46106
+    },
+    {
+      "git_blob_sha1": "08181ca35f47c89b4f416f45eb8893458ad2eef8",
+      "oid": "3b11ee84d48972a2499cb29f01594d77a1a39692f6424a315a3f83262bc16087",
+      "path": "openpilot/selfdrive/assets/icons_mici/offroad_alerts/green_wheel.png",
+      "pointer_raw_sha256": "949c2590e1e41d0dfec88fe9d418a9a978c7569df06bc22235ed6560ac2075ca",
+      "size": 13481
+    },
+    {
+      "git_blob_sha1": "91a7b43c5a689062df733eee28fb40a922075cb7",
+      "oid": "46d08a8a08b42d466ff45d8ad6d2578e345dcbb1c06c126ad361873d9d35eaec",
+      "path": "openpilot/selfdrive/assets/icons_mici/offroad_alerts/medium_alert.png",
+      "pointer_raw_sha256": "86998a79b6d1da540c96ce520f1f97a34d783404fc0273f20cf1de1ca20fe168",
+      "size": 12877
+    },
+    {
+      "git_blob_sha1": "09ca2d08d5eb0eb9c5ea676245a6d5a1db828fd8",
+      "oid": "42ea275e5fe0a8a0e2fddb5a4a8487806fb22850115ea3646ee8f213d5fd6bb6",
+      "path": "openpilot/selfdrive/assets/icons_mici/offroad_alerts/medium_alert_pressed.png",
+      "pointer_raw_sha256": "15cb241e610de7fedd6c3ad056e8363d892d21a4cbd2a9799fdb85521323afdd",
+      "size": 37202
+    },
+    {
+      "git_blob_sha1": "52e6836d4b4804584274fc9e04ce91e7d3408e22",
+      "oid": "d548405a65ba4d4590c55866612dc6aa0e78d9278fc864ef60fe3e463edf4a68",
+      "path": "openpilot/selfdrive/assets/icons_mici/offroad_alerts/orange_warning.png",
+      "pointer_raw_sha256": "ac634e6a1094f938116b23ea621b0cdf7aa91b7aabfed0028eacaa85205f9b97",
+      "size": 12169
+    },
+    {
+      "git_blob_sha1": "df608d3518b7474e97cb158acb4607ea93503637",
+      "oid": "b6fc63326d34fbe72f6daf104d101ce19e547dbfe134427c067c957a7179df74",
+      "path": "openpilot/selfdrive/assets/icons_mici/offroad_alerts/red_warning.png",
+      "pointer_raw_sha256": "5d2dd3786ebf60c574fa6bdb2376073da3124e67e0c722a36aecc4d84e5af430",
+      "size": 12124
+    },
+    {
+      "git_blob_sha1": "0a50b6a1ca94eed182f40669bc67f8960792f860",
+      "oid": "cfbf38672a893fd1d8fadf942354d2511e2436814a9af0e5c188cbb427fc6c70",
+      "path": "openpilot/selfdrive/assets/icons_mici/offroad_alerts/small_alert.png",
+      "pointer_raw_sha256": "f9cd25e423d882434af8bf28b920deae7177068f274226e0588ef962a203338f",
+      "size": 12281
+    },
+    {
+      "git_blob_sha1": "865355ef01f57a3f512a082060eb3b195014c9c4",
+      "oid": "a7102850bcfb075a285041cecb546559374a905403ab3b9814fa6097d2d822dd",
+      "path": "openpilot/selfdrive/assets/icons_mici/offroad_alerts/small_alert_pressed.png",
+      "pointer_raw_sha256": "23d47884dbf00157cff478342ccf820fc2f15bc53070f453fb2549a7897810f3",
+      "size": 34680
+    },
+    {
+      "git_blob_sha1": "fdc189b858274f9f24270623de45eebb92056985",
+      "oid": "77b20a8c478d982412d556afb3a035b80b4aa9fe7a86aea761af4a42147d9435",
+      "path": "openpilot/selfdrive/assets/icons_mici/onroad/blind_spot_left.png",
+      "pointer_raw_sha256": "1ba2146debe308d8e979c7c7625268ecd7aac7b961468437853c5db309c413da",
+      "size": 45297
+    },
+    {
+      "git_blob_sha1": "305561f509c5b78a1a06a64688b017f755d88d84",
+      "oid": "fd91685bf656e828648acf035a4737acb2c4709e8514cf0aa0a10fa470a9bb60",
+      "path": "openpilot/selfdrive/assets/icons_mici/onroad/bookmark.png",
+      "pointer_raw_sha256": "f6452464fb9d6e4e11fc48a5a2961113ef39fc0bfe5486b8b643241810894fcd",
+      "size": 11580
+    },
+    {
+      "git_blob_sha1": "4129b13d922c90dce1e1133a242b28ac786fefd2",
+      "oid": "cb89d9f11cf44992f92142aa5ad84e1ac700a2601aff2abab373e2a822af149e",
+      "path": "openpilot/selfdrive/assets/icons_mici/onroad/driver_monitoring/dm_background.png",
+      "pointer_raw_sha256": "d0af295dc5cc9cac0c8fadf54e234c0c72d97192217c3650da47534a4386907f",
+      "size": 11678
+    },
+    {
+      "git_blob_sha1": "6974b6d8e237e85694a817318b66030889fe2fb0",
+      "oid": "5f5d4b7bd406114945e53f4d56089102ee83ba7d0a4590a371f7acab90c7ad53",
+      "path": "openpilot/selfdrive/assets/icons_mici/onroad/driver_monitoring/dm_cone.png",
+      "pointer_raw_sha256": "840c646e9c646844906a01c2b7b93e6f7d6c9db23d239adcb05d01ef509ca9b9",
+      "size": 1862
+    },
+    {
+      "git_blob_sha1": "5b917f3a4a8442a28510c50155a4a2d170438c87",
+      "oid": "e2772c6a9fe9c57099d347ad49f0cb7c906593f1fdf0e6dde96d104baf0200b0",
+      "path": "openpilot/selfdrive/assets/icons_mici/onroad/driver_monitoring/dm_person.png",
+      "pointer_raw_sha256": "b50e143f5afa04b24eebfa829bcd263d5042ededc9c3ad22c74dbfe131e5a4cd",
+      "size": 1365
+    },
+    {
+      "git_blob_sha1": "78758a9809caf0b525216a521d1d2396508518f4",
+      "oid": "07310879d093108435c0011846ae1184966db86443bc6e7ca036a6fa6123700b",
+      "path": "openpilot/selfdrive/assets/icons_mici/onroad/eye_fill.png",
+      "pointer_raw_sha256": "3ef0c449ff69861d3a706627e78d841b654b73df8e12d97864745e1717e04c7e",
+      "size": 4983
+    },
+    {
+      "git_blob_sha1": "932c71260b446bb21e0815255894af54a97de7bb",
+      "oid": "7be447e56d649e0362ef650494b484e140a01ead31799ce43b266f5781c918d2",
+      "path": "openpilot/selfdrive/assets/icons_mici/onroad/eye_orange.png",
+      "pointer_raw_sha256": "908aa10c7038a550dd171faf4e5b2523752b67b1bf17f3d6a44331b854d15d3d",
+      "size": 36473
+    },
+    {
+      "git_blob_sha1": "006972fd397c419fce4d0198ae2cd6b33a9871c1",
+      "oid": "56de402482b5987ed9a0ff3f793a1c89f857304b34fbb8a3deb5b5d4a332be1c",
+      "path": "openpilot/selfdrive/assets/icons_mici/onroad/glasses.png",
+      "pointer_raw_sha256": "c506bd1e3829ff0d1cbb40eeecd5f3585fd58d5cd06d7680e3ce190a6da96717",
+      "size": 3688
+    },
+    {
+      "git_blob_sha1": "3f823061b9b8ec2b148e34599cce5f168069ce11",
+      "oid": "2aa6d04ba038f15a92868de6e6c7b04f624b4fe89d03bc3e9c4cd44cb729b24e",
+      "path": "openpilot/selfdrive/assets/icons_mici/onroad/onroad_fade.png",
+      "pointer_raw_sha256": "855ba7bcdcb3c4f64e130b8a01c134c6c03bf64bf6c907f8f8b8be51ccf1ecfa",
+      "size": 38317
+    },
+    {
+      "git_blob_sha1": "97b5cf1443f2cf266be1275b47946adcf54604b7",
+      "oid": "f9f7d0554c0c79ab605c1119ffdef0a4f55196e53b75a65b6ac5218911e24a02",
+      "path": "openpilot/selfdrive/assets/icons_mici/onroad/turn_signal_left.png",
+      "pointer_raw_sha256": "7a41ed61e233117391400ae7f12e900391e6fe8e11c868d377d07c4e1bd4af1b",
+      "size": 45701
+    },
+    {
+      "git_blob_sha1": "4ba7df9fdf65f5a01a28e775f7059fcaf908d744",
+      "oid": "14b457d2dc19d8658f525cc6989c9cfcf0edaf695b18767514242acbdbe2a6dd",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings.png",
+      "pointer_raw_sha256": "5994297f8f8234a4959a44cc4f7eb04e96e3a14dcda71deeb12bed93d99b728e",
+      "size": 2198
+    },
+    {
+      "git_blob_sha1": "dd38a8938f6440fb5199e1ccc54b5a9428c4e41a",
+      "oid": "7ad4ee47ec6470f788a026f95ed86bf344f64f9cf3186c9c78927233d2694a1d",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/comma_icon.png",
+      "pointer_raw_sha256": "9000e3c8f56511e5bd7391cd8721039d4ecc74ad3068236f3302d3a8b36bf34c",
+      "size": 1388
+    },
+    {
+      "git_blob_sha1": "0f17d04eca8fd2b094543e1a490958d9b600f0cf",
+      "oid": "b26133bee089627202d5e89a4e939ad23aaceb5d8e26d7381b1aea3ef892f2ee",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/developer/ssh.png",
+      "pointer_raw_sha256": "b8d29ceefa86a68b2342927a060df420fabf0ca04bb447e33dd618a903499b0c",
+      "size": 2620
+    },
+    {
+      "git_blob_sha1": "f9d553c7c30f6d46427790e9f5afa380b9aaac5e",
+      "oid": "ebb4f7ad9fd2f9fb3c69a38fbc00cbe690809b0ff202ffd4768ae5b699acc035",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/developer_icon.png",
+      "pointer_raw_sha256": "1e1a54deb6c825c7b738809dddae2269ffcf7745309fbf02813ed94425841b15",
+      "size": 1759
+    },
+    {
+      "git_blob_sha1": "04af670a488dbe1d01ee3de398626a7f43e6dafd",
+      "oid": "dfb645e59636687d61d20283bae65b68ddda6f7b2d4fda01a6e613a842e3b41f",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/apple.png",
+      "pointer_raw_sha256": "a2baa9d09281871c8c3bfcf58e28d0b2c45e14ee83d5e711710a4dd4dd4844c7",
+      "size": 823
+    },
+    {
+      "git_blob_sha1": "ae9a88c4dc8d0a1b185f6eb183612483f84d3084",
+      "oid": "5f47e636025e044977f278a35546e0fc971f48fd53c2eeafd3508e95c35f378f",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/cameras.png",
+      "pointer_raw_sha256": "7dd501a6c8e1b1f8753b8d803d258285b20df333d28094c30110a67d0e83a44d",
+      "size": 3117
+    },
+    {
+      "git_blob_sha1": "0e484035cf37c637e2cc2f8318b76b6d6aefcdfd",
+      "oid": "df07383a6ddfe8cd7eeb2f22271cbd13068327ca0978873f8d10368860562e40",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/commacare.png",
+      "pointer_raw_sha256": "4c2971340460b6835413849f0454ebcb4e13d9127f34d454bd9e59d00223a8b1",
+      "size": 111083
+    },
+    {
+      "git_blob_sha1": "f29b24fd099208004b3009f8b7ef3ac7b4651152",
+      "oid": "3cac8546d19e75a9edcbc0721a887fd74c8a3c41bfe19e36186b2b2bcabdae98",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/fcc_logo.png",
+      "pointer_raw_sha256": "0664cc9e596189310e93dbc28dbd7aebd5b076a0a7c11c30af2ac85be1526b92",
+      "size": 1817
+    },
+    {
+      "git_blob_sha1": "136c09aac76c7178d89f1e9f47191a8664a67065",
+      "oid": "f7518f3409e2ff8f7e99fb7f0c06afa8bdf0b0a506147b5cf9d4931b820a1a75",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/github.png",
+      "pointer_raw_sha256": "fcff33904e9e06f6e513f955375f057b03d8615f838d1223828858ab1fca0895",
+      "size": 1107
+    },
+    {
+      "git_blob_sha1": "daeb574532aba86a73910e23abed798001cb8b7f",
+      "oid": "8a18e3de5f455b4089a824da8d5d78d5d532ef71facb05cc75c178b24d5beeb7",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/google.png",
+      "pointer_raw_sha256": "c1f62382f4dd07bebaa2781fe326cdb13cd1281d1c3d4a67cfc276117ea8d1c6",
+      "size": 920
+    },
+    {
+      "git_blob_sha1": "99635bcc2bb5904b5405672b4826718d740f0efa",
+      "oid": "710e74b526adb5bbac15cd8915a828dd673dd8ce15b2fd694c64c182eef6f56f",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/green_cell.png",
+      "pointer_raw_sha256": "962b5c7ce24fbb6dde03fb88e291068a95f7e39f2a3767208aee05eef4078d41",
+      "size": 13744
+    },
+    {
+      "git_blob_sha1": "230beb85dd9ca1a2d3458a8b3140dd0108d24003",
+      "oid": "25db08a9038b5faa3b200ef5625cb216d7f4b31ea3d49fb0395f9b726bfaf8e6",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/green_settings.png",
+      "pointer_raw_sha256": "e0ec80276eb027000a58f0f5d825ba7913d326fc6618c63999eedac781c10b0d",
+      "size": 13135
+    },
+    {
+      "git_blob_sha1": "9a29c46d0d2c3525737a86dda518293ba2e86721",
+      "oid": "66858a5d3302333485fa391f7a9bb3a9b1ab4ae881e7fb47b04c3a4507011c94",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/info.png",
+      "pointer_raw_sha256": "c849814412e5b7b89e087334370eb7501e571ea38c3172a700234990f1668f11",
+      "size": 2613
+    },
+    {
+      "git_blob_sha1": "80d37d4d5c1a4a2294484794cec95f9cfdd5ee1a",
+      "oid": "a05a41e66c7a24d461a4bbcdab0979031e5900e1db270af52ca363f0bed521f5",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/lkas.png",
+      "pointer_raw_sha256": "1444b1315cf799b186b2fb7fda30c96968189a58a14770c9ea79ce8e717ce336",
+      "size": 2028
+    },
+    {
+      "git_blob_sha1": "807d44335dcc6767e54d1cd8aa63cc9a8d77b392",
+      "oid": "678483230831d0a7d3dcad5f067a7b641e5d2ae0db477665dfc6c53a675eba18",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/pair.png",
+      "pointer_raw_sha256": "8bfe66dc8b8393bdcb7fb86517a1d193851092cb912e5a3bf4b73a69de03f6d2",
+      "size": 1779
+    },
+    {
+      "git_blob_sha1": "75708bf51c753ee1b377a2a3d9361f118dc42c64",
+      "oid": "547f466cc59d29647f3bf131d8444d7f22b63b186bcea55ceb8109c68ca74fe8",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/paired_apple.png",
+      "pointer_raw_sha256": "046b6ce63403034531b7fd7131c2c494cc4a0ab688982206553aa16d30c6ef2e",
+      "size": 2345
+    },
+    {
+      "git_blob_sha1": "8514100359e4f4ff19c36edbeca80b0a68be1f0c",
+      "oid": "55050096cd98e7f4ea3e843d927c18815e458dfbd5e7d100b503db92075d061b",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/paired_github.png",
+      "pointer_raw_sha256": "edeac645d8f973cb6d36a7af2c55f052a7d71beeb5f6141d13e046aa6fd6182e",
+      "size": 2373
+    },
+    {
+      "git_blob_sha1": "853de37d9d02b7adb9a14b9c36e7df0019a2be5d",
+      "oid": "f9c439ed89bc0357e86c005d5dbb6f1ad2b8d72cdc0890e3201d842d8c3928f1",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/paired_google.png",
+      "pointer_raw_sha256": "fbe43b81b40a275878299797d972dc4321a64376594731a8bbb48719bc9c5c1b",
+      "size": 2443
+    },
+    {
+      "git_blob_sha1": "6114cd9124921b3545bcca43bc6ef0b57a7173d7",
+      "oid": "7aeccd3e0d8517f74eb34f7d73632c0b29b0ad5df5b9686c0f509bb6b136561e",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/phone.png",
+      "pointer_raw_sha256": "6073bb23f105189960c827dc5fae25faf40a894168494534cdda312863d6e706",
+      "size": 1728
+    },
+    {
+      "git_blob_sha1": "711f1a4ab9b997f5f3f0be18ee7e1801d9414837",
+      "oid": "a34885e79f42d19b7777dd07e7ab51df344880cb770c48e0baaddb177c2ae938",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/power.png",
+      "pointer_raw_sha256": "c347d24d3127d4e4adbb3de988cb8751a9a555dc0d1c4e717a38ef563a2b355b",
+      "size": 2228
+    },
+    {
+      "git_blob_sha1": "298a85c5041d8663034be4c18e70716e0bf90973",
+      "oid": "1356fe3ddda14568e9be1dca4e16ca9048852e3a27a3f531cd58d7d368485a82",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/reboot.png",
+      "pointer_raw_sha256": "f330671283c236e3de009d4e4788f56bfbee376afa77467a630393553ecc181a",
+      "size": 2362
+    },
+    {
+      "git_blob_sha1": "53f8bc0e7d30cb39de587201b1c9c08caae19c59",
+      "oid": "50a8ce4fa8ff7f5b0f56ba0dc65b4802dc0be2dc0967b5cb3a15e3b79a4e513e",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/uninstall.png",
+      "pointer_raw_sha256": "97946b202136d85772d881221c10d177ac213fa01ff1927b2e89d63a2c34834d",
+      "size": 2424
+    },
+    {
+      "git_blob_sha1": "e09f7d33085d999e654369eadfc875d83a8b9bed",
+      "oid": "61bc44b6e0f99640434d6abcb64880c7bf575eda5cdcf7d74cba7d73307dd39a",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/up_to_date.png",
+      "pointer_raw_sha256": "849d9f3bafbab3e587d026146ec50256d74b2c626b4a4f80b49b1f4bcbcc8904",
+      "size": 2739
+    },
+    {
+      "git_blob_sha1": "498c066191a0212178e9527358946d1dd9c5a674",
+      "oid": "f28cdeaba9146521335bc11ad60a8e0368eb0ed1381e88b35a12a6138ba22ed6",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/update.png",
+      "pointer_raw_sha256": "2e1ccf175fd5a6d04d58a52317f9aeb1cafa854bed05a81da85895ad784724f2",
+      "size": 2409
+    },
+    {
+      "git_blob_sha1": "6a716e4dfde5077e84d6a4a3d520a25ae88def3a",
+      "oid": "2273629450aa870f0964dd285721c35d3d313fb8b4684122215a65844ae744d0",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device_icon.png",
+      "pointer_raw_sha256": "c67187b024a4191ff89d36f289614202e456dc381297594894bfaa3d2debdcf1",
+      "size": 1888
+    },
+    {
+      "git_blob_sha1": "37451c0482c18604fb85cf27a5acf6c46171a3bc",
+      "oid": "416656861380981acc114e5285b448d6e4dc42b98539d0ba16821cbc3db89208",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/firehose.png",
+      "pointer_raw_sha256": "d2fcc12096804703708866d825ddb7ee3f42e7f8cdf75dd5ef13487bc1043360",
+      "size": 1364
+    },
+    {
+      "git_blob_sha1": "39dd7b194773e8717a7df54f1f2717b3da27eb41",
+      "oid": "af8d5ecb6468442361462aa838a2d234b1256b8139418be8ef2962e4350cfbef",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/horizontal_scroll_indicator.png",
+      "pointer_raw_sha256": "f1b682936d3e556c249b1f181f57d4e90c156e2f4eacc934b783860bbff6ef3a",
+      "size": 2176
+    },
+    {
+      "git_blob_sha1": "53ff00c2ae7ff9d2da451d2e86105590b7299dfc",
+      "oid": "69bb4a401429c3fdf473778f751288b2aafea27eb13f09b20e83d55212f084ba",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/keyboard/backspace.png",
+      "pointer_raw_sha256": "23b6de6f173a163f408261578516dc457fa17ca63a3b6408aba4b15397c84ef3",
+      "size": 1963
+    },
+    {
+      "git_blob_sha1": "2d173bfc9fa5b8a4f48af434885af2595a64d076",
+      "oid": "563c211fd98018e24418235602e596f3a481f04fddde0a14590e563474fcffd2",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/keyboard/caps_lock.png",
+      "pointer_raw_sha256": "508b8555caaa5c9cc74ef84b1bc01ff5a7a0c02850ea46e0cf6ae73e1537665c",
+      "size": 1423
+    },
+    {
+      "git_blob_sha1": "a3ce71f04924c0e37d257f909fbbbc6fc470e733",
+      "oid": "6f81811ea9cdc409d5549035ca928c76e22396193e1cefb6cacab3747ee0c297",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/keyboard/caps_lower.png",
+      "pointer_raw_sha256": "7e504f99e8d668caf891cbe1fb64101a869ad1d964703f093fa4ff08011c7733",
+      "size": 1142
+    },
+    {
+      "git_blob_sha1": "7c147bc07bb05eb5eb96cd0ea3800c9dfaadb751",
+      "oid": "60875e73dd9659122c9248d8e99d5cfd301d68dabeec2cb42cebce812c9baae9",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/keyboard/caps_upper.png",
+      "pointer_raw_sha256": "f18fb30056ac5dd2e430357f889753669952b4d70e2c41fafa892950fcdd6f83",
+      "size": 1102
+    },
+    {
+      "git_blob_sha1": "0b7fc95c510e8406e2af0a85eeed04bbcee1a762",
+      "oid": "3dd956d5ccfce01a01bea74ef59c9e73dfca406a5ff9ac62417203afa6027fba",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/keyboard/enter.png",
+      "pointer_raw_sha256": "fb500d1993aa7f7569aeda5e55ac6ee4962067de1b0c6fc00ba458394d008841",
+      "size": 5620
+    },
+    {
+      "git_blob_sha1": "251d5d8d14027d2b3e82de152eaeab59a9a6a737",
+      "oid": "1dd1c2308872729d58adab390030ae9c987dc7908f0c39391651ea2b6cb620c5",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/keyboard/enter_disabled.png",
+      "pointer_raw_sha256": "271def769b67a88e18a801f20be55d71f3943235548c8c38bc59318ef04b336b",
+      "size": 2445
+    },
+    {
+      "git_blob_sha1": "8c2c068d4131cfcca500d54488f6e60ed9b4debc",
+      "oid": "399e7ff9dea6710244827c91014f1a08d8ae989dce922928d6b7f7504b15ba79",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/keyboard/keyboard_background.png",
+      "pointer_raw_sha256": "27dc7c9b6e1a01231200ee0a50d5a8dd907a466ae3001a4cfee6b8e7ec06e6d6",
+      "size": 11321
+    },
+    {
+      "git_blob_sha1": "3d61109721b5ea873a1a4e8187d117e4facb786d",
+      "oid": "f431e428772991323ee3ce662479e1ab29c3d80a72b93cf9c9673716ba245d5f",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/keyboard/space.png",
+      "pointer_raw_sha256": "658d73881a650674fd19dce3fef64d54b953e2ad7c2be58ca2aaa86693ca28a4",
+      "size": 654
+    },
+    {
+      "git_blob_sha1": "13f70386d44fa3509ebb8a5d41779231c8289bd4",
+      "oid": "fb7af523411c5ed75c6e1418dfc2a379486f6dbd7f2f1c281d3ff54e1ea7810e",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/cell_strength_full.png",
+      "pointer_raw_sha256": "43dd62da672b179582eacb76f6798fdaeab13ddaccaf6ca281824a9f45da12dc",
+      "size": 777
+    },
+    {
+      "git_blob_sha1": "1fea6d23b809b5a8f654f492a86b4d4c2f6b778a",
+      "oid": "db86e176e016458fcff00d40e37636a808977e0cc01bcc9c04b31a1001562de8",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/cell_strength_high.png",
+      "pointer_raw_sha256": "ffca56ca56b2dd51a598c3a80cedcf71ae753b01ab99a113da68f464c83caf2a",
+      "size": 936
+    },
+    {
+      "git_blob_sha1": "d763f86c7fa31369f892003b9a9fa8c6620a20a3",
+      "oid": "1cd0b3a00db36ee7eacf5887d07d40e5351fb441d98643a02df4c742cd1e935d",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/cell_strength_low.png",
+      "pointer_raw_sha256": "a42747a15e8c1c0d9b36a5c46c7837d5931dad466f2f9d03adbb63193bc7108a",
+      "size": 945
+    },
+    {
+      "git_blob_sha1": "148ee63e990d17ad0ce23d17b91ab42d333ab1eb",
+      "oid": "25724acfe0c261070b103ef5933053d5dd8b726ece42d0e5f715f05c67be2294",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/cell_strength_medium.png",
+      "pointer_raw_sha256": "a5cfeb93b51c888ac55ddfa69a55afb5ce127d6f3441fff8abc01089452aaf3c",
+      "size": 956
+    },
+    {
+      "git_blob_sha1": "c6d82ac316eb8f0f43dc2259184476e8a2cfba23",
+      "oid": "cb0aeb6260bcd0642204f842112479f4b19b350db9addae5e14c9c5131bcf956",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/cell_strength_none.png",
+      "pointer_raw_sha256": "d0a83639730aa94e796d546193538325d01f528f1493a63ccb7bf0df2697c47b",
+      "size": 781
+    },
+    {
+      "git_blob_sha1": "541433be76301256d330291ad5cb49f5bfe66885",
+      "oid": "6ccb5f2298389ae36df87de84d85440ee5a82c50e803c9bd362c9b89ea45aa69",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/new/forget_button.png",
+      "pointer_raw_sha256": "18b1f64e4e450d46608f3e68474eaa461f1afa4e4daac3cf5a9b68d795ead975",
+      "size": 6611
+    },
+    {
+      "git_blob_sha1": "26cc8b4fca6d6b7ac50b871be192004c56b2d3e3",
+      "oid": "d9f17c82b2f349d107d27c69418f054be1f1753f970c7d3d3520c1e65de00511",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/new/forget_button_pressed.png",
+      "pointer_raw_sha256": "8842a3d6d152e7c0e508cb3a174c8a955ba2f79f37f54fe1f5fbb6bf3b33b90e",
+      "size": 12894
+    },
+    {
+      "git_blob_sha1": "65bd71f6543c2f7df64a35d228920e9aa5608b54",
+      "oid": "7488c1aa69b728387b2cf300a614cc64e3c2305d2b509c14cf44cad65d20d85c",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/new/lock.png",
+      "pointer_raw_sha256": "84305d19d9d5f04d34d2cfd51bb8ce30a5e20082af6691c20fe94a289e454c87",
+      "size": 2509
+    },
+    {
+      "git_blob_sha1": "81e5f13e43a66341162700eff1408c3ae7ceb63c",
+      "oid": "9074162bf0469fc5ab0b5711a121289a983c887161df269ac120edd8fd024499",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/new/trash.png",
+      "pointer_raw_sha256": "031dbd967f825379353429afa82a2eba6a7f6d693c50426f4c9e7874b435f3de",
+      "size": 1533
+    },
+    {
+      "git_blob_sha1": "4bb416b0b105d82e94b8e07101d2ecbad65d9149",
+      "oid": "b1e322ea6e57b05b3515fcd4e9100f890e6ff80607c11360b7927fa5a9765beb",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/tethering.png",
+      "pointer_raw_sha256": "e8ebc63a4aa1b75e7644e5f6fe62bf684f41a08f30de55605d3bc6fb3a1b09b2",
+      "size": 2752
+    },
+    {
+      "git_blob_sha1": "fe81ffa572076d35caf0d1a67384259dad3da651",
+      "oid": "73c76e5240bdff64c1d1ed0ac2bb9c3fadb2fd61fbf8dc710b812757af8bcf6c",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/wifi_strength_full.png",
+      "pointer_raw_sha256": "bfec620bd5d3c9d875aebc5a449e89982e76ed07acf3ec42ef1c134b79e7dc67",
+      "size": 2026
+    },
+    {
+      "git_blob_sha1": "2649cc89dce40ec530242bbf9518a5127e8fb2b6",
+      "oid": "e66cc6174a54177793c42ef3525a9aa1592e05b0abb677442c7226269d1371a5",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/wifi_strength_low.png",
+      "pointer_raw_sha256": "6bd19e2489d05891c5cf53c5835dc1afef1296a5ada422833c93be0eaedb7a17",
+      "size": 2196
+    },
+    {
+      "git_blob_sha1": "8881833375319c2445382a8b214d69e99f76a102",
+      "oid": "7948a9234f2bc996aefb3a9e58a37c06ebbf54e8e4596e47800f78ef7e81961f",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/wifi_strength_medium.png",
+      "pointer_raw_sha256": "53a845a67c0429041fd54293439e9df49c30341b05699d7a11fb9df0d626e344",
+      "size": 2231
+    },
+    {
+      "git_blob_sha1": "848d7849a23c1095bf66a4473ef0363418a96dbb",
+      "oid": "a57ea402448dacc2026631174e448b6254698fe92309221576400cbf28196936",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/wifi_strength_none.png",
+      "pointer_raw_sha256": "5da8175a7587399aadeddac469a543954375713b3c266e7bb2f7307dccba2e7c",
+      "size": 2195
+    },
+    {
+      "git_blob_sha1": "4457a3fcd27908b159e31f8cad43542b71cba962",
+      "oid": "7e6d166bdbbcdc106e7cd4a44ba85848888f18a6ef34e86daac8e12a3f519443",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/network/wifi_strength_slash.png",
+      "pointer_raw_sha256": "0c6bc0d872a38f9c0fc4462574cf42ac18afafd808bc323bb26a77a7f4a553aa",
+      "size": 2318
+    },
+    {
+      "git_blob_sha1": "15baccd725222639c1ee03bc3d9ffe5ea58477d8",
+      "oid": "190e196eba6feffec125ac66cf7e77620b759e346fa69b80e3a3884a5694cb15",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/software.png",
+      "pointer_raw_sha256": "9878f8987f7fbf660936a2376b55286cd46ddc87da4a95c59ec833e2f3416ddc",
+      "size": 3225
+    },
+    {
+      "git_blob_sha1": "f50cc9ef3fe6ac2f52eaa65871a562a90c5b87b0",
+      "oid": "a6892bd4d9b14b587fa491a6d608562e38819b4c618b1d7a3e8c384f05d52a2b",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/cancel.png",
+      "pointer_raw_sha256": "70b14fc7482ecbe31718004996ee62592a03ce24cc83bc880a55bd6ce4b37b81",
+      "size": 1245
+    },
+    {
+      "git_blob_sha1": "7a67bb0c9603e79a8ae617281b7a5a8c5ab9fde0",
+      "oid": "3428d8fcf2ecf9542c524706124f82b7fc809453c63418c9234ac9df5d85bd24",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/continue.png",
+      "pointer_raw_sha256": "d8a328c888c3f2575ef759de6e800a10155b4665062fd56582f31f64d33485fb",
+      "size": 10074
+    },
+    {
+      "git_blob_sha1": "8a2bcc2ffee17f457df48814b74b1313c82b30d9",
+      "oid": "b2810add4943dd4f20a984ed6011b520925919a58d5c0dd0d846fc4d7f8a1d02",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/continue_disabled.png",
+      "pointer_raw_sha256": "de9840e2436adbfc2e1bc1ea4febc25923738d85b31ba6ed250032e5156f881b",
+      "size": 7109
+    },
+    {
+      "git_blob_sha1": "3eaee7bf1c92c86f94d9f84685abc80d305540ab",
+      "oid": "3a3a87454a3d2f1ebb327211062c52480de945673dcfd137c5da3df8fa98d731",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/continue_pressed.png",
+      "pointer_raw_sha256": "0512d60cd0e694e7d902eda7b3abd7ed5121542b5c8d37876efd687181672c7b",
+      "size": 22400
+    },
+    {
+      "git_blob_sha1": "dfb9799b0b8535cf59234e709a2a863514a12c9e",
+      "oid": "2290105f9b055b3c3d482d883d148de3418cad07b653133b0f61137e1976c407",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/driver_monitoring/dm_check.png",
+      "pointer_raw_sha256": "4f6376cfe265d8f44aed57de4ee1896f66e8928856b5d67a532b46edf5c56a5e",
+      "size": 1412
+    },
+    {
+      "git_blob_sha1": "fa29be1827ffecc55099124bbfdbaa60431f1de7",
+      "oid": "ec9691d2572e2e084f0b3c99a1dcd0daadf5040d16c02347ffec9dd5466c061a",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/driver_monitoring/dm_question.png",
+      "pointer_raw_sha256": "80df90ecacb51faf3584c5bbdf4138f43857a61e29fcb8d9735a3e752e35960e",
+      "size": 1438
+    },
+    {
+      "git_blob_sha1": "bcb3ea92cb12907f08a61cb575a8232ac08d2fbe",
+      "oid": "122a614d1aa26187507951f932160eebfddfebcb4293e78f8d23e350fc97bc0f",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/factory_reset.png",
+      "pointer_raw_sha256": "20e69d67783f0af93c62a7c9b419bd7f9db31363b735028495e0fd15b2ffd2f7",
+      "size": 11489
+    },
+    {
+      "git_blob_sha1": "87f4ffe78850e6fde91cfb8584942e944a455b54",
+      "oid": "8b6d7747dd6bbf47d9782fc0d847c224b933f6616218ade1f9220018aa9d6acc",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/green_dm.png",
+      "pointer_raw_sha256": "645fe94127c759233e9004f0f12185e79fc534785ec188a8d7c788b720b19cd2",
+      "size": 15052
+    },
+    {
+      "git_blob_sha1": "57e005abd676203076ee3f939f79b2f3957eff5b",
+      "oid": "5055bc385a1de674e6f3cbafdb611ee4b1088de2a3c357bce76f6a192226c952",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/green_info.png",
+      "pointer_raw_sha256": "c77325d9baa86737d504444a89d819ac609807103cd082b159c7bcdfe5f23afb",
+      "size": 14154
+    },
+    {
+      "git_blob_sha1": "97df767a9872154256b2b42fa8a108f11fd4d288",
+      "oid": "9c45ab0b949c1c71651f9f48cf6ff10196d64eb85e042b063e92b1d7ca02dcb5",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/orange_dm.png",
+      "pointer_raw_sha256": "8bf405527c969e8fb2db197bc97b5110d450d31caa394be6f590a166a9e6d04e",
+      "size": 13155
+    },
+    {
+      "git_blob_sha1": "387794cf13a9a8e02c46368ea4593a1927aee78a",
+      "oid": "e8e8bc3c15df7512a81b902e47fb069eff1370c833095d3b25f3866efb815fff",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/red_warning.png",
+      "pointer_raw_sha256": "134303af1ff10d2b56e6a4047ac34a52b2351d611e8c720829f72927b064af50",
+      "size": 11123
+    },
+    {
+      "git_blob_sha1": "680df97cbcdd83ccbd4dd06c119035111c8eab24",
+      "oid": "8d5b8f76e5f47e77e5af3016ebdbe548ad3bc9af83a1111b3214bf4017c95a28",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/reset_failed.png",
+      "pointer_raw_sha256": "2c2a19d08a9342aaa46aee1b10042ac36a6951c395857dbb252d403631eef2c6",
+      "size": 11792
+    },
+    {
+      "git_blob_sha1": "5c62086f64fda789feafd2d34a320c0d8471a449",
+      "oid": "63c1499106621a4d927c21b2b04c87235a927216d9f513a0205f0fe03b8c799b",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/restore.png",
+      "pointer_raw_sha256": "473a3c8e7c1d28109f21bca3ab65b3fcbc39659d1a9ea6e5250ccd5ca6c58b56",
+      "size": 12320
+    },
+    {
+      "git_blob_sha1": "1ee01aeac2f0f10e2f16f432a137baf436297f47",
+      "oid": "13919cf5df3137fdffdb8cc53a1215f13bf478a780ca8614234b7af0cdc0e766",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/small_button.png",
+      "pointer_raw_sha256": "2c64deea04c76179f5d30af612d2d69efa00f55b88321bff7fc5c61c14a50234",
+      "size": 5409
+    },
+    {
+      "git_blob_sha1": "da8bb3eefd78cede1c834f2313df9a8794e4de8d",
+      "oid": "6ed258d8e0531c19705953ded065c6d5e14929728a2909d8d4e335898fa5d080",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/small_button_disabled.png",
+      "pointer_raw_sha256": "01d51b6e457a3be307e6828cc8f10c26fc74a9b0fd3671746ce0fa1fa134cf58",
+      "size": 4056
+    },
+    {
+      "git_blob_sha1": "6e30f47fba4cb8447b4ba4ddb32bd847ba868944",
+      "oid": "c032fd71ccfebe161827de420771e7927fe1ed799e615e24d458cfd79fead7f7",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/small_button_pressed.png",
+      "pointer_raw_sha256": "60b25c5cf1ece2c698dcba1f0c9a5659d49bf3c510fc87295db28634e8ce6413",
+      "size": 7875
+    },
+    {
+      "git_blob_sha1": "acf5b1741477428c359228fc96f9e9f8deb85030",
+      "oid": "75a6557935075a646b17d083202832daafb263d4cfa38aea2af407afc04e2ef4",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/small_slider/slider_arrow.png",
+      "pointer_raw_sha256": "609e1dacc857a6cc01e4f9362f0b826ffda3722abae5b317f7a17e400c8734cb",
+      "size": 1312
+    },
+    {
+      "git_blob_sha1": "11c3ae2d3f2678a40de192d25511d11b02541c95",
+      "oid": "950d55fd7294fb05c10ba9944537c02637776497c159e1b7d145c73f0f9d3253",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/small_slider/slider_bg_larger.png",
+      "pointer_raw_sha256": "a606e4a4d6c36ed15ab9601a842a802c97e63ac3177a07c908029561a823470f",
+      "size": 7119
+    },
+    {
+      "git_blob_sha1": "683587a060c8a41b529e35a190e58e04aa7fd1b2",
+      "oid": "61281d3e3ef5ac5a8fe75405a93c2096bf235f090b27832e986444e3fb85715e",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/small_slider/slider_black_rounded_rectangle.png",
+      "pointer_raw_sha256": "551ac221acc87a917f4bf90061d92521313c2d96cb02ea894b44ddfb5a067604",
+      "size": 7427
+    },
+    {
+      "git_blob_sha1": "470bfc50c0b3b318ba13b742f5401646b03f6aeb",
+      "oid": "d1dd642ae4708cc7a837e8ef8b4c75f578654d241f8c854249c2b1ade640ceca",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/small_slider/slider_black_rounded_rectangle_pressed.png",
+      "pointer_raw_sha256": "e410f907639ba533714f03f5f5fac6ab15c10456ae335afbaaa8b61c04a3ab64",
+      "size": 14058
+    },
+    {
+      "git_blob_sha1": "88e6985f12603cd91f95b68e455960a12186cc84",
+      "oid": "5ba98ab2b75f0c1f8fdffb9eab0a742645b80ef4ca404c007f374a5e0fd48d8c",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/small_slider/slider_green_rounded_rectangle.png",
+      "pointer_raw_sha256": "a3a052adfe818050f5bed6e614afa287548d972c0720abfa832af4f21745f964",
+      "size": 10254
+    },
+    {
+      "git_blob_sha1": "999cdafcc78d5ec37fdf50654066b281203ef994",
+      "oid": "4545fdbaf67402b28b18644a7353a0620250ece6416c1b0ce0e27c758817b042",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/small_slider/slider_green_rounded_rectangle_pressed.png",
+      "pointer_raw_sha256": "ff963da5f868425161a1160d23c90c4d7e1d4adfe4d80b4fc20bd555782ffa47",
+      "size": 26729
+    },
+    {
+      "git_blob_sha1": "58d8a8b7488ff0d802861e99b986f79ba363b6c7",
+      "oid": "5e993247160edcbc9c3cba3efa93169028568d484bcfd0bf64f3e3a7ec7556c0",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/start_button.png",
+      "pointer_raw_sha256": "45d9ff725496dbf580455019adabfb81f123cff47dc463db144045e55e4d2ba5",
+      "size": 18608
+    },
+    {
+      "git_blob_sha1": "564de0bef78b81a3bf3aa41a88660d0e3dbdcdf6",
+      "oid": "1c4f1002ecde9a2b33779c2e784a39b492b4c8d76abc063e935ce0aa971925dd",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/start_button_pressed.png",
+      "pointer_raw_sha256": "f96277b14abb72458802bae64cd52f9970897ffd1e07cedaa97f5fb4ce5409ea",
+      "size": 65513
+    },
+    {
+      "git_blob_sha1": "1b7839f47f67779bb3ee0c7800e5f67b03d6851b",
+      "oid": "7584d32ac0231381e38646fdac2f71b4517905ef22024f01bd9e124d3918f33a",
+      "path": "openpilot/selfdrive/assets/icons_mici/setup/warning.png",
+      "pointer_raw_sha256": "46567bdbd3e5e466c0ce2ddc54e46609c20a47af560c469f68e5e17a55a9a8f5",
+      "size": 9194
+    },
+    {
+      "git_blob_sha1": "699ddd72e8fb9072dd453ac689ec44ccb08f1f6d",
+      "oid": "ef1735e6effcb625ea618fa35a6b908b28ca483d5997e15241d48e2d3d29819e",
+      "path": "openpilot/selfdrive/assets/icons_mici/ssh_short.png",
+      "pointer_raw_sha256": "798eaa4b429f08ec12f15ed1c04d59463e681f3721f5167d587236b0167dcdfc",
+      "size": 1433
+    },
+    {
+      "git_blob_sha1": "3934200c9d9c7fc603a26bc5469b27d4c4d59f4c",
+      "oid": "001cb8227eaaff5367055395d9b3ccd5822f9a47276091832d8ad28b074d77c9",
+      "path": "openpilot/selfdrive/assets/icons_mici/turn_intent_left.png",
+      "pointer_raw_sha256": "2b81d53e6cce534ca80138bf8a1eb9a550046ac2f1ef880f29b3f0f61ac0ca97",
+      "size": 914
+    },
+    {
+      "git_blob_sha1": "2f3afb0de9e87bdbf2ce836dc9bbf3661949bbe3",
+      "oid": "07bda2fe5d6be0b2854044053c384fe002e96406da119863a443b9344258b500",
+      "path": "openpilot/selfdrive/assets/icons_mici/usb.png",
+      "pointer_raw_sha256": "fa5e9c51e58f949a203fcfde893e1799c01ffd7b4836d39f917869dcc9e82b5e",
+      "size": 1544
+    },
+    {
+      "git_blob_sha1": "a43bcb3b9933f2f64f1302be91abdafb37650cb5",
+      "oid": "8cf9c6361ed82551eb99e028e0a75ff56b72ca856ccf7c9a76afe6745434980a",
+      "path": "openpilot/selfdrive/assets/icons_mici/wheel.png",
+      "pointer_raw_sha256": "a71385c24418df4a40730ebbfeea984c6aea5ea4e616abbd0de07fb13731034c",
+      "size": 2720
+    },
+    {
+      "git_blob_sha1": "676b0b4d7108c9ee609ae6f795d82326a6c645a3",
+      "oid": "4c3d9082b295f9e5ddef93f8d4e9cb961ea2374c7affd26394bbccb26e7137b2",
+      "path": "openpilot/selfdrive/assets/icons_mici/wheel_critical.png",
+      "pointer_raw_sha256": "f8972f30f109477b2f426c0e8aa57f86aa00209cae99d5913c2a5ffa5de3218e",
+      "size": 11023
+    },
+    {
+      "git_blob_sha1": "c56e1120945770f84a09d4fe00e28fae33146d97",
+      "oid": "b9218e02c42b0f80858477255e24a97da4cf0b2898fc76f3806409d65b104668",
+      "path": "openpilot/selfdrive/assets/images/button_continue_triangle.png",
+      "pointer_raw_sha256": "56dc8218ef7cb73d06d3918968689877238c1c9dcb737ffced7d4c93d002dd60",
+      "size": 4510
+    },
+    {
+      "git_blob_sha1": "e6d362927cd8a9865ebd16430fd6eb78042380a6",
+      "oid": "8084e5a8bbc16956a98b010092ae1c4e32b3391b0551fa1cd65cb1e2bb59d3df",
+      "path": "openpilot/selfdrive/assets/images/button_continue_triangle.svg",
+      "pointer_raw_sha256": "bb26be19ae0899de6d92155253209514a0e2aae6f1ca35ffc029fc429e542857",
+      "size": 169
+    },
+    {
+      "git_blob_sha1": "745c8d576bf10635d6d961e497ae46ed8da2593a",
+      "oid": "cd1528167f0cd22cb9a16f2f04e914b2bff78ffca26be8157b9ad208b485d8ea",
+      "path": "openpilot/selfdrive/assets/images/button_flag.png",
+      "pointer_raw_sha256": "e9b51d18fa8899f879964952cf57de9655edd21e9f6ab99f3275103c808522e1",
+      "size": 1611
+    },
+    {
+      "git_blob_sha1": "dd3f97f44bbeeaafe5054bdaa1688c7efb66ee35",
+      "oid": "3fca2a1f675cad4f454f3ba56d6e7f090a352321b61f241fc2ffcbede7a7593a",
+      "path": "openpilot/selfdrive/assets/images/button_home.png",
+      "pointer_raw_sha256": "0fa0eed21f78a4316d7d529c1a0700385b60ac2a0671f574d2ffd30d0712d37f",
+      "size": 1501
+    },
+    {
+      "git_blob_sha1": "4bbfe581e6740e67100068b23468028664549445",
+      "oid": "9ec603a5e8f08eb46512c8f0fbb684ff93533964b13a8a8ce45aec95b85e3800",
+      "path": "openpilot/selfdrive/assets/images/button_settings.png",
+      "pointer_raw_sha256": "43ee5cbb3a3b46d4bf275df0645a2c8da4df3a0849393d753e4d2eb7c5d9e2b6",
+      "size": 957
+    },
+    {
+      "git_blob_sha1": "81f2fb38c4da469a0cc7e58f8f8d0e2ae0768260",
+      "oid": "78d140abe572b00765a7ece46bd990cff1287c2e8705a5f551b74461ab307b6b",
+      "path": "openpilot/selfdrive/assets/images/spinner_comma.png",
+      "pointer_raw_sha256": "cebb5e13eb3a5dea29f01e97a3112f3e60d333be8580b52b0d3a5009f2ebb2a2",
+      "size": 15713
+    },
+    {
+      "git_blob_sha1": "989a6cefd1f63e361f87a7c2820f129d80d9d3b5",
+      "oid": "49e9bad844598b0aa13c75fad7685f89f7ab190932963a8c70014553b9da37ae",
+      "path": "openpilot/selfdrive/assets/images/spinner_track.png",
+      "pointer_raw_sha256": "3687d5da5dc1fce69becd06e59cf25dfee0d0e7831817d6ba62ec0aa822e3584",
+      "size": 41523
+    },
+    {
+      "git_blob_sha1": "f36aa1bacd0df30a2ea0ab2d311a2bc8c5f3c4b8",
+      "oid": "ca29ff46fbd6d00cc02596de8c9abfbf1cacdc6a7b2f98b27a74d24c790da004",
+      "path": "openpilot/selfdrive/assets/sounds/critical.wav",
+      "pointer_raw_sha256": "4bd4d77627702b53112ade151763500353b485f494811aa34fb6846410a6c9de",
+      "size": 52374
+    },
+    {
+      "git_blob_sha1": "7db1d31911303de6321addd09abb0f87e8051954",
+      "oid": "6f47633b5082b911e79dd13fc2d1f4c2a9d44d2fe0860f3d390ffc4e3d772f7d",
+      "path": "openpilot/selfdrive/assets/sounds/disengage.wav",
+      "pointer_raw_sha256": "fbd8ae695793dcbb39426bf9a9457c43bad659136f0f5513a6175574bdb188b8",
+      "size": 97120
+    },
+    {
+      "git_blob_sha1": "9a4171444ff80e8aa36b7557f64a55aba1df565a",
+      "oid": "538271820d618046009bb456e930598f2736dd1a6174c11925ec3912581b05c1",
+      "path": "openpilot/selfdrive/assets/sounds/dm_critical.wav",
+      "pointer_raw_sha256": "84baa6586ed5648d70a0f377243304f710bce5ea08d884d799d6e737fa14e181",
+      "size": 52374
+    },
+    {
+      "git_blob_sha1": "9526364f99374bf40c61a3069f522d55fca19eb3",
+      "oid": "6c4699e3a456a0df2bbfac7ab1eb8972fc8bd970296133fd322e214c61884407",
+      "path": "openpilot/selfdrive/assets/sounds/dm_critical_max.wav",
+      "pointer_raw_sha256": "b86ce213ca4d09350fd42f8ad7d121555cf242aa69d5eb7542c36c712e400589",
+      "size": 52374
+    },
+    {
+      "git_blob_sha1": "52124b0801c0910dd72c79078a798801b90b4984",
+      "oid": "634fad6590295ef2e73d5f7e5aecbb5dd245a0f7692f1e300c2ebac95aabb8e3",
+      "path": "openpilot/selfdrive/assets/sounds/dm_warning.wav",
+      "pointer_raw_sha256": "3916fe19521f192e5c3b977bbc84c65a76968a0f2e784860bfbb040cedf919ba",
+      "size": 73026
+    },
+    {
+      "git_blob_sha1": "a984e2f3da2a27da23584d783aa8e548cb90fd2f",
+      "oid": "a380fe0a022856b302841a0dd19b71eab318c6b08ec851f128942758a7f1631a",
+      "path": "openpilot/selfdrive/assets/sounds/engage.wav",
+      "pointer_raw_sha256": "8725680ba011a414dba9d4d8d774718d6ffc2d3530459cc1c6b8ba896b0d65bf",
+      "size": 97120
+    },
+    {
+      "git_blob_sha1": "d8240a17176f2ad9a92d66c9895d75671bb1d7ad",
+      "oid": "cc9e67cfaba77e8e4f4049f0add9238660e4cf8f886c6915600d8f47a30c98db",
+      "path": "openpilot/selfdrive/assets/sounds/pre_alert.wav",
+      "pointer_raw_sha256": "f298cc3986ca24ffaaf600928f76a9924be43bf2cc90517bade3181bcb69e588",
+      "size": 97120
+    },
+    {
+      "git_blob_sha1": "10026d7be9883bf5b6cb4510ade5a7ef236a0a4e",
+      "oid": "081d64ca28a84a59ff5e6aea4732865b8687585938b8a287bc7e6a49d0646508",
+      "path": "openpilot/selfdrive/assets/sounds/refuse.wav",
+      "pointer_raw_sha256": "c0f3dda2cc92ab72662f7446d1d15a94f40172d2aede59870c4d2b8c91380c4c",
+      "size": 97120
+    },
+    {
+      "git_blob_sha1": "bb71a0176a51a92d49ecedada133c7b9d1a367f2",
+      "oid": "1bb440f424c989c06e203bfba0b32d39aede8f6c78a9b335e5e778460202b601",
+      "path": "openpilot/selfdrive/assets/sounds/warning.wav",
+      "pointer_raw_sha256": "f37f0be2d2129132382e4526752483a1edbcacfaae0fbd1d54564fea021c82ad",
+      "size": 73026
+    },
+    {
+      "git_blob_sha1": "fb869e317d3561866e24aedb8347320a42056ea3",
+      "oid": "5da731d3b43d7203eda3828c72328e5164f3c5dc14881cee20b474f8a445790c",
+      "path": "openpilot/selfdrive/assets/training/step0.png",
+      "pointer_raw_sha256": "624361bdc0512ee533458e5bf2ebdffaed8a10a9ceebe86a88e4a998cc4dce1a",
+      "size": 1605451
+    },
+    {
+      "git_blob_sha1": "8bd9fbaa676123eae69b302801acc42c474cb662",
+      "oid": "522d7c48937b5551313884051e1018f20d2fca86db31b587222867e86254f08a",
+      "path": "openpilot/selfdrive/assets/training/step1.png",
+      "pointer_raw_sha256": "c893289a4b3221bddddfcaa80d1822a6d45e18c0a274206afef749f39c92113c",
+      "size": 51774
+    },
+    {
+      "git_blob_sha1": "da71f97e8300355b0b5366d49cb0c225fa15323f",
+      "oid": "fa3ab22eb5e4f1564f37df24a14b12c34b965cc8539b2df0fb6ae6d5c4ebc857",
+      "path": "openpilot/selfdrive/assets/training/step10.png",
+      "pointer_raw_sha256": "41a4cfc34b3d53923835656e9a6d2d72dc4fe21cdbd33bdff0524f3b39440b44",
+      "size": 1034167
+    },
+    {
+      "git_blob_sha1": "aa3791304ea29e8f7dff807b9913628f7469905d",
+      "oid": "bad2dffbc75b502a713ceb718dceb5f3a5a2e34fcffc438ee8acfc6580bbc94f",
+      "path": "openpilot/selfdrive/assets/training/step11.png",
+      "pointer_raw_sha256": "98be989c323611027a30a625f82703950b60eefa82fa950ea0b11c6744b5ba89",
+      "size": 53375
+    },
+    {
+      "git_blob_sha1": "745a8d0553d31b8ea83637019c19af1f92038a9d",
+      "oid": "aff8f1b35a29e7353a58ca6349ebe1c0faff162596a134fdd74b126b8c1cdd28",
+      "path": "openpilot/selfdrive/assets/training/step12.png",
+      "pointer_raw_sha256": "03543d2410b0f91af89f9e1758d4d52950968d0b9831e9090ccbbca0b0e60809",
+      "size": 1092478
+    },
+    {
+      "git_blob_sha1": "68638ffec138d19e7fcabd0ce89135e4ea87ca34",
+      "oid": "d18847d47d963f2536a748ddfde1df4ef3d1dc2638af94974cd6af1539d9c18b",
+      "path": "openpilot/selfdrive/assets/training/step13.png",
+      "pointer_raw_sha256": "0f9027d1ca61bcb2529ec29e954ea5e74b9ca00447014e5bf709edddc898135a",
+      "size": 37382
+    },
+    {
+      "git_blob_sha1": "2f5956b1ff4057cf95ef77e35cdd4f96f44ac350",
+      "oid": "be7402c00ea0e67b60394a5858976237af61cccec7068bee0c8ec6aae1385af4",
+      "path": "openpilot/selfdrive/assets/training/step14.png",
+      "pointer_raw_sha256": "13078c7ca4f2ea4ec9c91b1b2f03e1f7d43392076f5133c8786dc094ba48d78f",
+      "size": 1879281
+    },
+    {
+      "git_blob_sha1": "798e01d00aac146985e0dfc13550d346e646c018",
+      "oid": "8c7c981f2601607381a341da47bd044d24a8e301c91c5b7426cbce9570f5bad0",
+      "path": "openpilot/selfdrive/assets/training/step15.png",
+      "pointer_raw_sha256": "902917f8960cffd727ea38dd5e835db06c791436e1ec3e97eac227e9ed461cc5",
+      "size": 1104967
+    },
+    {
+      "git_blob_sha1": "27288141819116e65798b4c23736f1dd90beade7",
+      "oid": "12780d35798dfab1353bf428927e1c04ca88394675a63c134a0bbbd137201715",
+      "path": "openpilot/selfdrive/assets/training/step16.png",
+      "pointer_raw_sha256": "6683dabd9f0ecccfa020121d0e7dccef4b3efb66c205a11173e718eba225db47",
+      "size": 35997
+    },
+    {
+      "git_blob_sha1": "ab54f9c992ec2c6a27ee5034d2104f282f955c19",
+      "oid": "cfb184957120901b5b803571fa14bd9e7ae98da0b46425e3b75b00a8a69e1246",
+      "path": "openpilot/selfdrive/assets/training/step17.png",
+      "pointer_raw_sha256": "44422e63961f82ad529528bb746c66d3983da48a5ab60bb6b99dc207d4957ded",
+      "size": 43545
+    },
+    {
+      "git_blob_sha1": "8149e79364c32a7cf6df9669cc8f216adfa0e57b",
+      "oid": "a29dd3ee7abc5d338db395576e7765ba3d4d56568820f8dfbbe938c62fbee6de",
+      "path": "openpilot/selfdrive/assets/training/step18.png",
+      "pointer_raw_sha256": "4dcaf543c27550db87e9a83c9e00ed255f5c210ee1fa178cee8e36313aa7bb1c",
+      "size": 1646908
+    },
+    {
+      "git_blob_sha1": "35d65c9b01137e6c886f513e953830a4af06b833",
+      "oid": "bdfa7fc67a0d89f5503bb30f1822fa72cbd140c84e14170957531c5166159519",
+      "path": "openpilot/selfdrive/assets/training/step2.png",
+      "pointer_raw_sha256": "8743a86ce6f09adec75fb1e19a3845afca79993645d7c1eeea3fa2eb342288b0",
+      "size": 36869
+    },
+    {
+      "git_blob_sha1": "0d3a6bbecbf9002d1b305032dbf5578a2550a45b",
+      "oid": "c476251bb58200d008fc0aa172173983d9fb0b71ab860f199d9d431910bf5c61",
+      "path": "openpilot/selfdrive/assets/training/step3.png",
+      "pointer_raw_sha256": "bd8062ce9d2a5857b1092216595b9d1b9aeeaceb4738f4ea5af1b461d46bbfae",
+      "size": 966466
+    },
+    {
+      "git_blob_sha1": "1d4da570b19a1902088cc8bccc915dba861bbae8",
+      "oid": "95da2bda3ba1c046620a88b2caf77fd9a2b980b6b746e700d3574f4f1c0d6ce9",
+      "path": "openpilot/selfdrive/assets/training/step4.png",
+      "pointer_raw_sha256": "6696be09187e3b4cc456a04a4dfa9a4b303734a645f71ca65d352b28fc9da9e1",
+      "size": 1287393
+    },
+    {
+      "git_blob_sha1": "1ce43e28dc47cf0e2d478f88e01cc0db71aa0b25",
+      "oid": "886903bfaf0567939125daa0bc7fcaecd08c9f34f4e7c8b137a30986f80e4a6e",
+      "path": "openpilot/selfdrive/assets/training/step5.png",
+      "pointer_raw_sha256": "bc0bc808c46c2999a914b1633f27a25cb58e1616d607fd8fdbc53ceb16f1d07e",
+      "size": 41823
+    },
+    {
+      "git_blob_sha1": "d0e06469c7f11ce43e96ac1899c38ec25aca4b0c",
+      "oid": "c8dc0b499b0c9dbf7e5e967ea2d55c7ed78f8e56f9055d98662f247de960eda4",
+      "path": "openpilot/selfdrive/assets/training/step6.png",
+      "pointer_raw_sha256": "1719ee394b3322cb7964ca508f7210d06e057b87af53b165147665d3caf92f10",
+      "size": 1231263
+    },
+    {
+      "git_blob_sha1": "63e6e27e077df0a0a6635b11724f1690b7ee0162",
+      "oid": "690be96b7a3cacaeb8d11bbab043a3e6dd65710ce197a8c7d35a3124dce590d1",
+      "path": "openpilot/selfdrive/assets/training/step7.png",
+      "pointer_raw_sha256": "a3842d4798b38eb58867b25a0b1bc5b821e55ba0134f04784e68748076630cbe",
+      "size": 936779
+    },
+    {
+      "git_blob_sha1": "de881446dc1fbf328f548258ec302f0a6d327ab8",
+      "oid": "7550d18943d77a2b0d8b3a1e702af4ceb7c3e9d08614a8d941a9f73a615cf7b7",
+      "path": "openpilot/selfdrive/assets/training/step8.png",
+      "pointer_raw_sha256": "3f3b4642457a9556d2d19572681af007a65b9f578a8426f5581c4225357365df",
+      "size": 728928
+    },
+    {
+      "git_blob_sha1": "43ca1d03dfc25f979106cdf5dc82ce9c86ce9dec",
+      "oid": "e48538287fc974e5ec97403ba05145c21035f50bdf28b6e00275a4b428643f09",
+      "path": "openpilot/selfdrive/assets/training/step9.png",
+      "pointer_raw_sha256": "a0b233ac158501e8dba8e740ad0c1ab957c22dafc5426099a3c8ea19e2b29629",
+      "size": 1024935
+    },
+    {
+      "git_blob_sha1": "91125f3f21a47f24401e2fd3776719b8d2bbf5ad",
+      "oid": "4937fc6f04367b28328fe3bc0d1463a245725d039ddaab29406cc565fd5c8ed4",
+      "path": "openpilot/selfdrive/modeld/models/big_driving_tinygrad.pkl",
+      "pointer_raw_sha256": "d56d2551dff55ac5e03d24418508bc40f777c9cfdc55744f6cce51b87a051bb0",
+      "size": 773082315
+    },
+    {
+      "git_blob_sha1": "fdcaba2f002a9967d7c345ba5eb7c4fceecc9d22",
+      "oid": "6334d6b92a2cc095bfb1430a252aa2ede1902605d0f9ba89224aa5a87c7dc7c0",
+      "path": "openpilot/selfdrive/modeld/models/big_driving_warp_1344x760_tinygrad.pkl",
+      "pointer_raw_sha256": "8b509c3ed66f7ba6ce1bb96629bec77a2aa7c7d049042c88c5354b05cbbdafac",
+      "size": 863472
+    },
+    {
+      "git_blob_sha1": "91c4096993d8c1b94c067996668fc4bcf1e04414",
+      "oid": "bda11a9c2e87636db364862ca68ebe4ff9d7baeeb39c0c7e2010b702ed543283",
+      "path": "openpilot/selfdrive/modeld/models/big_driving_warp_1928x1208_tinygrad.pkl",
+      "pointer_raw_sha256": "19f2b675ee763aca91fbb9b99b8035e7b056d00d6bd85cf7e2550f47087dbd1c",
+      "size": 863216
+    },
+    {
+      "git_blob_sha1": "1d6527cf2c9c973db8727dcd68859e30242507eb",
+      "oid": "dee5a294e8afaacc9295ac5d100e00733ecac278e79264b96331e40a3ede1b04",
+      "path": "openpilot/selfdrive/modeld/models/dmonitoring_model.onnx",
+      "pointer_raw_sha256": "d4e8646bff88d5bb47626e5ad5dfd118a0b48a8fb769064d7ce1ce67cd80f3c7",
+      "size": 7844499
+    },
+    {
+      "git_blob_sha1": "f030157ccd2bacbdc6d7b98358903cbacc0e0b34",
+      "oid": "65a08adc31d5c456219687d99b7bf5e44d61dae2d49ea67850e76105c7248cce",
+      "path": "openpilot/selfdrive/modeld/models/driving_supercombo.onnx",
+      "pointer_raw_sha256": "7a92b26c853d49ad244059fd81d1e499804bc2294383fa50c47942f573fa5e3a",
+      "size": 60918562
+    },
+    {
+      "git_blob_sha1": "5d480c515a6ed17c7ddc09013680de2c87539a40",
+      "oid": "1ef26a4099ef867f3493389379d882381a2491cdbfa41a086be8899a2154dcb3",
+      "path": "openpilot/selfdrive/ui/installer/inter-ascii.ttf",
+      "pointer_raw_sha256": "fda6020147422b9455c88478934a14d79028e1b74947278f3e17d295cc21ca14",
+      "size": 26160
+    }
+  ],
+  "coverage": "All 252 HEAD cached objects passed git lfs fsck --objects; all15 separately streamed and hashed. Actual clean-runner build coverage is an independent CI requirement.",
+  "effective_exclusion_in_original_full_ci": "openpilot/selfdrive/modeld/models/big_driving_tinygrad.pkl",
+  "head": "a720b930fa63f1372019a1e696c1b63181da3e81",
+  "head_declared_bytes": 895134701,
+  "hf_tree_note": "Older named tree/import differs from the current content-addressed LFS object store. All15 actual payloads currently available.",
+  "hf_tree_revision_observed": "51b12d20a25b76fa8a5717c2e5af01f148e469e2",
+  "historical_official_candidate": {
+    "cause": "NOT_FOUND_OR_NOT_AUTHORIZED; does not prove deletion",
+    "configuration_proof": "https://github.com/commaai/openpilot/blob/d9ecb0b678e95d88dfbb7a1c4fe7b07a0247b09b/.lfsconfig",
+    "endpoint": "https://gitlab.com/commaai/openpilot-lfs.git/info/lfs",
+    "response": "HTTP200 batch; 9 per-object404, 6 download actions; no historical endpoint payload downloads needed"
+  },
+  "local_exclusion": null,
+  "missing_declared_bytes": 95348970,
+  "missing_object_count": 15,
+  "objects": [
+    {
+      "dependency_evidence": [
+        "launch_chffrplus.sh:20-29,83-85"
+      ],
+      "downstream_classification": "UNKNOWN_DEPENDENCY",
+      "existing_exclusion_applies": false,
+      "file_type": "BINARY_NOT_PARSED",
+      "git_blob_sha1": "241d0fc1688841faa248cd5446a1451853eb19aa",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:05.524120+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 24709520,
+        "payload_sha256": "f92c0a9b41613e063b6a1cd086729f5555d9df6482249e171ed1e276272cad7d",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "4dbdd66e0c7120a66a258bf91d74350d3f64715d",
+        "path": "openpilot/common/hardware/comma/updater",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "df3a1e55e16833f40bd6586e92ff56209df2b85a5cbffb4560ca7d5cfe870a17",
+        "response_bytes": 133,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/4dbdd66e0c7120a66a258bf91d74350d3f64715d/openpilot/common/hardware/comma/updater"
+      },
+      "oid": "f92c0a9b41613e063b6a1cd086729f5555d9df6482249e171ed1e276272cad7d",
+      "path": "openpilot/common/hardware/comma/updater",
+      "pointer_raw_sha256": "df3a1e55e16833f40bd6586e92ff56209df2b85a5cbffb4560ca7d5cfe870a17",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 24709520
+    },
+    {
+      "dependency_evidence": [
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/prime.py:18-20,64-65,128",
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/device_layout.py:101-105"
+      ],
+      "downstream_classification": "UNKNOWN_DEPENDENCY",
+      "existing_exclusion_applies": false,
+      "file_type": "PNG",
+      "git_blob_sha1": "04af670a488dbe1d01ee3de398626a7f43e6dafd",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:08.783813+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 823,
+        "payload_sha256": "dfb645e59636687d61d20283bae65b68ddda6f7b2d4fda01a6e613a842e3b41f",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "d06711be19b72688c6d8a4f485df98135352355e",
+        "path": "openpilot/selfdrive/assets/icons_mici/settings/device/apple.png",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "a2baa9d09281871c8c3bfcf58e28d0b2c45e14ee83d5e711710a4dd4dd4844c7",
+        "response_bytes": 128,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/d06711be19b72688c6d8a4f485df98135352355e/openpilot/selfdrive/assets/icons_mici/settings/device/apple.png"
+      },
+      "oid": "dfb645e59636687d61d20283bae65b68ddda6f7b2d4fda01a6e613a842e3b41f",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/apple.png",
+      "pointer_raw_sha256": "a2baa9d09281871c8c3bfcf58e28d0b2c45e14ee83d5e711710a4dd4dd4844c7",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 823
+    },
+    {
+      "dependency_evidence": [
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/prime.py:18-20,64-65,128",
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/device_layout.py:101-105"
+      ],
+      "downstream_classification": "UNKNOWN_DEPENDENCY",
+      "existing_exclusion_applies": false,
+      "file_type": "PNG",
+      "git_blob_sha1": "0e484035cf37c637e2cc2f8318b76b6d6aefcdfd",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:09.611262+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 111083,
+        "payload_sha256": "df07383a6ddfe8cd7eeb2f22271cbd13068327ca0978873f8d10368860562e40",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "d06711be19b72688c6d8a4f485df98135352355e",
+        "path": "openpilot/selfdrive/assets/icons_mici/settings/device/commacare.png",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "4c2971340460b6835413849f0454ebcb4e13d9127f34d454bd9e59d00223a8b1",
+        "response_bytes": 131,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/d06711be19b72688c6d8a4f485df98135352355e/openpilot/selfdrive/assets/icons_mici/settings/device/commacare.png"
+      },
+      "oid": "df07383a6ddfe8cd7eeb2f22271cbd13068327ca0978873f8d10368860562e40",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/commacare.png",
+      "pointer_raw_sha256": "4c2971340460b6835413849f0454ebcb4e13d9127f34d454bd9e59d00223a8b1",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 111083
+    },
+    {
+      "dependency_evidence": [
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/prime.py:18-20,64-65,128",
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/device_layout.py:101-105"
+      ],
+      "downstream_classification": "UNKNOWN_DEPENDENCY",
+      "existing_exclusion_applies": false,
+      "file_type": "PNG",
+      "git_blob_sha1": "136c09aac76c7178d89f1e9f47191a8664a67065",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:10.764869+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 1107,
+        "payload_sha256": "f7518f3409e2ff8f7e99fb7f0c06afa8bdf0b0a506147b5cf9d4931b820a1a75",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "d06711be19b72688c6d8a4f485df98135352355e",
+        "path": "openpilot/selfdrive/assets/icons_mici/settings/device/github.png",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "fcff33904e9e06f6e513f955375f057b03d8615f838d1223828858ab1fca0895",
+        "response_bytes": 129,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/d06711be19b72688c6d8a4f485df98135352355e/openpilot/selfdrive/assets/icons_mici/settings/device/github.png"
+      },
+      "oid": "f7518f3409e2ff8f7e99fb7f0c06afa8bdf0b0a506147b5cf9d4931b820a1a75",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/github.png",
+      "pointer_raw_sha256": "fcff33904e9e06f6e513f955375f057b03d8615f838d1223828858ab1fca0895",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 1107
+    },
+    {
+      "dependency_evidence": [
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/prime.py:18-20,64-65,128",
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/device_layout.py:101-105"
+      ],
+      "downstream_classification": "UNKNOWN_DEPENDENCY",
+      "existing_exclusion_applies": false,
+      "file_type": "PNG",
+      "git_blob_sha1": "daeb574532aba86a73910e23abed798001cb8b7f",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:19.003827+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 920,
+        "payload_sha256": "8a18e3de5f455b4089a824da8d5d78d5d532ef71facb05cc75c178b24d5beeb7",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "d06711be19b72688c6d8a4f485df98135352355e",
+        "path": "openpilot/selfdrive/assets/icons_mici/settings/device/google.png",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "c1f62382f4dd07bebaa2781fe326cdb13cd1281d1c3d4a67cfc276117ea8d1c6",
+        "response_bytes": 128,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/d06711be19b72688c6d8a4f485df98135352355e/openpilot/selfdrive/assets/icons_mici/settings/device/google.png"
+      },
+      "oid": "8a18e3de5f455b4089a824da8d5d78d5d532ef71facb05cc75c178b24d5beeb7",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/google.png",
+      "pointer_raw_sha256": "c1f62382f4dd07bebaa2781fe326cdb13cd1281d1c3d4a67cfc276117ea8d1c6",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 920
+    },
+    {
+      "dependency_evidence": [
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/prime.py:18-20,64-65,128",
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/device_layout.py:101-105"
+      ],
+      "downstream_classification": "UNKNOWN_DEPENDENCY",
+      "existing_exclusion_applies": false,
+      "file_type": "PNG",
+      "git_blob_sha1": "99635bcc2bb5904b5405672b4826718d740f0efa",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:20.092526+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 13744,
+        "payload_sha256": "710e74b526adb5bbac15cd8915a828dd673dd8ce15b2fd694c64c182eef6f56f",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "d06711be19b72688c6d8a4f485df98135352355e",
+        "path": "openpilot/selfdrive/assets/icons_mici/settings/device/green_cell.png",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "962b5c7ce24fbb6dde03fb88e291068a95f7e39f2a3767208aee05eef4078d41",
+        "response_bytes": 130,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/d06711be19b72688c6d8a4f485df98135352355e/openpilot/selfdrive/assets/icons_mici/settings/device/green_cell.png"
+      },
+      "oid": "710e74b526adb5bbac15cd8915a828dd673dd8ce15b2fd694c64c182eef6f56f",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/green_cell.png",
+      "pointer_raw_sha256": "962b5c7ce24fbb6dde03fb88e291068a95f7e39f2a3767208aee05eef4078d41",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 13744
+    },
+    {
+      "dependency_evidence": [
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/prime.py:18-20,64-65,128",
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/device_layout.py:101-105"
+      ],
+      "downstream_classification": "UNKNOWN_DEPENDENCY",
+      "existing_exclusion_applies": false,
+      "file_type": "PNG",
+      "git_blob_sha1": "230beb85dd9ca1a2d3458a8b3140dd0108d24003",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:20.955920+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 13135,
+        "payload_sha256": "25db08a9038b5faa3b200ef5625cb216d7f4b31ea3d49fb0395f9b726bfaf8e6",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "7635dec6182705b9516b400521eac447f3eb3fed",
+        "path": "openpilot/selfdrive/assets/icons_mici/settings/device/green_settings.png",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "e0ec80276eb027000a58f0f5d825ba7913d326fc6618c63999eedac781c10b0d",
+        "response_bytes": 130,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/7635dec6182705b9516b400521eac447f3eb3fed/openpilot/selfdrive/assets/icons_mici/settings/device/green_settings.png"
+      },
+      "oid": "25db08a9038b5faa3b200ef5625cb216d7f4b31ea3d49fb0395f9b726bfaf8e6",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/green_settings.png",
+      "pointer_raw_sha256": "e0ec80276eb027000a58f0f5d825ba7913d326fc6618c63999eedac781c10b0d",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 13135
+    },
+    {
+      "dependency_evidence": [
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/prime.py:18-20,64-65,128",
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/device_layout.py:101-105"
+      ],
+      "downstream_classification": "UNKNOWN_DEPENDENCY",
+      "existing_exclusion_applies": false,
+      "file_type": "PNG",
+      "git_blob_sha1": "75708bf51c753ee1b377a2a3d9361f118dc42c64",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:21.962925+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 2345,
+        "payload_sha256": "547f466cc59d29647f3bf131d8444d7f22b63b186bcea55ceb8109c68ca74fe8",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "d06711be19b72688c6d8a4f485df98135352355e",
+        "path": "openpilot/selfdrive/assets/icons_mici/settings/device/paired_apple.png",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "046b6ce63403034531b7fd7131c2c494cc4a0ab688982206553aa16d30c6ef2e",
+        "response_bytes": 129,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/d06711be19b72688c6d8a4f485df98135352355e/openpilot/selfdrive/assets/icons_mici/settings/device/paired_apple.png"
+      },
+      "oid": "547f466cc59d29647f3bf131d8444d7f22b63b186bcea55ceb8109c68ca74fe8",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/paired_apple.png",
+      "pointer_raw_sha256": "046b6ce63403034531b7fd7131c2c494cc4a0ab688982206553aa16d30c6ef2e",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 2345
+    },
+    {
+      "dependency_evidence": [
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/prime.py:18-20,64-65,128",
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/device_layout.py:101-105"
+      ],
+      "downstream_classification": "UNKNOWN_DEPENDENCY",
+      "existing_exclusion_applies": false,
+      "file_type": "PNG",
+      "git_blob_sha1": "8514100359e4f4ff19c36edbeca80b0a68be1f0c",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:22.871723+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 2373,
+        "payload_sha256": "55050096cd98e7f4ea3e843d927c18815e458dfbd5e7d100b503db92075d061b",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "d06711be19b72688c6d8a4f485df98135352355e",
+        "path": "openpilot/selfdrive/assets/icons_mici/settings/device/paired_github.png",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "edeac645d8f973cb6d36a7af2c55f052a7d71beeb5f6141d13e046aa6fd6182e",
+        "response_bytes": 129,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/d06711be19b72688c6d8a4f485df98135352355e/openpilot/selfdrive/assets/icons_mici/settings/device/paired_github.png"
+      },
+      "oid": "55050096cd98e7f4ea3e843d927c18815e458dfbd5e7d100b503db92075d061b",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/paired_github.png",
+      "pointer_raw_sha256": "edeac645d8f973cb6d36a7af2c55f052a7d71beeb5f6141d13e046aa6fd6182e",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 2373
+    },
+    {
+      "dependency_evidence": [
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/prime.py:18-20,64-65,128",
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/device_layout.py:101-105"
+      ],
+      "downstream_classification": "UNKNOWN_DEPENDENCY",
+      "existing_exclusion_applies": false,
+      "file_type": "PNG",
+      "git_blob_sha1": "853de37d9d02b7adb9a14b9c36e7df0019a2be5d",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:23.603576+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 2443,
+        "payload_sha256": "f9c439ed89bc0357e86c005d5dbb6f1ad2b8d72cdc0890e3201d842d8c3928f1",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "d06711be19b72688c6d8a4f485df98135352355e",
+        "path": "openpilot/selfdrive/assets/icons_mici/settings/device/paired_google.png",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "fbe43b81b40a275878299797d972dc4321a64376594731a8bbb48719bc9c5c1b",
+        "response_bytes": 129,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/d06711be19b72688c6d8a4f485df98135352355e/openpilot/selfdrive/assets/icons_mici/settings/device/paired_google.png"
+      },
+      "oid": "f9c439ed89bc0357e86c005d5dbb6f1ad2b8d72cdc0890e3201d842d8c3928f1",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/paired_google.png",
+      "pointer_raw_sha256": "fbe43b81b40a275878299797d972dc4321a64376594731a8bbb48719bc9c5c1b",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 2443
+    },
+    {
+      "dependency_evidence": [
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/prime.py:18-20,64-65,128",
+        "openpilot/selfdrive/ui/mici/layouts/settings/device/device_layout.py:101-105"
+      ],
+      "downstream_classification": "UNKNOWN_DEPENDENCY",
+      "existing_exclusion_applies": false,
+      "file_type": "PNG",
+      "git_blob_sha1": "6114cd9124921b3545bcca43bc6ef0b57a7173d7",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:24.405543+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 1728,
+        "payload_sha256": "7aeccd3e0d8517f74eb34f7d73632c0b29b0ad5df5b9686c0f509bb6b136561e",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "d06711be19b72688c6d8a4f485df98135352355e",
+        "path": "openpilot/selfdrive/assets/icons_mici/settings/device/phone.png",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "6073bb23f105189960c827dc5fae25faf40a894168494534cdda312863d6e706",
+        "response_bytes": 129,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/d06711be19b72688c6d8a4f485df98135352355e/openpilot/selfdrive/assets/icons_mici/settings/device/phone.png"
+      },
+      "oid": "7aeccd3e0d8517f74eb34f7d73632c0b29b0ad5df5b9686c0f509bb6b136561e",
+      "path": "openpilot/selfdrive/assets/icons_mici/settings/device/phone.png",
+      "pointer_raw_sha256": "6073bb23f105189960c827dc5fae25faf40a894168494534cdda312863d6e706",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 1728
+    },
+    {
+      "dependency_evidence": [
+        "openpilot/selfdrive/modeld/helpers.py:41-44",
+        "tools/release/build_release.sh:62-66"
+      ],
+      "downstream_classification": "UNKNOWN_DEPENDENCY",
+      "existing_exclusion_applies": false,
+      "file_type": "BINARY_NOT_PARSED",
+      "git_blob_sha1": "fdcaba2f002a9967d7c345ba5eb7c4fceecc9d22",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:25.230381+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 863472,
+        "payload_sha256": "6334d6b92a2cc095bfb1430a252aa2ede1902605d0f9ba89224aa5a87c7dc7c0",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "66fd3d1bd453312f9f11dc65da423de20f94d297",
+        "path": "openpilot/selfdrive/modeld/models/big_driving_warp_1344x760_tinygrad.pkl",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "8b509c3ed66f7ba6ce1bb96629bec77a2aa7c7d049042c88c5354b05cbbdafac",
+        "response_bytes": 131,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/66fd3d1bd453312f9f11dc65da423de20f94d297/openpilot/selfdrive/modeld/models/big_driving_warp_1344x760_tinygrad.pkl"
+      },
+      "oid": "6334d6b92a2cc095bfb1430a252aa2ede1902605d0f9ba89224aa5a87c7dc7c0",
+      "path": "openpilot/selfdrive/modeld/models/big_driving_warp_1344x760_tinygrad.pkl",
+      "pointer_raw_sha256": "8b509c3ed66f7ba6ce1bb96629bec77a2aa7c7d049042c88c5354b05cbbdafac",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 863472
+    },
+    {
+      "dependency_evidence": [
+        "openpilot/selfdrive/modeld/helpers.py:41-44",
+        "tools/release/build_release.sh:62-66"
+      ],
+      "downstream_classification": "UNKNOWN_DEPENDENCY",
+      "existing_exclusion_applies": false,
+      "file_type": "BINARY_NOT_PARSED",
+      "git_blob_sha1": "91c4096993d8c1b94c067996668fc4bcf1e04414",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:27.191663+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 863216,
+        "payload_sha256": "bda11a9c2e87636db364862ca68ebe4ff9d7baeeb39c0c7e2010b702ed543283",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "66fd3d1bd453312f9f11dc65da423de20f94d297",
+        "path": "openpilot/selfdrive/modeld/models/big_driving_warp_1928x1208_tinygrad.pkl",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "19f2b675ee763aca91fbb9b99b8035e7b056d00d6bd85cf7e2550f47087dbd1c",
+        "response_bytes": 131,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/66fd3d1bd453312f9f11dc65da423de20f94d297/openpilot/selfdrive/modeld/models/big_driving_warp_1928x1208_tinygrad.pkl"
+      },
+      "oid": "bda11a9c2e87636db364862ca68ebe4ff9d7baeeb39c0c7e2010b702ed543283",
+      "path": "openpilot/selfdrive/modeld/models/big_driving_warp_1928x1208_tinygrad.pkl",
+      "pointer_raw_sha256": "19f2b675ee763aca91fbb9b99b8035e7b056d00d6bd85cf7e2550f47087dbd1c",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 863216
+    },
+    {
+      "dependency_evidence": [
+        "tools/op.sh:105-110",
+        "openpilot/selfdrive/modeld/SConscript:13-16,41-52"
+      ],
+      "downstream_classification": "REQUIRED_PROVEN",
+      "existing_exclusion_applies": false,
+      "file_type": "BINARY_NOT_PARSED",
+      "git_blob_sha1": "1d6527cf2c9c973db8727dcd68859e30242507eb",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:28.888014+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 7844499,
+        "payload_sha256": "dee5a294e8afaacc9295ac5d100e00733ecac278e79264b96331e40a3ede1b04",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "5ae0da0e465a21cb32b07eac0a987c24b2b7945e",
+        "path": "openpilot/selfdrive/modeld/models/dmonitoring_model.onnx",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "d4e8646bff88d5bb47626e5ad5dfd118a0b48a8fb769064d7ce1ce67cd80f3c7",
+        "response_bytes": 132,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/5ae0da0e465a21cb32b07eac0a987c24b2b7945e/openpilot/selfdrive/modeld/models/dmonitoring_model.onnx"
+      },
+      "oid": "dee5a294e8afaacc9295ac5d100e00733ecac278e79264b96331e40a3ede1b04",
+      "path": "openpilot/selfdrive/modeld/models/dmonitoring_model.onnx",
+      "pointer_raw_sha256": "d4e8646bff88d5bb47626e5ad5dfd118a0b48a8fb769064d7ce1ce67cd80f3c7",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 7844499
+    },
+    {
+      "dependency_evidence": [
+        "openpilot/selfdrive/modeld/SConscript:13-16,41-52"
+      ],
+      "downstream_classification": "REQUIRED_PROVEN",
+      "existing_exclusion_applies": false,
+      "file_type": "BINARY_NOT_PARSED",
+      "git_blob_sha1": "f030157ccd2bacbdc6d7b98358903cbacc0e0b34",
+      "llvm_build_condition_note": "SConscript model compilation conditional on LLVM; no optional exclusion inferred.",
+      "local_cache_and_checkout_sha256_verified": true,
+      "model_format_validation": "NOT_PARSED_NOT_EXECUTED",
+      "official_distribution": {
+        "endpoint": "https://huggingface.co/commaai/openpilot-lfs.git/info/lfs",
+        "final_host": "us.aws.cdn.hf.co",
+        "http_status": 200,
+        "observed_at": "2026-10-19T20:42:30.584325+00:00",
+        "operator": "commaai official Hugging Face repository",
+        "payload_bytes": 60918562,
+        "payload_sha256": "65a08adc31d5c456219687d99b7bf5e44d61dae2d49ea67850e76105c7248cce",
+        "redistribution": "NOT_PERFORMED; payload not committed or uploaded",
+        "repository_card_license": "mit",
+        "request_credentials": "NONE",
+        "status": "VERIFIED_EXACT_ORIGINAL_BYTES"
+      },
+      "official_upstream_pointer": {
+        "commit": "64f9b47b6ea7b622967acd7042148e7a92f0ccc4",
+        "path": "openpilot/selfdrive/modeld/models/driving_supercombo.onnx",
+        "pointer_bytes_equal": true,
+        "pointer_raw_sha256": "7a92b26c853d49ad244059fd81d1e499804bc2294383fa50c47942f573fa5e3a",
+        "response_bytes": 133,
+        "status": 200,
+        "url": "https://raw.githubusercontent.com/commaai/openpilot/64f9b47b6ea7b622967acd7042148e7a92f0ccc4/openpilot/selfdrive/modeld/models/driving_supercombo.onnx"
+      },
+      "oid": "65a08adc31d5c456219687d99b7bf5e44d61dae2d49ea67850e76105c7248cce",
+      "path": "openpilot/selfdrive/modeld/models/driving_supercombo.onnx",
+      "pointer_raw_sha256": "7a92b26c853d49ad244059fd81d1e499804bc2294383fa50c47942f573fa5e3a",
+      "setup_fetch_classification": "REQUIRED_PROVEN",
+      "size": 60918562
+    }
+  ],
+  "old_failure": {
+    "attempt": 1,
+    "downstream": "NOT_EXECUTED",
+    "job_id": 118162975156,
+    "matching_object_errors": 45,
+    "run_id": 39283519646,
+    "status": "FAILURE",
+    "unique_oids": 15
+  },
+  "optional_proven_count": 0,
+  "pointer_count": 252,
+  "receipt_sha256": "558e138ad7bdb25cca5579a8024d30311833bed45c012984aad1e9f13c72ded0",
+  "status": "LFS_MISSING_15_EXACTLY_RECONCILED",
+  "submodule_lfs": [
+    {
+      "commit": "0e266c1dbcf7328beee3e57b4a8688555387c877",
+      "exit_code": 0,
+      "lfs_pointer_count": 0,
+      "path": "msgq_repo"
+    },
+    {
+      "commit": "4134c0d1f5e8f695e35ea5fedbe88f6d0c3afb76",
+      "exit_code": 0,
+      "lfs_pointer_count": 0,
+      "path": "opendbc_repo"
+    },
+    {
+      "commit": "92eb565169fd553f4dfaf508c1a3f8dbc14fbfbf",
+      "exit_code": 0,
+      "lfs_pointer_count": 0,
+      "path": "panda"
+    },
+    {
+      "commit": "8671c17c3a4cdc4be5df07a068039e2da5b94eaa",
+      "exit_code": 0,
+      "lfs_pointer_count": 0,
+      "path": "rednose_repo"
+    },
+    {
+      "commit": "1aa8fc433bef1519a95c0700c96258c3be6dfb34",
+      "exit_code": 0,
+      "lfs_pointer_count": 0,
+      "path": "teleoprtc_repo"
+    },
+    {
+      "commit": "9d0446a4ba8a532c8b674fb6ad795af015cd9dcf",
+      "exit_code": 0,
+      "lfs_pointer_count": 0,
+      "path": "tinygrad_repo"
+    }
+  ],
+  "upstream_recovery_time": "UNKNOWN",
+  "version": "CYBERPILOT_FULL_CI_LFS_RECOVERY_INVENTORY_V1"
+}

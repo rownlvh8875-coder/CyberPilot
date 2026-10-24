@@ -1,0 +1,56 @@
+{
+  "detector": {
+    "config_sha256": "f06c4c3ffe1db9f77eb86082b05a5e2ce550bb3c02c9302d5a818e360cd94fa9",
+    "detector": "CLRerNet",
+    "ensemble_allowed": false,
+    "environment_sha256": "a4f0529fef22655b8e7509022f7f06acf4250c2a72681dc649801a829f2655e5",
+    "fine_tuning_allowed": false,
+    "postprocessing_mutation_allowed": false,
+    "postprocessing_sha256": "ebe14800fc6145462fbb9324789ce45360e96e9a2d97b14d29134c2ed5e42493",
+    "preprocessing_sha256": "d0b220f7ceb23423b87109abe7a2564f5f3ab7aa3d300aa007cd7c8cb7727ae9",
+    "public_environment_file_sha256": "7d39efce7a0cb3fb5e6cd4703b93252bc469d9e9bdb815a4b89a08bc95dd31ae",
+    "receipt_sha256": "13d5f72d1256fc9847b8ca7070364b8a319426df2eeca4572477015a1a0f9da5",
+    "repository_commit": "dae038f67da57e292e5293a68c9c1c2922de13c2",
+    "reselection_allowed": false,
+    "schema": "PRIVATE_DIAGNOSTIC_DETECTOR_FREEZE_V1",
+    "source_sha256": "9de95fcbaa580d4279f085925effae36c3d82a7da026805a96d3646c446e1ed1",
+    "threshold_optimization_allowed": false,
+    "weight_sha256": "424422f1008a5fe1717d52bbc5f631dcc2731808f8adb96110d126fa83d3a8aa"
+  },
+  "execution": "NOT_RUN",
+  "human_holdout_status": "PRIVATE_HUMAN_HOLDOUT_PENDING",
+  "manifest_sha256": null,
+  "output_contract": {
+    "allowed": [
+      "detected_lane_count",
+      "confidence_distribution",
+      "temporal_availability",
+      "prediction_geometry_stability",
+      "unavailable_rate"
+    ],
+    "localization_error_against_truth_allowed": false,
+    "no_gt_semantics": "GEOMETRY_STABILITY_IS_NOT_LOCALIZATION_ACCURACY_OR_LANE_QUALITY",
+    "qualification_allowed": false,
+    "receipt_sha256": "50ab66594cc65c7927b3973993f8b63afeff3eb1ce6e490844a6676f60f99033",
+    "reference_promotable": false,
+    "schema": "PRIVATE_PIXEL_DIAGNOSTIC_OUTPUT_CONTRACT_V1",
+    "sealed_reference_allowed": false,
+    "unavailable_handling": "ACCOUNT_ALL_FROZEN_FRAMES_NO_CONFIDENCE_POSTHOC_EXCLUSION",
+    "unit": "PIXEL_DOMAIN_ONLY"
+  },
+  "privacy": [
+    "NO_RAW_FRAME_LOG_UPLOAD_OR_REPOSITORY_COMMIT",
+    "NO_EXIF_GPS_OR_RAW_METADATA_PUBLICATION",
+    "NO_INDIVIDUAL_ROUTE_FRAME_HASHES_OR_LOCAL_PATHS_IN_PUBLIC_OUTPUT",
+    "SEPARATE_LOCAL_PRIVATE_CACHE_PUBLIC_REPORTS"
+  ],
+  "private_input_allowed": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "d1628d4721d4e6eb8c63b353c462e014c1c51fecea8a22dc04078a4a53466ec2",
+  "reference_promotable": false,
+  "sampling_policy_sha256": null,
+  "schema": "PRIVATE_PIXEL_PREPARATION_READINESS_V1",
+  "sealed_reference_allowed": false,
+  "status": "PROPOSED_NOT_RUN",
+  "tool_sha256": "7b030cb51f852dbba5addfcd592a9677341547401c3b96f0974fd9b2201b985c"
+}

@@ -1,0 +1,27 @@
+{
+  "allocation": "DEV_MAX_1_FLOOR_N_DIV_5_HOLDOUT_SAME_TRAIN_REMAINDER",
+  "before_numeric_inspection": true,
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "fractions": [
+    0.6,
+    0.2,
+    0.2
+  ],
+  "holdout": "ONE_OPEN_AFTER_MODEL_UNIT_METRIC_SUPPORT_FREEZE",
+  "method": "SHA256_ROUTE_ID_SORT_WHOLE_ROUTES",
+  "minimum_routes": 3,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "quality_based_reassignment": false,
+  "receipt_sha256": "ba60c5e59fe5d093abab4c2ec81d96d2373d94e745195779623c84dbf67f0e8b",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_DATASET_V2_SPLIT_POLICY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "v1_numeric_reuse": false,
+  "v1_role": "PLANNING_CONTEXT_ONLY",
+  "vehicle_activation_allowed": false
+}

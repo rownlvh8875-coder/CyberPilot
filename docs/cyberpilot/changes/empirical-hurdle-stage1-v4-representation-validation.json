@@ -1,0 +1,133 @@
+{
+  "actual_execution_authorized": false,
+  "actual_model": "NOT_FIT",
+  "actual_rollout_calls": 0,
+  "actual_v4_performance": "NOT_RUN",
+  "architecture_frozen": true,
+  "baseline": "da23b158fa2ff6eecf1ca8d33ae5e2190fcba078",
+  "candidate_search_authorized": false,
+  "checks": {
+    "combined_empirical": {
+      "passed": 2032
+    },
+    "compileall": "PASS",
+    "full_autotune_controls": {
+      "passed": 4891
+    },
+    "git_diff_check": "PASS",
+    "json_files": {
+      "passed": 704
+    },
+    "lateral_replay": {
+      "passed": 16
+    },
+    "new_focused": {
+      "passed": 31
+    },
+    "numeric_causal_authority_review": "APPROVED",
+    "prior_focused": {
+      "passed": 233
+    },
+    "publication_privacy_authority": "PASS",
+    "research_review": "APPROVED",
+    "ruff": "PASS",
+    "scons": "PASS"
+  },
+  "component": "representation-validation",
+  "composition_authorized": false,
+  "final_full_attempt": {
+    "failed": 0,
+    "passed": 4891,
+    "source_binding_before_equals_after": true
+  },
+  "fitting_policy_frozen": false,
+  "full_source_stability_sha256": "d433c8b064aa418d6a2b665e548420a65908ae8ced5dab6a398ad6d843be8083",
+  "historical_states_preserved": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "holdout_openings": 0,
+  "hugging_face": {
+    "download": 0,
+    "login": "NOT_RUN",
+    "repo": "NOT_CREATED",
+    "setup": "NOT_RUN",
+    "upload": 0
+  },
+  "initial_full_attempt": {
+    "exact_worker_internal_reason": "NOT_EXPOSED",
+    "failed": 1,
+    "isolated_retry": "PASS",
+    "no_test_or_gate_change": true,
+    "passed": 4890,
+    "reason": "EXISTING_SYNTHETIC_WORKER_FAILED_DURING_CONCURRENT_REVIEW_EDITS"
+  },
+  "input_lock": "PASS",
+  "model_fit_calls": 0,
+  "model_selection_calls": 0,
+  "normalizer_fit_calls": 0,
+  "opening_count": 0,
+  "pooled_refit": "NOT_AUTHORIZED",
+  "prediction_replay_calls": 0,
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "HOLDOUT_OPENING_CLOSED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED",
+    "SEARCH_NOT_AUTHORIZED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "prior_review_states_preserved": [
+    "GLOBAL_SINGLE_THRESHOLD_FAMILY_RETROSPECTIVELY_EXHAUSTED",
+    "V4_ARCHITECTURE_REDESIGN_INCONCLUSIVE",
+    "V4_TWO_CONTEXT_CAUSAL_STATE_CONTRACT_ESTABLISHED",
+    "V4_TWO_CONTEXT_EXACT_FITTING_EXACT_BUT_CARTESIAN_WORST_CASE",
+    "OPTION_A_ALGORITHMIC_ELIGIBILITY_NOT_ESTABLISHED",
+    "SEPARABLE_TWO_CONTEXT_FITTING_ALGORITHMICALLY_FEASIBLE_POLICY_UNFROZEN",
+    "V4_TWO_CONTEXT_POLICY_DECISION_INCONCLUSIVE"
+  ],
+  "private_numeric_array_opens": 0,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qlog_openings": 0,
+  "qualification_allowed": false,
+  "raw_log_openings": 0,
+  "receipt_sha256": "5cef4f2754d0dce517f4a0d89aca17e4a33d6408e8131dd5b2370b67a0635c80",
+  "reference_promotable": false,
+  "schema": "BOUNDED_STAGE1_REPRESENTATION_ARCHITECTURE_REVIEW_V1",
+  "scope": "PUBLIC_STATIC_SYNTHETIC_ARCHITECTURE_ONLY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_writes": 0,
+  "status": "BOUNDED_STAGE1_REPRESENTATION_ARCHITECTURE_REVIEW_COMPLETE",
+  "synthetic_algebra": "PASS_NO_FITTING",
+  "ta_execution": false,
+  "threshold_search_calls": 0,
+  "v4": {
+    "cv": "NOT_RUN",
+    "development": "NOT_RUN",
+    "fitting": "NOT_RUN",
+    "performance": "NOT_RUN",
+    "rollout": "NOT_RUN",
+    "selection": "NOT_RUN"
+  },
+  "validation_environment": {
+    "blas_threads": 1,
+    "legacy_d_fixture_isolation": "PRIVATE_MOUNT_NAMESPACE_TMPFS_NO_GLOBAL_GUARD_CHANGE",
+    "numpy": "2.5.3",
+    "python": "3.12.13",
+    "temp": "E_BACKED_WSL"
+  },
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

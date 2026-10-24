@@ -1,0 +1,97 @@
+{
+  "authority": {
+    "candidate_execution": false,
+    "composition": false,
+    "controller_integration": false,
+    "cv_scoring": false,
+    "device": false,
+    "fitting": false,
+    "holdout_opening": false,
+    "logistic_fitting": false,
+    "normalizer_fitting": false,
+    "ols_fitting": false,
+    "pooled_refit": false,
+    "prediction": false,
+    "private_array_access": false,
+    "qlog_opening": false,
+    "raw_opening": false,
+    "rollout": false,
+    "selection": false,
+    "sg": false,
+    "ta": false,
+    "threshold_search": false,
+    "vehicle": false
+  },
+  "candidate_search_authorized": false,
+  "comparator": "HOLD_LAST_ANGLE",
+  "comparator_population": "EXACT_SAME_ORDERED_ANCHOR_SET_AS_INTEGRATED_CANDIDATE",
+  "comparator_rollout": "INITIAL_OBSERVED_TICK_HELD_FOR_ENTIRE_HORIZON",
+  "composition_authorized": false,
+  "diagnostic_values": "NOT_COMPUTED",
+  "family": "HURDLE_RI_V1",
+  "integrated_branch": "PREDICTED_GATE_ONLY",
+  "integrated_continuous": [
+    "RMSE",
+    "MAE",
+    "P95_ABSOLUTE"
+  ],
+  "integrated_population": "ALL_ELIGIBLE_DEVELOPMENT_ANCHORS_STATIC_AND_MOVE",
+  "integrated_projected": [
+    "EXACT_NEXT_TICK_HIT",
+    "WITHIN_ONE_TICK"
+  ],
+  "metric_reduction": "EXACT_RULE_REQUIRED_IN_FUTURE_POLICY",
+  "oracle": "ORACLE_MOVE_GATE_DIAGNOSTIC_FUTURE_POLICY_ONLY",
+  "oracle_admission": false,
+  "oracle_deployable": false,
+  "oracle_population": "ALL_ELIGIBLE_ONE_STEP_ANCHORS_TRUE_LABEL_BRANCH_FOR_DIAGNOSIS_ONLY",
+  "oracle_ranking": false,
+  "oracle_selection": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "68aeaf13efc8912fa62400d73352c3c3314557123405d529811980ad56d15b17",
+  "reference_promotable": false,
+  "required_attribution": [
+    "STATIC",
+    "MOVE",
+    "STATIC_FALSE_MOVE",
+    "MOVE_MISSED_MOTION"
+  ],
+  "rollout_horizons": [
+    25,
+    50,
+    100,
+    200
+  ],
+  "rollout_primary": [
+    "ANGLE_RMSE",
+    "ANGLE_MAE",
+    "ANGLE_P95_ABSOLUTE"
+  ],
+  "schema": "EMPIRICAL_HURDLE_DIAGNOSTIC_CONTRACT_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "stage1": [
+    "CONFUSION_MATRIX",
+    "STATIC_FALSE_MOVE_RATE",
+    "MOVE_MISSED_RATE",
+    "MOVE_PRECISION",
+    "MOVE_RECALL",
+    "SPECIFICITY",
+    "BALANCED_ACCURACY"
+  ],
+  "stage2_diagnostic_inference": "FUTURE_TRUE_MOVE_DIAGNOSTIC_BRANCH_SEPARATE_FROM_PRIMARY",
+  "stage2_true_move": [
+    "RMSE",
+    "MAE",
+    "P95_ABSOLUTE",
+    "SIGN_ACCURACY",
+    "EXACT_TICK",
+    "WITHIN_ONE_TICK"
+  ],
+  "standalone_stage_score_admission": false,
+  "ta_execution": false,
+  "undefined_rates": "EXACT_RULE_REQUIRED_IN_FUTURE_POLICY",
+  "vehicle_activation_allowed": false
+}

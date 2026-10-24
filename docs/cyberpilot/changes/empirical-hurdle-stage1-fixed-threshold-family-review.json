@@ -1,0 +1,74 @@
+{
+  "actual_execution_authorized": false,
+  "baseline": "b7e91e57c3d19be827c8757d9803e4744ddcf4a9",
+  "candidate_search_authorized": false,
+  "closure_scope": "EMPIRICAL_PROJECT_POLICY_CLOSURE_CURRENT_DATA_FIXED_SCORE_HURDLE_COMPOSITION_FROZEN_FINAL_GATE",
+  "component": "fixed-threshold-family-review",
+  "composition_authorized": false,
+  "definition": "SAME_CANDIDATE_FOLD_FIXED_SCALAR_SCORE; MOVE_IFF_SCORE_STRICTLY_GREATER_THAN_ONE_TRAIN_THRESHOLD",
+  "family": "SINGLE_GLOBAL_THRESHOLD_OVER_FIXED_STAGE1_SCORE",
+  "historical_states_preserved": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "mathematical_impossibility_claim": false,
+  "not_proven": [
+    "ALL_POSSIBLE_THRESHOLDS_FAIL",
+    "ALL_THRESHOLD_OBJECTIVES_FAIL",
+    "ALL_STAGE1_MODELS_FAIL"
+  ],
+  "opening_count": 0,
+  "policies": [
+    {
+      "selection_receipt_sha256": "cac341f353befbf014726df964009525484e938abc1b5a5dc6d5de4e5a7a6df8",
+      "threshold_policy": "TRAIN_BALANCED_ACCURACY",
+      "version": "V1"
+    },
+    {
+      "selection_receipt_sha256": "339cf8e4b9df64aed3cb64f232bab5661dd971437be41cd10bf66fc1c2f0f68a",
+      "threshold_policy": "TRAIN_TASK_EXACT_HIT_WITH_MOVE_AND_ALL_RMSE_PROTECTION",
+      "version": "V2"
+    },
+    {
+      "selection_receipt_sha256": "1487193d6e9778b472b1e49ebf8e96ac3e9d20154358926d63e74d81be3bd2b9",
+      "threshold_policy": "V2_PLUS_IMMUTABLE_V1_TRAIN_TP_FLOOR",
+      "version": "V3"
+    }
+  ],
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "HOLDOUT_OPENING_CLOSED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED",
+    "SEARCH_NOT_AUTHORIZED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "reason": "THREE_DISTINCT_TRAIN_POLICY_SELECTIONS_NO_ADMISSIBLE; V2_SUPPRESSION_V3_COVERAGE_STATIC_TRADEOFF_OBSERVED",
+  "receipt_sha256": "c5c229cdf974a573fa03702874404f6f1d38603ddfe99a98fb359df273b9da5d",
+  "reference_promotable": false,
+  "research_priority": "STOP_ADDITIONAL_GLOBAL_THRESHOLD_OBJECTIVE_TWEAKING_WITHOUT_NEW_STRUCTURAL_EVIDENCE",
+  "same_models_features_score": true,
+  "schema": "STAGE1_V4_ARCHITECTURE_REVIEW_V1",
+  "scope": "RESEARCH_DESIGN_REVIEW_ONLY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "status": "GLOBAL_SINGLE_THRESHOLD_FAMILY_RETROSPECTIVELY_EXHAUSTED",
+  "ta_execution": false,
+  "v2_v3_comparison_denominator": 31,
+  "v4_performance": "NOT_RUN",
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

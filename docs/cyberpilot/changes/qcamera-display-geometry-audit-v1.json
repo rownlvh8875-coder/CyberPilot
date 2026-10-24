@@ -1,0 +1,39 @@
+{
+  "development_sources": 60,
+  "image_decode": false,
+  "layouts": [
+    {
+      "layout": {
+        "chroma_format_idc": 1,
+        "coded_wh": [
+          528,
+          336
+        ],
+        "display_crop_lrtb_px": [
+          0,
+          2,
+          0,
+          6
+        ],
+        "progressive": true,
+        "proves_native_crop": false,
+        "visible_wh": [
+          526,
+          330
+        ]
+      },
+      "observations": 4800
+    }
+  ],
+  "manifest_sha256": "b17512ebb0a6f4c2ea04c3c9c1c386ed9c1d73742f3433aca22458c05f4997f6",
+  "model_payload_access": false,
+  "native_optical_crop_proven": false,
+  "new_holdout_access": false,
+  "parser_sha256": "c44aa7a222745f58b8056b757ff6f5de0c820e142f5a2ae31c6458813ec602cd",
+  "qualification_allowed": false,
+  "raw_publication": false,
+  "schema": "EXISTING_DEVELOPMENT_H264_DISPLAY_GEOMETRY_AUDIT_V1",
+  "source_sha256": "9bfce9e51adcd2f87767ff7a143f5f1e7b182c9344cb9b13c752c4b3811c80d7",
+  "sps_observations": 4800,
+  "receipt_sha256": "200706648597b463ff8090d16f48c6299513579fb8dd8da54942fee8a6eb96d1"
+}

@@ -1,0 +1,62 @@
+{
+  "actual_execution_authorized": false,
+  "additional_constraints": [],
+  "all_static": "EXCLUDED_BY_STRICT_ALL_RMSE; MOVE_NONWORSE_ALONE_DOES_NOT_EXCLUDE",
+  "authority": "DECLARATIVE_DESIGN_AND_SYNTHETIC_TESTS_ONLY",
+  "candidate_search_authorized": false,
+  "change_scope": "THRESHOLD_OBJECTIVE_ONLY",
+  "clauses": [
+    [
+      "MOVE_RMSE",
+      "<=",
+      "HOLD_MOVE_RMSE"
+    ],
+    [
+      "MOVE_MAE",
+      "<=",
+      "HOLD_MOVE_MAE"
+    ],
+    [
+      "MOVE_P95",
+      "<=",
+      "HOLD_MOVE_P95"
+    ],
+    [
+      "ALL_RMSE",
+      "<",
+      "HOLD_ALL_RMSE"
+    ]
+  ],
+  "composition_authorized": false,
+  "conjunction": "ALL_FOUR",
+  "decision_policy": "HURDLE_STAGE1_DECISION_POLICY_V2",
+  "empty_state": "STAGE1_DECISION_POLICY_V2_NO_FEASIBLE_THRESHOLD",
+  "epsilon": 0,
+  "failure_scope": "CANDIDATE_FOLD_DECISION_POLICY",
+  "fallback": "NONE",
+  "family": "HURDLE_RI_V1",
+  "finite_required": true,
+  "forbidden_fallbacks": [
+    "V1_THRESHOLD",
+    "BALANCED_ACCURACY",
+    "DEFAULT_0_5",
+    "NEAREST",
+    "RELAXATION"
+  ],
+  "metric_contract_sha256": "98df562961a9c60cd43531694cd0dfbbde19b528c856bf6562ea6d5c6aad17e5",
+  "metric_semantics": "V1_CANONICAL_DELTA_ERROR_REDUCTION_AND_LINEAR_P95_UNCHANGED",
+  "minimum_predicted_move_fraction": "NOT_SPECIFIED_NO_ADDED_CONSTRAINT",
+  "move_subset": "ACTUAL_DELTA_TICK_NE_ZERO",
+  "output": "INTEGRATED_PREDICTED_GATE_NOT_ORACLE",
+  "population": "SAME_ORDERED_TRAIN_ANCHORS",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "2dc5e8fbbf1830a5f69309c9e742811fdf8fef19cdd0d0c59e5daa434170fadb",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_STAGE1_V2_FEASIBILITY_CONTRACT",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

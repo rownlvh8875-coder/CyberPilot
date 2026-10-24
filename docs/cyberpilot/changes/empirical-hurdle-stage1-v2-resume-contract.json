@@ -1,0 +1,40 @@
+{
+  "actual_execution_authorized": false,
+  "authority": "PUBLIC_POLICY_AND_SYNTHETIC_TESTS_ONLY",
+  "candidate_search_authorized": false,
+  "change_scope": "THRESHOLD_OBJECTIVE_ONLY",
+  "composition_authorized": false,
+  "compute_calls": 0,
+  "decision_policy": "HURDLE_STAGE1_DECISION_POLICY_V2",
+  "external_reference_verification": "SAVED_SEALED_LINEAGE_ONLY_NO_DEREFERENCE_NO_CURRENT_SOURCE_BYTE_CLAIM",
+  "family": "HURDLE_RI_V1",
+  "incomplete": "FAIL_CLOSED_NO_RECOMPUTATION",
+  "mode": "VERIFY_ONLY_SAVED_V2_STORE",
+  "outputs": [
+    "SAME_MANIFEST",
+    "SAME_READINESS"
+  ],
+  "prerequisite": "COMPLETE_AUTHORITATIVE_RUN1_MANIFEST",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "2b0ebef4749f3864840db134d7fe4777aa5085dceaf499ab163779e2fa620fc9",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_STAGE1_V2_RESUME_CONTRACT",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_open_calls": 0,
+  "ta_execution": false,
+  "traps": [
+    "V1_MODEL_LOADER",
+    "SOURCE_FEATURE_LOADER",
+    "PREDICTION_REPLAY",
+    "THRESHOLD_EVALUATOR",
+    "DEVELOPMENT_EVALUATOR",
+    "ROLLOUT",
+    "SCORER",
+    "SELECTOR"
+  ],
+  "vehicle_activation_allowed": false,
+  "verification": "VERIFY_PERSISTED_V2_PAYLOAD_HASHES_RECEIPTS_MANIFEST_AND_READINESS_CHAIN"
+}

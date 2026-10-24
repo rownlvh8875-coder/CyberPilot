@@ -1,0 +1,67 @@
+{
+  "browser": "NOT_APPLICABLE",
+  "candidate_search_authorized": false,
+  "combined_empirical": {
+    "passed": 1233,
+    "subtests_passed": 216
+  },
+  "composition_authorized": false,
+  "cv_scoring": "NOT_RUN",
+  "exact_head_ci": "VERIFIED_SEPARATELY_AFTER_COMMIT_NOT_CLAIMED_BY_THIS_PRECOMMIT_RECEIPT",
+  "focused": {
+    "passed": 60,
+    "subtests_passed": 67
+  },
+  "full_runner": {
+    "autotune": 3865,
+    "controls": 142,
+    "passed": 4007,
+    "seconds": 1570.31
+  },
+  "git_diff_check": "PASS",
+  "historical_tracked_modifications": 0,
+  "holdout": "HOLDOUT_OPENING_CLOSED",
+  "independent_review": {
+    "findings": [
+      "EMISSION_TICK_TO_DEGREE_UNITS",
+      "AUXILIARY_RATE_READ_ALLOWLIST",
+      "COMPLETE_DERIVED_SOURCE_ARRAY_PROOF"
+    ],
+    "full_regression_after_fixes": true,
+    "status": "COMPLETED_FINDINGS_FIXED_BEFORE_NUMERIC_ACCESS",
+    "unresolved_findings": 0
+  },
+  "json": "PASS",
+  "lateral_replay": {
+    "passed": 16
+  },
+  "log_sha256": {
+    "empirical.log": "d99bf17531d4beb74c8002a72d1835c04c81196e3ab0ae48c9db69f40e4afe49",
+    "focused.log": "f765d3cef60a3006d142db2be8ab25301693c7fff019af4acba39b7ef3699e5f",
+    "full.log": "55e12ffb6280fbbc041fd63b8ac2fdc0571f134a7cd45f67754b306e0aad8384",
+    "lateral.log": "d3b05fdcd5cda54685fde2b3e0d4a236c707f30e20dd39a445ccb8d2a81a5290",
+    "publication-full.log": "5268d379606ae95b309e1f3380b693a5568aea50dabeef7c9c022ce5794dd2da",
+    "publication-head.log": "38841c7ffc3778e657e3458550d672b5ef169368f0ddb66d5417e637d960cf43",
+    "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "scons.log": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056"
+  },
+  "model_fitting": "NOT_RUN",
+  "model_selection": "NOT_RUN",
+  "opening_count": 0,
+  "policy_sha256": "2a32ee18b757b7fa6dde62360b226bef42d7a203d6f15f509b94d5b18910c454",
+  "production_authority": false,
+  "publication_privacy_authority": "PASS",
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "readiness_sha256": "df79966d0f2daedba0a6e798a91b277ee2325ee9e5e303069e3b4287e695d9b4",
+  "receipt_sha256": "cf8cba4e55c4a8f3268d2e19c1228187c4419ed70513ad765ebd253f8de5082e",
+  "reference_promotable": false,
+  "ruff": "PASS",
+  "schema": "EMPIRICAL_S2_RI_REGRESSION_VALIDATION_V1",
+  "scons": "PASS",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "syntax": "PASS",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

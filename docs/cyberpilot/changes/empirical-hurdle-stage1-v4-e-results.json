@@ -1,0 +1,2899 @@
+{
+  "Hugging_Face": "NOT_REQUIRED / NOT_USED",
+  "acceptance_by_job": [
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_RMSE",
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_MAE",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_MAE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D00_L01",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_100_RMSE",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_100_RMSE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D00_L01",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D00_L05",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D00_L05",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D00_L15",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_100_RMSE",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_100_RMSE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D00_L15",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D00_L45",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_EXACT_HIT"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D00_L45",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_RMSE",
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_RMSE",
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D05_L01",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_MAE",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_100_RMSE",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_100_RMSE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D05_L01",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D05_L05",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_MAE",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_200_RMSE",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_200_RMSE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D05_L05",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D05_L15",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_50_RMSE",
+          "OVERALL_100_RMSE",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_100_RMSE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D05_L15",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D05_L45",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D05_L45",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_RMSE",
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_RMSE",
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D10_L01",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_MAE",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_100_RMSE",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_100_RMSE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D10_L01",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D10_L05",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_100_RMSE",
+          "PATH_MOVED_100_RMSE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D10_L05",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D10_L15",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_100_RMSE",
+          "PATH_MOVED_100_RMSE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D10_L15",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D10_L45",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D10_L45",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_RMSE",
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_RMSE",
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D20_L01",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_RMSE",
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT",
+          "ONE_STEP_WITHIN_ONE_TICK",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_100_RMSE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D20_L01",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D20_L05",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_MAE",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_200_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_200_RMSE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D20_L05",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D20_L15",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D20_L15",
+      "fold": "FOLD_B"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_P95",
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D20_L45",
+      "fold": "FOLD_A"
+    },
+    {
+      "D0": {
+        "failures": [
+          "ONE_STEP_EXACT_HIT",
+          "OVERALL_25_RMSE",
+          "OVERALL_25_MAE",
+          "OVERALL_25_P95",
+          "OVERALL_50_RMSE",
+          "OVERALL_50_MAE",
+          "OVERALL_50_P95",
+          "OVERALL_100_RMSE",
+          "OVERALL_100_MAE",
+          "OVERALL_100_P95",
+          "OVERALL_200_RMSE",
+          "OVERALL_200_MAE",
+          "OVERALL_200_P95",
+          "PATH_MOVED_25_RMSE",
+          "PATH_MOVED_25_MAE",
+          "PATH_MOVED_25_P95",
+          "PATH_MOVED_50_RMSE",
+          "PATH_MOVED_50_MAE",
+          "PATH_MOVED_50_P95",
+          "PATH_MOVED_100_RMSE",
+          "PATH_MOVED_100_MAE",
+          "PATH_MOVED_100_P95",
+          "PATH_MOVED_200_RMSE",
+          "PATH_MOVED_200_MAE",
+          "PATH_MOVED_200_P95"
+        ],
+        "pass": false
+      },
+      "D1": {
+        "failures": [
+          "ONE_STEP_MAE",
+          "ONE_STEP_EXACT_HIT"
+        ],
+        "pass": false
+      },
+      "candidate_id": "HRI_D20_L45",
+      "fold": "FOLD_B"
+    }
+  ],
+  "holdout": "CLOSED",
+  "interpretation": "OVERLAPPING_JOB_MEDIANS_NOT_INDEPENDENT_DRIVING_TRIALS; RETROSPECTIVE_NOT_BLINDED; NO_CAUSAL_SHARE_IDENTIFIED",
+  "metric_families": {
+    "H100_OVERALL": {
+      "metrics": {
+        "mae": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 21.431422327723816,
+              "median": 16.197921088169192,
+              "minimum": 14.328595604826843,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 21.227836320690812,
+              "median": 15.87443348016036,
+              "minimum": 13.879154807887781,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 14.031875230634153,
+              "median": 11.875771493635511,
+              "minimum": 10.555580627032919,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 11.995964052492386,
+              "median": 9.640015685672008,
+              "minimum": 8.49914229200581,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "p95": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 94.0,
+              "median": 68.0,
+              "minimum": 60.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 90.0,
+              "median": 65.5,
+              "minimum": 57.0,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 66.0,
+              "median": 48.0,
+              "minimum": 44.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 49.0,
+              "median": 38.0,
+              "minimum": 32.0,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "rmse": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 51.797504752709344,
+              "median": 38.115380425283305,
+              "minimum": 34.137945985977716,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 48.654682725885266,
+              "median": 35.483478494433925,
+              "minimum": 31.692038656004225,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 36.61707955570893,
+              "median": 29.41391075210003,
+              "minimum": 24.379200156746176,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 32.65103844653309,
+              "median": 22.69615178942611,
+              "minimum": 17.603774922618022,
+              "valid_jobs": 16
+            }
+          }
+        }
+      },
+      "status": "RELEASED_JOB_MEDIANS_AND_RANGES"
+    },
+    "H100_PATH_MOVED": {
+      "metrics": {
+        "mae": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 22.677348884801535,
+              "median": 17.09639886025637,
+              "minimum": 15.168243190203313,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 22.451898630876528,
+              "median": 16.76340111609406,
+              "minimum": 14.69839967451007,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 14.586456197412147,
+              "median": 12.37227332421584,
+              "minimum": 10.996247554922755,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 12.45824464264727,
+              "median": 10.004439584475708,
+              "minimum": 8.849790590948242,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "p95": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 97.0,
+              "median": 70.0,
+              "minimum": 62.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 91.0,
+              "median": 67.5,
+              "minimum": 59.0,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 68.0,
+              "median": 50.0,
+              "minimum": 46.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 50.0,
+              "median": 39.0,
+              "minimum": 33.0,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "rmse": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 53.24490362072622,
+              "median": 39.132906583673055,
+              "minimum": 35.05757982473496,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 49.98280792198227,
+              "median": 36.42669765499879,
+              "minimum": 32.50700068574416,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 37.3721860070333,
+              "median": 29.99850809974059,
+              "minimum": 24.88377270687869,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 33.249007802380696,
+              "median": 23.088941697981095,
+              "minimum": 17.964403875084653,
+              "valid_jobs": 16
+            }
+          }
+        }
+      },
+      "status": "RELEASED_JOB_MEDIANS_AND_RANGES"
+    },
+    "H200_OVERALL": {
+      "metrics": {
+        "mae": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 25.35133738380298,
+              "median": 20.465106900350456,
+              "minimum": 18.47124443084039,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 24.34074299836347,
+              "median": 20.023168865094856,
+              "minimum": 17.9322722171207,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 21.638346319586535,
+              "median": 19.356068471052573,
+              "minimum": 17.139253466511622,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 17.98301091666172,
+              "median": 15.059033529125928,
+              "minimum": 13.58847945263896,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "p95": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 105.0,
+              "median": 82.0,
+              "minimum": 71.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 97.0,
+              "median": 74.5,
+              "minimum": 62.0,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 107.0,
+              "median": 88.0,
+              "minimum": 77.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 77.0,
+              "median": 62.0,
+              "minimum": 54.0,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "rmse": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 51.319344359736206,
+              "median": 44.51074395655735,
+              "minimum": 40.17398272762531,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 47.82045424714889,
+              "median": 42.3706254746312,
+              "minimum": 37.23177249089532,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 52.75036012472233,
+              "median": 45.282670199840794,
+              "minimum": 37.51431296160014,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 43.0283568966066,
+              "median": 34.2419591467563,
+              "minimum": 27.831303977317592,
+              "valid_jobs": 16
+            }
+          }
+        }
+      },
+      "status": "RELEASED_JOB_MEDIANS_AND_RANGES"
+    },
+    "H200_PATH_MOVED": {
+      "metrics": {
+        "mae": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 25.712522947192877,
+              "median": 20.769186237608352,
+              "minimum": 18.738401839410614,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 24.686364828425603,
+              "median": 20.317479816545145,
+              "minimum": 18.190990754614063,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 21.72559241925983,
+              "median": 19.438845126158242,
+              "minimum": 17.21128929457029,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 18.04811056442331,
+              "median": 15.117083465010762,
+              "minimum": 13.644378996650426,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "p95": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 106.0,
+              "median": 83.0,
+              "minimum": 72.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 98.0,
+              "median": 75.0,
+              "minimum": 62.0,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 107.0,
+              "median": 88.0,
+              "minimum": 77.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 77.0,
+              "median": 62.0,
+              "minimum": 54.0,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "rmse": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 51.690633707293394,
+              "median": 44.841830155642924,
+              "minimum": 40.45866801351648,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 48.16492831594846,
+              "median": 42.68427080661208,
+              "minimum": 37.492205514592115,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 52.86019658355435,
+              "median": 45.37648756417586,
+              "minimum": 37.593111864682385,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 43.09336205157199,
+              "median": 34.30273469955951,
+              "minimum": 27.888945700552537,
+              "valid_jobs": 16
+            }
+          }
+        }
+      },
+      "status": "RELEASED_JOB_MEDIANS_AND_RANGES"
+    },
+    "H25_OVERALL": {
+      "metrics": {
+        "mae": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 6.992082721067039,
+              "median": 5.454031978921607,
+              "minimum": 4.576035414756523,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 6.927373340737865,
+              "median": 5.523997413734386,
+              "minimum": 4.590210317304068,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 4.974029045289251,
+              "median": 3.4145095660560854,
+              "minimum": 3.1495419470103014,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 3.2860116365446324,
+              "median": 3.040585999446076,
+              "minimum": 2.686128362707307,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "p95": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 31.0,
+              "median": 24.0,
+              "minimum": 21.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 29.0,
+              "median": 23.0,
+              "minimum": 20.0,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 24.0,
+              "median": 15.5,
+              "minimum": 13.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 13.0,
+              "median": 12.0,
+              "minimum": 11.0,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "rmse": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 19.606909721271112,
+              "median": 15.810564857683719,
+              "minimum": 11.626161182763038,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 18.237674143948926,
+              "median": 15.112128402687095,
+              "minimum": 11.61776291674286,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 11.341668686958066,
+              "median": 8.946854117679017,
+              "minimum": 7.768503094086798,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 8.595007139701002,
+              "median": 7.606530396449245,
+              "minimum": 6.575207796645036,
+              "valid_jobs": 16
+            }
+          }
+        }
+      },
+      "status": "RELEASED_JOB_MEDIANS_AND_RANGES"
+    },
+    "H25_PATH_MOVED": {
+      "metrics": {
+        "mae": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 9.161092526448535,
+              "median": 7.53010444121841,
+              "minimum": 6.235256811449076,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 8.843095946542725,
+              "median": 7.548239476391418,
+              "minimum": 6.186865273083823,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 6.790524476684396,
+              "median": 4.828180325323954,
+              "minimum": 4.472883432921606,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 4.531764946390433,
+              "median": 4.193826378821086,
+              "minimum": 3.7946324184792046,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "p95": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 37.0,
+              "median": 29.0,
+              "minimum": 24.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 35.0,
+              "median": 27.5,
+              "minimum": 22.0,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 25.0,
+              "median": 20.5,
+              "minimum": 18.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 17.0,
+              "median": 15.0,
+              "minimum": 14.0,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "rmse": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 22.64919389649074,
+              "median": 18.30088930720876,
+              "minimum": 13.322671917279942,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 20.89847554286049,
+              "median": 17.39502738499803,
+              "minimum": 13.265180998086834,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 13.235307340154735,
+              "median": 10.605424420817952,
+              "minimum": 9.213741701959949,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 10.015841027221525,
+              "median": 8.87799152303332,
+              "minimum": 7.819055408150033,
+              "valid_jobs": 16
+            }
+          }
+        }
+      },
+      "status": "RELEASED_JOB_MEDIANS_AND_RANGES"
+    },
+    "H50_OVERALL": {
+      "metrics": {
+        "mae": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 13.069010961093674,
+              "median": 10.566416257611014,
+              "minimum": 8.260831154567052,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 12.840532229637823,
+              "median": 10.581651385293181,
+              "minimum": 8.012099614388214,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 8.5469282967927,
+              "median": 6.418981129049115,
+              "minimum": 5.920479967459833,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 6.476822913589583,
+              "median": 5.576229769108156,
+              "minimum": 4.869152013222533,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "p95": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 58.0,
+              "median": 45.0,
+              "minimum": 38.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 49.0,
+              "median": 44.0,
+              "minimum": 35.0,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 42.0,
+              "median": 27.0,
+              "minimum": 24.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 26.0,
+              "median": 22.0,
+              "minimum": 19.0,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "rmse": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 37.87874759580495,
+              "median": 27.086675678219926,
+              "minimum": 20.56700501432436,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 35.36214948153162,
+              "median": 25.791615508316355,
+              "minimum": 20.052898091548716,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 19.27193520688513,
+              "median": 16.262617301744747,
+              "minimum": 14.13433465356837,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 17.393876481822033,
+              "median": 13.391611963584316,
+              "minimum": 10.445322487363022,
+              "valid_jobs": 16
+            }
+          }
+        }
+      },
+      "status": "RELEASED_JOB_MEDIANS_AND_RANGES"
+    },
+    "H50_PATH_MOVED": {
+      "metrics": {
+        "mae": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 15.433801696882636,
+              "median": 12.412677649528845,
+              "minimum": 9.790270278148204,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 15.099683838571694,
+              "median": 12.303012186749196,
+              "minimum": 9.453096648667556,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 9.844313854543746,
+              "median": 7.486783691280804,
+              "minimum": 6.917665669608067,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 7.499350080663747,
+              "median": 6.412827727131763,
+              "minimum": 5.676330413211841,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "p95": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 69.0,
+              "median": 47.5,
+              "minimum": 41.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 60.0,
+              "median": 46.0,
+              "minimum": 38.0,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 44.0,
+              "median": 31.0,
+              "minimum": 27.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 28.0,
+              "median": 24.0,
+              "minimum": 21.0,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "rmse": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 41.07271458818291,
+              "median": 29.228514778977974,
+              "minimum": 22.19800558501992,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 38.217487071156675,
+              "median": 27.70547353295904,
+              "minimum": 21.57207522370832,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 20.831267716603374,
+              "median": 17.565415664713502,
+              "minimum": 15.266350504075167,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 18.701844452926593,
+              "median": 14.30167749418055,
+              "minimum": 11.26787219898455,
+              "valid_jobs": 16
+            }
+          }
+        }
+      },
+      "status": "RELEASED_JOB_MEDIANS_AND_RANGES"
+    },
+    "one_step": {
+      "metrics": {
+        "mae": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 0.37326036305047244,
+              "median": 0.2685407374375749,
+              "minimum": 0.25578862402059155,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 0.40040374552298774,
+              "median": 0.2920142307816943,
+              "minimum": 0.2718915232190044,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 0.25409332909092186,
+              "median": 0.18801223687280652,
+              "minimum": 0.18448599398760301,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 0.24893302971039177,
+              "median": 0.23642760744870184,
+              "minimum": 0.19247594432024662,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "p95": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 1.5170358625862028,
+              "median": 1.0972975345912617,
+              "minimum": 1.064542722457074,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 1.5084990122789015,
+              "median": 1.1216362021285033,
+              "minimum": 1.0997152444875744,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 1.4324421994544299,
+              "median": 1.0,
+              "minimum": 1.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 1.0,
+              "median": 1.0,
+              "minimum": 1.0,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "rmse": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 0.8271422014384661,
+              "median": 0.553318712387032,
+              "minimum": 0.528622289861781,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 0.8384954880983011,
+              "median": 0.5820541876362106,
+              "minimum": 0.5683808227119709,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 0.6085003545465087,
+              "median": 0.46664906744614665,
+              "minimum": 0.46004005788604607,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 0.5957964215303525,
+              "median": 0.5513532601614579,
+              "minimum": 0.5361972606874128,
+              "valid_jobs": 16
+            }
+          }
+        }
+      },
+      "status": "RELEASED_JOB_MEDIANS_AND_RANGES"
+    },
+    "true_move": {
+      "metrics": {
+        "mae": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 1.236306134772494,
+              "median": 0.921071552683834,
+              "minimum": 0.8783445555337189,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 1.2008356814678496,
+              "median": 0.9847133674350346,
+              "minimum": 0.9458703884899052,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 1.2239808728889727,
+              "median": 0.9559925443947777,
+              "minimum": 0.9268706515955815,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 1.2174813931504462,
+              "median": 1.1666578337750522,
+              "minimum": 1.0779120336525456,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "p95": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 2.861103554474543,
+              "median": 2.0,
+              "minimum": 2.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 3.0,
+              "median": 2.0,
+              "minimum": 2.0,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 2.5282709987773275,
+              "median": 2.0,
+              "minimum": 2.0,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 2.6013172055172973,
+              "median": 2.0,
+              "minimum": 2.0,
+              "valid_jobs": 16
+            }
+          }
+        },
+        "rmse": {
+          "FOLD_A": {
+            "D0": {
+              "maximum": 1.603696218242487,
+              "median": 1.126815302636318,
+              "minimum": 1.066013769668234,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 1.6153877817122384,
+              "median": 1.2110987234161246,
+              "minimum": 1.1831127668197354,
+              "valid_jobs": 16
+            }
+          },
+          "FOLD_B": {
+            "D0": {
+              "maximum": 1.4035934533421879,
+              "median": 1.090211960798333,
+              "minimum": 1.0615229784131435,
+              "valid_jobs": 16
+            },
+            "D1": {
+              "maximum": 1.4462523155495066,
+              "median": 1.3463294782147561,
+              "minimum": 1.2905841061670742,
+              "valid_jobs": 16
+            }
+          }
+        }
+      },
+      "status": "RELEASED_JOB_MEDIANS_AND_RANGES"
+    }
+  },
+  "onset_continuation_details": "WITHHELD_TO_PRESERVE_C_SUPPRESSION",
+  "original_TRAIN_rowwise_gate": "NOT_SAVED",
+  "original_V4_result": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
+  "original_replica": "REPLICA_PAYLOAD_EQUALITY_NOT_FULLY_REVERIFIED",
+  "original_selection": "MODEL_SELECTION_FAILED_CLOSED",
+  "policy_adopted": false,
+  "policy_arms": [
+    "D0",
+    "D1"
+  ],
+  "processed_jobs": 32,
+  "protocol_sha256": "2933aaf1eb40addcd1e872e831901da3ff6b778147cdfe46150fc4c1251a37a5",
+  "receipt_sha256": "396ea99f3b45cefcfebbeb151650d0882e5ee8069cb91da8ed0fa33ce78075fc",
+  "retrospective_both_fold_gate_qualifying_candidates": [],
+  "schema": "V4_E_PUBLIC_PROJECTION_V1",
+  "scientific_counts_and_bins": "WITHHELD",
+  "selected_candidate": null,
+  "selected_policy": null,
+  "state_conditioned_score_and_calibration": "TEACHER_FORCED_DEV_SCORE_BYTE_EQUIVALENCE_VERIFIED_USE_PINNED_C_PUBLIC_RESULTS",
+  "status": "E_EXECUTION_COMPLETE_D1_NOT_ADMISSIBLE",
+  "transitions": {
+    "MOVE_CONTINUATION": {
+      "status": "SUPPRESSED_C_COMPATIBLE_JOINT_POLICY"
+    },
+    "MOVE_ONSET": {
+      "status": "SUPPRESSED_C_COMPATIBLE_JOINT_POLICY"
+    },
+    "MOVE_TERMINATION": {
+      "MOVE_gate_rate": {
+        "FOLD_A": {
+          "D0": {
+            "maximum": 1.0,
+            "median": 1.0,
+            "minimum": 1.0,
+            "valid_jobs": 16
+          },
+          "D1": {
+            "maximum": 0.5962508080155139,
+            "median": 0.5441492860410493,
+            "minimum": 0.4742433665008292,
+            "valid_jobs": 16
+          }
+        },
+        "FOLD_B": {
+          "D0": {
+            "maximum": 1.0,
+            "median": 1.0,
+            "minimum": 1.0,
+            "valid_jobs": 16
+          },
+          "D1": {
+            "maximum": 0.21408415111822432,
+            "median": 0.09840175307824889,
+            "minimum": 0.04586615002316472,
+            "valid_jobs": 16
+          }
+        }
+      },
+      "status": "RELEASED_JOB_MEDIANS_AND_RANGES"
+    },
+    "STATIC_HOLD": {
+      "MOVE_gate_rate": {
+        "FOLD_A": {
+          "D0": {
+            "maximum": 0.39660678894681695,
+            "median": 0.34885837534385555,
+            "minimum": 0.31280152874538336,
+            "valid_jobs": 16
+          },
+          "D1": {
+            "maximum": 0.5349957017727284,
+            "median": 0.4885522375634733,
+            "minimum": 0.4461349442992978,
+            "valid_jobs": 16
+          }
+        },
+        "FOLD_B": {
+          "D0": {
+            "maximum": 0.02073755409853059,
+            "median": 0.007782135531243387,
+            "minimum": 0.004569404977795548,
+            "valid_jobs": 16
+          },
+          "D1": {
+            "maximum": 0.34770893251054086,
+            "median": 0.30972491509400585,
+            "minimum": 0.033807587051512725,
+            "valid_jobs": 16
+          }
+        }
+      },
+      "status": "RELEASED_JOB_MEDIANS_AND_RANGES"
+    }
+  },
+  "vehicle_authority": "NONE"
+}

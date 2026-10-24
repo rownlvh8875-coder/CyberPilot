@@ -1,0 +1,162 @@
+{
+  "across_context": "DIFFERENT_CUTOFFS_CAN_CHANGE_DECISION_ORDER_BETWEEN_STATES",
+  "actual_execution_authorized": false,
+  "actual_pair_search_calls": 0,
+  "architecture_frozen": false,
+  "baseline": "cfea011d68f28a5c907a3cef17a76e1fa29bf58a",
+  "candidate_search_authorized": false,
+  "component": "state-ranking-limit",
+  "composition_authorized": false,
+  "conditional_dev_auc_ranges": {
+    "FOLD_A": {
+      "development": {
+        "continuation": {
+          "max": 0.6222943017251367,
+          "min": 0.5947944473284812
+        },
+        "onset": {
+          "max": 0.5382269658460259,
+          "min": 0.5337304715814281
+        },
+        "previous_move": {
+          "max": 0.5949007298050478,
+          "min": 0.5680675592274662
+        },
+        "previous_static": {
+          "max": 0.5414001606001397,
+          "min": 0.5361146016371393
+        }
+      },
+      "train": {
+        "continuation": {
+          "max": 0.6374355391614729,
+          "min": 0.6206479730581768
+        },
+        "onset": {
+          "max": 0.564843204541033,
+          "min": 0.5596450841584458
+        },
+        "previous_move": {
+          "max": 0.5858852647219154,
+          "min": 0.5659798553193482
+        },
+        "previous_static": {
+          "max": 0.5709797496874426,
+          "min": 0.5652788874627842
+        }
+      }
+    },
+    "FOLD_B": {
+      "development": {
+        "continuation": {
+          "max": 0.5853055889196654,
+          "min": 0.5583808259352921
+        },
+        "onset": {
+          "max": 0.5471920662248777,
+          "min": 0.535569058468251
+        },
+        "previous_move": {
+          "max": 0.5592788549710274,
+          "min": 0.5378383351682998
+        },
+        "previous_static": {
+          "max": 0.5508681615368877,
+          "min": 0.5389345130067146
+        }
+      },
+      "train": {
+        "continuation": {
+          "max": 0.6113528251424647,
+          "min": 0.597815095029236
+        },
+        "onset": {
+          "max": 0.5358948898712386,
+          "min": 0.531864719067615
+        },
+        "previous_move": {
+          "max": 0.5965334589804198,
+          "min": 0.5816750590870163
+        },
+        "previous_static": {
+          "max": 0.5371908720026722,
+          "min": 0.5327783078523864
+        }
+      }
+    }
+  },
+  "fitting_policy_frozen": false,
+  "hard_gate": "MAY_COARSEN_TO_TIES_NOT_REVERSE_WITHIN_STATE_ORDER_NOT_A_BINARY_GATE_AUC_INVARIANCE_CLAIM",
+  "historical_states_preserved": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "holdout_openings": 0,
+  "hugging_face": {
+    "download": 0,
+    "login": "NOT_RUN",
+    "repo": "NOT_CREATED",
+    "setup": "NOT_RUN",
+    "upload": 0
+  },
+  "impossibility_or_inadequacy_proof": false,
+  "model_fit_calls": 0,
+  "model_selection_calls": 0,
+  "normalizer_fit_calls": 0,
+  "opening_count": 0,
+  "pooled_refit": "NOT_AUTHORIZED",
+  "prediction_replay_calls": 0,
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "HOLDOUT_OPENING_CLOSED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED",
+    "SEARCH_NOT_AUTHORIZED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "prior_review_states_preserved": [
+    "GLOBAL_SINGLE_THRESHOLD_FAMILY_RETROSPECTIVELY_EXHAUSTED",
+    "V4_ARCHITECTURE_REDESIGN_INCONCLUSIVE",
+    "V4_TWO_CONTEXT_CAUSAL_STATE_CONTRACT_ESTABLISHED",
+    "V4_TWO_CONTEXT_EXACT_FITTING_EXACT_BUT_CARTESIAN_WORST_CASE",
+    "OPTION_A_ALGORITHMIC_ELIGIBILITY_NOT_ESTABLISHED",
+    "SEPARABLE_TWO_CONTEXT_FITTING_ALGORITHMICALLY_FEASIBLE_POLICY_UNFROZEN"
+  ],
+  "private_numeric_array_opens": 0,
+  "production_authority": false,
+  "proof": "FOR_FIXED_z_p_i<=p_j_AND_p_i>theta_z_IMPLIES_p_j>theta_z; SCORES_UNCHANGED",
+  "publication_raw_data": false,
+  "qlog_openings": 0,
+  "qualification_allowed": false,
+  "raw_log_openings": 0,
+  "receipt_sha256": "fe4b0a99e6507203d4437162bbb4634869e82a32b33f81508bfb2a9de55cba00",
+  "reference_promotable": false,
+  "rollout_calls": 0,
+  "schema": "HURDLE_STAGE1_V4_FITTING_POLICY_DECISION_REVIEW_V1",
+  "scope": "PUBLIC_STATIC_SYNTHETIC_POLICY_REVIEW_ONLY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_writes": 0,
+  "status": "TWO_CONTEXT_FIXED_SCORE_CANNOT_IMPROVE_WITHIN_STATE_RANKING",
+  "ta_execution": false,
+  "threshold_fitting_calls": 0,
+  "v4": {
+    "development": "NOT_RUN",
+    "fitting": "NOT_RUN",
+    "performance": "NOT_RUN",
+    "rollout": "NOT_RUN",
+    "selection": "NOT_RUN"
+  },
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

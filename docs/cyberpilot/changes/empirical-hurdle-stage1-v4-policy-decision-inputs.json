@@ -1,0 +1,149 @@
+{
+  "actual_execution_authorized": false,
+  "actual_pair_search_calls": 0,
+  "architecture_frozen": false,
+  "baseline": "cfea011d68f28a5c907a3cef17a76e1fa29bf58a",
+  "candidate_search_authorized": false,
+  "component": "policy-decision-inputs",
+  "composition_authorized": false,
+  "fitting_policy_frozen": false,
+  "historical_public_audit_is_not_current_private_access": true,
+  "historical_states_preserved": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "holdout_openings": 0,
+  "hugging_face": {
+    "download": 0,
+    "login": "NOT_RUN",
+    "repo": "NOT_CREATED",
+    "setup": "NOT_RUN",
+    "upload": 0
+  },
+  "input_count": 16,
+  "input_reconciliation": "PASS",
+  "model_fit_calls": 0,
+  "model_selection_calls": 0,
+  "new_private_audit": false,
+  "normalizer_fit_calls": 0,
+  "opening_count": 0,
+  "pooled_refit": "NOT_AUTHORIZED",
+  "prediction_replay_calls": 0,
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "HOLDOUT_OPENING_CLOSED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED",
+    "SEARCH_NOT_AUTHORIZED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "prior_review_states_preserved": [
+    "GLOBAL_SINGLE_THRESHOLD_FAMILY_RETROSPECTIVELY_EXHAUSTED",
+    "V4_ARCHITECTURE_REDESIGN_INCONCLUSIVE",
+    "V4_TWO_CONTEXT_CAUSAL_STATE_CONTRACT_ESTABLISHED",
+    "V4_TWO_CONTEXT_EXACT_FITTING_EXACT_BUT_CARTESIAN_WORST_CASE",
+    "OPTION_A_ALGORITHMIC_ELIGIBILITY_NOT_ESTABLISHED",
+    "SEPARABLE_TWO_CONTEXT_FITTING_ALGORITHMICALLY_FEASIBLE_POLICY_UNFROZEN"
+  ],
+  "private_numeric_array_opens": 0,
+  "production_authority": false,
+  "public_input_lock": {
+    "empirical-hurdle-stage1-fixed-threshold-family-review.json": {
+      "file_sha256": "e3d7bb8f2d4713fa9a97ee17cbdb246dde2dfc03ef1a99b907174504cec8843a",
+      "receipt_sha256": "c5c229cdf974a573fa03702874404f6f1d38603ddfe99a98fb359df273b9da5d"
+    },
+    "empirical-hurdle-stage1-v3-onset-continuation-ranking.json": {
+      "file_sha256": "74f56209a692d18798b7633eee7147c93722c6c863b4d0877bffde81731d69ba",
+      "receipt_sha256": "b692752e967549f6bc6747de36fee64f01a79dded2c530176a450e092eb63877"
+    },
+    "empirical-hurdle-stage1-v4-architecture-decision.json": {
+      "file_sha256": "e4b327accf0a4551038dc3af6fcd8a1b32207fc6914b50cd36e9ad2946485a93",
+      "receipt_sha256": "e868bf09f5e823388b7464babdb2093dc7d822b4c30b3019bbd5ae8ab8542e35"
+    },
+    "empirical-hurdle-stage1-v4-architecture-options.json": {
+      "file_sha256": "daaa64c1273cde06021d6fa01e80961bcee160670062141a83f0b09f66138c89",
+      "receipt_sha256": "b1014606100ba57f429c562e4fd9718ad9f9074f596c3f83625d74102ab2fb77"
+    },
+    "empirical-hurdle-stage1-v4-causal-state-contract.json": {
+      "file_sha256": "bdcd62d3e2736a96e4118d1da070b5f0c77aa2a23d57a776888594a6a4db686c",
+      "receipt_sha256": "d3df9b9c32043aa01df9f95c6adb126ceab76439bc72aac79c4c06fe86096e39"
+    },
+    "empirical-hurdle-stage1-v4-onset-continuation-support.json": {
+      "file_sha256": "d962e9a07ec9d79638a563cccccbda749312a2fe548239f139bb5b3b64f028c1",
+      "receipt_sha256": "771e90d4f2e1336da3b853e8a01c7f1313f76bf8b32d53840eafd4141ab5c938"
+    },
+    "empirical-hurdle-stage1-v4-option-a-eligibility.json": {
+      "file_sha256": "79f511ab0fa72f111ba4beea99fbea37436c9e140f6657d9a312ffe869e095b6",
+      "receipt_sha256": "d55c25fe04c9612d668a5ef88e21ecd3a202ed2068ae5b3f6d0959aa9b168171"
+    },
+    "empirical-hurdle-stage1-v4-rollout-state-contract.json": {
+      "file_sha256": "efd06a9d9109ce326e96ecc29af480007f85cbbccf398f1c0750164ba266bada",
+      "receipt_sha256": "1b503078ac9e5adda34f54650099309c7db718c5181ccdca5dc462d11899542f"
+    },
+    "empirical-hurdle-stage1-v4-route-transfer-analysis.json": {
+      "file_sha256": "83629b829e911e55c184e3e63be91a65c99c1031521b83618dcf442bff6c3ba0",
+      "receipt_sha256": "7791b7bd6c589a74516638df10691c2e4a7b54bd7cc52e8500519852fbaa0ae3"
+    },
+    "empirical-hurdle-stage1-v4-singleton-audit.json": {
+      "file_sha256": "c84b32de24fbbb4f74c66ce3f431d90bd5871471dc1652db7c49e134af741a27",
+      "receipt_sha256": "f491ce0ba4d593951eea631345bb4cd8d9da8035d644ff64d69472aad4a3bd97"
+    },
+    "empirical-hurdle-stage1-v4-two-context-complexity-analysis.json": {
+      "file_sha256": "58a6fea693d97e7f94ff76adfebf38e82ce6cc50b7bd2edfbcdf562c1dfb630f",
+      "receipt_sha256": "3283c00f1f2e9a3e101c250b5248525847a367bcc06d9570aa795ff0c9e0a015"
+    },
+    "empirical-hurdle-stage1-v4-two-context-exact-algorithm.json": {
+      "file_sha256": "ae1d95cb6a8fda8dafb1a2ab916a7c266316e815f161b6a8efe81ad9f4f227a1",
+      "receipt_sha256": "6408ec14fd41ec02bb15d78a64ba0f6582c6f698351998dad39c7c556083f1ee"
+    },
+    "empirical-hurdle-stage1-v4-two-context-feasibility-policy.json": {
+      "file_sha256": "57aabcb686cd239aff587d23c827355deb4d4368eb9b913e94e66743f4dba2f1",
+      "receipt_sha256": "4efbf141a3574c7afc85e465d6a9bfabdd04ba442a27be500410e862352a74e7"
+    },
+    "empirical-hurdle-stage1-v4-two-context-separable-policy-review.json": {
+      "file_sha256": "2407e4192eee0e506b4fcc1039ef59e2875bb3c8680b7e2f3f961eae17f3d9e6",
+      "receipt_sha256": "06ce2bc737b5b07d720151baa01ce83e502dfa95890b1048eed39b0a7d64ea58"
+    },
+    "empirical-hurdle-stage1-v4-two-context-validation.json": {
+      "file_sha256": "f2c7bc976749777e6a1e4c5e1b21fce45eaaba36a44f3474ecabfe6661720465",
+      "receipt_sha256": "c969071df63cca8364228624f9c8e72baf995d55eaf5245ee45964fb819481bb"
+    },
+    "empirical-hurdle-stage1-v4-validation.json": {
+      "file_sha256": "2581ce34a3894bbbe71888cbf62ab1f253ea1eaca9c9a9d44c180d53c6d34ef2",
+      "receipt_sha256": "90083d3dce9e68e8bbece4f27a0f094bd4f8d0a09cf53981f2bfd37ca2a725c1"
+    }
+  },
+  "publication_raw_data": false,
+  "qlog_openings": 0,
+  "qualification_allowed": false,
+  "raw_log_openings": 0,
+  "receipt_sha256": "ac9184e78ef44edf311bc2009fe4ea59e192097c458591bd0be5d01e7969bcc3",
+  "reference_promotable": false,
+  "rollout_calls": 0,
+  "schema": "HURDLE_STAGE1_V4_FITTING_POLICY_DECISION_REVIEW_V1",
+  "scope": "PUBLIC_STATIC_SYNTHETIC_POLICY_REVIEW_ONLY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_writes": 0,
+  "ta_execution": false,
+  "threshold_fitting_calls": 0,
+  "v4": {
+    "development": "NOT_RUN",
+    "fitting": "NOT_RUN",
+    "performance": "NOT_RUN",
+    "rollout": "NOT_RUN",
+    "selection": "NOT_RUN"
+  },
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

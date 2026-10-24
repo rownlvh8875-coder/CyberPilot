@@ -1,0 +1,437 @@
+{
+  "D1_selected_parity": "PUBLIC_SYNTHETIC_DIAGNOSTIC_ONLY_NOT_NEW_ACCEPTANCE_CLAUSE",
+  "Q1": {
+    "all_jobs_before_D2": 32,
+    "comparison": "CANONICAL_FIXED512_SEGMENT_ALL_ROW_CACHE_VS_CANONICAL_WHOLE_JOB_D0_SELECTED_ROWS",
+    "dtype": "FLOAT64",
+    "mandatory": true,
+    "projection_only_equivalence": false,
+    "raw_bytes": true,
+    "signed_zero": true
+  },
+  "Q3": {
+    "after_decisions": 64,
+    "all_jobs_before_readiness": 32,
+    "comparison": "SAME_CACHE_VS_CANONICAL_FINAL_D2_WINNER_WHOLE_JOB_SELECTED_ROWS",
+    "dtype": "FLOAT64",
+    "mandatory": true,
+    "raw_bytes": true,
+    "reselection_on_failure": false,
+    "signed_zero": true
+  },
+  "Stage1_batch_independence_claimed": false,
+  "acceptance": {
+    "both_folds": true,
+    "clauses": 32,
+    "comparator": "SAME_ANCHOR_HOLD_LAST",
+    "empirical_acceptance_executed": false,
+    "epsilon": 0,
+    "families": [
+      5,
+      3,
+      24
+    ],
+    "horizons": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "operators": "ORIGINAL_UNCHANGED",
+    "populations": [
+      "OVERALL",
+      "PATH_MOVED"
+    ],
+    "raw_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+    "support": 201
+  },
+  "arms": {
+    "D0": {
+      "candidate_set": "{0,1} UNION UNIQUE_FINITE_COMBINED_TRAIN_SCORES",
+      "objective": "PYTHON_INTEGER_TP*N_negative+TN*N_positive",
+      "recipe": "ORIGINAL_COMBINED_TRAIN_BA_ONE_THRESHOLD_PER_JOB",
+      "reference": "RECONSTRUCTED_COMBINED_GATE_WITH_SAME_CANONICAL_U_AND_FIXED_LOSS_TREE",
+      "source": "empirical_hurdle_fit_cv_math.threshold",
+      "ties": [
+        "MAX_TN",
+        "MAX_DECISION"
+      ]
+    },
+    "D1": {
+      "Stage2_dependent_threshold_refit": false,
+      "context_decisions": 2,
+      "recipe": "ORIGINAL_TWO_CONTEXT_TRAIN_BA",
+      "source": "empirical_hurdle_v4_e_decision.select_job"
+    },
+    "D2": {
+      "candidate_set": "{0,1} UNION UNIQUE_FINITE_CONTEXT_TRAIN_SCORES",
+      "complexity": "O(N_LOG_N)_TIME_O(N)_MEMORY;NO_PER_CANDIDATE_STAGE2",
+      "context_decisions": 2,
+      "epsilon": 0,
+      "feasibility_witness": "D0_EQUIVALENT_GATE_CANDIDATE_MANDATORY;NO_FALLBACK",
+      "guard_deterioration": 0,
+      "guards": [
+        "TRUE_MOVE_TP>=CANONICAL_D0_TP",
+        "TRUE_MOVE_CONTINUOUS_SSE<=CANONICAL_D0_SSE",
+        "TRUE_MOVE_CONTINUOUS_SAE<=CANONICAL_D0_SAE",
+        "HARMFUL_NEXT_STATIC_REALIZED_MOVEMENT<=CANONICAL_D0_COUNT"
+      ],
+      "numerical_tree": "ORIGINAL_FOUR_CHANNEL_FIXED_BINARY64_TREE;FILTERED_CONTEXT_PRESERVES_ORIGINAL_RELATIVE_ORDER;SAME_D0_D2_TOPOLOGY",
+      "objectives": [
+        "MAX_NET_PROJECTED_TICK_EXACT_HIT_GAIN_VS_SAME_ROW_HOLD_LAST",
+        "MIN_OVERALL_CONTINUOUS_SSE",
+        "MIN_OVERALL_CONTINUOUS_SAE",
+        "MIN_HARMFUL_NEXT_STATIC_REALIZED_MOVEMENT",
+        "MAX_DECISION"
+      ],
+      "recipe": "ORIGINAL_LOSS_AWARE_SELECTOR_UNCHANGED",
+      "source": "empirical_hurdle_v4_e2_decision.select_context"
+    }
+  },
+  "authority": {
+    "E2_execution": false,
+    "existing_runtime_replacement": false,
+    "policy_adoption": false,
+    "private_access": false,
+    "research_bridge_implementation": true,
+    "vehicle_authority": "NONE"
+  },
+  "baseline_head": "99cd6aa62d00bfb2a27b8d5fcf08cf06cdb129cb",
+  "causal": {
+    "PATH_MOVED": "OBSERVED_REFERENCE_DIFFERS_FROM_INITIAL_AT_LEAST_ONCE",
+    "full_projected_history": true,
+    "future_truth_feature": false,
+    "horizon_reset": true,
+    "one_step_context": "OBSERVED_PRIOR_RAW_DELTA",
+    "padding": false,
+    "recursive_context": "PREVIOUS_REALIZED_PROJECTED_DELTA_NOT_GATE",
+    "segment_crossing": false,
+    "supplied_exogenous": "ORIGINAL_DELAYED_COMMAND_WINDOW_AND_SPEED;NO_DOUBLE_DELAY"
+  },
+  "common_policy": {
+    "context": "RAW_PRIOR_DELTA==0_OR_NONZERO",
+    "contexts": [
+      "PREVIOUS_STATIC",
+      "PREVIOUS_MOVE"
+    ],
+    "equality": "STATIC",
+    "gate": "P>DECISION",
+    "gate_is_realized_movement": false,
+    "historical_BLAS_delta_in_guard": false,
+    "label": "TARGET_TICK!=CURRENT_TICK",
+    "post_selection_reselection": false,
+    "winner_can_change_under_new_numerics": true
+  },
+  "empty_gate": {
+    "automatic_unproven_pass": false,
+    "proof": [
+      "FULL_N_FALSE_GATE",
+      "SELECTED_FLOAT64_SHAPE_ZERO",
+      "POSITIVE_ZERO_FULL_N_DELTA",
+      "CURRENT_TICK_HOLD",
+      "SOURCE_MODEL_ORDER_BINDING"
+    ],
+    "selected_Stage2_calls": 0
+  },
+  "failure_semantics": {
+    "Q1_failure": "BLOCK_ALL_D2_SELECTION",
+    "Q3_failure": "BLOCK_READINESS_NO_SECOND_BEST_NO_REBATCHING",
+    "allclose_or_tolerance": false,
+    "contract_or_source_conflict": "CANONICAL_BRIDGE_POLICY_SEMANTICS_CONFLICT",
+    "identity_or_class_missing": "ABORT_TERMINAL_NO_REPAIR",
+    "nonfinite_overflow": "FAIL_CLOSED_NO_CLIP_NO_ROW_DROP"
+  },
+  "future_private_execution": {
+    "HOLDOUT": "CLOSED",
+    "TRAIN_DEV_barrier": "ALL32_Q1_ALL64_DECISIONS_ALL32_Q3_DURABLE_SEAL_FSYNC_READBACK_BEFORE_DEV",
+    "binding": "EXACT_PRIVATE_INPUT_MEMBER_MODEL_SOURCE_ANCHOR_ENVIRONMENT_RESOURCE_PRIVACY_BINDING_NOT_IMPLEMENTED_HERE",
+    "eight_GiB_capacity": "SEPARATE_CALLER_LIVENESS_PROOF_REQUIRED",
+    "fresh_repeats": 2,
+    "grant": "SEPARATE_EXPLICIT_FRESH_CANONICAL_E2_APPROVAL_REQUIRED",
+    "vehicle": "NOT_READY_AUTHORITY_NONE",
+    "verify_only": "SOURCE_REREAD_INFERENCE_RECOMPUTE_ZERO"
+  },
+  "guard_reference": "NEW_CANONICAL_D0_TRAIN_REFERENCE",
+  "historical": {
+    "D0": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
+    "D1": "E_EXECUTION_COMPLETE_D1_NOT_ADMISSIBLE",
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "E2_V1_V2": "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+    "Q1": "E2_V2_Q1_BATCH_LAYOUT_NUMERICAL_DIFFERENCE_CONFIRMED",
+    "TRAIN_gate": "NOT_SAVED",
+    "pooled_refit_composition_V5": "NOT_AUTHORIZED",
+    "replica": "REPLICA_PAYLOAD_EQUALITY_NOT_FULLY_REVERIFIED",
+    "selected_candidate": null,
+    "selected_policy": null
+  },
+  "identity": "COPY_BOUND_IN_MEMORY_ARRAY_DIGESTS;C_ORDER_BYTES_DTYPE_SHAPE_ROLE_CANDIDATE_FOLD_ANCHOR_MODEL;NO_PRIVATE_PROVENANCE_AUTHENTICATION_FROM_NUMBERS_OR_SCOPE_LABEL",
+  "mission": "STAGE1_V4_E2_CANONICAL_SOURCE_GUARD_CONTRACT_AND_ADDITIVE_BRIDGE",
+  "numerical_source": {
+    "FMA": false,
+    "Stage1": "UNCHANGED_ORIGINAL_V4_PROBABILITY_HEADS_NORMALIZER_FEATURE_ROUTING;SAME_SAVED_P_FOR_ALL_ONE_STEP_ARMS",
+    "Stage2_coefficients_normalizer": "UNCHANGED_CALLER_BOUND_FROZEN_ARRAYS;SYNTHETIC_VALUES_ONLY_HERE",
+    "accumulator": "+0.0",
+    "call": "canonical_predict_delta(x,stage2_model)",
+    "gradual_underflow": true,
+    "intercept": "+1.0_UNSCALED",
+    "nonfinite": "FAIL_CLOSED",
+    "order": [
+      "SEPARATE_BINARY64_SUBTRACTION",
+      "SEPARATE_BINARY64_DIVISION",
+      "SEPARATE_BINARY64_MULTIPLICATION",
+      "ORIGINAL_EFFECTIVE_COLUMN_LEFT_FOLD_ADDITION"
+    ],
+    "projection": "UNCHANGED_EMPIRICAL_S2_RI_PROJECT_TIES_EVEN_SIGNED16",
+    "reassociation": false,
+    "semantics": "CANONICAL_STAGE2_SEPARATE_BINARY64_LEFT_FOLD_V1",
+    "signed_zero": "PRESERVE_OPERATION_RESULT_NO_REWRITE"
+  },
+  "original_V4_execution_head": "bd8045ef2a0da62a92603439f38e7740f5923622",
+  "phase_order": [
+    "ALL32_INPUT_SOURCE_MODEL_QUALIFICATION",
+    "ALL32_D0_COMBINED_RECONSTRUCTION",
+    "ALL32_FIXED512_CANONICAL_CACHE",
+    "ALL32_Q1",
+    "ALL32_D1_CONTEXT_BA",
+    "ALL64_D2_CONTEXT_SELECTION_PROVISIONAL",
+    "ALL32_Q3_FINAL_WINNER",
+    "ALL32_THREE_ARM_SYNTHETIC_ONE_STEP",
+    "ALL32_THREE_ARM_H25_H50_H100_H200_SYNTHETIC_SMOKE",
+    "SYNTHETIC_READY_ONLY"
+  ],
+  "prospective_amendment": "Canonical Stage2 replaces historical BLAS only in this separate research definition; old D2/V4/E2 contracts, grants and archived outcomes are unchanged.",
+  "public_identity": {
+    "empirical-hurdle-acceptance-gate-v1.json": {
+      "raw_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+      "receipt_sha256": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60"
+    },
+    "empirical-hurdle-stage1-v4-d2-evaluation-contract.json": {
+      "raw_sha256": "52f6fdf8e05c9f950aecf2a610cc4ea9220d6c01a96afd1a9afb3ed58a114004",
+      "receipt_sha256": "eb7aa2c671d2d185685bcf450d4084b0aab5a6b19ad72695277d624788c760be"
+    },
+    "empirical-hurdle-stage1-v4-d2-loss-aware-policy.json": {
+      "raw_sha256": "51eea816f6f2d3f648a9030dc6cf2d1718fb456bf3d0e6e9903ac34ae2e6bba7",
+      "receipt_sha256": "cc7c3ba36f1bd3f1930c801b023d37858cdb86d26263fe4ab8881018b608da60"
+    },
+    "empirical-hurdle-stage1-v4-e2-canonical-implementation-lock.json": {
+      "raw_sha256": "628dc2c82a2bdf4aa1a7f9af923450e998772cc7eb10af7ea2909b2806005d77",
+      "receipt_sha256": "61dabf50a7471132b2591adc263ae92b1455339b182d0b1702e682590c964c0c"
+    },
+    "empirical-hurdle-stage1-v4-e2-deterministic-numerics-contract.json": {
+      "raw_sha256": "8701a98aa49307b9e785ce871aecad2fc35c4da2f804cff6a90471a7d9bb86c3",
+      "receipt_sha256": "d099e817f6aa3eae1a2a5d6db242c6ed10da7b2312b5a3ea6d1f785cfab899c2"
+    },
+    "empirical-hurdle-stage1-v4-e2-execution-protocol-v2.json": {
+      "raw_sha256": "7a4e02966d921759430a4b6c3c9ca1f343f400a293e4f79f1a9a73fb8aaeeb2f",
+      "receipt_sha256": "be0bc8005695b03bff57a128374cf535eee76989d4b52c3239f29d1f1967bd08"
+    },
+    "empirical-hurdle-stage1-v4-e2-execution-protocol.json": {
+      "raw_sha256": "177925af0d9a70fecaeb2f8d848dbdee9c620f92047a9d8320e0ed6e1e7ef7db",
+      "receipt_sha256": "e0a820a681389e09449737ee191fd5bcfcb02b4cc040ee78922900cf96ba78c2"
+    },
+    "empirical-hurdle-stage1-v4-e2-numerical-qualification-v2.json": {
+      "raw_sha256": "7a51775da2ec0edd18c21abf73d78123f940cff3c8e125ddac0cd43857427ccf",
+      "receipt_sha256": "dfca44a4a0658f09568d657b4961a565b28be29c60d6634e3ff3ec972d796755"
+    }
+  },
+  "publication": "PUBLIC_SYNTHETIC_COUNTS_ONLY;FUTURE_PRIVATE_JOINT_C_E_D0_D1_D2_COMPLEMENTARY_SUPPRESSION_UNCHANGED;NO_PRIVATE_VALUES_OR_PATHS",
+  "receipt_sha256": "38c68fb1c958eac0e4490fb25799f977fb8013d8438e44e77b6e77cbf92ae563",
+  "schema": "CANONICAL_SOURCE_GUARD_PROSPECTIVE_RESEARCH_V1",
+  "scope": "PUBLIC_SYNTHETIC_CANONICAL_RESEARCH_ONLY",
+  "source_sha256": {
+    "openpilot/tools/cyber_autotune/empirical_hurdle_fit_cv_math.py": "b410b2f0138848faf4e976094a1bd4f3cc3ac44418b54a24310717c6261e0e73",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_bridge.py": "5add917e1b56ed308bdfe9eaa06dfd77f3ef21f3630cd15836277bafc0d07322",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_stage2.py": "e8b77a9c4494484c2022ca6a9325a588751d8aa1661d69a28608b8860ab92ef8",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_decision.py": "689c3ab3afe34719fa517aa59fc0fee09ef70bc70a3dac954b62a0a0dbdf61b1",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_execution.py": "a1986d904f2b1cdf3f686b44caeeef7f662139b80f045766e721cc0cdc072b43",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_v2_execution.py": "69833d5594632d2dd97dbf8e6c6eb47465f3210e9b30aeb02a1875bf9afb37c2",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_v2_qualification.py": "3349d72cb59d88dbef7e04a7f0d6bc125508800be474a0bbe098fe34162ecc0b",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e_decision.py": "dd9ce02c5950c3533f11e0a3e054b6e0beb44e1fb829741be726720847fed70f",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_execution.py": "f7ae1ae98c645de4997e56d1bcd73b76e2f4f153090b65e5fd6bb8d207f7fd0e",
+    "openpilot/tools/cyber_autotune/empirical_s2_ri_fit_cv_math.py": "a1c1203c8222df067064ff1891aafa82cdafd997338c7ca7687a321c66777f29",
+    "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_deterministic_numerics_design.py": "85f4cb7363b28c1dafd8f9e2b3b479400f2b83f0d0080ea050d5b53f547be39e"
+  },
+  "synthetic_predeclaration": {
+    "benchmark_CPU_seconds": 120,
+    "benchmark_address_space_bytes": 2147483648,
+    "benchmark_output_bytes": 16384,
+    "benchmark_repeats": 1,
+    "benchmark_wall_seconds": 180,
+    "feature_dimensions": [
+      5,
+      13,
+      33,
+      93
+    ],
+    "frozen_fixture_sets_unchanged": [
+      "Original60",
+      "Parity60",
+      "Aligned60",
+      "CanonicalDesign60"
+    ],
+    "jobs": 32,
+    "private_distribution_mimicked": false,
+    "recursive_paths_per_job_arm_horizon": 1,
+    "rows_per_job": 1040,
+    "rows_per_segment": 520,
+    "seed": 20261019,
+    "segments_per_job": 2
+  },
+  "validation_domains": [
+    {
+      "D2_addendum": "E2 exact additional TRAIN feature/potential/model input provenance and original source pins; no private access in D2.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 1,
+      "source_pointer": "/domains/0",
+      "verification": "Bind policy/code/environment/model/normalizer/source/ordered anchors, original V4 and C/B0/B1 identities; no old grant reuse."
+    },
+    {
+      "D2_addendum": "Apply unchanged gate to D2; TRAIN feasibility guard is not acceptance.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 2,
+      "source_pointer": "/domains/1",
+      "verification": "Apply unchanged32clauses to each policy/candidate/fold with HOLD_LAST on exact same anchors; D0 paired comparison is additional."
+    },
+    {
+      "D2_addendum": "Three-arm gate versus realized STATIC loss, privacy suppressed jointly.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 3,
+      "source_pointer": "/domains/2",
+      "verification": "Report STATIC_HOLD gateFP/TN and harmful tick movement plus STATIC exact-hit loss."
+    },
+    {
+      "D2_addendum": "TRAIN per-context TP guards separately protect onset TP in PREVIOUS_STATIC and continuation TP in PREVIOUS_MOVE; no corresponding DEV guarantee; report DEV onset separately.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 4,
+      "source_pointer": "/domains/3",
+      "verification": "Report MOVE_ONSET recall/FN/missed rate and projected tick correctness."
+    },
+    {
+      "D2_addendum": "Harmful STATIC guard includes termination; gate termination reduction not guaranteed.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 5,
+      "source_pointer": "/domains/4",
+      "verification": "Report MOVE_TERMINATION false-MOVE/TN and FP-to-HOLD versus harmful movement."
+    },
+    {
+      "D2_addendum": "Joint continuation/termination tradeoff; no claim TP guard protects magnitude in DEV.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 6,
+      "source_pointer": "/domains/5",
+      "verification": "Report MOVE_CONTINUATION recall/FN jointly with termination; no recall-only success."
+    },
+    {
+      "D2_addendum": "Same four truth populations for all three arms; no truth-based routing.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 7,
+      "source_pointer": "/domains/6",
+      "verification": "All4truth states confusion/counts/denominators; routing vs truth separated in recursion; ratios undefined=>NOT_IDENTIFIABLE."
+    },
+    {
+      "D2_addendum": "Potential outcome exact-hit gain versus realized STATIC loss and MOVE gain, same-anchor identity.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 8,
+      "source_pointer": "/domains/7",
+      "verification": "Verify STATIC_HIT_LOSS,MOVE_HIT_GAIN,NET and exact identity candidate_hits=hold_last_hits-static_loss+move_gain."
+    },
+    {
+      "D2_addendum": "Separate gate FP-to-HOLD from harmful movement; Stage2 STATIC potential extrapolation risk.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 9,
+      "source_pointer": "/domains/8",
+      "verification": "GateFP count=projected-HOLD+harmful movement; report fraction only if defined; never force MOVE realization."
+    },
+    {
+      "D2_addendum": "D2 uses same one-step scores; recursive state changes can change later scores.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 10,
+      "source_pointer": "/domains/9",
+      "verification": "Describe TRAIN/DEV overall/previous-state AUC with ties/support; unchanged one-step scores expected D0/D1; no AUC acceptance shortcut."
+    },
+    {
+      "D2_addendum": "No calibration fitting; same one-step score diagnostics; private C suppression preserved.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 11,
+      "source_pointer": "/domains/10",
+      "verification": "Describe Brier/mean probability/prevalence/bias; unchanged one-step scores; no calibration fit or calibration-proof claim."
+    },
+    {
+      "D2_addendum": "Seal D0 reconstruction, D1 provenance and all64 D2 decisions before DEV; no DEV tuning.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 12,
+      "source_pointer": "/domains/11",
+      "verification": "Seal D1 two TRAIN decisions before DEV reading; report context TRAIN/DEV saved-or-E-generated gates separately; no DEV retuning."
+    },
+    {
+      "D2_addendum": "D2 per-fold complete gate; no averaging failures.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 13,
+      "source_pointer": "/domains/12",
+      "verification": "Each fold independently reports metrics/clause results; both required per model candidate; no averaging away fold failure."
+    },
+    {
+      "D2_addendum": "D0 relative TRAIN SSE/SAE tree guard does not replace frozen DEV TRUE MOVE clauses.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 14,
+      "source_pointer": "/domains/13",
+      "verification": "TRUE_MOVE integrated gated delta RMSE/MAE/p95 with frozen support/comparator; no oracle substitution."
+    },
+    {
+      "D2_addendum": "All-row Stage2 TRAIN potential-output numerical qualification plus actual gated DEV model residual.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 15,
+      "source_pointer": "/domains/14",
+      "verification": "GateTP onset/continuation magnitude/step-delta residual; preserve model/integration/quantization/confounding limits."
+    },
+    {
+      "D2_addendum": "Fixed original projection, finite check, ties-even and range; invalid TRAIN potentials abort whole job.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 16,
+      "source_pointer": "/domains/15",
+      "verification": "Test finite signed delta, ties-even integer ticks, signed16 range and STATIC hold; no clipping, repair or forced nonzero."
+    },
+    {
+      "D2_addendum": "Actual projected state/history updated under D2; no gate-bit substitution or oracle potentials.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 17,
+      "source_pointer": "/domains/16",
+      "verification": "Track realized movement/context divergence and full projected numeric history; descriptive association not causal share."
+    },
+    {
+      "D2_addendum": "D2 all four OVERALL horizons, support and frozen comparator unchanged.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 18,
+      "source_pointer": "/domains/17",
+      "verification": "OVERALL terminal errors RMSE/MAE/p95 on each H25/50/100/200 with frozen support, anchors, comparator and full-state recursion."
+    },
+    {
+      "D2_addendum": "D2 observed-truth PATH_MOVED all horizons, support unchanged.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 19,
+      "source_pointer": "/domains/18",
+      "verification": "PATH_MOVED uses observed truth path definition, not policy projected movement; all4horizons support and numeric errors required."
+    },
+    {
+      "D2_addendum": "Two fresh full E2 repeats and sealed verify-only, predeclared reduction/resource caps; source writes zero.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 20,
+      "source_pointer": "/domains/19",
+      "verification": "Predeclare two independent full evaluation repeats, byte-exact outputs, verify-only resume with source/inference/recompute trapped; source writes0."
+    },
+    {
+      "D2_addendum": "Repeated DEV exploratory evidence; HOLDOUT CLOSED no promotion.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 21,
+      "source_pointer": "/domains/20",
+      "verification": "Keep HOLDOUT closed/no discovery; observed DEV is retrospective and cannot optimize future untouched acceptance."
+    },
+    {
+      "D2_addendum": "No controller/vehicle/actuator paths; authority NONE.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 22,
+      "source_pointer": "/domains/21",
+      "verification": "Vehicle/controller/planner/actuator untouched; no integration, flashing or activation; no physical EPS performance claim."
+    }
+  ],
+  "version": "V4_E2_CANONICAL_D0_D1_D2_RESEARCH_CONTRACT_V1"
+}

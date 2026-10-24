@@ -1,0 +1,361 @@
+{
+  "angle_offset": "NO_LEARNED_OFFSET_APPLIED_OFFSET_PROVENANCE_PENDING",
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_search_authorized": false,
+  "common_support": "ALL_36_GYRO_OPTIONS_AVAILABLE_SAME_TARGET",
+  "composition_authorized": false,
+  "conditional_fit_gates": [
+    "unit_supported",
+    "frozen_selection",
+    "source_complete",
+    "split_disjoint",
+    "train_dev_support",
+    "untouched_role"
+  ],
+  "continuous_scale_fit": false,
+  "diagnostic_subsets": [
+    "LOW_SPEED",
+    "DRIVER_PRESSED",
+    "EPS_FAULT",
+    "INACTIVE",
+    "LIMIT_UNKNOWN"
+  ],
+  "dt_ns": 10000000,
+  "gyro_bias": "NO_CORRECTION_REPORT_BIAS",
+  "gyro_candidates": [
+    {
+      "axis": 0,
+      "lag_samples": 0,
+      "sign": -1
+    },
+    {
+      "axis": 0,
+      "lag_samples": 1,
+      "sign": -1
+    },
+    {
+      "axis": 0,
+      "lag_samples": 2,
+      "sign": -1
+    },
+    {
+      "axis": 0,
+      "lag_samples": 5,
+      "sign": -1
+    },
+    {
+      "axis": 0,
+      "lag_samples": 10,
+      "sign": -1
+    },
+    {
+      "axis": 0,
+      "lag_samples": 20,
+      "sign": -1
+    },
+    {
+      "axis": 0,
+      "lag_samples": 0,
+      "sign": 1
+    },
+    {
+      "axis": 0,
+      "lag_samples": 1,
+      "sign": 1
+    },
+    {
+      "axis": 0,
+      "lag_samples": 2,
+      "sign": 1
+    },
+    {
+      "axis": 0,
+      "lag_samples": 5,
+      "sign": 1
+    },
+    {
+      "axis": 0,
+      "lag_samples": 10,
+      "sign": 1
+    },
+    {
+      "axis": 0,
+      "lag_samples": 20,
+      "sign": 1
+    },
+    {
+      "axis": 1,
+      "lag_samples": 0,
+      "sign": -1
+    },
+    {
+      "axis": 1,
+      "lag_samples": 1,
+      "sign": -1
+    },
+    {
+      "axis": 1,
+      "lag_samples": 2,
+      "sign": -1
+    },
+    {
+      "axis": 1,
+      "lag_samples": 5,
+      "sign": -1
+    },
+    {
+      "axis": 1,
+      "lag_samples": 10,
+      "sign": -1
+    },
+    {
+      "axis": 1,
+      "lag_samples": 20,
+      "sign": -1
+    },
+    {
+      "axis": 1,
+      "lag_samples": 0,
+      "sign": 1
+    },
+    {
+      "axis": 1,
+      "lag_samples": 1,
+      "sign": 1
+    },
+    {
+      "axis": 1,
+      "lag_samples": 2,
+      "sign": 1
+    },
+    {
+      "axis": 1,
+      "lag_samples": 5,
+      "sign": 1
+    },
+    {
+      "axis": 1,
+      "lag_samples": 10,
+      "sign": 1
+    },
+    {
+      "axis": 1,
+      "lag_samples": 20,
+      "sign": 1
+    },
+    {
+      "axis": 2,
+      "lag_samples": 0,
+      "sign": -1
+    },
+    {
+      "axis": 2,
+      "lag_samples": 1,
+      "sign": -1
+    },
+    {
+      "axis": 2,
+      "lag_samples": 2,
+      "sign": -1
+    },
+    {
+      "axis": 2,
+      "lag_samples": 5,
+      "sign": -1
+    },
+    {
+      "axis": 2,
+      "lag_samples": 10,
+      "sign": -1
+    },
+    {
+      "axis": 2,
+      "lag_samples": 20,
+      "sign": -1
+    },
+    {
+      "axis": 2,
+      "lag_samples": 0,
+      "sign": 1
+    },
+    {
+      "axis": 2,
+      "lag_samples": 1,
+      "sign": 1
+    },
+    {
+      "axis": 2,
+      "lag_samples": 2,
+      "sign": 1
+    },
+    {
+      "axis": 2,
+      "lag_samples": 5,
+      "sign": 1
+    },
+    {
+      "axis": 2,
+      "lag_samples": 10,
+      "sign": 1
+    },
+    {
+      "axis": 2,
+      "lag_samples": 20,
+      "sign": 1
+    }
+  ],
+  "gyro_clock": "BOTH_SENSOR_AND_PUBLISH_MUST_PRECEDE_TARGET_MINUS_LAG",
+  "gyro_source": "lsm6ds3_OR_lsm6ds3trc_ONLY_GYROUNCALIBRATED",
+  "gyro_unit": "SOURCE_PRODUCER_RAD_PER_S",
+  "hypotheses": [
+    "YAW_H1",
+    "YAW_H2",
+    "YAW_H3",
+    "YAW_H4"
+  ],
+  "kinematic": "SPEED_OVER_WHEELBASE_TAN_STEERING_DEG_TO_RAD_OVER_STEER_RATIO",
+  "lag_samples": [
+    0,
+    1,
+    2,
+    5,
+    10,
+    20
+  ],
+  "mask": "VALID_FINITE_FORWARD_SPEED_GE5_NO_DRIVER_NO_EPS_FAULT_LATERAL_ACTIVE",
+  "max_age_ns": 20000000,
+  "metrics": [
+    "MAE",
+    "RMSE",
+    "MEDIAN_ABS",
+    "P95_ABS",
+    "BIAS",
+    "CORRELATION",
+    "SCALE_RATIO_RMS_DIAGNOSTIC_ONLY"
+  ],
+  "minimum_support": 201,
+  "new_yaw_holdout": "OLD_EMBARGO_NUMERIC_UNOPENED_BEFORE_THIS_POLICY_NO_ROUTE_INDEPENDENCE",
+  "old_holdout": "COMMAND_BRIDGE_ONLY_NEVER_YAW_SELECTION",
+  "physical_rigid_transform": null,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "6e7bafc60c6ff3181ee948a1111dfd59f3660a018601ba927d32307a27393147",
+  "reference_promotable": false,
+  "residual_lags": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "schema": "EMPIRICAL_YAW_HYPOTHESIS_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "selection": "DEVELOPMENT_KINEMATIC_HYPOTHESIS_RMSE_THEN_NAME_GYRO_RMSE_THEN_AXIS_SIGN_LAG",
+  "sg_execution": false,
+  "speed_bins": [
+    [
+      "LOW",
+      5.0,
+      15.0
+    ],
+    [
+      "MEDIUM",
+      15.0,
+      25.0
+    ],
+    [
+      "HIGH",
+      25.0,
+      null
+    ]
+  ],
+  "stage_a": "EMPIRICAL_ACTUATOR_MODEL_ONLY_STRICT_GATE_FAILED",
+  "stage_c_allowed": false,
+  "stationary_bias_estimation": "NOT_APPLIED_UNCALIBRATED_SENSOR_BIAS_OPEN",
+  "ta_execution": false,
+  "unit_support": "TRAIN_AND_DEVELOPMENT_STRICT_COMMON_SUPPORT_RMSE_MAE_P95_UNIT_GROUP_DOMINANCE_GYRO_AND_KINEMATIC",
+  "vehicle_activation_allowed": false,
+  "vehicle_frame": "UNVALIDATED_DEVICE_CORRESPONDENCE_ONLY",
+  "yaw_metric_policy_sha256": "e81b457764f1b7cb50ed1b31911d8f976d38fa819cd5dbd28df9564e9525c4a7",
+  "yaw_model_candidates": [
+    {
+      "delay_samples": 0,
+      "family": "ARX1",
+      "input_taps": 1,
+      "intercept": true,
+      "output_lags": 1
+    },
+    {
+      "delay_samples": 5,
+      "family": "ARX1",
+      "input_taps": 1,
+      "intercept": true,
+      "output_lags": 1
+    },
+    {
+      "delay_samples": 10,
+      "family": "ARX1",
+      "input_taps": 1,
+      "intercept": true,
+      "output_lags": 1
+    },
+    {
+      "delay_samples": 20,
+      "family": "ARX1",
+      "input_taps": 1,
+      "intercept": true,
+      "output_lags": 1
+    },
+    {
+      "delay_samples": 0,
+      "family": "FIR25",
+      "input_taps": 25,
+      "intercept": true,
+      "output_lags": 0
+    },
+    {
+      "delay_samples": 5,
+      "family": "FIR25",
+      "input_taps": 25,
+      "intercept": true,
+      "output_lags": 0
+    },
+    {
+      "delay_samples": 10,
+      "family": "FIR25",
+      "input_taps": 25,
+      "intercept": true,
+      "output_lags": 0
+    },
+    {
+      "delay_samples": 20,
+      "family": "FIR25",
+      "input_taps": 25,
+      "intercept": true,
+      "output_lags": 0
+    }
+  ],
+  "yaw_model_input": "MEASURED_STEERING_AND_SPEED_KINEMATIC_RAD_PER_S_REGRESSOR_NOT_TRUTH"
+}

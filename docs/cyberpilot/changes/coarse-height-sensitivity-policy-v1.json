@@ -1,0 +1,61 @@
+{
+  "coarse_source_sha256": "d2bb72bf2c0060d1f6e3d5d4d601ed07b248261248a586843c69455fe06caee5",
+  "coordinate_origin": "CAMERA_VERTICAL_FOOTPOINT_X_ZERO_NOT_SURVEYED_VEHICLE_DATUM",
+  "derivative_step_rad": 1e-06,
+  "distances_m": [
+    5.0,
+    10.0,
+    20.0,
+    30.0
+  ],
+  "enumeration": "HEIGHT_PITCH_DISTANCE_THEN_ROLL_YAW_DISTANCE",
+  "geometry_assumptions": [
+    "UNDISTORTED_PINHOLE",
+    "FLAT_GROUND",
+    "CALIB_ALIGNED_ASSUMED_ROAD_NOT_SURVEYED"
+  ],
+  "height_prior_sha256": "90673057619b2c15416dee64bee5f76336ec4f386b9f83d887a39ade186daf9c",
+  "heights_m": [
+    1.33,
+    1.35,
+    1.375,
+    1.4,
+    1.425,
+    1.45,
+    1.47
+  ],
+  "independent": false,
+  "matrix_rows": 84,
+  "orientation_1d_rows": 24,
+  "orientation_mount_prior_sha256": "bddd081d0b18886d583ddf0154d232d9365a7644bcf4ee5209a970bbc88e69ab",
+  "orientation_range_rationale": "PLUS_MINUS_0.5_DEG_ALGEBRAIC_PROBES_NOT_EMPIRICAL_PLAUSIBILITY_OR_UNCERTAINTY",
+  "orientation_range_role": "MODEL_PRIOR_SENSITIVITY_NOT_PHYSICAL_UNCERTAINTY",
+  "physical_measurement": false,
+  "physical_uncertainty": null,
+  "pitches_deg": [
+    1.84,
+    2.34,
+    2.84
+  ],
+  "private_input_allowed": false,
+  "qualification_allowed": false,
+  "qualification_thresholds": null,
+  "range_role": "DIAGNOSTIC_SENSITIVITY_RANGE_NOT_PHYSICAL_UNCERTAINTY",
+  "ray_policy": "HOLD_NOMINAL_RAYS_FIXED_ACROSS_HEIGHT_AND_ORIENTATION",
+  "receipt_sha256": "35ada2dfa0822088ce455a09cb54e715d23916256d8875d398594d26adff6c9a",
+  "reference_promotable": false,
+  "rolls_deg": [
+    -0.5,
+    0.0,
+    0.5
+  ],
+  "schema": "COARSE_CAMERA_HEIGHT_SENSITIVITY_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "synthetic_lateral_probe_left_m": 1.0,
+  "vehicle_activation_allowed": false,
+  "yaws_deg": [
+    -0.3,
+    0.2,
+    0.7
+  ]
+}

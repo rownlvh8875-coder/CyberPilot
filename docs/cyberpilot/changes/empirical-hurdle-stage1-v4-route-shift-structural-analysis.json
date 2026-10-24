@@ -1,0 +1,220 @@
+{
+  "actual_execution_authorized": false,
+  "actual_pair_search_calls": 0,
+  "architecture_frozen": false,
+  "baseline": "cfea011d68f28a5c907a3cef17a76e1fa29bf58a",
+  "candidate_search_authorized": false,
+  "component": "route-shift-structural-analysis",
+  "composition_authorized": false,
+  "fitting_policy_frozen": false,
+  "folds": {
+    "FOLD_A": {
+      "conditional_mean_score_shifts": {
+        "previous_move": {
+          "max": 0.03515625877300474,
+          "min": 0.030470799458235137
+        },
+        "previous_static": {
+          "max": 0.03592119856739098,
+          "min": 0.029298618152362788
+        }
+      },
+      "historical_recall_and_auc": {
+        "auc_dev_minus_train": {
+          "max": -0.019852163056154448,
+          "min": -0.03214037713666684
+        },
+        "train_reference_recall": {
+          "max": 0.5433849598805748,
+          "min": 0.3700844328539337
+        },
+        "v3_dev_minus_reference_recall": {
+          "max": 0.23710556361773355,
+          "min": 0.11258910192957972
+        },
+        "v3_dev_recall": {
+          "max": 0.6559740618101545,
+          "min": 0.5716267867427614
+        },
+        "v3_train_recall": {
+          "max": 0.5433849598805748,
+          "min": 0.3700844328539337
+        }
+      },
+      "overall_mean_score_shift": {
+        "max": 0.03544509908774873,
+        "min": 0.029414447826424744
+      }
+    },
+    "FOLD_B": {
+      "conditional_mean_score_shifts": {
+        "previous_move": {
+          "max": -0.020757119380924366,
+          "min": -0.028364308637568225
+        },
+        "previous_static": {
+          "max": -0.01390929797239926,
+          "min": -0.017584718863061774
+        }
+      },
+      "historical_recall_and_auc": {
+        "auc_dev_minus_train": {
+          "max": -0.0013580499810091906,
+          "min": -0.015737550109548804
+        },
+        "train_reference_recall": {
+          "max": 0.2364213672020919,
+          "min": 0.16360835172921265
+        },
+        "v3_dev_minus_reference_recall": {
+          "max": -0.08963103423631388,
+          "min": -0.12303911236553419
+        },
+        "v3_dev_recall": {
+          "max": 0.1208320799685309,
+          "min": 0.07397731749289876
+        },
+        "v3_train_recall": {
+          "max": 0.2364213672020919,
+          "min": 0.16360835172921265
+        }
+      },
+      "overall_mean_score_shift": {
+        "max": -0.01485269864877381,
+        "min": -0.019028603940372313
+      }
+    }
+  },
+  "historical_states_preserved": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "holdout_openings": 0,
+  "hugging_face": {
+    "download": 0,
+    "login": "NOT_RUN",
+    "repo": "NOT_CREATED",
+    "setup": "NOT_RUN",
+    "upload": 0
+  },
+  "mean_shift_and_rank_degradation": "COEXIST_NOT_CALIBRATION_ONLY_CAUSAL_PROOF",
+  "model_fit_calls": 0,
+  "model_selection_calls": 0,
+  "normalizer_fit_calls": 0,
+  "opening_count": 0,
+  "pooled_refit": "NOT_AUTHORIZED",
+  "prediction_replay_calls": 0,
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "HOLDOUT_OPENING_CLOSED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED",
+    "SEARCH_NOT_AUTHORIZED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "prior_review_states_preserved": [
+    "GLOBAL_SINGLE_THRESHOLD_FAMILY_RETROSPECTIVELY_EXHAUSTED",
+    "V4_ARCHITECTURE_REDESIGN_INCONCLUSIVE",
+    "V4_TWO_CONTEXT_CAUSAL_STATE_CONTRACT_ESTABLISHED",
+    "V4_TWO_CONTEXT_EXACT_FITTING_EXACT_BUT_CARTESIAN_WORST_CASE",
+    "OPTION_A_ALGORITHMIC_ELIGIBILITY_NOT_ESTABLISHED",
+    "SEPARABLE_TWO_CONTEXT_FITTING_ALGORITHMICALLY_FEASIBLE_POLICY_UNFROZEN"
+  ],
+  "private_numeric_array_opens": 0,
+  "production_authority": false,
+  "proof_scope": "NO_INVARIANCE_TO_GENERAL_MONOTONIC_SCORE_SHIFT_NOT_NO_POSSIBLE_TRANSFER_GAIN",
+  "publication_raw_data": false,
+  "qlog_openings": 0,
+  "qualification_allowed": false,
+  "raw_log_openings": 0,
+  "reason": "FIXED_TRAIN_ABSOLUTE_CONTEXT_CUTOFFS_NO_ONLINE_CALIBRATION_OR_TRANSPORT_RULE",
+  "receipt_sha256": "722ea642fae3f63f1da196d269f643ef1ef9e73e530431580c5c4a6538ef2789",
+  "reference_promotable": false,
+  "rollout_calls": 0,
+  "schema": "HURDLE_STAGE1_V4_FITTING_POLICY_DECISION_REVIEW_V1",
+  "scope": "PUBLIC_STATIC_SYNTHETIC_POLICY_REVIEW_ONLY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_writes": 0,
+  "stable_truth_transition_rates_do_not_imply_stable_conditional_score_distributions": true,
+  "structural_robustness": "NO_STRUCTURAL_CORRECTION",
+  "synthetic_shift_witness": {
+    "binary_gate_auc_invariance_claim": false,
+    "down_decisions": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "down_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "original_decisions": [
+      false,
+      false,
+      false,
+      true
+    ],
+    "original_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "structural_robustness": "NO_STRUCTURAL_CORRECTION",
+    "toy_contexts": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "toy_cutoffs": [
+      0.375,
+      0.75
+    ],
+    "toy_scores": [
+      0.125,
+      0.375,
+      0.625,
+      0.875
+    ],
+    "up_decisions": [
+      false,
+      true,
+      false,
+      true
+    ],
+    "up_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "within_state_score_order_unchanged": true
+  },
+  "ta_execution": false,
+  "temporal_relevance": "TEMPORAL_CONTEXT_PARTIALLY_RELEVANT_BUT_NOT_ROUTE_TRANSFER_EXPLANATION",
+  "threshold_fitting_calls": 0,
+  "v4": {
+    "development": "NOT_RUN",
+    "fitting": "NOT_RUN",
+    "performance": "NOT_RUN",
+    "rollout": "NOT_RUN",
+    "selection": "NOT_RUN"
+  },
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

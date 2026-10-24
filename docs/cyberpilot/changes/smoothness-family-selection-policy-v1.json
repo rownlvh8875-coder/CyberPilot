@@ -1,0 +1,45 @@
+{
+  "criteria": [
+    "command_intervention_only",
+    "no_physical_queue",
+    "minimal_state",
+    "exact_reset",
+    "bounded_no_expansion",
+    "steady_unity",
+    "no_new_sign_changes",
+    "no_bias",
+    "source_canonical_config",
+    "tracking_phase_cost_disclosed",
+    "not_arbitrary_scale"
+  ],
+  "existing_ta_receipts": {
+    "binding": "0d294e3c989c8b2adce885a04ac112f5f3511a06a7fac9cd0d9ec8c38fc80b54",
+    "readiness": "db2633df48bce8dbce05033eb512527ea2f81e33908c3368aaf0e87bcb31853a",
+    "results": "77bbf44c0bfcce5d7ce0e76a4ea5f488d84e3184fe984c3d92891f9c51a383fb"
+  },
+  "families": [
+    "SG-A",
+    "SG-B",
+    "SG-C",
+    "SG-D"
+  ],
+  "one_family_only": true,
+  "production_authority": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "994bed3c53308cfd83132e4ae32294e2d87ff5f2587e870d6c9d5bf466383ae1",
+  "reference_promotable": false,
+  "result_input_allowed": false,
+  "schema": "SMOOTHNESS_FAMILY_SELECTION_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "source_baseline_sha": "53506f2af49ab52490482d3961044f33b7360235",
+  "source_bindings": {
+    "openpilot/selfdrive/controls/lib/latcontrol_torque.py": "9489bfd923246906ef543a1c305bf7a7fe534ee9754c94d8195ae98bb3a1f2cd",
+    "openpilot/tools/cyber_autotune/candidate_architecture.py": "7829328937d4d485532486528deee93d82dfb079766db883b8433e0652dcf25a",
+    "openpilot/tools/cyber_autotune/candidate_architecture_policy.py": "c7e83946e39b2650db105ef179feffdfac692fe2036d62d9efec0dc76b509272",
+    "openpilot/tools/cyber_autotune/candidate_role_contracts.py": "2f236b38fa4c0af58726058823b33f286368e2034c60060b4328830802aadf63",
+    "openpilot/tools/cyber_autotune/smoothness_v0_policy.py": "bf4a4f404f317330454462591fc0a9c625e4d44bfb2f6a08e804fce008bf522a",
+    "openpilot/tools/cyber_autotune/trajectory_authority_core.py": "56f0d5ef041573b9aa199cd5b753a9ab97bd6cc2a6077173501106d52fc0847e"
+  },
+  "status": "FROZEN_BEFORE_IMPLEMENTATION",
+  "vehicle_activation_allowed": false
+}

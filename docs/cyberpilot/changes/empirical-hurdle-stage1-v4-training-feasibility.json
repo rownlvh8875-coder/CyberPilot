@@ -1,0 +1,209 @@
+{
+  "actual_effective_ranks": "UNKNOWN_NO_PRIVATE_ACCESS",
+  "actual_execution_authorized": false,
+  "actual_model": "NOT_FIT",
+  "actual_rollout_calls": 0,
+  "algebra": {
+    "base_delta_logits": [
+      -1.0,
+      1.0,
+      1.0,
+      -1.0
+    ],
+    "block_logits": [
+      -1.0,
+      1.0,
+      1.0,
+      -1.0
+    ],
+    "block_original_order_sum": 1.2530467500728912,
+    "block_per_row_nll": [
+      0.31326168751822286,
+      0.3132616875182228,
+      0.3132616875182228,
+      0.31326168751822286
+    ],
+    "context_float_subtotals_assumed_equal": false,
+    "head_logits": [
+      -1.0,
+      1.0,
+      1.0,
+      -1.0
+    ],
+    "head_original_order_sum": 1.2530467500728912,
+    "head_per_row_nll": [
+      0.31326168751822286,
+      0.3132616875182228,
+      0.3132616875182228,
+      0.31326168751822286
+    ],
+    "optimizer_byte_equivalence_claim": false,
+    "sum_hessian_off_block_zero": true
+  },
+  "architecture_frozen": true,
+  "baseline": "da23b158fa2ff6eecf1ca8d33ae5e2190fcba078",
+  "byte_equivalence_not_claimed": [
+    "CONTEXT_FLOAT_REDUCTION_ORDER",
+    "MEAN_GRADIENT_SCALE",
+    "SHARED_VS_INDEPENDENT_ARMIJO",
+    "REPARAMETERIZATION",
+    "REGULARIZATION"
+  ],
+  "candidate_search_authorized": false,
+  "component": "training-feasibility",
+  "composition_authorized": false,
+  "current_defaults_are_future_policy": false,
+  "current_solver": {
+    "armijo_c": 0.0001,
+    "function": "empirical_hurdle_fit_cv_math.newton",
+    "initialization": "ZERO_FLOAT64",
+    "linear_solver": "numpy.linalg.solve",
+    "loss": "UNREGULARIZED_MEAN_LOG_LOSS",
+    "max_updates": 100,
+    "maxabs_gradient_tolerance": 1e-08,
+    "support_each_class": 201,
+    "trial_exponents": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ]
+  },
+  "finite_unique_mle": "REQUIRES_IDENTIFIABLE_EFFECTIVE_BASIS_AND_NONSEPARATION_EACH_HEAD_NOT_JUST_CLASS_SUPPORT",
+  "fit_calls": 0,
+  "fitting_policy_frozen": false,
+  "global_mean": "n0/N*L0_mean+n1/N*L1_mean; SAME_MATHEMATICAL_ARGMIN_IF_POSITIVE_WEIGHTS_AND_NO_COUPLED_PENALTY",
+  "historical_states_preserved": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "holdout_openings": 0,
+  "hugging_face": {
+    "download": 0,
+    "login": "NOT_RUN",
+    "repo": "NOT_CREATED",
+    "setup": "NOT_RUN",
+    "upload": 0
+  },
+  "independent_equivalence_conditions": [
+    "UNCOUPLED_UNREGULARIZED_SUM_LIKELIHOOD_SEPARATES_BY_CONTEXT",
+    "NONEMPTY_CONTEXTS",
+    "UNCOUPLED_PARAMETER_DOMAINS",
+    "HEAD_ARGMIN_SETS_EXIST"
+  ],
+  "mean_stopping_counterexample": {
+    "context_weight": 0.1,
+    "current_tolerance": 1e-08,
+    "joint_mean_scaled_gradient": 2e-09,
+    "local_gradient": 2e-08,
+    "new_v4_tolerance_chosen": false
+  },
+  "model_fit_calls": 0,
+  "model_selection_calls": 0,
+  "normalization_options": [
+    {
+      "option": "REUSE_SHARED_V1_TRAIN_NORMALIZER",
+      "pros": "BYTE_IDENTITY_NO_NORMALIZER_REFIT",
+      "risk": "STATIC_HEAD_LAST_DELTA_COLLINEAR_WITH_INTERCEPT; BASIS_REQUIRED"
+    },
+    {
+      "option": "SEPARATE_CONTEXT_TRAIN_NORMALIZERS",
+      "pros": "LOCAL_CONSTANT_DROP_AND_SCALING",
+      "risk": "NEW_NORMALIZER_POLICY_AND_IDENTITIES; NOT_AUTHORIZED_OR_CHOSEN"
+    },
+    {
+      "option": "RAW_INPUTS_IDENTIFIABLE_BASIS",
+      "pros": "NO_NEW_NORMALIZER",
+      "risk": "SCALING_CONDITIONING_AND_CONSTANT_COLUMNS"
+    }
+  ],
+  "normalizer_fit_calls": 0,
+  "normalizer_selected": null,
+  "opening_count": 0,
+  "pooled_refit": "NOT_AUTHORIZED",
+  "prediction_replay_calls": 0,
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "HOLDOUT_OPENING_CLOSED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED",
+    "SEARCH_NOT_AUTHORIZED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "prior_review_states_preserved": [
+    "GLOBAL_SINGLE_THRESHOLD_FAMILY_RETROSPECTIVELY_EXHAUSTED",
+    "V4_ARCHITECTURE_REDESIGN_INCONCLUSIVE",
+    "V4_TWO_CONTEXT_CAUSAL_STATE_CONTRACT_ESTABLISHED",
+    "V4_TWO_CONTEXT_EXACT_FITTING_EXACT_BUT_CARTESIAN_WORST_CASE",
+    "OPTION_A_ALGORITHMIC_ELIGIBILITY_NOT_ESTABLISHED",
+    "SEPARABLE_TWO_CONTEXT_FITTING_ALGORITHMICALLY_FEASIBLE_POLICY_UNFROZEN",
+    "V4_TWO_CONTEXT_POLICY_DECISION_INCONCLUSIVE"
+  ],
+  "private_numeric_array_opens": 0,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qlog_openings": 0,
+  "qualification_allowed": false,
+  "raw_log_openings": 0,
+  "receipt_sha256": "13724bf5d68b6d25481b30baeaa8bb41f06f0192e71d076dbcb1c3da86100868",
+  "reference_promotable": false,
+  "regularization": "NOT_CHOSEN; COUPLED_PENALTIES_BREAK_SEPARATION; LOCAL_MEAN_PENALTIES_REQUIRE_WEIGHT_SCALING",
+  "schema": "BOUNDED_STAGE1_REPRESENTATION_ARCHITECTURE_REVIEW_V1",
+  "scope": "PUBLIC_STATIC_SYNTHETIC_ARCHITECTURE_ONLY",
+  "sealed_reference_allowed": false,
+  "separation_counterexample": {
+    "class_counts": [
+      201,
+      201
+    ],
+    "current_tolerance": 1e-08,
+    "design_rank": 2,
+    "finite_mle_exists": false,
+    "fit_executed": false,
+    "illustrative_gradient_magnitude": 1.2664165549094016e-14,
+    "proof": "x=(1,-1),y=0 and x=(1,1),y=1; beta=(0,a); loss=log(1+exp(-a)) infimum 0 unattained"
+  },
+  "sg_execution": false,
+  "solver_reuse": "DETERMINISTIC_LOGISTIC_METHOD_AVAILABLE_CONDITIONAL_ON_FUTURE_IDENTIFIABLE_BASIS_SUPPORT_SEPARATION_AND_STOPPING_CONTRACT",
+  "source_writes": 0,
+  "support_threshold_selected": null,
+  "ta_execution": false,
+  "threshold_search_calls": 0,
+  "v4": {
+    "cv": "NOT_RUN",
+    "development": "NOT_RUN",
+    "fitting": "NOT_RUN",
+    "performance": "NOT_RUN",
+    "rollout": "NOT_RUN",
+    "selection": "NOT_RUN"
+  },
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

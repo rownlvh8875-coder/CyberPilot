@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,"><link rel="stylesheet" href="/candidate-resolution.css">
+<title>Candidate diagnostic resolution</title><body>
+<nav><a href="/meter">Approximate meter diagnostic</a> · <a href="/">Geometry</a></nav>
+<h1>CANDIDATE EFFECT VS CURRENT DIAGNOSTIC RESOLUTION</h1>
+<p class="warning">CONDITIONAL / NON-QUALIFYING · NOT A PERFORMANCE ACCEPTANCE TEST<br>DESCRIPTIVE PLANT / CONDITIONAL METER ENVELOPE · NO INDEPENDENT METER TRUTH</p>
+<p id="status">Loading local receipt…</p><p id="coverage"></p><p id="verdicts"></p>
+<label>Historical nominal scenario <select id="scenario"></select></label>
+<h2>Distance-aligned lateral trajectory</h2><p>Each arm uses its own world-forward pose_x_m. Linear interpolation within observed span only. CURRENT is the exact BASELINE alias.</p>
+<svg id="trajectory" viewBox="0 0 900 320" role="img" aria-label="Distance aligned plant lateral trajectories"></svg>
+<h2>Candidate minus baseline and declared p95 band</h2>
+<p>Shaded bands show ±declared p95 minimum/maximum. Signed displacement is not improvement. Ratios are diagnostic scale ratios, not significance, probability or SNR.</p>
+<svg id="effect" viewBox="0 0 900 320" role="img" aria-label="Candidate effects against conditional p95 bands"></svg>
+<p>Blue: baseline/current · green: V1 · red: V2 · gray: conditional envelope.</p>
+<div class="scroll"><table><thead><tr><th>m</th><th>candidate</th><th>effect cm</th><th>p95 min–max cm</th><th>effect/max</th><th>classification</th><th>phase</th></tr></thead><tbody id="rows"></tbody></table></div>
+<h2>All nominal scenarios</h2><div id="summary"></div><p id="directions"></p>
+<h2>Coverage and open terms</h2><p id="open"></p>
+<p>Fixed-distance queries reuse matched residuals; they do not establish empirical ground truth at each distance. Nominal observed-point support is sparse at 25m (10 points) and 30m (1 point). Error and availability remain separate.</p>
+<h2>Historical tracking and smoothness</h2><p id="historical"></p><p>Full original per-phase metrics and all 37 V2 violations remain bound in the downloadable audit. Late phase effects beyond 30m are shown as context only; the envelope is never extrapolated.</p>
+<a href="/api/candidate-resolution">Exact public synthetic audit JSON</a><p id="receipts"></p>
+<script src="/candidate-resolution.js"></script></body></html>

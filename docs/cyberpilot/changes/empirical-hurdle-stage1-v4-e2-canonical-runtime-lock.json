@@ -1,0 +1,53 @@
+{
+  "FULL_CI_certified": false,
+  "HOLDOUT": "CLOSED",
+  "artifact_sha256": {
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-runtime-report.md": "3661584d02cdd1bd4a76fc7b874a28ff8b9609f2d504da5d1ff415fb77a410b2",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-runtime-results.json": "461f58e603a1993085410c38ded64e565bf6ac42efe41162f1931c78b8ddce1f"
+  },
+  "baseline_head": "1608205ff68ae5fe3182c303726c51e3831595ed",
+  "final_CI": "EXACT_HEAD_FINAL_HANDOFF",
+  "native_integration_authorized": false,
+  "private_execution_authorized": false,
+  "receipt_sha256": "decee56bc1ec05f5f62fb7bbd4d7c4ad3d13d8a5453335b7d62e0907d3f87e9b",
+  "scope": "PUBLIC_SYNTHETIC_RUNTIME_FEASIBILITY_AND_NATIVE_CANDIDATE_ONLY",
+  "source_sha256": {
+    ".github/workflows/cyberpilot-canonical-runtime-lab.yaml": "e822e27038dd6c96ae2d923fb9bfd4734e9cb38e004b2b7df7164404f7dc0aa7",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-runtime-qualification-v1.json": "a02e8f6037c05a2f60a808b602622867e804477e4a5ba2441b49dccace6ce6cc",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_native_candidate.c": "1af1bfa0ce165b47104980ed917375de5fd1c2385c7c0d8429c6f8b7d0e7115e",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_native_candidate.py": "a89a4473e3d9cacf3a42ca5056a656c42b757dc12f1358a071a7e28545215092",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_runtime_model.py": "b28dc36d944a56c5a60fb4c1a96d8292869ff0d36bfe498654f3be0e6f31792e",
+    "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_native_candidate.py": "62793f36d311ff89c856ffa1dc741706aff7041d2ae47a8378a4a40ff645b850",
+    "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_runtime_feasibility.py": "7746b89a26e585431fc530e55663d72a1e747c6d7bbd83bd362ab2ab95f78c38",
+    "tools/cyberpilot/run_canonical_runtime_feasibility.py": "ed698c2d8948f2b5741779b1056c9fe2e99888cf2763430e640b78f2ed57a397"
+  },
+  "validation": {
+    "attribution": 95,
+    "existing_public_suites": [
+      91,
+      29,
+      30
+    ],
+    "final_CI": "SEPARATE_EXACT_HEAD_HANDOFF",
+    "focused": 26,
+    "frozen_pins": 220,
+    "full_local_regression": {
+      "log_sha256": "0456e5ef1abd622aed6332c89bdb3eb2ceb6d5a7037d61c3bf533116a8e70c52",
+      "passed": 5878,
+      "previous_source_run": {
+        "log_sha256": "6128baac4da1259754ff4d81022f244dc681c746535b19ceefa96bc30ffb0dd5",
+        "passed": 5877,
+        "seconds": 613.65,
+        "superseded_by_final_cost_model_rerun": true
+      },
+      "seconds": 604.1,
+      "status": "PASS",
+      "workers": 4
+    },
+    "lateral": 16,
+    "publication": "PASS_FINDINGS_0",
+    "two_exact_byte_reviews": "SEPARATE_COMMIT_MESSAGE_RECEIPTS"
+  },
+  "vehicle_authority": "NONE",
+  "version": "V4_E2_CANONICAL_NATIVE_RUNTIME_LOCK_V1"
+}

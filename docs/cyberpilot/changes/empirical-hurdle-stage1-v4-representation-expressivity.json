@@ -1,0 +1,129 @@
+{
+  "actual_execution_authorized": false,
+  "actual_model": "NOT_FIT",
+  "actual_rollout_calls": 0,
+  "architecture_frozen": true,
+  "baseline": "da23b158fa2ff6eecf1ca8d33ae5e2190fcba078",
+  "candidate_search_authorized": false,
+  "component": "representation-expressivity",
+  "composition_authorized": false,
+  "data_origin": "SYNTHETIC_REPRESENTATION_ALGEBRA_ONLY",
+  "fitting_policy_frozen": false,
+  "historical_states_preserved": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "holdout_openings": 0,
+  "hugging_face": {
+    "download": 0,
+    "login": "NOT_RUN",
+    "repo": "NOT_CREATED",
+    "setup": "NOT_RUN",
+    "upload": 0
+  },
+  "mlp_one_unit_caveat": "RELU_SCORE_IS_NONLINEAR; ITS_THRESHOLD_GATES_ARE_HALFSPACES_OR_CONSTANTS; NO_FALSE_LINEAR_SCORE_CLAIM",
+  "model_fit_calls": 0,
+  "model_selection_calls": 0,
+  "normalizer_fit_calls": 0,
+  "opening_count": 0,
+  "pooled_refit": "NOT_AUTHORIZED",
+  "prediction_replay_calls": 0,
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "HOLDOUT_OPENING_CLOSED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED",
+    "SEARCH_NOT_AUTHORIZED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "prior_review_states_preserved": [
+    "GLOBAL_SINGLE_THRESHOLD_FAMILY_RETROSPECTIVELY_EXHAUSTED",
+    "V4_ARCHITECTURE_REDESIGN_INCONCLUSIVE",
+    "V4_TWO_CONTEXT_CAUSAL_STATE_CONTRACT_ESTABLISHED",
+    "V4_TWO_CONTEXT_EXACT_FITTING_EXACT_BUT_CARTESIAN_WORST_CASE",
+    "OPTION_A_ALGORITHMIC_ELIGIBILITY_NOT_ESTABLISHED",
+    "SEPARABLE_TWO_CONTEXT_FITTING_ALGORITHMICALLY_FEASIBLE_POLICY_UNFROZEN",
+    "V4_TWO_CONTEXT_POLICY_DECISION_INCONCLUSIVE"
+  ],
+  "private_numeric_array_opens": 0,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qlog_openings": 0,
+  "qualification_allowed": false,
+  "raw_log_openings": 0,
+  "receipt_sha256": "ef0875ea0cb8a7deed8c0c92a5d7f3772c5d8e572f5fbffceb76a614bb77bd34",
+  "reference_promotable": false,
+  "schema": "BOUNDED_STAGE1_REPRESENTATION_ARCHITECTURE_REVIEW_V1",
+  "scope": "PUBLIC_STATIC_SYNTHETIC_ARCHITECTURE_ONLY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_writes": 0,
+  "ta_execution": false,
+  "threshold_search_calls": 0,
+  "v4": {
+    "cv": "NOT_RUN",
+    "development": "NOT_RUN",
+    "fitting": "NOT_RUN",
+    "performance": "NOT_RUN",
+    "rollout": "NOT_RUN",
+    "selection": "NOT_RUN"
+  },
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE",
+  "what_is_not_proved": "REAL_DATA_GAIN_OR_ROUTE_TRANSFER_IMPROVEMENT",
+  "what_is_proved": "EXISTENCE_OF_DIFFERENT_ORDER_WITH_SAME_CAUSAL_CONTEXT",
+  "witnesses": {
+    "dual_head": {
+      "coefficient_origin": "SYNTHETIC_REPRESENTATION_ALGEBRA_ONLY",
+      "move_command_contrast": -2.0,
+      "new_logits": [
+        -1.0,
+        1.0,
+        1.0,
+        -1.0
+      ],
+      "old_logits": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "same_state_reversal": "ROWS_2_3_MOVE",
+      "static_command_contrast": 2.0
+    },
+    "mlp": {
+      "actual_width_selected": false,
+      "equation": "ReLU(command)+ReLU(-command)",
+      "illustrative_hidden_width": 2,
+      "new_logits": [
+        1.0,
+        0.0,
+        0.5
+      ],
+      "same_state": "STATIC"
+    },
+    "quadratic": {
+      "new_logits": [
+        1.0,
+        0.0,
+        0.25
+      ],
+      "old_logits": [
+        -1.0,
+        0.0,
+        0.5
+      ],
+      "same_state": "STATIC"
+    }
+  }
+}

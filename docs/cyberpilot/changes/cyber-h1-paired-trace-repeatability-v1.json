@@ -1,0 +1,263 @@
+{
+  "candidate_search_authorized": false,
+  "complete_repeated_file_set": "BYTE_EXACT",
+  "composition_authorized": false,
+  "execution_receipt_sha256": "d0be28a301e5adc18e0a77eb644c07ca94c2c1966c8ba097f20fc0509d85f49b",
+  "h1_packages": 88,
+  "observer_noninterference": "EXACT_HISTORICAL_FULL_RESULT_BYTES",
+  "paired_framesets": 44,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "8eeb2efecd7e3108ae78dcfb54741a14688510601bd70172a9c09c6b21e577c6",
+  "reference_promotable": false,
+  "repeated_local_file_count": 266,
+  "runs": [
+    {
+      "kind": "TA_B",
+      "observer_result_shas": [
+        "854813eaa03e792a92e7d5bc75aef71c2fc6d71d1febee613b0ac42b8fa6129d",
+        "0567af32f302214aebfeab14ac88523ef6945451b3d0f9cb75d98d1cbd821920",
+        "854813eaa03e792a92e7d5bc75aef71c2fc6d71d1febee613b0ac42b8fa6129d",
+        "0567af32f302214aebfeab14ac88523ef6945451b3d0f9cb75d98d1cbd821920"
+      ],
+      "scenario": "straight",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "TA_B",
+      "observer_result_shas": [
+        "870388e3902f0b058624bdc7e3ef1cab3b14c231d14cabde7aaab38ca5f42b39",
+        "18af2571b165eda9bfa47d6f9fcb45d72537006571e4dad5cc81295179ed0ca2",
+        "870388e3902f0b058624bdc7e3ef1cab3b14c231d14cabde7aaab38ca5f42b39",
+        "18af2571b165eda9bfa47d6f9fcb45d72537006571e4dad5cc81295179ed0ca2"
+      ],
+      "scenario": "gentle_left",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "TA_B",
+      "observer_result_shas": [
+        "4b0b608def3b2baef5baecedbe59da79fb5c3dc00dd286e0825db1f70845d0ff",
+        "3b58c72912de717c53454bf26b52031778ea81bccf791ae63d9d1b30a8b99966",
+        "4b0b608def3b2baef5baecedbe59da79fb5c3dc00dd286e0825db1f70845d0ff",
+        "3b58c72912de717c53454bf26b52031778ea81bccf791ae63d9d1b30a8b99966"
+      ],
+      "scenario": "gentle_right",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "TA_B",
+      "observer_result_shas": [
+        "af822a07507cf5faac0513cc896caa207d72a6f17f416eef2c5b5899db182644",
+        "9c969e4048bb3163a7cb2adafaaed66c8d8fe218151ef740a2cbf0af9e2f7fef",
+        "af822a07507cf5faac0513cc896caa207d72a6f17f416eef2c5b5899db182644",
+        "9c969e4048bb3163a7cb2adafaaed66c8d8fe218151ef740a2cbf0af9e2f7fef"
+      ],
+      "scenario": "sharp_left",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "TA_B",
+      "observer_result_shas": [
+        "a76bf599195d87edc83821d608b8ce7080335494055f4f943f9913189c3ecdcd",
+        "54df0ada663289f336c177f9630fed2fbbd537a39f90d8aa620c408f9d8c1301",
+        "a76bf599195d87edc83821d608b8ce7080335494055f4f943f9913189c3ecdcd",
+        "54df0ada663289f336c177f9630fed2fbbd537a39f90d8aa620c408f9d8c1301"
+      ],
+      "scenario": "sharp_right",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "TA_B",
+      "observer_result_shas": [
+        "b280f8b0d84b2ffdb3353b59e5bdb25d691bb6462f35300d004185b599a6fd9b",
+        "0e39054011c5586fe5c49a73a733bfca2d9691e9d582686d091781e3910339be",
+        "b280f8b0d84b2ffdb3353b59e5bdb25d691bb6462f35300d004185b599a6fd9b",
+        "0e39054011c5586fe5c49a73a733bfca2d9691e9d582686d091781e3910339be"
+      ],
+      "scenario": "low_speed",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "TA_B",
+      "observer_result_shas": [
+        "870388e3902f0b058624bdc7e3ef1cab3b14c231d14cabde7aaab38ca5f42b39",
+        "18af2571b165eda9bfa47d6f9fcb45d72537006571e4dad5cc81295179ed0ca2",
+        "870388e3902f0b058624bdc7e3ef1cab3b14c231d14cabde7aaab38ca5f42b39",
+        "18af2571b165eda9bfa47d6f9fcb45d72537006571e4dad5cc81295179ed0ca2"
+      ],
+      "scenario": "medium_speed",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "TA_B",
+      "observer_result_shas": [
+        "8d1104d4d9ed4b1658ca0afaeefc9e51f212e511c5c5de9454b8d8363ca4ea0e",
+        "f9694263a23d11fe16f6c40355e81e8fd293b2f3a49a0714666ce0c00b3409aa",
+        "8d1104d4d9ed4b1658ca0afaeefc9e51f212e511c5c5de9454b8d8363ca4ea0e",
+        "f9694263a23d11fe16f6c40355e81e8fd293b2f3a49a0714666ce0c00b3409aa"
+      ],
+      "scenario": "high_speed",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "TA_B",
+      "observer_result_shas": [
+        "982964e34f75a1c088d108aa7495ca3ea52d5616a1c2713d161ed1a6ac92f474",
+        "be09647b39444ff4c7c1a054c5a722afff53b9e9642eae206868c758d123fd68",
+        "982964e34f75a1c088d108aa7495ca3ea52d5616a1c2713d161ed1a6ac92f474",
+        "be09647b39444ff4c7c1a054c5a722afff53b9e9642eae206868c758d123fd68"
+      ],
+      "scenario": "s_reversal",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "TA_B",
+      "observer_result_shas": [
+        "fcbc6e2701380421ba28f02ea3ea84f0698ea4f6a381f7d676ad498cedbfcbb6",
+        "dd3636237ed9072ad9f2e9100c12c836c4c550163398bd3cb342b4da90aec4f4",
+        "fcbc6e2701380421ba28f02ea3ea84f0698ea4f6a381f7d676ad498cedbfcbb6",
+        "dd3636237ed9072ad9f2e9100c12c836c4c550163398bd3cb342b4da90aec4f4"
+      ],
+      "scenario": "driver_events",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "TA_B",
+      "observer_result_shas": [
+        "b6f56cf9c350c9c72f5e463d71bc3fa89ece2fad2d30230d4868a2c5769071c4",
+        "80085251ab728a5734ec60b7fb875fea61185a334960799192732279dcd0eb77",
+        "b6f56cf9c350c9c72f5e463d71bc3fa89ece2fad2d30230d4868a2c5769071c4",
+        "80085251ab728a5734ec60b7fb875fea61185a334960799192732279dcd0eb77"
+      ],
+      "scenario": "limit_flags",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "SG_A",
+      "observer_result_shas": [
+        "854813eaa03e792a92e7d5bc75aef71c2fc6d71d1febee613b0ac42b8fa6129d",
+        "f1dd5eb269818e5415050a1187ca94cbaeb0b37cdf7930b77d641e1ac072c083",
+        "854813eaa03e792a92e7d5bc75aef71c2fc6d71d1febee613b0ac42b8fa6129d",
+        "f1dd5eb269818e5415050a1187ca94cbaeb0b37cdf7930b77d641e1ac072c083"
+      ],
+      "scenario": "straight",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "SG_A",
+      "observer_result_shas": [
+        "870388e3902f0b058624bdc7e3ef1cab3b14c231d14cabde7aaab38ca5f42b39",
+        "34d6caea49683236c8ef44dbb71f85c5b6d560629955255c82e8fab6a465119b",
+        "870388e3902f0b058624bdc7e3ef1cab3b14c231d14cabde7aaab38ca5f42b39",
+        "34d6caea49683236c8ef44dbb71f85c5b6d560629955255c82e8fab6a465119b"
+      ],
+      "scenario": "gentle_left",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "SG_A",
+      "observer_result_shas": [
+        "4b0b608def3b2baef5baecedbe59da79fb5c3dc00dd286e0825db1f70845d0ff",
+        "1cf7a8e15d2e0aa84787d83865087cafeadf2efea3364655de1cadb62ad155ce",
+        "4b0b608def3b2baef5baecedbe59da79fb5c3dc00dd286e0825db1f70845d0ff",
+        "1cf7a8e15d2e0aa84787d83865087cafeadf2efea3364655de1cadb62ad155ce"
+      ],
+      "scenario": "gentle_right",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "SG_A",
+      "observer_result_shas": [
+        "af822a07507cf5faac0513cc896caa207d72a6f17f416eef2c5b5899db182644",
+        "77ed34f573f54d596caae46d9399458862d65b43fd538ce541b18bcce3c8cdaf",
+        "af822a07507cf5faac0513cc896caa207d72a6f17f416eef2c5b5899db182644",
+        "77ed34f573f54d596caae46d9399458862d65b43fd538ce541b18bcce3c8cdaf"
+      ],
+      "scenario": "sharp_left",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "SG_A",
+      "observer_result_shas": [
+        "a76bf599195d87edc83821d608b8ce7080335494055f4f943f9913189c3ecdcd",
+        "13a05641f35a90de34c3b77914e260bc4b7811ca822ea7d2790b965ce70206c0",
+        "a76bf599195d87edc83821d608b8ce7080335494055f4f943f9913189c3ecdcd",
+        "13a05641f35a90de34c3b77914e260bc4b7811ca822ea7d2790b965ce70206c0"
+      ],
+      "scenario": "sharp_right",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "SG_A",
+      "observer_result_shas": [
+        "b280f8b0d84b2ffdb3353b59e5bdb25d691bb6462f35300d004185b599a6fd9b",
+        "2c6372296fe0d0784d462813ee05676afacd6f2bb647b72ac592e43b234d824b",
+        "b280f8b0d84b2ffdb3353b59e5bdb25d691bb6462f35300d004185b599a6fd9b",
+        "2c6372296fe0d0784d462813ee05676afacd6f2bb647b72ac592e43b234d824b"
+      ],
+      "scenario": "low_speed",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "SG_A",
+      "observer_result_shas": [
+        "870388e3902f0b058624bdc7e3ef1cab3b14c231d14cabde7aaab38ca5f42b39",
+        "34d6caea49683236c8ef44dbb71f85c5b6d560629955255c82e8fab6a465119b",
+        "870388e3902f0b058624bdc7e3ef1cab3b14c231d14cabde7aaab38ca5f42b39",
+        "34d6caea49683236c8ef44dbb71f85c5b6d560629955255c82e8fab6a465119b"
+      ],
+      "scenario": "medium_speed",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "SG_A",
+      "observer_result_shas": [
+        "8d1104d4d9ed4b1658ca0afaeefc9e51f212e511c5c5de9454b8d8363ca4ea0e",
+        "5b36c03c0b1ce35e0a7f6b6b1dc3312624dd5d2a6ebe418ba170d55a4807fa03",
+        "8d1104d4d9ed4b1658ca0afaeefc9e51f212e511c5c5de9454b8d8363ca4ea0e",
+        "5b36c03c0b1ce35e0a7f6b6b1dc3312624dd5d2a6ebe418ba170d55a4807fa03"
+      ],
+      "scenario": "high_speed",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "SG_A",
+      "observer_result_shas": [
+        "982964e34f75a1c088d108aa7495ca3ea52d5616a1c2713d161ed1a6ac92f474",
+        "5511be36273ea228c0f1311720d172d338b7cdb80340df58d214c524540c85f9",
+        "982964e34f75a1c088d108aa7495ca3ea52d5616a1c2713d161ed1a6ac92f474",
+        "5511be36273ea228c0f1311720d172d338b7cdb80340df58d214c524540c85f9"
+      ],
+      "scenario": "s_reversal",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "SG_A",
+      "observer_result_shas": [
+        "fcbc6e2701380421ba28f02ea3ea84f0698ea4f6a381f7d676ad498cedbfcbb6",
+        "4dfbcf911e72f629ad108233e62c508d6ea6e11a437d540ed884a0598b1c1bba",
+        "fcbc6e2701380421ba28f02ea3ea84f0698ea4f6a381f7d676ad498cedbfcbb6",
+        "4dfbcf911e72f629ad108233e62c508d6ea6e11a437d540ed884a0598b1c1bba"
+      ],
+      "scenario": "driver_events",
+      "status": "EXACT_PASS"
+    },
+    {
+      "kind": "SG_A",
+      "observer_result_shas": [
+        "b6f56cf9c350c9c72f5e463d71bc3fa89ece2fad2d30230d4868a2c5769071c4",
+        "8d679832d908bcbbd3bca5139884788d3a7684ab8936696e3176325a9b09784c",
+        "b6f56cf9c350c9c72f5e463d71bc3fa89ece2fad2d30230d4868a2c5769071c4",
+        "8d679832d908bcbbd3bca5139884788d3a7684ab8936696e3176325a9b09784c"
+      ],
+      "scenario": "limit_flags",
+      "status": "EXACT_PASS"
+    }
+  ],
+  "schema": "CYBER_H1_PAIRED_TRACE_REPEATABILITY_V1",
+  "sealed_reference_allowed": false,
+  "status": "EXACT_PASS",
+  "vehicle_activation_allowed": false
+}

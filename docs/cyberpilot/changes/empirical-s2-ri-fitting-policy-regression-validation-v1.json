@@ -1,0 +1,82 @@
+{
+  "actual_numeric_fitting": "NOT_AUTHORIZED",
+  "browser": "NOT_APPLICABLE",
+  "candidate_search_authorized": false,
+  "combined_empirical": {
+    "command": "python -m pytest -q openpilot/tools/cyber_autotune/tests/test_empirical*.py openpilot/tools/cyber_autotune/tests/test_future_empirical*.py",
+    "passed": 1289,
+    "subtests_passed": 264
+  },
+  "composition_authorized": false,
+  "cv_scoring": "NOT_RUN",
+  "exact_head_ci": "VERIFIED_SEPARATELY_AFTER_COMMIT_NOT_CLAIMED_BY_THIS_PRECOMMIT_RECEIPT",
+  "final_pooled_refit": "NOT_AUTHORIZED",
+  "focused": {
+    "passed": 56,
+    "subtests_passed": 48
+  },
+  "full_runner": {
+    "autotune": 3921,
+    "command": "python tools/test_runner.py openpilot/tools/cyber_autotune/tests openpilot/selfdrive/controls/tests -j 1",
+    "controls": 142,
+    "passed": 4063,
+    "seconds": 1571.68
+  },
+  "git_diff_check": "PASS",
+  "historical_tracked_modifications": 0,
+  "holdout": "HOLDOUT_OPENING_CLOSED",
+  "independent_review": {
+    "findings": [
+      "ATOMIC_PUBLICATION_PREFLIGHT_AND_EXACT_BYTES"
+    ],
+    "full_regression_after_fixes": true,
+    "red_green_reproduction_tests": 4,
+    "status": "COMPLETE",
+    "unresolved_findings": 0
+  },
+  "json": "PASS",
+  "lateral_replay": {
+    "passed": 16
+  },
+  "log_sha256": {
+    "atomic-postcheck-red.log": "2de5c2057a23a223ff07bd4f2fcaa9b9f890b8bd7c73bb44a8bbb2a3a14d33c2",
+    "atomic-red.log": "42ca600f41731456771ac25f1699e88c4b691f46903a36fc2357395c72632299",
+    "empirical-final.log": "be8cb30c2cdeed30a209ab20b74648c2792f72509b740dd2e0bab19b9d390b11",
+    "focused.log": "c3e5a08c4800f5a9d412f47e9dbeb9907d0de278de46a8562424ab42315d1ca2",
+    "full.log": "7dc13d42bc0f8dfc1eef2a72914ec755870c95534f0f1fa28fb41053b785bbc0",
+    "lateral.log": "79d2f9ee0e085cd95875de01a1663297d3d379c176405dcbbb8d4c1db82e5954",
+    "publication-full.log": "3eb5dfc330b8b5caa818be5d5cbddb2d3283576a0ba54ae470adf2f77c65bdff",
+    "publication-generation.log": "ce07ecdacfdc14e385f56cfdee1bb9239f53bf0788cf9f2db9176ba167ec65a8",
+    "publication-head.log": "30d58e571eebcfaec353d1e581d6279e5cc3c89cde9f3d7ae00c1c93983224aa",
+    "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "scons.log": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056"
+  },
+  "model_fitting": "NOT_RUN",
+  "model_selection": "NOT_RUN",
+  "normalizer_fitting": "NOT_RUN",
+  "opening_count": 0,
+  "policy_sha256": "05cf63752587105d188bff2f81baec32e8192a689cbf09543caf1f954656ac96",
+  "prediction": "NOT_RUN",
+  "private_arrays_opened": 0,
+  "private_store_preservation": "NO_ACCESS_NO_WRITES_NOT_A_BYTE_REHASH_CLAIM",
+  "production_authority": false,
+  "public_policy_repeat_generation": "EXACT",
+  "publication_privacy_authority": "PASS",
+  "publication_raw_data": false,
+  "qlog_model_support": 0,
+  "qualification_allowed": false,
+  "raw_logs_opened": 0,
+  "readiness_sha256": "efa0fde78a71f401aa3730e7f843a4efc738eece76cfed2086e139da5febebcb",
+  "receipt_sha256": "36c5cd1557cce4b14481c2d76d7bc161e9b063ec95d9024fd5fec20febfa3ef0",
+  "reference_promotable": false,
+  "residual": "NOT_RUN",
+  "rollout": "NOT_RUN",
+  "ruff": "PASS",
+  "schema": "EMPIRICAL_S2_RI_FITTING_POLICY_REGRESSION_VALIDATION_V1",
+  "scons": "PASS",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "syntax": "PASS",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

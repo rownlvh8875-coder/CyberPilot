@@ -1,0 +1,41 @@
+{
+  "calibration_status": "CALIBRATION_MEASUREMENT_PENDING",
+  "coarse_height_node": {
+    "code": "COARSE_CAMERA_HEIGHT_PRIOR_AVAILABLE",
+    "evidence_sha256": "90673057619b2c15416dee64bee5f76336ec4f386b9f83d887a39ade186daf9c",
+    "resolves_independent_dependencies": false,
+    "status": "PASS_DIAGNOSTIC_ONLY"
+  },
+  "coarse_height_status": "COARSE_CAMERA_HEIGHT_PRIOR_AVAILABLE",
+  "coarse_source_sha256": "d2bb72bf2c0060d1f6e3d5d4d601ed07b248261248a586843c69455fe06caee5",
+  "diagnostic_node": {
+    "code": "APPROX_GEOMETRY_DIAGNOSTIC_AVAILABLE",
+    "evidence_sha256": "bddd081d0b18886d583ddf0154d232d9365a7644bcf4ee5209a970bbc88e69ab",
+    "resolves_independent_dependencies": false,
+    "status": "PASS_DIAGNOSTIC_ONLY"
+  },
+  "diagnostic_status": "APPROX_GEOMETRY_DIAGNOSTIC_AVAILABLE",
+  "existing_blocker_plan_sha256": "52f302339f28b00ff446f745fba959037d3a8371837725945070423236d6f8e9",
+  "independent": false,
+  "independent_extrinsics_status": "INDEPENDENT_EXTRINSICS_UNAVAILABLE",
+  "independent_reference_status": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "independent_validation_status": "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+  "metric_calibration_status": "METRIC_CALIBRATION_UNAVAILABLE",
+  "physical_measurement": false,
+  "physical_uncertainty": null,
+  "prior_sha256": "bddd081d0b18886d583ddf0154d232d9365a7644bcf4ee5209a970bbc88e69ab",
+  "private_comma4": "NOT_OPENED",
+  "private_input_allowed": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "fc183965c2b1095f73d2b34896bc6b175a1721070f58fc36e52e16332fc5bab8",
+  "reference_promotable": false,
+  "schema": "COARSE_HEIGHT_ADDITIVE_BLOCKER_SNAPSHOT_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "vehicle_activation_allowed": false,
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

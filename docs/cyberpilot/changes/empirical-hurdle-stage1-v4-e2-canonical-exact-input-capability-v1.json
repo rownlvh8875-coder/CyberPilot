@@ -1,0 +1,158 @@
+{
+  "HOLDOUT": "CLOSED",
+  "actual_binding": "INPUT_CONTRACT_UNRESOLVED_ACTUAL_BINDING_PENDING",
+  "binding": {
+    "entry": [
+      "32-job manifest position/candidate/fold",
+      "TRAIN or DEV role",
+      "ordered source route/segment and anchor/count",
+      "root receipt chain with expected content hash",
+      "Stage1/Stage2 original lineage",
+      "exclusive output identity 0700/0600 outside Git"
+    ],
+    "grant": [
+      "current mission",
+      "exact execution HEAD",
+      "protocol raw SHA256",
+      "protocol canonical receipt",
+      "source-map SHA256",
+      "explicit issuer and private_authority"
+    ],
+    "physical_overlap": "Same physical member can serve different authorized fold roles; content descriptor/route/segment must agree. Role-specific grants and DEV barrier remain independent; retrospective data are not blinded HOLDOUT."
+  },
+  "descriptor": {
+    "dimensions": 1,
+    "dtype": [
+      "<f8",
+      "<i8",
+      "|b1",
+      "<i2"
+    ],
+    "hash": "Expected content SHA256 from original writer receipt; not a guessed pointer. Numeric dtype/length are checked per frozen named member.",
+    "maximum_job_rows": 336941,
+    "maximum_source_rows": 916535,
+    "metadata_numeric_distinction": "Writer may declare nominal_coefficients and singular_values; their numeric payloads remain forbidden. Descriptor declarations grant no file access.",
+    "model_dimensions": [
+      5,
+      13,
+      33,
+      93
+    ],
+    "order": "C",
+    "storage": [
+      "npy for CAUSAL/DERIVED",
+      "npy.gz for named V1/V4 arrays",
+      "canonical-json for metadata"
+    ]
+  },
+  "entry_required_fields": [
+    "candidate",
+    "fold",
+    "role",
+    "owner",
+    "member",
+    "kind",
+    "root_identity",
+    "anchor",
+    "route",
+    "segment",
+    "manifest_chain",
+    "model_lineage",
+    "descriptor"
+  ],
+  "forbidden": [
+    "nominal_coefficients numeric",
+    "singular_values numeric",
+    "original private D0 threshold",
+    "historical BLAS delta/error as canonical baseline",
+    "mixed TRAIN carrier broad read",
+    "raw/qlog",
+    "GPS/timestamp expansion",
+    "HOLDOUT",
+    "vehicle",
+    "wildcard/discovery/alternate roots"
+  ],
+  "future_unresolved": [
+    "actual trusted root/device/inode",
+    "exact source/model/member/anchor receipts and manifests",
+    "actual role/count/segment admission and I/O plan",
+    "current private grant",
+    "Full CI or separately authorized equivalent verification",
+    "private host memory/disk/capacity"
+  ],
+  "issuer": {
+    "current": "SYNTHETIC_FIXTURE_NOT_TRUSTED_PRIVATE_ISSUER",
+    "future": "Separately approved trusted issuer must authenticate current grant, exact HEAD, protocol raw and canonical receipt, source-map and reviews/CI/resource proof. Self-signed JSON is insufficient.",
+    "past_grants_accepted": false
+  },
+  "lifecycle": [
+    "current grant validation",
+    "root identity validation",
+    "authorized metadata-only plan",
+    "exclusive plan seal",
+    "file/directory fsync and exact durable readback",
+    "exact numeric descriptor allowlist enable",
+    "TRAIN numeric access",
+    "all32 Q1/all64 D1/all64 D2/all32 Q3 and durable TRAIN seal",
+    "DEV numeric access"
+  ],
+  "member_grammar": {
+    "CAUSAL": "repeat-1/routes/<sha256>/segments/<sha256>/arrays/<approved field>.npy",
+    "DERIVED": "repeat-1/segments/<sha256>/<approved field>.npy",
+    "V1_V4_prefix": "candidates/<exact frozen candidate>/<FOLD_A or FOLD_B>/",
+    "implementation": "frozen canonical_inputs.member_allowed plus bounded_inputs.validate_capability",
+    "metadata": "Exact named manifests/receipts/authorizations admitted by frozen helper; no directory traversal."
+  },
+  "mission": "STAGE1_V4_E2_CANONICAL_BOUNDED_LIFETIME_AND_INPUT_BINDING",
+  "numeric_categories": {
+    "CAUSAL": [
+      "command.normalized",
+      "state.speed_mps"
+    ],
+    "DERIVED": [
+      "angle_tick",
+      "streak_all",
+      "model_eligible",
+      "rail",
+      "s2_ri_causal_run_id",
+      "within_s2_ri_causal_run_index"
+    ],
+    "DEV_after_seal": [
+      "V4 STATIC/MOVE Stage1 coefficients",
+      "V1 Stage1 five-field normalizer",
+      "named saved one-step p_move/true_move/prior identity checks",
+      "exact same-anchor causal/derived horizon sources"
+    ],
+    "TRAIN_V1": [
+      "move_label",
+      "prior_delta_tick",
+      "Stage2 coefficients",
+      "Stage2 normalizer mean",
+      "Stage2 normalizer std",
+      "Stage2 normalizer constant",
+      "Stage2 normalizer effective",
+      "Stage2 normalizer constant_reference"
+    ],
+    "TRAIN_V4": [
+      "combined_probability"
+    ]
+  },
+  "private_access_authorized": false,
+  "receipt_sha256": "445ee61aff21799482fcdc3bc813bc178dc9367d4c861508f28f93606607a222",
+  "root": {
+    "actual_identity": null,
+    "actual_volume_device_inode": null,
+    "implementation": "No OS private reader is implemented or enabled.",
+    "requirements": [
+      "exact trusted volume/device and root identity",
+      "root device/inode at open and readback",
+      "no-follow, no-magiclink, no-cross-device guarded reader",
+      "no discovery, wildcard, alternate root or caller path authorization"
+    ]
+  },
+  "schema_status": "CANONICAL_E2_INPUT_CAPABILITY_SCHEMA_FROZEN",
+  "scope": "PUBLIC_SYNTHETIC_BOUNDED_LIFETIME_AND_BINDING_DESIGN_ONLY",
+  "synthetic_validator": "Accepts only explicit fake synthetic issuer; checks schema, member grammar, physical identity, descriptor, canonical receipts, current public binding, terminal order. Returns descriptor only; no file open.",
+  "vehicle_authority": "NONE",
+  "version": "V4_E2_CANONICAL_EXACT_INPUT_CAPABILITY_PLAN_V1"
+}

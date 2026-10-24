@@ -1,0 +1,125 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "difference_name": "PUBLISH_ALIGNED_REQUEST_OUTPUT_DIFFERENCE",
+  "limiter_cause": null,
+  "linkage": "REQUEST_OUTPUT_TRANSACTION_LINK_UNAVAILABLE",
+  "physical_eps_application": null,
+  "post_controller": "LOGGED_POST_CARCONTROLLER_NORMALIZED_CAROUTPUT_ACTUATORSOUTPUT_TORQUE",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "raw_can_representation": "LOGGED_RAW_CAROUTPUT_TORQUEOUTPUTCAN_NOT_TRANSMISSION_ACK",
+  "receipt_sha256": "251a7d82325773534a1f55e86edbd27b922d39d1f5086806515806bcb0cf3e10",
+  "reference_promotable": false,
+  "request": "CONTROLLER_REQUESTED_NORMALIZED_CARCONTROL_ACTUATORS_TORQUE",
+  "routes": [
+    {
+      "bridge": {
+        "domain_conflicts": 0,
+        "eligible": 415896,
+        "exact_ratio_match_count": 13025,
+        "float32_exact_rate": 1.0,
+        "float32_expected_exact_count": 415896,
+        "invalid": 10,
+        "max_residual": 2.9729456119120812e-08,
+        "median_residual": 5.829305094184889e-10,
+        "normalized_saturated_count": 11,
+        "p95_residual": 4.991342505977769e-09,
+        "physical_eps_application_proven": false,
+        "raw_saturated_count": 11,
+        "sign_conflicts": 0,
+        "status": "ROUTE_COMMAND_BRIDGE_CONFIRMED",
+        "steer_max": 409,
+        "total": 415906
+      },
+      "request_output_order": {
+        "REQUEST_AFTER_OUTPUT": 11,
+        "REQUEST_BEFORE_OUTPUT": 415776
+      },
+      "route_id": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+      "source_age": {
+        "command": {
+          "count": 415844,
+          "maximum_ns": 283959,
+          "median_ns": 112864.0,
+          "p95_ns": 139063.0
+        },
+        "control": {
+          "count": 415787,
+          "maximum_ns": 18296827,
+          "median_ns": 6079324.0,
+          "p95_ns": 8323856.0
+        },
+        "gyro": {
+          "count": 415806,
+          "maximum_ns": 32366466,
+          "median_ns": 4801485.0,
+          "p95_ns": 9578217.75
+        },
+        "state": {
+          "count": 415844,
+          "maximum_ns": 57186757,
+          "median_ns": 4135704.5,
+          "p95_ns": 10225125.15
+        }
+      }
+    },
+    {
+      "bridge": {
+        "domain_conflicts": 0,
+        "eligible": 500745,
+        "exact_ratio_match_count": 91054,
+        "float32_exact_rate": 1.0,
+        "float32_expected_exact_count": 500745,
+        "invalid": 19,
+        "max_residual": 2.9729456119120812e-08,
+        "median_residual": 5.282807767625908e-10,
+        "normalized_saturated_count": 41,
+        "p95_residual": 5.501406691310606e-09,
+        "physical_eps_application_proven": false,
+        "raw_saturated_count": 41,
+        "sign_conflicts": 0,
+        "status": "ROUTE_COMMAND_BRIDGE_CONFIRMED",
+        "steer_max": 409,
+        "total": 500764
+      },
+      "request_output_order": {
+        "REQUEST_AFTER_OUTPUT": 17,
+        "REQUEST_BEFORE_OUTPUT": 500605
+      },
+      "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "source_age": {
+        "command": {
+          "count": 500691,
+          "maximum_ns": 267083,
+          "median_ns": 111771.0,
+          "p95_ns": 138021.0
+        },
+        "control": {
+          "count": 500622,
+          "maximum_ns": 18430156,
+          "median_ns": 6202552.0,
+          "p95_ns": 8562447.95
+        },
+        "gyro": {
+          "count": 500655,
+          "maximum_ns": 35334532,
+          "median_ns": 4876458.0,
+          "p95_ns": 9584754.899999999
+        },
+        "state": {
+          "count": 500691,
+          "maximum_ns": 41311903,
+          "median_ns": 6515052.0,
+          "p95_ns": 9687504.5
+        }
+      }
+    }
+  ],
+  "schema": "EMPIRICAL_CAUSAL_COMMAND_STAGES_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

@@ -1,0 +1,39 @@
+{
+  "ambiguous_route_identity": "BLOCK_NOT_SPLIT",
+  "angle_control_allowed": false,
+  "candidate_search_authorized": false,
+  "canfd_allowed": false,
+  "composition_authorized": false,
+  "duplicate_content": "ONE_SEGMENT_ONE_ROUTE",
+  "generation": {
+    "carparams_sha256": "3023ff6a4b49a67d3b4a85d5494773c3e061c0046b7685983a9c7b6d72e153da",
+    "control_type": "torque",
+    "fingerprint": "HYUNDAI_SANTA_FE_2022",
+    "flags": 65928,
+    "os_version": "19.8-carrot-bt1",
+    "software_profile_sha256": "21f48b6aa9faac920d56c8bd8707ec58dd88b091d752a2b3bdf25d88824a41c8",
+    "source_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813"
+  },
+  "other_commit_requires_separate_source_audit": true,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "a2d81bf5c786404c7a3aaa47f7d0c0b3163fa6821e35845762ba6b2fc607b847",
+  "reference_promotable": false,
+  "route_identity": [
+    "source_commit",
+    "fingerprint",
+    "carparams_sha256",
+    "software_profile_sha256",
+    "logger_start_sha256",
+    "segment_lineage_sha256",
+    "monotonic_group_sha256"
+  ],
+  "runtime_steer_max": "SOURCE_DEFAULT_409_OR_EXPLICIT_SOURCE_BOUND_OVERRIDE_VERIFIED_NUMERICALLY",
+  "schema": "EMPIRICAL_DATASET_V2_HOMOGENEITY_POLICY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "v1_overlap": "EXCLUDE_ENTIRE_ROUTE",
+  "vehicle_activation_allowed": false
+}

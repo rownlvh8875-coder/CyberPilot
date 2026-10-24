@@ -1,0 +1,38 @@
+{
+  "alternatives": [
+    {
+      "family": "SG-B",
+      "reason": "No independently justified general slew rate; adds arbitrary tracking cost"
+    },
+    {
+      "family": "SG-C",
+      "reason": "No canonical time constant; generic low pass and persistent tail unwanted"
+    },
+    {
+      "family": "SG-D",
+      "reason": "No justified deadband; potential steady bias"
+    }
+  ],
+  "candidate_results_used": false,
+  "counterevidence": [
+    "small chatter passes unchanged",
+    "p95 derivative can rise despite lower peak and nonincreasing total variation",
+    "no physical rate justification or guarantee",
+    "large reversal may require one additional sample",
+    "phase/plant tracking cost must be disclosed",
+    "frozen command replay cannot establish feedback-loop stability"
+  ],
+  "mechanism": "UNIT_DELTA_PROJECTOR",
+  "policy_sha256": "994bed3c53308cfd83132e4ae32294e2d87ff5f2587e870d6c9d5bf466383ae1",
+  "production_authority": false,
+  "qualification_allowed": false,
+  "reason": "Normalized authority radius1 supplies a geometric step; only opposing commands can differ by >1 within [-1,1]",
+  "receipt_sha256": "16eef8e12af3bb4e84761597b5168fbf22846acebf865d0ae3ceb238eaeed4b8",
+  "reference_promotable": false,
+  "schema": "SMOOTHNESS_FAMILY_SELECTION_V1",
+  "sealed_reference_allowed": false,
+  "selected_family": "SG-A",
+  "source_baseline_sha": "53506f2af49ab52490482d3961044f33b7360235",
+  "status": "SG_A_SELECTED",
+  "vehicle_activation_allowed": false
+}

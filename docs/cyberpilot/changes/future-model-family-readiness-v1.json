@@ -1,0 +1,89 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "families": [
+    {
+      "failure_modes": [
+        "pole instability",
+        "quantized measurement bias",
+        "closed-loop identification bias"
+      ],
+      "family": "S1",
+      "fields": [
+        "raw_command",
+        "steeringAngleDeg",
+        "steeringRateDeg",
+        "vEgo"
+      ],
+      "fitting_complexity": "small constrained linear/state estimation; method not selected",
+      "holdout_risk": "route transfer and recursive drift",
+      "name": "SECOND_ORDER_LATENT_STATE_SPACE",
+      "parameter_count": "UNFROZEN_A_2X2_B_2X1_PLUS_OBSERVATION_AND_BIAS_CHOICES",
+      "rationale": "Separate angle and rate dynamics from quantized observation",
+      "reset": "NEW_ROUTE_SEGMENT_RUN_INTERVENTION_POLICY_MUST_BE_FROZEN",
+      "states": [
+        "angle",
+        "rate"
+      ]
+    },
+    {
+      "failure_modes": [
+        "integrated bias",
+        "incorrect derivative timing",
+        "deadzone ambiguity"
+      ],
+      "family": "S2",
+      "fields": [
+        "command_history",
+        "steeringRateDeg",
+        "vEgo",
+        "angle_history"
+      ],
+      "fitting_complexity": "low-order regression; tap count not selected",
+      "holdout_risk": "accumulated angle drift",
+      "name": "DELTA_ANGLE_CAUSAL_MODEL",
+      "parameter_count": "UNFROZEN_DEPENDS_ON_FUTURE_TAP_POLICY",
+      "rationale": "Model motion separately from unchanged quantized samples",
+      "reset": "NO_CROSS_ROUTE_SEGMENT_RUN_HISTORY",
+      "states": [
+        "past motion"
+      ]
+    },
+    {
+      "failure_modes": [
+        "switch chatter",
+        "unsupported physical deadzone",
+        "overfit regimes"
+      ],
+      "family": "S3",
+      "fields": [
+        "raw_command",
+        "steeringRateDeg",
+        "vEgo",
+        "source_proven_deadzone_hysteresis"
+      ],
+      "fitting_complexity": "bounded small affine fits only after source mechanism audit",
+      "holdout_risk": "rare regime coverage",
+      "name": "BOUNDED_PIECEWISE_AFFINE_ACTUATOR",
+      "parameter_count": "UNFROZEN_NO_REGIME_COUNT_OR_BOUNDARIES_SELECTED",
+      "rationale": "Potential source-defined deadzone/hysteresis mechanism",
+      "reset": "FUTURE_SOURCE_BOUND_RESET_REQUIRED",
+      "states": [
+        "source-defined regime memory"
+      ]
+    }
+  ],
+  "fitting_allowed": false,
+  "implementation_allowed": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "ab86e1206feec5fbcf67a57d488f232dc40c98585fdad125f05466866dc70a22",
+  "reference_promotable": false,
+  "schema": "FUTURE_MODEL_FAMILY_READINESS_V1",
+  "sealed_reference_allowed": false,
+  "selection": "NOT_RUN",
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

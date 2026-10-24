@@ -1,0 +1,32 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "facts": [
+    "steeringAngleDeadzoneDeg converts to controller curvature/lateral-acceleration error deadzone",
+    "get_friction applies controller compensation; no physical deadzone measurement",
+    "apply_driver_steer_torque_limits clamps driver allowance and command slew",
+    "CustomSteerMax/Delta settings affect command limits, not EPS hysteresis proof",
+    "apply_hysteresis in interface_base is vEgoCluster display-speed behavior",
+    "measurement quantization is not an actuator regime"
+  ],
+  "numeric_regime_discovery_allowed": false,
+  "observed_mechanisms": [
+    "CONTROLLER_DEADZONE_ONLY",
+    "COMMAND_LIMIT_REGIME_ONLY"
+  ],
+  "physical_deadzone_proven": false,
+  "physical_hysteresis_proven": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "a7bd180a5357bb101fbedb6865f6c54af8ebc4fee2e464b5a29ea94e396f9f05",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_S3_SOURCE_MECHANISM_V1",
+  "scope": "NO_SOURCE_DEFINED_ACTUATOR_REGIME_PROVEN_BY_REVIEWED_SOURCE",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_contract_sha256": "109bc9159d06db8ba696922b93a7dea5d5f265f2bbc0dcbf4d22aade51e2f388",
+  "status": "S3_SOURCE_MECHANISM_BLOCKED",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

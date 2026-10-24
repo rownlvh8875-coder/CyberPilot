@@ -1,0 +1,76 @@
+{
+  "candidate_acceptance_authorized": false,
+  "composition_authorized": false,
+  "composition_recommendation": "COMPOSITION_NOT_RECOMMENDED",
+  "execution_binding_sha256": "046aaec7019f3aa8125326f95b0df7ad8bdbef1813f3d2037db37fccccb8dc0e",
+  "executions": 66,
+  "feedback_interaction": "FEEDBACK_COMPENSATES_GOVERNOR_LAG",
+  "frozen_evaluation_authorized": false,
+  "historical_roles": [
+    "MIXED_HISTORICAL",
+    "MIXED_HISTORICAL"
+  ],
+  "historical_sg_interpretation": "SG_STANDALONE_TRADEOFF_ONLY",
+  "historical_sg_receipts": {
+    "binding": "44026424a77e204b3f336c7cdf980187441a32f8b37682b9ea55aaff75c61222",
+    "readiness": "6a658c860c8b201f059c591e6e6168b3131ba73fa45e1a3bbad46bf5d41663e4",
+    "results": "17abb7e82eae7c16c61230299cbb4ae76e2f24af409206922ee2a0decfec96d1"
+  },
+  "historical_verdicts": {
+    "CURRENT": "BASELINE_EXACT",
+    "V1": "TRADEOFF_ONLY",
+    "V2": "REJECTED"
+  },
+  "independent_meter_result": null,
+  "interaction_sha256": "667c6b36f590c6bc4b9a19c6899024461498a812bc147c3622c3e5e359958f11",
+  "limitations": [
+    "Bounded input plant containment is not feedback convergence or real vehicle stability",
+    "Sustained oscillation and saturation can remain within source-derived envelope",
+    "Quarter blocks have unequal demand; only exact equivalent blocks support descriptive growth flags",
+    "No search, no changed SG config or metric policy, no new physical reference",
+    "No performance thresholds justified; no weighted objective score"
+  ],
+  "private_inputs_opened": false,
+  "production_authority": false,
+  "production_sources_modified": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "0326dad0852f57d04615f66975fcb879ba248464d05709b3915e7b3cb8f3657b",
+  "reference_blocker_graph_sha256": "203b8809f92a5924a3d80374ed47fb956d78d3b220ef0d61fb0356c1d80e43ee",
+  "reference_promotable": false,
+  "reference_track": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "reference_track_modified": false,
+  "repeatability": "EXACT_PASS",
+  "results_sha256": "e2369657aa47cb447bdfbaa1dd72bb7eddc712b0747f34d64a94503e54ca5818",
+  "schema": "SMOOTHNESS_CLOSED_LOOP_READINESS_V1",
+  "scope": "FINITE_HORIZON_CLOSED_LOOP_STABILITY_DIAGNOSTIC",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "search_authorized": false,
+  "source_baseline_sha": "cd5561b6c8ee568917fc6a5d2c53a6396d4544fe",
+  "stability_proof": false,
+  "states": [
+    "SG_CLOSED_LOOP_STRUCTURAL_PASS",
+    "SG_CLOSED_LOOP_TRADEOFF_ONLY",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "SEARCH_NOT_AUTHORIZED",
+    "FROZEN_EVALUATION_NOT_AUTHORIZED"
+  ],
+  "status": "SG_CLOSED_LOOP_TRADEOFF_ONLY",
+  "structural_status": "SG_CLOSED_LOOP_STRUCTURAL_PASS",
+  "ta_enabled": false,
+  "ta_interpretation": "TA_STANDALONE_TRADEOFF_ONLY",
+  "total_physical_bound": null,
+  "v2_historical_violations": 37,
+  "vehicle_activation_allowed": false,
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

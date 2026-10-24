@@ -1,0 +1,27 @@
+# UNAPPLIED_REVIEW_ONLY — separate manual diagnostic job, no legacy replacement.
+name: CyberPilot Dual Source Publication Diagnostic V1
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnostic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          submodules: recursive
+      - name: Candidate publication invariants
+        run: python3 -B -m unittest -v tools.cyberpilot.tests.test_dual_source_publication_v1
+      - name: Require approved F19/F21 source delivery and prepare capsules
+        run: >-
+          python3 -B tools/cyberpilot/dual_source_publication_v1.py --prepare
+          --source-root "$GITHUB_WORKSPACE"
+          --evidence-root "$RUNNER_TEMP/dual-source-capsules"
+      - name: Verify both sources without admitting Runtime
+        run: >-
+          python3 -B tools/cyberpilot/dual_source_publication_v1.py --run
+          --evidence-root "$RUNNER_TEMP/dual-source-capsules"
+          --output "$RUNNER_TEMP/dual-source-result.json"

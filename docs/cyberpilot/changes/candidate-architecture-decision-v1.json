@@ -1,0 +1,421 @@
+{
+  "actual_algorithm_implemented": false,
+  "alternatives": [
+    {
+      "approach": "A_PARALLEL_WRAPPERS",
+      "benefit": "isolated roles",
+      "cost": "duplicate LatControlTorque logic; composition unclear",
+      "decision": "NOT_SELECTED"
+    },
+    {
+      "approach": "B_CASCADED_CORE_PLUS_GOVERNOR",
+      "benefit": "observable boundary and distinct state/config identity",
+      "cost": "governor phase lag and reset discipline require standalone validation",
+      "decision": "SELECTED"
+    },
+    {
+      "approach": "C_SINGLE_MULTI_OBJECTIVE",
+      "benefit": "integrated implementation",
+      "cost": "role attribution and tradeoff concealment",
+      "decision": "NOT_SELECTED"
+    }
+  ],
+  "authority_boundary": "OFFLINE_ONLY_NO_RUNTIME_HOOK",
+  "composition": "TA -> narrow GovernorCommand -> SG -> existing offline plant adapter",
+  "historical_authority_audit_sha256": "396994f4e0936b9d9253682ae9042184701e874094380e43f4e0a59480ba6c18",
+  "historical_candidate_role": "MIXED_HISTORICAL_NO_RETROACTIVE_RECLASSIFICATION",
+  "historical_findings_sha256": "c0fde89e072a2d1b8a1ac121a133235e17db2ee5b2adcbc4c5fd85a3fa516145",
+  "historical_readiness_sha256": "7eb14c1aad3a208c144e0dad940e2bb08407ca122d058067d26df4ea8d31d6f0",
+  "historical_verdicts": {
+    "CURRENT": "BASELINE_EXACT",
+    "V1": "TRADEOFF_ONLY",
+    "V2": "REJECTED"
+  },
+  "injection_points": [
+    {
+      "boundary": "desired_curvature",
+      "dt_s": 0.01,
+      "input_owner": "EXPERIMENT",
+      "output_owner": "TA",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "FROZEN_SYNTHETIC_DEMAND_ONLY; production model input not imported",
+      "source_commit_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+      "source_path": "openpilot/selfdrive/controls/lib/latcontrol_torque.py",
+      "source_sha256": "9489bfd923246906ef543a1c305bf7a7fe534ee9754c94d8195ae98bb3a1f2cd",
+      "state_owner": "TA",
+      "symbol": "update",
+      "units": "1/m",
+      "update_hz": 100.0
+    },
+    {
+      "boundary": "actual_curvature",
+      "dt_s": 0.01,
+      "input_owner": "FEEDBACK_ADAPTER",
+      "output_owner": "TA",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "explicit simulated measurement, never hidden plant state",
+      "source_commit_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+      "source_path": "openpilot/tools/cyber_autotune/curvature_yaw_native_worker.py",
+      "source_sha256": "e2bab1b31318e4ed9ebd97f535db6d7a09462ba4ca8b2ece520395c768ef79b0",
+      "state_owner": "TA",
+      "symbol": "execute_request",
+      "units": "1/m",
+      "update_hz": 100.0
+    },
+    {
+      "boundary": "VehicleModel_reconstruction",
+      "dt_s": 0.01,
+      "input_owner": "FEEDBACK_ADAPTER",
+      "output_owner": "FEEDBACK_ADAPTER",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "-VM.calc_curvature(radians(angle-offset),speed,roll)",
+      "source_commit_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+      "source_path": "openpilot/tools/cyber_autotune/curvature_yaw_native_worker.py",
+      "source_sha256": "e2bab1b31318e4ed9ebd97f535db6d7a09462ba4ca8b2ece520395c768ef79b0",
+      "state_owner": "NO_NEW_CONTROLLER_STATE",
+      "symbol": "execute_request",
+      "units": "rad,deg,1/m",
+      "update_hz": 100.0
+    },
+    {
+      "boundary": "feedforward",
+      "dt_s": 0.01,
+      "input_owner": "TA",
+      "output_owner": "TA",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "desired_curvature*v^2 minus roll*g and offset",
+      "source_commit_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+      "source_path": "openpilot/selfdrive/controls/lib/latcontrol_torque.py",
+      "source_sha256": "9489bfd923246906ef543a1c305bf7a7fe534ee9754c94d8195ae98bb3a1f2cd",
+      "state_owner": "TA",
+      "symbol": "update",
+      "units": "m/s^2 upstream; normalized equivalent only if observed",
+      "update_hz": 100.0
+    },
+    {
+      "boundary": "PID_error",
+      "dt_s": 0.01,
+      "input_owner": "TA",
+      "output_owner": "TA",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "error/integrator and causal reference buffer",
+      "source_commit_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+      "source_path": "openpilot/selfdrive/controls/lib/latcontrol_torque.py",
+      "source_sha256": "9489bfd923246906ef543a1c305bf7a7fe534ee9754c94d8195ae98bb3a1f2cd",
+      "state_owner": "TA",
+      "symbol": "update",
+      "units": "m/s^2 upstream",
+      "update_hz": 100.0
+    },
+    {
+      "boundary": "friction",
+      "dt_s": 0.01,
+      "input_owner": "TA",
+      "output_owner": "TA",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "get_friction is factor-scaled; no lane information",
+      "source_commit_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+      "source_path": "openpilot/selfdrive/controls/lib/latcontrol_torque.py",
+      "source_sha256": "9489bfd923246906ef543a1c305bf7a7fe534ee9754c94d8195ae98bb3a1f2cd",
+      "state_owner": "TA",
+      "symbol": "update",
+      "units": "m/s^2 upstream",
+      "update_hz": 100.0
+    },
+    {
+      "boundary": "roll_compensation",
+      "dt_s": 0.01,
+      "input_owner": "EXPERIMENT",
+      "output_owner": "TA",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "roll*g, source provenance explicit",
+      "source_commit_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+      "source_path": "openpilot/selfdrive/controls/lib/latcontrol_torque.py",
+      "source_sha256": "9489bfd923246906ef543a1c305bf7a7fe534ee9754c94d8195ae98bb3a1f2cd",
+      "state_owner": "TA",
+      "symbol": "update",
+      "units": "rad -> m/s^2",
+      "update_hz": 100.0
+    },
+    {
+      "boundary": "normalized_conversion",
+      "dt_s": 0.01,
+      "input_owner": "TA",
+      "output_owner": "TA",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "negative return torque, existing CI conversion",
+      "source_commit_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+      "source_path": "openpilot/selfdrive/controls/lib/latcontrol_torque.py",
+      "source_sha256": "9489bfd923246906ef543a1c305bf7a7fe534ee9754c94d8195ae98bb3a1f2cd",
+      "state_owner": "TA",
+      "symbol": "update",
+      "units": "normalized [-1,1]",
+      "update_hz": 100.0
+    },
+    {
+      "boundary": "output_limiting",
+      "dt_s": 0.01,
+      "input_owner": "TA",
+      "output_owner": "TA",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "PID limits before torque conversion; pre-limit intent not historically saved",
+      "source_commit_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+      "source_path": "openpilot/common/pid.py",
+      "source_sha256": "87cf8669f4e9ba3ff22c6937393d082de6fa834e4889094ff1c67a0a8738402a",
+      "state_owner": "TA",
+      "symbol": "PIDController.update",
+      "units": "m/s^2 upstream",
+      "update_hz": 100.0
+    },
+    {
+      "boundary": "saturation_bookkeeping",
+      "dt_s": 0.01,
+      "input_owner": "TA",
+      "output_owner": "TA",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "saturation timer is distinct from clipping and SG state",
+      "source_commit_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+      "source_path": "openpilot/selfdrive/controls/lib/latcontrol.py",
+      "source_sha256": "7c373878846854f6964015e07d1eb105477fadaccaecd451e7f08073a103ad20",
+      "state_owner": "TA",
+      "symbol": "_check_saturation",
+      "units": "s,bool",
+      "update_hz": 100.0
+    },
+    {
+      "boundary": "inactive_reset",
+      "dt_s": 0.01,
+      "input_owner": "EXPERIMENT",
+      "output_owner": "TA",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "stock controlsd invokes reset; base reset clears sat_time only",
+      "source_commit_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+      "source_path": "openpilot/selfdrive/controls/controlsd.py",
+      "source_sha256": "f2857c1ffac0a7e3f6835cc235c510f0ee979eaaca6b6ace7291f3e00ad13dc1",
+      "state_owner": "TA",
+      "symbol": "state_control",
+      "units": "bool,s",
+      "update_hz": 100.0
+    },
+    {
+      "boundary": "steeringPressed",
+      "dt_s": 0.01,
+      "input_owner": "EXPERIMENT",
+      "output_owner": "TA_AND_SG_DISTINCT_STATES",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "upstream freezes integrator; future standalone reset policy explicitly fresh",
+      "source_commit_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+      "source_path": "openpilot/selfdrive/controls/lib/latcontrol_torque.py",
+      "source_sha256": "9489bfd923246906ef543a1c305bf7a7fe534ee9754c94d8195ae98bb3a1f2cd",
+      "state_owner": "NO_NEW_CONTROLLER_STATE",
+      "symbol": "update",
+      "units": "bool",
+      "update_hz": 100.0
+    },
+    {
+      "boundary": "driver_override",
+      "dt_s": 0.01,
+      "input_owner": "EXPERIMENT",
+      "output_owner": "RAW_ACTUATOR_LIMITER",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "offline input only; raw limiter not executed",
+      "source_commit_sha": "4134c0d1f5e8f695e35ea5fedbe88f6d0c3afb76",
+      "source_path": "opendbc_repo/opendbc/car/hyundai/carcontroller.py",
+      "source_sha256": "967d3f69076e19624bc18bdc897d141811c7aa80f727a497f176f670a6b4b59e",
+      "state_owner": "NO_NEW_CONTROLLER_STATE",
+      "symbol": "update",
+      "units": "normalized driver torque/raw counts",
+      "update_hz": 100.0
+    },
+    {
+      "boundary": "raw_Hyundai_boundary",
+      "dt_s": 0.01,
+      "input_owner": "RAW_ACTUATOR_LIMITER",
+      "output_owner": "RAW_ACTUATOR_LIMITER",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "round(STEER_MAX*u); driver/rate/fault checks; not executed",
+      "source_commit_sha": "4134c0d1f5e8f695e35ea5fedbe88f6d0c3afb76",
+      "source_path": "opendbc_repo/opendbc/car/hyundai/carcontroller.py",
+      "source_sha256": "967d3f69076e19624bc18bdc897d141811c7aa80f727a497f176f670a6b4b59e",
+      "state_owner": "NO_NEW_CONTROLLER_STATE",
+      "symbol": "update",
+      "units": "raw counts",
+      "update_hz": 100.0
+    },
+    {
+      "boundary": "plant_input",
+      "dt_s": 0.01,
+      "input_owner": "SG_OUTPUT_ADAPTER",
+      "output_owner": "PLANT",
+      "scope": "READ_ONLY_SOURCE_AUDIT_PRODUCTION_UNMODIFIED",
+      "semantics": "plant command=-requested; applied=-delayed command; sole physical delay",
+      "source_commit_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+      "source_path": "openpilot/tools/cyber_autotune/curvature_yaw_plant.py",
+      "source_sha256": "3903af91512b339630da18fa1f1baa53f35567afe2e546e487756c3356002881",
+      "state_owner": "PLANT",
+      "symbol": "observe_curvature_yaw_step",
+      "units": "normalized [-1,1]",
+      "update_hz": 100.0
+    }
+  ],
+  "parameter_search_allowed": false,
+  "physical_delay_owner": "PLANT",
+  "production_authority": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "50f5a8f3d07e6819ecd4937222592b2a4af08c3db8b619f352328040bcf05e6f",
+  "reset_ownership": [
+    [
+      "TA",
+      "EXPERIMENT_START",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "INACTIVE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "STEERING_PRESSED",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "RELEASE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "REENGAGEMENT",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "CONFIG_CHANGE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "SCENARIO_BOUNDARY",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "EXPERIMENT_START",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "INACTIVE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "STEERING_PRESSED",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "RELEASE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "REENGAGEMENT",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "CONFIG_CHANGE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "SCENARIO_BOUNDARY",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "PLANT",
+      "EXPERIMENT_START",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "PLANT",
+      "INACTIVE",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "STEERING_PRESSED",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "RELEASE",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "REENGAGEMENT",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "CONFIG_CHANGE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "PLANT",
+      "SCENARIO_BOUNDARY",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ]
+  ],
+  "schema": "CANDIDATE_ARCHITECTURE_DECISION_V1",
+  "sealed_reference_allowed": false,
+  "selected_approach": "B_CASCADED_CORE_PLUS_GOVERNOR",
+  "source_baseline_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+  "sources": {
+    "candidate_architecture.py": "7829328937d4d485532486528deee93d82dfb079766db883b8433e0652dcf25a",
+    "candidate_architecture_evidence.py": "cb5cdbce18478965c2c2f473cbdd4ad1d0b82ff6b7df919093884b0489f32809",
+    "candidate_architecture_policy.py": "c7e83946e39b2650db105ef179feffdfac692fe2036d62d9efec0dc76b509272",
+    "candidate_architecture_probe.py": "5d4d08ba04196a1d4643b5215bc60c28afde8b7b5ef3406c40d9f68b22b4495f",
+    "candidate_role_contracts.py": "2f236b38fa4c0af58726058823b33f286368e2034c60060b4328830802aadf63"
+  },
+  "state_ownership": [
+    [
+      "tracking_error_history",
+      "TA"
+    ],
+    [
+      "feedback_integrator",
+      "TA"
+    ],
+    [
+      "causal_feedforward_history",
+      "TA"
+    ],
+    [
+      "last_command",
+      "SG"
+    ],
+    [
+      "reversal_state",
+      "SG"
+    ],
+    [
+      "intervention_state",
+      "SG"
+    ],
+    [
+      "physical_delay",
+      "PLANT"
+    ],
+    [
+      "driver_pressed_and_active_source",
+      "EXPERIMENT"
+    ]
+  ],
+  "status": "ARCHITECTURE_DEFINED",
+  "timing_owner": "EXPERIMENT_100HZ",
+  "vehicle_activation_allowed": false
+}

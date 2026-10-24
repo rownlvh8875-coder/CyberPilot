@@ -1,0 +1,644 @@
+{
+  "authorization": {
+    "D_design_only": true,
+    "E_execution": false,
+    "F_holdout": false,
+    "F_vehicle": false,
+    "V5": false,
+    "policy_adoption": false,
+    "private_access": false,
+    "runtime_implementation": false
+  },
+  "automatic_additional_policy_search": false,
+  "baseline_head": "d30b61668dce158237b3f008a351b679c785eb6e",
+  "c_evidence": {
+    "file": "empirical-hurdle-stage1-v4-c-diagnostic-results.json",
+    "new_policy_effect_proven": false,
+    "pointers": [
+      "/folds/FOLD_A/DEV",
+      "/folds/FOLD_B/DEV",
+      "/prior_comparison"
+    ],
+    "protocol_raw_sha256": "0549292dd5101c39b118839d881720a23037cc6db6e516c6fa5d8bcda04b742f",
+    "protocol_version": "V4_C_DIAGNOSTIC_PROTOCOL_V1",
+    "suppressed_results_inferred": false,
+    "unit": "FOLD_MEDIAN_OF_16_OVERLAPPING_JOBS; OLD_ONSET_RATES_ARE_JOB_ROW_EXPOSURES_NOT_C_MEDIANS"
+  },
+  "candidate_search_authorized": false,
+  "causal_state": {
+    "boundary": "NO_PADDING_OR_CROSS_SEGMENT_HISTORY; RESET_EACH_PATH_AND_HORIZON",
+    "commands_and_speed": "ORIGINAL_SUPPLIED_DELAYED_COMMAND_AND_SPEED_CONTRACT; NOT_NEW_CONTROLLER_CLOSED_LOOP",
+    "full_projected_tick_and_history_feed_next_features": true,
+    "future_E_step_order": [
+      "CURRENT_PROJECTED_TICK_AND_FULL_HISTORY",
+      "RAW_PRIOR_DELTA_CONTEXT",
+      "SELECT_FROZEN_HEAD_AND_D1_DECISION",
+      "FROZEN_NORMALIZATION_AND_LOGISTIC_SCORE",
+      "STRICT_GT_GATE",
+      "HOLD_OR_FROZEN_STAGE2",
+      "FROZEN_TICK_PROJECTION",
+      "UPDATE_TICK_AND_FULL_DELTA_HISTORY"
+    ],
+    "future_truth_is_input": false,
+    "history_update": "SHIFT_FULL_DELTA_HISTORY_APPEND_NEW_PROJECTED_TICK_MINUS_OLD_PROJECTED_TICK",
+    "initialization": "OBSERVED_FULL_ELIGIBLE_HISTORY; LAST_OBSERVED_DELTA_AT_STEP_ZERO",
+    "missing_or_invalid_context": "FAIL_CLOSED_NO_FALLBACK",
+    "one_step_context": "OBSERVED_PRIOR_DELTA_NE_ZERO",
+    "reason": "D1 realization changes current tick/full history and hence later scores; new recursion requires E authorization",
+    "recursive_context": "ACTUAL_PROJECTED_PRIOR_DELTA_NE_ZERO",
+    "routing_order": "RAW_PRIOR_DELTA_THEN_HEAD_AND_DECISION_CONTEXT_THEN_FROZEN_NORMALIZATION",
+    "same_context_for_head_and_decision": true,
+    "saved_D0_recursive_scores_reusable_for_D1": false,
+    "saved_gate_is_routing_input": false
+  },
+  "composition_authorized": false,
+  "excluded_extensions": [
+    "HYSTERESIS",
+    "DWELL_TIME",
+    "SCORE_SMOOTHING",
+    "NEW_HEAD",
+    "REPRESENTATION_CHANGE",
+    "CALIBRATION_FITTING",
+    "NEW_CONTEXT_MEMORY",
+    "DEV_TUNING",
+    "EXTRA_POLICIES"
+  ],
+  "execution_head": "bd8045ef2a0da62a92603439f38e7740f5923622",
+  "gate_contract": {
+    "MOVE": "FROZEN_SIGNED_STAGE2_DELTA_ADD_TO_CURRENT_THEN_PROJECT; MAY_REALIZE_HOLD",
+    "STATIC": "HOLD_CURRENT_TICK_AND_ZERO_INTEGRATED_DELTA_SKIP_STAGE2",
+    "allowed_success_pairs": [
+      [
+        "STATIC",
+        "HOLD"
+      ],
+      [
+        "MOVE",
+        "HOLD"
+      ],
+      [
+        "MOVE",
+        "MOVE"
+      ]
+    ],
+    "comparison": "STRICT_SCORE_GT_CONTEXT_DECISION",
+    "correct_gate_implies_exact_tick": false,
+    "equality": "STATIC",
+    "force_nonzero_move": false,
+    "invalid_projection": "WHOLE_FOLD_INVALID_NO_PARTIAL_CHERRY_PICK"
+  },
+  "hypotheses_and_risks": {
+    "BA_is_not_tick_objective": true,
+    "onset": "Separating STATIC-context TRAIN selection may change onset/hold balance; no direction or DEV improvement promised.",
+    "residuals": "Stage2 magnitude/projection and recursive feedback are not fixed or causally isolated by D1.",
+    "score_limit": "Low previous-STATIC discrimination can persist; representation-only and decision-only causes are not identified.",
+    "termination": "Separating MOVE-context TRAIN selection may change termination/continuation balance; may select same decision or not improve.",
+    "tradeoffs": [
+      "STATIC_HOLD_FP_VS_ONSET_FN",
+      "TERMINATION_FP_VS_CONTINUATION_FN",
+      "FOLD_A_VS_FOLD_B",
+      "GATE_METRICS_VS_TICK_EXACTNESS",
+      "ONE_STEP_VS_RECURSIVE_FULL_STATE"
+    ]
+  },
+  "input_lock": {
+    "empirical-hurdle-acceptance-gate-v1.json": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "path": "docs/cyberpilot/changes/empirical-hurdle-acceptance-gate-v1.json",
+      "raw_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+      "receipt_sha256": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60"
+    },
+    "empirical-hurdle-stage1-v4-c-diagnostic-protocol.json": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-c-diagnostic-protocol.json",
+      "raw_sha256": "0549292dd5101c39b118839d881720a23037cc6db6e516c6fa5d8bcda04b742f",
+      "receipt_sha256": "7f09da07b2267aa1bc1b032d55ebe5d26ec5cbb27ce9f96160aa13895b297721"
+    },
+    "empirical-hurdle-stage1-v4-c-diagnostic-results.json": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-c-diagnostic-results.json",
+      "raw_sha256": "852a4145d2f1055df75854250328a731d887c61b2257ff9f4596206a4e34f514",
+      "receipt_sha256": "dbaf3292fd3562e9ce2b36d54f4ed3541a55e4803c0c9f5342f2f6fc13c97d84"
+    },
+    "empirical-hurdle-stage1-v4-c-diagnostics.md": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-c-diagnostics.md",
+      "raw_sha256": "95fb55a0f2d0c60b3230cd9e0a9caaa1eaff836c65a2d0aa79996e1ebcfd62e2"
+    },
+    "empirical-hurdle-stage1-v4-decision-policy-approval-matrix.json": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-decision-policy-approval-matrix.json",
+      "raw_sha256": "3c3d3775e09d20a111a2084f77fd766e83e344bd7ffcdeb0a22bc61ea182cf81",
+      "receipt_sha256": "5c028e73228c91d1453d3fdde65a779ac1738c343533b63cf8a0cc29678c8cdc"
+    },
+    "empirical-hurdle-stage1-v4-decision-policy-future-validation.json": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-decision-policy-future-validation.json",
+      "raw_sha256": "ab716739235b345de876cfaf805617fa1f4ea37116b7f4c129c76c81c6eed59f",
+      "receipt_sha256": "b5e3a3aa5c24857df3dd239dc94607a57a010597697300099199cb86bf43a01e"
+    },
+    "empirical-hurdle-stage1-v4-decision-policy-requirements-spec.json": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-decision-policy-requirements-spec.json",
+      "raw_sha256": "5de98102a3a15c8f01e81a9afb930bb835264ca011d88e1ab3595d798affb785",
+      "receipt_sha256": "5b4df00c8592ad87748489c91495702846e99b9e27f7f5137f923473eb856838"
+    },
+    "empirical-hurdle-stage1-v4-job-manifest.json": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-job-manifest.json",
+      "raw_sha256": "484a67e4f183ede512af89c99b73be2ed63643057a84382c90729f5d71819e03",
+      "receipt_sha256": "9a0c5b7a6eee597f6ea764ca4c731fd3eef37acb3465320ea3bd52fd6d78c011"
+    },
+    "empirical-hurdle-stage1-v4-retrospective-execution-authorization.json": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-retrospective-execution-authorization.json",
+      "raw_sha256": "99ba2f5218a38b72a47e72883546dcd0ad67cba822752197419fc4e76f9ca5d9",
+      "receipt_sha256": "b9d512ffd23f7f3ef9df87622642c3bfdabc59292e6188c43596cf3b00267237"
+    },
+    "empirical-hurdle-stage1-v4-selection-result.json": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-selection-result.json",
+      "raw_sha256": "13c7fbb088b1e5202753b5b51b7c318d24eb582f10663e78ce0d6c6544684c57",
+      "receipt_sha256": "d36b172441d620d93a4db4d6563fe4055affb94778487365726364e6a15ca05f"
+    },
+    "empirical-hurdle-stage1-v4-transition-decision-contract.json": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "path": "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-transition-decision-contract.json",
+      "raw_sha256": "0daa5d7fb8b4539b4d46de521333d5069b1b162b93eec8906ddb5344f7a39856",
+      "receipt_sha256": "af06a6baba5b46757e0ed2d42772736a21611b42172f4a192bf6f7fc127f7049"
+    }
+  },
+  "jobs": {
+    "count": 32,
+    "delays": [
+      0,
+      5,
+      10,
+      20
+    ],
+    "folds": [
+      "FOLD_A",
+      "FOLD_B"
+    ],
+    "history_lengths": [
+      1,
+      5,
+      15,
+      45
+    ],
+    "order": "PUBLIC_FROZEN_V4_JOB_MANIFEST"
+  },
+  "mission": "STAGE1_V4_D_TRANSITION_AWARE_DECISION_POLICY_DESIGN",
+  "operation_counter_scope": "THIS_D_INCREMENT_ACTUAL_PRIVATE_SCIENTIFIC_INPUT; SYNTHETIC_REGRESSION_DISTINCT",
+  "operation_counters": {
+    "calibration_fit_calls": 0,
+    "candidate_search_calls": 0,
+    "holdout_discovery": 0,
+    "holdout_openings": 0,
+    "model_refit_calls": 0,
+    "new_scientific_aggregate_calls": 0,
+    "normalizer_refit_calls": 0,
+    "prediction_replay_calls": 0,
+    "private_array_openings": 0,
+    "private_manifest_openings": 0,
+    "qlog_openings": 0,
+    "raw_log_openings": 0,
+    "rollout_regeneration_calls": 0,
+    "selection_calls": 0,
+    "source_writes": 0,
+    "stage2_refit_calls": 0,
+    "threshold_application_calls": 0,
+    "threshold_readings": 0,
+    "train_gate_reconstruction_calls": 0,
+    "vehicle_activation_calls": 0
+  },
+  "policies": {
+    "D0": {
+      "decision": "ORIGINAL_COMBINED_TRAIN_DECISION_UNCHANGED",
+      "decision_not_read_in_D": true,
+      "decision_scope": "ONE_PER_CANDIDATE_FOLD_SHARED_ACROSS_TWO_HEADS",
+      "id": "V4_FROZEN_SINGLE_SHARED_DECISION",
+      "model": "EXACT_ORIGINAL_FROZEN_V4_DUAL_HEAD",
+      "stage2_and_projection": "UNCHANGED"
+    },
+    "D1": {
+      "actual_values_generated": false,
+      "decision_names": [
+        "decision_previous_static",
+        "decision_previous_move"
+      ],
+      "decision_scope": "ONE_PER_CANDIDATE_FOLD_CONTEXT",
+      "global_numeric_value_across_jobs": false,
+      "id": "V4_TWO_CONTEXT_TRAIN_ONLY_DECISION",
+      "model": "SAME_FROZEN_DUAL_HEAD_COEFFICIENTS_AND_NORMALIZERS_AS_D0",
+      "only_change": "CONTEXT_PARTITION_OF_TRAIN_DECISION_SELECTION_AND_CONTEXT_DECISION_LOOKUP",
+      "stage2_and_projection": "UNCHANGED",
+      "status": "ONLY_NEW_EXPERIMENTAL_DESIGN_NOT_ADOPTED"
+    }
+  },
+  "preserved": {
+    "holdout": "CLOSED",
+    "holdout_discovery": 0,
+    "holdout_opening_count": 0,
+    "hugging_face": "NOT_REQUIRED_NOT_USED",
+    "replica": "REPLICA_PAYLOAD_EQUALITY_NOT_FULLY_REVERIFIED",
+    "scientific_result": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
+    "selected_candidate": null,
+    "selection": "MODEL_SELECTION_FAILED_CLOSED",
+    "states": [
+      "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+      "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+      "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+      "COMPOSITION_NOT_AUTHORIZED",
+      "NOT_READY",
+      "REAL_VEHICLE_UNVERIFIED",
+      "VEHICLE_ACTIVATION_BLOCKED"
+    ],
+    "train_rowwise_gate": "NOT_SAVED",
+    "vehicle_authority": "NONE"
+  },
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "55e5dc12ac7553365ee2e32b9cc05c14b406cc74eb2708d0516a5279dc66601e",
+  "reference_promotable": false,
+  "requirements_traceability": [
+    {
+      "design_pointers": [
+        "/selection_recipe",
+        "/causal_state"
+      ],
+      "evaluation_domains": [
+        1,
+        4,
+        5,
+        17
+      ],
+      "requirement_id": "R01",
+      "source_pointer": "/requirements/0",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/gate_contract",
+        "/hypotheses_and_risks"
+      ],
+      "evaluation_domains": [
+        3,
+        8,
+        9
+      ],
+      "requirement_id": "R02",
+      "source_pointer": "/requirements/1",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/truth_transitions",
+        "/hypotheses_and_risks/onset"
+      ],
+      "evaluation_domains": [
+        4,
+        7
+      ],
+      "requirement_id": "R03",
+      "source_pointer": "/requirements/2",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/truth_transitions",
+        "/hypotheses_and_risks/termination"
+      ],
+      "evaluation_domains": [
+        5,
+        7
+      ],
+      "requirement_id": "R04",
+      "source_pointer": "/requirements/3",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/hypotheses_and_risks/tradeoffs"
+      ],
+      "evaluation_domains": [
+        5,
+        6,
+        14
+      ],
+      "requirement_id": "R05",
+      "source_pointer": "/requirements/4",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/jobs"
+      ],
+      "evaluation_domains": [
+        12,
+        13,
+        18,
+        19
+      ],
+      "requirement_id": "R06",
+      "source_pointer": "/requirements/5",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/selection_recipe",
+        "/policies/D0",
+        "/policies/D1"
+      ],
+      "evaluation_domains": [
+        10,
+        11,
+        12
+      ],
+      "requirement_id": "R07",
+      "source_pointer": "/requirements/6",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/gate_contract"
+      ],
+      "evaluation_domains": [
+        8,
+        9,
+        16
+      ],
+      "requirement_id": "R08",
+      "source_pointer": "/requirements/7",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/unchanged_interfaces"
+      ],
+      "evaluation_domains": [
+        2,
+        14
+      ],
+      "requirement_id": "R09",
+      "source_pointer": "/requirements/8",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/unchanged_interfaces",
+        "/causal_state"
+      ],
+      "evaluation_domains": [
+        15,
+        16,
+        17
+      ],
+      "requirement_id": "R10",
+      "source_pointer": "/requirements/9",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/causal_state",
+        "/unresolved_requirements"
+      ],
+      "evaluation_domains": [
+        17,
+        18,
+        19
+      ],
+      "requirement_id": "R11",
+      "source_pointer": "/requirements/10",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/input_lock/empirical-hurdle-acceptance-gate-v1.json"
+      ],
+      "evaluation_domains": [
+        2,
+        13,
+        14,
+        18,
+        19
+      ],
+      "requirement_id": "R12",
+      "source_pointer": "/requirements/11",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/selection_recipe",
+        "/source_lock"
+      ],
+      "evaluation_domains": [
+        1,
+        20
+      ],
+      "requirement_id": "R13",
+      "source_pointer": "/requirements/12",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/authorization",
+        "/c_evidence"
+      ],
+      "evaluation_domains": [
+        1,
+        20,
+        21
+      ],
+      "requirement_id": "R14",
+      "source_pointer": "/requirements/13",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/preserved"
+      ],
+      "evaluation_domains": [
+        21
+      ],
+      "requirement_id": "R15",
+      "source_pointer": "/requirements/14",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/preserved",
+        "/authorization"
+      ],
+      "evaluation_domains": [
+        22
+      ],
+      "requirement_id": "R16",
+      "source_pointer": "/requirements/15",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    },
+    {
+      "design_pointers": [
+        "/hypotheses_and_risks",
+        "/excluded_extensions"
+      ],
+      "evaluation_domains": [
+        10,
+        11,
+        12,
+        15,
+        17
+      ],
+      "requirement_id": "R17",
+      "source_pointer": "/requirements/16",
+      "status": "DESIGN_TRACEABLE_NOT_EMPIRICAL_COMPLIANCE"
+    }
+  ],
+  "schema": "CYBERPILOT_V4_D_TRANSITION_AWARE_DESIGN_V1",
+  "scope": "D_POLICY_DESIGN_AND_EVALUATION_CONTRACT_ONLY",
+  "sealed_reference_allowed": false,
+  "selected_policy": null,
+  "selection_recipe": {
+    "DEV_input_allowed": false,
+    "candidate_equality": "NUMERIC_FLOAT64_EQUALITY; DEDUPLICATE_EQUAL_VALUES_INCLUDING_SIGNED_ZERO",
+    "candidate_set": "{0,1} UNION UNIQUE_FINITE_CONTEXT_TRAIN_SCORES",
+    "class_or_identity_conflict": "FAIL_CLOSED_NO_ROW_DROP_NO_REPAIR_NO_FALLBACK",
+    "computed_in_D": false,
+    "context_field": "V1_REFERENCE/prior_delta_tick",
+    "context_partition": "RAW_PRIOR_DELTA_ZERO_VS_NONZERO; SAME_AS_FROZEN_HEAD_ROUTING",
+    "existing_V4_fit_support": "PRESERVED_FROZEN_MODEL_PRECONDITION_NOT_REESTIMATED",
+    "float_tolerance": 0,
+    "freeze_both_decisions_before_DEV_access": true,
+    "input_role": "TRAIN",
+    "integer_comparison": "PYTHON_EXACT_INTEGERS_NO_BA_FLOAT_DIVISION",
+    "label_field": "V1_REFERENCE/move_label",
+    "maximize_lexicographic": [
+      "BA_NUM",
+      "TN",
+      "LARGER_TRAIN_DECISION"
+    ],
+    "new_support_or_performance_cutoff": false,
+    "no_post_hoc_adjustment": true,
+    "objective": "TP*N_negative + TN*N_positive",
+    "objective_definition": "TP,TN from strict score>decision on this TRAIN context only",
+    "output_in_future_E": "TWO_PRIVATE_VALUES_PER_JOB_WITH_SOURCE_POLICY_TRAIN_ANCHOR_CONTEXT_OBJECTIVE_AND_RECEIPT_BINDING",
+    "row_order": "IMMUTABLE_ORIGINAL_TRAIN; MASK_WITHOUT_REORDER_REPAIR",
+    "score_field": "V4/combined_probability",
+    "supervised_label_use": "TRAIN_SELECTION_ONLY_NEVER_INFERENCE_INPUT",
+    "support_guard": "P>0 AND N_negative>0; OTHERWISE FAIL_CLOSED_NO_FALLBACK",
+    "validation": "FULL_N_HASH_SHAPE_DTYPE_ORDER_ANCHOR; ALL_SCORES_FINITE_IN_CLOSED_0_1; EXACT_BINARY_LABELS; INT64_PRIOR"
+  },
+  "semantics": "prior_delta_tick != 0; SOURCE_GRID_ONLY; delta_tick=SOURCE_GRID_TICK_INCREMENT_CHANGE_NOT_PHYSICAL_EPS_MOVEMENT; logged_command=POST_CARCONTROLLER_NORMALIZED_COMMAND_NOT_APPLIED_EPS_TORQUE; steeringRateDeg=SOURCE_NATIVE_RATE_CODE_ONLY;RATE_SOURCE_CONTRACT_PARTIAL",
+  "sg_execution": false,
+  "source_lock": {
+    "empirical_hurdle_fit_cv_data.py": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "original_execution_source": true,
+      "path": "openpilot/tools/cyber_autotune/empirical_hurdle_fit_cv_data.py",
+      "raw_sha256": "9e104a83a928c6b997a914a606820f2d2190fa56917e4042856474f747b900ac",
+      "symbols": {
+        "design": 76,
+        "pair": 84
+      }
+    },
+    "empirical_hurdle_fit_cv_gates.py": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "original_execution_source": true,
+      "path": "openpilot/tools/cyber_autotune/empirical_hurdle_fit_cv_gates.py",
+      "raw_sha256": "7529884d62ee5773bc163a301a9d96c641ff2a2e2e911d3e3e4f0a5c1a6828c2",
+      "symbols": {
+        "fold_gate": 10,
+        "select": 75
+      }
+    },
+    "empirical_hurdle_fit_cv_math.py": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "original_execution_source": true,
+      "path": "openpilot/tools/cyber_autotune/empirical_hurdle_fit_cv_math.py",
+      "raw_sha256": "b410b2f0138848faf4e976094a1bd4f3cc3ac44418b54a24310717c6261e0e73",
+      "symbols": {
+        "metrics": 253,
+        "predict_delta": 215,
+        "threshold": 157
+      }
+    },
+    "empirical_hurdle_v4_execution.py": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "original_execution_source": true,
+      "path": "openpilot/tools/cyber_autotune/empirical_hurdle_v4_execution.py",
+      "raw_sha256": "f7ae1ae98c645de4997e56d1bcd73b76e2f4f153090b65e5fd6bb8d207f7fd0e",
+      "symbols": {
+        "development": 164,
+        "integrated": 152,
+        "probability": 20,
+        "recursive": 185,
+        "rollout": 212,
+        "train": 54
+      }
+    },
+    "empirical_hurdle_v4_fitting_policy.py": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "original_execution_source": true,
+      "path": "openpilot/tools/cyber_autotune/empirical_hurdle_v4_fitting_policy.py",
+      "raw_sha256": "529c6c14832a18bc18eb51409e1637ca2c003892d62aa883f900c238d59be76f",
+      "symbols": {
+        "basis": 84,
+        "combine": 210
+      }
+    },
+    "empirical_s2_ri_fit_cv_math.py": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "original_execution_source": true,
+      "path": "openpilot/tools/cyber_autotune/empirical_s2_ri_fit_cv_math.py",
+      "raw_sha256": "a1c1203c8222df067064ff1891aafa82cdafd997338c7ca7687a321c66777f29",
+      "symbols": {
+        "anchors": 20,
+        "features": 31,
+        "project": 49
+      }
+    },
+    "workflow": {
+      "git_sha": "d30b61668dce158237b3f008a351b679c785eb6e",
+      "original_execution_source": false,
+      "path": ".github/workflows/cyberpilot.yaml",
+      "raw_sha256": "30fbd6d6138fd4b44b9371ce0f803ed500bf662d287463d4a28a0585654d28d4"
+    }
+  },
+  "status": "DESIGN_CONTRACT_ONLY_COMPLETION_REQUIRES_TESTS_TWO_REVIEWS_AND_EXACT_HEAD_CI",
+  "ta_execution": false,
+  "truth_transitions": {
+    "MOVE_CONTINUATION": [
+      1,
+      1
+    ],
+    "MOVE_ONSET": [
+      0,
+      1
+    ],
+    "MOVE_TERMINATION": [
+      1,
+      0
+    ],
+    "STATIC_HOLD": [
+      0,
+      0
+    ]
+  },
+  "unchanged_interfaces": {
+    "delayed_command_normalization": true,
+    "feature_order": true,
+    "history_window": true,
+    "normalizers": true,
+    "overflow_fail_closed": true,
+    "projection": "FINITE_THEN_TIES_TO_EVEN_THEN_SIGNED16_CHECK_NO_CLIP",
+    "stage1_coefficients": true,
+    "stage2": true
+  },
+  "unresolved_requirements": [
+    "R02_NEW_CONDITIONAL_CUTOFF_REQUIRES_APPROVAL",
+    "R11_CAUSAL_SHARE_NOT_IDENTIFIED"
+  ],
+  "vehicle_activation_allowed": false,
+  "version": "V4_D_TRANSITION_AWARE_DESIGN_V1"
+}

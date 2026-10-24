@@ -1,0 +1,65 @@
+{
+  "aggregation": "ROUTE_SPECIFIC_THEN_EQUAL_ROUTE_PRIMARY_SAMPLE_WEIGHTED_SUPPORTING_ONLY",
+  "authority": {
+    "candidate": false,
+    "composition": false,
+    "cv_scoring": false,
+    "device": false,
+    "fitting": false,
+    "holdout_opening": false,
+    "optimizer": false,
+    "prediction": false,
+    "production": false,
+    "qlog_support": false,
+    "raw_opening": false,
+    "residual": false,
+    "rollout": false,
+    "selection": false,
+    "sg": false,
+    "ta": false,
+    "vehicle": false
+  },
+  "candidate_search_authorized": false,
+  "comparator": "HOLD_LAST_ANGLE",
+  "comparator_equation": "next_angle=present_angle",
+  "composition_authorized": false,
+  "direction": "RMSE_MAE_P95_ROLLOUT_CONSISTENCY_REQUIRED_SINGLE_METRIC_INSUFFICIENT",
+  "exact_acceptance_rule": "SEPARATE_FITTING_POLICY_BEFORE_PERFORMANCE",
+  "historical_ARX_FIR": "NOT_AUTOMATIC_COMPARATOR_OR_ADMISSION_TARGET",
+  "metric_values": "NOT_COMPUTED",
+  "next_angle": [
+    "RMSE",
+    "MAE",
+    "P95_ABSOLUTE"
+  ],
+  "one_step_delta": [
+    "RMSE",
+    "MAE",
+    "P95_ABSOLUTE"
+  ],
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "9a92fe4d1b2dfaaab00059f69ec78f5d04145e705e20094ef21131cee49874d2",
+  "reference_promotable": false,
+  "rollout_metrics": [
+    "ANGLE_RMSE",
+    "ANGLE_MAE",
+    "ANGLE_P95_ABSOLUTE"
+  ],
+  "rollout_seconds": [
+    0.25,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "schema": "EMPIRICAL_S2_RI_FUTURE_METRIC_CONTRACT_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_grid": [
+    "EXACT_NEXT_ANGLE_HIT_RATE",
+    "WITHIN_ONE_TICK_RATE"
+  ],
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

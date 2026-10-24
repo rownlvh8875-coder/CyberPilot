@@ -1,0 +1,103 @@
+{
+  "admission_policy_sha256": "17fb3fd4af2dca91856d83d0d3f2e7d4a2e361ef2310a92a7b578c96ca5e9a09",
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_search_authorized": false,
+  "causal_schema_sha256": "b21f2b531dd719ba763c81594de82ac443e3ae9f9f3451fec67cb1065da52159",
+  "composition_authorized": false,
+  "cv_scoring_allowed": false,
+  "dataset_role": "RETROSPECTIVE_TRAIN_DEV_CV_POOL",
+  "families": [
+    {
+      "additional_source_gate": "ACTUAL_STEERING_RATE_UNIT_SIGN_AUDIT_REQUIRED",
+      "family": "S1",
+      "implementation_allowed": false,
+      "name": "SECOND_ORDER_LATENT_STATE_SPACE",
+      "required_concepts": [
+        "raw_command",
+        "steeringAngleDeg",
+        "steeringRateDeg",
+        "vEgo"
+      ],
+      "selected": false
+    },
+    {
+      "additional_source_gate": "ACTUAL_STEERING_RATE_UNIT_SIGN_AUDIT_REQUIRED",
+      "family": "S2",
+      "implementation_allowed": false,
+      "name": "DELTA_ANGLE_CAUSAL_MODEL",
+      "required_concepts": [
+        "command_history",
+        "steeringRateDeg",
+        "vEgo",
+        "angle_history"
+      ],
+      "selected": false
+    },
+    {
+      "additional_source_gate": "RATE_UNIT_SIGN_AND_SOURCE_DEFINED_DEADZONE_HYSTERESIS_AUDIT_REQUIRED",
+      "family": "S3",
+      "implementation_allowed": false,
+      "name": "BOUNDED_PIECEWISE_AFFINE_ACTUATOR",
+      "required_concepts": [
+        "raw_command",
+        "steeringRateDeg",
+        "vEgo",
+        "source_proven_deadzone_hysteresis"
+      ],
+      "selected": false
+    }
+  ],
+  "family_selection": "NOT_RUN",
+  "future_holdout": "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+  "future_prerequisites": [
+    "SEPARATE_MODEL_IMPLEMENTATION_AND_FITTING_AUTHORIZATION",
+    "SOURCE_BOUND_RATE_UNIT_SIGN_CONTRACT",
+    "PREDECLARED_FAMILY_CONFIG_RESET_HISTORY_METRIC_SUPPORT_POLICY",
+    "ROUTE_DISJOINT_RETROSPECTIVE_DEVELOPMENT_POLICY",
+    "EXACT_RLOG_ROW_ADMISSION_GUARD",
+    "FUTURE_UNTOUCHED_HOLDOUT_BEFORE_QUALIFICATION"
+  ],
+  "generation": "EMPIRICAL_FINAL_READINESS_RESOLUTION_V2",
+  "h1_mapping_sha256": "0998cb9fbd072127d022a54c9417e5b6823864734f5e145309f6f3eaba74219e",
+  "holdout": "HOLDOUT_OPENING_CLOSED",
+  "holdout_allowed": false,
+  "independent_validation_allowed": false,
+  "model_coefficients_generated": false,
+  "model_fitting_allowed": false,
+  "model_selection": "NOT_RUN",
+  "model_shortlist_sha256": "ab86e1206feec5fbcf67a57d488f232dc40c98585fdad125f05466866dc70a22",
+  "model_support_computed": false,
+  "new_model_implementation": false,
+  "opening_count": 0,
+  "partition_sha256": "7cb057f638c742135d2f41cb20921a2724fa787b8e0f4e451dfe1c20c53e461f",
+  "physical_eps_acknowledgement": null,
+  "prior_numeric_exposure": true,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "09b0d623f419a0f3b1035749a17ddde2b99cd9657929c3ea5d19cdac60201405",
+  "reference_promotable": false,
+  "request_output_linkage": "PUBLISH_ALIGNED_DIFFERENCE_NOT_SAME_TRANSACTION",
+  "resolution_sha256": "10d8b8c6308393059cd712a89e3a583c233e1a177736c3bba95afcd359473383",
+  "retrospective_development_only": true,
+  "schema": "EMPIRICAL_DEVELOPMENT_DATA_ADMISSION_CONTRACT_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_identities": {
+    "empirical_causal_support_guard": "3ec8ff4b3799e8021bc88a4d5195e19d6829444959171ecbe9f619566a607509",
+    "empirical_final_readiness": "e979cca318f8f4f2373bf6d78fe75092e064cedf97ea34ffa60ab32c2bc375b4",
+    "empirical_final_readiness_publication": "9b5302ba12c3592d1f3dfff186ac5cab8a69a127758ab8bed02d01ede9da9262"
+  },
+  "stage_b": "STAGE_B_SIGNAL_ADMISSION_BLOCKED",
+  "steering_rate_unit": "DBC_UNIT_EMPTY_PHYSICAL_RATE_SEMANTICS_UNRESOLVED",
+  "steering_rate_values": "ACTUAL_VALUES_PRESERVED_IN_RLOG_SUBSET",
+  "ta_execution": false,
+  "unknown_limiter_reasons": null,
+  "vehicle_activation_allowed": false
+}

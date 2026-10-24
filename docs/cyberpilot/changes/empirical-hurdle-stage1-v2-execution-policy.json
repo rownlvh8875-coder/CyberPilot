@@ -1,0 +1,228 @@
+{
+  "actual_execution_authorized": false,
+  "authority": "PUBLIC_POLICY_AND_SYNTHETIC_TESTS_ONLY",
+  "auto_start": false,
+  "availability_probing": false,
+  "bad_row_drop": false,
+  "baseline": "32018c9cc4381c779c7001c51e0949b120185525",
+  "candidate_search_authorized": false,
+  "change_scope": "THRESHOLD_OBJECTIVE_ONLY",
+  "composition_authorized": false,
+  "contract_receipts": {
+    "comparison": "da0893f5c20b622268ba470114fdf08702fd6c028e61df1c98d753bfd549806d",
+    "development": "7d9fbaffddd5f11e8c816844b6285d96bbaac69704b56342af0e219797cabdc2",
+    "repeatability": "367d4938920b414a25f94353d34b4bbeb06e74b9d83339221594aaada956a396",
+    "resume": "2b0ebef4749f3864840db134d7fe4777aa5085dceaf499ab163779e2fa620fc9",
+    "reuse": "f9389d13626db25ff10d3308f9753344866cf63df98dfa094ec6f90f1cbc7065",
+    "rollout": "be033b1e825c835169f5060ba11df78d16d0da7acd9561d3963873175355ceb7",
+    "stage2": "58412c1b2d61f218d964c0210350d998e20ddf0faaee37ff4fdaae8e06737ea7",
+    "storage": "82fd0863bbc099ce73bcbe2096bb8a3d2ce477bcb5f6a14aef95f0e0740505ba",
+    "train": "26381c3a980832d4f8196a0e1b8ea87a70eba62bab4d7794544b3610d9752df5"
+  },
+  "decision_policy": "HURDLE_STAGE1_DECISION_POLICY_V2",
+  "every_job_receipt": true,
+  "execution_order": "LEXICAL_CANDIDATE_THEN_FOLD_A_THEN_FOLD_B",
+  "fallbacks": [],
+  "family": "HURDLE_RI_V1",
+  "fold_failures": [
+    "MODEL_IDENTITY",
+    "SOURCE_ANCHOR",
+    "PREDICTION_BYTE_IDENTITY",
+    "NO_FEASIBLE_THRESHOLD",
+    "NONFINITE_METRIC",
+    "PROJECTION",
+    "SUPPORT",
+    "DIAGNOSTIC_UNDEFINEDNESS",
+    "ROLLOUT"
+  ],
+  "future_prerequisites": [
+    "SEPARATE_EXECUTION_AUTHORIZATION",
+    "EXACT_SUCCESSFUL_V1_SOURCE_PATH",
+    "EXPLICIT_D_OUTPUT_ROOT",
+    "FREE_SPACE_GUARD",
+    "SOURCE_MANIFEST",
+    "MODEL_RECEIPTS",
+    "EXACT_SOURCE_ARRAY_AND_ANCHOR_LINEAGE",
+    "PINNED_EXECUTION_ENVIRONMENT"
+  ],
+  "jobs": 32,
+  "next_increment": "HURDLE_STAGE1_DECISION_POLICY_V2_RETROSPECTIVE_EXECUTION",
+  "next_increment_status": "REQUIRES_SEPARATE_AUTHORIZATION",
+  "no_feasible_scope": "AFFECTED_FOLD_FAILS_OTHER_JOBS_STILL_ACCOUNTED",
+  "outcomes": [
+    "V2_NO_FEASIBLE_THRESHOLD_FOR_ONE_OR_MORE_FOLDS",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_SINGLE_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_MULTIPLE_ADMISSIBLE_CANDIDATES"
+  ],
+  "performance_early_stop": false,
+  "production_authority": false,
+  "public_inputs": {
+    "empirical-hurdle-acceptance-gate-v1.json": {
+      "file_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+      "receipt_sha256": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60"
+    },
+    "empirical-hurdle-candidate-set-v1.json": {
+      "file_sha256": "7c337dd1fee7ca7947513788e91c88fe32092aa8c808213ac13787681a494b2b",
+      "receipt_sha256": "eff4ff37f74e06520e917f017c509175733a108df9399ebab8f2e93fa6a871f4"
+    },
+    "empirical-hurdle-comparator-contract-v1.json": {
+      "file_sha256": "5bc595c87a5a146256f6c36bc581fcd6fdb19dbedcef9de590dc9313191c9461",
+      "receipt_sha256": "80561a7f863363fa5ce6ed6710e2c29cae58ff985f2597bb0761faf86e27cf00"
+    },
+    "empirical-hurdle-composition-contract-v1.json": {
+      "file_sha256": "9c0f48ffada6ce8e905d85d9d72df21a3997f9ce6dc757bb96d9291218046948",
+      "receipt_sha256": "046d0ba328c7a52421aedfff504ed20ad27114785d67054f6e78fd8547eccc67"
+    },
+    "empirical-hurdle-failure-attribution-readiness-v1.json": {
+      "file_sha256": "095ac7f7a02cb7178d1d47087a70a03ff7919d99eced7f56a3c75027589046bc",
+      "receipt_sha256": "dd03dedbab42fa3e4cdf262234bb24f4a62fb94c4dbbd8d9f203d5ec6506b7c6"
+    },
+    "empirical-hurdle-family-contract-v1.json": {
+      "file_sha256": "cccaba738cb55c2506269976d1cb86510a90ba2d20f41004493d05f1aeab1d41",
+      "receipt_sha256": "c780fa1e75bdb3d13480f4863b6dabb7c7dbfe68797032fce582b7854d45dfe3"
+    },
+    "empirical-hurdle-feature-contract-v1.json": {
+      "file_sha256": "8676c89bcfe629d6bcc60706172ca29f79ee42430e67893c8ee837a7da672488",
+      "receipt_sha256": "517288519b2ae0ef9edaa4b2a0c5e5a1b296389e4381ac4af0a2bddfec41be3a"
+    },
+    "empirical-hurdle-fit-cv-authorization-v1.json": {
+      "file_sha256": "54b879120e55c805df5f4094bf04637553bf6faafcfecef69f052d160a29ccb2",
+      "receipt_sha256": "d93d6bb418a958b998c0308e4ce71a605a4069286029b5539d80b38001a34c6b"
+    },
+    "empirical-hurdle-fit-cv-readiness-v1.json": {
+      "file_sha256": "8613634aa79641de3f2512ce06882393cfa9c1a5d2749043631fa757cbf56499",
+      "receipt_sha256": "e00c9da0992fed899e77f9833d0ad04f333acc086e59846644ec164945b06861"
+    },
+    "empirical-hurdle-fit-cv-repeatability-v1.json": {
+      "file_sha256": "f734bd6fb3a956e62c883eb24b22d0df0a4626a6ae17a733ca43592f27c00e08",
+      "receipt_sha256": "60c262b004f253f6de203404520f9edc8ab3d78c0dba51948dd62759003f35dc"
+    },
+    "empirical-hurdle-fitting-policy-readiness-v1.json": {
+      "file_sha256": "9a0811e62916b6f3dbadc579ce6e3db64f888cd07e68474da1265e6efa984195",
+      "receipt_sha256": "cde321da593da445d5df34a7a2a9212555209c7d66b2979b7ef01987c230cefb"
+    },
+    "empirical-hurdle-fitting-policy-v1.json": {
+      "file_sha256": "e1b566d18a55cc72fe9378d37f0763d3a5de107cff2b6ff884cebcd238b376d6",
+      "receipt_sha256": "3824973d9851ebfffbfd47e9f95b9f49580326b75f652e55c1ca21808d624104"
+    },
+    "empirical-hurdle-mechanism-summary-v1.json": {
+      "file_sha256": "eec5066f40a17818bb9e3da1ff7bd2bf40d8dd2711f35618956eedd20949911c",
+      "receipt_sha256": "2d3d1763010ba6144e2318cd8b1377374c3bb22e101dbee6a381806e20294ca9"
+    },
+    "empirical-hurdle-metric-contract-v1.json": {
+      "file_sha256": "82f88fac1d31d3e4a24dfa717877cfd1d60da62bff4108b8d58cfbba7c446639",
+      "receipt_sha256": "98df562961a9c60cd43531694cd0dfbbde19b528c856bf6562ea6d5c6aad17e5"
+    },
+    "empirical-hurdle-next-design-trigger-v1.json": {
+      "file_sha256": "c12dc439d4c0d5550ca57dd0dbd4eb127f37d3d4f984a825edc700da9f3668af",
+      "receipt_sha256": "00566fbfac6d05929a17202aa9c6d889454449c4a7e7e9274128d6f85b92b320"
+    },
+    "empirical-hurdle-rollout-contract-v1.json": {
+      "file_sha256": "772d5febe8894c189c8332836365149467c0c5870bd630d0db1be7372ebc3d04",
+      "receipt_sha256": "ae1b447a4abdc3c5ba4c34adcfa4c650d3ee35b9229d899a8d6ff557ce09bb92"
+    },
+    "empirical-hurdle-route-cv-contract-v1.json": {
+      "file_sha256": "a40183e88f0ae7b830d353cdce3a692f56111d31a5c27cd1394d205d77e5e6f8",
+      "receipt_sha256": "9e6bddd4f4d0e3dbe1cd02d7cfe2313a17da5459215f4fa397d42b098b406a4a"
+    },
+    "empirical-hurdle-selection-result-v1.json": {
+      "file_sha256": "3e1d72ec6d114c03e289dac3a8406126f17d6594fc73ebcbb7b2302c32beed46",
+      "receipt_sha256": "cac341f353befbf014726df964009525484e938abc1b5a5dc6d5de4e5a7a6df8"
+    },
+    "empirical-hurdle-selection-rule-v1.json": {
+      "file_sha256": "aeb3e51e85039660be702517dfd79e4c932eb72bde0b1a9d9bdc4bbaad36586c",
+      "receipt_sha256": "9622e7134b56f0c48153cba1a23dd690bdc6d578a433c6f77b34e3f7a3cf70f0"
+    },
+    "empirical-hurdle-stage-normalization-v1.json": {
+      "file_sha256": "d0cd13c7afa4d35e55ee2e1d9316474cbdb50099d7674de0da8ff6fde46a1b26",
+      "receipt_sha256": "4704b839037042084da818cc72eecd651b7a1d7ac12fa5d74f1531bb2517e549"
+    },
+    "empirical-hurdle-stage1-convergence-v1.json": {
+      "file_sha256": "4014c3bbd0d47ed53ee05bde279e9c72f7f9c20e07b2bd1291f6278246f78ba3",
+      "receipt_sha256": "4a2c377be5379c1a03d65dbb9c06070619d60cedee3ab6d4af331aba8426a82a"
+    },
+    "empirical-hurdle-stage1-decision-policy-v2-design-evidence.json": {
+      "file_sha256": "6cb3cc78425b3bc1d13df087ffe453eca08d71f0d4592813dd836a9d9187da07",
+      "receipt_sha256": "1276f6851b07bb846b409d626a970d4d8ba9820ea6c6ed56c0908adad928d9f4"
+    },
+    "empirical-hurdle-stage1-decision-policy-v2-readiness.json": {
+      "file_sha256": "bdc12b1891d64cadf0cf45e88383acd5544d77cf33326ed6c4ff2adde2568ca0",
+      "receipt_sha256": "6963e8a3d0b3ae018a6612e7d07e18143db0f5147d7ccb5b75e90dbc77dc00e8"
+    },
+    "empirical-hurdle-stage1-decision-policy-v2-validation.json": {
+      "file_sha256": "f9a655493195108dc2b1128c2d7e58e580d382349c45104086edcb63ea88cf2b",
+      "receipt_sha256": "c4ae8f8a377578093582a4a60b12e08f1c8bccb95e81e458f3cefc542572e181"
+    },
+    "empirical-hurdle-stage1-decision-policy-v2.json": {
+      "file_sha256": "e358a8e99dbc2d2e8943ef0e6f326b74e1d3d623d5573218b22c6dac34c6a634",
+      "receipt_sha256": "463ac0c2f34b59b67c1a1d7365c5662d717a49de328cabfd9101f185bff2bf19"
+    },
+    "empirical-hurdle-stage1-fit-method-v1.json": {
+      "file_sha256": "5d6246624f7a3e49701f6db62185ed97ff5e2b34b99f59faca29c6f54636283f",
+      "receipt_sha256": "6c644678deb454008c3a3146cece0a24393642e2025707dbacbe47e3355a7b9a"
+    },
+    "empirical-hurdle-stage1-v2-feasibility-contract.json": {
+      "file_sha256": "e0d0c351da44347fc2d097f7b3e91ab87964262348ba0c994719a4fcdbc58f91",
+      "receipt_sha256": "2dc5e8fbbf1830a5f69309c9e742811fdf8fef19cdd0d0c59e5daa434170fadb"
+    },
+    "empirical-hurdle-stage1-v2-future-execution-requirements.json": {
+      "file_sha256": "117b53a21fafce22afa0155cd9858f17fb779540f3b26d45b729f2c42114b7f5",
+      "receipt_sha256": "52586eae8858a3cf31f54c74917dbb7df2d7b792a14a4e39567a5f2b057c74f9"
+    },
+    "empirical-hurdle-stage1-v2-objective-contract.json": {
+      "file_sha256": "20b8154153ade8601323b609f1637fb727702657afda3b9a122586ff6a13f5b7",
+      "receipt_sha256": "f12a268522064543252814842a3455a39c650531fdaa4f08c953e2ec9be025d9"
+    },
+    "empirical-hurdle-stage1-v2-threshold-candidates.json": {
+      "file_sha256": "8dc88f8c66f1221e86e105894e876d029860ad9dffe5a25485df5d6c7f38dbb8",
+      "receipt_sha256": "5d321ae32a134179b96debb66e2cadf7189a8c63bbe3daf5f764c61c5f279185"
+    },
+    "empirical-hurdle-stage1-v2-tiebreak-contract.json": {
+      "file_sha256": "c7dd4c8bbe9df270a1154e2fc7bf5f30e61bf747761a2bba89a8c60014f9373f",
+      "receipt_sha256": "e38949c44f922eda04ad9424a7b06ad02faca50e92b2829e5ce2fa1a2a18d571"
+    },
+    "empirical-hurdle-stage1-v2-unchanged-components.json": {
+      "file_sha256": "bdaff0385c352ce17fa8fb8efcb39ef83f340d1504224fc085f5e1cebf9bcf9a",
+      "receipt_sha256": "8bb8f8ac79f216c364b0d24340036851df4460aae8afe2fec5ce1cc95dde8e61"
+    },
+    "empirical-hurdle-stage2-fit-method-v1.json": {
+      "file_sha256": "7757e2b582a914f1fe802b6db1a731871c15d07c9e746ede84a7a3a6da53daaf",
+      "receipt_sha256": "31761a5961b755f3d0ca719bb88355b560c8b47e8b00df5f6f04e17ad8b986b4"
+    },
+    "empirical-hurdle-threshold-policy-v1.json": {
+      "file_sha256": "563ccf3805c33fa5eb588d210106aaf089c441d1fc5e35ca503ef66463a7cbd1",
+      "receipt_sha256": "56c8ce9eeba90be17d5ec4bd73ec604447dfcc9463dce7b38b8f6a1769706841"
+    },
+    "empirical-hurdle-training-population-v1.json": {
+      "file_sha256": "e7646168c73759c63cc78de43b57936be062f29c54b2afca3c449431409b8a24",
+      "receipt_sha256": "98b9296594b087df720b626389438c76072148c7a4d5709b11bca4df04507a0c"
+    }
+  },
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "b0f838bf1c981cc5f137416f1f6397398dd5c3c5867cfed3f649f1ccc815346e",
+  "reference_promotable": false,
+  "references": {
+    "attribution_baseline": "13e1ac7c8b892d3bd61b5e2eab9deba8f4dc08d6",
+    "attribution_manifest": "07345517d3bca95e90962e0566a58e2b756a8aa6f5c658b8b312f02d4961f77d",
+    "v1_authorization": "e4eeaca2f891cc9fdb1370b7ae735d963287af6c09cca85dc689c8e9c560c6ea",
+    "v1_baseline": "f5ed849bd27287084efc81ba3dd0275ebfc5ca0a",
+    "v1_manifest": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+    "v1_repeatability": "3b9e8e1f562972268a7a0543f72d3f98fe237a9f3e1c5e045b69e19f9c69949b",
+    "v2_design_policy": "463ac0c2f34b59b67c1a1d7365c5662d717a49de328cabfd9101f185bff2bf19",
+    "v2_design_readiness": "6963e8a3d0b3ae018a6612e7d07e18143db0f5147d7ccb5b75e90dbc77dc00e8",
+    "v2_future_requirements": "52586eae8858a3cf31f54c74917dbb7df2d7b792a14a4e39567a5f2b057c74f9"
+  },
+  "schema": "EMPIRICAL_HURDLE_STAGE1_V2_EXECUTION_POLICY",
+  "sealed_reference_allowed": false,
+  "selected_state": "HURDLE_STAGE1_V2_RETROSPECTIVE_CV_SELECTED",
+  "sg_execution": false,
+  "source_sha256": {
+    "empirical_hurdle_v2_execution_policy.py": "df6a1ff9c65b94071994b06e13ef4ada3ebabc1a26b539ffc019798694864e8f"
+  },
+  "status": "HURDLE_STAGE1_DECISION_POLICY_V2_EXECUTION_POLICY_FROZEN",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "zero_candidates": "MODEL_SELECTION_FAILED_CLOSED"
+}

@@ -1,0 +1,36 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "future_holdout": "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+  "generic_parser_fallback": false,
+  "inventory_sha256": "e4c796ef3211e8c0d7be1094e80e8e4845ba255398764992b1da5db640e46c2b",
+  "maximum_generations": 10,
+  "numeric_coverage": null,
+  "numeric_payload_access": false,
+  "old_route_role": "TRAIN_DEV_CANDIDATE_ONLY",
+  "primary_maximum": 5,
+  "primary_status": "ROUTE_DIFFERENT_SOURCE_GENERATION",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "43966d3f7a1416653da32907137c8dd223184af252aab97112b2dd37b6f8dd2f",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_SOURCE_AUDIT_TRIAGE_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "secondary_condition": "PRIMARY_ADMITTED_TRAIN_DEV_POOL_ROUTE_COUNT_LESS_THAN_2",
+  "secondary_maximum": 3,
+  "secondary_ranking": [
+    "route_count_DESC",
+    "segment_count_DESC",
+    "generation_id_ASC"
+  ],
+  "secondary_status": "ROUTE_IDENTITY_AMBIGUOUS",
+  "sg_execution": false,
+  "ta_execution": false,
+  "tertiary_maximum": 2,
+  "tertiary_schema_failures_only": [
+    "SOURCE_SCHEMA_MISMATCH",
+    "UNKNOWN_SOURCE_SCHEMA"
+  ],
+  "vehicle_activation_allowed": false
+}

@@ -1,0 +1,386 @@
+{
+  "actual_forward_mapping": null,
+  "actual_inverse_mapping": null,
+  "actual_qcamera_intrinsics": null,
+  "baseline_sha": "d32d5b65dbcfb8e5cabe9c0c54f93b4a4bf9adb5",
+  "blockers": {
+    "ASSISTED_REFERENCE_INDEPENDENCE_LIMITATION": {
+      "dependencies": [],
+      "evidence_sha256": "6e15a7caf6af342696906da5add686d775578844058e6eb8dd0df10dacb14562",
+      "resolution_condition": "Actual separate independent reference validation; assisted pixels cannot be relabeled blind",
+      "status": "BLOCKED"
+    },
+    "CALIBRATION_MEASUREMENT_PENDING": {
+      "dependencies": [
+        "CALIBRATION_UNCERTAINTY_PENDING"
+      ],
+      "evidence_sha256": "bc6eada2f78d371aaacc34b4c0ce86f46c89056a0574e3f981f32b9807fe7802",
+      "resolution_condition": "Height observation exists; remaining physical pose and all required uncertainty measurements are absent",
+      "status": "PARTIAL"
+    },
+    "CALIBRATION_UNCERTAINTY_PENDING": {
+      "dependencies": [],
+      "evidence_sha256": "bc6eada2f78d371aaacc34b4c0ce86f46c89056a0574e3f981f32b9807fe7802",
+      "resolution_condition": "Actual conservative physical height uncertainty evidence",
+      "status": "BLOCKED"
+    },
+    "COMMA10K_EGO_LANE_IDENTITY_UNAVAILABLE": {
+      "dependencies": [],
+      "evidence_sha256": "6e15a7caf6af342696906da5add686d775578844058e6eb8dd0df10dacb14562",
+      "resolution_condition": "Independent ego-boundary identity evidence; all-marking mask cannot supply it",
+      "status": "BLOCKED"
+    },
+    "COMMA10K_LABEL_COMPLETENESS_UNVERIFIED": {
+      "dependencies": [],
+      "evidence_sha256": "6e15a7caf6af342696906da5add686d775578844058e6eb8dd0df10dacb14562",
+      "resolution_condition": "Independent label completeness/provenance validation",
+      "status": "BLOCKED"
+    },
+    "CULANE_OFFICIAL_REPRODUCTION_BLOCKED": {
+      "dependencies": [],
+      "evidence_sha256": "8796f4ff3a05ea19e06a41a9f405d7e75ff3c8a130c1eb2e2ebc5f8f90364acb",
+      "resolution_condition": "Legitimate official data access and reproduced official benchmark",
+      "status": "BLOCKED"
+    },
+    "DESIRED_PATH_REFERENCE_UNAVAILABLE": {
+      "dependencies": [],
+      "evidence_sha256": "6e15a7caf6af342696906da5add686d775578844058e6eb8dd0df10dacb14562",
+      "resolution_condition": "Independent desired lane-center/path provenance and its separate validation",
+      "status": "BLOCKED"
+    },
+    "DISTORTION_STAGE_ORDERING_PENDING": {
+      "dependencies": [
+        "IFE_GEOMETRIC_REGISTER_SEMANTICS_UNVERIFIED"
+      ],
+      "evidence_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+      "resolution_condition": "Documented and verified sensor/IFE/encoder geometric transform ordering",
+      "status": "BLOCKED"
+    },
+    "EFFECTIVE_INPUT_CROP_RUNTIME_UNOBSERVED": {
+      "dependencies": [],
+      "evidence_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+      "resolution_condition": "Recorded effective input crop/selection/firmware metadata or independently measured position mapping",
+      "status": "BLOCKED"
+    },
+    "EGO_ASSOCIATION_VALIDATION_PENDING": {
+      "dependencies": [],
+      "evidence_sha256": "8796f4ff3a05ea19e06a41a9f405d7e75ff3c8a130c1eb2e2ebc5f8f90364acb",
+      "resolution_condition": "Independent ego-association validation, not assisted-human concordance",
+      "status": "BLOCKED"
+    },
+    "EMPIRICAL_MAPPING_VALIDATION_UNAVAILABLE": {
+      "dependencies": [],
+      "evidence_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+      "resolution_condition": "Authorized same-frame native/qcamera or independently known hardware test vector",
+      "status": "BLOCKED"
+    },
+    "HARDWARE_EFFECTIVE_CROP_PENDING": {
+      "dependencies": [
+        "EFFECTIVE_INPUT_CROP_RUNTIME_UNOBSERVED",
+        "RECORDED_OS_KERNEL_BINDING_PENDING"
+      ],
+      "evidence_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+      "resolution_condition": "Actual effective native input crop, including firmware defaults; no application crop is not proof",
+      "status": "BLOCKED"
+    },
+    "HARDWARE_RESIZE_PHASE_FIRMWARE_OPAQUE": {
+      "dependencies": [],
+      "evidence_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+      "resolution_condition": "Applicable SDM845 Venus firmware specification/conformance or measured phase; HFI dimensions do not specify phase",
+      "status": "BLOCKED"
+    },
+    "HARDWARE_RESIZE_PHASE_PENDING": {
+      "dependencies": [
+        "HARDWARE_RESIZE_PHASE_FIRMWARE_OPAQUE",
+        "RECORDED_VENUS_FIRMWARE_IDENTITY_PENDING"
+      ],
+      "evidence_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+      "resolution_condition": "Exact-runtime scaler sample-center/interpolation semantics or independent positional registration",
+      "status": "BLOCKED"
+    },
+    "IFE_GEOMETRIC_REGISTER_SEMANTICS_UNVERIFIED": {
+      "dependencies": [],
+      "evidence_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+      "resolution_condition": "Applicable IFE register semantics plus observed configuration; absence of rectification calls is insufficient",
+      "status": "BLOCKED"
+    },
+    "INDEPENDENT_BLIND_HUMAN_REVIEW_NOT_AVAILABLE": {
+      "dependencies": [],
+      "evidence_sha256": "8796f4ff3a05ea19e06a41a9f405d7e75ff3c8a130c1eb2e2ebc5f8f90364acb",
+      "resolution_condition": "Actual uninformed separate reviewer evidence",
+      "status": "BLOCKED"
+    },
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING": {
+      "dependencies": [
+        "CALIBRATION_MEASUREMENT_PENDING"
+      ],
+      "evidence_sha256": "bc6eada2f78d371aaacc34b4c0ce86f46c89056a0574e3f981f32b9807fe7802",
+      "resolution_condition": "Separate full physical pose/intrinsics/distortion validation; height observation is insufficient",
+      "status": "BLOCKED"
+    },
+    "INDEPENDENT_REFERENCE_UNAVAILABLE": {
+      "dependencies": [
+        "ROAD_REGISTRATION_UNAVAILABLE",
+        "CULANE_OFFICIAL_REPRODUCTION_BLOCKED",
+        "INDEPENDENT_BLIND_HUMAN_REVIEW_NOT_AVAILABLE",
+        "ASSISTED_REFERENCE_INDEPENDENCE_LIMITATION",
+        "PUBLIC_PIXEL_QUALIFICATION_THRESHOLD_UNJUSTIFIED",
+        "DESIRED_PATH_REFERENCE_UNAVAILABLE",
+        "COMMA10K_LABEL_COMPLETENESS_UNVERIFIED",
+        "COMMA10K_EGO_LANE_IDENTITY_UNAVAILABLE"
+      ],
+      "evidence_sha256": "8796f4ff3a05ea19e06a41a9f405d7e75ff3c8a130c1eb2e2ebc5f8f90364acb",
+      "resolution_condition": "All original reference admission gates including public benchmark, blind review and desired-path evidence",
+      "status": "BLOCKED"
+    },
+    "MAPPING_RESIDUAL_BOUND_PENDING": {
+      "dependencies": [
+        "EMPIRICAL_MAPPING_VALIDATION_UNAVAILABLE"
+      ],
+      "evidence_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+      "resolution_condition": "Actual pixel-position residual evidence, paired native/qcamera or validated target/vendor conformance; not synthetic round trip",
+      "status": "BLOCKED"
+    },
+    "METRIC_CALIBRATION_UNAVAILABLE": {
+      "dependencies": [
+        "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+        "PIXEL_GEOMETRY_REGISTRATION_PENDING"
+      ],
+      "evidence_sha256": "8796f4ff3a05ea19e06a41a9f405d7e75ff3c8a130c1eb2e2ebc5f8f90364acb",
+      "resolution_condition": "Reviewed complete projection uncertainty bounds",
+      "status": "BLOCKED"
+    },
+    "NATIVE_INTRINSICS_APPLICABILITY_PENDING": {
+      "dependencies": [
+        "STATIC_K_UNIT_AND_DISTORTION_VALIDATION_PENDING"
+      ],
+      "evidence_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+      "resolution_condition": "Source maps OS04C10/mici fcam to VisionIPC dimensions; unit and distortion applicability remain unvalidated",
+      "status": "PARTIAL"
+    },
+    "PHYSICAL_HEIGHT_OBSERVATION_AVAILABLE": {
+      "dependencies": [],
+      "evidence_sha256": "bc6eada2f78d371aaacc34b4c0ce86f46c89056a0574e3f981f32b9807fe7802",
+      "resolution_condition": "1.385 m user-reported physical mean; uncertainty and independent full pose validation remain pending",
+      "status": "PASS_OBSERVATION_ONLY"
+    },
+    "PIXEL_GEOMETRY_REGISTRATION_DEFINED": {
+      "dependencies": [],
+      "evidence_sha256": "731604c1ea54f26f9e072e7f903eeb5cba37b0f29b62e9f5b76c7e566c8227a4",
+      "resolution_condition": "Conditional transform arithmetic/source audit implemented; not actual mapping validation",
+      "status": "PASS_STRUCTURAL_ONLY"
+    },
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING": {
+      "dependencies": [
+        "RECORDED_OS_KERNEL_BINDING_PENDING",
+        "HARDWARE_EFFECTIVE_CROP_PENDING",
+        "HARDWARE_RESIZE_PHASE_PENDING",
+        "DISTORTION_STAGE_ORDERING_PENDING",
+        "NATIVE_INTRINSICS_APPLICABILITY_PENDING",
+        "MAPPING_RESIDUAL_BOUND_PENDING"
+      ],
+      "evidence_sha256": "731604c1ea54f26f9e072e7f903eeb5cba37b0f29b62e9f5b76c7e566c8227a4",
+      "resolution_condition": "Actual source/runtime-bound crop/phase/orientation/distortion and empirically justified residual; no guessed full-frame transform",
+      "status": "BLOCKED"
+    },
+    "PUBLIC_PIXEL_QUALIFICATION_THRESHOLD_UNJUSTIFIED": {
+      "dependencies": [],
+      "evidence_sha256": "6e15a7caf6af342696906da5add686d775578844058e6eb8dd0df10dacb14562",
+      "resolution_condition": "Externally justified downstream geometry/coverage/error budget, not posthoc thresholds",
+      "status": "BLOCKED"
+    },
+    "QCAMERA_ORIENTATION_RUNTIME_CONFIRMATION_PENDING": {
+      "dependencies": [],
+      "evidence_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+      "resolution_condition": "Recorded negotiated rotation/flip or independent orientation test; sensor-to-ISP orientation remains separately unverified",
+      "status": "BLOCKED"
+    },
+    "QCAMERA_ORIENTATION_SOURCE_DEFAULT_BOUND": {
+      "dependencies": [],
+      "evidence_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+      "resolution_condition": "Encoder has no qcamera rotation/flip control and bound kernel defaults NONE; not a measured orientation matrix",
+      "status": "PASS_SOURCE_DEFAULT_ONLY"
+    },
+    "RECORDED_BOOT_BINARY_ATTESTATION_PENDING": {
+      "dependencies": [],
+      "evidence_sha256": "fbdb4f3fd44387a3f278779458da029ee1ab42007a0702db25ad9ab106cf5fc1",
+      "resolution_condition": "Recorded boot partition/kernel image hash matching release binary; banner equality alone is insufficient",
+      "status": "BLOCKED"
+    },
+    "RECORDED_KERNEL_BUILD_IDENTITY_BOUND": {
+      "dependencies": [],
+      "evidence_sha256": "fbdb4f3fd44387a3f278779458da029ee1ab42007a0702db25ad9ab106cf5fc1",
+      "resolution_condition": "Recorded BUILD and complete normalized compiler/kernel banner match SHA-verified author release",
+      "status": "PASS_BUILD_IDENTITY_ONLY"
+    },
+    "RECORDED_OS_KERNEL_BINDING_PENDING": {
+      "dependencies": [
+        "RECORDED_BOOT_BINARY_ATTESTATION_PENDING",
+        "RECORDED_SYSTEM_BINARY_ATTESTATION_PENDING",
+        "RECORDED_VENUS_FIRMWARE_IDENTITY_PENDING"
+      ],
+      "evidence_sha256": "fbdb4f3fd44387a3f278779458da029ee1ab42007a0702db25ad9ab106cf5fc1",
+      "resolution_condition": "Build identity is bound; actual boot/system/loaded Venus binary identity remains unobserved",
+      "status": "PARTIAL"
+    },
+    "RECORDED_SYSTEM_BINARY_ATTESTATION_PENDING": {
+      "dependencies": [],
+      "evidence_sha256": "fbdb4f3fd44387a3f278779458da029ee1ab42007a0702db25ad9ab106cf5fc1",
+      "resolution_condition": "Recorded system image/build artifact hash, not only BUILD label",
+      "status": "BLOCKED"
+    },
+    "RECORDED_VENUS_FIRMWARE_IDENTITY_PENDING": {
+      "dependencies": [],
+      "evidence_sha256": "fbdb4f3fd44387a3f278779458da029ee1ab42007a0702db25ad9ab106cf5fc1",
+      "resolution_condition": "Recorded loaded Venus firmware filename/version/hash and corresponding documented scaler semantics",
+      "status": "BLOCKED"
+    },
+    "ROAD_REGISTRATION_UNAVAILABLE": {
+      "dependencies": [
+        "METRIC_CALIBRATION_UNAVAILABLE",
+        "EGO_ASSOCIATION_VALIDATION_PENDING"
+      ],
+      "evidence_sha256": "8796f4ff3a05ea19e06a41a9f405d7e75ff3c8a130c1eb2e2ebc5f8f90364acb",
+      "resolution_condition": "Validated road-frame registration",
+      "status": "BLOCKED"
+    },
+    "STATIC_K_SOURCE_COORDINATE_CONTRACT_BOUND": {
+      "dependencies": [],
+      "evidence_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+      "resolution_condition": "Recorded camera.py OS04C10 fcam 1344x760 nominal source prior only",
+      "status": "PASS_SOURCE_PRIOR_ONLY"
+    },
+    "STATIC_K_UNIT_AND_DISTORTION_VALIDATION_PENDING": {
+      "dependencies": [],
+      "evidence_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+      "resolution_condition": "Independent native-image intrinsics/distortion applicability evidence for actual camera",
+      "status": "BLOCKED"
+    }
+  },
+  "conditional_envelope_known_points": {
+    "assumed_crop": [
+      0,
+      0,
+      1344,
+      760
+    ],
+    "assumed_orientation": "IDENTITY",
+    "exhaustive": false,
+    "hypotheses": {
+      "exhaustive": false,
+      "pruned": [],
+      "reason": "FIRMWARE_SAMPLE_PHASE_AND_EFFECTIVE_CROP_NOT_OBSERVED",
+      "retained": [
+        "CENTER_ALIGNED",
+        "ZERO_ORIGIN",
+        "CORNER_ALIGNED"
+      ]
+    },
+    "maximum_native_xy": [
+      [
+        0.7775665399239544,
+        0.6515151515151516
+      ],
+      [
+        671.5000000000001,
+        379.5
+      ],
+      [
+        1343.0,
+        759.0
+      ]
+    ],
+    "minimum_native_xy": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        670.7224334600761,
+        378.8484848484849
+      ],
+      [
+        1341.4448669201522,
+        757.6969696969697
+      ]
+    ],
+    "physical_uncertainty_bound": false,
+    "qualification_allowed": false,
+    "receipt_sha256": "935de7471503e1e0911b1b9a33010e86e130d6f2a93728394ec822306eed9e81",
+    "reference_promotable": false,
+    "residual_bound_native_px": null,
+    "schema": "CONDITIONAL_MAPPING_ENVELOPE_V1",
+    "sealed_reference_allowed": false,
+    "source_xy": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        262.5,
+        164.5
+      ],
+      [
+        525.0,
+        329.0
+      ]
+    ],
+    "vehicle_activation_allowed": false
+  },
+  "conditional_hypotheses": {
+    "exhaustive": false,
+    "pruned": [],
+    "reason": "FIRMWARE_SAMPLE_PHASE_AND_EFFECTIVE_CROP_NOT_OBSERVED",
+    "retained": [
+      "CENTER_ALIGNED",
+      "ZERO_ORIGIN",
+      "CORNER_ALIGNED"
+    ]
+  },
+  "dag_verified": true,
+  "detector_inference_this_increment": false,
+  "historical_coordinate_system": "ORIGINAL_QCAMERA_526x330",
+  "historical_metrics_modified": false,
+  "new_holdout_access": false,
+  "numeric_meter_results": null,
+  "physical_height_context": {
+    "receipt_sha256": "bc6eada2f78d371aaacc34b4c0ce86f46c89056a0574e3f981f32b9807fe7802",
+    "uncertainty_m": null,
+    "use": "CONTEXT_ONLY_NOT_SCALER_INPUT",
+    "value_m": 1.385
+  },
+  "pixel_mapping_bound_native_px": null,
+  "previous_readiness_sha256": "708ad7256727e69cba61e9575ec6bbe3363465f48f9ba221dcbc963281b9d25c",
+  "private_images_decoded": false,
+  "qualification_allowed": false,
+  "raw_publication": false,
+  "receipt_sha256": "fd3f2f4313db50c000914357dbc2e4f7984adf5cd0d1b3501829c0d961afd531",
+  "reference_promotable": false,
+  "runtime_sha256": "fbdb4f3fd44387a3f278779458da029ee1ab42007a0702db25ad9ab106cf5fc1",
+  "scaler_sha256": "44b507d1e36612515593e85da54d1c75a8c212981863f4b4cb7668a669d8ed3f",
+  "schema": "QCAMERA_RECORDED_RUNTIME_READINESS_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "software_contract_status": "PIXEL_GEOMETRY_REGISTRATION_DEFINED_STRUCTURAL_ONLY",
+  "stationary_target_path": {
+    "future_qcamera_requirements": [
+      "VALIDATED_REGISTRATION",
+      "SOURCE_DERIVED_KQ",
+      "APPLICABLE_INTRINSICS_DISTORTION",
+      "PHYSICAL_TARGET_EVIDENCE"
+    ],
+    "native_input_wh": [
+      1344,
+      760
+    ],
+    "qcamera_input_allowed": false
+  },
+  "status": "PIXEL_GEOMETRY_REGISTRATION_PARTIAL",
+  "validated": false,
+  "vehicle_activation_allowed": false,
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

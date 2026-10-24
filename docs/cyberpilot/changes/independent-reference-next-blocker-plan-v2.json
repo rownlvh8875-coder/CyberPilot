@@ -1,0 +1,734 @@
+{
+  "calibration": {
+    "intrinsics": null,
+    "measurement": null,
+    "measurement_sha256": null,
+    "metric_calibration_validated": false,
+    "metrology_validation": "PENDING_EXTERNAL_PHYSICAL_REVIEW",
+    "provenance_role": "INDEPENDENT_PHYSICAL_EXTRINSICS",
+    "receipt_sha256": "8796f4ff3a05ea19e06a41a9f405d7e75ff3c8a130c1eb2e2ebc5f8f90364acb",
+    "reference_promotable": false,
+    "schema": "PHYSICAL_CALIBRATION_ADMISSION_V1",
+    "schema_sha256": "5ca103987bcf7473f0eaaacdfa1bf9e7a9727d72fadde8ec679868820fc58efd",
+    "status": "CALIBRATION_MEASUREMENT_PENDING",
+    "tool_sha256": "6cb9d043fc55418b88aa58dbd37b83a19ba91b5b90c9a8691b7b34cc5d0f653a"
+  },
+  "calibration_protocol": {
+    "actual_camera_identity": null,
+    "admission_tool_sha256": "6cb9d043fc55418b88aa58dbd37b83a19ba91b5b90c9a8691b7b34cc5d0f653a",
+    "distortion_validation": null,
+    "ground_survey": null,
+    "independence_limitation": "DECLARED_ROLES_AND_HASHES_DO_NOT_VERIFY_REAL_INSTRUMENT_ACCURACY_OR_EXTERIOR_NONCONTAMINATION",
+    "measurement_fields": {
+      "cx_px": {
+        "method": null,
+        "provenance": null,
+        "uncertainty": null,
+        "unit": "px",
+        "value": null
+      },
+      "cy_px": {
+        "method": null,
+        "provenance": null,
+        "uncertainty": null,
+        "unit": "px",
+        "value": null
+      },
+      "fx_px": {
+        "method": null,
+        "provenance": null,
+        "uncertainty": null,
+        "unit": "px",
+        "value": null
+      },
+      "fy_px": {
+        "method": null,
+        "provenance": null,
+        "uncertainty": null,
+        "unit": "px",
+        "value": null
+      },
+      "height_m": {
+        "method": null,
+        "provenance": null,
+        "uncertainty": null,
+        "unit": "m",
+        "value": null
+      },
+      "mount_x_m": {
+        "method": null,
+        "provenance": null,
+        "uncertainty": null,
+        "unit": "m",
+        "value": null
+      },
+      "mount_y_m": {
+        "method": null,
+        "provenance": null,
+        "uncertainty": null,
+        "unit": "m",
+        "value": null
+      },
+      "pitch_rad": {
+        "method": null,
+        "provenance": null,
+        "uncertainty": null,
+        "unit": "rad",
+        "value": null
+      },
+      "roll_rad": {
+        "method": null,
+        "provenance": null,
+        "uncertainty": null,
+        "unit": "rad",
+        "value": null
+      },
+      "yaw_rad": {
+        "method": null,
+        "provenance": null,
+        "uncertainty": null,
+        "unit": "rad",
+        "value": null
+      }
+    },
+    "measurement_schema": {
+      "admission": "STRUCTURE_AND_DECLARED_PROVENANCE_ONLY_NOT_PHYSICAL_OR_METROLOGY_VALIDATION",
+      "angles": "Rz(yaw)Ry(pitch)Rx(roll)_RADIANS",
+      "frames": [
+        "RH_X_RIGHT_Y_DOWN_Z_FORWARD_ORIGIN_OPTICAL_CENTER",
+        "RH_X_FORWARD_Y_LEFT_Z_UP_ORIGIN_SURVEYED_VEHICLE_DATUM"
+      ],
+      "methods": [
+        "SURVEYED_STATIONARY_TARGET",
+        "SURVEYED_CHECKERBOARD",
+        "SURVEYED_APRILTAG",
+        "OPTICAL_CENTER_SURVEY"
+      ],
+      "physical_protocol_sha256": "802bfbdb47543918b6976c35866547ae4620493c20789c8ca75b2781d1c93fbb",
+      "schema": "INDEPENDENT_PHYSICAL_CAMERA_MEASUREMENT_V1",
+      "uncertainty": "POSITIVE_INDEPENDENT_ABSOLUTE_BOUND_NOT_STATISTICAL_QUANTILE",
+      "units": {
+        "cx_px": "px",
+        "cy_px": "px",
+        "fx_px": "px",
+        "fy_px": "px",
+        "height_m": "m",
+        "mount_x_m": "m",
+        "mount_y_m": "m",
+        "pitch_rad": "rad",
+        "roll_rad": "rad",
+        "yaw_rad": "rad"
+      }
+    },
+    "measurement_timestamp": null,
+    "operator_id": null,
+    "receipt_sha256": "d16ce1cb72bbcc329cd66142b766e66c32ea5bd4abcc36ca3cd3742b04f6fae6",
+    "reference_promotable": false,
+    "schema": "PHYSICAL_CALIBRATION_SUBMISSION_PROTOCOL_V1",
+    "schema_sha256": "5ca103987bcf7473f0eaaacdfa1bf9e7a9727d72fadde8ec679868820fc58efd",
+    "static_sources": {
+      "camera": "openpilot/common/transformations/camera.py",
+      "camera_sha256": "1de3f9e6147f28195c71673ae5c8ec38e65ede997ac98d2e1e3b114eda873ec4",
+      "hardware_mapping": "openpilot/common/hardware/comma/hardware.py",
+      "hardware_sha256": "d357b90f878ef7b8ea1df5a537cdf986df2243bc4b20b37c7ed88175020cadd8"
+    },
+    "status": "CALIBRATION_MEASUREMENT_PENDING",
+    "target_device_family": "comma4_mici_narrow_road",
+    "template_submittable": false
+  },
+  "critical_path": [
+    "CALIBRATION_MEASUREMENT_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "ROAD_REGISTRATION_UNAVAILABLE",
+    "INDEPENDENT_LANE_CENTER_REFERENCE_UNAVAILABLE"
+  ],
+  "dependency_order": [
+    "AI_PREREVIEW_COMPLETE",
+    "CALIBRATION_ADMISSION_CONTRACT_DEFINED",
+    "CALIBRATION_MEASUREMENT_PENDING",
+    "COMMA10K_EGO_LANE_IDENTITY_UNAVAILABLE",
+    "COMMA10K_FULL_EVALUATION_COMPLETE",
+    "COMMA10K_LABEL_COMPLETENESS_UNVERIFIED",
+    "CONFIDENCE_CALIBRATION_UNESTABLISHED",
+    "CULANE_DATASET_UNAVAILABLE",
+    "INDEPENDENT_EGO_ASSOCIATION_CONTRACT_DEFINED",
+    "PRIVATE_METADATA_PREPARATION_CONTRACT_DEFINED",
+    "PUBLIC_PERSISTENT_RUNTIME_RECOVERY",
+    "PUBLIC_PIXEL_QUALIFICATION_THRESHOLD_UNJUSTIFIED",
+    "ROAD_REGISTRATION_CONTRACT_DEFINED",
+    "COMMA10K_ASSISTED_HUMAN_REVIEW_COMPLETE",
+    "CULANE_OFFICIAL_REPRODUCTION_BLOCKED",
+    "EGO_ASSOCIATION_VALIDATION_PENDING",
+    "INDEPENDENT_BLIND_HUMAN_REVIEW_NOT_AVAILABLE",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PRIVATE_HUMAN_HOLDOUT_PENDING",
+    "INDEPENDENT_EXTRINSICS_UNAVAILABLE",
+    "PRIVATE_DOMAIN_VALIDATION_NOT_RUN",
+    "PROJECTION_UNCERTAINTY_BUDGET_UNAVAILABLE",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "ROAD_REGISTRATION_UNAVAILABLE",
+    "DESIRED_PATH_REFERENCE_UNAVAILABLE",
+    "INDEPENDENT_LANE_CENTER_REFERENCE_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "ego_contract": {
+    "ego_association_validated": false,
+    "policy": {
+      "algorithm": "EXPLICIT_INDEPENDENT_PROPOSALS_ONLY_NO_NEAREST_SIDE_RULE",
+      "ambiguous_context": [
+        "merge",
+        "split",
+        "intersection",
+        "markings_inconsistent",
+        "outside_validated_range"
+      ],
+      "forbidden_sources": [
+        "modelv2_used",
+        "planner_used",
+        "candidate_used",
+        "steering_command_used"
+      ],
+      "interpolation": false,
+      "previous_frame_carry": false,
+      "reference_promotable": false,
+      "schema": "INDEPENDENT_EGO_ASSOCIATION_POLICY_V1",
+      "validation": "INDEPENDENT_EGO_GT_AND_DOMAIN_VALIDATION_PENDING"
+    },
+    "receipt_sha256": "c1c8088392ac898bddeaf407690b710e04ef5f4b5dcce730cbb2f66fb85148ff",
+    "reference_promotable": false,
+    "schema": "INDEPENDENT_EGO_ASSOCIATION_V1",
+    "status": "ALGORITHM_DEFINED",
+    "tool_sha256": "96862f50e49fd8d0064a60c415c30a7d9b9e8da5adbe73c75d87ca3369b17eb5",
+    "validation": "VALIDATION_PENDING"
+  },
+  "label_completeness_audit": {
+    "dataset_commit": "6c205fe4c43cc53b2b1befafb1060d0606555027",
+    "filter_applied": false,
+    "known_mask_category": "ALL_UNDRIVABLE",
+    "lane_absence_verified": false,
+    "legacy_metric_invalidated": false,
+    "mask_sha256": "fea98461253c4c12e2039a52ae61cd33d5e68e59adb006103d067667232bb786",
+    "metadata_consistency_checked": true,
+    "new_mask_or_image_opened": false,
+    "receipt_sha256": "deda5c7a0bd4b3d64e5e684d969ed5299621cbf4cac7b08f623bbfa4aac1cc41",
+    "reference_promotable": false,
+    "repeated_shared_mask_count": 1400,
+    "resolution_condition": "INDEPENDENT_PER_FRAME_LABEL_COMPLETION_PROVENANCE; IDENTICAL_MASK_BYTES_ARE_NOT_LANE_ABSENCE_TRUTH",
+    "schema": "LABEL_COMPLETENESS_DEPENDENCY_AUDIT_V1",
+    "source_receipt_sha256": "ceb9606170b4d6110ec98f35a5a2721345536b898e51b9c1b0daa0547a4696c7",
+    "status": "COMMA10K_LABEL_COMPLETENESS_UNVERIFIED"
+  },
+  "lane_center": {
+    "contract_sha256": "88145a2ad96b9bc9c4504db99a5ff4a6371d168e3df84ca98bf55af72d77a78e",
+    "points_m": null,
+    "receipt_sha256": "cf984b2ad1b292ba53202cddd1e894edfa9c50abb218e866e18178855782a4ce",
+    "reference_promotable": false,
+    "registration_sha256": "02c6f8852e32283eab44b7ec493a1fd1cb939fa7afb47b1740913387b2b25db2",
+    "schema": "INDEPENDENT_LANE_CENTER_READINESS_V1",
+    "sealed_reference_allowed": false,
+    "status": "REFERENCE_UNAVAILABLE"
+  },
+  "nodes": [
+    {
+      "code": "CULANE_OFFICIAL_REPRODUCTION_BLOCKED",
+      "dependencies": [
+        "CULANE_DATASET_UNAVAILABLE"
+      ],
+      "evidence_kind": "FILE_SHA256",
+      "evidence_sha256": "7a87391586e57d787a3fb5732aada03426cec6664b071dd97eebb8cb5558d067",
+      "resolution_condition": "Official complete CULane split + faithful reproduction",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "CULANE_DATASET_UNAVAILABLE",
+      "dependencies": [],
+      "evidence_kind": "FILE_SHA256",
+      "evidence_sha256": "7a87391586e57d787a3fb5732aada03426cec6664b071dd97eebb8cb5558d067",
+      "resolution_condition": "Supplier official access or documented authorized alternate",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "COMMA10K_EGO_LANE_IDENTITY_UNAVAILABLE",
+      "dependencies": [],
+      "evidence_kind": "FILE_SHA256",
+      "evidence_sha256": "a84f408979fa9d1b0e885650cdb5e58d74b22242668d33b148c32360ccbefd2d",
+      "resolution_condition": "Independent validated ego-left/right association GT, not all-paint segmentation",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "PUBLIC_PIXEL_QUALIFICATION_THRESHOLD_UNJUSTIFIED",
+      "dependencies": [],
+      "evidence_kind": "FILE_SHA256",
+      "evidence_sha256": "88344f760c87f15a3d3e373e0dd998b6d55a0283010840310420a54c874106cf",
+      "resolution_condition": "Externally justified downstream error/coverage budget frozen before qualifying evaluation",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "METRIC_CALIBRATION_UNAVAILABLE",
+      "dependencies": [
+        "INDEPENDENT_EXTRINSICS_UNAVAILABLE",
+        "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+        "PROJECTION_UNCERTAINTY_BUDGET_UNAVAILABLE"
+      ],
+      "evidence_kind": "FILE_SHA256",
+      "evidence_sha256": "4f69da0d7ddc977aff0e10592a40ba70d787fe08d423848820822876aa8ed491",
+      "resolution_condition": "Verified camera geometry and independently measured uncertainty",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "INDEPENDENT_EXTRINSICS_UNAVAILABLE",
+      "dependencies": [
+        "CALIBRATION_MEASUREMENT_PENDING",
+        "INDEPENDENT_CALIBRATION_VALIDATION_PENDING"
+      ],
+      "evidence_kind": "FILE_SHA256",
+      "evidence_sha256": "4f69da0d7ddc977aff0e10592a40ba70d787fe08d423848820822876aa8ed491",
+      "resolution_condition": "Independently observed camera pose/height; no model-derived calibration treated as truth",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "ROAD_REGISTRATION_UNAVAILABLE",
+      "dependencies": [
+        "METRIC_CALIBRATION_UNAVAILABLE",
+        "COMMA10K_EGO_LANE_IDENTITY_UNAVAILABLE",
+        "EGO_ASSOCIATION_VALIDATION_PENDING",
+        "ROAD_REGISTRATION_CONTRACT_DEFINED"
+      ],
+      "evidence_kind": "FILE_SHA256",
+      "evidence_sha256": "88344f760c87f15a3d3e373e0dd998b6d55a0283010840310420a54c874106cf",
+      "resolution_condition": "Independent road geometry to closed-loop vehicle coordinate registration",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "DESIRED_PATH_REFERENCE_UNAVAILABLE",
+      "dependencies": [
+        "ROAD_REGISTRATION_UNAVAILABLE"
+      ],
+      "evidence_kind": "FILE_SHA256",
+      "evidence_sha256": "88344f760c87f15a3d3e373e0dd998b6d55a0283010840310420a54c874106cf",
+      "resolution_condition": "Reviewed desired path provenance independent of model/planner/candidate",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "PRIVATE_DOMAIN_VALIDATION_NOT_RUN",
+      "dependencies": [
+        "CULANE_OFFICIAL_REPRODUCTION_BLOCKED",
+        "PUBLIC_PIXEL_QUALIFICATION_THRESHOLD_UNJUSTIFIED",
+        "INDEPENDENT_BLIND_HUMAN_REVIEW_NOT_AVAILABLE",
+        "PRIVATE_HUMAN_HOLDOUT_PENDING"
+      ],
+      "evidence_kind": "FILE_SHA256",
+      "evidence_sha256": "88344f760c87f15a3d3e373e0dd998b6d55a0283010840310420a54c874106cf",
+      "resolution_condition": "Frozen public-qualified detector + independent private human holdout",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "CONFIDENCE_CALIBRATION_UNESTABLISHED",
+      "dependencies": [],
+      "evidence_kind": "FILE_SHA256",
+      "evidence_sha256": "4f69da0d7ddc977aff0e10592a40ba70d787fe08d423848820822876aa8ed491",
+      "resolution_condition": "semantically matched GT and prefrozen independent calibration/evaluation split; no confidence optimization on these diagnostic results",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "COMMA10K_FULL_EVALUATION_COMPLETE",
+      "dependencies": [],
+      "evidence_kind": "FILE_SHA256",
+      "evidence_sha256": "250c0a0ef2899fc46ea5228c060b4189001f2ee9f83a54a389bd1557b57da4af",
+      "resolution_condition": "11888 exact validated durable receipts and completion marker; now satisfied for diagnostic single pass",
+      "status": "PASS"
+    },
+    {
+      "code": "PUBLIC_PERSISTENT_RUNTIME_RECOVERY",
+      "dependencies": [],
+      "evidence_kind": "FILE_SHA256",
+      "evidence_sha256": "3a208eb352a2eca1f7d150d0062abafe4c811d7f3df538a2ee15642fc040830f",
+      "resolution_condition": "Persistent rebuilt public runtime/cache and actual owned SIGKILL/restart; old lost prefix never reused",
+      "status": "PASS"
+    },
+    {
+      "code": "COMMA10K_LABEL_COMPLETENESS_UNVERIFIED",
+      "dependencies": [],
+      "evidence_kind": "FILE_SHA256",
+      "evidence_sha256": "e2ad017a1024d0b2f1d33e4e795202f1febaec76daa32475e42eb6210a9a5859",
+      "resolution_condition": "Independent per-frame label completion provenance, especially1400 identical all-undrivable masks; no posthoc metric filtering",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "AI_PREREVIEW_COMPLETE",
+      "dependencies": [],
+      "evidence_kind": "FILE_SHA256",
+      "evidence_sha256": "356c9948d9481cac4d825fbe209ac901f0144ca3180fb665ed0b76db76c6f7d4",
+      "resolution_condition": "Immutable29 vision suggestions; does not resolve human or qualification blockers",
+      "status": "PASS_SUPPORTING_DIAGNOSTIC_ONLY"
+    },
+    {
+      "code": "COMMA10K_ASSISTED_HUMAN_REVIEW_COMPLETE",
+      "dependencies": [
+        "COMMA10K_FULL_EVALUATION_COMPLETE"
+      ],
+      "evidence_kind": "RECEIPT_SHA256",
+      "evidence_sha256": "48f46796f8e7a3679b5774e36933dffd79d2864b2be6fcb1f171d2d486976922",
+      "resolution_condition": "Satisfied for assisted sample diagnostics only; does not resolve any blind/qualification gate",
+      "status": "PASS_SUPPORTING_DIAGNOSTIC_ONLY"
+    },
+    {
+      "code": "INDEPENDENT_BLIND_HUMAN_REVIEW_NOT_AVAILABLE",
+      "dependencies": [
+        "COMMA10K_FULL_EVALUATION_COMPLETE"
+      ],
+      "evidence_kind": "RECEIPT_SHA256",
+      "evidence_sha256": "e5be4899fb328f57229b5d37640e1df0fb079567db28eb3ce938ad18ece03c96",
+      "resolution_condition": "New uninformed reviewer with opaque ID and truthful prior-nonexposure attestation; all29 immutable separate rows",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "CALIBRATION_MEASUREMENT_PENDING",
+      "dependencies": [],
+      "evidence_kind": "RECEIPT_SHA256",
+      "evidence_sha256": "8796f4ff3a05ea19e06a41a9f405d7e75ff3c8a130c1eb2e2ebc5f8f90364acb",
+      "resolution_condition": "Independent physical pose/height/intrinsic and uncertainty measurements; model-derived live values are not truth",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+      "dependencies": [
+        "CULANE_OFFICIAL_REPRODUCTION_BLOCKED",
+        "CULANE_DATASET_UNAVAILABLE",
+        "COMMA10K_EGO_LANE_IDENTITY_UNAVAILABLE",
+        "PUBLIC_PIXEL_QUALIFICATION_THRESHOLD_UNJUSTIFIED",
+        "METRIC_CALIBRATION_UNAVAILABLE",
+        "INDEPENDENT_EXTRINSICS_UNAVAILABLE",
+        "ROAD_REGISTRATION_UNAVAILABLE",
+        "DESIRED_PATH_REFERENCE_UNAVAILABLE",
+        "PRIVATE_DOMAIN_VALIDATION_NOT_RUN",
+        "CONFIDENCE_CALIBRATION_UNESTABLISHED",
+        "COMMA10K_FULL_EVALUATION_COMPLETE",
+        "PUBLIC_PERSISTENT_RUNTIME_RECOVERY",
+        "COMMA10K_LABEL_COMPLETENESS_UNVERIFIED",
+        "AI_PREREVIEW_COMPLETE",
+        "COMMA10K_ASSISTED_HUMAN_REVIEW_COMPLETE",
+        "INDEPENDENT_BLIND_HUMAN_REVIEW_NOT_AVAILABLE",
+        "CALIBRATION_MEASUREMENT_PENDING",
+        "CALIBRATION_ADMISSION_CONTRACT_DEFINED",
+        "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+        "PROJECTION_UNCERTAINTY_BUDGET_UNAVAILABLE",
+        "INDEPENDENT_EGO_ASSOCIATION_CONTRACT_DEFINED",
+        "EGO_ASSOCIATION_VALIDATION_PENDING",
+        "ROAD_REGISTRATION_CONTRACT_DEFINED",
+        "INDEPENDENT_LANE_CENTER_REFERENCE_UNAVAILABLE",
+        "PRIVATE_METADATA_PREPARATION_CONTRACT_DEFINED",
+        "PRIVATE_HUMAN_HOLDOUT_PENDING"
+      ],
+      "evidence_kind": "RECEIPT_SHA256",
+      "evidence_sha256": "e10ac47cb038ff1d767f02dba2d1387beed3e102e6702ea034196b167a0281cb",
+      "resolution_condition": "All evidence prerequisites + existing strict sealed reference admission; never promoted by diagnostic receipts",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "CALIBRATION_ADMISSION_CONTRACT_DEFINED",
+      "dependencies": [],
+      "evidence_kind": "RECEIPT_SHA256",
+      "evidence_sha256": "d16ce1cb72bbcc329cd66142b766e66c32ea5bd4abcc36ca3cd3742b04f6fae6",
+      "resolution_condition": "Submission schema and immutable admission exist; actual physical artifact still pending",
+      "status": "PASS_STRUCTURAL_ONLY"
+    },
+    {
+      "code": "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+      "dependencies": [
+        "CALIBRATION_MEASUREMENT_PENDING"
+      ],
+      "evidence_kind": "RECEIPT_SHA256",
+      "evidence_sha256": "8796f4ff3a05ea19e06a41a9f405d7e75ff3c8a130c1eb2e2ebc5f8f90364acb",
+      "resolution_condition": "Independent instrument/target/holdout review and observed device geometry, not merely positive schema validation",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "PROJECTION_UNCERTAINTY_BUDGET_UNAVAILABLE",
+      "dependencies": [
+        "INDEPENDENT_CALIBRATION_VALIDATION_PENDING"
+      ],
+      "evidence_kind": "RECEIPT_SHA256",
+      "evidence_sha256": "67db7889e97295611c583b7884c38d09e398b1a677501c2895b2d03754b1073d",
+      "resolution_condition": "Independently justified detector/intrinsic/extrinsic/distortion/road-plane bounds and certified nonlinear remainder over actual domain",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "INDEPENDENT_EGO_ASSOCIATION_CONTRACT_DEFINED",
+      "dependencies": [],
+      "evidence_kind": "RECEIPT_SHA256",
+      "evidence_sha256": "c1c8088392ac898bddeaf407690b710e04ef5f4b5dcce730cbb2f66fb85148ff",
+      "resolution_condition": "Proposal algorithm and ambiguity gate defined; no nearest-side selection or ego-GT validation",
+      "status": "PASS_STRUCTURAL_ONLY"
+    },
+    {
+      "code": "EGO_ASSOCIATION_VALIDATION_PENDING",
+      "dependencies": [
+        "INDEPENDENT_EGO_ASSOCIATION_CONTRACT_DEFINED",
+        "COMMA10K_EGO_LANE_IDENTITY_UNAVAILABLE"
+      ],
+      "evidence_kind": "RECEIPT_SHA256",
+      "evidence_sha256": "c1c8088392ac898bddeaf407690b710e04ef5f4b5dcce730cbb2f66fb85148ff",
+      "resolution_condition": "Independent left/right association GT and frozen domain validation, not all-paint mask or detector self-agreement",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "ROAD_REGISTRATION_CONTRACT_DEFINED",
+      "dependencies": [],
+      "evidence_kind": "RECEIPT_SHA256",
+      "evidence_sha256": "02c6f8852e32283eab44b7ec493a1fd1cb939fa7afb47b1740913387b2b25db2",
+      "resolution_condition": "Known-geometry transformations tested; no real metric registration performed",
+      "status": "PASS_STRUCTURAL_ONLY"
+    },
+    {
+      "code": "INDEPENDENT_LANE_CENTER_REFERENCE_UNAVAILABLE",
+      "dependencies": [
+        "ROAD_REGISTRATION_UNAVAILABLE",
+        "DESIRED_PATH_REFERENCE_UNAVAILABLE"
+      ],
+      "evidence_kind": "RECEIPT_SHA256",
+      "evidence_sha256": "cf984b2ad1b292ba53202cddd1e894edfa9c50abb218e866e18178855782a4ce",
+      "resolution_condition": "Both validated registered boundaries, common covered samples and independently reviewed center-reference definition; not optimal driving path",
+      "status": "BLOCKED"
+    },
+    {
+      "code": "PRIVATE_METADATA_PREPARATION_CONTRACT_DEFINED",
+      "dependencies": [],
+      "evidence_kind": "RECEIPT_SHA256",
+      "evidence_sha256": "d1628d4721d4e6eb8c63b353c462e014c1c51fecea8a22dc04078a4a53466ec2",
+      "resolution_condition": "Metadata/private/publication contract exists, actual inventory and separate execution authority absent",
+      "status": "PASS_STRUCTURAL_ONLY"
+    },
+    {
+      "code": "PRIVATE_HUMAN_HOLDOUT_PENDING",
+      "dependencies": [
+        "PRIVATE_METADATA_PREPARATION_CONTRACT_DEFINED"
+      ],
+      "evidence_kind": "RECEIPT_SHA256",
+      "evidence_sha256": "d1628d4721d4e6eb8c63b353c462e014c1c51fecea8a22dc04078a4a53466ec2",
+      "resolution_condition": "Freeze independent holdout before detector output; actual human boundary/ambiguity annotations, never training/selection",
+      "status": "BLOCKED"
+    }
+  ],
+  "parallel_prerequisites": [
+    "EGO_ASSOCIATION_VALIDATION_PENDING",
+    "DESIRED_PATH_REFERENCE_UNAVAILABLE",
+    "INDEPENDENT_BLIND_HUMAN_REVIEW_NOT_AVAILABLE",
+    "CULANE_OFFICIAL_REPRODUCTION_BLOCKED"
+  ],
+  "prior_plan_sha256": "c588d848982d1f423812d8e9d7efeaa48c847ef2fc2e129e9fffe9397ec659e4",
+  "private_comma4": "NOT_OPENED",
+  "private_input_allowed": false,
+  "private_preparation": {
+    "detector": {
+      "config_sha256": "f06c4c3ffe1db9f77eb86082b05a5e2ce550bb3c02c9302d5a818e360cd94fa9",
+      "detector": "CLRerNet",
+      "ensemble_allowed": false,
+      "environment_sha256": "a4f0529fef22655b8e7509022f7f06acf4250c2a72681dc649801a829f2655e5",
+      "fine_tuning_allowed": false,
+      "postprocessing_mutation_allowed": false,
+      "postprocessing_sha256": "ebe14800fc6145462fbb9324789ce45360e96e9a2d97b14d29134c2ed5e42493",
+      "preprocessing_sha256": "d0b220f7ceb23423b87109abe7a2564f5f3ab7aa3d300aa007cd7c8cb7727ae9",
+      "public_environment_file_sha256": "7d39efce7a0cb3fb5e6cd4703b93252bc469d9e9bdb815a4b89a08bc95dd31ae",
+      "receipt_sha256": "13d5f72d1256fc9847b8ca7070364b8a319426df2eeca4572477015a1a0f9da5",
+      "repository_commit": "dae038f67da57e292e5293a68c9c1c2922de13c2",
+      "reselection_allowed": false,
+      "schema": "PRIVATE_DIAGNOSTIC_DETECTOR_FREEZE_V1",
+      "source_sha256": "9de95fcbaa580d4279f085925effae36c3d82a7da026805a96d3646c446e1ed1",
+      "threshold_optimization_allowed": false,
+      "weight_sha256": "424422f1008a5fe1717d52bbc5f631dcc2731808f8adb96110d126fa83d3a8aa"
+    },
+    "execution": "NOT_RUN",
+    "human_holdout_status": "PRIVATE_HUMAN_HOLDOUT_PENDING",
+    "manifest_sha256": null,
+    "output_contract": {
+      "allowed": [
+        "detected_lane_count",
+        "confidence_distribution",
+        "temporal_availability",
+        "prediction_geometry_stability",
+        "unavailable_rate"
+      ],
+      "localization_error_against_truth_allowed": false,
+      "no_gt_semantics": "GEOMETRY_STABILITY_IS_NOT_LOCALIZATION_ACCURACY_OR_LANE_QUALITY",
+      "qualification_allowed": false,
+      "receipt_sha256": "50ab66594cc65c7927b3973993f8b63afeff3eb1ce6e490844a6676f60f99033",
+      "reference_promotable": false,
+      "schema": "PRIVATE_PIXEL_DIAGNOSTIC_OUTPUT_CONTRACT_V1",
+      "sealed_reference_allowed": false,
+      "unavailable_handling": "ACCOUNT_ALL_FROZEN_FRAMES_NO_CONFIDENCE_POSTHOC_EXCLUSION",
+      "unit": "PIXEL_DOMAIN_ONLY"
+    },
+    "privacy": [
+      "NO_RAW_FRAME_LOG_UPLOAD_OR_REPOSITORY_COMMIT",
+      "NO_EXIF_GPS_OR_RAW_METADATA_PUBLICATION",
+      "NO_INDIVIDUAL_ROUTE_FRAME_HASHES_OR_LOCAL_PATHS_IN_PUBLIC_OUTPUT",
+      "SEPARATE_LOCAL_PRIVATE_CACHE_PUBLIC_REPORTS"
+    ],
+    "private_input_allowed": false,
+    "qualification_allowed": false,
+    "receipt_sha256": "d1628d4721d4e6eb8c63b353c462e014c1c51fecea8a22dc04078a4a53466ec2",
+    "reference_promotable": false,
+    "sampling_policy_sha256": null,
+    "schema": "PRIVATE_PIXEL_PREPARATION_READINESS_V1",
+    "sealed_reference_allowed": false,
+    "status": "PROPOSED_NOT_RUN",
+    "tool_sha256": "7b030cb51f852dbba5addfcd592a9677341547401c3b96f0974fd9b2201b985c"
+  },
+  "projection_budget": {
+    "calibration_sha256": "8796f4ff3a05ea19e06a41a9f405d7e75ff3c8a130c1eb2e2ebc5f8f90364acb",
+    "formula": "sum(abs(J_i(query))*independent_absolute_bound_i)+certified_nonlinear_ground_distortion_remainder",
+    "localization": null,
+    "receipt_sha256": "67db7889e97295611c583b7884c38d09e398b1a677501c2895b2d03754b1073d",
+    "reference_promotable": false,
+    "rows": [
+      {
+        "detector_term_m": null,
+        "distance_m": 5.0,
+        "distortion_term_m": null,
+        "first_order_subtotal_m": null,
+        "ground_plane_term_m": null,
+        "height_term_m": null,
+        "intrinsic_term_m": null,
+        "mount_lateral_term_m": null,
+        "pitch_term_m": null,
+        "projection_remainder_m": null,
+        "query_semantics": "CAMERA_RAY_TO_DEFINED_ROAD_ORIGIN_LATERAL_ZERO_NOT_A_LANE_TRUTH_POINT",
+        "roll_term_m": null,
+        "total_conservative_uncertainty_m": null,
+        "yaw_term_m": null
+      },
+      {
+        "detector_term_m": null,
+        "distance_m": 10.0,
+        "distortion_term_m": null,
+        "first_order_subtotal_m": null,
+        "ground_plane_term_m": null,
+        "height_term_m": null,
+        "intrinsic_term_m": null,
+        "mount_lateral_term_m": null,
+        "pitch_term_m": null,
+        "projection_remainder_m": null,
+        "query_semantics": "CAMERA_RAY_TO_DEFINED_ROAD_ORIGIN_LATERAL_ZERO_NOT_A_LANE_TRUTH_POINT",
+        "roll_term_m": null,
+        "total_conservative_uncertainty_m": null,
+        "yaw_term_m": null
+      },
+      {
+        "detector_term_m": null,
+        "distance_m": 20.0,
+        "distortion_term_m": null,
+        "first_order_subtotal_m": null,
+        "ground_plane_term_m": null,
+        "height_term_m": null,
+        "intrinsic_term_m": null,
+        "mount_lateral_term_m": null,
+        "pitch_term_m": null,
+        "projection_remainder_m": null,
+        "query_semantics": "CAMERA_RAY_TO_DEFINED_ROAD_ORIGIN_LATERAL_ZERO_NOT_A_LANE_TRUTH_POINT",
+        "roll_term_m": null,
+        "total_conservative_uncertainty_m": null,
+        "yaw_term_m": null
+      },
+      {
+        "detector_term_m": null,
+        "distance_m": 30.0,
+        "distortion_term_m": null,
+        "first_order_subtotal_m": null,
+        "ground_plane_term_m": null,
+        "height_term_m": null,
+        "intrinsic_term_m": null,
+        "mount_lateral_term_m": null,
+        "pitch_term_m": null,
+        "projection_remainder_m": null,
+        "query_semantics": "CAMERA_RAY_TO_DEFINED_ROAD_ORIGIN_LATERAL_ZERO_NOT_A_LANE_TRUTH_POINT",
+        "roll_term_m": null,
+        "total_conservative_uncertainty_m": null,
+        "yaw_term_m": null
+      }
+    ],
+    "schema": "CALIBRATION_BOUND_PROJECTION_BUDGET_V1",
+    "scope": "FIRST_ORDER_DIAGNOSTIC_NOT_CONSERVATIVE_CERTIFICATE",
+    "status": "PENDING"
+  },
+  "receipt_sha256": "92ceb3b4c528fe80cb92c770d8ce6a0ce4df4dcf4b268d1f7446a35d12f13a6e",
+  "reference_promotable": false,
+  "road_registration": {
+    "blockers": [
+      "METRIC_CALIBRATION_UNAVAILABLE",
+      "COMMA10K_EGO_LANE_IDENTITY_UNAVAILABLE",
+      "PROJECTION_REMAINDER_UNVALIDATED",
+      "INDEPENDENT_ROAD_TIME_REGISTRATION_PENDING"
+    ],
+    "calibration_sha256": "8796f4ff3a05ea19e06a41a9f405d7e75ff3c8a130c1eb2e2ebc5f8f90364acb",
+    "ego_pair_sha256": null,
+    "meter_reference_allowed": false,
+    "receipt_sha256": "02c6f8852e32283eab44b7ec493a1fd1cb939fa7afb47b1740913387b2b25db2",
+    "reference_promotable": false,
+    "schema": "ROAD_FRAME_REGISTRATION_GATE_V1",
+    "status": "BLOCKED",
+    "structural_pose_available": false,
+    "tool_sha256": "96862f50e49fd8d0064a60c415c30a7d9b9e8da5adbe73c75d87ca3369b17eb5"
+  },
+  "schema": "NEXT_BLOCKER_PLAN_V2_REFERENCE_INFRASTRUCTURE",
+  "sealed_reference": "NOT_GENERATED",
+  "state_machine_policy": {
+    "allowed_states_design_only": {
+      "CALIBRATION": [
+        "PENDING",
+        "ADMITTED",
+        "REJECTED"
+      ],
+      "EGO_ASSOCIATION": [
+        "DEFINED",
+        "VALIDATION_PENDING",
+        "VALIDATED"
+      ],
+      "PRIVATE_DIAGNOSTIC": [
+        "PROPOSED",
+        "MANIFEST_READY",
+        "AUTHORIZED",
+        "RUN",
+        "COMPLETE"
+      ],
+      "REFERENCE": [
+        "UNAVAILABLE",
+        "INPUTS_READY",
+        "SEALED"
+      ],
+      "ROAD_REGISTRATION": [
+        "BLOCKED",
+        "STRUCTURALLY_READY",
+        "VALIDATED"
+      ]
+    },
+    "independent_measurement": "PENDING_HUMAN_PHYSICAL_ARTIFACT_NO_DEFAULT_VALUES",
+    "private_execution": "EXPLICITLY_PROHIBITED_THIS_INCREMENT",
+    "schema": "REFERENCE_INFRASTRUCTURE_POLICY_V1",
+    "sealed_reference": "NOT_GENERATED",
+    "state_transitions": "FUTURE_DECLARED_INDEPENDENT_VALIDATORS_AND_EXECUTION_AUTHORITY_REQUIRED; NO_AUTOMATIC_TRANSITIONS",
+    "states": {
+      "CALIBRATION": "PENDING",
+      "EGO_ASSOCIATION": "VALIDATION_PENDING",
+      "PRIVATE_DIAGNOSTIC": "PROPOSED_NOT_RUN",
+      "REFERENCE": "UNAVAILABLE",
+      "ROAD_REGISTRATION": "BLOCKED"
+    },
+    "validation": "STRUCTURAL_ADMISSION_IS_NOT_CALIBRATION_OR_EGO_VALIDATION"
+  },
+  "states": {
+    "CALIBRATION": "PENDING",
+    "EGO_ASSOCIATION": "VALIDATION_PENDING",
+    "PRIVATE_DIAGNOSTIC": "PROPOSED_NOT_RUN",
+    "REFERENCE": "UNAVAILABLE",
+    "ROAD_REGISTRATION": "BLOCKED"
+  },
+  "status": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "tool_sha256": "f0a02b8902af14d1ab2771b27d15cf850bd25c5bae75d9bf817940444bd365c9",
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

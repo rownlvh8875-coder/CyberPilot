@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "protocol_id": "CYBER_D3Y_PROSPECTIVE_V1",
+  "frozen_at_utc": "2026-10-03T12:11:42Z",
+  "target_vehicle": "HYUNDAI_SANTA_FE_2022",
+  "model_family": "YR_AR1_SPEED_FIXED",
+  "expected_model_sha256": "dcd7cef76e336db015d5b4ec129991ea7c963053f30c88f966dfeac33bfa69a6",
+  "expected_adapter_sha256": "01f688b3202b2838e0f3e9052649771cf268f8253f90f7019b7ddbac35ce5a1b",
+  "expected_plant_builder_sha256": "2f681e13d73ab7fb1729e744167ca1917cd3b04c61d0353024424a3c42a3ab37",
+  "expected_validation_runner_sha256": "2622701e89bb1935ef3c819197722f5418f97ec45a79e97f06941f0786c4474d",
+  "minimum_validation_routes": 4,
+  "minimum_validation_sequences": 16,
+  "minimum_eligible_pose_samples": 5000,
+  "maximum_stability_radius": 0.98,
+  "require_independent_primary_position_truth": true,
+  "require_external_reproduction_for_review": true,
+  "horizons": [
+    {
+      "horizon_s": 1.0,
+      "minimum_window_count": 200,
+      "minimum_sample_count": 4000,
+      "maximum_yaw_rate_rmse_rad_s": 0.005,
+      "minimum_yaw_rate_correlation": 0.97,
+      "maximum_heading_endpoint_rmse_rad": 0.005,
+      "maximum_path_endpoint_rmse_m": 0.05,
+      "maximum_path_xy_rmse_m": 0.025
+    },
+    {
+      "horizon_s": 5.0,
+      "minimum_window_count": 40,
+      "minimum_sample_count": 4000,
+      "maximum_yaw_rate_rmse_rad_s": 0.006,
+      "minimum_yaw_rate_correlation": 0.96,
+      "maximum_heading_endpoint_rmse_rad": 0.025,
+      "maximum_path_endpoint_rmse_m": 0.75,
+      "maximum_path_xy_rmse_m": 0.35
+    },
+    {
+      "horizon_s": 10.0,
+      "minimum_window_count": 20,
+      "minimum_sample_count": 4000,
+      "maximum_yaw_rate_rmse_rad_s": 0.006,
+      "minimum_yaw_rate_correlation": 0.955,
+      "maximum_heading_endpoint_rmse_rad": 0.04,
+      "maximum_path_endpoint_rmse_m": 2.0,
+      "maximum_path_xy_rmse_m": 0.9
+    }
+  ]
+}
