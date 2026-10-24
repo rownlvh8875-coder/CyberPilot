@@ -22,6 +22,7 @@ from openpilot.selfdrive.controls.lib.cyber_lateral.jerk_observer import (
 from openpilot.selfdrive.controls.lib.cyber_lateral.path_observer import (
   PathQualityInput, PathQualityObservation, align_path_to_stations, observe_path_quality,
 )
+from openpilot.selfdrive.controls.lib.cyber_lateral.diagnostic_capture import capture_native_inputs
 from openpilot.selfdrive.controls.lib.drive_helpers import clip_curvature
 from openpilot.selfdrive.controls.lib.latcontrol import LatControl
 from openpilot.selfdrive.controls.lib.latcontrol_pid import LatControlPID
@@ -86,6 +87,9 @@ class Controls:
     )
     self.cyber_lateral = CyberLateralCoordinator(cyber_lateral_config, self.cyber_lateral_binding)
     self._cyber_lateral_pending = None
+    self._cyber_diagnostic_cycle = 0
+    self._cyber_diagnostic_capture_pending = None
+    self._cyber_diagnostic_capture = None
 
   def update(self):
     self.sm.update(15)
@@ -293,6 +297,32 @@ class Controls:
         cloudlog.error(f"actuators.{p} not finite {actuators.to_dict()}")
         setattr(actuators, p, 0.0)
 
+    # Copy diagnostic values only after final actuator sanitization.
+    # No callback, command writer or observer calculation runs at this boundary.
+    self._cyber_diagnostic_capture_pending = None
+    if self.cyber_lateral.config.mode == CyberLateralMode.OBSERVE_ONLY:
+      try:
+        self._cyber_diagnostic_cycle = getattr(self, '_cyber_diagnostic_cycle', 0) + 1
+        if self.sm.updated['modelV2']:
+          self._cyber_diagnostic_capture_pending = capture_native_inputs(
+            model=model_v2,
+            controller_cycle_id=self._cyber_diagnostic_cycle,
+            message_times_ns=tuple(self.sm.logMonoTime[name] for name in
+                                   ('modelV2', 'carState', 'vehicleParameters', 'lateralDelay')),
+            current_curvature_1pm=float(self.curvature),
+            final_desired_curvature_1pm=float(self.desired_curvature),
+            curvature_limited=bool(curvature_limited),
+            native_result=(float(steer), float(lateral_output)),
+            actuator_bytes=actuators.as_reader().as_builder().to_bytes(),
+            binding=self.cyber_lateral_binding,
+            lat_active=bool(CC.latActive),
+            driver_override=bool(CS.steeringPressed),
+            input_valid=bool(self.sm.all_checks(['modelV2', 'carState', 'vehicleParameters', 'lateralDelay'])),
+          )
+      except Exception:
+        # A diagnostic capture failure must not replace or suppress Native output.
+        self._cyber_diagnostic_capture_pending = None
+
     return CC, lac_log
 
   def publish(self, CC, lac_log):
@@ -373,6 +403,9 @@ class Controls:
 
     # Cyber diagnostics are deliberately after both native control publications.
     self._update_cyber_lateral_observation()
+    # Capture only: expose no Runtime consumer or publication.
+    self._cyber_diagnostic_capture = getattr(self, '_cyber_diagnostic_capture_pending', None)
+    self._cyber_diagnostic_capture_pending = None
 
   def run(self):
     rk = Ratekeeper(100, print_delay_threshold=None)
