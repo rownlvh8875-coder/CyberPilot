@@ -1,0 +1,76 @@
+name: CyberPilot F65 Source Separation Contract
+
+on:
+  push:
+    branches: [feature/f65-source-separation-contract]
+  pull_request:
+    branches: [develop]
+
+permissions:
+  contents: read
+
+env:
+  GIT_LFS_SKIP_SMUDGE: '1'
+  PYTHONDONTWRITEBYTECODE: '1'
+  PYTHONNOUSERSITE: '1'
+  PYTHONHASHSEED: '0'
+
+jobs:
+  f65-source-contract:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          lfs: false
+          submodules: false
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12.13'
+          architecture: x64
+          check-latest: false
+      - name: Exact new synthetic tests under Controller import sentinel
+        shell: bash
+        run: |
+          set -euo pipefail
+          umask 077
+          mkdir -m 700 "$RUNNER_TEMP/f65-private"
+          python -B -m tools.cyberpilot.run_f65_source_separation_v1 --tests > "$RUNNER_TEMP/f65-private/test-ledger.json"
+          python -B - <<'PY'
+          import json, os
+          from pathlib import Path
+          x = json.loads((Path(os.environ['RUNNER_TEMP'])/'f65-private/test-ledger.json').read_bytes())
+          expected = Path('artifacts/f65/test_ids.txt').read_text().splitlines()
+          assert len(expected) == len(set(expected)) > 0
+          assert x['records'] == [{'id': i, 'status': 'PASS'} for i in expected]
+          assert x['test_count'] == len(expected) and not any(x['guard_counts'].values())
+          PY
+      - name: Retain unchanged F64 public regression contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -B -m tools.cyberpilot.f64.entry --tests > "$RUNNER_TEMP/f65-private/f64-ledger.json"
+      - name: Actual failed F64 seal must be rejected
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -m 700 "$RUNNER_TEMP/f65-private/failed"
+          cp artifacts/f64/F64_FINAL_SEAL.json "$RUNNER_TEMP/f65-private/failed/final_result.json"
+          if python -B -m tools.cyberpilot.run_f65_source_separation_v1 --verify-bundle "$RUNNER_TEMP/f65-private/failed"; then
+            echo 'F65_FAILED_STATUS_WAS_ACCEPTED'
+            exit 1
+          fi
+      - name: Fail-closed final source and result qualification
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -B -m tools.cyberpilot.run_f65_source_separation_v1 --verify-bundle artifacts/f65/evaluation
+      - name: Preserve existing source checkout
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          test -z "$(git status --porcelain=v1 --untracked-files=all)"
