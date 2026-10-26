@@ -1,0 +1,96 @@
+name: CyberPilot F64 Synthetic Contract Oracle
+
+on:
+  push:
+    branches: [feature/f64-synthetic-contract-oracle]
+  pull_request:
+    branches: [develop]
+
+permissions:
+  contents: read
+
+env:
+  GIT_LFS_SKIP_SMUDGE: '1'
+  PYTHONDONTWRITEBYTECODE: '1'
+  PYTHONNOUSERSITE: '1'
+  PYTHONHASHSEED: '0'
+
+jobs:
+  f64-contract-oracle:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout public source only
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          lfs: false
+          submodules: false
+          persist-credentials: false
+      - name: Select exact Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12.13'
+          architecture: x64
+          check-latest: false
+      - name: Guarded exact-ID schema time metric boundary and isolation tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          umask 077
+          test "$(python -c 'import platform; print(platform.python_version())')" = 3.12.13
+          mkdir -m 700 "$RUNNER_TEMP/f64-private"
+          python -B -m tools.cyberpilot.f64.entry --tests > "$RUNNER_TEMP/f64-private/tests.json"
+          python -B - <<'PY'
+          import json, os
+          from pathlib import Path
+          result = json.loads((Path(os.environ['RUNNER_TEMP'])/'f64-private/tests.json').read_bytes())
+          expected = Path('artifacts/f64/public_test_ids.txt').read_text().splitlines()
+          assert len(expected) == len(set(expected)) > 0
+          assert result['records'] == [{'id': i, 'status': 'PASS'} for i in expected]
+          assert result['tests'] == len(expected) and result['controller_calls'] == 0
+          assert result['output_capture_empty']
+          PY
+      - name: Reproduce public fixtures with no private data
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -B -m tools.cyberpilot.f64.entry --public --output "$RUNNER_TEMP/f64-private/public"
+      - name: Verify immutable sealed holdout and protected hash receipts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -B - <<'PY'
+          import hashlib, json, stat, zipfile
+          from pathlib import Path, PurePosixPath
+          root = Path('artifacts/f64')
+          seal = json.loads((root/'F64_FINAL_SEAL.json').read_bytes())
+          zpath = root/'F64_DELIVERY.zip'
+          assert hashlib.sha256(zpath.read_bytes()).hexdigest() == seal['delivery_zip_sha256']
+          assert (root/'protected_artifacts_before.sha256').read_bytes() == (root/'protected_artifacts_after.sha256').read_bytes()
+          # These are hash receipts; original private local archives are never uploaded.
+          assert seal['protected_artifacts_local_audit'] == 'PASS'
+          with zipfile.ZipFile(zpath) as z:
+            assert z.testzip() is None
+            assert len(z.namelist()) == len(set(z.namelist()))
+            for i in z.infolist():
+              p = PurePosixPath(i.filename)
+              assert not p.is_absolute() and '..' not in p.parts and '\\' not in i.filename
+              assert not stat.S_ISLNK(i.external_attr >> 16)
+            manifest = json.loads(z.read('F64_FILE_MANIFEST.json'))
+            assert set(z.namelist()) == {v['path'] for v in manifest['files']} | {'F64_FILE_MANIFEST.json'}
+            for v in manifest['files']:
+              data = z.read(v['path'])
+              assert len(data) == v['bytes'] and hashlib.sha256(data).hexdigest() == v['sha256']
+          holdout = json.loads((root/'metric_oracle_results.json').read_bytes())
+          assert holdout['all_contract_checks_pass'] and holdout['controller_calls'] == 0
+          assert holdout['r_budget'] == 'R_BUDGET_UNRESOLVED'
+          print('F64_SYNTHETIC_CONTRACT_CHECKS_VERIFIED_ONLY; ORIGINAL_ARCHIVE_BYTES_LOCAL_AUDIT_ONLY')
+          PY
+      - name: Preserve source checkout
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          test -z "$(git status --porcelain=v1 --untracked-files=all)"

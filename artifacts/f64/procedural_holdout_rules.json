@@ -1,0 +1,11 @@
+{
+  "identity": "F64_PROCEDURAL_HOLDOUT_RULES_V1",
+  "cohort_adjudications": 1,
+  "preplanned_reproductions": 2,
+  "valid_new_source_cases_per_pass": 14,
+  "reused_public_invalid_regression_controls_per_pass": 8,
+  "novelty_scope": "Only14 valid synthetic-source fixture bytes. The8 invalid controls intentionally stay public/reused, and are never described as development-unseen.",
+  "valid_fixture_overlap_with_public": "Any exact byte SHA256 overlap makes F64_HOLDOUT_FAIL; no seed retry or filtering.",
+  "reproduction_policy": "Both fixed passes complete before any intermediate metric output is inspected. One combined verdict, no code/threshold/seed changes afterward.",
+  "interpretation": "Procedural development-unseen source, not external secret, real drive, Controller performance, candidate generalization or Private E2/HOLDOUT."
+}
