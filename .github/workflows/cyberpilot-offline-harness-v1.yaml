@@ -112,3 +112,429 @@ jobs:
           set -euo pipefail
           git diff --check
           test -z "$(git status --porcelain=v1 --untracked-files=all)"
+
+  shadow-boundary-exact27:
+    name: CYBERPILOT_SHADOW_BOUNDARY_EXACT27_SYNTHETIC
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout public source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 1
+          lfs: false
+          submodules: false
+          persist-credentials: false
+      - name: Select pinned Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12.13'
+          architecture: x64
+          check-latest: false
+      - name: Verify source, exact discovery, execution and privacy
+        shell: bash
+        run: |
+          set -euo pipefail
+          umask 077
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/f58-shadow-exact27/pycache"
+          python -B - <<'PY'
+          """Independent Exact27 CI: synthetic tests only, no Controller or private log inputs."""
+          import builtins
+          import hashlib
+          import importlib
+          import importlib.abc
+          import io
+          import json
+          import os
+          from pathlib import Path
+          import re
+          import subprocess
+          import sys
+          import tempfile
+          import threading
+          import unittest
+          from typing import Any, cast
+
+          ROOT = Path.cwd().resolve()
+          TEST_MODULE = 'tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1'
+          EXPECTED_IDS = (
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.BoundaryTests.test_cli_argument_and_private_path_canary_are_not_printed",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.BoundaryTests.test_existing_or_symlink_output_is_not_changed",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.BoundaryTests.test_nested_exception_does_not_cross_cli_boundary",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.BoundaryTests.test_output_inside_historical_input_is_rejected_before_any_read",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.BoundaryTests.test_pinned_private_artifact_read_and_hash_mismatch",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.BoundaryTests.test_symlink_or_unsafe_artifact_name_is_rejected",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.BoundaryTests.test_unknown_loaded_module_location_fails_closed",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_6000_unqualified_commands_remain_6000_not_a_qualified_subset",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_active_transition_is_not_a_continuous_rate_pair",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_changed_command_is_rejected_instead_of_overwriting_baseline",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_duplicate_or_reversed_command_timestamp_is_rejected",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_forged_recorded_candidate_does_not_grant_controller_authority",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_identical_commands_pass_fidelity_and_block_all_controller_execution",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_inputs_and_canonical_output_are_immutable_and_deterministic",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_invalid_flag_type_is_not_coerced_to_bool",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_invalid_record_is_preserved_but_has_no_rate_continuation",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_missing_duplicate_or_extra_command_is_rejected",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_nan_infinity_or_non_numeric_command_is_rejected",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_negative_zero_change_is_not_hidden_by_numeric_equality",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_no_controller_process_transport_or_schema_import",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_no_implicit_unit_rescaling_or_assumed_negative_command_limit",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_original_wire_order_is_not_sorted_to_conceal_reversal",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_qualification_missing_duplicate_or_future_mapping_is_rejected",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_rate_is_observed_difference_not_a_physical_or_deadline_claim",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_unknown_or_missing_field_is_rejected_before_statistics",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_unknown_status_cannot_be_promoted_to_pass",
+            "tools.cyberpilot.tests.test_recorded_command_invariant_gate_v1.InvariantTests.test_wrong_binding_or_service_is_rejected"
+          )
+          IDS_SHA = 'c4696ba7d9089f274fc761a6a8b6b2f7a6a90fceeccc8f2199507b20e39e21d2'
+          SOURCE_PINS = {
+            'tools/cyberpilot/recorded_command_invariant_gate_v1.py': '74a11ee84df2e7baf28804e0efee4d22056ebc5d4ffa41ba01fed636fe010cb6',
+            'tools/cyberpilot/tests/test_recorded_command_invariant_gate_v1.py': 'ee01ebd843afb41385dade71cc905d4de6d16a6fad75844c7da066f0f651a1dd',
+            'docs/cyberpilot/changes/recorded-command-invariant-gate-v1.json': '20f528f924813b16fee6bf3d493666d2ceb8c38cf469689d3119f4be93c2bbf8',
+            'tools/cyberpilot/run_offline_harness_ci_v1.py': '2e4ca62c432cfe298e70af77413a3d97fb37db7922d5f70d0b4039b691314e82',
+          }
+          WORKFLOW = ROOT / '.github/workflows/cyberpilot-offline-harness-v1.yaml'
+          CANARIES = (b'F56_SYNTHETIC_PRIVATE_CANARY', b'F54_SYNTHETIC_PRIVATE_CANARY', b'F51_SYNTHETIC_PRIVATE_CANARY')
+          ERRORS = frozenset(('EXPECTED_ID_CONTRACT_INVALID', 'DISCOVERY_MISMATCH', 'EXECUTION_INVALID',
+                             'TEST_OUTCOME_FAILED', 'SOURCE_IDENTITY_MISMATCH', 'PRIVACY_GATE_FAILED',
+                             'RUNTIME_OR_PRIVATE_IO_BLOCKED', 'BOUNDARY_CONTRACT_INVALID', 'ENVIRONMENT_UNQUALIFIED',
+                             'CHECKOUT_IDENTITY_MISMATCH', 'WORKSPACE_MUTATED', 'UNEXPECTED_INTERNAL_ERROR'))
+
+
+          class GateError(ValueError):
+            """Only fixed public failure codes."""
+
+
+          def need(value, code):
+            if not value:
+              raise GateError(code)
+
+
+          def canonical(value):
+            return (json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False) + '\n').encode()
+
+
+          def digest(data):
+            return hashlib.sha256(data).hexdigest()
+
+
+          def safe_error(error):
+            if isinstance(error, GateError) and error.args and type(error.args[0]) is str and error.args[0] in ERRORS:
+              return error.args[0]
+            return 'UNEXPECTED_INTERNAL_ERROR'
+
+
+          def verify_file(path, expected):
+            need(path.is_file() and not any(p.is_symlink() for p in (path, *path.parents)), 'SOURCE_IDENTITY_MISMATCH')
+            data = path.read_bytes()
+            need(digest(data) == expected, 'SOURCE_IDENTITY_MISMATCH')
+            return data
+
+
+          def contract_ids(expected, actual):
+            expected, actual = tuple(expected), tuple(actual)
+            need(len(expected) == len(set(expected)) == 27 and expected == tuple(sorted(expected)) and
+                 digest(('\n'.join(expected) + '\n').encode()) == IDS_SHA, 'EXPECTED_ID_CONTRACT_INVALID')
+            need(len(actual) == len(set(actual)) == 27 and set(actual) == set(expected), 'DISCOVERY_MISMATCH')
+
+
+          class ExactResult(unittest.TextTestResult):
+            def __init__(self, *args, **kwargs):
+              super().__init__(*args, **kwargs)
+              self.started = []
+              self.completed = []
+              self.rows = {}
+              self.active = set()
+
+            def startTest(self, test):
+              name = test.id()
+              need(name not in self.started, 'EXECUTION_INVALID')
+              super().startTest(test)
+              self.started.append(name)
+              self.active.add(name)
+
+            def mark(self, test, status):
+              name = test.id()
+              need(name in self.active and name not in self.rows, 'EXECUTION_INVALID')
+              self.rows[name] = status
+
+            def addSuccess(self, test):
+              self.mark(test, 'PASS')
+              super().addSuccess(test)
+
+            def addFailure(self, test, err):
+              self.mark(test, 'FAIL')
+              super().addFailure(test, err)
+
+            def addError(self, test, err):
+              self.mark(test, 'ERROR')
+              super().addError(test, err)
+
+            def addSkip(self, test, reason):
+              self.mark(test, 'SKIP')
+              super().addSkip(test, reason)
+
+            def addExpectedFailure(self, test, err):
+              self.mark(test, 'XFAIL')
+              super().addExpectedFailure(test, err)
+
+            def addUnexpectedSuccess(self, test):
+              self.mark(test, 'XPASS')
+              super().addUnexpectedSuccess(test)
+
+            def addSubTest(self, test, subtest, err):
+              super().addSubTest(test, subtest, err)
+              if err is not None:
+                need(test.id() in self.active, 'EXECUTION_INVALID')
+                self.rows[test.id()] = 'FAIL' if issubclass(err[0], test.failureException) else 'ERROR'
+
+            def stopTest(self, test):
+              need(test.id() in self.active, 'EXECUTION_INVALID')
+              self.active.remove(test.id())
+              self.completed.append(test.id())
+              super().stopTest(test)
+
+
+          def execute(suite, expected):
+            stream = io.StringIO()
+            result = unittest.TextTestRunner(stream=stream, verbosity=2, resultclass=ExactResult).run(suite)
+            expected = list(expected)
+            need(expected and len(expected) == len(set(expected)) and
+                 result.testsRun == len(expected) == len(result.rows) and
+                 sorted(result.started) == sorted(result.completed) == sorted(result.rows) == sorted(expected) and
+                 not result.active, 'EXECUTION_INVALID')
+            need(result.wasSuccessful() and not (result.failures or result.errors or result.skipped or
+                 result.expectedFailures or result.unexpectedSuccesses) and
+                 set(result.rows.values()) == {'PASS'}, 'TEST_OUTCOME_FAILED')
+            return {'started_ids': sorted(result.started), 'completed_ids': sorted(result.completed),
+                    'records': [{'id': i, 'status': result.rows[i]} for i in sorted(expected)],
+                    'tests_run': result.testsRun,
+                    'counts': {'passed': len(expected), 'failed': 0, 'errors': 0, 'skipped': 0, 'xfailed': 0, 'xpassed': 0},
+                    '_private_test_output': stream.getvalue()}
+
+
+          def check_privacy(*buffers):
+            for data in buffers:
+              if isinstance(data, str):
+                data = data.encode()
+              need(isinstance(data, bytes) and len(data) <= 8*1024**2 and
+                   not any(token in data for token in CANARIES), 'PRIVACY_GATE_FAILED')
+
+
+          def check_boundary(value):
+            n = value.get('command_count')
+            a = value.get('admission', {})
+            need(type(n) is int and n > 0 and value.get('data_origin') == 'UNATTESTED_PURE_INPUT' and
+                 value.get('primary_counts') == {'SOURCE_SCHEMA_UNQUALIFIED': n} and
+                 a.get('status') == 'BLOCKED' and a.get('blocked_commands') == n and
+                 type(a.get('controller_invocations')) is int and a.get('controller_invocations') == 0 and
+                 a.get('candidate_output') is None and a.get('controller_execution_supported') is False and
+                 a.get('actual_consumer_input_proven') is False and value.get('runtime_authorized') is False and
+                 value.get('vehicle_authority') == 'NONE' and value.get('native_exact_replay_proven') is False and
+                 value.get('physical_response_qualified') is False and value.get('target_deadline_qualified') is False,
+                 'BOUNDARY_CONTRACT_INVALID')
+
+
+          class Policy(importlib.abc.MetaPathFinder):
+            """Scoped cooperative guard;not a hostile same-UID/root sandbox."""
+            def __init__(self, root, files, read_roots):
+              self.root = Path(root).resolve()
+              self.files = {Path(p).resolve() for p in files}
+              self.read_roots = tuple(Path(p).resolve() for p in read_roots)
+              self.violations = 0
+              self.local = threading.local()
+              self.open_os = os.open
+              self.open_py = builtins.open
+              self.open_io = io.open
+              self.mkdir_os = os.mkdir
+              self.synthetic_dirs = (Path('/tmp/F56_SYNTHETIC_PRIVATE_CANARY'), Path('/missing'))
+
+            def deny(self):
+              self.violations += 1
+              raise GateError('RUNTIME_OR_PRIVATE_IO_BLOCKED')
+
+            def import_check(self, name):
+              if name == 'openpilot' or name.startswith(('openpilot.', 'cereal', 'capnp', 'zstandard', 'opendbc', 'msgq')):
+                self.deny()
+
+            def find_spec(self, fullname, path=None, target=None):
+              self.import_check(fullname)
+              return None
+
+            def absolute(self, path, dir_fd=None):
+              if isinstance(path, int):
+                path = os.readlink('/proc/self/fd/' + str(path))
+              value = Path(os.fsdecode(os.fspath(path)))
+              if '..' in value.parts:
+                self.deny()
+              if not value.is_absolute():
+                parent = Path.cwd() if dir_fd is None else Path(os.readlink('/proc/self/fd/' + str(dir_fd)))
+                value = parent / value
+              return value
+
+            def authorize(self, path, write=False, dir_fd=None, nofollow=False, directory=False):
+              lexical = self.absolute(path, dir_fd)
+              if lexical.name.lower() in ('rlog', 'qlog') or lexical.suffix.lower() in ('.zst', '.rlog', '.qlog') or any(
+                  part.lower() in ('private_e2', 'holdout', '.ssh') for part in lexical.parts):
+                self.deny()
+              resolved = lexical.resolve()
+              under_temp = lexical.is_relative_to(self.root) and resolved.is_relative_to(self.root)
+              if nofollow and lexical.is_relative_to(self.root) and lexical.parent.resolve().is_relative_to(self.root):
+                under_temp = True  # OS O_NOFOLLOW rejects a symlink leaf;expected negative fixture.
+              if directory:
+                roots = (self.root, ROOT, *self.read_roots, *self.synthetic_dirs)
+                if any(resolved.is_relative_to(p) or p.is_relative_to(resolved) for p in roots):
+                  return
+                self.deny()
+              if under_temp or (not write and (resolved in self.files or any(resolved.is_relative_to(p) for p in self.read_roots))):
+                return
+              self.deny()
+
+            def audit(self, event, args):
+              if event.startswith(('subprocess.', 'socket.')) or event in ('os.system', 'os.exec', 'os.posix_spawn', 'os.fork'):
+                self.deny()
+              if event == 'ctypes.dlopen' and args and args[0] is not None:
+                self.deny()
+              if event == 'open' and not getattr(self.local, 'validated_open', False):
+                flags = args[2] if len(args) > 2 and isinstance(args[2], int) else 0
+                write = bool(flags & (os.O_WRONLY | os.O_RDWR | os.O_CREAT | os.O_TRUNC | os.O_APPEND))
+                self.authorize(args[0], write=write, nofollow=bool(flags & os.O_NOFOLLOW),
+                               directory=bool(flags & os.O_DIRECTORY))
+              if event in ('os.mkdir', 'os.remove', 'os.rmdir', 'os.chmod'):
+                self.authorize(args[0], write=True, dir_fd=args[-1] if isinstance(args[-1], int) and args[-1] >= 0 else None)
+              if event in ('os.rename', 'os.link'):
+                self.authorize(args[0], write=True, dir_fd=args[2] if args[2] >= 0 else None)
+                self.authorize(args[1], write=True, dir_fd=args[3] if args[3] >= 0 else None)
+              if event == 'os.symlink':
+                self.authorize(args[1], write=True, dir_fd=args[2] if args[2] >= 0 else None)
+
+            def mkdir(self, path: str | bytes | os.PathLike[str] | os.PathLike[bytes], mode: int = 0o777, *, dir_fd: int | None = None) -> None:
+              absolute = self.absolute(path, dir_fd)
+              if absolute in self.root.parents:
+                need(absolute.is_dir() and not absolute.is_symlink(), 'ENVIRONMENT_UNQUALIFIED')
+                raise FileExistsError('EXISTING_TEMP_ANCESTOR')
+              self.authorize(path, write=True, dir_fd=dir_fd)
+              return self.mkdir_os(path, mode, dir_fd=dir_fd)
+
+            def install(self):
+              def os_open(path: str | bytes | os.PathLike[str] | os.PathLike[bytes], flags: int, mode: int = 0o777, *, dir_fd: int | None = None) -> int:
+                self.authorize(path, write=bool(flags & (os.O_WRONLY | os.O_RDWR | os.O_CREAT | os.O_TRUNC | os.O_APPEND)),
+                               dir_fd=dir_fd, nofollow=bool(flags & os.O_NOFOLLOW), directory=bool(flags & os.O_DIRECTORY))
+                self.local.validated_open = True
+                try:
+                  return self.open_os(path, flags, mode, dir_fd=dir_fd)
+                finally:
+                  self.local.validated_open = False
+              def wrap(fn):
+                def checked(file, mode='r', *args, **kwargs):
+                  self.authorize(file, write=any(c in mode for c in 'wax+'))
+                  self.local.validated_open = True
+                  try:
+                    return fn(file, mode, *args, **kwargs)
+                  finally:
+                    self.local.validated_open = False
+                return checked
+              os.mkdir = cast(Any, self.mkdir)  # Runtime adapter for the platform's overloaded OS API.
+              os.supports_dir_fd.add(os.mkdir)
+              os.open = cast(Any, os_open)
+              os.supports_dir_fd.add(os_open)
+              builtins.open = wrap(self.open_py)
+              io.open = wrap(self.open_io)
+              sys.meta_path.insert(0, self)
+              sys.addaudithook(self.audit)
+
+
+          def flatten(suite):
+            for item in suite:
+              if isinstance(item, unittest.TestSuite):
+                yield from flatten(item)
+              else:
+                yield item
+
+
+          def main():
+            need(sys.version_info[:3] == (3, 12, 13) and sys.platform == 'linux' and os.geteuid() != 0 and __debug__,
+                 'ENVIRONMENT_UNQUALIFIED')
+            actual_head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+            need(re.fullmatch('[0-9a-f]{40}', os.environ.get('GITHUB_SHA', '')) and
+                 actual_head == os.environ['GITHUB_SHA'], 'CHECKOUT_IDENTITY_MISMATCH')
+            workflow_before = WORKFLOW.read_bytes()
+            for name, expected in SOURCE_PINS.items():
+              verify_file(ROOT / name, expected)
+            from tools.cyberpilot import run_offline_harness_ci_v1 as helper
+            helper.check_source_pins()
+            sec = helper.security()
+            temporary = Path(os.environ['RUNNER_TEMP'])
+            need(temporary.is_absolute() and '..' not in temporary.parts, 'ENVIRONMENT_UNQUALIFIED')
+            folder = sec.SecureDirectory.create(temporary / 'f58-shadow-exact27')
+            try:
+              for name in ('tmp', 'home', 'pycache'):
+                os.mkdir(name, 0o700, dir_fd=folder.fd)
+              os.environ['TMPDIR'] = str(folder.path / 'tmp')
+              tempfile.tempdir = None
+              files = {WORKFLOW, *(ROOT / n for n in (*helper.SOURCE_PINS, *SOURCE_PINS))}
+              policy = Policy(folder.path, files, (sys.base_prefix, sys.prefix))
+              for p in policy.synthetic_dirs:
+                need(not p.exists(), 'ENVIRONMENT_UNQUALIFIED')
+              with helper.capture_output(folder) as sink:
+                policy.install()
+                loader = unittest.TestLoader()
+                suite = loader.loadTestsFromName(TEST_MODULE)
+                need(not loader.errors, 'DISCOVERY_MISMATCH')
+                actual = tuple(t.id() for t in flatten(suite))
+                contract_ids(EXPECTED_IDS, actual)
+                execution = execute(suite, EXPECTED_IDS)
+                test_output = execution.pop('_private_test_output')
+                gate = importlib.import_module('tools.cyberpilot.recorded_command_invariant_gate_v1')
+                base = importlib.import_module('tools.cyberpilot.rlog_observer_regression_v1')
+                values = (('actuators.torque', 0.0), ('actuators.steeringAngleDeg', 0.0),
+                          ('actuators.curvature', 0.0), ('currentCurvature', 0.0),
+                          ('latActive', False), ('enabled', False), ('longActive', False))
+                binding = 'f' * 64
+                record = base.Record(1, 'carControl', 1_000_000_000, True, values, binding)
+                quality = gate.Qualification(1, record.timestamp_ns, 'SOURCE_SCHEMA_UNQUALIFIED', binding)
+                check_boundary(gate.evaluate((record,), (record,), (quality,), binding=binding))
+                python_output = sink.getvalue()
+              check_privacy(python_output, test_output, folder.read('captured.log', max_bytes=8*1024**2))
+              need(policy.violations == 0, 'RUNTIME_OR_PRIVATE_IO_BLOCKED')
+              for name, expected in SOURCE_PINS.items():
+                verify_file(ROOT / name, expected)
+              helper.check_source_pins()
+              need(WORKFLOW.read_bytes() == workflow_before, 'WORKSPACE_MUTATED')
+              summary = {
+                'identity': 'CYBERPILOT_SHADOW_BOUNDARY_EXACT27_SYNTHETIC_V1',
+                'tested_checkout_sha': actual_head, 'workflow_sha256': digest(workflow_before),
+                'source_sha256': SOURCE_PINS, 'expected_ids_sha256': IDS_SHA,
+                'collected_ids': sorted(actual), 'execution': execution,
+                'privacy': {'canary_matches': 0, 'policy_violations': policy.violations},
+                'synthetic_boundary_probe': 'SOURCE_SCHEMA_UNQUALIFIED_BLOCKED',
+                'real_RLOG_or_projection_executed': False, 'runtime_authority': 'NONE',
+                'native_exact_replay_proven': False, 'vehicle_safety_qualified': False,
+              }
+              body = canonical(summary)
+              folder.write('summary.json', body)
+              folder.write('summary.sha256', (digest(body) + '\n').encode())
+              need(folder.read('summary.json') == body, 'EXECUTION_INVALID')
+              for row in execution['records']:
+                print('F58_TEST ' + json.dumps(row, sort_keys=True))
+              print('F58_EXACT27_EXECUTION_PASS')
+              print('F58_CANONICAL_SHA256 ' + digest(body))
+            finally:
+              folder.close()
+            # Audit forbids process spawn after installation;the outer always step checks Git clean.
+
+
+          if __name__ == '__main__':
+            try:
+              main()
+            except BaseException as failure:
+              print('F58_EXACT27_BLOCKED:' + safe_error(failure))
+              raise SystemExit(2) from None
+          PY
+      - name: Confirm source remains clean
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          test -z "$(git status --porcelain=v1 --untracked-files=all)"
