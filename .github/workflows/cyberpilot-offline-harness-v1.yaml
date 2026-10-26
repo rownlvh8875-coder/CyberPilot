@@ -1,0 +1,114 @@
+name: CyberPilot Offline Harness V1
+
+on:
+  push:
+    branches: [feature/cyber-autotune]
+  pull_request:
+    branches: [develop]
+
+permissions:
+  contents: read
+
+env:
+  GIT_LFS_SKIP_SMUDGE: '1'
+  PYTHONDONTWRITEBYTECODE: '1'
+  PYTHONNOUSERSITE: '1'
+  PYTHONHASHSEED: '0'
+
+jobs:
+  offline-harness:
+    name: CYBERPILOT_OFFLINE_HARNESS_SYNTHETIC_V1
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact event source without private assets
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 1
+          lfs: false
+          submodules: false
+          persist-credentials: false
+
+      - name: Exact Python environment
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12.13'
+          architecture: x64
+          check-latest: false
+
+      - name: Install only the pinned public synthetic compression wheel
+        shell: bash
+        run: |
+          set -euo pipefail
+          umask 077
+          python -m venv "$RUNNER_TEMP/f54-venv"
+          printf '%s\n' 'zstandard==0.25.0 --hash=sha256:5a56ba0db2d244117ed744dfa8f6f5b366e14148e00de44723413b2f3938a902' > "$RUNNER_TEMP/f54-requirements.txt"
+          "$RUNNER_TEMP/f54-venv/bin/python" -m pip --isolated --disable-pip-version-check install --no-cache-dir --index-url https://pypi.org/simple --only-binary=:all: --require-hashes -r "$RUNNER_TEMP/f54-requirements.txt"
+
+      - name: Verify public source and exact manifest before discovery
+        env:
+          EXPECTED_CHECKOUT_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/f54-venv/bin/python" -B - <<'PY'
+          import os
+          import subprocess
+          import sys
+          if not __debug__:
+            raise SystemExit('F54_OPTIMIZED_MODE_REJECTED')
+          from tools.cyberpilot import run_offline_harness_ci_v1 as gate
+          assert sys.version_info[:3] == (3, 12, 13)
+          assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip() == os.environ['EXPECTED_CHECKOUT_SHA']
+          gate.check_source_pins()
+          assert len(gate.parse_manifest(gate.read_source(gate.ROOT, gate.MANIFEST))) == 157
+          print('F54_SOURCE_AND_MANIFEST_VERIFIED')
+          PY
+
+      - name: Discover and run all exact157 synthetic tests with Privacy Gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          umask 077
+          "$RUNNER_TEMP/f54-venv/bin/python" -B tools/cyberpilot/run_offline_harness_ci_v1.py --manifest docs/cyberpilot/changes/offline-harness-test-ids-v1.txt --result "$RUNNER_TEMP/offline-harness-v1/summary.json"
+
+      - name: Independently verify actual execution and canonical result
+        shell: bash
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/f54-venv/bin/python" -B tools/cyberpilot/run_offline_harness_ci_v1.py --verify-result --result "$RUNNER_TEMP/offline-harness-v1/summary.json"
+          "$RUNNER_TEMP/f54-venv/bin/python" -B - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          if not __debug__:
+            raise SystemExit('F54_OPTIMIZED_MODE_REJECTED')
+          manifest = Path('docs/cyberpilot/changes/offline-harness-test-ids-v1.txt').read_bytes()
+          assert hashlib.sha256(manifest).hexdigest() == '9e863f672179c8c2fa755ac52e1e9da8409e70a9cadfbb9458173785dfd57d37'
+          expected = manifest.decode().splitlines()
+          assert len(expected) == len(set(expected)) == 157 and expected == sorted(expected)
+          directory = Path(os.environ['RUNNER_TEMP']) / 'offline-harness-v1'
+          raw = (directory / 'summary.json').read_bytes()
+          summary = json.loads(raw)
+          assert raw == (json.dumps(summary, sort_keys=True, separators=(',', ':'), allow_nan=False) + '\n').encode()
+          execution = summary['execution']
+          assert execution['started_ids'] == execution['completed_ids'] == expected
+          assert len(summary['collected_ids']) == 157 and set(summary['collected_ids']) == set(expected)
+          assert execution['records'] == [{'id': i, 'status': 'PASS'} for i in expected]
+          assert execution['counts'] == {'passed': 157, 'failed': 0, 'errors': 0, 'skipped': 0, 'xfailed': 0, 'xpassed': 0}
+          assert execution['tests_run'] == 157 and summary['runtime_authority'] == 'NONE'
+          assert summary['privacy'] == {'policy_violations': 0, 'child_handshakes_verified': True, 'canary_matches': 0, 'execution_ledger_verified': True}
+          assert (directory / 'summary.sha256').read_text() == hashlib.sha256(raw).hexdigest() + '\n'
+          for record in execution['records']:
+            print('F54_TEST ' + json.dumps(record, sort_keys=True))
+          print('F54_CANONICAL_SHA256 ' + hashlib.sha256(raw).hexdigest())
+          PY
+
+      - name: Confirm no source or tracked artifact mutations
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          test -z "$(git status --porcelain=v1 --untracked-files=all)"
