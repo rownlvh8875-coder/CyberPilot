@@ -1,0 +1,134 @@
+{
+  "angle": {
+    "factor": 0.1,
+    "layout": "0|16@1-",
+    "offset": 0.0,
+    "signal": "SAS11.SAS_Angle",
+    "storage": "FLOAT32_CARSTATE_THEN_EXACT_FLOAT64_CACHE",
+    "unit": "Deg"
+  },
+  "authority": {
+    "candidate": false,
+    "composition": false,
+    "cv_scoring": false,
+    "device": false,
+    "fitting": false,
+    "holdout_opening": false,
+    "optimizer": false,
+    "prediction": false,
+    "production": false,
+    "qlog_support": false,
+    "raw_opening": false,
+    "residual": false,
+    "rollout": false,
+    "selection": false,
+    "sg": false,
+    "ta": false,
+    "vehicle": false
+  },
+  "candidate_search_authorized": false,
+  "command": "LOGGED_POST_CARCONTROLLER_NORMALIZED_COMMAND",
+  "command_source": "carOutput.actuatorsOutput.torque",
+  "composition_authorized": false,
+  "controller_request": "CONTEXT_ONLY_NOT_FEATURE",
+  "driver_torque_feature": false,
+  "family": "S2_RI_V1",
+  "features": [
+    "logged_normalized_command_history",
+    "past_angle_tick_increments",
+    "current_angle_tick",
+    "current_speed_mps",
+    "intercept"
+  ],
+  "name": "RATE_INDEPENDENT_DELTA_ANGLE_CAUSAL_MODEL",
+  "physical_eps": "PHYSICAL_EPS_APPLICATION_UNAVAILABLE",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "raw_command": "PROVENANCE_ONLY_NOT_FEATURE",
+  "receipt_sha256": "e7b422205eba6ee4d1a5839ff8621e91363c2336cab4f302b477479ae32562fa",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_S2_RI_SIGNAL_CONTRACT_V1",
+  "sealed_reference_allowed": false,
+  "semantic_boundary": "LOGGED_COMMAND_REPRESENTATION_TO_MEASURED_STEERING_WHEEL_ANGLE_CHANGE",
+  "sg_execution": false,
+  "source_contract_sha256": "109bc9159d06db8ba696922b93a7dea5d5f265f2bbc0dcbf4d22aade51e2f388",
+  "source_files": {
+    "card": {
+      "file_sha256": "6630e7c50f016112e7591e980a68b7cfd223a5d9fee8f15bb4466cda9ab78e4f",
+      "path": "openpilot/selfdrive/car/card.py",
+      "reviewed_ranges": [],
+      "reviewed_slice_sha256": "6630e7c50f016112e7591e980a68b7cfd223a5d9fee8f15bb4466cda9ab78e4f"
+    },
+    "carstate": {
+      "file_sha256": "018ba9c239f8ab378de26354e3dd9c7eafe40ac513be1213d38f59a4c3a9e374",
+      "path": "opendbc_repo/opendbc/car/hyundai/carstate.py",
+      "reviewed_ranges": [
+        [
+          311,
+          331
+        ]
+      ],
+      "reviewed_slice_sha256": "08ab7088ce9030f3f5875222e0a80d5558f9c9a4f9ccd353047f2a3298c2734f"
+    },
+    "controller": {
+      "file_sha256": "ced1c209e3ef5661add16a97e5b1ff7af7d5f8f96438f6ce9cb56c02c54b87f6",
+      "path": "opendbc_repo/opendbc/car/hyundai/carcontroller.py",
+      "reviewed_ranges": [
+        [
+          192,
+          220
+        ],
+        [
+          235,
+          340
+        ],
+        [
+          555,
+          565
+        ]
+      ],
+      "reviewed_slice_sha256": "badf6c8cc1fa1569b9e8b68ef8b5c8af3934471d1131ad003a61dbff16316ca1"
+    },
+    "dbc": {
+      "file_sha256": "1590039abb51cbfc3dc8ab4151ab78e7f549088fec878480ab4d6f850b18898a",
+      "path": "opendbc_repo/opendbc/dbc/hyundai_kia_generic.dbc",
+      "reviewed_ranges": [
+        [
+          155,
+          159
+        ]
+      ],
+      "reviewed_slice_sha256": "8d2488af220de6765bfd8dd7e4a624ada5a08f4d516cfe17ffb849294b7427b9"
+    },
+    "parser": {
+      "file_sha256": "2e99d9e065a0758453becc55f886d90a33960be08ea5e4f9b6bf3202275063af",
+      "path": "opendbc_repo/opendbc/can/parser.py",
+      "reviewed_ranges": [
+        [
+          15,
+          27
+        ],
+        [
+          54,
+          91
+        ]
+      ],
+      "reviewed_slice_sha256": "17280fa4b1fb6790fb36a87b0de46dab413e4d3b2bb6b4bd749f03def1ee157a"
+    }
+  },
+  "speed_bin_models": false,
+  "speed_interaction": false,
+  "steering_rate_dependency": "NONE",
+  "ta_execution": false,
+  "target": "MEASURED_ANGLE_GRID_INCREMENT_PER_SAMPLE",
+  "transaction": "REQUEST_OUTPUT_TRANSACTION_LINK_UNAVAILABLE",
+  "units": {
+    "angle": "SIGNED_INTEGER_SOURCE_TICKS",
+    "command": "NORMALIZED_LOGGED_REPRESENTATION",
+    "intercept": "DIMENSIONLESS",
+    "past_increment": "SIGNED_SOURCE_GRID_STEPS_PER_SAMPLE_NOT_PHYSICAL_RATE",
+    "speed": "M_PER_S"
+  },
+  "vehicle_activation_allowed": false
+}

@@ -1,0 +1,56 @@
+# UNAPPLIED_PROPOSAL: separate manual diagnostic; never replaces required checks.
+name: CyberPilot Historical Source Routing Diagnostic V2
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnostic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: 1
+      GIT_OPTIONAL_LOCKS: 0
+      OPENBLAS_NUM_THREADS: 1
+      OMP_NUM_THREADS: 1
+    steps:
+      - name: Checkout exact dispatch source and preserved historical objects
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7, independently resolved
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          submodules: recursive
+          lfs: false
+          persist-credentials: false
+      - name: Prepare existing pinned Python development dependencies
+        run: ./tools/op.sh setup
+      - name: Independently validate current A-compatible and historical B1 and inactive B2
+        run: >-
+          .venv/bin/python -B tools/cyberpilot/historical_source_routing_v2.py
+          --repo "$GITHUB_WORKSPACE" --current-root "$GITHUB_WORKSPACE"
+          --contract "$GITHUB_WORKSPACE/docs/cyberpilot/changes/historical-source-routing-v2.json"
+          --output "$RUNNER_TEMP/f32-v2-run"
+      - name: Run source-bound routing and type negative controls
+        env:
+          F32_SOURCE_REPO: ${{ github.workspace }}
+          F32_B1_CAPSULE: ${{ runner.temp }}/f32-v2-run/B1
+          F32_CAPSULE_ROOT: ${{ runner.temp }}/f32-v2-run
+        run: >-
+          .venv/bin/python -B -m unittest -v
+          tools.cyberpilot.tests.test_historical_source_routing_v2
+      - name: Type and style checks on the proposed diagnostic code only
+        run: |
+          .venv/bin/python -m ty check openpilot/selfdrive/controls/lib/cyber_lateral/diagnostic_capture.py
+          .venv/bin/python -m ruff check --no-cache tools/cyberpilot/historical_source_routing_v2.py tools/cyberpilot/tests/test_historical_source_routing_v2.py
+          .venv/bin/python -m codespell_lib tools/cyberpilot/historical_source_routing_v2.py tools/cyberpilot/tests/test_historical_source_routing_v2.py
+      - name: Retain explicit-source public diagnostic result only
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7, independently resolved
+        with:
+          name: historical-routing-v2-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/f32-v2-run/result.json
+            ${{ runner.temp }}/f32-v2-run/lane_A_result.json
+            ${{ runner.temp }}/f32-v2-run/lane_B1_result.json
+            ${{ runner.temp }}/f32-v2-run/lane_B2_result.json
+          if-no-files-found: error
+          retention-days: 7

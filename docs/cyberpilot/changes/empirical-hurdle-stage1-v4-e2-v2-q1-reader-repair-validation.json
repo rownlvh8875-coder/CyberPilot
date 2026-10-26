@@ -1,0 +1,80 @@
+{
+  "execution_head": "7676d761e47654e3c86665a3166dfe88d87b39e0",
+  "final_exact_head_CI": "VERIFY_AFTER_PUBLICATION_COMMIT_NOT_CLAIMED_HERE",
+  "local_checks": {
+    "SCons": "PASS",
+    "compileall": "PASS",
+    "full_AutoTune_controls": {
+      "original_E_D_drives_masked_read_only": true,
+      "passed": 5716,
+      "seconds": 594.23,
+      "workers": 4
+    },
+    "git_diff_check": "PASS",
+    "lateral_synthetic": {
+      "passed": 40
+    },
+    "new_Writer_reader_telemetry_tests": {
+      "passed": 34
+    },
+    "public_JSON_parse": {
+      "files": 829,
+      "result": "PASS"
+    },
+    "publication_before_commit_A": {
+      "files": 4,
+      "findings": 0
+    },
+    "related_B0_B1_C_D_E_D2_E2_diagnostic_attribution": {
+      "overlaps_new_tests": true,
+      "passed": 550
+    },
+    "ruff": "PASS"
+  },
+  "old_protocol_results_and_scientific_runtime": "UNCHANGED",
+  "pre_execution_CI": {
+    "conclusion": "success",
+    "head": "7676d761e47654e3c86665a3166dfe88d87b39e0",
+    "id": 39193687093,
+    "status": "completed",
+    "url": "https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/39193687093"
+  },
+  "pre_execution_CI_checks": {
+    "attribution": {
+      "passed": 95
+    },
+    "full_AutoTune_controls": {
+      "passed": 5716,
+      "seconds": 1321.42
+    },
+    "lateral_replay": {
+      "passed": 16
+    },
+    "publication": {
+      "files": 1934,
+      "findings": 0
+    }
+  },
+  "pre_execution_reviews": {
+    "authority_privacy": {
+      "approval": "APPROVED",
+      "receipt_sha256": "d90fc9fcb002c43cff701714f04c1977173e138f64c0210b466fbc4d6338cb00",
+      "reviewer": "d_authority_review"
+    },
+    "scientific": {
+      "approval": "APPROVED",
+      "receipt_sha256": "599c8ccb77ae73715b364d6a232fea904f6fa4c3d7caefa7f7dc2e4510ab6d68",
+      "reviewer": "d_science_review"
+    }
+  },
+  "protocol_raw_sha256": "d33b3be20b84b6f0cf1848799e6c1e3c299dac227ddbeea8cc2c1cd28bbae725",
+  "public_result_raw_sha256": "e41ef762b9ce7d6b166c97d7bac0111d65d9184b74f8cfb92e1cd5a39fd30913",
+  "public_result_receipt_sha256": "1861bddece3525dc8dcb6bdc2db7e844176f6b9eeeac7205e09c424a6f60e0ec",
+  "publication_review_policy": "TWO_FINAL_BYTE_GIT_EXTERNAL_REVIEW_RECEIPTS_REQUIRED;REPORT_OUTCOME_IN_FINAL_HANDOFF",
+  "receipt_sha256": "ba54f214648704760d6b763a85c1d6291f435b987e5be20680777e2d2f1f5ba6",
+  "result_verification": "STORED_SEALS_READBACK_PASS_NO_SOURCE_INFERENCE_OR_RECOMPUTE",
+  "schema": "CYBERPILOT_V4_Q1_READER_REPAIR_VALIDATION_V2",
+  "source_map_sha256": "ccaaa7f74003d09d875e9f886f65ebad607719cb02c3d6d1ad65a8d977ef1d07",
+  "source_pin_count": 60,
+  "writer_and_original_V4_mathematics_identity": "PASS"
+}

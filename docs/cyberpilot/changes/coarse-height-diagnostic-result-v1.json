@@ -1,0 +1,4270 @@
+{
+  "actual_fx_px": null,
+  "coarse_source_sha256": "d2bb72bf2c0060d1f6e3d5d4d601ed07b248261248a586843c69455fe06caee5",
+  "height_prior_sha256": "90673057619b2c15416dee64bee5f76336ec4f386b9f83d887a39ade186daf9c",
+  "independent": false,
+  "measured_meter_error": null,
+  "nominal_result": {
+    "actual_fx_px": null,
+    "coarse_source_sha256": "d2bb72bf2c0060d1f6e3d5d4d601ed07b248261248a586843c69455fe06caee5",
+    "height_prior_sha256": "90673057619b2c15416dee64bee5f76336ec4f386b9f83d887a39ade186daf9c",
+    "independent": false,
+    "measured_meter_error": null,
+    "orientation_mount_prior_sha256": "bddd081d0b18886d583ddf0154d232d9365a7644bcf4ee5209a970bbc88e69ab",
+    "parameter_roles": {
+      "height": "USER_APPROVED_COARSE_GEOMETRY_PRIOR",
+      "mount_y": "USER_DECLARED_APPROX_CENTER_MOUNT",
+      "orientation": "MODEL_DERIVED_EXTRINSICS_PRIOR"
+    },
+    "physical_measurement": false,
+    "physical_uncertainty": null,
+    "policy_sha256": "35ada2dfa0822088ce455a09cb54e715d23916256d8875d398594d26adff6c9a",
+    "private_input_allowed": false,
+    "qualification_allowed": false,
+    "receipt_sha256": "350d745bbc9c7c8acbd97c5513a6cb7d6976bd9a0625e4d54a024665ce46174b",
+    "reference_promotable": false,
+    "rotation_optical_to_diagnostic_road": [
+      [
+        0.0034877406808864132,
+        -0.040829351978509995,
+        0.9991600470805254
+      ],
+      [
+        -0.9999939076577904,
+        0.0,
+        0.003490651415223732
+      ],
+      [
+        -0.0001425210352664538,
+        -0.9991661343425401,
+        -0.040829103232125546
+      ]
+    ],
+    "rows": [
+      {
+        "center_lateral_left_m": -2.1913725087687957e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": -8.881784197001252e-16,
+        "forward_m": 4.999999999999999,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.0,
+        "lateral_probe_forward_m": 4.999999999999999,
+        "lateral_probe_left_m": 1.0,
+        "lateral_sensitivity_m_per_normalized_u": -5.056935576224317,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -19.25714285766489,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.5714285715471306,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.571428571428571,
+          "roll_world_x_rad": 2.1142857142857143,
+          "yaw_world_z_rad": 4.999999999999999
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857144,
+        "forward_delta_from_nominal_m": 1.7763568394002505e-15,
+        "forward_m": 10.000000000000002,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 2.220446049250313e-16,
+        "lateral_probe_forward_m": 10.0,
+        "lateral_probe_left_m": 1.0000000000000002,
+        "lateral_sensitivity_m_per_normalized_u": -10.05321395166054,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -72.82857143220411,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -7.142857143371817,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -7.142857142857143,
+          "roll_world_x_rad": 2.1142857142857143,
+          "yaw_world_z_rad": 9.999999999999998
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857145,
+        "forward_delta_from_nominal_m": 0.0,
+        "forward_m": 20.0,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 2.220446049250313e-16,
+        "lateral_probe_forward_m": 20.0,
+        "lateral_probe_left_m": 1.0000000000000002,
+        "lateral_sensitivity_m_per_normalized_u": -20.04577070253298,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -287.1142857756581,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -14.285714288686524,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -14.285714285714292,
+          "roll_world_x_rad": 2.1142857142857148,
+          "yaw_world_z_rad": 20.0
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": -3.552713678800501e-15,
+        "forward_m": 29.999999999999996,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.0,
+        "lateral_probe_forward_m": 29.999999999999996,
+        "lateral_probe_left_m": 1.0,
+        "lateral_sensitivity_m_per_normalized_u": -30.038327453405415,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -644.2571431559685,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -21.428571438664168,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -21.428571428571423,
+          "roll_world_x_rad": 2.1142857142857143,
+          "yaw_world_z_rad": 29.99999999999999
+        }
+      }
+    ],
+    "schema": "NOMINAL_APPROX_GEOMETRY_RESULT_V1",
+    "sealed_reference_allowed": false,
+    "source_orientation_deg": [
+      0.0,
+      2.34,
+      0.2
+    ],
+    "total_conservative_uncertainty_m": null,
+    "vehicle_activation_allowed": false
+  },
+  "orientation_mount_prior_sha256": "bddd081d0b18886d583ddf0154d232d9365a7644bcf4ee5209a970bbc88e69ab",
+  "physical_measurement": false,
+  "physical_uncertainty": null,
+  "policy_sha256": "35ada2dfa0822088ce455a09cb54e715d23916256d8875d398594d26adff6c9a",
+  "private_input_allowed": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "0f19e0cea220736be6b177142d9a8c2ebbe7cdc261767370176fc7c10a95940e",
+  "reference_promotable": false,
+  "schema": "COARSE_APPROXIMATE_GEOMETRY_DIAGNOSTIC_RESULT_V1",
+  "sealed_reference_allowed": false,
+  "sensitivity_envelope": {
+    "actual_fx_px": null,
+    "coarse_source_sha256": "d2bb72bf2c0060d1f6e3d5d4d601ed07b248261248a586843c69455fe06caee5",
+    "continuous_bound_claimed": false,
+    "distance_envelopes": [
+      {
+        "center_lateral_left_m": [
+          -2.375052939617351e-18,
+          -2.018957528537706e-18
+        ],
+        "forward_m": [
+          4.595173717591884,
+          5.432133904238073
+        ],
+        "lateral_probe_left_m": [
+          0.921321007933991,
+          1.0838198116082758
+        ],
+        "lateral_sensitivity_m_per_normalized_u": [
+          -5.480701932729648,
+          -4.659144868278592
+        ],
+        "nominal_forward_distance_m": 5.0,
+        "reported_pitch_forward_sensitivity_m_per_rad": [
+          -21.5435229611316,
+          -17.20640713909205
+        ],
+        "scope": "SAMPLED_GRID_ENVELOPE_NOT_CONTINUOUS_OR_PHYSICAL_UNCERTAINTY_BOUND"
+      },
+      {
+        "center_lateral_left_m": [
+          0.0,
+          0.0
+        ],
+        "forward_m": [
+          8.931641450865682,
+          11.211707716742733
+        ],
+        "lateral_probe_left_m": [
+          0.8942907653540147,
+          1.119845280208486
+        ],
+        "lateral_sensitivity_m_per_normalized_u": [
+          -11.257859372555307,
+          -8.990626674111914
+        ],
+        "nominal_forward_distance_m": 10.0,
+        "reported_pitch_forward_sensitivity_m_per_rad": [
+          -86.98182988720049,
+          -61.31061579761621
+        ],
+        "scope": "SAMPLED_GRID_ENVELOPE_NOT_CONTINUOUS_OR_PHYSICAL_UNCERTAINTY_BOUND"
+      },
+      {
+        "center_lateral_left_m": [
+          0.0,
+          0.0
+        ],
+        "forward_m": [
+          16.883531199811113,
+          24.005594975505897
+        ],
+        "lateral_probe_left_m": [
+          0.8447247309444949,
+          1.1995926454411938
+        ],
+        "lateral_sensitivity_m_per_normalized_u": [
+          -24.04651053168268,
+          -16.933294497568948
+        ],
+        "nominal_forward_distance_m": 20.0,
+        "reported_pitch_forward_sensitivity_m_per_rad": [
+          -393.4894491699481,
+          -215.6560344523939
+        ],
+        "scope": "SAMPLED_GRID_ENVELOPE_NOT_CONTINUOUS_OR_PHYSICAL_UNCERTAINTY_BOUND"
+      },
+      {
+        "center_lateral_left_m": [
+          0.0,
+          0.0
+        ],
+        "forward_m": [
+          24.000244169788203,
+          38.76137213959481
+        ],
+        "lateral_probe_left_m": [
+          0.800364553541464,
+          1.2915689406044204
+        ],
+        "lateral_sensitivity_m_per_normalized_u": [
+          -38.79644176292125,
+          -24.041667294392138
+        ],
+        "nominal_forward_distance_m": 30.0,
+        "reported_pitch_forward_sensitivity_m_per_rad": [
+          -1023.540728699146,
+          -434.4215190990042
+        ],
+        "scope": "SAMPLED_GRID_ENVELOPE_NOT_CONTINUOUS_OR_PHYSICAL_UNCERTAINTY_BOUND"
+      }
+    ],
+    "height_prior_sha256": "90673057619b2c15416dee64bee5f76336ec4f386b9f83d887a39ade186daf9c",
+    "independent": false,
+    "matrix": [
+      {
+        "center_lateral_left_m": -2.148857421558556e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7372923888491671,
+        "forward_delta_from_nominal_m": -0.0852121818798377,
+        "forward_m": 4.914787818120162,
+        "height_m": 1.33,
+        "lateral_probe_delta_from_nominal_m": -0.019401122830607687,
+        "lateral_probe_forward_m": 4.914787818120161,
+        "lateral_probe_left_m": 0.9805988771693923,
+        "lateral_sensitivity_m_per_normalized_u": -4.958730320088729,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -19.491758870060494,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.6236356510954693,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.6236356511085996,
+          "roll_world_x_rad": 2.0529880886510323,
+          "yaw_world_z_rad": 4.914787818120162
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7617995103459089,
+        "forward_delta_from_nominal_m": 0.1439260294339011,
+        "forward_m": 10.143926029433901,
+        "height_m": 1.33,
+        "lateral_probe_delta_from_nominal_m": 0.013193348760058843,
+        "lateral_probe_forward_m": 10.143926029433901,
+        "lateral_probe_left_m": 1.0131933487600588,
+        "lateral_sensitivity_m_per_normalized_u": -10.185682289454801,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -78.69784608871555,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -7.727637882815053,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -7.727637882207865,
+          "roll_world_x_rad": 2.1018501969711445,
+          "yaw_world_z_rad": 10.1439260294339
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8160494186674788,
+        "forward_delta_from_nominal_m": 1.7193478349815265,
+        "forward_m": 21.719347834981527,
+        "height_m": 1.33,
+        "lateral_probe_delta_from_nominal_m": 0.08534572682774688,
+        "lateral_probe_forward_m": 21.719347834981527,
+        "lateral_probe_left_m": 1.0853457268277469,
+        "lateral_sensitivity_m_per_normalized_u": -21.75636667152243,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -356.0142635343766,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -17.724061179391626,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -17.724061174573436,
+          "roll_world_x_rad": 2.2156957494310148,
+          "yaw_world_z_rad": 21.719347834981527
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8786183269417827,
+        "forward_delta_from_nominal_m": 5.0698128882048294,
+        "forward_m": 35.06981288820483,
+        "height_m": 1.33,
+        "lateral_probe_delta_from_nominal_m": 0.16856237483257108,
+        "lateral_probe_forward_m": 35.06981288820483,
+        "lateral_probe_left_m": 1.168562374832571,
+        "lateral_sensitivity_m_per_normalized_u": -35.10154254740494,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -926.0606592995657,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -30.812980347572072,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -30.8129803259959,
+          "roll_world_x_rad": 2.35672031870251,
+          "yaw_world_z_rad": 35.06981288820483
+        }
+      },
+      {
+        "center_lateral_left_m": -2.0818038833303563e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": -0.2500000000000009,
+        "forward_m": 4.749999999999999,
+        "height_m": 1.33,
+        "lateral_probe_delta_from_nominal_m": -0.04999999999999993,
+        "lateral_probe_forward_m": 4.75,
+        "lateral_probe_left_m": 0.9500000000000001,
+        "lateral_sensitivity_m_per_normalized_u": -4.804088797413102,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -18.29428571475944,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.392857142958672,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.392857142857143,
+          "roll_world_x_rad": 2.008571428571429,
+          "yaw_world_z_rad": 4.75
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857144,
+        "forward_delta_from_nominal_m": -0.49999999999999645,
+        "forward_m": 9.500000000000004,
+        "height_m": 1.33,
+        "lateral_probe_delta_from_nominal_m": -0.04999999999999982,
+        "lateral_probe_forward_m": 9.500000000000002,
+        "lateral_probe_left_m": 0.9500000000000002,
+        "lateral_sensitivity_m_per_normalized_u": -9.550553254077514,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -69.18714286197059,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -6.785714286139388,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -6.785714285714287,
+          "roll_world_x_rad": 2.008571428571429,
+          "yaw_world_z_rad": 9.5
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857145,
+        "forward_delta_from_nominal_m": -0.9999999999999964,
+        "forward_m": 19.000000000000004,
+        "height_m": 1.33,
+        "lateral_probe_delta_from_nominal_m": -0.0499999999999996,
+        "lateral_probe_forward_m": 19.000000000000004,
+        "lateral_probe_left_m": 0.9500000000000004,
+        "lateral_sensitivity_m_per_normalized_u": -19.043482167406335,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -272.7585714872305,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -13.571428574332689,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -13.571428571428578,
+          "roll_world_x_rad": 2.0085714285714293,
+          "yaw_world_z_rad": 19.0
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": -1.5,
+        "forward_m": 28.5,
+        "height_m": 1.33,
+        "lateral_probe_delta_from_nominal_m": -0.04999999999999993,
+        "lateral_probe_forward_m": 28.5,
+        "lateral_probe_left_m": 0.9500000000000001,
+        "lateral_sensitivity_m_per_normalized_u": -28.536411080735146,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -612.0442859991471,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -20.357142866689326,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -20.357142857142858,
+          "roll_world_x_rad": 2.008571428571429,
+          "yaw_world_z_rad": 28.5
+        }
+      },
+      {
+        "center_lateral_left_m": -2.018957528537706e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6927225623563842,
+        "forward_delta_from_nominal_m": -0.40482628240811636,
+        "forward_m": 4.595173717591884,
+        "height_m": 1.33,
+        "lateral_probe_delta_from_nominal_m": -0.07867899206600903,
+        "lateral_probe_forward_m": 4.595173717591884,
+        "lateral_probe_left_m": 0.921321007933991,
+        "lateral_sensitivity_m_per_normalized_u": -4.659144868278592,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -17.20640713909205,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.183180512178474,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.183180512122962,
+          "roll_world_x_rad": 1.968219849368801,
+          "yaw_world_z_rad": 4.5951737175918845
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6723990716947479,
+        "forward_delta_from_nominal_m": -1.0683585491343184,
+        "forward_m": 8.931641450865682,
+        "height_m": 1.33,
+        "lateral_probe_delta_from_nominal_m": -0.10570923464598525,
+        "lateral_probe_forward_m": 8.93164145086568,
+        "lateral_probe_left_m": 0.8942907653540147,
+        "lateral_sensitivity_m_per_normalized_u": -8.990626674111914,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -61.31061579761621,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -6.005627420535564,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -6.005627420272415,
+          "roll_world_x_rad": 1.9313202804492255,
+          "yaw_world_z_rad": 8.93164145086568
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6351313766499961,
+        "forward_delta_from_nominal_m": -3.116468800188887,
+        "forward_m": 16.883531199811113,
+        "height_m": 1.33,
+        "lateral_probe_delta_from_nominal_m": -0.15527526905550515,
+        "lateral_probe_forward_m": 16.883531199811113,
+        "lateral_probe_left_m": 0.8447247309444949,
+        "lateral_sensitivity_m_per_normalized_u": -16.933294497568948,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -215.6560344523939,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -10.723260415346214,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -10.723260413649195,
+          "roll_world_x_rad": 1.8665111812550748,
+          "yaw_world_z_rad": 16.883531199811113
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6017778598056119,
+        "forward_delta_from_nominal_m": -5.999755830211797,
+        "forward_m": 24.000244169788203,
+        "height_m": 1.33,
+        "lateral_probe_delta_from_nominal_m": -0.19963544645853604,
+        "lateral_probe_forward_m": 24.000244169788203,
+        "lateral_probe_left_m": 0.800364553541464,
+        "lateral_sensitivity_m_per_normalized_u": -24.041667294392138,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -434.4215190990042,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -14.442815576110046,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -14.442815571307259,
+          "roll_world_x_rad": 1.8116416680944563,
+          "yaw_world_z_rad": 24.000244169788203
+        }
+      },
+      {
+        "center_lateral_left_m": -2.181171066995527e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7372923888491671,
+        "forward_delta_from_nominal_m": -0.011305598148707574,
+        "forward_m": 4.988694401851292,
+        "height_m": 1.35,
+        "lateral_probe_delta_from_nominal_m": -0.004655275053624286,
+        "lateral_probe_forward_m": 4.9886944018512915,
+        "lateral_probe_left_m": 0.9953447249463757,
+        "lateral_sensitivity_m_per_normalized_u": -5.033297693323147,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -19.78486802567403,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.678126412776095,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.678126412779406,
+          "roll_world_x_rad": 2.0838600899841304,
+          "yaw_world_z_rad": 4.9886944018512915
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7617995103459089,
+        "forward_delta_from_nominal_m": 0.296466270478021,
+        "forward_m": 10.296466270478021,
+        "height_m": 1.35,
+        "lateral_probe_delta_from_nominal_m": 0.02842933896697697,
+        "lateral_probe_forward_m": 10.29646627047802,
+        "lateral_probe_left_m": 1.028429338966977,
+        "lateral_sensitivity_m_per_normalized_u": -10.338850444183446,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -79.8812723461495,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -7.843842963706216,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -7.843842963143321,
+          "roll_world_x_rad": 2.1334569668504098,
+          "yaw_world_z_rad": 10.29646627047802
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8160494186674788,
+        "forward_delta_from_nominal_m": 2.045954569342154,
+        "forward_m": 22.045954569342154,
+        "height_m": 1.35,
+        "lateral_probe_delta_from_nominal_m": 0.10166671520109638,
+        "lateral_probe_forward_m": 22.045954569342154,
+        "lateral_probe_left_m": 1.1016667152010964,
+        "lateral_sensitivity_m_per_normalized_u": -22.083530080116752,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -361.36786148333044,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -17.990588415228714,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -17.99058841028131,
+          "roll_world_x_rad": 2.2490144825051654,
+          "yaw_world_z_rad": 22.04595456934215
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8786183269417827,
+        "forward_delta_from_nominal_m": 5.59717849554626,
+        "forward_m": 35.59717849554626,
+        "height_m": 1.35,
+        "lateral_probe_delta_from_nominal_m": 0.18613474137140673,
+        "lateral_probe_forward_m": 35.59717849554626,
+        "lateral_probe_left_m": 1.1861347413714067,
+        "lateral_sensitivity_m_per_normalized_u": -35.6293852924787,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -939.9863835000133,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -31.276333435470427,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -31.276333413604856,
+          "roll_world_x_rad": 2.3921597219912694,
+          "yaw_world_z_rad": 35.59717849554626
+        }
+      },
+      {
+        "center_lateral_left_m": -2.1131092048841963e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": -0.17857142857142883,
+        "forward_m": 4.821428571428571,
+        "height_m": 1.35,
+        "lateral_probe_delta_from_nominal_m": -0.03571428571428559,
+        "lateral_probe_forward_m": 4.821428571428571,
+        "lateral_probe_left_m": 0.9642857142857144,
+        "lateral_sensitivity_m_per_normalized_u": -4.876330734216306,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -18.569387755462685,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.443877551134733,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.4438775510204085,
+          "roll_world_x_rad": 2.038775510204082,
+          "yaw_world_z_rad": 4.821428571428571
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857144,
+        "forward_delta_from_nominal_m": -0.3571428571428541,
+        "forward_m": 9.642857142857146,
+        "height_m": 1.35,
+        "lateral_probe_delta_from_nominal_m": -0.035714285714285476,
+        "lateral_probe_forward_m": 9.642857142857144,
+        "lateral_probe_left_m": 0.9642857142857145,
+        "lateral_sensitivity_m_per_normalized_u": -9.694170596244094,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -70.22755102514822,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -6.887755102491511,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -6.887755102040819,
+          "roll_world_x_rad": 2.038775510204082,
+          "yaw_world_z_rad": 9.642857142857142
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857145,
+        "forward_delta_from_nominal_m": -0.7142857142857117,
+        "forward_m": 19.28571428571429,
+        "height_m": 1.35,
+        "lateral_probe_delta_from_nominal_m": -0.035714285714285365,
+        "lateral_probe_forward_m": 19.28571428571429,
+        "lateral_probe_left_m": 0.9642857142857146,
+        "lateral_sensitivity_m_per_normalized_u": -19.329850320299663,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -276.86020414030565,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -13.775510207036934,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -13.77551020408164,
+          "roll_world_x_rad": 2.0387755102040823,
+          "yaw_world_z_rad": 19.28571428571429
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": -1.071428571428573,
+        "forward_m": 28.928571428571427,
+        "height_m": 1.35,
+        "lateral_probe_delta_from_nominal_m": -0.03571428571428559,
+        "lateral_probe_forward_m": 28.928571428571427,
+        "lateral_probe_left_m": 0.9642857142857144,
+        "lateral_sensitivity_m_per_normalized_u": -28.965530044355223,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -621.2479594722708,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -20.663265315801205,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -20.66326530612245,
+          "roll_world_x_rad": 2.038775510204082,
+          "yaw_world_z_rad": 28.928571428571427
+        }
+      },
+      {
+        "center_lateral_left_m": -2.049317792124739e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6927225623563842,
+        "forward_delta_from_nominal_m": -0.3357259257525991,
+        "forward_m": 4.664274074247401,
+        "height_m": 1.35,
+        "lateral_probe_delta_from_nominal_m": -0.06482454081888134,
+        "lateral_probe_forward_m": 4.664274074247401,
+        "lateral_probe_left_m": 0.9351754591811187,
+        "lateral_sensitivity_m_per_normalized_u": -4.729207197124887,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -17.465150103479488,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.2310478882968674,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.231047888245112,
+          "roll_world_x_rad": 1.9978171403367526,
+          "yaw_world_z_rad": 4.664274074247402
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6723990716947479,
+        "forward_delta_from_nominal_m": -0.9340481513769383,
+        "forward_m": 9.065951848623062,
+        "height_m": 1.35,
+        "lateral_probe_delta_from_nominal_m": -0.09226125321209033,
+        "lateral_probe_forward_m": 9.065951848623058,
+        "lateral_probe_left_m": 0.9077387467879097,
+        "lateral_sensitivity_m_per_normalized_u": -9.125824067707581,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -62.232579945309396,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -6.095937607308866,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -6.095937607043428,
+          "roll_world_x_rad": 1.9603626906815446,
+          "yaw_world_z_rad": 9.065951848623058
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6351313766499961,
+        "forward_delta_from_nominal_m": -2.8625811129736825,
+        "forward_m": 17.137418887026318,
+        "height_m": 1.35,
+        "lateral_probe_delta_from_nominal_m": -0.14257264152250526,
+        "lateral_probe_forward_m": 17.137418887026318,
+        "lateral_probe_left_m": 0.8574273584774947,
+        "lateral_sensitivity_m_per_normalized_u": -17.187930505051188,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -218.89898233951044,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -10.884512451680983,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -10.88451244994467,
+          "roll_world_x_rad": 1.8945790185671811,
+          "yaw_world_z_rad": 17.137418887026318
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6017778598056119,
+        "forward_delta_from_nominal_m": -5.638849902846562,
+        "forward_m": 24.361150097153438,
+        "height_m": 1.35,
+        "lateral_probe_delta_from_nominal_m": -0.18759988926242388,
+        "lateral_probe_forward_m": 24.361150097153438,
+        "lateral_probe_left_m": 0.8124001107375761,
+        "lateral_sensitivity_m_per_normalized_u": -24.403196125886755,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -440.9541735199696,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -14.660000772714898,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -14.66000076786827,
+          "roll_world_x_rad": 1.8388843999455007,
+          "yaw_world_z_rad": 24.361150097153438
+        }
+      },
+      {
+        "center_lateral_left_m": -2.22156312379174e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7372923888491671,
+        "forward_delta_from_nominal_m": 0.08107763151520508,
+        "forward_m": 5.081077631515205,
+        "height_m": 1.375,
+        "lateral_probe_delta_from_nominal_m": 0.013777034667604937,
+        "lateral_probe_forward_m": 5.081077631515204,
+        "lateral_probe_left_m": 1.013777034667605,
+        "lateral_sensitivity_m_per_normalized_u": -5.126506909866167,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -20.151254470412994,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.746239864876877,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.7462398648679134,
+          "roll_world_x_rad": 2.122450091650503,
+          "yaw_world_z_rad": 5.081077631515204
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7617995103459089,
+        "forward_delta_from_nominal_m": 0.48714157178316775,
+        "forward_m": 10.487141571783168,
+        "height_m": 1.375,
+        "lateral_probe_delta_from_nominal_m": 0.047474326725624794,
+        "lateral_probe_forward_m": 10.487141571783168,
+        "lateral_probe_left_m": 1.0474743267256248,
+        "lateral_sensitivity_m_per_normalized_u": -10.53031063759425,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -81.36055516683172,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -7.989099314986703,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -7.989099314312641,
+          "roll_world_x_rad": 2.1729654291994915,
+          "yaw_world_z_rad": 10.487141571783166
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8160494186674788,
+        "forward_delta_from_nominal_m": 2.45421298729293,
+        "forward_m": 22.45421298729293,
+        "height_m": 1.375,
+        "lateral_probe_delta_from_nominal_m": 0.12206795066778331,
+        "lateral_probe_forward_m": 22.45421298729293,
+        "lateral_probe_left_m": 1.1220679506677833,
+        "lateral_sensitivity_m_per_normalized_u": -22.492484340859654,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -368.0598589177464,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -18.323747459914053,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -18.32374745491615,
+          "roll_world_x_rad": 2.2906628988478532,
+          "yaw_world_z_rad": 22.45421298729293
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8786183269417827,
+        "forward_delta_from_nominal_m": 6.256385504723035,
+        "forward_m": 36.256385504723035,
+        "height_m": 1.375,
+        "lateral_probe_delta_from_nominal_m": 0.20810019954495118,
+        "lateral_probe_forward_m": 36.256385504723035,
+        "lateral_probe_left_m": 1.2081001995449512,
+        "lateral_sensitivity_m_per_normalized_u": -36.28918872382089,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -957.3935387479082,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -31.85552479534337,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -31.855524773116056,
+          "roll_world_x_rad": 2.4364589761022186,
+          "yaw_world_z_rad": 36.256385504723035
+        }
+      },
+      {
+        "center_lateral_left_m": -2.152240856826496e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": -0.0892857142857153,
+        "forward_m": 4.910714285714285,
+        "height_m": 1.375,
+        "lateral_probe_delta_from_nominal_m": -0.017857142857142794,
+        "lateral_probe_forward_m": 4.910714285714286,
+        "lateral_probe_left_m": 0.9821428571428572,
+        "lateral_sensitivity_m_per_normalized_u": -4.966633155220311,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -18.91326530678583,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.507653061340932,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.5076530612244894,
+          "roll_world_x_rad": 2.076530612244898,
+          "yaw_world_z_rad": 4.910714285714286
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857144,
+        "forward_delta_from_nominal_m": -0.17857142857142527,
+        "forward_m": 9.821428571428575,
+        "height_m": 1.375,
+        "lateral_probe_delta_from_nominal_m": -0.017857142857142683,
+        "lateral_probe_forward_m": 9.821428571428571,
+        "lateral_probe_left_m": 0.9821428571428573,
+        "lateral_sensitivity_m_per_normalized_u": -9.873692273952317,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -71.52806122956434,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -7.015306122903908,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -7.015306122448981,
+          "roll_world_x_rad": 2.0765306122448983,
+          "yaw_world_z_rad": 9.821428571428571
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857145,
+        "forward_delta_from_nominal_m": -0.35714285714285765,
+        "forward_m": 19.642857142857142,
+        "height_m": 1.375,
+        "lateral_probe_delta_from_nominal_m": -0.01785714285714257,
+        "lateral_probe_forward_m": 19.642857142857142,
+        "lateral_probe_left_m": 0.9821428571428574,
+        "lateral_sensitivity_m_per_normalized_u": -19.687810511416323,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -281.9872449570937,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -14.030612247861729,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -14.030612244897966,
+          "roll_world_x_rad": 2.0765306122448988,
+          "yaw_world_z_rad": 19.642857142857142
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": -0.5357142857142883,
+        "forward_m": 29.46428571428571,
+        "height_m": 1.375,
+        "lateral_probe_delta_from_nominal_m": -0.017857142857142794,
+        "lateral_probe_forward_m": 29.46428571428571,
+        "lateral_probe_left_m": 0.9821428571428572,
+        "lateral_sensitivity_m_per_normalized_u": -29.50192874888032,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -632.7525513132315,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -21.04591837720493,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -21.04591836734694,
+          "roll_world_x_rad": 2.076530612244898,
+          "yaw_world_z_rad": 29.46428571428571
+        }
+      },
+      {
+        "center_lateral_left_m": -2.0872681216085302e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6927225623563842,
+        "forward_delta_from_nominal_m": -0.24935047993320314,
+        "forward_m": 4.750649520066797,
+        "height_m": 1.375,
+        "lateral_probe_delta_from_nominal_m": -0.04750647675997177,
+        "lateral_probe_forward_m": 4.750649520066797,
+        "lateral_probe_left_m": 0.9524935232400282,
+        "lateral_sensitivity_m_per_normalized_u": -4.816785108182755,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -17.788578809518896,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.2908821084309814,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.2908821083977986,
+          "roll_world_x_rad": 2.0348137540466924,
+          "yaw_world_z_rad": 4.750649520066798
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6723990716947479,
+        "forward_delta_from_nominal_m": -0.7661601541802163,
+        "forward_m": 9.233839845819784,
+        "height_m": 1.375,
+        "lateral_probe_delta_from_nominal_m": -0.07545127641972171,
+        "lateral_probe_forward_m": 9.233839845819782,
+        "lateral_probe_left_m": 0.9245487235802783,
+        "lateral_sensitivity_m_per_normalized_u": -9.294820809702166,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -63.3850351290377,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -6.208825340803248,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -6.208825340507195,
+          "roll_world_x_rad": 1.9966657034719435,
+          "yaw_world_z_rad": 9.233839845819782
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6351313766499961,
+        "forward_delta_from_nominal_m": -2.545221503954675,
+        "forward_m": 17.454778496045325,
+        "height_m": 1.375,
+        "lateral_probe_delta_from_nominal_m": -0.12669435710625543,
+        "lateral_probe_forward_m": 17.454778496045325,
+        "lateral_probe_left_m": 0.8733056428937446,
+        "lateral_sensitivity_m_per_normalized_u": -17.506225514403987,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -222.95266719574158,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -11.086077497113322,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -11.086077495314017,
+          "roll_world_x_rad": 1.929663815207314,
+          "yaw_world_z_rad": 17.454778496045325
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6017778598056119,
+        "forward_delta_from_nominal_m": -5.187717493640019,
+        "forward_m": 24.81228250635998,
+        "height_m": 1.375,
+        "lateral_probe_delta_from_nominal_m": -0.17255544276728363,
+        "lateral_probe_forward_m": 24.81228250635998,
+        "lateral_probe_left_m": 0.8274445572327164,
+        "lateral_sensitivity_m_per_normalized_u": -24.85510716525503,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -449.11999154884086,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -14.93148226849872,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -14.931482263569531,
+          "roll_world_x_rad": 1.872937814759306,
+          "yaw_world_z_rad": 24.812282506359985
+        }
+      },
+      {
+        "center_lateral_left_m": -2.261955180587953e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7372923888491671,
+        "forward_delta_from_nominal_m": 0.17346086117911685,
+        "forward_m": 5.173460861179117,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.03220934438883405,
+        "lateral_probe_forward_m": 5.173460861179117,
+        "lateral_probe_left_m": 1.032209344388834,
+        "lateral_sensitivity_m_per_normalized_u": -5.219716126409188,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -20.517640915596047,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.8143533168666366,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.8143533169564203,
+          "roll_world_x_rad": 2.1610400933168754,
+          "yaw_world_z_rad": 5.173460861179118
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7617995103459089,
+        "forward_delta_from_nominal_m": 0.6778168730883163,
+        "forward_m": 10.677816873088316,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.0665193144842724,
+        "lateral_probe_forward_m": 10.677816873088315,
+        "lateral_probe_left_m": 1.0665193144842724,
+        "lateral_sensitivity_m_per_normalized_u": -10.721770831005053,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -82.83983798751393,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -8.134355666045145,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -8.134355665481962,
+          "roll_world_x_rad": 2.212473891548573,
+          "yaw_world_z_rad": 10.677816873088315
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8160494186674788,
+        "forward_delta_from_nominal_m": 2.86247140524371,
+        "forward_m": 22.86247140524371,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.14246918613447024,
+        "lateral_probe_forward_m": 22.86247140524371,
+        "lateral_probe_left_m": 1.1424691861344702,
+        "lateral_sensitivity_m_per_normalized_u": -22.901438601602553,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -374.75185635216235,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -18.656906504710413,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -18.656906499550985,
+          "roll_world_x_rad": 2.3323113151905415,
+          "yaw_world_z_rad": 22.86247140524371
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8786183269417827,
+        "forward_delta_from_nominal_m": 6.915592513899817,
+        "forward_m": 36.91559251389982,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.23006565771849563,
+        "lateral_probe_forward_m": 36.91559251389982,
+        "lateral_probe_left_m": 1.2300656577184956,
+        "lateral_sensitivity_m_per_normalized_u": -36.94899215516309,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -974.8006939993559,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -32.43471615532734,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -32.43471613262725,
+          "roll_world_x_rad": 2.480758230213168,
+          "yaw_world_z_rad": 36.91559251389982
+        }
+      },
+      {
+        "center_lateral_left_m": -2.1913725087687957e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": -8.881784197001252e-16,
+        "forward_m": 4.999999999999999,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.0,
+        "lateral_probe_forward_m": 4.999999999999999,
+        "lateral_probe_left_m": 1.0,
+        "lateral_sensitivity_m_per_normalized_u": -5.056935576224317,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -19.25714285766489,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.5714285715471306,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.571428571428571,
+          "roll_world_x_rad": 2.1142857142857143,
+          "yaw_world_z_rad": 4.999999999999999
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857144,
+        "forward_delta_from_nominal_m": 1.7763568394002505e-15,
+        "forward_m": 10.000000000000002,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 2.220446049250313e-16,
+        "lateral_probe_forward_m": 10.0,
+        "lateral_probe_left_m": 1.0000000000000002,
+        "lateral_sensitivity_m_per_normalized_u": -10.05321395166054,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -72.82857143220411,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -7.142857143371817,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -7.142857142857143,
+          "roll_world_x_rad": 2.1142857142857143,
+          "yaw_world_z_rad": 9.999999999999998
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857145,
+        "forward_delta_from_nominal_m": 0.0,
+        "forward_m": 20.0,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 2.220446049250313e-16,
+        "lateral_probe_forward_m": 20.0,
+        "lateral_probe_left_m": 1.0000000000000002,
+        "lateral_sensitivity_m_per_normalized_u": -20.04577070253298,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -287.1142857756581,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -14.285714288686524,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -14.285714285714292,
+          "roll_world_x_rad": 2.1142857142857148,
+          "yaw_world_z_rad": 20.0
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": -3.552713678800501e-15,
+        "forward_m": 29.999999999999996,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.0,
+        "lateral_probe_forward_m": 29.999999999999996,
+        "lateral_probe_left_m": 1.0,
+        "lateral_sensitivity_m_per_normalized_u": -30.038327453405415,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -644.2571431559685,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -21.428571438664168,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -21.428571428571423,
+          "roll_world_x_rad": 2.1142857142857143,
+          "yaw_world_z_rad": 29.99999999999999
+        }
+      },
+      {
+        "center_lateral_left_m": -2.1252184510923217e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6927225623563842,
+        "forward_delta_from_nominal_m": -0.1629750341138072,
+        "forward_m": 4.837024965886193,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": -0.030188412701062206,
+        "lateral_probe_forward_m": 4.837024965886193,
+        "lateral_probe_left_m": 0.9698115872989378,
+        "lateral_sensitivity_m_per_normalized_u": -4.9043630192406225,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -18.112007515114215,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.3507163285650954,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.3507163285504857,
+          "roll_world_x_rad": 2.0718103677566324,
+          "yaw_world_z_rad": 4.837024965886194
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6723990716947479,
+        "forward_delta_from_nominal_m": -0.5982721569834943,
+        "forward_m": 9.401727843016506,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": -0.05864129962735298,
+        "lateral_probe_forward_m": 9.401727843016504,
+        "lateral_probe_left_m": 0.941358700372647,
+        "lateral_sensitivity_m_per_normalized_u": -9.463817551696751,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -64.53749031365419,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -6.32171307429763,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -6.321713073970961,
+          "roll_world_x_rad": 2.0329687162623427,
+          "yaw_world_z_rad": 9.401727843016504
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6351313766499961,
+        "forward_delta_from_nominal_m": -2.227861894935671,
+        "forward_m": 17.77213810506433,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": -0.1108160726900056,
+        "lateral_probe_forward_m": 17.77213810506433,
+        "lateral_probe_left_m": 0.8891839273099944,
+        "lateral_sensitivity_m_per_normalized_u": -17.824520523756785,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -227.00635205374908,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -11.287642542545662,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -11.287642540683361,
+          "roll_world_x_rad": 1.9647486118474466,
+          "yaw_world_z_rad": 17.77213810506433
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6017778598056119,
+        "forward_delta_from_nominal_m": -4.736585084433475,
+        "forward_m": 25.263414915566525,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": -0.15751099627214338,
+        "lateral_probe_forward_m": 25.263414915566525,
+        "lateral_probe_left_m": 0.8424890037278566,
+        "lateral_sensitivity_m_per_normalized_u": -25.3070182046233,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -457.28580957771214,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -15.20296376428254,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -15.202963759270796,
+          "roll_world_x_rad": 1.9069912295731115,
+          "yaw_world_z_rad": 25.263414915566525
+        }
+      },
+      {
+        "center_lateral_left_m": -2.302347237384167e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7372923888491671,
+        "forward_delta_from_nominal_m": 0.2658440908430304,
+        "forward_m": 5.26584409084303,
+        "height_m": 1.425,
+        "lateral_probe_delta_from_nominal_m": 0.05064165411006316,
+        "lateral_probe_forward_m": 5.2658440908430295,
+        "lateral_probe_left_m": 1.0506416541100632,
+        "lateral_sensitivity_m_per_normalized_u": -5.31292534295221,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -20.8840273607791,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.8824667689674186,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.8824667690449277,
+          "roll_world_x_rad": 2.199630094983249,
+          "yaw_world_z_rad": 5.26584409084303
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7617995103459089,
+        "forward_delta_from_nominal_m": 0.8684921743934648,
+        "forward_m": 10.868492174393465,
+        "height_m": 1.425,
+        "lateral_probe_delta_from_nominal_m": 0.08556430224292022,
+        "lateral_probe_forward_m": 10.868492174393465,
+        "lateral_probe_left_m": 1.0855643022429202,
+        "lateral_sensitivity_m_per_normalized_u": -10.91323102441586,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -84.3191208099725,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -8.279612017325633,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -8.279612016651283,
+          "roll_world_x_rad": 2.2519823538976547,
+          "yaw_world_z_rad": 10.868492174393463
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8160494186674788,
+        "forward_delta_from_nominal_m": 3.2707298231944932,
+        "forward_m": 23.270729823194493,
+        "height_m": 1.425,
+        "lateral_probe_delta_from_nominal_m": 0.1628704216011574,
+        "lateral_probe_forward_m": 23.270729823194493,
+        "lateral_probe_left_m": 1.1628704216011574,
+        "lateral_sensitivity_m_per_normalized_u": -23.31039286234546,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -381.4438537865783,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -18.99006554939575,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -18.990065544185825,
+          "roll_world_x_rad": 2.37395973153323,
+          "yaw_world_z_rad": 23.27072982319449
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8786183269417827,
+        "forward_delta_from_nominal_m": 7.5747995230766065,
+        "forward_m": 37.57479952307661,
+        "height_m": 1.425,
+        "lateral_probe_delta_from_nominal_m": 0.2520311158920403,
+        "lateral_probe_forward_m": 37.57479952307661,
+        "lateral_probe_left_m": 1.2520311158920403,
+        "lateral_sensitivity_m_per_normalized_u": -37.608795586505295,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -992.2078492508035,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -33.01390751520028,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -33.01390749213846,
+          "roll_world_x_rad": 2.5250574843241176,
+          "yaw_world_z_rad": 37.5747995230766
+        }
+      },
+      {
+        "center_lateral_left_m": -2.230504160711096e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": 0.08928571428571352,
+        "forward_m": 5.0892857142857135,
+        "height_m": 1.425,
+        "lateral_probe_delta_from_nominal_m": 0.017857142857143016,
+        "lateral_probe_forward_m": 5.089285714285714,
+        "lateral_probe_left_m": 1.017857142857143,
+        "lateral_sensitivity_m_per_normalized_u": -5.147237997228323,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -19.601020408988035,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.6352040817533293,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.635204081632653,
+          "roll_world_x_rad": 2.1520408163265308,
+          "yaw_world_z_rad": 5.089285714285714
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857144,
+        "forward_delta_from_nominal_m": 0.17857142857143238,
+        "forward_m": 10.178571428571432,
+        "height_m": 1.425,
+        "lateral_probe_delta_from_nominal_m": 0.017857142857143016,
+        "lateral_probe_forward_m": 10.178571428571429,
+        "lateral_probe_left_m": 1.017857142857143,
+        "lateral_sensitivity_m_per_normalized_u": -10.232735629368763,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -74.12908163662024,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -7.270408163728703,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -7.270408163265308,
+          "roll_world_x_rad": 2.1520408163265308,
+          "yaw_world_z_rad": 10.178571428571427
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857145,
+        "forward_delta_from_nominal_m": 0.35714285714285765,
+        "forward_m": 20.357142857142858,
+        "height_m": 1.425,
+        "lateral_probe_delta_from_nominal_m": 0.017857142857143238,
+        "lateral_probe_forward_m": 20.357142857142858,
+        "lateral_probe_left_m": 1.0178571428571432,
+        "lateral_sensitivity_m_per_normalized_u": -20.403730893649644,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -292.24132659244617,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -14.54081632956683,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -14.540816326530619,
+          "roll_world_x_rad": 2.152040816326531,
+          "yaw_world_z_rad": 20.357142857142858
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": 0.5357142857142847,
+        "forward_m": 30.535714285714285,
+        "height_m": 1.425,
+        "lateral_probe_delta_from_nominal_m": 0.017857142857143016,
+        "lateral_probe_forward_m": 30.535714285714285,
+        "lateral_probe_left_m": 1.017857142857143,
+        "lateral_sensitivity_m_per_normalized_u": -30.574726157930513,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -655.7617349969291,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -21.811224500067894,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -21.811224489795915,
+          "roll_world_x_rad": 2.1520408163265308,
+          "yaw_world_z_rad": 30.53571428571428
+        }
+      },
+      {
+        "center_lateral_left_m": -2.1631687805761135e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6927225623563842,
+        "forward_delta_from_nominal_m": -0.07659958829441038,
+        "forward_m": 4.92340041170559,
+        "height_m": 1.425,
+        "lateral_probe_delta_from_nominal_m": -0.01287034864215253,
+        "lateral_probe_forward_m": 4.92340041170559,
+        "lateral_probe_left_m": 0.9871296513578475,
+        "lateral_sensitivity_m_per_normalized_u": -4.991940930298491,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -18.435436220265444,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.4105505487547205,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.4105505487031738,
+          "roll_world_x_rad": 2.108806981466572,
+          "yaw_world_z_rad": 4.9234004117055905
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6723990716947479,
+        "forward_delta_from_nominal_m": -0.4303841597867688,
+        "forward_m": 9.569615840213231,
+        "height_m": 1.425,
+        "lateral_probe_delta_from_nominal_m": -0.04183132283498425,
+        "lateral_probe_forward_m": 9.569615840213228,
+        "lateral_probe_left_m": 0.9581686771650157,
+        "lateral_sensitivity_m_per_normalized_u": -9.632814293691336,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -65.6899454973825,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -6.4346008077920125,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -6.434600807434729,
+          "roll_world_x_rad": 2.0692717290527414,
+          "yaw_world_z_rad": 9.569615840213228
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6351313766499961,
+        "forward_delta_from_nominal_m": -1.9105022859166638,
+        "forward_m": 18.089497714083336,
+        "height_m": 1.425,
+        "lateral_probe_delta_from_nominal_m": -0.09493778827375554,
+        "lateral_probe_forward_m": 18.089497714083336,
+        "lateral_probe_left_m": 0.9050622117262445,
+        "lateral_sensitivity_m_per_normalized_u": -18.142815533109587,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -231.06003691353294,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -11.489207587866979,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -11.489207586052709,
+          "roll_world_x_rad": 1.99983340848758,
+          "yaw_world_z_rad": 18.089497714083336
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6017778598056119,
+        "forward_delta_from_nominal_m": -4.285452675226928,
+        "forward_m": 25.714547324773072,
+        "height_m": 1.425,
+        "lateral_probe_delta_from_nominal_m": -0.14246654977700302,
+        "lateral_probe_forward_m": 25.714547324773072,
+        "lateral_probe_left_m": 0.857533450222997,
+        "lateral_sensitivity_m_per_normalized_u": -25.758929243991577,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -465.4516276048071,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -15.47444526006636,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -15.47444525497206,
+          "roll_world_x_rad": 1.9410446443869174,
+          "yaw_world_z_rad": 25.714547324773072
+        }
+      },
+      {
+        "center_lateral_left_m": -2.3427392941803803e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7372923888491671,
+        "forward_delta_from_nominal_m": 0.35822732050694306,
+        "forward_m": 5.358227320506943,
+        "height_m": 1.45,
+        "lateral_probe_delta_from_nominal_m": 0.06907396383129227,
+        "lateral_probe_forward_m": 5.358227320506942,
+        "lateral_probe_left_m": 1.0690739638312923,
+        "lateral_sensitivity_m_per_normalized_u": -5.40613455949523,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -21.250413805518065,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.9505802210682006,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.9505802211334355,
+          "roll_world_x_rad": 2.2382200966496213,
+          "yaw_world_z_rad": 5.358227320506943
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7617995103459089,
+        "forward_delta_from_nominal_m": 1.0591674756986134,
+        "forward_m": 11.059167475698613,
+        "height_m": 1.45,
+        "lateral_probe_delta_from_nominal_m": 0.10460929000156782,
+        "lateral_probe_forward_m": 11.059167475698612,
+        "lateral_probe_left_m": 1.1046092900015678,
+        "lateral_sensitivity_m_per_normalized_u": -11.104691217826662,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -85.79840363065472,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -8.424868368384075,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -8.424868367820604,
+          "roll_world_x_rad": 2.291490816246736,
+          "yaw_world_z_rad": 11.059167475698612
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8160494186674788,
+        "forward_delta_from_nominal_m": 3.678988241145273,
+        "forward_m": 23.678988241145273,
+        "height_m": 1.45,
+        "lateral_probe_delta_from_nominal_m": 0.18327165706784432,
+        "lateral_probe_forward_m": 23.678988241145273,
+        "lateral_probe_left_m": 1.1832716570678443,
+        "lateral_sensitivity_m_per_normalized_u": -23.71934712308836,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -388.13585122099425,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -19.32322459408109,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -19.32322458882066,
+          "roll_world_x_rad": 2.415608147875918,
+          "yaw_world_z_rad": 23.67898824114527
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8786183269417827,
+        "forward_delta_from_nominal_m": 8.234006532253382,
+        "forward_m": 38.23400653225338,
+        "height_m": 1.45,
+        "lateral_probe_delta_from_nominal_m": 0.27399657406558475,
+        "lateral_probe_forward_m": 38.23400653225338,
+        "lateral_probe_left_m": 1.2739965740655848,
+        "lateral_sensitivity_m_per_normalized_u": -38.26859901784749,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -1009.6150044986985,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -33.593098875073224,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -33.59309885164966,
+          "roll_world_x_rad": 2.569356738435067,
+          "yaw_world_z_rad": 38.23400653225338
+        }
+      },
+      {
+        "center_lateral_left_m": -2.269635812653396e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": 0.17857142857142705,
+        "forward_m": 5.178571428571427,
+        "height_m": 1.45,
+        "lateral_probe_delta_from_nominal_m": 0.03571428571428581,
+        "lateral_probe_forward_m": 5.178571428571428,
+        "lateral_probe_left_m": 1.0357142857142858,
+        "lateral_sensitivity_m_per_normalized_u": -5.237540418232328,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -19.944897959423002,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.698979591959528,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.6989795918367343,
+          "roll_world_x_rad": 2.1897959183673468,
+          "yaw_world_z_rad": 5.178571428571428
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857144,
+        "forward_delta_from_nominal_m": 0.3571428571428594,
+        "forward_m": 10.35714285714286,
+        "height_m": 1.45,
+        "lateral_probe_delta_from_nominal_m": 0.03571428571428581,
+        "lateral_probe_forward_m": 10.357142857142858,
+        "lateral_probe_left_m": 1.0357142857142858,
+        "lateral_sensitivity_m_per_normalized_u": -10.412257307076986,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -75.42959184103637,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -7.397959184141101,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -7.39795918367347,
+          "roll_world_x_rad": 2.1897959183673468,
+          "yaw_world_z_rad": 10.357142857142856
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857145,
+        "forward_delta_from_nominal_m": 0.7142857142857153,
+        "forward_m": 20.714285714285715,
+        "height_m": 1.45,
+        "lateral_probe_delta_from_nominal_m": 0.03571428571428603,
+        "lateral_probe_forward_m": 20.714285714285715,
+        "lateral_probe_left_m": 1.035714285714286,
+        "lateral_sensitivity_m_per_normalized_u": -20.761691084766305,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -297.3683674092342,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -14.795918370502648,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -14.795918367346944,
+          "roll_world_x_rad": 2.1897959183673477,
+          "yaw_world_z_rad": 20.714285714285715
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": 1.0714285714285694,
+        "forward_m": 31.07142857142857,
+        "height_m": 1.45,
+        "lateral_probe_delta_from_nominal_m": 0.03571428571428581,
+        "lateral_probe_forward_m": 31.07142857142857,
+        "lateral_probe_left_m": 1.0357142857142858,
+        "lateral_sensitivity_m_per_normalized_u": -31.11112486245561,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -667.2663268396661,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -22.19387756141611,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -22.193877551020407,
+          "roll_world_x_rad": 2.189795918367347,
+          "yaw_world_z_rad": 31.07142857142857
+        }
+      },
+      {
+        "center_lateral_left_m": -2.2011191100599046e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6927225623563842,
+        "forward_delta_from_nominal_m": 0.009775857524985554,
+        "forward_m": 5.0097758575249856,
+        "height_m": 1.45,
+        "lateral_probe_delta_from_nominal_m": 0.0044477154167570365,
+        "lateral_probe_forward_m": 5.0097758575249856,
+        "lateral_probe_left_m": 1.004447715416757,
+        "lateral_sensitivity_m_per_normalized_u": -5.079518841356359,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -18.758864926304852,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.4703847688888345,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.470384768855861,
+          "roll_world_x_rad": 2.145803595176512,
+          "yaw_world_z_rad": 5.009775857524986
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6723990716947479,
+        "forward_delta_from_nominal_m": -0.2624961625900468,
+        "forward_m": 9.737503837409953,
+        "height_m": 1.45,
+        "lateral_probe_delta_from_nominal_m": -0.025021346042615633,
+        "lateral_probe_forward_m": 9.737503837409951,
+        "lateral_probe_left_m": 0.9749786539573844,
+        "lateral_sensitivity_m_per_normalized_u": -9.80181103568592,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -66.8424006811108,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -6.547488541230884,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -6.547488540898495,
+          "roll_world_x_rad": 2.10557474184314,
+          "yaw_world_z_rad": 9.737503837409951
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6351313766499961,
+        "forward_delta_from_nominal_m": -1.59314267689766,
+        "forward_m": 18.40685732310234,
+        "height_m": 1.45,
+        "lateral_probe_delta_from_nominal_m": -0.07905950385750571,
+        "lateral_probe_forward_m": 18.40685732310234,
+        "lateral_probe_left_m": 0.9209404961424943,
+        "lateral_sensitivity_m_per_normalized_u": -18.461110542462386,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -235.11372176976408,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -11.690772633299318,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -11.690772631422053,
+          "roll_world_x_rad": 2.034918205127713,
+          "yaw_world_z_rad": 18.40685732310234
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6017778598056119,
+        "forward_delta_from_nominal_m": -3.8343202660203843,
+        "forward_m": 26.165679733979616,
+        "height_m": 1.45,
+        "lateral_probe_delta_from_nominal_m": -0.12742210328186276,
+        "lateral_probe_forward_m": 26.165679733979616,
+        "lateral_probe_left_m": 0.8725778967181372,
+        "lateral_sensitivity_m_per_normalized_u": -26.210840283359847,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -473.61744563367836,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -15.745926755850181,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -15.745926750673325,
+          "roll_world_x_rad": 1.9750980592007226,
+          "yaw_world_z_rad": 26.16567973397962
+        }
+      },
+      {
+        "center_lateral_left_m": -2.375052939617351e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7372923888491671,
+        "forward_delta_from_nominal_m": 0.4321339042380732,
+        "forward_m": 5.432133904238073,
+        "height_m": 1.47,
+        "lateral_probe_delta_from_nominal_m": 0.08381981160827578,
+        "lateral_probe_forward_m": 5.432133904238072,
+        "lateral_probe_left_m": 1.0838198116082758,
+        "lateral_sensitivity_m_per_normalized_u": -5.480701932729648,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -21.5435229611316,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -4.005070982748826,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -4.0050709828042415,
+          "roll_world_x_rad": 2.26909209798272,
+          "yaw_world_z_rad": 5.432133904238073
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7617995103459089,
+        "forward_delta_from_nominal_m": 1.2117077167427333,
+        "forward_m": 11.211707716742733,
+        "height_m": 1.47,
+        "lateral_probe_delta_from_nominal_m": 0.11984528020848595,
+        "lateral_probe_forward_m": 11.211707716742731,
+        "lateral_probe_left_m": 1.119845280208486,
+        "lateral_sensitivity_m_per_normalized_u": -11.257859372555307,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -86.98182988720049,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -8.541073449497283,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -8.54107344875606,
+          "roll_world_x_rad": 2.3230975861260017,
+          "yaw_world_z_rad": 11.21170771674273
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8160494186674788,
+        "forward_delta_from_nominal_m": 4.005594975505897,
+        "forward_m": 24.005594975505897,
+        "height_m": 1.47,
+        "lateral_probe_delta_from_nominal_m": 0.19959264544119382,
+        "lateral_probe_forward_m": 24.005594975505897,
+        "lateral_probe_left_m": 1.1995926454411938,
+        "lateral_sensitivity_m_per_normalized_u": -24.04651053168268,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -393.4894491699481,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -19.58975182991818,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -19.589751824528534,
+          "roll_world_x_rad": 2.4489268809500686,
+          "yaw_world_z_rad": 24.005594975505897
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8786183269417827,
+        "forward_delta_from_nominal_m": 8.761372139594812,
+        "forward_m": 38.76137213959481,
+        "height_m": 1.47,
+        "lateral_probe_delta_from_nominal_m": 0.2915689406044204,
+        "lateral_probe_forward_m": 38.76137213959481,
+        "lateral_probe_left_m": 1.2915689406044204,
+        "lateral_sensitivity_m_per_normalized_u": -38.79644176292125,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 1.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -1023.540728699146,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -34.0564519630826,
+        "source_rpy_deg": [
+          0.0,
+          1.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -34.05645193925862,
+          "roll_world_x_rad": 2.6047961417238263,
+          "yaw_world_z_rad": 38.761372139594805
+        }
+      },
+      {
+        "center_lateral_left_m": -2.300941134207236e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": 0.2499999999999991,
+        "forward_m": 5.249999999999999,
+        "height_m": 1.47,
+        "lateral_probe_delta_from_nominal_m": 0.050000000000000044,
+        "lateral_probe_forward_m": 5.249999999999999,
+        "lateral_probe_left_m": 1.05,
+        "lateral_sensitivity_m_per_normalized_u": -5.309782355035533,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -20.220000000570337,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.7500000001911005,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.75,
+          "roll_world_x_rad": 2.22,
+          "yaw_world_z_rad": 5.249999999999999
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857144,
+        "forward_delta_from_nominal_m": 0.5000000000000036,
+        "forward_m": 10.500000000000004,
+        "height_m": 1.47,
+        "lateral_probe_delta_from_nominal_m": 0.050000000000000266,
+        "lateral_probe_forward_m": 10.5,
+        "lateral_probe_left_m": 1.0500000000000003,
+        "lateral_sensitivity_m_per_normalized_u": -10.555874649243567,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -76.47000000510218,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -7.500000000493223,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -7.500000000000002,
+          "roll_world_x_rad": 2.2199999999999998,
+          "yaw_world_z_rad": 10.499999999999998
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857145,
+        "forward_delta_from_nominal_m": 1.0,
+        "forward_m": 21.0,
+        "height_m": 1.47,
+        "lateral_probe_delta_from_nominal_m": 0.050000000000000266,
+        "lateral_probe_forward_m": 21.0,
+        "lateral_probe_left_m": 1.0500000000000003,
+        "lateral_sensitivity_m_per_normalized_u": -21.04805923765963,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -301.4700000623094,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -15.000000003206893,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -15.000000000000005,
+          "roll_world_x_rad": 2.2200000000000006,
+          "yaw_world_z_rad": 21.0
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": 1.4999999999999964,
+        "forward_m": 31.499999999999996,
+        "height_m": 1.47,
+        "lateral_probe_delta_from_nominal_m": 0.050000000000000044,
+        "lateral_probe_forward_m": 31.499999999999996,
+        "lateral_probe_left_m": 1.05,
+        "lateral_sensitivity_m_per_normalized_u": -31.540243826075688,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -676.4700003127899,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -22.5000000105835,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -22.5,
+          "roll_world_x_rad": 2.22,
+          "yaw_world_z_rad": 31.499999999999993
+        }
+      },
+      {
+        "center_lateral_left_m": -2.2314793736469378e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6927225623563842,
+        "forward_delta_from_nominal_m": 0.07887621418050283,
+        "forward_m": 5.078876214180503,
+        "height_m": 1.47,
+        "lateral_probe_delta_from_nominal_m": 0.018302166663884734,
+        "lateral_probe_forward_m": 5.078876214180503,
+        "lateral_probe_left_m": 1.0183021666638847,
+        "lateral_sensitivity_m_per_normalized_u": -5.149581170202654,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -19.01760789069229,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.518252145062739,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.5182521449780104,
+          "roll_world_x_rad": 2.175400886144464,
+          "yaw_world_z_rad": 5.078876214180504
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6723990716947479,
+        "forward_delta_from_nominal_m": -0.12818576483266853,
+        "forward_m": 9.871814235167331,
+        "height_m": 1.47,
+        "lateral_probe_delta_from_nominal_m": -0.011573364608720604,
+        "lateral_probe_forward_m": 9.87181423516733,
+        "lateral_probe_left_m": 0.9884266353912794,
+        "lateral_sensitivity_m_per_normalized_u": -9.937008429281589,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -67.76436482880399,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -6.637798728004185,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -6.6377987276695105,
+          "roll_world_x_rad": 2.1346171520754598,
+          "yaw_world_z_rad": 9.87181423516733
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6351313766499961,
+        "forward_delta_from_nominal_m": -1.3392549896824555,
+        "forward_m": 18.660745010317545,
+        "height_m": 1.47,
+        "lateral_probe_delta_from_nominal_m": -0.06635687632450582,
+        "lateral_probe_forward_m": 18.660745010317545,
+        "lateral_probe_left_m": 0.9336431236754942,
+        "lateral_sensitivity_m_per_normalized_u": -18.715746549944626,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -238.35666965865698,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -11.852024669634087,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -11.85202466771753,
+          "roll_world_x_rad": 2.062986042439819,
+          "yaw_world_z_rad": 18.660745010317545
+        }
+      },
+      {
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6017778598056119,
+        "forward_delta_from_nominal_m": -3.4734143386551466,
+        "forward_m": 26.526585661344853,
+        "height_m": 1.47,
+        "lateral_probe_delta_from_nominal_m": -0.1153865460857505,
+        "lateral_probe_forward_m": 26.526585661344853,
+        "lateral_probe_left_m": 0.8846134539142495,
+        "lateral_sensitivity_m_per_normalized_u": -26.572369114854464,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.84,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -480.1501000564201,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -15.963111952455034,
+        "source_rpy_deg": [
+          0.0,
+          2.84,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -15.963111947234337,
+          "roll_world_x_rad": 2.002340791051767,
+          "yaw_world_z_rad": 26.526585661344853
+        }
+      }
+    ],
+    "measured_meter_error": null,
+    "orientation_1d": [
+      {
+        "axis": "roll",
+        "axis_value_deg": -0.5,
+        "center_lateral_left_m": 0.0122176149070623,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7275477341388271,
+        "forward_delta_from_nominal_m": 0.00019039192868408605,
+        "forward_m": 5.000190391928684,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.01856682779435781,
+        "lateral_probe_forward_m": 5.031554470964475,
+        "lateral_probe_left_m": 1.0185668277943578,
+        "lateral_sensitivity_m_per_normalized_u": -5.120964551470712,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -19.49138983681209,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.6166486279132215,
+        "source_rpy_deg": [
+          -0.5,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.66069605454629,
+          "roll_world_x_rad": 2.141055987630758,
+          "yaw_world_z_rad": 5.031554470964476
+        }
+      },
+      {
+        "axis": "roll",
+        "axis_value_deg": -0.5,
+        "center_lateral_left_m": 0.0122176149070623,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7275477341388273,
+        "forward_delta_from_nominal_m": 0.0003807838573717248,
+        "forward_m": 10.000380783857372,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.018566827794358254,
+        "lateral_probe_forward_m": 10.063108941928954,
+        "lateral_probe_left_m": 1.0185668277943583,
+        "lateral_sensitivity_m_per_normalized_u": -10.180503883983183,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -73.7390535929805,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -7.233297255826443,
+        "source_rpy_deg": [
+          -0.5,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -7.321392109092582,
+          "roll_world_x_rad": 2.1410559876307587,
+          "yaw_world_z_rad": 10.063108941928952
+        }
+      },
+      {
+        "axis": "roll",
+        "axis_value_deg": -0.5,
+        "center_lateral_left_m": 0.01221761490706229,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7275477341388273,
+        "forward_delta_from_nominal_m": 0.0007615677147398969,
+        "forward_m": 20.00076156771474,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.018566827794358254,
+        "lateral_probe_forward_m": 20.126217883857905,
+        "lateral_probe_left_m": 1.0185668277943583,
+        "lateral_sensitivity_m_per_normalized_u": -20.29958254900812,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -290.72970866117487,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -14.466594513984354,
+        "source_rpy_deg": [
+          -0.5,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -14.642784218185163,
+          "roll_world_x_rad": 2.141055987630758,
+          "yaw_world_z_rad": 20.126217883857905
+        }
+      },
+      {
+        "axis": "roll",
+        "axis_value_deg": -0.5,
+        "center_lateral_left_m": 0.012217614907062285,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7275477341388273,
+        "forward_delta_from_nominal_m": 0.00114235157210274,
+        "forward_m": 30.001142351572103,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.018566827794358254,
+        "lateral_probe_forward_m": 30.189326825786857,
+        "lateral_probe_left_m": 1.0185668277943583,
+        "lateral_sensitivity_m_per_normalized_u": -30.41866121403307,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -652.380800591601,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -21.69989177669418,
+        "source_rpy_deg": [
+          -0.5,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -21.964176327277745,
+          "roll_world_x_rad": 2.141055987630758,
+          "yaw_world_z_rad": 30.18932682578686
+        }
+      },
+      {
+        "axis": "roll",
+        "axis_value_deg": 0.0,
+        "center_lateral_left_m": -2.1913725087687957e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": -8.881784197001252e-16,
+        "forward_m": 4.999999999999999,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.0,
+        "lateral_probe_forward_m": 4.999999999999999,
+        "lateral_probe_left_m": 1.0,
+        "lateral_sensitivity_m_per_normalized_u": -5.056935576224317,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -19.25714285766489,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.5714285715471306,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.571428571428571,
+          "roll_world_x_rad": 2.1142857142857143,
+          "yaw_world_z_rad": 4.999999999999999
+        }
+      },
+      {
+        "axis": "roll",
+        "axis_value_deg": 0.0,
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857144,
+        "forward_delta_from_nominal_m": 1.7763568394002505e-15,
+        "forward_m": 10.000000000000002,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 2.220446049250313e-16,
+        "lateral_probe_forward_m": 10.0,
+        "lateral_probe_left_m": 1.0000000000000002,
+        "lateral_sensitivity_m_per_normalized_u": -10.05321395166054,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -72.82857143220411,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -7.142857143371817,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -7.142857142857143,
+          "roll_world_x_rad": 2.1142857142857143,
+          "yaw_world_z_rad": 9.999999999999998
+        }
+      },
+      {
+        "axis": "roll",
+        "axis_value_deg": 0.0,
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857145,
+        "forward_delta_from_nominal_m": 0.0,
+        "forward_m": 20.0,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 2.220446049250313e-16,
+        "lateral_probe_forward_m": 20.0,
+        "lateral_probe_left_m": 1.0000000000000002,
+        "lateral_sensitivity_m_per_normalized_u": -20.04577070253298,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -287.1142857756581,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -14.285714288686524,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -14.285714285714292,
+          "roll_world_x_rad": 2.1142857142857148,
+          "yaw_world_z_rad": 20.0
+        }
+      },
+      {
+        "axis": "roll",
+        "axis_value_deg": 0.0,
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": -3.552713678800501e-15,
+        "forward_m": 29.999999999999996,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.0,
+        "lateral_probe_forward_m": 29.999999999999996,
+        "lateral_probe_left_m": 1.0,
+        "lateral_sensitivity_m_per_normalized_u": -30.038327453405415,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -644.2571431559685,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -21.428571438664168,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -21.428571428571423,
+          "roll_world_x_rad": 2.1142857142857143,
+          "yaw_world_z_rad": 29.99999999999999
+        }
+      },
+      {
+        "axis": "roll",
+        "axis_value_deg": 0.5,
+        "center_lateral_left_m": -0.012217614907062307,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7011880071841259,
+        "forward_delta_from_nominal_m": 0.00019039192868408605,
+        "forward_m": 5.000190391928684,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": -0.018336789942223874,
+        "lateral_probe_forward_m": 4.969214905142223,
+        "lateral_probe_left_m": 0.9816632100577761,
+        "lateral_sensitivity_m_per_normalized_u": -4.994855982439985,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -19.0286348424884,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.5275852535709973,
+        "source_rpy_deg": [
+          0.5,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.484353896606331,
+          "roll_world_x_rad": 2.088330469986384,
+          "yaw_world_z_rad": 4.969214905142225
+        }
+      },
+      {
+        "axis": "roll",
+        "axis_value_deg": 0.5,
+        "center_lateral_left_m": -0.012217614907062304,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.701188007184126,
+        "forward_delta_from_nominal_m": 0.0003807838573717248,
+        "forward_m": 10.000380783857372,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": -0.018336789942223652,
+        "lateral_probe_forward_m": 9.938429810284449,
+        "lateral_probe_left_m": 0.9816632100577763,
+        "lateral_sensitivity_m_per_normalized_u": -9.929799399717195,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -71.94039885138892,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -7.055170507197506,
+        "source_rpy_deg": [
+          0.5,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -6.968707793212664,
+          "roll_world_x_rad": 2.0883304699863845,
+          "yaw_world_z_rad": 9.93842981028445
+        }
+      },
+      {
+        "axis": "roll",
+        "axis_value_deg": 0.5,
+        "center_lateral_left_m": -0.012217614907062307,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7011880071841259,
+        "forward_delta_from_nominal_m": 0.0007615677147398969,
+        "forward_m": 20.00076156771474,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": -0.018336789942223874,
+        "lateral_probe_forward_m": 19.876859620568894,
+        "lateral_probe_left_m": 0.9816632100577761,
+        "lateral_sensitivity_m_per_normalized_u": -19.799686234271615,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -283.58745493051174,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -14.110341016504435,
+        "source_rpy_deg": [
+          0.5,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -13.937415586425326,
+          "roll_world_x_rad": 2.088330469986384,
+          "yaw_world_z_rad": 19.876859620568897
+        }
+      },
+      {
+        "axis": "roll",
+        "axis_value_deg": 0.5,
+        "center_lateral_left_m": -0.012217614907062312,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.701188007184126,
+        "forward_delta_from_nominal_m": 0.00114235157210274,
+        "forward_m": 30.001142351572103,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": -0.018336789942223652,
+        "lateral_probe_forward_m": 29.815289430853344,
+        "lateral_probe_left_m": 0.9816632100577763,
+        "lateral_sensitivity_m_per_normalized_u": -29.66957306882604,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -636.3325485345683,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -21.16551152991919,
+        "source_rpy_deg": [
+          0.5,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -20.90612337963799,
+          "roll_world_x_rad": 2.088330469986384,
+          "yaw_world_z_rad": 29.815289430853348
+        }
+      },
+      {
+        "axis": "yaw",
+        "axis_value_deg": -0.3,
+        "center_lateral_left_m": -0.044095359433222375,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6825921189494353,
+        "forward_delta_from_nominal_m": -0.00016418697282105654,
+        "forward_m": 4.999835813027179,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": -0.04437103347079063,
+        "lateral_probe_forward_m": 5.007280764917476,
+        "lateral_probe_left_m": 0.9556289665292094,
+        "lateral_sensitivity_m_per_normalized_u": -5.054386479012114,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -19.309186184646165,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.4179303875503386,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          -0.3
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.417930387499769,
+          "roll_world_x_rad": 2.052304801192632,
+          "yaw_world_z_rad": 5.007280764917476
+        }
+      },
+      {
+        "axis": "yaw",
+        "axis_value_deg": -0.3,
+        "center_lateral_left_m": -0.08769238425737994,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.6514632708909794,
+        "forward_delta_from_nominal_m": -0.00027072326826349524,
+        "forward_m": 9.999729276731737,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": -0.08795142075262885,
+        "lateral_probe_forward_m": 10.005902110918825,
+        "lateral_probe_left_m": 0.9120485792473711,
+        "lateral_sensitivity_m_per_normalized_u": -10.048268942990457,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -72.91291218436413,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -6.518477717765148,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          -0.3
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -6.518477717394134,
+          "roll_world_x_rad": 1.9941661506479633,
+          "yaw_world_z_rad": 10.005902110918827
+        }
+      },
+      {
+        "axis": "yaw",
+        "axis_value_deg": -0.3,
+        "center_lateral_left_m": -0.17488788512124007,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.5892045388507647,
+        "forward_delta_from_nominal_m": -0.00031736424719497336,
+        "forward_m": 19.999682635752805,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": -0.1751136456089294,
+        "lateral_probe_forward_m": 20.00331114985237,
+        "lateral_probe_left_m": 0.8248863543910706,
+        "lateral_sensitivity_m_per_normalized_u": -20.036399493303513,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -287.2088978858045,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -11.78604172391573,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          -0.3
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -11.78604172153713,
+          "roll_world_x_rad": 1.8860267840432792,
+          "yaw_world_z_rad": 20.003311149852372
+        }
+      },
+      {
+        "axis": "yaw",
+        "axis_value_deg": -0.3,
+        "center_lateral_left_m": -0.2620853209928349,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.5269444255411746,
+        "forward_delta_from_nominal_m": -0.0001420902545419267,
+        "forward_m": 29.999857909745458,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": -0.2622778042423556,
+        "lateral_probe_forward_m": 30.00094199084466,
+        "lateral_probe_left_m": 0.7377221957576444,
+        "lateral_sensitivity_m_per_normalized_u": -30.025017560985628,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -644.2975148246433,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -15.808829150421033,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          -0.3
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -15.80882914305974,
+          "roll_world_x_rad": 1.7887385986524857,
+          "yaw_world_z_rad": 30.000941990844655
+        }
+      },
+      {
+        "axis": "yaw",
+        "axis_value_deg": 0.2,
+        "center_lateral_left_m": -2.1913725087687957e-18,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": -8.881784197001252e-16,
+        "forward_m": 4.999999999999999,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.0,
+        "lateral_probe_forward_m": 4.999999999999999,
+        "lateral_probe_left_m": 1.0,
+        "lateral_sensitivity_m_per_normalized_u": -5.056935576224317,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -19.25714285766489,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.5714285715471306,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.571428571428571,
+          "roll_world_x_rad": 2.1142857142857143,
+          "yaw_world_z_rad": 4.999999999999999
+        }
+      },
+      {
+        "axis": "yaw",
+        "axis_value_deg": 0.2,
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857144,
+        "forward_delta_from_nominal_m": 1.7763568394002505e-15,
+        "forward_m": 10.000000000000002,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 2.220446049250313e-16,
+        "lateral_probe_forward_m": 10.0,
+        "lateral_probe_left_m": 1.0000000000000002,
+        "lateral_sensitivity_m_per_normalized_u": -10.05321395166054,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -72.82857143220411,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -7.142857143371817,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -7.142857142857143,
+          "roll_world_x_rad": 2.1142857142857143,
+          "yaw_world_z_rad": 9.999999999999998
+        }
+      },
+      {
+        "axis": "yaw",
+        "axis_value_deg": 0.2,
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857145,
+        "forward_delta_from_nominal_m": 0.0,
+        "forward_m": 20.0,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 2.220446049250313e-16,
+        "lateral_probe_forward_m": 20.0,
+        "lateral_probe_left_m": 1.0000000000000002,
+        "lateral_sensitivity_m_per_normalized_u": -20.04577070253298,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -287.1142857756581,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -14.285714288686524,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -14.285714285714292,
+          "roll_world_x_rad": 2.1142857142857148,
+          "yaw_world_z_rad": 20.0
+        }
+      },
+      {
+        "axis": "yaw",
+        "axis_value_deg": 0.2,
+        "center_lateral_left_m": 0.0,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7142857142857143,
+        "forward_delta_from_nominal_m": -3.552713678800501e-15,
+        "forward_m": 29.999999999999996,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.0,
+        "lateral_probe_forward_m": 29.999999999999996,
+        "lateral_probe_left_m": 1.0,
+        "lateral_sensitivity_m_per_normalized_u": -30.038327453405415,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -644.2571431559685,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -21.428571438664168,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.2
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -21.428571428571423,
+          "roll_world_x_rad": 2.1142857142857143,
+          "yaw_world_z_rad": 29.99999999999999
+        }
+      },
+      {
+        "axis": "yaw",
+        "axis_value_deg": 0.7,
+        "center_lateral_left_m": 0.044095359433222375,
+        "fixed_normalized_optical_uv": [
+          [
+            0.0034906726815962506,
+            0.23643282284046516
+          ],
+          [
+            -0.19427767660522524,
+            0.23626960471284822
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7459490541016321,
+        "forward_delta_from_nominal_m": -0.00016418697282105654,
+        "forward_m": 4.999835813027179,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.04432867574228494,
+        "lateral_probe_forward_m": 4.992387070683309,
+        "lateral_probe_left_m": 1.044328675742285,
+        "lateral_sensitivity_m_per_normalized_u": -5.059271682996482,
+        "nominal_forward_distance_m": 5.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -19.202806188722832,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -3.724066413135496,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.7
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -3.7240664130854326,
+          "roll_world_x_rad": 2.1790159878411677,
+          "yaw_world_z_rad": 4.992387070683309
+        }
+      },
+      {
+        "axis": "yaw",
+        "axis_value_deg": 0.7,
+        "center_lateral_left_m": 0.08769238425737994,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.09857325167437607
+          ],
+          [
+            -0.0959901307876757,
+            0.09853902204453575
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.7771016781456975,
+        "forward_delta_from_nominal_m": -0.0002707232682652716,
+        "forward_m": 9.999729276731735,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.08794234940397638,
+        "lateral_probe_forward_m": 9.993553299747807,
+        "lateral_probe_left_m": 1.0879423494039764,
+        "lateral_sensitivity_m_per_normalized_u": -10.0580702034697,
+        "nominal_forward_distance_m": 10.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -72.73650540007282,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -7.766007040443945,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.7
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -7.766007039872495,
+          "roll_world_x_rad": 2.2454418254476027,
+          "yaw_world_z_rad": 9.993553299747806
+        }
+      },
+      {
+        "axis": "yaw",
+        "axis_value_deg": 0.7,
+        "center_lateral_left_m": 0.1748878851212401,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.02905364472100176
+          ],
+          [
+            -0.04640024027957576,
+            0.029048585007711375
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.8394079634761935,
+        "forward_delta_from_nominal_m": -0.00031736424719497336,
+        "forward_m": 19.999682635752805,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.17517114886667073,
+        "lateral_probe_forward_m": 19.996052274234554,
+        "lateral_probe_left_m": 1.1751711488666707,
+        "lateral_sensitivity_m_per_normalized_u": -20.056299608982066,
+        "nominal_forward_distance_m": 20.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -287.0015047395924,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -16.784845520589897,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.7
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -16.784845517078736,
+          "roll_world_x_rad": 2.3864480208061507,
+          "yaw_world_z_rad": 19.996052274234554
+        }
+      },
+      {
+        "axis": "yaw",
+        "axis_value_deg": 0.7,
+        "center_lateral_left_m": 0.26208532099283494,
+        "fixed_normalized_optical_uv": [
+          [
+            0.00349067268159625,
+            0.005792229885454017
+          ],
+          [
+            -0.02980351797901938,
+            0.005791556725785809
+          ]
+        ],
+        "fixed_ray_lateral_height_sensitivity_m_per_m": 0.9017156318348837,
+        "forward_delta_from_nominal_m": -0.0001420902545419267,
+        "forward_m": 29.999857909745458,
+        "height_m": 1.4,
+        "lateral_probe_delta_from_nominal_m": 0.2624018845688372,
+        "lateral_probe_forward_m": 29.99877327669198,
+        "lateral_probe_left_m": 1.2624018845688372,
+        "lateral_sensitivity_m_per_normalized_u": -30.05537220788097,
+        "nominal_forward_distance_m": 30.0,
+        "pitch_deg": 2.34,
+        "pixel_sensitivity_symbolic": "lateral_sensitivity_m_per_normalized_u / actual_fx_px",
+        "reported_pitch_forward_sensitivity_m_per_rad": -644.2045703742849,
+        "reported_pitch_lateral_sensitivity_m_per_rad": -27.050362812031103,
+        "source_rpy_deg": [
+          0.0,
+          2.34,
+          0.7
+        ],
+        "world_axis_jacobian_m_per_rad": {
+          "pitch_world_y_rad": -27.050362799463734,
+          "roll_world_x_rad": 2.5383275129735368,
+          "yaw_world_z_rad": 29.99877327669198
+        }
+      }
+    ],
+    "orientation_mount_prior_sha256": "bddd081d0b18886d583ddf0154d232d9365a7644bcf4ee5209a970bbc88e69ab",
+    "physical_measurement": false,
+    "physical_uncertainty": null,
+    "policy_sha256": "35ada2dfa0822088ce455a09cb54e715d23916256d8875d398594d26adff6c9a",
+    "private_input_allowed": false,
+    "qualification_allowed": false,
+    "range_role": "MODEL_PRIOR_SENSITIVITY_NOT_PHYSICAL_UNCERTAINTY",
+    "receipt_sha256": "5d310d1d5eff74f2ed5c51d5e3db0a594bcbbb91cd83f079ef777ceacf33a0af",
+    "reference_promotable": false,
+    "schema": "DIAGNOSTIC_SENSITIVITY_ENVELOPE_V1",
+    "sealed_reference_allowed": false,
+    "total_conservative_uncertainty_m": null,
+    "vehicle_activation_allowed": false
+  },
+  "total_conservative_uncertainty_m": null,
+  "vehicle_activation_allowed": false
+}

@@ -1,0 +1,80 @@
+{
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_search_authorized": false,
+  "clean_limit_mask_observable": false,
+  "composition_authorized": false,
+  "counterfactual_use_admitted": false,
+  "full_plant_ready": false,
+  "metric_policy_sha256": "e81b457764f1b7cb50ed1b31911d8f976d38fa819cd5dbd28df9564e9525c4a7",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "908138c4866860f2a70d23ca773711a071c24960466d5d0ca1fbd63b3f16f48f",
+  "reference_promotable": false,
+  "regimes": {
+    "HIGH": {
+      "better_than_each_naive_primary_rule": false,
+      "status": "UNAVAILABLE"
+    },
+    "LOW": {
+      "better_than_each_naive_primary_rule": false,
+      "directional_comparisons": {
+        "100": {
+          "HOLD_LAST_OUTPUT": {
+            "MAE": true,
+            "P95_ABS": true,
+            "RMSE": true
+          },
+          "TRAIN_STATIC_GAIN": {
+            "MAE": true,
+            "P95_ABS": true,
+            "RMSE": true
+          },
+          "ZERO_RESPONSE": {
+            "MAE": true,
+            "P95_ABS": true,
+            "RMSE": true
+          }
+        },
+        "one_step": {
+          "HOLD_LAST_OUTPUT": {
+            "MAE": false,
+            "P95_ABS": false,
+            "RMSE": true
+          },
+          "TRAIN_STATIC_GAIN": {
+            "MAE": true,
+            "P95_ABS": true,
+            "RMSE": true
+          },
+          "ZERO_RESPONSE": {
+            "MAE": true,
+            "P95_ABS": true,
+            "RMSE": true
+          }
+        }
+      },
+      "minimum_support_available": true,
+      "physical_delay_validated": false,
+      "status": "DIAGNOSTIC_ONLY"
+    },
+    "MEDIUM": {
+      "better_than_each_naive_primary_rule": false,
+      "status": "UNAVAILABLE"
+    }
+  },
+  "route_independent_generalization": false,
+  "schema": "EMPIRICAL_PLANT_VALIDATION_GATES_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "validation_sha256": "df7f73c291057e3c2701387d4622e9a83057ca3b8046732efad48e1289b912fc",
+  "vehicle_activation_allowed": false,
+  "yaw_unit_frame_proven": false
+}

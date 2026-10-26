@@ -1,0 +1,759 @@
+{
+  "arms": 3,
+  "candidate_acceptance_authorized": false,
+  "composition_authorized": false,
+  "cross_objective_interpretation": "Tracking p95 differences are descriptive; sharp/high-speed derivative regressions and output limiting coexist. No winner or acceptance.",
+  "detectability": "TA_STANDALONE_EFFECT_PRESENT",
+  "effect_present_scenarios": 10,
+  "event_metric_limitation": "Pressed derivative mask has zero eligible support; boundary jumps explicitly outside frozen derivative estimator. Before/at commands disclosed.",
+  "execution_binding_sha256": "0d294e3c989c8b2adce885a04ac112f5f3511a06a7fac9cd0d9ec8c38fc80b54",
+  "executions": 66,
+  "family": "TA-B",
+  "historical_70_used_for_selection_or_tuning": false,
+  "historical_readiness_sha256": "b0de51af8f38aaa6e2c5a601ef8d95abee60c7b674abfd4b89f0bdc12c0ee520",
+  "historical_roles": [
+    "MIXED_HISTORICAL",
+    "MIXED_HISTORICAL"
+  ],
+  "historical_verdicts": {
+    "CURRENT": "BASELINE_EXACT",
+    "V1": "TRADEOFF_ONLY",
+    "V2": "REJECTED"
+  },
+  "implementation_commit_sha": "3ab2ab102feeeebea828e33451966b4dc9f0b4c0",
+  "next": "REVIEW_NONQUALIFYING_TA_MECHANISM_AND_TRADEOFFS_WITHOUT_SEARCH_OR_COMPOSITION",
+  "no_effect_scenarios": [
+    "straight"
+  ],
+  "noise_stability_limitation": "Synthetic baseline and TA show large oscillatory/saturated responses at medium/high speed; structural PASS is not stability/performance qualification.",
+  "performance_threshold": null,
+  "physical_delay_owner": "PLANT",
+  "physical_meter_result": null,
+  "private_inputs_opened": false,
+  "production_authority": false,
+  "production_sources_modified": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "db2633df48bce8dbce05033eb512527ea2f81e33908c3368aaf0e87bcb31853a",
+  "reference_blocker_graph_sha256": "203b8809f92a5924a3d80374ed47fb956d78d3b220ef0d61fb0356c1d80e43ee",
+  "reference_promotable": false,
+  "reference_track": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "reference_track_modified": false,
+  "repeatability": "EXACT_PASS",
+  "repeats": 2,
+  "results_sha256": "77bbf44c0bfcce5d7ce0e76a4ea5f488d84e3184fe984c3d92891f9c51a383fb",
+  "scenarios": 11,
+  "schema": "TRAJECTORY_V0_READINESS_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "search_execution_allowed": false,
+  "selection_frozen_commit": "2bec29c54",
+  "sg_enabled": false,
+  "source_baseline_sha": "c2d3923d9a13e3e9942352d8a8114cd3203188e2",
+  "source_configuration_changed_after_results": false,
+  "standalone_verdict": "TA_STANDALONE_TRADEOFF_ONLY",
+  "states": [
+    "TA_FAMILY_SELECTED",
+    "TA_V0_IMPLEMENTED",
+    "TA_STANDALONE_STRUCTURAL_PASS",
+    "TA_STANDALONE_EFFECT_PRESENT",
+    "TA_STANDALONE_TRADEOFF_ONLY",
+    "SMOOTHNESS_IMPLEMENTATION_PENDING",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "SEARCH_NOT_AUTHORIZED",
+    "FROZEN_EVALUATION_NOT_AUTHORIZED"
+  ],
+  "status": "TA_V0_IMPLEMENTED",
+  "structural_status": "TA_STANDALONE_STRUCTURAL_PASS",
+  "summary": [
+    {
+      "baseline_requested_derivative_p95_normalized_per_s": 0.0,
+      "baseline_tracking_p95_1pm": 0.0,
+      "effect": {
+        "cancellation_ratio": null,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 0.0,
+        "requested_delta_sign_changes": 0,
+        "requested_delta_signed_integral": 0.0,
+        "same_time_peak_absolute_delta": {
+          "applied": 0.0,
+          "curvature": 0.0,
+          "heading": 0.0,
+          "pose_y": 0.0,
+          "requested": 0.0
+        },
+        "same_time_signed_final_delta": {
+          "applied": 0.0,
+          "curvature": 0.0,
+          "heading": 0.0,
+          "pose_y": 0.0,
+          "requested": 0.0
+        },
+        "states": [
+          "NO_OUTPUT_DIFFERENCE"
+        ]
+      },
+      "scenario": "straight",
+      "ta_requested_derivative_p95_normalized_per_s": 0.0,
+      "ta_tracking_p95_1pm": 0.0
+    },
+    {
+      "baseline_requested_derivative_p95_normalized_per_s": 117.20075685086348,
+      "baseline_tracking_p95_1pm": 0.014042884493503733,
+      "effect": {
+        "cancellation_ratio": 0.9971149426814956,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": 0.0009660059800268275,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": 0.0066218210628018435,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": 0.015830709211254606,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 6.514348233469951,
+        "requested_delta_sign_changes": 152,
+        "requested_delta_signed_integral": -0.01879426804625882,
+        "same_time_peak_absolute_delta": {
+          "applied": 2.0,
+          "curvature": 0.02619071664130514,
+          "heading": 0.009013652036224215,
+          "pose_y": 0.3090089829023004,
+          "requested": 2.0
+        },
+        "same_time_signed_final_delta": {
+          "applied": -1.969196315173614,
+          "curvature": 0.019540064556317422,
+          "heading": 0.0036784586160979182,
+          "pose_y": 0.3090089829023004,
+          "requested": 1.1416933124657045
+        },
+        "states": [
+          "REQUESTED_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED"
+        ]
+      },
+      "scenario": "gentle_left",
+      "ta_requested_derivative_p95_normalized_per_s": 116.15776606959723,
+      "ta_tracking_p95_1pm": 0.011976180678609758
+    },
+    {
+      "baseline_requested_derivative_p95_normalized_per_s": 117.20075685086348,
+      "baseline_tracking_p95_1pm": 0.014042884493503733,
+      "effect": {
+        "cancellation_ratio": 0.9971149426814956,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": -0.0009660059800268286,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": -0.006621821062801849,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": -0.01583070921125461,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 6.514348233469951,
+        "requested_delta_sign_changes": 152,
+        "requested_delta_signed_integral": 0.018794268046258826,
+        "same_time_peak_absolute_delta": {
+          "applied": 2.0,
+          "curvature": 0.02619071664130514,
+          "heading": 0.009013652036224215,
+          "pose_y": 0.3090089829023004,
+          "requested": 2.0
+        },
+        "same_time_signed_final_delta": {
+          "applied": 1.969196315173614,
+          "curvature": -0.019540064556317422,
+          "heading": -0.0036784586160979182,
+          "pose_y": -0.3090089829023004,
+          "requested": -1.1416933124657045
+        },
+        "states": [
+          "REQUESTED_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED"
+        ]
+      },
+      "scenario": "gentle_right",
+      "ta_requested_derivative_p95_normalized_per_s": 116.15776606959723,
+      "ta_tracking_p95_1pm": 0.011976180678609758
+    },
+    {
+      "baseline_requested_derivative_p95_normalized_per_s": 117.57310236739579,
+      "baseline_tracking_p95_1pm": 0.014078377638088837,
+      "effect": {
+        "cancellation_ratio": 0.9961531744363126,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": -0.000905811283790265,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": 0.00036204070941592975,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": 0.008163312634243303,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 6.549339593866595,
+        "requested_delta_sign_changes": 156,
+        "requested_delta_signed_integral": -0.02519416697495646,
+        "same_time_peak_absolute_delta": {
+          "applied": 2.0,
+          "curvature": 0.026606381895418463,
+          "heading": 0.013336697891762173,
+          "pose_y": 0.5241641767970808,
+          "requested": 2.0
+        },
+        "same_time_signed_final_delta": {
+          "applied": -2.0,
+          "curvature": 0.015491280976729051,
+          "heading": 0.006000119826351014,
+          "pose_y": 0.5241641767970808,
+          "requested": 0.6692512252947515
+        },
+        "states": [
+          "REQUESTED_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED"
+        ]
+      },
+      "scenario": "sharp_left",
+      "ta_requested_derivative_p95_normalized_per_s": 121.29081937486784,
+      "ta_tracking_p95_1pm": 0.012018019975958732
+    },
+    {
+      "baseline_requested_derivative_p95_normalized_per_s": 117.57310236739579,
+      "baseline_tracking_p95_1pm": 0.014078377638088837,
+      "effect": {
+        "cancellation_ratio": 0.9961531744363126,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": 0.0009058112837902611,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": -0.0003620407094159471,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": -0.00816331263424333,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 6.549339593866595,
+        "requested_delta_sign_changes": 156,
+        "requested_delta_signed_integral": 0.025194166974956463,
+        "same_time_peak_absolute_delta": {
+          "applied": 2.0,
+          "curvature": 0.026606381895418463,
+          "heading": 0.013336697891762145,
+          "pose_y": 0.5241641767970808,
+          "requested": 2.0
+        },
+        "same_time_signed_final_delta": {
+          "applied": 2.0,
+          "curvature": -0.015491280976729051,
+          "heading": -0.006000119826351014,
+          "pose_y": -0.5241641767970808,
+          "requested": -0.6692512252947515
+        },
+        "states": [
+          "REQUESTED_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED"
+        ]
+      },
+      "scenario": "sharp_right",
+      "ta_requested_derivative_p95_normalized_per_s": 121.29081937486784,
+      "ta_tracking_p95_1pm": 0.012018019975958732
+    },
+    {
+      "baseline_requested_derivative_p95_normalized_per_s": 0.033235305868253205,
+      "baseline_tracking_p95_1pm": 0.00015599330097351504,
+      "effect": {
+        "cancellation_ratio": 0.999741680484896,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": -2.893834787943972e-08,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": -1.0672416234612514e-06,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": -2.170295057293825e-06,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": -3.2232034196111314e-06,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": -3.2454496014522327e-06,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 0.00014194283401425676,
+        "requested_delta_sign_changes": 135,
+        "requested_delta_signed_integral": 3.666660405505213e-08,
+        "same_time_peak_absolute_delta": {
+          "applied": 0.00012713917514850731,
+          "curvature": 1.1352349276724577e-06,
+          "heading": 3.4560924059776066e-07,
+          "pose_y": 3.285849202616653e-06,
+          "requested": 0.00012713917514850731
+        },
+        "same_time_signed_final_delta": {
+          "applied": -5.663898986964396e-10,
+          "curvature": 3.645271080727171e-11,
+          "heading": 1.2399854287456491e-08,
+          "pose_y": -3.119479407509562e-06,
+          "requested": -5.787846249296377e-10
+        },
+        "states": [
+          "REQUESTED_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT"
+        ]
+      },
+      "scenario": "low_speed",
+      "ta_requested_derivative_p95_normalized_per_s": 0.03281128187096942,
+      "ta_tracking_p95_1pm": 0.00015579630910388936
+    },
+    {
+      "baseline_requested_derivative_p95_normalized_per_s": 117.20075685086348,
+      "baseline_tracking_p95_1pm": 0.014042884493503733,
+      "effect": {
+        "cancellation_ratio": 0.9971149426814956,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": 0.0009660059800268275,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": 0.0066218210628018435,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": 0.015830709211254606,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 6.514348233469951,
+        "requested_delta_sign_changes": 152,
+        "requested_delta_signed_integral": -0.01879426804625882,
+        "same_time_peak_absolute_delta": {
+          "applied": 2.0,
+          "curvature": 0.02619071664130514,
+          "heading": 0.009013652036224215,
+          "pose_y": 0.3090089829023004,
+          "requested": 2.0
+        },
+        "same_time_signed_final_delta": {
+          "applied": -1.969196315173614,
+          "curvature": 0.019540064556317422,
+          "heading": 0.0036784586160979182,
+          "pose_y": 0.3090089829023004,
+          "requested": 1.1416933124657045
+        },
+        "states": [
+          "REQUESTED_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED"
+        ]
+      },
+      "scenario": "medium_speed",
+      "ta_requested_derivative_p95_normalized_per_s": 116.15776606959723,
+      "ta_tracking_p95_1pm": 0.011976180678609758
+    },
+    {
+      "baseline_requested_derivative_p95_normalized_per_s": 176.3502331258384,
+      "baseline_tracking_p95_1pm": 0.022329503183761163,
+      "effect": {
+        "cancellation_ratio": 0.9947752284400533,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 6.94480921844214,
+        "requested_delta_sign_changes": 153,
+        "requested_delta_signed_integral": 0.03628504169377203,
+        "same_time_peak_absolute_delta": {
+          "applied": 2.0,
+          "curvature": 0.04548584949483647,
+          "heading": 0.17002922603665285,
+          "pose_y": 22.587686248883536,
+          "requested": 2.0
+        },
+        "same_time_signed_final_delta": {
+          "applied": 0.0,
+          "curvature": -0.008176852470066559,
+          "heading": 0.15531036273853888,
+          "pose_y": 22.587686248883536,
+          "requested": 0.0
+        },
+        "states": [
+          "REQUESTED_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED"
+        ]
+      },
+      "scenario": "high_speed",
+      "ta_requested_derivative_p95_normalized_per_s": 200.0,
+      "ta_tracking_p95_1pm": 0.02123416673826474
+    },
+    {
+      "baseline_requested_derivative_p95_normalized_per_s": 117.1690168644025,
+      "baseline_tracking_p95_1pm": 0.01402999952303002,
+      "effect": {
+        "cancellation_ratio": 0.9968705944907519,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": 0.0009660059800268275,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": 0.0066218210628018435,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": 0.015830709211254606,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 6.509253375595805,
+        "requested_delta_sign_changes": 152,
+        "requested_delta_signed_integral": -0.02037009337468109,
+        "same_time_peak_absolute_delta": {
+          "applied": 2.0,
+          "curvature": 0.026187115738371743,
+          "heading": 0.007203413753027374,
+          "pose_y": 0.11639715392949712,
+          "requested": 2.0
+        },
+        "same_time_signed_final_delta": {
+          "applied": -1.9822764326721753,
+          "curvature": 0.019523502079239433,
+          "heading": 0.001770365679892827,
+          "pose_y": 0.11639715392949712,
+          "requested": 1.1414106321744124
+        },
+        "states": [
+          "REQUESTED_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED"
+        ]
+      },
+      "scenario": "s_reversal",
+      "ta_requested_derivative_p95_normalized_per_s": 114.95405144231125,
+      "ta_tracking_p95_1pm": 0.0120905886163767
+    },
+    {
+      "baseline_requested_derivative_p95_normalized_per_s": 116.68684794012387,
+      "baseline_tracking_p95_1pm": 0.014002343223131744,
+      "effect": {
+        "cancellation_ratio": 0.9989869543368691,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": 0.0009660059800268275,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": 0.0066218210628018435,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": 0.015830709211254606,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 6.102977248731548,
+        "requested_delta_sign_changes": 133,
+        "requested_delta_signed_integral": -0.00618259463401373,
+        "same_time_peak_absolute_delta": {
+          "applied": 2.0,
+          "curvature": 0.027777471404688385,
+          "heading": 0.016358710591478504,
+          "pose_y": 0.32433115888610775,
+          "requested": 2.0
+        },
+        "same_time_signed_final_delta": {
+          "applied": 0.0,
+          "curvature": -0.00137364499654548,
+          "heading": -0.010638757942034248,
+          "pose_y": -0.32433115888610775,
+          "requested": 0.0
+        },
+        "states": [
+          "REQUESTED_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED"
+        ]
+      },
+      "scenario": "driver_events",
+      "ta_requested_derivative_p95_normalized_per_s": 116.14215706233732,
+      "ta_tracking_p95_1pm": 0.01197346531022105
+    },
+    {
+      "baseline_requested_derivative_p95_normalized_per_s": 117.19486661004582,
+      "baseline_tracking_p95_1pm": 0.014040830342031059,
+      "effect": {
+        "cancellation_ratio": 0.9972249711622159,
+        "early_distance_effect": {
+          "10.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "15.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "20.0": {
+            "delta_pose_y_m": 0.0009660059800268275,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "25.0": {
+            "delta_pose_y_m": 0.0066218210628018435,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "30.0": {
+            "delta_pose_y_m": 0.015830709211254606,
+            "status": "DESCRIPTIVE_ONLY"
+          },
+          "5.0": {
+            "delta_pose_y_m": 0.0,
+            "status": "DESCRIPTIVE_ONLY"
+          }
+        },
+        "physical_performance_claim": false,
+        "requested_delta_abs_integral": 6.513982047334882,
+        "requested_delta_sign_changes": 152,
+        "requested_delta_signed_integral": -0.01807648803016259,
+        "same_time_peak_absolute_delta": {
+          "applied": 2.0,
+          "curvature": 0.02619273433204037,
+          "heading": 0.009386352941560212,
+          "pose_y": 0.3494275720781479,
+          "requested": 2.0
+        },
+        "same_time_signed_final_delta": {
+          "applied": -1.9698166239255512,
+          "curvature": 0.019529693927897135,
+          "heading": 0.004627638438245457,
+          "pose_y": 0.3494275720781479,
+          "requested": 1.1415552267121483
+        },
+        "states": [
+          "REQUESTED_OUTPUT_DIFFERENCE_PRESENT",
+          "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+          "CURVATURE_EFFECT_PRESENT",
+          "HEADING_EFFECT_PRESENT",
+          "POSE_EFFECT_PRESENT",
+          "OUTPUT_LIMITED"
+        ]
+      },
+      "scenario": "limit_flags",
+      "ta_requested_derivative_p95_normalized_per_s": 116.17116362502517,
+      "ta_tracking_p95_1pm": 0.011974809183025405
+    }
+  ],
+  "threshold_status": "THRESHOLD_UNJUSTIFIED",
+  "v2_historical_violations": 37,
+  "vehicle_activation_allowed": false,
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

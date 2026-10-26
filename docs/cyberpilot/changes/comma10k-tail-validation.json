@@ -1,0 +1,74 @@
+{
+  "authority": "PASS_LITERAL_GREP_AND_IMPORT_AST",
+  "authority_privacy_log_sha256": "bd4f193b6376298123da05c3d1359a692bed65688c78424224035f2baf881703",
+  "autotune": {
+    "failed": 0,
+    "log_sha256": "bebe48f4b57322fddd5d42937707194f01170c4fb53aff9262a0873592cd4374",
+    "passed": 1118,
+    "seconds": 286.85,
+    "source_edits_during_run": false
+  },
+  "focused": {
+    "log_sha256": "26f49cc08e76cc1e6e2dfabafa0d86db13359d3b137d023b9b9e0a34d1456dd5",
+    "passed": 65
+  },
+  "format": "PASS",
+  "full_attempt_receipt_file_sha256": "329e4afe56d882477f3a9899f7a53f3fd8d2bb915e3eed0730ee1087a6308341",
+  "full_evaluation": "BLOCKED_EXTERNAL_PUBLIC_CACHE_LOST_ON_WSL_RESTART",
+  "git_diff_check": "PASS",
+  "human_causal_review": "PENDING",
+  "independent_review": {
+    "final_scope": "math/subset, source identity guards, full cache-loss disposition and causal overclaim documentation",
+    "focused_independently_passed": 65,
+    "remaining_critical": 0,
+    "remaining_important": 0
+  },
+  "legacy_result_invalidated": false,
+  "new_guard_GPU_execution": "NOT_RUN_EXTERNAL_ENVIRONMENT_LOST",
+  "official_reproduction": "NOT_RUN_BLOCKED_CULANE_DATASET_UNAVAILABLE",
+  "primary_119_exact_repeatability": "PASS",
+  "privacy": "PASS_METADATA_SOURCE_ONLY",
+  "private_input_opened": false,
+  "publication": {
+    "files": 505,
+    "findings": 0,
+    "log_sha256": "c2f9bfe46f802c3601573797299ff89b4e5380976e89911f0fb802d92c1657cd"
+  },
+  "qualification": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "receipt_sha256": "25f34f01115d13f44e1178f9547e378fcad6c8a6186d12b931790c1c9a066d35",
+  "reference_promotable": false,
+  "ruff": "PASS",
+  "ruff_log_sha256": "b2a588b384f6be753eae1fb893b49b0d33c4931e8a39c6576453bcf908d6e1ed",
+  "schema": "COMMA10K_TAIL_FINAL_VALIDATION_V1",
+  "scons": {
+    "command": "export PATH=\"$PWD/.venv/bin:$PATH\"; .venv/bin/scons -j2",
+    "log_sha256": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056",
+    "status": "PASS"
+  },
+  "sealed_reference_generated": false,
+  "secondary_119_exact_repeatability": "REJECTED",
+  "source_sha256": {
+    "openpilot/tools/cyber_autotune/lane_public_batch.py": "f0b178e104990b851ea253deea624b3e900ac3669008c0e69bfd490973341754",
+    "openpilot/tools/cyber_autotune/lane_secondary_capture.py": "a4f85073ac22018d57d8c6610372e71ba9a294654f3cc0eb3e7d0aa5ed0c45c6",
+    "openpilot/tools/cyber_autotune/lane_tail_capture.py": "fc7e032c00adff385ed8df5b1f3df8c7eb4afdb8301fc5ad6e4f3a0573186789",
+    "openpilot/tools/cyber_autotune/lane_tail_diagnostics.py": "8c2f8447bc1e84351b20b38634a9834cb0c34f8fe51758fb2dd8daa474831768",
+    "openpilot/tools/cyber_autotune/lane_tail_report.py": "04292b9841c3b258fe07e6f6a42b85f51ddc4f16f8c2d09707b6be4f212e4ddc",
+    "openpilot/tools/cyber_autotune/tests/test_lane_public_identity.py": "fdec26f10796ae28aa55e010d78fcf783ae0eac3f6ef91e71f4808f8d5b17343",
+    "openpilot/tools/cyber_autotune/tests/test_lane_tail_diagnostics.py": "0af6129b2f9110d1339cc17cd13dd3a11fcc2bee334a561421744e72d740e245",
+    "openpilot/tools/cyber_autotune/tests/test_lane_tail_records.py": "56d6d54e9dae4a2e52193b1ca449307d44169d7e7589aa5e7ac146178fad03cf"
+  },
+  "status": "SOFTWARE_CHECKS_PASS_EVIDENCE_PROMOTION_BLOCKED",
+  "supersedes_core_validation_status_file_sha256": "eed0a2fb524d4455b89e439659dbc59e340a9a9245defd0e6712628e5b87bd16",
+  "syntax": "PASS",
+  "syntax_log_sha256": "777e418c757edef5be23333ecbafe5edc519ce99081f6dab512d97b31128e0f4",
+  "tdd": {
+    "GREEN": "PASS",
+    "partial_environment_guard_RED": "FAILED_EXPECTED_VALUEERROR_NOT_RAISED",
+    "red_log_sha256": "be8fc5bda91685fd15740b0998db0a653000ebbb8bfa5647cdf25fec8f2f39a0"
+  },
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

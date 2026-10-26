@@ -1,0 +1,278 @@
+{
+  "authorization_flags": {
+    "candidate_search_authorized": false,
+    "composition_authorized": false,
+    "normalizer_refit_authorized": false,
+    "numeric_access_authorized": true,
+    "pooled_refit_authorized": false,
+    "production_authority": false,
+    "publication_raw_data": false,
+    "qualification_allowed": false,
+    "raw_qlog_authorized": false,
+    "reference_promotable": false,
+    "sealed_reference_allowed": false,
+    "sg_execution": false,
+    "stage1_train_fit_authorized": true,
+    "stage2_refit_authorized": false,
+    "ta_execution": false,
+    "train_only_decision_authorized": true,
+    "vehicle_activation_allowed": false
+  },
+  "authorization_receipt_verified": true,
+  "authorization_review_receipt_sha256": "6bec8db1900dcaa471848d59c4801afc5a7356ae070c1cebfb734a2a4c8cf779",
+  "authorization_sha256": "a23e88b37ba1b2b57f5eb29bc37508166a6a392354826d00bb4444d8efcdc34c",
+  "branch": "feature/cyber-autotune",
+  "candidate_search_authorized": false,
+  "capacity_preflight": {
+    "atomic_upper_bytes": 309876208,
+    "free_bytes": 51654926336,
+    "metadata_upper_bytes": 8342693888,
+    "required_bytes": 42704404308,
+    "reserve_bytes": 2147483648,
+    "run1_upper_bytes": 15952175282,
+    "run2_upper_bytes": 15952175282
+  },
+  "certificate_generator_sha256": "2eec8b0c3939893d7788fd672472af4f7e0cb788a3a9c444de6a6824655f6f1b",
+  "certificate_verifier_sha256": "2eec8b0c3939893d7788fd672472af4f7e0cb788a3a9c444de6a6824655f6f1b",
+  "coefficients_public": false,
+  "component": "retrospective-execution-authorization",
+  "composition_authorized": false,
+  "compression": {
+    "filename": "",
+    "format": "NPY_GZIP_V1",
+    "level": 1,
+    "mtime": 0,
+    "order": "C"
+  },
+  "delta_tick_semantics": "SOURCE_GRID_TICK_INCREMENT_CHANGE_NOT_PHYSICAL_EPS_MOVEMENT",
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "blas_build_identity_sha256": "704bde2afe24c22d171cc7d2508517db81b7db455743b2cb0e5de9dda88da7a2",
+    "dtype": "float64",
+    "numpy": "2.5.3",
+    "order": "C",
+    "python": "3.12.13",
+    "rng": "NONE",
+    "zlib_runtime_version": "1.3.2"
+  },
+  "execution_head": "bd8045ef2a0da62a92603439f38e7740f5923622",
+  "execution_snapshot_verified_against_git": true,
+  "executor_contract_receipts": {
+    "empirical-hurdle-stage1-v4-certificate-stress.json": {
+      "file_sha256": "ffe74d34331fb03a9664ecc57bb0b833b94f00a9d62194ac47b3d4fd3ead7a25",
+      "receipt_sha256": "460b58accd61a8b5311c04843f286ab43c5fdaf4eaa6b072fa73730352bb6861"
+    },
+    "empirical-hurdle-stage1-v4-executor-authorization-policy.json": {
+      "file_sha256": "c550e2fd1189884144ce6811df672b2943dad56d64e141e677e0cc35264a75cb",
+      "receipt_sha256": "37d535f9850b70d7d108376abd9dd342d918387ea8b3bed08d849ea748522e05"
+    },
+    "empirical-hurdle-stage1-v4-executor-code-map.json": {
+      "file_sha256": "1600da8d5bc8548933e5b6a8e6a6f2841d3ee67525f1168ad30890017fb72d5a",
+      "receipt_sha256": "87e676523775a4149e10adb5badfe4cda73d34b2661f9c5e1ee00dff76c1539e"
+    },
+    "empirical-hurdle-stage1-v4-executor-readiness.json": {
+      "file_sha256": "93d9927c8754b569040878d76b349f75c576cee72d54b026a45075ab90f01ef0",
+      "receipt_sha256": "aa2d03166f93f2df4fe520e8a8584a35df8edd2921c51c22601bdf9a6c58ab09"
+    },
+    "empirical-hurdle-stage1-v4-executor-repeatability.json": {
+      "file_sha256": "dfa2101b1e7802ec58cc74ab0a2e89938bd75d0c8c4773bd3b71b52ec3ecba4a",
+      "receipt_sha256": "beb245a2a69693d615c37116fd23d97624f95697564c55a4ef65c03637f34b88"
+    },
+    "empirical-hurdle-stage1-v4-executor-resume.json": {
+      "file_sha256": "b0e7f88341ad69baf914bc2a0d737527afc894c95cabf209e9553d561da7523a",
+      "receipt_sha256": "cea8c8a9fcf7fe18f40121d10130d75f399dc437072c0c3ab1e1945f40572afd"
+    },
+    "empirical-hurdle-stage1-v4-executor-storage-policy.json": {
+      "file_sha256": "3dc7b7d94cacff32ec4367a9287533208789781bd77f0a22267176157608da85",
+      "receipt_sha256": "4a993496e9db764ca6f064ac820e54856cba6a40cca0e2273c0090ad4e862fb3"
+    },
+    "empirical-hurdle-stage1-v4-executor-synthetic-results.json": {
+      "file_sha256": "5d965a0e940bcbf67adb43f6ec8b1131761625fd609ee5293cddbf4cf8c697f4",
+      "receipt_sha256": "f4e903e5d2ecf9d2d0ab13d01ae4cf7e378c4ea926e4c06b499008a6d329e4a7"
+    },
+    "empirical-hurdle-stage1-v4-executor-validation.json": {
+      "file_sha256": "b64660adfc20c78117d261f75c52c90c0cd12bf08b7c06c20feab3742793dc4a",
+      "receipt_sha256": "e65b15f76981a16226cf0ea53358389775eed3500f20960c17e6c506bc99c423"
+    },
+    "empirical-hurdle-stage1-v4-rank-certificate-design.json": {
+      "file_sha256": "8f49b5e1ce07d7846cf9ce8e3902c967b0ace4973ef1b3688532954bad5feff7",
+      "receipt_sha256": "b173d86ad9747146f0c79f1ae2f88ed39ad80970a95df5b4e1bfc574fa35e0c9"
+    },
+    "empirical-hurdle-stage1-v4-rank-certificate-validation.json": {
+      "file_sha256": "5184d7a94a4cc7fd88d51ceb2bc738bb56c8ceefc9b5fd4ef6ce26c26900cd16",
+      "receipt_sha256": "c088b60dc306f3b16310676aa12ba5a9f218020e2447f0e0e186dd1fac3de01d"
+    },
+    "empirical-hurdle-stage1-v4-separation-certificate-design.json": {
+      "file_sha256": "5d81483f389014109263e0cab4b059a76a56cfa4ecd39f59b517f8a09ba737ae",
+      "receipt_sha256": "7c9336477537c46596288c7b6bcb3a2b5140e3e341bf14c784c48e03a67ec682"
+    },
+    "empirical-hurdle-stage1-v4-separation-certificate-validation.json": {
+      "file_sha256": "3aed86c587bb458f1f80d665619bc0e098066425ce96a04fa2902d7381bd116f",
+      "receipt_sha256": "9e5e6ef27dbe408cb5315dfe972d0b56231768cee774ee0f03f0662deeb10e1d"
+    }
+  },
+  "executor_minted_authorization": false,
+  "executor_sources": {
+    "empirical_causal_dataset_store.py": "af72bc24a54029bd1f91f20180e67525f007ca3d420b5a84b336f3825b02390d",
+    "empirical_hurdle_attribution_io.py": "13bfc34ddc4e7cdf2bf98e01c53a937f7f0362d92493ca0254e52df8efcea4f6",
+    "empirical_hurdle_fit_cv_data.py": "9e104a83a928c6b997a914a606820f2d2190fa56917e4042856474f747b900ac",
+    "empirical_hurdle_fit_cv_gates.py": "7529884d62ee5773bc163a301a9d96c641ff2a2e2e911d3e3e4f0a5c1a6828c2",
+    "empirical_hurdle_fit_cv_math.py": "b410b2f0138848faf4e976094a1bd4f3cc3ac44418b54a24310717c6261e0e73",
+    "empirical_hurdle_fit_cv_store.py": "37afd091349396b7f1eb2610b13bbd4ef81f89b977feab3e7875c8eaec5b5fcd",
+    "empirical_hurdle_v2_execution.py": "31642388236f91ff96e16c886395bfcc7dbdf1a6e741a84f690c6437b358fcc5",
+    "empirical_hurdle_v2_io.py": "10b8e902eeb718eeb2b2d96b5baf7a295b4e354485d1167a65c4f0c81ac234b5",
+    "empirical_hurdle_v2_publication.py": "e9e10876788b75a7cfa667aee4dca026ba5d42ce858c4e19cc710cfd498aadc2",
+    "empirical_hurdle_v2_threshold.py": "d54423a83fe0e72b4ee816a695f04fd44c156caf53df135db02f86a64e8b650b",
+    "empirical_hurdle_v3_execution.py": "e5b73d8436607938044e5a02d05ba79ba85db5ff1f9a95005871c74eb0fd02eb",
+    "empirical_hurdle_v3_executor_publication.py": "5b5b1ac84651f382189207b55fdf56c325fb1e9b66ab60c8cf51a70aa8a29194",
+    "empirical_hurdle_v3_external_storage.py": "fddf87bf1837e773c0e00b23d8b9446a6de511bf437b90832c15d94da1331d6c",
+    "empirical_hurdle_v3_io.py": "1fb772477eed0be39653d92247edf31cdfab109069afb6b56fbadbb65cd06b3d",
+    "empirical_hurdle_v3_policy.py": "0a9ef783a79927fcfda0877bcec74e164e27b992ab8d457f780d68602ad3de5d",
+    "empirical_hurdle_v3_publication.py": "474a8f39dd1f27be87fec650a193ca8452fd0fe9443b444695e04b952f50c9c2",
+    "empirical_hurdle_v3_scaffold.py": "85a9e2e6b9abdbcab2b3847887a4548d00c84802f64aba7ad6224de7685fecf9",
+    "empirical_hurdle_v3_store.py": "eadb505681a5e46f6cf447afcf4ccc1d68c6977c5a0c2e2ded8944465450567b",
+    "empirical_hurdle_v3_temporal.py": "cd41e15cb62c2b81653ac80ac004a5142ac4fb8b81328e86deed328b0cb34f0a",
+    "empirical_hurdle_v3_temporal_binding.py": "193a432a0baa3da856e55efabf4d87ca39271b354960c30efc8adaa07e2030b8",
+    "empirical_hurdle_v3_temporal_math.py": "677094d107b6351baf9e39a7bd5b50e010c1a0331dacf10aa0c4fece845527a8",
+    "empirical_hurdle_v3_threshold.py": "7ae8b57db1575d59d2a80b01cb97ea28ab0af99beab0b6a9652c768311b99b5f",
+    "empirical_hurdle_v4_authorization.py": "27d198ddb164aa6942f56fa942180ed9245020cad89462ddb435ef3e783cfb65",
+    "empirical_hurdle_v4_certificate.py": "2eec8b0c3939893d7788fd672472af4f7e0cb788a3a9c444de6a6824655f6f1b",
+    "empirical_hurdle_v4_execution.py": "f7ae1ae98c645de4997e56d1bcd73b76e2f4f153090b65e5fd6bb8d207f7fd0e",
+    "empirical_hurdle_v4_fitting_policy.py": "529c6c14832a18bc18eb51409e1637ca2c003892d62aa883f900c238d59be76f",
+    "empirical_hurdle_v4_io.py": "e1bb255654980e0559d7af1becedac8c3aabf0c2a01e6da179307afe9a7b5d70",
+    "empirical_hurdle_v4_state_contract.py": "3a21944b47ee82f4401b6742742924b7458741f17959e3ed2c2d41df67f68793",
+    "empirical_hurdle_v4_store.py": "f541ebb4686a6032892f327a820ea3e22ad1bffb5c38b73bb649305a448c7935",
+    "empirical_identifiability_execution.py": "2a421f797870667b583d3c938d2106ec803e54c0532283b6195ad71f999c8311",
+    "empirical_plant_policy.py": "3961101927faca0e64a731ff92484d563082390c001988a156056275743034df",
+    "empirical_s2_ri_execution.py": "4f3b0711a44a32f157546076f1d02035f0730495a453a0af0481b00332dd82d4",
+    "empirical_s2_ri_fit_cv_math.py": "a1c1203c8222df067064ff1891aafa82cdafd997338c7ca7687a321c66777f29",
+    "empirical_s2_ri_policy.py": "5764626e066e0d45c4f650e8dac3961e58c9610916c240ff6d592f10c70bd048",
+    "empirical_s2_ri_reconstruction_math.py": "e6bb2f276b3e87104f1aedb0ecbafae7175147c60e9b03aaba19b77a49db0055"
+  },
+  "external_helpers_sha256": {
+    "control.py": "0e6886adf37a2971afeaf0bb117d7f8c911b34717ec3db9dc972f162d86e4cb9",
+    "mint_authorization.py": "94c31ab8e8a388905cc01ebe20de0dada1b112a79b0338cb399b81444e5305a9"
+  },
+  "external_one_shot_minter": true,
+  "family": "HURDLE_STAGE1_CONTEXT_CONDITIONAL_LOGISTIC_V4",
+  "final_pooled_refit": "NOT_AUTHORIZED",
+  "firewall_sha256": "d17fba952b2ac48a45bd8f51e5db88697558bd1e039880a7b342e5d3584bc8c1",
+  "historical_states_preserved": [
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "job_identity_set_sha256": "fc0bbd32df71941d88033ec23c7234cc88a80837381d491b900795e2b4f057c9",
+  "lineage_identity_sha256": "6619311ef5ee2352270555687fbca158e039ca26e3734b4a57cc712f916e0a3d",
+  "logged_command_semantics": "POST_CARCONTROLLER_NORMALIZED_COMMAND_NOT_PHYSICAL_EPS_APPLIED_TORQUE",
+  "metadata_pin_set_sha256": "44a2da07de0923d1822c6f813a02662b415cb4bc774121da3f7e7cdad11e5b4d",
+  "model_admission": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+  "mount_identity_sha256": "497bbf20fa8f027a0884949785ad582c38c7e91dbae77383051c45a6ff02d589",
+  "normalizer_refit_calls": 0,
+  "opening_count": 0,
+  "output_schema": "V4_PRIVATE_STORE_V1",
+  "policies": {
+    "empirical-hurdle-acceptance-gate-v1.json": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60",
+    "empirical-hurdle-fit-cv-results-v1.json": "8d7c45a7a97f73918f927b19b0004c309078239b8b8523e1beac08fa6c53f5c4",
+    "empirical-hurdle-selection-rule-v1.json": "9622e7134b56f0c48153cba1a23dd690bdc6d578a433c6f77b34e3f7a3cf70f0",
+    "empirical-hurdle-stage1-v3-external-storage-amendment.json": "5b109186575c4b50b7095a4e99d6028fd8a8f21e4e944fb6ca5ec59d6a4a26e5",
+    "empirical-hurdle-stage1-v3-storage-migration-verification.json": "f147cb4121a5e34f57d663c8fa631ab26805d30c9157515802f7a0cf7529adc9",
+    "empirical-hurdle-stage1-v4-artifact-identity-policy.json": "030deec64781d98c36beb015899b58d7e9d954b0a2f79274997423331932f1da",
+    "empirical-hurdle-stage1-v4-causal-state-contract.json": "d3df9b9c32043aa01df9f95c6adb126ceab76439bc72aac79c4c06fe86096e39",
+    "empirical-hurdle-stage1-v4-current-feature-contract.json": "5c7ea2975f7ee2881b028c445a5aa6076669ecf87c1989e91a5d582921850ce0",
+    "empirical-hurdle-stage1-v4-failure-policy.json": "1b5bf5bceac75e351a448748830dcac4b9b308460feea2e850f341c9b606e3c3",
+    "empirical-hurdle-stage1-v4-fitting-policy-decision.json": "f63a046c8e40606921852e5709349b140d229cfc1714df97e837105826505268",
+    "empirical-hurdle-stage1-v4-fitting-policy-readiness.json": "5737d4965c22f7f2a6712e3ae0bc931ad9c60a37ca8ce18f2677cfa7646023bf",
+    "empirical-hurdle-stage1-v4-fitting-policy-validation.json": "45b417009d31998bbb4c8c4c603caf75627e4296e6675417a0e0e07d83741127",
+    "empirical-hurdle-stage1-v4-head-fitting-policy.json": "e28ce7c17aa828f3366d40b221d5c3074b6c7102e49fba6c3d0489d675018be2",
+    "empirical-hurdle-stage1-v4-identifiable-basis-policy.json": "6d7c12e30e6004b1189dfd084fa05917b0b457928fe5ac9a923e9274a12ddd9c",
+    "empirical-hurdle-stage1-v4-normalization-policy.json": "b95c2a778123610cfbadfef504ef072bfd660f4655244df42c21df93ff4d35da",
+    "empirical-hurdle-stage1-v4-optimizer-policy.json": "dff8be0f3da7d6aea0eff81317ce15ce694f8f1bc08e56a1ed9ece23c59320ec",
+    "empirical-hurdle-stage1-v4-regularization-policy.json": "6b4d756727c7fbf7583c31ad06a0298f27e6d3f4f9d945dd420b1bd378d72cfc",
+    "empirical-hurdle-stage1-v4-representation-decision.json": "5c1a64fb49aa0c5eda0ee21f1cd9173653647353b82915fb85fcb001ea3cc74b",
+    "empirical-hurdle-stage1-v4-representation-design-contract.json": "01b695d8941298066b61acc341a07f2cbedcd8f1df408754d476744fc3e2a1b8",
+    "empirical-hurdle-stage1-v4-rollout-state-contract.json": "1b503078ac9e5adda34f54650099309c7db718c5181ccdca5dc462d11899542f",
+    "empirical-hurdle-stage1-v4-separation-policy.json": "840adca399b765f59b8a03e7335b130475ed889b2c21a95459ed3cc89d2c928a",
+    "empirical-hurdle-stage1-v4-support-rank-policy.json": "8ad397ff95abcb3fc0cfc8b8105aba46c53fdd3fb30f37458976d6c5eff8118c",
+    "empirical-hurdle-stage1-v4-threshold-policy.json": "8e8896e2a68f85f646741b7471c6becad0a58e3fb80b691b7c9582247487f048"
+  },
+  "pooled_refit_calls": 0,
+  "preauthorization_numeric_opens": 0,
+  "preflight_receipt_sha256": "8ddd55cf7ffea009e1b6c6ed7ec6785ee50153469b01cf3d21e49dc6dc462b1c",
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "private_authorization_schema": "HURDLE_STAGE1_V4_EXTERNAL_ONE_SHOT_AUTHORIZATION",
+  "private_manifest_sha256": "fd3639f93944edecfdfa573818d29fbc8a91ab23208e2d561f8a69726eb0dc64",
+  "production_authority": false,
+  "public_schema": "HURDLE_STAGE1_V4_PUBLIC_SAFE_AUTHORIZATION_RECEIPT_BINDINGS",
+  "publication_is_not_an_authority_grant": true,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "rate_semantics": [
+    "SOURCE_NATIVE_RATE_CODE_ONLY",
+    "RATE_SOURCE_CONTRACT_PARTIAL"
+  ],
+  "receipt_sha256": "b9d512ffd23f7f3ef9df87622642c3bfdabc59292e6188c43596cf3b00267237",
+  "reference_promotable": false,
+  "replicas": [
+    "repeat-1",
+    "repeat-2"
+  ],
+  "repository": "https://github.com/rownlvh8875-coder/CyberPilot",
+  "resource_budget": {
+    "certificate_integer_bits": 395253,
+    "metadata_bytes_per_job": 134217728,
+    "reserve_bytes": 2147483648
+  },
+  "result_publication_head": {
+    "resolution": "CONTAINING_GIT_COMMIT"
+  },
+  "root_identities": {
+    "causal": "77c1e559b5120f916c1e0e20414529002112110ed4f55fc68fbbf159646784c0",
+    "derived": "10478828912486bc3415a47f70c6e27fa4653c2a74b6a955f999ad476d114001",
+    "output": "7c8296a605c0435f247c2597d5d26191a5b81d9dd2dddc84cfcfdf7dfa3939db",
+    "source": "458ea59d3f7b2b9230433cdff28510c5eb16a642b59ad3c619c8a7ed0eec44a9"
+  },
+  "schema": "HURDLE_STAGE1_V4_ACTUAL_RETROSPECTIVE_PUBLIC_EVIDENCE",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_manifests": {
+    "causal": "c584e2031baf144103c20ca76974c53a9ea614babdf9c865936675474742bba8",
+    "derived_file_set": "cb863c2aea9dbde80de92ed618e208c1e20cded7fb06e5fe75a89f218eb1f15d",
+    "derived_index": "34fba3100273a19b17d28b8bc73e153caaa247a216fa470833bcba95bd36fc18",
+    "derived_result": "58546988e7458ce3406c64e015edee0f2c09ec1af681fb99eb62840ece61526c",
+    "source_file_set": "1aa3f116f4889d3e15bf1c2671fc31e9401f648a8056199790ad2a9ad2946ce7",
+    "v1_file_set": "51da8f47f0709875af79f548af42d2efb4d5a5fdae4cc97a4e9b67a8148ac3d9"
+  },
+  "stage2_refit_calls": 0,
+  "storage_amendment_receipt_sha256": "5b109186575c4b50b7095a4e99d6028fd8a8f21e4e944fb6ca5ec59d6a4a26e5",
+  "storage_migration_receipt_sha256": "f147cb4121a5e34f57d663c8fa631ab26805d30c9157515802f7a0cf7529adc9",
+  "storage_volume": "E_EXTERNAL_SSD",
+  "ta_execution": false,
+  "threshold_values_public": false,
+  "trusted_sha256_verified": true,
+  "v1_authorization_sha256": "e4eeaca2f891cc9fdb1370b7ae735d963287af6c09cca85dc689c8e9c560c6ea",
+  "v1_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "v1_repeatability_sha256": "3b9e8e1f562972268a7a0543f72d3f98fe237a9f3e1c5e045b69e19f9c69949b",
+  "vehicle": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE",
+  "volume_identity_sha256": "efca164d9a5367bc1389137490213ef6f4948129377418a78ab0113f38947caa"
+}

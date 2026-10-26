@@ -1,0 +1,46 @@
+{
+  "artifact_sha256": {
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-native-bounded-report.md": "ff9b9bd2a8d1d14ffffa277034a9e7aae8071e89f159db9375d102f3041e254f",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-native-bounded-results.json": "897ef3855f37e87214fd846b3f8292208ee0217698071dbd1b6e94b762f7940a"
+  },
+  "baseline_head": "7cf1630773918dd560153517f45bfc75663c6f97",
+  "final_decoded_granularity_canonical_sha256": {
+    "NATIVE_BOUNDED": "72d26251b0a841d4f70dcbf4d632c0bdcc4f8498a96b7d0d2b8852a07f2becff",
+    "NATIVE_BOUNDED_OPTIMIZED": "a779ef342b9f5fdd3f183e70f718bfd4e320c63b24e89bbe20323d45864ce0a2",
+    "PYTHON_REFERENCE": "d3fcf02cf6cb5b902b4a1eede469a435f3503ebc5ba3918aea9c2ebfc7e343cd"
+  },
+  "final_exact_head_CI": "FINAL_HANDOFF_ONLY",
+  "final_focused_tests_passed": 22,
+  "final_full_local_tests_passed": 5900,
+  "final_granular_measurement_raw_sha256": "c518800e3aa9d1d4bd2e18eea85faf7bc54827bf653696bf6d83b05025cf4c79",
+  "full_AS_bound_proven": false,
+  "full_runtime_bound_proven": false,
+  "measured_v1_source_sha256": {
+    ".github/workflows/cyberpilot-canonical-native-bounded.yaml": "010944e236b670e8b2e6907cb0b2e318551bfe75a50e646bf2ff7151716e1537",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-native-bounded-contract-v1.json": "d3bb1bece76f61cac996de86ca946000e799c7387919ab31afaf291d91fa27db",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_caller_profile.py": "d64dfb2984bd131cb317ef2526944f8937d1f5a4ba2e79c2df657a935208de93",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_native_bounded.py": "a9d1000857e4cef701057ac1a0bdaa41ae12b119392385bbe41c29747bfc11f6",
+    "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_caller_profile.py": "e68c85861b0c0ab0de982c26672eb7eccf75237bdd37bbe3ddb9324daafb07bf",
+    "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_native_bounded.py": "ed8416c30302b6d37dedc209487cbe7dabf6861a876b325b75bee3086286dc2b",
+    "tools/cyberpilot/run_canonical_native_bounded.py": "212b14f7dda3a7975ed3b4e6b4f272af9a3b9142c5b9f4f3fe0fc4ca2de295c4"
+  },
+  "measured_v1_source_snapshot_archive_raw_sha256": "cc440227c24aa921a912899fd4c0205d31c89e14f6f6525bfe1097b3a7466138",
+  "measurement_raw_sha256": "9cc7e4b20b2d36ab12a3d306ba1567979709b64139076c5cd5663dfb553b3f3b",
+  "native_build_receipt_raw_sha256": "fe50c846b466df21fe0e68a415518e3a8bb61d8564a63684cf53762e8e418628",
+  "private_execution_authorized": false,
+  "production_runtime_integration_authorized": false,
+  "receipt_sha256": "0b167c51ee39356c50ea496a7571c61f2740a73b85169103b1b7b185661c7e28",
+  "review_receipts": "FINAL_EXACT_BYTES_RECORDED_IN_PUBLICATION_COMMIT_AND_HANDOFF",
+  "schema": "V4_E2_NATIVE_BOUNDED_SYNTHETIC_IMPLEMENTATION_LOCK_V1",
+  "scientific_parity": "A_B_C_BYTE_EXACT_PASS",
+  "scope": "PUBLIC_SYNTHETIC_NATIVE_BOUNDED_INTEGRATION_ONLY",
+  "source_sha256": {
+    ".github/workflows/cyberpilot-canonical-native-bounded.yaml": "010944e236b670e8b2e6907cb0b2e318551bfe75a50e646bf2ff7151716e1537",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-canonical-native-bounded-contract-v1.json": "a1dcd09942a9f7df0f57cac9b6443f0abe0789063d94941d1f5e9df7136e3f16",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_caller_profile.py": "20ae796b33f9ab70c3e80d7c86c87cc7db2473de49f1161dcb4764c59a09ac35",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_native_bounded.py": "a9d1000857e4cef701057ac1a0bdaa41ae12b119392385bbe41c29747bfc11f6",
+    "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_caller_profile.py": "a99a09ca3f7b818a3ddc0d71f8c9c668df799b72438767b63284f9e8e9b6c003",
+    "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_native_bounded.py": "ed8416c30302b6d37dedc209487cbe7dabf6861a876b325b75bee3086286dc2b",
+    "tools/cyberpilot/run_canonical_native_bounded.py": "6140a6ca477ab7a07dfb8518bd327df40efb11d1d021f3bdb9aef9fbc3cb5457"
+  }
+}

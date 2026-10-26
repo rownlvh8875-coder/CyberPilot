@@ -1,0 +1,92 @@
+{
+  "bucket_rationale": "zero/absence separately; powers-of-two count bins are descriptive, not performance thresholds",
+  "confidence_threshold": "unchanged .41",
+  "count_buckets": {
+    "gt_components": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        8,
+        31
+      ],
+      [
+        32,
+        null
+      ]
+    ],
+    "mask_complexity_gt_row_runs": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        255
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        512,
+        1023
+      ],
+      [
+        1024,
+        null
+      ]
+    ],
+    "raw_prediction_count": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        null
+      ]
+    ]
+  },
+  "eligible_error": "pred_to_gt.p95 is non-null",
+  "human_labels_required_for_final_cause": true,
+  "overlap": "preserve_all_reasons_one_frame",
+  "per_stratum_limit": 4,
+  "private_input_allowed": false,
+  "receipt_sha256": "ef6c56d4f0f3fd1d377c8a35d8d92e9d5f78f8f3fd0440f998fd2f45db7bae54",
+  "reference_promotable": false,
+  "schema": "PUBLIC_TAIL_REVIEW_SELECTION_POLICY_V1",
+  "scope": "POST_SUBSET_DIAGNOSTIC_NOT_QUALIFICATION",
+  "selection_before_full_results": true,
+  "strata": {
+    "EXTREME_TAIL": "four highest per-frame pred_to_gt.p95",
+    "FAR_FIELD_DOMINANT": "four highest far pred p95 where far has samples and p95>=each available mid/near p95",
+    "GT_MISS_HYPOTHESIS": "four largest positive missed_gt_components",
+    "HIGH_COMPONENT_COUNT": "four highest gt_components",
+    "LOW_ERROR_CONTROL": "four lowest non-null per-frame pred_to_gt.p95",
+    "MULTI_LANE_ASSOCIATION_HYPOTHESIS": "four highest gt_components among raw_prediction_count>=3; no scene/ego claim",
+    "NO_OUTPUT": "first four lexicographic raw_prediction_count==0",
+    "P90_TO_P95": "four evenly spaced floor-rank positions from floor(.90*(N-1)) through floor(.95*(N-1)), deduplicated",
+    "P95_NEIGHBORHOOD": "four ascending error ranks centered on floor(.95*(N-1)); clipped start=max(0,min(N-4,rank-2))",
+    "REMOTE_PREDICTION_HYPOTHESIS": "four largest positive row_tail_still_spatially_remote_points"
+  },
+  "ties": "frame_id_ascending",
+  "y_buckets": "unchanged frozen image thirds"
+}

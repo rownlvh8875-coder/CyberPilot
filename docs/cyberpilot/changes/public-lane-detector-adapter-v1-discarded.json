@@ -1,0 +1,237 @@
+{
+  "candidate_outputs_used_for_reference": false,
+  "environment_sha256": "ecc2772a210003be18b288d7c7982ef18fd7640f6d7de5f26bdac3ea471e7427",
+  "exact_repeatability": true,
+  "frames_per_repetition": 119,
+  "geometry_unavailable_frames": 82,
+  "localization": {
+    "available_frame_ratio": 0.03361344537815125,
+    "detection_failure_rate": 0.9574468085106383,
+    "ego_lane_association_evaluated": false,
+    "false_positive_marking_ratio": 0.7725309530665131,
+    "gt_eligible_frames": 94,
+    "gt_to_pred": {
+      "maximum": 894.2207809915341,
+      "median": 3.8204121730052805,
+      "p90": 452.7165671140664,
+      "p95": 558.5674387720331,
+      "p99": 783.5230476654008,
+      "sample_count": 1360
+    },
+    "mask_coverage": 0.01880325605750464,
+    "meter_error": null,
+    "missing_row_support_ratio": 0.9676298376731566,
+    "normalized_gt_to_pred": {
+      "maximum": 0.46380745902050524,
+      "median": 0.0024755942977707796,
+      "p90": 0.24964497634945865,
+      "p95": 0.31839397981379874,
+      "p99": 0.40639162223309166,
+      "sample_count": 1360
+    },
+    "normalized_pred_to_gt": {
+      "maximum": 0.5978657375446536,
+      "median": 0.0020246401118539548,
+      "p90": 0.35369636472873217,
+      "p95": 0.4197985215195355,
+      "p99": 0.5498954524304944,
+      "sample_count": 1095
+    },
+    "normalized_unit": "image_width_fraction",
+    "pred_to_gt": {
+      "maximum": 695.9157185019767,
+      "median": 2.8060417189985856,
+      "p90": 411.7025685442443,
+      "p95": 488.64547904873933,
+      "p99": 640.0783066290954,
+      "sample_count": 1095
+    },
+    "receipt_sha256": "92487593008aefb28d14b4d4fa8b9aa413f0815f358d9328e12991c34b1faaa8",
+    "reference_promotable": false,
+    "schema": "LANE_MARKING_LOCALIZATION_DISTRIBUTION_V1",
+    "scope": "PUBLIC_PIXEL_DIAGNOSTIC_NOT_QUALIFICATION",
+    "source_receipts_sha256": "f24bf9d5c53de188e56b446186a538dc35e5d826a2d60bc2514051c54f9a0037",
+    "total_frames": 119,
+    "unavailable_frames": 115,
+    "unit": "px",
+    "unmatched_gt_ratio": 0.9811967439424953,
+    "usable_frames": 4
+  },
+  "manifest_file_sha256": "f5f58574fa93c0915ce0a9d0f499a278bd89294ab64276049fcc4919411e4bcf",
+  "official_reproduction_status": "DETECTOR_REPRODUCTION_BLOCKED",
+  "openpilot_path_lane_used": false,
+  "prediction_artifact_sha256": "414d884b3fac4039260fe0d66f443b9f5540dc670bc889a612666c5928c5f818",
+  "private_input_opened": false,
+  "protocol_file_sha256": "4fd2be23468d745d49b66186a48f21ae165eb1883e92609f171982f7e5ec80b4",
+  "receipt_sha256": "ab25d4eea5fc1076fc255a21631f61be6f30666119c9a6e6730fdb5e08d3f488",
+  "reference_promotable": false,
+  "regions": {
+    "far": {
+      "available_frame_ratio": 0.0,
+      "detection_failure_rate": null,
+      "ego_lane_association_evaluated": false,
+      "false_positive_marking_ratio": null,
+      "gt_eligible_frames": 0,
+      "gt_to_pred": {
+        "maximum": null,
+        "median": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "sample_count": 0
+      },
+      "mask_coverage": null,
+      "meter_error": null,
+      "missing_row_support_ratio": null,
+      "normalized_gt_to_pred": {
+        "maximum": null,
+        "median": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "sample_count": 0
+      },
+      "normalized_pred_to_gt": {
+        "maximum": null,
+        "median": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "sample_count": 0
+      },
+      "normalized_unit": "image_width_fraction",
+      "pred_to_gt": {
+        "maximum": null,
+        "median": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "sample_count": 0
+      },
+      "receipt_sha256": "800837f17bba082869933b1a330df27993c9d5ee85b39a30d6f53dc809bd8794",
+      "reference_promotable": false,
+      "schema": "LANE_MARKING_LOCALIZATION_DISTRIBUTION_V1",
+      "scope": "PUBLIC_PIXEL_DIAGNOSTIC_NOT_QUALIFICATION",
+      "source_receipts_sha256": "af2edc734886148beb486325ffd4f43a9578b8ca42d732d1678acb5bec4856d3",
+      "total_frames": 119,
+      "unavailable_frames": 119,
+      "unit": "px",
+      "unmatched_gt_ratio": null,
+      "usable_frames": 0
+    },
+    "mid": {
+      "available_frame_ratio": 0.03361344537815125,
+      "detection_failure_rate": 0.9574468085106383,
+      "ego_lane_association_evaluated": false,
+      "false_positive_marking_ratio": 0.5036496350364964,
+      "gt_eligible_frames": 94,
+      "gt_to_pred": {
+        "maximum": 894.2207809915341,
+        "median": 4.514716342245379,
+        "p90": 490.49072311645233,
+        "p95": 576.4373217310925,
+        "p99": 805.457143017559,
+        "sample_count": 1028
+      },
+      "mask_coverage": 0.017241379310344827,
+      "meter_error": null,
+      "missing_row_support_ratio": 0.9674188640973631,
+      "normalized_gt_to_pred": {
+        "maximum": 0.46380745902050524,
+        "median": 0.0025681327113722657,
+        "p90": 0.278536745463537,
+        "p95": 0.34698547696219983,
+        "p99": 0.4177682277062028,
+        "sample_count": 1028
+      },
+      "normalized_pred_to_gt": {
+        "maximum": 0.55231803051296,
+        "median": 0.0017947946540683797,
+        "p90": 0.10001276104135448,
+        "p95": 0.37309265561928806,
+        "p99": 0.5260298469372985,
+        "sample_count": 673
+      },
+      "normalized_unit": "image_width_fraction",
+      "pred_to_gt": {
+        "maximum": 642.8981875170855,
+        "median": 2.4904761685644417,
+        "p90": 162.79306170119025,
+        "p95": 434.2798511408513,
+        "p99": 612.2987418350154,
+        "sample_count": 673
+      },
+      "receipt_sha256": "080171abad51852ea23d073332bcf736048d88595560c5e85cf75828722d1778",
+      "reference_promotable": false,
+      "schema": "LANE_MARKING_LOCALIZATION_DISTRIBUTION_V1",
+      "scope": "PUBLIC_PIXEL_DIAGNOSTIC_NOT_QUALIFICATION",
+      "source_receipts_sha256": "dacdcb53c2508033520e468ea4ee62b21f91b943b5691f8dd19b1723831df914",
+      "total_frames": 119,
+      "unavailable_frames": 115,
+      "unit": "px",
+      "unmatched_gt_ratio": 0.9827586206896551,
+      "usable_frames": 4
+    },
+    "near": {
+      "available_frame_ratio": 0.01680672268907568,
+      "detection_failure_rate": 0.9726027397260274,
+      "ego_lane_association_evaluated": false,
+      "false_positive_marking_ratio": 0.8965082036180059,
+      "gt_eligible_frames": 73,
+      "gt_to_pred": {
+        "maximum": 166.53117518026647,
+        "median": 2.533844586988664,
+        "p90": 144.92573273276466,
+        "p95": 154.22510879861906,
+        "p99": 161.91494458365244,
+        "sample_count": 332
+      },
+      "mask_coverage": 0.023513668514624355,
+      "meter_error": null,
+      "missing_row_support_ratio": 0.9682661059070924,
+      "normalized_gt_to_pred": {
+        "maximum": 0.14306801991431828,
+        "median": 0.0021768424286844196,
+        "p90": 0.12450664324120675,
+        "p95": 0.13249579793695795,
+        "p99": 0.13910218606842994,
+        "sample_count": 332
+      },
+      "normalized_pred_to_gt": {
+        "maximum": 0.5978657375446536,
+        "median": 0.002882771172062929,
+        "p90": 0.4006229979418225,
+        "p95": 0.436394065894982,
+        "p99": 0.5810594611488461,
+        "sample_count": 422
+      },
+      "normalized_unit": "image_width_fraction",
+      "pred_to_gt": {
+        "maximum": 695.9157185019767,
+        "median": 3.35554564428125,
+        "p90": 466.32516960428137,
+        "p95": 507.962692701759,
+        "p99": 676.3532127772569,
+        "sample_count": 422
+      },
+      "receipt_sha256": "f6f39a5ded53185975027ec2a37b9aa082dc87aed6d7eb4d78ac1099debaaa2e",
+      "reference_promotable": false,
+      "schema": "LANE_MARKING_LOCALIZATION_DISTRIBUTION_V1",
+      "scope": "PUBLIC_PIXEL_DIAGNOSTIC_NOT_QUALIFICATION",
+      "source_receipts_sha256": "0fc5630f96c83bc404b48a16a8df6c6ad5753650b5b062d4d5bc906eea761c35",
+      "total_frames": 119,
+      "unavailable_frames": 117,
+      "unit": "px",
+      "unmatched_gt_ratio": 0.9764863314853757,
+      "usable_frames": 2
+    }
+  },
+  "repetitions": 2,
+  "runner_source_sha256": "7bfd7f5b9fe242cde4f5a57feb66ab321f8aca35466b56e98b07791ef8b4dbe1",
+  "runtime_seconds": {
+    "median": 0.022417714004404843,
+    "p95": 0.03415686881053261
+  },
+  "schema": "PUBLIC_CLRERNET_DIAGNOSTIC_RUN_V1",
+  "scope": "INCOMPLETE_PUBLIC_DIAGNOSTIC_NOT_QUALIFICATION"
+}

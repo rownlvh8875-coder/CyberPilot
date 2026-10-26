@@ -1,0 +1,78 @@
+{
+  "baseline": "91b3210d3e7d45a9dc7d6253eeec2f4e36d4a57e",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "execution_calls": {
+    "causal_derived_openings": 0,
+    "holdout_discovery": 0,
+    "holdout_openings": 0,
+    "model_refit_calls": 0,
+    "normalizer_refit_calls": 0,
+    "prediction_replay_calls": 0,
+    "qlog_openings": 0,
+    "raw_log_openings": 0,
+    "rollout_regeneration_calls": 0,
+    "selection_calls": 0,
+    "source_write_count": 0,
+    "threshold_reselection_calls": 0
+  },
+  "holdout": "CLOSED",
+  "opening_count": 0,
+  "private_manifest_sha256": "7a9055a90ea44ee83b40ee0c6e217d2a121479ef8ce3e152a65455a13492892e",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "110f06efbc847f17cd30650ddabe28de36e36b1966706341dc421e10f4908f3c",
+  "reference_promotable": false,
+  "routes": {
+    "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677": {
+      "MOVE": {
+        "boundary_censored_count": 3339,
+        "count": 27616,
+        "max": 47,
+        "median": 1.0,
+        "p90": 3.0,
+        "p95": 4.0
+      },
+      "STATIC": {
+        "boundary_censored_count": 18495,
+        "count": 41906,
+        "max": 393,
+        "median": 2.0,
+        "p90": 16.0,
+        "p95": 30.0
+      },
+      "fragment_count": 18498,
+      "interpretation": "ELIGIBLE_OBSERVED_FRAGMENTS_BOUNDARY_CENSORED_NOT_RAW_ROUTE_RUNS"
+    },
+    "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c": {
+      "MOVE": {
+        "boundary_censored_count": 3095,
+        "count": 24660,
+        "max": 66,
+        "median": 1.0,
+        "p90": 3.0,
+        "p95": 4.0
+      },
+      "STATIC": {
+        "boundary_censored_count": 12898,
+        "count": 33005,
+        "max": 493,
+        "median": 3.0,
+        "p90": 17.0,
+        "p95": 30.799999999999272
+      },
+      "fragment_count": 12067,
+      "interpretation": "ELIGIBLE_OBSERVED_FRAGMENTS_BOUNDARY_CENSORED_NOT_RAW_ROUTE_RUNS"
+    }
+  },
+  "schema": "HURDLE_STAGE1_V3_TEMPORAL_PUBLIC",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "v1_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "v2_manifest_sha256": "7d28c7d07c72a1080e6769165af8539f3568e14688b82f782d0d29aed8d84b9b",
+  "v3_performance": "NOT_RUN",
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

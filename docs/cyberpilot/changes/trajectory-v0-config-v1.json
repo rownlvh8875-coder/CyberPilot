@@ -1,0 +1,153 @@
+{
+  "allowed_configs": [
+    "DISABLED",
+    "CANONICAL_V0",
+    "TEST_ONLY_SAME_MECHANISM"
+  ],
+  "bound_semantics": "INHERITED_OUTPUT_AUTHORITY_PROJECTION_NOT_PHYSICAL_ERROR_BOUND",
+  "correction": "clip(current_clipped_error - previous_clipped_error, native_PID_neg_limit, native_PID_pos_limit)",
+  "dt_s": 0.01,
+  "family": "TA-B",
+  "first_sample_correction_mps2": 0.0,
+  "history_length": 1,
+  "horizon_justification": "Minimal one-step discrete predictor dt*backward_difference; dt cancels exactly",
+  "horizon_samples": 1,
+  "in_run_mutation_allowed": false,
+  "inactive": "ZERO_NATIVE_OUTPUT; CLEAR_INNOVATION_HISTORY",
+  "native_ff_friction_unchanged": true,
+  "native_parameters_changed": false,
+  "physical_delay_owner": "PLANT",
+  "production_authority": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "fff05b2a400f589dc9889cd63802b15b76651d5b6191c6d83abe7d722dd23b2d",
+  "reference_promotable": false,
+  "reset_events": [
+    "EXPERIMENT_START",
+    "INACTIVE",
+    "STEERING_PRESSED",
+    "RELEASE",
+    "REENGAGEMENT",
+    "CONFIG_CHANGE",
+    "SCENARIO_BOUNDARY"
+  ],
+  "reset_policy": [
+    [
+      "TA",
+      "EXPERIMENT_START",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "INACTIVE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "STEERING_PRESSED",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "RELEASE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "REENGAGEMENT",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "CONFIG_CHANGE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "SCENARIO_BOUNDARY",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "EXPERIMENT_START",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "INACTIVE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "STEERING_PRESSED",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "RELEASE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "REENGAGEMENT",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "CONFIG_CHANGE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "SCENARIO_BOUNDARY",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "PLANT",
+      "EXPERIMENT_START",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "PLANT",
+      "INACTIVE",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "STEERING_PRESSED",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "RELEASE",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "REENGAGEMENT",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "CONFIG_CHANGE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "PLANT",
+      "SCENARIO_BOUNDARY",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ]
+  ],
+  "schema": "TRAJECTORY_V0_CONFIG_V1",
+  "sealed_reference_allowed": false,
+  "search_allowed": false,
+  "selection_sha256": "e99cee05d2899c3341eb9076ed62923b220e3832e0719f5433df8d146efb8aec",
+  "source_baseline_sha": "c2d3923d9a13e3e9942352d8a8114cd3203188e2",
+  "state_fields": [
+    "previous_clipped_error_mps2"
+  ],
+  "state_owner": "TA",
+  "state_projection": "clip(native_delayed_accel_error, native_PID_neg_limit, native_PID_pos_limit)",
+  "state_units": "m/s^2",
+  "steering_pressed": "FRESH_RESET_ON_PRESS; ZERO_INNOVATION_WHILE_PRESSED; NATIVE_OUTPUT_NOT_FORCED_ZERO",
+  "vehicle_activation_allowed": false
+}

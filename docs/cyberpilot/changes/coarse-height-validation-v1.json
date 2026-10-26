@@ -1,0 +1,100 @@
+{
+  "baseline_head": "a24f12e20cfb8fab2c82488dce43ab06aefa9096",
+  "calibration_status": "CALIBRATION_MEASUREMENT_PENDING",
+  "checks": {
+    "SCons": {
+      "command": "export PATH=\"$PWD/.venv/bin:$PATH\"; .venv/bin/scons -j2",
+      "status": "PASS"
+    },
+    "TDD": {
+      "new_UI_red": {
+        "assertion_failures": 1,
+        "failed_tests": 2,
+        "missing_new_state_field_errors": 1
+      },
+      "new_geometry_red_failures": 15,
+      "status": "PASS"
+    },
+    "browser": {
+      "actual_browser": "Chrome extension browser",
+      "external_dom_assets": [],
+      "height_pitch_selector_combinations": 21,
+      "js_errors": [],
+      "network_boundary_validation": "ENFORCED_SAME_ORIGIN_CSP_AND_LOCAL_ONLY_FETCH_SOURCE_AUDIT",
+      "network_request_trace_available": false,
+      "no_private_input": true,
+      "nominal_rows": 4,
+      "old_height_parameter_input_blank": true,
+      "physical_comparison_pending": true,
+      "refresh_nominal_height_m": 1.4,
+      "refresh_nominal_pitch_deg": 2.34,
+      "roll_yaw_rows": 24,
+      "sampled_envelope_rows": 4,
+      "server_clean_shutdown": true,
+      "status": "PASS_DIAGNOSTIC_ONLY"
+    },
+    "diff": {
+      "status": "PASS"
+    },
+    "focused": {
+      "count": 49,
+      "status": "PASS"
+    },
+    "full_regression": {
+      "autotune_count": 1448,
+      "combined_count": 1590,
+      "command": ".venv/bin/python tools/test_runner.py openpilot/tools/cyber_autotune/tests openpilot/selfdrive/controls/tests -j2",
+      "controls_count": 142,
+      "status": "PASS"
+    },
+    "independent_review": {
+      "minor_documented_launch_command_issue_corrected": true,
+      "numerical_binding_scope_issues": 0,
+      "status": "PASS"
+    },
+    "privacy_authority": {
+      "authority_imports_added": false,
+      "private_input_opened": false,
+      "production_dependency_evidence_policy_changes": false,
+      "status": "PASS"
+    },
+    "publication": {
+      "findings": 0,
+      "scope": "WHOLE_BRANCH_AGAINST_ORIGIN_MAIN",
+      "status": "PASS"
+    },
+    "ruff": {
+      "scope": "EXACT_CYBERPILOT_WORKFLOW_TARGETS",
+      "status": "PASS"
+    },
+    "syntax": {
+      "command": ".venv/bin/python -m compileall -q openpilot/tools/cyber_autotune tools/cyberpilot",
+      "status": "PASS"
+    }
+  },
+  "coarse_source_sha256": "d2bb72bf2c0060d1f6e3d5d4d601ed07b248261248a586843c69455fe06caee5",
+  "environment": {
+    "numpy": "2.5.3",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.13",
+    "uv_lock_sha256": "2d05b33b220a5fd221e9b55c65a0f55bd628a6139c8df9e863ab67aa1c630a83"
+  },
+  "height_prior_sha256": "90673057619b2c15416dee64bee5f76336ec4f386b9f83d887a39ade186daf9c",
+  "independent_reference_status": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "independent_validation_status": "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+  "private_comma4": "NOT_OPENED",
+  "private_input_allowed": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "73716634cb79aadfd209cf361d5198a7907af67944b4627309c8929b086bea79",
+  "reference_promotable": false,
+  "schema": "COARSE_HEIGHT_DIAGNOSTIC_VALIDATION_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "search_or_tuning_performed": false,
+  "vehicle_activation_allowed": false,
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

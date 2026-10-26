@@ -1,0 +1,61 @@
+{
+  "candidate_search_authorized": false,
+  "change_scope": "THRESHOLD_OBJECTIVE_ONLY",
+  "composition_authorized": false,
+  "decision_policy": "HURDLE_STAGE1_DECISION_POLICY_V2",
+  "family": "HURDLE_RI_V1",
+  "final_pooled_refit": "NOT_AUTHORIZED",
+  "historical_v1": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "model_admission": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+  "model_strategy": "REUSE_BYTE_IDENTICAL_V1_FITTED_MODELS",
+  "opening_count": 0,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "339cf8e4b9df64aed3cb64f232bab5661dd971437be41cd10bf66fc1c2f0f68a",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_STAGE1_V2_SELECTION_RESULT",
+  "sealed_reference_allowed": false,
+  "selection": {
+    "admissible_count": 0,
+    "candidate_search_authorized": false,
+    "composition_authorized": false,
+    "holdout": "CLOSED",
+    "interpretation": "RETROSPECTIVE_CONFIGURATION_ONLY",
+    "model_admission": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "opening_count": 0,
+    "pooled_refit": false,
+    "production_authority": false,
+    "publication_raw_data": false,
+    "qualification_allowed": false,
+    "ranking": [],
+    "receipt_sha256": "dc77b3d46d3dab65695e6e98c6173237e3699289a45d7741068c0aef1ad57d95",
+    "reference_promotable": false,
+    "schema": "HURDLE_STAGE1_V2_SELECTION_RESULT",
+    "sealed_reference_allowed": false,
+    "selected_candidate": null,
+    "sg_execution": false,
+    "states": [
+      "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+      "MODEL_SELECTION_FAILED_CLOSED"
+    ],
+    "status": "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "ta_execution": false,
+    "vehicle_activation_allowed": false,
+    "vehicle_authority": "NONE"
+  },
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

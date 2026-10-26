@@ -1,0 +1,93 @@
+{
+  "authority": {
+    "candidate_execution": false,
+    "composition": false,
+    "cv_scoring": false,
+    "family_selection": false,
+    "holdout_opening": false,
+    "model_fitting": false,
+    "model_selection": false,
+    "parameter_search": false,
+    "prediction_generation": false,
+    "production": false,
+    "qlog_support": false,
+    "raw_reopening": false,
+    "residual_calculation": false,
+    "sg_execution": false,
+    "ta_execution": false,
+    "vehicle": false
+  },
+  "both_routes_support_for_all_forms": {
+    "S1": true,
+    "S2": true
+  },
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_search_authorized": false,
+  "closed_loop_bias": "CLOSED_LOOP_IDENTIFICATION_BIAS_RISK",
+  "composition": [
+    "COMPOSITION_NOT_RECOMMENDED",
+    "COMPOSITION_NOT_AUTHORIZED"
+  ],
+  "composition_authorized": false,
+  "cv_scoring": "NOT_RUN",
+  "dataset_completeness": "RETROSPECTIVE_CAUSAL_TRAIN_DEV_DATASET_PARTIAL",
+  "family_selected": null,
+  "family_states": {
+    "S1": "S1_NUMERIC_STRUCTURE_AVAILABLE_BUT_RATE_SEMANTICS_BLOCKED",
+    "S2": "S2_STRUCTURAL_SUPPORT_PRESENT_RATE_SEMANTICS_BLOCKED",
+    "S3": "S3_SOURCE_MECHANISM_BLOCKED"
+  },
+  "fitting_admission": false,
+  "future_holdout": "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+  "historical_track": "CURRENT_ARX1_FIR25_SIMPLE_OBSERVATION_TRACK_CLOSED",
+  "holdout": "HOLDOUT_OPENING_CLOSED",
+  "inputs": {
+    "empirical-identifiability-excitation-v1.json": "6691ca01258e36f0610d3718ab5309c7671c32427e7125e1d50bcf2b0e373129",
+    "empirical-identifiability-history-support-v1.json": "72137edb4e291cc6f2a7bc082c52ab146a58ebf9b331def50a2fa61783d0c2a2",
+    "empirical-identifiability-leakage-reset-v1.json": "d0770c61af01b28af53980084ef8b30dd3eb4059494137ffa9bf71163f3bcd80",
+    "empirical-model-family-identifiability-policy-v1.json": "8dee196fc4905bf3da93bc4f31c8359f7030de796019c66a64ae090aa304e9fc",
+    "empirical-s1-structural-diagnostics-v1.json": "cd48288f5e8bf5559ec260b164332d28b60cfe03d55936d0e7f0a2a8ab4c04cb",
+    "empirical-s2-structural-diagnostics-v1.json": "a8a7424bd1e36adabb7d6ec7d4d131e8f7a3c7d2fc17c88c5d94502c2166bd70",
+    "empirical-s3-source-mechanism-v1.json": "a7bd180a5357bb101fbedb6865f6c54af8ebc4fee2e464b5a29ea94e396f9f05",
+    "empirical-steering-rate-semantics-v1.json": "109bc9159d06db8ba696922b93a7dea5d5f265f2bbc0dcbf4d22aade51e2f388"
+  },
+  "legacy_reproduction": "PASS",
+  "model_fitting": "NOT_RUN",
+  "model_selection": "NOT_RUN",
+  "opening_count": 0,
+  "physical_eps": "PHYSICAL_EPS_APPLICATION_UNAVAILABLE",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qlog_arrays_opened": 0,
+  "qlog_reconciliation": "COMPLETE",
+  "qlog_support": 0,
+  "qualification_allowed": false,
+  "rate_contract": "RATE_SOURCE_CONTRACT_PARTIAL",
+  "receipt_sha256": "a9c6e3cb39aa498bdbdd2f42f249d5a5e351d623bab51047838c651b838a31f4",
+  "reference_promotable": false,
+  "rlog_stream_count": 154,
+  "schema": "EMPIRICAL_MODEL_FAMILY_IDENTIFIABILITY_READINESS_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "sg": "SG_CLOSED_LOOP_TRADEOFF_ONLY",
+  "sg_execution": false,
+  "signed_physical_rate_proven": false,
+  "stage_b": "STAGE_B_SIGNAL_ADMISSION_BLOCKED",
+  "status": "EMPIRICAL_MODEL_FAMILY_IDENTIFIABILITY_AUDIT_COMPLETE",
+  "symbolic_identifiability_established": false,
+  "ta": "TA_STANDALONE_TRADEOFF_ONLY",
+  "ta_execution": false,
+  "transaction": "REQUEST_OUTPUT_TRANSACTION_LINK_UNAVAILABLE",
+  "vehicle": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "vehicle_activation_allowed": false
+}

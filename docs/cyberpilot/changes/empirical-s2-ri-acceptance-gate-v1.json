@@ -1,0 +1,80 @@
+{
+  "admissible_state": "S2_RI_CV_ADMISSIBLE",
+  "all_ties": "REJECT",
+  "authority": {
+    "candidate_execution": false,
+    "composition": false,
+    "cv_scoring": false,
+    "device": false,
+    "fitting": false,
+    "holdout_opening": false,
+    "metric_execution": false,
+    "normalizer_fitting": false,
+    "pooled_refit": false,
+    "prediction": false,
+    "private_array_access": false,
+    "production": false,
+    "qlog_support": false,
+    "raw_opening": false,
+    "residual": false,
+    "rollout": false,
+    "selection": false,
+    "sg": false,
+    "ta": false,
+    "vehicle": false
+  },
+  "candidate_search_authorized": false,
+  "comparison": "CANDIDATE_OPERATOR_HOLD_LAST_FINITE_COMPUTED_METRIC",
+  "composition_authorized": false,
+  "epsilon": null,
+  "fold_quantifier": "ALL",
+  "folds": [
+    "FOLD_A",
+    "FOLD_B"
+  ],
+  "gate_execution": "NOT_RUN",
+  "horizon_quantifier": "ALL",
+  "metric_sha256": "a554c0fa7848890ffc8e756874eddcd12c3a0e91b0a4b39c3eb3c3404db3bd70",
+  "non_rail_use": "FORBIDDEN",
+  "one_step_next_angle": {
+    "MAE": "<=",
+    "P95_ABSOLUTE": "<=",
+    "RMSE": "<"
+  },
+  "pooled_gate": "FORBIDDEN",
+  "prerequisites": [
+    "EXACT_HISTORY_AND_SOURCE_ADMISSION",
+    "TRAIN_EFFECTIVE_RANK_FULL",
+    "FINITE_COEFFICIENTS_AND_OUTPUTS_AND_METRICS",
+    "NO_SOURCE_GRID_RANGE_VIOLATION",
+    "IDENTICAL_COMPARATOR_ANCHORS",
+    "DEVELOPMENT_SUPPORT_AT_LEAST_201_EACH_POPULATION"
+  ],
+  "primary_scope": "SCOPE_ALL_ACTIVE_NO_OVERRIDE",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "fe645a15dfba84dd7fbc5a7756b817d9e61a3bc7bfc5e1ee56234ed2ebd06786",
+  "reference_promotable": false,
+  "rollout": {
+    "ANGLE_MAE": "<=",
+    "ANGLE_P95_ABSOLUTE": "<=",
+    "ANGLE_RMSE": "<="
+  },
+  "rollout_horizons_steps": [
+    25,
+    50,
+    100,
+    200
+  ],
+  "schema": "EMPIRICAL_S2_RI_ACCEPTANCE_GATE_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_grid": {
+    "EXACT_NEXT_ANGLE_HIT_RATE": ">=",
+    "WITHIN_ONE_TICK_RATE": ">="
+  },
+  "strict_improvement": "ONE_STEP_NEXT_ANGLE_RMSE_EACH_FOLD",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

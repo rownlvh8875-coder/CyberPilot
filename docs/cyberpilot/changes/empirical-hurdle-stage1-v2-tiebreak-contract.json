@@ -1,0 +1,39 @@
+{
+  "actual_execution_authorized": false,
+  "authority": "DECLARATIVE_DESIGN_AND_SYNTHETIC_TESTS_ONLY",
+  "candidate_search_authorized": false,
+  "change_scope": "THRESHOLD_OBJECTIVE_ONLY",
+  "composition_authorized": false,
+  "decision_policy": "HURDLE_STAGE1_DECISION_POLICY_V2",
+  "epsilon": 0,
+  "false_move_basis": "PROJECTED_MOTION_NOT_PREDICTED_GATE",
+  "family": "HURDLE_RI_V1",
+  "final_tie": "SAME_NUMERIC_THRESHOLD",
+  "integer_arithmetic": "WIDEN_TICKS_BEFORE_SUBTRACTION_NO_SIGNED16_OVERFLOW",
+  "ordered_rules": [
+    [
+      "STATIC_PROJECTED_FALSE_MOVE_COUNT",
+      "MINIMIZE"
+    ],
+    [
+      "ALL_WITHIN_ONE_TICK_COUNT",
+      "MAXIMIZE"
+    ],
+    [
+      "threshold",
+      "MAXIMIZE"
+    ]
+  ],
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "e38949c44f922eda04ad9424a7b06ad02faca50e92b2829e5ce2fa1a2a18d571",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_STAGE1_V2_TIEBREAK_CONTRACT",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "static_false_move_count": "np.count_nonzero((delta == 0) & (projected != current))",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "within_one_tick_count": "np.count_nonzero(np.abs(projected - target) <= 1)"
+}

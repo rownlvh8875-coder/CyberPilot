@@ -1,0 +1,350 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "policy_sha256": "0cb9cfa6c281f3ba034397790a33ea5742f06ccc0304dc6d495b817ccc8456f4",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "c3a440da88742b45aa4f49c4c093b1022a242d6cd57526ca3ce648bfaee850e5",
+  "reference_promotable": false,
+  "routes": [
+    {
+      "arx_prediction_grid": {
+        "exact_grid_count": 0,
+        "float32_tolerant_grid_count": 0,
+        "off_grid_count": 85107,
+        "residual": {
+          "max": 0.04999867560395188,
+          "median": 0.021569120940231168,
+          "p95": 0.04686996337816651
+        },
+        "total": 85107
+      },
+      "fold": "FOLD_A",
+      "past_measurement_grid": {
+        "exact_grid_count": 15203,
+        "float32_tolerant_grid_count": 85107,
+        "off_grid_count": 0,
+        "residual": {
+          "max": 6.103515630684342e-06,
+          "median": 2.3841857821338408e-08,
+          "p95": 7.629394502828291e-07
+        },
+        "total": 85107
+      },
+      "quantization": {
+        "arx_error_above_one_quantum_count": 8270,
+        "arx_error_below_half_quantum_count": 62340,
+        "arx_error_half_through_one_quantum_count": 14497,
+        "arx_exact_hit_count": 0,
+        "hold_last_exact_hit_count": 70284,
+        "unchanged_other_error_absolute_contribution": 0.011471205198482241,
+        "unchanged_small_error_absolute_contribution": 0.014031132535742319
+      },
+      "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "speed_bin": "LOW",
+      "target_grid": {
+        "exact_grid_count": 15195,
+        "float32_tolerant_grid_count": 85107,
+        "off_grid_count": 0,
+        "residual": {
+          "max": 6.103515630684342e-06,
+          "median": 2.3841857821338408e-08,
+          "p95": 7.629394502828291e-07
+        },
+        "total": 85107
+      }
+    },
+    {
+      "arx_prediction_grid": {
+        "exact_grid_count": 0,
+        "float32_tolerant_grid_count": 0,
+        "off_grid_count": 27217,
+        "residual": {
+          "max": 0.04999923217039992,
+          "median": 0.01928112637104995,
+          "p95": 0.046634234989582524
+        },
+        "total": 27217
+      },
+      "fold": "FOLD_B",
+      "past_measurement_grid": {
+        "exact_grid_count": 5342,
+        "float32_tolerant_grid_count": 27217,
+        "off_grid_count": 0,
+        "residual": {
+          "max": 1.5258789076710855e-06,
+          "median": 2.384185793236071e-08,
+          "p95": 3.814697286941282e-07
+        },
+        "total": 27217
+      },
+      "quantization": {
+        "arx_error_above_one_quantum_count": 2711,
+        "arx_error_below_half_quantum_count": 19420,
+        "arx_error_half_through_one_quantum_count": 5086,
+        "arx_exact_hit_count": 0,
+        "hold_last_exact_hit_count": 21124,
+        "unchanged_other_error_absolute_contribution": 0.007086931133244236,
+        "unchanged_small_error_absolute_contribution": 0.012275910739893273
+      },
+      "route_id": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+      "speed_bin": "LOW",
+      "target_grid": {
+        "exact_grid_count": 5341,
+        "float32_tolerant_grid_count": 27217,
+        "off_grid_count": 0,
+        "residual": {
+          "max": 1.5258789076710855e-06,
+          "median": 2.384185793236071e-08,
+          "p95": 3.814697286941282e-07
+        },
+        "total": 27217
+      }
+    },
+    {
+      "arx_prediction_grid": {
+        "exact_grid_count": 0,
+        "float32_tolerant_grid_count": 0,
+        "off_grid_count": 79278,
+        "residual": {
+          "max": 0.049998505948653904,
+          "median": 0.013583586817147442,
+          "p95": 0.043046391023132013
+        },
+        "total": 79278
+      },
+      "fold": "FOLD_A",
+      "past_measurement_grid": {
+        "exact_grid_count": 14798,
+        "float32_tolerant_grid_count": 79278,
+        "off_grid_count": 0,
+        "residual": {
+          "max": 3.8146972691777137e-07,
+          "median": 1.1920929021691506e-08,
+          "p95": 1.9073486345888568e-07
+        },
+        "total": 79278
+      },
+      "quantization": {
+        "arx_error_above_one_quantum_count": 3431,
+        "arx_error_below_half_quantum_count": 68271,
+        "arx_error_half_through_one_quantum_count": 7576,
+        "arx_exact_hit_count": 0,
+        "hold_last_exact_hit_count": 69887,
+        "unchanged_other_error_absolute_contribution": 0.0018068154533411693,
+        "unchanged_small_error_absolute_contribution": 0.013069842591363543
+      },
+      "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "speed_bin": "MEDIUM",
+      "target_grid": {
+        "exact_grid_count": 14808,
+        "float32_tolerant_grid_count": 79278,
+        "off_grid_count": 0,
+        "residual": {
+          "max": 3.8146972691777137e-07,
+          "median": 1.1920929021691506e-08,
+          "p95": 1.9073486345888568e-07
+        },
+        "total": 79278
+      }
+    },
+    {
+      "arx_prediction_grid": {
+        "exact_grid_count": 0,
+        "float32_tolerant_grid_count": 0,
+        "off_grid_count": 146878,
+        "residual": {
+          "max": 0.049996032046447425,
+          "median": 0.0070328184481187606,
+          "p95": 0.029900464460723163
+        },
+        "total": 146878
+      },
+      "fold": "FOLD_B",
+      "past_measurement_grid": {
+        "exact_grid_count": 26561,
+        "float32_tolerant_grid_count": 146878,
+        "off_grid_count": 0,
+        "residual": {
+          "max": 1.5258789076710855e-06,
+          "median": 2.3841857821338408e-08,
+          "p95": 1.907348643470641e-07
+        },
+        "total": 146878
+      },
+      "quantization": {
+        "arx_error_above_one_quantum_count": 8913,
+        "arx_error_below_half_quantum_count": 123988,
+        "arx_error_half_through_one_quantum_count": 13977,
+        "arx_exact_hit_count": 0,
+        "hold_last_exact_hit_count": 124065,
+        "unchanged_other_error_absolute_contribution": 0.00020341013576312574,
+        "unchanged_small_error_absolute_contribution": 0.0072512736884935225
+      },
+      "route_id": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+      "speed_bin": "MEDIUM",
+      "target_grid": {
+        "exact_grid_count": 26572,
+        "float32_tolerant_grid_count": 146878,
+        "off_grid_count": 0,
+        "residual": {
+          "max": 1.5258789076710855e-06,
+          "median": 2.3841857821338408e-08,
+          "p95": 1.907348643470641e-07
+        },
+        "total": 146878
+      }
+    },
+    {
+      "arx_prediction_grid": {
+        "exact_grid_count": 0,
+        "float32_tolerant_grid_count": 0,
+        "off_grid_count": 29975,
+        "residual": {
+          "max": 0.039044724213497695,
+          "median": 0.0056644452241607635,
+          "p95": 0.0164410081341253
+        },
+        "total": 29975
+      },
+      "fold": "FOLD_A",
+      "past_measurement_grid": {
+        "exact_grid_count": 5206,
+        "float32_tolerant_grid_count": 29975,
+        "off_grid_count": 0,
+        "residual": {
+          "max": 1.9073486345888568e-07,
+          "median": 1.1920929021691506e-08,
+          "p95": 9.536743128535363e-08
+        },
+        "total": 29975
+      },
+      "quantization": {
+        "arx_error_above_one_quantum_count": 1330,
+        "arx_error_below_half_quantum_count": 26647,
+        "arx_error_half_through_one_quantum_count": 1998,
+        "arx_exact_hit_count": 0,
+        "hold_last_exact_hit_count": 26647,
+        "unchanged_other_error_absolute_contribution": 0.0,
+        "unchanged_small_error_absolute_contribution": 0.005850123593473543
+      },
+      "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "speed_bin": "HIGH",
+      "target_grid": {
+        "exact_grid_count": 5203,
+        "float32_tolerant_grid_count": 29975,
+        "off_grid_count": 0,
+        "residual": {
+          "max": 1.9073486345888568e-07,
+          "median": 1.1920929021691506e-08,
+          "p95": 9.536743128535363e-08
+        },
+        "total": 29975
+      }
+    },
+    {
+      "arx_prediction_grid": {
+        "exact_grid_count": 0,
+        "float32_tolerant_grid_count": 0,
+        "off_grid_count": 80971,
+        "residual": {
+          "max": 0.039858508859425434,
+          "median": 0.005178874901899844,
+          "p95": 0.016635561545438993
+        },
+        "total": 80971
+      },
+      "fold": "FOLD_B",
+      "past_measurement_grid": {
+        "exact_grid_count": 14465,
+        "float32_tolerant_grid_count": 80971,
+        "off_grid_count": 0,
+        "residual": {
+          "max": 1.9073486345888568e-07,
+          "median": 1.1920928910669204e-08,
+          "p95": 4.7683716086766026e-08
+        },
+        "total": 80971
+      },
+      "quantization": {
+        "arx_error_above_one_quantum_count": 3158,
+        "arx_error_below_half_quantum_count": 72280,
+        "arx_error_half_through_one_quantum_count": 5533,
+        "arx_exact_hit_count": 0,
+        "hold_last_exact_hit_count": 72280,
+        "unchanged_other_error_absolute_contribution": 0.0,
+        "unchanged_small_error_absolute_contribution": 0.005412062089152938
+      },
+      "route_id": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+      "speed_bin": "HIGH",
+      "target_grid": {
+        "exact_grid_count": 14469,
+        "float32_tolerant_grid_count": 80971,
+        "off_grid_count": 0,
+        "residual": {
+          "max": 1.9073486345888568e-07,
+          "median": 1.1920928910669204e-08,
+          "p95": 4.7683716086766026e-08
+        },
+        "total": 80971
+      }
+    }
+  ],
+  "schema": "EMPIRICAL_STAGE_A_QUANTIZATION_AUDIT_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source": {
+    "bit_length": 16,
+    "bit_start": 0,
+    "byte_order": "LITTLE_ENDIAN",
+    "candidate_search_authorized": false,
+    "carstate": {
+      "file_sha256": "018ba9c239f8ab378de26354e3dd9c7eafe40ac513be1213d38f59a4c3a9e374",
+      "path": "opendbc_repo/opendbc/car/hyundai/carstate.py"
+    },
+    "carstate_assignment": "ret.steeringAngleDeg = cp.vl[\"SAS11\"][\"SAS_Angle\"]",
+    "carstate_conversion": "DIRECT_COPY_LEGACY_NON_CANFD_NO_SIGN_OR_OFFSET_CHANGE",
+    "carstate_slice_sha256": "22cbcb25b1fa7c85a984c9a9dfd414a8f8844f679be8451ed7a2c20666f5286e",
+    "commit": "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29",
+    "composition_authorized": false,
+    "dbc": {
+      "file_sha256": "1590039abb51cbfc3dc8ab4151ab78e7f549088fec878480ab4d6f850b18898a",
+      "path": "opendbc_repo/opendbc/dbc/hyundai_kia_generic.dbc"
+    },
+    "declared_range_deg": [
+      -3276.8,
+      3276.7
+    ],
+    "declared_unit": "Deg",
+    "license_sha256": "716ce815a0467219c59ec2433e6bce7f32efc45240725c6d3141a52b111d2558",
+    "offset_deg": 0.0,
+    "production_authority": false,
+    "publication_raw_data": false,
+    "qualification_allowed": false,
+    "receipt_sha256": "e11a5a743d34b1fa505a0ae5d3f3b244ef29ed8ee2eb7aa5ecf31abcbcad7a61",
+    "reference_promotable": false,
+    "repository": "https://github.com/ajouatom/openpilot",
+    "schema": {
+      "file_sha256": "db5444005dcff5fdbbecf617ea031eb90852e51a848a9d832a02756ddc6bc024",
+      "path": "opendbc_repo/opendbc/car/car.capnp"
+    },
+    "schema_field": "steeringAngleDeg @7 :Float32;",
+    "schema_slice_sha256": "c22e7b494d113e3860536cc222e08c87835dee7e1c7fb4e626458ead4aa459d3",
+    "sealed_reference_allowed": false,
+    "sg_execution": false,
+    "sign": 1,
+    "signal": "SAS11.SAS_Angle",
+    "signal_definition": "SG_ SAS_Angle : 0|16@1- (0.1,0.0) [-3276.8|3276.7] \"Deg\"",
+    "signed": true,
+    "source_slice_sha256": "e417451454a574a23d694a730e53c12c10c10b3cd9c5b5a4112b3006863fae7b",
+    "step_deg": 0.1,
+    "storage": "Float32",
+    "ta_execution": false,
+    "vehicle_activation_allowed": false
+  },
+  "status": "STEERING_MEASUREMENT_QUANTIZATION_CONFIRMED",
+  "ta_execution": false,
+  "target_grid_status": "CONSISTENT",
+  "vehicle_activation_allowed": false
+}

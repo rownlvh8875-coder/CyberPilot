@@ -1,0 +1,58 @@
+{
+  "authorization": {
+    "composition": "NOT_AUTHORIZED",
+    "frozen_candidate_evaluation": "NOT_AUTHORIZED",
+    "search": "NOT_AUTHORIZED"
+  },
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_search_authorized": false,
+  "components_classified": 35,
+  "composition_authorized": false,
+  "historical": {
+    "current": "BASELINE_EXACT",
+    "empirical_track": "CURRENT_ARX1_FIR25_SIMPLE_OBSERVATION_TRACK_CLOSED",
+    "future_holdout": "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "holdout": "CLOSED_MISSING_ADMISSIBLE_MODEL",
+    "model": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "opening": "HOLDOUT_OPENING_CLOSED",
+    "sg": "SG_CLOSED_LOOP_TRADEOFF_ONLY",
+    "stage_b": "STAGE_B_SIGNAL_ADMISSION_BLOCKED",
+    "ta": "TA_STANDALONE_TRADEOFF_ONLY",
+    "v1": "TRADEOFF_ONLY",
+    "v2": "REJECTED",
+    "v2_violations": 37
+  },
+  "matrix_sha256": "3ce6949bfab3a376b1579944e0737888b0874a97594055d64d0d1e0007b6a639",
+  "missing_requested_public_files": 2,
+  "no_as_is_module_copy": "schema/authority overlap or missing redistribution license",
+  "numeric_execution": "NOT_RUN",
+  "observer_plant_optimizer_candidate_execution": "NOT_RUN",
+  "overlap_sha256": "2882922a3e0268863af66e802aad38fa66640f774bd1d42b719cb520462a64ab",
+  "private_raw_access": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "09c5bebb83d89e6a01bc04f58fe59a4e0be2addbd2193f01f4263b2639bbfc7a",
+  "reference_promotable": false,
+  "schema": "SIMULATOR_REUSE_AUDIT_V1",
+  "scope": "SOURCE_ONLY_CONTRACT_SCAFFOLDING",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_files_audited": 33,
+  "source_identity_sha256": "56548fc7734433699349f37e548e7dceb5d5a5062af5d802c6b591a09b4572d3",
+  "status": "SIMULATOR_REUSE_AUDIT_COMPLETE",
+  "ta_execution": false,
+  "vehicle": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "vehicle_activation_allowed": false
+}

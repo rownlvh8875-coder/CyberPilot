@@ -1,0 +1,322 @@
+{
+  "actual_execution_authorized": false,
+  "authority": {
+    "candidate_execution": false,
+    "composition": false,
+    "controller_integration": false,
+    "cv_scoring": false,
+    "device": false,
+    "fitting": false,
+    "holdout_opening": false,
+    "logistic_fitting": false,
+    "normalizer_fitting": false,
+    "ols_fitting": false,
+    "pooled_refit": false,
+    "prediction": false,
+    "private_array_access": false,
+    "qlog_opening": false,
+    "raw_opening": false,
+    "rollout": false,
+    "selection": false,
+    "sg": false,
+    "ta": false,
+    "threshold_search": false,
+    "vehicle": false
+  },
+  "baseline": "cce79c2762e4e83f39fa2239f7129253fb5b713b",
+  "candidate_search_authorized": false,
+  "closed_loop_bias": "CLOSED_LOOP_IDENTIFICATION_BIAS_RISK",
+  "complete_accounting": "EVERY_JOB_PASS_PRECONDITION_FAILURE_NUMERICAL_FAILURE_OR_INSUFFICIENT_SUPPORT_NO_SILENT_SKIP",
+  "composition": {
+    "clipping": false,
+    "debounce": false,
+    "epsilon": 0,
+    "force_minimum_movement": false,
+    "hysteresis": false,
+    "move_delta": "STAGE2_FROZEN_MOVE_NORMALIZER_AND_COEFFICIENTS",
+    "move_operator": ">",
+    "projected_range": "SIGNED16_INTEGER_TICK_RANGE_FAIL_WHOLE_FOLD_ON_VIOLATION",
+    "projection": "DIRECT_ROUND_HALF_TO_EVEN_TO_INTEGER_TICK",
+    "projection_input": "BINARY64_CURRENT_TICK_PLUS_CONDITIONAL_DELTA",
+    "soft_blending": false,
+    "stage2_on_static": false,
+    "static_delta": 0.0,
+    "static_operator": "<=",
+    "static_tick": "CURRENT_PROJECTED_TICK"
+  },
+  "composition_authorized": false,
+  "contract_sha256": {
+    "acceptance-gate": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60",
+    "candidate-set": "eff4ff37f74e06520e917f017c509175733a108df9399ebab8f2e93fa6a871f4",
+    "comparator-contract": "80561a7f863363fa5ce6ed6710e2c29cae58ff985f2597bb0761faf86e27cf00",
+    "metric-contract": "98df562961a9c60cd43531694cd0dfbbde19b528c856bf6562ea6d5c6aad17e5",
+    "route-cv-contract": "9e6bddd4f4d0e3dbe1cd02d7cfe2313a17da5459215f4fa397d42b098b406a4a",
+    "selection-rule": "9622e7134b56f0c48153cba1a23dd690bdc6d578a433c6f77b34e3f7a3cf70f0",
+    "stage-normalization": "4704b839037042084da818cc72eecd651b7a1d7ac12fa5d74f1531bb2517e549",
+    "stage1-convergence": "4a2c377be5379c1a03d65dbb9c06070619d60cedee3ab6d4af331aba8426a82a",
+    "stage1-fit-method": "6c644678deb454008c3a3146cece0a24393642e2025707dbacbe47e3355a7b9a",
+    "stage2-fit-method": "31761a5961b755f3d0ca719bb88355b560c8b47e8b00df5f6f04e17ad8b986b4",
+    "threshold-policy": "56c8ce9eeba90be17d5ec4bd73ec604447dfcc9463dce7b38b8f6a1769706841"
+  },
+  "early_stop": false,
+  "exact_candidates": 16,
+  "expected_candidate_fold_jobs": 32,
+  "family": "HURDLE_RI_V1",
+  "final_pooled_refit": "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+  "future_fitting": "REQUIRES_SEPARATE_EXPLICIT_EXECUTION_AUTHORIZATION",
+  "historical_inputs": {
+    "empirical-hurdle-composition-contract-v1.json": {
+      "file_sha256": "9c0f48ffada6ce8e905d85d9d72df21a3997f9ce6dc757bb96d9291218046948",
+      "receipt_sha256": "046d0ba328c7a52421aedfff504ed20ad27114785d67054f6e78fd8547eccc67"
+    },
+    "empirical-hurdle-conditional-delta-target-v1.json": {
+      "file_sha256": "5187c5f0fdb19285dca424b24a54cce3747ab7c59057a5bbf933859e71d1fe2d",
+      "receipt_sha256": "a29d77ce85acf114b1f54c5a1a80785fb9a83cea7ecd6b608ff731b4d683030c"
+    },
+    "empirical-hurdle-design-evidence-v1.json": {
+      "file_sha256": "c7677194276983192ac90f25ad9f4758e426367698ae62a8e5d49cf6f2dda2f5",
+      "receipt_sha256": "49abff45affee17049e4864b99731526acd3952b2efacea24c30047c5819d9cc"
+    },
+    "empirical-hurdle-design-readiness-v1.json": {
+      "file_sha256": "955c96a711a2628fbf3ea4dce6a30b5ff6036df5ab84fffc20dfcfb11ac071ec",
+      "receipt_sha256": "8d08f9c06583983e237cbdf92dc6028865a3d87a9a289aaba00ea895ede9fd2a"
+    },
+    "empirical-hurdle-design-validation-v1.json": {
+      "file_sha256": "b6752a1aab3bfba475eda539b2ef1af9fa54199178c676b36018db071167ade0",
+      "receipt_sha256": "94da1e54aaaf705fb1be3aa987b71242cf3b50654326788375c70ddd7153575a"
+    },
+    "empirical-hurdle-diagnostic-contract-v1.json": {
+      "file_sha256": "bb1f4c0766a3a0bbd81f59388f5b0c6810fc19c89a40a0cb0c2fb7bd0dc8e89c",
+      "receipt_sha256": "68aeaf13efc8912fa62400d73352c3c3314557123405d529811980ad56d15b17"
+    },
+    "empirical-hurdle-family-contract-v1.json": {
+      "file_sha256": "cccaba738cb55c2506269976d1cb86510a90ba2d20f41004493d05f1aeab1d41",
+      "receipt_sha256": "c780fa1e75bdb3d13480f4863b6dabb7c7dbfe68797032fce582b7854d45dfe3"
+    },
+    "empirical-hurdle-feature-contract-v1.json": {
+      "file_sha256": "8676c89bcfe629d6bcc60706172ca29f79ee42430e67893c8ee837a7da672488",
+      "receipt_sha256": "517288519b2ae0ef9edaa4b2a0c5e5a1b296389e4381ac4af0a2bddfec41be3a"
+    },
+    "empirical-hurdle-future-fitting-requirements-v1.json": {
+      "file_sha256": "7b92cea1d8e87c6eaa875199d80cc724a7e3bf096a83a24b78b469bfe686d869",
+      "receipt_sha256": "8cfa83d6e1e613796925f532be5d391016da31d7da87b0009662d4c8d8c99989"
+    },
+    "empirical-hurdle-move-gate-target-v1.json": {
+      "file_sha256": "362d73b231c810f4e1ccd5f376effe0b7887eea77f3d9e5c211403d54dc03bbe",
+      "receipt_sha256": "0ca483ef467c7039214956cc3c599256ac23147a89e9dccc13d098abb9dfa23d"
+    },
+    "empirical-hurdle-normalization-policy-v1.json": {
+      "file_sha256": "f262c6a82a8d3a716a8c5464f8ec179f4b2a0a7af155f2a26446405828c160b1",
+      "receipt_sha256": "618772cfcd852113da81b60b5570e33b4eaba8959022bf8eba498392da0033dc"
+    },
+    "empirical-hurdle-rollout-contract-v1.json": {
+      "file_sha256": "772d5febe8894c189c8332836365149467c0c5870bd630d0db1be7372ebc3d04",
+      "receipt_sha256": "ae1b447a4abdc3c5ba4c34adcfa4c650d3ee35b9229d899a8d6ff557ce09bb92"
+    },
+    "empirical-hurdle-structural-candidates-v1.json": {
+      "file_sha256": "5acdb0b5aa4413965ba37dc6dfe27e724a0c8b8b1319869abaee6db10e61fdc6",
+      "receipt_sha256": "b3935fb07073d8f8445f6db263624f93929cb269c780455d00e3c589cdef20b3"
+    },
+    "empirical-hurdle-training-population-v1.json": {
+      "file_sha256": "e7646168c73759c63cc78de43b57936be062f29c54b2afca3c449431409b8a24",
+      "receipt_sha256": "98b9296594b087df720b626389438c76072148c7a4d5709b11bca4df04507a0c"
+    },
+    "empirical-s2-ri-fitting-grid-contract-v1.json": {
+      "file_sha256": "7f079c65e5c75ac9521a829874d17a9ded00e36ac0aa627a2ea8a86d0d515c89",
+      "receipt_sha256": "ff2b3c0cfa926b029dda87dbfb8fc80ec1cbb57a58b59bb20430bef0c6c7a9af"
+    },
+    "empirical-s2-ri-fitting-metric-contract-v1.json": {
+      "file_sha256": "3d4121f6a5c1f85d08c0af8dcbbf6a3796738a04b20c5a8e09e91b053744b6bc",
+      "receipt_sha256": "a554c0fa7848890ffc8e756874eddcd12c3a0e91b0a4b39c3eb3c3404db3bd70"
+    },
+    "empirical-s2-ri-route-cv-contract-v1.json": {
+      "file_sha256": "d3f935674a760754222bf5195312b48dfd90fb1e94ebb26747232c4910a22a09",
+      "receipt_sha256": "4fbcfbaf6c76e70b5fbad43e57624c4ec0917abb1aebcdf96a79d525f99cf31c"
+    }
+  },
+  "job_order": [
+    [
+      "HRI_D00_L01",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D00_L01",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D00_L05",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D00_L05",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D00_L15",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D00_L15",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D00_L45",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D00_L45",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D05_L01",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D05_L01",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D05_L05",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D05_L05",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D05_L15",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D05_L15",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D05_L45",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D05_L45",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D10_L01",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D10_L01",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D10_L05",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D10_L05",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D10_L15",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D10_L15",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D10_L45",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D10_L45",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D20_L01",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D20_L01",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D20_L05",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D20_L05",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D20_L15",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D20_L15",
+      "FOLD_B"
+    ],
+    [
+      "HRI_D20_L45",
+      "FOLD_A"
+    ],
+    [
+      "HRI_D20_L45",
+      "FOLD_B"
+    ]
+  ],
+  "model_parameters": "EMPIRICAL_PREDICTIVE_PARAMETERS",
+  "policy_change_after_performance": "FORBIDDEN_REQUIRES_INVALIDATION_AND_SEPARATE_REDESIGN_AUTHORIZATION",
+  "primary_scope": "SCOPE_ALL_ACTIVE_NO_OVERRIDE",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "3824973d9851ebfffbfd47e9f95b9f49580326b75f652e55c1ca21808d624104",
+  "reference_promotable": false,
+  "rollout": {
+    "boundary": "ENTIRE_HISTORY_AND_HORIZON_SAME_ROUTE_SEGMENT_S2_RI_RUN_ELIGIBLE_STREAK_EXACT_100HZ",
+    "delta_history_update": "APPEND_NEW_PROJECTED_TICK_MINUS_PREVIOUS_PROJECTED_TICK",
+    "design_sha256": "ae1b447a4abdc3c5ba4c34adcfa4c650d3ee35b9229d899a8d6ff557ce09bb92",
+    "exogenous": [
+      "LOGGED_NORMALIZED_POST_CARCONTROLLER_COMMAND",
+      "RECORDED_VEGO"
+    ],
+    "future_measured_move_label": false,
+    "future_measured_steering_feedback": false,
+    "horizon_seconds": [
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "horizons_steps": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "initial_state": "OBSERVED_TICK_k_AND_DELTA_HISTORY_THROUGH_k_MINUS_1",
+    "numeric_failure": "WHOLE_FOLD_FAILURE_NO_ROW_DROP",
+    "off_by_one": "ANCHOR_k_PLUS_H_AFTER_H_TRANSITIONS_PATH_LENGTH_H_PLUS_1",
+    "required": "COMMAND_AND_VEGO_AVAILABLE_ENTIRE_WINDOW_NO_PADDING_NO_INTERPOLATION",
+    "sample_period_seconds": 0.01,
+    "semantics": "LOGGED_EXOGENOUS_COMMAND_CONDITIONED_ROLLOUT",
+    "stage1": "EACH_RECURSIVE_STEP",
+    "stage2": "ONLY_PREDICTED_MOVE",
+    "state": "PROJECTED_INTEGER_TICK"
+  },
+  "schema": "EMPIRICAL_HURDLE_FITTING_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_sha256": {
+    "empirical_hurdle_fitting_contracts.py": "e93d0edc159e87a84ffcc6707d8d0ca371bbcccda7f514652498dbc90617b3c8",
+    "empirical_hurdle_fitting_policy.py": "b9cf748c0fa4e3c5c54bd1b36bb6cbf674dacd25d9cd240ac98e65ddaba8017f"
+  },
+  "stage1_feature_sha256": "517288519b2ae0ef9edaa4b2a0c5e5a1b296389e4381ac4af0a2bddfec41be3a",
+  "stage2_feature_sha256": "517288519b2ae0ef9edaa4b2a0c5e5a1b296389e4381ac4af0a2bddfec41be3a",
+  "stage_models": "TWO_SEPARATE_NORMALIZERS_COEFFICIENT_RECEIPTS_PLUS_STAGE1_PRIVATE_THRESHOLD_PER_FOLD",
+  "status": "HURDLE_FITTING_POLICY_FROZEN",
+  "steering_rate_dependency": "NONE",
+  "ta_execution": false,
+  "threshold_meaning": "MODEL_DECISION_THRESHOLD_NOT_PHYSICAL_EPS_DEADZONE",
+  "vehicle_activation_allowed": false
+}

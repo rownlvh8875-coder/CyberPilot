@@ -1,0 +1,339 @@
+{
+  "capture_receipt_sha256": "a9da46975462629a9b53921f61448987d6f660ef9c46152ef6bfe7b02906edae",
+  "confidence_buckets": {
+    "0.0:0.2": {
+      "distance_available_lanes": 0,
+      "gt_eligible_lanes": 0,
+      "lane_count": 0,
+      "large_row_tail_lanes": 0,
+      "large_row_tail_rate": null,
+      "no_row_support_lanes": 0,
+      "off_mask_point_ratio": null,
+      "pred_to_gt": {
+        "maximum": null,
+        "median": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "sample_count": 0
+      },
+      "rate_semantics": "diagnostic width-quarter tail among supported-row observable lanes; NOT confidence gate or official failure rate"
+    },
+    "0.2:0.4": {
+      "distance_available_lanes": 0,
+      "gt_eligible_lanes": 0,
+      "lane_count": 0,
+      "large_row_tail_lanes": 0,
+      "large_row_tail_rate": null,
+      "no_row_support_lanes": 0,
+      "off_mask_point_ratio": null,
+      "pred_to_gt": {
+        "maximum": null,
+        "median": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "sample_count": 0
+      },
+      "rate_semantics": "diagnostic width-quarter tail among supported-row observable lanes; NOT confidence gate or official failure rate"
+    },
+    "0.4:0.6": {
+      "distance_available_lanes": 88,
+      "gt_eligible_lanes": 88,
+      "lane_count": 100,
+      "large_row_tail_lanes": 63,
+      "large_row_tail_rate": 0.7159090909090909,
+      "no_row_support_lanes": 0,
+      "off_mask_point_ratio": 0.8150388936905791,
+      "pred_to_gt": {
+        "maximum": 966.5907040598361,
+        "median": 25.504779819868133,
+        "p90": 489.8068326879296,
+        "p95": 636.296120066784,
+        "p99": 824.70709860186,
+        "sample_count": 13511
+      },
+      "rate_semantics": "diagnostic width-quarter tail among supported-row observable lanes; NOT confidence gate or official failure rate"
+    },
+    "0.6:0.8": {
+      "distance_available_lanes": 112,
+      "gt_eligible_lanes": 112,
+      "lane_count": 117,
+      "large_row_tail_lanes": 69,
+      "large_row_tail_rate": 0.6160714285714286,
+      "no_row_support_lanes": 0,
+      "off_mask_point_ratio": 0.6333710727427115,
+      "pred_to_gt": {
+        "maximum": 1137.6493476633284,
+        "median": 2.9619102014643204,
+        "p90": 379.5733607347268,
+        "p95": 613.3713805332728,
+        "p99": 816.3981297747229,
+        "sample_count": 21505
+      },
+      "rate_semantics": "diagnostic width-quarter tail among supported-row observable lanes; NOT confidence gate or official failure rate"
+    },
+    "0.8:1.0": {
+      "distance_available_lanes": 32,
+      "gt_eligible_lanes": 32,
+      "lane_count": 32,
+      "large_row_tail_lanes": 23,
+      "large_row_tail_rate": 0.71875,
+      "no_row_support_lanes": 0,
+      "off_mask_point_ratio": 0.49872862779482685,
+      "pred_to_gt": {
+        "maximum": 915.6152201554246,
+        "median": 1.3312736307277646,
+        "p90": 271.83257296063573,
+        "p95": 469.22317441486314,
+        "p99": 799.6730268716216,
+        "sample_count": 7280
+      },
+      "rate_semantics": "diagnostic width-quarter tail among supported-row observable lanes; NOT confidence gate or official failure rate"
+    }
+  },
+  "confidence_reliability": "UNCALIBRATED_POST_THRESHOLD_DIAGNOSTIC_NO_GATE_OPTIMIZATION",
+  "detector_exact_repeatability": true,
+  "direction_unit": "px",
+  "directions": {
+    "gt": {
+      "maximum": 1092.5504938968224,
+      "median": 2.715233780634435,
+      "p90": 178.6479163777251,
+      "p95": 343.3515477869,
+      "p99": 711.1539577006589,
+      "sample_count": 36991
+    },
+    "paired_spatial_pred": {
+      "maximum": 643.0505703535439,
+      "median": 2.029025034869716,
+      "p90": 79.4024203824593,
+      "p95": 137.81973328330474,
+      "p99": 250.93013905781558,
+      "sample_count": 42296
+    },
+    "pred": {
+      "maximum": 1137.6493476633284,
+      "median": 3.8846122138368457,
+      "p90": 409.88921711000256,
+      "p95": 608.4058599107527,
+      "p99": 818.5084663714657,
+      "sample_count": 42296
+    },
+    "semantic_lane_marking": {
+      "maximum": 22.806379301345146,
+      "median": 1.340460807921147,
+      "p90": 4.667211887479084,
+      "p95": 6.799225150537055,
+      "p99": 13.807323491459892,
+      "sample_count": 23806
+    },
+    "semantic_movable": {
+      "maximum": 1064.0166367050458,
+      "median": 155.3044502783145,
+      "p90": 583.2910680585454,
+      "p95": 664.4510796065329,
+      "p99": 973.117961326741,
+      "sample_count": 1130
+    },
+    "semantic_movable_in_car": {
+      "maximum": null,
+      "median": null,
+      "p90": null,
+      "p95": null,
+      "p99": null,
+      "sample_count": 0
+    },
+    "semantic_my_car": {
+      "maximum": 1005.2092873048176,
+      "median": 699.3164754826744,
+      "p90": 883.1583509033752,
+      "p95": 902.5755680583776,
+      "p99": 948.264124547988,
+      "sample_count": 1006
+    },
+    "semantic_road": {
+      "maximum": 1137.6493476633284,
+      "median": 198.5899184233889,
+      "p90": 602.1153713546265,
+      "p95": 696.5514656650003,
+      "p99": 822.0165846464441,
+      "sample_count": 14435
+    },
+    "semantic_undrivable": {
+      "maximum": 711.5697037537388,
+      "median": 188.88195852953186,
+      "p90": 330.21347236368894,
+      "p95": 369.7476068677088,
+      "p99": 627.0138419284563,
+      "sample_count": 1919
+    },
+    "spatial_gt": {
+      "maximum": 756.7833446642605,
+      "median": 1.6200755586398286,
+      "p90": 66.90871454731342,
+      "p95": 177.33298688183044,
+      "p99": 481.36691422330375,
+      "sample_count": 38051
+    },
+    "spatial_pred": {
+      "maximum": 653.914336084562,
+      "median": 19.827092916352264,
+      "p90": 232.74439102571705,
+      "p95": 286.8372977260653,
+      "p99": 441.3404832434105,
+      "sample_count": 68282
+    }
+  },
+  "ego_lane_association_evaluated": false,
+  "evidence_tier": "POST_RESULT_DIAGNOSTIC_PUBLIC_GT",
+  "false_positive_components": 54,
+  "frame_count": 119,
+  "gt_eligible_frames": 94,
+  "historical_cut_source": "public-lane-detector-diagnostic-result.json: localization pred_to_gt p95; immutable 608.4058599107527px diagnostic only",
+  "historical_p95_semantic_tail": {
+    "lane_marking": 0,
+    "movable": 95,
+    "movable_in_car": 0,
+    "my_car": 607,
+    "road": 1389,
+    "undrivable": 24
+  },
+  "historical_p95_tail_points": 2115,
+  "historical_p95_tail_spatially_resolved_points": 1079,
+  "human_review_status": "PENDING_SEMANTIC_CAUSAL_CATEGORIES_UNRESOLVED",
+  "ledger_sha256": "0574bb356476e67fb466c3499d55edfb2818484dfa88df13aeae7dff78817fe8",
+  "legacy_result_invalidated": false,
+  "mask_coverage": 0.5666206502594373,
+  "meter_error": null,
+  "metric_implementation_failure_observed": false,
+  "metric_source_sha256": "8c2f8447bc1e84351b20b38634a9834cb0c34f8fe51758fb2dd8daa474831768",
+  "missed_gt_components": 664,
+  "no_prediction_frames": 32,
+  "normalized_directions": {
+    "normalized_gt": {
+      "maximum": 0.9386172627979574,
+      "median": 0.002293545794987274,
+      "p90": 0.14748634568384347,
+      "p95": 0.27896220544917927,
+      "p99": 0.5698143421595335,
+      "sample_count": 36991
+    },
+    "normalized_pred": {
+      "maximum": 0.9773619825286326,
+      "median": 0.0032411077934479094,
+      "p90": 0.3521385026718235,
+      "p95": 0.5226854466587223,
+      "p99": 0.7031859676730804,
+      "sample_count": 42296
+    }
+  },
+  "normalized_unit": "fraction_of_original_image_width",
+  "official_reproduction_status": "BLOCKED_CULANE_DATASET_UNAVAILABLE",
+  "policy_sha256": "cac00d0936765b289298142d84a477bf86f3d795e49b053eb00c5d62dcde11ff",
+  "private_input_opened": false,
+  "receipt_sha256": "6a2139dcf9213563baada4f69694999e9e3c9a0ad0560c7306db39d48b37d0ec",
+  "reference_promotable": false,
+  "regions": {
+    "far": {
+      "coverage": null,
+      "covered_runs": 0,
+      "gt_runs": 0,
+      "gt_to_pred": {
+        "maximum": null,
+        "median": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "sample_count": 0
+      },
+      "missed_runs": 0,
+      "off_mask_points": 0,
+      "pred_points": 0,
+      "pred_to_gt": {
+        "maximum": null,
+        "median": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "sample_count": 0
+      },
+      "unsupported_points": 0
+    },
+    "mid": {
+      "coverage": 0.5342925963488844,
+      "covered_runs": 16858,
+      "gt_runs": 31552,
+      "gt_to_pred": {
+        "maximum": 1092.5504938968224,
+        "median": 2.937212252555014,
+        "p90": 202.9240301720681,
+        "p95": 334.15144422908435,
+        "p99": 622.1827622882635,
+        "sample_count": 27617
+      },
+      "missed_runs": 3935,
+      "off_mask_points": 20380,
+      "pred_points": 37238,
+      "pred_to_gt": {
+        "maximum": 1137.6493476633284,
+        "median": 4.603808366779504,
+        "p90": 333.6280084946307,
+        "p95": 451.1379208564464,
+        "p99": 692.4737175955331,
+        "sample_count": 32023
+      },
+      "unsupported_points": 5215
+    },
+    "near": {
+      "coverage": 0.6641177595106098,
+      "covered_runs": 6948,
+      "gt_runs": 10462,
+      "gt_to_pred": {
+        "maximum": 927.6795212814814,
+        "median": 2.2353079441463137,
+        "p90": 57.12668708582071,
+        "p95": 528.5507915160244,
+        "p99": 784.4660996202552,
+        "sample_count": 9374
+      },
+      "missed_runs": 1088,
+      "off_mask_points": 30317,
+      "pred_points": 37265,
+      "pred_to_gt": {
+        "maximum": 1005.2092873048176,
+        "median": 2.640475851466931,
+        "p90": 681.5190944370779,
+        "p95": 776.546057826421,
+        "p99": 884.3971275189158,
+        "sample_count": 10273
+      },
+      "unsupported_points": 26992
+    }
+  },
+  "row_tail_points": 6627,
+  "row_tail_spatially_resolved_points": 3610,
+  "row_tail_still_spatially_remote_points": 3017,
+  "schema": "PUBLIC_COMMA10K_TAIL_REPORT_V1",
+  "source_sha256": "04292b9841c3b258fe07e6f6a42b85f51ddc4f16f8c2d09707b6be4f212e4ddc",
+  "spatial_sample_semantics": "spatial_pred includes all points in nonempty-GT frames; paired_spatial_pred uses EXACT legacy supported-row sample population",
+  "symmetric": {
+    "maximum": 1137.6493476633284,
+    "median": 3.1806900436361047,
+    "p90": 317.6647835188631,
+    "p95": 523.244254531328,
+    "p99": 789.3607979055005,
+    "sample_count": 79287
+  },
+  "tail_frame_count": 73,
+  "taxonomy_counts": {
+    "GT_UNAVAILABLE": 25,
+    "MIXED_ROW_AND_SPATIAL_TAIL": 50,
+    "NO_LARGE_ROW_TAIL": 6,
+    "NO_PREDICTION": 15,
+    "ROW_ASSOCIATION_SENSITIVE": 19,
+    "SPATIALLY_REMOTE_PREDICTION": 4
+  },
+  "unavailable_frames": 40,
+  "usable_frames": 79
+}

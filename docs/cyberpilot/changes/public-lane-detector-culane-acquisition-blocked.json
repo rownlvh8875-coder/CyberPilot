@@ -1,0 +1,67 @@
+{
+  "archives": [
+    {
+      "download_command": [
+        "gdown",
+        "1Z6a463FQ3pfP54HMwF3QS5h9p2Ch3An7",
+        "-O",
+        "driver_37_30frame.tar.gz"
+      ],
+      "download_exit_code": 1,
+      "filename": "driver_37_30frame.tar.gz",
+      "google_drive_id": "1Z6a463FQ3pfP54HMwF3QS5h9p2Ch3An7",
+      "log_sha256": "f3506a05cae933d7e9889998075bf4eacb7da669a78b62217edf102df00c2b32",
+      "sha256": null,
+      "status": "BLOCKED_SUPPLIER_DOWNLOAD_QUOTA"
+    },
+    {
+      "download_command": [
+        "gdown",
+        "1LTdUXzUWcnHuEEAiMoG42oAGuJggPQs8",
+        "-O",
+        "driver_100_30frame.tar.gz"
+      ],
+      "download_exit_code": 1,
+      "filename": "driver_100_30frame.tar.gz",
+      "google_drive_id": "1LTdUXzUWcnHuEEAiMoG42oAGuJggPQs8",
+      "log_sha256": "ee94b65feaf5130617fc65cf17d8beb7bb9916b6cf629a488e345f134cadf7b9",
+      "sha256": null,
+      "status": "BLOCKED_SUPPLIER_DOWNLOAD_QUOTA"
+    },
+    {
+      "download_command": [
+        "gdown",
+        "1daWl7XVzH06GwcZtF4WD8Xpvci5SZiUV",
+        "-O",
+        "driver_193_90frame.tar.gz"
+      ],
+      "download_exit_code": 1,
+      "filename": "driver_193_90frame.tar.gz",
+      "google_drive_id": "1daWl7XVzH06GwcZtF4WD8Xpvci5SZiUV",
+      "log_sha256": "b5a7422d7086a8efd4db72e582cd4f2a5c54a52d5a71de215d6be8a82ac292e5",
+      "sha256": null,
+      "status": "BLOCKED_SUPPLIER_DOWNLOAD_QUOTA"
+    },
+    {
+      "download_command": [
+        "gdown",
+        "1QbB1TOk9Fy6Sk0CoOsR3V8R56_eG6Xnu",
+        "-O",
+        "annotations_new.tar.gz"
+      ],
+      "download_exit_code": 1,
+      "filename": "annotations_new.tar.gz",
+      "google_drive_id": "1QbB1TOk9Fy6Sk0CoOsR3V8R56_eG6Xnu",
+      "log_sha256": "4970e1a62861f2f17d0fcc75c6070e7938683564719ecbdea2933c9ba204c5ba",
+      "sha256": null,
+      "status": "BLOCKED_SUPPLIER_DOWNLOAD_QUOTA"
+    }
+  ],
+  "artifact_kind": "BLOCKED_EXECUTION_REPORT_NOT_BENCHMARK_OUTPUT",
+  "expected_test_frames": 34680,
+  "list_archive_sha256": "d8c2b6928937c29fbea25493cb0eebda520cd03f28127037c226044e123153d4",
+  "list_archive_size": 1115197,
+  "official_metric_not_run": true,
+  "schema": "OFFICIAL_CULANE_ACQUISITION_BLOCKED_V1",
+  "source": "https://github.com/hirotomusiker/CLRerNet/blob/dae038f67da57e292e5293a68c9c1c2922de13c2/docs/DATASETS.md"
+}

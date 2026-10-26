@@ -1,0 +1,94 @@
+{
+  "Q2_private_calls": 0,
+  "additive_source_sha256": {
+    "empirical_hurdle_v4_e2_v2_execution.py": "69833d5594632d2dd97dbf8e6c6eb47465f3210e9b30aeb02a1875bf9afb37c2",
+    "empirical_hurdle_v4_e2_v2_qualification.py": "3349d72cb59d88dbef7e04a7f0d6bc125508800be474a0bbe098fe34162ecc0b",
+    "tests/test_empirical_hurdle_v4_e2_v2_execution.py": "543aa37116f94135e29dd995c5f26e2e70283aa88dc1e18ce2f780dee823a574"
+  },
+  "authority": {
+    "V5": false,
+    "automatic_adoption": false,
+    "holdout": "CLOSED",
+    "selected_candidate": null,
+    "selected_policy": null,
+    "vehicle_authority": "NONE"
+  },
+  "baseline_head": "63f74c22d2c30978bf51dc7c00fca3eb423e45c1",
+  "current_grant_required": "STAGE1_V4_E2_V2_ADDITIVE_RUNNER_AND_FRESH_EXECUTION",
+  "default_Q2_status": "NOT_EXECUTED_DIAGNOSTIC",
+  "frozen_design_execution_authorized_value": false,
+  "historical_grant_reused": false,
+  "mission": "STAGE1_V4_E2_V2_ADDITIVE_RUNNER_AND_FRESH_EXECUTION",
+  "output_schema": "Existing immutable E2_CANONICAL_RESULT_V1 FORMAT plus execution_version=V2, V2_qualification and V2_forbidden_operation_counters. Protocol/head/train-seal identities differ from historical V1. Run-specific metadata separate envelope.",
+  "phases": [
+    "PREFLIGHT",
+    "D0",
+    "POTENTIALS",
+    "Q1",
+    "SELECTION",
+    "Q3",
+    "DURABLE_SEAL_READBACK",
+    "DEV"
+  ],
+  "private_controls": "Fresh current-grant/review/CI gate checked BEFORE historical metadata; exact previous E2V1 control root and named control files only. No historical numeric result replay/resume. New binding records exact input_scope/source/roots/lineage/implementation hashes.",
+  "protocol_raw_sha256": "7a4e02966d921759430a4b6c3c9ca1f343f400a293e4f79f1a9a73fb8aaeeb2f",
+  "publication_projection": {
+    "Q1_Q3_row_telemetry": "PRIVATE_ONLY",
+    "abort_public_fields": [
+      "status",
+      "stage",
+      "qualified_job_counts",
+      "decision_completeness",
+      "DEV_access",
+      "completed_job_count",
+      "source_writes"
+    ],
+    "forbidden_public_fields": [
+      "private_paths",
+      "private_decisions",
+      "model_values",
+      "normalizer_values",
+      "source_ids",
+      "input_events",
+      "gate_dependent_calls",
+      "row_differences"
+    ],
+    "minimum_support": 201,
+    "onset_continuation_rare_exact_counts": "WITHHELD",
+    "source": "empirical_hurdle_v4_e2_publication.py",
+    "three_arm_both_fold_joint_suppression": true,
+    "unchanged": true
+  },
+  "qualification_raw_sha256": "7a51775da2ec0edd18c21abf73d78123f940cff3c8e125ddac0cd43857427ccf",
+  "receipt_sha256": "fbe94b5a5f59c0075e680eb7ec58f5cdc4d3f0b1b913e0d6048f5721bf73788b",
+  "requirements": "Separate fresh private execution binding, two final-byte reviewer APPROVED receipts and exact pre-execution HEAD CI SUCCESS. Existing design protocol is never edited to grant access.",
+  "resource_contract": {
+    "Q1_max_calls": 32,
+    "Q3_max_calls": 32,
+    "address_space_bytes": 8589934592,
+    "analytical_bound_bytes": 5574680630,
+    "input_reopens_for_qualification": 0,
+    "native_reference": "https://github.com/OpenMathLib/OpenBLAS/blob/v0.3.34/interface/gemv.c#L264-L287",
+    "native_workspace_argument": "Single-thread real GEMV temporary buffer rounds up (m+n+16) float64 elements; at frozen max shape below3MiB. NumPy feature/index/normalization/finite-check copies fit eight full float64 matrix allowances; baseline Python/mappings/native libraries/allocator slack fit frozen2GiB reserve validated before numeric reads.",
+    "public_synthetic_native_qualification": {
+      "batch_rows": [
+        512,
+        168470,
+        336941
+      ],
+      "coefficients": "SYNTHETIC_INTERCEPT_ONE_REST_ZERO",
+      "features": 93,
+      "interpretation": "Synthetic capacity corroboration, not private measured usage, not a proof of private numeric equivalence or exact kernel instructions.",
+      "normalizer": "SYNTHETIC_MEAN_ZERO_STD_ONE_IDENTITY_EFFECTIVE",
+      "observed_peak_RSS_bytes": 1043972096,
+      "private_input_reads": 0,
+      "rows": 336941
+    },
+    "runtime_reserve_bytes": 2147483648,
+    "worker_threads": [
+      1,
+      1
+    ]
+  },
+  "schema": "CYBERPILOT_E2_V2_IMPLEMENTATION_LOCK_V1"
+}

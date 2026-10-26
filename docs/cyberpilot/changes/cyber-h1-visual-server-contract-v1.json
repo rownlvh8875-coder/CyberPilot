@@ -1,0 +1,37 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "cors": false,
+  "csp": "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+  "holdout_opener_implemented": false,
+  "holdout_opening": "CLOSED",
+  "host_origin_validation": true,
+  "hosts": [
+    "127.0.0.1",
+    "localhost",
+    "::1"
+  ],
+  "methods": [
+    "GET",
+    "HEAD"
+  ],
+  "mutation_status": 405,
+  "opening_count": 0,
+  "optimizer_endpoint": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "ff53ad8a530a062157d02dfbec33e8e90c35628700cef9d05a75930b37a22d25",
+  "reference_promotable": false,
+  "schema": "CYBER_H1_VISUAL_SERVER_CONTRACT_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_files": {
+    "cyber_h1_visual_server.py": "04d8824d76e84690e93d650bbe5f2705adf68d824da73f2213a51912787c2761",
+    "static/cyber_h1_visual.css": "fb3f6be39fbce04d4a64cedfa751cd1d9bc96c70423041029b2aa3b84d8894ae",
+    "static/cyber_h1_visual.html": "ebf0aa07a06e87a8919e56943e73f98e1bae6a0a366b778d456c202726f11533",
+    "static/cyber_h1_visual.js": "cc798cb41704b5fbe5327cccbbea52273e78e20316b9af65cc62b682f8596105"
+  },
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

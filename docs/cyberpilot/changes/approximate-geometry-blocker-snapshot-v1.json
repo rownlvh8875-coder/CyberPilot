@@ -1,0 +1,31 @@
+{
+  "calibration_status": "CALIBRATION_MEASUREMENT_PENDING",
+  "diagnostic_node": {
+    "code": "APPROX_GEOMETRY_DIAGNOSTIC_AVAILABLE",
+    "evidence_sha256": "bddd081d0b18886d583ddf0154d232d9365a7644bcf4ee5209a970bbc88e69ab",
+    "resolves_independent_dependencies": false,
+    "status": "PASS_DIAGNOSTIC_ONLY"
+  },
+  "diagnostic_status": "APPROX_GEOMETRY_DIAGNOSTIC_AVAILABLE",
+  "existing_blocker_plan_sha256": "52f302339f28b00ff446f745fba959037d3a8371837725945070423236d6f8e9",
+  "independent": false,
+  "independent_reference_status": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "independent_validation_status": "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+  "metric_calibration_status": "METRIC_CALIBRATION_UNAVAILABLE",
+  "physical_uncertainty": null,
+  "prior_sha256": "bddd081d0b18886d583ddf0154d232d9365a7644bcf4ee5209a970bbc88e69ab",
+  "private_comma4": "NOT_OPENED",
+  "private_input_allowed": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "7832cfd2f048c203ec3a197b7b74130eaf40506567ff0921b67523c7fe6f25e9",
+  "reference_promotable": false,
+  "schema": "APPROX_GEOMETRY_ADDITIVE_BLOCKER_SNAPSHOT_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "vehicle_activation_allowed": false,
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

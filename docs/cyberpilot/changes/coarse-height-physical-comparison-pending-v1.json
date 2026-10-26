@@ -1,0 +1,30 @@
+{
+  "automatic_reference_selection": false,
+  "coarse_source_sha256": "d2bb72bf2c0060d1f6e3d5d4d601ed07b248261248a586843c69455fe06caee5",
+  "cross_device_identity_verified": false,
+  "height": {
+    "coarse_nominal_m": 1.4,
+    "coarse_prior_preserved": true,
+    "delta_physical_minus_coarse_m": null,
+    "outside_range_does_not_reject_physical_receipt": true,
+    "physical_m": null,
+    "provenance_precedence": "PHYSICAL_RECEIPT_OVER_COARSE_FOR_FUTURE_MATCHED_DEVICE",
+    "within_diagnostic_range": null
+  },
+  "height_prior_sha256": "90673057619b2c15416dee64bee5f76336ec4f386b9f83d887a39ade186daf9c",
+  "independent": false,
+  "independent_validation_complete": false,
+  "orientation_comparison_sha256": "698723cef91e43e904142cee77afbb6cc06fdaac37c8ecf441c4b51f8042783c",
+  "physical_measurement": false,
+  "physical_receipt_sha256": null,
+  "physical_scope": null,
+  "physical_uncertainty": null,
+  "private_input_allowed": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "6e7be53393df5ab16f861971095dc0602f6beb7921c4aae13864d0b7bf68f4a5",
+  "reference_promotable": false,
+  "schema": "COARSE_APPROX_PHYSICAL_CONSISTENCY_DIAGNOSTIC_V1",
+  "sealed_reference_allowed": false,
+  "status": "PHYSICAL_MEASUREMENT_COMPARISON_PENDING",
+  "vehicle_activation_allowed": false
+}

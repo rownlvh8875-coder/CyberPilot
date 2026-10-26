@@ -1,0 +1,117 @@
+{
+  "background_automation_allowed": false,
+  "baseline": "46e41ad2f2e11cd4aee926b47d037c46d226108c",
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_search_authorized": false,
+  "closure": {
+    "no_model": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "receipt_sha256": "13da4be741d49a6303e8512c99f27be5728101c711cda21dac35549f453a0efe",
+    "stage_b": "STAGE_B_SIGNAL_ADMISSION_BLOCKED",
+    "track": "CURRENT_ARX1_FIR25_SIMPLE_OBSERVATION_TRACK_CLOSED",
+    "verdict": "SOURCE_GRID_OBSERVATION_REJECTED"
+  },
+  "composition_authorized": false,
+  "executor_sha256": {
+    "future_empirical_admission.py": "19d82637f145d41330552f077a9a19c8aa967407acf0fb7b7dc71bcfcc3f3dc8",
+    "future_empirical_cli.py": "5cf1f3f8bed86a230a47b4a8e83f5e61f9bf11b026ddd09864089a2bef868709",
+    "future_empirical_context.py": "14c2a093562cb14cd920b6e9a99d084fb61270e8a529bb6d62b84cc27486228e",
+    "future_empirical_contracts.py": "2842271e8996e6d29c40e7604b31a91781f38cc11c28dea9850229ec9260deb2"
+  },
+  "historical_regeneration_allowed": false,
+  "history_inventory_sha256": "343b1e17e2ca94fa5f9b9c008678d431053813e04ca1cb5d78852fc10b81f972",
+  "holdout_opening_allowed": false,
+  "known_full_profiles": [
+    {
+      "empirical_profile_sha256": "494ce20b81e7f212ade6f30f89686752817d52d2d0e0e7658ab0a7239c0e35b3",
+      "full_carparams_sha256": "252dff3c55c39f34e0375d0bf36a7a7792c8b332cca13eda491d57321eb0a542",
+      "semantic_class_id": "c07dbc19980119034bea832a830d24536551c489b6753547475b0b8a38b7dd1e"
+    }
+  ],
+  "known_scoped_sources": [
+    {
+      "adapter_sha256": "e89093bb859ccf0db5b0c331fecf0dd56648ce725aa7037645cf56ee6fb52e82",
+      "class_sha256": "c07dbc19980119034bea832a830d24536551c489b6753547475b0b8a38b7dd1e",
+      "commit": "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29",
+      "fingerprint_sha256": "720f52530dfd7773350f5dcc19e7f12547ac0ce075ab3d165e197d536a15590f"
+    },
+    {
+      "adapter_sha256": "ea5a890bb3c3fa3c288807c0c60974f63412c90614a6313d0831a7b2cfeb68c4",
+      "class_sha256": "c07dbc19980119034bea832a830d24536551c489b6753547475b0b8a38b7dd1e",
+      "commit": "6ca11a4aea8223ebfebb1140bd8094ef1b3c5b90",
+      "fingerprint_sha256": "e180f1119287aba849c87f974af0b09d30cea5e7fbabb1759cf8686a6ae4e868"
+    }
+  ],
+  "minimum_support": 201,
+  "model_fitting_allowed": false,
+  "model_implementation_allowed": false,
+  "model_selection_allowed": false,
+  "numeric_extraction_allowed": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "f582c1473460571041dab937943fba60b82fc32476cd2ed5e084f47f484b4761",
+  "reference_promotable": false,
+  "schema": "FUTURE_EMPIRICAL_DATA_GENERATION_READINESS_POLICY_V1",
+  "scope": "FUTURE_GENERATIONS_ONLY",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_signal_matrix_sha256": "67773d7c89d8900dd6760a7c9bd43a78a437708f05b61b6abb9b98ede6ed57ab",
+  "source_template": {
+    "automatic_current_source_admission": false,
+    "exact_commit_required": true,
+    "outcomes": [
+      "SOURCE_EQUIVALENT",
+      "SOURCE_ADAPTER_REQUIRED",
+      "SOURCE_INCOMPATIBLE",
+      "SOURCE_AUDIT_PENDING"
+    ],
+    "required": [
+      "origin",
+      "commit",
+      "dirty_attestation",
+      "logger_schema",
+      "command_path",
+      "CarState_DBC",
+      "sensor_producer_units_axes_clocks",
+      "CarParams_profile",
+      "runtime_STEER_MAX",
+      "reviewed_scoped_equivalence",
+      "adapter"
+    ],
+    "status": "SOURCE_AUDIT_PENDING"
+  },
+  "speed_bins": [
+    [
+      "LOW",
+      5,
+      15
+    ],
+    [
+      "MEDIUM",
+      15,
+      25
+    ],
+    [
+      "HIGH",
+      25,
+      null
+    ]
+  ],
+  "ta_execution": false,
+  "timebase": {
+    "boundary": "NO_ROUTE_SEGMENT_RUN_MASK_OR_SPEED_BIN_HISTORY_CROSSING",
+    "dt_ns": 10000000,
+    "duplicate_or_regressing_clock": "REJECT",
+    "max_age_ns": 20000000,
+    "method": "LATEST_PAST_ONLY_NO_INTERPOLATION"
+  },
+  "vehicle": "VEHICLE_ACTIVATION_BLOCKED",
+  "vehicle_activation_allowed": false
+}

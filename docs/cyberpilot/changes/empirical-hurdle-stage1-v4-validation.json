@@ -1,0 +1,90 @@
+{
+  "artifact_receipts": {
+    "empirical-hurdle-stage1-v4-architecture-decision.json": "e868bf09f5e823388b7464babdb2093dc7d822b4c30b3019bbd5ae8ab8542e35",
+    "empirical-hurdle-stage1-v4-architecture-inputs.json": "73e0c7ddb58a1d1104cab76cf28c5f49a1bdb318c10376d6d6ff2baecc0c8286",
+    "empirical-hurdle-stage1-v4-architecture-options.json": "b1014606100ba57f429c562e4fd9718ad9f9074f596c3f83625d74102ab2fb77",
+    "empirical-hurdle-stage1-v4-architecture-selection-rule.json": "2405104b98d2d9854574dcadb4d48d45c6fc284703300dfb33873e412bedf5cb",
+    "empirical-hurdle-stage1-v4-design-readiness.json": "2914417d78ee8de6b85e55fcd175ef57bfa8d3c037ee324bd3b907b2e4573e0c",
+    "empirical-hurdle-stage1-v4-equivalence-analysis.json": "50049e9502bafabebae7b026ecb1cb23f8d1bc0794d0457431a9af7b141b43b4",
+    "empirical-hurdle-stage1-v4-future-fitting-requirements.json": "ee3323b4ae1c120d8373fe98053b80b30b441fd01d2f879d78a302de4dca2dcc",
+    "empirical-hurdle-stage1-v4-onset-continuation-support.json": "771e90d4f2e1336da3b853e8a01c7f1313f76bf8b32d53840eafd4141ab5c938",
+    "empirical-hurdle-stage1-v4-route-transfer-analysis.json": "7791b7bd6c589a74516638df10691c2e4a7b54bd7cc52e8500519852fbaa0ae3",
+    "empirical-hurdle-stage1-v4-singleton-audit.json": "f491ce0ba4d593951eea631345bb4cd8d9da8035d644ff64d69472aad4a3bd97"
+  },
+  "audit": {
+    "authoritative_runs": 2,
+    "initial_diagnostic_runs": 2,
+    "model_fit": 0,
+    "prediction_replay": 0,
+    "rollout": 0,
+    "source_writes": 0,
+    "threshold_search": 0,
+    "total_decodes": 48,
+    "unique_numeric_arrays": 12,
+    "v4_numeric_execution": 0
+  },
+  "baseline": "b7e91e57c3d19be827c8757d9803e4744ddcf4a9",
+  "candidate_search_authorized": false,
+  "checks": {
+    "combined_empirical": 1928,
+    "combined_subtests": 812,
+    "compileall": "PASS",
+    "full_autotune_controls": 4787,
+    "git_diff_check": "PASS",
+    "historical_files_unchanged": "PASS",
+    "json_count": 667,
+    "lateral_replay": 16,
+    "publication_privacy_authority": "PASS",
+    "ruff": "PASS",
+    "scons": "PASS",
+    "v3_focused": 131,
+    "v3_focused_subtests": 187,
+    "v4_focused": 29
+  },
+  "composition_authorized": false,
+  "family_review_sha256": "c5c229cdf974a573fa03702874404f6f1d38603ddfe99a98fb359df273b9da5d",
+  "full_regression_after_review_fixes": true,
+  "future_fitting_execution_authorized": false,
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "independent_reviews": [
+    {
+      "important_findings_remaining": 0,
+      "result": "PASS",
+      "review": "RESEARCH_ARCHITECTURE",
+      "reviewer": "v4_architecture_review"
+    },
+    {
+      "important_findings_fixed": 2,
+      "important_findings_remaining": 0,
+      "negative_mutations": [
+        "MISSING_REPEAT_RECEIPTS",
+        "RAW_ROUTE_FIELD",
+        "MISMATCHED_RUN_IDENTITY"
+      ],
+      "result": "PASS",
+      "review": "CAUSALITY_PUBLICATION_READINESS",
+      "reviewer": "v4_causality_review"
+    }
+  ],
+  "opening_count": 0,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "90083d3dce9e68e8bbece4f27a0f094bd4f8d0a09cf53981f2bfd37ca2a725c1",
+  "reference_promotable": false,
+  "review_sources": {
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-architecture-redesign-review.md": "79ffbabc65aa4e7447b85db4fec9a30959c3307b2c046c50a913bd3de28b93f7",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_review.py": "db4fc00152f30e1d2da5bae97ddb6c88fd6ae2df5f6877d5d2278a2934dc3904",
+    "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_review.py": "3c1fc21a7d059d2b6017b88ced90e69a2d683d2ecde870ed8e5b1405ba8957a2",
+    "tools/cyberpilot/build_hurdle_v4_review.py": "73d32304ccd420c1bba09d10ae178675cc291f66b223291b622550314829d4b6"
+  },
+  "schema": "STAGE1_V4_VALIDATION_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "status": "PASS",
+  "ta_execution": false,
+  "v4_performance": "NOT_RUN",
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

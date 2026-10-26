@@ -1,0 +1,923 @@
+{
+  "actual_execution_authorized": false,
+  "baseline": "b7e91e57c3d19be827c8757d9803e4744ddcf4a9",
+  "candidate_search_authorized": false,
+  "component": "architecture-inputs",
+  "composition_authorized": false,
+  "facts": {
+    "historical_v3_summary": {
+      "admissible_count": 0,
+      "clause_closed_failure_counts": {
+        "MOVE_MAE": 1,
+        "MOVE_P95": 1,
+        "MOVE_RMSE": 1,
+        "ONE_STEP_EXACT_HIT": 32,
+        "ONE_STEP_MAE": 20,
+        "ONE_STEP_P95": 16,
+        "ONE_STEP_RMSE": 4,
+        "ONE_STEP_WITHIN_ONE_TICK": 8,
+        "OVERALL_100_MAE": 23,
+        "OVERALL_100_P95": 25,
+        "OVERALL_100_RMSE": 20,
+        "OVERALL_200_MAE": 22,
+        "OVERALL_200_P95": 19,
+        "OVERALL_200_RMSE": 21,
+        "OVERALL_25_MAE": 23,
+        "OVERALL_25_P95": 21,
+        "OVERALL_25_RMSE": 15,
+        "OVERALL_50_MAE": 22,
+        "OVERALL_50_P95": 24,
+        "OVERALL_50_RMSE": 16,
+        "PATH_MOVED_100_MAE": 23,
+        "PATH_MOVED_100_P95": 25,
+        "PATH_MOVED_100_RMSE": 19,
+        "PATH_MOVED_200_MAE": 22,
+        "PATH_MOVED_200_P95": 18,
+        "PATH_MOVED_200_RMSE": 21,
+        "PATH_MOVED_25_MAE": 23,
+        "PATH_MOVED_25_P95": 21,
+        "PATH_MOVED_25_RMSE": 14,
+        "PATH_MOVED_50_MAE": 22,
+        "PATH_MOVED_50_P95": 23,
+        "PATH_MOVED_50_RMSE": 16
+      },
+      "clause_evaluated_failure_counts": {
+        "MOVE_MAE": 0,
+        "MOVE_P95": 0,
+        "MOVE_RMSE": 0,
+        "ONE_STEP_EXACT_HIT": 31,
+        "ONE_STEP_MAE": 19,
+        "ONE_STEP_P95": 15,
+        "ONE_STEP_RMSE": 3,
+        "ONE_STEP_WITHIN_ONE_TICK": 7,
+        "OVERALL_100_MAE": 22,
+        "OVERALL_100_P95": 24,
+        "OVERALL_100_RMSE": 19,
+        "OVERALL_200_MAE": 21,
+        "OVERALL_200_P95": 18,
+        "OVERALL_200_RMSE": 20,
+        "OVERALL_25_MAE": 22,
+        "OVERALL_25_P95": 20,
+        "OVERALL_25_RMSE": 14,
+        "OVERALL_50_MAE": 21,
+        "OVERALL_50_P95": 23,
+        "OVERALL_50_RMSE": 15,
+        "PATH_MOVED_100_MAE": 22,
+        "PATH_MOVED_100_P95": 24,
+        "PATH_MOVED_100_RMSE": 18,
+        "PATH_MOVED_200_MAE": 21,
+        "PATH_MOVED_200_P95": 17,
+        "PATH_MOVED_200_RMSE": 20,
+        "PATH_MOVED_25_MAE": 22,
+        "PATH_MOVED_25_P95": 20,
+        "PATH_MOVED_25_RMSE": 13,
+        "PATH_MOVED_50_MAE": 21,
+        "PATH_MOVED_50_P95": 22,
+        "PATH_MOVED_50_RMSE": 15
+      },
+      "clause_evaluated_job_counts": {
+        "MOVE_MAE": 31,
+        "MOVE_P95": 31,
+        "MOVE_RMSE": 31,
+        "ONE_STEP_EXACT_HIT": 31,
+        "ONE_STEP_MAE": 31,
+        "ONE_STEP_P95": 31,
+        "ONE_STEP_RMSE": 31,
+        "ONE_STEP_WITHIN_ONE_TICK": 31,
+        "OVERALL_100_MAE": 31,
+        "OVERALL_100_P95": 31,
+        "OVERALL_100_RMSE": 31,
+        "OVERALL_200_MAE": 31,
+        "OVERALL_200_P95": 31,
+        "OVERALL_200_RMSE": 31,
+        "OVERALL_25_MAE": 31,
+        "OVERALL_25_P95": 31,
+        "OVERALL_25_RMSE": 31,
+        "OVERALL_50_MAE": 31,
+        "OVERALL_50_P95": 31,
+        "OVERALL_50_RMSE": 31,
+        "PATH_MOVED_100_MAE": 31,
+        "PATH_MOVED_100_P95": 31,
+        "PATH_MOVED_100_RMSE": 31,
+        "PATH_MOVED_200_MAE": 31,
+        "PATH_MOVED_200_P95": 31,
+        "PATH_MOVED_200_RMSE": 31,
+        "PATH_MOVED_25_MAE": 31,
+        "PATH_MOVED_25_P95": 31,
+        "PATH_MOVED_25_RMSE": 31,
+        "PATH_MOVED_50_MAE": 31,
+        "PATH_MOVED_50_P95": 31,
+        "PATH_MOVED_50_RMSE": 31
+      },
+      "development_comparable_job_count": 31,
+      "folds": {
+        "FOLD_A": {
+          "complete_gate_pass_count": 0,
+          "development_scored_count": 15,
+          "job_count": 16,
+          "recall_range": [
+            0.5716267867427614,
+            0.6559740618101545
+          ]
+        },
+        "FOLD_B": {
+          "complete_gate_pass_count": 0,
+          "development_scored_count": 16,
+          "job_count": 16,
+          "recall_range": [
+            0.07397731749289876,
+            0.1208320799685309
+          ]
+        }
+      },
+      "historical_clause_failure_counts": {
+        "v1": {
+          "MOVE_MAE": 0,
+          "MOVE_P95": 0,
+          "MOVE_RMSE": 0,
+          "ONE_STEP_EXACT_HIT": 32,
+          "ONE_STEP_MAE": 20,
+          "ONE_STEP_P95": 16,
+          "ONE_STEP_RMSE": 4,
+          "ONE_STEP_WITHIN_ONE_TICK": 8,
+          "OVERALL_100_MAE": 23,
+          "OVERALL_100_P95": 25,
+          "OVERALL_100_RMSE": 20,
+          "OVERALL_200_MAE": 22,
+          "OVERALL_200_P95": 18,
+          "OVERALL_200_RMSE": 21,
+          "OVERALL_25_MAE": 23,
+          "OVERALL_25_P95": 21,
+          "OVERALL_25_RMSE": 15,
+          "OVERALL_50_MAE": 22,
+          "OVERALL_50_P95": 24,
+          "OVERALL_50_RMSE": 16,
+          "PATH_MOVED_100_MAE": 23,
+          "PATH_MOVED_100_P95": 25,
+          "PATH_MOVED_100_RMSE": 19,
+          "PATH_MOVED_200_MAE": 22,
+          "PATH_MOVED_200_P95": 17,
+          "PATH_MOVED_200_RMSE": 21,
+          "PATH_MOVED_25_MAE": 23,
+          "PATH_MOVED_25_P95": 21,
+          "PATH_MOVED_25_RMSE": 14,
+          "PATH_MOVED_50_MAE": 22,
+          "PATH_MOVED_50_P95": 23,
+          "PATH_MOVED_50_RMSE": 16
+        },
+        "v2": {
+          "MOVE_MAE": 0,
+          "MOVE_P95": 0,
+          "MOVE_RMSE": 0,
+          "ONE_STEP_EXACT_HIT": 18,
+          "ONE_STEP_MAE": 1,
+          "ONE_STEP_P95": 0,
+          "ONE_STEP_RMSE": 1,
+          "ONE_STEP_WITHIN_ONE_TICK": 10,
+          "OVERALL_100_MAE": 0,
+          "OVERALL_100_P95": 1,
+          "OVERALL_100_RMSE": 0,
+          "OVERALL_200_MAE": 5,
+          "OVERALL_200_P95": 1,
+          "OVERALL_200_RMSE": 5,
+          "OVERALL_25_MAE": 6,
+          "OVERALL_25_P95": 0,
+          "OVERALL_25_RMSE": 1,
+          "OVERALL_50_MAE": 0,
+          "OVERALL_50_P95": 0,
+          "OVERALL_50_RMSE": 0,
+          "PATH_MOVED_100_MAE": 0,
+          "PATH_MOVED_100_P95": 1,
+          "PATH_MOVED_100_RMSE": 0,
+          "PATH_MOVED_200_MAE": 5,
+          "PATH_MOVED_200_P95": 0,
+          "PATH_MOVED_200_RMSE": 5,
+          "PATH_MOVED_25_MAE": 4,
+          "PATH_MOVED_25_P95": 2,
+          "PATH_MOVED_25_RMSE": 0,
+          "PATH_MOVED_50_MAE": 0,
+          "PATH_MOVED_50_P95": 1,
+          "PATH_MOVED_50_RMSE": 0
+        }
+      },
+      "job_status_counts": {
+        "EXECUTED_COMPLETE": 31,
+        "NO_FEASIBLE_THRESHOLD": 1
+      },
+      "no_feasible_threshold_job_count": 1,
+      "selected_candidate": null,
+      "threshold_finalized_job_count": 31,
+      "tp_constraint_satisfied_job_count": 31,
+      "v2_exact_hit_change_job_counts": {
+        "worse": 31
+      },
+      "v2_missed_move_improved_job_count": 31
+    },
+    "v1_admissible_count": 0,
+    "v2_admissible_count": 0,
+    "v2_extreme_suppression_denominator": 32,
+    "v2_extreme_suppression_jobs": 32,
+    "v2_mechanism_states": {
+      "classifier_review": "PREDECLARED_RANK_COLLAPSE_CONDITION_NOT_MET",
+      "decision_state": "V2_EXTREME_MOVE_SUPPRESSION_ALL_JOBS",
+      "rank_state": "STAGE1_DEV_RANK_ABOVE_CHANCE_ALL_JOBS",
+      "rank_transfer_state": "STAGE1_RANK_TRANSFER_DECREASED_ALL_JOBS",
+      "stage2_review": "INSUFFICIENT_GATE_PERFECT_SUPPORT",
+      "threshold_review": "THRESHOLD_POLICY_REDESIGN_REVIEW_SUPPORTED"
+    },
+    "v3_admissible_count": 0,
+    "v3_comparable_jobs": 31,
+    "v3_exact_hit_worsened_jobs": 31,
+    "v3_fold_pass_counts": {
+      "FOLD_A": 0,
+      "FOLD_B": 0
+    },
+    "v3_gate_accounting_denominator": 32,
+    "v3_missed_move_improved_jobs": 31,
+    "v3_no_feasible_jobs": 1
+  },
+  "historical_states_preserved": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "opening_count": 0,
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "HOLDOUT_OPENING_CLOSED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED",
+    "SEARCH_NOT_AUTHORIZED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "production_authority": false,
+  "public_input_lock_sha256": "d8deb6f246726e5a3f83317a85d0df4f1972ecc1a488399f91274b0d434213c9",
+  "public_inputs": {
+    "empirical-hurdle-acceptance-gate-v1.json": {
+      "file_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+      "receipt_sha256": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60"
+    },
+    "empirical-hurdle-candidate-gates-v1.json": {
+      "file_sha256": "d29f85e7d452147fda7169d17334dcdd89dcf2fc987cc00f648e62f4feed1fe5",
+      "receipt_sha256": "e18ba4ad15e48f8aac860a3366fbb71786de3ef34548f92d2c95c409dc7e4fb4"
+    },
+    "empirical-hurdle-candidate-set-v1.json": {
+      "file_sha256": "7c337dd1fee7ca7947513788e91c88fe32092aa8c808213ac13787681a494b2b",
+      "receipt_sha256": "eff4ff37f74e06520e917f017c509175733a108df9399ebab8f2e93fa6a871f4"
+    },
+    "empirical-hurdle-comparator-contract-v1.json": {
+      "file_sha256": "5bc595c87a5a146256f6c36bc581fcd6fdb19dbedcef9de590dc9313191c9461",
+      "receipt_sha256": "80561a7f863363fa5ce6ed6710e2c29cae58ff985f2597bb0761faf86e27cf00"
+    },
+    "empirical-hurdle-composition-contract-v1.json": {
+      "file_sha256": "9c0f48ffada6ce8e905d85d9d72df21a3997f9ce6dc757bb96d9291218046948",
+      "receipt_sha256": "046d0ba328c7a52421aedfff504ed20ad27114785d67054f6e78fd8547eccc67"
+    },
+    "empirical-hurdle-conditional-delta-target-v1.json": {
+      "file_sha256": "5187c5f0fdb19285dca424b24a54cce3747ab7c59057a5bbf933859e71d1fe2d",
+      "receipt_sha256": "a29d77ce85acf114b1f54c5a1a80785fb9a83cea7ecd6b608ff731b4d683030c"
+    },
+    "empirical-hurdle-design-evidence-v1.json": {
+      "file_sha256": "c7677194276983192ac90f25ad9f4758e426367698ae62a8e5d49cf6f2dda2f5",
+      "receipt_sha256": "49abff45affee17049e4864b99731526acd3952b2efacea24c30047c5819d9cc"
+    },
+    "empirical-hurdle-design-readiness-v1.json": {
+      "file_sha256": "955c96a711a2628fbf3ea4dce6a30b5ff6036df5ab84fffc20dfcfb11ac071ec",
+      "receipt_sha256": "8d08f9c06583983e237cbdf92dc6028865a3d87a9a289aaba00ea895ede9fd2a"
+    },
+    "empirical-hurdle-design-regression-validation-v1.json": {
+      "file_sha256": "16b9e09705219f6b2b2141ca513da77970933c2f8272ee49a95d07b7fa480aac",
+      "receipt_sha256": "fba7badb8af71f2581164b9e956a2d04d1b0575d0312c66da8b3e2d605d548cc"
+    },
+    "empirical-hurdle-design-validation-v1.json": {
+      "file_sha256": "b6752a1aab3bfba475eda539b2ef1af9fa54199178c676b36018db071167ade0",
+      "receipt_sha256": "94da1e54aaaf705fb1be3aa987b71242cf3b50654326788375c70ddd7153575a"
+    },
+    "empirical-hurdle-diagnostic-contract-v1.json": {
+      "file_sha256": "bb1f4c0766a3a0bbd81f59388f5b0c6810fc19c89a40a0cb0c2fb7bd0dc8e89c",
+      "receipt_sha256": "68aeaf13efc8912fa62400d73352c3c3314557123405d529811980ad56d15b17"
+    },
+    "empirical-hurdle-exact-hit-attribution-v1.json": {
+      "file_sha256": "6eeb73237c218df946b9739d8168c0220c3e4900829d7843e1a450c19cafd447",
+      "receipt_sha256": "2938f1650bbff9e99ff89acea87bbc2615f7fc86d40d9869eb4693a83b187a69"
+    },
+    "empirical-hurdle-failure-attribution-policy-v1.json": {
+      "file_sha256": "f64590657463ff068dc583b8ec250142849944011b61d3dd13eb3374d3f7f4a9",
+      "receipt_sha256": "b93b623231dcd763e7588c4986073d4ee0188dac6b4a06b4b0e035317928b96e"
+    },
+    "empirical-hurdle-failure-attribution-readiness-v1.json": {
+      "file_sha256": "095ac7f7a02cb7178d1d47087a70a03ff7919d99eced7f56a3c75027589046bc",
+      "receipt_sha256": "dd03dedbab42fa3e4cdf262234bb24f4a62fb94c4dbbd8d9f203d5ec6506b7c6"
+    },
+    "empirical-hurdle-failure-attribution-repeatability-v1.json": {
+      "file_sha256": "eea9460c3bc016c5dc29089d4b0d3211d49a8136bcc7d16eecdbb5184e3f11a8",
+      "receipt_sha256": "e3610c22b6ba5e0053b676e3d0144fb391446dcdfbd003329d2b5efe91b36b37"
+    },
+    "empirical-hurdle-failure-attribution-validation-v1.json": {
+      "file_sha256": "770fd9656d0cdd3dad04eb51fafdeb506deddda9529a7e8a6ac70cf7493f48e6",
+      "receipt_sha256": "be092bf97b9f63f69e7dad0b9cfd59df55f4d8d78cae8faa0744eb841a7bb4ec"
+    },
+    "empirical-hurdle-family-contract-v1.json": {
+      "file_sha256": "cccaba738cb55c2506269976d1cb86510a90ba2d20f41004493d05f1aeab1d41",
+      "receipt_sha256": "c780fa1e75bdb3d13480f4863b6dabb7c7dbfe68797032fce582b7854d45dfe3"
+    },
+    "empirical-hurdle-feature-contract-v1.json": {
+      "file_sha256": "8676c89bcfe629d6bcc60706172ca29f79ee42430e67893c8ee837a7da672488",
+      "receipt_sha256": "517288519b2ae0ef9edaa4b2a0c5e5a1b296389e4381ac4af0a2bddfec41be3a"
+    },
+    "empirical-hurdle-fit-cv-authorization-v1.json": {
+      "file_sha256": "54b879120e55c805df5f4094bf04637553bf6faafcfecef69f052d160a29ccb2",
+      "receipt_sha256": "d93d6bb418a958b998c0308e4ce71a605a4069286029b5539d80b38001a34c6b"
+    },
+    "empirical-hurdle-fit-cv-job-manifest-v1.json": {
+      "file_sha256": "be8cf73c1fc14683d2c18a95707c99ec015f00b806059d1a656453d90d7f098f",
+      "receipt_sha256": "b13b25f1f5c0f37d8465a24472e126c8f7f1d221643d5411dcf047996f9a7fe0"
+    },
+    "empirical-hurdle-fit-cv-readiness-v1.json": {
+      "file_sha256": "8613634aa79641de3f2512ce06882393cfa9c1a5d2749043631fa757cbf56499",
+      "receipt_sha256": "e00c9da0992fed899e77f9833d0ad04f333acc086e59846644ec164945b06861"
+    },
+    "empirical-hurdle-fit-cv-repeatability-v1.json": {
+      "file_sha256": "f734bd6fb3a956e62c883eb24b22d0df0a4626a6ae17a733ca43592f27c00e08",
+      "receipt_sha256": "60c262b004f253f6de203404520f9edc8ab3d78c0dba51948dd62759003f35dc"
+    },
+    "empirical-hurdle-fit-cv-results-v1.json": {
+      "file_sha256": "72e0179a96a8885e7ffab57bf1c579ef75536769bc1a03990a007b3b4e2ac272",
+      "receipt_sha256": "8d7c45a7a97f73918f927b19b0004c309078239b8b8523e1beac08fa6c53f5c4"
+    },
+    "empirical-hurdle-fit-cv-validation-v1.json": {
+      "file_sha256": "d6804d64fc3f97ca10aa9c6e234e097ab4a71657ea89388b3a367f82e32a7d89",
+      "receipt_sha256": "340cc48499dc7def91e8fa71f4d7202cd0239e455bedca4bc1f1eb69c9cd2004"
+    },
+    "empirical-hurdle-fitting-policy-readiness-v1.json": {
+      "file_sha256": "9a0811e62916b6f3dbadc579ce6e3db64f888cd07e68474da1265e6efa984195",
+      "receipt_sha256": "cde321da593da445d5df34a7a2a9212555209c7d66b2979b7ef01987c230cefb"
+    },
+    "empirical-hurdle-fitting-policy-regression-validation-v1.json": {
+      "file_sha256": "57c1f3b8fc8e6ac171fb9d8139475b9de0dd583eecc2e436d53254531e2bcb02",
+      "receipt_sha256": "451dd27160092f0f418bb6f8d3a34f0da113ecab100377b29ae3f83090fd953c"
+    },
+    "empirical-hurdle-fitting-policy-v1.json": {
+      "file_sha256": "e1b566d18a55cc72fe9378d37f0763d3a5de107cff2b6ff884cebcd238b376d6",
+      "receipt_sha256": "3824973d9851ebfffbfd47e9f95b9f49580326b75f652e55c1ca21808d624104"
+    },
+    "empirical-hurdle-fitting-policy-validation-v1.json": {
+      "file_sha256": "5c3e7b56d3430448c5547caac601c73d84b769b903b6904ff129bc8b39df48a2",
+      "receipt_sha256": "0ed1f76c0e496ec7e62cfa7633195b78a8e46c85deb06068c4f9617fd75a26b0"
+    },
+    "empirical-hurdle-fold-asymmetry-v1.json": {
+      "file_sha256": "43f80eba69981ef65258ff59a39e277825d19e1cc921eff57e0541e885884495",
+      "receipt_sha256": "2be8f4f8dca3a5abc09fd359ddff2acb04168a28bab8878dec0f10e1a1d2a796"
+    },
+    "empirical-hurdle-future-fitting-requirements-v1.json": {
+      "file_sha256": "7b92cea1d8e87c6eaa875199d80cc724a7e3bf096a83a24b78b469bfe686d869",
+      "receipt_sha256": "8cfa83d6e1e613796925f532be5d391016da31d7da87b0009662d4c8d8c99989"
+    },
+    "empirical-hurdle-mechanism-summary-v1.json": {
+      "file_sha256": "eec5066f40a17818bb9e3da1ff7bd2bf40d8dd2711f35618956eedd20949911c",
+      "receipt_sha256": "2d3d1763010ba6144e2318cd8b1377374c3bb22e101dbee6a381806e20294ca9"
+    },
+    "empirical-hurdle-metric-contract-v1.json": {
+      "file_sha256": "82f88fac1d31d3e4a24dfa717877cfd1d60da62bff4108b8d58cfbba7c446639",
+      "receipt_sha256": "98df562961a9c60cd43531694cd0dfbbde19b528c856bf6562ea6d5c6aad17e5"
+    },
+    "empirical-hurdle-move-gate-target-v1.json": {
+      "file_sha256": "362d73b231c810f4e1ccd5f376effe0b7887eea77f3d9e5c211403d54dc03bbe",
+      "receipt_sha256": "0ca483ef467c7039214956cc3c599256ac23147a89e9dccc13d098abb9dfa23d"
+    },
+    "empirical-hurdle-next-design-trigger-v1.json": {
+      "file_sha256": "c12dc439d4c0d5550ca57dd0dbd4eb127f37d3d4f984a825edc700da9f3668af",
+      "receipt_sha256": "00566fbfac6d05929a17202aa9c6d889454449c4a7e7e9274128d6f85b92b320"
+    },
+    "empirical-hurdle-normalization-policy-v1.json": {
+      "file_sha256": "f262c6a82a8d3a716a8c5464f8ec179f4b2a0a7af155f2a26446405828c160b1",
+      "receipt_sha256": "618772cfcd852113da81b60b5570e33b4eaba8959022bf8eba498392da0033dc"
+    },
+    "empirical-hurdle-one-step-error-decomposition-v1.json": {
+      "file_sha256": "3d898b08148b80fc154ae11bd5302d9292148f3aae5b5a189a1f4c4f55f8eb2e",
+      "receipt_sha256": "99de69ee9c27d7c003d4db3bf1a63e361eaf018cb66efb1b38f0927dfd529726"
+    },
+    "empirical-hurdle-rollout-contract-v1.json": {
+      "file_sha256": "772d5febe8894c189c8332836365149467c0c5870bd630d0db1be7372ebc3d04",
+      "receipt_sha256": "ae1b447a4abdc3c5ba4c34adcfa4c650d3ee35b9229d899a8d6ff557ce09bb92"
+    },
+    "empirical-hurdle-rollout-divergence-v1.json": {
+      "file_sha256": "620dee23ace877f8a5da8d351ca19e6d7299b7393575d415197a0d035f15e6d2",
+      "receipt_sha256": "9744cac1ba16d9cfda0a8e73c13357bee9f1b9eaff2f3058d033ef8ed3d490ab"
+    },
+    "empirical-hurdle-rollout-gate-attribution-v1.json": {
+      "file_sha256": "618cac0e653e70dff816ad8fac424972ed0a6996e64fa059b1a8d38611026ad0",
+      "receipt_sha256": "788f082095ad1bed29f3cc3e52e7a00b09302215963db70115d605f551dda5d1"
+    },
+    "empirical-hurdle-route-cv-contract-v1.json": {
+      "file_sha256": "a40183e88f0ae7b830d353cdce3a692f56111d31a5c27cd1394d205d77e5e6f8",
+      "receipt_sha256": "9e6bddd4f4d0e3dbe1cd02d7cfe2313a17da5459215f4fa397d42b098b406a4a"
+    },
+    "empirical-hurdle-selection-result-v1.json": {
+      "file_sha256": "3e1d72ec6d114c03e289dac3a8406126f17d6594fc73ebcbb7b2302c32beed46",
+      "receipt_sha256": "cac341f353befbf014726df964009525484e938abc1b5a5dc6d5de4e5a7a6df8"
+    },
+    "empirical-hurdle-selection-rule-v1.json": {
+      "file_sha256": "aeb3e51e85039660be702517dfd79e4c932eb72bde0b1a9d9bdc4bbaad36586c",
+      "receipt_sha256": "9622e7134b56f0c48153cba1a23dd690bdc6d578a433c6f77b34e3f7a3cf70f0"
+    },
+    "empirical-hurdle-stage-normalization-v1.json": {
+      "file_sha256": "d0cd13c7afa4d35e55ee2e1d9316474cbdb50099d7674de0da8ff6fde46a1b26",
+      "receipt_sha256": "4704b839037042084da818cc72eecd651b7a1d7ac12fa5d74f1531bb2517e549"
+    },
+    "empirical-hurdle-stage1-confusion-attribution-v1.json": {
+      "file_sha256": "a2952b9ced60b617305a7e9c9bcbd89e958db33fb18fdb7719d6bbb5736bba12",
+      "receipt_sha256": "18f69a5cd06fe10d9672da465894ed2a6a1f9b4f10fcb28a097895a2b47efbbf"
+    },
+    "empirical-hurdle-stage1-convergence-v1.json": {
+      "file_sha256": "4014c3bbd0d47ed53ee05bde279e9c72f7f9c20e07b2bd1291f6278246f78ba3",
+      "receipt_sha256": "4a2c377be5379c1a03d65dbb9c06070619d60cedee3ab6d4af331aba8426a82a"
+    },
+    "empirical-hurdle-stage1-decision-policy-v2-design-evidence.json": {
+      "file_sha256": "6cb3cc78425b3bc1d13df087ffe453eca08d71f0d4592813dd836a9d9187da07",
+      "receipt_sha256": "1276f6851b07bb846b409d626a970d4d8ba9820ea6c6ed56c0908adad928d9f4"
+    },
+    "empirical-hurdle-stage1-decision-policy-v2-readiness.json": {
+      "file_sha256": "bdc12b1891d64cadf0cf45e88383acd5544d77cf33326ed6c4ff2adde2568ca0",
+      "receipt_sha256": "6963e8a3d0b3ae018a6612e7d07e18143db0f5147d7ccb5b75e90dbc77dc00e8"
+    },
+    "empirical-hurdle-stage1-decision-policy-v2-validation.json": {
+      "file_sha256": "f9a655493195108dc2b1128c2d7e58e580d382349c45104086edcb63ea88cf2b",
+      "receipt_sha256": "c4ae8f8a377578093582a4a60b12e08f1c8bccb95e81e458f3cefc542572e181"
+    },
+    "empirical-hurdle-stage1-decision-policy-v2.json": {
+      "file_sha256": "e358a8e99dbc2d2e8943ef0e6f326b74e1d3d623d5573218b22c6dac34c6a634",
+      "receipt_sha256": "463ac0c2f34b59b67c1a1d7365c5662d717a49de328cabfd9101f185bff2bf19"
+    },
+    "empirical-hurdle-stage1-decision-policy-v3.json": {
+      "file_sha256": "355b42d54df30afb7c02764542cbb068bda11fc792da36dc450e699f8573e8b0",
+      "receipt_sha256": "c6795b87374f696d9701e30eaaa675ec88e2e1de5e60d381bc33efd90be20925"
+    },
+    "empirical-hurdle-stage1-fit-method-v1.json": {
+      "file_sha256": "5d6246624f7a3e49701f6db62185ed97ff5e2b34b99f59faca29c6f54636283f",
+      "receipt_sha256": "6c644678deb454008c3a3146cece0a24393642e2025707dbacbe47e3355a7b9a"
+    },
+    "empirical-hurdle-stage1-results-v1.json": {
+      "file_sha256": "f2050e929b08c9edf5bc3b1621bcf0871314202f8a35039dc6caa2167ea9f782",
+      "receipt_sha256": "a3a2eb82e70109c9db38d81a07d3147087494f5927eeb540d54f4a2c6abf24be"
+    },
+    "empirical-hurdle-stage1-transfer-v1.json": {
+      "file_sha256": "33cddb4a98a23f45021a351f2a4678edeff7bf21ecd6c3144c5fb7f96ed25368",
+      "receipt_sha256": "6b16edc9542da46764648bc1acd6edc33dc9400167eb4126ecd64fe3dfb82c83"
+    },
+    "empirical-hurdle-stage1-v2-candidate-gates.json": {
+      "file_sha256": "eb3fb2fca5590becd0287c08bce4d15a6e2ceb60d57fff55b2d4b977bb1893c9",
+      "receipt_sha256": "154e73dae6961745f5b2071f1fd29599314b7da049c2d143b8a419d9e0844564"
+    },
+    "empirical-hurdle-stage1-v2-decision-conservatism.json": {
+      "file_sha256": "6e57c12a8decc53410274eebe83b6a7212a3878334caa7e7535101f53f450e2a",
+      "receipt_sha256": "934719c387f069d9c9d0971f155393f6540e624d1f3345ca220b524fa18b84fe"
+    },
+    "empirical-hurdle-stage1-v2-development-execution-contract.json": {
+      "file_sha256": "130e8d562271a9ad894ec6df5e33a16dc9db4be9440ef60b051864a90ebe08d2",
+      "receipt_sha256": "7d9fbaffddd5f11e8c816844b6285d96bbaac69704b56342af0e219797cabdc2"
+    },
+    "empirical-hurdle-stage1-v2-development-results.json": {
+      "file_sha256": "fc6e135e223e52004414b3667753253d5c0b93ba237821a094de2753fa2099d3",
+      "receipt_sha256": "553fe5b446f1aa0eb88e72079b6f3fdda4a3b3a1d01f0c40a5e7353e3a7ef496"
+    },
+    "empirical-hurdle-stage1-v2-exact-hit-decomposition.json": {
+      "file_sha256": "e428f8e66ef78d261dbde6cb029b88a5c939be2e129d527f85d020c7a84f4eb6",
+      "receipt_sha256": "9b10873e986910538603e0e23ba20a377e860ab8ad7441f84290a149e3faaf95"
+    },
+    "empirical-hurdle-stage1-v2-execution-authorization.json": {
+      "file_sha256": "40683b23e2cb08ca8265aa7fa94087f5e4411bccb659dce1e56f418418b6c40b",
+      "receipt_sha256": "5249faeab0055eeb3dd608b572e3c80335b12259a6444fb2ae11a285d636b35c"
+    },
+    "empirical-hurdle-stage1-v2-execution-policy-validation.json": {
+      "file_sha256": "63047abc7e6a765fbddbecae2098675f4d41d175648a05386feebcecc5aa9222",
+      "receipt_sha256": "14e3f9a5e7264f8746138058943d71db7defe36e96d2cc20c6d29d1dc746f2ec"
+    },
+    "empirical-hurdle-stage1-v2-execution-policy.json": {
+      "file_sha256": "4cfc6a49466af84fd7948652d9a456f7a0d6e64687b828a14f411e9069049ba0",
+      "receipt_sha256": "b0f838bf1c981cc5f137416f1f6397398dd5c3c5867cfed3f649f1ccc815346e"
+    },
+    "empirical-hurdle-stage1-v2-execution-readiness.json": {
+      "file_sha256": "fac1b59a53bc93dad8622e3ec957ecf60bd309dccb86175b5740b49b1d4ed8b8",
+      "receipt_sha256": "81e6a953589ec768e8194f5f503292b11796ff074165e7c3fc151d957a5ebc5f"
+    },
+    "empirical-hurdle-stage1-v2-execution-validation.json": {
+      "file_sha256": "207a7a46976f9a086335eb073ff282aeb44331766a2b2cdd097485a7653a9ca0",
+      "receipt_sha256": "c80f1eceba21589b9be03f3d3e82a3d8613084d0861963fb722973b563fb90da"
+    },
+    "empirical-hurdle-stage1-v2-failure-attribution-policy.json": {
+      "file_sha256": "ab17c5f3fec2416ba5372d9aececcb889d5813f0c426b14e061749d65d50676b",
+      "receipt_sha256": "c36c991bf6074f4d5677fb514d8c73eba8f7dcc9c62d8a90c78516f98cbb6f27"
+    },
+    "empirical-hurdle-stage1-v2-failure-attribution-readiness.json": {
+      "file_sha256": "cb3bfe443b977e27ed7f4636cd8dd8599c2bd043c8e48f5676cdc537ff74ff95",
+      "receipt_sha256": "ba45795fe26849685ba6c38a9e28c69fb77fa2266eef7d79e81db57a4523420e"
+    },
+    "empirical-hurdle-stage1-v2-failure-attribution-repeatability.json": {
+      "file_sha256": "e9b112383cac0a4fe03d4345145ca93aaa64a7b8dd74a22a101a9ac2b2a90b63",
+      "receipt_sha256": "f8880b6947a71b8ec3871f623a432d4ae78ab3dec98a981232a583631371532f"
+    },
+    "empirical-hurdle-stage1-v2-failure-attribution-validation.json": {
+      "file_sha256": "fdd9c91233f643985d8a67a6e43c0d7ae067be6ca443cd2714b14817ef8714d0",
+      "receipt_sha256": "2b58141135c36e75b325a3a59f00e392c5a388857bd71dbfdc8be38a3cc96be6"
+    },
+    "empirical-hurdle-stage1-v2-feasibility-contract.json": {
+      "file_sha256": "e0d0c351da44347fc2d097f7b3e91ab87964262348ba0c994719a4fcdbc58f91",
+      "receipt_sha256": "2dc5e8fbbf1830a5f69309c9e742811fdf8fef19cdd0d0c59e5daa434170fadb"
+    },
+    "empirical-hurdle-stage1-v2-feasibility-slack.json": {
+      "file_sha256": "2db47d0a5234b19f6642bb404916e6b3c1efcdc80abdedc4dcd70d60aa9f22b2",
+      "receipt_sha256": "8070710942b1c34953425cb634fbf7401be62e204d2ef1967cdeceebf771c0ad"
+    },
+    "empirical-hurdle-stage1-v2-fold-asymmetry.json": {
+      "file_sha256": "e3a89a381f0c74773af16a57e3c6d93e0ea66e52433538c46280e43ea33d0ac7",
+      "receipt_sha256": "dd379dab97aec8b852764f532ed3a2c1e98d2a2be4968a6fec47821017699721"
+    },
+    "empirical-hurdle-stage1-v2-future-execution-requirements.json": {
+      "file_sha256": "117b53a21fafce22afa0155cd9858f17fb779540f3b26d45b729f2c42114b7f5",
+      "receipt_sha256": "52586eae8858a3cf31f54c74917dbb7df2d7b792a14a4e39567a5f2b057c74f9"
+    },
+    "empirical-hurdle-stage1-v2-job-manifest.json": {
+      "file_sha256": "8688ae6ccfadfee80e47ec659d1f15ad8fe18e2bea8a2857b7669921e5ae7adc",
+      "receipt_sha256": "85b31a2b20a543ab4cf542982c085a6e36a9ebe95a7615ed4896288051ce56ae"
+    },
+    "empirical-hurdle-stage1-v2-long-horizon-attribution.json": {
+      "file_sha256": "a6a3532afc105cc196a22b1ccae2f1deb0050fbd22e4c26c316fcb1b6cdf45e0",
+      "receipt_sha256": "45408a1c99432064e980e102770e3589f419c7e13a7d2de97e59bc20b944bb62"
+    },
+    "empirical-hurdle-stage1-v2-mechanism-summary.json": {
+      "file_sha256": "aa819d6097a18be22c1fc67ed64aa368161d01eba82e16dc5b432244043c7c83",
+      "receipt_sha256": "8d6a06927632f597f041876607e7d4071991f16916b92030c90049f87dff8128"
+    },
+    "empirical-hurdle-stage1-v2-model-reuse-contract.json": {
+      "file_sha256": "e75981d8d200efb4549925dcef28c391ab061e1cbd00cb444365ca43e611f861",
+      "receipt_sha256": "f9389d13626db25ff10d3308f9753344866cf63df98dfa094ec6f90f1cbc7065"
+    },
+    "empirical-hurdle-stage1-v2-move-miss-decomposition.json": {
+      "file_sha256": "3594a0b065b328e1d0d45993f249d70f4c693d4517348f342723711834467849",
+      "receipt_sha256": "95ea249947300167854b965d835373e2a62c31ef15278c959de7c7bde480e6e7"
+    },
+    "empirical-hurdle-stage1-v2-next-design-trigger.json": {
+      "file_sha256": "587b0c80dafe7519e6fe3d56dbcd0ae268d9dc78e68b7b59a7daca67e763150a",
+      "receipt_sha256": "968fcef01dd2408b8182bf9fe1a1d00fbdbcc00a3460c9742bd0dc2ab6581c76"
+    },
+    "empirical-hurdle-stage1-v2-objective-contract.json": {
+      "file_sha256": "20b8154153ade8601323b609f1637fb727702657afda3b9a122586ff6a13f5b7",
+      "receipt_sha256": "f12a268522064543252814842a3455a39c650531fdaa4f08c953e2ec9be025d9"
+    },
+    "empirical-hurdle-stage1-v2-repeatability-contract.json": {
+      "file_sha256": "d31d9e3f960862a93ed42f7c4ef5de893d62c09b58e065e806e0d13be0f89d8a",
+      "receipt_sha256": "367d4938920b414a25f94353d34b4bbeb06e74b9d83339221594aaada956a396"
+    },
+    "empirical-hurdle-stage1-v2-repeatability.json": {
+      "file_sha256": "043c96bbadb758b2e2646bb449bff53fb19122b1e83d0de255dbe605649c2cd1",
+      "receipt_sha256": "1a24b02d4179d77b04b850b8e9b46a9aa65eaa925c13a6a4b18d55540092c79f"
+    },
+    "empirical-hurdle-stage1-v2-resume-contract.json": {
+      "file_sha256": "0dd9ce45c7414df06701a58e4cb3865b478c49fac9130b2068c2225cc49459ee",
+      "receipt_sha256": "2b0ebef4749f3864840db134d7fe4777aa5085dceaf499ab163779e2fa620fc9"
+    },
+    "empirical-hurdle-stage1-v2-retrospective-execution-readiness.json": {
+      "file_sha256": "5a494f0de854a88f6bfffc1402a1f9f611c14d4d41a0486da49d4a183fe39ca9",
+      "receipt_sha256": "00434b084fb2b0617a6e540281db406e620482a6a1453a39de16d53dbe0736ba"
+    },
+    "empirical-hurdle-stage1-v2-rollout-attribution.json": {
+      "file_sha256": "04f1573970769d517187e70f7299a234b6ca449a032b23f4e7cf3e184c52c055",
+      "receipt_sha256": "ee245d8f462706d3331fda534ae8e73d1d0eed1cf842cb2d02ac5cba1f03b291"
+    },
+    "empirical-hurdle-stage1-v2-rollout-execution-contract.json": {
+      "file_sha256": "01ee31c34d4f2a8ccd36d01a5ca9b1b1579953ff1ca9dfdeb310c02aa1a95cb4",
+      "receipt_sha256": "be033b1e825c835169f5060ba11df78d16d0da7acd9561d3963873175355ceb7"
+    },
+    "empirical-hurdle-stage1-v2-rollout-results.json": {
+      "file_sha256": "39fb965ec22b5d4a347f83a0c55939a6c5944b3d17484de06674c649b93affa6",
+      "receipt_sha256": "29d37097da6d18c1464245735c170ae1749455ab8ea701c7da5e2b416a5e94e0"
+    },
+    "empirical-hurdle-stage1-v2-score-ranking.json": {
+      "file_sha256": "d848c9e2c97d09190f6c6c9453430d2581bc1b6f025d6015fe197486b226c503",
+      "receipt_sha256": "94f5a0ddcaa7f1432996a35e602e2b0de94f13e3ec44b7d5622bb3971d3918bd"
+    },
+    "empirical-hurdle-stage1-v2-score-transfer.json": {
+      "file_sha256": "69cdbeefd3563630daa17ff9d405332713886a9bd8f32cdbeed341d9c926fff5",
+      "receipt_sha256": "ff52c17aae94051daddbc6170176d68787b707996ade72e375e4544150c81918"
+    },
+    "empirical-hurdle-stage1-v2-selection-result.json": {
+      "file_sha256": "c384825b5e287dd6ec7125efa617b5a2160340adfb95008ce4127454937d51e5",
+      "receipt_sha256": "339cf8e4b9df64aed3cb64f232bab5661dd971437be41cd10bf66fc1c2f0f68a"
+    },
+    "empirical-hurdle-stage1-v2-stage2-train-inference-contract.json": {
+      "file_sha256": "7d1bc5a59e700af65bd549bbf5ddb09db9f144fc567ed9cbf5e14fe6be95ec79",
+      "receipt_sha256": "58412c1b2d61f218d964c0210350d998e20ddf0faaee37ff4fdaae8e06737ea7"
+    },
+    "empirical-hurdle-stage1-v2-storage-contract.json": {
+      "file_sha256": "2bfee2094c5ab09227ddb735781ca9b0b53c09fc48b9a549a314876b3e4ef1e9",
+      "receipt_sha256": "82fd0863bbc099ce73bcbe2096bb8a3d2ce477bcb5f6a14aef95f0e0740505ba"
+    },
+    "empirical-hurdle-stage1-v2-threshold-candidates.json": {
+      "file_sha256": "8dc88f8c66f1221e86e105894e876d029860ad9dffe5a25485df5d6c7f38dbb8",
+      "receipt_sha256": "5d321ae32a134179b96debb66e2cadf7189a8c63bbe3daf5f764c61c5f279185"
+    },
+    "empirical-hurdle-stage1-v2-threshold-results.json": {
+      "file_sha256": "c23175a0b70fe6378a1c80097fdc6483abde9ef94a6ca0d1ec59d819e4996f7e",
+      "receipt_sha256": "0ba817b3725be6ad85968d41cab15ba7ddc0573367a05adc4671c071cb199f2d"
+    },
+    "empirical-hurdle-stage1-v2-tiebreak-contract.json": {
+      "file_sha256": "c7dd4c8bbe9df270a1154e2fc7bf5f30e61bf747761a2bba89a8c60014f9373f",
+      "receipt_sha256": "e38949c44f922eda04ad9424a7b06ad02faca50e92b2829e5ce2fa1a2a18d571"
+    },
+    "empirical-hurdle-stage1-v2-train-prediction-lineage.json": {
+      "file_sha256": "fef2d03d0c5549fb57b6e08ac88642621f15b8d2d9a60a8e8116e971d00f2f02",
+      "receipt_sha256": "26381c3a980832d4f8196a0e1b8ea87a70eba62bab4d7794544b3610d9752df5"
+    },
+    "empirical-hurdle-stage1-v2-train-results.json": {
+      "file_sha256": "46bc0485ff8fd6c44503943990d60b242285d3df3526fe1cf1ef2fd2db30ebee",
+      "receipt_sha256": "1dd95cacd71cfb9e4a942138299da079865b1172490437d3fa8784a915a2b5ea"
+    },
+    "empirical-hurdle-stage1-v2-unchanged-components.json": {
+      "file_sha256": "bdaff0385c352ce17fa8fb8efcb39ef83f340d1504224fc085f5e1cebf9bcf9a",
+      "receipt_sha256": "8bb8f8ac79f216c364b0d24340036851df4460aae8afe2fec5ce1cc95dde8e61"
+    },
+    "empirical-hurdle-stage1-v2-v1-comparison-contract.json": {
+      "file_sha256": "542229af0cbc12726eacdce0f963a5db40835090acae71cfeb3aacdb04c1ad56",
+      "receipt_sha256": "da0893f5c20b622268ba470114fdf08702fd6c028e61df1c98d753bfd549806d"
+    },
+    "empirical-hurdle-stage1-v2-v1-comparison.json": {
+      "file_sha256": "c0405ed623c652787646435fdb8b367bdd8bb583f3d6adbb87960ab7340f7d80",
+      "receipt_sha256": "0cabcb87efc18b03a22acb447a734a1f7c1aad6d4afb4f47a76b7fb7fb3c3d9a"
+    },
+    "empirical-hurdle-stage1-v3-acceptance-binding.json": {
+      "file_sha256": "1e7bcfd592f142e332ebed95f13f3429fb26dd551bd4296866cd7398c2354848",
+      "receipt_sha256": "bda5b91447726d387ec4f8eaf093b1e327a56713fb9b6f01f477aa23ecbc0b20"
+    },
+    "empirical-hurdle-stage1-v3-authorization-firewall.json": {
+      "file_sha256": "4ffeb2ca02eed87fbeefce26ce376287fb08097809bc748b5ac9014ab33c15b3",
+      "receipt_sha256": "8b6f53d5f89d410e18dddd34cd5fcc4c2075f274b7fc029cead6eef705b7be7d"
+    },
+    "empirical-hurdle-stage1-v3-candidate-gates.json": {
+      "file_sha256": "5954cf18df2b9ba044d3ada2e455fe29d7ffe2ac703e92bca5f6f2dd3c0f62f8",
+      "receipt_sha256": "eb41a42c079218cfb5fd6fa38d4df29e746e866325c9c7fd34b39c0fd99b7cd8"
+    },
+    "empirical-hurdle-stage1-v3-causality-contract.json": {
+      "file_sha256": "a76565d4ec3bc856db44fa2f354e6014c080b72be19de6b83edf3ea30c23768e",
+      "receipt_sha256": "8ebfa64e55b7507b3ebd5eebb66084e7fd182a72d29838461cd34800427df61f"
+    },
+    "empirical-hurdle-stage1-v3-data-lineage.json": {
+      "file_sha256": "b5d93b31fc496fea70a5961bb2c50ea46a5e4ef525f7da5610433a593a80ec06",
+      "receipt_sha256": "60c372819ef285fb6e7f3d39ef3bfa2aadf9aa4bdd3c463350c89751a330bb32"
+    },
+    "empirical-hurdle-stage1-v3-design-decision.json": {
+      "file_sha256": "eb6528a4a51b3ab2310069d086093e9a4fbba97f014d1bfbae90a6f12514a89c",
+      "receipt_sha256": "484a402dbd7f71518c26dd3e3b8175d96942e6c3dfd229890f68678979337fdb"
+    },
+    "empirical-hurdle-stage1-v3-design-evidence.json": {
+      "file_sha256": "8317b65a143c0b828c2955cd9ab08a903145b64335a89282e4fda1d66c65aabb",
+      "receipt_sha256": "8fd475600021815cae1e484ffa27d82f7b49d63e10f55a8fd02e49228a93e7d0"
+    },
+    "empirical-hurdle-stage1-v3-design-options.json": {
+      "file_sha256": "a8aba5268d71a6613a583422675ea613c1d4acefcc0b453e4eae3c8408989b2f",
+      "receipt_sha256": "2191fc76759e824b450e45a94074f3571a38459a07470dfeabda41967dc527ce"
+    },
+    "empirical-hurdle-stage1-v3-design-readiness.json": {
+      "file_sha256": "803a49a59cb283a626244d8699ca828f1fc25b1a8ae5ff454774f7554679f47e",
+      "receipt_sha256": "566cc409a8092ad62ad3bd8a8eb3a6fdba6caa8554cda337b8b01328a6c936fb"
+    },
+    "empirical-hurdle-stage1-v3-design-selection-rule.json": {
+      "file_sha256": "d730198bfd165f5d942de1304d9a603a0eb10437b264e64b2e83a269f2dc8e80",
+      "receipt_sha256": "9abb48d5fb5681eb0284539f040ae23dcb61d50a93cff0349e041f3336b81d7a"
+    },
+    "empirical-hurdle-stage1-v3-development-executor-validation.json": {
+      "file_sha256": "c3bd5eb00f78c1dd839192ed1ab2837c8a46803ca859e53c8263405b8551a7b4",
+      "receipt_sha256": "5ff9ed7b64e0dae2d0a778f2aa984ecf9264c4346877a4098060f01af701a62f"
+    },
+    "empirical-hurdle-stage1-v3-development-results.json": {
+      "file_sha256": "94130144f5dd6eb62450e91b942a6d9565edf1bd0664adf48270f3de790a98af",
+      "receipt_sha256": "215eed695170abcb978d56fb002dc53c2e064817a742ad9e80fe34e41c2cccc0"
+    },
+    "empirical-hurdle-stage1-v3-execution-authorization.json": {
+      "file_sha256": "a4c79a4a6172f9604b3ace1fe352a249b2c31d835efedf217583ecde0b6917af",
+      "receipt_sha256": "b1df7f6119817f28a41379b289f0d1a6471a8ae99b6519400567870630e2f682"
+    },
+    "empirical-hurdle-stage1-v3-execution-policy.json": {
+      "file_sha256": "ce4256058843b8d9dab3d6047ce62ed2beccc6a3cd9bf6f7c9dfc631eae8c6ea",
+      "receipt_sha256": "9f46c3ff85df88eff84f36c126eb847cd7a1b509a0de25bac1193c707e8e9461"
+    },
+    "empirical-hurdle-stage1-v3-execution-readiness.json": {
+      "file_sha256": "593207ee95a29e845ebc08436abdf9382c744da4f5a17f43d145fa8a7954dd46",
+      "receipt_sha256": "7ffe5ef6d41b4bf5b70cdf833fa95242f83102448e1cab14528e311f97d7f678"
+    },
+    "empirical-hurdle-stage1-v3-executor-implementation.json": {
+      "file_sha256": "8bcbae957d3dd06bb22a22eb7e0a2868a12e44f9448fcc4927a3156eb54b9b00",
+      "receipt_sha256": "176ec5c810ac7020aecc0bbc96b24fcfb364f445b930f6210f6f0bd25e8ad5b7"
+    },
+    "empirical-hurdle-stage1-v3-executor-readiness.json": {
+      "file_sha256": "98feb95cb324683d2b0df130bce9874a43815c972377aed7cc0ab5d48f88f621",
+      "receipt_sha256": "165c52c20ee209dd793e7b4f79129904c752d276ce490b1c434875310c7c6422"
+    },
+    "empirical-hurdle-stage1-v3-executor-validation.json": {
+      "file_sha256": "01524f636c5624d11317644c38a6aa73bb391983b3a5069c9fc807a8b5930e47",
+      "receipt_sha256": "11dbf6ecdf1e577caa544cdb4dbc7ba3ebc3d5db29895b566248a91042a27893"
+    },
+    "empirical-hurdle-stage1-v3-external-storage-amendment-validation.json": {
+      "file_sha256": "66384bbc97adbea07e8be80486b71476be67aee892259825ba4b50ee383c6633",
+      "receipt_sha256": "b9227633581916dd175dd1299eb828260b7f0860be063b688749622bc77525a4"
+    },
+    "empirical-hurdle-stage1-v3-external-storage-amendment.json": {
+      "file_sha256": "d59da0af6279c33109513848f9c910a484b352a4a530d47da60af32a17d1239d",
+      "receipt_sha256": "5b109186575c4b50b7095a4e99d6028fd8a8f21e4e944fb6ca5ec59d6a4a26e5"
+    },
+    "empirical-hurdle-stage1-v3-feature-input-contract.json": {
+      "file_sha256": "a95128f16e94c0202a6be56d637e8ff120159dd48e063e4da771bf68d8aa3040",
+      "receipt_sha256": "9151754219c69f92d534f48f35f3239583436587456e8d01e626b97a7b1c76f4"
+    },
+    "empirical-hurdle-stage1-v3-fitting-policy.json": {
+      "file_sha256": "c408f55526bb376fa8f0e95b6ba83bda9c5ddea5c7fae0468d4ee8027fffe457",
+      "receipt_sha256": "e9991c5ea12ecf5f52b07651c08ad66be0fe1d23fccafbe90b68216ab1c1e09f"
+    },
+    "empirical-hurdle-stage1-v3-future-execution-requirements.json": {
+      "file_sha256": "6b6bb7f9475b857c21352f9bbd43aa47b1213d50f371b57f847272fa8265ea85",
+      "receipt_sha256": "68fd3abff99675bcb2aafa712a7ce2ccf39b300a5486e67aa1ba139b8fb8a649"
+    },
+    "empirical-hurdle-stage1-v3-gate-selection-binding.json": {
+      "file_sha256": "d7bb515a77bedec0223dfd84ec89ee9acd7ffbada7a001cda261f585041eace6",
+      "receipt_sha256": "e85315ae1a1f02db29516817d61d22c377a3e9c1eacf33f433c50756abc3a38e"
+    },
+    "empirical-hurdle-stage1-v3-job-manifest.json": {
+      "file_sha256": "8e059236a2715ed243a9db3fa94791201b3c59cac202d4d5b86de3113fdcbf90",
+      "receipt_sha256": "5eecfe026512df192671ff138b16059a4e778b44bddacc8ab6e4639cb998bc62"
+    },
+    "empirical-hurdle-stage1-v3-model-reuse-contract.json": {
+      "file_sha256": "5ff0db6fcb79b218cd2bc39fb97ecf34eeaada1903f44fd9b428221117523df4",
+      "receipt_sha256": "c200f658fbbf1092f4f8d80c10fffc7c6d20597da8faca4de5ebfd5d6a7ac9ff"
+    },
+    "empirical-hurdle-stage1-v3-model-reuse-executor.json": {
+      "file_sha256": "bbab48449fc63f4910f14bb0e105976bc24f8a7d4ea5c29beeb51538396449e3",
+      "receipt_sha256": "5dc5829e48adfab242dde2d7114cc91ca21397993154480346c53f9bf1cd71bd"
+    },
+    "empirical-hurdle-stage1-v3-onset-continuation-ranking.json": {
+      "file_sha256": "74f56209a692d18798b7633eee7147c93722c6c863b4d0877bffde81731d69ba",
+      "receipt_sha256": "b692752e967549f6bc6747de36fee64f01a79dded2c530176a450e092eb63877"
+    },
+    "empirical-hurdle-stage1-v3-parameter-contract.json": {
+      "file_sha256": "6357a2a3011e98cc61fcccac9a23742c0b7ec5049c23d8470b802f9ea14f8403",
+      "receipt_sha256": "0da04128c93da74cd867bea2ff3db484dbe65d84626cf9af3753b40f7d8adb83"
+    },
+    "empirical-hurdle-stage1-v3-reference-tp-validation.json": {
+      "file_sha256": "b53845b44463566228b4896e9f615589fd07701d8503f8b5045eb6ed9558b340",
+      "receipt_sha256": "a7c3ab16bfd4943a8b888568c6da04a2488044458aebe26c659852be1fe5f3e6"
+    },
+    "empirical-hurdle-stage1-v3-repeatability-contract.json": {
+      "file_sha256": "78accf224f87ca2eb3979017d587e22b4df98229b0b584d90a176236f776b139",
+      "receipt_sha256": "a5812db1a3466497e58a69c302e0c417c325e24ad3c4bd64074f2d0e3e0ef10d"
+    },
+    "empirical-hurdle-stage1-v3-repeatability-implementation.json": {
+      "file_sha256": "eadbb44301fa5cbb560e221508da017b9b75451ed73c82a2a87fffbd86cda81e",
+      "receipt_sha256": "75765b66d44e96d10067f6f63aaf65a4289acb7b3f8387abd9e43a2d9edbbece"
+    },
+    "empirical-hurdle-stage1-v3-repeatability.json": {
+      "file_sha256": "e55171397840b48089dd1c490b9419e3d16705e51585c5e8e31e2a9d0beb9832",
+      "receipt_sha256": "e8d7d31c9eae09c6a40448e65d7fed2ce5dfedadef6a9c057ebac76073950238"
+    },
+    "empirical-hurdle-stage1-v3-research-inputs.json": {
+      "file_sha256": "6a44e1253ab06266e876a1a62835c582856706445c3e8edaf90a9d74ba299ecd",
+      "receipt_sha256": "95a4bb4828137f0280dcebb1e1e39ceed8cdbcfa18fea0d1863e372134e3c2f3"
+    },
+    "empirical-hurdle-stage1-v3-resume-contract.json": {
+      "file_sha256": "2e6fea05fd9396e52523a0410cdee969981144d070a5ccf128c20feeeb0e045c",
+      "receipt_sha256": "c7b6dc213a327952693dae453b5b0bafe1127ca08f360540a6bd56ffe9787f87"
+    },
+    "empirical-hurdle-stage1-v3-resume-implementation.json": {
+      "file_sha256": "0798aae437c0718135acb2e6f6581edaa73830b33e43e949320f49565ea31d8f",
+      "receipt_sha256": "8db7c8b6576aadb87a7e818edf6c0ce1ff241b48b09d4d85e98f058385aa440c"
+    },
+    "empirical-hurdle-stage1-v3-retrospective-execution-readiness.json": {
+      "file_sha256": "90b2143e396ff2dba2f35a58be8aa127633581ae222b8b4f6c00edbf73518ff1",
+      "receipt_sha256": "c612486bdbaffebb936ba1019841a24976e8a1373c68df2ae9559d778ef5e2eb"
+    },
+    "empirical-hurdle-stage1-v3-retrospective-execution-validation.json": {
+      "file_sha256": "f7b7cde3707fcaa6e4faa02f4816663fa19b370b3afb3be4c6d585f1e6beaf50",
+      "receipt_sha256": "3038f53c273e1e1e750f75d36ceaeea84879fd196e2896eadf7f599ce8e79300"
+    },
+    "empirical-hurdle-stage1-v3-rollout-executor-validation.json": {
+      "file_sha256": "e5fcd13598b4b73eef5f3269a0c91eada9ec852a5b2e8d35774f6db940e4bafa",
+      "receipt_sha256": "2444c7fd8aa8e0c18c0220f00e11431efbc546046a35971b3e488eb4ea33b245"
+    },
+    "empirical-hurdle-stage1-v3-rollout-results.json": {
+      "file_sha256": "30ee32a020bd988faa5a7d6fe8a0327e3f5021104c1ee9f5a1d7fcfed4070598",
+      "receipt_sha256": "75b7cc59d20123d05f3500661989cde042e9a134c35058808ac1bb2831dafc8e"
+    },
+    "empirical-hurdle-stage1-v3-run-length-statistics.json": {
+      "file_sha256": "b5eb40be525b64eb6f3e710c611de346fa79bcccce130941f719511a58b7ccd3",
+      "receipt_sha256": "110f06efbc847f17cd30650ddabe28de36e36b1966706341dc421e10f4908f3c"
+    },
+    "empirical-hurdle-stage1-v3-selection-result.json": {
+      "file_sha256": "944cdb420963d0b0563ec36ba7c6ebcf4b54ae0feace7bf26948298d2a7e9bdb",
+      "receipt_sha256": "1487193d6e9778b472b1e49ebf8e96ac3e9d20154358926d63e74d81be3bd2b9"
+    },
+    "empirical-hurdle-stage1-v3-state-contract.json": {
+      "file_sha256": "f4024cc4c803dd07fe42440b2e419a9f2ad3009537d4e112aed52c3e1f7eae78",
+      "receipt_sha256": "740d0598fd77595ad4a0937319fa412d87641136e2cdda574585a02ffa85a818"
+    },
+    "empirical-hurdle-stage1-v3-storage-contract.json": {
+      "file_sha256": "c8fe21ec12ecc26808c839bc3bd6c62cf756af377c4ef4188cbb525c05e4bf48",
+      "receipt_sha256": "c53701f787f4d743f203297e575f02df098acf1f61e2cd97b8c6478d76f4c9f4"
+    },
+    "empirical-hurdle-stage1-v3-storage-implementation.json": {
+      "file_sha256": "d6e22a7b36d9cfa1db42ca054ec558dc7f24ec07c7594722ea0c27593e6bb575",
+      "receipt_sha256": "22eae45d81aced2d3d34386c15e4a5c15dd9c4772fc828f120ccfc0360052a52"
+    },
+    "empirical-hurdle-stage1-v3-storage-migration-verification.json": {
+      "file_sha256": "a1b25dd9913c0906a8239af85f09d7db42eb3559b6ed15f408ba14555f5173e4",
+      "receipt_sha256": "f147cb4121a5e34f57d663c8fa631ab26805d30c9157515802f7a0cf7529adc9"
+    },
+    "empirical-hurdle-stage1-v3-temporal-design-trigger.json": {
+      "file_sha256": "1a7c11fc4b68a09d02b8e680fe2f82f927020113e013a335d7dcaba1faed784a",
+      "receipt_sha256": "3f722171ec626b5c9882c12a7402be569a9167b9cd4fac67986b49e4466153f6"
+    },
+    "empirical-hurdle-stage1-v3-temporal-evidence-policy.json": {
+      "file_sha256": "b64a1716c372c925c59dfb680b9aa367bd98662748b7795018f4bbdc4c5e1d9b",
+      "receipt_sha256": "6fb147b430ba667f002577cc9b6b23b88538afb4fff7492dfcdea3c5b11e5c1c"
+    },
+    "empirical-hurdle-stage1-v3-threshold-evaluator-validation.json": {
+      "file_sha256": "e8e69c94b8f74f55152b0962b11228ac9431e5e75702fc7cc06edaaa79035f59",
+      "receipt_sha256": "0c103d1dec75ef71cd024d3db7ea2d4b5334296311597069037b50684ac96a66"
+    },
+    "empirical-hurdle-stage1-v3-threshold-results.json": {
+      "file_sha256": "6f1350b21746909e2cda9cc1b3e422bb7667b45dcccc7e332b82b9cc6458693e",
+      "receipt_sha256": "1fd6ca0cd5b0cd4756dfd775fd01466e348f0102209c9b291c71fdb73bf1fc94"
+    },
+    "empirical-hurdle-stage1-v3-train-results.json": {
+      "file_sha256": "f1d10b098df4c529fae80c9c95502a0b0671e5ab835945522a011f4ea4d806cc",
+      "receipt_sha256": "59254cafe7efc1785e669ac51fa219a2c43a70f4e7ef78d5586d9c9c33c6ac36"
+    },
+    "empirical-hurdle-stage1-v3-training-policy.json": {
+      "file_sha256": "70488e3f2ee69fc335fcf403e08c3e5e785dbbab72c40f943011a04837c7e1ee",
+      "receipt_sha256": "dee5eabafd9469772c1f8f9e8976895501090ca6534b464fb3d60045784abfba"
+    },
+    "empirical-hurdle-stage1-v3-transition-statistics.json": {
+      "file_sha256": "9c69a2e26f49f55559aafb81c1f12a85fa74618a17f508e10ab7515a01d617ea",
+      "receipt_sha256": "8b96cd008269c0121f335b80ebb16f5074138ffc33f2ae406015348215320d35"
+    },
+    "empirical-hurdle-stage1-v3-v1-v2-comparison.json": {
+      "file_sha256": "21de1f6fa74390a2da2f94767c8cd63038a12338607ac5253fd5be485d1b2d8d",
+      "receipt_sha256": "03db8e8efc5c34e8497a4746945bd1cfed07a77f34a4f90b846cb3bfa72e18a2"
+    },
+    "empirical-hurdle-stage1-v3-validation.json": {
+      "file_sha256": "86a02dabc22eee69bc5c5d1059d6f1fa2cf829957fae2e368c72683ce4764e55",
+      "receipt_sha256": "ddde948380062ea3c5c99407c64673a1294a07a0e253b49db487eee20c10503a"
+    },
+    "empirical-hurdle-stage2-diagnostics-v1.json": {
+      "file_sha256": "a56a9dd986e01c6401d5b88437f7445b6be91fcc262f25106573535e19047196",
+      "receipt_sha256": "fa7f76fa93c19f77d038ea1f5dadfa786e78ac28bac793ff1c749bcdc4ca7b98"
+    },
+    "empirical-hurdle-stage2-fit-method-v1.json": {
+      "file_sha256": "7757e2b582a914f1fe802b6db1a731871c15d07c9e746ede84a7a3a6da53daaf",
+      "receipt_sha256": "31761a5961b755f3d0ca719bb88355b560c8b47e8b00df5f6f04e17ad8b986b4"
+    },
+    "empirical-hurdle-stage2-oracle-attribution-v1.json": {
+      "file_sha256": "720c27d3c90b9f806454bbe12638fdeef14e46ab51aad0f4c39c6ff2bf177d14",
+      "receipt_sha256": "c2a74a82f60a17cee68f03320ee12dc8096917cebc4d507e0c286e108e628fe1"
+    },
+    "empirical-hurdle-structural-candidates-v1.json": {
+      "file_sha256": "5acdb0b5aa4413965ba37dc6dfe27e724a0c8b8b1319869abaee6db10e61fdc6",
+      "receipt_sha256": "b3935fb07073d8f8445f6db263624f93929cb269c780455d00e3c589cdef20b3"
+    },
+    "empirical-hurdle-threshold-policy-v1.json": {
+      "file_sha256": "563ccf3805c33fa5eb588d210106aaf089c441d1fc5e35ca503ef66463a7cbd1",
+      "receipt_sha256": "56c8ce9eeba90be17d5ec4bd73ec604447dfcc9463dce7b38b8f6a1769706841"
+    },
+    "empirical-hurdle-threshold-results-v1.json": {
+      "file_sha256": "c1013e3a57a7112f1daf8c7794421a3827b7e11b048814274349a35c02e46736",
+      "receipt_sha256": "543dc8a06914d9ef5baaf9da73254429dba200c207310252a1b522ea6d16b389"
+    },
+    "empirical-hurdle-training-population-v1.json": {
+      "file_sha256": "e7646168c73759c63cc78de43b57936be062f29c54b2afca3c449431409b8a24",
+      "receipt_sha256": "98b9296594b087df720b626389438c76072148c7a4d5709b11bca4df04507a0c"
+    },
+    "empirical-s2-ri-hurdle-design-trigger-v2.json": {
+      "file_sha256": "e601cc17057329da2b3be24ee6f95ababe33e659bb7d6ce154a03052071a4d23",
+      "receipt_sha256": "a43f44514c8b0099673ba10656c559f3fa98c26270377678ecd2a323868eb20d"
+    }
+  },
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_and_file_hash_reconciliation": "PASS",
+  "receipt_sha256": "73e0c7ddb58a1d1104cab76cf28c5f49a1bdb318c10376d6d6ff2baecc0c8286",
+  "reference_promotable": false,
+  "schema": "STAGE1_V4_ARCHITECTURE_REVIEW_V1",
+  "scope": "RESEARCH_DESIGN_REVIEW_ONLY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "v4_performance": "NOT_RUN",
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

@@ -12,6 +12,16 @@ from openpilot.common.swaglog import cloudlog
 
 from opendbc.car.car_helpers import interfaces
 from opendbc.car.vehicle_model import VehicleModel
+from openpilot.selfdrive.controls.lib.cyber_lateral import (
+  CyberLateralConfig, CyberLateralCoordinator, CyberLateralMode, LateralBinding, LateralContext,
+  NativeLateralResult,
+)
+from openpilot.selfdrive.controls.lib.cyber_lateral.jerk_observer import (
+  FutureLateralProfile, JerkPersistenceObservation, observe_jerk_persistence,
+)
+from openpilot.selfdrive.controls.lib.cyber_lateral.path_observer import (
+  PathQualityInput, PathQualityObservation, align_path_to_stations, observe_path_quality,
+)
 from openpilot.selfdrive.controls.lib.drive_helpers import clip_curvature
 from openpilot.selfdrive.controls.lib.latcontrol import LatControl
 from openpilot.selfdrive.controls.lib.latcontrol_pid import LatControlPID
@@ -30,7 +40,7 @@ ACTUATOR_FIELDS = tuple(car.CarControl.Actuators.schema.fields.keys())
 
 
 class Controls:
-  def __init__(self) -> None:
+  def __init__(self, *, cyber_lateral_config: CyberLateralConfig | None = None) -> None:
     self.params = Params()
     cloudlog.info("controlsd is waiting for CarParams")
     self.CP = messaging.log_from_bytes(self.params.get("CarParams", block=True), car.CarParams)
@@ -55,12 +65,27 @@ class Controls:
     self.LaC: LatControl
     if self.CP.steerControlType == car.CarParams.SteerControlType.angle:
       self.LaC = LatControlAngle(self.CP, self.CI, DT_CTRL)
+      self.cyber_lateral_controller_type = 'angle'
     elif self.CP.steerControlType == car.CarParams.SteerControlType.curvature:
       self.LaC = LatControlCurvature(self.CP, self.CI, DT_CTRL)
+      self.cyber_lateral_controller_type = 'curvature'
     elif self.CP.lateralTuning.which() == 'pid':
       self.LaC = LatControlPID(self.CP, self.CI, DT_CTRL)
+      self.cyber_lateral_controller_type = 'pid'
     elif self.CP.lateralTuning.which() == 'torque':
       self.LaC = LatControlTorque(self.CP, self.CI, DT_CTRL)
+      self.cyber_lateral_controller_type = 'torque'
+
+    cyber_lateral_config = CyberLateralConfig() if cyber_lateral_config is None else cyber_lateral_config
+    # Firmware and model identities are not authoritative in controlsd. Leaving
+    # them absent keeps provenance fail-closed until a verified source supplies them.
+    self.cyber_lateral_binding = LateralBinding(
+      vehicle=str(self.CP.carFingerprint),
+      controller_type=self.cyber_lateral_controller_type,
+      configuration_epoch=cyber_lateral_config.configuration_epoch,
+    )
+    self.cyber_lateral = CyberLateralCoordinator(cyber_lateral_config, self.cyber_lateral_binding)
+    self._cyber_lateral_pending = None
 
   def update(self):
     self.sm.update(15)
@@ -69,6 +94,130 @@ class Controls:
     if self.sm.updated["deviceMotion"]:
       device_motion = Pose.from_device_motion(self.sm['deviceMotion'])
       self.calibrated_pose = self.pose_calibrator.build_calibrated_pose(device_motion)
+
+  def _cyber_lateral_context(self, native_result, CC, CS, lp, curvature_limited, lat_delay,
+                             steer_limited_by_safety):
+    services = ['modelV2', 'carState', 'vehicleParameters', 'lateralDelay']
+    future_jerk, path_quality = self._cyber_lateral_model_observations(self.sm['modelV2'])
+    return LateralContext(
+      model_mono_time_ns=self.sm.logMonoTime['modelV2'],
+      car_state_mono_time_ns=self.sm.logMonoTime['carState'],
+      vehicle_parameters_mono_time_ns=self.sm.logMonoTime['vehicleParameters'],
+      lateral_delay_mono_time_ns=self.sm.logMonoTime['lateralDelay'],
+      input_valid=self.sm.all_checks(services),
+      lat_active=CC.latActive,
+      steering_pressed=CS.steeringPressed,
+      steer_limited_by_safety=steer_limited_by_safety,
+      curvature_limited=curvature_limited,
+      v_ego_mps=float(CS.vEgo),
+      desired_curvature_1pm=float(self.desired_curvature),
+      current_curvature_1pm=float(self.curvature),
+      roll_rad=float(lp.roll),
+      lateral_delay_s=float(lat_delay),
+      native_result=NativeLateralResult(
+        float(native_result[0]), float(native_result[1]), self.cyber_lateral_controller_type,
+      ),
+      binding=self.cyber_lateral_binding,
+      future_jerk_observation=future_jerk,
+      path_quality_observation=path_quality,
+    )
+
+  @staticmethod
+  def _cyber_lateral_model_observations(model_v2):
+    try:
+      future_profile = FutureLateralProfile(
+        tuple(model_v2.acceleration.t), tuple(model_v2.acceleration.y),
+      )
+      future_jerk = observe_jerk_persistence(future_profile, future_profile.time_s)
+    except (AttributeError, TypeError, ValueError):
+      future_jerk = JerkPersistenceObservation(
+        False, 'model_profile_invalid', (), (), False, None,
+      )
+
+    try:
+      source_station = tuple(model_v2.position.x)
+      source_desired_path = tuple(model_v2.position.y)
+      lane_lines = tuple(model_v2.laneLines)
+      lane_probabilities = tuple(model_v2.laneLineProbs)
+      lane_stds = tuple(model_v2.laneLineStds)
+      if len(lane_lines) < 3 or len(lane_probabilities) < 3 or len(lane_stds) < 3:
+        raise ValueError('ego lane boundaries unavailable')
+      left_lane = lane_lines[1]
+      right_lane = lane_lines[2]
+      lane_station = tuple(left_lane.x)
+      if tuple(right_lane.x) != lane_station:
+        raise ValueError('lane station mismatch')
+      left_lane_y = tuple(left_lane.y)
+      right_lane_y = tuple(right_lane.y)
+      if len(left_lane_y) != len(lane_station) or len(right_lane_y) != len(lane_station):
+        raise ValueError('lane shape mismatch')
+      station, desired_path, selected = align_path_to_stations(
+        source_station, source_desired_path, lane_station,
+      )
+
+      road_edges = tuple(model_v2.roadEdges)
+      left_edge = right_edge = None
+      if road_edges:
+        if (len(road_edges) < 2 or tuple(road_edges[0].x) != lane_station or
+            tuple(road_edges[1].x) != lane_station):
+          raise ValueError('road edge station mismatch')
+        left_edge_y = tuple(road_edges[0].y)
+        right_edge_y = tuple(road_edges[1].y)
+        if len(left_edge_y) != len(lane_station) or len(right_edge_y) != len(lane_station):
+          raise ValueError('road edge shape mismatch')
+        left_edge = tuple(left_edge_y[index] for index in selected)
+        right_edge = tuple(right_edge_y[index] for index in selected)
+
+      lane_change_active = model_v2.meta.laneChangeState != LaneChangeState.off
+      path_quality = observe_path_quality(PathQualityInput(
+        station_m=station,
+        desired_path_y_m=desired_path,
+        left_lane_y_m=tuple(left_lane_y[index] for index in selected),
+        right_lane_y_m=tuple(right_lane_y[index] for index in selected),
+        left_lane_probability=(float(lane_probabilities[1]),) * len(station),
+        right_lane_probability=(float(lane_probabilities[2]),) * len(station),
+        left_lane_std_m=(float(lane_stds[1]),) * len(station),
+        right_lane_std_m=(float(lane_stds[2]),) * len(station),
+        left_road_edge_y_m=left_edge,
+        right_road_edge_y_m=right_edge,
+        lane_change_active=lane_change_active,
+        maneuver_state='lane_change' if lane_change_active else 'none',
+      ))
+    except (AttributeError, TypeError, ValueError):
+      path_quality = PathQualityObservation(
+        False, 'model_shape_or_station_mismatch', 0, None, None, None, None, None,
+      )
+    return future_jerk, path_quality
+
+  def _update_lateral_control(self, CC, CS, lp, curvature_limited, lat_delay):
+    def native_update():
+      return self.LaC.update(
+        CC.latActive, CS, self.VM, lp, self.steer_limited_by_safety,
+        self.desired_curvature, curvature_limited, lat_delay,
+      )
+
+    result = self.cyber_lateral.invoke_native(native_update)
+    if (self.cyber_lateral.config.mode == CyberLateralMode.OBSERVE_ONLY and
+        self.sm.updated['modelV2']):
+      self._cyber_lateral_pending = (
+        result, CC, CS, lp, curvature_limited, lat_delay, self.steer_limited_by_safety,
+      )
+    else:
+      self._cyber_lateral_pending = None
+    return result
+
+  def _update_cyber_lateral_observation(self):
+    pending = self._cyber_lateral_pending
+    self._cyber_lateral_pending = None
+    if pending is None:
+      return
+    native_result, CC, CS, lp, curvature_limited, lat_delay, steer_limited_by_safety = pending
+    self.cyber_lateral.observe_native_result(
+      native_result,
+      lambda result: self._cyber_lateral_context(
+        result, CC, CS, lp, curvature_limited, lat_delay, steer_limited_by_safety,
+      ),
+    )
 
   def state_control(self):
     CS = self.sm['carState']
@@ -128,9 +277,7 @@ class Controls:
     lat_delay = self.sm["lateralDelay"].lateralDelay + LAT_SMOOTH_SECONDS
 
     actuators.curvature = self.desired_curvature
-    steer, lateral_output, lac_log = self.LaC.update(CC.latActive, CS, self.VM, lp,
-                                                     self.steer_limited_by_safety, self.desired_curvature,
-                                                     curvature_limited, lat_delay)
+    steer, lateral_output, lac_log = self._update_lateral_control(CC, CS, lp, curvature_limited, lat_delay)
     actuators.torque = float(steer)
     if self.CP.steerControlType == car.CarParams.SteerControlType.curvature:
       actuators.curvature = float(lateral_output)
@@ -223,6 +370,9 @@ class Controls:
     cc_send.valid = CS.canValid
     cc_send.carControl = CC
     self.pm.send('carControl', cc_send)
+
+    # Cyber diagnostics are deliberately after both native control publications.
+    self._update_cyber_lateral_observation()
 
   def run(self):
     rk = Ratekeeper(100, print_delay_threshold=None)

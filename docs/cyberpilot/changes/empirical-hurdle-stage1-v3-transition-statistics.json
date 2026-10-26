@@ -1,0 +1,108 @@
+{
+  "baseline": "91b3210d3e7d45a9dc7d6253eeec2f4e36d4a57e",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "execution_calls": {
+    "causal_derived_openings": 0,
+    "holdout_discovery": 0,
+    "holdout_openings": 0,
+    "model_refit_calls": 0,
+    "normalizer_refit_calls": 0,
+    "prediction_replay_calls": 0,
+    "qlog_openings": 0,
+    "raw_log_openings": 0,
+    "rollout_regeneration_calls": 0,
+    "selection_calls": 0,
+    "source_write_count": 0,
+    "threshold_reselection_calls": 0
+  },
+  "holdout": "CLOSED",
+  "opening_count": 0,
+  "private_manifest_sha256": "7a9055a90ea44ee83b40ee0c6e217d2a121479ef8ce3e152a65455a13492892e",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "8b96cd008269c0121f335b80ebb16f5074138ffc33f2ae406015348215320d35",
+  "reference_promotable": false,
+  "routes": {
+    "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677": {
+      "anchor_sha256": "f488b1b1a82a6feebb3217f7ad7265c56eec15f6d9e1cdfe0e4bea26c8e739e6",
+      "transitions": {
+        "count": 336941,
+        "counts": {
+          "MM": 21449,
+          "MS": 26904,
+          "SM": 26782,
+          "SS": 261806
+        },
+        "history_two": {
+          "any_last_two_move": {
+            "denominator": 71750,
+            "numerator": 28005,
+            "ratio": 0.3903135888501742
+          },
+          "last_two_static": {
+            "denominator": 246693,
+            "numerator": 18104,
+            "ratio": 0.07338676006210147
+          },
+          "support": 318443
+        },
+        "previous_move": {
+          "denominator": 48353,
+          "numerator": 21449,
+          "ratio": 0.44359191777138957
+        },
+        "previous_static": {
+          "denominator": 288588,
+          "numerator": 26782,
+          "ratio": 0.09280358157650352
+        }
+      }
+    },
+    "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c": {
+      "anchor_sha256": "735b1aeec372655038f6ce12967c8b4e8a10a0584f97e7c8d180c3930057d89b",
+      "transitions": {
+        "count": 300569,
+        "counts": {
+          "MM": 19712,
+          "MS": 23687,
+          "SM": 23776,
+          "SS": 233394
+        },
+        "history_two": {
+          "any_last_two_move": {
+            "denominator": 64295,
+            "numerator": 25398,
+            "ratio": 0.39502294113072556
+          },
+          "last_two_static": {
+            "denominator": 224207,
+            "numerator": 16262,
+            "ratio": 0.0725311876970835
+          },
+          "support": 288502
+        },
+        "previous_move": {
+          "denominator": 43399,
+          "numerator": 19712,
+          "ratio": 0.45420401391737136
+        },
+        "previous_static": {
+          "denominator": 257170,
+          "numerator": 23776,
+          "ratio": 0.09245246335109072
+        }
+      }
+    }
+  },
+  "schema": "HURDLE_STAGE1_V3_TEMPORAL_PUBLIC",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "v1_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "v2_manifest_sha256": "7d28c7d07c72a1080e6769165af8539f3568e14688b82f782d0d29aed8d84b9b",
+  "v3_performance": "NOT_RUN",
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

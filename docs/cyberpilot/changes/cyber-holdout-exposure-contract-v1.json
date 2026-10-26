@@ -1,0 +1,74 @@
+{
+  "actual_journal_or_opener_implemented": false,
+  "admission_contract_sha256": "f3e08b2dbcace8c89c0b5406b23216b87d104e89736f2d501e64fb5aaac8c649",
+  "audit_baseline": "46e41ad2f2e11cd4aee926b47d037c46d226108c",
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "campaign_drift": "REJECT",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "context_schema_sha256": "b21f2b531dd719ba763c81594de82ac443e3ae9f9f3451fec67cb1065da52159",
+  "current_package": "CLOSED_MISSING_ADMISSIBLE_MODEL",
+  "device_write_allowed": false,
+  "execution_allowed": false,
+  "future_data_readiness_sha256": "f6ff56d3560d891eb48aaeacf33e93fb6e639c322dacb8bc55882885ef23fd2d",
+  "future_journal_fields": [
+    "opening_count",
+    "previous_receipt_sha256",
+    "opening_receipt_sha256",
+    "binding_sha256"
+  ],
+  "future_requirements": [
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "admissible frozen model before opening",
+    "role assigned before numeric access",
+    "new distinct source-compatible complete route",
+    "prior analysis NONE; unknown rejected",
+    "immutable one-time opening receipt"
+  ],
+  "implementation_base": "3a3bec6f07fc7c217e4c8a024217e755be065261",
+  "model_set_drift": "REJECT",
+  "one_time": true,
+  "opening_allowed": false,
+  "opening_count": 0,
+  "opening_state": "CLOSED",
+  "persistence": "future private immutable atomic receipt; symlinks/overwrite forbidden",
+  "production_authority": false,
+  "production_observer_implemented": false,
+  "publication_raw_data": false,
+  "purpose_drift": "REJECT",
+  "qualification_allowed": false,
+  "receipt_sha256": "f1f8cd3792762d85c02b3b4f78694f311e60c484b84d227da4c95f92d4aacada",
+  "reference_promotable": false,
+  "refit_after_opening_allowed": false,
+  "required_binding": [
+    "campaign_sha256",
+    "models",
+    "model_set_sha256",
+    "purpose",
+    "admission_sha256",
+    "metric_policy_sha256"
+  ],
+  "reselection_allowed": false,
+  "scaffolding_sources": {
+    "simulator_reuse_contracts.py": "184359ca114421440331966dbc97da36ee9ed6626614fec7b4b7b40fb86696cc",
+    "simulator_reuse_scaffolding.py": "ac85cdf6cb0969d82fd5fc1da9c0ccd2afe2d3b216e16f1c605a6d2abbfdab52"
+  },
+  "schema": "CYBER_HOLDOUT_EXPOSURE_CONTRACT_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "status": "CONTRACT_ONLY",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "vehicle_states": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

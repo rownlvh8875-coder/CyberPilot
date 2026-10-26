@@ -1,0 +1,61 @@
+{
+  "authority": {
+    "candidate": false,
+    "composition": false,
+    "cv_scoring": false,
+    "device": false,
+    "fitting": false,
+    "holdout_opening": false,
+    "optimizer": false,
+    "prediction": false,
+    "production": false,
+    "qlog_support": false,
+    "raw_opening": false,
+    "residual": false,
+    "rollout": false,
+    "selection": false,
+    "sg": false,
+    "ta": false,
+    "vehicle": false
+  },
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "folds": [
+    {
+      "development": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "name": "FOLD_A",
+      "train": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677"
+    },
+    {
+      "development": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+      "name": "FOLD_B",
+      "train": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c"
+    }
+  ],
+  "holdout_allowed": false,
+  "independent_validation_allowed": false,
+  "interpretation": "RETROSPECTIVE_ROUTE_LEVEL_DEVELOPMENT",
+  "minimum_route_support": 201,
+  "normalization": "TRAIN_ROUTE_ONLY_NO_POOLED_OR_DEVELOPMENT_STATISTICS",
+  "normalizer": {
+    "actual_normalizer_fitted": false,
+    "constant": "FROZEN_TRAIN_ZERO_COLUMN",
+    "development_constant_drift": "REPORT_NO_REFIT",
+    "intercept": "ONE_UNSCALED",
+    "nonconstant": "TRAIN_POPULATION_MEAN_AND_STD"
+  },
+  "prior_numeric_exposure": true,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "4fbcfbaf6c76e70b5fbad43e57624c4ec0917abb1aebcdf96a79d525f99cf31c",
+  "reference_promotable": false,
+  "role": "RETROSPECTIVE_TRAIN_DEV_CV_POOL",
+  "row_random_split": false,
+  "schema": "EMPIRICAL_S2_RI_ROUTE_CV_CONTRACT_V1",
+  "sealed_reference_allowed": false,
+  "segment_random_split": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

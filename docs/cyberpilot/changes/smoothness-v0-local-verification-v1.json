@@ -1,0 +1,82 @@
+{
+  "binding_sha256": "44026424a77e204b3f336c7cdf980187441a32f8b37682b9ea55aaff75c61222",
+  "checks": {
+    "browser": "NOT_APPLICABLE_NO_UI_CHANGE",
+    "controls_separate": {
+      "exit_code": 0,
+      "passed": 142
+    },
+    "focused": {
+      "exit_code": 0,
+      "passed": 97
+    },
+    "full": {
+      "autotune": 2245,
+      "controls": 142,
+      "duration_s": 904.44,
+      "exit_code": 0,
+      "passed": 2387
+    },
+    "git_diff_check": {
+      "exit_code": 0
+    },
+    "github_actions": "PENDING_PUSH_SEPARATE_GITHUB_ACTIONS_CHECK",
+    "historical_architecture_ta_regression": {
+      "exit_code": 0,
+      "passed": 188
+    },
+    "independent_review": "PASS_SOURCE_CONTROLS_ACTUAL_RECEIPTS_AND_NARRATIVE",
+    "lateral_replay": {
+      "exit_code": 0,
+      "passed": 16
+    },
+    "privacy_regression": {
+      "exit_code": 0,
+      "passed": 16
+    },
+    "publication": {
+      "checkpoint": "BEFORE_THIS_VERIFICATION_RECEIPT_ADDITION",
+      "files": 887,
+      "findings": 0
+    },
+    "ruff": {
+      "exit_code": 0,
+      "scope": "FULL_CYBERPILOT"
+    },
+    "scons": {
+      "exit_code": 0,
+      "jobs": 2
+    },
+    "syntax": {
+      "exit_code": 0,
+      "scope": "AutoTune and publication tools"
+    }
+  },
+  "composition_authorized": false,
+  "frozen_evaluation_authorized": false,
+  "log_sha256": {
+    "architecture-ta-regression.log": "9f2876c12d1ccdce213921ba7920425c55d8609fcd9ee3f83d28a11880d8eac6",
+    "controls.log": "1cfbff16c6e64627638b454a382abaf6b5cc429e7873fa3ca4fb31d2e9241b51",
+    "execution.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focused.log": "0d9dd2ed4a52966abfb610b6e696109ca08b980b969d47d980803068a43cfb15",
+    "full.log": "984c490d46b7961a37bc323420182b383fd573471a812ac268be6de055b27432",
+    "privacy.log": "065c3bd02d4f44787574c6733e6212542aed0d43219b49ad7189a2d061501222",
+    "replay.log": "1142062f68c700b6b19d4010bce1cf03dc6d9faf20d8ba0267fbd39aded4b02f",
+    "scons.log": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056"
+  },
+  "private_inputs_opened": false,
+  "production_authority": false,
+  "production_sources_modified": false,
+  "qualification_allowed": false,
+  "raw_publication": false,
+  "readiness_sha256": "6a658c860c8b201f059c591e6e6168b3131ba73fa45e1a3bbad46bf5d41663e4",
+  "receipt_sha256": "ef31c730796853e9aa2b0c3abd66922c357e5fd7b9be42237e1c917682887998",
+  "reference_promotable": false,
+  "results_sha256": "17abb7e82eae7c16c61230299cbb4ae76e2f24af409206922ee2a0decfec96d1",
+  "schema": "SMOOTHNESS_V0_LOCAL_VERIFICATION_V1",
+  "sealed_reference_allowed": false,
+  "search_authorized": false,
+  "source_baseline_sha": "53506f2af49ab52490482d3961044f33b7360235",
+  "status": "LOCAL_VERIFICATION_COMPLETE",
+  "vehicle_activation_allowed": false
+}

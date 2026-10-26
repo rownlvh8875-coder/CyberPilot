@@ -1,0 +1,153 @@
+{
+  "authority": {
+    "candidate_execution": false,
+    "composition": false,
+    "cv_scoring": false,
+    "device": false,
+    "fitting": false,
+    "holdout_opening": false,
+    "metric_execution": false,
+    "normalizer_fitting": false,
+    "pooled_refit": false,
+    "prediction": false,
+    "private_array_access": false,
+    "production": false,
+    "qlog_support": false,
+    "raw_opening": false,
+    "residual": false,
+    "rollout": false,
+    "selection": false,
+    "sg": false,
+    "ta": false,
+    "vehicle": false
+  },
+  "baseline": "68fdcdc1334f682f9300b2f6bf3230074f79922c",
+  "candidate_search_authorized": false,
+  "candidate_set_sha256": "c0fe2284a0b9ba0f89cf72151ef450528be716ec3a953b64d2d17b696ae4d3c8",
+  "coefficient_sets_per_candidate": 2,
+  "composition_authorized": false,
+  "contracts": {
+    "acceptance-gate": "fe645a15dfba84dd7fbc5a7756b817d9e61a3bc7bfc5e1ee56234ed2ebd06786",
+    "comparator-contract": "8fa891ac1333d17abd031ad8b3b644d973f971fdca056837bbc17347b36ad9ba",
+    "fit-method": "9af82f1c15b087f76af18c577babf327edab30caab3703d85bf48064c6c01e35",
+    "fitting-feature-contract": "8812434d0ea3f51b51d5f7c79c72ea4b0c5a585bf9a1b1fda8f274f1f019a1f7",
+    "fitting-grid-contract": "ff2b3c0cfa926b029dda87dbfb8fc80ec1cbb57a58b59bb20430bef0c6c7a9af",
+    "fitting-metric-contract": "a554c0fa7848890ffc8e756874eddcd12c3a0e91b0a4b39c3eb3c3404db3bd70",
+    "normalization-contract": "934e9526d961d86f552c9951388ad242de638399276cd2ae4b29221847ab82cc",
+    "rollout-contract": "80e1da374da289effe6fe58b8e5ef807021bf2f557701ec391d99771bf6ecb97",
+    "selection-rule": "443a6ddc5aa713cc8efe1ced5cd5dedf35b0256f9cefeeb0adc7d5f893550633"
+  },
+  "execution_authorized": false,
+  "execution_order": "LEXICAL_CANDIDATE_ID_THEN_FOLD_A_THEN_FOLD_B",
+  "expected_fold_jobs": 32,
+  "failure": "RECEIPT_EVERY_FAILURE_NO_CANDIDATE_SKIP_NO_GATE_RELAXATION",
+  "family": "S2_RI_V1",
+  "final_pooled_refit": "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+  "folds": [
+    {
+      "development": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "name": "FOLD_A",
+      "train": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677"
+    },
+    {
+      "development": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+      "name": "FOLD_B",
+      "train": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c"
+    }
+  ],
+  "future_execution": "S2_RI_RETROSPECTIVE_FIT_AND_CV_V1_REQUIRES_SEPARATE_EXPLICIT_AUTHORIZATION",
+  "generation": "S2_RI_FITTING_POLICY_V1",
+  "handoff": "SELECTED_CONFIGURATION_AND_TWO_FOLD_LINEAGES_ONLY",
+  "historical_inputs": {
+    "empirical-s2-ri-angle-grid-v1.json": {
+      "file_sha256": "23d3595fb73c058f1c965c1d110d828fbe25aa9b1c95f3b64e1e5a04791d1e09",
+      "receipt_sha256": "83ab72d1dc11521547cb5d9588b7350a836a7e3256342b51bb4d0dcd4eef5fff"
+    },
+    "empirical-s2-ri-causal-identity-v1.json": {
+      "file_sha256": "01c31a851c1612c4c3e5c70f2e14a6fdad694fed0fb2031a724ae2942508982b",
+      "receipt_sha256": "42b8dc61b9fd8673a810a93edeee575c7f7333576ea0908cc09b4602aea30cc5"
+    },
+    "empirical-s2-ri-design-policy-v1.json": {
+      "file_sha256": "02395f01d11a8b9a7779914ba7064f05a5c7609458c64699f07dc5e9a6bab522",
+      "receipt_sha256": "2a32ee18b757b7fa6dde62360b226bef42d7a203d6f15f509b94d5b18910c454"
+    },
+    "empirical-s2-ri-future-metric-contract-v1.json": {
+      "file_sha256": "1b402dfca196630905649ab327195dc5e1761daeeb993a3c86373ff6a80b896e",
+      "receipt_sha256": "9a92fe4d1b2dfaaab00059f69ec78f5d04145e705e20094ef21131cee49874d2"
+    },
+    "empirical-s2-ri-history-reset-v1.json": {
+      "file_sha256": "86a5405fb184304b6861f0a85ed38814acde0d24a1d22cb122df955435e5008d",
+      "receipt_sha256": "b3387dc0d9ab0372cfbc6ed2e9bcc337250a4faa92c7c8fa7ab50451b34a1294"
+    },
+    "empirical-s2-ri-readiness-v1.json": {
+      "file_sha256": "3b6922f67bb096ccba8516e6ead5b4b326b757180582d124e2e6e2aa9c7535c6",
+      "receipt_sha256": "df79966d0f2daedba0a6e798a91b277ee2325ee9e5e303069e3b4287e695d9b4"
+    },
+    "empirical-s2-ri-regression-validation-v1.json": {
+      "file_sha256": "650401647bbd7a7ecb8a7188dc208b7125849f5af5c5862b0bf31a68e9b9efca",
+      "receipt_sha256": "cf8cba4e55c4a8f3268d2e19c1228187c4419ed70513ad765ebd253f8de5082e"
+    },
+    "empirical-s2-ri-route-cv-contract-v1.json": {
+      "file_sha256": "d3f935674a760754222bf5195312b48dfd90fb1e94ebb26747232c4910a22a09",
+      "receipt_sha256": "4fbcfbaf6c76e70b5fbad43e57624c4ec0917abb1aebcdf96a79d525f99cf31c"
+    },
+    "empirical-s2-ri-row-admission-v1.json": {
+      "file_sha256": "c3de2b51bfd80e6b7122db15277071e5cb6afbed7ebc8773cb70a97513ae1448",
+      "receipt_sha256": "43e0eb373a31757ba44159bc674b2f5fb483a8e999142cf5c28898ee5f4908fc"
+    },
+    "empirical-s2-ri-signal-contract-v1.json": {
+      "file_sha256": "7362932d9fd0a61905ac99fa2a5674bf11cd82ce716263e7d30a7e9f79dc3f3d",
+      "receipt_sha256": "e7b422205eba6ee4d1a5839ff8621e91363c2336cab4f302b477479ae32562fa"
+    },
+    "empirical-s2-ri-structural-diagnostics-v1.json": {
+      "file_sha256": "65df72e30a020a9593638d2ff1370af090f287a5d173745b182d93cb3f863622",
+      "receipt_sha256": "3f24defe8e6a3049b279c3b4a80386f97326a393da460a70e05ed7bd3308e807"
+    },
+    "empirical-s2-ri-support-v1.json": {
+      "file_sha256": "1569a72bae5dece07a7572fc6e5c20d5dfa6900b38e91e07cd3f525d15a1276f",
+      "receipt_sha256": "e0b8f3719c9907d7b1b647ce2313c11eda4ed24d686c1cb92ee88236501c7392"
+    },
+    "empirical-s2-ri-target-contract-v1.json": {
+      "file_sha256": "225dade0c492beefe5c544d8a9a6e2af83ca2d032490e20a4ba869172efec1c7",
+      "receipt_sha256": "f871a00be28d345c219e213cd81befc84ee071f153938feb670b2eefac212154"
+    },
+    "empirical-s2-ri-validation-v1.json": {
+      "file_sha256": "5707ce441cf320459c5f92b19eb3279e3b37b7b18bb8a01a1742f5d01d62f5c5",
+      "receipt_sha256": "8f2d8be144c28bdb9c9192fca3e8e60b64a95b6937f2e501b0c620aa5df0a191"
+    }
+  },
+  "holdout": "HOLDOUT_OPENING_CLOSED",
+  "independent_validation_allowed": false,
+  "non_rail_scope": "DIAGNOSTIC_ONLY",
+  "opening_count": 0,
+  "primary_scope": "SCOPE_ALL_ACTIVE_NO_OVERRIDE",
+  "privacy": "DECLARATIVE_POLICY_AND_PUBLIC_AGGREGATE_PINS_ONLY",
+  "private_numeric_access": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "05cf63752587105d188bff2f81baec32e8192a689cbf09543caf1f954656ac96",
+  "reference_promotable": false,
+  "reservation": "NONE",
+  "route_cv_sha256": "4fbcfbaf6c76e70b5fbad43e57624c4ec0917abb1aebcdf96a79d525f99cf31c",
+  "schema": "EMPIRICAL_S2_RI_FITTING_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_sha256": {
+    "empirical_s2_ri_fitting_contracts.py": "d4287ca3feea325c4d63171630112ebb44f93dd745d51b7bc4e1d25038c9bb83",
+    "empirical_s2_ri_fitting_policy.py": "eeec67b62df500607d418a937792688970217fe2ab8badf9d66fc11da7f561c5"
+  },
+  "states": [
+    "S2_RI_FITTING_POLICY_FROZEN",
+    "S2_RI_FINITE_CANDIDATE_SET_FROZEN",
+    "S2_RI_SELECTION_RULE_FROZEN",
+    "S2_RI_ROLLOUT_SEMANTICS_FROZEN",
+    "MODEL_FITTING_NOT_RUN",
+    "CV_SCORING_NOT_RUN",
+    "MODEL_SELECTION_NOT_RUN",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED"
+  ],
+  "status": "S2_RI_FITTING_POLICY_FROZEN",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

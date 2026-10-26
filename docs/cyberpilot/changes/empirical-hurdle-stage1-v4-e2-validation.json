@@ -1,0 +1,337 @@
+{
+  "actual_local_checks": {
+    "compileall": "PASS",
+    "full_AutoTune_controls": {
+      "passed": 5502,
+      "private_drives": "MASKED_READONLY_IN_ISOLATED_TEST_MOUNT_NAMESPACE",
+      "seconds": 605.3
+    },
+    "git_diff_check": "PASS",
+    "lateral_synthetic": {
+      "passed": 16
+    },
+    "new_E2_focused": {
+      "passed": 51
+    },
+    "preexecution_publication": {
+      "files": 7,
+      "findings": 0
+    },
+    "public_JSON_preexecution": {
+      "parsed": 817
+    },
+    "related_focused_including_E2": {
+      "passed": 336
+    },
+    "ruff": "PASS",
+    "scons": "PASS"
+  },
+  "executed_bad_performance_vs_validation": "NO_D2_PERFORMANCE_EVALUATION; NUMERICAL_PRECONDITION_FAILED_BEFORE_SELECTION_AND_DEV",
+  "final_publication_CI": "MUST_VERIFY_ON_ACTUAL_PUBLICATION_HEAD_EXTERNAL_HANDOFF_NO_SELF_REFERENTIAL_CI_CLAIM",
+  "post_abort_final_byte_review": "REQUIRED_BEFORE_PUBLICATION_COMMIT; EXACT_HASH_SUPPLEMENT_IN_FINAL_HANDOFF_AVOIDS_SELF_REFERENCE",
+  "post_abort_public_content_reviews": [
+    {
+      "blockers_reported": 0,
+      "private_input_independently_verified": false,
+      "review_performed": true,
+      "reviewer": "d_science_review",
+      "scope": "PUBLIC_FACT_HYPOTHESIS_LIMITATION_AND_STATUS_CONSISTENCY"
+    },
+    {
+      "blockers_reported": 0,
+      "private_input_independently_verified": false,
+      "review_performed": true,
+      "reviewer": "d_authority_review",
+      "scope": "PUBLIC_PRIVACY_AUTHORITY_AND_SUPPRESSION"
+    }
+  ],
+  "postpublication_checks": {
+    "compileall": "PASS",
+    "diff_check": "PASS",
+    "full_and_lateral": "PREEXECUTION_SAME_CODE_BYTES_FULL5502_AND_LATERAL16_RESULTS_ABOVE; NOT_RERUN_AFTER_DOCUMENTATION_ONLY_ADDITIONS",
+    "legacy_baseline_source_unchanged": 45,
+    "new_E2_focused_within_related": 51,
+    "new_result_canonical_seals": "PASS",
+    "postexecution_source_or_protocol_changes": 0,
+    "public_JSON": 819,
+    "publication": {
+      "files": 10,
+      "findings": 0
+    },
+    "related_focused_including_E2": 336,
+    "ruff": "PASS",
+    "scons": "PASS",
+    "source_pins": 50
+  },
+  "preexecution_ci": {
+    "conclusion": "success",
+    "head_sha": "d9d6843a62d3a148aadc59eea0213ad501448115",
+    "id": 39123893987,
+    "status": "completed",
+    "url": "https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/39123893987"
+  },
+  "preexecution_head": "d9d6843a62d3a148aadc59eea0213ad501448115",
+  "preexecution_independent_reviews": [
+    {
+      "approval": "APPROVED",
+      "focused_tests": 51,
+      "protocol_raw_sha256": "177925af0d9a70fecaeb2f8d848dbdee9c620f92047a9d8320e0ed6e1e7ef7db",
+      "reviewer": "d_science_review",
+      "role": "SCIENTIFIC_NUMERICAL_CAUSAL",
+      "scope": "EXACT_CODE_PROTOCOL_STATIC_SYNTHETIC_NOT_ACTUAL_INPUT_OR_PERFORMANCE_CERTIFICATION",
+      "source_mapping_sha256": "1f0b50a621459f7b93482bd34dce8606275ee4c1f335b1eb0f6f389f550cd2e8"
+    },
+    {
+      "approval": "APPROVED",
+      "focused_tests": 51,
+      "protocol_raw_sha256": "177925af0d9a70fecaeb2f8d848dbdee9c620f92047a9d8320e0ed6e1e7ef7db",
+      "reviewer": "d_authority_review",
+      "role": "AUTHORITY_PRIVACY_SOURCE_INTEGRITY",
+      "scope": "EXACT_CODE_PROTOCOL_STATIC_SYNTHETIC_NOT_ACTUAL_INPUT_OR_PERFORMANCE_CERTIFICATION",
+      "source_mapping_sha256": "1f0b50a621459f7b93482bd34dce8606275ee4c1f335b1eb0f6f389f550cd2e8"
+    }
+  ],
+  "protocol_raw_sha256": "177925af0d9a70fecaeb2f8d848dbdee9c620f92047a9d8320e0ed6e1e7ef7db",
+  "receipt_sha256": "5e1c674dd64b680800e8a4d06b1e01445bf762472ed5181e7ed851165709a08f",
+  "result_file": "empirical-hurdle-stage1-v4-e2-results.json",
+  "schema": "CYBERPILOT_V4_E2_PUBLIC_VALIDATION_V1",
+  "scientific_semantics": {
+    "delta_tick": "SOURCE_GRID_TICK_INCREMENT_CHANGE",
+    "logged_command": "POST_CARCONTROLLER_NORMALIZED_COMMAND",
+    "rate_contract": "RATE_SOURCE_CONTRACT_PARTIAL",
+    "steeringRateDeg": "SOURCE_NATIVE_RATE_CODE_ONLY",
+    "vehicle_closed_loop_proof": false
+  },
+  "source_immutability": {
+    "acceptance_changes": 0,
+    "legacy_source_pins": 45,
+    "original_mathematical_source_pins": 6,
+    "original_source_changes": 0,
+    "public_input_pins": 17,
+    "source_pins_total": 50,
+    "workflow_changes": 0
+  },
+  "status": "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+  "validation_domains": [
+    {
+      "D2_addendum": "E2 exact additional TRAIN feature/potential/model input provenance and original source pins; no private access in D2.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 1,
+      "performance_PASS_claimed": false,
+      "reason": "Baseline/source/protocol/handoff/host/volume/control lineage and opened input identities verified; remaining job payloads not newly verified.",
+      "source_pointer": "/domains/0",
+      "status": "Verified",
+      "verification": "Bind policy/code/environment/model/normalizer/source/ordered anchors, original V4 and C/B0/B1 identities; no old grant reuse."
+    },
+    {
+      "D2_addendum": "Apply unchanged gate to D2; TRAIN feasibility guard is not acceptance.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 2,
+      "performance_PASS_claimed": false,
+      "reason": "Existing32 gate unchanged; zero D2 DEV jobs evaluated; no performance pass/fail claimed.",
+      "source_pointer": "/domains/1",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "Apply unchanged32clauses to each policy/candidate/fold with HOLD_LAST on exact same anchors; D0 paired comparison is additional."
+    },
+    {
+      "D2_addendum": "Three-arm gate versus realized STATIC loss, privacy suppressed jointly.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 3,
+      "performance_PASS_claimed": false,
+      "reason": "Required DEV/D2 evaluation not reached after TRAIN numerical qualification failure.",
+      "source_pointer": "/domains/2",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "Report STATIC_HOLD gateFP/TN and harmful tick movement plus STATIC exact-hit loss."
+    },
+    {
+      "D2_addendum": "TRAIN per-context TP guards separately protect onset TP in PREVIOUS_STATIC and continuation TP in PREVIOUS_MOVE; no corresponding DEV guarantee; report DEV onset separately.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 4,
+      "performance_PASS_claimed": false,
+      "reason": "Required DEV/D2 evaluation not reached after TRAIN numerical qualification failure.",
+      "source_pointer": "/domains/3",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "Report MOVE_ONSET recall/FN/missed rate and projected tick correctness."
+    },
+    {
+      "D2_addendum": "Harmful STATIC guard includes termination; gate termination reduction not guaranteed.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 5,
+      "performance_PASS_claimed": false,
+      "reason": "Required DEV/D2 evaluation not reached after TRAIN numerical qualification failure.",
+      "source_pointer": "/domains/4",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "Report MOVE_TERMINATION false-MOVE/TN and FP-to-HOLD versus harmful movement."
+    },
+    {
+      "D2_addendum": "Joint continuation/termination tradeoff; no claim TP guard protects magnitude in DEV.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 6,
+      "performance_PASS_claimed": false,
+      "reason": "Required DEV/D2 evaluation not reached after TRAIN numerical qualification failure.",
+      "source_pointer": "/domains/5",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "Report MOVE_CONTINUATION recall/FN jointly with termination; no recall-only success."
+    },
+    {
+      "D2_addendum": "Same four truth populations for all three arms; no truth-based routing.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 7,
+      "performance_PASS_claimed": false,
+      "reason": "Required DEV/D2 evaluation not reached after TRAIN numerical qualification failure.",
+      "source_pointer": "/domains/6",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "All4truth states confusion/counts/denominators; routing vs truth separated in recursion; ratios undefined=>NOT_IDENTIFIABLE."
+    },
+    {
+      "D2_addendum": "Potential outcome exact-hit gain versus realized STATIC loss and MOVE gain, same-anchor identity.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 8,
+      "performance_PASS_claimed": false,
+      "reason": "Required DEV/D2 evaluation not reached after TRAIN numerical qualification failure.",
+      "source_pointer": "/domains/7",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "Verify STATIC_HIT_LOSS,MOVE_HIT_GAIN,NET and exact identity candidate_hits=hold_last_hits-static_loss+move_gain."
+    },
+    {
+      "D2_addendum": "Separate gate FP-to-HOLD from harmful movement; Stage2 STATIC potential extrapolation risk.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 9,
+      "performance_PASS_claimed": false,
+      "reason": "Required DEV/D2 evaluation not reached after TRAIN numerical qualification failure.",
+      "source_pointer": "/domains/8",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "GateFP count=projected-HOLD+harmful movement; report fraction only if defined; never force MOVE realization."
+    },
+    {
+      "D2_addendum": "D2 uses same one-step scores; recursive state changes can change later scores.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 10,
+      "performance_PASS_claimed": false,
+      "reason": "Required DEV/D2 evaluation not reached after TRAIN numerical qualification failure.",
+      "source_pointer": "/domains/9",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "Describe TRAIN/DEV overall/previous-state AUC with ties/support; unchanged one-step scores expected D0/D1; no AUC acceptance shortcut."
+    },
+    {
+      "D2_addendum": "No calibration fitting; same one-step score diagnostics; private C suppression preserved.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 11,
+      "performance_PASS_claimed": false,
+      "reason": "Required DEV/D2 evaluation not reached after TRAIN numerical qualification failure.",
+      "source_pointer": "/domains/10",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "Describe Brier/mean probability/prevalence/bias; unchanged one-step scores; no calibration fit or calibration-proof claim."
+    },
+    {
+      "D2_addendum": "Seal D0 reconstruction, D1 provenance and all64 D2 decisions before DEV; no DEV tuning.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 12,
+      "performance_PASS_claimed": false,
+      "reason": "TRAIN-to-DEV hard barrier held: zero D2 decisions and zero DEV-role reads; no transfer evaluation.",
+      "source_pointer": "/domains/11",
+      "status": "Verified",
+      "verification": "Seal D1 two TRAIN decisions before DEV reading; report context TRAIN/DEV saved-or-E-generated gates separately; no DEV retuning."
+    },
+    {
+      "D2_addendum": "D2 per-fold complete gate; no averaging failures.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 13,
+      "performance_PASS_claimed": false,
+      "reason": "Required DEV/D2 evaluation not reached after TRAIN numerical qualification failure.",
+      "source_pointer": "/domains/12",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "Each fold independently reports metrics/clause results; both required per model candidate; no averaging away fold failure."
+    },
+    {
+      "D2_addendum": "D0 relative TRAIN SSE/SAE tree guard does not replace frozen DEV TRUE MOVE clauses.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 14,
+      "performance_PASS_claimed": false,
+      "reason": "Required DEV/D2 evaluation not reached after TRAIN numerical qualification failure.",
+      "source_pointer": "/domains/13",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "TRUE_MOVE integrated gated delta RMSE/MAE/p95 with frozen support/comparator; no oracle substitution."
+    },
+    {
+      "D2_addendum": "All-row Stage2 TRAIN potential-output numerical qualification plus actual gated DEV model residual.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 15,
+      "performance_PASS_claimed": false,
+      "reason": "TRAIN Stage2/projected potentials partially executed; one job qualified, next job byte-equivalence nonpass; DEV residual/quantization evaluation not reached.",
+      "source_pointer": "/domains/14",
+      "status": "Executed",
+      "verification": "GateTP onset/continuation magnitude/step-delta residual; preserve model/integration/quantization/confounding limits."
+    },
+    {
+      "D2_addendum": "Fixed original projection, finite check, ties-even and range; invalid TRAIN potentials abort whole job.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 16,
+      "performance_PASS_claimed": false,
+      "reason": "TRAIN Stage2/projected potentials partially executed; one job qualified, next job byte-equivalence nonpass; DEV residual/quantization evaluation not reached.",
+      "source_pointer": "/domains/15",
+      "status": "Executed",
+      "verification": "Test finite signed delta, ties-even integer ticks, signed16 range and STATIC hold; no clipping, repair or forced nonzero."
+    },
+    {
+      "D2_addendum": "Actual projected state/history updated under D2; no gate-bit substitution or oracle potentials.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 17,
+      "performance_PASS_claimed": false,
+      "reason": "Required DEV/D2 evaluation not reached after TRAIN numerical qualification failure.",
+      "source_pointer": "/domains/16",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "Track realized movement/context divergence and full projected numeric history; descriptive association not causal share."
+    },
+    {
+      "D2_addendum": "D2 all four OVERALL horizons, support and frozen comparator unchanged.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 18,
+      "performance_PASS_claimed": false,
+      "reason": "Required DEV/D2 evaluation not reached after TRAIN numerical qualification failure.",
+      "source_pointer": "/domains/17",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "OVERALL terminal errors RMSE/MAE/p95 on each H25/50/100/200 with frozen support, anchors, comparator and full-state recursion."
+    },
+    {
+      "D2_addendum": "D2 observed-truth PATH_MOVED all horizons, support unchanged.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 19,
+      "performance_PASS_claimed": false,
+      "reason": "Required DEV/D2 evaluation not reached after TRAIN numerical qualification failure.",
+      "source_pointer": "/domains/18",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "PATH_MOVED uses observed truth path definition, not policy projected movement; all4horizons support and numeric errors required."
+    },
+    {
+      "D2_addendum": "Two fresh full E2 repeats and sealed verify-only, predeclared reduction/resource caps; source writes zero.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 20,
+      "performance_PASS_claimed": false,
+      "reason": "One partial fresh attempt; second repeat and completed-result resume not run. Abort-receipt-only verification passed without source rereads/inference/recompute.",
+      "source_pointer": "/domains/19",
+      "status": "NOT_IDENTIFIABLE",
+      "verification": "Predeclare two independent full evaluation repeats, byte-exact outputs, verify-only resume with source/inference/recompute trapped; source writes0."
+    },
+    {
+      "D2_addendum": "Repeated DEV exploratory evidence; HOLDOUT CLOSED no promotion.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 21,
+      "performance_PASS_claimed": false,
+      "reason": "HOLDOUT CLOSED/no discovery and vehicle authority NONE; no promotion.",
+      "source_pointer": "/domains/20",
+      "status": "Authority blocked",
+      "verification": "Keep HOLDOUT closed/no discovery; observed DEV is retrospective and cannot optimize future untouched acceptance."
+    },
+    {
+      "D2_addendum": "No controller/vehicle/actuator paths; authority NONE.",
+      "failure_behavior": "MISSING=>EXPLICIT_INSUFFICIENCY; REQUIRED_CLAUSE_OR_SUPPORT_NONPASS=>NOT_ADMISSIBLE; IDENTITY_OR_AUTHORITY_CONFLICT=>ABORT",
+      "order": 22,
+      "performance_PASS_claimed": false,
+      "reason": "HOLDOUT CLOSED/no discovery and vehicle authority NONE; no promotion.",
+      "source_pointer": "/domains/21",
+      "status": "Authority blocked",
+      "verification": "Vehicle/controller/planner/actuator untouched; no integration, flashing or activation; no physical EPS performance claim."
+    }
+  ]
+}

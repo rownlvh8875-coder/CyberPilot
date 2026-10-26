@@ -1,0 +1,1348 @@
+{
+  "angle": {
+    "factor": 0.1,
+    "layout": "0|16@1-",
+    "offset": 0,
+    "signal": "SAS11.SAS_Angle",
+    "unit": "Deg"
+  },
+  "candidate_search_authorized": false,
+  "command": {
+    "physical_eps_applied": null,
+    "post_controller": "carOutput.actuatorsOutput.torque",
+    "raw": "carOutput.actuatorsOutput.torqueOutputCan",
+    "request": "carControl.actuators.torque"
+  },
+  "commit": "18c07cfae4a35786955d5c7fa8bcbe4bfaee0c29",
+  "composition_authorized": false,
+  "files": {
+    "can_builder": {
+      "file_sha256": "341f8321a597f8aafc23f64fc3177173cacd2f86f73f8b9951eb6aafa1c21c89",
+      "normalized_source_sha256": "2b94297646fb513678e9dd68a0b397fca5d19d564277471c12f55ee06159dbb4",
+      "path": "opendbc_repo/opendbc/car/hyundai/hyundaican.py",
+      "symbols": {
+        "create_acc_commands:264": {
+          "normalized_ast_sha256": "7af5c28e6f3eb71907076ea97cfc0d6b122f3f9f0948372c8adf78a6cb010ea8",
+          "source_slice_sha256": "7f66fb9dce8254e68076f2e21d86a21cdd56246151dcae9e3a7da440e70689e5"
+        },
+        "create_acc_commands_scc:156": {
+          "normalized_ast_sha256": "873fcad1d4718165435cdc8ac12145503fd780688eaae24f3757a633ec10f479",
+          "source_slice_sha256": "97945d005a17f520ecea1fe1eaa631ba68461ea63dae2dfecccab704d09f8457"
+        },
+        "create_acc_opt:356": {
+          "normalized_ast_sha256": "f76e34ada1ad3d9a88060c09c713e76ee5dbd38f2333d3fc29b108cbec26b80f",
+          "source_slice_sha256": "e2fa9b69c1e0155100994ba3c13e01c1526d2a0a7f4b4e1c8acc37a26c1cd726"
+        },
+        "create_acc_opt_copy:257": {
+          "normalized_ast_sha256": "e2d9b95345d23b668755b49fb653ba49f9728f221f1cfd4536d92c0e33a8139c",
+          "source_slice_sha256": "e209d385805e7cf6346209219aa820318222cf65b04295eb803f5bf18c1849d2"
+        },
+        "create_clu11:120": {
+          "normalized_ast_sha256": "ab7154184e52c4e951bc1413cb4f7b559e82dd4fef9d307b08e012f88130f8d4",
+          "source_slice_sha256": "6899f967d97d7ab8a7ac99712ac7c7c2e933b492ba35c5c6207110c0aba3e018"
+        },
+        "create_clu11_button:383": {
+          "normalized_ast_sha256": "8c64f01a9b35cf1373e0b58490e842ec7f252be345d30d969d1d6fd39a9c257b",
+          "source_slice_sha256": "133e66456c58426073cce954eef264b7dc544eab9c54bbc6829ced52198fda9f"
+        },
+        "create_frt_radar_opt:377": {
+          "normalized_ast_sha256": "0b5681cc4d464ef849cbab6f0360be22bdbd6ce7d4a5681894096f530f91175b",
+          "source_slice_sha256": "f56d202882821a1c8aaae8417d11210695ec1bfc9d7994f68b039a258e7935f2"
+        },
+        "create_lfahda_mfc:142": {
+          "normalized_ast_sha256": "f12407611dca4d147df4af3ebf519760a3ff60933204aaaad5084a53d9a0c79a",
+          "source_slice_sha256": "da13cb633ccefc7ecb15e078c87505b1c31674287289e9640053c63fed9217d5"
+        },
+        "create_lkas11:26": {
+          "normalized_ast_sha256": "803920bf7bc174baff637ecebd62347145dae4f66316ee617f221e44a0428561",
+          "source_slice_sha256": "41345aafb06465795ee837003f8a867b6eb74a5e1e0c564f1aebedd41dcb9f8d"
+        },
+        "create_mdps12:392": {
+          "normalized_ast_sha256": "8cbb56db7ec1aa9fe92590c74c749893d9e8880fa584bb7333f0fc801fa321bc",
+          "source_slice_sha256": "face56c469c99cb5016c6c31debecdfc2d9c88bb209d77b295ae49443ac4abd5"
+        },
+        "suppress_casper_ev_fca11_fault:7": {
+          "normalized_ast_sha256": "809485d5c3eacd66f59e645dbd3e0fc98c9e2bdcacaa47968ec13045c728deca",
+          "source_slice_sha256": "f9752833ee3cc60c393385ba3863ef89f4d3fb88888776317d390757b50c9971"
+        }
+      }
+    },
+    "canfd_builder": {
+      "file_sha256": "b635acd77d90544da12563791a336ca34503e73e3363fd39be471fc85ef082f2",
+      "normalized_source_sha256": "3216695cbab2c59b137047c7e2f87c03fb41e94f9e840a2bdc79da3515af7c7e",
+      "path": "opendbc_repo/opendbc/car/hyundai/hyundaicanfd.py",
+      "symbols": {
+        "ACAN:52": {
+          "normalized_ast_sha256": "6c1e79967cca7ba68db6bbc930c3807efe5fb779e8b5612127acaa7b75345e27",
+          "source_slice_sha256": "4c97898f5e5c6819324e70af036f2d3a14437a46aa398948bb5602e76cd08684"
+        },
+        "CAM:56": {
+          "normalized_ast_sha256": "0f7a15bedfce509c85b2df76823e5896e48d71cd6b1313eafb69b8ef569ef139",
+          "source_slice_sha256": "e7eda575607755b25547e178c46905e0ace665ceff88fde34122d581c2bbd8a1"
+        },
+        "CanBus:29": {
+          "normalized_ast_sha256": "9a81963846cdc8422e98897f65ec08592f965451ecf486a469ac2e221babca71",
+          "source_slice_sha256": "366dd22d5c97cc828cd20372139f9cf89eab1bd04e15a906182f8bb6ce8a5e9b"
+        },
+        "ECAN:48": {
+          "normalized_ast_sha256": "443c99e1bed2767b10f4a8baf42fea6c8a6f9826fdf737272d0fa0d377c5cac0",
+          "source_slice_sha256": "8ecba7fd5050c8873386695528764a89965844ff58c7777e75b9bdc9032c8630"
+        },
+        "__init__:30": {
+          "normalized_ast_sha256": "501a21ca2bfa71d9f94025a4cccf27e0203dd5d7ed2b559f440ddaa610079d8a",
+          "source_slice_sha256": "f4d2f0b64dfd9cbb1a14ee52a7de33a44fafd2cf6ee10b4e07258cea32c5e0bc"
+        },
+        "_apply_lane_desire:609": {
+          "normalized_ast_sha256": "18e32c91ede4c76b4bb449b50498c4c11e551365336f2ba442caa05611cfc5ce",
+          "source_slice_sha256": "946a2834b712a1e8798182d15ba90368575cd97d8e975d1e1e0a02e77760e5cd"
+        },
+        "_apply_radar_blink:628": {
+          "normalized_ast_sha256": "4c490f865c0ce14dc032e0fb5a5b0d78c427eae08c1643c769654c43ef84732b",
+          "source_slice_sha256": "2073a6349b71fbf595ac674e07fc038bf8d4535d4c626a2b930ad8481a9a936a"
+        },
+        "_clip_int:593": {
+          "normalized_ast_sha256": "00b7e4f48a27a061f57bd617b957310a7566777a46091e246ac36e838d47c62a",
+          "source_slice_sha256": "1d891ca3f216db92c94c8bd894fa3673a331aa53cad86a5fcf159639b91e0171"
+        },
+        "_get_desire_and_lane_changing:596": {
+          "normalized_ast_sha256": "3f8e00281c87b94f1df9391189d0ea3ffb86d468bfd5554872828ef131cacafa",
+          "source_slice_sha256": "43acb9d5ef8094e819f7c7581dd3f470dc01362e628cacb88c077bacab7e82b5"
+        },
+        "_make_ccnc_values:654": {
+          "normalized_ast_sha256": "daa911342c7c967a570a8a1d00cb101d7b95fc68c5e877025c4ce10c6d4410ce",
+          "source_slice_sha256": "d1f5cc0722d1217298721b3e692fb95e4d7342e5b155572420131552236bef8d"
+        },
+        "_suppress_trailer_mode_warning:648": {
+          "normalized_ast_sha256": "772e61cc34c08eabdccf1675c5737fb5204778c76c082a7de11b65fb046099f9",
+          "source_slice_sha256": "e17ac90cc95248ff6140aeef3785edc1edf42fd538dbe8561f8b606e40b0f3fa"
+        },
+        "alt_cruise_buttons:568": {
+          "normalized_ast_sha256": "dc8c7281cd7db7f7d0aa76a54b02067d38657fba97b9761342e74069cf2e96d9",
+          "source_slice_sha256": "9cdb552b30d98e50941be816cbe5c8416550bf57c5a5dafd879aca30a4505034"
+        },
+        "create_acc_cancel:255": {
+          "normalized_ast_sha256": "e054d903283e39f03da072d11bb9199460886fc1ae8ed930b26464b2419b9082",
+          "source_slice_sha256": "2e1aaa688034a2ee7fcdae6706e77f04173b6d7b6aa37124a8f9fa1f85ca12b7"
+        },
+        "create_acc_control:409": {
+          "normalized_ast_sha256": "a5b397c765b4a1ccaf7dc1da477e4167a9e3efb79a70a0f0176b8523abc1d066",
+          "source_slice_sha256": "8dfff590851d79ea1dba105e46afcb664b8f9cfb45dc37f2ccab590d1d933023"
+        },
+        "create_acc_control_scc2:332": {
+          "normalized_ast_sha256": "7835fe3777e650b4455c3f6464da1dd800400553215f83b55f5f60750525e8a8",
+          "source_slice_sha256": "25611c3de4f9fd80abcf694e9263967fd589cf8a855d2f716b19eee369167615"
+        },
+        "create_adrv_messages:521": {
+          "normalized_ast_sha256": "dc73268efcd195d2ce9c975f2ddf7eefed5e8cdcfbc5140e367d821339271460",
+          "source_slice_sha256": "bd814752addcf90cf1137146247f10e04109da8ea1ddcf113e87ba9e45212ccf"
+        },
+        "create_buttons:244": {
+          "normalized_ast_sha256": "9e9d94d1176cafe1c7271da8793cc1696b9291c052bbe58bef4009735da53898",
+          "source_slice_sha256": "74328640ce964c1f05b35e4ef5b6fb11a61dd7ba88485250ef2dc3142912463d"
+        },
+        "create_ccnc_messages:683": {
+          "normalized_ast_sha256": "632d593f1e6145537efe6a8f3d0229b26dd59b3e14e033be97787663f30d2d25",
+          "source_slice_sha256": "a7892b21d1fd5b3c5d7f19529f65a481dc0d58b2952ec79614f7012f01aa03ec"
+        },
+        "create_fca_warning_light:467": {
+          "normalized_ast_sha256": "adb30b12feb242bbb8aac1fdf2b177fecdfc9bbce921056f77c2be05cd885feb",
+          "source_slice_sha256": "c8a283e4e95e8f98d2a26bceba3f5d907301063acff22b869370d13d605e6a6c"
+        },
+        "create_lfa_icon_non_camera_scc:301": {
+          "normalized_ast_sha256": "897ac58c2a0f4ff15d22a5ae8302e127afbcbc6fdfb922f7ad297ce507dbaa56",
+          "source_slice_sha256": "aa74b56bd95d40b1283323f64003fde899f2c125f1f636dc4c85cc8616b9e572"
+        },
+        "create_lfahda_cluster:285": {
+          "normalized_ast_sha256": "d9ecf96bac67079955078a902f15c2d89161301debcec60531f323e7dee4e42d",
+          "source_slice_sha256": "a508c554eddc398d1871c4971a899833a881e593f058d460419d0ff95af6dbaa"
+        },
+        "create_spas_messages:447": {
+          "normalized_ast_sha256": "0056b2c1cdad2e84c6eeb77db97332e317e2e7379cedef50e8258cc197d96d6c",
+          "source_slice_sha256": "4ba48b5990aeb972bb39954637ae4ea705dd05a4943f3825b9dd4d150d6d9314"
+        },
+        "create_steering_messages:176": {
+          "normalized_ast_sha256": "9ddabecfb447cbd500dce770fdd8422cfc9319a6da648e0a695b60dbd409be20",
+          "source_slice_sha256": "fd58e64c751ebba5157bba9aa30e602d533b146f9f008d7685e58abc57eec569"
+        },
+        "create_steering_messages_camera_scc:89": {
+          "normalized_ast_sha256": "b29ad42cbaabb7616d1bc0f2e0d72d3721fc61e05713c8f854bc2a25978d584c",
+          "source_slice_sha256": "738e4f621976bc0f6362061245e44990cfab002cf446c46d61704707c71dd989"
+        },
+        "create_suppress_lfa:225": {
+          "normalized_ast_sha256": "8f1864dad6ec09b5bb4f60f7eb1499e2bbea68977a04813b08ab6cc0cb461e26",
+          "source_slice_sha256": "16df058ba001efb024f72b318e4723cd4e221f06170cae0e4b208c5e5846e974"
+        },
+        "create_tcs_messages:484": {
+          "normalized_ast_sha256": "3c39850ae7ced25ac78b55f3dcb232fea0ae6747324501171c5c79d1e7dd7ff5",
+          "source_slice_sha256": "060da8891dec46289b103644424a842e42bc831a7090ffa66fd277dbbfd5f6ee"
+        },
+        "forward_button_message:500": {
+          "normalized_ast_sha256": "ac5d22d8a281e9994b2414786ae3e1e10b47a42017e604b65ed46fe83bf6b783",
+          "source_slice_sha256": "9a3decb205d09b5e6010d288442fb20ae65687b17fa15dc394d85f16ecb83ff7"
+        },
+        "hkg_can_fd_checksum:574": {
+          "normalized_ast_sha256": "f051ff44db25bc924a9d291680cc2fc89ceceb04cc62e491c487ba8b6941a0ac",
+          "source_slice_sha256": "fdf7be0729b61a48eddb617bb6b7d2264a5e491ad68cd4238fc421340a98554e"
+        },
+        "hyundai_crc8:15": {
+          "normalized_ast_sha256": "d6ffae489f988ae3433ec8d9709f445f6deb0233c93616493acc4d6074e57983",
+          "source_slice_sha256": "23c54239fbb67209c51f165702af53fed5b327b6b4ddfbf0ce33aee5906292b8"
+        }
+      }
+    },
+    "card": {
+      "file_sha256": "6630e7c50f016112e7591e980a68b7cfd223a5d9fee8f15bb4466cda9ab78e4f",
+      "normalized_source_sha256": "a93afde4c14f478eeaf4f82bb93119d52a2c3f9242bb925de373dbcb31409cab",
+      "path": "openpilot/selfdrive/car/card.py",
+      "symbols": {
+        "Car:63": {
+          "normalized_ast_sha256": "98b5024e57f3be8920d67b780d379a9f7f23183dc3e3ea884bc4385186a639cd",
+          "source_slice_sha256": "f7077c18175723867904e44a3932ebb6bdfbdf007a5bdfc9138024cdb6c67db4"
+        },
+        "__init__:68": {
+          "normalized_ast_sha256": "2e309c07a29fbf6d7cd16bdbaf81b30083f7582eb43d5327c4514d3f25039362",
+          "source_slice_sha256": "0349f4f6c791cc4a62d7419ee1c24be370c1f5f248a01674a06426b72158f555"
+        },
+        "can_comm_callbacks:45": {
+          "normalized_ast_sha256": "1f55b6bb05c1a62f41737e08fb8529279ec19dd9482ef2b5614c16b388965206",
+          "source_slice_sha256": "67312a1023ea3a7302d4b3dfe4f475a6ed73d51ddeb23ac69dc265c39f56d3a5"
+        },
+        "can_recv:46": {
+          "normalized_ast_sha256": "8bf9a33551cfd1821063fa30d7d0be276a11bb80ae22b703f56b95564d90f075",
+          "source_slice_sha256": "893273fd5ec35e009de0926f0c82f5116531ccdec1beb9e2592d6e9105217a8d"
+        },
+        "can_send:57": {
+          "normalized_ast_sha256": "e909d29669f2304bf486e00e241a72099e66b330d4dd2b403b17f7b57eee5401",
+          "source_slice_sha256": "f95afc11b17bca26f3d3067670a83048bfa746c7a0944bfd3c17c0d5455aebbb"
+        },
+        "card_thread:302": {
+          "normalized_ast_sha256": "dddd34de1989d7ec300225a0e8213e93497fe9b69d04c438f52330b4f0d35931",
+          "source_slice_sha256": "7a074c130494497548db3ef4e7f1c472d54309c38f1df7c508d41d6f4aa710e6"
+        },
+        "controls_update:255": {
+          "normalized_ast_sha256": "e17e288edd9b34a57ee7ac0d2ab980dd17a51c074f5ffdc35cda6b5182744747",
+          "source_slice_sha256": "5aae0152bebd68a4cb437995c16fa7923043c12e0d1bfb2b9dbf76919b4bf97b"
+        },
+        "main:317": {
+          "normalized_ast_sha256": "9c5f370a8d754cf6797b6b26a3ae29f6cb295911ef5fc9c42f1f242a1d7e815e",
+          "source_slice_sha256": "c85c870e5c036930f67abe9a387b80a42e5cb3fe8562073cc843b0282b292d57"
+        },
+        "obd_callback:34": {
+          "normalized_ast_sha256": "55d61bab95949e07b7e4277718b19441572a4c244a5c62c5869f654b5f9758b5",
+          "source_slice_sha256": "94d2f63e136b702b0fa8b6a888e2cb50946919adad6eac041470b07aec22df99"
+        },
+        "params_thread:296": {
+          "normalized_ast_sha256": "a8756109a147d98638e122c2ffcca02ae01defce6f05d9867a48d296d4c2ba49",
+          "source_slice_sha256": "4cb754271914ad6369b290af8d73662c308f24cd8bd6ba2a8dba1372459f9b1d"
+        },
+        "set_obd_multiplexing:35": {
+          "normalized_ast_sha256": "0d0deff610b77168481140317bff163d414d5c67d033f85be9a636f802a1bedc",
+          "source_slice_sha256": "07c1cbe07ae0a0eec6bbe15f1172625ba9de5f618a57465cd58adfd1709dee4c"
+        },
+        "state_publish:225": {
+          "normalized_ast_sha256": "2454f077b3bd3c319aa402bf4669b1baa92d9dd65241872daa731e030e6b522e",
+          "source_slice_sha256": "c9ed65f68f37e0e72f78b47ae1777dbf1394a67f5fc79c2fc030ab6695c4b5d2"
+        },
+        "state_update:168": {
+          "normalized_ast_sha256": "69137542c7715f71f421becfdb76d7a6ac8a38f1418ddf51c125ff60249856e3",
+          "source_slice_sha256": "4fa8f01414e289501873e27d8bbc59f9e178cbac4a59e445ffaaf97a3b8e290e"
+        },
+        "step:274": {
+          "normalized_ast_sha256": "8fe2b8c17d80456a359ade30c662896a708441a47703fa9137988c5ede973fa8",
+          "source_slice_sha256": "65136b52afee22a69d3896060f6d8fc8bab392e7098bd158ca6f568ae477c752"
+        }
+      }
+    },
+    "carstate": {
+      "file_sha256": "018ba9c239f8ab378de26354e3dd9c7eafe40ac513be1213d38f59a4c3a9e374",
+      "normalized_source_sha256": "de64d0ec3d7610e2637f98704be6f0895258f549dd2664fc946a727d29566324",
+      "path": "opendbc_repo/opendbc/car/hyundai/carstate.py",
+      "symbols": {
+        "CarState:48": {
+          "normalized_ast_sha256": "023a2bcdecdda2b0441e6e24ca284b9ec2e454389cb1828ff694e1311f2ca975",
+          "source_slice_sha256": "f77223bb42ef4c854adf8997cc737839e197a1063bae9436c69f3b838ac7ea47"
+        },
+        "__init__:49": {
+          "normalized_ast_sha256": "022a4b30a4e06749701ffa10e0894405ba2d58350cb7de63e5279af9dda2c12f",
+          "source_slice_sha256": "f07900b83f604ffb7cce6797cb9f6acd1cb1720b0ed516e9a3b0fbeaeee2bb8d"
+        },
+        "add_and_cache:197": {
+          "normalized_ast_sha256": "e23123c9e3a9ff68877847b785e6bb55e38ec2abcf1411f3aada64f1c83f6517",
+          "source_slice_sha256": "0cd97c859277df9ab0b2d3ab8f31d78d2bafaa9abbd3d5833b816c4d3389b014"
+        },
+        "add_if_seen:186": {
+          "normalized_ast_sha256": "65d57d96a1d4b4857387f59dab557cef8d7145be7a93fa0638aab9a667a12ea2",
+          "source_slice_sha256": "f6047c130b64b78ad815992709c1a9abf72fef8b7f4326aaae27d531b88e4fc2"
+        },
+        "corner_max:635": {
+          "normalized_ast_sha256": "becfae1c68b90a1049cb4613b5435eb1f10d37539784e8ee06863669d0b2073c",
+          "source_slice_sha256": "45d0fc812cc6ca22ee415a02e1af74e003da1cb9d5e8aed73c140aa000303628"
+        },
+        "get_can_parsers:796": {
+          "normalized_ast_sha256": "d5ea84471efcfc5ec69a89d14443ded0e7eb6278d3b5f73a530507c8084334e8",
+          "source_slice_sha256": "da72fad480f24a37933147c66a55d42ddd79a0f70dc7bb4af004a211a52ce6f9"
+        },
+        "get_can_parsers_canfd:782": {
+          "normalized_ast_sha256": "e1f9446a70c808a6fd84b941e8ea61ae98b5896d89447179b06986bd31510b7c",
+          "source_slice_sha256": "757ea0e93adf23eca9519836f99d95b4ba3d99f3e4fa42341706c742445b5f2a"
+        },
+        "monitor_fingerprint:177": {
+          "normalized_ast_sha256": "b087a70269e686499c5d26dbb9dafe613af88bbd34c85b3da9b4f2dd725d6096",
+          "source_slice_sha256": "4c739c2191bc86ccf5b1fa336716b9b3cc1500fb5717a6c45c86336f220f9bbe"
+        },
+        "update:275": {
+          "normalized_ast_sha256": "94d7e8f74b222ece6a36824c40ae23a3e855b56022b94fc47dba2d754e9b8406",
+          "source_slice_sha256": "c491e272d37ca520cc66f5aebc7e03fbd0ed992bbbfb52651b049dec80aa6436"
+        },
+        "update_canfd:498": {
+          "normalized_ast_sha256": "ec7a22f9bcf00866143b16405a331c5e42efab7a7632a9de3ec06d3aa1b343ef",
+          "source_slice_sha256": "ffa3723fefabeef1e55335c1519c62a1b44691daabd2cd078f46f7ba7935940e"
+        },
+        "update_speed_limit:488": {
+          "normalized_ast_sha256": "2e5c1a94449825294a682d3830d27a813d6208c662faf8bc6f23132117f9a8c0",
+          "source_slice_sha256": "26925784d8fa650cb3f6ffd938e9dbd34ddf920e68aca556873b375b2161f86b"
+        }
+      }
+    },
+    "controller": {
+      "file_sha256": "ced1c209e3ef5661add16a97e5b1ff7af7d5f8f96438f6ce9cb56c02c54b87f6",
+      "normalized_source_sha256": "fc64417754436e97056d7251ad19c3991a66606fc8956d25519df5aaa55b68db",
+      "path": "opendbc_repo/opendbc/car/hyundai/carcontroller.py",
+      "symbols": {
+        "CarController:134": {
+          "normalized_ast_sha256": "a203317b672366d8bb8b49edd9c404ac5fa7067fb2720b8003be0f30206fc27b",
+          "source_slice_sha256": "7f70a8024b7f1fa594ad7ce21aebaff21e2bac368762c8e96abfd9ef8b612267"
+        },
+        "HyundaiJerk:728": {
+          "normalized_ast_sha256": "349d5a8d5f52d983dead4e61af08842ad8b66ab2b2df86d15d52811053971ccb",
+          "source_slice_sha256": "4c4c8ff004f4a29c1efe161026ac1f22d28d5e715e216aadb6f67d639b29b7db"
+        },
+        "__init__:135": {
+          "normalized_ast_sha256": "735e5dc8c5306cf8c331b3884fadc98389985ea567240e15ab50ace4c2af4c8b",
+          "source_slice_sha256": "dfefadba8c311402a852cfb83f17ccb94ebbe93e88b83b26d599abef2c13aba5"
+        },
+        "__init__:729": {
+          "normalized_ast_sha256": "c1710e7f698ff7241926350551c531591908ed3054da76a5fc95cd108539cf18",
+          "source_slice_sha256": "57a5d2f96b299cdc6312f631bdbd928d8dd3d09c3b78d462c11cc5ff30cd31d9"
+        },
+        "apply_steer_angle_limits_physics:71": {
+          "normalized_ast_sha256": "612c54cbe881928624d753f9d658fad599d6f770a2ce04eb130e39c59b96226f",
+          "source_slice_sha256": "47533e115a3b793f27cc2a4c32c8f140a02c964e1a0ade7243cce035b5da33ae"
+        },
+        "canfd_speed_control_pcm:651": {
+          "normalized_ast_sha256": "3e03caa6775a8ba93241c930e971557faa29be5d0d2641df3593753766b08af9",
+          "source_slice_sha256": "e88d5b810e411129fbaef497499225260cb8e9d9325e7299bdac2cbbdf790378"
+        },
+        "canfd_toggle_adas:640": {
+          "normalized_ast_sha256": "ba36476d24cad06b62d823cec1a21ab7a8e8db07acb2d0a65329519dce853e96",
+          "source_slice_sha256": "b57b73f56b1fa6ef6ab15b7bfa5fc4e6b6b93dfa8bf548eae557465c41232a3e"
+        },
+        "check_carrot_cruise:738": {
+          "normalized_ast_sha256": "aa95c9ab02108fc5c13dbca691b709baacb6d4e563593ee0c536d152b6c1f43b",
+          "source_slice_sha256": "408ccb67b7741101181a0c45bed265cc6d25e53ca892104b681ae5a5be27a254"
+        },
+        "create_button_messages:568": {
+          "normalized_ast_sha256": "d522deba229ed0f73bf1e6d1b29a65c86e18e4c267e2fe062e6a4e2376d8325c",
+          "source_slice_sha256": "10836e5cc11321662c405679df48e466c6e0beacf60644f1f886a5d6d57981ab"
+        },
+        "make_jerk:758": {
+          "normalized_ast_sha256": "060b902d5c1b04ebb85e1f3e667ddfefdcca14f05c9992d5f884048fa6fd840f",
+          "source_slice_sha256": "f2ad7e5dfac97d501737bf17850f6bab5e4f33f66fe84723a7b61b51e71f89d0"
+        },
+        "make_spam_button:668": {
+          "normalized_ast_sha256": "dc017851b00913a00a74c856814c73105ebb8a4bff0f91c7f743ee37d4909f6c",
+          "source_slice_sha256": "f163032e364b45e6ceaa26970b46476f2d9413584552d83a311106f249b6c221"
+        },
+        "process_hud_alert:45": {
+          "normalized_ast_sha256": "80350cea2791f52856864ac5fb3148f98351109d0ff5d0b5cecd1b19a5ffa93a",
+          "source_slice_sha256": "7a113372c533dafadc3291560f4d7eae55267b9ceb248599968fa00b1400b012"
+        },
+        "rate_limit:68": {
+          "normalized_ast_sha256": "0db36055b851e1b7cdd0422c8223bb3e4a7e69654f33f5aa8d57428bdd0c1bdd",
+          "source_slice_sha256": "d0e48d9910410422539d3e74ed11815144d84a2f17f4e29d5a68a8d30b7f1494"
+        },
+        "update:192": {
+          "normalized_ast_sha256": "c210e25029390302ffcefe6a3491a11fcff8a21074ea2f5d65faa196b2ce2f4a",
+          "source_slice_sha256": "7cd81a03ab6cb793f1817e614b9f1b4d7714bb0a4f958c9062e5565188ced74a"
+        }
+      }
+    },
+    "controller_helpers": {
+      "file_sha256": "f56a23742d37395f5869f9c63a367375e038e2b47966efaed7a9679307c01e5e",
+      "normalized_source_sha256": "2d8457c1031c1e38f4c5ea23c9ff5a7e2434b3726ecbfdad8b5b8b77cea2c4ed",
+      "path": "opendbc_repo/opendbc/car/__init__.py",
+      "symbols": {
+        "AngleSteeringLimits:27": {
+          "normalized_ast_sha256": "67549c7530185d7c1081e2bcfa85e9b52cc4a67894924df1383998e178c6d6a2",
+          "source_slice_sha256": "3393785d5dbda0548a58fe7beede7a4b372d8f046ba28cd99582329ad79d26e4"
+        },
+        "Bus:98": {
+          "normalized_ast_sha256": "c0012317fab883148f3ee304c7b6e6a0d5c293eee62a38561b68285156887f3a",
+          "source_slice_sha256": "bc1fb769277ba366b7c4d4757d1b6df254360de520e841407eebe80e398f7205"
+        },
+        "CanBusBase:320": {
+          "normalized_ast_sha256": "6d237ffb59b16abfca91da27fdaa2df37e3e6f0116f888ca6361abef4fd64e35",
+          "source_slice_sha256": "f2d2a889f85e61319edfbe61df6cf82876087fadc297de12bc61f25ab6985630"
+        },
+        "CanSignalRateCalculator:332": {
+          "normalized_ast_sha256": "d74f49c3375a89cd5c04238b73fc0c2e74e9a4461163b38f6d28106562164c42",
+          "source_slice_sha256": "4031c017922bf02c5082e3cf1ecbef89bc9e5a0f612acef20cc175f1f1bd87b6"
+        },
+        "CarSpecs:352": {
+          "normalized_ast_sha256": "eaf2a724f6b36b530cc0eb10811f08fe1cb68df49e77dfc5108ee0e4e6b70194",
+          "source_slice_sha256": "08c7f413a1e324ef128f498054b3ba73b71fc0a71534e478d04b02fc4d98a899"
+        },
+        "ExtraPlatformConfig:410": {
+          "normalized_ast_sha256": "fe899ad7642295536b0a4e8770c2d866a6d3f4921d391d69b42013d0cfa489c6",
+          "source_slice_sha256": "3867f34aed8d801a4e40675d1da0245ef4fc5b4afa3ad3c13ffb8a1f05c5cdb5"
+        },
+        "Freezable:365": {
+          "normalized_ast_sha256": "28ad9c9c0a6149e20f9346869d29274d689887b59c407afd3e99fa288a0b97b6",
+          "source_slice_sha256": "6b6265ed0718e2da1f47bbfce6ff0cc37ea755f6451956ef48a65f24931561c2"
+        },
+        "PlatformConfig:403": {
+          "normalized_ast_sha256": "1a88e399e7623a94bcd60de40eaa9f0bb51bb7d59e2f1aab33ed92f35c29d8aa",
+          "source_slice_sha256": "9abe1597d9849fdb98dd5705ce1776a84703984450aaffcc06e4ac8fb80c89d9"
+        },
+        "PlatformConfigBase:379": {
+          "normalized_ast_sha256": "e56f3516ed9677681bff92f18f9b027384bc04c6e35999c041a2e4d075dc3065",
+          "source_slice_sha256": "6ef55911cc4a0ea813b002d7a2b97022bad183482194383e33709c9d6f588f9f"
+        },
+        "Platforms:425": {
+          "normalized_ast_sha256": "ee133bd5316e9b091bea2f6d55f9304cf2842b3d9b85ab88b3ae300f80047a63",
+          "source_slice_sha256": "0293dc6ef96623acdf3a7c08d7cda38c66da6cc20aef8bf3818c3d9e841c845a"
+        },
+        "PlatformsType:416": {
+          "normalized_ast_sha256": "2bd23d34f29a4fa3eebc04fded66cd15aaf1bab62168e95507036fd8ef068a8b",
+          "source_slice_sha256": "a694ea74a47a0269f815d05fedcf6ba8bd20c7fc5fc35808ddc30410a0634354"
+        },
+        "VehicleDynamicsParams:66": {
+          "normalized_ast_sha256": "5cc3182c20e681a04c48d623d35f10ec09b27da2431f29d71a8c16c2beee454f",
+          "source_slice_sha256": "f3c5fcda0b299d5b4cad383a3c258a280e1e8848cb42044cfd3924d268ec7f95"
+        },
+        "__hash__:389": {
+          "normalized_ast_sha256": "893098193dab98bb866c7dbc6011eca666bd2078c3a52fd9157988d01212bc97",
+          "source_slice_sha256": "dc116b6b1a110fe3521e66cc7feb7d9554b48f5812fc708bb63062381c2c6a6c"
+        },
+        "__init__:323": {
+          "normalized_ast_sha256": "a623702e68e18cd2fa8664024f909e8dbae1d18d3ba47b8a71e00d809c371066",
+          "source_slice_sha256": "6030985eb3e19f11bce95042a61b0703368ac33f9096cb84213786adb3b78b58"
+        },
+        "__init__:337": {
+          "normalized_ast_sha256": "9c833fb75c6d812c9d6b4bd6505da0c084b3135416023897c29679e32803226c",
+          "source_slice_sha256": "1a94aea89db5b58694245ff502a84a46900d9868bdd6cfaf41e514b9c372e545"
+        },
+        "__new__:417": {
+          "normalized_ast_sha256": "15688fdb0ea9606bc9c62989eb6a0d310083b0ab89de44bfa42beb55e179fbb4",
+          "source_slice_sha256": "276e49805ae408091f4a95acf392730b32fc2103d29a5945021533a6674e9244"
+        },
+        "__new__:428": {
+          "normalized_ast_sha256": "aeb5639c1b6a11047fcebcf19e1052515ef7d5a85e3cfe88680829b5cdede687",
+          "source_slice_sha256": "1b55579b3f8ccf5fd95c9c2db3db359f5ee8786b83df9138b28f504d2ac221be"
+        },
+        "__post_init__:398": {
+          "normalized_ast_sha256": "bee5b28f700feabcf1f18a7fcef303c4c4ad41f376985370033f0e3bf19d02d2",
+          "source_slice_sha256": "9623f2b7c83496aa38a81d75cc3002ed48045e22a14669553a4dddc8fa19ad0f"
+        },
+        "__repr__:434": {
+          "normalized_ast_sha256": "fa18107ed1e52853a87d2acea46806b9a72755c6591096b47a69f0c18ec1dd2f",
+          "source_slice_sha256": "51718eb296101af2a6d8d18e8ad42b91bf46d84b07c7250d36a6a6eae8176f91"
+        },
+        "__setattr__:372": {
+          "normalized_ast_sha256": "829a637653fa5576b270ebb08c78dd0a3da76daaf01062f8e47b2e052c393656",
+          "source_slice_sha256": "32f9388535f44397b624ee0d29a1eb8632e29789750a466420febea041a7cc28"
+        },
+        "apply_center_deadzone:281": {
+          "normalized_ast_sha256": "ab9c1aa998b168dd84b5ff37de99ffd22f972f4d978e83ff62467db569a4f96f",
+          "source_slice_sha256": "c96615371b186269f9b8aad4d0253c2714be0a7dddf6b14ef51917ddfb6b4ad3"
+        },
+        "apply_dist_to_meas_limits:135": {
+          "normalized_ast_sha256": "ab1b5fc12d338774f40fbd80f33efb1179c514d1ebd6e44220e6766d41052d33",
+          "source_slice_sha256": "6fd0e44df846d3e786dd3155148a3dd90d401aa20c6af826c54a9e265d72ed7f"
+        },
+        "apply_driver_steer_torque_limits:112": {
+          "normalized_ast_sha256": "df59cdb1888ff59fe7f5217103210c88cdd6ab45772e90630300303a7dda1597",
+          "source_slice_sha256": "d600d79c1e5c778f35f2afbd99a076c518b7c3fff63ca2d2a01ce329bc939795"
+        },
+        "apply_hysteresis:38": {
+          "normalized_ast_sha256": "e24daaf108b615b1bde23fcabb822eed90752ae501160bc05fdbecabab011e98",
+          "source_slice_sha256": "0e64b9f6848b02dde5b0826e7e92cea49551e523e67e963f766602e8ed0587a3"
+        },
+        "apply_meas_steer_torque_limits:157": {
+          "normalized_ast_sha256": "9d45d1bf2fd27d5fa2dff37e640d6ba5cba3dddcbf41a0667c255ddeca2a37f2",
+          "source_slice_sha256": "805281a46b1df77a22df533768799edd263abb96615989b1ed73e3bbe645930c"
+        },
+        "apply_std_steer_angle_limits:163": {
+          "normalized_ast_sha256": "4f11fe1636487ad665c7f88094f3f85a1426e0e370ae867ffc0e20850e2de839",
+          "source_slice_sha256": "0be84f0623e708f4c89dca5918455060320b75fb917ffdc964e10ca1936b08cc"
+        },
+        "apply_steer_angle_limits_vm:192": {
+          "normalized_ast_sha256": "edce434a7ab67fe750f05394c8b587a59994aa70f71f7ec59a56f90f55f9294e",
+          "source_slice_sha256": "7e098cf1322f12180c3b7ff59c838580ab10d94c24d7a33c2e669a4902f39a24"
+        },
+        "common_fault_avoidance:222": {
+          "normalized_ast_sha256": "4d01c479af47d820f26b1b14ab16de3a28e8f690de75b3f22ba97baae5fa5271",
+          "source_slice_sha256": "9ab206f1641ff488c3da804f543259ab03c24ccb89b80cf2a5d2b5f7ece7a38f"
+        },
+        "crc8_pedal:246": {
+          "normalized_ast_sha256": "df5bd6852ec2c63d02c895ed373696ab97db052f27d56dcca3bd3ef205c2a002",
+          "source_slice_sha256": "d3f7d6a309b7ec508baef62e4f29c98ee5d8ee3bc291eb7d269f19b9bc6f4d85"
+        },
+        "create_button_events:46": {
+          "normalized_ast_sha256": "eae35603542a8f4d4467e72cd70b77ba3fee62b7b285cae37e70775e51d7d2cb",
+          "source_slice_sha256": "b7505d8911032a39d069d7462ec902ccd8baec127666ecabf6fab6f1dfff276a"
+        },
+        "create_dbc_map:438": {
+          "normalized_ast_sha256": "c3d1b07bc82afed2df85727bd3c632a1afd731e3580e50c979ac8c99eb472b84",
+          "source_slice_sha256": "c09994d68c546d5df4364441697c45ed0046012ac4733cee82be0f7ba00aeb18"
+        },
+        "create_gas_interceptor_command:260": {
+          "normalized_ast_sha256": "2cc9680130997f8157d2594ced3200cca3d789e22dba746ac27ea80ff2a39164",
+          "source_slice_sha256": "29f411b53104df81e4f47026523f8bf2e69bde21d1a374c032bef76644501dc6"
+        },
+        "freeze:368": {
+          "normalized_ast_sha256": "825de476ce222616e2414df1e980b6438e3a999cb0747d677d00018614e7baed",
+          "source_slice_sha256": "9e40a7c6b08b646e6a4579ef52fe707737d498b2563685cc32279c851e7dd40d"
+        },
+        "gen_empty_fingerprint:61": {
+          "normalized_ast_sha256": "b8fcd22b6f8cd5e27aea21ae6cfb06d79b4797dab351ab3b805920e811a7f6e2",
+          "source_slice_sha256": "2e76c321ac8f5e3b424e4d283d5feec504ce71503db45d2537871f429b8f2ca8"
+        },
+        "get_friction:291": {
+          "normalized_ast_sha256": "68c7659b8a2e84e7605e76f2ec2d850ab9e858cca0bb02ddb31f3209b9593f03",
+          "source_slice_sha256": "ec3bcaeddcb04830fb4e34ed86883335fc9336397189ad7694651b9bdd416b31"
+        },
+        "get_max_angle_delta_vm:179": {
+          "normalized_ast_sha256": "0ca703912737b6cfb9bb81e8dfb74d69c5b7bc95448a21e081f9150ff047a364",
+          "source_slice_sha256": "4c51d646c445c5bc105052d4f0d78c9a7614a81ec21e7691501210a024cbb711"
+        },
+        "get_max_angle_vm:186": {
+          "normalized_ast_sha256": "a3a2a3c580a38b0d3a6360bde7f9e02e3347faf3a0de3e6af07d844e6b402c78",
+          "source_slice_sha256": "3dd42f63cc453e7c324a3878591ff4ec05ecc49e7992386abe8ef59f0c18360c"
+        },
+        "get_safety_config:312": {
+          "normalized_ast_sha256": "f82dc2b602499de9dc70d6db3b48e055d1aa2839590e29e98dd88334c490065e",
+          "source_slice_sha256": "129dfef7862c00564a5038b9dd34c5fea5e8900e6b7986136f01c44f585f7a68"
+        },
+        "init:395": {
+          "normalized_ast_sha256": "20412cd1f17bd470c4e9746b24ec04d578f7505b146f9ed00c48e6ebd67e93b3",
+          "source_slice_sha256": "ce24d911c5af8e8f9edd4e32dd4ddf70c70d2d93e30a0e68ac7ea96ed5cef5f1"
+        },
+        "make_tester_present_msg:302": {
+          "normalized_ast_sha256": "6a1cd475bb42b734d4ef5376e765f72df25c53c77d96b3d42cff347dd71cae42",
+          "source_slice_sha256": "bb2add7ac7b1fcf479315e7021003b079e13801209dcace0b9550cb2f4d0c9e3"
+        },
+        "override:361": {
+          "normalized_ast_sha256": "ea814ea94668304af86db38108262512c2f21fc156d4dc530ec52c8866d13e09",
+          "source_slice_sha256": "1510d2e71264f44a087b3c091505886b78615a1637501ccb499ca5ffa45ddfdb"
+        },
+        "override:392": {
+          "normalized_ast_sha256": "ea814ea94668304af86db38108262512c2f21fc156d4dc530ec52c8866d13e09",
+          "source_slice_sha256": "1510d2e71264f44a087b3c091505886b78615a1637501ccb499ca5ffa45ddfdb"
+        },
+        "rate_limit:287": {
+          "normalized_ast_sha256": "e92d9f2274687a1b363621d46983bc99025d144ed9efe3a866986fe6b66d9f2d",
+          "source_slice_sha256": "669f9cb2f68cfe7fb3c8083d057f8a61eace54bc22f06385ebbcdcb929b63553"
+        },
+        "scale_rot_inertia:78": {
+          "normalized_ast_sha256": "9f42316a559bd2a33691a1baf2652d44194903d7adf2d55ef8c1754a094d7527",
+          "source_slice_sha256": "0b73c962988f624489b1333071a43d0a027c3cc6bcc18cf5d77d17bb844a1782"
+        },
+        "scale_tire_stiffness:84": {
+          "normalized_ast_sha256": "9b954d6be570822327a06c79b6926e8a50a5e23bfb81d7bd710dbc74ee2f54dc",
+          "source_slice_sha256": "9a7df15601737bc65d613d9cdeb99418dbb5c34cb9cd4d10a4ba4366dbf4361e"
+        },
+        "update:342": {
+          "normalized_ast_sha256": "f4d59a581c9b1175d6ba55a6c8d7ea4a3443726ce16e37be78f09ff8483d8098",
+          "source_slice_sha256": "0e2b741c1f959a8c5fa2d569b6183ede4e0d2ac30c6de1b7a380d2c66b715ecc"
+        },
+        "with_flags:442": {
+          "normalized_ast_sha256": "42151ee0388bfd8fe2e8de04794d311b47cf3f23f34018198afffa43a1e18841",
+          "source_slice_sha256": "2a1124aa95e3765b3fb68c5a068ed6213cecf9665f263717cb0d0ad6fb32c88b"
+        }
+      }
+    },
+    "controller_limits": {
+      "file_sha256": "2310c5ba7aa8d2b201915a4a392bd18615da3c00b3e5223b268699ae20b57c02",
+      "normalized_source_sha256": "3db32a149c8413cd8abffc1163557ae63276dc69e6cf63c1896da77023718bea",
+      "path": "opendbc_repo/opendbc/car/hyundai/values.py",
+      "symbols": {
+        "Buttons:822": {
+          "normalized_ast_sha256": "d3e4d8ea676e56520b7252c1e26e36f536f28fa80d235d0fb00d2802ab670536",
+          "source_slice_sha256": "b942723960db24f577fd9daab927393d3b0a6dcb7f40f6ee8a35f3a6470d9636"
+        },
+        "CAR:189": {
+          "normalized_ast_sha256": "a9ceb78baf84948ddd2fb9ba772252e29a10ebd5fe81509a096ce5cc18f7939a",
+          "source_slice_sha256": "7376fd1213755d33d8059d6c406d136b2fa9f47e17191ae361863c3d29b9aa4b"
+        },
+        "CarControllerParams:14": {
+          "normalized_ast_sha256": "c717134a121b832a29991c43fa5a612df60db711b383cdcc985a2012421c87a1",
+          "source_slice_sha256": "e95aaf73544052a623fde180149feed19011b1b35ab1d85bcf8cd57fe70f9245"
+        },
+        "Footnote:153": {
+          "normalized_ast_sha256": "edbb7685955be69c179d77b1c23055d80b8784502f846fc89294a277033ef6ef",
+          "source_slice_sha256": "044f45607560cf9a8ca48877bf2f93ab52c350524cd0d6e66996fd716d983345"
+        },
+        "HyundaiCanFDPlatformConfig:182": {
+          "normalized_ast_sha256": "dbdd01bbf5e0be5e094ecde429154ed8762f5067498bd5aed80458ea149a0d0f",
+          "source_slice_sha256": "eb344e8ec02c018292c5140d182cce44170d1c2daa27091a3e064952702ed3ec"
+        },
+        "HyundaiCarDocs:161": {
+          "normalized_ast_sha256": "a6b6226e9762c7b8a9919a9dd13b0cb702ba0ac152bdb7faad99885c606e8d80",
+          "source_slice_sha256": "db4ae42c673ec8ecdfd169a12ac0dcac95199749a83785ef9ece07d8d1b361f3"
+        },
+        "HyundaiExtFlags:143": {
+          "normalized_ast_sha256": "ca094c8075c9f1b95c6fbcfecca2db521da02f5f66f07b2a805377f7f4ff3298",
+          "source_slice_sha256": "72bb360ab143e9ffa4de6ee7bda65492a4438204bc2635fc653977d165ff4f39"
+        },
+        "HyundaiFlags:88": {
+          "normalized_ast_sha256": "297984d113404cad230f7cf29401fbb037dc764a88ba9baa69c41e486a00cc22",
+          "source_slice_sha256": "76ee5acf69bf76c9ae94d3f90a9f3dc38fb15387ff167a437bfd61669a1a08ac"
+        },
+        "HyundaiPlatformConfig:170": {
+          "normalized_ast_sha256": "3b22bf6ec3b2ce1910c538a2327011fcd27f3b7ca01f12dc2ae2d19570c1e57a",
+          "source_slice_sha256": "3d21f37044d596bd84c6db248ceb392991dae26a1560bc315fecb7443ee68cb5"
+        },
+        "HyundaiSafetyFlags:75": {
+          "normalized_ast_sha256": "06e11afb493341c0cf0de68bd4ae460bd7502590e481a04ccf450d15d0b75e32",
+          "source_slice_sha256": "615f1c06724852b3a732632c855d11069d78241d7750a87a5e3bf7e4258f3abe"
+        },
+        "__init__:38": {
+          "normalized_ast_sha256": "cac563c1703ca1949fd0a8538d3307fe1524c36f56dea60645fc8ca2695e1e2a",
+          "source_slice_sha256": "707864250d31d2ed0ad0218e5806d7da329e0737c10d3030abc3f7158f73f249"
+        },
+        "get_platform_codes:831": {
+          "normalized_ast_sha256": "6acebd9b1b31d4a56c447bc735aeac7c9449811396918ab00742f6d4d2832a95",
+          "source_slice_sha256": "a505e06e0676ad9658b69f3a470cb0986beb83fc0fb773c47a78d1cfa4d8f788"
+        },
+        "init:173": {
+          "normalized_ast_sha256": "65591be26ede1be92fdc0a2d854c39175c1030932d0a0e642aeb5663ea844107",
+          "source_slice_sha256": "6b22789f47cc8952d91ccb8c531137a9dbf6edc5d3eeab4e12c533cd5d294351"
+        },
+        "init:185": {
+          "normalized_ast_sha256": "9390d86b2d60ccca9a0ed813d995ac1c43671996a47e5b020b74192140edf23f",
+          "source_slice_sha256": "95c1da8d2e38621405075ed4a45bc7ed0504713e93c5ea1a0612c37c648ee364"
+        },
+        "init_make:164": {
+          "normalized_ast_sha256": "8cd42daf162b0e85362e3ed27fe1fb976b2c134a0dc5b491577cbb26be87770f",
+          "source_slice_sha256": "0ac6d0fdbd7bff66a04fc5df6ae7b23dcfb9775ca18cdd01c21c0d18657809d3"
+        },
+        "match_fw_to_car_fuzzy:850": {
+          "normalized_ast_sha256": "d8b172c926f4208fb88825091c2c7ab8c571f68e68bd88b3b1600e7a1a814366",
+          "source_slice_sha256": "e5b57e1d4b9fea8b7bb1de0df92a55c85187e7b15572d01135630eb799307e74"
+        }
+      }
+    },
+    "dbc": {
+      "file_sha256": "1590039abb51cbfc3dc8ab4151ab78e7f549088fec878480ab4d6f850b18898a",
+      "normalized_source_sha256": "1590039abb51cbfc3dc8ab4151ab78e7f549088fec878480ab4d6f850b18898a",
+      "path": "opendbc_repo/opendbc/dbc/hyundai_kia_generic.dbc",
+      "symbols": {}
+    },
+    "interface": {
+      "file_sha256": "123f14680dfb50c9133bbda35e309c93ed57ae81dec12dd28835e5e6a3dd1e8b",
+      "normalized_source_sha256": "f2982939c3c4d4626908ceb2a543d630e9011b834c21632015c1f579569186cd",
+      "path": "opendbc_repo/opendbc/car/hyundai/interface.py",
+      "symbols": {
+        "CarInterface:24": {
+          "normalized_ast_sha256": "434de3efcd3120de7a8fcd44658bf58c3a5d83b2696ef1a98218ab34215a6a9e",
+          "source_slice_sha256": "0c24e91b4a1f5fa40a1183b3b714c3533ea6bd06cbbc422ab7322a5f3734ac23"
+        },
+        "_get_params:30": {
+          "normalized_ast_sha256": "dd8a26c401d801b80d97cdb91f633dc1d5d30828a4c71ca544622f3ab8ca9778",
+          "source_slice_sha256": "d6f372301d27092ff19e4b26257a6e8195901b64f8460056efc9d3eff2808ca3"
+        },
+        "enable_radar_tracks:263": {
+          "normalized_ast_sha256": "9eab019f3aa472a33132ea1808b8315cece0c8c3c49988356ae99ae23710dd44",
+          "source_slice_sha256": "c908ba5d13f8fc6a3be8ca25663076f6733e22faed0b86d23a8e0d9c0dc53b7d"
+        },
+        "init:244": {
+          "normalized_ast_sha256": "5e177c786bc9b024cca64297fa507cb1271088c6b1e202c64ec1333899a693b9",
+          "source_slice_sha256": "25f2cdcccc2d1776f202c6017ae0c8d4ef93c9f211bd3e3e39b17d7e5d7d9b10"
+        }
+      }
+    },
+    "interface_base": {
+      "file_sha256": "9a7787c3450da2a0677023246b4a6770470b797f82e9a15db8f83f001b5a5d7f",
+      "normalized_source_sha256": "507e9e346bd84ea443c234a3865dc299ae34233c74feb8eeccad3655636a7ded",
+      "path": "opendbc_repo/opendbc/car/interfaces.py",
+      "symbols": {
+        "CarControllerBase:713": {
+          "normalized_ast_sha256": "15f8af4865939bbd66a8ff728293b46952393d20126c677e28c70591f00cd920",
+          "source_slice_sha256": "e88d9bd13ed867b9bf3514a6d8722d4de608ffd147156682232971dc6f1ad847"
+        },
+        "CarInterfaceBase:390": {
+          "normalized_ast_sha256": "d59855c3813efda3d6deb1708767c2445c61736854624272679ab762d3919910",
+          "source_slice_sha256": "7bf71433f6d6e4d870bac0a39bda2240719dd81b4c39f9eabfc965894ad67412"
+        },
+        "CarStateBase:598": {
+          "normalized_ast_sha256": "ceb9544157b92f0b696199f63ccf4dd43d8198aa51c9dd0ad45a4dd7d6851e8e",
+          "source_slice_sha256": "ff19c90c2f98963696620b43b29f2073c8b537d0c90e9796652b24d92384e790"
+        },
+        "FluxModel:103": {
+          "normalized_ast_sha256": "e4b67029512637518f551ed7a9b764499a38550764f50dc00fffae5d228373dd",
+          "source_slice_sha256": "2efd360327078d838da0e5459f63d5dceda2dae65a7de261bc63182e31c82868"
+        },
+        "LatControlInputs:63": {
+          "normalized_ast_sha256": "f4a4c45e9130d7cf7281c5ed94ae73c6e69f17941d7b50c67af87bd0ecf6f007",
+          "source_slice_sha256": "5ff87f950e3078945397b95434f62f382c83e546e5ed938107275effa6a54cbd"
+        },
+        "MyTrack:213": {
+          "normalized_ast_sha256": "56cc9a3ce4ff2bd4931aadadc3ccb5577508505fb63008d2b9ab30460d20a0e6",
+          "source_slice_sha256": "39f72329dc6ce6f85f226758147a3028c3ac898ff8642d86cef2b6c7df0fbeff"
+        },
+        "NanoFFModel:757": {
+          "normalized_ast_sha256": "ca524d7747e34b486e750b90d730faf11f9b358bec5e7e3da620c581edf4df17",
+          "source_slice_sha256": "51c06feea64727581b0aa02a2e9900c2374741cad624da90644ad8414ed82f67"
+        },
+        "RadarInterfaceBase:305": {
+          "normalized_ast_sha256": "d423c1da00c5031839dfd0052652e938a6472cf490282cb95316a5c46c610b25",
+          "source_slice_sha256": "6ff175a6e1a4f7291d13566f4aaaa3d1e95f16a2b2cc66313339ca957bd9ea97"
+        },
+        "__init__:106": {
+          "normalized_ast_sha256": "399f152eefebd5105ce5f11944b76392c909c772d75c3a8f7f90a637706674be",
+          "source_slice_sha256": "a465958bc53e35a831cbcd0c08bb131e66b506ad5122f004c6be543c6d8e436b"
+        },
+        "__init__:214": {
+          "normalized_ast_sha256": "539d5dba98da674991c781bf926a611b67b97f4de7440a0b8d294db2f46290f2",
+          "source_slice_sha256": "32ce2edbd7b2b8452f59a24aca485890766c5aff91dab5604bfde12d324156f7"
+        },
+        "__init__:306": {
+          "normalized_ast_sha256": "6a403199a9f9f7cb74e6afbc66926d5f661fe4ab1d5ef497c0df2c09ad9de3cd",
+          "source_slice_sha256": "afe4fb7846dfd3fb968094c0a6327949dfcae432c697501b64b0cc0dab743dd1"
+        },
+        "__init__:395": {
+          "normalized_ast_sha256": "dc50e0641e897455118b4d87089fab6e52348fe3caeafa22ba691e1a098f69c2",
+          "source_slice_sha256": "fddd59be72c5e8cbbe2e34ecca4e6a671cf1668719c3d9ba12f60c09d605a82c"
+        },
+        "__init__:599": {
+          "normalized_ast_sha256": "5b06076601257d912e5683eff1c17d6931d4564aa4cdd99b17f3d25ea413db51",
+          "source_slice_sha256": "1ee72b19ff0c5dfe4d26021278afd3c39ac1645106f083de767e59c0a37c34b5"
+        },
+        "__init__:714": {
+          "normalized_ast_sha256": "5615e40bc4a27b8c0e54a482ca4c10fa4e930b988379853970c06aa296fbc374",
+          "source_slice_sha256": "0aab854f2126e44873022c44141e043234b3bd57481001c6f3cd5c59399be985"
+        },
+        "__init__:758": {
+          "normalized_ast_sha256": "435c12e99904001c92ffacfbeadb3d0f2d88633c7e66829ea6377b081a2f3104",
+          "source_slice_sha256": "823a49a52776f93cd287f9a1e663cb6096e3650e1c43d9f5a1b0f2597f48b4b4"
+        },
+        "_get_params:488": {
+          "normalized_ast_sha256": "ef1bc7d4947897e99b11112f4716604af385a8e559089ce9337b4f5b9c84c6f5",
+          "source_slice_sha256": "4489ee425cfc379f1dea8e14c380c0f3892497b1ebcdffe9c47205637ff02925"
+        },
+        "apply:429": {
+          "normalized_ast_sha256": "02f0e21206cf66964c7135ee0a4dd4a81d147ed59de8eb445a1cf0cc989d9fdb",
+          "source_slice_sha256": "64815fb68d6f8c9b7c9a98591430eaccf78c97555188c1d1480cfe7b909ee5e5"
+        },
+        "check_comma_nn_ff_support:419": {
+          "normalized_ast_sha256": "84a0c05eb13a00891f966fddd4177b78395e8dbabdf5ba536af217521304726c",
+          "source_slice_sha256": "83d25132fbdfcb5b34f4ab7e843eb8a95b6051316e1d1d8370b141d5134d6364"
+        },
+        "check_for_friction_override:170": {
+          "normalized_ast_sha256": "93bbe5cb23e20da0d904197b0178c01d916309af046a3dab142694851d327307",
+          "source_slice_sha256": "6ebbb4219019221572b515d2585f57c19d99a0894bf3f1be8a79c75a040e3cf4"
+        },
+        "check_nn_path:175": {
+          "normalized_ast_sha256": "569cc02193eccc77244b088c01975e60629f242061ec0d931a831ee7109450e1",
+          "source_slice_sha256": "14537ce9e6302056bf729e3d75c7ec29043c9e36a69814d67fa977775a54866e"
+        },
+        "configure_torque_tune:552": {
+          "normalized_ast_sha256": "1d3f23fb8a31edca4c33ba64aacdd6c626880b1e4b7d6b0c4267f47e93661491",
+          "source_slice_sha256": "7fe99c4807a26ff3fce0f717122fd4b8eb7d4f1668c26aef51d856792d2233c4"
+        },
+        "deinit:497": {
+          "normalized_ast_sha256": "f3c3c3d60fa3ef84bdd0221f104b63d5685cbbfa456ab2a4ef5ac2be32cf858e",
+          "source_slice_sha256": "4ec15c8d9ae5e8853505f6b91fabffe9070109d45524ccc042ee6fa37c1080c1"
+        },
+        "estimate_dt:323": {
+          "normalized_ast_sha256": "ec9cbd261cbb91998331c7ac7f86192d64e6b39b31af16acf680309839f48a6a",
+          "source_slice_sha256": "332c0b7e29aee83e3a74785e6f1950d61533d6b125fe8c81b4b345fd70c9ec4a"
+        },
+        "evaluate:146": {
+          "normalized_ast_sha256": "53dc37c77df47717a7193453b3317de6e06b3c62c933852068552f08f5fbbeab",
+          "source_slice_sha256": "103f36760b8d2f6004736f933bfe930b8cd32e197dfde59bb6638c15fc4cc30f"
+        },
+        "forward:141": {
+          "normalized_ast_sha256": "18c978af67794312c81f4efa6c99013153d77ec49e9a34e440cc0178e0255bf3",
+          "source_slice_sha256": "155e9fa5acff68bbafd60e005f1bef55771aa94b0b460b804e930d8baf2bef52"
+        },
+        "forward:770": {
+          "normalized_ast_sha256": "69a30c02f273feaa90360b94dec34c30e69ad1bc9079e052c65e4ec7654d3f27",
+          "source_slice_sha256": "6cdbe95b05bfec50f33e4b3da2cea13d2c52a0fd06cfcff4ea88b88e801070f7"
+        },
+        "get_can_parsers:709": {
+          "normalized_ast_sha256": "fa11a70deeedf2f861eded6c99be755639774b566bc702162cf8f92a197c994f",
+          "source_slice_sha256": "9617f703e1c196be5f44b92352aa4110e42ffd1f9c962cad30387c5ae9576330"
+        },
+        "get_ff_nn:416": {
+          "normalized_ast_sha256": "ecbe1afeb0a66e90dda05221fde9935c9075c51eb98e673884b639c233a9c660",
+          "source_slice_sha256": "c77a576fdec02ac4c95bf63631a3786909dabfd00372abd5f1b0599706e153de"
+        },
+        "get_interface_attr:731": {
+          "normalized_ast_sha256": "ff3cda0a0b55ec6fee1f1fdab1f0a05262142e3c5f5ded01125d92c9bba7a6ea",
+          "source_slice_sha256": "fb13da01850c3faf5d2258dfd04c6371c09096d5a9f049bbeb42cb476bb270f3"
+        },
+        "get_nn_model:204": {
+          "normalized_ast_sha256": "4e020fc52094c839bc2396200165eb6278d63d85d37dcfd0d2a6c7cf5cfa4ea6",
+          "source_slice_sha256": "f37fe4dc6f9125bf51c3424ef8f7dbed27581da8d176de558bf39b79cb180ac9"
+        },
+        "get_nn_model_path:174": {
+          "normalized_ast_sha256": "ee67ce782fd3b4f6d12303bf0448c91af9aeadb5efc3ab00f3ec513d55f73002",
+          "source_slice_sha256": "5832566e5bb3e3127cf73c5b20a97067c3eb32d76861b8833ee4468d3dfc274f"
+        },
+        "get_non_essential_params:440": {
+          "normalized_ast_sha256": "1129d11ff275d4ba8fef5d321bc1206238e641192113be3894412562f85c3414",
+          "source_slice_sha256": "59cfe1dcbba4bb524428a286652736def1c071dcc96e03cde7f2f032af0e4006"
+        },
+        "get_params:447": {
+          "normalized_ast_sha256": "a8867cc11f03979294743b5b5161f7578cf83b20eeb7ed73cd1640b0552bb954",
+          "source_slice_sha256": "10f53921093827213ff2c3946f9f053c445fb3f7f07e1e1d9e42ea7de7fedeb5"
+        },
+        "get_pid_accel_limits:436": {
+          "normalized_ast_sha256": "b787d0540b294c03949125a55b9796cc1450ad039b57aa4d979899b14c0f7321",
+          "source_slice_sha256": "a580604edd6c2c671c2323e224310c5ace5cd53ea14d92fb5b951e48d446446d"
+        },
+        "get_std_params:519": {
+          "normalized_ast_sha256": "71aac3c90804db9e97c6bf8a82600963bc724fee22b4f9ba706c1f24908a1889",
+          "source_slice_sha256": "a91a5655e1b1a62fcca68abc5a4ed07aebee3bffaad24e37e167ce3f133180de"
+        },
+        "get_steer_feedforward_default:501": {
+          "normalized_ast_sha256": "4bda3f4b0017dfa0475dbe76f230c26233f14faa4a8d3b4edb81dbe3d1e79f08",
+          "source_slice_sha256": "9719df356e0e453b38066302716c8a49e15519d980580f0a9a49c85899e65e0a"
+        },
+        "get_steer_feedforward_function:505": {
+          "normalized_ast_sha256": "b22b8c3843c96ba1674ddab210e1a9fb5e21e529419cd28a6e6cb67b0f08a9e7",
+          "source_slice_sha256": "5373e78b4edc80d8ff3a6cf4900b90040e1d421c84d804fa10acdfb83507bc43"
+        },
+        "get_torque_params:74": {
+          "normalized_ast_sha256": "d281f776a3f34dd6cf8b9a0b717bad16c0a6dfbb2a70d0b133a6a107cfad4959",
+          "source_slice_sha256": "310ea9a2ac56c5f5e0fe14ba0a68703f31188d444e3a558ba229b2155e23048a"
+        },
+        "get_wheel_speeds:647": {
+          "normalized_ast_sha256": "4b19e9e57debf049ae108b72ed7c56c493e491f031938fd76e7eef5d863a6b5a",
+          "source_slice_sha256": "03f54aceebc151adac3bc4435cabb954016cad4949a4756530aecb5932c7617a"
+        },
+        "identity:137": {
+          "normalized_ast_sha256": "a0da5ca3c3e80c2852076932d04fe3b556fe3751936e028d1c570328476f52db",
+          "source_slice_sha256": "aa8f8f45705ea80a1dc1e9e7f964f64c9d62786c7dab4c529c23f08fd7e2d949"
+        },
+        "init:493": {
+          "normalized_ast_sha256": "fdcccce8bcd649f2d96bb309b0cc5284150f76c333f06e7b6879e6d68155498b",
+          "source_slice_sha256": "2fb41f343ce93f0a2fa17790305a64a7a1ff04270826dbcd95aea83c5c220aaa"
+        },
+        "init_point:234": {
+          "normalized_ast_sha256": "ba5c62b5898aa1970dffe7c431b5ee047a773bf23176c2156be0aecd9db20d47",
+          "source_slice_sha256": "cb1a231351e88c4d016299c941fe0e9ee2f72846b631ca504285a4a29e58ce7d"
+        },
+        "initialize_lat_torque_nn:424": {
+          "normalized_ast_sha256": "036a708ffe3c34ce59eb5fa207107e134410de827b97cd969f6ee2cd927b0a81",
+          "source_slice_sha256": "a89330bd1f4c1fb3ecefcea5b530038765af4d7ea0b2bfdb7c86b9f96f8c232c"
+        },
+        "is_discontinuous_corner_slot:249": {
+          "normalized_ast_sha256": "580d495d66f62af6e72f696512d013be29745723532c9a337d35c767415f4a9c",
+          "source_slice_sha256": "aa55f9d84b5e0c94a6d922ab6d72ed2c82b6235d382b2268fb0471bd0af4764f"
+        },
+        "load_weights:763": {
+          "normalized_ast_sha256": "05cb97b59c76ad13f1df293402a467c8b91ed77fe0093c4ccbf6e018374d6820",
+          "source_slice_sha256": "309353fbdeb7b4f7a8b82b150452e152bbf8f7574e0d5b188c0b58defa6b1da7"
+        },
+        "parse_gear_shifter:703": {
+          "normalized_ast_sha256": "2e15b73d248bcfed8b185f0989f68b24dc272c8e4b81da2f42398019ea85c0ba",
+          "source_slice_sha256": "d684951fd67b06eefb09df75acc7af5be3b0c3ad1a92868cb2aa41f682c88a33"
+        },
+        "predict:779": {
+          "normalized_ast_sha256": "9ba429b5e0e6d4d01b400b56c717a4c44999369a462282e1dcd792302853d4a6",
+          "source_slice_sha256": "7ef12cbb6d945bf664e528283db2bf18977c53bdcc9dd78de111bc50223aaab3"
+        },
+        "radar_track_id_is_reused_corner_slot:210": {
+          "normalized_ast_sha256": "289e142d23396d58d628ecc159653d34c95cb31bc68fb79543267b056913afc6",
+          "source_slice_sha256": "af3ef1814429ad64d48817f8f0b499368a862503478c49bf837d1d4e028ca094"
+        },
+        "relu:767": {
+          "normalized_ast_sha256": "c6cff8471fab4a330abf8a5be361b75822cbf7067c8dbd68dabe70cea1ee11cd",
+          "source_slice_sha256": "a1112cfeaddfa512464ac093767a85362b3f99855b50667bd0270ce28c0bf8e3"
+        },
+        "sigmoid:133": {
+          "normalized_ast_sha256": "0e1d87bcbe32d2f72df7d9229de99bafa951e00a1e3851af40c95f9c09db969d",
+          "source_slice_sha256": "fb9faf9d7d7f4d37141e92a224461dbb3e58815f7e66c354890968b0b3fbf643"
+        },
+        "similarity:60": {
+          "normalized_ast_sha256": "1b8ca1ec8b99f04aef47bf070f17c2a57be84ab7c650f11b9b317a2b03f6c54e",
+          "source_slice_sha256": "e9fa06b307c33c15ac044658af187b580d107f629dc7dc31537b9c88beb19453"
+        },
+        "torque_from_lateral_accel:514": {
+          "normalized_ast_sha256": "7d3697ec269ca3b2dccc540ff1456444bdfa7e69015b0167c8c380d3cd035ac0",
+          "source_slice_sha256": "4dda28ba8e92cee4daf744b75539c894a296709d0d934f6747a5631fcebe77ba"
+        },
+        "torque_from_lateral_accel_linear:508": {
+          "normalized_ast_sha256": "50e550b6c8438678ef23d42a4f2c85ed1fc43cefa505fc1002d986496a8b78c8",
+          "source_slice_sha256": "45ab7bfa2503e53b1b27e54d6dcae2e03b55848cc3579bdaaef76df0c381a98d"
+        },
+        "update:258": {
+          "normalized_ast_sha256": "cc3615cf714da6e5d9433ea9f23fab3023d8b25c9186abceaef9d894891ee90e",
+          "source_slice_sha256": "6a3de070aa43d2cf0aa06c3e5ea487976a35af7777aa0aea65d7ad8299569e90"
+        },
+        "update:383": {
+          "normalized_ast_sha256": "3eee95a65fcfb6299bdcf187657c5be16b500f4b82e0d87cfe1ab72a1910d531",
+          "source_slice_sha256": "b973166c906b2db5d0a21f9b493b77ddef3cb35cb1bab897fbd4faec5dbfabf7"
+        },
+        "update:565": {
+          "normalized_ast_sha256": "47ec929a4d97f2629f6cb7e1417f8a806ba8cbc96b502b334d10e5820b4877ad",
+          "source_slice_sha256": "77873935394f7c31d0dfc8d285b7e67da154f867150f5ef0021214dce9fb7058"
+        },
+        "update:630": {
+          "normalized_ast_sha256": "123eb33fb7a9051db977adaddd5300f2013010d1e897cbc4e53ec78bec558cb2",
+          "source_slice_sha256": "59b19438d58b2b86bd5c5af522c9d8e9d7737b8c1ec9f453e7a18327c0c51f78"
+        },
+        "update:720": {
+          "normalized_ast_sha256": "4df8eb0bc433d0b051c1ac78d6922916fe73a6faa9285f9cdbc19c77a9d76a50",
+          "source_slice_sha256": "c5da0ef79382a1790075c49e805f8571a6b32d9c3c241053d45e9ba1a659207b"
+        },
+        "update_blinker_from_lamp:657": {
+          "normalized_ast_sha256": "26529599607b63b5f282a86e08250a20e7a88de2ba76e8271619fc1b23d8d7c2",
+          "source_slice_sha256": "1d075dff3b3a65bd81470f557008af032688896bb418dc0621dea70d54798dd6"
+        },
+        "update_blinker_from_stalk:671": {
+          "normalized_ast_sha256": "b696a521d70874619141bf4bb24328c20f7467a4c39e36cb509eacf8343647aa",
+          "source_slice_sha256": "050eadb53f432ff852597e012a17431673a335f5a2a7ba2e4beefaf8261e6dbc"
+        },
+        "update_button_enable:694": {
+          "normalized_ast_sha256": "d3efb4987e71cc7216b3f0ecfa8e9fe0e19457595e03d93cd865e819c7e04b8f",
+          "source_slice_sha256": "1bfc1db18db71a6800f25862a1e936aaca1939f8ee90ea24a4fb681056f4f8c3"
+        },
+        "update_carrot:337": {
+          "normalized_ast_sha256": "024d0ab4b9e75261e708933f4f8070b0eddc1b843ad797d16e8dcaf8bf4e06fb",
+          "source_slice_sha256": "df5265bd3e7f1338f39d4c5300b1e88580404effe87288933882465879797de6"
+        },
+        "update_clu_speed_kf:640": {
+          "normalized_ast_sha256": "ca465817b2a730dff0cdd47982e5bf40083bf0ff7b71e962bb94312bd9aaf534",
+          "source_slice_sha256": "42b2010cdc5e90fb6cddb7ef879b5aae0c6dff826ece1ee3406dfa5ac0661538"
+        },
+        "update_speed_kf:633": {
+          "normalized_ast_sha256": "3566d4834e1b5037efa6eb1b2b4bf79571e50375ca380636c6ea490332041ee0",
+          "source_slice_sha256": "24a5d7e3f192cbe189f1e25a3b33cf2f97e7f8889d5f3057e274f0dd3cf45f34"
+        },
+        "update_steering_pressed:665": {
+          "normalized_ast_sha256": "0ea15d660a6477c957592c72146cf9176b94497001b667974823289e3310b629",
+          "source_slice_sha256": "5fefa8e0f7c35fa52eeea4b3ef711de2436e5913426f4df929c71b4edb9c36d5"
+        },
+        "validate_layers:165": {
+          "normalized_ast_sha256": "882626a88b89195d5b910c4862b96e846a88a0509d550fa203000152158330b2",
+          "source_slice_sha256": "c33eea8ea88bcc338a42ac0ed73af15dca5a3e12642d2a30788610424aae0744"
+        }
+      }
+    },
+    "logger": {
+      "file_sha256": "ddf2ffb10b871d466f17d13859e2cdeac4b454573a495f82ebac45f303ef9ccd",
+      "normalized_source_sha256": "ddf2ffb10b871d466f17d13859e2cdeac4b454573a495f82ebac45f303ef9ccd",
+      "path": "openpilot/system/loggerd/logger.cc",
+      "symbols": {}
+    },
+    "logger_config": {
+      "file_sha256": "558130ae6fd4f3d0f48e215f36b2b72d31c6d33f19dbff497acf76d8868320f6",
+      "normalized_source_sha256": "558130ae6fd4f3d0f48e215f36b2b72d31c6d33f19dbff497acf76d8868320f6",
+      "path": "openpilot/system/loggerd/loggerd.h",
+      "symbols": {}
+    },
+    "logger_header": {
+      "file_sha256": "66eb66cfa79326994aa2f38953ee48d31bea0f5356ae3d6fe0de1f8c30ed406d",
+      "normalized_source_sha256": "66eb66cfa79326994aa2f38953ee48d31bea0f5356ae3d6fe0de1f8c30ed406d",
+      "path": "openpilot/system/loggerd/logger.h",
+      "symbols": {}
+    },
+    "logger_start": {
+      "file_sha256": "09b91ed7fc0517b8f0aa34eba2c3278a4ff87d6312fa4afca3cac7fcb8c3b160",
+      "normalized_source_sha256": "09b91ed7fc0517b8f0aa34eba2c3278a4ff87d6312fa4afca3cac7fcb8c3b160",
+      "path": "openpilot/system/loggerd/loggerd.cc",
+      "symbols": {}
+    },
+    "schema_car": {
+      "file_sha256": "db5444005dcff5fdbbecf617ea031eb90852e51a848a9d832a02756ddc6bc024",
+      "normalized_source_sha256": "db5444005dcff5fdbbecf617ea031eb90852e51a848a9d832a02756ddc6bc024",
+      "path": "opendbc_repo/opendbc/car/car.capnp",
+      "symbols": {}
+    },
+    "schema_custom": {
+      "file_sha256": "e0740a219a7ffc605a4bd7d98180587b140f6c037a14e68b5afcb9a0b0d91749",
+      "normalized_source_sha256": "e0740a219a7ffc605a4bd7d98180587b140f6c037a14e68b5afcb9a0b0d91749",
+      "path": "openpilot/cereal/custom.capnp",
+      "symbols": {}
+    },
+    "schema_dependency:opendbc_repo/opendbc/car/car.capnp": {
+      "file_sha256": "db5444005dcff5fdbbecf617ea031eb90852e51a848a9d832a02756ddc6bc024",
+      "normalized_source_sha256": "db5444005dcff5fdbbecf617ea031eb90852e51a848a9d832a02756ddc6bc024",
+      "path": "opendbc_repo/opendbc/car/car.capnp",
+      "symbols": {}
+    },
+    "schema_dependency:opendbc_repo/opendbc/car/include/c++.capnp": {
+      "file_sha256": "fb306076cd38c27af1aed20fac6395e9a46fbe5b5df6a248b5f1b6845a079c44",
+      "normalized_source_sha256": "fb306076cd38c27af1aed20fac6395e9a46fbe5b5df6a248b5f1b6845a079c44",
+      "path": "opendbc_repo/opendbc/car/include/c++.capnp",
+      "symbols": {}
+    },
+    "schema_dependency:opendbc_repo/opendbc/car/rlog.capnp": {
+      "file_sha256": "0f4a316832f333bdd17d4af32f0102844fa569b97a417ada3ffbe0d2de5cbd21",
+      "normalized_source_sha256": "0f4a316832f333bdd17d4af32f0102844fa569b97a417ada3ffbe0d2de5cbd21",
+      "path": "opendbc_repo/opendbc/car/rlog.capnp",
+      "symbols": {}
+    },
+    "schema_dependency:openpilot/cereal/custom.capnp": {
+      "file_sha256": "e0740a219a7ffc605a4bd7d98180587b140f6c037a14e68b5afcb9a0b0d91749",
+      "normalized_source_sha256": "e0740a219a7ffc605a4bd7d98180587b140f6c037a14e68b5afcb9a0b0d91749",
+      "path": "openpilot/cereal/custom.capnp",
+      "symbols": {}
+    },
+    "schema_dependency:openpilot/cereal/deprecated.capnp": {
+      "file_sha256": "65079ff035a29c4c267d07ef7240c316c7eaa81b52f795142ed7603489a61355",
+      "normalized_source_sha256": "65079ff035a29c4c267d07ef7240c316c7eaa81b52f795142ed7603489a61355",
+      "path": "openpilot/cereal/deprecated.capnp",
+      "symbols": {}
+    },
+    "schema_dependency:openpilot/cereal/include/c++.capnp": {
+      "file_sha256": "fb306076cd38c27af1aed20fac6395e9a46fbe5b5df6a248b5f1b6845a079c44",
+      "normalized_source_sha256": "fb306076cd38c27af1aed20fac6395e9a46fbe5b5df6a248b5f1b6845a079c44",
+      "path": "openpilot/cereal/include/c++.capnp",
+      "symbols": {}
+    },
+    "schema_dependency:openpilot/cereal/log.capnp": {
+      "file_sha256": "806c923f67487fd9144db78d583e56ad6d44215a0754481962e0438361e13671",
+      "normalized_source_sha256": "806c923f67487fd9144db78d583e56ad6d44215a0754481962e0438361e13671",
+      "path": "openpilot/cereal/log.capnp",
+      "symbols": {}
+    },
+    "schema_deprecated": {
+      "file_sha256": "65079ff035a29c4c267d07ef7240c316c7eaa81b52f795142ed7603489a61355",
+      "normalized_source_sha256": "65079ff035a29c4c267d07ef7240c316c7eaa81b52f795142ed7603489a61355",
+      "path": "openpilot/cereal/deprecated.capnp",
+      "symbols": {}
+    },
+    "schema_log": {
+      "file_sha256": "806c923f67487fd9144db78d583e56ad6d44215a0754481962e0438361e13671",
+      "normalized_source_sha256": "806c923f67487fd9144db78d583e56ad6d44215a0754481962e0438361e13671",
+      "path": "openpilot/cereal/log.capnp",
+      "symbols": {}
+    },
+    "sensor_dependency:openpilot/system/sensord/sensors/__init__.py": {
+      "file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalized_source_sha256": "3543b4693a36a1098850b8bc928887694ed59a6deb7d3dfd0339de01f55a77b6",
+      "path": "openpilot/system/sensord/sensors/__init__.py",
+      "symbols": {}
+    },
+    "sensor_dependency:openpilot/system/sensord/sensors/i2c_sensor.py": {
+      "file_sha256": "d3b9327073f1a96ef15c3f5ca3838d38d9aae3efcb5a1561891f7571c1f75bce",
+      "normalized_source_sha256": "e93ecc4d8fd728dd0ea8d3690f504a9d47649541444485422df3985b9ed9fb8f",
+      "path": "openpilot/system/sensord/sensors/i2c_sensor.py",
+      "symbols": {
+        "DataNotReady:13": {
+          "normalized_ast_sha256": "eaa24e7d2617162a11b6f53e0b31ce5483d7919488052b834905119bf61497e9",
+          "source_slice_sha256": "3c15679a1b0a49cec4f3cff5637fd7c3dd372c0650e26c4f200cf4aef735ca24"
+        },
+        "Sensor:9": {
+          "normalized_ast_sha256": "24935fa638d40ec4da16c0512c83f33c24a4c9ba097fa95dd4d2617e20d09510",
+          "source_slice_sha256": "4a0eeebe0501b79581a3536801e7ec7c47e7538e34c40bce50abc358494cc6d2"
+        },
+        "SensorException:10": {
+          "normalized_ast_sha256": "9a082f0534ed8b56fb97a4dc20aec08a1a27ed302b930faebb7b954e0817a2b3",
+          "source_slice_sha256": "5c3281a8d7483525573965ffe68124710ba877e000cf524d8db1963bf5c7ff22"
+        },
+        "__del__:21": {
+          "normalized_ast_sha256": "eb33580fbbad15dc95337776c8dc34c4671feea43bef3b01eb3ac50e84273dbf",
+          "source_slice_sha256": "e58c60048cefcb53cc02c8e93f1a992a65d0e6de976e32e624bfda3b197cc4d9"
+        },
+        "__init__:16": {
+          "normalized_ast_sha256": "6d116b7135c612d1fe573477896143f7df1dcba4b79887ad18b914a53267b4a4",
+          "source_slice_sha256": "d1eab7f3f794a4b3c200f85f0f383f652f82f42e0e1edcbd039caf6e270defb9"
+        },
+        "device_address:41": {
+          "normalized_ast_sha256": "a289ee46a1a0653a5ad37146a5ca1e64fc338d22dd5ff7edde910d2b5bba4d2d",
+          "source_slice_sha256": "2a6a0973287887ac177a3103b4c179bd0a1e2d36b6815ecd38f5ae8dd6eb8faa"
+        },
+        "get_event:52": {
+          "normalized_ast_sha256": "b4296f4af4228fb58fdc4af393cc6006892385e063ffbc5ced4afe9ac36f0021",
+          "source_slice_sha256": "d4df8b39d2257072d1a48a805f5d2ed56af3751600db72b57261d15841ac70d9"
+        },
+        "init:49": {
+          "normalized_ast_sha256": "03cb9403daa665884d5df039fcd8a4c3c529429433cff471fd2ffbb2d4180584",
+          "source_slice_sha256": "7f75a77a26dac1c08077e3b5df6eb171bfa3f0236f65822c7426b886e48d80ee"
+        },
+        "is_data_valid:58": {
+          "normalized_ast_sha256": "b76f1d7eabe98ebcf9e2d914b3b6cafb5a93e5f1e3265b765d829e3c1d82bcc9",
+          "source_slice_sha256": "6613c1fdcc9d285aec1b7b738b7d76255ac207ff290e449a2e2e910d977aa590"
+        },
+        "parse_16bit:72": {
+          "normalized_ast_sha256": "a0ab6d81100dfee0aef96ab282ac63bdaf58fc2ac22545cb83f04b9cc77a7ed2",
+          "source_slice_sha256": "9a44a53c784cae670f06ea69c8a415ccab9e46e4e3352edf2a26d4cd83ce149d"
+        },
+        "parse_20bit:76": {
+          "normalized_ast_sha256": "68af335190e243297ddb96e2d8bb64b8151d877c3ba4e43071af961839f1c492",
+          "source_slice_sha256": "ef3d53f0796e119ee9c04df6e3f9f2b90e3570e6b5e8f1af3e45d61e58b9c87a"
+        },
+        "read:24": {
+          "normalized_ast_sha256": "672bf65349f4dc2914c5209d0597d79932d6a82b24b70d08a570490b09c52c6d",
+          "source_slice_sha256": "ddd93721b3856951e1af8da2b2891a4b76e51eebf3cff8df13874bb658888ff7"
+        },
+        "reset:44": {
+          "normalized_ast_sha256": "479faa4c40e9ed387f4f00acf057421aa4bcc33a5e1fe8b878b42f34afd8f816",
+          "source_slice_sha256": "6c4e3dafa599c9e4f424dcd4c02c0b8126645e3eeda53e047ff14ecf63195c96"
+        },
+        "shutdown:55": {
+          "normalized_ast_sha256": "3cb4af643047f3ac2abb74bc00c3c16e22aee5794f926910a8ce3b36aa4662b2",
+          "source_slice_sha256": "3b6beaf85e44bb8656a8be951e3ff378f7c5185fdde204c2a87c67d15dea3ea5"
+        },
+        "verify_chip_id:34": {
+          "normalized_ast_sha256": "dfbf68681393265bfd6e8074fb33866d179f7ac6dbc60bb93bd57f5a7e08a761",
+          "source_slice_sha256": "6067f4ef7807fb76ac8032567e0ddeb365321bdf42e8894ab89d61c979809cbd"
+        },
+        "wait:67": {
+          "normalized_ast_sha256": "50436b3bbe700f9db3010d394577b7c74ecc54ea1d5c1c8ad838480d70525ec6",
+          "source_slice_sha256": "d933a1b19e9079a78b3da3581064705d83a20b2bd7e19f12cab56d0189747962"
+        },
+        "write:27": {
+          "normalized_ast_sha256": "abac58a83b33aaf572b7ae042e2d402b90444b4931cbeac94780fb3f8b68e846",
+          "source_slice_sha256": "bccea74c37d1a46639979b0b83cb7b07e2b92e6497476568a7382be826a838dd"
+        },
+        "writes:30": {
+          "normalized_ast_sha256": "aabf7331a35830bc1a5c2c18b09952f23d6a7445c0a4ad76e38208ee4836aaeb",
+          "source_slice_sha256": "de1c409d5875b4a390d3f1cf8a02981049aab65d26978c8fc3a57bb4eb7c9666"
+        }
+      }
+    },
+    "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_accel.py": {
+      "file_sha256": "02c66b9ff99df050d801f0d87ae741ed0b9ec34010de4731fabd56a7b67d9204",
+      "normalized_source_sha256": "af3254d79f3458dcab6a7082a23a9ca85f38582232852476888306f2f7d644ad",
+      "path": "openpilot/system/sensord/sensors/lsm6ds3_accel.py",
+      "symbols": {
+        "LSM6DS3_Accel:7": {
+          "normalized_ast_sha256": "a7b24dd370539544cd7f095ffedac943a64ae337c6da906e2e613b21ce003972",
+          "source_slice_sha256": "f0e0766b52830038ab95f4d5698c8a060240d65b1302bb5659f1785ab046f728"
+        },
+        "_read_and_avg_data:107": {
+          "normalized_ast_sha256": "daf06146613e068d19da94280be43f3ad82a65c668f421805a0c4d9cfd14e356",
+          "source_slice_sha256": "73a8e8107fe3a8cda245d07a59415dff9c195e59a27536a7675930dd4f99b800"
+        },
+        "_wait_for_data_ready:101": {
+          "normalized_ast_sha256": "367e07a182b3d62fc1a75634941e7f07512e3f033ecba2a3f1087235ecd1fff3",
+          "source_slice_sha256": "6615627163941fb04b9d2ee383dcd81d4dfb0320e4c78933bf773d1786e074ab"
+        },
+        "device_address:31": {
+          "normalized_ast_sha256": "025dd50ab6a2a31456d3d7e5233046ea6a68a398f1e28aca33ee8c0f1942e337",
+          "source_slice_sha256": "ddefba2c1136e1686f035f7025e963ab738463fd8916414302ec485b9e990a25"
+        },
+        "get_event:64": {
+          "normalized_ast_sha256": "7a7260a276f02745e84f5c334fc13d12a558e1f4c58464b1e1c180778bb947a8",
+          "source_slice_sha256": "3aec2fd2b433f5620c37818e4cb8f4e3da5e09617567cecf52187fe45732f9f8"
+        },
+        "init:38": {
+          "normalized_ast_sha256": "ecc061dbd8346efb88ab21d521f44b8cf730a9fb58e48d41440641a29fd8ce63",
+          "source_slice_sha256": "e74016a2a24369673637428bce2baf95430f0aeac16babc9d31e05238cac7987"
+        },
+        "reset:34": {
+          "normalized_ast_sha256": "e7615efbdb7e33ab8870d2d579cccc9eb889d6baff3759f7a7be2ad08a576b09",
+          "source_slice_sha256": "a8c2441408b592cf29e6949fe025947df348aca10c100bba8792020e5abb22c6"
+        },
+        "self_test:117": {
+          "normalized_ast_sha256": "d01efd7992b490852a9fd9a3deec3072ad9aebd205933bef47f24f9591e4e003",
+          "source_slice_sha256": "69aeee2c689f03e8188c59bb2820ed9eb35dc0aa501bc68d8dbdca3d80d29b91"
+        },
+        "shutdown:89": {
+          "normalized_ast_sha256": "f63317eda81da3a3d9baebba9f030fedc198e95149891bea314cf3c493051fb8",
+          "source_slice_sha256": "27783c09e6b69d86e27c80c2dfc84ad1085a6b54a2787a03e12026d9633e7d90"
+        }
+      }
+    },
+    "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_gyro.py": {
+      "file_sha256": "cd864538b75ca84ff4758bf88893492afa17a1cb32e0fff9237e24567553eb0f",
+      "normalized_source_sha256": "43d7e11e0a5d85b626e84d2cf365c0182a3f00e6505e5d9bdac4db4ea3b0d79d",
+      "path": "openpilot/system/sensord/sensors/lsm6ds3_gyro.py",
+      "symbols": {
+        "LSM6DS3_Gyro:8": {
+          "normalized_ast_sha256": "9e1e156a1e4f4bb2ae5f31b17b0d84b25b12e274938f4c84001b5d74cf14e20e",
+          "source_slice_sha256": "2c637e3a7037db45885524bc9fc0d7f7f259109be0aabafcaae1a2cbbddfca8d"
+        },
+        "_read_and_avg_data:103": {
+          "normalized_ast_sha256": "83e9b7ffa613dee390632897d85de70a2b92bc89594c62ef6510c69d044e74d2",
+          "source_slice_sha256": "d8136efa98330cbad7bac38439e730abd7863f5e72b65eaac9368b25eeabf8cd"
+        },
+        "_wait_for_data_ready:97": {
+          "normalized_ast_sha256": "84b865d3cc17860c7e9c0082637257c67eb5c6b3877a77a5d393fd46f29da222",
+          "source_slice_sha256": "1f61d9fd5f18d44c3092ce882bb9eca862e567d10d107a0af09679c6750c064b"
+        },
+        "device_address:29": {
+          "normalized_ast_sha256": "025dd50ab6a2a31456d3d7e5233046ea6a68a398f1e28aca33ee8c0f1942e337",
+          "source_slice_sha256": "ddefba2c1136e1686f035f7025e963ab738463fd8916414302ec485b9e990a25"
+        },
+        "get_event:59": {
+          "normalized_ast_sha256": "50f252cd0803db1bd50614b134c892638c8dac5dcf0eef85b0c48d26cbde6366",
+          "source_slice_sha256": "6279a787cad8409315f73d338ae2b2488053fc157c23e923639766f1e4f58c3b"
+        },
+        "init:36": {
+          "normalized_ast_sha256": "6b7588d864df564e3d36ba3fe1d33363893dc3fefc5a76c792ad46822ca93522",
+          "source_slice_sha256": "552585a91b55e676f55343951b290f4765e754c794171aab28e1b66c3703352e"
+        },
+        "reset:32": {
+          "normalized_ast_sha256": "e7615efbdb7e33ab8870d2d579cccc9eb889d6baff3759f7a7be2ad08a576b09",
+          "source_slice_sha256": "a8c2441408b592cf29e6949fe025947df348aca10c100bba8792020e5abb22c6"
+        },
+        "self_test:113": {
+          "normalized_ast_sha256": "066aa0fd5cf2a6331f6b4343e344deba42c1256ed691837733dbe9dd4e68d3be",
+          "source_slice_sha256": "a18de486668c5001e2cbff5183be9a5861c98fcddf89dd62f25abe2663c30fe7"
+        },
+        "shutdown:85": {
+          "normalized_ast_sha256": "041f45f1cf948a9203e457be4373a53f476eccdf5b7a7948e03785f4da03ba1d",
+          "source_slice_sha256": "3a76b04c208f03de0fd9de220bd0a5400835a3089a90dc8a0950aa74e9756106"
+        }
+      }
+    },
+    "sensor_dependency:openpilot/system/sensord/sensors/lsm6ds3_temp.py": {
+      "file_sha256": "1a982fb7fcc119000e851746c0e2db4d0742f96f9e4be2670491cb3e34a03b79",
+      "normalized_source_sha256": "03e20d2b6f070bcc8304a4f5a50f5b6145019bb417eb20518cf2889359f071a5",
+      "path": "openpilot/system/sensord/sensors/lsm6ds3_temp.py",
+      "symbols": {
+        "LSM6DS3_Temp:7": {
+          "normalized_ast_sha256": "f76d2137e9c127fb2858d19653273532a1ec79a175cd2c8595f44a718e8e3dd7",
+          "source_slice_sha256": "83f15659353199f68a46e386d400ad1916c5f48b0faa321584a4bd4317a75a78"
+        },
+        "_read_temperature:12": {
+          "normalized_ast_sha256": "ac2a260a850640c9a21ebaa420a88f04119b5cdb5e52e0c75aa5ed26c4e89db0",
+          "source_slice_sha256": "b185c7b08491c1cb278102afbea6e0f3779539f4a8af6426aafe66d920e7ffc8"
+        },
+        "device_address:9": {
+          "normalized_ast_sha256": "025dd50ab6a2a31456d3d7e5233046ea6a68a398f1e28aca33ee8c0f1942e337",
+          "source_slice_sha256": "ddefba2c1136e1686f035f7025e963ab738463fd8916414302ec485b9e990a25"
+        },
+        "get_event:24": {
+          "normalized_ast_sha256": "d26713ee4bee094f33eb301ce2685b136b292eee521e5c39f0a976e62500db16",
+          "source_slice_sha256": "34ad4651405edc5976b23ed20644c248476dab7346985dc32ffe72ed313daba3"
+        },
+        "init:17": {
+          "normalized_ast_sha256": "553c28aafc05b7aab0bd39fc09fc7069d3d4ae30364f57ccb03c36bffae345a8",
+          "source_slice_sha256": "af2a08ceca7f4f115585e772a030983af43885e12678ceb4f390e0241a689b6d"
+        },
+        "shutdown:32": {
+          "normalized_ast_sha256": "a96452639d5d6edee0a5b4ca4ea81ab6b7c34e9613f8528a8cafd8d77e52a47d",
+          "source_slice_sha256": "831a71a3cd11c0d8a451b85bacea5388c69d0e11977d21a61aed3a1834f09867"
+        }
+      }
+    },
+    "sensor_dependency:openpilot/system/sensord/sensors/mmc5603nj_magn.py": {
+      "file_sha256": "c5b78dec273b49916c9d361b257fb923ba25774e3d4d2c76fa1a04798638d965",
+      "normalized_source_sha256": "3c07fdfefbea979c414e6da0edff6685f4d80ac4c50049dd6ac5028bf7a0e7d1",
+      "path": "openpilot/system/sensord/sensors/mmc5603nj_magn.py",
+      "symbols": {
+        "MMC5603NJ_Magn:19": {
+          "normalized_ast_sha256": "aff3150aa553ce8e500cb5cf1c68aa33d34986a4836aa69495b1eac28ef126a8",
+          "source_slice_sha256": "6222f655bcef91b5c4068db35040b78ee75aabffb29ccdd1cffe6bd953231ce4"
+        },
+        "_read_data:33": {
+          "normalized_ast_sha256": "3986118d0788c6bd0bb83e790a452aee00d82fefcf786d037d0cbf82ce291700",
+          "source_slice_sha256": "a7a67d4cdd6a9b2e1a2d4c7802192f06b77c5ea01f033eaedac82259eb8671c0"
+        },
+        "device_address:21": {
+          "normalized_ast_sha256": "b3456036af331eedfb37a2642fa5530454b6c102343203680427ea390fb33910",
+          "source_slice_sha256": "8a2a92ad8dd5b1e9d030f5b0c89c07fb5b14becd84aac65ade4d5e19b53b5df3"
+        },
+        "get_event:47": {
+          "normalized_ast_sha256": "f02f384f0e6343714a9e21eb7a7f45f8580a9ed548adfb3dbb247b181e79cc0c",
+          "source_slice_sha256": "468dbdf54f008e03d00d732a34c5a6bf17afab18a63cc05a81c563ea915018da"
+        },
+        "init:24": {
+          "normalized_ast_sha256": "eb151671c7078dcb496bd5573ed9b8ecc869a7425a44f7c71282befdd9b16de1",
+          "source_slice_sha256": "a802306c63c0e3af7d67fee024d111ae77b24e0b08c05786d53600e5c4c4995c"
+        },
+        "shutdown:68": {
+          "normalized_ast_sha256": "d8b8c0dff9a38ee8e7c04293f954d92de46907b2e130ff49f834dcf18895fc1d",
+          "source_slice_sha256": "dd4f1d5a33c55a19f646449d1b90a0381fd557e3de053d746acab1d58003ba5b"
+        }
+      }
+    },
+    "sensor_main": {
+      "file_sha256": "3f3db5796ffcc429c396a3e6ef900c85bd6262517c457d1fed28db58936ec4a5",
+      "normalized_source_sha256": "803de1a3784c4a0409df0d7644ba4386c3e3ab18ce51f22aeebebb3371b049b1",
+      "path": "openpilot/system/sensord/sensord.py",
+      "symbols": {
+        "interrupt_loop:24": {
+          "normalized_ast_sha256": "d7bc0944556d1e2405a1a267e850a4c2ee72bec4d77c91c5443adddcb03f9eb5",
+          "source_slice_sha256": "07324b67313e616dfb7b6d4abfdeb7d2e05f56c8388025c4c16b44468d70eaef"
+        },
+        "main:92": {
+          "normalized_ast_sha256": "130c412ab6a8e2a0a57bb553559ed5ed32bdbcefcc7ef3fe38930dcdcaaf7f2c",
+          "source_slice_sha256": "2e3445084c919f9df3960c323a1765fe2b58613693e869658ea8570832eeef73"
+        },
+        "polling_loop:77": {
+          "normalized_ast_sha256": "c129f9c60d8ba7fe83eaa1994afa7036aff49e6c321f43afa1c0ba2805fbe7dd",
+          "source_slice_sha256": "58e579b38d904bb12d58cd0ed190801ca0acb9896e99f980b2c2f15a41be2f83"
+        }
+      }
+    },
+    "services": {
+      "file_sha256": "9f44630c58622ad7285de56b80ca357ce9797904e4c2dd46fce19bb60a84c7dd",
+      "normalized_source_sha256": "59992591ae4d97b9d6343450d012504c884e32e26fdf1283005e1f264c82d248",
+      "path": "openpilot/cereal/services.py",
+      "symbols": {
+        "QueueSize:7": {
+          "normalized_ast_sha256": "f3e0ef290871502c72ce6796694b28ce8846f49f3701adb484c1b8ca3805617c",
+          "source_slice_sha256": "9de93f340fff7074cbf61fa0cbfd11ef8b0d8779d169dc173dfa559b45cacb17"
+        },
+        "Service:13": {
+          "normalized_ast_sha256": "de0218b18b31bceedb99c53c2f20748bf824433311cb21ea6b27967428c41fdf",
+          "source_slice_sha256": "b38b7c1dbee68f4d2a6bd70e60a6493e95645dc62787f0e7cba2724df53e06b2"
+        },
+        "__init__:14": {
+          "normalized_ast_sha256": "690f37e0633a48292a72b2103910a25829569e231109218bdce500dd1f0d2d52",
+          "source_slice_sha256": "80afcac39f64f13156eb5475c8c236c69b95a338294253bb681cabcbe8faec6a"
+        },
+        "build_header:119": {
+          "normalized_ast_sha256": "1e23a1ee398da97bbda34fb9c8e673c7abd5749c73e171b60044820664db087c",
+          "source_slice_sha256": "0f38963ce18e25477669723bcb7c248d533f8bb9e9a38c7589b2f8370a13a94d"
+        }
+      }
+    }
+  },
+  "gyro": {
+    "imu_to_vehicle_transform": "UNVERIFIED",
+    "producer_identity": "EXACT_PRIOR_SOURCE_FINGERPRINT_AND_DEPENDENCY_CLOSURE",
+    "sources": [
+      "lsm6ds3",
+      "lsm6ds3trc"
+    ],
+    "unit": "SOURCE_DECLARED_RAD_PER_SECOND_DEVICE_AXES"
+  },
+  "license_status": "EXACT_LICENSE_BLOBS_BOUND_REVIEW_REQUIRED",
+  "licenses": {
+    "LICENSE": "716ce815a0467219c59ec2433e6bce7f32efc45240725c6d3141a52b111d2558"
+  },
+  "numeric_unit_or_yaw_adjudication": "NOT_RUN",
+  "production_authority": false,
+  "publication_order": "CARD_PUBLISHES_LAST_ACTUATORS_OUTPUT_THEN_UPDATES_FROM_CARCONTROL_NO_TRANSACTION_ID",
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "rate": {
+    "dbc_unit": "",
+    "factor": 4.0,
+    "layout": "16|8@1+",
+    "offset": 0,
+    "physical_unit_status": "DBC_UNIT_EMPTY_PHYSICAL_RATE_SEMANTICS_UNRESOLVED",
+    "schema_name": "steeringRateDeg",
+    "signal": "SAS11.SAS_Speed"
+  },
+  "receipt_sha256": "a9df216a7766b073f5fe55734e679fa3f4bbae029727b0d31227e9f7cde5a719",
+  "reference_promotable": false,
+  "repository": "https://github.com/ajouatom/openpilot",
+  "request_output_linkage": "REQUEST_OUTPUT_TRANSACTION_LINK_UNAVAILABLE",
+  "schema": "EMPIRICAL_CAUSAL_SIGNAL_PROVENANCE_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_fingerprint_sha256": "720f52530dfd7773350f5dcc19e7f12547ac0ce075ab3d165e197d536a15590f",
+  "source_manifest_sha256": "91f487469290c3e87b9c3fdc4f5acee0fd104b709ce18af0c55f26209b6535a4",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "yaw": {
+    "dbc_unit": "",
+    "factor": 0.01,
+    "offset": -40.95,
+    "signal": "ESP12.YAW_RATE",
+    "unit": "UNRESOLVED",
+    "vehicle_frame": "UNVERIFIED"
+  }
+}

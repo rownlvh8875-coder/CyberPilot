@@ -1,0 +1,423 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "coverage": {
+    "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677": {
+      "context": {
+        "active": 412394,
+        "active_falling": 2,
+        "active_rising": 2,
+        "eps_fault": 0,
+        "inactive": 3393,
+        "pressed_falling": 102,
+        "pressed_rising": 102,
+        "run_boundary": 24659,
+        "segment_boundary": 70,
+        "steering_pressed": 5154
+      },
+      "fields": {
+        "command.normalized": 415844,
+        "command.raw": 415844,
+        "control.lat_active": 415787,
+        "control.requested": 415787,
+        "state.angle_deg": 415837,
+        "state.driver_pressed": 415837,
+        "state.driver_torque": 415837,
+        "state.eps_fault": 415837,
+        "state.rate": 415837,
+        "state.speed_mps": 415837
+      },
+      "segments": 70,
+      "snapshot_set_sha256": "4fa770f7be230a44d9c6958eaa7fea9ac8ba46ab53c2521264b986534f87ae9b"
+    },
+    "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c": {
+      "context": {
+        "active": 419445,
+        "active_falling": 36,
+        "active_rising": 36,
+        "eps_fault": 0,
+        "inactive": 81177,
+        "pressed_falling": 374,
+        "pressed_rising": 374,
+        "run_boundary": 17302,
+        "segment_boundary": 84,
+        "steering_pressed": 22651
+      },
+      "fields": {
+        "command.normalized": 500691,
+        "command.raw": 500691,
+        "control.lat_active": 500622,
+        "control.requested": 500622,
+        "state.angle_deg": 500683,
+        "state.driver_pressed": 500683,
+        "state.driver_torque": 500683,
+        "state.eps_fault": 500683,
+        "state.rate": 500683,
+        "state.speed_mps": 500683
+      },
+      "segments": 84,
+      "snapshot_set_sha256": "f545969c5f2855a7df70d2a83d04ff51cfa9c3ee15c2a19ee861d716d37bda2b"
+    }
+  },
+  "policy_sha256": "8dee196fc4905bf3da93bc4f31c8359f7030de796019c66a64ae090aa304e9fc",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "6691ca01258e36f0610d3718ab5309c7671c32427e7125e1d50bcf2b0e373129",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_IDENTIFIABILITY_EXCITATION_V1",
+  "scopes": {
+    "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677": {
+      "adjacent_pairs": 357997,
+      "angle": {
+        "finite": 382025,
+        "float32_source_grid_compliant": 382025,
+        "negative_delta": 25088,
+        "positive_delta": 25641,
+        "unchanged_adjacent_count": 307268,
+        "unchanged_adjacent_fraction": 0.858297695232083,
+        "unique_float_levels": 931,
+        "unique_source_grid_codes": 931
+      },
+      "base_rows": 415844,
+      "command": {
+        "finite": 382025,
+        "negative": 167690,
+        "positive": 206453,
+        "rail_count": 10,
+        "request_finite": 382025,
+        "reversal_count": 4150,
+        "transition_count": 218709,
+        "unique_normalized_levels": 724,
+        "unique_raw_levels": 724,
+        "zero_count": 7882
+      },
+      "delta_angle": {
+        "count": 357997,
+        "negative": 25088,
+        "positive": 25641,
+        "unique_float_delta_levels": 203,
+        "unique_source_grid_delta_codes": 33,
+        "usage": "TARGET_AVAILABILITY_AND_EXCITATION_ONLY_NO_INPUT_RANK_OR_FEATURE_SELECTION",
+        "zero": 307268
+      },
+      "guard_admitted_rows": 382025,
+      "rate_diagnostic": {
+        "correlation_absolute_fd": 0.9697340538254577,
+        "correlation_signed_fd": 0.016323377682866815,
+        "count": 357997,
+        "fd_negative": 25088,
+        "fd_positive": 25641,
+        "fd_zero": 307268,
+        "finite_difference_timebase": "STRICTLY_POSITIVE_SELECTED_STATE_TIMESTAMP_DIFFERENCE",
+        "nonzero_rate_changed_angle": 49825,
+        "nonzero_rate_unchanged_angle": 1036,
+        "rate_at": "LATER_ADJACENT_STATE_SOURCE_TIME",
+        "rate_max": 180.0,
+        "rate_min": 0.0,
+        "rate_negative": 0,
+        "rate_over_absolute_fd_quantiles_0_50_95_100": [
+          0.0,
+          0.8265542029341213,
+          1.1100070313537007,
+          3.685197921380348
+        ],
+        "rate_positive": 50861,
+        "rate_zero": 307136,
+        "ratio_count": 50729,
+        "source_semantics_promotable": false,
+        "status": "EMPIRICAL_DIAGNOSTIC_ONLY_NOT_SOURCE_SEMANTIC_PROOF",
+        "zero_rate_changed_angle": 904,
+        "zero_rate_unchanged_angle": 306232
+      },
+      "rate_native": {
+        "finite": 382025,
+        "negative_count": 0,
+        "nonzero_count": 53446,
+        "positive_count": 53446,
+        "unique_levels": 19,
+        "zero_count": 328579,
+        "zero_fraction": 0.8600981611151103
+      },
+      "speed": {
+        "bins": {
+          "HIGH": 159968,
+          "LOW": 36475,
+          "MEDIUM": 185582
+        },
+        "quantiles_0_50_95_100_mps": [
+          5.000164985656738,
+          22.525785446166992,
+          31.897702789306642,
+          32.09180450439453
+        ],
+        "unique_levels": 365643
+      },
+      "target_by_speed": {
+        "HIGH": {
+          "count": 141258,
+          "negative": 7488,
+          "positive": 7599,
+          "unique_float_delta_levels": 53,
+          "unique_source_grid_delta_codes": 11,
+          "usage": "TARGET_AVAILABILITY_AND_EXCITATION_ONLY_NO_INPUT_RANK_OR_FEATURE_SELECTION",
+          "zero": 126171
+        },
+        "LOW": {
+          "count": 35294,
+          "negative": 4222,
+          "positive": 4180,
+          "unique_float_delta_levels": 185,
+          "unique_source_grid_delta_codes": 33,
+          "usage": "TARGET_AVAILABILITY_AND_EXCITATION_ONLY_NO_INPUT_RANK_OR_FEATURE_SELECTION",
+          "zero": 26892
+        },
+        "MEDIUM": {
+          "count": 181445,
+          "negative": 13378,
+          "positive": 13862,
+          "unique_float_delta_levels": 129,
+          "unique_source_grid_delta_codes": 20,
+          "usage": "TARGET_AVAILABILITY_AND_EXCITATION_ONLY_NO_INPUT_RANK_OR_FEATURE_SELECTION",
+          "zero": 154205
+        }
+      }
+    },
+    "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c": {
+      "adjacent_pairs": 313516,
+      "angle": {
+        "finite": 328030,
+        "float32_source_grid_compliant": 328030,
+        "negative_delta": 22705,
+        "positive_delta": 22741,
+        "unchanged_adjacent_count": 268070,
+        "unchanged_adjacent_fraction": 0.8550440806848774,
+        "unique_float_levels": 1312,
+        "unique_source_grid_codes": 1312
+      },
+      "base_rows": 500691,
+      "command": {
+        "finite": 328030,
+        "negative": 157850,
+        "positive": 164348,
+        "rail_count": 32,
+        "request_finite": 328030,
+        "reversal_count": 3110,
+        "transition_count": 183537,
+        "unique_normalized_levels": 741,
+        "unique_raw_levels": 741,
+        "zero_count": 5832
+      },
+      "delta_angle": {
+        "count": 313516,
+        "negative": 22705,
+        "positive": 22741,
+        "unique_float_delta_levels": 275,
+        "unique_source_grid_delta_codes": 43,
+        "usage": "TARGET_AVAILABILITY_AND_EXCITATION_ONLY_NO_INPUT_RANK_OR_FEATURE_SELECTION",
+        "zero": 268070
+      },
+      "guard_admitted_rows": 328030,
+      "rate_diagnostic": {
+        "correlation_absolute_fd": 0.973766723559081,
+        "correlation_signed_fd": 0.16338730910936722,
+        "count": 313516,
+        "fd_negative": 22705,
+        "fd_positive": 22741,
+        "fd_zero": 268070,
+        "finite_difference_timebase": "STRICTLY_POSITIVE_SELECTED_STATE_TIMESTAMP_DIFFERENCE",
+        "nonzero_rate_changed_angle": 44696,
+        "nonzero_rate_unchanged_angle": 735,
+        "rate_at": "LATER_ADJACENT_STATE_SOURCE_TIME",
+        "rate_max": 200.0,
+        "rate_min": 0.0,
+        "rate_negative": 0,
+        "rate_over_absolute_fd_quantiles_0_50_95_100": [
+          0.0,
+          0.8284107362617967,
+          1.1289786152268464,
+          5.446932753006262
+        ],
+        "rate_positive": 45431,
+        "rate_zero": 268085,
+        "ratio_count": 45446,
+        "source_semantics_promotable": false,
+        "status": "EMPIRICAL_DIAGNOSTIC_ONLY_NOT_SOURCE_SEMANTIC_PROOF",
+        "zero_rate_changed_angle": 750,
+        "zero_rate_unchanged_angle": 267335
+      },
+      "rate_native": {
+        "finite": 328030,
+        "negative_count": 0,
+        "nonzero_count": 47598,
+        "positive_count": 47598,
+        "unique_levels": 21,
+        "zero_count": 280432,
+        "zero_fraction": 0.8548974179190928
+      },
+      "speed": {
+        "bins": {
+          "HIGH": 81496,
+          "LOW": 118882,
+          "MEDIUM": 127652
+        },
+        "quantiles_0_50_95_100_mps": [
+          5.0000319480896,
+          19.766411781311035,
+          29.294543552398682,
+          32.07707977294922
+        ],
+        "unique_levels": 323004
+      },
+      "target_by_speed": {
+        "HIGH": {
+          "count": 76552,
+          "negative": 4452,
+          "positive": 4374,
+          "unique_float_delta_levels": 50,
+          "unique_source_grid_delta_codes": 9,
+          "usage": "TARGET_AVAILABILITY_AND_EXCITATION_ONLY_NO_INPUT_RANK_OR_FEATURE_SELECTION",
+          "zero": 67726
+        },
+        "LOW": {
+          "count": 114660,
+          "negative": 10795,
+          "positive": 10575,
+          "unique_float_delta_levels": 272,
+          "unique_source_grid_delta_codes": 43,
+          "usage": "TARGET_AVAILABILITY_AND_EXCITATION_ONLY_NO_INPUT_RANK_OR_FEATURE_SELECTION",
+          "zero": 93290
+        },
+        "MEDIUM": {
+          "count": 122304,
+          "negative": 7458,
+          "positive": 7792,
+          "unique_float_delta_levels": 109,
+          "unique_source_grid_delta_codes": 23,
+          "usage": "TARGET_AVAILABILITY_AND_EXCITATION_ONLY_NO_INPUT_RANK_OR_FEATURE_SELECTION",
+          "zero": 107054
+        }
+      }
+    },
+    "POOLED": {
+      "adjacent_pairs": 671513,
+      "angle": {
+        "finite": 710055,
+        "float32_source_grid_compliant": 710055,
+        "negative_delta": 47793,
+        "positive_delta": 48382,
+        "unchanged_adjacent_count": 575338,
+        "unchanged_adjacent_fraction": 0.8567786476211183,
+        "unique_float_levels": 1420,
+        "unique_source_grid_codes": 1420
+      },
+      "base_rows": 916535,
+      "command": {
+        "finite": 710055,
+        "negative": 325540,
+        "positive": 370801,
+        "rail_count": 42,
+        "request_finite": 710055,
+        "reversal_count": 7260,
+        "transition_count": 402246,
+        "unique_normalized_levels": 754,
+        "unique_raw_levels": 754,
+        "zero_count": 13714
+      },
+      "delta_angle": {
+        "count": 671513,
+        "negative": 47793,
+        "positive": 48382,
+        "unique_float_delta_levels": 297,
+        "unique_source_grid_delta_codes": 43,
+        "usage": "TARGET_AVAILABILITY_AND_EXCITATION_ONLY_NO_INPUT_RANK_OR_FEATURE_SELECTION",
+        "zero": 575338
+      },
+      "guard_admitted_rows": 710055,
+      "rate_diagnostic": {
+        "correlation_absolute_fd": 0.9720803919579826,
+        "correlation_signed_fd": 0.10284304881581328,
+        "count": 671513,
+        "fd_negative": 47793,
+        "fd_positive": 48382,
+        "fd_zero": 575338,
+        "finite_difference_timebase": "STRICTLY_POSITIVE_SELECTED_STATE_TIMESTAMP_DIFFERENCE",
+        "nonzero_rate_changed_angle": 94521,
+        "nonzero_rate_unchanged_angle": 1771,
+        "rate_at": "LATER_ADJACENT_STATE_SOURCE_TIME",
+        "rate_max": 200.0,
+        "rate_min": 0.0,
+        "rate_negative": 0,
+        "rate_over_absolute_fd_quantiles_0_50_95_100": [
+          0.0,
+          0.82746252932061,
+          1.1195159506357655,
+          5.446932753006262
+        ],
+        "rate_positive": 96292,
+        "rate_zero": 575221,
+        "ratio_count": 96175,
+        "source_semantics_promotable": false,
+        "status": "EMPIRICAL_DIAGNOSTIC_ONLY_NOT_SOURCE_SEMANTIC_PROOF",
+        "zero_rate_changed_angle": 1654,
+        "zero_rate_unchanged_angle": 573567
+      },
+      "rate_native": {
+        "finite": 710055,
+        "negative_count": 0,
+        "nonzero_count": 101044,
+        "positive_count": 101044,
+        "unique_levels": 21,
+        "zero_count": 609011,
+        "zero_fraction": 0.8576955306279092
+      },
+      "speed": {
+        "bins": {
+          "HIGH": 241464,
+          "LOW": 155357,
+          "MEDIUM": 313234
+        },
+        "quantiles_0_50_95_100_mps": [
+          5.0000319480896,
+          21.377527236938477,
+          31.865633392333983,
+          32.09180450439453
+        ],
+        "unique_levels": 679661
+      },
+      "target_by_speed": {
+        "HIGH": {
+          "count": 217810,
+          "negative": 11940,
+          "positive": 11973,
+          "unique_float_delta_levels": 57,
+          "unique_source_grid_delta_codes": 11,
+          "usage": "TARGET_AVAILABILITY_AND_EXCITATION_ONLY_NO_INPUT_RANK_OR_FEATURE_SELECTION",
+          "zero": 193897
+        },
+        "LOW": {
+          "count": 149954,
+          "negative": 15017,
+          "positive": 14755,
+          "unique_float_delta_levels": 291,
+          "unique_source_grid_delta_codes": 43,
+          "usage": "TARGET_AVAILABILITY_AND_EXCITATION_ONLY_NO_INPUT_RANK_OR_FEATURE_SELECTION",
+          "zero": 120182
+        },
+        "MEDIUM": {
+          "count": 303749,
+          "negative": 20836,
+          "positive": 21654,
+          "unique_float_delta_levels": 141,
+          "unique_source_grid_delta_codes": 23,
+          "usage": "TARGET_AVAILABILITY_AND_EXCITATION_ONLY_NO_INPUT_RANK_OR_FEATURE_SELECTION",
+          "zero": 261259
+        }
+      }
+    }
+  },
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

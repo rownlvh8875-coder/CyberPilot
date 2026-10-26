@@ -1,0 +1,56 @@
+{
+  "binding_sha256": "35e8847f07105059f0a7f8d30f638f4467cabef9e64409f627d7995ad2460202",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "groups": [
+    {
+      "domain_conflicts": 0,
+      "eligible": 564149,
+      "exact_ratio_match_count": 109134,
+      "float32_expected_exact_count": 564149,
+      "invalid": 22,
+      "mismatch_taxonomy": {
+        "FLOAT32_RELATION": 0,
+        "INVALID_OR_NONFINITE": 22,
+        "SIGN": 0,
+        "SOURCE_DOMAIN": 0
+      },
+      "normalized_saturated_count": 45,
+      "physical_applied_command_acknowledged": false,
+      "raw_saturated_count": 45,
+      "residual": {
+        "BIAS": 1.05882162704345e-11,
+        "CORRELATION": 1.0,
+        "MAE": 1.4345874937958407e-09,
+        "MAX_ABS": 2.9729456119120812e-08,
+        "MEDIAN_ABS": 6.512426813098937e-10,
+        "P95_ABS": 5.42854039498053e-09,
+        "RMSE": 2.6718189467193554e-09,
+        "count": 564149
+      },
+      "runtime_setting_known": true,
+      "sign_conflicts": 0,
+      "status": "RAW_TO_NORMALIZED_COMMAND_CONFIRMED",
+      "steer_max": 409,
+      "total": 564171
+    }
+  ],
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "272f6b3823d20007b7bfe0dfb935685b3ad7dcee89ae5e70cc3bf788331dd69f",
+  "reference_promotable": false,
+  "same_message_pairs": true,
+  "schema": "EMPIRICAL_COMMAND_BRIDGE_V1",
+  "sealed_reference_allowed": false,
+  "segment_status_counts": {
+    "RAW_TO_NORMALIZED_COMMAND_CONFIRMED": 94
+  },
+  "segments": 94,
+  "sg_execution": false,
+  "source_sha256": "bf903fa6f10ceaa0fd4529436f151f110580dd98ac8b43610886f0289a487f08",
+  "status": "RAW_TO_NORMALIZED_COMMAND_CONFIRMED",
+  "ta_execution": false,
+  "units": "RAW_CAN_AND_NORMALIZED_POST_CARCONTROLLER",
+  "vehicle_activation_allowed": false
+}

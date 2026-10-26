@@ -1,0 +1,168 @@
+{
+  "actual_admitted_receipt_count": 0,
+  "actual_measurement_count": 0,
+  "artifacts_sha256": {
+    "docs/cyberpilot/changes/physical-calibration-field-guide.md": "b4c6352a4295afd84734c5c9fdfc73adc900d70f741d1b5ae78d9da500a3299f",
+    "docs/cyberpilot/changes/physical-calibration-field-wizard.md": "980443f387f87122569404e7a02c3293eb0efae0f1380e67d98a3239a1e1a8f4",
+    "docs/cyberpilot/changes/physical-calibration-wizard-pending-v1.json": "03254cd9ab186375a1e86fb8317fc26d1811d42420a492b5761cf6413b63401d",
+    "docs/cyberpilot/changes/physical-calibration-wizard-plan.md": "ad80e66aaa31f7c944f0a149fce864b224589a406f5221ef9db85565b590bb1b",
+    "openpilot/tools/cyber_autotune/physical_calibration_assets/wizard.css": "3f849eb9f00cc4297ada127ab4a97f31c2bad56ad0a47e4950ebd463eafc1a84",
+    "openpilot/tools/cyber_autotune/physical_calibration_assets/wizard.html": "3d11c4a52e9fa3eda0de068c026daa16372d598b3d9eff01beeb0f9ac86327a5",
+    "openpilot/tools/cyber_autotune/physical_calibration_assets/wizard.js": "4509e25d26767678be404b8b795de3f7f992dc86092ee50b95147b7ebcc3a52c",
+    "openpilot/tools/cyber_autotune/physical_calibration_wizard.py": "07e2bcaf878486395790c675151678f3756579336834ecb315e281e00ee3afd7",
+    "openpilot/tools/cyber_autotune/physical_calibration_wizard_ui.py": "e95758058a96192b24c7733fec35cf1ecccc9559e827961e3927288da6ad0546",
+    "openpilot/tools/cyber_autotune/tests/test_physical_calibration_wizard.py": "316d3abf966daa2d5df0ed4aa0c4b5d1773b993212aaa8deb1cc61f0fa4dcc19",
+    "openpilot/tools/cyber_autotune/tests/test_physical_calibration_wizard_ui.py": "0ee95075e71dabd60ece75fc9555f91f21ea906ede5821a4d5205bcd7cbaceae"
+  },
+  "authoritative_admission_identity_sha256": "6cb9d043fc55418b88aa58dbd37b83a19ba91b5b90c9a8691b7b34cc5d0f653a",
+  "baseline_contracts_results_production_files_changed": false,
+  "baseline_sha": "926b86e0de1120fe195a1648fc02eb1a3a985e21",
+  "branch": "feature/cyber-autotune",
+  "calibration_status": "CALIBRATION_MEASUREMENT_PENDING",
+  "checks": {
+    "authority_privacy": {
+      "exit_code": 0,
+      "grep_sha256": "b9a29aa9ffb4ccee35bda3d53aeed242acd6eb87b53912c67d8ba417d3132eb6",
+      "log_sha256": "a25a53d164f769a0110ae7d0b0827b05fd491f11eae0f543ae25a0c34e73f11b",
+      "method": "AST_import_call_audit_plus_authority_grep; old_tracked_files_unchanged; text_only_public_artifacts",
+      "permitted_network": "127.0.0.1_ONLY_EXPLICIT_LOCAL_UI_NOT_PRODUCTION",
+      "raw_images_weights_logs_committed": false,
+      "status": "PASS"
+    },
+    "browser": {
+      "actual_engine": "Google_Chrome_154.0.8037.98",
+      "actual_physical_measurements": false,
+      "result": {
+        "admitted_immutable": true,
+        "blank_defaults": true,
+        "degree_provenance": true,
+        "draft_save_reload": true,
+        "explicit_attachment": true,
+        "external_requests": [],
+        "failed_resources": [],
+        "invalid_preflight": true,
+        "js_errors": [],
+        "private_comma4": "NOT_OPENED",
+        "real_measurements": false,
+        "receipt_preview": true,
+        "refresh_persistence": true,
+        "stages": 8,
+        "static_not_measured": true,
+        "status": "PASS_TEST_ONLY"
+      },
+      "result_sha256": "22b4b8f428ac8e36cb76ff6b95bc576280aa8ec2c90bbe6160b38d1184804e34",
+      "server_clean_shutdown": true,
+      "shutdown_log_sha256": "2f9acb02faa121bb2a3621951f57b4c690655337edee2e5ac350be2b3be88ea8",
+      "status": "PASS_TEST_ONLY",
+      "test_session_tool_binding_sha256": "449ea50c96e718f810256e6f367570bb81b752776adb30ccb82a2bb4fa844f94"
+    },
+    "diff": {
+      "command": "git diff --cached --check; git diff --check",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "PASS"
+    },
+    "focused": {
+      "exit_code": 0,
+      "expanded_log_sha256": "1cd318361cee6f35e33bac38ce0a2e9ddef15536aa35ae9f0700d9feab92ad6d",
+      "expanded_passed": 88,
+      "log_sha256": "fe0208c2e03c186560083b1811991e3072e4ad629ad2448294d740b68486c20a",
+      "new_tests_passed": 40,
+      "status": "PASS"
+    },
+    "full_autotune": {
+      "baseline_passed": 1359,
+      "command": ".venv/bin/python tools/test_runner.py -j2 openpilot/tools/cyber_autotune",
+      "elapsed_seconds": 304.08,
+      "exit_code": 0,
+      "failed": 0,
+      "log_sha256": "1f149278fc45a36ca0bbc740984a5f044cf1ebccfa5ed56108abd41245d8613a",
+      "new_tests": 40,
+      "passed": 1399,
+      "status": "PASS"
+    },
+    "independent_review": {
+      "focused_independently_passed": 40,
+      "limits": "NO_PHYSICAL_METROLOGY_VALIDATION_OR_PRIVATE_INPUT; BROWSER_FULL_RUN_EXECUTED_BY_PRIMARY",
+      "log_sha256": "3a1e7e93c245d5e95b5b7fc8947bdc34a80f1b6d8b8283c0c1f1543d10572437",
+      "minor_doc_overclaim_corrected": true,
+      "outstanding_critical_important": 0,
+      "role": "SEPARATE_READ_ONLY_CODE_AND_METADATA_REVIEWER",
+      "status": "PASS_AFTER_FIXES"
+    },
+    "publication": {
+      "command": ".venv/bin/python tools/cyberpilot/check_publication.py --repo . --base origin/main",
+      "exit_code": 0,
+      "files": 630,
+      "findings": 0,
+      "log_sha256": "551855c09794cc7d75b59f228b8f618f1a0d5cfac134c7c88fed9ab08df6f239",
+      "status": "PASS"
+    },
+    "publication_final": {
+      "command": ".venv/bin/python tools/cyberpilot/check_publication.py --repo . --base origin/main",
+      "exit_code": 0,
+      "files": 631,
+      "findings": 0,
+      "log_sha256": "feda5112b3a332b4d91095b6a18961dab6d4a8adbba52e8b65f67fdbf49b3d8d",
+      "status": "PASS"
+    },
+    "ruff": {
+      "command": ".venv/bin/ruff check openpilot/tools/cyber_autotune",
+      "exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "status": "PASS"
+    },
+    "scons": {
+      "command": "export PATH=\"$PWD/.venv/bin:$PATH\"; .venv/bin/scons -j2",
+      "exit_code": 0,
+      "log_sha256": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056",
+      "progress_percent": 100,
+      "status": "PASS"
+    },
+    "syntax": {
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "py_compile_four_new_modules_and_tests; JS_executed_in_actual_browser",
+      "status": "PASS"
+    },
+    "tdd": {
+      "fixed_cases": [
+        "MISSING_MODEL_AND_LOOPBACK_UI",
+        "SOURCE_DRIFT_AND_ROOT_SUBSTITUTION",
+        "PHONE_TIER_MISDECLARATION",
+        "INSTRUMENT_DIMENSION_MISMATCH",
+        "PER_OBSERVATION_TARGET_METHOD_BYPASS",
+        "DANGLING_ADMISSION_MARKER_SYMLINK"
+      ],
+      "red_logs_sha256": {
+        "instrument-red.log": "9d7951911ce4e134633762e51d300b7eea4e6fbb4176adad190102b9866e45e4",
+        "integrity-red.log": "100c23c094b271de935c1a9fb0b859fc3acecc6bf383c14f76732f8b8232ed21",
+        "model-red.log": "2bd8841f9e3178794c572154934bbd587bfb0c85782be31a6a384187192dddbb",
+        "target-marker-red.log": "61dd30aeacf2a8d99a75585b0981bf7acfe167ddf535680e0444c84602a0d2af",
+        "ui-red.log": "23ff72016d1186392048b34b81cbc83b1942b8938829b3e06154ceb97caef0f9"
+      },
+      "status": "PASS_RED_THEN_GREEN"
+    }
+  },
+  "environment": {
+    "browser": "Google_Chrome_154.0.8037.98",
+    "browser_driver": "EXISTING_BUNDLED_PLAYWRIGHT",
+    "new_dependencies": false,
+    "os": "Ubuntu24.04_WSL_on_Windows",
+    "python": "3.12.13",
+    "scope": "CONSTRUCTED_TEST_ONLY_NO_ACTUAL_MEASUREMENTS"
+  },
+  "environment_sha256": "cede6b4ba7a5906ec75b8ec06fcbe1202ee2087944bb8a574e2861462dff7f99",
+  "independent_validation_status": "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+  "private_comma4": "NOT_OPENED",
+  "receipt_sha256": "154dc9b747945cd10632547241a644a0a790846ac45fc2aec1044714c64c909d",
+  "reference_status": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "schema": "PHYSICAL_CALIBRATION_WIZARD_VALIDATION_V1",
+  "sealed_reference": "NOT_GENERATED",
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "wizard_tool_sha256": "449ea50c96e718f810256e6f367570bb81b752776adb30ccb82a2bb4fa844f94"
+}

@@ -1,0 +1,66 @@
+name: CyberPilot Canonical Runtime Lab
+
+'on':
+  push:
+    branches: [feature/cyber-autotune]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  GIT_LFS_SKIP_SMUDGE: '1'
+  PYTHONDONTWRITEBYTECODE: '1'
+  OPENBLAS_NUM_THREADS: '1'
+  OMP_NUM_THREADS: '1'
+  MKL_NUM_THREADS: '1'
+  NUMEXPR_NUM_THREADS: '1'
+
+jobs:
+  runtime:
+    name: OFFLINE_CANONICAL_NATIVE_AND_RUNTIME_CI
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - name: Checkout public source only
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          lfs: false
+          submodules: false
+          persist-credentials: false
+      - name: Exact qualified Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12.13'
+          architecture: x64
+          check-latest: false
+      - name: Pinned public numerical wheels
+        run: |
+          python -m pip --isolated install --index-url https://pypi.org/simple --only-binary=:all: --require-hashes -r tools/cyberpilot/numerical-offline-requirements.txt
+      - name: Explicit separate native build and disassembly qualification
+        run: |
+          test "$(gcc-13 -dumpfullversion)" = '13.3.0'
+          timeout 60s python -B tools/cyberpilot/run_canonical_runtime_feasibility.py --build "$RUNNER_TEMP/canonical-native-lab" > "$RUNNER_TEMP/native-build.json"
+          cat "$RUNNER_TEMP/native-build.json"
+      - name: Byte exact numerical ABI and authority tests
+        run: |
+          RECEIPT="$RUNNER_TEMP/canonical-native-lab/build.json"
+          DIGEST=$(sha256sum "$RECEIPT" | cut -d' ' -f1)
+          timeout 2400s python -B tools/cyberpilot/run_canonical_runtime_feasibility.py --receipt "$RECEIPT" --receipt-sha256 "$DIGEST" --tests
+      - name: Fixed synthetic kernel Stage1 D2 recursion and frozen caller measurements
+        run: |
+          RECEIPT="$RUNNER_TEMP/canonical-native-lab/build.json"
+          DIGEST=$(sha256sum "$RECEIPT" | cut -d' ' -f1)
+          timeout 2400s python -B tools/cyberpilot/run_canonical_runtime_feasibility.py --receipt "$RECEIPT" --receipt-sha256 "$DIGEST" --benchmark-output "$RUNNER_TEMP/canonical-runtime-measurements.json"
+      - name: Scoped Ruff and syntax
+        run: |
+          python -m ruff check openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_native_candidate.py openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_runtime_model.py openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_native_candidate.py openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_runtime_feasibility.py tools/cyberpilot/run_canonical_runtime_feasibility.py
+          python -m compileall -q openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_native_candidate.py openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_runtime_model.py openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_native_candidate.py openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_runtime_feasibility.py tools/cyberpilot/run_canonical_runtime_feasibility.py
+      - name: Publication frozen source and clean scope
+        run: |
+          python -B tools/cyberpilot/check_publication.py --base 1608205ff68ae5fe3182c303726c51e3831595ed
+          git diff --check 1608205ff68ae5fe3182c303726c51e3831595ed HEAD
+          test -z "$(git status --porcelain)"
+          echo 'OFFLINE_CANONICAL_NATIVE_AND_RUNTIME_CI; FULL_CI and private runtime NOT certified'

@@ -1,0 +1,172 @@
+{
+  "actual_complete_calibration_submissions": 0,
+  "actual_target_solves": 0,
+  "authority": "PASS_NO_PRODUCTION_DETECTOR_HOLDOUT_OR_STRICT_ADMISSION_CHANGES",
+  "baseline_ci_run": 37897968495,
+  "baseline_sha": "99670290150be22de2bd65c88490d7d263ece175",
+  "browser": {
+    "checks": [
+      "blank_until_explicit_load",
+      "1.385_preserved",
+      "no_uncertainty_or_instrument_defaults",
+      "draft_save_reload",
+      "eight_stages",
+      "pending_preflight",
+      "mobile_DPR2"
+    ],
+    "clean_server_shutdown": "PASS",
+    "external_requests": 0,
+    "failed_requests": 0,
+    "js_errors": 0,
+    "private_images_used": false,
+    "process_restart_persistence": "PASS",
+    "status": "PASS"
+  },
+  "commands": {
+    "focused": ".venv/bin/python -m unittest -q openpilot.tools.cyber_autotune.tests.test_physical_height_observation openpilot.tools.cyber_autotune.tests.test_physical_calibration_wizard openpilot.tools.cyber_autotune.tests.test_physical_calibration_wizard_ui openpilot.tools.cyber_autotune.tests.test_camera_calibration_evidence openpilot.tools.cyber_autotune.tests.test_stationary_target_calibration openpilot.tools.cyber_autotune.tests.test_stationary_target_ui openpilot.tools.cyber_autotune.tests.test_physical_projection_uncertainty openpilot.tools.cyber_autotune.tests.test_qcamera_pixel_registration",
+    "full": ".venv/bin/python tools/test_runner.py openpilot/tools/cyber_autotune/tests openpilot/selfdrive/controls/tests -j 1",
+    "publication": ".venv/bin/python tools/cyberpilot/check_publication.py --base origin/main",
+    "replay": ".venv/bin/python -m unittest -q openpilot.selfdrive.test.process_replay.test_cyber_lateral_card_replay openpilot.selfdrive.test.process_replay.test_cyber_lateral_native_experiment",
+    "ruff": ".venv/bin/ruff check tools/cyberpilot openpilot/tools/cyber_autotune openpilot/selfdrive/controls/lib/cyber_lateral openpilot/selfdrive/controls/lib/cyber_long openpilot/selfdrive/controls/tests/test_cyber_*.py openpilot/selfdrive/test/process_replay/*cyber_lateral*.py",
+    "scons": "export PATH=\"$PWD/.venv/bin:$PATH\"; .venv/bin/scons -j2",
+    "syntax": ".venv/bin/python -m compileall -q openpilot/tools/cyber_autotune tools/cyberpilot",
+    "whitespace": "git diff --check; git diff --cached --check"
+  },
+  "detector_inference": false,
+  "diff_check": "PASS",
+  "environment": {
+    "distribution": "Ubuntu 24.04 WSL",
+    "numpy": "2.5.3",
+    "platform": "Linux",
+    "python": "3.12.13"
+  },
+  "focused": {
+    "exit_code": 0,
+    "failed": 0,
+    "passed": 139
+  },
+  "focused_replay": {
+    "exit_code": 0,
+    "failed": 0,
+    "passed": 16
+  },
+  "full_regression": {
+    "autotune": 1726,
+    "controls": 142,
+    "exit_code": 0,
+    "failed": 0,
+    "passed": 1868
+  },
+  "github_actions": "POST_PUSH_VERIFICATION_REQUIRED_NOT_YET_RUN_FOR_NEW_COMMIT",
+  "height_observed_mean_m": 1.385,
+  "height_uncertainty": null,
+  "independent_review": "PASS_AFTER_SOURCE_DRIFT_REGRESSION_FIX_NO_REMAINING_FINDINGS",
+  "new_tests": 15,
+  "numeric_meter_results": null,
+  "privacy": "PASS_NO_RAW_INPUTS_PATHS_TIMESTAMPS_OR_HUMAN_COORDINATES",
+  "private_inputs_opened": false,
+  "publication": "PASS_ZERO_FINDINGS_RECHECK_AFTER_THIS_RECEIPT",
+  "qualification_allowed": false,
+  "receipt_sha256": "953ce7bb38cb594ba1154a6c7146ce9be738cca66993dae84c56432e00cbfebb",
+  "receipts": {
+    "physical-height-coarse-consistency-v1.json": "a3f026b0472ad2d36db3220c9b16568f198f9f9139f48420ecda4ff7ff692599",
+    "physical-height-diagnostic-context-v1.json": "4b0e969b0c05eb988e77165c1de3b36ee8ba7ea3c37817896d9c447a351b74c3",
+    "physical-height-observation-v1.json": "bc6eada2f78d371aaacc34b4c0ce86f46c89056a0574e3f981f32b9807fe7802",
+    "physical-height-readiness-v1.json": "22d2616decfc1c69aa76871fc38d633124079a652e52d4bb92c1bc49f816e09d",
+    "physical-height-sensitivity-derivative-v1.json": "f659c59366af96fdbb989bc1ac86958fbf408f2c1f54b73f5b1289ae24832c3a"
+  },
+  "reference_promotable": false,
+  "ruff": "PASS",
+  "schema": "PHYSICAL_HEIGHT_OBSERVATION_SOFTWARE_VALIDATION_V1",
+  "scons": "PASS",
+  "sealed_reference_allowed": false,
+  "source_files": {
+    "docs/cyberpilot/changes/physical-height-coarse-consistency-v1.json": "31641554cca407cd6f1d11d05307f410a1931318089bdb704fcfd156c16b5778",
+    "docs/cyberpilot/changes/physical-height-diagnostic-context-v1.json": "d0072e9026586db9caf4dc4f73e05b70a7bc979711e8a1a417eed8addbd5c842",
+    "docs/cyberpilot/changes/physical-height-observation-v1.json": "78f57215f13856481cf62d7b4957a9ae41cce2d2ce7dbbfb01c8a296abaf0986",
+    "docs/cyberpilot/changes/physical-height-observation.md": "dae143a579ad9da63fb87233493394853ba3d77d1e71277d2b51bc809c8918dc",
+    "docs/cyberpilot/changes/physical-height-readiness-v1.json": "f973b1b0ad21195f4b4eb1473f96578ce9328a2080358ed43b76fc4a35649f58",
+    "docs/cyberpilot/changes/physical-height-sensitivity-derivative-v1.json": "091e8f849e1f8b7a26149029c0014d340feddbc30830aaf5ef0c4dadded3d68b",
+    "openpilot/tools/cyber_autotune/physical_calibration_assets/wizard.html": "52164bcc156125a8c4b58f22aefe1781160ce4a390eba33ada4ed4d585c8485b",
+    "openpilot/tools/cyber_autotune/physical_calibration_assets/wizard.js": "f0b48eca79986f4a432853b2a4f57f92bce6226ef5747f849dc36ec997031426",
+    "openpilot/tools/cyber_autotune/physical_calibration_wizard.py": "a87a6ee8bd557ff39d32ea674d7295038608241199cfb729f75302e6375e718e",
+    "openpilot/tools/cyber_autotune/physical_calibration_wizard_ui.py": "8f4127d9bbf02c88110449cf08a41e18c32f885618a8212a8e9602cfd4d49299",
+    "openpilot/tools/cyber_autotune/physical_height_observation.py": "7f2f79b0c1447dd47de9136adbab2d283fcecf0caf1bce0bea8691eab2c1b791",
+    "openpilot/tools/cyber_autotune/tests/test_physical_height_observation.py": "150e400d782e507e33764ed416c406bc35bd3fb14338397dec78266566b55083"
+  },
+  "state": {
+    "blockers": [
+      "CALIBRATION_UNCERTAINTY_PENDING",
+      "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+      "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+      "METRIC_CALIBRATION_UNAVAILABLE",
+      "INDEPENDENT_REFERENCE_UNAVAILABLE"
+    ],
+    "full_calibration_status": "CALIBRATION_MEASUREMENT_PENDING",
+    "height_observation_sha256": "bc6eada2f78d371aaacc34b4c0ce86f46c89056a0574e3f981f32b9807fe7802",
+    "height_status": "PHYSICAL_HEIGHT_OBSERVATION_AVAILABLE",
+    "independent_calibration_validated": false,
+    "meter_result_required_gates": [
+      "PIXEL_GEOMETRY_REGISTRATION_VALIDATED",
+      "INDEPENDENT_CALIBRATION_VALIDATION"
+    ],
+    "meter_results": null,
+    "nodes": [
+      {
+        "code": "PHYSICAL_HEIGHT_OBSERVATION_AVAILABLE",
+        "evidence_sha256": "bc6eada2f78d371aaacc34b4c0ce86f46c89056a0574e3f981f32b9807fe7802",
+        "resolves_calibration_dependencies": false,
+        "status": "RECORDED_NOT_ADMITTED"
+      }
+    ],
+    "pending_components": [
+      "FORMAL_HEIGHT_UNCERTAINTY",
+      "PHYSICAL_PITCH",
+      "PHYSICAL_ROLL",
+      "PHYSICAL_YAW",
+      "TARGET_POSE_VALIDATION",
+      "INTRINSICS_APPLICABILITY",
+      "DISTORTION",
+      "QCAMERA_MAPPING_RESIDUAL"
+    ],
+    "pixel_registration_sha256": "731604c1ea54f26f9e072e7f903eeb5cba37b0f29b62e9f5b76c7e566c8227a4",
+    "pixel_registration_status": "PIXEL_GEOMETRY_REGISTRATION_PARTIAL",
+    "private_input_access_this_increment": "NOT_OPENED",
+    "private_input_allowed": false,
+    "qualification_allowed": false,
+    "receipt_sha256": "22d2616decfc1c69aa76871fc38d633124079a652e52d4bb92c1bc49f816e09d",
+    "reference_promotable": false,
+    "schema": "PHYSICAL_HEIGHT_ADDITIVE_READINESS_V1",
+    "sealed_reference": "NOT_GENERATED",
+    "sealed_reference_allowed": false,
+    "source_sha256": "eab878bbd6e4718b84a6c820c17b27a10b110428d9fa78aadd3603d128ae4edb",
+    "uncertainty_status": "CALIBRATION_UNCERTAINTY_PENDING",
+    "vehicle": [
+      "NOT_READY",
+      "REAL_VEHICLE_UNVERIFIED",
+      "VEHICLE_ACTIVATION_BLOCKED"
+    ],
+    "vehicle_activation_allowed": false
+  },
+  "syntax": "PASS",
+  "tdd": {
+    "initial_full_run": "INTERRUPTED_SUPERSEDED_BY_FINAL_SOURCE_RUN",
+    "initial_missing_implementation": "14 EXPECTED_FAILURES_THEN_PASS",
+    "source_drift": "1 EXPECTED_FAILURE_THEN_PASS"
+  },
+  "test_log_sha256": {
+    "browser-result.json": "3696e3f08291281423b649b777ad9e61467057c24946229c23d58c2fbc01f793",
+    "browser-server.py": "db409f7b654ee552a2c76d7b1a0cc7f28bd62094c3cd7067069811c7426ddd15",
+    "browser-test.cjs": "c33f8b51f2568ff9d045d46ef83049c7df3e883bd5c2cfdb7e43d336268b834a",
+    "focused.log": "35a808c1f159275e94e980cea9c8be821dc23965a6fd6e880caee27304eece8f",
+    "full-regression.log": "954bd4dbba2af3f2a362dbdb369fbc7e4f769faaaaa13bc8f2af027f83362dc7",
+    "privacy-authority.log": "467adb4f154080a24a588745d746c0fdf5848a2d18d628f93af61e4f99f9999e",
+    "red.log": "928d14b032317035d940813c129e97f61c6af04fcacb4dad9786b18826d660a7",
+    "replay.log": "0e6f1dbf63a4a3ce17584cad045cec7ba756537cb7b5c3eadd555e38554e3401",
+    "review-red.log": "042c8e9ea5b4e301d945ae706c3b381a0f6550601bd1efc225404799e0bc2b29",
+    "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "scons.log": "870f4ab033b2c85dbd11bd689b1dedd563221b66b4fdd762fa7cd9a0cf82f056",
+    "syntax.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "vehicle_activation_allowed": false
+}

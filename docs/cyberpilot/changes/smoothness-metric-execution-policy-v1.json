@@ -1,0 +1,80 @@
+{
+  "base_trajectory_metric_policy_sha256": "2af46ff521830760cbf9639eb1f96006f109b202de6c46c2fcf6f970f60cc739",
+  "base_trajectory_metrics": "Reuse pinned source implementation, same phase/lag/distance/coverage semantics; separate new receipt",
+  "contiguous": "strict index/time order; gaps rejected",
+  "coverage": "valid/total/unavailable everywhere; empty=null, n<3 small_support",
+  "derivative": "backward adjacent finite .01s pairs; PRIMARY includes all interventions/reset boundaries",
+  "distance": {
+    "coordinate": "observed pose_x_m, updated-heading Euler plant integration",
+    "interpolation": "piecewise linear on strictly increasing observed x; no extrapolation",
+    "queries_m": [
+      5.0,
+      10.0,
+      15.0,
+      20.0,
+      25.0,
+      30.0
+    ],
+    "secondary": "full observed distance descriptive only; no meter envelope classification"
+  },
+  "dt_s": 0.01,
+  "events": {
+    "expected_support": 100,
+    "mask": "all finite samples; boundary jump separately recorded",
+    "offset_samples_inclusive": [
+      0,
+      99
+    ]
+  },
+  "floating_tolerance": {
+    "repeatability": "EXACT_CANONICAL_JSON",
+    "sign_zero": "EXACT_ZERO",
+    "time_abs_s": 1e-12
+  },
+  "lag": {
+    "ambiguity": "exact tied maxima -> ambiguous descriptive value; flat/insufficient=null",
+    "cross_phase_or_reset": false,
+    "estimator": "demeaned_normalized_cross_correlation",
+    "search_samples_inclusive": [
+      -100,
+      100
+    ],
+    "search_source": "native 1s demand history / .01s",
+    "sign": "positive means actual follows desired",
+    "tie_break": "max correlation then minimum absolute lag then signed lag"
+  },
+  "minimum_support": {
+    "derivative": 2,
+    "distribution": 1,
+    "spectrum": 4
+  },
+  "performance_threshold": null,
+  "phases": "Use frozen exogenous scenario labels ENTRY/APEX/EXIT/REVERSAL/STRAIGHT; never infer from outputs",
+  "production_authority": false,
+  "qualification_allowed": false,
+  "quantiles": "numpy linear p50/p90/p95/max; RMS separately; no weighted score",
+  "receipt_sha256": "547a85da3b30491c2668660e145142773d178d9a6217dfaf65f854f75e0665eb",
+  "reference_promotable": false,
+  "saturation": "CORE_INPUT_SATURATED=abs(input)==1; OUTPUT=abs(output)==1; LIMIT_ACTIVE=output!=input",
+  "saturation_transitions": "adjacent boolean change; never infer native prelimit intent",
+  "schema": "SMOOTHNESS_METRIC_EXECUTION_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "secondary_mask": "active not pressed contiguous pairs, never join gaps/resets; disclose separately",
+  "settling": "exact final constant-input run; first sample after which output==constant input for remainder; no tolerance threshold",
+  "sign_reversal": "remove exact zeros within contiguous series, count nonzero sign changes",
+  "source_baseline_sha": "53506f2af49ab52490482d3961044f33b7360235",
+  "spectrum": {
+    "band_basis": "existing native jerk cutoff and 100Hz Nyquist",
+    "band_hz": [
+      1.2,
+      50.0
+    ],
+    "energy": "sum |rFFT|^2/N^2",
+    "window": "demeaned Hann on full contiguous command stream"
+  },
+  "status": "FROZEN_BEFORE_EXECUTION",
+  "steady_bias": "mean(output-input) on final constant-input run, disclose length and absent run",
+  "threshold_status": "THRESHOLD_UNJUSTIFIED",
+  "vehicle_activation_allowed": false,
+  "zero_crossing": "strict adjacent product<0; exact zero touch is not direct crossing"
+}

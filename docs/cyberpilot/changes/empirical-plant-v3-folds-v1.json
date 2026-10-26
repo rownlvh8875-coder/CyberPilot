@@ -1,0 +1,28 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "folds": [
+    {
+      "development_route": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+      "fold": "FOLD_A",
+      "train_route": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677"
+    },
+    {
+      "development_route": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+      "fold": "FOLD_B",
+      "train_route": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c"
+    }
+  ],
+  "old_routes_holdout_allowed": false,
+  "policy_sha256": "5c47b1a833dad3803f94e822ff9a45f1b0c6bfd6ea6b75299375415a6085f5f8",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "0b4e62a8e75519edaab900a274878daaac0893cfe9d903fd840a52c825da60ee",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_PLANT_V3_FOLDS_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

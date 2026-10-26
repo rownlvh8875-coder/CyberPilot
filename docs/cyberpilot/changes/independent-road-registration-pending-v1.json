@@ -1,0 +1,17 @@
+{
+  "blockers": [
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "COMMA10K_EGO_LANE_IDENTITY_UNAVAILABLE",
+    "PROJECTION_REMAINDER_UNVALIDATED",
+    "INDEPENDENT_ROAD_TIME_REGISTRATION_PENDING"
+  ],
+  "calibration_sha256": "8796f4ff3a05ea19e06a41a9f405d7e75ff3c8a130c1eb2e2ebc5f8f90364acb",
+  "ego_pair_sha256": null,
+  "meter_reference_allowed": false,
+  "receipt_sha256": "02c6f8852e32283eab44b7ec493a1fd1cb939fa7afb47b1740913387b2b25db2",
+  "reference_promotable": false,
+  "schema": "ROAD_FRAME_REGISTRATION_GATE_V1",
+  "status": "BLOCKED",
+  "structural_pose_available": false,
+  "tool_sha256": "96862f50e49fd8d0064a60c415c30a7d9b9e8da5adbe73c75d87ca3369b17eb5"
+}

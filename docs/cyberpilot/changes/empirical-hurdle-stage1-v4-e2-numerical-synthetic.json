@@ -1,0 +1,571 @@
+{
+  "alignment_control": {
+    "both_transformed_matrix_and_coefficients_base_alignment_mod64": 0,
+    "byte_fail_fixtures": 44,
+    "max_ULP_distance": 80
+  },
+  "base60": {
+    "all_transformed_equal": true,
+    "comparisons": {
+      "B_vs_A": {
+        "bit_mismatch_count": 0,
+        "byte_fail_fixtures": 0,
+        "exact_float_fail_fixtures": 0,
+        "max_ULP_distance": 0,
+        "max_absolute_difference": 0.0,
+        "max_relative_difference": 0.0,
+        "numeric_mismatch_count": 0,
+        "projected_tick_mismatch_count": 0,
+        "signed_zero_difference_count": 0
+      },
+      "B_vs_C": {
+        "bit_mismatch_count": 21,
+        "byte_fail_fixtures": 21,
+        "exact_float_fail_fixtures": 21,
+        "max_ULP_distance": 12,
+        "max_absolute_difference": 8.526512829121202e-14,
+        "max_relative_difference": 1.3499039623713805e-15,
+        "numeric_mismatch_count": 21,
+        "projected_tick_mismatch_count": 0,
+        "signed_zero_difference_count": 0
+      },
+      "C_vs_A": {
+        "bit_mismatch_count": 21,
+        "byte_fail_fixtures": 21,
+        "exact_float_fail_fixtures": 21,
+        "max_ULP_distance": 12,
+        "max_absolute_difference": 8.526512829121202e-14,
+        "max_relative_difference": 1.3499039623713805e-15,
+        "numeric_mismatch_count": 21,
+        "projected_tick_mismatch_count": 0,
+        "signed_zero_difference_count": 0
+      },
+      "whole_all_vs_A": {
+        "bit_mismatch_count": 35,
+        "byte_fail_fixtures": 35,
+        "exact_float_fail_fixtures": 35,
+        "max_ULP_distance": 12,
+        "max_absolute_difference": 8.526512829121202e-14,
+        "max_relative_difference": 1.3499039623713805e-15,
+        "numeric_mismatch_count": 35,
+        "projected_tick_mismatch_count": 0,
+        "signed_zero_difference_count": 0
+      }
+    },
+    "fixtures": 60
+  },
+  "base_grid": {
+    "L": [
+      1,
+      5,
+      15,
+      45
+    ],
+    "chunk_rows": 512,
+    "masks": [
+      "low",
+      "medium",
+      "high",
+      "alternating",
+      "contiguous"
+    ],
+    "rows": 1537,
+    "scales": [
+      1e-06,
+      1,
+      100
+    ]
+  },
+  "by_L": {
+    "1": {
+      "base": {
+        "all_transformed_equal": true,
+        "comparisons": {
+          "B_vs_A": {
+            "bit_mismatch_count": 0,
+            "byte_fail_fixtures": 0,
+            "exact_float_fail_fixtures": 0,
+            "max_ULP_distance": 0,
+            "max_absolute_difference": 0.0,
+            "max_relative_difference": 0.0,
+            "numeric_mismatch_count": 0,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "B_vs_C": {
+            "bit_mismatch_count": 3,
+            "byte_fail_fixtures": 3,
+            "exact_float_fail_fixtures": 3,
+            "max_ULP_distance": 2,
+            "max_absolute_difference": 2.220446049250313e-16,
+            "max_relative_difference": 2.3784667684476924e-16,
+            "numeric_mismatch_count": 3,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "C_vs_A": {
+            "bit_mismatch_count": 3,
+            "byte_fail_fixtures": 3,
+            "exact_float_fail_fixtures": 3,
+            "max_ULP_distance": 2,
+            "max_absolute_difference": 2.220446049250313e-16,
+            "max_relative_difference": 2.3784667684476924e-16,
+            "numeric_mismatch_count": 3,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "whole_all_vs_A": {
+            "bit_mismatch_count": 5,
+            "byte_fail_fixtures": 5,
+            "exact_float_fail_fixtures": 5,
+            "max_ULP_distance": 2,
+            "max_absolute_difference": 2.220446049250313e-16,
+            "max_relative_difference": 2.3784667684476924e-16,
+            "numeric_mismatch_count": 5,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          }
+        },
+        "fixtures": 15
+      },
+      "parity": {
+        "all_transformed_equal": true,
+        "comparisons": {
+          "B_vs_A": {
+            "bit_mismatch_count": 0,
+            "byte_fail_fixtures": 0,
+            "exact_float_fail_fixtures": 0,
+            "max_ULP_distance": 0,
+            "max_absolute_difference": 0.0,
+            "max_relative_difference": 0.0,
+            "numeric_mismatch_count": 0,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "B_vs_C": {
+            "bit_mismatch_count": 3,
+            "byte_fail_fixtures": 3,
+            "exact_float_fail_fixtures": 3,
+            "max_ULP_distance": 2,
+            "max_absolute_difference": 2.220446049250313e-16,
+            "max_relative_difference": 2.3784667684476924e-16,
+            "numeric_mismatch_count": 3,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "C_vs_A": {
+            "bit_mismatch_count": 3,
+            "byte_fail_fixtures": 3,
+            "exact_float_fail_fixtures": 3,
+            "max_ULP_distance": 2,
+            "max_absolute_difference": 2.220446049250313e-16,
+            "max_relative_difference": 2.3784667684476924e-16,
+            "numeric_mismatch_count": 3,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "whole_all_vs_A": {
+            "bit_mismatch_count": 5,
+            "byte_fail_fixtures": 5,
+            "exact_float_fail_fixtures": 5,
+            "max_ULP_distance": 2,
+            "max_absolute_difference": 2.220446049250313e-16,
+            "max_relative_difference": 2.3784667684476924e-16,
+            "numeric_mismatch_count": 5,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          }
+        },
+        "fixtures": 15
+      }
+    },
+    "15": {
+      "base": {
+        "all_transformed_equal": true,
+        "comparisons": {
+          "B_vs_A": {
+            "bit_mismatch_count": 0,
+            "byte_fail_fixtures": 0,
+            "exact_float_fail_fixtures": 0,
+            "max_ULP_distance": 0,
+            "max_absolute_difference": 0.0,
+            "max_relative_difference": 0.0,
+            "numeric_mismatch_count": 0,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "B_vs_C": {
+            "bit_mismatch_count": 6,
+            "byte_fail_fixtures": 6,
+            "exact_float_fail_fixtures": 6,
+            "max_ULP_distance": 8,
+            "max_absolute_difference": 8.881784197001252e-16,
+            "max_relative_difference": 1.1215965773444466e-15,
+            "numeric_mismatch_count": 6,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "C_vs_A": {
+            "bit_mismatch_count": 6,
+            "byte_fail_fixtures": 6,
+            "exact_float_fail_fixtures": 6,
+            "max_ULP_distance": 8,
+            "max_absolute_difference": 8.881784197001252e-16,
+            "max_relative_difference": 1.1215965773444466e-15,
+            "numeric_mismatch_count": 6,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "whole_all_vs_A": {
+            "bit_mismatch_count": 10,
+            "byte_fail_fixtures": 10,
+            "exact_float_fail_fixtures": 10,
+            "max_ULP_distance": 8,
+            "max_absolute_difference": 8.881784197001252e-16,
+            "max_relative_difference": 1.1215965773444466e-15,
+            "numeric_mismatch_count": 10,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          }
+        },
+        "fixtures": 15
+      },
+      "parity": {
+        "all_transformed_equal": true,
+        "comparisons": {
+          "B_vs_A": {
+            "bit_mismatch_count": 54,
+            "byte_fail_fixtures": 14,
+            "exact_float_fail_fixtures": 14,
+            "max_ULP_distance": 28,
+            "max_absolute_difference": 1.7053025658242404e-13,
+            "max_relative_difference": 5.975456647278568e-15,
+            "numeric_mismatch_count": 54,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "B_vs_C": {
+            "bit_mismatch_count": 57,
+            "byte_fail_fixtures": 15,
+            "exact_float_fail_fixtures": 15,
+            "max_ULP_distance": 28,
+            "max_absolute_difference": 1.7053025658242404e-13,
+            "max_relative_difference": 5.975456647278568e-15,
+            "numeric_mismatch_count": 57,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "C_vs_A": {
+            "bit_mismatch_count": 19,
+            "byte_fail_fixtures": 13,
+            "exact_float_fail_fixtures": 13,
+            "max_ULP_distance": 16,
+            "max_absolute_difference": 1.1368683772161603e-13,
+            "max_relative_difference": 2.243193154688891e-15,
+            "numeric_mismatch_count": 19,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "whole_all_vs_A": {
+            "bit_mismatch_count": 10,
+            "byte_fail_fixtures": 10,
+            "exact_float_fail_fixtures": 10,
+            "max_ULP_distance": 8,
+            "max_absolute_difference": 8.881784197001252e-16,
+            "max_relative_difference": 1.1215965773444466e-15,
+            "numeric_mismatch_count": 10,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          }
+        },
+        "fixtures": 15
+      }
+    },
+    "45": {
+      "base": {
+        "all_transformed_equal": true,
+        "comparisons": {
+          "B_vs_A": {
+            "bit_mismatch_count": 0,
+            "byte_fail_fixtures": 0,
+            "exact_float_fail_fixtures": 0,
+            "max_ULP_distance": 0,
+            "max_absolute_difference": 0.0,
+            "max_relative_difference": 0.0,
+            "numeric_mismatch_count": 0,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "B_vs_C": {
+            "bit_mismatch_count": 9,
+            "byte_fail_fixtures": 9,
+            "exact_float_fail_fixtures": 9,
+            "max_ULP_distance": 12,
+            "max_absolute_difference": 8.526512829121202e-14,
+            "max_relative_difference": 1.3499039623713805e-15,
+            "numeric_mismatch_count": 9,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "C_vs_A": {
+            "bit_mismatch_count": 9,
+            "byte_fail_fixtures": 9,
+            "exact_float_fail_fixtures": 9,
+            "max_ULP_distance": 12,
+            "max_absolute_difference": 8.526512829121202e-14,
+            "max_relative_difference": 1.3499039623713805e-15,
+            "numeric_mismatch_count": 9,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "whole_all_vs_A": {
+            "bit_mismatch_count": 15,
+            "byte_fail_fixtures": 15,
+            "exact_float_fail_fixtures": 15,
+            "max_ULP_distance": 12,
+            "max_absolute_difference": 8.526512829121202e-14,
+            "max_relative_difference": 1.3499039623713805e-15,
+            "numeric_mismatch_count": 15,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          }
+        },
+        "fixtures": 15
+      },
+      "parity": {
+        "all_transformed_equal": true,
+        "comparisons": {
+          "B_vs_A": {
+            "bit_mismatch_count": 79,
+            "byte_fail_fixtures": 15,
+            "exact_float_fail_fixtures": 15,
+            "max_ULP_distance": 80,
+            "max_absolute_difference": 4.547473508864641e-13,
+            "max_relative_difference": 1.6967791861991444e-14,
+            "numeric_mismatch_count": 79,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "B_vs_C": {
+            "bit_mismatch_count": 83,
+            "byte_fail_fixtures": 15,
+            "exact_float_fail_fixtures": 15,
+            "max_ULP_distance": 80,
+            "max_absolute_difference": 4.547473508864641e-13,
+            "max_relative_difference": 1.6967791861991444e-14,
+            "numeric_mismatch_count": 83,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "C_vs_A": {
+            "bit_mismatch_count": 25,
+            "byte_fail_fixtures": 14,
+            "exact_float_fail_fixtures": 14,
+            "max_ULP_distance": 14,
+            "max_absolute_difference": 2.5579538487363607e-13,
+            "max_relative_difference": 1.574887956099944e-15,
+            "numeric_mismatch_count": 25,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "whole_all_vs_A": {
+            "bit_mismatch_count": 15,
+            "byte_fail_fixtures": 15,
+            "exact_float_fail_fixtures": 15,
+            "max_ULP_distance": 12,
+            "max_absolute_difference": 8.526512829121202e-14,
+            "max_relative_difference": 1.3499039623713805e-15,
+            "numeric_mismatch_count": 15,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          }
+        },
+        "fixtures": 15
+      }
+    },
+    "5": {
+      "base": {
+        "all_transformed_equal": true,
+        "comparisons": {
+          "B_vs_A": {
+            "bit_mismatch_count": 0,
+            "byte_fail_fixtures": 0,
+            "exact_float_fail_fixtures": 0,
+            "max_ULP_distance": 0,
+            "max_absolute_difference": 0.0,
+            "max_relative_difference": 0.0,
+            "numeric_mismatch_count": 0,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "B_vs_C": {
+            "bit_mismatch_count": 3,
+            "byte_fail_fixtures": 3,
+            "exact_float_fail_fixtures": 3,
+            "max_ULP_distance": 1,
+            "max_absolute_difference": 4.440892098500626e-16,
+            "max_relative_difference": 1.9507565309485538e-16,
+            "numeric_mismatch_count": 3,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "C_vs_A": {
+            "bit_mismatch_count": 3,
+            "byte_fail_fixtures": 3,
+            "exact_float_fail_fixtures": 3,
+            "max_ULP_distance": 1,
+            "max_absolute_difference": 4.440892098500626e-16,
+            "max_relative_difference": 1.9507565309485538e-16,
+            "numeric_mismatch_count": 3,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "whole_all_vs_A": {
+            "bit_mismatch_count": 5,
+            "byte_fail_fixtures": 5,
+            "exact_float_fail_fixtures": 5,
+            "max_ULP_distance": 1,
+            "max_absolute_difference": 4.440892098500626e-16,
+            "max_relative_difference": 1.9507565309485538e-16,
+            "numeric_mismatch_count": 5,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          }
+        },
+        "fixtures": 15
+      },
+      "parity": {
+        "all_transformed_equal": true,
+        "comparisons": {
+          "B_vs_A": {
+            "bit_mismatch_count": 47,
+            "byte_fail_fixtures": 15,
+            "exact_float_fail_fixtures": 15,
+            "max_ULP_distance": 64,
+            "max_absolute_difference": 2.2737367544323206e-13,
+            "max_relative_difference": 9.689703724598736e-15,
+            "numeric_mismatch_count": 47,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "B_vs_C": {
+            "bit_mismatch_count": 52,
+            "byte_fail_fixtures": 15,
+            "exact_float_fail_fixtures": 15,
+            "max_ULP_distance": 64,
+            "max_absolute_difference": 2.2737367544323206e-13,
+            "max_relative_difference": 9.689703724598736e-15,
+            "numeric_mismatch_count": 52,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "C_vs_A": {
+            "bit_mismatch_count": 17,
+            "byte_fail_fixtures": 12,
+            "exact_float_fail_fixtures": 12,
+            "max_ULP_distance": 5,
+            "max_absolute_difference": 5.684341886080802e-14,
+            "max_relative_difference": 6.151507918802814e-16,
+            "numeric_mismatch_count": 17,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          },
+          "whole_all_vs_A": {
+            "bit_mismatch_count": 5,
+            "byte_fail_fixtures": 5,
+            "exact_float_fail_fixtures": 5,
+            "max_ULP_distance": 1,
+            "max_absolute_difference": 4.440892098500626e-16,
+            "max_relative_difference": 1.9507565309485538e-16,
+            "numeric_mismatch_count": 5,
+            "projected_tick_mismatch_count": 0,
+            "signed_zero_difference_count": 0
+          }
+        },
+        "fixtures": 15
+      }
+    }
+  },
+  "environment": {
+    "BLAS": {
+      "name": "scipy-openblas",
+      "openblas configuration": "OpenBLAS 0.3.34.106.0  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64",
+      "version": "0.3.34.106.0"
+    },
+    "architecture": "x86_64",
+    "blas_build_sha256": "704bde2afe24c22d171cc7d2508517db81b7db455743b2cb0e5de9dda88da7a2",
+    "float64": {
+      "bits": 64,
+      "epsilon": 2.220446049250313e-16
+    },
+    "numpy": "2.5.3",
+    "python": "3.12.13",
+    "threads": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    }
+  },
+  "limits": [
+    "SYNTHETIC_ONLY_NOT_ACTUAL_FOLD_B_PROOF",
+    "SPECIFIC_BLAS_KERNEL_NOT_TRACED",
+    "NO_ACCEPTANCE_RELAXATION",
+    "NO_E2_EFFICACY_CLAIM"
+  ],
+  "parity_control60": {
+    "all_transformed_equal": true,
+    "comparisons": {
+      "B_vs_A": {
+        "bit_mismatch_count": 180,
+        "byte_fail_fixtures": 44,
+        "exact_float_fail_fixtures": 44,
+        "max_ULP_distance": 80,
+        "max_absolute_difference": 4.547473508864641e-13,
+        "max_relative_difference": 1.6967791861991444e-14,
+        "numeric_mismatch_count": 180,
+        "projected_tick_mismatch_count": 0,
+        "signed_zero_difference_count": 0
+      },
+      "B_vs_C": {
+        "bit_mismatch_count": 195,
+        "byte_fail_fixtures": 48,
+        "exact_float_fail_fixtures": 48,
+        "max_ULP_distance": 80,
+        "max_absolute_difference": 4.547473508864641e-13,
+        "max_relative_difference": 1.6967791861991444e-14,
+        "numeric_mismatch_count": 195,
+        "projected_tick_mismatch_count": 0,
+        "signed_zero_difference_count": 0
+      },
+      "C_vs_A": {
+        "bit_mismatch_count": 64,
+        "byte_fail_fixtures": 42,
+        "exact_float_fail_fixtures": 42,
+        "max_ULP_distance": 16,
+        "max_absolute_difference": 2.5579538487363607e-13,
+        "max_relative_difference": 2.243193154688891e-15,
+        "numeric_mismatch_count": 64,
+        "projected_tick_mismatch_count": 0,
+        "signed_zero_difference_count": 0
+      },
+      "whole_all_vs_A": {
+        "bit_mismatch_count": 35,
+        "byte_fail_fixtures": 35,
+        "exact_float_fail_fixtures": 35,
+        "max_ULP_distance": 12,
+        "max_absolute_difference": 8.526512829121202e-14,
+        "max_relative_difference": 1.3499039623713805e-15,
+        "numeric_mismatch_count": 35,
+        "projected_tick_mismatch_count": 0,
+        "signed_zero_difference_count": 0
+      }
+    },
+    "fixtures": 60
+  },
+  "parity_intervention": "UNCHANGED_BASE60_MATRICES_AND_SEED;FLIP_FIRST_MASK_BIT_EACH_FULL512CHUNK;LEAVE_TAIL;PREFROZEN_FOLLOWUP_NO_SEED_SEARCH",
+  "private_input_openings": 0,
+  "receipt_sha256": "45cfc3e24e36b130b39147775eea72f7b3a8b31ee71e97458d2d79fb4d3fff91",
+  "schema": "V4_E2_NUMERICAL_SYNTHETIC_PUBLIC_SUMMARY_V1",
+  "seed": 20261018
+}

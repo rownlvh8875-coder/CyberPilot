@@ -1,0 +1,95 @@
+{
+  "authority": {
+    "candidate_execution": false,
+    "composition": false,
+    "cv_scoring": false,
+    "family_selection": false,
+    "holdout_opening": false,
+    "model_fitting": false,
+    "model_selection": false,
+    "parameter_search": false,
+    "prediction_generation": false,
+    "production": false,
+    "qlog_support": false,
+    "raw_reopening": false,
+    "residual_calculation": false,
+    "sg_execution": false,
+    "ta_execution": false,
+    "vehicle": false
+  },
+  "bias_correction": "NOT_RUN",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "families": {
+    "S1": {
+      "initialization": "ONLY_AVAILABLE_CURRENT_PAST_DATA_FUTURE_FITTING_POLICY_MUST_FREEZE",
+      "latent_state_carry_across_boundary": false,
+      "parameterization": "NOT_SELECTED_NO_FITTING",
+      "reset_at": [
+        "route_boundary",
+        "segment_boundary",
+        "causal_run_break",
+        "inactive",
+        "driver_override",
+        "fault",
+        "reengagement_before_new_valid_history"
+      ]
+    },
+    "S2": {
+      "initialization": "ONLY_AVAILABLE_CURRENT_PAST_DATA_FUTURE_FITTING_POLICY_MUST_FREEZE",
+      "latent_state_carry_across_boundary": false,
+      "parameterization": "NOT_SELECTED_NO_FITTING",
+      "reset_at": [
+        "route_boundary",
+        "segment_boundary",
+        "causal_run_break",
+        "inactive",
+        "driver_override",
+        "fault",
+        "reengagement_before_new_valid_history"
+      ]
+    },
+    "S3": {
+      "initialization": "ONLY_AVAILABLE_CURRENT_PAST_DATA_FUTURE_FITTING_POLICY_MUST_FREEZE",
+      "latent_state_carry_across_boundary": false,
+      "parameterization": "NOT_SELECTED_NO_FITTING",
+      "reset_at": [
+        "route_boundary",
+        "segment_boundary",
+        "causal_run_break",
+        "inactive",
+        "driver_override",
+        "fault",
+        "reengagement_before_new_valid_history"
+      ]
+    }
+  },
+  "history": "SAME_ROUTE_SEGMENT_CAUSAL_RUN_STRICT_CURRENT_OR_PAST_SOURCE_TIME",
+  "holdout": "HOLDOUT_OPENING_CLOSED",
+  "production_authority": false,
+  "prohibited": [
+    "future_command",
+    "future_state",
+    "next_segment",
+    "next_causal_run",
+    "other_route",
+    "qlog",
+    "next_target_in_X",
+    "post_target_event",
+    "development_feedback_into_policy",
+    "HOLDOUT"
+  ],
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "d0770c61af01b28af53980084ef8b30dd3eb4059494137ffa9bf71163f3bcd80",
+  "reference_promotable": false,
+  "runtime_implemented": false,
+  "s1_ambiguity": "STATE_COORDINATE_SCALE_SIGN_LATENT_OBSERVATION_AND_INPUT_DELAY_NOT_IDENTIFIED_BY_X_RANK",
+  "s2_ambiguity": "FEATURE_COLLINEARITY_QUANTIZED_TARGET_CLOSED_LOOP_BIAS_NOT_RESOLVED_BY_X_RANK",
+  "s3_ambiguity": "NO_SOURCE_PROVEN_PHYSICAL_REGIME_NO_NUMERIC_BOUNDARY_SEARCH",
+  "schema": "EMPIRICAL_IDENTIFIABILITY_LEAKAGE_RESET_CONTRACT_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

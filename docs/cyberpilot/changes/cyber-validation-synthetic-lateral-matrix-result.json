@@ -1,0 +1,251 @@
+{
+  "blockers": [
+    "SYNTHETIC_ONLY_NO_PHYSICAL_QUALIFICATION"
+  ],
+  "candidate_generation_allowed": false,
+  "catalog_sha256": "c92cb9e71a9e9c0273f56a6ca3966b7d92fda5c67aa47742aa852a0b3a14928c",
+  "controller_executed": false,
+  "coverage_counts": {
+    "apex": 8,
+    "driver_override": 1,
+    "entry": 8,
+    "exit": 8,
+    "gentle_curve": 4,
+    "high_speed": 4,
+    "lane_change": 1,
+    "left_curve": 4,
+    "low_speed": 2,
+    "medium_speed": 8,
+    "reengagement": 1,
+    "right_curve": 4,
+    "saturation": 3,
+    "steering_release": 1,
+    "straight": 5,
+    "tight_curve": 3
+  },
+  "covered_stress_axes": [
+    "delay_high",
+    "friction_high",
+    "friction_low",
+    "ramp",
+    "s_curve",
+    "sensor_dropout",
+    "timebase_gap"
+  ],
+  "fault_scenario_count": 2,
+  "nominal_scenario_count": 12,
+  "performance_qualified": false,
+  "plant_executed": false,
+  "promotable": false,
+  "runtime_accepted": false,
+  "scenario_count": 14,
+  "scenarios": [
+    {
+      "expected_outcome": "COMPLETED",
+      "frame_count": 600,
+      "frames_sha256": "7e18324c1840406a319a5a1ea8de476f70b9660069ef5a9e664cee827ac3b863",
+      "scenario_id": "straight_low",
+      "stress_axes": [],
+      "tags": [
+        "straight",
+        "low_speed"
+      ]
+    },
+    {
+      "expected_outcome": "COMPLETED",
+      "frame_count": 600,
+      "frames_sha256": "ef25a19ee13282b0c2da151d766375f38a19054ddc02dd3e8e075bb9952cff59",
+      "scenario_id": "straight_high",
+      "stress_axes": [],
+      "tags": [
+        "straight",
+        "high_speed"
+      ]
+    },
+    {
+      "expected_outcome": "COMPLETED",
+      "frame_count": 600,
+      "frames_sha256": "28e707239dde0d86ada640030c87501a601446eb9736466bbd449885cd7cffd1",
+      "scenario_id": "gentle_left",
+      "stress_axes": [],
+      "tags": [
+        "left_curve",
+        "gentle_curve",
+        "medium_speed",
+        "entry",
+        "apex",
+        "exit"
+      ]
+    },
+    {
+      "expected_outcome": "COMPLETED",
+      "frame_count": 600,
+      "frames_sha256": "d613a48bd252ec13b5412dc397f0f6c41241b06e13e376c84a1bc7ba8266016e",
+      "scenario_id": "gentle_right",
+      "stress_axes": [],
+      "tags": [
+        "right_curve",
+        "gentle_curve",
+        "medium_speed",
+        "entry",
+        "apex",
+        "exit"
+      ]
+    },
+    {
+      "expected_outcome": "COMPLETED",
+      "frame_count": 600,
+      "frames_sha256": "3683868dc9486d466388695902100d013021bc82f181efd060d6057e5d263931",
+      "scenario_id": "tight_left",
+      "stress_axes": [],
+      "tags": [
+        "left_curve",
+        "tight_curve",
+        "high_speed",
+        "entry",
+        "apex",
+        "exit",
+        "saturation"
+      ]
+    },
+    {
+      "expected_outcome": "COMPLETED",
+      "frame_count": 600,
+      "frames_sha256": "2d2ffb8f70ad450424bd13363e66273ca36a60b405d81a76aa6597749c28e993",
+      "scenario_id": "tight_right",
+      "stress_axes": [],
+      "tags": [
+        "right_curve",
+        "tight_curve",
+        "high_speed",
+        "entry",
+        "apex",
+        "exit",
+        "saturation"
+      ]
+    },
+    {
+      "expected_outcome": "COMPLETED",
+      "frame_count": 600,
+      "frames_sha256": "daf19de6aa8ee0ee56a83ebcf1fcfae95d16fca48ef0ad8abc393e316be1f48f",
+      "scenario_id": "s_curve",
+      "stress_axes": [
+        "s_curve"
+      ],
+      "tags": [
+        "left_curve",
+        "right_curve",
+        "gentle_curve",
+        "medium_speed",
+        "entry",
+        "apex",
+        "exit"
+      ]
+    },
+    {
+      "expected_outcome": "COMPLETED",
+      "frame_count": 600,
+      "frames_sha256": "acca9f899f13023f4c142798268d027313757acf158522eeeaaa420ef12d8b28",
+      "scenario_id": "ramp_curve",
+      "stress_axes": [
+        "ramp",
+        "delay_high"
+      ],
+      "tags": [
+        "right_curve",
+        "tight_curve",
+        "high_speed",
+        "entry",
+        "apex",
+        "exit",
+        "saturation"
+      ]
+    },
+    {
+      "expected_outcome": "COMPLETED",
+      "frame_count": 600,
+      "frames_sha256": "47bf0cedee02d43f326de518624ea708cddac137a1dead6d7b1904972d13dc20",
+      "scenario_id": "lane_change",
+      "stress_axes": [],
+      "tags": [
+        "lane_change",
+        "medium_speed",
+        "entry",
+        "apex",
+        "exit"
+      ]
+    },
+    {
+      "expected_outcome": "COMPLETED",
+      "frame_count": 600,
+      "frames_sha256": "3bb57194af4848afb1dd3df802b4a300da66fca843869539f7cb176466d286c5",
+      "scenario_id": "driver_override",
+      "stress_axes": [],
+      "tags": [
+        "driver_override",
+        "steering_release",
+        "reengagement",
+        "medium_speed"
+      ]
+    },
+    {
+      "expected_outcome": "COMPLETED",
+      "frame_count": 600,
+      "frames_sha256": "291e6ca6a29e0f44ae36eb8a5fbacdd515d5cf723f7d5b196ee9bb9cc3fcd5ff",
+      "scenario_id": "friction_low",
+      "stress_axes": [
+        "friction_low"
+      ],
+      "tags": [
+        "straight",
+        "low_speed"
+      ]
+    },
+    {
+      "expected_outcome": "COMPLETED",
+      "frame_count": 600,
+      "frames_sha256": "313c108b13a53d7e51d65d4c6f8bc2746ac389d79ca1f7012d343ecada908569",
+      "scenario_id": "friction_high",
+      "stress_axes": [
+        "friction_high"
+      ],
+      "tags": [
+        "left_curve",
+        "gentle_curve",
+        "medium_speed",
+        "entry",
+        "apex",
+        "exit"
+      ]
+    },
+    {
+      "expected_outcome": "REJECTED_INPUT",
+      "frame_count": 600,
+      "frames_sha256": "f0abdcc7c5a70cb17bf4ae7ac7bd2aa3efb5b130cb95295bc014efe851420bf6",
+      "scenario_id": "sensor_dropout",
+      "stress_axes": [
+        "sensor_dropout"
+      ],
+      "tags": [
+        "straight",
+        "medium_speed"
+      ]
+    },
+    {
+      "expected_outcome": "REJECTED_INPUT",
+      "frame_count": 600,
+      "frames_sha256": "41cebc90621280c79853ee59d123cd3d76854b13f0626519ddb442c86845ec40",
+      "scenario_id": "timebase_gap",
+      "stress_axes": [
+        "timebase_gap"
+      ],
+      "tags": [
+        "straight",
+        "medium_speed"
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "status": "SYNTHETIC_MATRIX_READY",
+  "vehicle_or_can_write": false
+}

@@ -1,0 +1,98 @@
+{
+  "identity": "F56_RECORDED_COMMAND_INVARIANT_GATE_V1",
+  "identity_and_purpose": {
+    "area": "Cyber Validation",
+    "status": "IMPLEMENTED_LOCAL_VALIDATED_CONTROLLER_BLOCKED",
+    "purpose": "Byte-faithful recorded-command comparison and permanently non-executing admission gate",
+    "baseline": "1f41379d74a28f1bdb28fe19db92cb8bbf66b632",
+    "branch": "feature/cyber-autotune",
+    "vehicle_applicability": "Offline F41-C01 projection only;no vehicle authority"
+  },
+  "original_references": {
+    "repository": "https://github.com/rownlvh8875-coder/CyberPilot",
+    "source_commit": "1f41379d74a28f1bdb28fe19db92cb8bbf66b632",
+    "historical_recorded_source": "a559fcd971ccaa5a87befb8ec080f59a2966325b",
+    "schema_manifest_sha256": "96ec3bc609beac9fba027d5adf83ce72c2d7d70013e00e878c14e9da996dfa94",
+    "dataset": "F41-C01",
+    "raw_rlog_sha256": "9db34f2698d6857c2f4c07298b973b3f731c76b0b5441f2a54159edcfa43d5a5",
+    "reused_files": [
+      "tools/cyberpilot/rlog_observer_regression_v1.py",
+      "tools/cyberpilot/recorded_input_binding_v1.py",
+      "tools/cyberpilot/cli_security_f51.py"
+    ],
+    "call_path": "Local CLI -> named SHA-pinned historical projection files -> immutable command comparison -> software statistics + BLOCKED admission -> private summary",
+    "adoption": "Reuse existing projection types,canonicalization and secure directory capabilities;do not import Native or vehicle Controller",
+    "license_attribution": "Existing repository licensing retained;no external code copied",
+    "external_dependencies": "Python standard library and unchanged existing harness modules;no new packages/models/submodule changes"
+  },
+  "changes_and_expected_effect": {
+    "added_files": [
+      "tools/cyberpilot/recorded_command_invariant_gate_v1.py",
+      "tools/cyberpilot/tests/test_recorded_command_invariant_gate_v1.py",
+      "docs/cyberpilot/changes/recorded-command-invariant-gate-v1.json"
+    ],
+    "existing_files_modified": [],
+    "expected_effect": "Detect altered commands,order/time/identity/quality faults and retain all6000 SOURCE_SCHEMA_UNQUALIFIED without executing a Controller",
+    "constants": "6000 commands and fixed file byte/digest values originate in sealed F46/F47 evidence;not performance thresholds",
+    "state_initialization": "First rate null;invalid/active-transition pairs break rate history;actual reset and missing-cycle continuity UNKNOWN",
+    "failure_behavior": "Fixed-code nonzero CLI;no fallback data,sorting,interpolation,forward-fill,limit synthesis or parameter updates",
+    "safety_boundary": "No Controller callback/native launch/CAN/Params/device transport;candidate output null for every input",
+    "maintenance": "New tests are separately invoked;fixed157 manifest and CI workflows unchanged"
+  },
+  "regression_risk_and_acceptance": {
+    "risks": [
+      "source or historical-artifact drift",
+      "schema/units or sign coercion",
+      "timestamp sorting or future alignment",
+      "forged input qualification",
+      "private path/error leakage"
+    ],
+    "predeclared_acceptance": [
+      "6000 command bytes and ordinals/timestamps preserved",
+      "SOURCE_SCHEMA_UNQUALIFIED6000 unchanged",
+      "all proposed Controller execution permanently blocked",
+      "synthetic negative controls and existing157 regression pass",
+      "two independent canonical summaries byte-identical",
+      "tracked source/index unchanged;exactnew3paths only"
+    ],
+    "holdout": "PrivateE2 NOT_AUTHORIZED;HOLDOUT CLOSED;no new logs",
+    "rollback": "Uncommitted new3files only;no runtime integration or automatic rollback/deletion",
+    "promotion_authority": "User approval required for any future Git/CI integration"
+  },
+  "validation_method_and_actual_results": {
+    "unit_regression_build": {
+      "planned": "Focused synthetic unittest + exact existing157 + scoped static/compile;two independent runs",
+      "actual": "New27 PASSx2;existing exact157 PASSx2;Fail/Error/Skip/Xfail/Xpass0;Ruff/Ty/codespell/compile PASS. Initial TDD25+2 failures and first157 environment rejection preserved."
+    },
+    "recorded_projection": {
+      "planned": "Existing F46/F47 sealed projections only;read-only2runs,independent fidelity/count/rate oracle",
+      "actual": "6000 commands byte-faithful;SOURCE_SCHEMA_UNQUALIFIED6000;4 canonical output pairs identical;independent stdlib oracle5996 rate pairs/RMS equal;Controller invocations0 and rawRLOG opens0."
+    },
+    "simulation_closed_loop": {
+      "status": "NOT_RUN_NOT_AUTHORIZED"
+    },
+    "shadow_controller": {
+      "status": "BLOCKED",
+      "reason": "6000 SOURCE_SCHEMA_UNQUALIFIED,internal state and actual input consumption unproven"
+    }
+  },
+  "handoff": {
+    "verified_effect": "Recorded-command fidelity/admission software contract validated;actual ShadowController BLOCKED.",
+    "limitations": [
+      "Native Exact Replay NOT_PROVEN",
+      "physical response and delay UNQUALIFIED",
+      "Position/Heading NOT_EVALUATED",
+      "Target100Hz NOT_QUALIFIED",
+      "no lane-tracking or safety improvement claim",
+      "Extreme finite Float64 pure inputs may be conservatively rejected because intermediate rate multiplication overflows;fixed historical Float32 data unaffected."
+    ],
+    "git_commit": "NOT_AUTHORIZED",
+    "vehicle_application": "NOT_AUTHORIZED",
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "F19": "LEGACY_UNRESOLVED",
+    "runtime": "NO_GO",
+    "vehicle_authority": "NONE",
+    "selected_candidate": null,
+    "selected_policy": null
+  }
+}

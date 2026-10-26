@@ -1,0 +1,76 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "historical_results_rewritten": false,
+  "history": 45,
+  "minimum_support": 201,
+  "new_segments": [
+    {
+      "checks": {
+        "bridge": true,
+        "diagnostic_mask": true,
+        "grid_order": true,
+        "reason_sets": true,
+        "row_count": true,
+        "speed_bin": true,
+        "state_clock": true,
+        "support": true,
+        "valid_angle": true,
+        "valid_command": true
+      },
+      "segment_sha256": "400982f5200d7a276d85692ce435d72efb5c36c8e85e074a753c1fab13ed8709"
+    },
+    {
+      "checks": {
+        "bridge": true,
+        "diagnostic_mask": true,
+        "grid_order": true,
+        "reason_sets": true,
+        "row_count": true,
+        "speed_bin": true,
+        "state_clock": true,
+        "support": true,
+        "valid_angle": true,
+        "valid_command": true
+      },
+      "segment_sha256": "68260e1e5eb71df7fe9a73b7118b8587d6ab9d5a552ffe15d7e2ffd37d848abb"
+    }
+  ],
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "2aa5b936523d840d483c02e628280d2a476632d7cd123ed2a7fd3e5ddf598df6",
+  "reference_promotable": false,
+  "routes": [
+    {
+      "checks": {
+        "bridge_counts": true,
+        "diagnostic_valid": true,
+        "full_source_set": true,
+        "grid_count": true,
+        "per_bin_accounting": true,
+        "per_segment_exact": true,
+        "segment_count": true
+      },
+      "route_id": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677"
+    },
+    {
+      "checks": {
+        "bridge_counts": true,
+        "diagnostic_valid": true,
+        "full_source_set": true,
+        "grid_count": true,
+        "per_bin_accounting": true,
+        "per_segment_exact": true,
+        "segment_count": true
+      },
+      "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c"
+    }
+  ],
+  "schema": "EMPIRICAL_QLOG_LEGACY_REPRODUCTION_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "status": "LEGACY_ALIGNMENT_REPRODUCED",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

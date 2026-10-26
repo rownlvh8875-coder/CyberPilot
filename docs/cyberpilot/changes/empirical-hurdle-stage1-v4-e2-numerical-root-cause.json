@@ -1,0 +1,135 @@
+{
+  "authorized_operations": {
+    "D0_TRAIN_reconstruction": 1,
+    "Stage2_call_detail": "PRIVATE_LEDGER_ONLY_NO_GATE_TELEMETRY_PUBLICATION",
+    "Stage2_model_loads": 1,
+    "single_TRAIN_diagnostic": 1
+  },
+  "baseline_head": "7adba76d5b1400f35fbd03c420e5f331cf0c7272",
+  "changes_adopted": {
+    "D2_objective_guard": false,
+    "Stage2": false,
+    "acceptance": false,
+    "epsilon": false,
+    "qualification_removal": false,
+    "tolerance": false
+  },
+  "forbidden_operations": {
+    "CALIBRATION_FIT": 0,
+    "D2_DEV_ONE_STEP": 0,
+    "D2_NEW_GATES": 0,
+    "D2_RECURSIVE_ROLLOUT": 0,
+    "D2_TRAIN_DECISION_SELECTION": 0,
+    "HOLDOUT_DISCOVERY": 0,
+    "HOLDOUT_OPENINGS": 0,
+    "NEW_POLICY_SEARCH": 0,
+    "NORMALIZER_REFIT": 0,
+    "POSTHOC_TUNING": 0,
+    "RAW_LOG_QLOG_OPENINGS": 0,
+    "SOURCE_WRITES": 0,
+    "STAGE1_REFIT": 0,
+    "STAGE2_REFIT": 0,
+    "THRESHOLD_TOLERANCE_RELAXATION": 0,
+    "VEHICLE_ACTIVATION": 0
+  },
+  "fresh_diagnostic_jobs": 1,
+  "input_reads": {
+    "arrays": {
+      "bytes": 27349143,
+      "files": 681
+    },
+    "execution_controls_separate": {
+      "bytes": 2381873,
+      "files": 19
+    },
+    "metadata": {
+      "bytes": 5015070,
+      "files": 179
+    },
+    "source_total": {
+      "bytes": 32364213,
+      "files": 860
+    }
+  },
+  "job": {
+    "candidate_id": "HRI_D00_L01",
+    "fold": "FOLD_B",
+    "role": "TRAIN"
+  },
+  "observations": {
+    "B_chunk_subset_vs_A": "FLOAT_AND_BYTE_DIFFERENCE_OBSERVED",
+    "C_original_whole_job_subset_vs_A": "BYTE_EXACT",
+    "classification": "BATCH_LAYOUT_SENSITIVE_MATMUL_DIFFERENCE",
+    "frozen_projected_ticks": "EQUAL_IN_THIS_DIAGNOSTIC",
+    "input_or_normalization_difference": "NOT_OBSERVED_IN_CORRESPONDING_TRANSFORMED_ROWS",
+    "interpretation_case": 5,
+    "source_hash_schema_anchor": "PASS",
+    "specific_BLAS_kernel": "NOT_TRACED",
+    "transformed_rows": "BYTE_EXACT",
+    "whole_job_all_vs_A": "BYTE_EXACT"
+  },
+  "preexecution_CI": {
+    "conclusion": "success",
+    "id": 39133199735,
+    "status": "completed"
+  },
+  "preexecution_head": "f77ce9921f8e8008cfc3533c62e1eac30523940e",
+  "preserved": {
+    "D0": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
+    "D1": "E_EXECUTION_COMPLETE_D1_NOT_ADMISSIBLE",
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "E2": "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+    "HOLDOUT": "CLOSED",
+    "Hugging_Face": "NOT_REQUIRED / NOT_USED",
+    "TRAIN_gate": "NOT_SAVED",
+    "selected_candidate": null,
+    "selected_policy": null,
+    "vehicle_authority": "NONE"
+  },
+  "prior_E2_resumed": false,
+  "privacy": {
+    "complementary_suppression": "C_E_RESTRICTIONS_PRESERVED",
+    "gate_dependent_telemetry": "PRIVATE_RECEIPT_ONLY",
+    "private_hashes_paths_rows_coefficients_decisions": "NOT_PUBLISHED",
+    "private_result": "NOT_PUBLISHED",
+    "rare_mismatch_counts_maxima_ULP": "PRIVATE_RECEIPT_ONLY"
+  },
+  "protocol_raw_sha256": "b5d44171530648cc2f2aaa9faf665a49c803bdf8ad44c8d965bfe6179d01acf3",
+  "receipt_sha256": "09c9058e6ebf9005544caf98ee994a48e5a08fb3c168b58477b273a7dc37573c",
+  "recommended_next": "REVIEW_ADDITIONAL_CHUNK_QUALIFICATION_KEEP_ORIGINAL_WHOLE_JOB_BYTE_EXACT_CONTRACT; SEPARATE_PROTOCOL_AMENDMENT_AND_FRESH_E2_GRANT_REQUIRED",
+  "schema": "V4_E2_NUMERICAL_ROOT_CAUSE_PUBLIC_OUTCOME_V1",
+  "status": "E2_NUMERICAL_ROOT_CAUSE_IDENTIFIED",
+  "stop": "NO_E2_REEXECUTION_POLICY_ADOPTION_OR_V5",
+  "synthetic": {
+    "base_fixtures": 60,
+    "boundary_test": "ONE_ULP_CAN_CHANGE_PROJECTED_TICK",
+    "matched_parity_fixtures": 60,
+    "parity_B_A_fail_fixtures": 44,
+    "parity_B_A_max_ULP": 80,
+    "projected_tick_differences": 0,
+    "same64byte_alignment_fail_fixtures": 44,
+    "synthetic_L1_B_A_reproduced": false
+  },
+  "validation": {
+    "Ruff": "PASS",
+    "SCons": "PASS",
+    "compileall": "PASS",
+    "full_AutoTune_controls": 5530,
+    "full_seconds": 599.14,
+    "independent_preexecution_reviews": {
+      "authority": "APPROVED",
+      "science": "APPROVED"
+    },
+    "lateral_synthetic": 16,
+    "new_focused": 28,
+    "public_input_pins": 17,
+    "related_focused": 364,
+    "source_pins": 50
+  },
+  "verification_only": {
+    "inference_calls": 0,
+    "recompute_calls": 0,
+    "sealed_stored_result": "PASS",
+    "source_rereads": 0
+  }
+}

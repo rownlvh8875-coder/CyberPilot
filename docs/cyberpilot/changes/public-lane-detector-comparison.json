@@ -1,0 +1,77 @@
+{
+  "CLRNet": {
+    "environment_sha256": null,
+    "source_commit": "7269e9d1c1c650343b6c7febb8e764be538b1aed",
+    "status": "NOT_RUN_PRIMARY_OFFICIAL_REPRODUCTION_BLOCKED"
+  },
+  "CLRerNet": {
+    "determinism": "EXACT_REPEATABILITY_PASS_119_X_2",
+    "diagnostic": {
+      "available_frame_ratio": 0.6638655462184874,
+      "detection_failure_rate": 0.1595744680851064,
+      "ego_lane_association_evaluated": false,
+      "false_positive_marking_ratio": 0.6804692428492812,
+      "gt_eligible_frames": 94,
+      "gt_to_pred": {
+        "maximum": 1092.5504938968224,
+        "median": 2.715233780634435,
+        "p90": 178.6479163777251,
+        "p95": 343.3515477869,
+        "p99": 711.1539577006589,
+        "sample_count": 36991
+      },
+      "mask_coverage": 0.5666206502594373,
+      "meter_error": null,
+      "missing_row_support_ratio": 0.11955538629980483,
+      "normalized_gt_to_pred": {
+        "maximum": 0.9386172627979574,
+        "median": 0.002293545794987274,
+        "p90": 0.14748634568384347,
+        "p95": 0.27896220544917927,
+        "p99": 0.5698143421595335,
+        "sample_count": 36991
+      },
+      "normalized_pred_to_gt": {
+        "maximum": 0.9773619825286326,
+        "median": 0.0032411077934479094,
+        "p90": 0.3521385026718235,
+        "p95": 0.5226854466587223,
+        "p99": 0.7031859676730804,
+        "sample_count": 42296
+      },
+      "normalized_unit": "image_width_fraction",
+      "pred_to_gt": {
+        "maximum": 1137.6493476633284,
+        "median": 3.8846122138368457,
+        "p90": 409.88921711000256,
+        "p95": 608.4058599107527,
+        "p99": 818.5084663714657,
+        "sample_count": 42296
+      },
+      "receipt_sha256": "1f55ff3b409b6fd7ef128472c7b507e6a4a538db67291622cf39c3642c05d2dd",
+      "reference_promotable": false,
+      "schema": "LANE_MARKING_LOCALIZATION_DISTRIBUTION_V1",
+      "scope": "PUBLIC_PIXEL_DIAGNOSTIC_NOT_QUALIFICATION",
+      "source_receipts_sha256": "3bce25d3d729c9fb4c3d1b2e2abd6d6d2469370a8f82ab51bf5a67d841343d9b",
+      "total_frames": 119,
+      "unavailable_frames": 40,
+      "unit": "px",
+      "unmatched_gt_ratio": 0.4333793497405627,
+      "usable_frames": 79
+    },
+    "environment_sha256": "da5670a1c94fe203335f1ff1b04d1206bfce468097f5ad1e6af2c17c8c4a395e",
+    "official_reproduction": "DETECTOR_REPRODUCTION_BLOCKED",
+    "runtime_seconds": {
+      "median": 0.02223748099640943,
+      "p95": 0.0340318215108709
+    },
+    "source_commit": "dae038f67da57e292e5293a68c9c1c2922de13c2"
+  },
+  "UFLDv2": {
+    "status": "NOT_RUN_PRIMARY_OFFICIAL_REPRODUCTION_BLOCKED"
+  },
+  "meter_qualification": false,
+  "qualified_winner": null,
+  "schema": "PUBLIC_DETECTOR_COMPARISON_V1",
+  "selection_basis": "Public data only; no detector selected as qualified"
+}

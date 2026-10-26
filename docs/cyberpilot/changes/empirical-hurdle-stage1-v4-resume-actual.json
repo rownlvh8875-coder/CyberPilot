@@ -1,0 +1,96 @@
+{
+  "authoritative_replicas_corrupted_for_test": false,
+  "authorization_sha256": "a23e88b37ba1b2b57f5eb29bc37508166a6a392354826d00bb4444d8efcdc34c",
+  "candidate_search_authorized": false,
+  "coefficients_public": false,
+  "component": "resume-actual",
+  "composition_authorized": false,
+  "delta_tick_semantics": "SOURCE_GRID_TICK_INCREMENT_CHANGE_NOT_PHYSICAL_EPS_MOVEMENT",
+  "execution_head": "bd8045ef2a0da62a92603439f38e7740f5923622",
+  "external_resume_receipt_sha256": "e64972f1d028c8ee5f2cd1bf583812bf32c01101bd61a6de2dd8e86a95903cb8",
+  "family": "HURDLE_STAGE1_CONTEXT_CONDITIONAL_LOGISTIC_V4",
+  "final_pooled_refit": "NOT_AUTHORIZED",
+  "historical_states_preserved": [
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "logged_command_semantics": "POST_CARCONTROLLER_NORMALIZED_COMMAND_NOT_PHYSICAL_EPS_APPLIED_TORQUE",
+  "model_admission": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+  "normalizer_refit_calls": 0,
+  "opening_count": 0,
+  "pooled_refit_calls": 0,
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "private_manifest_sha256": "fd3639f93944edecfdfa573818d29fbc8a91ab23208e2d561f8a69726eb0dc64",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "rate_semantics": [
+    "SOURCE_NATIVE_RATE_CODE_ONLY",
+    "RATE_SOURCE_CONTRACT_PARTIAL"
+  ],
+  "receipt_sha256": "40505c29ef7b56fe7535642e786db3d711e32d7c633396d0778d76700466d630",
+  "recompute_calls": 0,
+  "reference_promotable": false,
+  "replicas": [
+    {
+      "manifest_sha256": "fd3639f93944edecfdfa573818d29fbc8a91ab23208e2d561f8a69726eb0dc64",
+      "recompute_calls": 0,
+      "replica": "repeat-1",
+      "status": "PASS"
+    },
+    {
+      "manifest_sha256": "fd3639f93944edecfdfa573818d29fbc8a91ab23208e2d561f8a69726eb0dc64",
+      "recompute_calls": 0,
+      "replica": "repeat-2",
+      "status": "PASS"
+    }
+  ],
+  "result_publication_head": {
+    "resolution": "CONTAINING_GIT_COMMIT"
+  },
+  "schema": "HURDLE_STAGE1_V4_ACTUAL_RETROSPECTIVE_PUBLIC_EVIDENCE",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "stage2_refit_calls": 0,
+  "status": "V4_VERIFY_ONLY_RESUME_PASS",
+  "storage_amendment_receipt_sha256": "5b109186575c4b50b7095a4e99d6028fd8a8f21e4e944fb6ca5ec59d6a4a26e5",
+  "storage_migration_receipt_sha256": "f147cb4121a5e34f57d663c8fa631ab26805d30c9157515802f7a0cf7529adc9",
+  "storage_volume": "E_EXTERNAL_SSD",
+  "ta_execution": false,
+  "threshold_values_public": false,
+  "trapped_functions": [
+    "load_route",
+    "load_models",
+    "rank_generate",
+    "separation_generate",
+    "newton",
+    "threshold",
+    "train",
+    "probability",
+    "development",
+    "recursive",
+    "rollout",
+    "select"
+  ],
+  "vehicle": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

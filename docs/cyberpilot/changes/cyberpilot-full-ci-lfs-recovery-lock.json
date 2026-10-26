@@ -1,0 +1,22 @@
+{
+  "baseline_head": "a720b930fa63f1372019a1e696c1b63181da3e81",
+  "ci_evidence": "FINAL_EXACT_HEAD_ACTIONS_AND_HANDOFF; no self-referential SHA/run ID",
+  "existing_scientific_source_pins_verified": 231,
+  "existing_workflow_edits": 0,
+  "lfs_pointer_changes": 0,
+  "payload_commit_or_upload": false,
+  "private_execution_authority": "NONE",
+  "receipt_sha256": "c8e5e8264d01d0d9d51ab81bac9fed240ad21239f42477cfa8f74a353fd6e1a0",
+  "source_review": "TWO_INDEPENDENT_FINAL_BYTE_APPROVALS_REQUIRED; receipts in commit message and final handoff",
+  "source_scope": "ADDITIVE_PUBLIC_LFS_VERIFICATION_ONLY",
+  "source_sha256": {
+    "docs/cyberpilot/changes/cyberpilot-full-ci-lfs-recovery-contract-v1.json": "369706da10975fa6dae250e7fce226d3a35cc0214b0fcbd335677fe03729dbdd",
+    "docs/cyberpilot/changes/cyberpilot-full-ci-lfs-recovery-inventory.json": "993de4536578a5f6474383a3d83248c90699468cf82adeb045d8ef9340fa2d64",
+    "docs/cyberpilot/changes/cyberpilot-full-ci-lfs-recovery-report.md": "f032e997b66a50e4422aa57a394fa781cb12164e6bdabece8d8d49f81506caee",
+    "docs/cyberpilot/changes/cyberpilot-full-ci-lfs-recovery-results.json": "e6aa95e98c82d58fd3f430ef4d09aad7178db4b4056d0d509d925d47bc0d9965",
+    "openpilot/tools/cyber_autotune/tests/test_full_ci_lfs_recovery.py": "353a6a222b69dd5a05ca0fa5955402d3442adf2d4cae1d8850d8b8236ba93ead",
+    "tools/cyberpilot/verify_full_ci_lfs.py": "65cb3a503fa745379bcce049bf309feaea30d19253383f9e875f89faab021e15"
+  },
+  "vehicle_authority": "NONE",
+  "version": "CYBERPILOT_FULL_CI_LFS_RECOVERY_IMPLEMENTATION_LOCK_V1"
+}

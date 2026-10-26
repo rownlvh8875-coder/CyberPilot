@@ -1,0 +1,20 @@
+{
+  "blockers": [
+    "DETECTOR_REPRODUCTION_BLOCKED",
+    "PUBLIC_PIXEL_QUALIFICATION_THRESHOLD_UNJUSTIFIED",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "environment_sha256": "da5670a1c94fe203335f1ff1b04d1206bfce468097f5ad1e6af2c17c8c4a395e",
+  "private_input_access_allowed": false,
+  "qualification": "INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "receipt_sha256": "60dc4b0c5f74b4c6703741fa1975000cff8927cba12d5d1d71f3dc9df81d55d7",
+  "reproduction_sha256": "4d855a470ed82c51d438e71520dbe3ca885b54e32e0b0921442d1fe50319e570",
+  "schema": "PRIVATE_PIXEL_ACCESS_GATE_V1",
+  "sealed_reference_generation_allowed": false,
+  "status": "BLOCKED",
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

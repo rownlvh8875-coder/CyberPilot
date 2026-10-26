@@ -1,0 +1,252 @@
+{
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "numeric_route_count": 2,
+  "policy_sha256": "5c47b1a833dad3803f94e822ff9a45f1b0c6bfd6ea6b75299375415a6085f5f8",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "raw_payload_redecoded": false,
+  "receipt_sha256": "208c67899cd0577b571848ae5f2ae48e8fc0635b36d20069c7507be003e92e75",
+  "reference_promotable": false,
+  "routes": [
+    {
+      "bridge": {
+        "domain_conflicts": 0,
+        "eligible": 415896,
+        "exact_ratio_match_count": 13025,
+        "float32_exact_rate": 1.0,
+        "float32_expected_exact_count": 415896,
+        "invalid": 10,
+        "mismatch_taxonomy": {
+          "FLOAT32_RELATION": 0,
+          "INVALID_OR_NONFINITE": 10,
+          "SIGN": 0,
+          "SOURCE_DOMAIN": 0
+        },
+        "normalized_saturated_count": 11,
+        "pair_count": 415896,
+        "physical_applied_command_acknowledged": false,
+        "raw_saturated_count": 11,
+        "residual": {
+          "BIAS": -2.6972260039028796e-12,
+          "CORRELATION": 0.999999999999999,
+          "MAE": 1.2647771881013413e-09,
+          "MAX_ABS": 2.9729456119120812e-08,
+          "MEDIAN_ABS": 5.829305094184889e-10,
+          "P95_ABS": 4.991342505977769e-09,
+          "RMSE": 2.574083106305404e-09,
+          "count": 415896
+        },
+        "role": "TRAIN",
+        "route_id": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+        "runtime_setting_known": true,
+        "sign_conflicts": 0,
+        "status": "ROUTE_COMMAND_BRIDGE_CONFIRMED",
+        "steer_max": 409,
+        "total": 415906
+      },
+      "coverage": {
+        "auxiliary_coverage": {
+          "steeringRateDeg.finite": 415906,
+          "wheelSpeeds.fl.finite": 415906,
+          "wheelSpeeds.fr.finite": 415906,
+          "wheelSpeeds.rl.finite": 415906,
+          "wheelSpeeds.rr.finite": 415906
+        },
+        "bins": {
+          "HIGH": {
+            "ARX1_design_rows": 80971,
+            "FIR25_design_rows": 80971,
+            "common_design_rows": 80971,
+            "contiguous_45_sample_windows": 80971,
+            "contiguous_runs": 18737,
+            "continuous_valid_duration_s": 1599.68,
+            "diagnostic_valid": 159968,
+            "longest_contiguous_samples": 5293,
+            "total_grid_samples": 179262,
+            "unavailable": 19294
+          },
+          "LOW": {
+            "ARX1_design_rows": 27217,
+            "FIR25_design_rows": 27217,
+            "common_design_rows": 27217,
+            "contiguous_45_sample_windows": 27217,
+            "contiguous_runs": 1214,
+            "continuous_valid_duration_s": 364.75,
+            "diagnostic_valid": 36475,
+            "longest_contiguous_samples": 5998,
+            "total_grid_samples": 39964,
+            "unavailable": 3489
+          },
+          "MEDIUM": {
+            "ARX1_design_rows": 146878,
+            "FIR25_design_rows": 146878,
+            "common_design_rows": 146878,
+            "contiguous_45_sample_windows": 146878,
+            "contiguous_runs": 4194,
+            "continuous_valid_duration_s": 1855.82,
+            "diagnostic_valid": 185582,
+            "longest_contiguous_samples": 5998,
+            "total_grid_samples": 191237,
+            "unavailable": 5655
+          }
+        },
+        "clean_primary_valid": 0,
+        "curvature_limited": null,
+        "diagnostic_valid": 382025,
+        "extracted_segment_count": 70,
+        "gap_breaks": 24642,
+        "gap_masked_samples": 24661,
+        "gyro_common_valid": 372369,
+        "intervention_breaks": 106,
+        "intervention_masked_samples": 8503,
+        "mask_breaks": 24014,
+        "mask_invalid_samples": 33819,
+        "mask_reason_counts_overlapping": {
+          "DRIVER_OVERRIDE": 5154,
+          "INACTIVE": 3393,
+          "INVALID_MESSAGE": 9,
+          "LOW_SPEED": 5381,
+          "MISSING_OR_GAP": 64,
+          "NON_FORWARD_GEAR": 142,
+          "REPEATED_OUTPUT_EVENT": 24602,
+          "SOURCE_EVENT_GAP": 4
+        },
+        "rejected_segments": [],
+        "role": "TRAIN",
+        "route_id": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677",
+        "safety_limited": null,
+        "segment_boundary_breaks": 69,
+        "segment_count": 70,
+        "segment_reset_count": 70,
+        "speed_bin_breaks": 138,
+        "total_grid_samples": 415844,
+        "unavailable": 33819
+      },
+      "route_id": "7ae11bd92d924f7f4a319657595bfc9f60259f0a9b638327fd9ef6ad4edf2677"
+    },
+    {
+      "bridge": {
+        "domain_conflicts": 0,
+        "eligible": 501946,
+        "exact_ratio_match_count": 91089,
+        "float32_exact_rate": 1.0,
+        "float32_expected_exact_count": 501946,
+        "invalid": 19,
+        "mismatch_taxonomy": {
+          "FLOAT32_RELATION": 0,
+          "INVALID_OR_NONFINITE": 19,
+          "SIGN": 0,
+          "SOURCE_DOMAIN": 0
+        },
+        "normalized_saturated_count": 41,
+        "pair_count": 501946,
+        "physical_applied_command_acknowledged": false,
+        "raw_saturated_count": 41,
+        "residual": {
+          "BIAS": -4.74637946584095e-12,
+          "CORRELATION": 0.9999999999999982,
+          "MAE": 1.354009366815763e-09,
+          "MAX_ABS": 2.9729456119120812e-08,
+          "MEDIAN_ABS": 5.282807767625908e-10,
+          "P95_ABS": 5.501406691310606e-09,
+          "RMSE": 2.837883002154729e-09,
+          "count": 501946
+        },
+        "role": "TRAIN",
+        "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+        "runtime_setting_known": true,
+        "sign_conflicts": 0,
+        "status": "ROUTE_COMMAND_BRIDGE_CONFIRMED",
+        "steer_max": 409,
+        "total": 501965
+      },
+      "coverage": {
+        "auxiliary_coverage": {
+          "steeringRateDeg.finite": 501965,
+          "wheelSpeeds.fl.finite": 501965,
+          "wheelSpeeds.fr.finite": 501965,
+          "wheelSpeeds.rl.finite": 501965,
+          "wheelSpeeds.rr.finite": 501965
+        },
+        "bins": {
+          "HIGH": {
+            "ARX1_design_rows": 29975,
+            "FIR25_design_rows": 29975,
+            "common_design_rows": 29975,
+            "contiguous_45_sample_windows": 29975,
+            "contiguous_runs": 4972,
+            "continuous_valid_duration_s": 814.96,
+            "diagnostic_valid": 81496,
+            "longest_contiguous_samples": 4354,
+            "total_grid_samples": 90519,
+            "unavailable": 9023
+          },
+          "LOW": {
+            "ARX1_design_rows": 85107,
+            "FIR25_design_rows": 85107,
+            "common_design_rows": 85107,
+            "contiguous_45_sample_windows": 85107,
+            "contiguous_runs": 4241,
+            "continuous_valid_duration_s": 1188.82,
+            "diagnostic_valid": 118882,
+            "longest_contiguous_samples": 5999,
+            "total_grid_samples": 135365,
+            "unavailable": 16483
+          },
+          "MEDIUM": {
+            "ARX1_design_rows": 79278,
+            "FIR25_design_rows": 79278,
+            "common_design_rows": 79278,
+            "contiguous_45_sample_windows": 79278,
+            "contiguous_runs": 5398,
+            "continuous_valid_duration_s": 1276.52,
+            "diagnostic_valid": 127652,
+            "longest_contiguous_samples": 5999,
+            "total_grid_samples": 142577,
+            "unavailable": 14925
+          }
+        },
+        "clean_primary_valid": 0,
+        "curvature_limited": null,
+        "diagnostic_valid": 328030,
+        "extracted_segment_count": 86,
+        "gap_breaks": 17273,
+        "gap_masked_samples": 29291,
+        "gyro_common_valid": 318559,
+        "intervention_breaks": 423,
+        "intervention_masked_samples": 101783,
+        "mask_breaks": 14523,
+        "mask_invalid_samples": 184650,
+        "mask_reason_counts_overlapping": {
+          "DRIVER_OVERRIDE": 23394,
+          "INACTIVE": 81177,
+          "INVALID_MESSAGE": 18,
+          "LOW_SPEED": 144219,
+          "MISSING_OR_GAP": 12066,
+          "NON_FORWARD_GEAR": 4985,
+          "REPEATED_OUTPUT_EVENT": 28021,
+          "SOURCE_EVENT_GAP": 11975
+        },
+        "rejected_segments": [],
+        "role": "TRAIN",
+        "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c",
+        "safety_limited": null,
+        "segment_boundary_breaks": 85,
+        "segment_count": 86,
+        "segment_reset_count": 86,
+        "speed_bin_breaks": 198,
+        "total_grid_samples": 512680,
+        "unavailable": 184650
+      },
+      "route_id": "962f24485b27893e075f1a580f6e168a52f9a33dececfe4e82e1e2995c15c86c"
+    }
+  ],
+  "schema": "EMPIRICAL_PLANT_V3_ROUTE_COVERAGE_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "v2_cache_unchanged": true,
+  "vehicle_activation_allowed": false
+}

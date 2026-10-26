@@ -1,0 +1,160 @@
+{
+  "accounting": {
+    "actual_model_D0_A_C_projection_invocations": "PRIVATE_SEALED_ONLY",
+    "all_forbidden_operations": 0,
+    "control_totals_complete": true,
+    "durable_allowlist_readback": true,
+    "exact_metadata_numeric_control_file_and_byte_totals": "PRIVATE_SEALED_ONLY",
+    "forbidden_operation_counters": {
+      "CALIBRATION_FIT": 0,
+      "D2_DEV_ONE_STEP": 0,
+      "D2_NEW_GATES": 0,
+      "D2_RECURSIVE_ROLLOUT": 0,
+      "D2_TRAIN_DECISION_SELECTION": 0,
+      "E2_FULL_REEXECUTION": 0,
+      "E2_V2_RESUME": 0,
+      "HOLDOUT_DISCOVERY": 0,
+      "HOLDOUT_OPENINGS": 0,
+      "MIXED_TRAIN_CARRIER_OPENINGS": 0,
+      "NEW_POLICY_SEARCH": 0,
+      "NOMINAL_COEFFICIENTS_ARRAY_OPENINGS": 0,
+      "NORMALIZER_REFIT": 0,
+      "NUMERICAL_TOLERANCE_RELAXATION": 0,
+      "ORIGINAL_SOURCE_WRITES": 0,
+      "POSTHOC_TUNING": 0,
+      "RAW_LOG_QLOG_OPENINGS": 0,
+      "REBATCHING_TO_FORCE_PASS": 0,
+      "SINGULAR_VALUES_ARRAY_OPENINGS": 0,
+      "STAGE1_REFIT": 0,
+      "STAGE2_REFIT": 0,
+      "VEHICLE_ACTIVATION": 0
+    },
+    "mixed_TRAIN_carrier_openings": 0,
+    "nominal_coefficients_array_openings": 0,
+    "observed_within_frozen_caps": true,
+    "scope": "ONE_FRESH_DIAGNOSTIC_PROCESS;PREPARATION_AND_STORED_RESULT_READBACK_RECORDED_SEPARATELY",
+    "singular_values_array_openings": 0,
+    "source_writes": 0,
+    "wall_CPU_Linux_peak_RSS_output_counts_and_bytes": "PRIVATE_SEALED_ONLY"
+  },
+  "baseline_head": "5032e7197ed84fc58e236152f4a3ba30b1a3f7e3",
+  "execution_head": "7676d761e47654e3c86665a3166dfe88d87b39e0",
+  "historical_statuses": {
+    "D0": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
+    "D1": "E_EXECUTION_COMPLETE_D1_NOT_ADMISSIBLE",
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "E2_V1_V2": "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+    "historical_TRAIN_gate": "NOT_SAVED",
+    "previous_diagnostic": "E2_V2_Q1_DIAGNOSTIC_UNRESOLVED",
+    "whole_replica": "REPLICA_PAYLOAD_EQUALITY_NOT_FULLY_REVERIFIED"
+  },
+  "limitations": [
+    "ONE_AUTHENTICATED_FAILED_TRAIN_JOB_ONLY",
+    "NO_UNIVERSAL_BATCH_SIZE_BYTE_EQUALITY_GUARANTEE",
+    "NO_32_JOB_Q1_OR_ANY_Q3_QUALIFICATION",
+    "NO_SPECIFIC_BLAS_KERNEL_OR_FMA_IDENTIFICATION",
+    "NO_TICK_CHANGE_IN_THIS_OBSERVATION_DOES_NOT_PROVE_NO_CONTINUOUS_LOSS_IMPACT",
+    "D2_PERFORMANCE_NOT_EVALUATED",
+    "NO_OS_SANDBOX_CLAIM"
+  ],
+  "mission": "STAGE1_V4_E2_V2_Q1_READER_SCHEMA_REPAIR_AND_FRESH_DIAGNOSTIC",
+  "next_authority": "SEPARATE_NUMERICAL_CONTRACT_AND_SOURCE_AMENDMENT_IF_CHOSEN_THEN_EXPLICIT_FRESH_E2_EXECUTION_GRANT",
+  "outcome": {
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "HOLDOUT": "CLOSED",
+    "actual_Q1_mismatch_reproduced": true,
+    "all_counters_and_resource_measurements": "SEALED_PRIVATELY_WITHIN_FROZEN_CAPS",
+    "classification": [
+      "BATCH_LAYOUT_SENSITIVE_MATMUL_DIFFERENCE"
+    ],
+    "coefficient_normalizer_unchanged": true,
+    "control_totals_complete": true,
+    "diagnostic_jobs": 1,
+    "forbidden_operations_zero": true,
+    "input_rows_byte_equal": true,
+    "numeric_allowlist": "COEFFICIENTS_AND_ORIGINAL_FIVE_NORMALIZER_FIELDS_ONLY",
+    "projected_tick_changed": false,
+    "same_sealed_failed_job_authenticated": true,
+    "signed_zero_only": false,
+    "source_writes": 0,
+    "specific_BLAS_kernel_FMA": "NOT_IDENTIFIED",
+    "stage2_exact_numeric_equal": false,
+    "stage2_raw_byte_equal": false,
+    "status": "E2_V2_Q1_BATCH_LAYOUT_NUMERICAL_DIFFERENCE_CONFIRMED",
+    "transformed_rows_byte_equal": true,
+    "vehicle_authority": "NONE",
+    "writer_compatible_metadata_pass": true
+  },
+  "privacy": {
+    "C_E_E2_joint_suppression": "PRESERVED",
+    "per_row_outputs_persisted": false,
+    "private_job_identity_published": false,
+    "private_numeric_telemetry_published": false,
+    "projection": "QUALITATIVE_WHITELIST_ONLY",
+    "unsafe_small_cell_or_complementary_counts": "NOT_PUBLISHED"
+  },
+  "protocol": {
+    "raw_sha256": "d33b3be20b84b6f0cf1848799e6c1e3c299dac227ddbeea8cc2c1cd28bbae725",
+    "receipt_sha256": "e08aa2a648d237fc6e45d09ef7f6c8b55b4658115e35cf4ccf43f43438d5f129",
+    "version": "V4_E2_V2_Q1_DIAGNOSTIC_PROTOCOL_V2"
+  },
+  "reader_schema": {
+    "descriptor": "EXACT_WRITER_NPY_GZIP_V1_FIELDS_DTYPE_SHAPE_ORDER_FILENAME_SHA256_FORMAT_LOSSLESS_DECLARATION_AND_ROOT_MEMBER_HASH",
+    "metadata_only_model_fields": [
+      "nominal_coefficients",
+      "singular_values"
+    ],
+    "model_anchor": "ORIGINAL_MOVE_ONLY_STAGE2_FIT_SUBSET_FROM_FROZEN_V1_REFERENCE_NOT_FULL_TRAIN_ANCHOR",
+    "model_optional": [
+      "singular_values"
+    ],
+    "model_required": [
+      "coefficients",
+      "nominal_coefficients"
+    ],
+    "normalizer_required": [
+      "mean",
+      "std",
+      "constant",
+      "effective",
+      "constant_reference"
+    ],
+    "numeric_model_fields": [
+      "coefficients"
+    ],
+    "unknown_array_keys": "REJECT",
+    "unopened_payload_claim": "NO_CONTENT_OR_NUMERICAL_VALIDITY_CLAIM_FOR_UNOPENED_ARRAYS",
+    "writer": "empirical_hurdle_fit_cv_execution.py::save_model"
+  },
+  "receipt_sha256": "1861bddece3525dc8dcb6bdc2db7e844176f6b9eeeac7205e09c424a6f60e0ec",
+  "schema": "CYBERPILOT_V4_Q1_READER_REPAIR_PUBLIC_RESULT_V2",
+  "selection": {
+    "selected_candidate": null,
+    "selected_policy": null
+  },
+  "source_map_sha256": "ccaaa7f74003d09d875e9f886f65ebad607719cb02c3d6d1ad65a8d977ef1d07",
+  "stop": {
+    "D2_selection": false,
+    "DEV": false,
+    "E2_resume": false,
+    "HOLDOUT": "CLOSED",
+    "Hugging_Face": "NOT_REQUIRED / NOT_USED",
+    "Q3": false,
+    "V5": "NOT_AUTHORIZED",
+    "composition": "NOT_AUTHORIZED",
+    "diagnostic_complete": true,
+    "pooled_refit": "NOT_AUTHORIZED",
+    "rollout": false,
+    "vehicle": "NOT_READY",
+    "vehicle_authority": "NONE"
+  },
+  "stored_result_verification": {
+    "inference_calls": 0,
+    "original_source_rereads": 0,
+    "recompute_calls": 0,
+    "result_binding_grant_telemetry_seals": "PASS",
+    "scope": "RESULT_SEAL_READBACK_ONLY_NOT_SCIENTIFIC_REPEAT_OR_E2_RESUME",
+    "source_writes": 0
+  },
+  "writer_raw_sha256": "a952eb4986f47e0335bf355ee74868755f14b592d05070008a0b117979d4e635"
+}

@@ -1,0 +1,43 @@
+{
+  "actual_algorithm_implemented": false,
+  "arms": [
+    "UPSTREAM_BASELINE",
+    "CYBER_CURRENT_ALIAS",
+    "CYBER_CANDIDATE"
+  ],
+  "composition_execution_allowed": false,
+  "current_alias": true,
+  "experiments": {
+    "EXPERIMENT_COMPOSED": "NOT_AUTHORIZED",
+    "EXPERIMENT_SG": "SMOOTHNESS_ONLY_PENDING",
+    "EXPERIMENT_TA": "TRAJECTORY_ONLY_PENDING"
+  },
+  "historical_70_cases_search_allowed": false,
+  "objective_combination": "NO_COMPENSATION_ACROSS_HARD_FAILURES",
+  "parameter_search_allowed": false,
+  "primary_context_m": [
+    5,
+    10,
+    15,
+    20,
+    25,
+    30
+  ],
+  "production_authority": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "6021a6c11b764c32a88f7f4d7f839b620fab5eff6537abb8b24a3b90019bd818",
+  "roles": {
+    "ARCHITECTURE_PROBE": true,
+    "DEVELOPMENT_SCREEN": false,
+    "FROZEN_EVALUATION": false,
+    "STRESS_DIAGNOSTIC": false
+  },
+  "schema": "CANDIDATE_EXPERIMENT_MATRIX_V1",
+  "sealed_reference_allowed": false,
+  "secondary": "LONGER_HORIZON_DESCRIPTIVE_CONTEXT",
+  "secondary_meter_classification_allowed": false,
+  "source_baseline_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+  "threshold_status": "THRESHOLD_UNJUSTIFIED",
+  "vehicle_activation_allowed": false,
+  "weighted_score_allowed": false
+}

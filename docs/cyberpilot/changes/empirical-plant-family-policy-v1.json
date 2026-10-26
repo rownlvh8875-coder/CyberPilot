@@ -1,0 +1,84 @@
+{
+  "candidate_search_authorized": false,
+  "candidates": [
+    {
+      "delay_samples": 0,
+      "family": "ARX1",
+      "input_taps": 1,
+      "intercept": true,
+      "output_lags": 1
+    },
+    {
+      "delay_samples": 5,
+      "family": "ARX1",
+      "input_taps": 1,
+      "intercept": true,
+      "output_lags": 1
+    },
+    {
+      "delay_samples": 10,
+      "family": "ARX1",
+      "input_taps": 1,
+      "intercept": true,
+      "output_lags": 1
+    },
+    {
+      "delay_samples": 20,
+      "family": "ARX1",
+      "input_taps": 1,
+      "intercept": true,
+      "output_lags": 1
+    },
+    {
+      "delay_samples": 0,
+      "family": "FIR25",
+      "input_taps": 25,
+      "intercept": true,
+      "output_lags": 0
+    },
+    {
+      "delay_samples": 5,
+      "family": "FIR25",
+      "input_taps": 25,
+      "intercept": true,
+      "output_lags": 0
+    },
+    {
+      "delay_samples": 10,
+      "family": "FIR25",
+      "input_taps": 25,
+      "intercept": true,
+      "output_lags": 0
+    },
+    {
+      "delay_samples": 20,
+      "family": "FIR25",
+      "input_taps": 25,
+      "intercept": true,
+      "output_lags": 0
+    }
+  ],
+  "closed_loop_bias": "OLS_NOT_CAUSAL_INTERVENTION_OR_PHYSICAL_TRUTH",
+  "composition_authorized": false,
+  "holdout_reselection": false,
+  "maximum_candidates": 8,
+  "naive": [
+    "ZERO_RESPONSE",
+    "HOLD_LAST_OUTPUT",
+    "TRAIN_STATIC_GAIN"
+  ],
+  "pole_gate": "ABS_POLE_STRICTLY_LESS_THAN_ONE",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "c1c1d5162e7304b13e11ec60fc92fc0be07c04d494c2b697fb4f00f89424e9c1",
+  "reference_promotable": false,
+  "regularization": null,
+  "schema": "EMPIRICAL_PLANT_FAMILY_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "selection": "DEVELOPMENT_RMSE_THEN_PARAMETER_COUNT_THEN_FAMILY_DELAY",
+  "sg_execution": false,
+  "ta_execution": false,
+  "training": "TRAIN_ONLY",
+  "vehicle_activation_allowed": false
+}

@@ -1,0 +1,128 @@
+{
+  "actual_execution_authorized": false,
+  "authority": "PUBLIC_POLICY_AND_SYNTHETIC_TESTS_ONLY",
+  "c_result_directory": false,
+  "candidate_search_authorized": false,
+  "change_scope": "THRESHOLD_OBJECTIVE_ONLY",
+  "cleanup_failure": "KEEP_SCRATCH_NO_DELETION",
+  "commits": [
+    "PAYLOAD",
+    "RECEIPT_LAST",
+    "JOB_MANIFEST_LAST",
+    "RUN_MANIFEST_LAST"
+  ],
+  "composition_authorized": false,
+  "compression": {
+    "filename": "",
+    "format": "C_ORDER_NPY_GZIP",
+    "hashes": [
+      "COMPRESSED_FILE_SHA256",
+      "DECODED_NPY_SHA256",
+      "ARRAY_CONTENT_SHA256"
+    ],
+    "level": 1,
+    "lossless": true,
+    "metadata": [
+      "DTYPE",
+      "SHAPE",
+      "C_ORDER"
+    ],
+    "mtime": 0
+  },
+  "decision_policy": "HURDLE_STAGE1_DECISION_POLICY_V2",
+  "deletion_this_increment": false,
+  "development_payload": [
+    "P_MOVE_GATE_IDENTITY",
+    "INTEGRATED_PREDICTION",
+    "PROJECTED_NEXT_TICK",
+    "ERRORS"
+  ],
+  "family": "HURDLE_RI_V1",
+  "future_root": "EXPLICIT_EXTERNAL_D_ROOT_CONFIRMED_BY_SEPARATE_EXECUTION_AUTHORIZATION",
+  "path_discovery_this_increment": 0,
+  "path_guards": [
+    "ABSOLUTE_D_VOLUME_PROOF",
+    "NO_SOURCE_OR_RAW_DERIVED_OVERLAP",
+    "NO_SYMLINK_COMPONENT",
+    "NO_TRAVERSAL",
+    "NO_OVERWRITE",
+    "ATOMIC_WRITES",
+    "FREE_SPACE_GUARD"
+  ],
+  "production_authority": false,
+  "public_forbidden": [
+    "ACTUAL_THRESHOLD",
+    "COEFFICIENTS",
+    "NORMALIZER_VALUES",
+    "PER_ROW_PROBABILITY",
+    "PER_ROW_GATE",
+    "PREDICTIONS",
+    "PATHS",
+    "TICKS",
+    "COMMANDS",
+    "TIMESTAMPS",
+    "PRIVATE_PATHS",
+    "GPS"
+  ],
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "82fd0863bbc099ce73bcbe2096bb8a3d2ce477bcb5f6a14aef95f0e0740505ba",
+  "reference_only": [
+    "V1_STAGE1_MODEL",
+    "V1_STAGE2_MODEL",
+    "V1_NORMALIZERS",
+    "V1_TRUTH",
+    "V1_HOLD_LAST_PATH",
+    "V1_ANCHORS",
+    "V1_EXOGENOUS_INPUTS"
+  ],
+  "reference_promotable": false,
+  "reference_rule": "REUSE_EXISTING_IMMUTABLE_REFERENCE_NO_REDUNDANT_PAYLOAD",
+  "reference_schema": [
+    "successful_manifest_sha256",
+    "relative_member",
+    "receipt_sha256",
+    "content_sha256"
+  ],
+  "retained": [
+    "RUN2_MANIFEST",
+    "RUN2_RECEIPT",
+    "COMPARISON_MANIFEST",
+    "FILE_HASH_EQUALITY_SUMMARY",
+    "SELECTED_THRESHOLD_RECEIPT_IDENTITY",
+    "FINAL_RESULT_IDENTITY"
+  ],
+  "rollout_payload": [
+    "V2_PROJECTED_PATH",
+    "V2_GATE_PATH",
+    "ENDPOINT_ERRORS"
+  ],
+  "run1": "COMPLETE_AUTHORITATIVE_PERSISTENT_V2_EVIDENCE",
+  "run2": "INDEPENDENT_D_SCRATCH_LARGE_PAYLOAD_OPTIONALLY_REMOVED_ONLY_AFTER_EXACT_VERIFICATION",
+  "run2_cleanup_requires": [
+    "COMPLETE_BOTH_RUNS",
+    "EXACT_ALL_CONTENT_DECODED_FILE_HASHES_AND_MANIFESTS",
+    "DURABLE_RUN2_MANIFEST_RECEIPT",
+    "DURABLE_COMPARISON_AND_EQUALITY_SUMMARY",
+    "DURABLE_SELECTED_THRESHOLD_RECEIPT_AND_FINAL_RESULT_IDENTITY",
+    "RESOLVED_SCRATCH_WITHIN_AUTHORIZED_D_ROOT_NO_SYMLINK_NO_SOURCE_OVERLAP"
+  ],
+  "schema": "EMPIRICAL_HURDLE_STAGE1_V2_STORAGE_CONTRACT",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source": "SUCCESSFUL_C4DE_MANIFEST_ONLY_NO_INCOMPLETE_OR_INVALID_RUN",
+  "ta_execution": false,
+  "train_payload": [
+    "PRIVATE_V2_THRESHOLD",
+    "THRESHOLD_RECEIPT",
+    "P_MOVE_SHA",
+    "STAGE2_ALL_TRAIN_DELTA_SHA",
+    "SELECTED_GATE",
+    "PROJECTED_NEXT_TICK",
+    "TRAIN_OBJECTIVE_AGGREGATES",
+    "SAME_ANCHOR_RECEIPT"
+  ],
+  "vehicle_activation_allowed": false,
+  "volume": "D_ONLY",
+  "windows_and_wsl": "D_DRIVE_OR_VERIFIED_D_BACKED_WSL_OUTPUT_ONLY_NO_C_RESULTS"
+}

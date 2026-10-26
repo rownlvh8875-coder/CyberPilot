@@ -1,0 +1,85 @@
+{
+  "ascending_keys": [
+    "WORST_PATH_MOVED_ROLLOUT_RMSE_RATIO",
+    "WORST_OVERALL_ROLLOUT_RMSE_RATIO",
+    "WORST_INTEGRATED_ONE_STEP_P95_RATIO",
+    "TOTAL_NOMINAL_PARAMETER_COUNT",
+    "L",
+    "d",
+    "candidate_id"
+  ],
+  "authority": {
+    "candidate_execution": false,
+    "composition": false,
+    "controller_integration": false,
+    "cv_scoring": false,
+    "device": false,
+    "fitting": false,
+    "holdout_opening": false,
+    "logistic_fitting": false,
+    "normalizer_fitting": false,
+    "ols_fitting": false,
+    "pooled_refit": false,
+    "prediction": false,
+    "private_array_access": false,
+    "qlog_opening": false,
+    "raw_opening": false,
+    "rollout": false,
+    "selection": false,
+    "sg": false,
+    "ta": false,
+    "threshold_search": false,
+    "vehicle": false
+  },
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "family": "HURDLE_RI_V1",
+  "forbidden_fallback": [
+    "GATE_RELAXATION",
+    "THRESHOLD_RULE_CHANGE",
+    "CANDIDATE_EXPANSION",
+    "WEIGHTING",
+    "REGULARIZATION",
+    "PATH_MOVED_GATE_REMOVAL",
+    "HISTORY_OR_OFFSET_SEARCH"
+  ],
+  "handoff": "CONFIGURATION_PLUS_TWO_FOLD_STAGE_MODEL_RECEIPTS_NO_POOLED_MODEL",
+  "infinity_serialization": "TAG_POSITIVE_INFINITY_NO_NONSTANDARD_JSON_INFINITY_OR_NAN",
+  "input": "ONLY_CANDIDATES_ADMISSIBLE_IN_BOTH_FOLDS",
+  "interpretation": "RETROSPECTIVE_CONFIGURATION_ONLY",
+  "model_admission": "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+  "multiple": "HURDLE_RETROSPECTIVE_CV_SELECTED",
+  "one": [
+    "HURDLE_SINGLE_ADMISSIBLE_CANDIDATE",
+    "HURDLE_RETROSPECTIVE_CV_SELECTED"
+  ],
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "ratio": {
+    "negative_or_nonfinite_input": "CANDIDATE_INVALID",
+    "positive_denominator": "FLOAT64_NUMERATOR_DIVIDE_DENOMINATOR",
+    "positive_denominator_overflow": "CANDIDATE_INVALID",
+    "positive_over_zero": "POSITIVE_INFINITY",
+    "zero_over_zero": 1.0
+  },
+  "receipt_sha256": "9622e7134b56f0c48153cba1a23dd690bdc6d578a433c6f77b34e3f7a3cf70f0",
+  "redesign": "SEPARATE_AUTHORIZATION_REQUIRED",
+  "reductions": {
+    "TOTAL_NOMINAL_PARAMETER_COUNT": "2*(2*L+3)_THRESHOLD_SEPARATE",
+    "WORST_INTEGRATED_ONE_STEP_P95_RATIO": "MAX_BOTH_FOLDS_INTEGRATED_ONE_STEP",
+    "WORST_OVERALL_ROLLOUT_RMSE_RATIO": "MAX_BOTH_FOLDS_ALL_FOUR_OVERALL_HORIZONS",
+    "WORST_PATH_MOVED_ROLLOUT_RMSE_RATIO": "MAX_BOTH_FOLDS_ALL_FOUR_PATH_MOVED_HORIZONS"
+  },
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_SELECTION_RULE_V1",
+  "sealed_reference_allowed": false,
+  "selected_candidate": "NOT_COMPUTED",
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false,
+  "zero": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED"
+  ]
+}

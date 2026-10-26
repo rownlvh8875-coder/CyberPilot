@@ -1,0 +1,1011 @@
+{
+  "authorization_sha256": "e4eeaca2f891cc9fdb1370b7ae735d963287af6c09cca85dc689c8e9c560c6ea",
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "jobs": [
+    {
+      "candidate_id": "HRI_D00_L01",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 43488,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.24661975717439294,
+          "mae": 1.1090689176640218,
+          "p95": 2.710708928083399,
+          "rmse": 1.4973709755722762,
+          "sign_accuracy": 0.6966059602649006,
+          "within_one_tick": 0.786055923473142
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "5e995a01b95a2ee63428e6da6e9cc124447153128f35cae57a5ec2d8a1cc717d",
+        "condition": 2.7478592813734175,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 48231,
+        "effective_columns": 5,
+        "model_receipt_sha256": "d2969a538725eb05319b257a5c969393c9f9b3b92540d2e20ee4ab467d73b732",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "8875822ff2be95235b1c7f7cf7fafd2df2c15de9d1e0629707877b5779258f29",
+        "rank": 5,
+        "train_anchor_sha256": "1c96655a175e11ecc60abf5a33880cceeb506e2cf2bd44a3629cb0ee10d1ef3f"
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L01",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 48231,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.20358275797723455,
+          "mae": 1.0664391494864531,
+          "p95": 2.4579088297753025,
+          "rmse": 1.2959890253050501,
+          "sign_accuracy": 0.681968028861106,
+          "within_one_tick": 0.7632020899421534
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "2e7e5988285551f9c25d38f21a3e7790b99d3d1064141b8bcfe62bd536abf801",
+        "condition": 2.561036256205058,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 43488,
+        "effective_columns": 5,
+        "model_receipt_sha256": "21986b226bf02bceaeed9c98ba8a7c7d2d5a1b30e79fbeda1ef2d7da2aca51c8",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "d5bf6f4c560fa4dcc0563da9f972655594ea5541fcd57d1220f0d442d38e351c",
+        "rank": 5,
+        "train_anchor_sha256": "ec5d9b52ecbfc49a0ba63fb9881f9175a17ad9f5241714959b4642b68357e157"
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 38198,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.3319545525943767,
+          "mae": 0.852248190830387,
+          "p95": 2.103250618942723,
+          "rmse": 1.1020788192242643,
+          "sign_accuracy": 0.8379496308707263,
+          "within_one_tick": 0.8709356510812084
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "9a27d520cffec3a37ebf2232ed34604d565b284e082b7e25f018f14b0514f98b",
+        "condition": 192.94903899921275,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 43217,
+        "effective_columns": 13,
+        "model_receipt_sha256": "0af287c65994ec7f6eb478507b000608ed763929c761ba31395c7be14c11a47f",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "8e63b6221bf291a4cd147d01f58b2e02804ee594d9a41641a712d8e46316807f",
+        "rank": 13,
+        "train_anchor_sha256": "03c0c193ef35a2969af3546544b6bceee5098d2f7f095a45100c7cab7bf146b8"
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L05",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 43217,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.3051808316171877,
+          "mae": 0.8149763542065562,
+          "p95": 1.8838277791807299,
+          "rmse": 0.9878062525457847,
+          "sign_accuracy": 0.8462873406298448,
+          "within_one_tick": 0.895156998403406
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "2f580797d6be9b9694485b9c0198a6e4b065b6b22a98ddb3a4968f723e3f5f61",
+        "condition": 223.38239371028496,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 38198,
+        "effective_columns": 13,
+        "model_receipt_sha256": "6e719188dc2782d9a3eca226b507390d6b2c366d43c75d18fe0a46d35a76826d",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "d365e7aed6dd81797d5ff7439da4ad28a2511632b044f827d0398ab334ac12ea",
+        "rank": 13,
+        "train_anchor_sha256": "761b7dcd133fa2935cb3b830f1855368767ffd2e67cbeadc67ab06c94b1a9997"
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 33037,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.3672548960256682,
+          "mae": 0.8037067535873259,
+          "p95": 2.0108568047611795,
+          "rmse": 1.0418429774849276,
+          "sign_accuracy": 0.846626509670975,
+          "within_one_tick": 0.88446287495838
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "939e3760d662607f84481f485e7484510f90b9bf60d12c1b9979378a69bf47f6",
+        "condition": 376.627379474776,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 40822,
+        "effective_columns": 33,
+        "model_receipt_sha256": "0547e355f1b2ff650bb7961d824c2bd2a70ca9c25333aea0e592b764ff47c62d",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "d01247b5e01b74df73b5ddfbedd57626c5247277a8684d1b95a05d6880d32dc0",
+        "rank": 33,
+        "train_anchor_sha256": "9a871e840008aa4c607daa68a75d512d0ad535696f7edd4b1f9e8d33af489535"
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L15",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 40822,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.35635196707657635,
+          "mae": 0.7641284889959461,
+          "p95": 1.8268621233786335,
+          "rmse": 0.9383571350876924,
+          "sign_accuracy": 0.8501298319533585,
+          "within_one_tick": 0.9086277007495958
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "1e1c6384dc6fb119d4a87b43f656d91024bc2143fda0773a455e757fe022dbe0",
+        "condition": 455.98062838948124,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 33037,
+        "effective_columns": 33,
+        "model_receipt_sha256": "4510430a426fd5b76858f733a6e73f0657682b8383f7289d5cd8f0a1137485c6",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "355e95e98ba8a1015ec52f1ee097e6627d6a3916a57080ab632326d1291fb9c9",
+        "rank": 33,
+        "train_anchor_sha256": "8e9a7f7b891b27bedaced5c3d095ab912e8d1a30966419366ad11c41e4190ac7"
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 27672,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.3808181555362822,
+          "mae": 0.775164437790059,
+          "p95": 1.9238813623266966,
+          "rmse": 0.9954642342789392,
+          "sign_accuracy": 0.853642671292281,
+          "within_one_tick": 0.8931410812373518
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "092d10af5c54c8f5701a69025d340c33534e2dcdf45b9480e81c60919e9f0d3f",
+        "condition": 625.512210884164,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 38022,
+        "effective_columns": 93,
+        "model_receipt_sha256": "f2daf516a5b19f14241c17434bb9d066846beb2b7401fd116f186cd90d451985",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "c915d7dfec437093137ded8d2df183b41cf89156d3da7277b2ef39a8e014545f",
+        "rank": 93,
+        "train_anchor_sha256": "24e53c2b938b68e9979749fe9630b665a60513fd775697ca731fddefa78749ff"
+      }
+    },
+    {
+      "candidate_id": "HRI_D00_L45",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 38022,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.36673504813003,
+          "mae": 0.753208763681894,
+          "p95": 1.8040324552719766,
+          "rmse": 0.9280108239234319,
+          "sign_accuracy": 0.8539529745936563,
+          "within_one_tick": 0.9118405133869865
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "b23db4072fc60a36282345dbbec09bd892307db4fa9f5b01f3816235cee9af26",
+        "condition": 819.2311995201136,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 27672,
+        "effective_columns": 93,
+        "model_receipt_sha256": "e898fe13c21009471b9a63cb885a546020277f2fdb8f37685a367f71891e74ce",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "1a93bb530a4342b6c6c3f953edee4ff87ce652b7bb1139cea92025383b2da4b7",
+        "rank": 93,
+        "train_anchor_sha256": "777177b2c4c3cf09bba12a864823a5c405c866449679ce218aa9eb171e1d6d5c"
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 38198,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.2718990523064035,
+          "mae": 1.0918347325718956,
+          "p95": 2.731549018998108,
+          "rmse": 1.521265515714774,
+          "sign_accuracy": 0.7147494633226871,
+          "within_one_tick": 0.7900151840410493
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "66458d593b52f58c1031a2bb8aa72998a4a66c6d6b348d59b4b28e6ec3fd3f06",
+        "condition": 2.974199240937154,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 43217,
+        "effective_columns": 5,
+        "model_receipt_sha256": "086869bbc8545468e2e83b098a37042ea8583d82ad11bc1697ddb63ea5ae8878",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "70ffe5fcdbb8f5e8c91896581677311817267f1bab1fe1303f6888d3398640aa",
+        "rank": 5,
+        "train_anchor_sha256": "03c0c193ef35a2969af3546544b6bceee5098d2f7f095a45100c7cab7bf146b8"
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L01",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 43217,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.21942754008839113,
+          "mae": 1.0363884609804515,
+          "p95": 2.4372335350877856,
+          "rmse": 1.2684039092201307,
+          "sign_accuracy": 0.6976421315685957,
+          "within_one_tick": 0.77920725640373
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "a6dafbb385895843e8bbcaafaaa8091f2b659b350ce0070ad1bb660cd16b3123",
+        "condition": 2.7207330702456463,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 38198,
+        "effective_columns": 5,
+        "model_receipt_sha256": "6b79a500361fad07a1dc68a5c5c8c4099a57803354bf1cf41ea4fd880268f108",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "17345610c021bb0572b1c092717bd9e75849263c24b6411d0ed3b44e26deebb6",
+        "rank": 5,
+        "train_anchor_sha256": "761b7dcd133fa2935cb3b830f1855368767ffd2e67cbeadc67ab06c94b1a9997"
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 35520,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.35171734234234237,
+          "mae": 0.8238794326547546,
+          "p95": 2.0400066265179206,
+          "rmse": 1.0607778010538225,
+          "sign_accuracy": 0.8382601351351351,
+          "within_one_tick": 0.8767173423423423
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "7eb4d31ff8a532bf441eaf1afac531c78e7d71d38cd31eeedc20300d474ee358",
+        "condition": 129.80288816810668,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 41988,
+        "effective_columns": 13,
+        "model_receipt_sha256": "504022ca2903b151e40104b9a259bdbc9036556e565c93cb03a589a949c264b9",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "6ca2c3ae1b745707f98dfc328bcb7e07f9671bc256d7855a0d9f544aaf12bf32",
+        "rank": 13,
+        "train_anchor_sha256": "df2925d0ed3275d73f54c2b6ca5129cbd6e94949094810842834054d1a514d00"
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L05",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 41988,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.34490806897208726,
+          "mae": 0.7799182147561188,
+          "p95": 1.847191886592039,
+          "rmse": 0.9557169594963875,
+          "sign_accuracy": 0.8426931504239307,
+          "within_one_tick": 0.9032342574068781
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "38664208be0bf0805a704932cdaa08f721b055c0c66074ab0f9a961c1dbfce3b",
+        "condition": 152.61250184552225,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 35520,
+        "effective_columns": 13,
+        "model_receipt_sha256": "0f76ded97bd28df90532b8b6b654dc520ef55c214368abccfd65a4804692ff07",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "85bd079860016fc46f0954a098198af342a198b23a8548ab63934649f95556d1",
+        "rank": 13,
+        "train_anchor_sha256": "cd7505f342a46f4cd47d1fc1e186eafd427ea905cd00d06f06c6f663349639f0"
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 31879,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.37074563192070015,
+          "mae": 0.8026932902941926,
+          "p95": 2.012706939496458,
+          "rmse": 1.041516616196669,
+          "sign_accuracy": 0.8450704225352113,
+          "within_one_tick": 0.8835597101540199
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "91f3db4c5b31efa4ba45297deac5b9b7322b5a4662f27b6f9a2ac7d9bacd9c95",
+        "condition": 377.5436339081175,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 40237,
+        "effective_columns": 33,
+        "model_receipt_sha256": "942366e17efa6341af9ea80b7cc490983b55515cea571b8d2872ebd7c9fb4c1a",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "f20b3a231881818548522d2772339d02875e90005b331a55370716195d30b8fb",
+        "rank": 33,
+        "train_anchor_sha256": "bc4dab5a9c5111964b8ed7481a89d623dc4b414a4dced82a478d256ef97a63d7"
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L15",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 40237,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.35700971742426124,
+          "mae": 0.7648896468519805,
+          "p95": 1.833317771093485,
+          "rmse": 0.9403267093556831,
+          "sign_accuracy": 0.8450182667693914,
+          "within_one_tick": 0.9071501354474737
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "7b0676bc7c5527c668d8e0962d984b85f7ef8077013a46b7a90eeac13a97a123",
+        "condition": 455.1313468175728,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 31879,
+        "effective_columns": 33,
+        "model_receipt_sha256": "9b92b84a6c157943811214f7cfa7c2eacbaf036a4bcc17e09a653eae01ab29e4",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "3ad2d86d756281d5d48359988dc26dc8b920148b72f420d0ddf89f0e6f09a56e",
+        "rank": 33,
+        "train_anchor_sha256": "b271e790985e88bf989754564bc06ab2b7e1fbcdea577218365ab8cb1c904b49"
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 27263,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.3807724755162675,
+          "mae": 0.7762583857960003,
+          "p95": 1.93431862880219,
+          "rmse": 0.9980194975012493,
+          "sign_accuracy": 0.8514836958515204,
+          "within_one_tick": 0.8923816161097458
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "1114f1442ed8ebaa2e5c9680f3c0436fd6aa15212f2e8afe51c0473b734813bd",
+        "condition": 623.8178666561435,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 37769,
+        "effective_columns": 93,
+        "model_receipt_sha256": "b0eae2622f00cedc1b2e968c0116cfde118db72f544c75f4455cd99015d8db1a",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "360a8fe444bb0ca556d9eaa8bb632696e0efa6fa806674fd42fbfc9cb7d7b063",
+        "rank": 93,
+        "train_anchor_sha256": "bb30e59b04c28c1f76dd58ce1f5485ae934118720bccc76f33aa81c41ce1f72d"
+      }
+    },
+    {
+      "candidate_id": "HRI_D05_L45",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 37769,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.3634991659826842,
+          "mae": 0.7564101908571416,
+          "p95": 1.8103942151460497,
+          "rmse": 0.9316108121405058,
+          "sign_accuracy": 0.8490031507320819,
+          "within_one_tick": 0.9096878392332336
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "ed2d1e60d2aa812e6af9816dbddefaad72d23d6bbb5673edc65a9ea37ffb6a07",
+        "condition": 812.2969981216786,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 27263,
+        "effective_columns": 93,
+        "model_receipt_sha256": "948a15d8e11566e07557f77dfc9dc27c594bc627ad531a9a84a71aff168b842a",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "543f34a7840d780f36e90af6df6a73b3a4a1594a9af776345b3a97cd1c7ad245",
+        "rank": 93,
+        "train_anchor_sha256": "ab03531d781f9899cc3eee2ef9686f626e2c37d8163a713c989caf619483fcf0"
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 35036,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.26989382349583285,
+          "mae": 1.109746772845418,
+          "p95": 2.8190245663587317,
+          "rmse": 1.5587989508123365,
+          "sign_accuracy": 0.7144080374471972,
+          "within_one_tick": 0.782966092019637
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "d2e0dfcd1cfdeb5655a5e89c23b4882aebd1001a8582a72f1fa2af5a5a0bb025",
+        "condition": 3.152653426352126,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 41763,
+        "effective_columns": 5,
+        "model_receipt_sha256": "517e40a81a7bd2cefca3a5b7d29bf0a255f9ec85b9ab7ad2251ec811be6f8c14",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "60cee79e491b5e87b5eb4d76921ad3914c67c5eaa2595e680c1deaafa0c1d6dd",
+        "rank": 5,
+        "train_anchor_sha256": "6ac6906b0d0d2fffc7f26d01c5e1c259a932fd0140a5f68990168629e1e799af"
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L01",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 41763,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.2122452888920815,
+          "mae": 1.0519979020403945,
+          "p95": 2.458997575998151,
+          "rmse": 1.2829673956564425,
+          "sign_accuracy": 0.6924071546584297,
+          "within_one_tick": 0.7747767162320714
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "e76aaa018963adf5613bcfd6e0451f6ff884e50180acd23cf5c71f7894ced7ef",
+        "condition": 2.81446787571659,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 35036,
+        "effective_columns": 5,
+        "model_receipt_sha256": "d1bc6856b55b427ba2bd3453ab6fc8868a6f6da2aaed54499e9766b58288968b",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "7265ac480e3c7b7c750209317e50f92189ffb60bfada2f3b930de109edaa28cd",
+        "rank": 5,
+        "train_anchor_sha256": "ec731458f0c01adc998716f752421c4bc05acb6eab46caf461e237fa243a900a"
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 33369,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.3466091282327909,
+          "mae": 0.833800151358416,
+          "p95": 2.0550046321701636,
+          "rmse": 1.0755145250534326,
+          "sign_accuracy": 0.8354460727022086,
+          "within_one_tick": 0.8725164074440349
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "bee23eca582d7bde926d5b086b854d00668461fcbdd169970a6cf32461591922",
+        "condition": 132.52331143876694,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 40981,
+        "effective_columns": 13,
+        "model_receipt_sha256": "0f4af8598e6c886356f5011cf999419045fef001299711b02c03e97569493ab1",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "ea419ea00fb28fb2a56f41d5d53b9e390eea8fa1197ca735411071927d35b64f",
+        "rank": 13,
+        "train_anchor_sha256": "f7b1d39899663137e4d3d015963b36707ed2aaf19ede8b5f5c81a6cb9213049b"
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L05",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 40981,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.3377418803835924,
+          "mae": 0.7945949893580085,
+          "p95": 1.8886697228961067,
+          "rmse": 0.9739628304475266,
+          "sign_accuracy": 0.838632537029355,
+          "within_one_tick": 0.8967082306434689
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "21397ba8927662385e90d57ab9c6ec48eee69b080664ba64bec333842579f424",
+        "condition": 156.64980427626983,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 33369,
+        "effective_columns": 13,
+        "model_receipt_sha256": "21f2c4086c240c01d5938133c4aa1a8f82e0cd731070dbce33b2f180b04f5139",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "3c67f460f39a068d14f6b61b394d1c360c58a075c2b5be9c2c66f74feb3bc6b6",
+        "rank": 13,
+        "train_anchor_sha256": "7659fd53b1e1c81d23d3560a9a073e3c0908747dc4c2f219e08037c241d9a872"
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 30644,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.3627463777574729,
+          "mae": 0.8106028534644732,
+          "p95": 1.9968872731284177,
+          "rmse": 1.0489331148950882,
+          "sign_accuracy": 0.8452551886176739,
+          "within_one_tick": 0.8825871296175434
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "307b58a943562e15c069cacb5ba0ce27d5b408d4d62fc43b9cc1eb2bb9a7a8f9",
+        "condition": 352.5772064927875,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 39621,
+        "effective_columns": 33,
+        "model_receipt_sha256": "466a4a0af13f73e5541272542593885740adea455e500d2175b74c18afa5d485",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "0ce19581bd1696665963d2ba76c2f58ccccda52c0cb2c79f8d2bda67f1044b3c",
+        "rank": 33,
+        "train_anchor_sha256": "cfc7455e5429e478191b1e63be50b46f65c1dc7e8585314fc32b58fe6658535e"
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L15",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 39621,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.3451200121147876,
+          "mae": 0.778664613149501,
+          "p95": 1.8571228173057606,
+          "rmse": 0.9542425801216241,
+          "sign_accuracy": 0.8423815653315161,
+          "within_one_tick": 0.9045203301279624
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "c6715114f776ac840bdbff1927718a684aeea8bdb9e8bb813a76b2ab59b8b767",
+        "condition": 433.4503873587248,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 30644,
+        "effective_columns": 33,
+        "model_receipt_sha256": "453124a257dbd3dba9b50c96532a2b8fde51d5053b333e1d8a8092a6d11603c1",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "932191bc6c0932d6f23dc0019da8b1e853819e9913403c0fbefb70d975621c0c",
+        "rank": 33,
+        "train_anchor_sha256": "49e7e211741cc26985d8e3b4bc9197556ecee6ca1ec1b86f13c88a2dc11974e4"
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 26770,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.37396339185655586,
+          "mae": 0.7852536507737838,
+          "p95": 1.9369486659769892,
+          "rmse": 1.0095503343143337,
+          "sign_accuracy": 0.8507657825924543,
+          "within_one_tick": 0.8892043332088159
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "b88bdf7b50ec5c5f41390df94e2637fbb3c841be247457b832f5f8b3510f3c3c",
+        "condition": 613.7054748698067,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 37475,
+        "effective_columns": 93,
+        "model_receipt_sha256": "1b44b2efd5e82923c200b7339a6ccb838b6361ec45fec4d0eeb68d40bcbb340b",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "5c4861d56eb38d37c0a7db7aae445697ac0df1a0045dc32a6bbae6aa04b9c0b1",
+        "rank": 93,
+        "train_anchor_sha256": "8aa38105911fe1be97d8c71faf6be2b33b0d4665d44134f38450d95f64555236"
+      }
+    },
+    {
+      "candidate_id": "HRI_D10_L45",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 37475,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.3515410273515677,
+          "mae": 0.7706805146429272,
+          "p95": 1.8423733277477645,
+          "rmse": 0.9463431361535339,
+          "sign_accuracy": 0.8449899933288859,
+          "within_one_tick": 0.9057505003335558
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "06e64e10f2abcbbd1760b9ff5664ec5568b16911af2b2107f969f54100b82d3f",
+        "condition": 801.5314253548024,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 26770,
+        "effective_columns": 93,
+        "model_receipt_sha256": "999ea1547e85015d461cd3f0a4607e1b47941ad5a3008284314005af0d1da8df",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "fa0eb5b0455c0ae2844c62565a2116291cd096451d491e527876d37f9aab8861",
+        "rank": 93,
+        "train_anchor_sha256": "af2167c75b944289133bc5e8cce675ab67e650e241329e09543a0ca4aa36c203"
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 31609,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.21610933594862222,
+          "mae": 1.1646955322501016,
+          "p95": 2.868888262845812,
+          "rmse": 1.5412823413967112,
+          "sign_accuracy": 0.6737638014489544,
+          "within_one_tick": 0.7590243285140308
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "4a7eb8ff493c118206f88b8fc1494600a630d8a8df068afc30ce794cd552c31f",
+        "condition": 3.3716892498081457,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 40112,
+        "effective_columns": 5,
+        "model_receipt_sha256": "d16a086aa56dd11835a3f1390cd406566cd2ab056d39c35b2677e61a439a7b50",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "372f45b74587bafce4c3170c74bc5098cd9084e4dc8c855f3586de401c14e345",
+        "rank": 5,
+        "train_anchor_sha256": "3749bc0b263a15a64d03097a667b2e4624685705127304732f5296b28b053622"
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L01",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 40112,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.18338651775029916,
+          "mae": 1.1250481746821812,
+          "p95": 2.5553230403685068,
+          "rmse": 1.3497448177757934,
+          "sign_accuracy": 0.6618218986836857,
+          "within_one_tick": 0.7367620662145992
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "e3ba17c91178b67c0ca0611e6cf732d96034ec3a7543afe66a7853b2ee413177",
+        "condition": 2.8197914207849,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 31609,
+        "effective_columns": 5,
+        "model_receipt_sha256": "f59857dc6200543109c5473498c3aaf9c6c5f21c0713da664afbf399978950be",
+        "nominal_columns": 5,
+        "normalizer_receipt_sha256": "7aa024402eca5f860c4e81055d3c26c08a60411b9bfda6d48863c2186b1dc3e2",
+        "rank": 5,
+        "train_anchor_sha256": "3d9a10c2e9435bee6d4db817ddc34dfc7f45af41c323e91cef60342254ae9dba"
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 30644,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.2969912544054301,
+          "mae": 0.8865829817433482,
+          "p95": 2.105225725730575,
+          "rmse": 1.1093974434454548,
+          "sign_accuracy": 0.8207479441326198,
+          "within_one_tick": 0.8619958229996084
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "286963c88c16d08e014fbc6ba7a90f65d7c1ccc378d318373e478c4ab031d183",
+        "condition": 124.21060333588623,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 39621,
+        "effective_columns": 13,
+        "model_receipt_sha256": "f80f5016f954d3df43c1c12aee792becb6b51f3e11c16acc4c0ad676e292de36",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "efd41bd8bd2c274b0fe1fae4246bf278ed0efc6ea49a38f016efcdab2a28ffc2",
+        "rank": 13,
+        "train_anchor_sha256": "cfc7455e5429e478191b1e63be50b46f65c1dc7e8585314fc32b58fe6658535e"
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L05",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 39621,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.2766209838217107,
+          "mae": 0.8628556515390636,
+          "p95": 1.9620222859306091,
+          "rmse": 1.0369431566934855,
+          "sign_accuracy": 0.8165871633729588,
+          "within_one_tick": 0.8798616895080892
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "1f67a1b90763f8399e2485b990ffe94cfc48c1373dae34c568f5b76557b9bd00",
+        "condition": 155.98185098170748,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 30644,
+        "effective_columns": 13,
+        "model_receipt_sha256": "ded60102bc802d40a43fa66ddde8c0da37b695465a419b5ce80b382b8a0f1622",
+        "nominal_columns": 13,
+        "normalizer_receipt_sha256": "f9d035a870ebb5d394f40da039b8e65913e553b02e74b86c2b1d89fe34297df9",
+        "rank": 13,
+        "train_anchor_sha256": "49e7e211741cc26985d8e3b4bc9197556ecee6ca1ec1b86f13c88a2dc11974e4"
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 28945,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.33073069614786665,
+          "mae": 0.8498021688678549,
+          "p95": 2.064231150476261,
+          "rmse": 1.0858475459940649,
+          "sign_accuracy": 0.8273276904474003,
+          "within_one_tick": 0.871722231818967
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "f05fb14e53606bf5ee24105553a5a5c5fce42eb742d5fcdf6f22a01e3a3ad86d",
+        "condition": 214.481626152919,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 38729,
+        "effective_columns": 33,
+        "model_receipt_sha256": "9392b30acf661aeffac4716ecacffe514093836f01a80ec9e7fd71aa7955dead",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "fd08b11e10598e89b58b7848da29604c79d162dd15f7296ed763d23e82ae5853",
+        "rank": 33,
+        "train_anchor_sha256": "36da7dc2217f5d25409181db673ce8291a2532ac26af2bef2c716387ff121341"
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L15",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 38729,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.31031010353998295,
+          "mae": 0.8200513678393045,
+          "p95": 1.9176792124900894,
+          "rmse": 0.9943642621413459,
+          "sign_accuracy": 0.8213741640631051,
+          "within_one_tick": 0.8946009450282734
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "b999a816e9cf4ef68ab5b52b7853e850a4da7f40d51b1a48fabf33400bc63890",
+        "condition": 270.31506100281786,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 28945,
+        "effective_columns": 33,
+        "model_receipt_sha256": "20ff4a898ba6a22bdbc7e13709e55fa5a827720b807159d86e1dac859f0e9edb",
+        "nominal_columns": 33,
+        "normalizer_receipt_sha256": "179f940aa614b5688a8aea247d149bf4bc4d98c5fc1dcee999a80772be5e2791",
+        "rank": 33,
+        "train_anchor_sha256": "404bd63577688dccb8acd99791c81ac6388938c7247edfeded0a12eacd4c10d3"
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "fold": "FOLD_A",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 25897,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.3461790941035641,
+          "mae": 0.813028334677771,
+          "p95": 1.9701197735861318,
+          "rmse": 1.0295777453476833,
+          "sign_accuracy": 0.8389388732285593,
+          "within_one_tick": 0.8823415839672549
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "451aa809729d4b19433f549012d74a199fde543fc0cbf9d589cf1a22d8e7bede",
+        "condition": 605.8818097060158,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 36982,
+        "effective_columns": 93,
+        "model_receipt_sha256": "8d83adab689ef26afa851f8c865a6248b13cc03cbb4809d0e763cb7179b8da19",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "c128b8841bb35e2d97cea7e9324d3b326eab95fc0011f7cad44f10914442a23f",
+        "rank": 93,
+        "train_anchor_sha256": "18aa1735aaa8557a73a490c39dbd950df66438388f2b8e9a49f871f2909eaf10"
+      }
+    },
+    {
+      "candidate_id": "HRI_D20_L45",
+      "fold": "FOLD_B",
+      "move_only_verified": true,
+      "oracle": {
+        "count": 36982,
+        "failure": null,
+        "metrics": {
+          "exact_hit": 0.32066951489914014,
+          "mae": 0.8072035185234612,
+          "p95": 1.9020009130897217,
+          "rmse": 0.983143355435326,
+          "sign_accuracy": 0.8284570872316261,
+          "within_one_tick": 0.8961927424152291
+        },
+        "role": "DIAGNOSTIC_ONLY"
+      },
+      "stage2": {
+        "coefficient_sha256": "369e25fe5aede29398bd3d439ff6829d49f85c3a7711b51a5867d6e33bbc0b58",
+        "condition": 776.5024228829933,
+        "constant_columns": 0,
+        "convergence": null,
+        "count": 25897,
+        "effective_columns": 93,
+        "model_receipt_sha256": "8dba331c9c5e985098049b63a6b6911be78daffeb1fa4a1f2816cd6c2ecd004b",
+        "nominal_columns": 93,
+        "normalizer_receipt_sha256": "68ac1a4d9177b3836faa7037d2a695548ab5671075cab98dbfcc5cdc86e20ac1",
+        "rank": 93,
+        "train_anchor_sha256": "161cc86b0a9cb5c59be8cb1de25336c2f59711f696e245d646e6d78f686ab1c4"
+      }
+    }
+  ],
+  "oracle_role": "DIAGNOSTIC_ONLY",
+  "private_manifest_sha256": "c4de3955c12cd0d9721d4c7c1519da53b4d80f80be0c05e142047853a7b217a6",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "fa7f76fa93c19f77d038ea1f5dadfa786e78ac28bac793ff1c749bcdc4ca7b98",
+  "reference_promotable": false,
+  "schema": "EMPIRICAL_HURDLE_STAGE2_DIAGNOSTICS_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

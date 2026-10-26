@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Controller → Plant Authority</title><link rel="stylesheet" href="/plant-authority.css"><script defer src="/plant-authority.js"></script></head>
+<body><header><nav><a href="/candidate-resolution">Candidate resolution</a> · <a href="/meter">Meter diagnostic</a></nav>
+<h1>CONTROLLER → PLANT AUTHORITY</h1><p class="warning">DESCRIPTIVE PLANT ONLY · NOT REAL VEHICLE DYNAMICS · NOT CANDIDATE ACCEPTANCE</p>
+<p id="status">Loading immutable audit…</p><p id="verdicts"></p><p id="coverage"></p></header>
+<main><section><h2>What makes the early trajectory effect small?</h2><div id="findings"></div></section>
+<section><h2>Historical signal delta</h2><label>Scenario <select id="scenario"></select></label>
+<label>Signal <select id="signal"></select></label><p>V1 green · V2 red · CURRENT blue (exact zero).
+Same frame-start time alignment; plant states are post-step, desired/requested inputs are frame-start. Plot is decimated for display only.</p>
+<svg id="trace" viewBox="0 0 900 300" role="img" aria-label="Historical signal deltas"></svg>
+<div id="stages" class="scroll"></div><div id="ratios" class="scroll"></div><p>Signed/L1 integrals are separate. Cross-unit norm ratios are descriptive gains, not dimensionless causal attenuation.</p></section>
+<section><h2>Delay, phase and cancellation</h2><div id="cancellation" class="scroll"></div><div id="phase" class="scroll"></div>
+<p>Physical queue: 2 steps / 0.02 s. Native 0.15 s reference alignment is not a second actuator queue.
+No raw Hyundai rate limiting, rounding or driver limiting was executed in this plant.</p></section>
+<section><h2>Observed-distance context</h2><div id="distance" class="scroll"></div>
+<p>35/40 m and common observed maximum are LONGER_HORIZON_PLANT_CONTEXT_ONLY. No extrapolation or meter-envelope extension.</p></section>
+<section><h2>Direct plant positive and negative controls</h2><p id="controls"></p><div id="control-table" class="scroll"></div>
+<p>Sustained peak-delta probes are diagnostic stress inputs, not historical candidate waveforms. Nonmonotone forward X is uncomparable, not distance-not-reached.</p>
+<h3>Original integration vs independent circular arc</h3><div id="oracles" class="scroll"></div></section>
+<section><h2>Discrete plant gain</h2><div id="gain" class="scroll"></div>
+<p>DC magnitude and Nyquist magnitude differ because the curvature recurrence is a discrete AR filter.
+These are descriptive gains, not a physical steering calibration. The native factor4 relation is not a calibrated plant fit.</p></section>
+<section><h2>Source-bound signal chain</h2><div id="chain" class="scroll"></div></section>
+<section><h2>Separate reference-calibration track</h2><p id="blockers"></p><p id="receipts"></p></section></main></body></html>

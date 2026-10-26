@@ -1,0 +1,558 @@
+{
+  "android_build_fingerprint": "NOT_POPULATED_BY_RECORDED_LINUX_INITDATA_SOURCE",
+  "baseline_sha": "d32d5b65dbcfb8e5cabe9c0c54f93b4a4bf9adb5",
+  "binary_attested": false,
+  "builder_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+  "dependencies": {
+    "RECORDED_OS_KERNEL_BINDING_PENDING": [
+      "RECORDED_BOOT_BINARY_ATTESTATION_PENDING",
+      "RECORDED_SYSTEM_BINARY_ATTESTATION_PENDING",
+      "RECORDED_VENUS_FIRMWARE_IDENTITY_PENDING"
+    ]
+  },
+  "development_metadata_sources": 60,
+  "device": "mici",
+  "firmware": {
+    "binary_sources_not_executed": true,
+    "builder_modem_lfs_oid": "a3d014f0896d77a2df7e5a80a70f43a51a047b9d03cfc675b6f0e31a6ecc4994",
+    "camera_icp_git_blob": "2122edd148660bab0bee95188f9891342706bd09",
+    "camera_icp_role": "BPS_DRIVER_CAMERA_PATH_NOT_PROOF_OF_NARROW_ROAD_IFE_GEOMETRY",
+    "firmware_mount": "BUILDER_FSTAB_MODEM_A_READ_ONLY_AT_FIRMWARE",
+    "modem_runtime_hash": null,
+    "venus": "LOADED_BY_SUBSYSTEM_GET_WITH_FWNAME_NO_LOADED_BINARY_METADATA"
+  },
+  "kernel_base": "eccd146599f2e2f159d951092642689bede91632",
+  "kernel_binding": {
+    "applied_patches_required": true,
+    "binary_attested": false,
+    "builder_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+    "kernel": {
+      "build_ordinal": "#1",
+      "normalization": "DROP_LINUX_AND_HOST_OR_VERSION_TOKEN_STRIP_EOL",
+      "normalized_sha256": "93c2a50c5c4defdf55ecbd72be4d10958fa76c4b18cbe2cbbc3ed30b83df6586",
+      "release": "4.9.103"
+    },
+    "kernel_base": "eccd146599f2e2f159d951092642689bede91632",
+    "partition_hash_observed": false,
+    "qualification_allowed": false,
+    "receipt_sha256": "dfe18fc7424421442b1f54da91e339196d8a15b44267382c6e99399a3a82ca01",
+    "recorded_kernel_sha256": "85f6a4fef474b9898571761121c296d40e64e1b3f24d1768c266d25a47c214f0",
+    "reference_promotable": false,
+    "schema": "RECORDED_KERNEL_BINDING_V1",
+    "sealed_reference_allowed": false,
+    "status": "RECORDED_KERNEL_BUILD_IDENTITY_BOUND",
+    "vehicle_activation_allowed": false,
+    "verified_public_boot_sha256": "dccd7965346b0a87a9f64cb6be257f6bb5d3d0f368c8655085efc1e460527f5a"
+  },
+  "kernel_patches": [
+    {
+      "sha256": "567123048b68d4885507c1c2b3848412738bacecbdbd28db60c7e29f1a742ca3",
+      "source_name": "builder-patches_c4-usbpd-v2.patch"
+    },
+    {
+      "sha256": "7f5851b31e6c7e3f00fa5d84aebb00c573e741f608e64bfd7683bf35743ba8bc",
+      "source_name": "builder-patches_c4-usbpd-v3.patch"
+    },
+    {
+      "sha256": "11a56a334f6e1f7847f8cb44355edbf5126a44b0a4f3f2f65b009844258f020d",
+      "source_name": "builder-patches_bluetooth-wcn3990.patch"
+    }
+  ],
+  "local_metadata_audit_sha256": "884eb7dd67d7bb1435bbb612ae80a7837d55e3778479d74a7c40fa958c28f9fb",
+  "matching_builds": 60,
+  "matching_normalized_kernel_banners": 60,
+  "metadata_access": {
+    "existing_development_only": true,
+    "fields": [
+      "initData.osVersion",
+      "initData.kernelVersion",
+      "initData.deviceType",
+      "initData.commands./BUILD"
+    ],
+    "holdout_access": false,
+    "image_decode": false,
+    "model_payload_access": false,
+    "params_payload_access": false,
+    "source_rlog_hashes_revalidated": true
+  },
+  "observed_sensor": "os04c10",
+  "os_version": "19.8-carrot-bt1",
+  "outcomes": {
+    "RECORDED_BOOT_BINARY_ATTESTATION_PENDING": "BLOCKED",
+    "RECORDED_KERNEL_BUILD_IDENTITY_BOUND": "PASS_BUILD_IDENTITY_ONLY",
+    "RECORDED_OS_KERNEL_BINDING_PENDING": "PARTIAL",
+    "RECORDED_SYSTEM_BINARY_ATTESTATION_PENDING": "BLOCKED",
+    "RECORDED_VENUS_FIRMWARE_IDENTITY_PENDING": "BLOCKED"
+  },
+  "patch_scope": "USB_PD_DWC3_BLUETOOTH_DTS_DEFCONFIG_NO_CAMERA_OR_VIDC_SOURCE_DIFF",
+  "previous_reference_kernel": {
+    "commit": "b53ae06564df3d34f6914c5d0699594913b16626",
+    "role": "EXPLORATORY_REFERENCE_NOT_RECORDED_BINDING"
+  },
+  "prior_development_metadata_sha256": "3590c35a545ab37644e95599b362b19d59ee185fcac78ec2859542a22d0f669d",
+  "public_sources": [
+    {
+      "bytes": 4303,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-build_kernel.sh",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "428d0c42221d5801768ab3a55919e77c9f113894f493da1a2810022c83e226ee",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/build_kernel.sh"
+    },
+    {
+      "bytes": 4702,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-build_system.sh",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "9750acb35f575688656698cb982c4b10098f5407996184d962de2299fc1a8025",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/build_system.sh"
+    },
+    {
+      "bytes": 9342,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-Dockerfile.agnos",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "669d9557799c3cffbabdd7a440d393f69840931ff239ddc6eecc770fa4b66cf9",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/Dockerfile.agnos"
+    },
+    {
+      "bytes": 2485,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-patches_BLUETOOTH.md",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "5465f8519b29b701f6b2997f04afcceb505a5d0899c43eb7bf4842d45a4c27c4",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/patches/BLUETOOTH.md"
+    },
+    {
+      "bytes": 5016,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-README.md",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "292f851b5c4c6f5819b0579e1eb5658e54223a5ea5c747ac664773b6cf08b022",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/README.md"
+    },
+    {
+      "bytes": 109,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-.gitmodules",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "b437241df3d76d59116825552e0fc0c27506c054ce3f7c339800e30a29adc0e5",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/.gitmodules"
+    },
+    {
+      "bytes": 16,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-VERSION",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "f533e7b27f5489c53c7076ad60653846c95c1179f718c857878cbf7b54ca1959",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/VERSION"
+    },
+    {
+      "bytes": 206,
+      "evidence_role": "PUBLIC_RELEASE_ASSET",
+      "name": "release-PROVENANCE",
+      "repository_commit": null,
+      "sha256": "6f14020d651d725f693764c994b194acab3b8c261df6d043efd6adedd4138c74",
+      "status": "VERIFIED",
+      "url": "https://github.com/ajouatom/agnos-builder/releases/download/agnos-19.8-carrot-bt1/PROVENANCE"
+    },
+    {
+      "bytes": 851,
+      "evidence_role": "PUBLIC_RELEASE_ASSET",
+      "name": "release-SHA256SUMS",
+      "repository_commit": null,
+      "sha256": "55fdfa9b78a6e53d39b6da4aa27a30c77fd8764b04033c7cbfc0eb46d023cb02",
+      "status": "VERIFIED",
+      "url": "https://github.com/ajouatom/agnos-builder/releases/download/agnos-19.8-carrot-bt1/SHA256SUMS"
+    },
+    {
+      "bytes": 16,
+      "evidence_role": "PUBLIC_RELEASE_ASSET",
+      "name": "release-VERSION",
+      "repository_commit": null,
+      "sha256": "f533e7b27f5489c53c7076ad60653846c95c1179f718c857878cbf7b54ca1959",
+      "status": "VERIFIED",
+      "url": "https://github.com/ajouatom/agnos-builder/releases/download/agnos-19.8-carrot-bt1/VERSION"
+    },
+    {
+      "bytes": 3862,
+      "evidence_role": "PUBLIC_RELEASE_ASSET",
+      "name": "release-agnos-c3x-c4.json",
+      "repository_commit": null,
+      "sha256": "e1d9de58ad06dec5c8e7c2fcc9d6565efd1dee1143f270cdfecc4a6e3efeac73",
+      "status": "VERIFIED",
+      "url": "https://github.com/ajouatom/agnos-builder/releases/download/agnos-19.8-carrot-bt1/agnos-c3x-c4.json"
+    },
+    {
+      "bytes": 6109,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-.github_workflows_build-carrot-bluetooth-19.8.yaml",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "cac1525dea6d9947c44b9feee60b53ae7524677689e43be4d260c591f2e51995",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/.github/workflows/build-carrot-bluetooth-19.8.yaml"
+    },
+    {
+      "bytes": 5733,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-scripts_package_carrot_agnos.py",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "2fda6108f9fd2708de4abfa164c7b9a83838a51b9f9a321ca0292cce0e83f645",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/scripts/package_carrot_agnos.py"
+    },
+    {
+      "bytes": 4030,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-patches_c4-usbpd-v2.patch",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "567123048b68d4885507c1c2b3848412738bacecbdbd28db60c7e29f1a742ca3",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/patches/c4-usbpd-v2.patch"
+    },
+    {
+      "bytes": 3024,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-patches_c4-usbpd-v3.patch",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "7f5851b31e6c7e3f00fa5d84aebb00c573e741f608e64bfd7683bf35743ba8bc",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/patches/c4-usbpd-v3.patch"
+    },
+    {
+      "bytes": 16228,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-patches_bluetooth-wcn3990.patch",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "11a56a334f6e1f7847f8cb44355edbf5126a44b0a4f3f2f65b009844258f020d",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/patches/bluetooth-wcn3990.patch"
+    },
+    {
+      "bytes": 84455,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "kernel-drivers_media_platform_msm_vidc_msm_venc.c",
+      "repository_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "sha256": "62419745199aa0bf06d673b9fc2655ac8557bf9f15b0be4e5ace5d1524476ab0",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/msm_venc.c"
+    },
+    {
+      "bytes": 190816,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "kernel-drivers_media_platform_msm_vidc_msm_vidc_common.c",
+      "repository_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "sha256": "f97c285e0037946da6d69a8aa4a1b7b0359a5247aa6dcddc2fe09af3ccc821cc",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/msm_vidc_common.c"
+    },
+    {
+      "bytes": 58209,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "kernel-drivers_media_platform_msm_vidc_hfi_packetization.c",
+      "repository_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "sha256": "0394d9f05bc1c3d2c0153e11c80fcdad94013c1277233ce693a00bc10fcbeb15",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/hfi_packetization.c"
+    },
+    {
+      "bytes": 38852,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "kernel-drivers_media_platform_msm_vidc_vidc_hfi_api.h",
+      "repository_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "sha256": "5be82edeb5dff84badf63d251322acc84f9148584fd17cf1e6334576ef58df12",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/vidc_hfi_api.h"
+    },
+    {
+      "bytes": 34493,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "kernel-drivers_media_platform_msm_vidc_vidc_hfi_helper.h",
+      "repository_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "sha256": "12da9b26920c717163fd307aed835ab1fa3172b97f20ed942ea46e634d3ff036",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/vidc_hfi_helper.h"
+    },
+    {
+      "bytes": 116127,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "kernel-drivers_media_platform_msm_vidc_venus_hfi.c",
+      "repository_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "sha256": "8f38c053b57a01c962dd299f23143970f16d074c7f415a844144cf6c2d6b0c85",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/venus_hfi.c"
+    },
+    {
+      "bytes": 52068,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "kernel-drivers_media_platform_msm_vidc_msm_vidc.c",
+      "repository_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "sha256": "89a228520eacce6171764cf7ad8b42fa7754f78ce67a666e68d404f90578b8f3",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/msm_vidc.c"
+    },
+    {
+      "bytes": 11935,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "kernel-drivers_media_platform_msm_vidc_msm_vidc_internal.h",
+      "repository_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "sha256": "9d16bad53953119b879a9ba7215f7c6b10502c09efe8cc6d41092ac49bacb084",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/msm_vidc_internal.h"
+    },
+    {
+      "bytes": 151287,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "kernel-arch_arm64_configs_tici_defconfig",
+      "repository_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "sha256": "673ca11dddcbdfd7f3392d273df3619c25c340a9e97c697c09c83c254da95933",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/arch/arm64/configs/tici_defconfig"
+    },
+    {
+      "bytes": 63505,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "kernel-Makefile",
+      "repository_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "sha256": "438a9a18ccddbf797fbd30ced35751b18f71131570457b7281fa3c16d86c79e4",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/Makefile"
+    },
+    {
+      "bytes": 14273596,
+      "evidence_role": "PUBLIC_RELEASE_ASSET",
+      "name": "release-boot-c3x-c4-dccd7965346b0a87a9f64cb6be257f6bb5d3d0f368c8655085efc1e460527f5a.img.xz",
+      "repository_commit": null,
+      "sha256": "b308adf97dde96ce049d44500ad13278dcb1645628463c30146f89be12540417",
+      "status": "VERIFIED",
+      "url": "https://github.com/ajouatom/agnos-builder/releases/download/agnos-19.8-carrot-bt1/boot-c3x-c4-dccd7965346b0a87a9f64cb6be257f6bb5d3d0f368c8655085efc1e460527f5a.img.xz"
+    },
+    {
+      "bytes": 555,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-userspace_files_fstab",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "1b77b3e4eeadff8993a13b4ac31e5fd7b7ef727c1cc5303710b6309ef61f0b33",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/userspace/files/fstab"
+    },
+    {
+      "bytes": 461,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-userspace_usr_comma_init.qcom.sh",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "cb7bf7c44ee9857d86446f4e4e3275b1c122c01a93a31850aa3f154eba3a4d1c",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/userspace/usr/comma/init.qcom.sh"
+    },
+    {
+      "bytes": 134,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "builder-firmware_modem.img",
+      "repository_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+      "sha256": "0b2161773898ab04020ebb6f284cce5d3b026ef36c40567bbc305ab6eff6f2cc",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/ajouatom/agnos-builder/f5b3f77e59f1917f95e0752630ca08050463eede/firmware/modem.img"
+    },
+    {
+      "bytes": 33984,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "kernel-drivers_media_platform_msm_vidc_msm_vidc_res_parse.c",
+      "repository_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "sha256": "f38f7eca2c074f5705db861736f7a9c7beaaef857d3963cbb23a90b0d5d73100",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/msm_vidc_res_parse.c"
+    },
+    {
+      "bytes": 3942,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "kernel-arch_arm64_boot_dts_qcom_sdm845-vidc.dtsi",
+      "repository_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "sha256": "f75ef6a93a8e07fe51352201246b9c7d134a6d576ed42391441ff322ec831725",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/arch/arm64/boot/dts/qcom/sdm845-vidc.dtsi"
+    },
+    {
+      "bytes": 9554,
+      "evidence_role": "PUBLIC_SOURCE",
+      "name": "kernel-drivers_media_platform_msm_vidc_msm_vidc_platform.c",
+      "repository_commit": "eccd146599f2e2f159d951092642689bede91632",
+      "sha256": "58c4b9edb7f1ddeafaebf0a75aada4f5add52442d9dccb2bfa18ee7ca5b59353",
+      "status": "SOURCE_FETCHED",
+      "url": "https://raw.githubusercontent.com/commaai/agnos-kernel-sdm845/eccd146599f2e2f159d951092642689bede91632/drivers/media/platform/msm/vidc/msm_vidc_platform.c"
+    },
+    {
+      "bytes": 3396,
+      "evidence_role": "RECORDED_APPLICATION_SOURCE",
+      "name": "recorded-openpilot_system_hardware_tici_hardware.h",
+      "repository_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "sha256": "7138da196195b6d23c10485bcb64fe43f4c38aaf9f7e78361c6e41856db03c74",
+      "status": "LOCAL_GIT_OBJECT_VERIFIED",
+      "url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/hardware/tici/hardware.h"
+    },
+    {
+      "bytes": 5918,
+      "evidence_role": "RECORDED_APPLICATION_SOURCE",
+      "name": "recorded-openpilot_system_loggerd_logger.cc",
+      "repository_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "sha256": "ddf2ffb10b871d466f17d13859e2cdeac4b454573a495f82ebac45f303ef9ccd",
+      "status": "LOCAL_GIT_OBJECT_VERIFIED",
+      "url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/loggerd/logger.cc"
+    },
+    {
+      "bytes": 17409,
+      "evidence_role": "RECORDED_APPLICATION_SOURCE",
+      "name": "recorded-openpilot_system_loggerd_encoder_v4l_encoder.cc",
+      "repository_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "sha256": "57a03f1eab21e345552e6bd38fb506a0b526aee150f90810f20f75f1b66ca643",
+      "status": "LOCAL_GIT_OBJECT_VERIFIED",
+      "url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/loggerd/encoder/v4l_encoder.cc"
+    },
+    {
+      "bytes": 2132,
+      "evidence_role": "RECORDED_APPLICATION_SOURCE",
+      "name": "recorded-openpilot_system_loggerd_encoder_encoder.cc",
+      "repository_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "sha256": "e95693fc1e08139186c0df691aeee39137b55b491606e72ea5deee9235de6a10",
+      "status": "LOCAL_GIT_OBJECT_VERIFIED",
+      "url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/loggerd/encoder/encoder.cc"
+    },
+    {
+      "bytes": 1131,
+      "evidence_role": "RECORDED_APPLICATION_SOURCE",
+      "name": "recorded-openpilot_system_loggerd_encoder_encoder.h",
+      "repository_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "sha256": "508d039df4fd1e380c5376763fdf666fbd0b3e91a325b030ec8fcbfa4396ed65",
+      "status": "LOCAL_GIT_OBJECT_VERIFIED",
+      "url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/loggerd/encoder/encoder.h"
+    },
+    {
+      "bytes": 59987,
+      "evidence_role": "RECORDED_APPLICATION_SOURCE",
+      "name": "recorded-openpilot_system_camerad_cameras_spectra.cc",
+      "repository_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "sha256": "1ce2c217acdcb398a7e562e333a195084899d89d60058146d9e9dea8a5605d1c",
+      "status": "LOCAL_GIT_OBJECT_VERIFIED",
+      "url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/camerad/cameras/spectra.cc"
+    },
+    {
+      "bytes": 5323,
+      "evidence_role": "RECORDED_APPLICATION_SOURCE",
+      "name": "recorded-openpilot_system_camerad_cameras_ife.h",
+      "repository_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "sha256": "26ce0594b465c7c616d14e3ed5ca74839be40d7d35b2e2a8f8422a614fbe6d93",
+      "status": "LOCAL_GIT_OBJECT_VERIFIED",
+      "url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/camerad/cameras/ife.h"
+    },
+    {
+      "bytes": 2314,
+      "evidence_role": "RECORDED_APPLICATION_SOURCE",
+      "name": "recorded-openpilot_system_camerad_cameras_hw.h",
+      "repository_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "sha256": "9ea256c561dfdda5aa19a152fb208517623b52f42dcf074b41ed098bc46a46f7",
+      "status": "LOCAL_GIT_OBJECT_VERIFIED",
+      "url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/camerad/cameras/hw.h"
+    },
+    {
+      "bytes": 3230,
+      "evidence_role": "RECORDED_APPLICATION_SOURCE",
+      "name": "recorded-openpilot_system_camerad_cameras_camera_common.cc",
+      "repository_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "sha256": "bd9a416a6ee21047b4deec6df04276d8717cd92fe14de43f3e9daff86b62bb8f",
+      "status": "LOCAL_GIT_OBJECT_VERIFIED",
+      "url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/camerad/cameras/camera_common.cc"
+    },
+    {
+      "bytes": 3558,
+      "evidence_role": "RECORDED_APPLICATION_SOURCE",
+      "name": "recorded-openpilot_system_camerad_cameras_nv12_info.h",
+      "repository_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "sha256": "94c053dc4767927de35446ae87235dc4cc1a460286935583578f568b1991f410",
+      "status": "LOCAL_GIT_OBJECT_VERIFIED",
+      "url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/camerad/cameras/nv12_info.h"
+    },
+    {
+      "bytes": 7212,
+      "evidence_role": "RECORDED_APPLICATION_SOURCE",
+      "name": "recorded-openpilot_system_camerad_sensors_os04c10.cc",
+      "repository_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "sha256": "8a3463b7c2c38492a0d9fc648c5444b91882cb7294b2523c0eda476d6a4b5ef6",
+      "status": "LOCAL_GIT_OBJECT_VERIFIED",
+      "url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/camerad/sensors/os04c10.cc"
+    },
+    {
+      "bytes": 6324,
+      "evidence_role": "RECORDED_APPLICATION_SOURCE",
+      "name": "recorded-openpilot_system_camerad_sensors_os04c10_registers.h",
+      "repository_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "sha256": "b6bd2f79911881283d8e0888daca2d112be9e5ff5326e645b9b03cd9a7463139",
+      "status": "LOCAL_GIT_OBJECT_VERIFIED",
+      "url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/camerad/sensors/os04c10_registers.h"
+    },
+    {
+      "bytes": 6141,
+      "evidence_role": "RECORDED_APPLICATION_SOURCE",
+      "name": "recorded-openpilot_common_transformations_camera.py",
+      "repository_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "sha256": "3ac87fd236aa9c9e284059c47c9eb96a7c6e0be5106f514a95e6ec06e1060fb5",
+      "status": "LOCAL_GIT_OBJECT_VERIFIED",
+      "url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/common/transformations/camera.py"
+    },
+    {
+      "bytes": 3862,
+      "evidence_role": "RECORDED_APPLICATION_SOURCE",
+      "name": "recorded-openpilot_system_hardware_tici_agnos.json",
+      "repository_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+      "sha256": "e1d9de58ad06dec5c8e7c2fcc9d6565efd1dee1143f270cdfecc4a6e3efeac73",
+      "status": "LOCAL_GIT_OBJECT_VERIFIED",
+      "url": "https://github.com/ajouatom/openpilot/blob/5a970f1ad25d9f07d055955d7a7c14603b6b7813/openpilot/system/hardware/tici/agnos.json"
+    }
+  ],
+  "qualification_allowed": false,
+  "raw_publication": false,
+  "receipt_sha256": "fbdb4f3fd44387a3f278779458da029ee1ab42007a0702db25ad9ab106cf5fc1",
+  "recorded_boot_hash": null,
+  "recorded_system_hash": null,
+  "recorded_venus_firmware_hash": null,
+  "recording_commit": "5a970f1ad25d9f07d055955d7a7c14603b6b7813",
+  "reference_promotable": false,
+  "release_boot": {
+    "banner_sha256": "4da207e5fe2dbff12f2ff24ef116fe05b96f1a35afcc456a1bb9d700e496fd9f",
+    "compressed_bytes": 14273596,
+    "compressed_sha256": "b308adf97dde96ce049d44500ad13278dcb1645628463c30146f89be12540417",
+    "normalized_banner": {
+      "build_ordinal": "#1",
+      "normalization": "DROP_LINUX_AND_HOST_OR_VERSION_TOKEN_STRIP_EOL",
+      "normalized_sha256": "93c2a50c5c4defdf55ecbd72be4d10958fa76c4b18cbe2cbbc3ed30b83df6586",
+      "release": "4.9.103"
+    },
+    "raw_bytes": 47925248,
+    "raw_sha256": "dccd7965346b0a87a9f64cb6be257f6bb5d3d0f368c8655085efc1e460527f5a"
+  },
+  "release_provenance": {
+    "agnos_version": "19.8-carrot-bt1",
+    "builder_commit": "f5b3f77e59f1917f95e0752630ca08050463eede",
+    "kernel_base": "eccd146599f2e2f159d951092642689bede91632",
+    "openpilot_manifest_commit": "270da7f94ec42c473b6436263a91e2b8f195d49d"
+  },
+  "release_url": "https://github.com/ajouatom/agnos-builder/releases/tag/agnos-19.8-carrot-bt1",
+  "resolution_conditions": {
+    "RECORDED_BOOT_BINARY_ATTESTATION_PENDING": "Recorded boot partition/kernel image hash matching release binary; banner equality alone is insufficient",
+    "RECORDED_KERNEL_BUILD_IDENTITY_BOUND": "Recorded BUILD and complete normalized compiler/kernel banner match SHA-verified author release",
+    "RECORDED_OS_KERNEL_BINDING_PENDING": "Build identity is bound; actual boot/system/loaded Venus binary identity remains unobserved",
+    "RECORDED_SYSTEM_BINARY_ATTESTATION_PENDING": "Recorded system image/build artifact hash, not only BUILD label",
+    "RECORDED_VENUS_FIRMWARE_IDENTITY_PENDING": "Recorded loaded Venus firmware filename/version/hash and corresponding documented scaler semantics"
+  },
+  "schema": "RECORDED_RUNTIME_CAMERA_STACK_V1",
+  "sealed_reference_allowed": false,
+  "status": "RECORDED_KERNEL_IDENTITY_PARTIAL",
+  "system_release_raw_sha256": "375c5d22335770ac08750660bb5b29a3331c550d6a9875b35f36b88af792ea44",
+  "vehicle_activation_allowed": false
+}

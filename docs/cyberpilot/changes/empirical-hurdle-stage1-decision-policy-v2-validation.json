@@ -1,0 +1,145 @@
+{
+  "actual_execution_authorized": false,
+  "actual_fitting": "NOT_RUN",
+  "actual_threshold": "NOT_COMPUTED",
+  "artifact_receipts": {
+    "candidates": "5d321ae32a134179b96debb66e2cadf7189a8c63bbe3daf5f764c61c5f279185",
+    "evidence": "1276f6851b07bb846b409d626a970d4d8ba9820ea6c6ed56c0908adad928d9f4",
+    "feasibility": "2dc5e8fbbf1830a5f69309c9e742811fdf8fef19cdd0d0c59e5daa434170fadb",
+    "future": "52586eae8858a3cf31f54c74917dbb7df2d7b792a14a4e39567a5f2b057c74f9",
+    "objective": "f12a268522064543252814842a3455a39c650531fdaa4f08c953e2ec9be025d9",
+    "policy": "463ac0c2f34b59b67c1a1d7365c5662d717a49de328cabfd9101f185bff2bf19",
+    "readiness": "6963e8a3d0b3ae018a6612e7d07e18143db0f5147d7ccb5b75e90dbc77dc00e8",
+    "tiebreak": "e38949c44f922eda04ad9424a7b06ad02faca50e92b2829e5ce2fa1a2a18d571",
+    "unchanged": "8bb8f8ac79f216c364b0d24340036851df4460aae8afe2fec5ce1cc95dde8e61"
+  },
+  "authority": "DECLARATIVE_DESIGN_AND_SYNTHETIC_TESTS_ONLY",
+  "candidate_search_authorized": false,
+  "change_scope": "THRESHOLD_OBJECTIVE_ONLY",
+  "checks": [
+    "EXACT_PUBLIC_EVIDENCE_BINDING",
+    "UNCHANGED_V1_COMPONENTS",
+    "FOUR_FEASIBILITY_CLAUSES",
+    "PROJECTED_INTEGER_COUNT_OBJECTIVE",
+    "EXACT_TIEBREAK_ORDER",
+    "TRAIN_ONLY",
+    "NO_EXECUTOR_API"
+  ],
+  "composition_authorized": false,
+  "decision_policy": "HURDLE_STAGE1_DECISION_POLICY_V2",
+  "family": "HURDLE_RI_V1",
+  "input_pins": {
+    "empirical-hurdle-acceptance-gate-v1.json": {
+      "file_sha256": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+      "receipt_sha256": "1a5198475b7a3843381762078475915a389b2898e950effc171a3df58219ca60"
+    },
+    "empirical-hurdle-candidate-set-v1.json": {
+      "file_sha256": "7c337dd1fee7ca7947513788e91c88fe32092aa8c808213ac13787681a494b2b",
+      "receipt_sha256": "eff4ff37f74e06520e917f017c509175733a108df9399ebab8f2e93fa6a871f4"
+    },
+    "empirical-hurdle-comparator-contract-v1.json": {
+      "file_sha256": "5bc595c87a5a146256f6c36bc581fcd6fdb19dbedcef9de590dc9313191c9461",
+      "receipt_sha256": "80561a7f863363fa5ce6ed6710e2c29cae58ff985f2597bb0761faf86e27cf00"
+    },
+    "empirical-hurdle-composition-contract-v1.json": {
+      "file_sha256": "9c0f48ffada6ce8e905d85d9d72df21a3997f9ce6dc757bb96d9291218046948",
+      "receipt_sha256": "046d0ba328c7a52421aedfff504ed20ad27114785d67054f6e78fd8547eccc67"
+    },
+    "empirical-hurdle-failure-attribution-readiness-v1.json": {
+      "file_sha256": "095ac7f7a02cb7178d1d47087a70a03ff7919d99eced7f56a3c75027589046bc",
+      "receipt_sha256": "dd03dedbab42fa3e4cdf262234bb24f4a62fb94c4dbbd8d9f203d5ec6506b7c6"
+    },
+    "empirical-hurdle-family-contract-v1.json": {
+      "file_sha256": "cccaba738cb55c2506269976d1cb86510a90ba2d20f41004493d05f1aeab1d41",
+      "receipt_sha256": "c780fa1e75bdb3d13480f4863b6dabb7c7dbfe68797032fce582b7854d45dfe3"
+    },
+    "empirical-hurdle-feature-contract-v1.json": {
+      "file_sha256": "8676c89bcfe629d6bcc60706172ca29f79ee42430e67893c8ee837a7da672488",
+      "receipt_sha256": "517288519b2ae0ef9edaa4b2a0c5e5a1b296389e4381ac4af0a2bddfec41be3a"
+    },
+    "empirical-hurdle-fit-cv-readiness-v1.json": {
+      "file_sha256": "8613634aa79641de3f2512ce06882393cfa9c1a5d2749043631fa757cbf56499",
+      "receipt_sha256": "e00c9da0992fed899e77f9833d0ad04f333acc086e59846644ec164945b06861"
+    },
+    "empirical-hurdle-fitting-policy-readiness-v1.json": {
+      "file_sha256": "9a0811e62916b6f3dbadc579ce6e3db64f888cd07e68474da1265e6efa984195",
+      "receipt_sha256": "cde321da593da445d5df34a7a2a9212555209c7d66b2979b7ef01987c230cefb"
+    },
+    "empirical-hurdle-fitting-policy-v1.json": {
+      "file_sha256": "e1b566d18a55cc72fe9378d37f0763d3a5de107cff2b6ff884cebcd238b376d6",
+      "receipt_sha256": "3824973d9851ebfffbfd47e9f95b9f49580326b75f652e55c1ca21808d624104"
+    },
+    "empirical-hurdle-mechanism-summary-v1.json": {
+      "file_sha256": "eec5066f40a17818bb9e3da1ff7bd2bf40d8dd2711f35618956eedd20949911c",
+      "receipt_sha256": "2d3d1763010ba6144e2318cd8b1377374c3bb22e101dbee6a381806e20294ca9"
+    },
+    "empirical-hurdle-metric-contract-v1.json": {
+      "file_sha256": "82f88fac1d31d3e4a24dfa717877cfd1d60da62bff4108b8d58cfbba7c446639",
+      "receipt_sha256": "98df562961a9c60cd43531694cd0dfbbde19b528c856bf6562ea6d5c6aad17e5"
+    },
+    "empirical-hurdle-next-design-trigger-v1.json": {
+      "file_sha256": "c12dc439d4c0d5550ca57dd0dbd4eb127f37d3d4f984a825edc700da9f3668af",
+      "receipt_sha256": "00566fbfac6d05929a17202aa9c6d889454449c4a7e7e9274128d6f85b92b320"
+    },
+    "empirical-hurdle-rollout-contract-v1.json": {
+      "file_sha256": "772d5febe8894c189c8332836365149467c0c5870bd630d0db1be7372ebc3d04",
+      "receipt_sha256": "ae1b447a4abdc3c5ba4c34adcfa4c650d3ee35b9229d899a8d6ff557ce09bb92"
+    },
+    "empirical-hurdle-route-cv-contract-v1.json": {
+      "file_sha256": "a40183e88f0ae7b830d353cdce3a692f56111d31a5c27cd1394d205d77e5e6f8",
+      "receipt_sha256": "9e6bddd4f4d0e3dbe1cd02d7cfe2313a17da5459215f4fa397d42b098b406a4a"
+    },
+    "empirical-hurdle-selection-result-v1.json": {
+      "file_sha256": "3e1d72ec6d114c03e289dac3a8406126f17d6594fc73ebcbb7b2302c32beed46",
+      "receipt_sha256": "cac341f353befbf014726df964009525484e938abc1b5a5dc6d5de4e5a7a6df8"
+    },
+    "empirical-hurdle-selection-rule-v1.json": {
+      "file_sha256": "aeb3e51e85039660be702517dfd79e4c932eb72bde0b1a9d9bdc4bbaad36586c",
+      "receipt_sha256": "9622e7134b56f0c48153cba1a23dd690bdc6d578a433c6f77b34e3f7a3cf70f0"
+    },
+    "empirical-hurdle-stage-normalization-v1.json": {
+      "file_sha256": "d0cd13c7afa4d35e55ee2e1d9316474cbdb50099d7674de0da8ff6fde46a1b26",
+      "receipt_sha256": "4704b839037042084da818cc72eecd651b7a1d7ac12fa5d74f1531bb2517e549"
+    },
+    "empirical-hurdle-stage1-convergence-v1.json": {
+      "file_sha256": "4014c3bbd0d47ed53ee05bde279e9c72f7f9c20e07b2bd1291f6278246f78ba3",
+      "receipt_sha256": "4a2c377be5379c1a03d65dbb9c06070619d60cedee3ab6d4af331aba8426a82a"
+    },
+    "empirical-hurdle-stage1-fit-method-v1.json": {
+      "file_sha256": "5d6246624f7a3e49701f6db62185ed97ff5e2b34b99f59faca29c6f54636283f",
+      "receipt_sha256": "6c644678deb454008c3a3146cece0a24393642e2025707dbacbe47e3355a7b9a"
+    },
+    "empirical-hurdle-stage2-fit-method-v1.json": {
+      "file_sha256": "7757e2b582a914f1fe802b6db1a731871c15d07c9e746ede84a7a3a6da53daaf",
+      "receipt_sha256": "31761a5961b755f3d0ca719bb88355b560c8b47e8b00df5f6f04e17ad8b986b4"
+    },
+    "empirical-hurdle-threshold-policy-v1.json": {
+      "file_sha256": "563ccf3805c33fa5eb588d210106aaf089c441d1fc5e35ca503ef66463a7cbd1",
+      "receipt_sha256": "56c8ce9eeba90be17d5ec4bd73ec604447dfcc9463dce7b38b8f6a1769706841"
+    },
+    "empirical-hurdle-training-population-v1.json": {
+      "file_sha256": "e7646168c73759c63cc78de43b57936be062f29c54b2afca3c449431409b8a24",
+      "receipt_sha256": "98b9296594b087df720b626389438c76072148c7a4d5709b11bca4df04507a0c"
+    }
+  },
+  "prediction": "NOT_RUN",
+  "private_access": 0,
+  "private_preservation": "NOT_ACCESSED_NO_FILESYSTEM_WIDE_BYTE_IDENTITY_CLAIM",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "c4ae8f8a377578093582a4a60b12e08f1c8bccb95e81e458f3cefc542572e181",
+  "reference_promotable": false,
+  "regression_evidence": "CHANGE_RECORD_VALIDATION_SECTION",
+  "rollout": "NOT_RUN",
+  "schema": "EMPIRICAL_HURDLE_STAGE1_DECISION_POLICY_V2_VALIDATION",
+  "sealed_reference_allowed": false,
+  "selection": "NOT_RUN",
+  "sg_execution": false,
+  "source_sha256": {
+    "empirical_hurdle_decision_policy_v2.py": "27a248dd5d97d2f781cb5d147fe4a996ef2b8acc8099dc12a9f010e1eb3b8c6b"
+  },
+  "status": "PUBLIC_DESIGN_CONTRACT_AND_SHA_CHAIN_VALIDATED",
+  "ta_execution": false,
+  "vehicle_activation_allowed": false
+}

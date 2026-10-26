@@ -1,0 +1,122 @@
+{
+  "actual_coefficients": "NOT_GENERATED",
+  "actual_execution_authorized": false,
+  "actual_model": "NOT_FIT",
+  "architecture": "FROZEN",
+  "baseline": "e722342fdd30fcaff80c6d9f94dd7d3465c8a447",
+  "candidate_search_authorized": false,
+  "causal_contract_receipts": {
+    "causal-state-contract": "d3df9b9c32043aa01df9f95c6adb126ceab76439bc72aac79c4c06fe86096e39",
+    "rollout-state-contract": "1b503078ac9e5adda34f54650099309c7db718c5181ccdca5dc462d11899542f"
+  },
+  "causal_rules": {
+    "boundaries": "ROUTE_SEGMENT_CAUSAL_RUN_ELIGIBILITY_GRID_BREAK_INVALIDATES_CONTEXT",
+    "future_truth_use": "FUTURE_MEASURED_DEV_ROLLOUT_TRUTH_SCORING_ONLY; FUTURE_AUTHORIZED_TRAIN_TARGET_y_LABEL_ALLOWED; NEVER_CAUSAL_CONTEXT_OR_COVARIATE",
+    "gate_is_not_state": "MOVE_GATE_CAN_PROJECT_HOLD_AND_NEXT_z=0",
+    "initial_history_array_indices": "LAST[-1]_MINUS_PENULTIMATE[-2]; RELATIVE_TIME_0_MINUS_MINUS1_NOT_ARRAY_0_MINUS_LAST",
+    "one_step_z": "1[tick[k]-tick[k-1]!=0]; TARGET_NOT_CAUSAL_INPUT; FUTURE_TRAIN_TARGET_LABEL_ONLY",
+    "predecessor_admission": "SAME_ROUTE_SEGMENT_RUN; SOURCE_AND_WITHIN_CAUSAL_RUN_INDICES_PLUS_1; GRID_PLUS_10000000_NS; BOTH_ELIGIBLE; STREAK_PLUS_1",
+    "rollout_initial_z": "RELATIVE_TIME_1[observed_tick_at_0-observed_tick_at_minus1!=0]; HISTORY_ARRAY_LAST_MINUS_PENULTIMATE",
+    "rollout_recursive_z": "1[projected_tick[h]-projected_tick[h-1]!=0], h>=1"
+  },
+  "combined_probability": "ONE_ORIGINAL_ROW_ORDER_VECTOR; z=0_STATIC_HEAD_ELSE_z=1_MOVE_HEAD",
+  "component": "head-fitting-policy",
+  "composition_authorized": false,
+  "execution_order": [
+    "STATIC",
+    "MOVE"
+  ],
+  "family": "HURDLE_STAGE1_CONTEXT_CONDITIONAL_LOGISTIC_V4",
+  "fitting_policy": "FROZEN",
+  "head_local_normalizer_fit": false,
+  "historical_states_preserved": [
+    "HURDLE_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V2_NO_ADMISSIBLE_CANDIDATE",
+    "HURDLE_STAGE1_V3_NO_ADMISSIBLE_CANDIDATE",
+    "S2_RI_NO_ADMISSIBLE_CANDIDATE",
+    "MODEL_SELECTION_FAILED_CLOSED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "holdout": "CLOSED",
+  "holdout_discovery": 0,
+  "holdout_openings": 0,
+  "hugging_face": {
+    "download": 0,
+    "login": "NOT_RUN",
+    "repo": "NOT_CREATED",
+    "setup": "NOT_RUN",
+    "status": "HUGGING_FACE_NOT_REQUIRED_FOR_MODEL_SIZE",
+    "upload": 0
+  },
+  "likelihood_equivalence": "SUM_NLL_SEPARATES; GLOBAL_ARGMIN_PRODUCT_OF_HEAD_ARGMINS_IF_EXIST_UNCOUPLED; LOCAL_MEAN_POSITIVE_WEIGHTS_SAME_MINIMIZERS",
+  "model_fit_calls": 0,
+  "non_equivalence_reasons": [
+    "LOCAL_MEAN_GRADIENT_SCALE",
+    "REDUCTION_ORDER",
+    "ARMIJO_PATH",
+    "REPARAMETERIZATION"
+  ],
+  "normalizer_fit_calls": 0,
+  "opening_count": 0,
+  "operation_counter_scope": "ACTUAL_EMPIRICAL_OPERATIONS_ONLY; AUTHORIZED_SYNTHETIC_TEST_OPERATIONS_SEPARATE",
+  "optimizer_byte_equivalence_to_joint_block": false,
+  "policy": "FIT_STATIC_AND_MOVE_HEADS_INDEPENDENTLY",
+  "pooled_refit": "NOT_AUTHORIZED",
+  "preconditions_each_head": [
+    "SOURCE_MODEL_NORMALIZER_ANCHOR_IDENTITIES",
+    "SUPPORT",
+    "NUMERICAL_AND_EXACT_RANK",
+    "EXACT_NO_SEPARATION"
+  ],
+  "preserved_authority_states": [
+    "NO_MODEL_ADMITTED_FOR_FUTURE_HOLDOUT",
+    "FINAL_POOLED_REFIT_NOT_AUTHORIZED",
+    "FUTURE_UNTOUCHED_HOLDOUT_REQUIRED",
+    "HOLDOUT_OPENING_CLOSED",
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED",
+    "SEARCH_NOT_AUTHORIZED",
+    "COMPOSITION_NOT_AUTHORIZED",
+    "STAGE2_LONG_HORIZON_RESIDUAL_RISK_REMAINS"
+  ],
+  "prior_review_states_preserved": [
+    "GLOBAL_SINGLE_THRESHOLD_FAMILY_RETROSPECTIVELY_EXHAUSTED",
+    "V4_ARCHITECTURE_REDESIGN_INCONCLUSIVE",
+    "V4_TWO_CONTEXT_CAUSAL_STATE_CONTRACT_ESTABLISHED",
+    "V4_TWO_CONTEXT_EXACT_FITTING_EXACT_BUT_CARTESIAN_WORST_CASE",
+    "OPTION_A_ALGORITHMIC_ELIGIBILITY_NOT_ESTABLISHED",
+    "SEPARABLE_TWO_CONTEXT_FITTING_ALGORITHMICALLY_FEASIBLE_POLICY_UNFROZEN",
+    "V4_TWO_CONTEXT_POLICY_DECISION_INCONCLUSIVE"
+  ],
+  "private_executor_implemented": false,
+  "private_numeric_array_opens": 0,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qlog_openings": 0,
+  "qualification_allowed": false,
+  "raw_log_openings": 0,
+  "receipt_sha256": "e28ce7c17aa828f3366d40b221d5c3074b6c7102e49fba6c3d0489d675018be2",
+  "reference_promotable": false,
+  "rows": "ORIGINAL_TRAIN_ORDER_FILTERED_BY_RAW_z",
+  "schema": "HURDLE_STAGE1_CONTEXT_CONDITIONAL_LOGISTIC_V4_FITTING_POLICY_V1",
+  "scope": "PUBLIC_POLICY_AND_SYNTHETIC_REFERENCE_ONLY",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source_writes": 0,
+  "stage2": "REUSE_BYTE_IDENTICAL_V1_STAGE2_COEFFICIENTS_AND_MOVE_ONLY_TRAIN_NORMALIZER_SAME_CANDIDATE_FOLD",
+  "stage2_train_anchor": "PIN_TRUE_MOVE_SUBSET_SEPARATELY_FROM_STAGE1_PARENT_TRAIN",
+  "ta_execution": false,
+  "threshold_search_calls": 0,
+  "unique_finite_real_mle": "FINITE_INPUTS_EXACT_FULL_COLUMN_RANK_AND_EXACT_NO_COMPLETE_QUASI_SEPARATION",
+  "v4": {
+    "cv": "NOT_RUN",
+    "development": "NOT_RUN",
+    "fitting": "NOT_RUN",
+    "performance": "NOT_RUN",
+    "rollout": "NOT_RUN",
+    "selection": "NOT_RUN"
+  },
+  "vehicle_activation_allowed": false,
+  "vehicle_authority": "NONE"
+}

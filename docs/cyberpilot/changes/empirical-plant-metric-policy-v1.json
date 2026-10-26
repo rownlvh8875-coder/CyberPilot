@@ -1,0 +1,60 @@
+{
+  "aggregation": "POOLED_SSE_AND_COUNT_NO_SEGMENT_WEIGHT",
+  "amplitude_subsets": "INPUT_ZERO_POSITIVE_NEGATIVE_AND_TRAIN_ABS_QUARTILES",
+  "candidate_search_authorized": false,
+  "candidate_unstable": "EXCLUDE_AND_REPORT_NO_HOLDOUT_RESELECTION",
+  "common_history_samples": 45,
+  "common_support": "ALL_45_HISTORY_SAMPLES_VALID_SAME_SEGMENT_SAME_BIN",
+  "composition_authorized": false,
+  "correlation_constant": "NULL_WITH_SUPPORT_COUNT",
+  "minimum_samples": 201,
+  "one_step": [
+    "MAE",
+    "RMSE",
+    "MEDIAN_ABS",
+    "P95_ABS",
+    "BIAS",
+    "CORRELATION"
+  ],
+  "physical_delay_interpretation": "INCLUDES_SOURCE_PUBLISH_ALIGNMENT_AGE_NOT_PHYSICAL_DELAY_TRUTH",
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "quantile": "NUMPY_LINEAR",
+  "rank": "FULL_COLUMN_RANK_REQUIRED",
+  "ready_other_gates": [
+    "MEASURED_UNITS_FRAME_PROVEN",
+    "CLEAN_LIMIT_MASK_OBSERVABLE",
+    "EXACT_REPEATABILITY",
+    "STABLE_MODEL",
+    "SUPPORT_201_MINIMUM"
+  ],
+  "ready_primary_horizon_samples": 100,
+  "ready_primary_metrics": [
+    "MAE",
+    "RMSE",
+    "P95_ABS"
+  ],
+  "ready_rule": "STRICTLY_BETTER_THAN_EACH_NAIVE_ON_ONE_STEP_AND_100_STEP_ENDPOINT_COMMON_SUPPORT",
+  "receipt_sha256": "e81b457764f1b7cb50ed1b31911d8f976d38fa819cd5dbd28df9564e9525c4a7",
+  "reference_promotable": false,
+  "rollout_initialization": "OBSERVED_HISTORY_ONCE_THEN_RECURSIVE_PREDICTED_OUTPUT",
+  "rollout_input": "OBSERVED_EXOGENOUS_COMMAND_OVER_HORIZON_NOT_FEEDBACK_TO_MODEL",
+  "rollout_metric": "ENDPOINT_OUTPUT_RESIDUAL_AFTER_H_RECURSIVE_STEPS",
+  "rollout_origins": "EVERY_COMMON_SUPPORT_INDEX_WITH_COMPLETE_VALID_HORIZON",
+  "rollout_samples": [
+    25,
+    50,
+    100,
+    200
+  ],
+  "schema": "EMPIRICAL_PLANT_METRIC_EXECUTION_POLICY_V1",
+  "sealed_reference_allowed": false,
+  "selection_scope": "SEPARATE_STAGE_AND_SPEED_BIN",
+  "selection_target": "ONE_STEP_OUTPUT_RMSE",
+  "sg_execution": false,
+  "ta_execution": false,
+  "time_blocks": "FOUR_EQUAL_INDEX_BLOCKS_PER_SEGMENT_NO_POSTHOC_SELECTION",
+  "unavailable": "NULL_NEVER_ZERO_OR_IMPUTED",
+  "vehicle_activation_allowed": false
+}

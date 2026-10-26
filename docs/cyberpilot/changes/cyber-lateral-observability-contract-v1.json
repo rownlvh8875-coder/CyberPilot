@@ -1,0 +1,107 @@
+{
+  "actual_curvature_role": "SOURCE_DEFINED_RECONSTRUCTION_OR_MEASUREMENT_MUST_BE_LABELLED",
+  "audit_baseline": "46e41ad2f2e11cd4aee926b47d037c46d226108c",
+  "calibration_blockers": [
+    "CALIBRATION_UNCERTAINTY_PENDING",
+    "INDEPENDENT_CALIBRATION_VALIDATION_PENDING",
+    "PIXEL_GEOMETRY_REGISTRATION_PENDING",
+    "METRIC_CALIBRATION_UNAVAILABLE",
+    "INDEPENDENT_REFERENCE_UNAVAILABLE"
+  ],
+  "candidate_search_authorized": false,
+  "composition_authorized": false,
+  "configuration": "canonical config digest indexed by process epoch and config sequence; collisions rejected",
+  "desired_curvature_role": "CONTROLLER_INTENT_ONLY_NOT_INDEPENDENT_REFERENCE",
+  "device_write_allowed": false,
+  "events": [
+    "ORDINARY",
+    "INACTIVE",
+    "STEERING_PRESSED",
+    "RELEASE",
+    "REENGAGEMENT",
+    "SCENARIO_BOUNDARY",
+    "CONFIG_CHANGE"
+  ],
+  "execution_allowed": false,
+  "forbidden_inputs": [
+    "modelV2",
+    "planner/path/lane independent reference",
+    "fused pose",
+    "private raw logs"
+  ],
+  "future_data_readiness_sha256": "f6ff56d3560d891eb48aaeacf33e93fb6e639c322dacb8bc55882885ef23fd2d",
+  "identity_fields": [
+    "process_epoch",
+    "loop_sequence",
+    "config_sequence",
+    "config_sha256",
+    "consumed_input_snapshot_sha256",
+    "source_sha256"
+  ],
+  "implementation_base": "3a3bec6f07fc7c217e4c8a024217e755be065261",
+  "loop_clock_order": "within epoch capture/decision strictly increase; next capture >= prior decision; sequential loop ownership",
+  "production_authority": false,
+  "production_observer_implemented": false,
+  "production_overlay": "NOT_IMPLEMENTED",
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "raw_command_is_physical_acknowledgement": false,
+  "receipt_sha256": "2838621b5f9aa1acd7ed0b98de54cdb3a6e49349c5c04702ec2ac1ee2c5b5da0",
+  "reference_promotable": false,
+  "reset": "new epoch on process restart; config change explicit event and fresh sequence binding",
+  "scaffolding_sources": {
+    "simulator_reuse_contracts.py": "184359ca114421440331966dbc97da36ee9ed6626614fec7b4b7b40fb86696cc",
+    "simulator_reuse_scaffolding.py": "ac85cdf6cb0969d82fd5fc1da9c0ccd2afe2d3b216e16f1c605a6d2abbfdab52"
+  },
+  "schema": "CYBER_LATERAL_OBSERVABILITY_CONTRACT_V1",
+  "schema_allocation": "NO_CEREAL_FIELD_IDS_ALLOCATED",
+  "sealed_reference": "NOT_GENERATED",
+  "sealed_reference_allowed": false,
+  "sequence": "contiguous from 1 per epoch; new epoch requires boundary; never reenter epoch",
+  "service_masks": [
+    "updated",
+    "alive",
+    "freqOk",
+    "valid"
+  ],
+  "services": [
+    "carState",
+    "carControl",
+    "carOutput"
+  ],
+  "sg_execution": false,
+  "signals": {
+    "actual_curvature": "1/m; source/frame provenance required, unavailable stays null",
+    "curvature_limited": "nullable source-proven boolean, unknown is null",
+    "desired_curvature": "1/m; controller intent, never independent reference",
+    "driver_torque": "source-declared units, never guessed",
+    "final_torque": "normalized emitted command representation, not physical application",
+    "post_limit_torque": "normalized post-CarController representation",
+    "pre_limit_torque": "normalized; explicit limiter entry, not inferred from final",
+    "requested_torque": "normalized controller request",
+    "runtime_STEER_MAX": "raw command units; source/runtime provenance required",
+    "safety_limited": "nullable source-proven boolean, unknown is null",
+    "steeringAngleDeg": "steering-wheel degrees, measured",
+    "steeringPressed": "nullable source boolean",
+    "steeringRateDeg": "steering-wheel degrees/second, actual sample",
+    "torqueOutputCan": "signed raw CAN command representation, runtime STEER_MAX bound"
+  },
+  "snapshot": "SHA256 canonical full trace excluding its digest; capture <= decision; source <= capture",
+  "source_field_provenance": "exact source adapter and units required before future observation; no generic fallback",
+  "status": "CONTRACT_ONLY",
+  "synthetic_validation_only": true,
+  "ta_execution": false,
+  "timing_fields": [
+    "capture_time_ns",
+    "decision_time_ns",
+    "services.*.time_ns"
+  ],
+  "torque_stages": "distinct nullable producer observations; no inferred prelimit/safety reason",
+  "unavailable": "NULL_NEVER_FALSE_ZERO_OR_INFERRED",
+  "vehicle_activation_allowed": false,
+  "vehicle_states": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ]
+}

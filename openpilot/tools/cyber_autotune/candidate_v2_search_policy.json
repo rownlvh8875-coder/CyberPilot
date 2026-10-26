@@ -1,0 +1,232 @@
+{
+  "candidate_count": 9,
+  "criteria": {
+    "classification": "hard or final no-worse/retention violation REJECTED; otherwise v1 Pareto improvement SCREENING_IMPROVED; other TRADEOFF_ONLY",
+    "comparison": "each desired-input-defined speed/sign/magnitude/phase cell; exact IEEE <=; no weighted sum",
+    "development_high": "each HIGH cell no worse than baseline",
+    "development_low_mid": "each LOW/MID cell no worse than v1",
+    "evaluation": "report only after selection receipt frozen; no reselection",
+    "hard_first": true,
+    "lag": "diagnostic only, never physical delay estimate",
+    "pose": "observer excursion diagnostic only, never lane score",
+    "selection": "Pareto among eligible development vectors; tie smaller factor fraction, smaller friction fraction, config SHA"
+  },
+  "derived_scenario_speed_mps": {
+    "gentle_mid_left": 15.0,
+    "sharp_mid_left": 17.5
+  },
+  "development": [
+    "gentle_low_left",
+    "gentle_high_left",
+    "sharp_high_left",
+    "gentle_mid_left"
+  ],
+  "evaluation": [
+    "gentle_low_right",
+    "gentle_high_right",
+    "sharp_low_left",
+    "sharp_low_right",
+    "sharp_high_right",
+    "s_low",
+    "s_high",
+    "reengage_low",
+    "reengage_high",
+    "speed_sweep",
+    "sharp_mid_left"
+  ],
+  "family": {
+    "attenuated_knot_indexes": [
+      3,
+      4
+    ],
+    "controller_physical_delay_queue": false,
+    "cp_anchor": "initial common CP wire factor/friction; all tables built and frozen before execution",
+    "factor_unit": "(m/s^2)/normalized torque",
+    "friction_unit": "normalized torque",
+    "interpolation": "piecewise linear, native speed and parameters float32 admission",
+    "max_frame_delta": {
+      "friction": 0.0009765625,
+      "latAccelFactor": 0.015625
+    },
+    "max_rate_per_s": {
+      "friction": 0.09765625,
+      "latAccelFactor": 1.5625
+    },
+    "name": "NATIVE_HIGH_SPEED_PARAMETER_DELTA_ATTENUATION_V2",
+    "parameters": {
+      "factor_high_fraction": {
+        "choices": [
+          0.0,
+          0.5,
+          1.0
+        ],
+        "max": 1.0,
+        "min": 0.0,
+        "unit": "fraction of v1 factor delta"
+      },
+      "friction_high_fraction": {
+        "choices": [
+          0.0,
+          0.5,
+          1.0
+        ],
+        "max": 1.0,
+        "min": 0.0,
+        "unit": "fraction of v1 friction delta"
+      }
+    },
+    "physical_delay_owner": "PLANT",
+    "reset_policy": "fresh isolated controller and plant for each repeat; retain stock inactive/pressed state",
+    "speed_breakpoints_mps": [
+      0.0,
+      10.0,
+      15.0,
+      20.0,
+      25.0,
+      30.0
+    ],
+    "unchanged": [
+      "PID gains",
+      "history",
+      "lookahead",
+      "jerk filter",
+      "limits",
+      "offset"
+    ],
+    "v1_factor_deltas": [
+      0.0,
+      0.0078125,
+      0.01171875,
+      0.015625,
+      0.0078125,
+      0.0
+    ],
+    "v1_friction_deltas": [
+      0.0,
+      0.00048828125,
+      0.000732421875,
+      0.0009765625,
+      0.00048828125,
+      0.0
+    ]
+  },
+  "hard_constraints": [
+    "finite",
+    "normalized torque bound",
+    "plant domain",
+    "PLANT only delay",
+    "no controller command queue",
+    "exact repeatability",
+    "source/config/readback binding",
+    "zero inactive requested torque",
+    "pinned stock pressed integrator behavior",
+    "fresh reset/public replay",
+    "candidate identity",
+    "synthetic owned inputs only/no private publication"
+  ],
+  "historical_exposure": "original thirteen were seen in v1 attribution; evaluation role is not an untouched holdout",
+  "metrics": [
+    "curvature_residual_rmse_1pm",
+    "native_aligned_residual_rmse_1pm",
+    "steering_residual_rmse_deg",
+    "command_derivative_rms_per_s",
+    "applied_torque_derivative_rms_per_s",
+    "saturation_occupancy",
+    "zero_crossings",
+    "reversals"
+  ],
+  "real_performance_status": "BLOCKED: INDEPENDENT_REFERENCE_UNAVAILABLE",
+  "reference_status": "NO INDEPENDENT LANE TRUTH",
+  "robustness": {
+    "axes": {
+      "cp_friction_fraction": {
+        "basis": "common software CP compensation, not plant physical friction; tables reanchored before freeze",
+        "choices": [
+          0.9921875,
+          1.0078125
+        ]
+      },
+      "curvature_gain_fraction": {
+        "basis": "small local dyadic sensitivity; existing A1 fractional coordinate",
+        "choices": [
+          0.9921875,
+          1.0078125
+        ]
+      },
+      "delay_steps": {
+        "basis": "nominal2 +/- one native 10ms frame",
+        "choices": [
+          1,
+          3
+        ]
+      },
+      "initial_curvature_1pm": {
+        "basis": "one eighth existing gentle excitation",
+        "choices": [
+          -1.875e-05,
+          1.875e-05
+        ]
+      },
+      "initial_pose_y_m": {
+        "basis": "small software observer offset, not lane geometry; no controller pose input",
+        "choices": [
+          -0.01,
+          0.01
+        ]
+      },
+      "initial_yaw_rad_s": {
+        "basis": "nominal speed times small curvature excitation",
+        "choices": [
+          -0.00046875,
+          0.00046875
+        ]
+      },
+      "pressed_shift_steps": {
+        "basis": "reengage_high +/- one native frame",
+        "choices": [
+          -1,
+          1
+        ]
+      },
+      "reengage_shift_steps": {
+        "basis": "reengage_high release +/- one native frame",
+        "choices": [
+          -1,
+          1
+        ]
+      },
+      "roll_rad": {
+        "basis": "one tenth existing plant unit-test roll .02",
+        "choices": [
+          -0.002,
+          0.002
+        ]
+      },
+      "speed_delta_mps": {
+        "basis": "local one m/s within frozen 3..27 domain, not empirical uncertainty",
+        "choices": [
+          -1.0,
+          1.0
+        ]
+      },
+      "yaw_ar_delta": {
+        "basis": "small local dyadic sensitivity inside existing AR stability domain",
+        "choices": [
+          -0.0078125,
+          0.0078125
+        ]
+      }
+    },
+    "case_count": 23,
+    "design": "nominal plus deterministic one-at-a-time pairs; not calibrated uncertainty/coverage",
+    "scenario": "sharp_high_left",
+    "seed": null
+  },
+  "scope": "BOUNDED_SYNTHETIC_SCREENING_NO_VEHICLE_TRUTH",
+  "vehicle_status": [
+    "NOT_READY",
+    "REAL_VEHICLE_UNVERIFIED",
+    "VEHICLE_ACTIVATION_BLOCKED"
+  ],
+  "version": 1
+}

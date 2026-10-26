@@ -1,0 +1,650 @@
+{
+  "actual_algorithm_implemented": false,
+  "allowed_mechanisms": [
+    "causal_curvature_tracking",
+    "phase_response",
+    "bounded_error_history",
+    "speed_conditioned_dynamics"
+  ],
+  "causality": "current_or_past_timestamp_only; no future feedback",
+  "cross_objective_hard_constraints": [
+    {
+      "aggregation": "rms_p95_max",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "LOWER_ABSOLUTE",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "adjacent_active_samples",
+      "name": "requested_torque_derivative",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "normalized/s"
+    },
+    {
+      "aggregation": "rms_p95_max",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "LOWER_ABSOLUTE",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "adjacent_applied_samples",
+      "name": "applied_torque_derivative",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "normalized/s"
+    },
+    {
+      "aggregation": "per_phase",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "DESCRIPTIVE",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "active_nonzero_signs",
+      "name": "zero_crossing",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "count"
+    },
+    {
+      "aggregation": "per_phase",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "DESCRIPTIVE",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "active_nonzero_signs",
+      "name": "sign_reversal",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "count"
+    },
+    {
+      "aggregation": "spectral_band_energy",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "DESCRIPTIVE",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "uniform_contiguous_timebase",
+      "name": "high_frequency_content",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "normalized^2"
+    },
+    {
+      "aggregation": "count_over_valid",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "DESCRIPTIVE",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "explicit_saturation_observation",
+      "name": "saturation_occupancy",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "fraction"
+    },
+    {
+      "aggregation": "per_phase",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "DESCRIPTIVE",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "adjacent_saturation_observations",
+      "name": "saturation_transition",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "count"
+    },
+    {
+      "aggregation": "peak_and_signed_response",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "LOWER_ABSOLUTE",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "frozen_event_window",
+      "name": "release_reengagement_transient",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "normalized"
+    },
+    {
+      "aggregation": "peak_and_signed_response",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "LOWER_ABSOLUTE",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "frozen_event_window",
+      "name": "steering_pressed_transient",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "normalized"
+    }
+  ],
+  "detectability_states": [
+    "NO_OUTPUT_DIFFERENCE",
+    "REQUESTED_OUTPUT_DIFFERENCE_PRESENT",
+    "APPLIED_OUTPUT_DIFFERENCE_PRESENT",
+    "CURVATURE_EFFECT_PRESENT",
+    "HEADING_EFFECT_PRESENT",
+    "POSE_EFFECT_PRESENT",
+    "TEMPORALLY_CANCELED",
+    "OUTPUT_LIMITED",
+    "DISTANCE_NOT_REACHED"
+  ],
+  "dt_s": 0.01,
+  "enabled_implementation_authorized": false,
+  "families": [
+    {
+      "algorithm_selected": false,
+      "causal_inputs": "present/past desired curvature, speed, roll, feedback",
+      "expected_mechanism": "delay-aware curvature feedforward",
+      "family": "TA-A",
+      "observability": "FF intent/limited torque/curvature phase",
+      "parameter_count": null,
+      "parameter_ranges": null,
+      "potential_failure": "causal predictor phase overshoot; duplicate physical delay prohibited",
+      "production_transfer_risk": "delay estimate and torque conversion mismatch",
+      "reset": "EXPLICIT_FRESH_INSTANCE_POLICY",
+      "search_complexity": "UNDETERMINED_NO_SEARCH",
+      "state": "causal demand history"
+    },
+    {
+      "algorithm_selected": false,
+      "causal_inputs": "present/past desired/actual curvature, speed, intervention",
+      "expected_mechanism": "error dynamics and entry/apex/exit response",
+      "family": "TA-B",
+      "observability": "error state/feedback/limits/phase",
+      "parameter_count": null,
+      "parameter_ranges": null,
+      "potential_failure": "windup/state leak/incorrect reset",
+      "production_transfer_risk": "feedback reconstruction and saturation",
+      "reset": "EXPLICIT_FRESH_INSTANCE_POLICY",
+      "search_complexity": "UNDETERMINED_NO_SEARCH",
+      "state": "bounded tracking error state"
+    },
+    {
+      "algorithm_selected": false,
+      "causal_inputs": "present/past demand, feedback, speed, roll",
+      "expected_mechanism": "speed-conditioned feedforward-feedback blend",
+      "family": "TA-C",
+      "observability": "FF/FB components and speed transitions",
+      "parameter_count": null,
+      "parameter_ranges": null,
+      "potential_failure": "schedule discontinuity/sign inconsistency",
+      "production_transfer_risk": "profile-specific scheduling and extrapolation",
+      "reset": "EXPLICIT_FRESH_INSTANCE_POLICY",
+      "search_complexity": "UNDETERMINED_NO_SEARCH",
+      "state": "blend/history state"
+    }
+  ],
+  "families_algorithm_selection": "NOT_SELECTED",
+  "forbidden": [
+    "lane_truth",
+    "modelV2",
+    "planner_path",
+    "candidate_output",
+    "future_truth",
+    "hidden_plant_state",
+    "arbitrary_scale_bias",
+    "governor_command_shaping",
+    "posthoc_acceptance_fit"
+  ],
+  "historical_pre_limit_intent": null,
+  "historical_signal_reconstruction_allowed": false,
+  "identity": {
+    "car_params_profile_sha256": "4782f20b8ce51a8b585890a0677743a518b648acb91017d7f5e9b8a51bc99319",
+    "config_sha256": "e37a9aebe46993eb4a03972d879d446f0763ac682dfff25def606c82b9862ea1",
+    "environment_sha256": "235cb67dc6e6aacf97a93a865f40680454bf59bd60caacfbcdbe07fedbce667c",
+    "experiment_policy_sha256": "e3cd2d756c1411ae40a5269c3457f607d2970e94f0163422997c78beffeeb26b",
+    "family": "ARCHITECTURE_PROBE_ONLY",
+    "input_contract_sha256": "a9f588b92fe39db2734f49efa76002651196e5099f5ddd0bf5995f9abca85a2a",
+    "native_software_sha256": "32b84150dc9765b9edb0a55644a5f3490daec41f4c6a8cc95a8905adda043841",
+    "output_contract_sha256": "e83803a77224ef6f50be24a638b4cf496e1f1e66e486a33537e443a0e0518f77",
+    "plant_sha256": "488b0f3e6a04e02c58ce622c3d86716edb1c0d18258adc08be646b7e66cf094a",
+    "reset_policy_sha256": "f838c312c35e98ed37e6436dc2117baaa1a3e484786d021dad4bb4a686e08b6d",
+    "role": "TA",
+    "source_sha256": "a120ba1012be74b4953b49eecb3a5843617083e35ab35743666c17254d2f5759",
+    "state_schema_sha256": "771b3c7cb824aadc1d776ed680bd2b6150312e914eb1dfa0219b06b879e327ca",
+    "timebase_sha256": "b07217b1d4d9b8f41862fb4edd371139b2cedb1935a0050a8b9fc03a8199fc1c"
+  },
+  "identity_context": "native software and CarParams are historical first-index baseline reference, NOT executed by new probe",
+  "identity_environment": "current pure Python probe execution, NOT historical native environment",
+  "input_schema": {
+    "active": "<class 'bool'>",
+    "actual_curvature_1pm": "<class 'float'>",
+    "curvature_limited": "<class 'bool'>",
+    "desired_curvature_1pm": "<class 'float'>",
+    "dt_s": "<class 'float'>",
+    "roll_rad": "<class 'float'>",
+    "safety_limited": "<class 'bool'>",
+    "speed_mps": "<class 'float'>",
+    "steering_pressed": "<class 'bool'>",
+    "time_s": "<class 'float'>"
+  },
+  "input_whitelist_unknown_rejected": true,
+  "metrics": [
+    {
+      "aggregation": "median_p95_max",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "LOWER_ABSOLUTE",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "active_with_feedback",
+      "name": "curvature_tracking_residual",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "1/m"
+    },
+    {
+      "aggregation": "per_phase",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "DESCRIPTIVE_LAG",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "unique_identifiable_lag",
+      "name": "phase_aligned_curvature_response",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "s"
+    },
+    {
+      "aggregation": "distance_and_phase",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "DESCRIPTIVE_SIGNED",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "observed_distance_only",
+      "name": "heading_response",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "rad"
+    },
+    {
+      "aggregation": "distance_and_phase",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "DESCRIPTIVE_SIGNED",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "monotonic_observed_x_only",
+      "name": "descriptive_pose_response",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "m"
+    },
+    {
+      "aggregation": "median_p95_max",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "LOWER_ABSOLUTE",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "saturated_and_active",
+      "name": "saturation_tracking_loss",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "1/m"
+    },
+    {
+      "aggregation": "per_speed_sign_phase",
+      "availability": "NULL_IF_MISSING_SIGNAL_OR_INSUFFICIENT_SUPPORT; NEVER_ZERO_FILL",
+      "coverage": "VALID_TOTAL_UNAVAILABLE_SEPARATE_PER_SCENARIO_AND_PHASE",
+      "direction": "DESCRIPTIVE",
+      "execution_definition_status": "CATALOG_FROZEN_EXECUTION_POLICY_PENDING",
+      "mask": "causal_response_available",
+      "name": "sign_consistency",
+      "no_worse": "PAIRED_BASELINE_COMPARISON_WITH_COVERAGE; NO_CROSS_OBJECTIVE_COMPENSATION",
+      "pending_before_execution": "Freeze exact lag estimator, spectral band/window, event window, tolerances and masks before results",
+      "phase_handling": "ENTRY_APEX_EXIT_REVERSAL_RELEASE_REENGAGEMENT_SEPARATE",
+      "threshold": null,
+      "threshold_status": "THRESHOLD_UNJUSTIFIED",
+      "unit": "count"
+    }
+  ],
+  "observability": [
+    "pre_limit_intent",
+    "raw_requested_torque_POST_CONTROLLER_LIMIT",
+    "tracking_error",
+    "feedforward_component",
+    "feedback_component",
+    "friction_component",
+    "saturation_intent"
+  ],
+  "observability_unavailable": "NULL_WITH_UNAVAILABLE_STATUS_NO_ZERO_FILL",
+  "output_schema": {
+    "config_sha256": "<class 'str'>",
+    "feedback_component": "float | None",
+    "feedforward_component": "float | None",
+    "friction_component": "float | None",
+    "observation_status": "<class 'str'>",
+    "pre_limit_intent": "float | None",
+    "raw_requested_torque": "<class 'float'>",
+    "saturation_intent": "bool | None",
+    "source_sha256": "<class 'str'>",
+    "tracking_error": "float | None"
+  },
+  "parameter_search_allowed": false,
+  "plant_lifecycle": "retain physical state/queue through interventions; config changes require a new experiment",
+  "production_authority": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "6332e70a53698abe07cf6209e7d3e2796e473f75bf698a13cda6c18b09bd77f0",
+  "reset_policy": [
+    [
+      "TA",
+      "EXPERIMENT_START",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "INACTIVE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "STEERING_PRESSED",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "RELEASE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "REENGAGEMENT",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "CONFIG_CHANGE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "TA",
+      "SCENARIO_BOUNDARY",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "EXPERIMENT_START",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "INACTIVE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "STEERING_PRESSED",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "RELEASE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "REENGAGEMENT",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "CONFIG_CHANGE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "SG",
+      "SCENARIO_BOUNDARY",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "PLANT",
+      "EXPERIMENT_START",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "PLANT",
+      "INACTIVE",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "STEERING_PRESSED",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "RELEASE",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "REENGAGEMENT",
+      "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+    ],
+    [
+      "PLANT",
+      "CONFIG_CHANGE",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ],
+    [
+      "PLANT",
+      "SCENARIO_BOUNDARY",
+      "FRESH_INSTANCE_NO_RETAINED_STATE"
+    ]
+  ],
+  "schema": "TRAJECTORY_AUTHORITY_CONTRACT_V1",
+  "sealed_reference_allowed": false,
+  "search_policy": {
+    "development_scenarios": null,
+    "discretization": null,
+    "execution_allowed": false,
+    "family": null,
+    "frozen_evaluation_scenarios": null,
+    "hard_constraints": null,
+    "max_candidate_count": null,
+    "parameter_names": null,
+    "ranges": null,
+    "schema": "TRAJECTORY_SEARCH_POLICY_V1",
+    "state_reset": [
+      [
+        "TA",
+        "EXPERIMENT_START",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "TA",
+        "INACTIVE",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "TA",
+        "STEERING_PRESSED",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "TA",
+        "RELEASE",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "TA",
+        "REENGAGEMENT",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "TA",
+        "CONFIG_CHANGE",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "TA",
+        "SCENARIO_BOUNDARY",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "SG",
+        "EXPERIMENT_START",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "SG",
+        "INACTIVE",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "SG",
+        "STEERING_PRESSED",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "SG",
+        "RELEASE",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "SG",
+        "REENGAGEMENT",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "SG",
+        "CONFIG_CHANGE",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "SG",
+        "SCENARIO_BOUNDARY",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "PLANT",
+        "EXPERIMENT_START",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "PLANT",
+        "INACTIVE",
+        "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+      ],
+      [
+        "PLANT",
+        "STEERING_PRESSED",
+        "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+      ],
+      [
+        "PLANT",
+        "RELEASE",
+        "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+      ],
+      [
+        "PLANT",
+        "REENGAGEMENT",
+        "RETAIN_PHYSICAL_STATE_AND_QUEUE"
+      ],
+      [
+        "PLANT",
+        "CONFIG_CHANGE",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ],
+      [
+        "PLANT",
+        "SCENARIO_BOUNDARY",
+        "FRESH_INSTANCE_NO_RETAINED_STATE"
+      ]
+    ],
+    "status": "NOT_FROZEN",
+    "tie_breaking": null,
+    "units": null
+  },
+  "source_baseline_sha": "6c60eb8ba3382c1600d056e7b213c73517ce0e87",
+  "state_ownership": [
+    [
+      "tracking_error_history",
+      "TA"
+    ],
+    [
+      "feedback_integrator",
+      "TA"
+    ],
+    [
+      "causal_feedforward_history",
+      "TA"
+    ],
+    [
+      "last_command",
+      "SG"
+    ],
+    [
+      "reversal_state",
+      "SG"
+    ],
+    [
+      "intervention_state",
+      "SG"
+    ],
+    [
+      "physical_delay",
+      "PLANT"
+    ],
+    [
+      "driver_pressed_and_active_source",
+      "EXPERIMENT"
+    ]
+  ],
+  "structural_checks": [
+    "determinism",
+    "sign_consistency",
+    "amplitude_ordering",
+    "no_nonfinite",
+    "fresh_reset_no_leak"
+  ],
+  "timing_owner": "EXPERIMENT",
+  "vehicle_activation_allowed": false,
+  "verdict_catalog": [
+    "TRAJECTORY_STRUCTURALLY_VALID",
+    "TRAJECTORY_EFFECT_PRESENT",
+    "TRAJECTORY_TRADEOFF_ONLY",
+    "TRAJECTORY_REJECTED",
+    "TRAJECTORY_BLOCKED"
+  ]
+}

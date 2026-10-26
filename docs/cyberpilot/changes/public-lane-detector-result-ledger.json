@@ -1,0 +1,21 @@
+{
+  "controller_history_modified": false,
+  "history": [
+    {
+      "id": "ADAPTER_V1",
+      "reason": "Whole frame invalidation for valid off-canvas spline extension; retained, never qualification",
+      "result_file_sha256": "c46627d71e9cb273482c7a1d5e919ecca4e23be477c0f07222a21b3fbc87ec9e",
+      "result_receipt_sha256": "ab25d4eea5fc1076fc255a21631f61be6f30666119c9a6e6730fdb5e08d3f488",
+      "status": "DISCARDED_ADAPTER_ERROR_NOT_DETECTOR_VERDICT"
+    },
+    {
+      "evidence_tier": "POST_RESULT_ADAPTER_CORRECTION_DIAGNOSTIC_NOT_QUALIFICATION",
+      "id": "ADAPTER_V2",
+      "prior_GT_semantic_inspection": true,
+      "result_file_sha256": "57461ce9bb202e7c23724570ff71d302c5a843fa820dac066ce8467caeed1a72",
+      "result_receipt_sha256": "51184e4182efd3c6b2a7ee5640d4d11a9dc5f4071fabd003e617018885e97888",
+      "status": "PIXEL_DIAGNOSTIC_COMPLETE_NOT_QUALIFICATION"
+    }
+  ],
+  "schema": "PUBLIC_DETECTOR_RUN_LEDGER_V1"
+}

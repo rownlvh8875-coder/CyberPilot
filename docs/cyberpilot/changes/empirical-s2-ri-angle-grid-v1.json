@@ -1,0 +1,74 @@
+{
+  "authority": {
+    "candidate": false,
+    "composition": false,
+    "cv_scoring": false,
+    "device": false,
+    "fitting": false,
+    "holdout_opening": false,
+    "optimizer": false,
+    "prediction": false,
+    "production": false,
+    "qlog_support": false,
+    "raw_opening": false,
+    "residual": false,
+    "rollout": false,
+    "selection": false,
+    "sg": false,
+    "ta": false,
+    "vehicle": false
+  },
+  "candidate_search_authorized": false,
+  "clipping": false,
+  "codes": [
+    -32768,
+    32767
+  ],
+  "composition_authorized": false,
+  "emission_rule": {
+    "clipping": "FORBIDDEN",
+    "code_range": [
+      -32768,
+      32767
+    ],
+    "dtype": "float32",
+    "emission": "FLOAT64_CODE_TIMES_FLOAT64_POINT_ONE_THEN_FLOAT32",
+    "offset_deg": 0.0,
+    "quotient_dtype": "float64",
+    "range_deg": [
+      -3276.8,
+      3276.7
+    ],
+    "step_deg": 0.1,
+    "tie_rule": "ROUND_HALF_TO_EVEN",
+    "ties": "EXACT_BINARY64_QUOTIENT_FRACTION_HALF_NO_EPSILON"
+  },
+  "future_channels": [
+    "LATENT_CONTINUOUS_DELTA_PREDICTION",
+    "SOURCE_GRID_NEXT_ANGLE_PROJECTION"
+  ],
+  "future_next_angle": "NEXT_ANGLE_DEG=FLOAT64_POINT_ONE*(CURRENT_TICK+CONTINUOUS_DELTA_TICK);THEN_HISTORICAL_DEGREE_GRID_RULE",
+  "historical_emission_policy_sha256": "77d99c602047b7bda5a47e8ac6d5c869884d049bac9dcc397b05fdde98876339",
+  "historical_verdict": "SOURCE_GRID_OBSERVATION_REJECTED",
+  "invalid": "ANGLE_SOURCE_GRID_INCONSISTENT",
+  "offset_deg": 0.0,
+  "prediction_executed": false,
+  "production_authority": false,
+  "publication_raw_data": false,
+  "qualification_allowed": false,
+  "receipt_sha256": "83ab72d1dc11521547cb5d9588b7350a836a7e3256342b51bb4d0dcd4eef5fff",
+  "reference_promotable": false,
+  "reuse": "GENERIC_RULE_DEFINITION_ONLY_NOT_HISTORICAL_MODEL_RESULT_OR_EXECUTION",
+  "rollout_state_semantics": "PENDING_SEPARATE_FITTING_POLICY",
+  "schema": "EMPIRICAL_S2_RI_ANGLE_GRID_V1",
+  "sealed_reference_allowed": false,
+  "sg_execution": false,
+  "source": "SAS11.SAS_Angle",
+  "status": "SOURCE_PROVEN_0P1_DEG",
+  "step_deg": 0.1,
+  "ta_execution": false,
+  "target_replacement": false,
+  "tolerance": null,
+  "validation": "FINITE_SIGNED16_CODE_FLOAT64_TIMES_POINT_ONE_FLOAT32_THEN_EXACT_FLOAT64_EQUALITY",
+  "vehicle_activation_allowed": false
+}

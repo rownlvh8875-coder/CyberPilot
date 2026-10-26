@@ -1,0 +1,327 @@
+{
+  "authority": {
+    "E2_integration": false,
+    "native_kernel": false,
+    "new_canonical_D0_guard_reference_adoption": false,
+    "new_offline_workflow": true,
+    "original_runtime_replacement": false,
+    "private_access": false,
+    "standalone_implementation": true
+  },
+  "baseline_head": "d9d6b6f2747925fc386af4dbf44145861d8c6a01",
+  "benchmark_predeclaration": {
+    "CPU_seconds_per_process": 120,
+    "address_space_bytes": 8589934592,
+    "columns": 93,
+    "full_E2_resource_fit": "NOT_PROVEN",
+    "model": "UNCHANGED_PUBLIC_FIXTURE_L45_SCALE1_MEDIUM",
+    "output_bytes_per_process": 16384,
+    "repeats_each": 1,
+    "rows": [
+      8192,
+      336941
+    ],
+    "seed": 20261019,
+    "single_worker_BLAS_threads": 1,
+    "wall_seconds_per_process": 180
+  },
+  "design_raw_sha256": "8701a98aa49307b9e785ce871aecad2fc35c4da2f804cff6a90471a7d9bb86c3",
+  "environment": {
+    "OS": "UBUNTU24.04_TESTED;API_GATES_LINUX_X86_64",
+    "checks": [
+      "BINARY64_FORMAT",
+      "DOUBLE_STORAGE",
+      "FENV",
+      "SUBNORMAL_BITS",
+      "SEPARATE_MULTIPLY_ADD_WITNESS",
+      "INPUT_OUTPUT_DTYPE"
+    ],
+    "gradual_underflow": true,
+    "no_fenv_mutation": true,
+    "numpy": "2.5.3",
+    "python": "CPYTHON3.12.13",
+    "rounding": "NEAREST_TIES_EVEN",
+    "universal_platform_certification": false
+  },
+  "forbidden_actual_private_scientific_operations": {
+    "CALIBRATION_FIT": 0,
+    "CONTROLLER_MODIFICATIONS": 0,
+    "D2_DEV_ONE_STEP": 0,
+    "D2_RECURSIVE_ROLLOUT": 0,
+    "D2_TRAIN_SELECTION": 0,
+    "E2_FULL_REEXECUTION": 0,
+    "E2_Q1_Q3_PRIVATE_CALLS": 0,
+    "EXTRA_NUMERICAL_TOLERANCE": 0,
+    "FULL_CI_SUCCESS_FABRICATION": 0,
+    "HOLDOUT_DISCOVERY": 0,
+    "HOLDOUT_OPENINGS": 0,
+    "LFS_POINTER_REPLACEMENT": 0,
+    "MODEL_REFIT": 0,
+    "NEW_POLICY_SEARCH": 0,
+    "NORMALIZER_REFIT": 0,
+    "ORIGINAL_STAGE2_MODIFICATIONS": 0,
+    "ORIGINAL_V4_D0_D1_MODIFICATIONS": 0,
+    "POLICY_GUARD_RELAXATION": 0,
+    "PRIVATE_HANDOFF_OPENINGS": 0,
+    "PRIVATE_MODEL_READS": 0,
+    "PRIVATE_TRAIN_DEV_READS": 0,
+    "RAW_LOG_QLOG_OPENINGS": 0,
+    "REQUIRED_LFS_ASSET_SKIP_IN_FULL_CI": 0,
+    "UNAUTHORIZED_LFS_UPLOAD": 0,
+    "V5_EXECUTION": 0,
+    "VEHICLE_ACTIVATION": 0
+  },
+  "full_CI_observation": {
+    "classification": "FULL_CI_FAILURE_UPSTREAM_LFS",
+    "conclusion": "failure",
+    "failed_step": "Set up openpilot development environment",
+    "final_exact_head": "OBSERVE_POST_PUBLICATION_IN_FINAL_HANDOFF",
+    "head": "92098ebd331ed2a19945847a8db37fc7eec4b94f",
+    "later_build_and_test_steps": "SKIPPED_BY_SETUP_FAILURE",
+    "original_full_workflow_modified": false,
+    "remediation_applied": false,
+    "run_id": 39209370573,
+    "status": "completed",
+    "unique_LFS_OIDs_HTTP404": 15,
+    "url": "https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/39209370573"
+  },
+  "future_experiment": {
+    "Q1": "CANONICAL_CACHE_VS_CANONICAL_WHOLE_JOB_D0_SELECTED_BYTES",
+    "Q3": "CANONICAL_CACHE_VS_FINAL_CANONICAL_D2_SELECTED_BYTES",
+    "TRAIN_DEV_barrier": "ALL32_Q1_64DECISIONS_ALL32_Q3_DURABLE_TRAIN_SEAL_BEFORE_DEV",
+    "acceptance_clauses": 32,
+    "comparator": "SAME_ANCHOR_HOLD_LAST",
+    "epsilon": 0,
+    "execution_grant": "SEPARATE_FRESH_E2_APPROVAL_REQUIRED",
+    "folds": [
+      "FOLD_A",
+      "FOLD_B"
+    ],
+    "fresh_repeats": 2,
+    "guard_reference": "NEW_CANONICAL_D0_TRAIN_REFERENCE_REQUIRES_SEPARATE_SOURCE_POLICY_APPROVAL",
+    "horizons": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "jobs": 32,
+    "objective_guard_recipe": "FROZEN_D2_UNCHANGED;NUMERIC_VALUES_AND_WINNER_MAY_CHANGE",
+    "policies": [
+      "D0",
+      "D1",
+      "D2"
+    ],
+    "populations": [
+      "OVERALL",
+      "PATH_MOVED"
+    ],
+    "support": 201,
+    "validation_domains": 22,
+    "verify_only": "SOURCE_REREAD_INFERENCE_RECOMPUTE_ZERO"
+  },
+  "historical_sha256": {
+    ".gitattributes": "1a1bb991a71e2573aadaf4bc92ef442d4e978490d723e38fb98e34cea1f0f9d9",
+    ".github/workflows/cyberpilot.yaml": "30fbd6d6138fd4b44b9371ce0f803ed500bf662d287463d4a28a0585654d28d4",
+    ".lfsconfig": "f0a87f7e001362f649c76c3c36e4850ce1297577785ca54c8c85b22f88b7762b",
+    "docs/cyberpilot/changes/cyberpilot-ci-lfs-triage.json": "0e023d31cea366d29c113aadbb0aee735e265333c3d2e090816aa14525a5281f",
+    "docs/cyberpilot/changes/empirical-hurdle-acceptance-gate-v1.json": "606d5d3f46677d0107298f8b94e0a6d5a73da62f01db0164c4812a9fa2cccee1",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-d2-evaluation-contract.json": "52f6fdf8e05c9f950aecf2a610cc4ea9220d6c01a96afd1a9afb3ed58a114004",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-d2-loss-aware-policy.json": "51eea816f6f2d3f648a9030dc6cf2d1718fb456bf3d0e6e9903ac34ae2e6bba7",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-deterministic-numerics-contract.json": "8701a98aa49307b9e785ce871aecad2fc35c4da2f804cff6a90471a7d9bb86c3",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-deterministic-numerics-design.md": "805ff2bfaaef2e35111ec691cb1279886295090f1e2a4ebaa62c60df50c81320",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-execution-protocol-v2.json": "7a4e02966d921759430a4b6c3c9ca1f343f400a293e4f79f1a9a73fb8aaeeb2f",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-execution-protocol.json": "177925af0d9a70fecaeb2f8d848dbdee9c620f92047a9d8320e0ed6e1e7ef7db",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-numerical-qualification-v2.json": "7a51775da2ec0edd18c21abf73d78123f940cff3c8e125ddac0cd43857427ccf",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-v2-implementation-lock.json": "dccaedbfbbd7cda932ff802760c37e03b99b78f5ae4dbdfb94f58ff66e46be35",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-v2-q1-diagnostic-protocol-v2.json": "d33b3be20b84b6f0cf1848799e6c1e3c299dac227ddbeea8cc2c1cd28bbae725",
+    "docs/cyberpilot/changes/empirical-hurdle-stage1-v4-e2-v2-q1-reader-repair-results.json": "e41ef762b9ce7d6b166c97d7bac0111d65d9184b74f8cfb92e1cd5a39fd30913",
+    "launch_chffrplus.sh": "2a8fd2fa79671bab0d50a1065507931f4538bcfc452b091c2a79163757c38db9",
+    "openpilot/selfdrive/modeld/SConscript": "aa5775888421e06ff0b66b519ceb933f8de43fd5e1afd2339ba2121929327d84",
+    "openpilot/selfdrive/modeld/helpers.py": "7a14527bc9f2d06a9e4ff6469c9717e55c0e7a359cc7eee23818305ce1267164",
+    "openpilot/selfdrive/ui/mici/layouts/settings/device/device_layout.py": "2b589ee1384b87212f4f29967bcc4bd0e89a225e63c5dcec367c89094eaf0e71",
+    "openpilot/selfdrive/ui/mici/layouts/settings/device/prime.py": "673796c258432b4bafb0d153f0e757fa4fab76bf02ff04dba26522a5c3f789c2",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_fit_cv_execution.py": "a952eb4986f47e0335bf355ee74868755f14b592d05070008a0b117979d4e635",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_fit_cv_math.py": "b410b2f0138848faf4e976094a1bd4f3cc3ac44418b54a24310717c6261e0e73",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_decision.py": "689c3ab3afe34719fa517aa59fc0fee09ef70bc70a3dac954b62a0a0dbdf61b1",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_execution.py": "a1986d904f2b1cdf3f686b44caeeef7f662139b80f045766e721cc0cdc072b43",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_numerical_diagnostic.py": "650ff2e7a8bed63c690d5e0d032d9c927bb21197b479ffb039931015cc6c83b6",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_v2_execution.py": "69833d5594632d2dd97dbf8e6c6eb47465f3210e9b30aeb02a1875bf9afb37c2",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_v2_q1_diagnostic.py": "315473ced53da08ae35e5efc0a8d4118c96a8af05473c260b9d03c0ff0609db5",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_v2_qualification.py": "3349d72cb59d88dbef7e04a7f0d6bc125508800be474a0bbe098fe34162ecc0b",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_execution.py": "f7ae1ae98c645de4997e56d1bcd73b76e2f4f153090b65e5fd6bb8d207f7fd0e",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_fitting_policy.py": "529c6c14832a18bc18eb51409e1637ca2c003892d62aa883f900c238d59be76f",
+    "openpilot/tools/cyber_autotune/empirical_s2_ri_fit_cv_math.py": "a1c1203c8222df067064ff1891aafa82cdafd997338c7ca7687a321c66777f29",
+    "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_deterministic_numerics_design.py": "85f4cb7363b28c1dafd8f9e2b3b479400f2b83f0d0080ea050d5b53f547be39e",
+    "tools/op.sh": "96c1078c9379cda8344e5946b87c9cfeb01c402527bacb8aa33c76daa02025aa",
+    "tools/release/build_release.sh": "6cdcef5c6f565123c04ba038137ac9dd9a674f4e2f68864acbcd8b14e6448170",
+    "tools/setup_dependencies.sh": "13fedd5b2073f1f07e36d0595c9de8ff3a86d0458505a95ee899c011c53e9850"
+  },
+  "measurements": [
+    {
+      "N": 8192,
+      "P": 93,
+      "environment": {
+        "architecture": "x86_64",
+        "compiler": "Clang 22.1.3 ",
+        "gradual_underflow": true,
+        "numpy": "2.5.3",
+        "python": "3.12.13",
+        "rounding": "NEAREST_TIES_EVEN",
+        "separate_multiply_add_witness": true,
+        "status": "QUALIFIED_TESTED_ENVIRONMENT"
+      },
+      "input_bytes": 6094848,
+      "kernel_CPU_seconds": 0.17200505,
+      "kernel_wall_seconds": 0.16854077900006814,
+      "max_finite_validation_temporary_bytes": 761856,
+      "output_bytes": 65536,
+      "output_sha256": "97b7dcf48160245e243f94c653bca721d79cfeb6473afd92a4f1244d6b1d7806",
+      "peak_RSS_KiB": 49356,
+      "process_system_seconds": 0.01991,
+      "process_user_seconds": 0.24688
+    },
+    {
+      "N": 336941,
+      "P": 93,
+      "environment": {
+        "architecture": "x86_64",
+        "compiler": "Clang 22.1.3 ",
+        "gradual_underflow": true,
+        "numpy": "2.5.3",
+        "python": "3.12.13",
+        "rounding": "NEAREST_TIES_EVEN",
+        "separate_multiply_add_witness": true,
+        "status": "QUALIFIED_TESTED_ENVIRONMENT"
+      },
+      "input_bytes": 250684104,
+      "kernel_CPU_seconds": 7.2701662769999995,
+      "kernel_wall_seconds": 7.271186790000002,
+      "max_finite_validation_temporary_bytes": 31335513,
+      "output_bytes": 2695528,
+      "output_sha256": "52e7be5b814baca867d5877d73d3dc8bf1510731d30a0b7df55e52a0e54ff0ae",
+      "peak_RSS_KiB": 526872,
+      "process_system_seconds": 0.16791299999999998,
+      "process_user_seconds": 7.476124
+    }
+  ],
+  "mission": "STAGE1_V4_E2_CANONICAL_STAGE2_IMPLEMENTATION_AND_OFFLINE_CI",
+  "offline_CI": {
+    "dependencies": [
+      "numpy==2.5.3",
+      "ruff==0.16.7",
+      "PyYAML==6.0.3"
+    ],
+    "final_run_result": "OBSERVE_POST_PUSH_IN_FINAL_HANDOFF;NOT_IN_SELF_REFERENTIAL_LOCK",
+    "full_CI_substitution": false,
+    "initial_implementation_observation": {
+      "conclusion": "success",
+      "full_CI_certified": false,
+      "head": "92098ebd331ed2a19945847a8db37fc7eec4b94f",
+      "private_adapters_imported": 0,
+      "run_id": 39209370644,
+      "status": "completed",
+      "test_seconds": 24.338,
+      "tests_passed": 61,
+      "url": "https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/39209370644"
+    },
+    "isolation": "PYTHON_AUDIT_IMPORT_BOUNDARY;NOT_OS_AIR_GAP;CHECKOUT_AND_PACKAGE_INSTALL_USE_NETWORK",
+    "name": "CyberPilot Offline Static Numerical CI",
+    "public_legacy_helpers": "TRANSITIVE_PUBLIC_READER_EXECUTOR_DEFINITIONS_IMPORTED_WITHOUT_ENTRYPOINT_EXECUTION;PRIVATE_ADAPTERS_DENIED",
+    "scope": "OFFLINE_STATIC_NUMERICAL_CI",
+    "source_only_checkout": true
+  },
+  "oracle": {
+    "independent_code_paths": true,
+    "oracle_modified": false,
+    "path": "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_deterministic_numerics_design.py",
+    "raw_sha256": "85f4cb7363b28c1dafd8f9e2b3b479400f2b83f0d0080ea050d5b53f547be39e"
+  },
+  "outcomes": {
+    "full_CI": "INITIAL_IMPLEMENTATION_HEAD_FAILURE_UPSTREAM_LFS;FINAL_HEAD_RESULT_IN_HANDOFF",
+    "integration_authority": "CANONICAL_IMPLEMENTATION_INTEGRATION_NOT_AUTHORIZED",
+    "numerical": "CANONICAL_STAGE2_IMPLEMENTED_SYNTHETIC_QUALIFIED",
+    "offline_CI": "INITIAL_IMPLEMENTATION_HEAD_SUCCESS;FINAL_HEAD_RESULT_IN_HANDOFF"
+  },
+  "receipt_sha256": "61dabf50a7471132b2591adc263ae92b1455339b182d0b1702e682590c964c0c",
+  "safety": {
+    "D0": "HURDLE_STAGE1_V4_NO_ADMISSIBLE_CANDIDATE",
+    "D1": "E_EXECUTION_COMPLETE_D1_NOT_ADMISSIBLE",
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "HOLDOUT": "CLOSED",
+    "Q1": "E2_V2_Q1_BATCH_LAYOUT_NUMERICAL_DIFFERENCE_CONFIRMED",
+    "historical_E2": "E2_D0_TRAIN_NUMERICAL_EQUIVALENCE_NOT_PROVEN_FAIL_CLOSED",
+    "historical_TRAIN_gate": "NOT_SAVED",
+    "original_replica": "REPLICA_PAYLOAD_EQUALITY_NOT_FULLY_REVERIFIED",
+    "pooled_refit_composition_V5": "NOT_AUTHORIZED",
+    "selected_candidate": null,
+    "selected_policy": null,
+    "vehicle": "NOT_READY",
+    "vehicle_authority": "NONE"
+  },
+  "schema": "CYBERPILOT_CANONICAL_STAGE2_STANDALONE_IMPLEMENTATION_V1",
+  "semantics": "CANONICAL_STAGE2_SEPARATE_BINARY64_LEFT_FOLD_V1",
+  "source_sha256": {
+    ".github/workflows/cyberpilot-numerical-offline.yaml": "4ebd3fc752db00b3a924ee5fb819f5a01a02c00ae80ca689dc65bf9f9769aad8",
+    "openpilot/tools/cyber_autotune/empirical_hurdle_v4_e2_canonical_stage2.py": "e8b77a9c4494484c2022ca6a9325a588751d8aa1661d69a28608b8860ab92ef8",
+    "openpilot/tools/cyber_autotune/tests/test_empirical_hurdle_v4_e2_canonical_stage2.py": "1e8caa5cb27ca3022a0942e7899a85577ec0163dca9a9a3b6ce3b86aaae97e31",
+    "tools/cyberpilot/numerical-offline-requirements.txt": "044a77c1e23282586557fffbca081f4ac5a57acf33aa3df82b71ea1b923d1fd2",
+    "tools/cyberpilot/run_numerical_offline.py": "96c07acb67deb694791214ea4f6ab3dd0fe266c9bb5b7bb13279d6245347a3b8"
+  },
+  "status": "EXPERIMENTAL_NON_WIRED",
+  "synthetic_observations": {
+    "batch_PASS": true,
+    "batch_checks": 600,
+    "configurations": 60,
+    "historical_byte_mismatch_configurations": 60,
+    "max_absolute_difference": 1.3642420526593924e-12,
+    "max_historical_ULP": 7261,
+    "normalization_parity": 60,
+    "projection_mismatch_configurations": 0
+  },
+  "test_matrix": {
+    "checks_per_configuration": 10,
+    "configurations": 60,
+    "fixture_source_unchanged": true,
+    "historical_BLAS": "OBSERVATION_ONLY_NOT_A_REQUIRED_EQUALITY",
+    "legacy_fixture_sets": [
+      "Original60",
+      "Parity60",
+      "Aligned60"
+    ],
+    "new_api_vs_frozen_oracle": "BYTE_EXACT_NO_TOLERANCE",
+    "new_kernel_normalization_trace": "FOUR_DIMENSIONS_THREE_ROWS_EACH;EXACT_ORIGINAL_TRANSFORM_AND_ORACLE_BYTES;CONSTANT_EXCLUSION_INTERCEPT",
+    "required_batch_checks": 600,
+    "unique_full_input_model_pairs": 12
+  },
+  "validation": {
+    "SCons_Ruff_compile_JSON_privacy": "RUFF_COMPILE_SCONS_JSON_PRIVACY_PASS",
+    "full_local_regression": {
+      "command": "python -B tools/test_runner.py openpilot/tools/cyber_autotune/tests openpilot/selfdrive/controls/tests -j4",
+      "elapsed_seconds": 614.21,
+      "execution_head": "92098ebd331ed2a19945847a8db37fc7eec4b94f",
+      "exit_code": 0,
+      "failed": 0,
+      "log_sha256": "99ae13ee8795b480246dee7f612f3ea29c29a9ac09c46cecc5aec1af4b5ddb57",
+      "passed": 5763,
+      "private_drive_access": "D_AND_E_MOUNT_ROOTS_MASKED_READONLY_IN_MOUNT_NAMESPACE",
+      "scope": "LOCAL_FULL_REGRESSION",
+      "skipped": 0,
+      "source_code_changes_after_run": 0
+    },
+    "lateral_synthetic": "40_PASS",
+    "offline_clean_venv": "61_PASS_20.957_SECONDS",
+    "private_adapter_imports": 0,
+    "reviews": "FINAL_BYTE_APPROVAL_REQUIRED;RECEIPTS_RECORDED_IN_PUBLICATION_COMMIT_AND_HANDOFF",
+    "source_freeze_reviews": {
+      "authority_approval": "APPROVED",
+      "authority_receipt_sha256": "2f9a1c889167bdd382b8b0970a2a2b2d1f9008b21073539f6db6468ac48b67c8",
+      "file_set_sha256": "6e28fb52e25dd1828a28e25ffb194ee4ee143711559d664ab741767b8daee656",
+      "final_document_delta_reviews": "RECEIPTS_IN_PUBLICATION_COMMIT_AND_FINAL_HANDOFF_TO_AVOID_SELF_HASH_CYCLE",
+      "science_approval": "APPROVED",
+      "science_receipt_sha256": "0174d8ee4dcafcc12842538a052cf7d3f68fdfe3d18fc50082e27e0f68c4f29d"
+    },
+    "standalone_tests": "26_PASS_IN_OFFLINE61"
+  },
+  "version": "V4_E2_CANONICAL_STAGE2_IMPLEMENTATION_V1"
+}
