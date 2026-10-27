@@ -1,0 +1,38 @@
+name: CyberPilot F70U Static Context Contract
+
+'on':
+  push:
+    branches: [feature/f70u-static-context-binding-contract]
+
+permissions:
+  contents: read
+
+env:
+  GIT_LFS_SKIP_SMUDGE: '1'
+  PYTHONDONTWRITEBYTECODE: '1'
+  PYTHONNOUSERSITE: '1'
+  PYTHONHASHSEED: '0'
+
+jobs:
+  f70u-static-context-contract:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      F70U_IMPLEMENTATION_COMMIT: d7801941f34785517875dbc50490558d9d96dd45
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          lfs: false
+          submodules: false
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12.13'
+          architecture: x64
+          check-latest: false
+      - name: Exact-head static schema, provenance, bounded suites, quality and determinism
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -B -m tools.cyberpilot.f70u.run_context_verification --output-dir "$RUNNER_TEMP/f70u-evidence"
