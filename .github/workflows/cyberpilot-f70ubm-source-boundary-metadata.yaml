@@ -1,0 +1,243 @@
+name: CyberPilot F70UBM Source Boundary Metadata
+
+'on':
+  push:
+    branches: [feature/f70ubm-source-boundary-metadata]
+
+permissions:
+  contents: read
+
+env:
+  GIT_LFS_SKIP_SMUDGE: '1'
+  PYTHONDONTWRITEBYTECODE: '1'
+  PYTHONNOUSERSITE: '1'
+  PYTHONHASHSEED: '0'
+
+jobs:
+  f70ubm-source-boundary-metadata:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          lfs: false
+          submodules: false
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12.13'
+          architecture: x64
+          check-latest: false
+      - name: Exact-head metadata scope, 247 exact test IDs, pinned quality, generation and immutable baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -B - --output-dir "$RUNNER_TEMP/f70ubm-evidence" <<'PY'
+          """F70UBM publication gates; immutable module and existing suites stay unchanged."""
+          import argparse
+          import ast
+          import hashlib
+          import json
+          import os
+          import stat
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          BASE = '08eaf10250b6a005fd9bc74f74d2ec7f67c61e79'
+          BRANCH = 'feature/f70ubm-source-boundary-metadata'
+          WORKFLOW = '.github/workflows/cyberpilot-f70ubm-source-boundary-metadata.yaml'
+          IMPORTS = json.loads('[{"byte_count":2951,"encoding":"UTF-8","mode":"100644","newline":"LF","original_package_member_path":"DESIGN_KO.md","package_member_path":"payload/DESIGN_KO.md","repository_target_path":"tools/cyberpilot/f70ub_metadata/DESIGN_KO.md","sha256":"9004a2dbaf0a6a3ddb0f9e06a163aa3df039cd6a60e388afab56fa57b47313ce"},{"byte_count":2614,"encoding":"UTF-8","mode":"100644","newline":"LF","original_package_member_path":"PLAN.md","package_member_path":"payload/PLAN.md","repository_target_path":"tools/cyberpilot/f70ub_metadata/PLAN.md","sha256":"6acaab5398bb287f4c5c871fc0e04be3a87910f9cc98945fe1cee84b3a2830ee"},{"byte_count":1407,"encoding":"UTF-8","mode":"100644","newline":"LF","original_package_member_path":"README.md","package_member_path":"payload/README.md","repository_target_path":"tools/cyberpilot/f70ub_metadata/README.md","sha256":"dbfeb7a0869ee39a8e8745e35a39e4e7ca2fb8aadca7fca17828d5ab63c86e4b"},{"byte_count":1115,"encoding":"UTF-8","mode":"100644","newline":"LF","original_package_member_path":"artifacts/registered_static_context.json","package_member_path":"payload/artifacts/registered_static_context.json","repository_target_path":"tools/cyberpilot/f70ub_metadata/artifacts/registered_static_context.json","sha256":"031619a9153cdb3a38a1b46e99e5e92a5e5be2ebfb134b680b992bb6aed879ed"},{"byte_count":481,"encoding":"UTF-8","mode":"100644","newline":"LF","original_package_member_path":"artifacts/registered_synthetic_reference_descriptor.json","package_member_path":"payload/artifacts/registered_synthetic_reference_descriptor.json","repository_target_path":"tools/cyberpilot/f70ub_metadata/artifacts/registered_synthetic_reference_descriptor.json","sha256":"844e52815070cc8094045b3290629c842760221d7045c64bce35395867bd1545"},{"byte_count":2024,"encoding":"UTF-8","mode":"100644","newline":"LF","original_package_member_path":"artifacts/source_boundary_contract.json","package_member_path":"payload/artifacts/source_boundary_contract.json","repository_target_path":"tools/cyberpilot/f70ub_metadata/artifacts/source_boundary_contract.json","sha256":"6ecb9466a43d3fa748d6f814fe7d992277f4e35623b8e9af22a27eec83981af0"},{"byte_count":1304,"encoding":"UTF-8","mode":"100644","newline":"LF","original_package_member_path":"artifacts/static_metadata_envelope.json","package_member_path":"payload/artifacts/static_metadata_envelope.json","repository_target_path":"tools/cyberpilot/f70ub_metadata/artifacts/static_metadata_envelope.json","sha256":"ed3bd298ac1ab3eab63e1ae345c721b5d010cd6726ba9bc3da282e0ce6036392"},{"byte_count":675,"encoding":"UTF-8","mode":"100644","newline":"LF","original_package_member_path":"artifacts/synthetic_descriptor_envelope.json","package_member_path":"payload/artifacts/synthetic_descriptor_envelope.json","repository_target_path":"tools/cyberpilot/f70ub_metadata/artifacts/synthetic_descriptor_envelope.json","sha256":"7b8deb52567157d5dd0b93eab483aa8e56303e9d57c2abdd44f2461df6203d4a"},{"byte_count":5206,"encoding":"UTF-8","mode":"100644","newline":"LF","original_package_member_path":"source_boundary.py","package_member_path":"payload/source_boundary.py","repository_target_path":"tools/cyberpilot/f70ub_metadata/source_boundary.py","sha256":"3fe7877f7a1da87e693556531b85542a753e9019ae56f1a4ff012037bb6437c1"},{"byte_count":2764,"encoding":"UTF-8","mode":"100644","newline":"LF","original_package_member_path":"test_bundle_runner.py","package_member_path":"payload/test_bundle_runner.py","repository_target_path":"tools/cyberpilot/f70ub_metadata/test_bundle_runner.py","sha256":"d81f9015d2aa6234665a1b5159d586e9cea84c6180f87406a7bf7c9cf439883b"},{"byte_count":11025,"encoding":"UTF-8","mode":"100644","newline":"LF","original_package_member_path":"test_source_boundary.py","package_member_path":"payload/test_source_boundary.py","repository_target_path":"tools/cyberpilot/f70ub_metadata/test_source_boundary.py","sha256":"ecd90775659187c2bf3b5275eba47b4123125422d6354a62d40ebb50c7a6084b"},{"byte_count":3586,"encoding":"UTF-8","mode":"100644","newline":"LF","original_package_member_path":"verify_bundle.py","package_member_path":"payload/verify_bundle.py","repository_target_path":"tools/cyberpilot/f70ub_metadata/verify_bundle.py","sha256":"89b91930ea318348b1b175eceea5b98063a9aa11e64275b52a09a1667e39837d"},{"byte_count":31162,"encoding":"UTF-8","mode":"100644","newline":"LF","package_member_path":"publication_inputs.json","publication_support_newly_authored":true,"repository_target_path":"artifacts/f70ubm/publication_inputs.json","sha256":"084263988739fdee9272e80d3e68e36108b5e6f3cf5d5480f5318c67d83b26d9"},{"byte_count":3092,"encoding":"UTF-8","mode":"100644","newline":"LF","package_member_path":"publication_feature_record.md","publication_support_newly_authored":true,"repository_target_path":"docs/cyberpilot/changes/f70ubm-source-boundary-metadata-publication.md","sha256":"76b77d63031173525d809c1b3809db97971a26bda3d662d2ac955cf1da0ff3a7"}]')
+          INPUTS_PATH = 'artifacts/f70ubm/publication_inputs.json'
+          MODULE_PATH = 'tools/cyberpilot/f70ub_metadata'
+
+
+          def sha(raw):
+            return hashlib.sha256(raw).hexdigest()
+
+
+          def dump(path, value):
+            path.write_text(json.dumps(value, sort_keys=True, indent=2) + '\n')
+
+
+          def verify_imports(root, entries):
+            for entry in entries:
+              path = root / entry['repository_target_path']
+              assert path.is_file() and not path.is_symlink(), 'IMPORTED_REGULAR_FILE'
+              raw = path.read_bytes()
+              assert len(raw) == entry['byte_count'] and sha(raw) == entry['sha256'], 'IMPORTED_EXACT_BYTES'
+              assert stat.S_IMODE(path.stat().st_mode) == 0o644, 'IMPORTED_MODE'
+
+
+          def check_ids(actual, expected):
+            assert len(actual) == len(set(actual)) == len(expected) == len(set(expected)), 'TEST_ID_CARDINALITY'
+            assert sorted(actual) == sorted(expected), 'EXACT_TEST_ID_SET'
+
+
+          def compare_outputs(first, second, expected_hashes):
+            assert len(first) == 6 and first == second, 'SIX_BYTE_IDENTICAL_OUTPUTS'
+            assert {name: sha(raw) for name, raw in first.items()} == expected_hashes, 'ORIGINAL_LOCAL_OUTPUT_HASHES'
+
+
+          def scope_flags(result):
+            for key in ['calculator_input_created', 'numeric_samples_admitted', 'production_samples_admitted',
+                        'context_instance_resolved', 'r_budget_resolved', 'F70V_allowed', 'F71_allowed']:
+              assert result[key] is False, 'NO_SCOPE_PROMOTION'
+
+
+          def run(argv, label, out, cwd=None, env=None):
+            proc = subprocess.run(argv, cwd=cwd, env=env, capture_output=True, timeout=300, check=False)
+            (out / (label + '.stdout')).write_bytes(proc.stdout)
+            (out / (label + '.stderr')).write_bytes(proc.stderr)
+            assert proc.returncode == 0, label + ': ' + (proc.stdout + proc.stderr).decode(errors='replace')[-2200:]
+            return proc.stdout
+
+
+          def git(root, *args):
+            return subprocess.check_output(['git', *args], cwd=root)
+
+
+          def tree(root, ref):
+            entries = {}
+            for line in git(root, 'ls-tree', '-r', '-z', ref).split(b'\0'):
+              if line:
+                meta, name = line.split(b'\t', 1)
+                entries[name.decode()] = meta.decode()
+            return entries
+
+
+          def tree_gate(root, stage):
+            baseline, current = tree(root, BASE), tree(root, 'HEAD')
+            head = git(root, 'rev-parse', 'HEAD').decode().strip()
+            assert all(current.get(name) == value for name, value in baseline.items()), 'ALL_BASELINE_MODE_OID_UNCHANGED'
+            allowed = {entry['repository_target_path'] for entry in IMPORTS}
+            assert not git(root, 'diff', '--name-only'), 'NO_UNSTAGED_TRACKED_CHANGES'
+            assert not git(root, 'diff', '--cached', '--name-only'), 'NO_STAGED_CHANGES_DURING_CHECK'
+            if stage == 'import':
+              assert head == BASE, 'IMPORT_BASELINE_HEAD'
+              rows = git(root, 'status', '--porcelain=v1', '-uall').decode().splitlines()
+              ignored = {name for name in allowed if subprocess.run(['git','check-ignore','--quiet','--',name], cwd=root, check=False).returncode == 0}
+              assert set(rows) == {'?? ' + name for name in allowed - ignored}, 'EXACT_UNTRACKED_IMPORT_SET'
+              assert all((root/name).is_file() for name in ignored), 'IGNORED_IMPORT_MISSING'
+            else:
+              assert set(current) - set(baseline) == allowed | {WORKFLOW}, 'ONLY_DECLARED_ADDITIONS'
+              assert not git(root, 'status', '--porcelain=v1', '-uall'), 'CLEAN_WORKTREE_INDEX'
+              assert git(root, 'rev-list', '--count', BASE + '..HEAD').strip() == b'2', 'TWO_COMMITS'
+              imported = git(root, 'rev-parse', 'HEAD^').decode().strip()
+              assert git(root, 'rev-parse', imported + '^').decode().strip() == BASE, 'IMPORT_PARENT_BASELINE'
+              first = git(root, 'diff-tree', '--no-commit-id', '--name-status', '-r', BASE + '..' + imported).decode().splitlines()
+              assert set(first) == {'A\t' + name for name in allowed}, 'EXACT_IMPORT_COMMIT'
+              second = git(root, 'diff-tree', '--no-commit-id', '--name-status', '-r', imported + '..HEAD').decode().splitlines()
+              assert second == ['A\t' + WORKFLOW], 'ONLY_NEW_WORKFLOW_COMMIT'
+            if os.environ.get('GITHUB_ACTIONS') == 'true':
+              assert stage == 'final', 'CLOUD_FINAL_ONLY'
+              assert os.environ['GITHUB_SHA'] == head, 'EXACT_CI_HEAD'
+              assert os.environ['GITHUB_REF'] == 'refs/heads/' + BRANCH, 'EXACT_BRANCH'
+              assert os.environ['GITHUB_EVENT_NAME'] == 'push', 'AUTOMATIC_PUSH_EVENT'
+            return {'head': head, 'baseline': BASE, 'baseline_root_tree': git(root, 'rev-parse', BASE+'^{tree}').decode().strip(),
+                    'protected_baseline_entries': len(baseline), 'modified_existing_paths': 0, 'allowed_additions': sorted(allowed | {WORKFLOW})}
+
+
+          NEW_SUITE_RUNNER = '''import json,sys,unittest
+          suite=unittest.defaultTestLoader.discover(sys.argv[1],pattern='test_*.py')
+          class Result(unittest.TestResult):
+            def __init__(self):super().__init__();self.started=[];self.passed=[]
+            def startTest(self,test):super().startTest(test);self.started.append(test.id())
+            def addSuccess(self,test):super().addSuccess(test);self.passed.append(test.id())
+          r=Result();suite.run(r)
+          value={'tests':r.testsRun,'PASS':len(r.passed),'FAIL':len(r.failures),'ERROR':len(r.errors),'SKIP':len(r.skipped),
+                 'XFAIL':len(r.expectedFailures),'XPASS':len(r.unexpectedSuccesses),'started_ids':sorted(r.started),'passed_ids':sorted(r.passed),
+                 'failures':[{'id':test.id(),'detail':detail} for test,detail in r.failures+r.errors]}
+          print(json.dumps(value,sort_keys=True));sys.exit(0 if r.wasSuccessful() and not r.skipped and not r.expectedFailures else 1)
+          '''
+
+
+          def main():
+            parser = argparse.ArgumentParser()
+            parser.add_argument('--stage', choices=['import', 'final'], default='final')
+            parser.add_argument('--output-dir', type=Path, required=True)
+            args = parser.parse_args()
+            root, out = Path.cwd(), args.output_dir.resolve()
+            out.mkdir(parents=True, mode=0o700, exist_ok=False)
+            identity = tree_gate(root, args.stage)
+            verify_imports(root, IMPORTS)
+            inputs = json.loads((root / INPUTS_PATH).read_text())
+            assert inputs['baseline_commit'] == BASE and inputs['target_branch'] == BRANCH
+            assert inputs['technical_fields_unresolved'] == 7 and inputs['owner_facts_unresolved'] == 2
+            assert inputs['calculator_input_created'] is False and inputs['r_budget_resolved'] is False
+            module = root / MODULE_PATH
+            parsed = ast.parse((module / 'source_boundary.py').read_bytes())
+            names = []
+            for node in ast.walk(parsed):
+              if isinstance(node, ast.Import): names.extend(alias.name for alias in node.names)
+              elif isinstance(node, ast.ImportFrom): names.append(node.module)
+              elif isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
+                assert node.func.id not in {'open', 'exec', 'eval', 'compile', '__import__'}, 'CORE_IO_OR_DYNAMIC_EXEC'
+            assert set(names) == {'hashlib', 'json', 'typing'}, 'METADATA_ONLY_CORE_IMPORTS'
+            sys.path.insert(0, str(root))
+            from tools.cyberpilot.f70u import run_context_verification as previous
+            previous.artifact_evidence()
+            prior = previous.prior_verifier()
+            prior['verify_sources']()
+            tools = prior['restore_tools'](out)
+            fresh = json.loads(run([sys.executable, '-I', '-B', '-c', NEW_SUITE_RUNNER, str(module)], 'new45', out, root))
+            assert fresh['tests'] == fresh['PASS'] == 45 and all(fresh[key] == 0 for key in ['FAIL','ERROR','SKIP','XFAIL','XPASS'])
+            check_ids(fresh['started_ids'], inputs['new_test_ids'])
+            check_ids(fresh['passed_ids'], inputs['new_test_ids'])
+            f70u = previous.suite(previous.NEW_MODULE, 56, 'test_ids.txt', out)
+            compat = previous.suite(previous.COMPAT_MODULE, 2, 'compatibility_test_ids.txt', out)
+            legacy = prior['validate'](out)
+            groups = inputs['existing_test_ids']['groups']
+            check_ids(f70u['passed_ids'], groups['F70U'])
+            check_ids(compat['passed_ids'], groups['Compatibility'])
+            exact = json.loads((out / 'exact61_run_1.stdout').read_bytes())
+            check_ids(exact['test_ids'], groups['Reference'])
+            for name, label in [('Legacy28','run_f65_source_separation_v1'),('Legacy55','entry')]:
+              observed = json.loads((out / (label+'.stdout')).read_bytes())
+              check_ids([row['id'] for row in observed['records']], groups[name])
+            assert len(set(test for ids in groups.values() for test in ids)) == 202, 'FULL_EXISTING_LEDGER'
+            prior['quality'](tools, out)
+            previous.static_checks(tools, out)
+            previous_reproduction = previous.reproduction(out)
+            python_files = ['source_boundary.py','verify_bundle.py','test_source_boundary.py','test_bundle_runner.py']
+            run([tools['ruff'], 'check', '--isolated', *python_files], 'metadata_ruff', out, module)
+            run([tools['ty'], 'check', 'source_boundary.py','verify_bundle.py'], 'metadata_ty', out, module)
+            run([tools['codespell'], *python_files, 'DESIGN_KO.md','PLAN.md'], 'metadata_codespell', out, module)
+            for name in python_files: compile((module/name).read_bytes(), name, 'exec', dont_inherit=True)
+            outputs = []
+            for index in [1,2]:
+              env = dict(os.environ, PYTHONDONTWRITEBYTECODE='1', PYTHONHASHSEED='0', LC_ALL='C.UTF-8', TZ='UTC',
+                         XDG_CACHE_HOME=str(out/('cache_'+str(index))), PYTHONPYCACHEPREFIX=str(out/('pycache_'+str(index))))
+              generated = out / ('metadata_generation_'+str(index))
+              run([sys.executable,'-I','-S','-B',str(module/'verify_bundle.py'),'--output-dir',str(generated)], 'metadata_gen_'+str(index), out, root, env)
+              outputs.append({p.name:p.read_bytes() for p in generated.iterdir()})
+            compare_outputs(outputs[0], outputs[1], inputs['expected_generated_files'])
+            assert sha(outputs[0]['SHA256SUMS.txt']) == inputs['expected_generation_manifest_sha256'], 'ORIGINAL_MANIFEST'
+            result = json.loads(outputs[0]['boundary_result.json'])
+            scope_flags(result)
+            assert result['status'] == 'F70UB_SOURCE_BOUNDARY_METADATA_LOCAL_PASS'
+            assert json.loads(outputs[0]['final_seal.json'])['existing_instance_status'] == 'F70UB_BLOCKED_STATIC_EVIDENCE_INSUFFICIENT'
+            registered = json.loads((module/'artifacts/registered_static_context.json').read_text())
+            assert len(registered['unresolved_fields']) == 7 and len(registered['unresolved_owner_facts']) == 2
+            verify_imports(root, IMPORTS)
+            tree_gate(root, args.stage)
+            cloud = os.environ.get('GITHUB_ACTIONS') == 'true'
+            terminal = {'status': 'F70UBM_SOURCE_BOUNDARY_METADATA_PUBLISHED_CI_PASS' if cloud else 'F70UBM_SOURCE_BOUNDARY_METADATA_LOCAL_PASS',
+                        'git':identity,'new_tests':fresh,'F70U_tests':f70u,'compatibility_tests':compat,
+                        'reference_PASS':61,'existing_legacy_PASS':83,'existing_PASS':202,'total_PASS':247,'legacy':legacy,
+                        'Ruff':'PASS','Ty':'PASS','Codespell':'PASS','Compile':'PASS',
+                        'reproduction':{'byte_identical':True,'file_count':6,'run_1_manifest_sha256':sha(outputs[0]['SHA256SUMS.txt']),
+                                        'run_2_manifest_sha256':sha(outputs[1]['SHA256SUMS.txt']), 'files':inputs['expected_generated_files'],'original_local_output_match':True},
+                        'prior_context_reproduction':previous_reproduction,
+                        'calculator_input_generation_count':0,'r_calculation_count':0,'technical_field_binding_count':0,'owner_fact_assignment_count':0,
+                        'technical_fields_unresolved':7,'owner_facts_unresolved':2,'F70UB_instance':'BLOCKED',
+                        'R_BUDGET_UNRESOLVED':True,'SOURCE_SCHEMA_UNQUALIFIED':6000,'candidate_NO_GO':True,'RUNTIME_NO_GO':True,
+                        'F70V_allowed':False,'F71_allowed':False,'Windows_CI':'NOT_RUN'}
+            dump(out / 'F70UBM_TERMINAL_RESULT.json', terminal)
+            print(json.dumps({key:value for key,value in terminal.items() if not isinstance(value,(dict,list))},sort_keys=True))
+
+
+          if __name__ == '__main__':
+            main()
+          PY
