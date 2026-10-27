@@ -1,0 +1,257 @@
+name: CyberPilot F70PR Compatibility Reference
+
+on:
+  push:
+    branches: [feature/f70pr-synthetic-reference-compatibility]
+
+permissions:
+  contents: read
+
+env:
+  GIT_LFS_SKIP_SMUDGE: '1'
+  PYTHONDONTWRITEBYTECODE: '1'
+  PYTHONNOUSERSITE: '1'
+  PYTHONHASHSEED: '0'
+
+jobs:
+  f70pr-compatibility-reference:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      F70S_SUPPORT_JSON: >-
+        {"F70S_DESIGN_AND_IMPLEMENTATION_PLAN_KO.md":"# Synthetic Exact Reference Implementation Plan\n\n> For agentic workers: use executing-plans inline. Native project worktree and Git mutation are deliberately not used; this deliverable is an external synthetic-only local reference.\n\n**Goal:** Validate the amended vehicle-agnostic continuous interval contract with exact arithmetic and independent computation.\n**Architecture:** Pure Primary Fraction evaluator, independent integer-rational audit, real unit tests, exact-ID guarded verification runner.\n**Tech Stack:** Existing Python 3.12.13 stdlib, unittest; existing Ruff/Ty/Codespell only.\n**Spec:** F70S_SYNTHETIC_EXACT_CONTRACT.json and F70S_OWNER_SCOPE_AMENDMENT_RECORD.json.\n\n## Global constraints\n\n- Preserve baseline c4328011f5f15a0cb0319a4547df5cf8ee1e1d7c and all historical Sources/seals.\n- Do not import or execute Controller, production limiter, Runtime or RLOG tooling.\n- No historical/candidate payload input or analysis.\n- Synthetic interval A is an explicit prospective assumption; no physical validity or globally justified r budget claim.\n- All accepted numbers remain exact. No implicit float/rounding.\n- Resource digit bound is serialization-only, never an r threshold.\n- No staging, commit, push, CI, F71, native replay or vehicle access.\n- Freeze contract/cases/golden results/expected IDs before implementation.\n- Runtime tests are exact public synthetic fixtures; no holdout run.\n\n## Review focus\n\n- Boolean masquerading as integer, malformed/noncanonical rational strings and huge inputs must reject.\n- Inclusive saturation/zero radius must not select a command or hide conflict.\n- Negative epoch and non-dyadic ns must preserve exact declared time without normalization.\n- Source/ID pins, actual starts/completions, skip/faked success must fail closed.\n- Error and guard outputs must never echo canary input or private paths.\n\n## Files and interfaces\n\n- f70_synthetic_exact_reference.py: evaluate(request: object)->dict, canonical_summary(request: object)->bytes, ReferenceError fixed codes.\n- f70_synthetic_exact_audit.py: independent evaluate/canonical_summary and AuditError; integer pair arithmetic; no Primary/Fraction helpers.\n- test_f70_synthetic_exact_reference.py: real outputs and security behavior; immutable public vectors.\n- run_f70_synthetic_exact_reference.py: source/fixture pins, exact-ID collection, actual run ledger, guarded IO, canonical validation output.\n- Machine contract, fixture registry and hand-derived golden vectors are frozen support evidence.\n\n## Tasks\n\n- [ ] Task 1 RED: write expected-ID tests first; missing implementations must cause assertion FAIL with zero ERROR. Preserve red result.\n- [ ] Task 2 GREEN: implement strict Primary and independent Audit. Validate exact golden outputs, rejections, immutable input and interval proofs.\n- [ ] Task 3 GREEN: implement guarded runner and its tests. Reject missing/duplicate/unexpected IDs, skip/faked pass, altered source/case pins and forbidden access.\n- [ ] Task 4: freeze source hashes and run two independent isolated copies with identical source/contract. Compare exact IDs, public-case results and canonical bytes.\n- [ ] Task 5: run bounded existing 28+55 guarded regression, explicit-file Ruff/Ty/Codespell/compile, privacy/static isolation, frozen preservation.\n- [ ] Task 6: one fresh final code review, address important findings by TDD, then seal Korean report, manifests and deterministic ZIP.\n\n## Rulings\n\n- User scope and safety restrictions override skill defaults to commit frequently, use a project worktree, or run an unrestricted repository-wide test discovery.\n- The approved existing 83 guarded tests plus the complete new isolated suite are the regression scope; a general suite could invoke forbidden Controller/data paths.\n- No legacy F61 execution equivalence is claimed for non-dyadic inputs. New exact consumer is separate and old F61 remains unchanged.\n- Publication and original project-wide R_BUDGET_RESOLVED are not granted by a local conditional synthetic reference.\n\n## Expected verification\n\n- Every exact expected Test ID starts, completes and PASS; no fail/error/skip/xfail/xpass.\n- Primary/Audit and hand-derived expected public results agree.\n- Two independent canonical verification JSON files byte-identical.\n- Controller/Runtime calls and private payload reads zero within child guard scope; negative requests explicitly denied before access.\n- Existing 83 PASS and protection manifests unchanged; old Sources/seals untouched.\n","F70S_EXPECTED_PUBLIC_RESULTS.json":"{\"expected\":[{\"context_id\":\"F70S_CASE_01\",\"intersection_bounds\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"upper\":{\"denominator\":\"2\",\"numerator\":\"1\"}},\"r\":{\"denominator\":\"1\",\"numerator\":\"100\"},\"rate_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"1\"}},\"status\":\"FEASIBLE\"},{\"context_id\":\"F70S_CASE_02\",\"intersection_bounds\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"upper\":{\"denominator\":\"2\",\"numerator\":\"1\"}},\"r\":{\"denominator\":\"1\",\"numerator\":\"50\"},\"rate_interval\":{\"lower\":{\"denominator\":\"4\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"4\",\"numerator\":\"3\"}},\"status\":\"FEASIBLE\"},{\"context_id\":\"F70S_CASE_03\",\"intersection_bounds\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"0\"}},\"r\":{\"denominator\":\"30000003\",\"numerator\":\"1000000000\"},\"rate_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"upper\":{\"denominator\":\"3\",\"numerator\":\"2\"}},\"status\":\"FEASIBLE\"},{\"context_id\":\"F70S_CASE_04\",\"intersection_bounds\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"1\"},\"upper\":{\"denominator\":\"2\",\"numerator\":\"1\"}},\"r\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"rate_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"1\"}},\"status\":\"CONSTRAINT_CONFLICT\"},{\"context_id\":\"F70S_CASE_05\",\"intersection_bounds\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"-1\"}},\"r\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"rate_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"-1\"}},\"status\":\"FEASIBLE\"},{\"context_id\":\"F70S_CASE_06\",\"intersection_bounds\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"0\"}},\"r\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"rate_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"0\"}},\"status\":\"FEASIBLE\"},{\"context_id\":\"F70S_CASE_07\",\"intersection_bounds\":{\"lower\":{\"denominator\":\"4\",\"numerator\":\"1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"0\"}},\"r\":{\"denominator\":\"4\",\"numerator\":\"1\"},\"rate_interval\":{\"lower\":{\"denominator\":\"4\",\"numerator\":\"1\"},\"upper\":{\"denominator\":\"4\",\"numerator\":\"3\"}},\"status\":\"CONSTRAINT_CONFLICT\"},{\"context_id\":\"F70S_CASE_08\",\"intersection_bounds\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"0\"}},\"r\":{\"denominator\":\"3\",\"numerator\":\"100\"},\"rate_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"upper\":{\"denominator\":\"3\",\"numerator\":\"2\"}},\"status\":\"FEASIBLE\"},{\"context_id\":\"F70S_CASE_09\",\"intersection_bounds\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"upper\":{\"denominator\":\"3\",\"numerator\":\"1\"}},\"r\":{\"denominator\":\"3\",\"numerator\":\"100\"},\"rate_interval\":{\"lower\":{\"denominator\":\"3\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"3\",\"numerator\":\"1\"}},\"status\":\"FEASIBLE\"},{\"context_id\":\"F70S_CASE_10\",\"intersection_bounds\":null,\"r\":null,\"rate_interval\":null,\"reason_codes\":[\"RESET_INTERVAL\"],\"status\":\"NOT_EVALUATED\"},{\"context_id\":\"F70S_CASE_11\",\"intersection_bounds\":null,\"r\":null,\"rate_interval\":null,\"reason_codes\":[\"LATERAL_INACTIVE\"],\"status\":\"NOT_EVALUATED\"},{\"context_id\":\"F70S_CASE_12\",\"intersection_bounds\":null,\"r\":null,\"rate_interval\":null,\"reason_codes\":[\"DRIVER_OVERRIDE\"],\"status\":\"NOT_EVALUATED\"},{\"context_id\":\"F70S_CASE_13\",\"intersection_bounds\":null,\"r\":null,\"rate_interval\":null,\"reason_codes\":[\"RESET_INTERVAL\",\"LATERAL_INACTIVE\",\"DRIVER_OVERRIDE\"],\"status\":\"NOT_EVALUATED\"},{\"context_id\":\"F70S_CASE_14\",\"intersection_bounds\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"upper\":{\"denominator\":\"2\",\"numerator\":\"1\"}},\"r\":{\"denominator\":\"1\",\"numerator\":\"1000000000\"},\"rate_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"1\"}},\"status\":\"FEASIBLE\"},{\"context_id\":\"F70S_CASE_15\",\"intersection_bounds\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"upper\":{\"denominator\":\"2\",\"numerator\":\"1\"}},\"r\":{\"denominator\":\"9223372036854775807\",\"numerator\":\"1000000000\"},\"rate_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"1\"}},\"status\":\"FEASIBLE\"}],\"identity\":\"F70S_HAND_DERIVED_EXPECTED_RESULTS_V1\",\"provenance\":\"Hand-derived closed-form rational interval examples; not production/audit calculator outputs or chosen global r values\"}\n","F70S_EXPECTED_TEST_IDS.txt":"test_f70_synthetic_exact_reference.ExactReferenceTests.test_R_contained_in_registered_A\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_budget_is_per_context\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_canonical_repeat\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_case_hash_mutation_rejected\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_controller_import_request_denied\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_duplicate_discovery_rejected\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_error_outcome_rejected\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_errors_do_not_echo_canary\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_exact_negative_ns_origin\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_fake_pass_rejected\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_independent_audit_dependencies\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_input_unchanged\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_malformed_pins_rejected\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_missing_discovery_rejected\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_narrowing_A_does_not_increase_r\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_no_evaluation_emits_no_capacity\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_non_dyadic_ns_exact\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_output_directory_security\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_private_path_denied\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_process_network_denied\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_01\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_02\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_03\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_04\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_05\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_06\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_07\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_08\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_09\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_10\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_11\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_12\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_13\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_14\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_public_case_15\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_anchor_outside_interval\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_boolean_time\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_dt_overflow\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_duplicate_time\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_extra_path_canary\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_float_command\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_invalid_flags\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_inverted_interval\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_malformed_ratio_strings\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_missing_field\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_outside_domain\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_oversized_ratio\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_reversed_time\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_sequence_gap\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_sequence_wrap\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_supplied_budget\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_time_bounds\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_unreduced_ratio\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_wrong_source\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_wrong_units\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_reject_zero_denominator\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_skip_outcome_rejected\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_source_pin_mutation_rejected\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_unexpected_discovery_rejected\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_zero_capacity_no_command\ntest_f70_synthetic_exact_reference.ExactReferenceTests.test_zero_discovery_rejected\n","F70S_OWNER_SCOPE_AMENDMENT_RECORD.json":"{\n  \"identity\": \"F70S_EXPLICIT_CONVERSATION_SCOPE_AMENDMENT_V1\",\n  \"evidence_record_id\": \"CYBERPILOT-F70-SYNTHETIC-SCOPE-20261027-001\",\n  \"record_id_is_administrative_not_a_numeric_policy_parameter\": true,\n  \"authority_verification_level\": \"EXPLICIT_OWNER_ATTESTATION\",\n  \"original_owner_approval_identifier\": \"CYBERPILOT-F70-R-POLICY-20261027-001\",\n  \"original_owner_approval_sha256\": \"9881628b559715830dcaf54a17ecf35cbf21ae320c4ec237e25f5b0a6b67fa0e\",\n  \"human_statements\": [\n    {\n      \"role\": \"user\",\n      \"text\": \"승인할게 다음작업진행해\"\n    },\n    {\n      \"role\": \"user\",\n      \"text\": \"권장안이뭐야?\"\n    },\n    {\n      \"role\": \"user\",\n      \"text\": \"그래 그렇게.진행해\"\n    }\n  ],\n  \"approved_recommendation\": \"Vehicle-agnostic synthetic software contract plus separate exact reference path; preserve old F61\",\n  \"scope_change\": \"Official vehicle-limit source selection is replaced for this synthetic-only local reference by preregistered caller-declared continuous synthetic admissible intervals\",\n  \"preserved_min_rule\": \"r=min(L_up,abs(L_down))\",\n  \"capacity_binding\": \"L_up=(b-p)/dt; L_down=(a-p)/dt for declared inclusive synthetic A=[a,b] and p in A\",\n  \"source_limit_is_conditional_assumption_not_empirically_justified_vehicle_limit\": true,\n  \"no_r_value_or_safety_factor_selected\": true,\n  \"consumer\": \"New exact reference only; old F61 primitive int/float API preserved and not silently coerced\",\n  \"output_predicate\": \"Continuous interval nonemptiness; no quantized production reachability claim\",\n  \"implementation_scope\": \"Local external directory; no current Git staging/commit/push/CI\",\n  \"cryptographic_signature_verified\": false,\n  \"legal_delegation_audited\": false,\n  \"R_BUDGET_UNRESOLVED_preserved_for_original_project_policy\": true,\n  \"SOURCE_SCHEMA_UNQUALIFIED\": 6000,\n  \"F71_authorized\": false,\n  \"runtime\": \"NO_GO\"\n}\n","F70S_PREIMPLEMENTATION_SEAL.json":"{\"Git_commit_created\":false,\"files\":[{\"bytes\":1875,\"name\":\"F70S_OWNER_SCOPE_AMENDMENT_RECORD.json\",\"sha256\":\"6d73f3c6bfdc8b541e008cec6a0cc9dad78622fc50c443510f9b2b037277f0fc\"},{\"bytes\":3573,\"name\":\"F70S_SYNTHETIC_EXACT_CONTRACT.json\",\"sha256\":\"e30f5b2d3347c04d53be21855eb3dd824229d03263dceb3ae2922a214e16b544\"},{\"bytes\":9456,\"name\":\"F70S_PUBLIC_CASES.json\",\"sha256\":\"18ea4c470f04db15193f4c56ce4e54273ae5fc3650c5ae7701c2546d6fe2a47c\"},{\"bytes\":4302,\"name\":\"F70S_EXPECTED_PUBLIC_RESULTS.json\",\"sha256\":\"659a6d657198abc2b807b76170d01f19804689d56e2cee7d009edf6ad082cbbb\"},{\"bytes\":4987,\"name\":\"F70S_EXPECTED_TEST_IDS.txt\",\"sha256\":\"b2558ed24fcf5188712806b626289f65d0dfe534585d94ac012df3608cf594a6\"},{\"bytes\":4480,\"name\":\"F70S_DESIGN_AND_IMPLEMENTATION_PLAN_KO.md\",\"sha256\":\"2b6dfdeb63b11f7d6637f3924f60c03186cfd3da7840c04e388ac2f5d36f0f31\"}],\"identity\":\"F70S_LOCAL_PREIMPLEMENTATION_SEAL_V1\",\"product_calculators_present\":false,\"product_verification_runner_present\":false,\"scope\":\"Conditional synthetic assumptions only; not original project r budget resolution\"}\n","F70S_PUBLIC_CASES.json":"{\"case_count\":15,\"cases\":[{\"admissible_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"1\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_01\",\"current_sequence\":1,\"current_time_ns\":10000000,\"gates\":{\"active\":true,\"override\":false,\"previous_active\":true,\"previous_override\":false,\"reset_between_samples\":false},\"previous_command\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"previous_sequence\":0,\"previous_time_ns\":0,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"2\",\"numerator\":\"1\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"},{\"admissible_interval\":{\"lower\":{\"denominator\":\"2\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"4\",\"numerator\":\"3\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_02\",\"current_sequence\":1,\"current_time_ns\":10000000,\"gates\":{\"active\":true,\"override\":false,\"previous_active\":true,\"previous_override\":false,\"reset_between_samples\":false},\"previous_command\":{\"denominator\":\"4\",\"numerator\":\"1\"},\"previous_sequence\":0,\"previous_time_ns\":0,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"2\",\"numerator\":\"1\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"},{\"admissible_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"upper\":{\"denominator\":\"3\",\"numerator\":\"2\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_03\",\"current_sequence\":1,\"current_time_ns\":10000001,\"gates\":{\"active\":true,\"override\":false,\"previous_active\":true,\"previous_override\":false,\"reset_between_samples\":false},\"previous_command\":{\"denominator\":\"3\",\"numerator\":\"1\"},\"previous_sequence\":0,\"previous_time_ns\":0,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"3\",\"numerator\":\"-1\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"},{\"admissible_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"1\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_04\",\"current_sequence\":1,\"current_time_ns\":1,\"gates\":{\"active\":true,\"override\":false,\"previous_active\":true,\"previous_override\":false,\"reset_between_samples\":false},\"previous_command\":{\"denominator\":\"1\",\"numerator\":\"1\"},\"previous_sequence\":0,\"previous_time_ns\":0,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"2\",\"numerator\":\"1\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"},{\"admissible_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"1\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_05\",\"current_sequence\":1,\"current_time_ns\":1,\"gates\":{\"active\":true,\"override\":false,\"previous_active\":true,\"previous_override\":false,\"reset_between_samples\":false},\"previous_command\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"previous_sequence\":0,\"previous_time_ns\":0,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"},{\"admissible_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"0\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_06\",\"current_sequence\":1,\"current_time_ns\":1,\"gates\":{\"active\":true,\"override\":false,\"previous_active\":true,\"previous_override\":false,\"reset_between_samples\":false},\"previous_command\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"previous_sequence\":0,\"previous_time_ns\":0,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"},{\"admissible_interval\":{\"lower\":{\"denominator\":\"4\",\"numerator\":\"1\"},\"upper\":{\"denominator\":\"4\",\"numerator\":\"3\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_07\",\"current_sequence\":1,\"current_time_ns\":1000000000,\"gates\":{\"active\":true,\"override\":false,\"previous_active\":true,\"previous_override\":false,\"reset_between_samples\":false},\"previous_command\":{\"denominator\":\"2\",\"numerator\":\"1\"},\"previous_sequence\":0,\"previous_time_ns\":0,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"2\",\"numerator\":\"-1\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"},{\"admissible_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"upper\":{\"denominator\":\"3\",\"numerator\":\"2\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_08\",\"current_sequence\":1,\"current_time_ns\":10000000,\"gates\":{\"active\":true,\"override\":false,\"previous_active\":true,\"previous_override\":false,\"reset_between_samples\":false},\"previous_command\":{\"denominator\":\"3\",\"numerator\":\"1\"},\"previous_sequence\":0,\"previous_time_ns\":0,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"},{\"admissible_interval\":{\"lower\":{\"denominator\":\"3\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"3\",\"numerator\":\"1\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_09\",\"current_sequence\":1,\"current_time_ns\":0,\"gates\":{\"active\":true,\"override\":false,\"previous_active\":true,\"previous_override\":false,\"reset_between_samples\":false},\"previous_command\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"previous_sequence\":0,\"previous_time_ns\":-10000000,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"3\",\"numerator\":\"1\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"},{\"admissible_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"1\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_10\",\"current_sequence\":1,\"current_time_ns\":10000000,\"gates\":{\"active\":true,\"override\":false,\"previous_active\":true,\"previous_override\":false,\"reset_between_samples\":true},\"previous_command\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"previous_sequence\":0,\"previous_time_ns\":0,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"2\",\"numerator\":\"1\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"},{\"admissible_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"1\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_11\",\"current_sequence\":1,\"current_time_ns\":10000000,\"gates\":{\"active\":false,\"override\":false,\"previous_active\":true,\"previous_override\":false,\"reset_between_samples\":false},\"previous_command\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"previous_sequence\":0,\"previous_time_ns\":0,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"2\",\"numerator\":\"1\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"},{\"admissible_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"1\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_12\",\"current_sequence\":1,\"current_time_ns\":10000000,\"gates\":{\"active\":true,\"override\":false,\"previous_active\":true,\"previous_override\":true,\"reset_between_samples\":false},\"previous_command\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"previous_sequence\":0,\"previous_time_ns\":0,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"2\",\"numerator\":\"1\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"},{\"admissible_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"1\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_13\",\"current_sequence\":1,\"current_time_ns\":10000000,\"gates\":{\"active\":false,\"override\":true,\"previous_active\":false,\"previous_override\":true,\"reset_between_samples\":true},\"previous_command\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"previous_sequence\":0,\"previous_time_ns\":0,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"2\",\"numerator\":\"1\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"},{\"admissible_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"1\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_14\",\"current_sequence\":1,\"current_time_ns\":1,\"gates\":{\"active\":true,\"override\":false,\"previous_active\":true,\"previous_override\":false,\"reset_between_samples\":false},\"previous_command\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"previous_sequence\":0,\"previous_time_ns\":0,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"2\",\"numerator\":\"1\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"},{\"admissible_interval\":{\"lower\":{\"denominator\":\"1\",\"numerator\":\"-1\"},\"upper\":{\"denominator\":\"1\",\"numerator\":\"1\"}},\"command_unit\":\"normalized_command\",\"context_id\":\"F70S_CASE_15\",\"current_sequence\":1,\"current_time_ns\":9223372036854775807,\"gates\":{\"active\":true,\"override\":false,\"previous_active\":true,\"previous_override\":false,\"reset_between_samples\":false},\"previous_command\":{\"denominator\":\"1\",\"numerator\":\"0\"},\"previous_sequence\":0,\"previous_time_ns\":0,\"rate_unit\":\"normalized_command/s\",\"reference_command\":{\"denominator\":\"2\",\"numerator\":\"1\"},\"schema_version\":\"1\",\"source_kind\":\"PREREGISTERED_SYNTHETIC_INTERVAL\",\"time_unit\":\"ns\"}],\"identity\":\"F70S_PUBLIC_PREREGISTERED_INTERVAL_CASES_V1\",\"not_a_real_vehicle_policy_dataset\":true}\n","F70S_SOURCE_PINS.json":"{\"files\":[{\"bytes\":5396,\"name\":\"f70_synthetic_exact_reference.py\",\"sha256\":\"46247e88875a7c6998bddb1f994d9739ab1d3f16de6e8df0b8eb25074d398b47\"},{\"bytes\":6147,\"name\":\"f70_synthetic_exact_audit.py\",\"sha256\":\"23f02d117d1b867036871677fb8698c7f0b9180e1c877e70152802759594ffe0\"},{\"bytes\":12315,\"name\":\"test_f70_synthetic_exact_reference.py\",\"sha256\":\"d7a2564f47d8012b7db8708bcfd1fe0bcd01a4bcb756a2d89e0dba1677174051\"},{\"bytes\":12278,\"name\":\"run_f70_synthetic_exact_reference.py\",\"sha256\":\"15ee9ab6f42b12ecb0049a164f09e19165ef78a82278345ea02b40f0dbc91b0f\"},{\"bytes\":1875,\"name\":\"F70S_OWNER_SCOPE_AMENDMENT_RECORD.json\",\"sha256\":\"6d73f3c6bfdc8b541e008cec6a0cc9dad78622fc50c443510f9b2b037277f0fc\"},{\"bytes\":3573,\"name\":\"F70S_SYNTHETIC_EXACT_CONTRACT.json\",\"sha256\":\"e30f5b2d3347c04d53be21855eb3dd824229d03263dceb3ae2922a214e16b544\"},{\"bytes\":9456,\"name\":\"F70S_PUBLIC_CASES.json\",\"sha256\":\"18ea4c470f04db15193f4c56ce4e54273ae5fc3650c5ae7701c2546d6fe2a47c\"},{\"bytes\":4302,\"name\":\"F70S_EXPECTED_PUBLIC_RESULTS.json\",\"sha256\":\"659a6d657198abc2b807b76170d01f19804689d56e2cee7d009edf6ad082cbbb\"},{\"bytes\":4987,\"name\":\"F70S_EXPECTED_TEST_IDS.txt\",\"sha256\":\"b2558ed24fcf5188712806b626289f65d0dfe534585d94ac012df3608cf594a6\"},{\"bytes\":4480,\"name\":\"F70S_DESIGN_AND_IMPLEMENTATION_PLAN_KO.md\",\"sha256\":\"2b6dfdeb63b11f7d6637f3924f60c03186cfd3da7840c04e388ac2f5d36f0f31\"},{\"bytes\":1060,\"name\":\"F70S_PREIMPLEMENTATION_SEAL.json\",\"sha256\":\"6d6c7096f4e1e00a1d416c6a31e1e64a0952cc285313f3d0ae6ba289acd7747f\"}],\"identity\":\"F70S_SOURCE_PINS_V1\",\"preimplementation_seal_sha256\":\"6d6c7096f4e1e00a1d416c6a31e1e64a0952cc285313f3d0ae6ba289acd7747f\"}\n","F70S_SYNTHETIC_EXACT_CONTRACT.json":"{\n  \"schema_version\": \"1\",\n  \"contract_id\": \"F70_SYNTHETIC_EXACT_INTERVAL_V1\",\n  \"reference_result_identity\": \"F70_SYNTHETIC_EXACT_INTERVAL_RESULT_V1\",\n  \"source_kind\": \"PREREGISTERED_SYNTHETIC_INTERVAL\",\n  \"scope\": \"VEHICLE_AGNOSTIC_SOFTWARE_ONLY\",\n  \"units\": {\n    \"command\": \"normalized_command\",\n    \"rate\": \"normalized_command/s\",\n    \"time\": \"ns\"\n  },\n  \"canonical_numbers\": \"Reduced rational objects {numerator: canonical signed decimal string, denominator: canonical positive decimal string}; no float or bool; gcd=1; zero is 0/1\",\n  \"integer_string_digit_limit\": 128,\n  \"digit_limit_reason\": \"Serialization/resource bound only; rejects oversize input without rounding. It is not an r limit or empirical threshold.\",\n  \"time_contract\": {\n    \"endpoints\": \"signed int64 epoch-free synthetic ticks\",\n    \"dt_ns\": \"positive exact difference fitting int64\",\n    \"seconds\": \"dt_ns/1000000000\",\n    \"sorting\": false,\n    \"normalization\": false,\n    \"rounding\": false\n  },\n  \"sequence_contract\": \"uint64 adjacent endpoints without wraparound\",\n  \"domain\": {\n    \"reference_command\": \"[-1,1]\",\n    \"previous_command\": \"[-1,1]\",\n    \"admissible_lower\": \"[-1,1]\",\n    \"admissible_upper\": \"[-1,1]\",\n    \"interval_order\": \"a<=b\",\n    \"anchor\": \"a<=p<=b\"\n  },\n  \"definitions\": {\n    \"dt\": \"(current_time_ns-previous_time_ns)/1000000000\",\n    \"L_up\": \"(b-p)/dt\",\n    \"L_down\": \"(a-p)/dt\",\n    \"r\": \"min(L_up,-L_down)\",\n    \"R\": \"[p-r*dt,p+r*dt]\",\n    \"S\": \"[min(0,n),max(0,n)]\",\n    \"intersection\": \"[max(S.lower,R.lower),min(S.upper,R.upper)]\",\n    \"FEASIBLE\": \"lower<=upper\",\n    \"CONSTRAINT_CONFLICT\": \"lower>upper; preserve conflicting endpoints\"\n  },\n  \"gate_order\": [\n    \"Strict structure/source/units/types/ratio/domain/time/sequence validation\",\n    \"Anchor validation; reject without clamp/fallback\",\n    \"Reset/inactive/override => NOT_EVALUATED with no r/intervals\",\n    \"Exact capacities and continuous interval predicate\"\n  ],\n  \"blocked_reason_order\": [\n    \"RESET_INTERVAL\",\n    \"LATERAL_INACTIVE\",\n    \"DRIVER_OVERRIDE\"\n  ],\n  \"no_eval_outputs\": \"capacities,r,dt_s,S,R,intersection,is_nonempty null\",\n  \"declared_interval_meaning\": \"A is a preregistered synthetic assumption, not a produced Controller output or justified real vehicle limit\",\n  \"privacy\": \"Unknown/malformed inputs produce fixed codes, no input echo; no file/network/process/Controller access in calculators\",\n  \"arithmetic_independence\": \"Primary Fraction path; independent audit integer numerator/denominator and cross-products; no core helper sharing\",\n  \"acceptance\": [\n    \"Exact public-case golden results\",\n    \"Exact discovered Test ID set with zero duplicates/missing/unexpected\",\n    \"All tests started/completed and PASS; zero FAIL/ERROR/SKIP/XFAIL/XPASS\",\n    \"Primary/Audit canonical bytes identical\",\n    \"Two isolated full runs byte-identical\",\n    \"Frozen Source preservation\",\n    \"No Controller/Runtime or private payload access\"\n  ],\n  \"output_invariants\": {\n    \"candidate_output\": null,\n    \"command_generated\": false,\n    \"controller_invocations\": 0,\n    \"runtime_authority\": \"NONE\",\n    \"source_schema_qualified_for_controller\": false,\n    \"physical_response_evaluated\": false,\n    \"performance_qualified\": false,\n    \"synthetic_assumption_only\": true\n  },\n  \"no_global_rate_budget_adopted\": true,\n  \"maintained\": [\n    \"R_BUDGET_UNRESOLVED\",\n    \"SOURCE_SCHEMA_UNQUALIFIED=6000\",\n    \"NO_ADMISSIBLE_NEXT_CANDIDATE\",\n    \"D2 PERFORMANCE_NOT_EVALUATED\",\n    \"F19_LEGACY_UNRESOLVED\",\n    \"NATIVE_EXACT_REPLAY_NOT_PROVEN\",\n    \"RUNTIME_NO_GO\",\n    \"F71_NOT_AUTHORIZED\"\n  ]\n}\n"}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          lfs: false
+          submodules: false
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12.13'
+          architecture: x64
+          check-latest: false
+      - name: Exact-head source, locked tools, 61 plus 83 tests, static and repeatability gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          umask 077
+          python -B - <<'PY'
+          import ast
+          import hashlib
+          import importlib.util
+          import json
+          import os
+          import shutil
+          import subprocess
+          import sys
+          import tempfile
+          import tomllib
+          from pathlib import Path
+          
+          BASE = 'c4328011f5f15a0cb0319a4547df5cf8ee1e1d7c'
+          IMPORT = '58d8fb2e2799f41333dab3d61550ac519a69fdbd'
+          BRANCH = 'feature/f70pr-synthetic-reference-compatibility'
+          WORKFLOW = '.github/workflows/cyberpilot-f70pr-compatibility-reference.yaml'
+          SOURCE = Path('tools/cyberpilot/f70s')
+          EXPECTED = [{'ast_sha256': '1a36416b2898d665eceda4c86ceca17e98ec774f3ad34a86440575b567fad3a8', 'bytes': 5396, 'name': 'f70_synthetic_exact_reference.py', 'sha256': '46247e88875a7c6998bddb1f994d9739ab1d3f16de6e8df0b8eb25074d398b47'}, {'ast_sha256': 'bdd4a707c3affa893c26602fb27913fd211469f7c1a94b3e9ea46d1baa638423', 'bytes': 6147, 'name': 'f70_synthetic_exact_audit.py', 'sha256': '23f02d117d1b867036871677fb8698c7f0b9180e1c877e70152802759594ffe0'}, {'ast_sha256': '02f7ea054b762850c03989550a49880037f000fc96052bc8ccc012ab8530ac1c', 'bytes': 12315, 'name': 'test_f70_synthetic_exact_reference.py', 'sha256': 'd7a2564f47d8012b7db8708bcfd1fe0bcd01a4bcb756a2d89e0dba1677174051'}, {'ast_sha256': '1bdcf9faca22d2ba1d94408f060ac8c7b9d7103e03b4e60e8dfd0dece4d23bc6', 'bytes': 12278, 'name': 'run_f70_synthetic_exact_reference.py', 'sha256': '15ee9ab6f42b12ecb0049a164f09e19165ef78a82278345ea02b40f0dbc91b0f'}]
+          SUPPORT_SHA = '3673ea5ae455d0d6e72939fff89af032af3d4435737f42aee5a6b53bbf8ef5e9'
+          TYPE_CONFIG = '# Explicit local tool config. No rule exemptions.\n'
+          GOLDEN = 'a20e2d2a9e576a1839d9da3189727d07d914fabd0b008edd7f349702729150eb'
+          OLD = [
+            ('tools.cyberpilot.run_f65_source_separation_v1', 28, 'artifacts/f65/test_ids.txt',
+             'c53bb31c79f60bf374b198c65658a8bc9ae98dc03986ce32c0bfbc09757b19f1'),
+            ('tools.cyberpilot.f64.entry', 55, 'artifacts/f64/public_test_ids.txt',
+             '5464ad1df767645de5b010479393ad8cd89b8d3fdb036da5cad7f25b9a5f7fbd'),
+          ]
+          
+          def digest(raw):
+            return hashlib.sha256(raw).hexdigest()
+          
+          def git(*args):
+            return subprocess.check_output(['git', *args])
+          
+          def tree(ref):
+            result = {}
+            for row in git('ls-tree', '-r', '-z', ref).split(b'\0'):
+              if row:
+                meta, name = row.split(b'\t', 1)
+                result[name.decode()] = meta.decode()
+            return result
+          
+          def verify_tree():
+            head = git('rev-parse', 'HEAD').decode().strip()
+            assert os.environ['GITHUB_SHA'] == head, 'EXACT_HEAD'
+            assert os.environ['GITHUB_REF'] == 'refs/heads/' + BRANCH, 'EXACT_BRANCH'
+            assert git('rev-parse', 'HEAD^').decode().strip() == IMPORT, 'CI_PARENT'
+            assert git('rev-parse', IMPORT + '^').decode().strip() == BASE, 'IMPORT_PARENT'
+            assert git('rev-list', '--count', BASE + '..HEAD').strip() == b'2', 'TWO_COMMITS'
+            baseline, current = tree(BASE), tree('HEAD')
+            assert all(current.get(k) == v for k, v in baseline.items()), 'PROTECTED_TREE'
+            added = {str(SOURCE / e['name']) for e in EXPECTED} | {WORKFLOW}
+            assert set(current) - set(baseline) == added, 'ONLY_FIVE_ADDITIONS'
+            first = git('diff-tree', '--no-commit-id', '--name-status', '-r', BASE + '..' + IMPORT).decode().splitlines()
+            assert set(first) == {'A\t' + str(SOURCE / e['name']) for e in EXPECTED}, 'ONLY_FOUR_SOURCE_IMPORT'
+            second = git('diff-tree', '--no-commit-id', '--name-status', '-r', IMPORT + '..HEAD').decode().splitlines()
+            assert second == ['A\t' + WORKFLOW], 'ONLY_NEW_WORKFLOW'
+            return head, len(baseline)
+          
+          def support_data():
+            raw = os.environ['F70S_SUPPORT_JSON']
+            assert digest(raw.encode()) == SUPPORT_SHA, 'SUPPORT_HASH'
+            data = json.loads(raw)
+            assert len(data) == 8 and all(Path(n).name == n for n in data), 'SUPPORT_NAMES'
+            return data
+          
+          def verify_sources():
+            for entry in EXPECTED:
+              path = SOURCE / entry['name']
+              assert path.is_file() and not path.is_symlink(), 'SOURCE_PATH'
+              raw = path.read_bytes()
+              assert len(raw) == entry['bytes'] and digest(raw) == entry['sha256'], 'SOURCE_HASH'
+              assert digest(ast.dump(ast.parse(raw), include_attributes=False).encode()) == entry['ast_sha256'], 'EXPRESSION_AST'
+              assert git('ls-tree', 'HEAD', '--', str(path)).startswith(b'100644 blob '), 'SOURCE_MODE'
+              compile(raw, str(path), 'exec', dont_inherit=True)
+            for name, allowed in [
+              ('f70_synthetic_exact_reference.py', {'hashlib', 'json', 're', 'fractions'}),
+              ('f70_synthetic_exact_audit.py', {'hashlib', 'json', 'math'}),
+            ]:
+              parsed = ast.parse((SOURCE / name).read_bytes())
+              imports = []
+              for node in ast.walk(parsed):
+                if isinstance(node, ast.Import):
+                  imports.extend(x.name for x in node.names)
+                elif isinstance(node, ast.ImportFrom):
+                  imports.append(node.module)
+                elif isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
+                  assert node.func.id not in {'open', 'exec', 'eval', 'compile', '__import__'}, 'CORE_IO'
+              assert set(imports) <= allowed, 'CORE_IMPORTS'
+          
+          def execute(args, label, out, cwd=None, env=None):
+            done = subprocess.run(args, cwd=cwd, env=env, capture_output=True, timeout=300)
+            (out / (label + '.stdout')).write_bytes(done.stdout)
+            (out / (label + '.stderr')).write_bytes(done.stderr)
+            assert done.returncode == 0, label + ': ' + (done.stdout + done.stderr).decode(errors='replace')[-2400:]
+            return done.stdout
+          
+          def restore_tools(out):
+            packages = tomllib.loads(Path('uv.lock').read_text())['package']
+            selected = {p['name']: p for p in packages if p['name'] in {'ruff', 'ty', 'codespell'}}
+            assert set(selected) == {'ruff', 'ty', 'codespell'}, 'LOCKED_TOOL_SET'
+            assert {k: v['version'] for k, v in selected.items()} == {'ruff': '0.16.7', 'ty': '0.0.80', 'codespell': '2.4.3'}, 'LOCKED_TOOL_VERSIONS'
+            local = os.environ.get('COMPAT_LOCAL_TOOL_BIN')
+            cloud = os.environ.get('GITHUB_ACTIONS') == 'true'
+            assert not (cloud and local), 'NO_LOCAL_RESTORE_BYPASS_IN_CI'
+            if cloud:
+              lines = []
+              for name, package in sorted(selected.items()):
+                hashes = sorted({wheel['hash'] for wheel in package['wheels']})
+                assert hashes and all(h.startswith('sha256:') for h in hashes), 'WHEEL_HASHES'
+                lines.append(name + '==' + package['version'] + ''.join(' --hash=' + h for h in hashes))
+              req = out / 'locked-quality-tools.txt'
+              req.write_text('\n'.join(lines) + '\n')
+              execute([sys.executable, '-m', 'pip', 'install', '--disable-pip-version-check',
+                       '--index-url', 'https://pypi.org/simple', '--no-deps', '--only-binary=:all:',
+                       '--require-hashes', '-r', str(req)], 'locked_tool_restore', out)
+            else:
+              assert local, 'LOCAL_TOOL_BIN_REQUIRED'
+            result = {}
+            for name, package in sorted(selected.items()):
+              program = str(Path(local) / name) if local else shutil.which(name)
+              assert program, 'TOOL_MISSING'
+              version = execute([program, '--version'], name + '_version', out).decode().strip()
+              assert version.split()[-1] == package['version'], 'TOOL_VERSION'
+              result[name] = program
+            return result
+          
+          def validate(out):
+            data = support_data()
+            expected_ids = data['F70S_EXPECTED_TEST_IDS.txt'].splitlines()
+            assert len(expected_ids) == len(set(expected_ids)) == 61, 'EXPECTED_61'
+            outputs = []
+            for index in [1, 2]:
+              with tempfile.TemporaryDirectory(prefix='compat-exact-', dir=str(out)) as temp:
+                directory = Path(temp)
+                assert directory.stat().st_uid == os.getuid() and directory.stat().st_mode & 0o777 == 0o700, 'PRIVATE_TEMP'
+                for entry in EXPECTED:
+                  (directory / entry['name']).write_bytes((SOURCE / entry['name']).read_bytes())
+                for name, text in data.items():
+                  (directory / name).write_text(text, encoding='utf-8', newline='\n')
+                (directory / 'cache').mkdir(mode=0o700)
+                (directory / 'tmp').mkdir(mode=0o700)
+                env = os.environ.copy()
+                env.update(TMPDIR=str(directory / 'tmp'), XDG_CACHE_HOME=str(directory / 'cache'),
+                           PYTHONDONTWRITEBYTECODE='1', PYTHONHASHSEED='0', LC_ALL='C.UTF-8', TZ='UTC')
+                raw = execute([sys.executable, '-I', '-S', '-B', str(directory / 'run_f70_synthetic_exact_reference.py')],
+                              'exact61_run_' + str(index), out, directory, env)
+                value = json.loads(raw)
+                assert value['PASS'] == value['test_count'] == 61, 'ACTUAL_61'
+                assert all(value[k] == 0 for k in ['FAIL', 'ERROR', 'SKIP', 'XFAIL', 'XPASS']), 'BAD_STATUS'
+                for key in ['test_ids', 'started_ids', 'completed_ids']:
+                  assert len(value[key]) == len(set(value[key])) == 61 and set(value[key]) == set(expected_ids), 'ACTUAL_IDS'
+                assert value['records'] == [{'id': i, 'status': 'PASS'} for i in expected_ids], 'ACTUAL_PASS'
+                assert value['guard_counts'] == {'controller_calls': 0, 'runtime_calls': 0, 'successful_private_payload_reads': 0,
+                                                'denied_external_requests': 2, 'denied_import_requests': 1, 'denied_read_requests': 1}, 'FENCES'
+                assert value['candidate_output'] is None and value['runtime_authority'] == 'NONE', 'SYNTHETIC_ONLY'
+                assert value['project_r_budget_resolved'] is False and value['F71_authorized'] is False, 'NO_PROMOTION'
+                assert digest(raw) == GOLDEN, 'ORIGINAL_CANONICAL_BYTES'
+                outputs.append(raw)
+            assert outputs[0] == outputs[1], 'BYTE_IDENTICAL'
+            legacy = []
+            for module, count, path, golden in OLD:
+              raw = execute([sys.executable, '-B', '-m', module, '--tests'], module.rsplit('.', 1)[-1], out)
+              value = json.loads(raw)
+              ids = Path(path).read_text().splitlines()
+              assert len(ids) == len(set(ids)) == count, 'OLD_ID_SET'
+              assert value['records'] == [{'id': i, 'status': 'PASS'} for i in ids], 'OLD_ACTUAL_IDS'
+              assert not any(value['guard_counts'].values()) and value['controller_calls'] == 0, 'OLD_FENCES'
+              assert digest(raw) == golden, 'OLD_CANONICAL_BYTES'
+              legacy.append({'module': module, 'PASS': count, 'canonical_sha256': digest(raw)})
+            spec = importlib.util.spec_from_file_location('compatibility_primary', SOURCE / 'f70_synthetic_exact_reference.py')
+            primary = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(primary)
+            assert issubclass(primary.SyntheticReferenceError, ValueError), 'EXCEPTION_BASE'
+            try:
+              primary.evaluate(None)
+              raise AssertionError('EXPECTED_DIAGNOSTIC')
+            except primary.SyntheticReferenceError as error:
+              assert str(error) == 'F70S_REQUEST_TYPE', 'FIXED_DIAGNOSTIC'
+            return legacy
+          
+          def quality(tools, out):
+            files = [str(SOURCE / e['name']) for e in EXPECTED]
+            execute([tools['ruff'], 'check', '--no-cache', *files], 'ruff_repository', out)
+            config = out / 'exact-original-ty.toml'
+            config.write_text(TYPE_CONFIG)
+            execute([tools['ty'], 'check', '--config-file', str(config), '--python', sys.executable,
+                     '--python-version', '3.12', *files], 'ty', out)
+            execute([tools['codespell'], *files], 'codespell', out)
+          
+          def main():
+            head, baseline_count = verify_tree()
+            verify_sources()
+            out = Path(os.environ.get('RUNNER_TEMP', tempfile.gettempdir())) / 'compat-reference-evidence'
+            out.mkdir(mode=0o700, parents=True, exist_ok=False)
+            tools = restore_tools(out)
+            legacy = validate(out)
+            quality(tools, out)
+            assert not git('diff', '--check'), 'WHITESPACE'
+            assert not git('status', '--porcelain=v1', '--untracked-files=all'), 'CLEAN_WORKTREE'
+            cloud = os.environ.get('GITHUB_ACTIONS') == 'true'
+            status = 'F70PR_COMPATIBILITY_REFERENCE_PUBLISHED_CI_PASS' if cloud else 'F70PR_COMPATIBILITY_REFERENCE_LOCAL_PASS'
+            record = {'status': status, 'revision_identity': 'F70S_COMPATIBILITY_REVISION_1',
+                      'head': head, 'baseline': BASE, 'protected_baseline_entries': baseline_count,
+                      'added_sources': 4, 'added_workflows': 1, 'modified_existing_paths': 0,
+                      'new_PASS': 61, 'existing_PASS': 83, 'compatibility_gates_PASS': 2, 'legacy': legacy,
+                      'Ruff': 'PASS', 'Ty': 'PASS', 'Codespell': 'PASS', 'Compile': 'PASS',
+                      'independent_runs': 2, 'canonical_sha256': GOLDEN, 'byte_identical': True,
+                      'original_F70S_artifact_unchanged': True, 'original_F70S_source_bytes_published': False,
+                      'R_BUDGET_UNRESOLVED': True, 'SOURCE_SCHEMA_UNQUALIFIED': 6000,
+                      'candidate_NO_GO': True, 'RUNTIME_NO_GO': True, 'F71_authorized': False}
+            (out / 'terminal_result.json').write_text(json.dumps(record, sort_keys=True, indent=2) + '\n')
+            print('COMPATIBILITY_TERMINAL_GATE ' + json.dumps(record, sort_keys=True))
+          
+          if __name__ == '__main__':
+            main()
+          PY
