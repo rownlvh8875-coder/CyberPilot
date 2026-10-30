@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "package_version": "0.3.0",
+  "authority": "R8_VALIDATED_FIXED_CATALOG_REGRESSION_NOT_INDEPENDENT_ORACLE",
+  "source_report_sha256": "0a1108b2dc0d285329d3f602b3c06793947690eb787f47cba280fb6ef0bdd55e",
+  "source_ci_run": "https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/41060704374",
+  "fixture_catalog_sha256": "74095144882ff3977679ce92ec7dad0e7bf3f532a0cacae2cfa26f4aab0fd287",
+  "scenarios": [
+    {"id": "decimal-ties", "steps": 4, "result_sha256": "c461829c9e225b7ccde282e2239b27bea274cfc14a7e6f5b98276e10367103d9"},
+    {"id": "ramp", "steps": 3, "result_sha256": "b03e71f9259071e3b460a8fd07ddcdfab462eff18e078c5e36ab3777623d24e3"},
+    {"id": "reversal", "steps": 4, "result_sha256": "de04f433854511742652eba65b4f65bc51b85f3bc4ed103d8ea0c60ab5976692"},
+    {"id": "inactive", "steps": 4, "result_sha256": "f38f9abbef22950eb45326067c01a79aba33cc5b80c7b99ad034ad462752d1d7"},
+    {"id": "fault-cycle", "steps": 94, "result_sha256": "14ef99b580f2f11e477b7ac3f0f89d8eb8c9dd2563a65bddbe5eefb720a32735"},
+    {"id": "signed-zero", "steps": 2, "result_sha256": "0ee911aa4afeacd3a5154600e5983df87d64cb50e500f35432fc534528309480"},
+    {"id": "history-scale", "steps": 1, "result_sha256": "9e5d0e74c0e05710db7ad187eeb1a4e1dc8858366cb3c19d6a9a170d7af531a4"}
+  ]
+}
