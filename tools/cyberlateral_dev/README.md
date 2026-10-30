@@ -49,6 +49,13 @@ as intended, then passed after exact source restoration. See
 [state mutation coverage](docs/STATE_MUTATION_COVERAGE.md). This is tests-only;
 the package, wheel, fixed fixtures and R9 harness contract remain unchanged.
 
+R11 adds a [source-backed DEV bridge design](docs/OPENPILOT_DEV_BRIDGE_DESIGN.md),
+[pinned source map](docs/OPENPILOT_DEV_BRIDGE_SOURCE_MAP.json) and
+[future implementation plan](docs/OPENPILOT_DEV_BRIDGE_IMPLEMENTATION_PLAN.md).
+This proposes typed, fixed-fixture-only source-shaped records, not a live CC/CS
+reader, runtime hook or F61 adapter. No bridge implementation is included yet;
+state, binary64/Float32, time and vehicle-policy boundaries are kept explicit.
+
 The dev environment intentionally does not install the wheel-only project as an
 editable package (`tool.uv.package=false`). Test source selectors are DEV-only.
 The actual package installation is verified in an isolated child environment.
