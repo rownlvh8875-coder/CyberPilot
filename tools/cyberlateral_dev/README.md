@@ -74,6 +74,16 @@ the verifier separately validates every frozen full-result hash, session, gate a
 checksum. Profiles/labels are not input provenance authentication. The runtime
 wheel remains the sealed0.3.0 artifact with no DEV bridge code or dependencies.
 
+R13 adds an [offline message-boundary design](docs/OPENPILOT_MESSAGE_BOUNDARY_DESIGN.md),
+[machine-readable contract](docs/OPENPILOT_MESSAGE_BOUNDARY_CONTRACT.json),
+[future test specification](docs/OPENPILOT_MESSAGE_BOUNDARY_TEST_SPEC.md) and
+[future extraction plan](docs/OPENPILOT_MESSAGE_BOUNDARY_IMPLEMENTATION_PLAN.md).
+This is documents only: no actual-object reader, new extraction code or native/schema
+execution. The design separates source-backed fields/declared synthetic custody
+from unverified native Float32/default/presence/lifetime behavior.28 synthetic and6
+native qualification cases are specifications, NOT executed/passing tests. Native
+qualification stays closed; R12 remains the unchanged fixed-fixture implementation.
+
 The dev environment intentionally does not install the wheel-only project as an
 editable package (`tool.uv.package=false`). Test source selectors are DEV-only.
 The actual package installation is verified in an isolated child environment.
