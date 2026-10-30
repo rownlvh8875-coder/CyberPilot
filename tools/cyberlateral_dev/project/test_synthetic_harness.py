@@ -10,7 +10,7 @@ import sys
 import tempfile
 import unittest
 from copy import deepcopy
-from dataclasses import replace
+from dataclasses import asdict, replace
 from pathlib import Path
 from unittest.mock import patch
 
@@ -77,6 +77,63 @@ class SyntheticHarnessTests(unittest.TestCase):
 
         with patch.object(p, 'step', side_effect=corrupt), self.assertRaisesRegex(m.HarnessError, 'STEP_CHAIN'):
             m.run_harness(self.expected())
+
+    def assert_batch_and_step_golden_controls(self, p):
+        catalog = package_feature('cyberlateral_dev.synthetic_catalog').fixed_catalog()
+        golden = self.expected()['scenarios']
+        for scenario, expected in zip(catalog, golden, strict=True):
+            full = p.simulate(scenario.samples, scenario.initial_state)
+            state, outputs = scenario.initial_state, []
+            for sample in scenario.samples:
+                output = p.step(sample, state)
+                outputs.append(output)
+                state = output.next_state
+            chain = p.SimulationResult(tuple(outputs), state)
+            for result in [full, chain]:
+                raw = (json.dumps(asdict(result), sort_keys=True, ensure_ascii=False, separators=(',', ':'), allow_nan=False) + '\n').encode()
+                self.assertEqual(hashlib.sha256(raw).hexdigest(), expected['result_sha256'], scenario.id)
+
+    def test_split_only_history_reset_rejected_at_resume_comparison(self):
+        m, p = self.module(), package_feature()
+        ramp = next(s for s in package_feature('cyberlateral_dev.synthetic_catalog').fixed_catalog() if s.id == 'ramp')
+        simulate = p.simulate
+        suffix = ramp.samples[1:]
+
+        def reset_only_suffix(samples, state):
+            if samples == suffix:
+                # Keep the valid invocation index; erase only continuation history.
+                state = replace(state, previous_requested=0, previous_applied=0, angle_counter=0)
+            return simulate(samples, state)
+
+        with patch.object(p, 'simulate', side_effect=reset_only_suffix):
+            self.assert_batch_and_step_golden_controls(p)
+            prefix = p.simulate(ramp.samples[:1], ramp.initial_state)
+            bad_suffix = p.simulate(suffix, prefix.next_state)
+            self.assertEqual([o.projection.integer_command for o in prefix.outputs + bad_suffix.outputs], [2, 2, 4])
+            with self.assertRaisesRegex(m.HarnessError, '^SPLIT_RESUME_MISMATCH:ramp:1$'):
+                m.run_harness(self.expected())
+
+    def test_interleaving_only_history_leak_rejected_at_caller_comparison(self):
+        m, p = self.module(), package_feature()
+        step = p.step
+        last_index, last_history, interleaving = None, None, False
+
+        def leak_only_interleaved(sample, state):
+            nonlocal last_index, last_history, interleaving
+            # The closed catalog has consecutive index0 callers only in round-robin.
+            if sample.index == last_index == 0:
+                interleaving = True
+            if interleaving and state.index > 0 and last_history is not None:
+                state = replace(state, previous_requested=last_history.previous_requested,
+                                previous_applied=last_history.previous_applied, angle_counter=last_history.angle_counter)
+            output = step(sample, state)
+            last_index, last_history = sample.index, output.next_state
+            return output
+
+        with patch.object(p, 'step', side_effect=leak_only_interleaved):
+            self.assert_batch_and_step_golden_controls(p)
+            with self.assertRaisesRegex(m.HarnessError, '^INTERLEAVED_CALLER_MISMATCH$'):
+                m.run_harness(self.expected())
 
     def test_exact_rejections_preserve_the_supplied_state(self):
         m = self.module()

@@ -41,6 +41,14 @@ published last after complete staged writes; failed output directories are not
 successful evidence. Ty uses explicit component `ty.toml`, without inheriting
 openpilot's generated-ABI import/attribute suppressions.
 
+R10 closes the targeted caller-state test gap: split-only history resets and
+round-robin-only cross-caller history leakage preserve all whole-batch/isolated
+step golden controls, yet must fail at their dedicated harness comparisons.
+Each test was also run with just its comparison temporarily bypassed: it failed
+as intended, then passed after exact source restoration. See
+[state mutation coverage](docs/STATE_MUTATION_COVERAGE.md). This is tests-only;
+the package, wheel, fixed fixtures and R9 harness contract remain unchanged.
+
 The dev environment intentionally does not install the wheel-only project as an
 editable package (`tool.uv.package=false`). Test source selectors are DEV-only.
 The actual package installation is verified in an isolated child environment.
