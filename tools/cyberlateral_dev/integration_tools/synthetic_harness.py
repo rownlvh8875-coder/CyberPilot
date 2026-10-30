@@ -2,6 +2,7 @@
 
 import argparse
 import hashlib
+import importlib.util
 import json
 import sys
 from dataclasses import asdict, replace
@@ -137,6 +138,16 @@ def main(argv=None):
         output.mkdir(parents=True, exist_ok=False)
         expected = json.loads((Path(__file__).resolve().parents[1] / 'reference/synthetic_harness_expected_v1.json').read_bytes())
         result = run_harness(expected)
+        forbidden = {'numpy', 'kernel', 'openpilot', 'selfdrive', 'opendbc', 'cereal', 'capnp', 'normalized_reference', 'output_oracle'}
+        package_file = sys.modules['cyberlateral_dev'].__file__
+        if type(package_file) is not str:
+            raise HarnessError('PACKAGE_LOCATION_NOT_ESTABLISHED')
+        result['execution_environment'] = {
+            'isolated': bool(sys.flags.isolated),
+            'installed_package': 'site-packages' in Path(package_file).parts,
+            'numpy_available': importlib.util.find_spec('numpy') is not None,
+            'forbidden_modules_loaded': sorted(n for n in sys.modules if n.split('.')[0] in forbidden),
+        }
         raw = canonical(result)
         with (output / 'RESULTS.json').open('xb') as stream:
             stream.write(raw)

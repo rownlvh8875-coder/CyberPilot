@@ -26,6 +26,16 @@ compares two isolated report runs and two fixed numerical reference runs. Output
 contains logs, wheel, reports, checksums and SUMMARY.json. No environment/cache
 payload is included. Do not interpret descriptive counts or CI PASS as vehicle safety.
 
+The R9 gate also runs a DEV caller harness twice against the installed wheel:
+seven fixed scenarios/112 model invocations,105 internal two-chunk splits,
+single-step chaining, round-robin independent caller states and11 exact rejection
+cases. `harness_one/RESULTS.json` records every output/state and acceptance check;
+the harness directories and their checksums must match byte-for-byte. Golden
+hashes come from the validated R8 report: regression snapshots, NOT a new
+independent numerical oracle. Existing independent arithmetic tests still run.
+There is no external data/log input mode, state persistence protocol or production
+adapter. Invocation order is not elapsed time; actual r/T2/vehicle scale stay null.
+
 The dev environment intentionally does not install the wheel-only project as an
 editable package (`tool.uv.package=false`). Test source selectors are DEV-only.
 The actual package installation is verified in an isolated child environment.

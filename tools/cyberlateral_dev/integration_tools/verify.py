@@ -109,6 +109,42 @@ def _compare(a, b):
     return {name: sha(raw) for name, raw in sorted(one.items())}
 
 
+def harness_pair_summary(first: Path, second: Path) -> dict:
+    hashes = _compare(first, second)
+    if set(hashes) != {'RESULTS.json', 'SHA256SUMS.txt'}:
+        raise ValueError('MISSING_HARNESS_ARTIFACTS')
+    raw = (first / 'RESULTS.json').read_bytes()
+    record = json.loads(raw)
+    if type(record) is not dict or canonical(record) != raw:
+        raise ValueError('HARNESS_CONTRACT_NONCANONICAL_RECORD')
+    environment = {'isolated': True, 'installed_package': True, 'numpy_available': False, 'forbidden_modules_loaded': []}
+    valid = (
+        record.get('status') == 'F70UGZ_R9_SYNTHETIC_CALLER_HARNESS_PASS'
+        and record.get('package_version') == '0.3.0'
+        and (record.get('scenario_count'), record.get('total_steps'), record.get('two_chunk_splits')) == (7, 112, 105)
+        and record.get('step_chain_parity') is True and record.get('interleaved_caller_parity') is True
+        and type(record.get('rejections')) is list and len(record['rejections']) == 11
+        and record.get('execution_environment') == environment
+    )
+    if not valid:
+        raise ValueError('HARNESS_CONTRACT_MISMATCH')
+    if (first / 'SHA256SUMS.txt').read_bytes() != (sha(raw) + '  RESULTS.json\n').encode():
+        raise ValueError('HARNESS_MANIFEST_MISMATCH')
+    return {
+        'status': record['status'], 'byte_identical': True, 'scenario_count': record['scenario_count'],
+        'total_steps': record['total_steps'], 'two_chunk_splits': record['two_chunk_splits'],
+        'rejection_cases': len(record['rejections']), 'file_hashes': hashes,
+        'scope': 'fixed installed caller lifecycle/regression; not independent numerical oracle or production activation',
+    }
+
+
+def verify_installed_harness(root: Path, python: Path, output: Path, cwd: Path) -> dict:
+    for name in ['harness_one', 'harness_two']:
+        _run([python, '-I', '-B', root / 'integration_tools/synthetic_harness.py', '--output', output / name],
+             output / (name + '.log'), cwd)
+    return harness_pair_summary(output / 'harness_one', output / 'harness_two')
+
+
 def _runtime():
     if platform.python_implementation() != 'CPython' or platform.python_version() != '3.12.13' or sys.float_info.mant_dig != 53:
         raise ValueError('PINNED_CPYTHON31213_BINARY64_REQUIRED')
@@ -170,6 +206,7 @@ assert not [n for n in sys.modules if n.split('.')[0] in {'numpy','kernel','open
 print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies':[],'numpy_available':False,'isolated':bool(sys.flags.isolated)},sort_keys=True))
 """
         _run([isolated, '-I', '-B', '-c', code], output / 'installed.log', temp)
+        harness = verify_installed_harness(root, isolated, output, temp)
     for name in ['numeric_one', 'numeric_two']:
         _run(
             [
@@ -191,7 +228,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
     numeric_hashes = _compare(output / 'numeric_one', output / 'numeric_two')
     source = json.loads((output / 'report_one/simulation.json').read_bytes())
     summary = {
-        'status': 'F70UGZ_R8_REPOSITORY_OFFLINE_VERIFICATION_PASS',
+        'status': 'F70UGZ_R9_SYNTHETIC_INTEGRATION_HARNESS_PASS',
         'runtime': runtime,
         'imports': imported,
         'tests': test_count((output / 'unittest.log').read_text()),
@@ -200,6 +237,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
         'wheel': wheels,
         'report_file_hashes': report_hashes,
         'numeric_file_hashes': numeric_hashes,
+        'synthetic_harness': harness,
         'report_and_numeric_pairs_byte_identical': True,
         'source_gates': source['gates'],
         'Controller_execution': 0,

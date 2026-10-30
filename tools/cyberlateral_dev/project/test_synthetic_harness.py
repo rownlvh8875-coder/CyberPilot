@@ -5,6 +5,7 @@ import hashlib
 import importlib
 import io
 import json
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -120,6 +121,18 @@ class SyntheticHarnessTests(unittest.TestCase):
             self.assertEqual(error.exception.code, 2)
             self.assertFalse(output.exists())
 
+    def test_missing_package_location_rejects_without_publishing_results(self):
+        m, p = self.module(), package_feature()
+        with tempfile.TemporaryDirectory() as scratch:
+            output = Path(scratch) / 'out'
+            with patch.object(p, '__file__', None), contextlib.redirect_stderr(io.StringIO()):
+                try:
+                    code = m.main(['--output', str(output)])
+                except TypeError:
+                    code = -1
+            self.assertEqual(code, 2, 'Missing package location escaped the rejection boundary')
+            self.assertFalse((output / 'RESULTS.json').exists())
+
     def test_two_cli_runs_emit_exact_canonical_results_and_manifest(self):
         m = self.module()
         with tempfile.TemporaryDirectory() as scratch:
@@ -134,6 +147,56 @@ class SyntheticHarnessTests(unittest.TestCase):
             expected = (json.dumps(json.loads(raw), sort_keys=True, ensure_ascii=False, separators=(',', ':'), allow_nan=False) + '\n').encode()
             self.assertEqual(raw, expected)
             self.assertEqual(one['SHA256SUMS.txt'], (hashlib.sha256(raw).hexdigest() + '  RESULTS.json\n').encode())
+
+
+class InstalledHarnessTests(unittest.TestCase):
+    def verifier(self):
+        if str(ROOT) not in sys.path:
+            sys.path.insert(0, str(ROOT))
+        m = importlib.import_module('integration_tools.verify')
+        self.assertTrue(hasattr(m, 'verify_installed_harness'), 'Missing installed caller verification gate')
+        self.assertTrue(hasattr(m, 'harness_pair_summary'), 'Missing harness artifact acceptance gate')
+        return m
+
+    def test_real_empty_environment_pair_and_tamper_rejection(self):
+        m = self.verifier()
+        backend = importlib.import_module('build_backend')
+        with tempfile.TemporaryDirectory() as scratch:
+            root = Path(scratch)
+            name = backend.build_wheel(str(root / 'dist'))
+            subprocess.run([sys.executable, '-B', '-m', 'venv', '--without-pip', str(root / 'env')], check=True, capture_output=True)
+            py = root / 'env/bin/python'
+            subprocess.run(['uv', 'pip', 'install', '--offline', '--no-deps', '--link-mode=copy', '--python', str(py),
+                            str(root / 'dist' / name)], check=True, capture_output=True)
+            output = root / 'artifacts'
+            output.mkdir()
+            result = m.verify_installed_harness(ROOT, py, output, root)
+            self.assertTrue(result['byte_identical'])
+            self.assertEqual((result['scenario_count'], result['total_steps'], result['two_chunk_splits'], result['rejection_cases']), (7, 112, 105, 11))
+            first, second = output / 'harness_one', output / 'harness_two'
+            data = json.loads((first / 'RESULTS.json').read_bytes())
+            self.assertEqual(data['execution_environment'], {
+                'isolated': True, 'installed_package': True, 'numpy_available': False, 'forbidden_modules_loaded': [],
+            })
+            (second / 'RESULTS.json').write_bytes(b'{}\n')
+            with self.assertRaisesRegex(ValueError, 'REPRODUCTION_BYTE_MISMATCH'):
+                m.harness_pair_summary(first, second)
+            data['status'] = 'NOT_PASS'
+            raw = m.canonical(data)
+            for directory in [first, second]:
+                (directory / 'RESULTS.json').write_bytes(raw)
+                (directory / 'SHA256SUMS.txt').write_text(hashlib.sha256(raw).hexdigest() + '  RESULTS.json\n')
+            with self.assertRaisesRegex(ValueError, 'HARNESS_CONTRACT'):
+                m.harness_pair_summary(first, second)
+
+    def test_missing_harness_results_cannot_be_a_successful_empty_pair(self):
+        m = self.verifier()
+        with tempfile.TemporaryDirectory() as scratch:
+            first, second = Path(scratch) / 'one', Path(scratch) / 'two'
+            first.mkdir()
+            second.mkdir()
+            with self.assertRaisesRegex(ValueError, 'MISSING_HARNESS_ARTIFACTS'):
+                m.harness_pair_summary(first, second)
 
 
 if __name__ == '__main__':
