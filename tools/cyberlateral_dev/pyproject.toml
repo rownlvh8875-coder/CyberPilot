@@ -33,6 +33,9 @@ target-version = "py312"
 line-length = 160
 indent-width = 4
 lint.select = ["E4", "E7", "E9", "F", "I", "B", "UP", "PIE", "RUF100", "ISC004"]
+lint.extend-select = ["S102", "RUF046"]
+# Preserve imported code bytes, including compact test statements and DEV source selectors.
+lint.ignore = ["E701", "E702", "E402"]
 
 [tool.ruff.format]
 quote-style = "preserve"
