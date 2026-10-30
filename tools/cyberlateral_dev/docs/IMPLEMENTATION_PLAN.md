@@ -27,22 +27,22 @@
 
 Files: tools/cyberlateral_dev/{src,project,licenses,reference,build_backend.py,pyproject.toml,tools/build_wheel.py,IMPORTED_ARTIFACT.json,.gitignore,uv.lock,README.md}.
 
-- [ ] Verify R7 ZIP and copy selected exact bytes; run127-method baseline.
-- [ ] RED project/test_repository_integration.py for isolated dev config/provenance integrity/runtime/build identity.
-- [ ] Add pinned dev config/lockfile/import manifest, project README and root link; install isolated local env only.
-- [ ] Whole suite PASS; wheel remains exact R7; commit scoped import.
+- [x] Verify R7 ZIP and copy selected exact bytes; run127-method baseline.
+- [x] RED project/test_repository_integration.py for isolated dev config/provenance integrity/runtime/build identity.
+- [x] Add pinned dev config/lockfile/import manifest, project README and root link; install isolated local env only.
+- [x] Whole suite PASS; wheel remains exact R7; commit scoped import.
 
 ## Task2 — verification command and CI
 
 Files: dev.py,integration_tools/verify.py,project/test_dev_command.py,project/test_ci_contract.py,.github/workflows/cyberlateral-dev.yaml.
 
-- [ ] RED output-guard/import-tamper/real-wheel helper tests, semantic safe workflow configuration tests; full CLI missing command RED.
-- [ ] Implement verify helpers/orchestrator and pinned scoped CI; actual end-to-end verify outside unit suite (no recursion).
-- [ ] Whole suite/static/lock/repro/local isolated report PASS; commit checked runner/workflow.
+- [x] RED output-guard/import-tamper/real-wheel helper tests, semantic safe workflow configuration tests; full CLI missing command RED.
+- [x] Implement verify helpers/orchestrator and pinned scoped CI; actual end-to-end verify outside unit suite (no recursion).
+- [x] Whole suite/static/lock/repro/local isolated report PASS; commit checked runner/workflow.
 
 ## Task3 — independent review and safe publication
 
-- [ ] Fresh final read-only review against initial base/spec/ledger; Important fixes RED->GREEN with whole suite; minors ledger.
+- [x] Fresh final read-only review against initial base/spec/ledger; Important fixes RED->GREEN with whole suite; minors ledger.
 - [ ] Final full verify on clean committed tree; normal branch push (no PR yet); monitor dedicated CI only.
 - [ ] Record tested SHA/tree, add tree-identical skip-ci guard, push and create DRAFT PR; attach artifact.
 - [ ] Try dedicated manual dispatch guarded head; report exact CI status/URLs and main/runtime preservation. Keep worktree.

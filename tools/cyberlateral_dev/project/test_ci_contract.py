@@ -1,5 +1,6 @@
 """Semantic checks for the dedicated offline workflow's execution boundary."""
 
+import json
 import unittest
 
 import yaml
@@ -43,6 +44,14 @@ class CiContractTests(unittest.TestCase):
         )
         artifact = steps[-1]
         self.assertEqual(artifact['with']['path'], 'tools/cyberlateral_dev/out/ci')
+
+    def test_action_pins_match_verified_commit_objects_not_annotated_tags(self):
+        records = json.loads((ROOT / 'reference/ci_action_commits.json').read_bytes())['actions']
+        uses = [step['uses'] for step in self.workflow()['jobs']['verify']['steps'] if 'uses' in step]
+        self.assertEqual(len(uses), len(records))
+        for value in uses:
+            action, pin = value.rsplit('@', 1)
+            self.assertEqual(pin, records[action]['commit_sha'], 'Action pin must be the verified commit, not a tag object')
 
 
 if __name__ == '__main__':
