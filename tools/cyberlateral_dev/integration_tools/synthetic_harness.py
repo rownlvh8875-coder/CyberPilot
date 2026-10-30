@@ -63,9 +63,14 @@ def run_harness(expected: dict) -> dict:
     fixture_sha = hashlib.sha256(canonical(fixtures)).hexdigest()
     _require(p.__version__ == expected.get('package_version') == '0.3.0', 'PACKAGE_VERSION_MISMATCH')
     _require(fixture_sha == expected.get('fixture_catalog_sha256'), 'FIXTURE_IDENTITY_MISMATCH')
-    golden = expected.get('scenarios')
-    if type(golden) is not list or not all(type(row) is dict for row in golden):
+    rows = expected.get('scenarios')
+    if type(rows) is not list:
         raise HarnessError('GOLDEN_COVERAGE_MISMATCH')
+    golden: list[dict] = []
+    for row in rows:
+        if type(row) is not dict:
+            raise HarnessError('GOLDEN_COVERAGE_MISMATCH')
+        golden.append(row)
     _require([(r.get('id'), r.get('steps')) for r in golden] == [(s.id, len(s.samples)) for s in catalog], 'GOLDEN_COVERAGE_MISMATCH')
     records, batch_results = [], []
     split_count = 0
@@ -149,10 +154,13 @@ def main(argv=None):
             'forbidden_modules_loaded': sorted(n for n in sys.modules if n.split('.')[0] in forbidden),
         }
         raw = canonical(result)
-        with (output / 'RESULTS.json').open('xb') as stream:
+        staged = output / 'RESULTS.pending'
+        with staged.open('xb') as stream:
             stream.write(raw)
         with (output / 'SHA256SUMS.txt').open('xb') as stream:
             stream.write((hashlib.sha256(raw).hexdigest() + '  RESULTS.json\n').encode())
+        # Only publish the designated result after both complete writes succeed.
+        staged.rename(output / 'RESULTS.json')
     except (OSError, ValueError, RuntimeError, ImportError) as error:
         print(f'REJECTED: {error}', file=sys.stderr)
         return 2

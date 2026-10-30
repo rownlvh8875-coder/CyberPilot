@@ -133,6 +133,21 @@ class SyntheticHarnessTests(unittest.TestCase):
             self.assertEqual(code, 2, 'Missing package location escaped the rejection boundary')
             self.assertFalse((output / 'RESULTS.json').exists())
 
+    def test_manifest_write_failure_does_not_publish_a_pass_result(self):
+        m = self.module()
+        original = Path.open
+
+        def fail_manifest(path, *args, **kwargs):
+            if path.name == 'SHA256SUMS.txt':
+                raise OSError('SYNTHETIC_MANIFEST_WRITE_FAILURE')
+            return original(path, *args, **kwargs)
+
+        with tempfile.TemporaryDirectory() as scratch:
+            output = Path(scratch) / 'out'
+            with patch.object(Path, 'open', fail_manifest), contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(m.main(['--output', str(output)]), 2)
+            self.assertFalse((output / 'RESULTS.json').exists(), 'Rejected run published a PASS result')
+
     def test_two_cli_runs_emit_exact_canonical_results_and_manifest(self):
         m = self.module()
         with tempfile.TemporaryDirectory() as scratch:
@@ -197,6 +212,52 @@ class InstalledHarnessTests(unittest.TestCase):
             second.mkdir()
             with self.assertRaisesRegex(ValueError, 'MISSING_HARNESS_ARTIFACTS'):
                 m.harness_pair_summary(first, second)
+
+    def test_identically_malformed_payloads_with_valid_checksums_reject(self):
+        m = self.verifier()
+        harness = SyntheticHarnessTests().module()
+        data = harness.run_harness(SyntheticHarnessTests().expected())
+        data['execution_environment'] = {
+            'isolated': True, 'installed_package': True, 'numpy_available': False, 'forbidden_modules_loaded': [],
+        }
+        with tempfile.TemporaryDirectory() as scratch:
+            first, second = Path(scratch) / 'one', Path(scratch) / 'two'
+            first.mkdir()
+            second.mkdir()
+            for corruption in ['missing-scenarios', 'result', 'fixture', 'golden-source', 'rejections', 'gates']:
+                bad = deepcopy(data)
+                if corruption == 'missing-scenarios':
+                    del bad['scenarios']
+                elif corruption == 'result':
+                    scenario = bad['scenarios'][0]
+                    scenario['result']['outputs'][0]['projection']['integer_command'] = 999
+                    scenario['result_sha256'] = hashlib.sha256(m.canonical(scenario['result'])).hexdigest()
+                elif corruption == 'fixture':
+                    bad['fixture_catalog_sha256'] = '0' * 64
+                elif corruption == 'golden-source':
+                    bad['golden_source_report_sha256'] = '0' * 64
+                elif corruption == 'rejections':
+                    bad['rejections'][0]['code'] = 'WRONG_REJECTION'
+                else:
+                    bad['gates']['STATIC_EVIDENCE_GATE'] = 'PASS'
+                raw = m.canonical(bad)
+                for directory in [first, second]:
+                    (directory / 'RESULTS.json').write_bytes(raw)
+                    (directory / 'SHA256SUMS.txt').write_text(hashlib.sha256(raw).hexdigest() + '  RESULTS.json\n')
+                with self.subTest(corruption=corruption), self.assertRaisesRegex(ValueError, 'HARNESS_CONTRACT'):
+                    m.harness_pair_summary(first, second)
+
+    def test_typecheck_boundary_rejects_attribute_error_despite_parent_ignores(self):
+        m = self.verifier()
+        self.assertTrue(hasattr(m, 'typecheck_project'), 'Missing explicit component typecheck boundary')
+        with tempfile.TemporaryDirectory() as scratch:
+            root = Path(scratch)
+            probe = root / 'probe.py'
+            probe.write_text('value = object()\nvalue.nonexistent_attribute\n')
+            log = root / 'probe.log'
+            with self.assertRaisesRegex(RuntimeError, 'COMMAND_FAILED'):
+                m.typecheck_project(ROOT, Path(sys.executable), [probe], log)
+            self.assertIn('unresolved-attribute', log.read_text())
 
 
 if __name__ == '__main__':

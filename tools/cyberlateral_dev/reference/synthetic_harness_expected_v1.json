@@ -5,6 +5,26 @@
   "source_report_sha256": "0a1108b2dc0d285329d3f602b3c06793947690eb787f47cba280fb6ef0bdd55e",
   "source_ci_run": "https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/41060704374",
   "fixture_catalog_sha256": "74095144882ff3977679ce92ec7dad0e7bf3f532a0cacae2cfa26f4aab0fd287",
+  "required_gates": {
+    "actual_r": null, "actual_T2": null, "actual_vehicle_scale": null,
+    "R_BUDGET": "UNRESOLVED", "STATIC_EVIDENCE_GATE": "FAIL", "SOURCE_SCHEMA_UNQUALIFIED": 6000,
+    "Candidate": "NO_GO", "Runtime": "NO_GO", "actual_activation": "NOT_ALLOWED",
+    "F70UH": "NOT_ALLOWED", "F70V": "NOT_ALLOWED", "F71": "NOT_ALLOWED",
+    "D2": "PERFORMANCE_NOT_EVALUATED", "F19": "LEGACY_UNRESOLVED", "NATIVE_EXACT_REPLAY": "NOT_PROVEN"
+  },
+  "rejection_contract": [
+    {"id": "missing-state", "exception": "FlowError", "code": "EXACT_SYNTHETIC_MODELS_REQUIRED", "state_unchanged": true},
+    {"id": "reset-mid-sequence", "exception": "FlowError", "code": "ADJACENT_MODEL_INVOCATION_REQUIRED", "state_unchanged": true},
+    {"id": "gap", "exception": "FlowError", "code": "ADJACENT_MODEL_INVOCATION_REQUIRED", "state_unchanged": true},
+    {"id": "duplicate", "exception": "FlowError", "code": "ADJACENT_MODEL_INVOCATION_REQUIRED", "state_unchanged": true},
+    {"id": "missing-history", "exception": "FlowError", "code": "SYNTHETIC_STATE_INTEGER_REQUIRED", "state_unchanged": true},
+    {"id": "missing-limits", "exception": "QuantizationError", "code": "EXACT_SYNTHETIC_SAMPLE_AND_LIMITS_REQUIRED", "state_unchanged": true},
+    {"id": "nonfinite-request", "exception": "QuantizationError", "code": "BUILTIN_FINITE_NORMALIZED_FLOAT_REQUIRED", "state_unchanged": true},
+    {"id": "exhausted-state", "exception": "FlowError", "code": "SYNTHETIC_STATE_INTEGER_REQUIRED", "state_unchanged": true},
+    {"id": "production-label", "exception": "QuantizationError", "code": "SYNTHETIC_SCOPE_REQUIRED", "state_unchanged": true},
+    {"id": "empty-batch", "exception": "SimulationError", "code": "EXPLICIT_BOUNDED_SYNTHETIC_TUPLE_REQUIRED", "state_unchanged": true},
+    {"id": "list-batch", "exception": "SimulationError", "code": "EXPLICIT_BOUNDED_SYNTHETIC_TUPLE_REQUIRED", "state_unchanged": true}
+  ],
   "scenarios": [
     {"id": "decimal-ties", "steps": 4, "result_sha256": "c461829c9e225b7ccde282e2239b27bea274cfc14a7e6f5b98276e10367103d9"},
     {"id": "ramp", "steps": 3, "result_sha256": "b03e71f9259071e3b460a8fd07ddcdfab462eff18e078c5e36ab3777623d24e3"},

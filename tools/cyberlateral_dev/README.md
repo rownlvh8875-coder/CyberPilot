@@ -35,6 +35,11 @@ hashes come from the validated R8 report: regression snapshots, NOT a new
 independent numerical oracle. Existing independent arithmetic tests still run.
 There is no external data/log input mode, state persistence protocol or production
 adapter. Invocation order is not elapsed time; actual r/T2/vehicle scale stay null.
+The acceptance gate verifies full result hashes, fixture identity, exact rejection
+records and unchanged safety gates, not just PASS labels/counts. `RESULTS.json` is
+published last after complete staged writes; failed output directories are not
+successful evidence. Ty uses explicit component `ty.toml`, without inheriting
+openpilot's generated-ABI import/attribute suppressions.
 
 The dev environment intentionally does not install the wheel-only project as an
 editable package (`tool.uv.package=false`). Test source selectors are DEV-only.

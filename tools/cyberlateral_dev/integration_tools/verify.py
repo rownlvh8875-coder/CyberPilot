@@ -128,6 +128,28 @@ def harness_pair_summary(first: Path, second: Path) -> dict:
     )
     if not valid:
         raise ValueError('HARNESS_CONTRACT_MISMATCH')
+    golden = json.loads((Path(__file__).resolve().parents[1] / 'reference/synthetic_harness_expected_v1.json').read_bytes())
+    identities = {
+        'schema_version': 1, 'contract_id': 'F70UGZ_R9_FIXED_SYNTHETIC_CALLER_V1',
+        'fixture_catalog_sha256': golden['fixture_catalog_sha256'],
+        'golden_source_report_sha256': golden['source_report_sha256'],
+        'time_semantics': 'INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME',
+        'gates': golden['required_gates'], 'rejections': golden['rejection_contract'],
+    }
+    if any(canonical(record.get(name)) != canonical(value) for name, value in identities.items()):
+        raise ValueError('HARNESS_CONTRACT_IDENTITY_GATES_OR_REJECTIONS')
+    scenarios = record.get('scenarios')
+    if type(scenarios) is not list or len(scenarios) != len(golden['scenarios']):
+        raise ValueError('HARNESS_CONTRACT_SCENARIO_COVERAGE')
+    for item, expected in zip(scenarios, golden['scenarios'], strict=True):
+        if type(item) is not dict:
+            raise ValueError('HARNESS_CONTRACT_SCENARIO_RECORD')
+        payload = item.get('result')
+        if type(payload) is not dict:
+            raise ValueError('HARNESS_CONTRACT_SCENARIO_RECORD')
+        identity = {name: item.get(name) for name in ['id', 'steps', 'result_sha256']}
+        if canonical(identity) != canonical(expected) or sha(canonical(payload)) != expected['result_sha256']:
+            raise ValueError('HARNESS_CONTRACT_SCENARIO_GOLDEN_MISMATCH')
     if (first / 'SHA256SUMS.txt').read_bytes() != (sha(raw) + '  RESULTS.json\n').encode():
         raise ValueError('HARNESS_MANIFEST_MISMATCH')
     return {
@@ -143,6 +165,10 @@ def verify_installed_harness(root: Path, python: Path, output: Path, cwd: Path) 
         _run([python, '-I', '-B', root / 'integration_tools/synthetic_harness.py', '--output', output / name],
              output / (name + '.log'), cwd)
     return harness_pair_summary(output / 'harness_one', output / 'harness_two')
+
+
+def typecheck_project(root: Path, python: Path, paths, log: Path) -> None:
+    _run([python.parent / 'ty', 'check', '--config-file', root / 'ty.toml', '--python', python, *paths], log, root)
 
 
 def _runtime():
@@ -173,7 +199,7 @@ def verify_project(root: Path, output: Path) -> dict:
     tools = python.parent
     own = ['project', 'src', 'build_backend.py', 'dev.py', 'integration_tools', 'tools']
     _run([tools / 'ruff', 'check', *own], output / 'ruff.log', root)
-    _run([tools / 'ty', 'check', '--python', python, *own], output / 'ty.log', root)
+    typecheck_project(root, python, own, output / 'ty.log')
     _run([tools / 'codespell', 'README.md', 'docs', *own], output / 'codespell.log', root)
     compiled = []
     for directory in ['project', 'src', 'integration_tools', 'tools']:
