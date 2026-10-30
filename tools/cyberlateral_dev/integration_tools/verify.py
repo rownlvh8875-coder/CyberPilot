@@ -167,6 +167,68 @@ def verify_installed_harness(root: Path, python: Path, output: Path, cwd: Path) 
     return harness_pair_summary(output / 'harness_one', output / 'harness_two')
 
 
+def bridge_pair_summary(first: Path, second: Path) -> dict:
+    hashes = _compare(first, second)
+    if set(hashes) != {'RESULTS.json', 'SHA256SUMS.txt'}:
+        raise ValueError('MISSING_BRIDGE_ARTIFACTS')
+    raw = (first / 'RESULTS.json').read_bytes()
+    record = json.loads(raw)
+    if type(record) is not dict or canonical(record) != raw:
+        raise ValueError('BRIDGE_CONTRACT_NONCANONICAL_RECORD')
+    root = Path(__file__).resolve().parents[1]
+    golden = json.loads((root / 'reference/synthetic_harness_expected_v1.json').read_bytes())
+    source = json.loads((root / 'docs/OPENPILOT_DEV_BRIDGE_SOURCE_MAP.json').read_bytes())
+    identities = {
+        'schema_version': 1, 'contract_id': source['contract_id'], 'profile_id': source['profile_id'], 'source_set_id': source['source_set_id'],
+        'status': 'F70UGZ_R12_FIXED_SYNTHETIC_DEV_BRIDGE_PASS',
+        'scope': 'FIXED_SYNTHETIC_DEV_GLUE_REGRESSION_NOT_PRODUCTION_OR_INDEPENDENT_ORACLE',
+        'package_version': '0.3.0', 'fixture_catalog_sha256': golden['fixture_catalog_sha256'],
+        'scenario_count': 7, 'total_steps': 112, 'time_semantics': 'INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME',
+        'work_semantics': 'ONE_NEW_CURRENT_TRANSITION_PLUS_TRUSTED_PREFIX_PER_ADVANCE', 'gates': golden['required_gates'],
+        'execution_environment': {'isolated': True, 'installed_package': True, 'numpy_available': False, 'forbidden_modules_loaded': []},
+    }
+    if set(record) != set(identities) | {'scenarios'} or any(canonical(record.get(k)) != canonical(v) for k, v in identities.items()):
+        raise ValueError('BRIDGE_CONTRACT_IDENTITY_GATES_OR_ENVIRONMENT')
+    rows = record.get('scenarios')
+    if type(rows) is not list or len(rows) != len(golden['scenarios']):
+        raise ValueError('BRIDGE_CONTRACT_SCENARIO_COVERAGE')
+    for raw_row, expected in zip(rows, golden['scenarios'], strict=True):
+        if type(raw_row) is not dict:
+            raise ValueError('BRIDGE_CONTRACT_SCENARIO_RECORD')
+        row: dict = raw_row
+        if set(row) != {'id', 'sequence_id', 'steps', 'result', 'result_sha256', 'final_session'}:
+            raise ValueError('BRIDGE_CONTRACT_SCENARIO_RECORD')
+        identity = {k: row.get(k) for k in ['id', 'steps', 'result_sha256']}
+        raw_payload = row.get('result')
+        if type(raw_payload) is not dict:
+            raise ValueError('BRIDGE_CONTRACT_SCENARIO_RECORD')
+        payload: dict = raw_payload
+        if canonical(identity) != canonical(expected) or sha(canonical(payload)) != expected['result_sha256']:
+            raise ValueError('BRIDGE_CONTRACT_SCENARIO_GOLDEN_MISMATCH')
+        sequence_id = 'probe_' + expected['id']
+        session = {
+            'schema_version': 1, 'scope': 'SYNTHETIC_DEVELOPMENT_ONLY',
+            'profile_id': source['profile_id'], 'source_set_id': source['source_set_id'],
+            'fixture_id': expected['id'], 'sequence_id': sequence_id, 'next_offset': expected['steps'], 'model_state': payload['next_state'],
+        }
+        if row.get('sequence_id') != sequence_id or canonical(row.get('final_session')) != canonical(session):
+            raise ValueError('BRIDGE_CONTRACT_FINAL_SESSION')
+    if (first / 'SHA256SUMS.txt').read_bytes() != (sha(raw) + '  RESULTS.json\n').encode():
+        raise ValueError('BRIDGE_MANIFEST_MISMATCH')
+    return {
+        'status': record['status'], 'byte_identical': True, 'scenario_count': record['scenario_count'],
+        'total_steps': record['total_steps'], 'file_hashes': hashes,
+        'scope': 'installed fixed-fixture source-shaped glue only; prefix work is not an independent numerical oracle',
+    }
+
+
+def verify_installed_bridge(root: Path, python: Path, output: Path, cwd: Path) -> dict:
+    for name in ['bridge_one', 'bridge_two']:
+        _run([python, '-I', '-B', root / 'integration_tools/dev_bridge_probe.py', '--output', output / name],
+             output / (name + '.log'), cwd)
+    return bridge_pair_summary(output / 'bridge_one', output / 'bridge_two')
+
+
 def typecheck_project(root: Path, python: Path, paths, log: Path) -> None:
     _run([python.parent / 'ty', 'check', '--config-file', root / 'ty.toml', '--python', python, *paths], log, root)
 
@@ -233,6 +295,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
 """
         _run([isolated, '-I', '-B', '-c', code], output / 'installed.log', temp)
         harness = verify_installed_harness(root, isolated, output, temp)
+        bridge = verify_installed_bridge(root, isolated, output, temp)
     for name in ['numeric_one', 'numeric_two']:
         _run(
             [
@@ -254,7 +317,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
     numeric_hashes = _compare(output / 'numeric_one', output / 'numeric_two')
     source = json.loads((output / 'report_one/simulation.json').read_bytes())
     summary = {
-        'status': 'F70UGZ_R9_SYNTHETIC_INTEGRATION_HARNESS_PASS',
+        'status': 'F70UGZ_R12_SYNTHETIC_DEV_BRIDGE_REFERENCE_PASS',
         'runtime': runtime,
         'imports': imported,
         'tests': test_count((output / 'unittest.log').read_text()),
@@ -264,6 +327,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
         'report_file_hashes': report_hashes,
         'numeric_file_hashes': numeric_hashes,
         'synthetic_harness': harness,
+        'synthetic_dev_bridge': bridge,
         'report_and_numeric_pairs_byte_identical': True,
         'source_gates': source['gates'],
         'Controller_execution': 0,

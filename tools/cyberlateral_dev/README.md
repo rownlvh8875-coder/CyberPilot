@@ -51,10 +51,28 @@ the package, wheel, fixed fixtures and R9 harness contract remain unchanged.
 
 R11 adds a [source-backed DEV bridge design](docs/OPENPILOT_DEV_BRIDGE_DESIGN.md),
 [pinned source map](docs/OPENPILOT_DEV_BRIDGE_SOURCE_MAP.json) and
-[future implementation plan](docs/OPENPILOT_DEV_BRIDGE_IMPLEMENTATION_PLAN.md).
-This proposes typed, fixed-fixture-only source-shaped records, not a live CC/CS
-reader, runtime hook or F61 adapter. No bridge implementation is included yet;
-state, binary64/Float32, time and vehicle-policy boundaries are kept explicit.
+[implementation plan](docs/OPENPILOT_DEV_BRIDGE_IMPLEMENTATION_PLAN.md).
+Those documents preserve the historical R11 design-only state; R12 implements
+that design below, without making it a live CC/CS reader, runtime hook or F61 adapter.
+
+R12 adds the [fixed-fixture DEV bridge](docs/DEV_BRIDGE_R12.md) in
+`integration_tools/dev_bridge.py`. Frozen snapshot/session/result records preserve
+source-shaped names, exact builtin binary64 bits and explicit caller state.
+`fixture_snapshot(id, offset, sequence_id)` and `begin_sequence(id, sequence_id)`
+only select existing fixed fixtures; `advance(snapshot, session)` rejects arbitrary
+objects/metadata/domains, out-of-order calls, payload changes and incorrect state.
+Trusted-prefix validation is additional model work, NOT an independent oracle.
+No source/message reader, arbitrary-input mode, timestamp, dt, r or policy input
+exists. A deterministic retry of the original immutable pair is allowed; replay
+prevention, persistence and concurrency management are not provided.
+
+The one-command gate now also runs `dev_bridge_probe.py` twice under -I/-B in the
+empty installed-wheel environment. `bridge_one/RESULTS.json` and `bridge_two`
+contain all7 scenarios/112 NEW current transitions, complete diagnostics, final
+sessions, source-profile labels and unchanged gates. Both outputs must byte-match;
+the verifier separately validates every frozen full-result hash, session, gate and
+checksum. Profiles/labels are not input provenance authentication. The runtime
+wheel remains the sealed0.3.0 artifact with no DEV bridge code or dependencies.
 
 The dev environment intentionally does not install the wheel-only project as an
 editable package (`tool.uv.package=false`). Test source selectors are DEV-only.
