@@ -43,6 +43,19 @@ b7eaadea476113bcd5e56b6526382dc468773f9ec69327f4a6c6fc31cff2fe74.
 Process-specific paths/runtime receipts are separate; only observations are
 claimed byte-identical. Receipts identify observed loaded files, not OS trust.
 
+Independent final review identified one Important preflight gap: -B still reads
+preexisting cached bytecode, so verified .py could differ from executed .pyc.
+Two regression tests first reproduced five failing assertions, then passed after
+rejecting relevant caches and extra package files/symlinks before native import.
+Fresh environments remain required; caches are never deleted as a fallback.
+There were no Critical or Minor review findings. No second review was used.
+
+Full component tests:263 PASS (inherited250 +13 preflight regressions).
+Separately invoked observation assertions:6 PASS. Component Ruff/Ty/Codespell,
+99 own-code compilations,77 imported-file checks and sealed wheel reproduction
+PASS; explicit native-tool Ruff/Ty/Codespell and3 own-code compilations PASS.
+These are development checks, not full openpilot tests or numerical performance.
+
 ## Qualification limits and next work
 
 Q01 artifact/process identities observed; Q02 generic schema types/owned read

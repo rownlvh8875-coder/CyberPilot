@@ -27,9 +27,11 @@ verify all installed wheel-member bytes, including extension/bundled libraries,
 before import (installer-rewritten RECORD is checked for full coverage/hash/size
 instead of byte equality; its actual hash and the three metadata additions plus
 the exact generated capnpc-cython wrapper hash are retained; that wrapper is NOT
-run). Reject symlinked/missing/
-mutated installed members. Resolve only
-car.capnp and wheel capnp/c++.capnp into a private include tree, preserving bytes.
+run). Reject symlinked/missing/mutated installed members. Preexisting .pyc caches
+and extra files/symlinks in wheel-owned package/metadata directories reject BEFORE
+native import. -B alone does not block bytecode reads. The tool never deletes
+caches as a fallback. Resolve only car.capnp and wheel capnp/c++.capnp into a
+private include tree, preserving bytes.
 Record Python binary, imported file and Linux mapped-library hashes after loading.
 This is an observed process receipt, not an authenticated OS image, portable ABI
 promise, malicious-interpreter defense or complete system attestation.

@@ -5,6 +5,7 @@ import csv
 import hashlib
 import importlib
 import io
+import py_compile
 import sys
 import tempfile
 import unittest
@@ -66,6 +67,42 @@ class NativeQualificationTests(unittest.TestCase):
                 w.verify_installed(wheel, site)
             member.unlink()
             with self.assertRaisesRegex(ValueError, 'INSTALLED_IDENTITY'):
+                w.verify_installed(wheel, site)
+
+    def test_unchecked_bytecode_cannot_substitute_verified_source(self):
+        w = self.worker()
+        with tempfile.TemporaryDirectory() as scratch:
+            root = Path(scratch)
+            site, wheel = root / 'site', root / 'fixture.whl'
+            site.mkdir()
+            source = site / 'r19_cache_fixture.py'
+            source.write_bytes(b"result = 'different cached bytes'\n")
+            py_compile.compile(str(source), doraise=True, invalidation_mode=py_compile.PycInvalidationMode.UNCHECKED_HASH)
+            approved = b"result = 'approved'\n"
+            source.write_bytes(approved)
+            with zipfile.ZipFile(wheel, 'w') as archive:
+                archive.writestr(source.name, approved)
+            with self.assertRaisesRegex(ValueError, 'INSTALLED_UNEXPECTED'):
+                w.verify_installed(wheel, site)
+
+    def test_extra_package_module_extension_or_symlink_rejects(self):
+        w = self.worker()
+        with tempfile.TemporaryDirectory() as scratch:
+            root = Path(scratch)
+            site, wheel = root / 'site', root / 'fixture.whl'
+            package = site / 'capnp'
+            package.mkdir(parents=True)
+            (package / '__init__.py').write_bytes(b'approved')
+            with zipfile.ZipFile(wheel, 'w') as archive:
+                archive.writestr('capnp/__init__.py', b'approved')
+            for name in ['extra.py', 'extra.cpython-312-x86_64-linux-gnu.so', 'extra.pyc']:
+                extra = package / name
+                extra.write_bytes(b'not wheel payload')
+                with self.subTest(name=name), self.assertRaisesRegex(ValueError, 'INSTALLED_UNEXPECTED'):
+                    w.verify_installed(wheel, site)
+                extra.unlink()
+            (package / 'unexpected').symlink_to(root, target_is_directory=True)
+            with self.assertRaisesRegex(ValueError, 'INSTALLED_UNEXPECTED'):
                 w.verify_installed(wheel, site)
 
     def test_installed_symlink_or_unsafe_wheel_path_rejects(self):

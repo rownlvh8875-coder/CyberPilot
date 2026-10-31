@@ -63,6 +63,24 @@ def verify_installed(wheel: Path, site: Path) -> dict:
             hashes[name] = sha(path.read_bytes())
     for record in [name for name in hashes if name.endswith('.dist-info/RECORD')]:
         hashes.update(_verify_record(site, record, set(hashes)))
+    # -B stops writes, NOT reads. Reject caches and extra importable package
+    # files rather than attributing executed bytecode to a verified source path.
+    for name in hashes:
+        path = site / name
+        if name.endswith('.py'):
+            cache = path.parent / '__pycache__'
+            if (cache.is_symlink() or any(cache.glob(path.stem + '.*.pyc'))
+                    or path.with_suffix('.pyc').exists() or path.with_suffix('.pyc').is_symlink()):
+                raise ValueError('INSTALLED_UNEXPECTED_BYTECODE:' + name)
+    roots = {PurePosixPath(name).parts[0] for name in hashes if '/' in name and not name.startswith('../')}
+    for name in roots:
+        directory = site / name
+        if not directory.is_dir():
+            continue
+        for path in directory.rglob('*'):
+            relative = path.relative_to(site).as_posix()
+            if path.is_symlink() or (path.is_file() and relative not in hashes):
+                raise ValueError('INSTALLED_UNEXPECTED_FILE:' + relative)
     return hashes
 
 
