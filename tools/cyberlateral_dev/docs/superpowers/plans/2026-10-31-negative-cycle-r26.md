@@ -54,7 +54,7 @@ qualify/observe(...,negative_cycle=False),--negative-cycle, R26 full99 profile.
   wheel unchanged; native own compilations18; all checks PASS.
 - [x] Fresh native env, R26 two workers and independent7 literal output checks;
   R19–R25 controls7 exact observation hashes+46 independent assertions PASS.
-- [ ] Commit; archive source+workflow/new dev+native env; full gate+native repeat.
+- [x] Commit; archive source+workflow/new dev+native env; full gate+native repeat.
   Expected:observations/SUMMARY byte-identical; no receipt/OS equality claims.
 - [ ] One fresh whole-branch review; one blocker RED/GREEN fix pass only; ledger
   all decisions and deferred minors. Docs-only final commit, exact-head pure CI,

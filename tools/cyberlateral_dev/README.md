@@ -58,6 +58,7 @@ explicitly selected with --negative-cycle:99 preregistered steps qualify the
 89/90/91/92-call request boundary, below-negative85 reset and nonzero inactive
 reset/reactivation while retaining fractional driver trace kinds. It does not
 broaden accepted external inputs, infer elapsed time or authorize vehicle use.
+See [R26 results and reproduction](docs/NEGATIVE_CYCLE_R26_RESULTS.md).
 
 ## One-command verification
 
