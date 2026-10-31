@@ -110,7 +110,7 @@ def write_audit(first: Path, second: Path, output: Path) -> None:
     (output / 'AUDIT.pending').rename(output / 'AUDIT.json')
 
 
-def audit_pair_summary(first_report: Path, second_report: Path, first_source: Path, second_source: Path) -> dict:
+def read_audit_pair(first_report: Path, second_report: Path, first_source: Path, second_source: Path) -> tuple[dict, dict[str, bytes], dict]:
     record, source_summary = read_lifecycle_pair(first_source, second_source)
     try:
         one = {p.name: p.read_bytes() for p in first_report.iterdir()}
@@ -124,10 +124,15 @@ def audit_pair_summary(first_report: Path, second_report: Path, first_source: Pa
     expected['SHA256SUMS.txt'] = _manifest(expected)
     if one != expected:
         raise ValueError('AUDIT_PAYLOAD_SOURCE_ENVIRONMENT_OR_MANIFEST_MISMATCH')
-    return {'status': 'F70UGZ_R17_FIXED_HANDOFF_AUDIT_PASS', 'byte_identical': True, 'scenario_count': 7, 'row_count': 112, 'model_steps': 0,
+    summary = {'status': 'F70UGZ_R17_FIXED_HANDOFF_AUDIT_PASS', 'byte_identical': True, 'scenario_count': 7, 'row_count': 112, 'model_steps': 0,
             'input_lifecycle_sha256': source_summary['file_hashes']['RESULTS.json'],
             'file_hashes': {name: hashlib.sha256(raw).hexdigest() for name, raw in sorted(one.items())},
             'scope': 'read-only fixed evidence view; shared projection acceptance is not an independent mapping or numerical oracle'}
+    return record, one, summary
+
+
+def audit_pair_summary(first_report: Path, second_report: Path, first_source: Path, second_source: Path) -> dict:
+    return read_audit_pair(first_report, second_report, first_source, second_source)[2]
 
 
 def main(argv=None):

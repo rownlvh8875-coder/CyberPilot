@@ -14,6 +14,7 @@ import tempfile
 import zipfile
 from pathlib import Path, PurePosixPath
 
+from .audit_bundle import bundle_pair_summary
 from .handoff_audit import audit_pair_summary
 from .handoff_validation import handoff_pair_summary
 from .lifecycle_validation import lifecycle_pair_summary
@@ -294,6 +295,21 @@ def verify_installed_audit(root: Path, python: Path, output: Path, cwd: Path) ->
     return audit_pair_summary(output / 'audit_one', output / 'audit_two', output / 'lifecycle_one', output / 'lifecycle_two')
 
 
+def verify_installed_bundle(root: Path, python: Path, output: Path, cwd: Path) -> dict:
+    script = root / 'integration_tools/audit_bundle.py'
+    for name in ['bundle_one', 'bundle_two']:
+        _run([python, '-I', '-B', script, 'export', '--evidence', output, '--output', output / name], output / (name + '.log'), cwd)
+    summary = bundle_pair_summary(output / 'bundle_one', output / 'bundle_two')
+    for name in ['bundle_one', 'bundle_two']:
+        raw = _run([python, '-I', '-B', script, 'verify', '--bundle', output / name / 'F70UGZ_R18_AUDIT_BUNDLE.zip'],
+                   output / (name + '.verify.log'), cwd)
+        expected = {'result': json.loads((output / name / 'RESULTS.json').read_bytes()),
+                    'execution_environment': {'isolated': True, 'forbidden_modules_loaded': []}}
+        if canonical(json.loads(raw)) != canonical(expected):
+            raise ValueError('BUNDLE_INSTALLED_VERIFY_MISMATCH')
+    return summary
+
+
 def typecheck_project(root: Path, python: Path, paths, log: Path) -> None:
     _run([python.parent / 'ty', 'check', '--config-file', root / 'ty.toml', '--python', python, *paths], log, root)
 
@@ -365,6 +381,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
         handoff = verify_installed_handoff(root, isolated, output, temp)
         lifecycle = verify_installed_lifecycle(root, isolated, output, temp)
         audit = verify_installed_audit(root, isolated, output, temp)
+        bundle = verify_installed_bundle(root, isolated, output, temp)
     for name in ['numeric_one', 'numeric_two']:
         _run(
             [
@@ -386,7 +403,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
     numeric_hashes = _compare(output / 'numeric_one', output / 'numeric_two')
     source = json.loads((output / 'report_one/simulation.json').read_bytes())
     summary = {
-        'status': 'F70UGZ_R17_FIXED_HANDOFF_AUDIT_REFERENCE_PASS',
+        'status': 'F70UGZ_R18_FIXED_AUDIT_BUNDLE_REFERENCE_PASS',
         'runtime': runtime,
         'imports': imported,
         'tests': test_count((output / 'unittest.log').read_text()),
@@ -401,6 +418,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
         'synthetic_message_handoff': handoff,
         'synthetic_handoff_lifecycle': lifecycle,
         'synthetic_handoff_audit': audit,
+        'synthetic_audit_bundle': bundle,
         'report_and_numeric_pairs_byte_identical': True,
         'source_gates': source['gates'],
         'Controller_execution': 0,

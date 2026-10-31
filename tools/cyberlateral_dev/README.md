@@ -131,6 +131,25 @@ model run or an independent mapping/numerical oracle. Complete table mappings
 are tested against raw source fields; paired artifacts are checked in full.
 `AUDIT.json` is published last, after all report/checksum writes succeed.
 
+R18 adds a [portable data-only bundle](docs/AUDIT_BUNDLE_R18_DESIGN.md):
+`bundle_one/F70UGZ_R18_AUDIT_BUNDLE.zip` contains exactly17 files (R16/R17 pair
+data14 plus metadata/Korean README/16-entry Manifest). No executable code/wheel
+or installer is included. Keep the ZIP and its external .sha256 for notebook
+storage. Validation needs this repository's trusted tools, not a bundled signature:
+
+```bash
+python -I -B tools/cyberlateral_dev/integration_tools/audit_bundle.py verify --bundle YOUR_ZIP_PATH
+```
+
+The verifier checks exact names/CRC/hashes/frozen contracts and canonical ZIP
+bytes, with8MiB archive/total and4MiB member limits. It never uses extractall or
+runs archive members; only hardcoded data enters private validation temps. Stored
+ZIP/sorted paths/regular modes/fixed1980 format time make full ZIP bytes repeatable;
+that time is not an observed sample/creation/vehicle time. Two isolated exports
+and two isolated read-only verifications add0 model/extractor/F61/r/dt work.
+The final ZIP is published last after receipts. Source/goldens/runtime/gates
+remain unchanged; this is consistency, not origin authentication or activation.
+
 The dev environment intentionally does not install the wheel-only project as an
 editable package (`tool.uv.package=false`). Test source selectors are DEV-only.
 The actual package installation is verified in an isolated child environment.
