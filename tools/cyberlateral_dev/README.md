@@ -5,6 +5,16 @@ byte-for-byte from the verified R7 evidence. It is now maintained as a standalon
 development project in CyberPilot. It is NOT an openpilot controller, vehicle
 installation, physical simulator, F61 invocation or safety/performance approval.
 
+Current developer entry point: [R30 Korean acceptance and quickstart guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md),
+with a [source-backed capability inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
+It distinguishes bounded offline acceptance from whole-product completion or
+vehicle readiness. Historical stage descriptions below retain their original scope.
+
+R28 provides a [controlled internally constructed synthetic native adapter](docs/NATIVE_ADAPTER_R28.md).
+R29 connects it to the unchanged model for [two fixed state-carry profiles](docs/ADAPTER_SEQUENCE_R29.md).
+Neither is a generic external message reader, authenticated vehicle history or
+F61/production activation. Native work remains separate opt-in; default CI is pure.
+
 R19 adds an explicitly opt-in [native-message observation experiment](
 docs/NATIVE_MESSAGE_QUALIFICATION_R19.md), not a native adapter. It uses a separate
 pycapnp environment and only internally constructed synthetic messages. The
