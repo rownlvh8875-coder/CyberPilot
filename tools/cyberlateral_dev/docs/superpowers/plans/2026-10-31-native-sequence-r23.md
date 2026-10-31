@@ -36,14 +36,14 @@ project/test_native_coverage.py. Existing public/R22 files remain untouched.
 **Interfaces:** expected_input(index),expected_output(index); consume_fixed_step
 (index,sample,state); validate_coverage(observations,mode)->int per spec.
 
-- [ ] Commit spec/plan/literals first. SHA receipt retained.
-- [ ] RED missing-feature tests for four outputs2,-2,0,2/full states/clips/trace;
+- [x] Commit spec/plan/literals first. SHA receipt retained.
+- [x] RED missing-feature tests for four outputs2,-2,0,2/full states/clips/trace;
   state reset/crossed settings/signed-zero mismatch before step; full output
   mutation/reference identity/copy isolation; no simulation/initialization;
   coverage missing/extra/duplicate/reorder/wrong flags/count/bool rejection.
-- [ ] Implement layout-only literals, exact input/output single-step gate and
+- [x] Implement layout-only literals, exact input/output single-step gate and
   stdlib-only coverage validator. R22 five accepted/three rejects; R23 ordered4.
-- [ ] Targeted tests + full dev.py gate/static checks PASS; commit and ledger.
+- [x] Targeted tests + full dev.py gate/static checks PASS; commit and ledger.
 
 ### Task 2: Native sequence integration and handoff
 
