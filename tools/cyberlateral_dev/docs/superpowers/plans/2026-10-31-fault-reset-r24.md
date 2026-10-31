@@ -62,7 +62,7 @@ README/results docs.
   producer and opt-in mode. Targeted tests/static checks PASS.
 - [x] Full pure gate; new native env/two workers, independent literal output checks;
   R19–R23 observation hash controls, explicit native static/compile.
-- [ ] Fresh archive/new dev+native environment reproduces observations/SUMMARY;
+- [x] Fresh archive/new dev+native environment reproduces observations/SUMMARY;
   retain environment receipts without equality/attestation claims. Commit/ledger.
 - [ ] Fresh whole-branch read-only review; one RED/GREEN fix pass only for blockers,
   minors/rulings ledgered. Feature Draft/exact-head pure CI/94 downloaded hashes.

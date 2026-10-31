@@ -19,6 +19,13 @@ Native static/14 compilations and7 independent literal output checks PASS.
 Reviewer directly ran v1's20+6 tests and did NOT re-review or approve v2; the
 single fix pass is executor-verified, with no remaining deferred minor from review.
 
+Fresh archived627b564b7 source/new dev+native environment also passes359 tests,
+122 own compilations and7 literal observation assertions. Final v2 observations
+and SUMMARY are byte-identical to primary; environment receipts/manifests and
+complete pure SUMMARY are not equality/attestation claims. Current reproduction
+command below selects v2 and its final hashes, not historical v1. Historical v1
+source is preserved at37142f883d4f2f47035c37494b208c4a5f59a5aa.
+
 Final v2 OBSERVATIONS SHA:
 b13ff35e6fda538af2a437309384109d5e87adf8cc6c3f5a6edba44c4626287d.
 Final v2 SUMMARY SHA:
