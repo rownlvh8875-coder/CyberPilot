@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+from copy import deepcopy
 from pathlib import Path
 
 FIXTURES = Path(__file__).resolve().parent / 'fixtures/r31_report'
@@ -39,3 +40,44 @@ def edit_json(root, name, change):
     change(value)
     (root / name).write_bytes(canonical(value))
     rehash(root)
+
+
+def layout_bundle(root, count=1, negative_zero=False):
+    """Literal zero-command formatting fixture, NOT a recorded model execution."""
+    from integration_tools.scenario_input import parse_scenario
+    from integration_tools.scenario_output import render_outputs
+
+    write_bundle(root)
+    original = json.loads((root / 'RESULTS.json').read_bytes())
+    receipt = json.loads((root / 'RECEIPT.json').read_bytes())
+    zero = -0.0 if negative_zero else 0.0
+    zero_hex = '-0x0.0p+0' if negative_zero else '0x0.0p+0'
+    limits = json.loads((root / 'INPUT.json').read_bytes())['limits']
+    raw = canonical({'schema_version': 1, 'scope': 'SYNTHETIC_ONLY', 'scenario_id': 'R32_layout_fixture',
+                     'limits': limits, 'initial_state': {'index': 0, 'previous_requested': None, 'previous_applied': 0, 'angle_counter': 0},
+                     'samples': [{'index': i, 'request': zero, 'driver': zero, 'angle_deg': zero, 'lat_active': True} for i in range(count)]})
+    spec = parse_scenario(raw)
+    rows = []
+    for i in range(count):
+        row = deepcopy(original['rows'][0])
+        row['prepared']['sample'].update(index=i, request_hex=zero_hex, driver_hex=zero_hex, angle_hex=zero_hex)
+        row['prepared']['state'].update(index=i, previous_requested=None if i == 0 else 0)
+        output = row['model_output']
+        state = {'index': i + 1, 'previous_requested': 0, 'previous_applied': 0, 'angle_counter': 0}
+        output['next_state'] = dict(state)
+        output['projection'].update(integer_command=0, normalized_expression=0.0, normalized_expression_hex='0x0.0p+0')
+        for field in ['torque_float32', 'torque_output_can_float32']:
+            output['projection'][field] = {'bits_hex': '00000000', 'value_hex': '0x0.0p+0'}
+        output['trace']['quantization'].update(integer_command=0, rounded_integer=0, request_hex=zero_hex, product_hex=zero_hex)
+        down = output['trace']['downstream']
+        down.update(limited_command=0, final_command=0, next_state=dict(state))
+        down['driver_clip']['x']['value'] = 0
+        down['driver_clip']['result'] = {'kind': 'numpy.int64', 'value': 0}
+        down['rate_clip']['x'] = {'kind': 'numpy.int64', 'value': 0}
+        down['rate_clip']['result'] = {'kind': 'numpy.int64', 'value': 0}
+        rows.append(row)
+    receipt['input_raw_sha256'] = spec.raw_sha256
+    files = render_outputs(spec, {'model_steps': count, 'rows': rows, 'final_state': rows[-1]['model_output']['next_state']}, original['identity'], receipt)
+    for name, value in files.items():
+        (root / name).write_bytes(value)
+    return root

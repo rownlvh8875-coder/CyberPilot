@@ -99,6 +99,15 @@ class ScenarioReportDataTests(unittest.TestCase):
                 with self.assertRaises(m.ReportError):
                     m.read_report(source)
 
+    def test_recorded_clip_input_aliases_must_agree(self):
+        m = self.module()
+        for clip in ['driver_clip', 'rate_clip']:
+            with tempfile.TemporaryDirectory() as scratch:
+                source = write_bundle(Path(scratch) / 'input')
+                edit_json(source, 'RESULTS.json', lambda x, clip=clip: x['rows'][0]['model_output']['trace']['downstream'][clip]['x'].update(value=99))
+                with self.assertRaises(m.ReportError):
+                    m.read_report(source)
+
     def test_canonical_json_duplicates_nonfinite_deep_reject_even_rehashed(self):
         m = self.module()
         for mode in ['space', 'duplicate', 'nonfinite', 'deep', 'utf8']:

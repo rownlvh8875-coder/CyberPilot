@@ -232,6 +232,8 @@ def read_report(path: Path) -> dict:
         _same(quant['scale'], spec.limits.STEER_MAX)
         _same(output['projection']['scale'], spec.limits.STEER_MAX)
         _same(down['limiter_previous'], state['previous_applied'])
+        _same(down['driver_clip']['x'], {'kind': 'python.int', 'value': quant['integer_command']})
+        _same(down['rate_clip']['x'], down['driver_clip']['result'])
         next_state = output['next_state']
         _same(next_state['index'], sample.index + 1)
         _same(next_state['previous_requested'], quant['integer_command'])

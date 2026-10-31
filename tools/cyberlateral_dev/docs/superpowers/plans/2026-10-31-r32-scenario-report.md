@@ -66,14 +66,14 @@ No model imports. Task2 renders only this internal view, not arbitrary dicts.
 `run_report(input_path:Path,output_path:Path)->dict` consumes Task1, emits4 files
 index.html/VIEW.json/RECEIPT.json/SHA256SUMS.txt, index last.
 
-- [ ] Write failing tests for two graphs/table/counts, exact literal stages,
+- [x] Write failing tests for two graphs/table/counts, exact literal stages,
   resumed/single/flat/signed zero, escaping/CSP/no external paths, source untouched,
   moved-bundle portable equality/receipt difference, invalid-last rejection,
   existing/dangling/missing-parent/nested output guards, IO fault/late collision,
   CLI argument behavior and fresh-process import tripwire.
-- [ ] Run `uv run --locked python -B -m unittest discover -s project -p test_scenario_report_cli.py -v`;
+- [x] Run `uv run --locked python -B -m unittest discover -s project -p test_scenario_report_cli.py -v`;
   Expected: missing CLI FAIL. Implement data-only renderer/publication/bootstrap.
-- [ ] Both new test files and targeted static:PASS; commit `[skip ci]`.
+- [x] Both new test files and targeted static:PASS; commit `[skip ci]`.
 
 ### Task 3: usage, complete checks and handoff
 
