@@ -1,5 +1,11 @@
 # R24 Fault/Reset Boundary Implementation Plan
 
+Review amendment:preserve96-call v1 unchanged; final preregistered v2 extends the
+identical prefix with96/97/98 active/inactive/active to reset carried counter1.
+Final counts99 per worker/396 four workers. One Important fix pass adds a RED
+test for nonzero inactive reset, updates only closed v2 profile, then reruns the
+whole gate/native/fresh-env checks. No re-review or vehicle scope expansion.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Qualify a preregistered96-step synthetic fault/reset trace and reject

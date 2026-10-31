@@ -1,5 +1,28 @@
 # R24 — fixed synthetic fault/reset boundaries and claim validation
 
+## Prospective review amendment v2 (before new model execution)
+
+The original96-call trace reaches inactive index93 after below85 index92 already
+sets counter0. It proves final-command zero/carry, NOT reset of a nonzero angle
+counter. Final review identified this Important coverage/claim gap. Preserve v1
+literal bytes/hash and all native evidence; never tune its outputs.
+
+Preregister reference/r24_fault_expected_v2.json, revision2, with exactly the same
+first96 records plus THREE source-derived calls, before any v2 execution:
+
+| index | previous state(index,requested,applied,counter) | angle/active | limited/final | next state | request |
+| --- | --- | --- | --- | --- | --- |
+| 96 | (96,4,4,0) | 85/true | 4/4 | (97,4,4,1) | true |
+| 97 | (97,4,4,1) | 85/false | 4/0 | (98,4,0,0) | false |
+| 98 | (98,4,0,0) | 85/true | 2/2 | (99,4,2,1) | true |
+
+This carries a verified nonzero counter1 into inactivity and observes its reset0,
+then reactivation counter1 with prior final0. No arbitrary input or new physical
+authority is added. Final mode/claims/coverage use99 records and the v2 SHA, four
+designated workers396 steps. Earlier six v1 workers576 steps and control/test/
+review/CI work are separate. Text below records the original v1 design/chronology;
+v2 amendments govern final cardinality, scope label and reference identity.
+
 Baseline942ee7ff3d8534636e660cb7ebada80aa159aac6. User requested the recommended
 next offline stage and delegated routine choices/inline work/feature Draft
 publication. No vehicle policy, installation, activation or main merge approval.
