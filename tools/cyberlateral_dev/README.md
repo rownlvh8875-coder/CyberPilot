@@ -36,6 +36,12 @@ model output state; complete preregistered literals check sign changes and inact
 gating. Parent coverage/count validation also closes R22's deferred M1 without
 changing old observation bytes. See [R23 results](docs/NATIVE_SEQUENCE_R23_RESULTS.md).
 
+R24 adds [fixed fault/reset boundaries](docs/FAULT_RESET_R24.md), explicitly selected
+with --fault-boundaries:96 preregistered synthetic native/model steps across the
+request-suppression window, below85 reset and inactive reactivation. Auxiliary
+claim validation also closes R23-M1 without changing old observations. This is
+model behavior, not a physical safety recommendation. See [R24 results](docs/FAULT_RESET_R24_RESULTS.md).
+
 ## One-command verification
 
 Install [uv](https://docs.astral.sh/uv/)0.12.23. From the repository root:

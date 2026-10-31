@@ -216,12 +216,12 @@ def _receipt(installed: dict, include_sha: str, capnp) -> dict:
 
 
 def verify_experiment(owned_boundary: bool, semantic_bridge: bool, package_wheel: Path | None,
-                      model_consumption: bool = False, model_sequence: bool = False) -> None:
-    if any(type(mode) is not bool for mode in (owned_boundary, semantic_bridge, model_consumption, model_sequence)):
+                      model_consumption: bool = False, model_sequence: bool = False, fault_boundaries: bool = False) -> None:
+    if any(type(mode) is not bool for mode in (owned_boundary, semantic_bridge, model_consumption, model_sequence, fault_boundaries)):
         raise ValueError('EXPLICIT_BOOLEAN_MODE')
-    if sum((owned_boundary, semantic_bridge, model_consumption, model_sequence)) > 1:
+    if sum((owned_boundary, semantic_bridge, model_consumption, model_sequence, fault_boundaries)) > 1:
         raise ValueError('EXPERIMENT_MODE_CONFLICT')
-    if semantic_bridge or model_consumption or model_sequence:
+    if semantic_bridge or model_consumption or model_sequence or fault_boundaries:
         if package_wheel is None:
             raise ValueError('PUBLIC_WHEEL_REQUIRED')
         if package_wheel.is_symlink() or sha(package_wheel.read_bytes()) != PUBLIC_WHEEL_SHA:
@@ -232,8 +232,8 @@ def verify_experiment(owned_boundary: bool, semantic_bridge: bool, package_wheel
 
 def observe(wheel: Path, schema: Path, *, owned_boundary: bool = False,
             semantic_bridge: bool = False, package_wheel: Path | None = None, model_consumption: bool = False,
-            model_sequence: bool = False) -> dict:
-    verify_experiment(owned_boundary, semantic_bridge, package_wheel, model_consumption, model_sequence)
+            model_sequence: bool = False, fault_boundaries: bool = False) -> dict:
+    verify_experiment(owned_boundary, semantic_bridge, package_wheel, model_consumption, model_sequence, fault_boundaries)
     identity = verify_inputs(wheel, schema)
     if not sys.flags.isolated or not sys.flags.dont_write_bytecode:
         raise ValueError('ISOLATED_NO_BYTECODE_REQUIRED')
@@ -245,7 +245,7 @@ def observe(wheel: Path, schema: Path, *, owned_boundary: bool = False,
     site = Path(sysconfig.get_paths()['purelib'])
     installed = verify_installed(wheel, site)
     public_installed = None
-    if semantic_bridge or model_consumption or model_sequence:
+    if semantic_bridge or model_consumption or model_sequence or fault_boundaries:
         if package_wheel is None or 'cyberlateral_dev' in sys.modules:
             raise ValueError('FRESH_PUBLIC_PACKAGE_ENV_REQUIRED')
         public_installed = verify_installed(package_wheel, site)
@@ -282,7 +282,7 @@ def observe(wheel: Path, schema: Path, *, owned_boundary: bool = False,
                               'Q05': 'NOT_QUALIFIED', 'Q06': 'NOT_IMPLEMENTED_READER_BLOCKED'},
             'native_reader_activation': 'NOT_ALLOWED',
         }
-        if owned_boundary or semantic_bridge or model_consumption or model_sequence:
+        if owned_boundary or semantic_bridge or model_consumption or model_sequence or fault_boundaries:
             # -B alone still reads old caches. Fresh private prefix prevents
             # repository-source caches from substituting for this closed demo.
             previous_prefix = sys.pycache_prefix
@@ -290,7 +290,10 @@ def observe(wheel: Path, schema: Path, *, owned_boundary: bool = False,
                 sys.pycache_prefix = cold
                 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
                 try:
-                    if model_sequence:
+                    if fault_boundaries:
+                        from native_qualification.fault_demo import demonstrate as demonstrate_fault
+                        observations = demonstrate_fault(car)
+                    elif model_sequence:
                         from native_qualification.sequence_demo import demonstrate as demonstrate_sequence
                         observations = demonstrate_sequence(car)
                     elif semantic_bridge or model_consumption:
@@ -307,7 +310,7 @@ def observe(wheel: Path, schema: Path, *, owned_boundary: bool = False,
         raise ValueError('FORBIDDEN_MODULES_LOADED')
     observations['forbidden_modules_loaded'] = forbidden
     receipt = _receipt(installed, sha(include), capnp)
-    if semantic_bridge or model_consumption or model_sequence:
+    if semantic_bridge or model_consumption or model_sequence or fault_boundaries:
         receipt['public_wheel_sha256'] = PUBLIC_WHEEL_SHA
         receipt['public_installed_files'] = public_installed
     return {'observations': observations, 'receipt': receipt}
@@ -321,12 +324,14 @@ def main() -> None:
     parser.add_argument('--semantic-bridge', action='store_true')
     parser.add_argument('--model-consumption', action='store_true')
     parser.add_argument('--model-sequence', action='store_true')
+    parser.add_argument('--fault-boundaries', action='store_true')
     parser.add_argument('--package-wheel', type=Path)
     args = parser.parse_args()
     sys.stdout.buffer.write(canonical(observe(args.wheel.absolute(), args.schema.absolute(), owned_boundary=args.owned_boundary,
                                              semantic_bridge=args.semantic_bridge,
                                              model_consumption=args.model_consumption,
                                              model_sequence=args.model_sequence,
+                                             fault_boundaries=args.fault_boundaries,
                                              package_wheel=args.package_wheel.absolute() if args.package_wheel is not None else None)))
 
 

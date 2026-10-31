@@ -5,6 +5,7 @@ import importlib
 import sys
 import unittest
 
+from native_claim_fixture import complete_claims
 from v1_helpers import ROOT
 
 
@@ -27,8 +28,8 @@ def observations(mode):
             rows.append({'index': index, 'accepted': True, 'model_steps': 1, 'model_expected_match': True,
                          'prepared': reference.expected_input(index), 'model_output': reference.expected_output(index)})
         count = 4
-    return {'cases': rows, 'model_execution': count, 'F61_execution': 0, 'actual_activation': 'NOT_ALLOWED',
-            'R_BUDGET': 'UNRESOLVED', 'STATIC_EVIDENCE_GATE': 'FAIL'}
+    return complete_claims({'cases': rows, 'model_execution': count, 'F61_execution': 0, 'actual_activation': 'NOT_ALLOWED',
+                            'R_BUDGET': 'UNRESOLVED', 'STATIC_EVIDENCE_GATE': 'FAIL'}, mode)
 
 
 class NativeCoverageTests(unittest.TestCase):

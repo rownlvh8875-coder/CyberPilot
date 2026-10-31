@@ -34,11 +34,11 @@ fault_consumption.py, project/test_fault_consumption.py.
 **Interfaces:** expected_input(index),expected_output(index),consume_fault_step
 (index,sample,state)->public LateralOutput;0..95 exact builtin index.
 
-- [ ] Commit spec/plan/all96 literal records first; preserve SHA/commit receipt.
-- [ ] RED tests:96 actual fixed steps/counter/flag/literal output boundaries,
+- [x] Commit spec/plan/all96 literal records first; preserve SHA/commit receipt.
+- [x] RED tests:96 actual fixed steps/counter/flag/literal output boundaries,
   altered state/counter/angle/type/index rejects before step, full output mutation,
   hash/copy isolation/disabled-model expectation assembly, no initialization/retry.
-- [ ] Implement literal-only reference, one-step input/output gate; targeted tests
+- [x] Implement literal-only reference, one-step input/output gate; targeted tests
   and full dev.py gate/static/wheel PASS. Commit/ledger.
 
 ### Task 2: Claims and explicit native qualification
@@ -50,11 +50,11 @@ README/results docs.
 **Interfaces:** validate_claims(observations,mode)->None; coverage adds R24 exact96;
 --fault-boundaries guarded same sealed wheels, actual state carry and validated counts.
 
-- [ ] RED metadata missing/contradictory/version/SHA/module/hash/oracle/stamp/
+- [x] RED metadata missing/contradictory/version/SHA/module/hash/oracle/stamp/
   custody/type tests; parent pre-mkdir failure and mode/wheel/conflict guards.
-- [ ] Complete existing test doubles; implement metadata/numerical gate, closed
+- [x] Complete existing test doubles; implement metadata/numerical gate, closed
   producer and opt-in mode. Targeted tests/static checks PASS.
-- [ ] Full pure gate; new native env/two workers, independent literal output checks;
+- [x] Full pure gate; new native env/two workers, independent literal output checks;
   R19–R23 observation hash controls, explicit native static/compile.
 - [ ] Fresh archive/new dev+native environment reproduces observations/SUMMARY;
   retain environment receipts without equality/attestation claims. Commit/ledger.

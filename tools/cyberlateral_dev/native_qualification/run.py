@@ -24,10 +24,10 @@ def compare_observations(first: dict, second: dict) -> bytes:
 
 def qualify(python: Path, wheel: Path, output: Path, *, owned_boundary: bool = False,
             semantic_bridge: bool = False, package_wheel: Path | None = None, model_consumption: bool = False,
-            model_sequence: bool = False) -> dict:
+            model_sequence: bool = False, fault_boundaries: bool = False) -> dict:
     if output.exists() or output.is_symlink():
         raise FileExistsError('OUTPUT_EXISTS')
-    verify_experiment(owned_boundary, semantic_bridge, package_wheel, model_consumption, model_sequence)
+    verify_experiment(owned_boundary, semantic_bridge, package_wheel, model_consumption, model_sequence, fault_boundaries)
     schema = ROOT / 'reference/car.capnp'
     verify_inputs(wheel, schema)
     processes = []
@@ -40,6 +40,8 @@ def qualify(python: Path, wheel: Path, output: Path, *, owned_boundary: bool = F
                 mode = ['--model-consumption', '--package-wheel', str(package_wheel.absolute())]
             if model_sequence and package_wheel is not None:
                 mode = ['--model-sequence', '--package-wheel', str(package_wheel.absolute())]
+            if fault_boundaries and package_wheel is not None:
+                mode = ['--fault-boundaries', '--package-wheel', str(package_wheel.absolute())]
             result = subprocess.run([str(python.absolute()), '-I', '-B', str(ROOT / 'native_qualification/worker.py'),
                                      '--wheel', str(wheel.absolute()), '--schema', str(schema), *mode],
                                     cwd=cwd, capture_output=True, timeout=45, check=False)
@@ -50,8 +52,9 @@ def qualify(python: Path, wheel: Path, output: Path, *, owned_boundary: bool = F
             raise ValueError('NONCANONICAL_WORKER_RECORD')
         processes.append(record)
     observations = compare_observations(processes[0]['observations'], processes[1]['observations'])
-    counts = [validate_coverage(record['observations'], 'R22' if model_consumption else 'R23')
-              for record in processes] if model_consumption or model_sequence else []
+    coverage_mode = 'R22' if model_consumption else 'R23' if model_sequence else 'R24'
+    counts = [validate_coverage(record['observations'], coverage_mode)
+              for record in processes] if model_consumption or model_sequence or fault_boundaries else []
     summary = {'status': 'F70UGZ_R19_OBSERVATIONS_REPRODUCED_READER_STILL_BLOCKED',
                'observations_sha256': sha(observations), 'worker_processes': 2, 'byte_identical_observations': True,
                'native_reader': 'NOT_IMPLEMENTED', 'actual_input': 'NOT_ALLOWED',
@@ -62,25 +65,31 @@ def qualify(python: Path, wheel: Path, output: Path, *, owned_boundary: bool = F
         summary['status'] = 'F70UGZ_R20_OWNED_SYNTHETIC_BOUNDARY_REFERENCE_PASS'
         summary['tool_sources'].update({name: sha((ROOT / name).read_bytes()) for name in
                                         ['native_qualification/owned_demo.py', 'integration_tools/owned_message_boundary.py']})
-    if semantic_bridge or model_consumption or model_sequence:
+    if semantic_bridge or model_consumption or model_sequence or fault_boundaries:
         summary['status'] = 'F70UGZ_R21_SYNTHETIC_SEMANTIC_BRIDGE_ORACLE_PASS'
         summary['tool_sources'].update({name: sha((ROOT / name).read_bytes()) for name in
                                         ['native_qualification/semantic_demo.py', 'native_qualification/owned_demo.py',
                                          'integration_tools/semantic_bridge.py', 'integration_tools/semantic_oracle.py',
                                          'integration_tools/semantic_types.py', 'integration_tools/owned_message_boundary.py']})
-    if model_consumption or model_sequence:
+    if model_consumption or model_sequence or fault_boundaries:
         summary.update(status='F70UGZ_R22_FIXED_SYNTHETIC_MODEL_CONSUMPTION_PASS' if model_consumption else
-                       'F70UGZ_R23_FIXED_SYNTHETIC_NATIVE_SEQUENCE_PASS', model_execution=sum(counts),
+                       'F70UGZ_R23_FIXED_SYNTHETIC_NATIVE_SEQUENCE_PASS' if model_sequence else
+                       'F70UGZ_R24_FIXED_SYNTHETIC_FAULT_RESET_PASS', model_execution=sum(counts),
                        model_execution_per_worker=counts[0], model_execution_scope='TWO_SEALED_WORKERS_NOT_UNIT_TEST_OR_STAGE_TOTAL',
                        model_reference_sha256=sha((ROOT / ('reference/r22_model_expected_v1.json' if model_consumption else
-                                                          'reference/r23_sequence_expected_v1.json')).read_bytes()))
+                                                          'reference/r23_sequence_expected_v1.json' if model_sequence else
+                                                          'reference/r24_fault_expected_v1.json')).read_bytes()))
         summary['tool_sources'].update({name: sha((ROOT / name).read_bytes()) for name in
-                                       ['native_qualification/coverage.py', 'integration_tools/model_consumption.py',
+                                       ['native_qualification/coverage.py', 'native_qualification/claims.py', 'integration_tools/model_consumption.py',
                                         'integration_tools/fixed_model_reference.py']})
     if model_sequence:
         summary['tool_sources'].update({name: sha((ROOT / name).read_bytes()) for name in
                                        ['native_qualification/sequence_demo.py', 'integration_tools/sequence_consumption.py',
                                         'integration_tools/sequence_reference.py']})
+    if fault_boundaries:
+        summary['tool_sources'].update({name: sha((ROOT / name).read_bytes()) for name in
+                                       ['native_qualification/fault_demo.py', 'integration_tools/fault_consumption.py',
+                                        'integration_tools/fault_reference.py', 'integration_tools/sequence_reference.py']})
     output.mkdir(parents=True, exist_ok=False)
     files = {'OBSERVATIONS.json': observations, 'SUMMARY.json': canonical(summary),
              'RECEIPT_1.json': canonical(processes[0]['receipt']), 'RECEIPT_2.json': canonical(processes[1]['receipt'])}
@@ -99,12 +108,13 @@ def main() -> int:
     parser.add_argument('--semantic-bridge', action='store_true', help='Explicit R21 closed semantic/oracle experiment, no model execution')
     parser.add_argument('--model-consumption', action='store_true', help='Explicit R22 five fixed synthetic steps with pinned expected outputs')
     parser.add_argument('--model-sequence', action='store_true', help='Explicit R23 fixed four-step synthetic state-carry sequence')
+    parser.add_argument('--fault-boundaries', action='store_true', help='Explicit R24 fixed96-step synthetic fault/reset sequence')
     parser.add_argument('--package-wheel', type=Path, help='Exact sealed public wheel, required for semantic or model mode')
     args = parser.parse_args()
     try:
         summary = qualify(args.python, args.wheel, args.output, owned_boundary=args.owned_boundary,
                            semantic_bridge=args.semantic_bridge, package_wheel=args.package_wheel, model_consumption=args.model_consumption,
-                           model_sequence=args.model_sequence)
+                           model_sequence=args.model_sequence, fault_boundaries=args.fault_boundaries)
     except (OSError, ValueError, subprocess.TimeoutExpired) as error:
         print('REJECTED:' + str(error), file=sys.stderr)
         return 2
