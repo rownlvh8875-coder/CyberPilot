@@ -5,6 +5,12 @@ byte-for-byte from the verified R7 evidence. It is now maintained as a standalon
 development project in CyberPilot. It is NOT an openpilot controller, vehicle
 installation, physical simulator, F61 invocation or safety/performance approval.
 
+R19 adds an explicitly opt-in [native-message observation experiment](
+docs/NATIVE_MESSAGE_QUALIFICATION_R19.md), not a native adapter. It uses a separate
+pycapnp environment and only internally constructed synthetic messages. The
+default command below remains pure; the package/lock/wheel remain unchanged.
+See [observations and reproduction](docs/NATIVE_MESSAGE_QUALIFICATION_R19_RESULTS.md).
+
 ## One-command verification
 
 Install [uv](https://docs.astral.sh/uv/)0.12.23. From the repository root:
