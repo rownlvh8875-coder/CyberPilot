@@ -91,11 +91,11 @@ uv run --project tools/cyberlateral_dev --locked python -B tools/cyberlateral_de
 
 각 runner는 새로운 -I/-B process를 시작합니다. 같은 부모 venv를 사용해도
 한 process에서 qualified context를 반복해서 여는 것은 아닙니다.
-上記3回のformal qualification model callsは454+0+206=660です。
+위 세 runner의 formal qualification model calls는454+0+206=660입니다.
 pure/unit/CI/별도 report의 모델 계산은 추가입니다.660을 전체 작업의 총계로
 표시하거나 invocation을 초·실차100Hz로 변환하지 마십시오.
 
-## 4. 開発判定・GitHubと残りの範囲
+## 4. 개발 판정·GitHub와 남은 범위
 
 이 milestone의 수락 조건은 source/wheel 불변, fresh pure/static/compile,
 별도 runtime report 일치, 선택 native portable 결과 일치, Manifest/data 검산,
@@ -107,11 +107,12 @@ R30 결과 문서와 외부 receipt를 기준으로 하며 README나 static inve
 수락 조건을 채우지 않습니다. Draft PR2 업데이트는 main merge 허가가 아니며
 GitHub required checks/branch policy를 우회하지 않습니다. 자동 merge/install 없음.
 
-未確定:実際のr/T2/vehicle scale、静的車両文脈、実際の履歴custody、対象配備、
-全CyberPilot製品要件。これらはoffline開発の阻害条件ではありませんが、
-offline受入でも解消しません。F61/Controller/Runtime/CAN/実車入力/r/dt実行0、
-R_BUDGET UNRESOLVED、Static Gate FAIL、activation/F70UH/F70V/F71 NOT_ALLOWED。
+미확정: 실제 r/T2/vehicle scale, 정적 차량 문맥, 실제 이력 custody, 대상 배포본,
+전체 CyberPilot 제품 요구사항. 이 항목들은 offline 개발을 막지는 않지만
+offline 수락으로 해소되지도 않습니다. F61/Controller/Runtime/CAN/실차 입력/
+r/dt 실행0, R_BUDGET UNRESOLVED, Static Gate FAIL,
+activation/F70UH/F70V/F71 NOT_ALLOWED.
 
-次の実装候補は既存pure APIを使う「ユーザー定義SYNTHETICシナリオのファイル
-入出力・CLI契約」です。これは便利機能の提案であり、今回の実装・実車入力
-許可や、確認済みの製品必須要件としては扱いません。
+다음 구현 후보는 기존 pure API를 쓰는 사용자 정의 SYNTHETIC 시나리오의
+파일 입출력·CLI 계약입니다. 이는 편의 기능 제안이며 이번 단계의 구현이나
+실차 입력 허가, 확인된 제품 필수 요구사항으로 취급하지 않습니다.
