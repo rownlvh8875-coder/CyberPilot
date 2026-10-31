@@ -68,10 +68,10 @@ build_summary(rows)->dict,render_report(summary)->str; CLI --fixed-native-suite.
 - [x] Fresh native env executes suite (8 stages/16 workers/454 model calls),
   independent7 suite observation checks and all53 existing individual output
   assertions; verify root43 and8 inner4-entry manifests. Expected:all PASS.
-- [ ] Commit; archived source+workflow/new dev/native env full gate and suite.
+- [x] Commit; archived source+workflow/new dev/native env full gate and suite.
   Expected:SUITE_SUMMARY/report and all8 observations/summaries byte-identical;
   receipts/manifests preserved without equality/OS-authentication claim.
-- [ ] One fresh whole-branch review; one blocker RED/GREEN fix pass only. Regrade
+- [x] One fresh whole-branch review; one blocker RED/GREEN fix pass only. Regrade
   all findings and rule on every declined area, ledger all decisions/minors.
 - [ ] Docs-only final commit; exact-head pure CI/Draft update preserving latest
   body; download94 hashes; original guards; Korean report and deterministic

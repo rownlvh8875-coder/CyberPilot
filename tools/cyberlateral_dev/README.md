@@ -79,6 +79,7 @@ accepts stage subsets, external data, r or dt. Its8 profiles/16 workers/454 mode
 calls are scoped to this one fixed synthetic suite, not an aggregate stage count,
 general reader, actual-history proof or vehicle/production approval. Environment
 receipts/manifests are retained separately from portable summary equality.
+See [R27 results and reproduction](docs/NATIVE_SUITE_R27_RESULTS.md).
 
 ## One-command verification
 
