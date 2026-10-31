@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "scope": "FOUR_FIXED_SYNTHETIC_STEPS_NOT_ACTUAL_HISTORY",
+  "limits": [16, 2, 5, 7, 1, 3],
+  "driver_bounds": [-16, 16],
+  "steps": [
+    {"index": 0, "request_hex": "0x1.3333340000000p-2", "active": true,
+     "previous": [0, null, 0, 0], "product_hex": "0x1.3333340000000p+2", "integer_request": 5,
+     "rate_bounds": [-2, 2], "limited": 2, "final": 2, "steer_request": true, "next_state": [1, 5, 2, 0],
+     "normalized_hex": "0x1.0000000000000p-3", "normalized_bits": "3e000000", "command_hex": "0x1.0000000000000p+1", "command_bits": "40000000"},
+    {"index": 1, "request_hex": "-0x1.0000000000000p-2", "active": true,
+     "previous": [1, 5, 2, 0], "product_hex": "-0x1.0000000000000p+2", "integer_request": -4,
+     "rate_bounds": [-2, 4], "limited": -2, "final": -2, "steer_request": true, "next_state": [2, -4, -2, 0],
+     "normalized_hex": "-0x1.0000000000000p-3", "normalized_bits": "be000000", "command_hex": "-0x1.0000000000000p+1", "command_bits": "c0000000"},
+    {"index": 2, "request_hex": "0x1.0000000000000p-2", "active": false,
+     "previous": [2, -4, -2, 0], "product_hex": "0x1.0000000000000p+2", "integer_request": 4,
+     "rate_bounds": [-4, 2], "limited": 2, "final": 0, "steer_request": false, "next_state": [3, 4, 0, 0],
+     "normalized_hex": "0x0.0p+0", "normalized_bits": "00000000", "command_hex": "0x0.0p+0", "command_bits": "00000000"},
+    {"index": 3, "request_hex": "0x1.0000000000000p-2", "active": true,
+     "previous": [3, 4, 0, 0], "product_hex": "0x1.0000000000000p+2", "integer_request": 4,
+     "rate_bounds": [-2, 2], "limited": 2, "final": 2, "steer_request": true, "next_state": [4, 4, 2, 0],
+     "normalized_hex": "0x1.0000000000000p-3", "normalized_bits": "3e000000", "command_hex": "0x1.0000000000000p+1", "command_bits": "40000000"}
+  ]
+}

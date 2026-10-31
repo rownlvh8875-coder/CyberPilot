@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "status": "SOURCE_BACKED_DESIGN_NOT_IMPLEMENTED",
+  "contract_id": "F70UGZ_R11_DEV_BRIDGE_V1",
+  "profile_id": "R11_HYUNDAI_TORQUE_SYNTHETIC_V1",
+  "source_set_id": "R11_C8FB9068_4134C0D1_V1",
+  "repository_context": {"repository": "rownlvh8875-coder/CyberPilot", "commit": "c8fb906815530460ed156f14e09e1f312bb0f851", "opendbc_gitlink": "4134c0d1f5e8f695e35ea5fedbe88f6d0c3afb76", "integration_baseline": "31219f9fa50bc44f392884a0b861a496402b5a75"},
+  "sources": [
+    {"id": "controller", "repository": "commaai/opendbc", "commit": "4134c0d1f5e8f695e35ea5fedbe88f6d0c3afb76", "path": "opendbc/car/hyundai/carcontroller.py", "sha256": "967d3f69076e19624bc18bdc897d141811c7aa80f727a497f176f670a6b4b59e", "bytes": 11291, "exact_committed_mirror": "reference/carcontroller.py"},
+    {"id": "helper", "repository": "commaai/opendbc", "commit": "4134c0d1f5e8f695e35ea5fedbe88f6d0c3afb76", "path": "opendbc/car/lateral.py", "sha256": "94cf2dde92b43590b1d1e5b2a37b3d295e5f2cf9700ca43e3846bcb1c3ef36b6", "bytes": 9367, "exact_committed_mirror": "reference/lateral.py"},
+    {"id": "schema", "repository": "commaai/opendbc", "commit": "4134c0d1f5e8f695e35ea5fedbe88f6d0c3afb76", "path": "opendbc/car/car.capnp", "sha256": "098a19d69e8d233ac653503b53761a94824f31812757a11a7ded1589fe1e0788", "bytes": 21300, "exact_committed_mirror": "reference/car.capnp"},
+    {"id": "interface", "repository": "commaai/opendbc", "commit": "4134c0d1f5e8f695e35ea5fedbe88f6d0c3afb76", "path": "opendbc/car/interfaces.py", "sha256": "89cdec34103a40b6c5a17e44709946968cf3683272df4b203a0ed374e0bfd165", "bytes": 15725, "exact_committed_mirror": null},
+    {"id": "params", "repository": "commaai/opendbc", "commit": "4134c0d1f5e8f695e35ea5fedbe88f6d0c3afb76", "path": "opendbc/car/hyundai/values.py", "sha256": "52ce46aafba6ebc3260b06d39e6263e2e80bf5c15562b13ee68220097aa8228f", "bytes": 39403, "exact_committed_mirror": null},
+    {"id": "caller", "repository": "rownlvh8875-coder/CyberPilot", "commit": "c8fb906815530460ed156f14e09e1f312bb0f851", "path": "openpilot/selfdrive/car/card.py", "sha256": "f2b2800bd7e6cb1671c73d23fc3a278496bd3c16ec74fbde660341aa20731de8", "bytes": 10134, "exact_committed_mirror": null}
+  ],
+  "source_derived_facts": [
+    {"source_id": "controller", "symbol": "CarController.update", "lines": [65, 70], "fact": "requested actuators.torque is multiplied by self.params.STEER_MAX then int(round(...)) before limiting"},
+    {"source_id": "controller", "symbol": "CarController.update", "lines": [71, 74, 78, 81], "fact": "limiter then fault request then inactive zero then previous-applied update; previous state is post-inactive integer"},
+    {"source_id": "controller", "symbol": "CarController.__init__", "lines": [57, 60], "fact": "angle_limit_counter and apply_torque_last initialize to literal zero"},
+    {"source_id": "controller", "symbol": "CarController.update", "lines": [120, 121, 122, 125, 126], "fact": "returned normalized torque expression, torqueOutputCan assignment and frame increment are separate from selected limiter slice"},
+    {"source_id": "helper", "symbol": "apply_driver_steer_torque_limits", "lines": [70, 72, 76, 83, 90], "fact": "driver and sign-sensitive invocation history limits; optional steer_max falls back to LIMITS.STEER_MAX; selected caller supplies only four args"},
+    {"source_id": "helper", "symbol": "common_fault_avoidance", "lines": [174, 182, 189, 192, 195], "fact": "request/counter update and mismatch reset are distinct from torque zeroing"},
+    {"source_id": "schema", "symbol": "CarState.steeringTorque / steeringAngleDeg; CarControl.latActive / Actuators", "lines": [185, 188, 346, 367, 378], "fact": "numeric fields are Float32, driver torque comment says native CAN units; comments do not establish Python ABI or runtime range validation"},
+    {"source_id": "interface", "symbol": "CarInterfaceBase.apply", "lines": [114, 115, 116, 117], "fact": "forwards provided now_nanos, synthesizes monotonic value only when omitted; not called by DEV bridge"},
+    {"source_id": "params", "symbol": "CarControllerParams.__init__", "lines": [18, 27, 29, 35, 55], "fact": "vehicle/flag-dependent constants; CANFD allowance250 exceeds synthetic module allowance64; no actual vehicle selection established"},
+    {"source_id": "caller", "symbol": "Car.state_publish / controls_update / step", "lines": [204, 207, 236, 237, 245, 250], "fact": "carOutput published before controls_update; live/replay time chosen before CI.apply, not model index or carOutput apply-time proof"}
+  ],
+  "model_authority": {"package_version": "0.3.0", "wheel_sha256": "3f3db36f62aa79ba97e4536a183b7e685a9d06c4e264d1fec9dd3bbda7c4d73c", "fixture_catalog_sha256": "74095144882ff3977679ce92ec7dad0e7bf3f532a0cacae2cfa26f4aab0fd287", "domain_sources": ["src/cyberlateral_dev/_r4/domain.py", "src/cyberlateral_dev/_r4/state_model.py", "src/cyberlateral_dev/_r4/request_quantizer.py", "src/cyberlateral_dev/output_projection.py"], "previous_requested": "PRIOR_INTEGER_CANDIDATE_MODEL_BOOKKEEPING_NOT_F61_PREVIOUS_NATIVE", "index": "MODEL_INVOCATION_NOT_FRAME_OR_TIME"},
+  "design_choices_not_source_facts": {"scope": "FIXED_SYNTHETIC_TYPED_DEV_RECORDS_ONLY", "value_representation": "SYNTHETIC_PYTHON_BINARY64", "original_object_readers": "PROHIBITED", "real_data_loader": "NONE", "source_labels_authenticate_provenance": false, "actual_source_hook": "NOT_IMPLEMENTED", "production_equivalence": "NOT_CLAIMED", "historical_ajouatom_commits": "NOT_BOUND_BY_R11"},
+  "maintained_gates": {"R_BUDGET": "UNRESOLVED", "STATIC_EVIDENCE_GATE": "FAIL", "actual_r": null, "actual_T2": null, "actual_vehicle_scale": null, "actual_activation": "NOT_ALLOWED", "F70UH": "NOT_ALLOWED", "F70V": "NOT_ALLOWED", "F71": "NOT_ALLOWED"}
+}

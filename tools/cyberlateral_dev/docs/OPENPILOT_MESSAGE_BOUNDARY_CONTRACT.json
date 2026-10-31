@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "contract_id": "F70UGZ_R13_MESSAGE_BOUNDARY_V1",
+  "status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+  "integration_baseline": "a69025dad11c99877bf875bd188a6f6cb8f1753f",
+  "source_authority": "OPENPILOT_DEV_BRIDGE_SOURCE_MAP.json",
+  "source_set_id": "R11_C8FB9068_4134C0D1_V1",
+  "profile_id": "R13_HYUNDAI_TORQUE_ENTRY_SYNTHETIC_V1",
+  "additional_static_sources": [
+    {"id": "struct_loader", "repository": "commaai/opendbc", "commit": "4134c0d1f5e8f695e35ea5fedbe88f6d0c3afb76", "path": "opendbc/car/structs.py", "bytes": 448, "sha256": "8a054e866a485defb01c6f163f907d9cd0d2c53e7dbddda354b5a2a5bf9bd5ea", "lines": [2,5,6], "fact": "module import invokes capnp schema load; not passive type inspection"},
+    {"id": "cereal_loader", "repository": "rownlvh8875-coder/CyberPilot", "commit": "c8fb906815530460ed156f14e09e1f312bb0f851", "path": "openpilot/cereal/__init__.py", "bytes": 500, "sha256": "72fea22180ef49968dd924360ef0638b762680dd4f0931fbb8a8cebf69574e22", "lines": [2,5,7,10,11], "fact": "module import invokes log/custom schema load"},
+    {"id": "dependency_declaration", "repository": "rownlvh8875-coder/CyberPilot", "commit": "c8fb906815530460ed156f14e09e1f312bb0f851", "path": "pyproject.toml", "bytes": 4669, "sha256": "2d08270c231a05870585f97c24227d88487d3908145f7207647b629cdbabab75", "lines": [25], "fact": "declares pycapnp==2.1.0; installed ABI not established"},
+    {"id": "dependency_lock", "repository": "rownlvh8875-coder/CyberPilot", "commit": "c8fb906815530460ed156f14e09e1f312bb0f851", "path": "uv.lock", "bytes": 143128, "sha256": "2d05b33b220a5fd221e9b55c65a0f55bd628a6139c8df9e863ab67aa1c630a83", "lines": [749,750,752,759], "fact": "version and candidate distributions only; no artifact selected/downloaded/executed"}
+  ],
+  "field_bindings": [
+    {"source_id": "controller", "lines": [66,70], "source": "CC.actuators.torque", "target": "LateralInput.request", "schema_source_id": "schema", "schema_line": 367, "schema_type": "Float32", "python_readback_type": null},
+    {"source_id": "controller", "lines": [71], "source": "CS.out.steeringTorque", "target": "LateralInput.driver", "schema_source_id": "schema", "schema_line": 188, "schema_type": "Float32", "unit": "native CAN units", "python_readback_type": null},
+    {"source_id": "controller", "lines": [74], "source": "CS.out.steeringAngleDeg", "target": "LateralInput.angle_deg", "schema_source_id": "schema", "schema_line": 185, "schema_type": "Float32", "unit": "degrees", "python_readback_type": null},
+    {"source_id": "controller", "lines": [74,78], "source": "CC.latActive", "target": "LateralInput.lat_active", "schema_source_id": "schema", "schema_line": 346, "schema_type": "Bool", "python_readback_type": null},
+    {"source_id": "controller", "lines": [55,70,71], "source": "self.params six consumed fields", "target": "LateralInput.limits", "actual_consumed_snapshot": "NOT_ESTABLISHED"},
+    {"source_id": "controller", "lines": [60,71,81], "source": "self.apply_torque_last at entry", "target": "LateralState.previous_applied", "stage": "prior post-inactive integer"},
+    {"source_id": "controller", "lines": [57,74], "source": "self.angle_limit_counter at entry", "target": "LateralState.angle_counter", "stage": "before current fault update"},
+    {"source_id": "controller", "lines": [65,70,81], "source": null, "target": "LateralState.previous_requested", "authority": "model-owned prior integer candidate; no matching persisted source field"},
+    {"source_id": "interface", "lines": [258,267], "source": "CS.out", "target": "synthetic wrapper.out", "fact": "wrapper separate from bare CarState message"}
+  ],
+  "future_synthetic_api": {
+    "implemented": false,
+    "function": "extract_synthetic_message(frame:SyntheticBoundaryFrameV1)->PreparedLateralInputV1",
+    "scope": "SYNTHETIC_DEVELOPMENT_ONLY",
+    "representation": "SYNTHETIC_PYTHON_BINARY64",
+    "custody_claim": "SYNTHETIC_DECLARATION_ONLY",
+    "precision_claim": "EXACT_SUPPLIED_BINARY64_NOT_NATIVE_ABI",
+    "time_semantics": "INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME",
+    "new_model_transitions": 0,
+    "r12_registry_or_api_change": false,
+    "arbitrary_native_object_reader": false,
+    "file_or_log_input": false,
+    "validation_order": ["BOUNDARY_RECORD_TYPE","BOUNDARY_SCOPE","BOUNDARY_SOURCE_PROFILE","BOUNDARY_SEQUENCE","BOUNDARY_ORDER","BOUNDARY_DOMAIN","BOUNDARY_CUSTODY"],
+    "previous_transition_correctness_proven": false,
+    "constructor_missing_or_unknown_fields": "TypeError"
+  },
+  "native_reader": {
+    "implemented": false,
+    "qualification": "UNRESOLVED_NOT_RUN_NOT_AUTHORIZED",
+    "native_constructor_signature": null,
+    "qualified_runtime_types": null,
+    "installed_binary_identity": null,
+    "resolved_schema_dependency_closure": null,
+    "actual_atomic_snapshot": "NOT_ESTABLISHED",
+    "declared_pycapnp_version": "2.1.0",
+    "schema_import_dependency": "/include/c++.capnp",
+    "required_qualification_cases": ["Q01","Q02","Q03","Q04","Q05","Q06"],
+    "missing_value_fallback": "PROHIBITED"
+  },
+  "test_specification": {"file": "OPENPILOT_MESSAGE_BOUNDARY_TEST_SPEC.md", "synthetic_cases": 28, "native_qualification_cases": 6, "new_tests_executed_in_r13": 0, "all_new_cases_status": "NOT_IMPLEMENTED_NOT_RUN"},
+  "gates": {"actual_r": null, "actual_T2": null, "actual_vehicle_scale": null, "R_BUDGET": "UNRESOLVED", "STATIC_EVIDENCE_GATE": "FAIL", "SOURCE_SCHEMA_UNQUALIFIED": 6000, "Candidate": "NO_GO", "Runtime": "NO_GO", "actual_activation": "NOT_ALLOWED", "F70UH": "NOT_ALLOWED", "F70V": "NOT_ALLOWED", "F71": "NOT_ALLOWED", "D2": "PERFORMANCE_NOT_EVALUATED", "F19": "LEGACY_UNRESOLVED", "NATIVE_EXACT_REPLAY": "NOT_PROVEN"}
+}

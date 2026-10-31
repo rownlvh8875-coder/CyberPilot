@@ -1,0 +1,185 @@
+{
+  "profiles": [
+    {
+      "case_count": null,
+      "mode": null,
+      "model_steps_per_worker": 0,
+      "observations_sha256": "b7eaadea476113bcd5e56b6526382dc468773f9ec69327f4a6c6fc31cff2fe74",
+      "reference_sha256": null,
+      "stage_id": "R19",
+      "status": "F70UGZ_R19_OBSERVATIONS_REPRODUCED_READER_STILL_BLOCKED",
+      "tool_sources": [
+        "run.py",
+        "worker.py"
+      ]
+    },
+    {
+      "case_count": 4,
+      "mode": "owned_boundary",
+      "model_steps_per_worker": 0,
+      "observations_sha256": "d88aabec4c37ceaca52f2516ae0a7c7c3d2efbad2680afa365a1c809b06448af",
+      "reference_sha256": null,
+      "stage_id": "R20",
+      "status": "F70UGZ_R20_OWNED_SYNTHETIC_BOUNDARY_REFERENCE_PASS",
+      "tool_sources": [
+        "integration_tools/owned_message_boundary.py",
+        "native_qualification/owned_demo.py",
+        "run.py",
+        "worker.py"
+      ]
+    },
+    {
+      "case_count": 8,
+      "mode": "semantic_bridge",
+      "model_steps_per_worker": 0,
+      "observations_sha256": "afbc84215769d23a8939828a28cc4c5507485bb8177a3e64e52fadad2c753ae2",
+      "reference_sha256": null,
+      "stage_id": "R21",
+      "status": "F70UGZ_R21_SYNTHETIC_SEMANTIC_BRIDGE_ORACLE_PASS",
+      "tool_sources": [
+        "integration_tools/owned_message_boundary.py",
+        "integration_tools/semantic_bridge.py",
+        "integration_tools/semantic_oracle.py",
+        "integration_tools/semantic_types.py",
+        "native_qualification/owned_demo.py",
+        "native_qualification/semantic_demo.py",
+        "run.py",
+        "worker.py"
+      ]
+    },
+    {
+      "case_count": 8,
+      "mode": "model_consumption",
+      "model_steps_per_worker": 5,
+      "observations_sha256": "c802a6ecad9f0cae59b8d82598d9b6a58a171d7e8a826406b21e3c157d02c4a7",
+      "reference_sha256": "55e07d229fadd5cbe96130670b3a16812ef0ef9ebf20a389408cd5ca9cf0fff1",
+      "stage_id": "R22",
+      "status": "F70UGZ_R22_FIXED_SYNTHETIC_MODEL_CONSUMPTION_PASS",
+      "tool_sources": [
+        "integration_tools/fixed_model_reference.py",
+        "integration_tools/model_consumption.py",
+        "integration_tools/owned_message_boundary.py",
+        "integration_tools/semantic_bridge.py",
+        "integration_tools/semantic_oracle.py",
+        "integration_tools/semantic_types.py",
+        "native_qualification/claims.py",
+        "native_qualification/coverage.py",
+        "native_qualification/owned_demo.py",
+        "native_qualification/semantic_demo.py",
+        "run.py",
+        "worker.py"
+      ]
+    },
+    {
+      "case_count": 4,
+      "mode": "model_sequence",
+      "model_steps_per_worker": 4,
+      "observations_sha256": "662a138f71ef6c065eebb6061ba71ab2e6c728250c57bef8a932e32e0c260441",
+      "reference_sha256": "221b04aae7a149409f5f91aa516e7f9fcefe090958e785d91bc6fd4153161e97",
+      "stage_id": "R23",
+      "status": "F70UGZ_R23_FIXED_SYNTHETIC_NATIVE_SEQUENCE_PASS",
+      "tool_sources": [
+        "integration_tools/fixed_model_reference.py",
+        "integration_tools/model_consumption.py",
+        "integration_tools/owned_message_boundary.py",
+        "integration_tools/semantic_bridge.py",
+        "integration_tools/semantic_oracle.py",
+        "integration_tools/semantic_types.py",
+        "integration_tools/sequence_consumption.py",
+        "integration_tools/sequence_reference.py",
+        "native_qualification/claims.py",
+        "native_qualification/coverage.py",
+        "native_qualification/owned_demo.py",
+        "native_qualification/semantic_demo.py",
+        "native_qualification/sequence_demo.py",
+        "run.py",
+        "worker.py"
+      ]
+    },
+    {
+      "case_count": 99,
+      "mode": "fault_boundaries",
+      "model_steps_per_worker": 99,
+      "observations_sha256": "b13ff35e6fda538af2a437309384109d5e87adf8cc6c3f5a6edba44c4626287d",
+      "reference_sha256": "dfb150fc3f1348be6fae161bdb2d524dc1138c504410c8ef38bf874c27b4d8cd",
+      "stage_id": "R24",
+      "status": "F70UGZ_R24_FIXED_SYNTHETIC_FAULT_RESET_PASS",
+      "tool_sources": [
+        "integration_tools/fault_consumption.py",
+        "integration_tools/fault_reference.py",
+        "integration_tools/fixed_model_reference.py",
+        "integration_tools/model_consumption.py",
+        "integration_tools/owned_message_boundary.py",
+        "integration_tools/semantic_bridge.py",
+        "integration_tools/semantic_oracle.py",
+        "integration_tools/semantic_types.py",
+        "integration_tools/sequence_reference.py",
+        "native_qualification/claims.py",
+        "native_qualification/coverage.py",
+        "native_qualification/fault_demo.py",
+        "native_qualification/owned_demo.py",
+        "native_qualification/semantic_demo.py",
+        "run.py",
+        "worker.py"
+      ]
+    },
+    {
+      "case_count": 20,
+      "mode": "driver_boundaries",
+      "model_steps_per_worker": 20,
+      "observations_sha256": "2283bed92bafaacda57486fe109be213d5a1479a820cfc63074539f3d7ba3150",
+      "reference_sha256": "21de9d95fa3e45dd03fe5ac8da0505a4ea94d233dc81d21ba65d741573ef1fa7",
+      "stage_id": "R25",
+      "status": "F70UGZ_R25_FIXED_SYNTHETIC_NEGATIVE_DRIVER_PASS",
+      "tool_sources": [
+        "integration_tools/driver_consumption.py",
+        "integration_tools/driver_reference.py",
+        "integration_tools/fixed_model_reference.py",
+        "integration_tools/model_consumption.py",
+        "integration_tools/owned_message_boundary.py",
+        "integration_tools/semantic_bridge.py",
+        "integration_tools/semantic_oracle.py",
+        "integration_tools/semantic_types.py",
+        "native_qualification/claims.py",
+        "native_qualification/coverage.py",
+        "native_qualification/driver_demo.py",
+        "native_qualification/owned_demo.py",
+        "native_qualification/semantic_demo.py",
+        "run.py",
+        "worker.py"
+      ]
+    },
+    {
+      "case_count": 99,
+      "mode": "negative_cycle",
+      "model_steps_per_worker": 99,
+      "observations_sha256": "4720baa96bfef759037a80a214d5ce84292fc0b607d06f5ccfd9f5b86d154a62",
+      "reference_sha256": "f3b60afc2e3ba8b100ee9dbcb2a125f9c27c797c3d6b4af7b882cc7c069390f8",
+      "stage_id": "R26",
+      "status": "F70UGZ_R26_FIXED_SYNTHETIC_NEGATIVE_CYCLE_PASS",
+      "tool_sources": [
+        "integration_tools/fixed_model_reference.py",
+        "integration_tools/model_consumption.py",
+        "integration_tools/negative_cycle_consumption.py",
+        "integration_tools/negative_cycle_reference.py",
+        "integration_tools/owned_message_boundary.py",
+        "integration_tools/semantic_bridge.py",
+        "integration_tools/semantic_oracle.py",
+        "integration_tools/semantic_types.py",
+        "native_qualification/claims.py",
+        "native_qualification/coverage.py",
+        "native_qualification/negative_cycle_demo.py",
+        "native_qualification/owned_demo.py",
+        "native_qualification/semantic_demo.py",
+        "run.py",
+        "worker.py"
+      ]
+    }
+  ],
+  "provenance": {
+    "baseline_commit": "1441749ad5ec4fe7355b0435d18151dea42b1890",
+    "source_zip_sha256": "3b90aed1c3a445312967ad3fdb219ca0391410929f9b5589c0b09272b6e70d4f"
+  },
+  "schema_version": 1,
+  "scope": "FIXED_R19_R26_NATIVE_SUITE_ONLY"
+}
