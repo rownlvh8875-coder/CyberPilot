@@ -56,8 +56,10 @@ record from that frozen trace. It rejects omissions, duplicate/reordered cuts
 or events, identical poisoned pairs with rewritten checksums, noncanonical
 JSON, changed gates/claims/environment and promoted seed custody.
 
-Run in two empty installed-wheel environments with -I/-B and no NumPy; record
-actual isolation/package/module facts. Publish RESULTS.json last, after both
+Each full verification uses one fresh installed-wheel venv and runs two R16
+processes with -I/-B and no NumPy. Separate local/relocated full verifications
+use separate fresh venvs. Record actual isolation/package/module facts.
+Publish RESULTS.json last, after both
 payload and checksum writes. Existing file/dir/dangling links and unknown
 input/native/r/dt flags reject before work. Failure does not produce a
 designated successful result. Concurrency and crash durability are not promised.

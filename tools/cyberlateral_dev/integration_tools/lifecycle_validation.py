@@ -16,7 +16,7 @@ def _sha(value):
     return hashlib.sha256(canonical(value)).hexdigest()
 
 
-def lifecycle_pair_summary(first: Path, second: Path) -> dict:
+def read_lifecycle_pair(first: Path, second: Path) -> tuple[dict, dict]:
     try:
         one = {p.name: p.read_bytes() for p in first.iterdir()}
         two = {p.name: p.read_bytes() for p in second.iterdir()}
@@ -60,6 +60,11 @@ def lifecycle_pair_summary(first: Path, second: Path) -> dict:
     _require(canonical(record['split_runs']) == canonical(expected_splits), 'LIFECYCLE_CONTRACT_SPLITS')
     _require(canonical(record['interleaved_events']) == canonical(expected_events), 'LIFECYCLE_CONTRACT_INTERLEAVED')
     _require(one['SHA256SUMS.txt'] == (hashlib.sha256(raw).hexdigest() + '  RESULTS.json\n').encode(), 'LIFECYCLE_CONTRACT_MANIFEST')
-    return {'status': record['status'], 'byte_identical': True, 'scenario_count': record['scenario_count'], 'two_chunk_splits': record['two_chunk_splits'],
-            'model_steps': record['model_steps'], 'file_hashes': {k: hashlib.sha256(v).hexdigest() for k, v in sorted(one.items())},
-            'scope': 'closed same-process synthetic lifecycle only, not native custody, persistent replay or independent arithmetic proof'}
+    summary = {'status': record['status'], 'byte_identical': True, 'scenario_count': record['scenario_count'], 'two_chunk_splits': record['two_chunk_splits'],
+               'model_steps': record['model_steps'], 'file_hashes': {k: hashlib.sha256(v).hexdigest() for k, v in sorted(one.items())},
+               'scope': 'closed same-process synthetic lifecycle only, not native custody, persistent replay or independent arithmetic proof'}
+    return record, summary
+
+
+def lifecycle_pair_summary(first: Path, second: Path) -> dict:
+    return read_lifecycle_pair(first, second)[1]

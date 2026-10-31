@@ -118,6 +118,19 @@ aggregate test count or elapsed-time/rate/performance claim. R15 output bytes,
 R14's copy-only behavior, package0.3.0, goldens and gates remain unchanged. This
 does not add arbitrary input, persistent checkpoint/replay or native qualification.
 
+R17 adds [read-only audit tables](docs/HANDOFF_AUDIT_R17_DESIGN.md) from the exact
+validated R16 pair: `audit_one/audit.csv` has112 rows/37 scalar columns spanning
+request, explicit settings, owned previous state, separate limiting stages and
+next state. `AUDIT.json` retains typed values/source hashes/gates, and
+`SUMMARY_KO.md` summarizes the seven synthetic scenarios in Korean. Signed zero
+and binary64 hex/null are explicit; spreadsheet display may coerce numbers.
+Two isolated report processes load no model/native/NumPy modules and perform0
+extractions/model steps/F61/r/dt calculations. The source's9010 calls are labeled
+separately. This is a fixed-evidence projection, not arbitrary log intake, a new
+model run or an independent mapping/numerical oracle. Complete table mappings
+are tested against raw source fields; paired artifacts are checked in full.
+`AUDIT.json` is published last, after all report/checksum writes succeed.
+
 The dev environment intentionally does not install the wheel-only project as an
 editable package (`tool.uv.package=false`). Test source selectors are DEV-only.
 The actual package installation is verified in an isolated child environment.

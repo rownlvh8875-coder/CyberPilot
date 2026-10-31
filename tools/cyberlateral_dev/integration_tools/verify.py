@@ -14,6 +14,7 @@ import tempfile
 import zipfile
 from pathlib import Path, PurePosixPath
 
+from .handoff_audit import audit_pair_summary
 from .handoff_validation import handoff_pair_summary
 from .lifecycle_validation import lifecycle_pair_summary
 
@@ -286,6 +287,13 @@ def verify_installed_lifecycle(root: Path, python: Path, output: Path, cwd: Path
     return lifecycle_pair_summary(output / 'lifecycle_one', output / 'lifecycle_two')
 
 
+def verify_installed_audit(root: Path, python: Path, output: Path, cwd: Path) -> dict:
+    for name in ['audit_one', 'audit_two']:
+        _run([python, '-I', '-B', root / 'integration_tools/handoff_audit.py', '--first', output / 'lifecycle_one',
+              '--second', output / 'lifecycle_two', '--output', output / name], output / (name + '.log'), cwd)
+    return audit_pair_summary(output / 'audit_one', output / 'audit_two', output / 'lifecycle_one', output / 'lifecycle_two')
+
+
 def typecheck_project(root: Path, python: Path, paths, log: Path) -> None:
     _run([python.parent / 'ty', 'check', '--config-file', root / 'ty.toml', '--python', python, *paths], log, root)
 
@@ -356,6 +364,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
         message_boundary = verify_installed_message_boundary(root, isolated, output, temp)
         handoff = verify_installed_handoff(root, isolated, output, temp)
         lifecycle = verify_installed_lifecycle(root, isolated, output, temp)
+        audit = verify_installed_audit(root, isolated, output, temp)
     for name in ['numeric_one', 'numeric_two']:
         _run(
             [
@@ -377,7 +386,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
     numeric_hashes = _compare(output / 'numeric_one', output / 'numeric_two')
     source = json.loads((output / 'report_one/simulation.json').read_bytes())
     summary = {
-        'status': 'F70UGZ_R16_SYNTHETIC_MESSAGE_HANDOFF_LIFECYCLE_REFERENCE_PASS',
+        'status': 'F70UGZ_R17_FIXED_HANDOFF_AUDIT_REFERENCE_PASS',
         'runtime': runtime,
         'imports': imported,
         'tests': test_count((output / 'unittest.log').read_text()),
@@ -391,6 +400,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
         'synthetic_message_boundary': message_boundary,
         'synthetic_message_handoff': handoff,
         'synthetic_handoff_lifecycle': lifecycle,
+        'synthetic_handoff_audit': audit,
         'report_and_numeric_pairs_byte_identical': True,
         'source_gates': source['gates'],
         'Controller_execution': 0,
