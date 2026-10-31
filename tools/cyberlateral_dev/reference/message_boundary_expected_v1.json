@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "boundary_contract_id": "F70UGZ_R13_MESSAGE_BOUNDARY_V1",
+  "profile_id": "R13_HYUNDAI_TORQUE_ENTRY_SYNTHETIC_V1",
+  "source_set_id": "R11_C8FB9068_4134C0D1_V1",
+  "package_version": "0.3.0",
+  "provenance": "HAND_AUTHORED_R13_LITERAL_PREPARED_VALUES_NOT_EXTRACTOR_OUTPUT",
+  "records": [
+    {
+      "id": "base",
+      "payload": {
+        "prepared": {"contract_id": "F70UGZ_R13_MESSAGE_BOUNDARY_V1", "source_set_id": "R11_C8FB9068_4134C0D1_V1", "sequence_id": "probe_base", "sample": {"index": 0, "request": 1.0, "driver": 0.0, "angle_deg": 0.0, "lat_active": true, "limits": {"STEER_MAX": 16, "STEER_DELTA_UP": 2, "STEER_DELTA_DOWN": 5, "STEER_DRIVER_ALLOWANCE": 7, "STEER_DRIVER_FACTOR": 1, "STEER_DRIVER_MULTIPLIER": 3}, "provenance": "SYNTHETIC_ONLY"}, "state": {"index": 0, "previous_requested": null, "previous_applied": 0, "angle_counter": 0}, "custody_claim": "SYNTHETIC_DECLARATION_ONLY", "precision_claim": "EXACT_SUPPLIED_BINARY64_NOT_NATIVE_ABI", "time_semantics": "INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME"},
+        "float_hex": {"request": "0x1.0000000000000p+0", "driver": "0x0.0p+0", "angle_deg": "0x0.0p+0"}
+      },
+      "sha256": "5cdf680765100b2bbe31b18402a481301fbd30bbcd3139f34bfd2b950460fbc1"
+    },
+    {
+      "id": "resume",
+      "payload": {
+        "prepared": {"contract_id": "F70UGZ_R13_MESSAGE_BOUNDARY_V1", "source_set_id": "R11_C8FB9068_4134C0D1_V1", "sequence_id": "probe_resume", "sample": {"index": 1, "request": 1.0, "driver": 0.0, "angle_deg": 0.0, "lat_active": true, "limits": {"STEER_MAX": 16, "STEER_DELTA_UP": 2, "STEER_DELTA_DOWN": 5, "STEER_DRIVER_ALLOWANCE": 7, "STEER_DRIVER_FACTOR": 1, "STEER_DRIVER_MULTIPLIER": 3}, "provenance": "SYNTHETIC_ONLY"}, "state": {"index": 1, "previous_requested": 16, "previous_applied": 2, "angle_counter": 0}, "custody_claim": "SYNTHETIC_DECLARATION_ONLY", "precision_claim": "EXACT_SUPPLIED_BINARY64_NOT_NATIVE_ABI", "time_semantics": "INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME"},
+        "float_hex": {"request": "0x1.0000000000000p+0", "driver": "0x0.0p+0", "angle_deg": "0x0.0p+0"}
+      },
+      "sha256": "914b1bb2b9b184c10a5ff52d8f7e8e0bcc65d474b3d64086ab1750d07e9d4527"
+    },
+    {
+      "id": "history-scale-change",
+      "payload": {
+        "prepared": {"contract_id": "F70UGZ_R13_MESSAGE_BOUNDARY_V1", "source_set_id": "R11_C8FB9068_4134C0D1_V1", "sequence_id": "probe_history-scale-change", "sample": {"index": 1, "request": 0.0, "driver": 0.0, "angle_deg": 0.0, "lat_active": true, "limits": {"STEER_MAX": 5, "STEER_DELTA_UP": 5, "STEER_DELTA_DOWN": 5, "STEER_DRIVER_ALLOWANCE": 0, "STEER_DRIVER_FACTOR": 1, "STEER_DRIVER_MULTIPLIER": 1}, "provenance": "SYNTHETIC_ONLY"}, "state": {"index": 1, "previous_requested": 100, "previous_applied": 100, "angle_counter": 0}, "custody_claim": "SYNTHETIC_DECLARATION_ONLY", "precision_claim": "EXACT_SUPPLIED_BINARY64_NOT_NATIVE_ABI", "time_semantics": "INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME"},
+        "float_hex": {"request": "0x0.0p+0", "driver": "0x0.0p+0", "angle_deg": "0x0.0p+0"}
+      },
+      "sha256": "571b2a521ae7161d334b585e547858bda95d8e183e67ba47b13bc3e1bf0b6e1a"
+    },
+    {
+      "id": "signed-zero",
+      "payload": {
+        "prepared": {"contract_id": "F70UGZ_R13_MESSAGE_BOUNDARY_V1", "source_set_id": "R11_C8FB9068_4134C0D1_V1", "sequence_id": "probe_signed-zero", "sample": {"index": 0, "request": -0.0, "driver": 0.0, "angle_deg": 0.0, "lat_active": true, "limits": {"STEER_MAX": 16, "STEER_DELTA_UP": 2, "STEER_DELTA_DOWN": 5, "STEER_DRIVER_ALLOWANCE": 7, "STEER_DRIVER_FACTOR": 1, "STEER_DRIVER_MULTIPLIER": 3}, "provenance": "SYNTHETIC_ONLY"}, "state": {"index": 0, "previous_requested": null, "previous_applied": 0, "angle_counter": 0}, "custody_claim": "SYNTHETIC_DECLARATION_ONLY", "precision_claim": "EXACT_SUPPLIED_BINARY64_NOT_NATIVE_ABI", "time_semantics": "INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME"},
+        "float_hex": {"request": "-0x0.0p+0", "driver": "0x0.0p+0", "angle_deg": "0x0.0p+0"}
+      },
+      "sha256": "00831ea9519b1b48a42198a3e66e75607a26950694d6173436fa6d3096db5ed7"
+    }
+  ],
+  "required_gates": {"actual_r": null, "actual_T2": null, "actual_vehicle_scale": null, "R_BUDGET": "UNRESOLVED", "STATIC_EVIDENCE_GATE": "FAIL", "SOURCE_SCHEMA_UNQUALIFIED": 6000, "Candidate": "NO_GO", "Runtime": "NO_GO", "actual_activation": "NOT_ALLOWED", "F70UH": "NOT_ALLOWED", "F70V": "NOT_ALLOWED", "F71": "NOT_ALLOWED", "D2": "PERFORMANCE_NOT_EVALUATED", "F19": "LEGACY_UNRESOLVED", "NATIVE_EXACT_REPLAY": "NOT_PROVEN"}
+}

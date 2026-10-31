@@ -229,6 +229,46 @@ def verify_installed_bridge(root: Path, python: Path, output: Path, cwd: Path) -
     return bridge_pair_summary(output / 'bridge_one', output / 'bridge_two')
 
 
+def message_boundary_pair_summary(first: Path, second: Path) -> dict:
+    hashes = _compare(first, second)
+    if set(hashes) != {'RESULTS.json', 'SHA256SUMS.txt'}:
+        raise ValueError('MISSING_MESSAGE_BOUNDARY_ARTIFACTS')
+    raw = (first / 'RESULTS.json').read_bytes()
+    record = json.loads(raw)
+    if type(record) is not dict or canonical(record) != raw:
+        raise ValueError('MESSAGE_BOUNDARY_CONTRACT_NONCANONICAL_RECORD')
+    golden = json.loads((Path(__file__).resolve().parents[1] / 'reference/message_boundary_expected_v1.json').read_bytes())
+    identities = {
+        'schema_version': 1, 'contract_id': 'F70UGZ_R14_SYNTHETIC_MESSAGE_PROBE_V1',
+        'boundary_contract_id': golden['boundary_contract_id'], 'profile_id': golden['profile_id'], 'source_set_id': golden['source_set_id'],
+        'status': 'F70UGZ_R14_FIXED_SYNTHETIC_MESSAGE_EXTRACTION_PASS', 'package_version': golden['package_version'],
+        'scope': 'PREPARED_INPUTS_ONLY_NOT_NATIVE_OR_HISTORY_PROOF', 'scenario_count': 4, 'model_transitions': 0,
+        'native_qualification': 'NOT_RUN_NOT_AUTHORIZED', 'gates': golden['required_gates'],
+        'execution_environment': {'isolated': True, 'installed_package': True, 'numpy_available': False, 'forbidden_modules_loaded': []},
+    }
+    if set(record) != set(identities) | {'records'} or any(canonical(record.get(k)) != canonical(v) for k, v in identities.items()):
+        raise ValueError('MESSAGE_BOUNDARY_CONTRACT_IDENTITY_CLAIMS_OR_GATES')
+    if canonical(record.get('records')) != canonical(golden['records']):
+        raise ValueError('MESSAGE_BOUNDARY_CONTRACT_FULL_LITERAL_MISMATCH')
+    for row in record['records']:
+        if sha(canonical(row['payload'])) != row['sha256']:
+            raise ValueError('MESSAGE_BOUNDARY_CONTRACT_LITERAL_HASH')
+    if (first / 'SHA256SUMS.txt').read_bytes() != (sha(raw) + '  RESULTS.json\n').encode():
+        raise ValueError('MESSAGE_BOUNDARY_MANIFEST_MISMATCH')
+    return {
+        'status': record['status'], 'byte_identical': True, 'scenario_count': record['scenario_count'],
+        'model_transitions': record['model_transitions'], 'file_hashes': hashes,
+        'scope': 'copy-only prepared inputs against hand-authored literals; not native ABI, state-history proof or model execution',
+    }
+
+
+def verify_installed_message_boundary(root: Path, python: Path, output: Path, cwd: Path) -> dict:
+    for name in ['message_boundary_one', 'message_boundary_two']:
+        _run([python, '-I', '-B', root / 'integration_tools/message_boundary_probe.py', '--output', output / name],
+             output / (name + '.log'), cwd)
+    return message_boundary_pair_summary(output / 'message_boundary_one', output / 'message_boundary_two')
+
+
 def typecheck_project(root: Path, python: Path, paths, log: Path) -> None:
     _run([python.parent / 'ty', 'check', '--config-file', root / 'ty.toml', '--python', python, *paths], log, root)
 
@@ -296,6 +336,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
         _run([isolated, '-I', '-B', '-c', code], output / 'installed.log', temp)
         harness = verify_installed_harness(root, isolated, output, temp)
         bridge = verify_installed_bridge(root, isolated, output, temp)
+        message_boundary = verify_installed_message_boundary(root, isolated, output, temp)
     for name in ['numeric_one', 'numeric_two']:
         _run(
             [
@@ -317,7 +358,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
     numeric_hashes = _compare(output / 'numeric_one', output / 'numeric_two')
     source = json.loads((output / 'report_one/simulation.json').read_bytes())
     summary = {
-        'status': 'F70UGZ_R12_SYNTHETIC_DEV_BRIDGE_REFERENCE_PASS',
+        'status': 'F70UGZ_R14_SYNTHETIC_MESSAGE_EXTRACTION_REFERENCE_PASS',
         'runtime': runtime,
         'imports': imported,
         'tests': test_count((output / 'unittest.log').read_text()),
@@ -328,6 +369,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
         'numeric_file_hashes': numeric_hashes,
         'synthetic_harness': harness,
         'synthetic_dev_bridge': bridge,
+        'synthetic_message_boundary': message_boundary,
         'report_and_numeric_pairs_byte_identical': True,
         'source_gates': source['gates'],
         'Controller_execution': 0,

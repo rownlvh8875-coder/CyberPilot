@@ -78,11 +78,22 @@ R13 adds an [offline message-boundary design](docs/OPENPILOT_MESSAGE_BOUNDARY_DE
 [machine-readable contract](docs/OPENPILOT_MESSAGE_BOUNDARY_CONTRACT.json),
 [future test specification](docs/OPENPILOT_MESSAGE_BOUNDARY_TEST_SPEC.md) and
 [future extraction plan](docs/OPENPILOT_MESSAGE_BOUNDARY_IMPLEMENTATION_PLAN.md).
-This is documents only: no actual-object reader, new extraction code or native/schema
-execution. The design separates source-backed fields/declared synthetic custody
-from unverified native Float32/default/presence/lifetime behavior.28 synthetic and6
-native qualification cases are specifications, NOT executed/passing tests. Native
-qualification stays closed; R12 remains the unchanged fixed-fixture implementation.
+Those documents preserve R13's design-only history. They separate source-backed
+fields/declared synthetic custody from unverified native Float32/default/presence/
+lifetime behavior. Native qualification stays closed; R12 remains unchanged.
+
+R14 implements the [pure synthetic extractor](docs/MESSAGE_BOUNDARY_R14.md): seven
+immutable nested carriers and `extract_synthetic_message(frame)`, which validates
+then copies public sample/state without model transitions or state repair. The28
+synthetic cases B01-B28 now run, giving215 tests with the existing187. Native Q01-Q06
+are still NOT_AUTHORIZED/NOT_RUN, not passing tests. No actual CC/CS reader exists.
+
+The gate additionally runs `message_boundary_probe.py` twice under -I/-B with the
+installed unchanged wheel. `message_boundary_one/RESULTS.json` contains four fixed
+prepared inputs and exact float.hex/state/claim/gate records, checked in full
+against hand-authored literal expectations, not just matching checksums/counts.
+Previous integer candidate is model bookkeeping/declaration-only, not history
+proof; supplied signed-zero/binary64 bits remain intact. No F61/r/time API is added.
 
 The dev environment intentionally does not install the wheel-only project as an
 editable package (`tool.uv.package=false`). Test source selectors are DEV-only.
