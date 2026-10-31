@@ -57,7 +57,7 @@ demo carries output.next_state into next frame's previous snapshot.
 - [x] Implement separate producer/mode and validated R22/R23 summary counts.
 - [x] New native env, two R23 workers, literal output tests; R19–R22 observation
   hash controls and internal count guards. Full pure suite and native static/compile.
-- [ ] Fresh archive/new native/dev env repeats native observations/SUMMARY; retain
+- [x] Fresh archive/new native/dev env repeats native observations/SUMMARY; retain
   environment receipts without cross-env equality claims. Commit/ledger.
 - [ ] One fresh whole-branch read-only review; Critical/Important one RED/GREEN fix
   pass, minors ledgered. Exact-head pure CI, Draft PR update,94 downloaded hashes.

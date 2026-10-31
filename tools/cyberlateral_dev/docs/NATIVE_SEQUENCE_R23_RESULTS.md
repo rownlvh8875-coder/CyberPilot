@@ -30,6 +30,21 @@ Two designated R23 workers execute4 steps each/8 combined. Unit/reviewer/CI mode
 work is additional and NOT included in that figure. Projection words are schema
 simulation, not native output/CAN wire; scalar kind strings are model trace labels.
 
+Fresh archived source/new dev+native environment also passes338 tests/116 own
+compilations. Native observations and SUMMARY match primary byte-for-byte; four
+designated R23 workers total16 steps. The separate R22 control pair adds10;
+unit/reviewer/CI activity remains outside these scoped counts. Environment receipts
+and complete pure SUMMARY are not claimed equal or authenticated.
+
+One fresh read-only whole-branch reviewer independently ran20 new pure tests and
+7 observation checks:PASS, Critical0/Important0. Deferred Minor R23-M1:parent
+coverage currently enforces numerical records/counts/selected gates, not every
+auxiliary oracle/stamp/binding/identity/custody/module claim. Current actual
+producer/observations are correct; mandatory recorded-output checks independently
+verify key claims. Parent PASS alone is not full metadata validation/authentication.
+This reporting-hardening item is distinct from the fixed R22 count issue. No
+source correction/re-review pass was needed for this fixed synthetic head.
+
 R23 OBSERVATIONS.json SHA256:
 662a138f71ef6c065eebb6061ba71ab2e6c728250c57bef8a932e32e0c260441.
 R19/R20/R21/R22 observation controls remain respectively:
