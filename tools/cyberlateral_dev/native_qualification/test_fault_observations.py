@@ -1,4 +1,4 @@
-"""Independent literal acceptance on recorded96-step native fault/reset trace."""
+"""Independent literal acceptance on recorded99-step native fault/reset trace."""
 
 import json
 import unittest
@@ -10,11 +10,21 @@ class FaultObservationTests(unittest.TestCase):
     def setUpClass(cls):
         cls.data = json.loads(Path('OBSERVATIONS.json').read_bytes())
 
-    def test_96_adjacent_indices_and_exact_scoped_counts(self):
+    def test_99_adjacent_indices_and_exact_scoped_counts(self):
         rows = self.data['cases']
-        self.assertEqual([r['index'] for r in rows], list(range(96)))
-        self.assertEqual([r['model_steps'] for r in rows], [1] * 96)
-        self.assertEqual(self.data['model_execution'], 96)
+        self.assertEqual([r['index'] for r in rows], list(range(99)))
+        self.assertEqual([r['model_steps'] for r in rows], [1] * 99)
+        self.assertEqual(self.data['model_execution'], 99)
+
+    def test_nonzero_inactive_counter_is_actually_carried_then_cleared(self):
+        rows = self.data['cases']
+        self.assertEqual(rows[96]['model_output']['next_state'], {'index': 97, 'previous_requested': 4, 'previous_applied': 4, 'angle_counter': 1})
+        self.assertEqual(rows[97]['prepared']['state'], rows[96]['model_output']['next_state'])
+        self.assertEqual(rows[97]['prepared']['state']['angle_counter'], 1)
+        self.assertFalse(rows[97]['prepared']['sample']['lat_active'])
+        self.assertEqual(rows[97]['model_output']['next_state'], {'index': 98, 'previous_requested': 4, 'previous_applied': 0, 'angle_counter': 0})
+        self.assertEqual(rows[98]['prepared']['state'], rows[97]['model_output']['next_state'])
+        self.assertEqual(rows[98]['model_output']['next_state'], {'index': 99, 'previous_requested': 4, 'previous_applied': 2, 'angle_counter': 1})
 
     def test_literal89_90_91_92_call_counter_and_request_boundary(self):
         for index, counter, request in [(88, 89, True), (89, 90, False), (90, 0, False), (91, 1, True)]:
@@ -50,7 +60,7 @@ class FaultObservationTests(unittest.TestCase):
             self.assertEqual(row['stamp'], {'sequence_id': 'R24_FIXED_FAULT_RESET', 'invocation_index': index, 'capture_id': 'entry_' + str(index)})
 
     def test_reference_and_declaration_only_gates(self):
-        self.assertEqual(self.data['model_reference_sha256'], '7d0d6ab9702318049752fc5312c6530f91822ed391a83863a56134d95df550e0')
+        self.assertEqual(self.data['model_reference_sha256'], 'dfb150fc3f1348be6fae161bdb2d524dc1138c504410c8ef38bf874c27b4d8cd')
         self.assertEqual(self.data['actual_call_custody'], 'NOT_QUALIFIED')
         self.assertEqual(self.data['actual_activation'], 'NOT_ALLOWED')
         self.assertEqual(self.data['F61_execution'], 0)

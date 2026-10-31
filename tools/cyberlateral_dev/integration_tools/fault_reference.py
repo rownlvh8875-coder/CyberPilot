@@ -1,4 +1,4 @@
-"""All96 preregistered literals, representation assembly only, no model math."""
+"""All99 preregistered v2 literals, representation assembly only, no model math."""
 
 import hashlib
 import json
@@ -6,8 +6,8 @@ from pathlib import Path
 
 from .fixed_model_reference import _clip, _state
 
-REFERENCE_PATH = Path(__file__).resolve().parents[1] / 'reference/r24_fault_expected_v1.json'
-REFERENCE_SHA256 = '7d0d6ab9702318049752fc5312c6530f91822ed391a83863a56134d95df550e0'
+REFERENCE_PATH = Path(__file__).resolve().parents[1] / 'reference/r24_fault_expected_v2.json'
+REFERENCE_SHA256 = 'dfb150fc3f1348be6fae161bdb2d524dc1138c504410c8ef38bf874c27b4d8cd'
 
 
 def load_reference() -> dict:
@@ -18,7 +18,7 @@ def load_reference() -> dict:
 
 
 def _record(index: int) -> tuple[dict, dict]:
-    if type(index) is not int or not 0 <= index < 96:
+    if type(index) is not int or not 0 <= index < 99:
         raise ValueError('FAULT_INDEX')
     reference = load_reference()
     return reference, reference['steps'][index]

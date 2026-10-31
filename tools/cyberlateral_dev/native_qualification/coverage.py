@@ -32,7 +32,7 @@ def validate_coverage(observations: dict, mode: str) -> int:
     rows = observations.get('cases')
     if type(rows) is not list:
         raise ValueError('OBSERVATION_COVERAGE')
-    _require(len(rows) == {'R22': 8, 'R23': 4, 'R24': 96}[mode])
+    _require(len(rows) == {'R22': 8, 'R23': 4, 'R24': 99}[mode])
     # Decoded JSON boundary: container shape is checked here and each row below.
     # The annotation does not replace the exact scalar/record validation.
     decoded = cast(list[dict[str, Any]], rows)
@@ -71,6 +71,6 @@ def validate_coverage(observations: dict, mode: str) -> int:
             previous_next = row['model_output']['next_state']
         else:
             _require('model_output' not in row and row.get('rejection_code') == 'SEMANTIC_DOMAIN')
-    _require(_integer(observations.get('model_execution'), total) and total == {'R22': 5, 'R23': 4, 'R24': 96}[mode])
+    _require(_integer(observations.get('model_execution'), total) and total == {'R22': 5, 'R23': 4, 'R24': 99}[mode])
     validate_claims(observations, mode)
     return total

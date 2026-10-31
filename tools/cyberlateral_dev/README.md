@@ -37,9 +37,11 @@ gating. Parent coverage/count validation also closes R22's deferred M1 without
 changing old observation bytes. See [R23 results](docs/NATIVE_SEQUENCE_R23_RESULTS.md).
 
 R24 adds [fixed fault/reset boundaries](docs/FAULT_RESET_R24.md), explicitly selected
-with --fault-boundaries:96 preregistered synthetic native/model steps across the
+with --fault-boundaries:99 preregistered synthetic native/model steps across the
 request-suppression window, below85 reset and inactive reactivation. Auxiliary
-claim validation also closes R23-M1 without changing old observations. This is
+claim validation also closes R23-M1 without changing old observations. A separately
+preregistered v2 preserves the original96-call prefix and adds nonzero-counter
+deactivation/reactivation coverage identified by review. This is
 model behavior, not a physical safety recommendation. See [R24 results](docs/FAULT_RESET_R24_RESULTS.md).
 
 ## One-command verification

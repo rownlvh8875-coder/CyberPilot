@@ -36,7 +36,7 @@ def validate_claims(data: dict, mode: str) -> None:
     profiles = {
         'R22': ('FIVE_FIXED_SYNTHETIC_SINGLE_STEPS_NOT_ACTUAL_OR_CHAIN', r22.REFERENCE_SHA256, 8),
         'R23': ('FOUR_FIXED_SYNTHETIC_NATIVE_MODEL_STEPS_NOT_ACTUAL_HISTORY', r23.REFERENCE_SHA256, 4),
-        'R24': ('NINETY_SIX_FIXED_SYNTHETIC_FAULT_RESET_STEPS_NOT_ACTUAL_HISTORY', r24.REFERENCE_SHA256, 96),
+        'R24': ('NINETY_NINE_FIXED_SYNTHETIC_FAULT_RESET_STEPS_NOT_ACTUAL_HISTORY', r24.REFERENCE_SHA256, 99),
     }
     scope, reference, count = profiles[mode]
     _require(type(data.get('schema_version')) is int and data['schema_version'] == 1

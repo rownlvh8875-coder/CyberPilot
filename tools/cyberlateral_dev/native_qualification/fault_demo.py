@@ -1,4 +1,4 @@
-"""One fixed96-step synthetic native fault/reset trace, not a generic reader."""
+"""One fixed99-step synthetic native fault/reset trace, not a generic reader."""
 
 from dataclasses import asdict
 
@@ -17,7 +17,7 @@ def _frame(car, index: int, state: p.LateralState) -> tuple[b.OwnedFrame, Scalar
     stamp = b.Stamp('R24_FIXED_FAULT_RESET', index, 'entry_' + str(index))
     cc, cs = car.CarControl.new_message(), car.CarState.new_message()
     cc.actuators.torque = 0.25
-    cc.latActive = index != 93
+    cc.latActive = index not in (93, 97)
     cs.steeringTorque = 0.0
     cs.steeringAngleDeg = 84.5 if index in (92, 95) else 85.0
     cc_raw, cs_raw = cc.to_bytes(), cs.to_bytes()
@@ -40,7 +40,7 @@ def demonstrate(car) -> dict:
     rows = []
     state = p.LateralState(0, None, 0, 0)
     model_steps = 0
-    for index in range(96):
+    for index in range(99):
         frame, readback = _frame(car, index, state)
         prepared = prepare_semantic_input(frame, readback)
         oracle_sample, oracle_state = oracle_prepare(frame, readback)
@@ -52,7 +52,7 @@ def demonstrate(car) -> dict:
                      'cc_sha256': readback.cc_sha256, 'cs_sha256': readback.cs_sha256, 'stamp': asdict(frame.stamp),
                      'state_binding': 'EXPLICIT_FIXED_INITIAL_DATA' if index == 0 else 'PREVIOUS_VERIFIED_MODEL_OUTPUT_NOT_ACTUAL_HISTORY'})
         state = output.next_state
-    return {'schema_version': 1, 'scope': 'NINETY_SIX_FIXED_SYNTHETIC_FAULT_RESET_STEPS_NOT_ACTUAL_HISTORY',
+    return {'schema_version': 1, 'scope': 'NINETY_NINE_FIXED_SYNTHETIC_FAULT_RESET_STEPS_NOT_ACTUAL_HISTORY',
             'cases': rows, 'package_version': p.__version__, 'model_execution': model_steps,
             'model_reference_sha256': REFERENCE_SHA256, 'F61_execution': 0,
             'actual_call_custody': 'NOT_QUALIFIED', 'actual_activation': 'NOT_ALLOWED',

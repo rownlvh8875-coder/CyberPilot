@@ -17,8 +17,8 @@ from v1_helpers import ROOT
 def fault_observations():
     from integration_tools import fault_reference as reference
     rows = [{'index': index, 'accepted': True, 'model_steps': 1, 'model_expected_match': True,
-             'prepared': reference.expected_input(index), 'model_output': reference.expected_output(index)} for index in range(96)]
-    return complete_claims({'cases': rows, 'model_execution': 96, 'F61_execution': 0, 'actual_activation': 'NOT_ALLOWED',
+             'prepared': reference.expected_input(index), 'model_output': reference.expected_output(index)} for index in range(99)]
+    return complete_claims({'cases': rows, 'model_execution': 99, 'F61_execution': 0, 'actual_activation': 'NOT_ALLOWED',
                             'R_BUDGET': 'UNRESOLVED', 'STATIC_EVIDENCE_GATE': 'FAIL'}, 'R24')
 
 
@@ -66,12 +66,12 @@ class FaultModeTests(unittest.TestCase):
             self.assertIn('--fault-boundaries', worker_io.call_args.args[0])
             return result
 
-    def test_validated96_counts_are_derived_not_fixed_or_coerced(self):
+    def test_validated99_counts_are_derived_not_fixed_or_coerced(self):
         runner, _ = self.modules()
         with tempfile.TemporaryDirectory() as scratch:
             root = Path(scratch)
             result = self.run_workers(runner, root, fault_observations())
-            self.assertEqual((result['model_execution'], result['model_execution_per_worker']), (192, 96))
+            self.assertEqual((result['model_execution'], result['model_execution_per_worker']), (198, 99))
             self.assertTrue((root / 'output/SUMMARY.json').is_file())
 
     def test_equal_missing_rows_wrong_counter_and_bool_counts_never_publish(self):

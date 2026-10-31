@@ -8,7 +8,7 @@ def complete_claims(data, mode):
                   'R24': fault_reference.REFERENCE_SHA256}
     scopes = {'R22': 'FIVE_FIXED_SYNTHETIC_SINGLE_STEPS_NOT_ACTUAL_OR_CHAIN',
               'R23': 'FOUR_FIXED_SYNTHETIC_NATIVE_MODEL_STEPS_NOT_ACTUAL_HISTORY',
-              'R24': 'NINETY_SIX_FIXED_SYNTHETIC_FAULT_RESET_STEPS_NOT_ACTUAL_HISTORY'}
+              'R24': 'NINETY_NINE_FIXED_SYNTHETIC_FAULT_RESET_STEPS_NOT_ACTUAL_HISTORY'}
     data.update(schema_version=1, scope=scopes[mode], package_version='0.3.0', model_reference_sha256=references[mode],
                 actual_call_custody='NOT_QUALIFIED', forbidden_modules_loaded=[],
                 identity={'schema_sha256': '098a19d69e8d233ac653503b53761a94824f31812757a11a7ded1589fe1e0788',

@@ -108,7 +108,7 @@ def main() -> int:
     parser.add_argument('--semantic-bridge', action='store_true', help='Explicit R21 closed semantic/oracle experiment, no model execution')
     parser.add_argument('--model-consumption', action='store_true', help='Explicit R22 five fixed synthetic steps with pinned expected outputs')
     parser.add_argument('--model-sequence', action='store_true', help='Explicit R23 fixed four-step synthetic state-carry sequence')
-    parser.add_argument('--fault-boundaries', action='store_true', help='Explicit R24 fixed96-step synthetic fault/reset sequence')
+    parser.add_argument('--fault-boundaries', action='store_true', help='Explicit R24 fixed99-step synthetic fault/reset sequence')
     parser.add_argument('--package-wheel', type=Path, help='Exact sealed public wheel, required for semantic or model mode')
     args = parser.parse_args()
     try:

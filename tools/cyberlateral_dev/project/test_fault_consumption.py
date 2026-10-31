@@ -13,7 +13,7 @@ from v1_helpers import ROOT, package_feature
 
 def sample(p, index):
     return p.LateralInput(index, 0.25, 0.0, 84.5 if index in (92, 95) else 85.0,
-                          index != 93, p.Limits(16, 2, 5, 7, 1, 3), 'SYNTHETIC_ONLY')
+                          index not in (93, 97), p.Limits(16, 2, 5, 7, 1, 3), 'SYNTHETIC_ONLY')
 
 
 class FaultConsumptionTests(unittest.TestCase):
@@ -23,22 +23,35 @@ class FaultConsumptionTests(unittest.TestCase):
             sys.path.insert(0, str(ROOT))
         return package_feature(), importlib.import_module('integration_tools.fault_consumption'), importlib.import_module('integration_tools.fault_reference')
 
-    def test_continuous_96_steps_hit_literal_boundaries_without_extra_initialization(self):
+    def test_nonzero_counter_is_reset_by_carried_inactive_call(self):
+        p, consumer, reference = self.modules()
+        self.assertEqual(len(reference.load_reference()['steps']), 99, 'Missing preregistered99-step extension')
+        state = p.LateralState(96, 4, 4, 0)
+        active = consumer.consume_fault_step(96, sample(p, 96), state)
+        self.assertEqual(active.next_state, p.LateralState(97, 4, 4, 1))
+        inactive = consumer.consume_fault_step(97, sample(p, 97), active.next_state)
+        self.assertEqual(inactive.next_state, p.LateralState(98, 4, 0, 0))
+        self.assertFalse(inactive.steer_request)
+        reactivated = consumer.consume_fault_step(98, sample(p, 98), inactive.next_state)
+        self.assertEqual(reactivated.next_state, p.LateralState(99, 4, 2, 1))
+        self.assertTrue(reactivated.steer_request)
+
+    def test_continuous_99_steps_hit_literal_boundaries_without_extra_initialization(self):
         p, consumer, _ = self.modules()
         state = p.LateralState(0, None, 0, 0)
         boundaries = {0: (1, True, 2), 1: (2, True, 4), 88: (89, True, 4), 89: (90, False, 4),
                       90: (0, False, 4), 91: (1, True, 4), 92: (0, True, 4), 93: (0, False, 0),
-                      94: (1, True, 2), 95: (0, True, 4)}
+                      94: (1, True, 2), 95: (0, True, 4), 96: (1, True, 4), 97: (0, False, 0), 98: (1, True, 2)}
         with patch.object(p, 'step', wraps=p.step) as step, patch.object(p, 'simulate', side_effect=AssertionError('no simulation')), \
                 patch.object(p, 'initial_state', side_effect=AssertionError('no initialization')):
-            for index in range(96):
+            for index in range(99):
                 output = consumer.consume_fault_step(index, sample(p, index), state)
                 if index in boundaries:
                     self.assertEqual((output.next_state.angle_counter, output.steer_request, output.projection.integer_command), boundaries[index])
                 self.assertEqual(output.trace.downstream.limiter_previous, state.previous_applied)
                 self.assertEqual(step.call_count, index + 1)
                 state = output.next_state
-        self.assertEqual(state, p.LateralState(96, 4, 4, 0))
+        self.assertEqual(state, p.LateralState(99, 4, 2, 1))
 
     def test_suppressed_request_does_not_invent_command_zeroing(self):
         p, consumer, _ = self.modules()
@@ -68,7 +81,7 @@ class FaultConsumptionTests(unittest.TestCase):
                                   (91, p.LateralState(91, 4, 4, 90)), (94, p.LateralState(94, 4, 4, 0))]:
                 with self.assertRaisesRegex(ValueError, 'FAULT_INPUT_MISMATCH'):
                     consumer.consume_fault_step(index, sample(p, index), state)
-            for index in [True, -1, 96, '0']:
+            for index in [True, -1, 99, '0']:
                 with self.assertRaisesRegex(ValueError, 'FAULT_INDEX'):
                     consumer.consume_fault_step(index, object(), object())
 

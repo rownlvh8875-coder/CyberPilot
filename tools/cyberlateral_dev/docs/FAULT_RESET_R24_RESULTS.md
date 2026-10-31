@@ -1,5 +1,35 @@
 # R24 — fixed synthetic fault/reset trace and auxiliary claims
 
+## Final v2 qualification after one review fix pass
+
+Independent review found Important R24-I1:the original inactive step entered with
+counter0 after a below85 reset, so it did not experimentally prove clearing a
+nonzero counter. No arithmetic output was wrong. Preserve v1 bytes/observations;
+do not relabel the old coverage. Preregistered v2 at
+18efc87b9cd7e08285045392c2e77d1b4df441ef BEFORE any new continuation step.
+V2 reference SHA dfb150fc3f1348be6fae161bdb2d524dc1138c504410c8ef38bf874c27b4d8cd.
+Its first96 literal AND observed records exactly match v1, with only96/97/98
+active/inactive/active85 appended. Actual carried counters1->0->1 and applied
+commands4->0->2 are checked; no declared-state substitution is used by the producer.
+
+New regression test RED against the old96-record consumer, then GREEN after
+the prospective99-record profile. Final full gate359 tests PASS (338 inherited
++21 new),122 own pure compilations/77 frozen identities/sealed wheel unchanged.
+Native static/14 compilations and7 independent literal output checks PASS.
+Reviewer directly ran v1's20+6 tests and did NOT re-review or approve v2; the
+single fix pass is executor-verified, with no remaining deferred minor from review.
+
+Final v2 OBSERVATIONS SHA:
+b13ff35e6fda538af2a437309384109d5e87adf8cc6c3f5a6edba44c4626287d.
+Final v2 SUMMARY SHA:
+87446a0a81132e03a8672bda45580abe3caa4333e752807716130832a3d25d3f.
+Designated primary pair198 steps; relocated pair adds198,396 total. Earlier v1
+six workers576 and R22/R23 control pairs across two rounds36 are separate;
+unit/reviewer/CI work is additional, not an aggregate execution total. Details
+below retain the original v1 chronology, not the final cardinality/reference.
+
+## Preserved v1 development evidence
+
 All96 literal rows were preregistered ate8cf2e0d2cebf7e10ff9f6b20206a95a273b7958
 before R24 implementation/tests/model execution. Reference SHA256:
 7d0d6ab9702318049752fc5312c6530f91822ed391a83863a56134d95df550e0.
