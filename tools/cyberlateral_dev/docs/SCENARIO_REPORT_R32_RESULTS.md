@@ -21,7 +21,7 @@ The final handoff commit changes documentation only, not executed Python.
   `3f3db36f62aa79ba97e4536a183b7e685a9d06c4e264d1fec9dd3bbda7c4d73c`.
 - Final source: two saved R31 bundles x2 locations x2 repeats =8 direct report
   processes. Model/native/NumPy import tripwire PASS, new reader model calls0.
- 20 historical steps are displayed, NOT executed. Inherited unit/CI synthetic
+  20 historical steps are displayed, NOT executed. Inherited unit/CI synthetic
   model work is NONZERO and additional; no whole-task model0 claim.
 - For each profile, index.html and VIEW.json are exactly equal across all4 runs;
   valid-data portable bytes remain unchanged after the alias fix. Actual receipt
@@ -35,7 +35,7 @@ The final handoff commit changes documentation only, not executed Python.
   native observation tests and33 native source in-memory compiles PASS. No new
   native workers, native installation or fresh ABI qualification. Historical
   native observations are evidence from their original execution, not this one.
--205 preexisting Python/JSON/build/lock guards and10 original source hashes
+- 205 preexisting Python/JSON/build/lock guards and10 original source hashes
   unchanged. Original checkout/submodule observed clean at preserved original
   heads before/after. This is not atomic full-tree, deployment or OS attestation.
 - Every available pure root manifest94 entries and every nested report/output
