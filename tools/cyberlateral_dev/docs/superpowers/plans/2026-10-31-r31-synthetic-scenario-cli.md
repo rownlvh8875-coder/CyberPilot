@@ -63,9 +63,9 @@ update README navigation and R30-M1 report-opening prose.
 
 **Interfaces:** Task2 CLI only, no new public package flags or hardware paths.
 
-- [ ] Add literal synthetic examples and usage/format/rejection/claim limits; corrected report path.
-- [ ] Full component tests/static/wheel/original guards PASS; committed relocated fresh env repeats custom examples twice, portable files exact, receipts retained.
-- [ ] Unchanged optional native R27/R28/R29 regressions match historical pins; native static/compile/data checks PASS.
-- [ ] Fresh whole-branch reviewer; Important/Critical one RED→GREEN fix pass if needed; all exclusions dispositioned.
+- [x] Add literal synthetic examples and usage/format/rejection/claim limits; corrected report path.
+- [x] Full component tests/static/wheel/original guards PASS; committed relocated fresh env repeats custom examples twice, portable files exact, receipts retained.
+- [x] Unchanged optional native R27/R28/R29 regressions match historical pins; native static/compile/data checks PASS.
+- [x] Fresh whole-branch reviewer; Important/Critical one RED→GREEN fix pass if needed; all exclusions dispositioned.
 - [ ] Commit results, normal feature push, exact-head dedicated pure CI/artifact PASS, preserve/update Draft PR2.
 - [ ] Deterministic evidence seal twice, fresh extraction/CRC/all checksum manifests PASS; final closed production gates.
