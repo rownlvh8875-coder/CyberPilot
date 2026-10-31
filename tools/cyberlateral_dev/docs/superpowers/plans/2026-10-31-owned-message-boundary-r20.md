@@ -51,15 +51,15 @@ modify worker.py/run.py only for explicit --owned-boundary; add pure mode guard 
 **Interfaces:** owned_demo.demonstrate(car)->dict; worker.observe(...,owned_boundary=False);
 run.qualify(...,owned_boundary=False). Default observations still original R19 SHA.
 
-- [ ] Write missing-demo/mode RED tests and literal output assertions for four
+- [x] Write missing-demo/mode RED tests and literal output assertions for four
   fixed cases,0.3 Float32 readback, signed zero/default proof, frozen-after-mutation,
   expected rejection codes and blocked actual-reader/model gates.
-- [ ] Implement fixed local builder producer + declaration ledger, no arbitrary
+- [x] Implement fixed local builder producer + declaration ledger, no arbitrary
   input parser. Only --owned-boundary enables it in the verified R19 schema context.
-- [ ] Run two workers, independently check output, original R19 SHA, Ruff/Ty/
+- [x] Run two workers, independently check output, original R19 SHA, Ruff/Ty/
   Codespell/own compile and full component gate. Fresh archive/new native env
   reproduces observation bytes; include unchanged workflow in relocated source.
-- [ ] Commit and request one fresh whole-branch final review; one RED/GREEN fix
+- [x] Commit and request one fresh whole-branch final review; one RED/GREEN fix
   pass for Important/Critical, ledger all rulings/deferred minors.
 - [ ] Record results/docs; publish existing feature/Draft PR, run exact-head pure
   CI and verify downloaded manifest. Native GitHub CI remains NOT_RUN.

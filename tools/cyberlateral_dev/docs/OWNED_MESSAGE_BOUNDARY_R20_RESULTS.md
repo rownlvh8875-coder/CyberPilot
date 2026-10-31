@@ -31,6 +31,15 @@ b7eaadea476113bcd5e56b6526382dc468773f9ec69327f4a6c6fc31cff2fe74.
 R20 OBSERVATIONS.json SHA256:
 d88aabec4c37ceaca52f2516ae0a7c7c3d2efbad2680afa365a1c809b06448af.
 
+Primary and relocated full gates:280 tests PASS (263 inherited +17 R20).
+Each separate native observation check:6 PASS. Component/static checks and
+102 own-code compilations PASS; explicit native Ruff/Ty/Codespell and5 own-code
+compilations PASS.77 frozen imports and sealed public wheel unchanged.
+Fresh relocated sources/new environments reproduce observation and SUMMARY bytes;
+process/environment receipts are retained separately, not claimed identical.
+One fresh final reviewer independently ran17 tests,40 hostile probes and6 output
+checks, finding no Critical/Important/Minor defect. No fix pass/re-review needed.
+
 ## Reproduction
 
 Use the same separate binary-only native environment/wheel requirements as R19.
