@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "contract_id": "F70UGZ_R22_FIXED_FIVE_SINGLE_STEP_V1",
+  "expectation_origin": "SOURCE_DERIVED_LITERAL_PREREGISTRATION_NOT_OBSERVED_MODEL_OUTPUT",
+  "public_wheel_sha256": "3f3db36f62aa79ba97e4536a183b7e685a9d06c4e264d1fec9dd3bbda7c4d73c",
+  "limits": [16, 2, 5, 7, 1, 3],
+  "driver_bounds": [-16, 16],
+  "cases": {
+    "zero": {
+      "input": {"index": 0, "request_hex": "0x0.0p+0", "driver_hex": "0x0.0p+0", "angle_hex": "0x0.0p+0", "lat_active": false, "state": [0, null, 0, 0]},
+      "product_hex": "0x0.0p+0", "integer_request": 0, "driver_result": 0,
+      "rate_bounds": [-2, 2], "limited": 0, "final": 0, "steer_request": false,
+      "next_state": [1, 0, 0, 0], "normalized_hex": "0x0.0p+0", "command_hex": "0x0.0p+0",
+      "normalized_bits": "00000000", "command_bits": "00000000"
+    },
+    "rounded_request": {
+      "input": {"index": 0, "request_hex": "0x1.3333340000000p-2", "driver_hex": "0x1.8000000000000p+0", "angle_hex": "-0x1.d000000000000p+2", "lat_active": true, "state": [0, null, 0, 0]},
+      "product_hex": "0x1.3333340000000p+2", "integer_request": 5, "driver_result": 5,
+      "rate_bounds": [-2, 2], "limited": 2, "final": 2, "steer_request": true,
+      "next_state": [1, 5, 2, 0], "normalized_hex": "0x1.0000000000000p-3", "command_hex": "0x1.0000000000000p+1",
+      "normalized_bits": "3e000000", "command_bits": "40000000"
+    },
+    "signed_zero": {
+      "input": {"index": 0, "request_hex": "-0x0.0p+0", "driver_hex": "-0x0.0p+0", "angle_hex": "-0x0.0p+0", "lat_active": false, "state": [0, null, 0, 0]},
+      "product_hex": "-0x0.0p+0", "integer_request": 0, "driver_result": 0,
+      "rate_bounds": [-2, 2], "limited": 0, "final": 0, "steer_request": false,
+      "next_state": [1, 0, 0, 0], "normalized_hex": "0x0.0p+0", "command_hex": "0x0.0p+0",
+      "normalized_bits": "00000000", "command_bits": "00000000"
+    },
+    "resumed": {
+      "input": {"index": 1, "request_hex": "0x1.0000000000000p-2", "driver_hex": "0x1.0000000000000p+1", "angle_hex": "0x1.0000000000000p+3", "lat_active": true, "state": [1, 5, 3, 1]},
+      "product_hex": "0x1.0000000000000p+2", "integer_request": 4, "driver_result": 4,
+      "rate_bounds": [-2, 5], "limited": 4, "final": 4, "steer_request": true,
+      "next_state": [2, 4, 4, 0], "normalized_hex": "0x1.0000000000000p-2", "command_hex": "0x1.0000000000000p+2",
+      "normalized_bits": "3e800000", "command_bits": "40800000"
+    },
+    "smallest_subnormal": {
+      "input": {"index": 0, "request_hex": "0x1.0000000000000p-149", "driver_hex": "0x0.0p+0", "angle_hex": "0x0.0p+0", "lat_active": true, "state": [0, null, 0, 0]},
+      "product_hex": "0x1.0000000000000p-145", "integer_request": 0, "driver_result": 0,
+      "rate_bounds": [-2, 2], "limited": 0, "final": 0, "steer_request": true,
+      "next_state": [1, 0, 0, 0], "normalized_hex": "0x0.0p+0", "command_hex": "0x0.0p+0",
+      "normalized_bits": "00000000", "command_bits": "00000000"
+    }
+  }
+}
