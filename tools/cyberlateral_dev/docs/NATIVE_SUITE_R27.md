@@ -66,6 +66,8 @@ Validate preflight once, run all8 stages sequentially in a private temporary
 sibling directory, then validate each stage and its returned-summary hash.
 Abort on first failure; do not run later stages, publish a partial PASS, retry,
 or fall back. Existing per-mode output bytes and behavior must remain unchanged.
+Revalidate all eight outputs after the final child, reject late corruption or
+unexpected root staging entries, then construct reports and the closed manifest.
 
 suite_report.build_summary(rows:list[dict])->dict and render_report(summary)->str
 require exact ordered8-row coverage and strict counts/pins. Summary/report state

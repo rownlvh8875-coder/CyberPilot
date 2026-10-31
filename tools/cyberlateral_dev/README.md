@@ -60,6 +60,26 @@ reset/reactivation while retaining fractional driver trace kinds. It does not
 broaden accepted external inputs, infer elapsed time or authorize vehicle use.
 See [R26 results and reproduction](docs/NEGATIVE_CYCLE_R26_RESULTS.md).
 
+R27 adds a separate [complete fixed native suite](docs/NATIVE_SUITE_R27.md).
+It runs all eight R19–R26 profiles, checks exact retained observation identities,
+numerical contracts, source hashes and manifests, and publishes one bounded
+Korean/JSON report only after all pass. Missing/contradictory records, late
+corruption and output collisions fail closed; SUITE_SUMMARY.json is published last.
+The default pure command/CI below still does NOT run native qualification.
+
+From tools/cyberlateral_dev, after preparing the existing separate pinned native
+environment and the exact native/public wheels:
+
+```bash
+uv run --locked python -B native_qualification/suite.py --fixed-native-suite --python /absolute/native-env/bin/python --wheel /absolute/pycapnp.whl --package-wheel /absolute/cyberlateral_dev-0.3.0-py3-none-any.whl --output /absolute/NEW-suite-output
+```
+
+The output parent must exist. This command neither installs dependencies nor
+accepts stage subsets, external data, r or dt. Its8 profiles/16 workers/454 model
+calls are scoped to this one fixed synthetic suite, not an aggregate stage count,
+general reader, actual-history proof or vehicle/production approval. Environment
+receipts/manifests are retained separately from portable summary equality.
+
 ## One-command verification
 
 Install [uv](https://docs.astral.sh/uv/)0.12.23. From the repository root:

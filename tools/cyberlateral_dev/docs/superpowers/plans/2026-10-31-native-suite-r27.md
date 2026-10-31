@@ -55,7 +55,7 @@ project/test_suite_runner.py; README/spec/results/plan.
 run_suite(python,wheel,package_wheel,output,*,enabled=False)->dict;
 build_summary(rows)->dict,render_report(summary)->str; CLI --fixed-native-suite.
 
-- [ ] Write12 runner/report tests:mandatory opt-in/bool/output/wheel/parent
+- [x] Write12 runner/report tests:mandatory opt-in/bool/output/wheel/parent
   preflight;8 exact mode calls and report454/16; stage failure abort/no final;
   returned-summary/artifact contradiction; bad child metadata; missing/duplicate/
   reordered report rows and false counts; deterministic pure results/no native
@@ -63,9 +63,9 @@ build_summary(rows)->dict,render_report(summary)->str; CLI --fixed-native-suite.
   collision; link failure/summary-last/no overwrite;43-entry manifest verification.
   Run unittest discover -s project -p test_suite_runner.py -v.
   Expected:RED missing suite. Implement minimal runner/reporter; GREEN12.
-- [ ] Full dev.py verify --output out/r27-primary, native Ruff/Ty/Codespell/23
+- [x] Full dev.py verify --output out/r27-primary, native Ruff/Ty/Codespell/23
   compilations. Expected:410 tests/134 pure compilations/frozen77/sealed wheel PASS.
-- [ ] Fresh native env executes suite (8 stages/16 workers/454 model calls),
+- [x] Fresh native env executes suite (8 stages/16 workers/454 model calls),
   independent7 suite observation checks and all53 existing individual output
   assertions; verify root43 and8 inner4-entry manifests. Expected:all PASS.
 - [ ] Commit; archived source+workflow/new dev/native env full gate and suite.
