@@ -14,6 +14,8 @@ import tempfile
 import zipfile
 from pathlib import Path, PurePosixPath
 
+from .handoff_validation import handoff_pair_summary
+
 WHEEL = 'cyberlateral_dev-0.3.0-py3-none-any.whl'
 PINS = {'numpy': '2.5.3', 'ruff': '0.16.7', 'ty': '0.0.80', 'codespell': '2.4.3', 'PyYAML': '6.0.3'}
 
@@ -269,6 +271,13 @@ def verify_installed_message_boundary(root: Path, python: Path, output: Path, cw
     return message_boundary_pair_summary(output / 'message_boundary_one', output / 'message_boundary_two')
 
 
+def verify_installed_handoff(root: Path, python: Path, output: Path, cwd: Path) -> dict:
+    for name in ['handoff_one', 'handoff_two']:
+        _run([python, '-I', '-B', root / 'integration_tools/message_handoff.py', '--output', output / name],
+             output / (name + '.log'), cwd)
+    return handoff_pair_summary(output / 'handoff_one', output / 'handoff_two')
+
+
 def typecheck_project(root: Path, python: Path, paths, log: Path) -> None:
     _run([python.parent / 'ty', 'check', '--config-file', root / 'ty.toml', '--python', python, *paths], log, root)
 
@@ -337,6 +346,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
         harness = verify_installed_harness(root, isolated, output, temp)
         bridge = verify_installed_bridge(root, isolated, output, temp)
         message_boundary = verify_installed_message_boundary(root, isolated, output, temp)
+        handoff = verify_installed_handoff(root, isolated, output, temp)
     for name in ['numeric_one', 'numeric_two']:
         _run(
             [
@@ -358,7 +368,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
     numeric_hashes = _compare(output / 'numeric_one', output / 'numeric_two')
     source = json.loads((output / 'report_one/simulation.json').read_bytes())
     summary = {
-        'status': 'F70UGZ_R14_SYNTHETIC_MESSAGE_EXTRACTION_REFERENCE_PASS',
+        'status': 'F70UGZ_R15_SYNTHETIC_MESSAGE_HANDOFF_REFERENCE_PASS',
         'runtime': runtime,
         'imports': imported,
         'tests': test_count((output / 'unittest.log').read_text()),
@@ -370,6 +380,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
         'synthetic_harness': harness,
         'synthetic_dev_bridge': bridge,
         'synthetic_message_boundary': message_boundary,
+        'synthetic_message_handoff': handoff,
         'report_and_numeric_pairs_byte_identical': True,
         'source_gates': source['gates'],
         'Controller_execution': 0,

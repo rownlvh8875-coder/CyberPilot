@@ -95,6 +95,17 @@ against hand-authored literal expectations, not just matching checksums/counts.
 Previous integer candidate is model bookkeeping/declaration-only, not history
 proof; supplied signed-zero/binary64 bits remain intact. No F61/r/time API is added.
 
+R15 adds a separate [fixed handoff runner](docs/MESSAGE_HANDOFF_R15_DESIGN.md) and
+[implementation plan](docs/MESSAGE_HANDOFF_R15_PLAN.md): nested synthetic frames ->
+unchanged R14 extraction -> exact prepared-input/state check -> pure model step ->
+owned continuation. It covers7 scenarios/112 synthetic steps per process, with0
+prefix recomputation. R14 itself remains copy-only with0 model transitions.
+`handoff_one/RESULTS.json` records complete source/frame/prepared/result traces.
+The acceptance gate anchors input identity and results to the existing frozen
+catalog/goldens, then reconstructs every expected frame/prepared state from them.
+The history-scale seed is declared, NOT observed prehistory; later state ownership
+only describes this synthetic run. No native/vehicle/rate-policy qualification.
+
 The dev environment intentionally does not install the wheel-only project as an
 editable package (`tool.uv.package=false`). Test source selectors are DEV-only.
 The actual package installation is verified in an isolated child environment.
