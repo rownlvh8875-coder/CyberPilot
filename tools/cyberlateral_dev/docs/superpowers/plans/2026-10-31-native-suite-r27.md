@@ -34,16 +34,16 @@ project/suite_fixture.py,test_suite_validation.py.
 **Interfaces:** load_profiles()->tuple[Profile,...],get_profile(stage_id)->Profile;
 validate_stage(directory:Path,stage_id:str)->dict with spec's nine row fields.
 
-- [ ] Extract only exact retained JSON records and identities from verified R26
+- [x] Extract only exact retained JSON records and identities from verified R26
   archive, using apply_patch; commit registry/fixtures/spec/plan before execution.
-- [ ] Write12 validator tests:all8 full records+literal counts/hashes; registry
+- [x] Write12 validator tests:all8 full records+literal counts/hashes; registry
   tamper/freshness; unknown stage; bad/duplicate/path manifest; missing/extra or
   symlink files; noncanonical JSON; mutated observation; summary status/reference/
   counts/gates/source/extra-field forgery; delegated numerical rejection;
   oversized/nonfile data; data-only import/no native/model calls.
   Run unittest discover -s project -p test_suite_validation.py -v.
   Expected:RED missing validator. Implement minimal registry/validator; GREEN12.
-- [ ] Full dev.py verify --output out/r27-stage-validation; explicit native static
+- [x] Full dev.py verify --output out/r27-stage-validation; explicit native static
   checks and20 own native in-memory compilations. Expected:398 tests/133 pure
   compilations/frozen77/public wheel unchanged PASS. Commit and ledger before Task2.
 
