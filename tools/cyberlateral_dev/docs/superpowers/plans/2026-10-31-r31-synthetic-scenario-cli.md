@@ -37,9 +37,9 @@ thin source-selecting CLI. No frozen package/public CLI/native runner changes.
 `ScenarioError(code)`, `parse_scenario(raw:bytes)`, `validate_spec(spec)`,
 `read_scenario(path:Path)`; no public model import or execution.
 
-- [ ] Write parser/typed/domain/order/resource/duplicate/unknown/scope/precision/file tests; run RED missing module.
-- [ ] Implement bounded strict JSON and frozen exact-type preflight, source-derived rules without model calculations.
-- [ ] Run targeted tests/static PASS; commit `[skip ci]`.
+- [x] Write parser/typed/domain/order/resource/duplicate/unknown/scope/precision/file tests; run RED missing module.
+- [x] Implement bounded strict JSON and frozen exact-type preflight, source-derived rules without model calculations.
+- [x] Run targeted tests/static PASS; commit `[skip ci]`.
 
 ### Task 2: model engine, output and CLI
 

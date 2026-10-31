@@ -38,7 +38,8 @@ normalization/clamp or inverse transform. Signed zero is preserved in input hex.
 The model retains its own defined integer quantization/output behavior.
 
 UTF-8 strict JSON, no BOM/comments/trailing data/duplicate keys/NaN/Infinity.
-Maximum input1MiB, float token128 characters, integer token32 characters. These
+Maximum input1MiB, float token128 characters, integer token32 characters and64
+container nesting levels independent of caller recursion settings. These
 are DEV resource caps, not vehicle constraints. Bounded regular-file read with
 no final symlink/FIFO/device/directory input. POSIX nonblocking/nofollow support
 required; validated platform Linux/CPython3.12.13/binary64. No portability promise.
