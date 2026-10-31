@@ -35,12 +35,38 @@ def _encode(sample, state, sequence):
     )
 
 
+def _advance_owned(sample, state, sequence):
+    """One declared synthetic extraction and exact owned-state model transition."""
+    import cyberlateral_dev as p
+    from integration_tools import message_boundary as b
+
+    frame = _encode(sample, state, sequence)
+    try:
+        prepared = b.extract_synthetic_message(frame)
+    except ValueError as error:
+        raise HandoffError('HANDOFF_EXTRACTION_REJECTED') from error
+    _require(type(prepared) is b.PreparedLateralInputV1 and type(prepared.sample) is p.LateralInput
+             and type(prepared.state) is p.LateralState and type(prepared.sample.limits) is p.Limits, 'HANDOFF_PREPARED_MISMATCH')
+    expected_prepared = {
+        'contract_id': 'F70UGZ_R13_MESSAGE_BOUNDARY_V1', 'source_set_id': 'R11_C8FB9068_4134C0D1_V1',
+        'sequence_id': sequence, 'sample': asdict(sample), 'state': asdict(state),
+        'custody_claim': 'SYNTHETIC_DECLARATION_ONLY', 'precision_claim': 'EXACT_SUPPLIED_BINARY64_NOT_NATIVE_ABI',
+        'time_semantics': 'INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME',
+    }
+    _require(canonical(asdict(prepared)) == canonical(expected_prepared), 'HANDOFF_PREPARED_MISMATCH')
+    try:
+        output = p.step(prepared.sample, prepared.state)
+    except ValueError as error:
+        raise HandoffError('HANDOFF_MODEL_REJECTED') from error
+    _require(type(output) is p.LateralOutput and type(output.next_state) is p.LateralState, 'HANDOFF_MODEL_OUTPUT')
+    return frame, prepared, output
+
+
 def run_handoff_chain() -> dict:
     if __package__ in (None, ''):
         sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # DEV glue, never src/reference/native selectors.
     import cyberlateral_dev as p
     from cyberlateral_dev import synthetic_catalog
-    from integration_tools import message_boundary as b
 
     golden = json.loads((Path(__file__).resolve().parents[1] / 'reference/synthetic_harness_expected_v1.json').read_bytes())
     _require(type(p.__version__) is str and p.__version__ == golden['package_version'] == '0.3.0', 'HANDOFF_IDENTITY')
@@ -55,27 +81,9 @@ def run_handoff_chain() -> dict:
         state, outputs, frames, prepared_records = scenario.initial_state, [], [], []
         sequence = 'handoff_' + scenario.id
         for sample in scenario.samples:
-            frame = _encode(sample, state, sequence)
-            try:
-                prepared = b.extract_synthetic_message(frame)
-            except ValueError as error:
-                raise HandoffError('HANDOFF_EXTRACTION_REJECTED') from error
+            frame, prepared, output = _advance_owned(sample, state, sequence)
             extractor_calls += 1
-            _require(type(prepared) is b.PreparedLateralInputV1 and type(prepared.sample) is p.LateralInput
-                     and type(prepared.state) is p.LateralState and type(prepared.sample.limits) is p.Limits, 'HANDOFF_PREPARED_MISMATCH')
-            expected_prepared = {
-                'contract_id': 'F70UGZ_R13_MESSAGE_BOUNDARY_V1', 'source_set_id': 'R11_C8FB9068_4134C0D1_V1',
-                'sequence_id': sequence, 'sample': asdict(sample), 'state': asdict(state),
-                'custody_claim': 'SYNTHETIC_DECLARATION_ONLY', 'precision_claim': 'EXACT_SUPPLIED_BINARY64_NOT_NATIVE_ABI',
-                'time_semantics': 'INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME',
-            }
-            _require(canonical(asdict(prepared)) == canonical(expected_prepared), 'HANDOFF_PREPARED_MISMATCH')
-            try:
-                output = p.step(prepared.sample, prepared.state)
-            except ValueError as error:
-                raise HandoffError('HANDOFF_MODEL_REJECTED') from error
             model_steps += 1
-            _require(type(output) is p.LateralOutput and type(output.next_state) is p.LateralState, 'HANDOFF_MODEL_OUTPUT')
             frames.append(asdict(frame))
             prepared_records.append(asdict(prepared))
             outputs.append(output)

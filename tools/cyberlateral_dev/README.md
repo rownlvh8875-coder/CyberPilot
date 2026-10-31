@@ -106,6 +106,18 @@ catalog/goldens, then reconstructs every expected frame/prepared state from them
 The history-scale seed is declared, NOT observed prehistory; later state ownership
 only describes this synthetic run. No native/vehicle/rate-policy qualification.
 
+R16 adds a [closed lifecycle runner](docs/MESSAGE_HANDOFF_LIFECYCLE_R16_DESIGN.md)
+and [plan](docs/MESSAGE_HANDOFF_LIFECYCLE_R16_PLAN.md) over the same message-to-model
+advance: all105 interior split/resume points and112 round-robin stream events.
+Complete frames/prepared values/results must match the existing frozen baseline;
+the installed `lifecycle_one/RESULTS.json` and `lifecycle_two` include all split
+certificates and interleaved events, independently checked against that baseline.
+Each lifecycle process uses9010 synthetic extractions/model steps including the
+baseline and all splits, with0 prefix validation calculations; this is not an
+aggregate test count or elapsed-time/rate/performance claim. R15 output bytes,
+R14's copy-only behavior, package0.3.0, goldens and gates remain unchanged. This
+does not add arbitrary input, persistent checkpoint/replay or native qualification.
+
 The dev environment intentionally does not install the wheel-only project as an
 editable package (`tool.uv.package=false`). Test source selectors are DEV-only.
 The actual package installation is verified in an isolated child environment.

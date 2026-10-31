@@ -39,17 +39,9 @@ def _expected_frame(sample: dict, state: dict, sequence: str) -> dict:
     }
 
 
-def handoff_pair_summary(first: Path, second: Path) -> dict:
-    try:
-        one = {p.name: p.read_bytes() for p in first.iterdir()}
-        two = {p.name: p.read_bytes() for p in second.iterdir()}
-    except OSError as error:
-        raise ValueError('HANDOFF_ARTIFACT_READ') from error
-    _require(set(one) == set(two) == {'RESULTS.json', 'SHA256SUMS.txt'}, 'HANDOFF_ARTIFACT_MISSING')
-    _require(one == two, 'HANDOFF_ARTIFACT_BYTE_MISMATCH')
-    raw = one['RESULTS.json']
-    record = _object(json.loads(raw))
-    _require(canonical(record) == raw, 'HANDOFF_CONTRACT_CANONICAL')
+def validate_handoff_record(record: dict) -> None:
+    """Validate a full R15 record without importing or executing the model."""
+    record = _object(record)
     golden = json.loads((Path(__file__).resolve().parents[1] / 'reference/synthetic_harness_expected_v1.json').read_bytes())
     identities = {
         'schema_version': 1, 'contract_id': 'F70UGZ_R15_FIXED_SYNTHETIC_HANDOFF_V1',
@@ -96,6 +88,20 @@ def handoff_pair_summary(first: Path, second: Path) -> dict:
                 'precision_claim': 'EXACT_SUPPLIED_BINARY64_NOT_NATIVE_ABI', 'time_semantics': 'INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME',
             }
             _require(canonical(prepared[offset]) == canonical(expected_prepared), 'HANDOFF_CONTRACT_PREPARED')
+
+
+def handoff_pair_summary(first: Path, second: Path) -> dict:
+    try:
+        one = {p.name: p.read_bytes() for p in first.iterdir()}
+        two = {p.name: p.read_bytes() for p in second.iterdir()}
+    except OSError as error:
+        raise ValueError('HANDOFF_ARTIFACT_READ') from error
+    _require(set(one) == set(two) == {'RESULTS.json', 'SHA256SUMS.txt'}, 'HANDOFF_ARTIFACT_MISSING')
+    _require(one == two, 'HANDOFF_ARTIFACT_BYTE_MISMATCH')
+    raw = one['RESULTS.json']
+    record = _object(json.loads(raw))
+    _require(canonical(record) == raw, 'HANDOFF_CONTRACT_CANONICAL')
+    validate_handoff_record(record)
     _require(one['SHA256SUMS.txt'] == (hashlib.sha256(raw).hexdigest() + '  RESULTS.json\n').encode(), 'HANDOFF_CONTRACT_MANIFEST')
     return {'status': record['status'], 'byte_identical': True, 'scenario_count': record['scenario_count'], 'model_steps': record['model_steps'],
             'file_hashes': {k: hashlib.sha256(v).hexdigest() for k, v in sorted(one.items())},
