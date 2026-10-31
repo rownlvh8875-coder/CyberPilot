@@ -212,7 +212,9 @@ def _receipt(installed: dict, include_sha: str, capnp) -> dict:
             'scope': 'OBSERVED_PROCESS_FILES_NOT_AUTHENTICATED_OS_IMAGE_OR_PORTABLE_ABI'}
 
 
-def observe(wheel: Path, schema: Path) -> dict:
+def observe(wheel: Path, schema: Path, *, owned_boundary: bool = False) -> dict:
+    if type(owned_boundary) is not bool:
+        raise ValueError('EXPLICIT_BOOLEAN_MODE')
     identity = verify_inputs(wheel, schema)
     if not sys.flags.isolated or not sys.flags.dont_write_bytecode:
         raise ValueError('ISOLATED_NO_BYTECODE_REQUIRED')
@@ -253,6 +255,19 @@ def observe(wheel: Path, schema: Path) -> dict:
                               'Q05': 'NOT_QUALIFIED', 'Q06': 'NOT_IMPLEMENTED_READER_BLOCKED'},
             'native_reader_activation': 'NOT_ALLOWED',
         }
+        if owned_boundary:
+            # -B alone still reads old caches. Fresh private prefix prevents
+            # repository-source caches from substituting for this closed demo.
+            previous_prefix = sys.pycache_prefix
+            with tempfile.TemporaryDirectory(prefix='r20-cold-import-') as cold:
+                sys.pycache_prefix = cold
+                sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+                try:
+                    from native_qualification.owned_demo import demonstrate
+                    observations = demonstrate(car)
+                    observations['identity'] = identity
+                finally:
+                    sys.pycache_prefix = previous_prefix
     forbidden = sorted(n for n in sys.modules if n.split('.')[0] in FORBIDDEN)
     if forbidden:
         raise ValueError('FORBIDDEN_MODULES_LOADED')
@@ -264,8 +279,9 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--wheel', type=Path, required=True)
     parser.add_argument('--schema', type=Path, required=True)
+    parser.add_argument('--owned-boundary', action='store_true')
     args = parser.parse_args()
-    sys.stdout.buffer.write(canonical(observe(args.wheel.absolute(), args.schema.absolute())))
+    sys.stdout.buffer.write(canonical(observe(args.wheel.absolute(), args.schema.absolute(), owned_boundary=args.owned_boundary)))
 
 
 if __name__ == '__main__':

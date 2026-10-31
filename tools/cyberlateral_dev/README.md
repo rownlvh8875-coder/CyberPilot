@@ -11,6 +11,12 @@ pycapnp environment and only internally constructed synthetic messages. The
 default command below remains pure; the package/lock/wheel remain unchanged.
 See [observations and reproduction](docs/NATIVE_MESSAGE_QUALIFICATION_R19_RESULTS.md).
 
+R20 adds a [pure owned-message envelope boundary](docs/OWNED_MESSAGE_BOUNDARY_R20.md)
+and an explicit --owned-boundary native demonstration. It preserves immutable
+bytes/field ledgers/settings/prior declarations, but does NOT parse arbitrary
+messages, authenticate call custody or create model/F61 inputs. See
+[R20 results and reproduction](docs/OWNED_MESSAGE_BOUNDARY_R20_RESULTS.md).
+
 ## One-command verification
 
 Install [uv](https://docs.astral.sh/uv/)0.12.23. From the repository root:
