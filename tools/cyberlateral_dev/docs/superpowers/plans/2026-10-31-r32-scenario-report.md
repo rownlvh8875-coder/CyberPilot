@@ -46,15 +46,15 @@ and fixture provenance README.
 `view` (validated internal dict) and `source_hashes` (all6 owned hashes).
 No model imports. Task2 renders only this internal view, not arbitrary dicts.
 
-- [ ] Capture8 immutable portable fixture files from sealed R31 examples; construct
+- [x] Capture8 immutable portable fixture files from sealed R31 examples; construct
   receipt/manifest only in test helper. Literal sign final[2,-2,0,2], resumed counter90/bitfalse.
-- [ ] Write failing reader tests: real fixture values, canonical checksum JSON,
+- [x] Write failing reader tests: real fixture values, canonical checksum JSON,
   rehashed mismatch in CSV/summary/flags/types/shape/state/final/identity/gates,
   unknown root/nested keys, caps/duplicates/nonfinite/depth, symlink/FIFO/extras,
   old producer hashes accepted as metadata, no model/native import.
-- [ ] Run `uv run --locked python -B -m unittest discover -s project -p test_scenario_report_data.py -v`;
+- [x] Run `uv run --locked python -B -m unittest discover -s project -p test_scenario_report_data.py -v`;
   Expected: missing reader FAIL. Implement reader and exact stored-data crosschecks.
-- [ ] Same command and targeted Ruff/Ty/Codespell:PASS; commit `[skip ci]`.
+- [x] Same command and targeted Ruff/Ty/Codespell:PASS; commit `[skip ci]`.
 
 ### Task 2: static report renderer and file CLI
 
