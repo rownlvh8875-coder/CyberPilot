@@ -32,10 +32,10 @@ pycapnp2.1.0 Linux x86_64 environment.
 **Interfaces:** qualify(...mode flags...) summary model_reference_sha256 equals
 numerical+claims-validated worker observation identity.
 
-- [ ] Regression RED for R24 summary=v1 vs actual observation=v2, with complete
+- [x] Regression RED for R24 summary=v1 vs actual observation=v2, with complete
   fixed worker doubles. No native/model execution in this protocol regression.
-- [ ] Derive label from validated data, remove duplicated path branching.
-- [ ] Targeted GREEN and full dev.py gate/static/wheel PASS; commit/ledger.
+- [x] Derive label from validated data, remove duplicated path branching.
+- [x] Targeted GREEN and full dev.py gate/static/wheel PASS; commit/ledger.
 
 ### Task 2: Fixed20-step corpus and qualification
 
@@ -46,7 +46,7 @@ test_driver_mode.py, native_claim_fixture.py; README/spec/results.
 **Interfaces:** expected_input/output(index),consume_driver_step(index,sample,state);
 --driver-boundaries; claims/coverage R25 exact20 and reference; source unchanged.
 
-- [ ] Preregister complete literals first, SHA/commit preserved.
+- [x] Preregister complete literals first, SHA/commit preserved.
 - [ ] RED consumer:20 literal outputs/types/rounding/counters/states, mismatches
   rejected pre-step, output-kind mutation/hash/copy/version/no-retry tests.
 - [ ] Implement no-math literal assembly/closed exact consumer; targeted GREEN.

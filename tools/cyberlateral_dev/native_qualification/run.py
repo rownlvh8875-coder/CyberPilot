@@ -76,9 +76,7 @@ def qualify(python: Path, wheel: Path, output: Path, *, owned_boundary: bool = F
                        'F70UGZ_R23_FIXED_SYNTHETIC_NATIVE_SEQUENCE_PASS' if model_sequence else
                        'F70UGZ_R24_FIXED_SYNTHETIC_FAULT_RESET_PASS', model_execution=sum(counts),
                        model_execution_per_worker=counts[0], model_execution_scope='TWO_SEALED_WORKERS_NOT_UNIT_TEST_OR_STAGE_TOTAL',
-                       model_reference_sha256=sha((ROOT / ('reference/r22_model_expected_v1.json' if model_consumption else
-                                                          'reference/r23_sequence_expected_v1.json' if model_sequence else
-                                                          'reference/r24_fault_expected_v1.json')).read_bytes()))
+                       model_reference_sha256=processes[0]['observations']['model_reference_sha256'])
         summary['tool_sources'].update({name: sha((ROOT / name).read_bytes()) for name in
                                        ['native_qualification/coverage.py', 'native_qualification/claims.py', 'integration_tools/model_consumption.py',
                                         'integration_tools/fixed_model_reference.py']})
