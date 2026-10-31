@@ -6,6 +6,7 @@ from typing import Any, cast
 from integration_tools import driver_reference as r25
 from integration_tools import fault_reference as r24
 from integration_tools import fixed_model_reference as r22
+from integration_tools import negative_cycle_reference as r26
 from integration_tools import sequence_reference as r23
 from native_qualification.claims import validate_claims
 
@@ -29,11 +30,11 @@ def _equal(actual, expected) -> bool:
 
 
 def validate_coverage(observations: dict, mode: str) -> int:
-    _require(type(observations) is dict and type(mode) is str and mode in ('R22', 'R23', 'R24', 'R25'))
+    _require(type(observations) is dict and type(mode) is str and mode in ('R22', 'R23', 'R24', 'R25', 'R26'))
     rows = observations.get('cases')
     if type(rows) is not list:
         raise ValueError('OBSERVATION_COVERAGE')
-    _require(len(rows) == {'R22': 8, 'R23': 4, 'R24': 99, 'R25': 20}[mode])
+    _require(len(rows) == {'R22': 8, 'R23': 4, 'R24': 99, 'R25': 20, 'R26': 99}[mode])
     # Decoded JSON boundary: container shape is checked here and each row below.
     # The annotation does not replace the exact scalar/record validation.
     decoded = cast(list[dict[str, Any]], rows)
@@ -62,7 +63,7 @@ def validate_coverage(observations: dict, mode: str) -> int:
                     raise ValueError('OBSERVATION_COVERAGE')
                 expected_input, expected_output = r22.expected_input(key), r22.expected_output(key)
             else:
-                reference = {'R23': r23, 'R24': r24, 'R25': r25}[mode]
+                reference = {'R23': r23, 'R24': r24, 'R25': r25, 'R26': r26}[mode]
                 expected_input, expected_output = reference.expected_input(position), reference.expected_output(position)
             _require(row.get('model_expected_match') is True and _equal(row.get('prepared'), expected_input)
                      and _equal(row.get('model_output'), expected_output))
@@ -72,6 +73,6 @@ def validate_coverage(observations: dict, mode: str) -> int:
             previous_next = row['model_output']['next_state']
         else:
             _require('model_output' not in row and row.get('rejection_code') == 'SEMANTIC_DOMAIN')
-    _require(_integer(observations.get('model_execution'), total) and total == {'R22': 5, 'R23': 4, 'R24': 99, 'R25': 20}[mode])
+    _require(_integer(observations.get('model_execution'), total) and total == {'R22': 5, 'R23': 4, 'R24': 99, 'R25': 20, 'R26': 99}[mode])
     validate_claims(observations, mode)
     return total

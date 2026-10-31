@@ -53,6 +53,12 @@ without rewriting old evidence or changing numerical results. Public0.3.0 is
 unchanged; this is neither a general driver sweep nor physical safety validation.
 See [R25 results and correction scope](docs/NEGATIVE_DRIVER_R25_RESULTS.md).
 
+R26 adds [one fixed negative-angle full cycle](docs/NEGATIVE_CYCLE_R26.md),
+explicitly selected with --negative-cycle:99 preregistered steps qualify the
+89/90/91/92-call request boundary, below-negative85 reset and nonzero inactive
+reset/reactivation while retaining fractional driver trace kinds. It does not
+broaden accepted external inputs, infer elapsed time or authorize vehicle use.
+
 ## One-command verification
 
 Install [uv](https://docs.astral.sh/uv/)0.12.23. From the repository root:

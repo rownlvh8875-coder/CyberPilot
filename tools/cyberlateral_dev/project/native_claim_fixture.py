@@ -2,14 +2,15 @@
 
 
 def complete_claims(data, mode):
-    from integration_tools import driver_reference, fault_reference, fixed_model_reference, sequence_reference
+    from integration_tools import driver_reference, fault_reference, fixed_model_reference, negative_cycle_reference, sequence_reference
 
     references = {'R22': fixed_model_reference.REFERENCE_SHA256, 'R23': sequence_reference.REFERENCE_SHA256,
-                  'R24': fault_reference.REFERENCE_SHA256, 'R25': driver_reference.REFERENCE_SHA256}
+                  'R24': fault_reference.REFERENCE_SHA256, 'R25': driver_reference.REFERENCE_SHA256, 'R26': negative_cycle_reference.REFERENCE_SHA256}
     scopes = {'R22': 'FIVE_FIXED_SYNTHETIC_SINGLE_STEPS_NOT_ACTUAL_OR_CHAIN',
               'R23': 'FOUR_FIXED_SYNTHETIC_NATIVE_MODEL_STEPS_NOT_ACTUAL_HISTORY',
               'R24': 'NINETY_NINE_FIXED_SYNTHETIC_FAULT_RESET_STEPS_NOT_ACTUAL_HISTORY',
-              'R25': 'TWENTY_FIXED_SYNTHETIC_NEGATIVE_ANGLE_DRIVER_STEPS_NOT_ACTUAL_HISTORY'}
+              'R25': 'TWENTY_FIXED_SYNTHETIC_NEGATIVE_ANGLE_DRIVER_STEPS_NOT_ACTUAL_HISTORY',
+              'R26': 'NINETY_NINE_FIXED_SYNTHETIC_NEGATIVE_CYCLE_STEPS_NOT_ACTUAL_HISTORY'}
     data.update(schema_version=1, scope=scopes[mode], package_version='0.3.0', model_reference_sha256=references[mode],
                 actual_call_custody='NOT_QUALIFIED', forbidden_modules_loaded=[],
                 identity={'schema_sha256': '098a19d69e8d233ac653503b53761a94824f31812757a11a7ded1589fe1e0788',
@@ -29,7 +30,8 @@ def complete_claims(data, mode):
                 row['oracle_rejection_code'] = 'SEMANTIC_DOMAIN'
         else:
             index = row['index']
-            row['stamp'] = {'sequence_id': {'R23': 'R23_FIXED_SEQUENCE', 'R24': 'R24_FIXED_FAULT_RESET', 'R25': 'R25_FIXED_DRIVER_CONTEXT'}[mode],
+            row['stamp'] = {'sequence_id': {'R23': 'R23_FIXED_SEQUENCE', 'R24': 'R24_FIXED_FAULT_RESET', 'R25': 'R25_FIXED_DRIVER_CONTEXT',
+                                          'R26': 'R26_FIXED_NEGATIVE_CYCLE'}[mode],
                             'invocation_index': index, 'capture_id': 'entry_' + str(index)}
             row['state_binding'] = 'EXPLICIT_FIXED_INITIAL_DATA' if index == 0 else 'PREVIOUS_VERIFIED_MODEL_OUTPUT_NOT_ACTUAL_HISTORY'
     return data

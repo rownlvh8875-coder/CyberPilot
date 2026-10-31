@@ -35,24 +35,24 @@ test_negative_cycle_mode.py,native_claim_fixture.py; README/spec/results/plan.
 **Interfaces:** expected_input/output(index),consume_negative_cycle_step(index,sample,state);
 qualify/observe(...,negative_cycle=False),--negative-cycle, R26 full99 profile.
 
-- [ ] Preregister literal corpus from exact source table, SHA+commit before execution.
-- [ ] Write consumer tests:99 actual state carries; boundary indices88..91;
+- [x] Preregister literal corpus from exact source table, SHA+commit before execution.
+- [x] Write consumer tests:99 actual state carries; boundary indices88..91;
   suppressed command-12 retained; fractional float-kind/rounding; inactive94
   nonzero reset/final0 carry; wrong index/input/state/sign/settings reject before
   step; wrong output trace rejects; reference hash/copy/version/no retry.
   Run unittest discover -s project -p test_negative_cycle_consumption.py -v.
   Expected: RED missing consumer. Implement closed reference/consumer; GREEN8.
-- [ ] Write mode tests:explicit bool/all six conflicts/missing or wrong public
+- [x] Write mode tests:explicit bool/all six conflicts/missing or wrong public
   wheel/existing output; full99 worker records derive198/99 and exact reference;
   equal missing row/wrong counter/final state/float kind/bool count rejected;
   missing/contradictory oracle/stamp/ref/time declarations rejected before mkdir.
   Run unittest discover -s project -p test_negative_cycle_mode.py -v.
   Expected: RED missing explicit mode. Implement new producer/profile/flag,
   complete fixture declarations. Expected: GREEN5.
-- [ ] Full dev.py verify --output out/r26-primary, explicit native Ruff/Ty/
+- [x] Full dev.py verify --output out/r26-primary, explicit native Ruff/Ty/
   Codespell+own compile. Expected:386 tests/131 pure compilations/frozen77/sealed
   wheel unchanged; native own compilations18; all checks PASS.
-- [ ] Fresh native env, R26 two workers and independent7 literal output checks;
+- [x] Fresh native env, R26 two workers and independent7 literal output checks;
   R19–R25 controls7 exact observation hashes+46 independent assertions PASS.
 - [ ] Commit; archive source+workflow/new dev+native env; full gate+native repeat.
   Expected:observations/SUMMARY byte-identical; no receipt/OS equality claims.
