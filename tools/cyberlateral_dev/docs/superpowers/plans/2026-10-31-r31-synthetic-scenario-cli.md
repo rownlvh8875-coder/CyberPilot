@@ -51,9 +51,9 @@ thin source-selecting CLI. No frozen package/public CLI/native runner changes.
 p.simulate; `render_outputs(spec,result,identity,receipt)->dict[str,bytes]`;
 `run_scenario(input_path,output_path)->dict`, CLI --input/--output only.
 
-- [ ] Write engine literal sign-cycle/resumed/precision/preflight no-work tests and CLI guard/inert/source/IO/determinism tests; run RED missing implementation.
-- [ ] Implement cold exact-source loader after complete preflight, model mapping, full trace rendering and exclusive final publication.
-- [ ] Run targeted tests/static PASS; actual CLI subprocess examples pass; commit `[skip ci]`.
+- [x] Write engine literal sign-cycle/resumed/precision/preflight no-work tests and CLI guard/inert/source/IO/determinism tests; run RED missing implementation.
+- [x] Implement cold exact-source loader after complete preflight, model mapping, full trace rendering and exclusive final publication.
+- [x] Run targeted tests/static PASS; actual CLI subprocess examples pass; commit `[skip ci]`.
 
 ### Task 3: examples, docs and full handoff
 
