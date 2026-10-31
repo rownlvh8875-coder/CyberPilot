@@ -55,6 +55,8 @@ Separately invoked observation assertions:6 PASS. Component Ruff/Ty/Codespell,
 99 own-code compilations,77 imported-file checks and sealed wheel reproduction
 PASS; explicit native-tool Ruff/Ty/Codespell and3 own-code compilations PASS.
 These are development checks, not full openpilot tests or numerical performance.
+Final-source relocated/native observations and summary reproduce byte-for-byte;
+environment receipts are intentionally kept separate, not claimed identical.
 
 ## Qualification limits and next work
 

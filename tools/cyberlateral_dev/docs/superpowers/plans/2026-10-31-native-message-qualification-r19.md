@@ -60,15 +60,18 @@ External audit directory holds receipts/logs/TDD/ledger and review package.
 
 **Interfaces:** Task1 JSON reports, SHA256SUMS and fixed source identities.
 
-- [ ] Run qualifier twice, check observation bytes identical and all receipts.
-- [ ] Fresh git archive/new native environment run; compare observation bytes,
+- [x] Run qualifier twice, check observation bytes identical and all receipts.
+- [x] Fresh git archive/new native environment run; compare observation bytes,
   retaining distinct environment receipts. Recheck original source/Git guards.
-- [ ] Write exact observations/limits/reproduction results and rerun full gate.
-- [ ] Commit, request one fresh whole-branch review; one RED/GREEN fix pass for
+- [x] Write exact observations/limits/reproduction results and rerun full gate.
+- [x] Commit, request one fresh whole-branch review; one RED/GREEN fix pass for
   Important/Critical, ledger all scope rulings and deferred minors.
 - [ ] Publish existing feature branch/Draft PR only; dispatch existing pure CI,
   verify exact HEAD and retained artifact. Native CI remains NOT_RUN.
 - [ ] Final handoff states Q coverage, test counts, hashes and remaining block.
+
+Publication/CI/final handoff occur after the final source commit and are recorded
+in the external task receipt, not by creating an endless post-publication commit.
 
 Self-review: source/receipt/default/precision/lifetime/custody/fail-closed and
 reproduction requirements are covered; Q05/Q06 are reported as limits, not built.
