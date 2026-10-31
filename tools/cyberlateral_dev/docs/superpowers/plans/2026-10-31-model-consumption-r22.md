@@ -58,10 +58,10 @@ R21 demonstrate(car,consume_model=False) keeps old outputs unchanged.
 
 - [x] RED explicit-mode/missing-wheel/conflict/output assertions and five-case counts.
 - [x] Implement closed accepted-row consumption and counts; rejected rows no work.
-- [ ] New native env/two workers, independent literal output checks, old R19/R20/R21
+- [x] New native env/two workers, independent literal output checks, old R19/R20/R21
   SHA controls, full pure suite and explicit native static/compile checks. Fresh
   archive/new native/dev environment reproduces observations/SUMMARY exactly.
-- [ ] Commit; one fresh whole-branch review, one RED/GREEN fix pass for Important/
+- [x] Commit; one fresh whole-branch review, one RED/GREEN fix pass for Important/
   Critical; ledger every scope ruling/deferred minor.
 - [ ] Exact-head feature Draft/pure CI/downloaded manifest, original guards, external
   evidence seal and scoped handoff. Native GitHub CI remains NOT_RUN.

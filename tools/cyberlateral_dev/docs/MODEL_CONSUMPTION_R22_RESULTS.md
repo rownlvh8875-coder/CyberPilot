@@ -21,6 +21,23 @@ smallest_subnormal order:0,2,0,4,0. Negative-zero input/product traces and the
 smallest subnormal are preserved. Active zero command can still have request=true.
 These are synthetic DEV-model semantics, NOT steering performance evidence.
 
+Primary and fresh relocated full gates:318 tests PASS (299 inherited +19 new),
+111 own component compilations,77 frozen imports and sealed wheel unchanged.
+Native Ruff/Ty/Codespell/8 own compilations and7 literal output checks PASS.
+Native observation/SUMMARY bytes reproduce in the fresh source/new environment.
+Environment-specific receipts/manifests are NOT equal. Complete pure SUMMARY
+also differs only in numeric execution identity:NumPy installer RECORD and its
+aggregate payload digest vary; both unmodified receipts are retained. Within
+each full gate, numeric/report pairs remain byte-identical.
+
+One fresh read-only whole-branch reviewer independently ran19 new unit tests and
+7 observation assertions:PASS, Critical0/Important0. Deferred minor M1:the native
+runner currently writes fixed5/10 summary counts; separate mandatory observation
+tests validate exact current coverage/counts, but the runner should eventually
+enforce those internally against a future shared worker regression. No second
+review or code-fix pass was needed at this fixed head. This is bounded synthetic
+verification, not exhaustive correctness or safety certification.
+
 OBSERVATIONS.json SHA256:
 c802a6ecad9f0cae59b8d82598d9b6a58a171d7e8a826406b21e3c157d02c4a7.
 Two worker observation bytes match; their model executions are5 each/10 combined.
