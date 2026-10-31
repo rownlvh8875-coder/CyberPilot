@@ -47,12 +47,12 @@ test_driver_mode.py, native_claim_fixture.py; README/spec/results.
 --driver-boundaries; claims/coverage R25 exact20 and reference; source unchanged.
 
 - [x] Preregister complete literals first, SHA/commit preserved.
-- [ ] RED consumer:20 literal outputs/types/rounding/counters/states, mismatches
+- [x] RED consumer:20 literal outputs/types/rounding/counters/states, mismatches
   rejected pre-step, output-kind mutation/hash/copy/version/no-retry tests.
-- [ ] Implement no-math literal assembly/closed exact consumer; targeted GREEN.
-- [ ] RED mode/wheel/conflict/existing-output/coverage/claims/reference-label tests;
+- [x] Implement no-math literal assembly/closed exact consumer; targeted GREEN.
+- [x] RED mode/wheel/conflict/existing-output/coverage/claims/reference-label tests;
   implement opt-in producer/gates and complete fixture claims; targeted GREEN.
-- [ ] Full pure gate/static checks, fresh native env/two workers/literal output
+- [x] Full pure gate/static checks, fresh native env/two workers/literal output
   assertions, R19–R24 exact observation controls and current-reference labels.
 - [ ] Commit; new archived source/dev+native env repeats observations/SUMMARY;
   receipts not normalized/equality claims. One fresh whole-branch review; one

@@ -44,6 +44,14 @@ preregistered v2 preserves the original96-call prefix and adds nonzero-counter
 deactivation/reactivation coverage identified by review. This is
 model behavior, not a physical safety recommendation. See [R24 results](docs/FAULT_RESET_R24_RESULTS.md).
 
+R25 adds [fixed negative-angle/driver interactions](docs/NEGATIVE_DRIVER_R25.md),
+explicitly selected with --driver-boundaries:20 preregistered steps retain
+fractional driver bounds, direction-sensitive rate limits, nearest-even rounding
+and nonzero inactive state reset. Summary reference labels now come from validated
+observations; a correction receipt preserves the known R24 summary-label error
+without rewriting old evidence or changing numerical results. Public0.3.0 is
+unchanged; this is neither a general driver sweep nor physical safety validation.
+
 ## One-command verification
 
 Install [uv](https://docs.astral.sh/uv/)0.12.23. From the repository root:

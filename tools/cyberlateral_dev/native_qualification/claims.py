@@ -4,6 +4,7 @@ import json
 import re
 from typing import Any, cast
 
+from integration_tools import driver_reference as r25
 from integration_tools import fault_reference as r24
 from integration_tools import fixed_model_reference as r22
 from integration_tools import sequence_reference as r23
@@ -31,12 +32,13 @@ def _digest(value) -> bool:
 
 
 def validate_claims(data: dict, mode: str) -> None:
-    if type(data) is not dict or type(mode) is not str or mode not in ('R22', 'R23', 'R24'):
+    if type(data) is not dict or type(mode) is not str or mode not in ('R22', 'R23', 'R24', 'R25'):
         raise ValueError('OBSERVATION_CLAIMS')
     profiles = {
         'R22': ('FIVE_FIXED_SYNTHETIC_SINGLE_STEPS_NOT_ACTUAL_OR_CHAIN', r22.REFERENCE_SHA256, 8),
         'R23': ('FOUR_FIXED_SYNTHETIC_NATIVE_MODEL_STEPS_NOT_ACTUAL_HISTORY', r23.REFERENCE_SHA256, 4),
         'R24': ('NINETY_NINE_FIXED_SYNTHETIC_FAULT_RESET_STEPS_NOT_ACTUAL_HISTORY', r24.REFERENCE_SHA256, 99),
+        'R25': ('TWENTY_FIXED_SYNTHETIC_NEGATIVE_ANGLE_DRIVER_STEPS_NOT_ACTUAL_HISTORY', r25.REFERENCE_SHA256, 20),
     }
     scope, reference, count = profiles[mode]
     _require(type(data.get('schema_version')) is int and data['schema_version'] == 1
@@ -70,7 +72,7 @@ def validate_claims(data: dict, mode: str) -> None:
             index = row.get('index')
             if type(index) is not int or not 0 <= index < count:
                 raise ValueError('OBSERVATION_CLAIMS')
-            sequence_id = 'R23_FIXED_SEQUENCE' if mode == 'R23' else 'R24_FIXED_FAULT_RESET'
+            sequence_id = {'R23': 'R23_FIXED_SEQUENCE', 'R24': 'R24_FIXED_FAULT_RESET', 'R25': 'R25_FIXED_DRIVER_CONTEXT'}[mode]
             _require(type(row.get('stamp')) is dict and _equal(row['stamp'], {
                 'sequence_id': sequence_id, 'invocation_index': index, 'capture_id': 'entry_' + str(index)}))
             _require(_text(row.get('state_binding'), 'EXPLICIT_FIXED_INITIAL_DATA' if index == 0 else
