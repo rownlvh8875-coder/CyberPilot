@@ -53,9 +53,9 @@ README/results docs. No original/public/controller changes.
 **Interfaces:** --model-sequence exact public wheel; parent consumes Task1 validator;
 demo carries output.next_state into next frame's previous snapshot.
 
-- [ ] RED mode/wheel/conflict/output-preservation/worker-reduced-coverage tests.
-- [ ] Implement separate producer/mode and validated R22/R23 summary counts.
-- [ ] New native env, two R23 workers, literal output tests; R19–R22 observation
+- [x] RED mode/wheel/conflict/output-preservation/worker-reduced-coverage tests.
+- [x] Implement separate producer/mode and validated R22/R23 summary counts.
+- [x] New native env, two R23 workers, literal output tests; R19–R22 observation
   hash controls and internal count guards. Full pure suite and native static/compile.
 - [ ] Fresh archive/new native/dev env repeats native observations/SUMMARY; retain
   environment receipts without cross-env equality claims. Commit/ledger.

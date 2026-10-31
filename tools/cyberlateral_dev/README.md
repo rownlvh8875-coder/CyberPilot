@@ -30,6 +30,12 @@ a general native adapter, sequence replay, F61 invocation or vehicle activation.
 R19/R20/R21 retain their original zero-new-model-work behavior.
 See [R22 results and reproduction](docs/MODEL_CONSUMPTION_R22_RESULTS.md).
 
+R23 adds [one fixed native/model sequence](docs/NATIVE_SEQUENCE_R23.md), explicitly
+selected with --model-sequence. Four synthetic steps carry the preceding verified
+model output state; complete preregistered literals check sign changes and inactive
+gating. Parent coverage/count validation also closes R22's deferred M1 without
+changing old observation bytes. See [R23 results](docs/NATIVE_SEQUENCE_R23_RESULTS.md).
+
 ## One-command verification
 
 Install [uv](https://docs.astral.sh/uv/)0.12.23. From the repository root:
