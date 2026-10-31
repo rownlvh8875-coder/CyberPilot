@@ -5,7 +5,11 @@ byte-for-byte from the verified R7 evidence. It is now maintained as a standalon
 development project in CyberPilot. It is NOT an openpilot controller, vehicle
 installation, physical simulator, F61 invocation or safety/performance approval.
 
-Current developer entry point: [R30 Korean acceptance and quickstart guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md),
+Custom declared-synthetic JSON files can now be run with the separate
+[R31 developer scenario CLI](docs/SYNTHETIC_SCENARIO_CLI_R31_KO.md) for full JSON/CSV
+traces. It preserves the public0.3.0 model/wheel; it is not a vehicle/log reader.
+
+Bounded offline acceptance: [R30 Korean acceptance and quickstart guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md),
 with a [source-backed capability inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
 It distinguishes bounded offline acceptance from whole-product completion or
 vehicle readiness. Historical stage descriptions below retain their original scope.

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "scope": "SYNTHETIC_ONLY",
+  "scenario_id": "R31_sign_cycle",
+  "limits": {
+    "STEER_MAX": 16, "STEER_DELTA_UP": 2, "STEER_DELTA_DOWN": 5,
+    "STEER_DRIVER_ALLOWANCE": 7, "STEER_DRIVER_FACTOR": 1, "STEER_DRIVER_MULTIPLIER": 3
+  },
+  "initial_state": {"index": 0, "previous_requested": null, "previous_applied": 0, "angle_counter": 0},
+  "samples": [
+    {"index": 0, "request": 0.25, "driver": 0.0, "angle_deg": 0.0, "lat_active": true},
+    {"index": 1, "request": -0.25, "driver": 0.0, "angle_deg": 0.0, "lat_active": true},
+    {"index": 2, "request": 0.25, "driver": 0.0, "angle_deg": 0.0, "lat_active": false},
+    {"index": 3, "request": 0.25, "driver": 0.0, "angle_deg": 0.0, "lat_active": true}
+  ]
+}

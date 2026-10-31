@@ -50,7 +50,7 @@ uv pip install --offline --no-deps --link-mode copy --python tools/cyberlateral_
 tools/cyberlateral_dev/out/r30-runtime-1/bin/python -I -B -m cyberlateral_dev --report --output tools/cyberlateral_dev/out/r30-report-1
 ```
 
-out/r30-report-1/index.html을 로컬 브라우저에서 열 수 있습니다. HTML/CSV/JSON
+`tools/cyberlateral_dev/out/r30-report-1/index.html`을 로컬 브라우저에서 열 수 있습니다. HTML/CSV/JSON
 4개와 report checksum이 생성됩니다. 이 작업의 검증은 데이터·구조·byte 비교이며
 브라우저에서 보이는 품질을 검증했다는 주장은 아닙니다. wheel은46,646 bytes,
 SHA256 `3f3db36f62aa79ba97e4536a183b7e685a9d06c4e264d1fec9dd3bbda7c4d73c`입니다.
