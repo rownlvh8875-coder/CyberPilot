@@ -10,7 +10,7 @@ from pathlib import Path
 if __package__ in (None, ''):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from native_qualification.worker import canonical, sha, verify_inputs
+from native_qualification.worker import canonical, sha, verify_experiment, verify_inputs
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -21,17 +21,19 @@ def compare_observations(first: dict, second: dict) -> bytes:
     return canonical(first)
 
 
-def qualify(python: Path, wheel: Path, output: Path, *, owned_boundary: bool = False) -> dict:
+def qualify(python: Path, wheel: Path, output: Path, *, owned_boundary: bool = False,
+            semantic_bridge: bool = False, package_wheel: Path | None = None) -> dict:
     if output.exists() or output.is_symlink():
         raise FileExistsError('OUTPUT_EXISTS')
-    if type(owned_boundary) is not bool:
-        raise ValueError('EXPLICIT_BOOLEAN_MODE')
+    verify_experiment(owned_boundary, semantic_bridge, package_wheel)
     schema = ROOT / 'reference/car.capnp'
     verify_inputs(wheel, schema)
     processes = []
     for _ in range(2):
         with tempfile.TemporaryDirectory(prefix='r19-empty-cwd-') as cwd:
             mode = ['--owned-boundary'] if owned_boundary else []
+            if semantic_bridge and package_wheel is not None:
+                mode = ['--semantic-bridge', '--package-wheel', str(package_wheel.absolute())]
             result = subprocess.run([str(python.absolute()), '-I', '-B', str(ROOT / 'native_qualification/worker.py'),
                                      '--wheel', str(wheel.absolute()), '--schema', str(schema), *mode],
                                     cwd=cwd, capture_output=True, timeout=45, check=False)
@@ -52,6 +54,12 @@ def qualify(python: Path, wheel: Path, output: Path, *, owned_boundary: bool = F
         summary['status'] = 'F70UGZ_R20_OWNED_SYNTHETIC_BOUNDARY_REFERENCE_PASS'
         summary['tool_sources'].update({name: sha((ROOT / name).read_bytes()) for name in
                                         ['native_qualification/owned_demo.py', 'integration_tools/owned_message_boundary.py']})
+    if semantic_bridge:
+        summary['status'] = 'F70UGZ_R21_SYNTHETIC_SEMANTIC_BRIDGE_ORACLE_PASS'
+        summary['tool_sources'].update({name: sha((ROOT / name).read_bytes()) for name in
+                                        ['native_qualification/semantic_demo.py', 'native_qualification/owned_demo.py',
+                                         'integration_tools/semantic_bridge.py', 'integration_tools/semantic_oracle.py',
+                                         'integration_tools/semantic_types.py', 'integration_tools/owned_message_boundary.py']})
     output.mkdir(parents=True, exist_ok=False)
     files = {'OBSERVATIONS.json': observations, 'SUMMARY.json': canonical(summary),
              'RECEIPT_1.json': canonical(processes[0]['receipt']), 'RECEIPT_2.json': canonical(processes[1]['receipt'])}
@@ -67,9 +75,12 @@ def main() -> int:
     parser.add_argument('--wheel', type=Path, required=True, help='Exact downloaded wheel; never installed by this tool')
     parser.add_argument('--output', type=Path, required=True, help='New data-only output directory')
     parser.add_argument('--owned-boundary', action='store_true', help='Explicit R20 closed owned-message experiment, not an external reader')
+    parser.add_argument('--semantic-bridge', action='store_true', help='Explicit R21 closed semantic/oracle experiment, no model execution')
+    parser.add_argument('--package-wheel', type=Path, help='Exact sealed public wheel, required ONLY for --semantic-bridge')
     args = parser.parse_args()
     try:
-        summary = qualify(args.python, args.wheel, args.output, owned_boundary=args.owned_boundary)
+        summary = qualify(args.python, args.wheel, args.output, owned_boundary=args.owned_boundary,
+                           semantic_bridge=args.semantic_bridge, package_wheel=args.package_wheel)
     except (OSError, ValueError, subprocess.TimeoutExpired) as error:
         print('REJECTED:' + str(error), file=sys.stderr)
         return 2

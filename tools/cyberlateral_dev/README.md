@@ -17,6 +17,12 @@ bytes/field ledgers/settings/prior declarations, but does NOT parse arbitrary
 messages, authenticate call custody or create model/F61 inputs. See
 [R20 results and reproduction](docs/OWNED_MESSAGE_BOUNDARY_R20_RESULTS.md).
 
+R21 adds a [declared-readback semantic bridge and independent oracle](docs/SEMANTIC_BRIDGE_R21.md).
+It prepares unchanged0.3.0 synthetic input/state records without running the model
+or F61. Its explicitly selected native experiment also requires the exact public
+wheel in a separate environment; default R19/R20 and pure CI remain unchanged.
+See [R21 results](docs/SEMANTIC_BRIDGE_R21_RESULTS.md).
+
 ## One-command verification
 
 Install [uv](https://docs.astral.sh/uv/)0.12.23. From the repository root:

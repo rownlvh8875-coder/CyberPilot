@@ -18,6 +18,7 @@ from typing import Any
 
 SCHEMA_SHA = '098a19d69e8d233ac653503b53761a94824f31812757a11a7ded1589fe1e0788'
 WHEEL_SHA = '48938e0436ab1be615fc0a41434119a2065490a6212b9a5e56949e89b0588b76'
+PUBLIC_WHEEL_SHA = '3f3db36f62aa79ba97e4536a183b7e685a9d06c4e264d1fec9dd3bbda7c4d73c'
 FORBIDDEN = {'openpilot', 'opendbc', 'cereal', 'numpy', 'synthetic_rate_constraint_feasibility_v1'}
 
 
@@ -86,6 +87,8 @@ def verify_installed(wheel: Path, site: Path) -> dict:
 
 def _verify_record(site: Path, record: str, payload_names: set[str]) -> dict:
     permitted_extra = {str(PurePosixPath(record).parent / name) for name in ['INSTALLER', 'REQUESTED', 'direct_url.json']}
+    if record == 'cyberlateral_dev-0.3.0.dist-info/RECORD':
+        permitted_extra.add('cyberlateral_dev-0.3.0.dist-info/uv_cache.json')
     if record == 'pycapnp-2.1.0.dist-info/RECORD' and site.parts[-3:] == ('lib', 'python3.12', 'site-packages'):
         # Exact wheel-declared entrypoint wrapper, installer-generated and NOT run.
         permitted_extra.add('../../../bin/capnpc-cython')
@@ -212,9 +215,23 @@ def _receipt(installed: dict, include_sha: str, capnp) -> dict:
             'scope': 'OBSERVED_PROCESS_FILES_NOT_AUTHENTICATED_OS_IMAGE_OR_PORTABLE_ABI'}
 
 
-def observe(wheel: Path, schema: Path, *, owned_boundary: bool = False) -> dict:
-    if type(owned_boundary) is not bool:
+def verify_experiment(owned_boundary: bool, semantic_bridge: bool, package_wheel: Path | None) -> None:
+    if type(owned_boundary) is not bool or type(semantic_bridge) is not bool:
         raise ValueError('EXPLICIT_BOOLEAN_MODE')
+    if owned_boundary and semantic_bridge:
+        raise ValueError('EXPERIMENT_MODE_CONFLICT')
+    if semantic_bridge:
+        if package_wheel is None:
+            raise ValueError('PUBLIC_WHEEL_REQUIRED')
+        if package_wheel.is_symlink() or sha(package_wheel.read_bytes()) != PUBLIC_WHEEL_SHA:
+            raise ValueError('PUBLIC_WHEEL_IDENTITY')
+    elif package_wheel is not None:
+        raise ValueError('UNEXPECTED_PACKAGE_WHEEL')
+
+
+def observe(wheel: Path, schema: Path, *, owned_boundary: bool = False,
+            semantic_bridge: bool = False, package_wheel: Path | None = None) -> dict:
+    verify_experiment(owned_boundary, semantic_bridge, package_wheel)
     identity = verify_inputs(wheel, schema)
     if not sys.flags.isolated or not sys.flags.dont_write_bytecode:
         raise ValueError('ISOLATED_NO_BYTECODE_REQUIRED')
@@ -225,6 +242,14 @@ def observe(wheel: Path, schema: Path, *, owned_boundary: bool = False) -> dict:
         raise ValueError('FRESH_NATIVE_VENV_REQUIRED')
     site = Path(sysconfig.get_paths()['purelib'])
     installed = verify_installed(wheel, site)
+    public_installed = None
+    if semantic_bridge:
+        if package_wheel is None or 'cyberlateral_dev' in sys.modules:
+            raise ValueError('FRESH_PUBLIC_PACKAGE_ENV_REQUIRED')
+        public_installed = verify_installed(package_wheel, site)
+        public_spec = importlib.util.find_spec('cyberlateral_dev')
+        if public_spec is None or public_spec.origin != str(site / 'cyberlateral_dev/__init__.py'):
+            raise ValueError('UNEXPECTED_PUBLIC_IMPORT_ORIGIN')
     spec = importlib.util.find_spec('capnp')
     if spec is None or spec.origin != str(site / 'capnp/__init__.py'):
         raise ValueError('UNEXPECTED_NATIVE_IMPORT_ORIGIN')
@@ -255,7 +280,7 @@ def observe(wheel: Path, schema: Path, *, owned_boundary: bool = False) -> dict:
                               'Q05': 'NOT_QUALIFIED', 'Q06': 'NOT_IMPLEMENTED_READER_BLOCKED'},
             'native_reader_activation': 'NOT_ALLOWED',
         }
-        if owned_boundary:
+        if owned_boundary or semantic_bridge:
             # -B alone still reads old caches. Fresh private prefix prevents
             # repository-source caches from substituting for this closed demo.
             previous_prefix = sys.pycache_prefix
@@ -263,7 +288,10 @@ def observe(wheel: Path, schema: Path, *, owned_boundary: bool = False) -> dict:
                 sys.pycache_prefix = cold
                 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
                 try:
-                    from native_qualification.owned_demo import demonstrate
+                    if semantic_bridge:
+                        from native_qualification.semantic_demo import demonstrate
+                    else:
+                        from native_qualification.owned_demo import demonstrate
                     observations = demonstrate(car)
                     observations['identity'] = identity
                 finally:
@@ -272,7 +300,11 @@ def observe(wheel: Path, schema: Path, *, owned_boundary: bool = False) -> dict:
     if forbidden:
         raise ValueError('FORBIDDEN_MODULES_LOADED')
     observations['forbidden_modules_loaded'] = forbidden
-    return {'observations': observations, 'receipt': _receipt(installed, sha(include), capnp)}
+    receipt = _receipt(installed, sha(include), capnp)
+    if semantic_bridge:
+        receipt['public_wheel_sha256'] = PUBLIC_WHEEL_SHA
+        receipt['public_installed_files'] = public_installed
+    return {'observations': observations, 'receipt': receipt}
 
 
 def main() -> None:
@@ -280,8 +312,12 @@ def main() -> None:
     parser.add_argument('--wheel', type=Path, required=True)
     parser.add_argument('--schema', type=Path, required=True)
     parser.add_argument('--owned-boundary', action='store_true')
+    parser.add_argument('--semantic-bridge', action='store_true')
+    parser.add_argument('--package-wheel', type=Path)
     args = parser.parse_args()
-    sys.stdout.buffer.write(canonical(observe(args.wheel.absolute(), args.schema.absolute(), owned_boundary=args.owned_boundary)))
+    sys.stdout.buffer.write(canonical(observe(args.wheel.absolute(), args.schema.absolute(), owned_boundary=args.owned_boundary,
+                                             semantic_bridge=args.semantic_bridge,
+                                             package_wheel=args.package_wheel.absolute() if args.package_wheel is not None else None)))
 
 
 if __name__ == '__main__':

@@ -12,7 +12,7 @@ def _read(car, cc: bytes, cs: bytes) -> dict:
                 'steeringAngleDeg': number(c.steeringAngleDeg), 'steeringTorque': number(c.steeringTorque)}
 
 
-def _make(car, name: str, torque: float, active: bool, resumed: bool) -> tuple[b.OwnedFrame, dict]:
+def _make(car, name: str, torque: float, active: bool, resumed: bool, *, driver: float = 0.0, angle: float = 0.0) -> tuple[b.OwnedFrame, dict]:
     stamp = b.Stamp(name, 1 if resumed else 0, name + '_entry')
     cc, cs = car.CarControl.new_message(), car.CarState.new_message()
     writes = []
@@ -20,9 +20,9 @@ def _make(car, name: str, torque: float, active: bool, resumed: bool) -> tuple[b
     writes.append('CC.actuators.torque')
     cc.latActive = active
     writes.append('CC.latActive')
-    cs.steeringAngleDeg = 0.0
+    cs.steeringAngleDeg = angle
     writes.append('CS.out.steeringAngleDeg')
-    cs.steeringTorque = 0.0
+    cs.steeringTorque = driver
     writes.append('CS.out.steeringTorque')
     cc_raw, cs_raw = cc.to_bytes(), cs.to_bytes()
     cc_sha, cs_sha = sha(cc_raw), sha(cs_raw)
