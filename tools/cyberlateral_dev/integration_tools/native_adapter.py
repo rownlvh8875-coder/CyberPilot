@@ -39,6 +39,12 @@ class _Handle:
     __slots__ = ('__weakref__',)
 
 
+def _exact_hex(value: float) -> str:
+    if type(value) is not float:
+        raise AdapterError('ADAPTER_READBACK_MISMATCH')
+    return value.hex()
+
+
 def _frame(spec: SyntheticSpec, cc_raw: bytes, cs_raw: bytes) -> b.OwnedFrame:
     cc_sha, cs_sha = (hashlib.sha256(raw).hexdigest() for raw in (cc_raw, cs_raw))
     return b.OwnedFrame(
@@ -134,7 +140,7 @@ class _SyntheticAdapter:
             raise AdapterError('ADAPTER_NATIVE_READ') from error
         values = (readback.request, readback.driver, readback.angle_deg)
         if (any(type(value) is not float for value in values)
-                or [float.hex(value) for value in values] != [float.hex(spec.request), float.hex(spec.driver), float.hex(spec.angle_deg)]
+                or [_exact_hex(value) for value in values] != [_exact_hex(spec.request), _exact_hex(spec.driver), _exact_hex(spec.angle_deg)]
                 or type(readback.lat_active) is not bool or readback.lat_active is not spec.lat_active):
             raise AdapterError('ADAPTER_READBACK_MISMATCH')
         try:
