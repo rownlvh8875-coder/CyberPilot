@@ -40,14 +40,14 @@ project/test_model_consumption.py.
 expected_output(case_id)->dict; consume_closed_case(case_id,sample,state)->LateralOutput,
 verify_output(case_id,output)->None. Error codes per spec.
 
-- [ ] Commit spec/plan/literal table first; hash and preserve receipt before any R22 step.
-- [ ] Write missing-feature RED tests:literal outputs for all five, step count exactly
+- [x] Commit spec/plan/literal table first; hash and preserve receipt before any R22 step.
+- [x] Write missing-feature RED tests:literal outputs for all five, step count exactly
   one, mismatched/unknown/hostile input rejected before work, no initialization/
   simulation, no input mutation, complete output mutation rejection/reference hash
   mismatch/deep-copy isolation, independent expected assembly with model disabled.
-- [ ] Implement strict reference/closed input gate, exactly one real step and complete
+- [x] Implement strict reference/closed input gate, exactly one real step and complete
   expected-output comparison. No general model wrapper or fallback.
-- [ ] Targeted and full dev.py gate/static/wheel checks PASS; commit/ledger.
+- [x] Targeted and full dev.py gate/static/wheel checks PASS; commit/ledger.
 
 ### Task 2: Explicit native consumption and handoff
 
