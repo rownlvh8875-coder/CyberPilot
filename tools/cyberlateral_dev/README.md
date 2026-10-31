@@ -23,6 +23,13 @@ or F61. Its explicitly selected native experiment also requires the exact public
 wheel in a separate environment; default R19/R20 and pure CI remain unchanged.
 See [R21 results](docs/SEMANTIC_BRIDGE_R21_RESULTS.md).
 
+R22 adds [five preregistered fixed single-step consumptions](docs/MODEL_CONSUMPTION_R22.md)
+of the unchanged public model, explicitly selected with --model-consumption.
+Complete input and output must match independent SHA-pinned literals; it is not
+a general native adapter, sequence replay, F61 invocation or vehicle activation.
+R19/R20/R21 retain their original zero-new-model-work behavior.
+See [R22 results and reproduction](docs/MODEL_CONSUMPTION_R22_RESULTS.md).
+
 ## One-command verification
 
 Install [uv](https://docs.astral.sh/uv/)0.12.23. From the repository root:

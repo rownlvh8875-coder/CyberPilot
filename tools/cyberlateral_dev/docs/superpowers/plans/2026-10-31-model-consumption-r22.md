@@ -56,8 +56,8 @@ test_model_observations.py, project/test_model_mode.py, docs/results/README.
 **Interfaces:** --model-consumption plus exact --package-wheel; per-worker5 steps;
 R21 demonstrate(car,consume_model=False) keeps old outputs unchanged.
 
-- [ ] RED explicit-mode/missing-wheel/conflict/output assertions and five-case counts.
-- [ ] Implement closed accepted-row consumption and counts; rejected rows no work.
+- [x] RED explicit-mode/missing-wheel/conflict/output assertions and five-case counts.
+- [x] Implement closed accepted-row consumption and counts; rejected rows no work.
 - [ ] New native env/two workers, independent literal output checks, old R19/R20/R21
   SHA controls, full pure suite and explicit native static/compile checks. Fresh
   archive/new native/dev environment reproduces observations/SUMMARY exactly.

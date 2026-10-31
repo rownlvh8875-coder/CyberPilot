@@ -24,8 +24,11 @@ def compare_preparation(sample, state, oracle_sample, oracle_state) -> None:
         raise ValueError('SEMANTIC_ORACLE_PARITY')
 
 
-def demonstrate(car) -> dict:
+def demonstrate(car, *, consume_model: bool = False) -> dict:
+    if type(consume_model) is not bool:
+        raise ValueError('EXPLICIT_BOOLEAN_MODE')
     rows = []
+    model_steps = 0
     fixtures = [
         ('zero', 0.0, False, False, 0.0, 0.0),
         ('rounded_request', 0.3, True, False, 1.5, -7.25),
@@ -42,6 +45,8 @@ def demonstrate(car) -> dict:
             readback = ScalarReadback(frame.stamp, frame.cc.payload_sha256, frame.cs.payload_sha256,
                                       'NATIVE_FLOAT32_DECLARATION', cc.actuators.torque, cs.steeringTorque, cs.steeringAngleDeg, cc.latActive)
         row = {'id': name, 'cc_sha256': readback.cc_sha256, 'cs_sha256': readback.cs_sha256}
+        if consume_model:
+            row['model_steps'] = 0
         try:
             prepared = prepare_semantic_input(frame, readback)
         except SemanticBridgeError as error:
@@ -58,10 +63,20 @@ def demonstrate(car) -> dict:
             compare_preparation(prepared.sample, prepared.state, oracle_sample, oracle_state)
             row.update(accepted=True, prepared=project_preparation(prepared.sample, prepared.state), oracle_parity=True,
                        custody_claim=prepared.custody_claim, precision_claim=prepared.precision_claim)
+            if consume_model:
+                from integration_tools.model_consumption import consume_closed_case
+                output = consume_closed_case(name, prepared.sample, prepared.state)
+                model_steps += 1
+                row.update(model_output=asdict(output), model_steps=1, model_expected_match=True)
         rows.append(row)
-    return {'schema_version': 1, 'scope': 'CLOSED_SYNTHETIC_SEMANTIC_PREPARATION_NO_MODEL_EXECUTION', 'cases': rows,
+    result = {'schema_version': 1, 'scope': 'CLOSED_SYNTHETIC_SEMANTIC_PREPARATION_NO_MODEL_EXECUTION', 'cases': rows,
             'package_version': p.__version__, 'model_execution': 0, 'F61_execution': 0,
             'actual_call_custody': 'NOT_QUALIFIED', 'actual_activation': 'NOT_ALLOWED',
             'R_BUDGET': 'UNRESOLVED', 'STATIC_EVIDENCE_GATE': 'FAIL',
             'oracle_algorithm': 'INDEPENDENT_INTEGER_SIGNIFICAND_EXPONENT_NOT_STRUCT_ROUNDTRIP',
             'input_structure_only_not_F61': True}
+    if consume_model:
+        from integration_tools.fixed_model_reference import REFERENCE_SHA256
+        result.update(scope='FIVE_FIXED_SYNTHETIC_SINGLE_STEPS_NOT_ACTUAL_OR_CHAIN',
+                      model_execution=model_steps, model_reference_sha256=REFERENCE_SHA256)
+    return result
