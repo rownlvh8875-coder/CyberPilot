@@ -54,7 +54,7 @@ test_driver_mode.py, native_claim_fixture.py; README/spec/results.
   implement opt-in producer/gates and complete fixture claims; targeted GREEN.
 - [x] Full pure gate/static checks, fresh native env/two workers/literal output
   assertions, R19–R24 exact observation controls and current-reference labels.
-- [ ] Commit; new archived source/dev+native env repeats observations/SUMMARY;
+- [x] Commit; new archived source/dev+native env repeats observations/SUMMARY;
   receipts not normalized/equality claims. One fresh whole-branch review; one
   blocker RED/GREEN fix pass only, all rulings/minors ledgered.
 - [ ] Exact-head pure CI/Draft update/download94 hashes; original10 source guards;

@@ -51,6 +51,7 @@ and nonzero inactive state reset. Summary reference labels now come from validat
 observations; a correction receipt preserves the known R24 summary-label error
 without rewriting old evidence or changing numerical results. Public0.3.0 is
 unchanged; this is neither a general driver sweep nor physical safety validation.
+See [R25 results and correction scope](docs/NEGATIVE_DRIVER_R25_RESULTS.md).
 
 ## One-command verification
 
