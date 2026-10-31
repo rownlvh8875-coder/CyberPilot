@@ -82,11 +82,11 @@ update component README navigation. No other legacy edits.
 
 **Interfaces:** Task2 CLI, same saved R31 examples for all direct renderer runs.
 
-- [ ] Document root-relative producer→reader quickstart, new-output guards,
+- [x] Document root-relative producer→reader quickstart, new-output guards,
   integrity-vs-authority limits and view semantics. No r/time/scale fallback.
-- [ ] Full `uv run --locked python -B dev.py verify --output NEW` local and
+- [x] Full `uv run --locked python -B dev.py verify --output NEW` local and
   committed fresh snapshot:PASS; unchanged wheel77 imported files/old source guards.
-- [ ] Renderer two examples x2 repeats x2 locations exact portable2 files; all
+- [x] Renderer two examples x2 repeats x2 locations exact portable2 files; all
   source/output manifests, forbidden imports and zero new renderer model calls PASS.
   Inspect retained R31 native evidence pins/manifests/data-only tests; no new native execution.
 - [ ] One fresh whole-branch review, dispositions; Important/Critical one TDD fix
