@@ -48,6 +48,10 @@ class MessageBoundaryTests(unittest.TestCase):
                          ('F70UGZ_R13_MESSAGE_BOUNDARY_V1', 'R11_C8FB9068_4134C0D1_V1', 'A'))
         self.assertEqual((prepared.custody_claim, prepared.precision_claim, prepared.time_semantics),
                          ('SYNTHETIC_DECLARATION_ONLY', 'EXACT_SUPPLIED_BINARY64_NOT_NATIVE_ABI', 'INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME'))
+        distinct = replace(frame, cc=m.SyntheticCarControlV1(m.SyntheticActuatorsV1(0.25), False),
+                           cs=m.SyntheticCarStateWrapperV1(m.SyntheticCarStateValuesV1(1.5, -7.25)))
+        self.assertEqual(m.extract_synthetic_message(distinct).sample,
+                         p.LateralInput(0, 0.25, 1.5, -7.25, False, p.Limits(16, 2, 5, 7, 1, 3), 'SYNTHETIC_ONLY'))
 
     def test_records_immutable_and_closed(self):
         m = self.module()
