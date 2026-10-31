@@ -108,6 +108,15 @@ class ScenarioReportDataTests(unittest.TestCase):
                 with self.assertRaises(m.ReportError):
                     m.read_report(source)
 
+    def test_rehashed_rounded_integer_must_equal_recorded_integer_command(self):
+        m = self.module()
+        with tempfile.TemporaryDirectory() as scratch:
+            source = write_bundle(Path(scratch) / 'input')
+            edit_json(source, 'RESULTS.json', lambda x: x['rows'][0]['model_output']['trace']['quantization'].update(rounded_integer=999))
+            with self.assertRaises(m.ReportError) as error:
+                m.read_report(source)
+            self.assertEqual(error.exception.code, 'REPORT_CONSISTENCY')
+
     def test_canonical_json_duplicates_nonfinite_deep_reject_even_rehashed(self):
         m = self.module()
         for mode in ['space', 'duplicate', 'nonfinite', 'deep', 'utf8']:

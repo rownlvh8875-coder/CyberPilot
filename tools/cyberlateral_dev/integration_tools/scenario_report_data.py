@@ -191,6 +191,7 @@ def _output(value):
     _keys(quant, {'integer_command', 'rounded_integer', 'request_hex', 'scale', 'product_hex'})
     for name in ['integer_command', 'rounded_integer']:
         _integer(quant[name])
+    _same(quant['rounded_integer'], quant['integer_command'])
     _integer(quant['scale'], 1, 2048)
     _hex(quant['request_hex'])
     _hex(quant['product_hex'])
