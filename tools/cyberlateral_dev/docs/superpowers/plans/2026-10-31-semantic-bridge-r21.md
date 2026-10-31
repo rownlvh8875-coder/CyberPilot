@@ -54,13 +54,13 @@ public-wheel verification; add project/test_semantic_mode.py, docs/results/READM
 **Interfaces:** demonstrate(car)->dict, --semantic-bridge --package-wheel; default
 R19/R20 unchanged; installed public package guarded before importing bridge/oracle.
 
-- [ ] Write RED missing-mode/demo/wheel tests and literal eight-case output tests.
-- [ ] Implement explicit mutually-exclusive mode and exact public-wheel preflight,
+- [x] Write RED missing-mode/demo/wheel tests and literal eight-case output tests.
+- [x] Implement explicit mutually-exclusive mode and exact public-wheel preflight,
   closed readback producer, exact oracle comparison and fail-closed output.
-- [ ] Build/verify/install sealed public wheel + pinned pycapnp into new native env;
+- [x] Build/verify/install sealed public wheel + pinned pycapnp into new native env;
   run two workers/output assertions, unchanged R19/R20 SHA controls, full pure gate,
   explicit native Ruff/Ty/Codespell/own compile and fresh source/new-env reproduction.
-- [ ] Commit and request one fresh whole-branch review; fix Important/Critical in
+- [x] Commit and request one fresh whole-branch review; fix Important/Critical in
   one RED/GREEN pass, ledger all scope rulings/deferred minors.
 - [ ] Publish existing feature/Draft only; exact-head pure CI/downloaded manifest,
   original-tree/hash guards, external evidence seal and final scoped handoff.

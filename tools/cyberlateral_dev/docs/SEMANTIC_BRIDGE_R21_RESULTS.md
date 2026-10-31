@@ -27,6 +27,16 @@ afbc84215769d23a8939828a28cc4c5507485bb8177a3e64e52fadad2c753ae2.
 R19 control stays b7eaadea476113bcd5e56b6526382dc468773f9ec69327f4a6c6fc31cff2fe74;
 R20 control stays d88aabec4c37ceaca52f2516ae0a7c7c3d2efbad2680afa365a1c809b06448af.
 
+Primary and fresh relocated full gates:299 tests PASS (280 inherited +19 R21),
+107 own component compilations,77 frozen imports and sealed wheel unchanged.
+Explicit native Ruff/Ty/Codespell/7 own compilations and6 literal output checks
+PASS. Native observation/SUMMARY bytes reproduce across relocated new environments;
+environment-specific receipts are kept separately, not claimed identical.
+One fresh final reviewer independently ran19 semantic tests,6 output assertions,
+and a pure probe of4,108 exact signed binary32 plus4,108 adjacent binary64-only
+values, all correct. No Critical/Important/Minor findings or fix/re-review pass.
+This is bounded development verification, not exhaustive numeric or model qualification.
+
 ## Reproduction
 
 From tools/cyberlateral_dev, build public wheel to a NEW directory using
