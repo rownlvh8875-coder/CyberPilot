@@ -1,11 +1,13 @@
 {
   "schema_version": 1,
   "repository": "rownlvh8875-coder/CyberPilot",
-  "reviewed_source_commit": "3da79e367fcc851377d83caa88e3665f175acff6",
+  "reviewed_source_commit": "8082ec3651aad95885512fe0060036f112b65bd9",
   "scope": "STATIC_SOURCE_INVENTORY_OF_BOUNDED_OFFLINE_DEVELOPMENT",
   "execution_verdict": "NOT_ESTABLISHED_BY_STATIC_INVENTORY; USE_FRESH_COMMAND_EXIT_OUTPUT_RECORDS_AND_MANIFESTS",
   "runtime_package_version": "0.3.0",
   "new_runtime_implementation_in_R36": 0,
+  "new_model_runtime_implementation_in_R37": 0,
+  "new_DEV_validation_module_in_R37": 1,
   "whole_product_requirements_baseline": "NOT_ESTABLISHED_FROM_REVIEWED_AUTHORITIES",
   "historical_inventory": "OFFLINE_CAPABILITY_INVENTORY_R30.json",
   "recorded_baseline_evidence": {
@@ -20,7 +22,8 @@
     "step": {"path": "tools/cyberlateral_dev/src/cyberlateral_dev/api.py", "sha256": "052c4594f66d53adea4e37fc32f128b84a7a000662b564211f715e21610d5502", "symbol": "step"},
     "simulate": {"path": "tools/cyberlateral_dev/src/cyberlateral_dev/simulation.py", "sha256": "9b7771b3a75d852ce9f031e7f8490bcf9e9e6b890174551b4d9f0a28e366f264", "symbol": "simulate"},
     "public_cli": {"path": "tools/cyberlateral_dev/src/cyberlateral_dev/cli.py", "sha256": "fcc7ef7ecfe294b4dce8d6d90dffa0ab88d16cdae665d7386c76b0596f19ec4c", "symbol": "main"},
-    "scenario_cli": {"path": "tools/cyberlateral_dev/tools/scenario.py", "sha256": "49882a06b3ad8d8dc1d525f5b2ce52aa8208f8176395019fbfbd37a0470fd958", "symbol": "main"},
+    "scenario_cli": {"path": "tools/cyberlateral_dev/tools/scenario.py", "sha256": "c8ac6b0dcaec119429d7223911be6886ffcdfe3496f18151ad2480a98d0f8737", "symbol": "main"},
+    "scenario_validation": {"path": "tools/cyberlateral_dev/integration_tools/scenario_validate.py", "sha256": "fbd4302320d91551e6b17e0d8b34f6718e2aaa4d299c6a9f7acafe694cf6f5b5", "symbol": "validate_scenario"},
     "scenario_input": {"path": "tools/cyberlateral_dev/integration_tools/scenario_input.py", "sha256": "bfc098e7c33ac415fe48cd8d4414b6dc7d28240fee26df602c9c43e9c9983794", "symbol": "read_scenario"},
     "scenario_run": {"path": "tools/cyberlateral_dev/integration_tools/scenario_run.py", "sha256": "129a2e0d4ca9afda4a0e28f4ae9f8009d358a338438deea346c01b5d6fa2b25a", "symbol": "run_scenario"},
     "report_cli": {"path": "tools/cyberlateral_dev/tools/scenario_report.py", "sha256": "1e454235184d24fd5e0794550d6d7828d1461859457b0d6920dca97f951c54a2", "symbol": "main"},
@@ -49,7 +52,8 @@
     {"id": "C06", "name_ko": "완전한 저장 batch의 정확한 회귀 비교", "status": "IMPLEMENTED_R34_DEV_TOOL", "source_ids": ["compare_cli", "compare_run"], "limit": "zero new models; same-input recorded-value comparison, no tolerance or baseline auto-update; portable subsets not accepted"},
     {"id": "C07", "name_ko": "고정 수치·상태 경계 literal 회귀팩", "status": "IMPLEMENTED_R35_FIXED_PACK", "source_ids": ["r35_literals", "scenario_run", "batch_run", "compare_run"], "limit": "6valid/38samples plus3intentional rejections; selected literals not generic independent numerical oracle"},
     {"id": "C08", "name_ko": "기본 순수 개발 gate와 전용 CI 정의", "status": "IMPLEMENTED_OFFLINE_GATE", "source_ids": ["verify", "build", "config", "scoped_ci"], "limit": "fresh execution evidence required; not whole openpilot, native qualification or merge authorization"},
-    {"id": "C09", "name_ko": "별도 opt-in 고정 native 합성 경로", "status": "IMPLEMENTED_CONTROLLED_OPT_IN_NOT_REQUALIFIED_HERE", "source_ids": ["owned_native", "native_chain", "native_suite"], "limit": "qualified separate environment and fixed internally constructed messages/profiles only; not generic external readback or CAN wire"}
+    {"id": "C09", "name_ko": "별도 opt-in 고정 native 합성 경로", "status": "IMPLEMENTED_CONTROLLED_OPT_IN_NOT_REQUALIFIED_HERE", "source_ids": ["owned_native", "native_chain", "native_suite"], "limit": "qualified separate environment and fixed internally constructed messages/profiles only; not generic external readback or CAN wire"},
+    {"id": "C10", "name_ko": "모델 없는 합성 입력 사전 검사", "status": "IMPLEMENTED_R37_INPUT_CONTRACT_ONLY", "source_ids": ["scenario_cli", "scenario_validation", "scenario_input", "gates"], "limit": "--validate-only reuses V1 reader; stdout JSON exit0/2 without --output; no model/runner/engine import, result files or source/runtime/origin qualification; added DEV source intentionally changes observed producer hashes"}
   ],
   "not_implemented_or_not_authorized": [
     {"id": "U01", "name_ko": "공개 wheel CLI에서 사용자 JSON 읽기", "status": "NOT_IMPLEMENTED_IN_PUBLIC_CLI", "source_ids": ["public_cli", "scenario_cli"], "limit": "Use separate implemented R31 DEV tool; do not mistake this for missing all custom scenario support"},

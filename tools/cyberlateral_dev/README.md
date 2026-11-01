@@ -10,6 +10,10 @@ and [reviewed source capability map](docs/OFFLINE_CAPABILITY_INVENTORY_CURRENT.j
 They distinguish the installed fixed-catalog wheel CLI from the separate custom
 scenario tools below. Static availability is not a fresh execution or vehicle verdict.
 
+The [R37 validation-only mode](docs/SCENARIO_VALIDATION_R37_KO.md) checks declared
+synthetic input without model imports/execution or result files. Input acceptance
+is not model/source/runtime qualification or authenticated origin.
+
 Custom declared-synthetic JSON files can now be run with the separate
 [R31 developer scenario CLI](docs/SYNTHETIC_SCENARIO_CLI_R31_KO.md) for full JSON/CSV
 traces. It preserves the public0.3.0 model/wheel; it is not a vehicle/log reader.
@@ -48,7 +52,7 @@ Historical R30 snapshot: [original acceptance guide](docs/OFFLINE_ACCEPTANCE_R30
 and [original source inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
 Their recorded counts and prospective features describe R30, not current DEV-tool
 availability. These files and the historical stage descriptions retain their
-original scope; use the current guide above for R31–R35 workflows.
+original scope; use the current guide above for R31–R37 workflows.
 
 R28 provides a [controlled internally constructed synthetic native adapter](docs/NATIVE_ADAPTER_R28.md).
 R29 connects it to the unchanged model for [two fixed state-carry profiles](docs/ADAPTER_SEQUENCE_R29.md).

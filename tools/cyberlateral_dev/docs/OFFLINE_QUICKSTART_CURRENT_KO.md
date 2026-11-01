@@ -1,6 +1,6 @@
 # 현재 오프라인 개발판 사용 안내
 
-구현 설명의 검토 기준은 main `3da79e367fcc851377d83caa88e3665f175acff6`입니다.
+구현 설명의 검토 기준은 commit `8082ec3651aad95885512fe0060036f112b65bd9`입니다.
 실행 결과는 매번 새로 생성한 SUMMARY/RESULTS/Manifest로 확인합니다. 문서나 source
 inventory만으로 테스트 PASS, 최신 GitHub 상태 또는 실차 적격성을 판정하지 않습니다.
 
@@ -14,6 +14,7 @@ inventory만으로 테스트 PASS, 최신 GitHub 상태 또는 실차 적격성�
 |---|---|---|
 | 명시적 합성 sample/state 계산 | 공개 Python step / simulate | pure 모델; 실제 이력·시간 증명 아님 |
 | 설치한 wheel의 고정 카탈로그 | python -m cyberlateral_dev | 고정 카탈로그만; 사용자 --input 없음 |
+| 합성 JSON 사전 검사만 수행 | tools/scenario.py --validate-only (R37) | 입력 계약만; 모델 import/실행0, 결과 파일 없음 |
 | 사용자 선언 합성 JSON 실행 | tools/scenario.py (R31) | 별도 DEV 도구; bounded JSON과 명시적 상태 |
 | 저장된 R31 결과 보기 | tools/scenario_report.py (R32) | 검산 후 HTML/VIEW 생성; 새 모델0 |
 | 여러 파일을 독립 실행 | tools/scenario_batch.py (R33) | 파일 사이에 상태를 전달하지 않음 |
@@ -48,18 +49,31 @@ r36_output="$(mktemp -d /tmp/cyberlateral-use-XXXXXX)"
 root openpilot 설치, submodule/LFS, Docker, native wheel, 차량 장치는 필요하지 않습니다.
 아래 명령은 준비된 개발 환경의 --locked --offline 실행 예입니다.
 
-## 2. 전체 개발 검증
+## 2. 모델 실행 없는 입력 사전 검사
+
+```bash
+uv run --project "$r36_component" --locked --offline python -B "$r36_component/tools/scenario.py" --input "$r36_component/examples/synthetic_sign_cycle_v1.json" --validate-only
+```
+
+exit0은 입력 계약 충족, exit2의 SCENARIO_INPUT_REJECTED는 기존 입력 거절입니다.
+검사 JSON은 stdout 한 줄이며 일반 검사 거절의 stderr는 비어 있습니다.
+--output은 필요 없으며 함께 지정하면 입력을 읽기 전 usage error/exit2입니다.
+PASS는 모델/source/runtime 준비·산술 정답·출처 인증이나 실차 승인이 아닙니다.
+상세 필드·거절·제한은 [R37 안내](SCENARIO_VALIDATION_R37_KO.md)를 따릅니다.
+정상 실행에는 다음 R31 명령처럼 --output을 별도로 지정해야 합니다.
+
+## 3. 전체 개발 검증
 
 ```bash
 uv run --project "$r36_component" --locked --offline python -B "$r36_component/dev.py" verify --output "$r36_output/verify"
 ```
 
 exit0과 `verify/SUMMARY.json`, 전체 checksum을 함께 확인합니다. 실제 테스트 수·자체
-compile 수·Ruff/Ty/Codespell/wheel 결과는 해당 SUMMARY와 로그가 기준입니다. 기준 main의
-기록은570 tests/174 compiles였지만 미래 실행에 그 숫자를 고정된 성공 조건으로 대입하지
+compile 수·Ruff/Ty/Codespell/wheel 결과는 해당 SUMMARY와 로그가 기준입니다. 이 검토 기준의
+로컬 기록은579 tests/176 compiles였지만 미래 실행에 그 숫자를 고정된 성공 조건으로 대입하지
 않습니다. 이것은 컴포넌트 검증이며 전체 openpilot/native/실차 CI가 아닙니다.
 
-## 3. 합성 입력 사본 → 실행 → 읽기 전용 리포트
+## 4. 합성 입력 사본 → 실행 → 읽기 전용 리포트
 
 등록 examples는 보존하고 사본만 편집합니다. 아래는 **편집하지 않은 사본**의 예입니다.
 
@@ -79,7 +93,7 @@ R32는 저장 결과를 검산해 표시할 뿐 모델을 재실행하지 않습
 previous_applied를 합치거나 누락된 이력을 추정하지 않습니다. r/dt/timestamp/차량 설정
 필드는 받지 않습니다. SYNTHETIC_ONLY는 입력자 선언이지 실제 출처 인증이 아닙니다.
 
-## 4. 독립 batch 두 회차 → 정확한 저장 결과 비교
+## 5. 독립 batch 두 회차 → 정확한 저장 결과 비교
 
 ```bash
 uv run --project "$r36_component" --locked --offline python -B "$r36_component/tools/scenario_batch.py" --input "$r36_component/examples/synthetic_sign_cycle_v1.json" --input "$r36_component/examples/synthetic_resumed_v1.json" --output "$r36_output/batch-one"
@@ -93,7 +107,7 @@ uv run --project "$r36_component" --locked --offline python -B "$r36_component/t
 같은 입력의 반복 일치이지 정답·성능·출처 인증이 아닙니다. 입력 bytes가 바뀌면 같은
 입력 회귀로 취급하지 않습니다. --candidate는 파일 역할 이름이며 차량 Candidate가 아닙니다.
 
-## 5. R35 회귀팩과 종료 코드
+## 6. R35 회귀팩과 종료 코드
 
 정확한9개 입력 순서·literal·counter1→0 검증은
 [R35 안내](SYNTHETIC_REGRESSION_PACK_R35_KO.md)를 따릅니다. 임의 glob으로 순서를 정하거나
@@ -110,7 +124,11 @@ uv run --project "$r36_component" --locked --offline python -B "$r36_component/t
 R35의 예상 exit1을 worker 오류와 혼동하거나 무조건 무시하지 않습니다. `set -e`로
 연결하면 예상 exit1에서도 중단되므로 혼합 batch 명령은 각각 결과를 확인합니다.
 
-## 6. 보관·공유·해석 경계
+## 7. 보관·공유·해석 경계
+
+R37 DEV source 추가로 R31/R33의 observed_dev_source_hashes는 바뀝니다. 모델 수치와
+wheel은 불변이지만 과거 RESULTS bytes 전체가 같다고 주장하지 않습니다. R34의
+기록 비교와 producer identity 변경 표시는 별개입니다.
 
 완전한 batch/compare에는 개인 경로가 있는 receipt와 이를 참조하는 전체 Manifest가
 있습니다. 로컬 검증용 원본은 보존하고, 공개할 때는 검토한 portable 부분만 별도 묶음으로
