@@ -42,9 +42,9 @@ reader/renderer; external bounded browser probe over saved synthetic HTML.
 **Files:** add `docs/SCENARIO_REPORT_R321_RESULTS.md`, update R32 guide with follow-up link.
 **Interfaces:** unchanged saved R31 six-file inputs and R32 portable2 output.
 
-- [ ] Bounded blank-page/CDP report diagnostic; inspect screenshots if available,
+- [x] Bounded blank-page/CDP report diagnostic; inspect screenshots if available,
   otherwise record blocker/local read-only check. Do not alter product for environment failure.
-- [ ] Full `uv run --locked python -B dev.py verify --output NEW` local/fresh PASS;
+- [x] Full `uv run --locked python -B dev.py verify --output NEW` local/fresh PASS;
   repeat saved profiles, exact prior HTML/VIEW bytes, import tripwire/source/original guards PASS.
 - [ ] Fresh whole-branch reviewer, all exclusions dispositioned, one Important/Critical
   TDD fix pass if needed; record any deferred minors. Commit docs, normal feature
