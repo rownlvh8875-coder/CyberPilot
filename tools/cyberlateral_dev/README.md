@@ -25,6 +25,11 @@ producer identity changes without rerunning the model. MATCH is recorded-value
 equivalence, not an independent numerical oracle or vehicle approval. Portable
 sharing subsets are not complete input bundles; no baseline auto-update exists.
 
+The [R35 fixed synthetic regression pack](docs/SYNTHETIC_REGRESSION_PACK_R35_KO.md)
+adds six hand-authored scenarios/38 samples and three expected input rejections.
+Separate literal checks cover selected numerical/state boundaries before saved-byte
+comparison; no new CLI, public-model change or vehicle qualification is implied.
+
 Saved R31 outputs can be checked and viewed with the separate
 [R32 read-only HTML scenario report](docs/SCENARIO_REPORT_R32_KO.md).
 It displays graphs/state tables without importing or rerunning the model;
