@@ -5,6 +5,11 @@ byte-for-byte from the verified R7 evidence. It is now maintained as a standalon
 development project in CyberPilot. It is NOT an openpilot controller, vehicle
 installation, physical simulator, F61 invocation or safety/performance approval.
 
+Start with the [current Korean offline workflow guide](docs/OFFLINE_QUICKSTART_CURRENT_KO.md)
+and [reviewed source capability map](docs/OFFLINE_CAPABILITY_INVENTORY_CURRENT.json).
+They distinguish the installed fixed-catalog wheel CLI from the separate custom
+scenario tools below. Static availability is not a fresh execution or vehicle verdict.
+
 Custom declared-synthetic JSON files can now be run with the separate
 [R31 developer scenario CLI](docs/SYNTHETIC_SCENARIO_CLI_R31_KO.md) for full JSON/CSV
 traces. It preserves the public0.3.0 model/wheel; it is not a vehicle/log reader.
@@ -39,10 +44,11 @@ passed the two-report desktop/mobile visual check; [evidence receipts and hashes
 docs/evidence/r322-visual-acceptance/README_KO.md) preserve its bounded scope.
 This is not vehicle, arithmetic, performance or deployment approval.
 
-Bounded offline acceptance: [R30 Korean acceptance and quickstart guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md),
-with a [source-backed capability inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
-It distinguishes bounded offline acceptance from whole-product completion or
-vehicle readiness. Historical stage descriptions below retain their original scope.
+Historical R30 snapshot: [original acceptance guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md)
+and [original source inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
+Their recorded counts and prospective features describe R30, not current DEV-tool
+availability. These files and the historical stage descriptions retain their
+original scope; use the current guide above for R31–R35 workflows.
 
 R28 provides a [controlled internally constructed synthetic native adapter](docs/NATIVE_ADAPTER_R28.md).
 R29 connects it to the unchanged model for [two fixed state-carry profiles](docs/ADAPTER_SEQUENCE_R29.md).
