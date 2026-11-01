@@ -97,6 +97,7 @@ class ScenarioValidationTests(unittest.TestCase):
                                 'SCENARIO_SIZE' if name == 'oversize' else 'SCENARIO_INPUT_FILE')
 
     def test_mode_errors_before_input_read(self):
+        validator = self.module()
         if str(ROOT) not in sys.path:
             sys.path.insert(0, str(ROOT))
         reader = importlib.import_module('integration_tools.scenario_input')
@@ -108,7 +109,11 @@ class ScenarioValidationTests(unittest.TestCase):
             path = Path(tmp)
             for args in [['--input', str(path / 'missing'), '--validate-only', '--output', str(path / 'out')],
                          ['--input', str(path / 'missing')]]:
-                with self.subTest(args=args), patch.object(reader, 'read_scenario', side_effect=AssertionError('INPUT_READ')):
+                with (
+                    self.subTest(args=args),
+                    patch.object(reader, 'read_scenario', side_effect=AssertionError('INPUT_READ')),
+                    patch.object(validator, 'read_scenario', side_effect=AssertionError('INPUT_READ')),
+                ):
                     with contextlib.redirect_stderr(io.StringIO()), self.assertRaises(SystemExit) as caught:
                         cli.main(args)
                     self.assertEqual(caught.exception.code, 2)
