@@ -70,6 +70,7 @@ class RegressionPackTests(unittest.TestCase):
         engine = importlib.import_module('integration_tools.scenario_engine')
         result = engine.evaluate_scenario(source.read_scenario(PACK / filename))
         assert_case(self, filename, result)
+        return result
 
     def test_positive_crossing_uses_previous_applied_and_asymmetric_down(self):
         self.evaluate('positive_crossing_v1.json')
@@ -81,7 +82,11 @@ class RegressionPackTests(unittest.TestCase):
         self.evaluate('inactive_resume_v1.json')
 
     def test_counter89_90_91_negative_threshold_and_below85_reset(self):
-        self.evaluate('angle_counter_v1.json')
+        result = self.evaluate('angle_counter_v1.json')
+        last = result['rows'][-1]
+        assert_typed(self, [last['prepared']['state']['angle_counter'],
+                           last['model_output']['next_state']['angle_counter'],
+                           last['model_output']['trace']['downstream']['fault_condition']], [1, 0, False])
 
     def test_fractional_driver_bounds_and_positive_negative_nearest_even(self):
         self.evaluate('fractional_driver_v1.json')

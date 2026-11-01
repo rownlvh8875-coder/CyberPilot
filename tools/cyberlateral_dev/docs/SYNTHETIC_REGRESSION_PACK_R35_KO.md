@@ -45,8 +45,9 @@ inactive_resume의 첫 선언은 index10, 이전 요청12, 이전 applied6, coun
 이전 요청에는16이 보존됩니다. 다음 활성 sample은 applied0에서 다시2로 시작합니다.
 
 angle_counter는 초기88부터 high-angle에서89/90/91을 셉니다. 이때 request flag는
-true/false/false이고 세 번째 뒤 counter는0입니다. abs(-85)는 경계를 포함하고
-abs(-84.5)는 아래이므로 counter0/request=true입니다. 이 모델에서 request flag=false는
+true/false/false이고 세 번째 뒤 counter는0입니다. abs(-85)는 경계를 포함합니다.
+다음85 sample로 counter1을 만든 뒤 -84.5에서 실제1→0 초기화를 확인합니다.
+마지막 request=true이며 최종 counter0입니다. 이 모델에서 request flag=false는
 lat_active=false가 아니므로, 명령을 자동으로0으로 바꾼다고 해석하지 않습니다.
 
 fractional_driver에서는 allowance0, factor1, multiplier1, MAX16이므로
