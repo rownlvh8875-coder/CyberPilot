@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "scope": "SYNTHETIC_ONLY",
+  "scenario_id": "R31_resumed",
+  "limits": {
+    "STEER_MAX": 16, "STEER_DELTA_UP": 2, "STEER_DELTA_DOWN": 5,
+    "STEER_DRIVER_ALLOWANCE": 7, "STEER_DRIVER_FACTOR": 1, "STEER_DRIVER_MULTIPLIER": 3
+  },
+  "initial_state": {"index": 5, "previous_requested": 2, "previous_applied": 2, "angle_counter": 89},
+  "samples": [
+    {"index": 5, "request": -0.25, "driver": 8.5, "angle_deg": 85.0, "lat_active": true}
+  ]
+}

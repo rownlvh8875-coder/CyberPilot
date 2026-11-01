@@ -1,0 +1,11 @@
+[build-system]
+requires = []
+build-backend = "build_backend"
+backend-path = ["."]
+
+[project]
+name = "cyberlateral-dev"
+version = "0.3.0"
+description = "Offline synthetic lateral development calculation API; not vehicle runtime"
+requires-python = "==3.12.13"
+dependencies = []

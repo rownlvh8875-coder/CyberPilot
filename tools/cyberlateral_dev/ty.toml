@@ -1,0 +1,4 @@
+# Explicit component configuration; do not inherit openpilot's generated-ABI ignores.
+[rules]
+unresolved-import = "error"
+unresolved-attribute = "error"

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "authority": "GitHub git ref/tag/commit API reads during integration; not a mutable tag name or arbitrary 40-hex shape",
+  "actions": {
+    "actions/checkout": {
+      "tag": "v7",
+      "ref_object_type": "commit",
+      "ref_object_sha": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "commit_sha": "3d3c42e5aac5ba805825da76410c181273ba90b1"
+    },
+    "actions/setup-python": {
+      "tag": "v6",
+      "ref_object_type": "commit",
+      "ref_object_sha": "ece7cb06caefa5fff74198d8649806c4678c61a1",
+      "commit_sha": "ece7cb06caefa5fff74198d8649806c4678c61a1"
+    },
+    "actions/upload-artifact": {
+      "tag": "v7",
+      "ref_object_type": "commit",
+      "ref_object_sha": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+      "commit_sha": "cf430e030ddbb5b0abf93d22962f4752f3646cd9"
+    },
+    "astral-sh/setup-uv": {
+      "tag": "v7",
+      "ref_object_type": "tag",
+      "ref_object_sha": "94527f2e458b27549849d47d273a16bec83a01e9",
+      "commit_sha": "37802adc94f370d6bfd71619e3f0bf239e1f3b78",
+      "commit_tree_sha": "00da6c979561801aef741830cc894032fb2b83fa",
+      "annotated_object_commit_lookup": "422 No commit found; peel via git/tags endpoint before pinning"
+    }
+  }
+}

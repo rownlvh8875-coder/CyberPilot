@@ -1,0 +1,3188 @@
+{
+  "schema_version": 1,
+  "scope": "NINETY_NINE_FIXED_SYNTHETIC_FAULT_RESET_STEPS_NOT_ACTUAL_HISTORY",
+  "limits": [
+    16,
+    2,
+    5,
+    7,
+    1,
+    3
+  ],
+  "driver_bounds": [
+    -16,
+    16
+  ],
+  "steps": [
+    {
+      "index": 0,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        0,
+        null,
+        0,
+        0
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -2,
+        2
+      ],
+      "limited": 2,
+      "final": 2,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        1,
+        4,
+        2,
+        1
+      ],
+      "normalized_hex": "0x1.0000000000000p-3",
+      "normalized_bits": "3e000000",
+      "command_hex": "0x1.0000000000000p+1",
+      "command_bits": "40000000"
+    },
+    {
+      "index": 1,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        1,
+        4,
+        2,
+        1
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -2,
+        4
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        2,
+        4,
+        4,
+        2
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 2,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        2,
+        4,
+        4,
+        2
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        3,
+        4,
+        4,
+        3
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 3,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        3,
+        4,
+        4,
+        3
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 4,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        5,
+        4,
+        4,
+        5
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 5,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        5,
+        4,
+        4,
+        5
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        6,
+        4,
+        4,
+        6
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 6,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        6,
+        4,
+        4,
+        6
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        7,
+        4,
+        4,
+        7
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 7,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        7,
+        4,
+        4,
+        7
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        8,
+        4,
+        4,
+        8
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 8,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        8,
+        4,
+        4,
+        8
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        9,
+        4,
+        4,
+        9
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 9,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        9,
+        4,
+        4,
+        9
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        10,
+        4,
+        4,
+        10
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 10,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        10,
+        4,
+        4,
+        10
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        11,
+        4,
+        4,
+        11
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 11,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        11,
+        4,
+        4,
+        11
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        12,
+        4,
+        4,
+        12
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 12,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        12,
+        4,
+        4,
+        12
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        13,
+        4,
+        4,
+        13
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 13,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        13,
+        4,
+        4,
+        13
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        14,
+        4,
+        4,
+        14
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 14,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        14,
+        4,
+        4,
+        14
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        15,
+        4,
+        4,
+        15
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 15,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        15,
+        4,
+        4,
+        15
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        16,
+        4,
+        4,
+        16
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 16,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        16,
+        4,
+        4,
+        16
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        17,
+        4,
+        4,
+        17
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 17,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        17,
+        4,
+        4,
+        17
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        18,
+        4,
+        4,
+        18
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 18,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        18,
+        4,
+        4,
+        18
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        19,
+        4,
+        4,
+        19
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 19,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        19,
+        4,
+        4,
+        19
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        20,
+        4,
+        4,
+        20
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 20,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        20,
+        4,
+        4,
+        20
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        21,
+        4,
+        4,
+        21
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 21,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        21,
+        4,
+        4,
+        21
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        22,
+        4,
+        4,
+        22
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 22,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        22,
+        4,
+        4,
+        22
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        23,
+        4,
+        4,
+        23
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 23,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        23,
+        4,
+        4,
+        23
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        24,
+        4,
+        4,
+        24
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 24,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        24,
+        4,
+        4,
+        24
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        25,
+        4,
+        4,
+        25
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 25,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        25,
+        4,
+        4,
+        25
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        26,
+        4,
+        4,
+        26
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 26,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        26,
+        4,
+        4,
+        26
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        27,
+        4,
+        4,
+        27
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 27,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        27,
+        4,
+        4,
+        27
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        28,
+        4,
+        4,
+        28
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 28,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        28,
+        4,
+        4,
+        28
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        29,
+        4,
+        4,
+        29
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 29,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        29,
+        4,
+        4,
+        29
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        30,
+        4,
+        4,
+        30
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 30,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        30,
+        4,
+        4,
+        30
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        31,
+        4,
+        4,
+        31
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 31,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        31,
+        4,
+        4,
+        31
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        32,
+        4,
+        4,
+        32
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 32,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        32,
+        4,
+        4,
+        32
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        33,
+        4,
+        4,
+        33
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 33,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        33,
+        4,
+        4,
+        33
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        34,
+        4,
+        4,
+        34
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 34,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        34,
+        4,
+        4,
+        34
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        35,
+        4,
+        4,
+        35
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 35,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        35,
+        4,
+        4,
+        35
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        36,
+        4,
+        4,
+        36
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 36,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        36,
+        4,
+        4,
+        36
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        37,
+        4,
+        4,
+        37
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 37,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        37,
+        4,
+        4,
+        37
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        38,
+        4,
+        4,
+        38
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 38,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        38,
+        4,
+        4,
+        38
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        39,
+        4,
+        4,
+        39
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 39,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        39,
+        4,
+        4,
+        39
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        40,
+        4,
+        4,
+        40
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 40,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        40,
+        4,
+        4,
+        40
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        41,
+        4,
+        4,
+        41
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 41,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        41,
+        4,
+        4,
+        41
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        42,
+        4,
+        4,
+        42
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 42,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        42,
+        4,
+        4,
+        42
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        43,
+        4,
+        4,
+        43
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 43,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        43,
+        4,
+        4,
+        43
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        44,
+        4,
+        4,
+        44
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 44,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        44,
+        4,
+        4,
+        44
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        45,
+        4,
+        4,
+        45
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 45,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        45,
+        4,
+        4,
+        45
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        46,
+        4,
+        4,
+        46
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 46,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        46,
+        4,
+        4,
+        46
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        47,
+        4,
+        4,
+        47
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 47,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        47,
+        4,
+        4,
+        47
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        48,
+        4,
+        4,
+        48
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 48,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        48,
+        4,
+        4,
+        48
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        49,
+        4,
+        4,
+        49
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 49,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        49,
+        4,
+        4,
+        49
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        50,
+        4,
+        4,
+        50
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 50,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        50,
+        4,
+        4,
+        50
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        51,
+        4,
+        4,
+        51
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 51,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        51,
+        4,
+        4,
+        51
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        52,
+        4,
+        4,
+        52
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 52,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        52,
+        4,
+        4,
+        52
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        53,
+        4,
+        4,
+        53
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 53,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        53,
+        4,
+        4,
+        53
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        54,
+        4,
+        4,
+        54
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 54,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        54,
+        4,
+        4,
+        54
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        55,
+        4,
+        4,
+        55
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 55,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        55,
+        4,
+        4,
+        55
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        56,
+        4,
+        4,
+        56
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 56,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        56,
+        4,
+        4,
+        56
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        57,
+        4,
+        4,
+        57
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 57,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        57,
+        4,
+        4,
+        57
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        58,
+        4,
+        4,
+        58
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 58,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        58,
+        4,
+        4,
+        58
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        59,
+        4,
+        4,
+        59
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 59,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        59,
+        4,
+        4,
+        59
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        60,
+        4,
+        4,
+        60
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 60,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        60,
+        4,
+        4,
+        60
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        61,
+        4,
+        4,
+        61
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 61,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        61,
+        4,
+        4,
+        61
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        62,
+        4,
+        4,
+        62
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 62,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        62,
+        4,
+        4,
+        62
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        63,
+        4,
+        4,
+        63
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 63,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        63,
+        4,
+        4,
+        63
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        64,
+        4,
+        4,
+        64
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 64,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        64,
+        4,
+        4,
+        64
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        65,
+        4,
+        4,
+        65
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 65,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        65,
+        4,
+        4,
+        65
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        66,
+        4,
+        4,
+        66
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 66,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        66,
+        4,
+        4,
+        66
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        67,
+        4,
+        4,
+        67
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 67,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        67,
+        4,
+        4,
+        67
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        68,
+        4,
+        4,
+        68
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 68,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        68,
+        4,
+        4,
+        68
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        69,
+        4,
+        4,
+        69
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 69,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        69,
+        4,
+        4,
+        69
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        70,
+        4,
+        4,
+        70
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 70,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        70,
+        4,
+        4,
+        70
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        71,
+        4,
+        4,
+        71
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 71,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        71,
+        4,
+        4,
+        71
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        72,
+        4,
+        4,
+        72
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 72,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        72,
+        4,
+        4,
+        72
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        73,
+        4,
+        4,
+        73
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 73,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        73,
+        4,
+        4,
+        73
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        74,
+        4,
+        4,
+        74
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 74,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        74,
+        4,
+        4,
+        74
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        75,
+        4,
+        4,
+        75
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 75,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        75,
+        4,
+        4,
+        75
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        76,
+        4,
+        4,
+        76
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 76,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        76,
+        4,
+        4,
+        76
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        77,
+        4,
+        4,
+        77
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 77,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        77,
+        4,
+        4,
+        77
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        78,
+        4,
+        4,
+        78
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 78,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        78,
+        4,
+        4,
+        78
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        79,
+        4,
+        4,
+        79
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 79,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        79,
+        4,
+        4,
+        79
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        80,
+        4,
+        4,
+        80
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 80,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        80,
+        4,
+        4,
+        80
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        81,
+        4,
+        4,
+        81
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 81,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        81,
+        4,
+        4,
+        81
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        82,
+        4,
+        4,
+        82
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 82,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        82,
+        4,
+        4,
+        82
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        83,
+        4,
+        4,
+        83
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 83,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        83,
+        4,
+        4,
+        83
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        84,
+        4,
+        4,
+        84
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 84,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        84,
+        4,
+        4,
+        84
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        85,
+        4,
+        4,
+        85
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 85,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        85,
+        4,
+        4,
+        85
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        86,
+        4,
+        4,
+        86
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 86,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        86,
+        4,
+        4,
+        86
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        87,
+        4,
+        4,
+        87
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 87,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        87,
+        4,
+        4,
+        87
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        88,
+        4,
+        4,
+        88
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 88,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        88,
+        4,
+        4,
+        88
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        89,
+        4,
+        4,
+        89
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 89,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        89,
+        4,
+        4,
+        89
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": false,
+      "next_state": [
+        90,
+        4,
+        4,
+        90
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 90,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        90,
+        4,
+        4,
+        90
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": false,
+      "next_state": [
+        91,
+        4,
+        4,
+        0
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 91,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        91,
+        4,
+        4,
+        0
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        92,
+        4,
+        4,
+        1
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 92,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5200000000000p+6",
+      "active": true,
+      "previous": [
+        92,
+        4,
+        4,
+        1
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": false,
+      "steer_request": true,
+      "next_state": [
+        93,
+        4,
+        4,
+        0
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 93,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": false,
+      "previous": [
+        93,
+        4,
+        4,
+        0
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 0,
+      "fault_condition": true,
+      "steer_request": false,
+      "next_state": [
+        94,
+        4,
+        0,
+        0
+      ],
+      "normalized_hex": "0x0.0p+0",
+      "normalized_bits": "00000000",
+      "command_hex": "0x0.0p+0",
+      "command_bits": "00000000"
+    },
+    {
+      "index": 94,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        94,
+        4,
+        0,
+        0
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -2,
+        2
+      ],
+      "limited": 2,
+      "final": 2,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        95,
+        4,
+        2,
+        1
+      ],
+      "normalized_hex": "0x1.0000000000000p-3",
+      "normalized_bits": "3e000000",
+      "command_hex": "0x1.0000000000000p+1",
+      "command_bits": "40000000"
+    },
+    {
+      "index": 95,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5200000000000p+6",
+      "active": true,
+      "previous": [
+        95,
+        4,
+        2,
+        1
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -2,
+        4
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": false,
+      "steer_request": true,
+      "next_state": [
+        96,
+        4,
+        4,
+        0
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 96,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        96,
+        4,
+        4,
+        0
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 4,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        97,
+        4,
+        4,
+        1
+      ],
+      "normalized_hex": "0x1.0000000000000p-2",
+      "normalized_bits": "3e800000",
+      "command_hex": "0x1.0000000000000p+2",
+      "command_bits": "40800000"
+    },
+    {
+      "index": 97,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": false,
+      "previous": [
+        97,
+        4,
+        4,
+        1
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -1,
+        6
+      ],
+      "limited": 4,
+      "final": 0,
+      "fault_condition": true,
+      "steer_request": false,
+      "next_state": [
+        98,
+        4,
+        0,
+        0
+      ],
+      "normalized_hex": "0x0.0p+0",
+      "normalized_bits": "00000000",
+      "command_hex": "0x0.0p+0",
+      "command_bits": "00000000"
+    },
+    {
+      "index": 98,
+      "request_hex": "0x1.0000000000000p-2",
+      "angle_hex": "0x1.5400000000000p+6",
+      "active": true,
+      "previous": [
+        98,
+        4,
+        0,
+        0
+      ],
+      "product_hex": "0x1.0000000000000p+2",
+      "integer_request": 4,
+      "rate_bounds": [
+        -2,
+        2
+      ],
+      "limited": 2,
+      "final": 2,
+      "fault_condition": true,
+      "steer_request": true,
+      "next_state": [
+        99,
+        4,
+        2,
+        1
+      ],
+      "normalized_hex": "0x1.0000000000000p-3",
+      "normalized_bits": "3e000000",
+      "command_hex": "0x1.0000000000000p+1",
+      "command_bits": "40000000"
+    }
+  ],
+  "reference_revision": 2,
+  "preserved_v1_reference_sha256": "7d0d6ab9702318049752fc5312c6530f91822ed391a83863a56134d95df550e0"
+}

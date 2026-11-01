@@ -1,0 +1,27 @@
+{
+  "review_type": "OPENED_SUPPLIED_IMAGES_NOT_BROWSER_RERUN",
+  "screenshots_opened": [
+    "screenshots/sign-mobile-charts.png",
+    "screenshots/resumed-mobile-charts.png",
+    "screenshots/sign-desktop.png",
+    "screenshots/resumed-desktop.png",
+    "screenshots/sign-mobile-full.png",
+    "screenshots/resumed-mobile-full.png",
+    "screenshots/sign-mobile-table-previous.png",
+    "screenshots/resumed-mobile-table-previous.png",
+    "screenshots/sign-mobile.png",
+    "screenshots/resumed-mobile.png",
+    "screenshots/sign-desktop-table-previous.png",
+    "screenshots/resumed-desktop-table-previous.png"
+  ],
+  "observations": {
+    "mobile_ticks_caption_and_legend_readable": true,
+    "whole_legend_entries_wrap_without_split_words": true,
+    "resumed_single_points_and_center_index_5_visible": true,
+    "previous_requested_and_previous_applied_distinct": true,
+    "restriction_notices_and_Korean_visible": true,
+    "new_visual_defects_found": []
+  },
+  "preview_limits": "Two tall full-page previews were tool-resized to height2048; source PNG dimensions and hashes are verified separately. Chart/table viewport images were inspected separately. Local original-size/browser actions are supplied observations, not a new cloud browser run.",
+  "qualification_scope": "Two exact reports; 1440x1250 and390x844,DPR1,Windows Chrome156 local observations. Not every valid scenario/font/browser/zoom or accessibility qualification."
+}

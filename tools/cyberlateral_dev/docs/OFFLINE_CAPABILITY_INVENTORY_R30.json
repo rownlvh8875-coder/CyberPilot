@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "repository": "rownlvh8875-coder/CyberPilot",
+  "baseline_commit": "cc8d294a0312e1cc3316aafacb7a76ac1fe54024",
+  "scope": "SOURCE_INVENTORY_OF_BOUNDED_OFFLINE_DEVELOPMENT_ONLY",
+  "execution_verdict": "SEPARATE_R30_EXECUTION_RECEIPTS_NOT_THIS_STATIC_INVENTORY",
+  "whole_product_requirements_baseline": "NOT_ESTABLISHED_FROM_REVIEWED_AUTHORITIES",
+  "new_runtime_implementation_in_R30": 0,
+  "sources": {
+    "goal": {"path": "README.md", "sha256": "edf628e4fba685fec04c1d6e6cc62fc70bb8753a1d078fa55962c3e5e669055e", "reference": "CyberPilot offline development, lines1-6; remaining upstream README is not a custom product specification"},
+    "api": {"path": "tools/cyberlateral_dev/src/cyberlateral_dev/api.py", "sha256": "052c4594f66d53adea4e37fc32f128b84a7a000662b564211f715e21610d5502", "symbol": "step"},
+    "batch": {"path": "tools/cyberlateral_dev/src/cyberlateral_dev/simulation.py", "sha256": "9b7771b3a75d852ce9f031e7f8490bcf9e9e6b890174551b4d9f0a28e366f264", "symbol": "simulate"},
+    "cli": {"path": "tools/cyberlateral_dev/src/cyberlateral_dev/cli.py", "sha256": "fcc7ef7ecfe294b4dce8d6d90dffa0ab88d16cdae665d7386c76b0596f19ec4c", "symbol": "main"},
+    "report": {"path": "tools/cyberlateral_dev/src/cyberlateral_dev/trace_report.py", "sha256": "9942fe8546cf831ba237767129ea3e69c9e8200637b6cec3e2c9a4bc12aa3f17", "symbol": "build_report_bundle"},
+    "gates": {"path": "tools/cyberlateral_dev/src/cyberlateral_dev/reporting.py", "sha256": "2745f1749a3d4786c9e6954f9537d44acc2e05506c3ed48685a0e24e5ca79850", "symbol": "catalog_report"},
+    "verify": {"path": "tools/cyberlateral_dev/integration_tools/verify.py", "sha256": "56a9e1295dd3a0bffec184ba90d268c7c5ff52f725a98244e84832bf66129ba6", "symbol": "verify_project"},
+    "build": {"path": "tools/cyberlateral_dev/build_backend.py", "sha256": "e8dad90a54acff5d317d634878907f52acc0bd6cbed33e7a8089de4955733dec", "symbol": "build_wheel"},
+    "config": {"path": "tools/cyberlateral_dev/pyproject.toml", "sha256": "6fb6fa880215408e89782b8bffdbed561c6b47cea0d7cf16c244e37f7e4fa766", "reference": "project dependencies=[], version0.3.0, Python==3.12.13, isolated dev group"},
+    "owned_native": {"path": "tools/cyberlateral_dev/integration_tools/native_adapter.py", "sha256": "4771adaa4ab0f42ba9249f5a90b39006b5fa43b6260a307baba16d76e382d176", "symbol": "_SyntheticAdapter"},
+    "native_suite": {"path": "tools/cyberlateral_dev/native_qualification/suite.py", "sha256": "7c28e8ba2fe45b7f891ac5bdaac1ddf4d6eef6ba98c5092954688db202f624f9", "symbol": "run_suite"},
+    "native_chain": {"path": "tools/cyberlateral_dev/integration_tools/adapter_sequence.py", "sha256": "22d4c944724f90a7924d7b610b569b599af2cdc989e08dbabdd6e72d6c8bcdc4", "symbol": "run_registered_sequence"},
+    "ci": {"path": ".github/workflows/cyberlateral-dev.yaml", "sha256": "751f5455f312331b5748f60dd6fb24e548b788be50ac358621cba071613fc036", "reference": "verify job: isolated pure gate; no submodules/LFS/native setup"}
+  },
+  "capabilities": [
+    {"id": "D01", "name_ko": "명시적 합성 입력·상태의 단일 모델 계산", "status": "IMPLEMENTED_OFFLINE", "source_ids": ["api"], "limit": "pure development model, no vehicle IO or F61"},
+    {"id": "D02", "name_ko": "사용자 코드에서 구성한 합성 배치와 상태 전달", "status": "IMPLEMENTED_BOUNDED_OFFLINE", "source_ids": ["batch"], "limit": "explicit tuple1..4096 and explicit state; this is a programmatic API, not a scenario-file CLI"},
+    {"id": "D03", "name_ko": "고정 합성 카탈로그 HTML·CSV·JSON 보고서", "status": "IMPLEMENTED_FIXED_CATALOG", "source_ids": ["cli", "report"], "limit": "new output directory only; visual browser quality NOT_ESTABLISHED; not a physical simulator"},
+    {"id": "D04", "name_ko": "독립 환경 전체 테스트·정적 검사·재현 검증", "status": "IMPLEMENTED_OFFLINE", "source_ids": ["verify", "config"], "limit": "component only, not full openpilot tests or native CI"},
+    {"id": "D05", "name_ko": "제3자 런타임 의존성 없는 고정 wheel 설치", "status": "IMPLEMENTED_OFFLINE", "source_ids": ["build", "config"], "limit": "package0.3.0 only; development/native adapters are not wheel payload"},
+    {"id": "D06", "name_ko": "자체 생성한 native 합성 메시지 구성·읽기", "status": "IMPLEMENTED_CONTROLLED_SYNTHETIC_ONLY", "source_ids": ["owned_native"], "limit": "qualified opt-in Linux x86_64 CPython3.12.13 context, not arbitrary external messages or custody authentication"},
+    {"id": "D07", "name_ko": "고정 native→어댑터→모델 연속 검증", "status": "IMPLEMENTED_TWO_FIXED_PROFILES", "source_ids": ["native_chain"], "limit": "SIGN_CHANGE_4 and NEGATIVE_CYCLE_99 only,103 calls/worker; integer model history is not F61 previous_native"},
+    {"id": "D08", "name_ko": "기존 native8단계 통합 회귀", "status": "IMPLEMENTED_FIXED_SUITE", "source_ids": ["native_suite"], "limit": "16 workers/454 calls per suite, not an aggregate stage count or timing claim"},
+    {"id": "D09", "name_ko": "개발용 전용 GitHub CI", "status": "IMPLEMENTED_PURE_WORKFLOW", "source_ids": ["ci", "verify"], "limit": "exact-head execution proof is separate; does not authorize main merge or legacy/runtime CI"},
+    {"id": "U01", "name_ko": "합성 시나리오 파일을 받는 CLI", "status": "NOT_IMPLEMENTED_IN_CURRENT_CLI", "source_ids": ["cli", "batch"], "limit": "programmatic custom synthetic API already exists; this convenience is a prospective next feature, not an approved product requirement"},
+    {"id": "U02", "name_ko": "범용 외부 native 메시지·실제 호출 이력 읽기", "status": "NOT_QUALIFIED_OR_IMPLEMENTED_BY_CONTROLLED_ADAPTER", "source_ids": ["owned_native", "native_chain"], "limit": "owned internal synthetic frames only; no actual-history or time authority"},
+    {"id": "P01", "name_ko": "실제 r·T2·차량 scale·정적 차량 문맥", "status": "UNRESOLVED_PRODUCTION_GATE", "source_ids": ["gates"], "limit": "actual values null, R_BUDGET UNRESOLVED, STATIC_EVIDENCE_GATE FAIL; not an offline acceptance blocker"},
+    {"id": "P02", "name_ko": "F61·Controller·Runtime·CAN·실차 활성화", "status": "NOT_AUTHORIZED_BY_THIS_COMPONENT", "source_ids": ["goal", "gates", "api", "build"], "limit": "inherited upstream vehicle code exists but this offline feature does not install or activate it; no deployment receipt or safety approval follows"},
+    {"id": "P03", "name_ko": "CyberPilot 전체 제품의 완성 판정", "status": "NOT_ESTABLISHED_FROM_REVIEWED_REQUIREMENTS", "source_ids": ["goal"], "limit": "no completion percentage or invented AI/perception/autonomy requirements; bounded offline acceptance only"}
+  ],
+  "prospective_next_feature": {
+    "name_ko": "개발용 사용자 정의 합성 시나리오 파일·CLI 계약",
+    "status": "RECOMMENDATION_NOT_IMPLEMENTED_OR_PRODUCT_REQUIREMENT",
+    "basis": "U01; retain existing pure API, explicit synthetic provenance, exact numeric/state validation, no real data/native/F61/r integration",
+    "requires_separate_scope_and_design": true
+  }
+}

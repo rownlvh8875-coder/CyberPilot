@@ -1,3 +1,10 @@
+## CyberPilot offline development
+
+The isolated [CyberLateral development project](tools/cyberlateral_dev/README.md)
+contains the synthetic calculation module, regression tests and static trace report.
+It does not install or activate vehicle control. See its README for the single-command
+offline verification workflow and the unresolved production gates.
+
 <div align="center" style="text-align: center;">
 
 <h1>openpilot</h1>
