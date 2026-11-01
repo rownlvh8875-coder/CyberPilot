@@ -3,6 +3,7 @@
 import hashlib
 import os
 import stat
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -42,6 +43,13 @@ def _read(path: Path) -> bytes:
 
 
 def prepare_batch(inputs: list[Path], output: Path) -> list[BatchInput]:
+    # Every path later serialized in the UTF-8 receipt must be representable,
+    # not just the basename displayed by the index.
+    try:
+        for value in [str(output.absolute()), str(ROOT), sys.executable]:
+            value.encode('utf-8', errors='strict')
+    except UnicodeError as error:
+        raise BatchError('BATCH_PATH_ENCODING') from error
     if output.exists() or output.is_symlink():
         raise BatchError('BATCH_OUTPUT_EXISTS')
     if not output.parent.is_dir():
@@ -57,11 +65,13 @@ def prepare_batch(inputs: list[Path], output: Path) -> list[BatchInput]:
     resolved = []
     for path in inputs:
         try:
-            path.name.encode('utf-8', errors='strict')
+            str(path.absolute()).encode('utf-8', errors='strict')
             # Do not follow the final component: a rejected symlink must not
             # suppress a separately supplied valid file as a duplicate.
             resolved.append(path.parent.resolve() / path.name)
-        except (OSError, RuntimeError, UnicodeError) as error:
+        except UnicodeError as error:
+            raise BatchError('BATCH_PATH_ENCODING') from error
+        except (OSError, RuntimeError) as error:
             raise BatchError('BATCH_INPUT_LOCATION') from error
         if resolved[-1].is_relative_to(destination):
             raise BatchError('BATCH_OUTPUT_LOCATION')

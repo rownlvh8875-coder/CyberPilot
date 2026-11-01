@@ -235,3 +235,17 @@ class BatchCLITests(unittest.TestCase):
             self.assertEqual(result.returncode, 2)
             self.assertIn(b'BATCH_DUPLICATE_INPUT', result.stderr)
             self.assertFalse((root / 'out').exists())
+
+    def test_undecodable_input_ancestor_and_output_path_reject_before_publication(self):
+        self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bad = root / 'non_utf8_\udcff'
+            bad.mkdir()
+            for source, output in [(bad / 'absent.json', root / 'out'), (root / 'absent.json', bad / 'out')]:
+                with self.subTest(output=repr(output)):
+                    result = self.cli('--input', source, '--output', output)
+                    self.assertEqual(result.returncode, 2, result.stderr.decode(errors='replace'))
+                    self.assertIn(b'BATCH_PATH_ENCODING', result.stderr)
+                    self.assertNotIn(b'Traceback', result.stderr)
+                    self.assertFalse(output.exists())
