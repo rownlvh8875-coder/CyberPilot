@@ -1,8 +1,10 @@
-# R32.2 — 로컬 Codex용 모바일 화면 재검증 프롬프트
+# R32.2 — 완료된 로컬 화면 검사 절차 보존
 
-아래 내용을 첨부한 `F70UGZ_R322_EVIDENCE.zip`과 함께 로컬 Codex에 전달한다.
-사용자의 직접 검사가 아니라 로컬 Codex의 실제 화면 검사다. 수정 후 화면 PASS는
-아직 발행되지 않았다.
+현재 상태는 [R322_VISUAL_EVIDENCE_VERIFIED_PASS](SCENARIO_REPORT_R322_RESULTS.md)다.
+아래는 당시 로컬 Codex에 전달한 검사 절차이며 새 실행 요청이 아니다.
+실제 전달본은 필요한 파일만 추린 `R322_LOCAL_RECHECK_KIT.zip`이고, 아래의
+전체 Evidence 파일명 표기는 당시 원문이다. 원본 kit·ZIP·검사 기록은 수정하지
+않았다. [검산 근거](evidence/r322-visual-acceptance/README_KO.md)를 참고한다.
 
 ---
 

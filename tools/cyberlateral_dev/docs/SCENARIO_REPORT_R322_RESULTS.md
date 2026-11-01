@@ -1,6 +1,10 @@
 # R32.2 — 모바일 그래프 표시 수정
 
-STATUS: R322_MOBILE_CHART_CODE_VERIFIED_LOCAL_VISUAL_RECHECK_PENDING
+STATUS: R322_VISUAL_EVIDENCE_VERIFIED_PASS
+
+수정 후 로컬 화면 검사와 cloud 수신 검산이 완료됐다. 아래 PASS는 두 지정
+리포트의 Windows Chrome156,1440x1250·390x844,DPR1 범위에 한정된다.
+[완료 근거와 원본 ZIP SHA256](evidence/r322-visual-acceptance/README_KO.md)을 참고한다.
 
 로컬 R321 검사는 두 리포트의390px 화면에서 축 눈금·설명이 너무 작아 FAIL이었다.
 제공된 ZIP SHA256은
@@ -42,12 +46,26 @@ fresh 경로에서도 전체502/502·158compile·정적 검사·wheel 검산 PAS
 HTML/VIEW 재현 PASS였다. 최종-head scoped CI 및 ZIP 봉인은 외부 evidence
 receipt에 실제 수행 후 기록한다. 미래 결과를 미리 승인하지 않는다.
 
-## 남은 실제 화면 검증
+## 실제 화면 검증 완료
 
-코드·DOM 구조 검사는 실제 브라우저 가독성 PASS가 아니다. 기존 cloud 브라우저의
-관리자 차단을 재시도/우회하지 않았다. 수정 후 캡처는 아직 없으며 기존 로컬
-FAIL은 자동으로 PASS로 바꾸지 않는다. 새 정적 리포트와
-[로컬 Codex 재검증 프롬프트](SCENARIO_REPORT_R322_LOCAL_CHECK_KO.md)를 제공한다.
+로컬 Codex가 수정된 두 리포트를 별도 Chrome156 프로세스에서 열어 네 화면
+조합을 검사하고 캡처12개를 확인했다. 축·설명·범례의 실제 가독성, resumed
+단일 점과 중앙 index5, 표 값과 실제 스크롤을 확인했다. 표 내부 세로 스크롤은
+모든 행이 보이므로 NOT_APPLICABLE이며 억지로 행이나 CSS를 바꾸지 않았다.
+
+전달된 `R322_LOCAL_VISUAL_EVIDENCE.zip`의 SHA256은
+`35ef85d36d4a0793ece24cf4417ed6e69c132a74903ab598f522c240e445cfb8`이다.
+cloud에서30개 member CRC,4개 Manifest의49항목을 검산했다. 전달했던15개
+파일은 원래 kit과 byte-identical이고, 리포트8개 파일과 이전 VIEW도 그대로다.
+결과 JSON의 체크54개 PASS·6개 NOT_APPLICABLE을 대조하고 캡처12개를 열어
+확인했다. 긴 전체 페이지 미리보기2개는 도구에서 축소됐으므로 원본 PNG
+크기·SHA를 별도 검산하고 chart/table viewport 캡처도 따로 확인했다.
+
+이는 기존 DOM 검사만으로 승격한 PASS가 아니라 새 로컬 브라우저 관찰을
+수신해 검산한 결과다. cloud에서 브라우저를 새로 실행하거나 관리자 차단을
+우회하지 않았다. R321 FAIL과 당시 pre-local 봉인은 과거 기록으로 그대로
+보존한다. 다른 브라우저·입력 전체·zoom·접근성 전체는 미검증이다.
+[당시 검사 절차](SCENARIO_REPORT_R322_LOCAL_CHECK_KO.md)는 참고용으로 남긴다.
 
 F61/Controller/Runtime/CAN/실차/r/dt/candidate 평가0. R31 생산기, reader 검증,
 public API/모델/native/build/lock/workflow는 변경하지 않았다. R_BUDGET UNRESOLVED,

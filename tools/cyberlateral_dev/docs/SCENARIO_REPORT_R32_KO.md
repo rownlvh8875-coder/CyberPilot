@@ -1,8 +1,9 @@
 # R32 — 사용자 합성 기록 HTML 리포트
 
-모바일 축 가독성 후속 수정은 R32.2입니다.
-[로컬 Codex 재검증](SCENARIO_REPORT_R322_LOCAL_CHECK_KO.md)은 수정 후 실제 화면
-PASS와 코드 검증을 구분합니다.
+모바일 축 가독성 후속 수정 R32.2는 지정된 두 리포트의 desktop/mobile 화면
+검증까지 완료했습니다. [완료 결과](SCENARIO_REPORT_R322_RESULTS.md)와
+[근거·ZIP SHA256](evidence/r322-visual-acceptance/README_KO.md)을 참고하세요.
+화면 PASS는 모델 산술·실차 안전·배포 승인이 아닙니다.
 
 R31 결과를 읽어 checksum과 기록 간 일관성을 확인하고 HTML 그래프·표를 만듭니다.
 리포트 생성 자체는 모델을 import하거나 다시 실행하지 않습니다. 기존 public0.3.0

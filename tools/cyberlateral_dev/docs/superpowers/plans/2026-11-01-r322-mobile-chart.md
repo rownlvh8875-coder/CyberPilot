@@ -51,11 +51,15 @@ produce escaped bytes with exactly the same series geometry and VIEW.json.
 - [x] Document bounded status and local recheck prompt; commit code/tests/docs.
 - [x] One fresh whole-branch review. Grade findings and disposition all exclusions.
   Important fixes require one RED/GREEN pass; no repeated reviewer dispatch.
-- [ ] Push feature branch, manually run only scoped CI, keep PR2 Draft/unmerged.
+- [x] Push feature branch, manually run only scoped CI, keep PR2 Draft/unmerged.
   Verify exact-head CI artifact and deterministic evidence ZIP/sidecar.
 
-Delivery checkbox is intentionally pending in this pre-publication source snapshot;
-the final external publication/completion receipts record its actual outcome.
+The earlier source snapshot left delivery pending. Its final head
+`98df520480ffc81e0ce8084f2f2dac662f20a023` was pushed; scoped CI41276824566
+and downloaded artifact verification passed, and PR2 remained Draft/unmerged.
+Subsequent local browser evidence closed the specific mobile readability issue:
+see [visual acceptance](../../SCENARIO_REPORT_R322_RESULTS.md). Earlier sealed
+pending/FAIL records remain historical; no source bytes or gates were rewritten.
 
 Self-review: one cohesive display change, no task interface conflicts. Each focus
 has a rendered-output regression or an explicit local browser check. User standing

@@ -13,6 +13,10 @@ Saved R31 outputs can be checked and viewed with the separate
 [R32 read-only HTML scenario report](docs/SCENARIO_REPORT_R32_KO.md).
 It displays graphs/state tables without importing or rerunning the model;
 checksum consistency is not origin authentication or independent numerical proof.
+The [R32.2 mobile readability correction](docs/SCENARIO_REPORT_R322_RESULTS.md)
+passed the two-report desktop/mobile visual check; [evidence receipts and hashes](
+docs/evidence/r322-visual-acceptance/README_KO.md) preserve its bounded scope.
+This is not vehicle, arithmetic, performance or deployment approval.
 
 Bounded offline acceptance: [R30 Korean acceptance and quickstart guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md),
 with a [source-backed capability inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
