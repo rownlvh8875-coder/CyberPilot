@@ -18,6 +18,13 @@ the success/mixed/rejected lists and two linked reports at desktop/mobile sizes;
 [receipts and screenshot hashes](docs/evidence/r33-visual-acceptance/README_KO.md)
 preserve the scope. This does not qualify arbitrary scenarios or vehicle use.
 
+Two complete saved R33 batches can be checked with the separate
+[R34 exact regression comparison CLI](docs/SCENARIO_REGRESSION_R34_KO.md).
+It reports changed inputs, command/state/trace fields, rejection outcomes and
+producer identity changes without rerunning the model. MATCH is recorded-value
+equivalence, not an independent numerical oracle or vehicle approval. Portable
+sharing subsets are not complete input bundles; no baseline auto-update exists.
+
 Saved R31 outputs can be checked and viewed with the separate
 [R32 read-only HTML scenario report](docs/SCENARIO_REPORT_R32_KO.md).
 It displays graphs/state tables without importing or rerunning the model;

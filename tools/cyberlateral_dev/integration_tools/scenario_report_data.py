@@ -210,7 +210,15 @@ def _output(value):
 
 
 def read_report(path: Path) -> dict:
-    owned = _files(path)
+    return decode_report(_files(path))
+
+
+def decode_report(owned: dict[str, bytes]) -> dict:
+    """Validate already owned R31 bytes without reopening supplied paths."""
+    _require(owned.keys() == CAPS.keys(), 'REPORT_FILES')
+    _require(all(type(raw) is bytes and len(raw) <= CAPS[name] for name, raw in owned.items()), 'REPORT_SIZE')
+    expected_manifest = ''.join(hashlib.sha256(owned[name]).hexdigest() + '  ' + name + '\n' for name in sorted(CAPS) if name != 'SHA256SUMS.txt')
+    _require(owned['SHA256SUMS.txt'] == expected_manifest.encode(), 'REPORT_CHECKSUM')
     source, record, receipt = [_json(owned[name]) for name in ['INPUT.json', 'RESULTS.json', 'RECEIPT.json']]
     spec = _spec(source)
     _keys(record, SOURCE_KEYS | {'final_state', 'gates', 'identity', 'model_steps', 'numerical_claim', 'output_scope', 'rows', 'status', 'time_semantics'})
