@@ -47,3 +47,27 @@ MATCH는 저장된 수치/거절 기록의 정확 일치입니다. 코드 identi
 R_BUDGET=UNRESOLVED, Static Gate=FAIL, 실제 r/T2/vehicle scale=null,
 SOURCE_SCHEMA_UNQUALIFIED6000, Candidate/Runtime NO_GO, F70UH/V/F71 NOT_ALLOWED.
 실차 입력/활성화·F61·r/dt·Controller/Runtime/CAN 실행은 없습니다.
+
+## 리뷰 후 테스트 보강
+
+독립 리뷰에서 남긴 semantic-rejection 테스트 도달성 보완을 처리했습니다.
+생산 코드나 검증 규칙을 바꾸지 않고 fixture와 assertion만 강화했습니다.
+
+- count/gate 모순에서도 root/portable Manifest를 모두 갱신하고 정확한
+  COMPARE_RECORD를 확인합니다. schema/path/raw-digest 오류는 서로 구분합니다.
+- raw/typed 모순 fixture의 모든 raw digest 선언을 일치시키고 R31 decoder의
+  자체 일관성 검사를 먼저 통과시킵니다. 이후 실제 raw sample0.5와 typed
+  request0.25의 차이가 COMPARE_INPUT_BINDING으로 거부되는지 확인합니다.
+- aggregate 검사 또는 raw-to-typed 검사만 임시로 비활성화한 in-memory
+  mutation2개가 과거 테스트에서는 살아남았으나, 강화한 테스트에서는 각각
+  실패했습니다. 실제 검사로 복귀하면 targeted33 tests가 통과합니다.
+
+mutation은 검증용 process 안에서만 적용했으며 파일에 저장하거나 Git에
+포함하지 않았습니다. 이 보강으로 공개 모델/CLI/API/wheel이나 허용 입력을
+변경하지 않았고 기존 한계·닫힌 gate도 그대로 유지합니다. GitHub의 Push/PR/CI
+결과는 해당 PR의 exact head 기록으로 확인하며 과거 검증을 대신 쓰지 않습니다.
+
+이 테스트 보강의 fresh 전체 gate도556 tests/172 compiles와 Ruff·Ty·Codespell,
+봉인 wheel의 재현·설치 검증을 통과했습니다. 기존 R33 PR처럼 `[skip ci]` commit과
+전용 offline workflow의 명시적 dispatch를 사용해 범용 openpilot build/replay를
+자동 실행하지 않습니다. GitHub branch/rule/required-check 설정은 바꾸지 않습니다.

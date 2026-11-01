@@ -98,3 +98,37 @@ A separate CLI publishes a portable comparison and private runtime receipt.
 One fresh-context whole-branch review after all tasks. Resolve important findings
 with RED→GREEN tests and a full green gate. Preserve local commits; do not merge,
 push, publish or change CI/branch policy automatically.
+
+## Approved follow-up: review test coverage and GitHub PR
+
+The user approved the proposed follow-up: close the semantic-rejection test
+weakness, rerun full verification, push the named feature branch, create a PR
+against main and verify its CI. This specifically authorizes the feature push/PR;
+it does not authorize main merge, workflow/policy bypass or vehicle activation.
+
+### Task 4: Protect later semantic checks independently
+
+**Files:** `project/scenario_compare_fixture.py`,
+`project/test_scenario_compare_input.py`, `docs/SCENARIO_REGRESSION_R34_RESULTS.md`.
+
+**Interfaces:** Existing `edit_batch` keeps its deliberate root-only refresh.
+Add `rehash_portable(root)` for test fixtures, using the existing generated member
+inventory, not possibly corrupted paths in BATCH.json. No production file changes.
+
+- [x] Reproduce the review: bypass only the aggregate record check or only the
+  raw-to-typed check in temporary in-memory functions; the old tests still pass.
+- [x] Fully rehash root/portable records for count/gate contradictions and assert
+  COMPARE_RECORD. Preserve distinct schema/path/raw-digest rejection codes.
+- [x] Align every claimed raw digest in a deliberately inconsistent R31 fixture,
+  then ensure decode_report succeeds but batch raw-to-typed validation rejects.
+- [x] Observe strengthened tests fail under the two specific mutations, restore
+  the real guards and observe targeted tests pass. Mutations never reach Git.
+- [x] Run full dev.py verify including all tests/static/compile/wheel checks.
+- [ ] Commit coverage/docs, perform a normal non-force feature push, create a PR
+  and inspect exact-head scoped CI. Preserve all previous worktrees and gates.
+- [ ] Do not merge main or activate vehicle/runtime code.
+
+CI routing follows the prior R33 PR: a `[skip ci]` commit avoids automatic generic
+openpilot build/replay jobs, then the existing scoped offline workflow is explicitly
+dispatched on the exact named feature head. No required checks or repository rules
+are changed or bypassed; any outstanding policy/check remains visible in the PR.

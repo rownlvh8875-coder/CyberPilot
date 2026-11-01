@@ -84,3 +84,10 @@ def edit_batch(root, change):
     # Deliberately hash all actual files, without repairing record contradictions.
     (root / 'SHA256SUMS.txt').write_bytes(manifest({p.relative_to(root).as_posix(): p.read_bytes() for p in root.rglob('*')
                                                 if p.is_file() and p != root / 'SHA256SUMS.txt'}))
+
+
+def rehash_portable(root):
+    """Refresh a trusted fixture's existing inventory, not corrupted record paths."""
+    names = [line.split('  ', 1)[1] for line in (root / 'PORTABLE_SHA256SUMS.txt').read_text().splitlines()]
+    (root / 'PORTABLE_SHA256SUMS.txt').write_bytes(manifest({name: (root / name).read_bytes() for name in names}))
+    edit_batch(root, lambda value: None)

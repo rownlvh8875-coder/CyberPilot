@@ -1,5 +1,6 @@
 """Owned batch validation catches rehashed contradictions and unsafe filesystem input."""
 
+import hashlib
 import importlib
 import json
 import os
@@ -9,7 +10,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from scenario_compare_fixture import edit_batch, manifest, refresh, write_batch
+from scenario_compare_fixture import edit_batch, manifest, refresh, rehash_portable, write_batch
 from scenario_report_fixture import canonical
 from v1_helpers import ROOT
 
@@ -65,27 +66,50 @@ class CompareInputTests(unittest.TestCase):
 
     def test_rehashed_shape_count_order_gate_and_path_contradictions_reject(self):
         m = self.module()
-        changes = [lambda x: x.update(total_model_steps=6), lambda x: x.update(completed=True),
-                   lambda x: x['cases'][0].update(case_id='case-002'), lambda x: x['cases'][0].update(data='../outside'),
-                   lambda x: x['cases'][0].update(input_sha256='0' * 64), lambda x: x['gates'].update(STATIC_EVIDENCE_GATE='PASS'),
-                   lambda x: x['cases'][0].update(extra=0), lambda x: x.update(input_count=33)]
-        for change in changes:
-            with self.subTest(change=change), tempfile.TemporaryDirectory() as tmp:
+        changes = [('steps', lambda x: x.update(total_model_steps=6), 'COMPARE_RECORD'),
+                   ('completed_type', lambda x: x.update(completed=True), 'COMPARE_RECORD'),
+                   ('case_order', lambda x: x['cases'][0].update(case_id='case-002'), 'COMPARE_SCHEMA'),
+                   ('data_path', lambda x: x['cases'][0].update(data='../outside'), 'COMPARE_SCHEMA'),
+                   ('raw_digest', lambda x: x['cases'][0].update(input_sha256='0' * 64), 'COMPARE_INPUT_BINDING'),
+                   ('gate', lambda x: x['gates'].update(STATIC_EVIDENCE_GATE='PASS'), 'COMPARE_RECORD'),
+                   ('row_keys', lambda x: x['cases'][0].update(extra=0), 'COMPARE_SCHEMA'),
+                   ('count', lambda x: x.update(input_count=33), 'COMPARE_RECORD')]
+        for label, change, code in changes:
+            with self.subTest(change=label), tempfile.TemporaryDirectory() as tmp:
                 source = write_batch(Path(tmp) / 'batch')
                 edit_batch(source, change)
-                with self.assertRaises(m.CompareError):
+                rehash_portable(source)
+                with self.assertRaises(m.CompareError) as caught:
                     m.read_batch(source)
+                self.assertEqual(caught.exception.code, code)
 
     def test_raw_snapshot_must_match_typed_input_not_only_claimed_hash(self):
         m = self.module()
+        from integration_tools.scenario_output import render_outputs
+        from integration_tools.scenario_report_data import _spec, read_report
+
         with tempfile.TemporaryDirectory() as tmp:
             source = write_batch(Path(tmp) / 'batch')
             raw = json.loads((source / 'inputs/case-001.json').read_bytes())
             raw['samples'][0]['request'] = 0.5
-            (source / 'inputs/case-001.json').write_bytes(canonical(raw))
+            changed = canonical(raw)
+            digest = hashlib.sha256(changed).hexdigest()
+            (source / 'inputs/case-001.json').write_bytes(changed)
+            data = source / 'case-001/data'
+            typed, record, receipt = [json.loads((data / name).read_bytes()) for name in ['INPUT.json', 'RESULTS.json', 'RECEIPT.json']]
+            typed['input_raw_sha256'] = receipt['input_raw_sha256'] = digest
+            saved = {key: record[key] for key in ['model_steps', 'rows', 'final_state']}
+            for name, content in render_outputs(_spec(typed), saved, record['identity'], receipt).items():
+                (data / name).write_bytes(content)
+            edit_batch(source, lambda value: value['cases'][0].update(input_sha256=digest))
             refresh(source)
-            with self.assertRaises(m.CompareError):
+            decoded = read_report(data)
+            self.assertEqual(decoded['view']['input_raw_sha256'], digest)
+            self.assertEqual(decoded['view']['rows'][0]['request_hex'], '0x1.0000000000000p-2')
+            self.assertEqual(raw['samples'][0]['request'], 0.5)
+            with self.assertRaises(m.CompareError) as caught:
                 m.read_batch(source)
+            self.assertEqual(caught.exception.code, 'COMPARE_INPUT_BINDING')
 
     def test_rehashed_saved_report_view_disagreement_rejects(self):
         m = self.module()
