@@ -23,7 +23,8 @@ imported by the producer from contaminating the data-only renderer's receipt.
 - CLI: `tools/scenario_batch.py --input A.json --input B.json --output NEW`.
 - Linux CPython3.12.13/binary64, matching existing tools. No new dependencies.
 - 1..32 inputs; at most8192 valid samples in aggregate, each existing R31 limit
-  remains in force. Duplicate resolved input paths reject the whole request;
+  remains in force. Duplicate parent-resolved paths reject the whole request;
+  the final symlink component is not followed and is rejected individually;
   distinct files may deliberately share scenario_id. No state crosses files.
 - Validate output location/existence/parent before reading inputs or running a
   worker. Output cannot be within the component, nor contain an input path.
@@ -37,8 +38,9 @@ imported by the producer from contaminating the data-only renderer's receipt.
   Oversized/unreadable files have no full-byte digest/snapshot claim.
 - Generated case-001 etc identify files; names/IDs never become output paths.
 - Per-case output: R31 data, R32 report, isolated worker logs. Any unexpected
-  worker/identity/publication failure aborts the batch; partial files remain,
-  without the final BATCH.json completion marker. No retry/overwrite/rollback.
+  worker/identity/publication failure aborts the batch; partial files remain.
+  No valid BATCH.json/checksum completion pair is promised on failure; a partial
+  marker write can remain. No retry/overwrite/rollback or crash atomicity.
 - Top-level BATCH.json: portable ordered rows, input basename/digest, scenario ID,
   COMPLETE/REJECTED status, rejection code, steps and relative output links.
   COMPLETE means execution/report generation, not independent numerical PASS.
