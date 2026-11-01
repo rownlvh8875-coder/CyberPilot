@@ -12,8 +12,13 @@ header,section{background:white;border:1px solid #d7e0ec;border-radius:14px;padd
 h1{font-size:28px}h2{font-size:19px}p,footer{line-height:1.7}.badge{background:#fff0e8;color:#8a301b;padding:8px;border-radius:8px;font-weight:700}
 .stats{display:flex;gap:10px;flex-wrap:wrap}.stat{background:#f0f4fa;padding:10px;border-radius:8px}
 .charts{display:grid;grid-template-columns:1fr 1fr;gap:18px}figure{margin:0;min-width:0}figcaption{font-weight:600}
+.chart-plot{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px;margin-top:12px;font:14px/1.2 ui-monospace,monospace}
+.y-ticks{grid-column:1;grid-row:1;display:flex;flex-direction:column;justify-content:space-between}
+.x-ticks{grid-column:2;grid-row:2;display:flex;justify-content:space-between}.x-ticks.single{justify-content:center}
+.chart-plot svg{grid-column:2;grid-row:1;min-width:0}.axis-caption{font-size:14px;text-align:center;margin:6px 0 8px}
 svg{display:block;width:100%;height:auto}.axis{stroke:#9ba9bd}.zero{stroke:#d5ddeb;stroke-dasharray:4 4}
-.series{fill:none;stroke-width:2.5}.legend{font:12px ui-monospace,monospace;overflow-wrap:anywhere}.key{display:inline-block;width:16px;border-top:3px solid;margin:0 4px 0 10px}
+.series{fill:none;stroke-width:2.5}.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font:14px/1.5 ui-monospace,monospace}
+.legend-entry{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}.key{display:inline-block;width:16px;border-top:3px solid;flex-shrink:0}
 .scroll{overflow:auto;max-height:600px}table{border-collapse:collapse;font:12px ui-monospace,monospace;width:100%}
 th,td{white-space:nowrap;text-align:left;padding:8px;border-bottom:1px solid #e1e7f0}th{position:sticky;top:0;background:#eaf0f8}tr.event{background:#fff4e2}
 code{overflow-wrap:anywhere}small,footer{color:#53647c}a{color:#225ab0}
@@ -41,21 +46,22 @@ def _chart(rows, normalized):
         return 200 - 170 * (value - low) / (high - low)
     name = 'normalized' if normalized else 'commands'
     title = '원본 정규화 요청 · binary64' if normalized else '정수 명령 단계 · 물리 torque 아님'
-    parts = [f'<figure><figcaption>{title}</figcaption><svg viewBox="0 0 720 240" role="img" aria-labelledby="{name}-title">',
+    parts = [f'<figure><figcaption>{title}</figcaption><div class="chart-plot">',
+             f'<div class="y-ticks"><span>{high:.6g}</span><span>{low:.6g}</span></div>',
+             f'<svg viewBox="46 26 658 178" role="img" aria-labelledby="{name}-title">',
              f'<title id="{name}-title">{title}</title><desc>X축은 호출 index이며 초가 아닙니다. 좌표는 표시용 반올림입니다.</desc>',
              '<line class="axis" x1="50" y1="30" x2="50" y2="200"/><line class="axis" x1="50" y1="200" x2="700" y2="200"/>',
-             f'<line class="zero" x1="50" y1="{y(0):.3f}" x2="700" y2="{y(0):.3f}"/>',
-             f'<text x="4" y="35" font-size="11">{high:.6g}</text><text x="4" y="203" font-size="11">{low:.6g}</text>',
-             f'<text x="50" y="218" font-size="11">{first}</text><text x="680" y="218" font-size="11">{last}</text>',
-             '<text x="220" y="236" font-size="11">모델 호출 index · NOT seconds</text>']
+             f'<line class="zero" x1="50" y1="{y(0):.3f}" x2="700" y2="{y(0):.3f}"/>']
     colors, legends = ['#2563eb', '#b26917', '#8d52b3', '#15805c'], []
     for i, (label, values) in enumerate(series):
         points = ' '.join(f'{x(row["index"]):.3f},{y(value):.3f}' for row, value in zip(rows, values, strict=True))
         parts.append(f'<polyline class="series" stroke="{colors[i]}" data-series="{label}" points="{points}"/>')
         if len(rows) == 1:
             parts.append(f'<circle cx="{x(first):.3f}" cy="{y(values[0]):.3f}" r="3" fill="{colors[i]}"/>')
-        legends.append(f'<span><i class="key" style="border-color:{colors[i]}"></i>{label}</span>')
-    return ''.join(parts) + '</svg><div class="legend">' + ' · '.join(legends) + '</div></figure>'
+        legends.append(f'<span class="legend-entry"><i class="key" style="border-color:{colors[i]}"></i>{label}</span>')
+    ticks = f'<div class="x-ticks single"><span>{first}</span></div>' if first == last else f'<div class="x-ticks"><span>{first}</span><span>{last}</span></div>'
+    return (''.join(parts) + '</svg>' + ticks + '</div><p class="axis-caption">모델 호출 index · NOT seconds</p>'
+            '<div class="legend">' + ''.join(legends) + '</div></figure>')
 
 
 def _render_html(view: dict) -> bytes:

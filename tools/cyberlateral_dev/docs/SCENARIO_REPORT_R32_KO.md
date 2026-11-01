@@ -1,5 +1,9 @@
 # R32 — 사용자 합성 기록 HTML 리포트
 
+모바일 축 가독성 후속 수정은 R32.2입니다.
+[로컬 Codex 재검증](SCENARIO_REPORT_R322_LOCAL_CHECK_KO.md)은 수정 후 실제 화면
+PASS와 코드 검증을 구분합니다.
+
 R31 결과를 읽어 checksum과 기록 간 일관성을 확인하고 HTML 그래프·표를 만듭니다.
 리포트 생성 자체는 모델을 import하거나 다시 실행하지 않습니다. 기존 public0.3.0
 wheel/API·고정 catalog 보고서·R31 생산기·native 경로는 바꾸지 않았습니다.
