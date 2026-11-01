@@ -32,7 +32,11 @@ def run_report(input_path: Path, output_path: Path) -> dict:
         raise ReportError('REPORT_OUTPUT_EXISTS')
     if not output_path.parent.is_dir():
         raise ReportError('REPORT_OUTPUT_PARENT')
-    if output_path.resolve().is_relative_to(input_path.resolve()):
+    try:
+        resolved_input = input_path.resolve()
+    except (OSError, RuntimeError) as error:
+        raise ReportError('REPORT_INPUT_FILE') from error
+    if output_path.resolve().is_relative_to(resolved_input):
         raise ReportError('REPORT_OUTPUT_LOCATION')
     if (platform.python_implementation() != 'CPython' or platform.python_version() != '3.12.13'
             or sys.platform != 'linux' or (sys.float_info.radix, sys.float_info.mant_dig) != (2, 53)):

@@ -139,6 +139,50 @@ class ScenarioReportCLITests(unittest.TestCase):
                 run.run_report(source, root / 'out')
             self.assertFalse((root / 'out').exists())
 
+    def test_cli_looping_input_symlinks_reject_without_traceback_or_output(self):
+        self.modules()
+        for ancestor in [False, True]:
+            with self.subTest(ancestor=ancestor), tempfile.TemporaryDirectory() as scratch:
+                root = Path(scratch)
+                loop = root / 'loop'
+                loop.symlink_to('loop')
+                source = loop / 'child' if ancestor else loop
+                result = self.cli('--input', source, '--output', root / 'out')
+                self.assertEqual(result.returncode, 2, result.stderr.decode())
+                self.assertEqual(result.stderr, b'REJECTED: REPORT_INPUT_FILE\n')
+                self.assertEqual(result.stdout, b'')
+                self.assertFalse((root / 'out').exists())
+                self.assertEqual(loop.readlink(), Path('loop'))
+
+    def test_input_resolution_failure_is_scoped_and_output_guards_keep_precedence(self):
+        m, run = self.modules()
+        with tempfile.TemporaryDirectory() as scratch:
+            root = Path(scratch)
+            loop = root / 'loop'
+            loop.symlink_to('loop')
+            with self.assertRaises(Exception) as caught:
+                run.run_report(loop, root / 'out')
+            self.assertIsInstance(caught.exception, m.ReportError)
+            self.assertEqual(getattr(caught.exception, 'code', None), 'REPORT_INPUT_FILE')
+            self.assertIsInstance(caught.exception.__cause__, RuntimeError)
+            self.assertFalse((root / 'out').exists())
+            (root / 'keep').write_bytes(b'keep')
+            for output, code in [(root / 'keep', 'REPORT_OUTPUT_EXISTS'), (root / 'missing/out', 'REPORT_OUTPUT_PARENT')]:
+                with self.assertRaises(m.ReportError) as error:
+                    run.run_report(loop, output)
+                self.assertEqual(error.exception.code, code)
+            self.assertEqual((root / 'keep').read_bytes(), b'keep')
+            source = write_bundle(root / 'valid')
+            with patch.object(Path, 'resolve', side_effect=PermissionError('synthetic input metadata failure')):
+                with self.assertRaises(m.ReportError) as error:
+                    run.run_report(source, root / 'out')
+                self.assertEqual(error.exception.code, 'REPORT_INPUT_FILE')
+                self.assertIsInstance(error.exception.__cause__, PermissionError)
+            with patch.object(run, '_render_html', side_effect=RuntimeError('unrelated renderer failure')):
+                with self.assertRaisesRegex(RuntimeError, 'unrelated renderer failure'):
+                    run.run_report(source, root / 'out')
+            self.assertFalse((root / 'out').exists())
+
     def test_write_fault_has_no_index_and_existing_partial_cannot_retry(self):
         m, run = self.modules()
         with tempfile.TemporaryDirectory() as scratch:

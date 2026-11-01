@@ -30,11 +30,11 @@ reader/renderer; external bounded browser probe over saved synthetic HTML.
 **Files:** modify `integration_tools/scenario_report_run.py`, `project/test_scenario_report_cli.py`.
 **Interfaces:** existing run_report(Path,Path)->dict and CLI --input/--output unchanged.
 
-- [ ] Write two regressions: isolated self/ancestor-loop CLI→exit2/exact stderr/no output;
+- [x] Write two regressions: isolated self/ancestor-loop CLI→exit2/exact stderr/no output;
   direct API→REPORT_INPUT_FILE/RuntimeError cause and output guard precedence.
-- [ ] Run `uv run --locked python -B -m unittest discover -s project -p test_scenario_report_cli.py -v`;
+- [x] Run `uv run --locked python -B -m unittest discover -s project -p test_scenario_report_cli.py -v`;
   Expected RED: current traceback/exit1 and uncaught RuntimeError.
-- [ ] Narrowly translate input-resolution errors; same CLI and data suites PASS,
+- [x] Narrowly translate input-resolution errors; same CLI and data suites PASS,
   targeted Ruff/Ty/Codespell PASS; commit `[skip ci]`.
 
 ### Task 2: scoped browser check, complete verification and delivery
