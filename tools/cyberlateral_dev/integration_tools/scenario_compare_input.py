@@ -119,7 +119,9 @@ def _read_batch(path: Path) -> dict:
             _need(row['snapshot'] is None and row['status'] == 'REJECTED')
         detail = {'metadata': row, 'input': None, 'result': None}
         if row['status'] == 'COMPLETE':
-            _need(raw is not None and row['rejection_code'] is None and 1 <= row['model_steps'] <= 4096)
+            if raw is None:
+                raise CompareError('COMPARE_INPUT_BINDING')
+            _need(row['rejection_code'] is None and 1 <= row['model_steps'] <= 4096)
             _need(row['data'] == case_id + '/data' and row['report'] == case_id + '/report')
             expected_dirs.update({case_id, row['data'], row['report']})
             data = {n: files[row['data'] + '/' + n] for n in CAPS}

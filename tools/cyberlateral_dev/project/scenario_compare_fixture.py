@@ -37,7 +37,7 @@ def write_batch(root, profiles=('sign', 'resumed')):
 
     root.mkdir()
     (root / 'inputs').mkdir()
-    cases = []
+    cases: list[dict] = []
     for number, profile in enumerate(profiles, 1):
         case = f'case-{number:03d}'
         complete = profile in ('sign', 'resumed')
