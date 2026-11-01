@@ -94,3 +94,8 @@ SOURCE_SCHEMA_UNQUALIFIED=6000, Candidate/Runtime=NO_GO, F70UH/V/F71=NOT_ALLOWED
 새 renderer의 모델 호출0과 입력에 기록된 모델 호출 수를 분리합니다.
 
 [검증 기록](SCENARIO_REPORT_R32_RESULTS.md)
+
+R32.1은 순환 입력 링크의 오류를 `REPORT_INPUT_FILE`·exit2로 통일합니다.
+과거 R32 결과 보고서의 M1 관찰은 당시 기록으로 유지합니다.
+[허용된 로컬 화면 확인 절차](SCENARIO_REPORT_R321_LOCAL_CHECK_KO.md)와
+[R32.1 후속 검증 기록](SCENARIO_REPORT_R321_RESULTS.md)을 참고하세요.
