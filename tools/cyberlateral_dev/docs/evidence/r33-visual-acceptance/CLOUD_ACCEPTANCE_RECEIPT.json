@@ -1,0 +1,71 @@
+{
+  "CI": "NOT_RUN",
+  "Commit": "NOT_RUN",
+  "PR_updates": "NOT_RUN",
+  "Push": "NOT_RUN",
+  "capture_creation_events": "LOCAL_DECLARATION_NOT_INDEPENDENT_OS_ATTESTATION",
+  "capture_files_hash_and_dimensions_verified": 20,
+  "cloud_browser_execution": 0,
+  "cloud_capture_files_opened": 20,
+  "cloud_image_review": "NO_VISIBLE_BLOCKING_PROBLEM_IN_SUPPLIED_SCREENSHOTS",
+  "cloud_product_model_F61_r_dt_Controller_vehicle_Runtime_CAN": 0,
+  "declared_reference_commit": "3783461edcf0fa921adab92c8d1959c5a7262ebb",
+  "full_tests_reexecuted": 0,
+  "identical_capture_pairs": [
+    [
+      "screenshots/rejected-desktop-focus.png",
+      "screenshots/rejected-desktop-full.png"
+    ],
+    [
+      "screenshots/success-desktop-focus.png",
+      "screenshots/success-desktop-full.png"
+    ]
+  ],
+  "input_evidence_zip_sha256": "73ad2c415bbaded1933a043fc79ed51b08af83e21dd9a9a2abc13c7043d9890b",
+  "intake": {
+    "CRC": "PASS",
+    "manifest_entries": 23,
+    "members": 24,
+    "scope": "EVIDENCE_BYTE_CONSISTENCY_NOT_SIGNATURE_OR_REMOTE_OS_ATTESTATION",
+    "screenshot_count": 20,
+    "zip_byte_size": 1418409,
+    "zip_sha256": "73ad2c415bbaded1933a043fc79ed51b08af83e21dd9a9a2abc13c7043d9890b"
+  },
+  "limits": [
+    "Supplied PNG review and byte/record consistency, not a cloud browser rerun.",
+    "Before/after notebook hashes are reported observations matching exact handed-off bytes, not an atomic remote filesystem snapshot.",
+    "Bounded Windows Chrome156/DPR1 visual acceptance only; no model arithmetic, physical safety, performance or deployment qualification."
+  ],
+  "local_cases_consistent": 10,
+  "local_check_status_totals": {
+    "N/A": 45,
+    "PASS": 85
+  },
+  "local_link_records_verified": 48,
+  "local_report_navigation_records_consistent": 6,
+  "main_merge": "NOT_RUN",
+  "maintained": {
+    "Candidate": "NO_GO",
+    "D2": "PERFORMANCE_NOT_EVALUATED",
+    "F19": "LEGACY_UNRESOLVED",
+    "F70UH": "NOT_ALLOWED",
+    "F70V": "NOT_ALLOWED",
+    "F71": "NOT_ALLOWED",
+    "NATIVE_EXACT_REPLAY": "NOT_PROVEN",
+    "R_BUDGET": "UNRESOLVED",
+    "Runtime": "NO_GO",
+    "SOURCE_SCHEMA_UNQUALIFIED": 6000,
+    "STATIC_EVIDENCE_GATE": "FAIL",
+    "T2": null,
+    "actual_activation": "NOT_ALLOWED",
+    "actual_r": null,
+    "vehicle_scale": null
+  },
+  "original_input_files_exactly_matched_before_and_after": 60,
+  "original_manifest_count": 13,
+  "original_manifest_entries_verified_including_overlap": 165,
+  "repository_changes": 0,
+  "status": "R33_LOCAL_VISUAL_EVIDENCE_VERIFIED_PASS",
+  "target_HTML_identities": "5/5_EXACT_MATCH",
+  "unique_PNG_byte_hashes": 18
+}

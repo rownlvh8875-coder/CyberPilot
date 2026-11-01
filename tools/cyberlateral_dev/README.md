@@ -9,6 +9,15 @@ Custom declared-synthetic JSON files can now be run with the separate
 [R31 developer scenario CLI](docs/SYNTHETIC_SCENARIO_CLI_R31_KO.md) for full JSON/CSV
 traces. It preserves the public0.3.0 model/wheel; it is not a vehicle/log reader.
 
+Multiple explicitly named JSON files can be run independently with the
+[R33 synthetic batch CLI](docs/SCENARIO_BATCH_R33_KO.md), producing one static
+index of per-file results, input rejections and existing individual reports.
+State never crosses files; completion is not numerical or vehicle approval.
+Its [bounded local visual acceptance](docs/SCENARIO_BATCH_R33_RESULTS.md) covers
+the success/mixed/rejected lists and two linked reports at desktop/mobile sizes;
+[receipts and screenshot hashes](docs/evidence/r33-visual-acceptance/README_KO.md)
+preserve the scope. This does not qualify arbitrary scenarios or vehicle use.
+
 Saved R31 outputs can be checked and viewed with the separate
 [R32 read-only HTML scenario report](docs/SCENARIO_REPORT_R32_KO.md).
 It displays graphs/state tables without importing or rerunning the model;

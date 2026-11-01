@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "scope": "HISTORICAL_SUPPLIED_CAPTURE_REVIEW_NOT_NEW_BROWSER_EXECUTION",
+  "source_commit": "3783461edcf0fa921adab92c8d1959c5a7262ebb",
+  "evidence_zip_sha256": "73ad2c415bbaded1933a043fc79ed51b08af83e21dd9a9a2abc13c7043d9890b",
+  "input_kit_sha256": "8e1ac69e16e0ef164f401d73abd2d1bc5b55956755bc79f7dfb17f60824e2d28",
+  "environment": {
+    "browser": "Chrome",
+    "version": "156.0.8078.79",
+    "automation": "Playwright Core via Node REPL",
+    "automation_version": "1.62.1",
+    "OS": "Microsoft Windows 10.0.26300",
+    "headless": true,
+    "sandbox": true,
+    "isolated": "NEW_BROWSER_PROCESS_CONTEXT_AND_TEMPORARY_PROFILE",
+    "existing_user_tabs_or_profiles_used": 0,
+    "settings_or_policy_changes": 0,
+    "new_dependencies": 0,
+    "zoom_percent": 100,
+    "zoom_basis": "Fresh profile defaults, DPR1, visualViewport.scale=1 and document/body CSS zoom=1.",
+    "own_browser_closed": true
+  },
+  "case_count": 10,
+  "capture_file_count": 20,
+  "unique_png_byte_hashes": 18,
+  "cloud_review": "20_CAPTURE_FILES_OPENED_IN_THE_EARLIER_EVIDENCE_INTAKE",
+  "capture_creation_events": "LOCAL_DECLARATION_NOT_OS_ATTESTATION",
+  "captures": [
+    {
+      "path": "screenshots/mixed-desktop-focus.png",
+      "case_id": "mixed-desktop",
+      "kind": "FOCUS_VIEWPORT",
+      "sha256": "3346a14662fc0507ae5d83a0a322145e80404073386626348aacfaf8af8a7c66",
+      "byte_size": 78843,
+      "image_width": 1440,
+      "image_height": 1250
+    },
+    {
+      "path": "screenshots/mixed-desktop-full.png",
+      "case_id": "mixed-desktop",
+      "kind": "FULL_DOCUMENT",
+      "sha256": "6e3bcd639435d86054cde7fe410b0dfc2dd7fc8b85c8dbda167fec6ca3b4905b",
+      "byte_size": 96597,
+      "image_width": 1440,
+      "image_height": 1504
+    },
+    {
+      "path": "screenshots/mixed-mobile-focus.png",
+      "case_id": "mixed-mobile",
+      "kind": "FOCUS_VIEWPORT",
+      "sha256": "e330ac5fd54f510914c71a2e52b7dba63e6ad55b1d1149cba50ef082b3133e0c",
+      "byte_size": 38170,
+      "image_width": 390,
+      "image_height": 844
+    },
+    {
+      "path": "screenshots/mixed-mobile-full.png",
+      "case_id": "mixed-mobile",
+      "kind": "FULL_DOCUMENT",
+      "sha256": "20744cbde2f9c9a8b47db438c1fe763d47f3695bbef85715fbaa73b868ac4fdc",
+      "byte_size": 93166,
+      "image_width": 390,
+      "image_height": 2300
+    },
+    {
+      "path": "screenshots/rejected-desktop-focus.png",
+      "case_id": "rejected-desktop",
+      "kind": "FOCUS_VIEWPORT",
+      "sha256": "5512a72a3d8fd168052bcb13e0ec1bd8f827d763fe7dc5a4364cd9a01d8a2d30",
+      "byte_size": 77669,
+      "image_width": 1440,
+      "image_height": 1250
+    },
+    {
+      "path": "screenshots/rejected-desktop-full.png",
+      "case_id": "rejected-desktop",
+      "kind": "FULL_DOCUMENT",
+      "sha256": "5512a72a3d8fd168052bcb13e0ec1bd8f827d763fe7dc5a4364cd9a01d8a2d30",
+      "byte_size": 77669,
+      "image_width": 1440,
+      "image_height": 1250
+    },
+    {
+      "path": "screenshots/rejected-mobile-focus.png",
+      "case_id": "rejected-mobile",
+      "kind": "FOCUS_VIEWPORT",
+      "sha256": "67c80e56982ccd19b1227294f9f38b930c6f5305f692d9ac4e378362302e05c0",
+      "byte_size": 38130,
+      "image_width": 390,
+      "image_height": 844
+    },
+    {
+      "path": "screenshots/rejected-mobile-full.png",
+      "case_id": "rejected-mobile",
+      "kind": "FULL_DOCUMENT",
+      "sha256": "385a6a2540f6c0ea21e648c08f10573d9cb8d0f5170d1c944428d704e55d06e2",
+      "byte_size": 73412,
+      "image_width": 390,
+      "image_height": 1759
+    },
+    {
+      "path": "screenshots/resumed-desktop-focus.png",
+      "case_id": "resumed-desktop",
+      "kind": "FOCUS_VIEWPORT",
+      "sha256": "fc848856e9b42524ef5814d93eb799f61cab4bb01c13953da19c2a884c62b832",
+      "byte_size": 68986,
+      "image_width": 1440,
+      "image_height": 1250
+    },
+    {
+      "path": "screenshots/resumed-desktop-full.png",
+      "case_id": "resumed-desktop",
+      "kind": "FULL_DOCUMENT",
+      "sha256": "4fa3f0c8ecf0dce4611b6de58f785dd3e6ccca794c48f7b4c094cf0a7461e377",
+      "byte_size": 99743,
+      "image_width": 1440,
+      "image_height": 1766
+    },
+    {
+      "path": "screenshots/resumed-mobile-focus.png",
+      "case_id": "resumed-mobile",
+      "kind": "FOCUS_VIEWPORT",
+      "sha256": "5d2b292d69386932801cc861cfab26cbc4de480f13d40642ef7eb68ee890a9f4",
+      "byte_size": 25855,
+      "image_width": 390,
+      "image_height": 844
+    },
+    {
+      "path": "screenshots/resumed-mobile-full.png",
+      "case_id": "resumed-mobile",
+      "kind": "FULL_DOCUMENT",
+      "sha256": "632632247e7086d9a3faa8be519674b4abca5fa3cda4a142df5380d117de1495",
+      "byte_size": 98376,
+      "image_width": 390,
+      "image_height": 2662
+    },
+    {
+      "path": "screenshots/sign-desktop-focus.png",
+      "case_id": "sign-desktop",
+      "kind": "FOCUS_VIEWPORT",
+      "sha256": "928b1bb7df645bb2f07aadd007aeeb51ab872f0ecd11d429c2a15096545dcf26",
+      "byte_size": 93664,
+      "image_width": 1440,
+      "image_height": 1250
+    },
+    {
+      "path": "screenshots/sign-desktop-full.png",
+      "case_id": "sign-desktop",
+      "kind": "FULL_DOCUMENT",
+      "sha256": "f024f55f40dc7a0864dafac50c21b4bdd2c583a4c25379c1be74675c2e6c2a16",
+      "byte_size": 125612,
+      "image_width": 1440,
+      "image_height": 1859
+    },
+    {
+      "path": "screenshots/sign-mobile-focus.png",
+      "case_id": "sign-mobile",
+      "kind": "FOCUS_VIEWPORT",
+      "sha256": "265fcde7972342d413e7b97743ff7c27f6e70cc6fb326b531311f7838640f494",
+      "byte_size": 36477,
+      "image_width": 390,
+      "image_height": 844
+    },
+    {
+      "path": "screenshots/sign-mobile-full.png",
+      "case_id": "sign-mobile",
+      "kind": "FULL_DOCUMENT",
+      "sha256": "3bb482b2beeadf77e47dc8dd6b8be0378aa8f946d9072bf6aded1d7faa413456",
+      "byte_size": 111045,
+      "image_width": 390,
+      "image_height": 2755
+    },
+    {
+      "path": "screenshots/success-desktop-focus.png",
+      "case_id": "success-desktop",
+      "kind": "FOCUS_VIEWPORT",
+      "sha256": "e9f7c8eb793d4cb1ba7f8b7b6c190a4f9a3e21188226a99ab1c28bb4b219cef9",
+      "byte_size": 82811,
+      "image_width": 1440,
+      "image_height": 1250
+    },
+    {
+      "path": "screenshots/success-desktop-full.png",
+      "case_id": "success-desktop",
+      "kind": "FULL_DOCUMENT",
+      "sha256": "e9f7c8eb793d4cb1ba7f8b7b6c190a4f9a3e21188226a99ab1c28bb4b219cef9",
+      "byte_size": 82811,
+      "image_width": 1440,
+      "image_height": 1250
+    },
+    {
+      "path": "screenshots/success-mobile-focus.png",
+      "case_id": "success-mobile",
+      "kind": "FOCUS_VIEWPORT",
+      "sha256": "7d615241b028ae86e5234884f778774bbaa784270b15308b49f71747283707c5",
+      "byte_size": 35799,
+      "image_width": 390,
+      "image_height": 844
+    },
+    {
+      "path": "screenshots/success-mobile-full.png",
+      "case_id": "success-mobile",
+      "kind": "FULL_DOCUMENT",
+      "sha256": "5dc5ad85904046299d08aec8ea1c8522e9b6a45a5707e73015a59f17ae4a86af",
+      "byte_size": 80745,
+      "image_width": 390,
+      "image_height": 1918
+    }
+  ]
+}
