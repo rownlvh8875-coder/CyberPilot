@@ -15,7 +15,7 @@ STATUS: R33_LOCAL_VISUAL_EVIDENCE_VERIFIED_PASS
   `73ad2c415bbaded1933a043fc79ed51b08af83e21dd9a9a2abc13c7043d9890b`.
 - 결과 CRC와23개 Manifest 항목 PASS. 원본 input의13개 Manifest/중복 포함
  165개 hash 항목,60파일 before/after 및5개 대상 HTML SHA가 일치합니다.
--10개 case의 체크는 PASS85/N/A45, 미확인 필수 항목0입니다.
+- 10개 case의 체크는 PASS85/N/A45, 미확인 필수 항목0입니다.
 - 캡처20개(고유 PNG bytes SHA18개), 실제 report 탐색6회와 링크48개 record를
   대조했습니다.20개 PNG를 cloud에서도 직접 열어 눈에 띄는 문제를 발견하지 못했습니다.
 
