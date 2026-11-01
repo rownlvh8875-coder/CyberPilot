@@ -135,6 +135,15 @@ class CompareDataTests(unittest.TestCase):
         self.assertTrue(result['cases'][0]['producer_identity_changed'])
         self.assertEqual(result['comparison_claim'], 'RECORDED_VALUES_ONLY_NOT_ORIGIN_NUMERICAL_OR_VEHICLE_APPROVAL')
 
+    def test_batch_producer_identity_change_visible_even_for_rejected_only_batch(self):
+        m = self.module()
+        a, b = self.pair(('bad',))
+        b['batch_producer_identity_sha256'] = '1' * 64
+        result = m.compare_batches(a, b)
+        self.assertEqual(result['status'], 'MATCH')
+        self.assertFalse(result['all_observed_producer_identities_match'])
+        self.assertTrue(result['batch_producer_identity_changed'])
+
     def test_final_state_and_presence_not_confused_with_null(self):
         m = self.module()
         a, b = self.pair()

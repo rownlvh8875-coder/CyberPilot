@@ -86,15 +86,19 @@ def compare_batches(baseline: dict, candidate: dict) -> dict:
                 if summary['difference_count']:
                     summary['classification'] = 'RESULT_CHANGED'
         cases.append(summary)
+    batch_identity_changed = baseline['batch_producer_identity_sha256'] != candidate['batch_producer_identity_sha256']
     return {'schema_version': 1, 'contract_id': 'F70UGZ_R34_SAVED_BATCH_COMPARISON_V1',
             'status': 'DIFFERENT' if total else 'MATCH',
             'comparison_claim': 'RECORDED_VALUES_ONLY_NOT_ORIGIN_NUMERICAL_OR_VEHICLE_APPROVAL',
             'baseline_portable_manifest_sha256': baseline['portable_manifest_sha256'],
             'candidate_portable_manifest_sha256': candidate['portable_manifest_sha256'],
+            'baseline_batch_producer_identity_sha256': baseline['batch_producer_identity_sha256'],
+            'candidate_batch_producer_identity_sha256': candidate['batch_producer_identity_sha256'],
+            'batch_producer_identity_changed': batch_identity_changed,
             'alignment': 'EXPLICIT_ARGUMENT_POSITION_NOT_SCENARIO_ID', 'exactness': 'TYPED_CANONICAL_NO_TOLERANCE',
             'time_semantics': 'INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME',
             'compared_sample_count': samples, 'difference_count': total, 'detail_limit': DETAIL_LIMIT,
             'details_truncated': total > len(details), 'first_difference': details[0] if details else None,
             'differences': details, 'cases': cases,
-            'all_observed_producer_identities_match': all(not c['producer_identity_changed'] for c in cases),
+            'all_observed_producer_identities_match': not batch_identity_changed and all(not c['producer_identity_changed'] for c in cases),
             'new_model_executions': 0, 'gates': dict(GATES)}

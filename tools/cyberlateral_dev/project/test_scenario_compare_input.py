@@ -141,3 +141,17 @@ class CompareInputTests(unittest.TestCase):
                 (source / 'SHA256SUMS.txt').write_bytes(manifest(edit_manifest))
                 with self.assertRaises(m.CompareError):
                     m.read_batch(source)
+
+    def test_batch_producer_metadata_is_hashed_never_followed(self):
+        m = self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            source = write_batch(Path(tmp) / 'batch', ('bad',))
+            first = m.read_batch(source)
+            receipt = json.loads((source / 'RECEIPT.json').read_bytes())
+            receipt['observed_source_hashes']['integration_tools/historical_only.py'] = '1' * 64
+            (source / 'RECEIPT.json').write_bytes(canonical(receipt))
+            edit_batch(source, lambda x: None)
+            second = m.read_batch(source)
+            self.assertIn('batch_producer_identity_sha256', first, 'Missing batch producer metadata identity')
+            self.assertNotEqual(first['batch_producer_identity_sha256'], second['batch_producer_identity_sha256'])
+            self.assertFalse((ROOT / 'integration_tools/historical_only.py').exists())

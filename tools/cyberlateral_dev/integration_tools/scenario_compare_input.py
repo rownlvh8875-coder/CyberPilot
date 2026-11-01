@@ -147,7 +147,13 @@ def _read_batch(path: Path) -> dict:
         cases.append(detail)
     _need(files.keys() == expected_files and directories == expected_dirs, 'COMPARE_FILES')
     _need(files['PORTABLE_SHA256SUMS.txt'] == _manifest(portable), 'COMPARE_CHECKSUM')
-    _need(type(_json(files['RECEIPT.json'])) is dict)
+    receipt = _json(files['RECEIPT.json'])
+    _need(type(receipt) is dict)
+    inventory = receipt.get('observed_source_hashes')
+    _need(type(inventory) is dict and 1 <= len(inventory) <= 256)
+    for name, digest in inventory.items():
+        _need(re.fullmatch(r'(?:integration_tools/[A-Za-z0-9_]+\.py|tools/scenario(?:_batch|_report)?\.py)', name) is not None)
+        _need(type(digest) is str and re.fullmatch('[0-9a-f]{64}', digest) is not None)
     rejected = sum(r['status'] == 'REJECTED' for r in rows)
     steps = sum(r['model_steps'] for r in rows)
     _need(steps <= 8192, 'COMPARE_SIZE')
@@ -160,6 +166,7 @@ def _read_batch(path: Path) -> dict:
                 'numerical_claim': 'MODEL_RESULTS_NOT_GENERIC_INDEPENDENT_ORACLE', 'gates': GATES, 'cases': rows}
     _need(canonical(record) == canonical(expected), 'COMPARE_RECORD')
     return {'record': record, 'cases': cases, 'portable_manifest_sha256': _sha(files['PORTABLE_SHA256SUMS.txt']),
+            'batch_producer_identity_sha256': _sha(canonical(inventory)),
             'root_manifest_sha256': _sha(files['SHA256SUMS.txt'])}
 
 

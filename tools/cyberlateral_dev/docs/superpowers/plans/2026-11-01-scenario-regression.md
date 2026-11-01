@@ -44,13 +44,13 @@ A separate CLI publishes a portable comparison and private runtime receipt.
   `read_batch(path: Path) -> dict` with record, per-case records and owned identities.
 - Error class `CompareError(code: str)` used by later tasks.
 
-- [ ] Write preserved-fixture reader tests: valid complete/rejected/mixed input,
+- [x] Write preserved-fixture reader tests: valid complete/rejected/mixed input,
   nested hashes, raw binding, canonical/count/gate consistency, missing/extra/
   corrupt/unsafe members, per-file/aggregate limits, old identity metadata only.
-- [ ] Run targeted unittest discovery; expect failure for missing reader/decoder.
-- [ ] Implement safe reader and minimal decoder extraction, without model imports.
-- [ ] Run reader tests and full component suite; expect all PASS.
-- [ ] Commit reader, fixtures/tests and design/plan.
+- [x] Run targeted unittest discovery; expect failure for missing reader/decoder.
+- [x] Implement safe reader and minimal decoder extraction, without model imports.
+- [x] Run reader tests and full component suite; expect all PASS.
+- [x] Commit reader, fixtures/tests and design/plan.
 
 ### Task 2: Exact semantic diff
 
@@ -62,14 +62,14 @@ A separate CLI publishes a portable comparison and private runtime receipt.
 - Consumes `read_batch` dictionaries.
 - Produces `compare_batches(baseline: dict, candidate: dict) -> dict`.
 
-- [ ] Write tests with literal changed field/first sample/count expectations:
+- [x] Write tests with literal changed field/first sample/count expectations:
   exact match, request/input changes, final command/state/clip trace changes,
   type/signed-zero differences, changed rejection/status, missing raw input,
   added/removed cases, duplicate IDs, metadata change flags and256-detail truncation.
-- [ ] Run targeted tests; expect failure for missing comparison implementation.
-- [ ] Implement typed traversal, ordered case alignment and portable result record.
-- [ ] Run targeted and full suite; expect all PASS.
-- [ ] Commit pure diff and tests.
+- [x] Run targeted tests; expect failure for missing comparison implementation.
+- [x] Implement typed traversal, ordered case alignment and portable result record.
+- [x] Run targeted and full suite; expect all PASS.
+- [x] Commit pure diff and tests.
 
 ### Task 3: CLI, publication and developer guide
 
@@ -83,15 +83,15 @@ A separate CLI publishes a portable comparison and private runtime receipt.
 - Produces `run_comparison(baseline: Path, candidate: Path, output: Path) -> dict`.
 - CLI exit0 MATCH /1 DIFFERENT /2 rejected; isolated private pycache.
 
-- [ ] Write real CLI tests for0/1/2, deterministic portable output/full manifests,
+- [x] Write real CLI tests for0/1/2, deterministic portable output/full manifests,
   no forbidden imports/model execution, output collision/ancestry/encoding,
   partial write failure and no marker, private receipt separation, help/options.
-- [ ] Run targeted tests; expect failure for missing CLI.
-- [ ] Implement output preflight, receipt/source identity, exclusive publication.
-- [ ] Add Korean usage, exactness/limits/unchanged gates and no auto-baseline update.
-- [ ] Run full dev.py verify, including Ruff/Ty/Codespell/compile/wheel reproducibility.
-- [ ] Run two independent comparisons of saved complete batches; portable bytes match.
-- [ ] Commit feature and documentation after successful verification.
+- [x] Run targeted tests; expect failure for missing CLI.
+- [x] Implement output preflight, receipt/source identity, exclusive publication.
+- [x] Add Korean usage, exactness/limits/unchanged gates and no auto-baseline update.
+- [x] Run full dev.py verify, including Ruff/Ty/Codespell/compile/wheel reproducibility.
+- [x] Run two independent comparisons of saved complete batches; portable bytes match.
+- [x] Commit feature and documentation after successful verification.
 
 ## Completion
 

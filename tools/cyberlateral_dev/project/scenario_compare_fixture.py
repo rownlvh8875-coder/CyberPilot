@@ -71,7 +71,8 @@ def write_batch(root, profiles=('sign', 'resumed')):
               'numerical_claim': 'MODEL_RESULTS_NOT_GENERIC_INDEPENDENT_ORACLE', 'gates': dict(GATES), 'cases': cases}
     (root / 'BATCH.json').write_bytes(canonical(record))
     (root / 'index.html').write_bytes(b'<!doctype html><title>synthetic batch fixture</title>')
-    (root / 'RECEIPT.json').write_bytes(canonical({'scope': 'SYNTHETIC_TEST_FIXTURE', 'never_open': '/private/not-an-input'}))
+    (root / 'RECEIPT.json').write_bytes(canonical({'scope': 'SYNTHETIC_TEST_FIXTURE', 'never_open': '/private/not-an-input',
+                                                'observed_source_hashes': {'integration_tools/scenario_batch_run.py': '0' * 64}}))
     refresh(root)
     return root
 
