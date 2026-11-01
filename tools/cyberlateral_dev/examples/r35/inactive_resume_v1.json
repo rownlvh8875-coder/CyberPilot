@@ -1,0 +1,12 @@
+{
+  "schema_version": 1, "scope": "SYNTHETIC_ONLY", "scenario_id": "R35_inactive_resume",
+  "limits": {"STEER_MAX": 16, "STEER_DELTA_UP": 2, "STEER_DELTA_DOWN": 5, "STEER_DRIVER_ALLOWANCE": 7, "STEER_DRIVER_FACTOR": 1, "STEER_DRIVER_MULTIPLIER": 3},
+  "initial_state": {"index": 10, "previous_requested": 12, "previous_applied": 6, "angle_counter": 7},
+  "samples": [
+    {"index": 10, "request": 1.0, "driver": 0.0, "angle_deg": 85.0, "lat_active": false},
+    {"index": 11, "request": 1.0, "driver": 0.0, "angle_deg": 85.0, "lat_active": true},
+    {"index": 12, "request": -1.0, "driver": 0.0, "angle_deg": 85.0, "lat_active": false},
+    {"index": 13, "request": -1.0, "driver": 0.0, "angle_deg": 85.0, "lat_active": true},
+    {"index": 14, "request": 1.0, "driver": 0.0, "angle_deg": 85.0, "lat_active": true}
+  ]
+}
