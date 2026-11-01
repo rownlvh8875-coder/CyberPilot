@@ -34,25 +34,28 @@ No native rebuild, original-source edit, public wheel change or main merge.
 **Interfaces:** Consume `_render_html(view)` after existing reader validation;
 produce escaped bytes with exactly the same series geometry and VIEW.json.
 
-- [ ] Add real HTML regressions: all tick/caption text outside SVG, literal axis
+- [x] Add real HTML regressions: all tick/caption text outside SVG, literal axis
   values for sign/resumed/flat4096, one centered resumed index, geometry unchanged,
   long signed Y labels and complete separate legend entries. Mutations caught:
   text restored inside shrinking SVG, lost terminal label, state/series mix-up.
-- [ ] Run new unittest discovery before renderer edits. Expected: assertion FAIL
+- [x] Run new unittest discovery before renderer edits. Expected: assertion FAIL
   because old SVG text/labels still present, not import/setup ERROR.
-- [ ] Implement grid-based HTML axes,14px axis/legend text and padded plot-only
+- [x] Implement grid-based HTML axes,14px axis/legend text and padded plot-only
   SVG without changing any polyline point, circle coordinate or stored record.
-- [ ] Run report tests. Expected: all PASS, no skipped new regressions.
-- [ ] Run full `uv run --locked python -B dev.py verify --output NEW` and read logs.
+- [x] Run report tests. Expected: all PASS, no skipped new regressions.
+- [x] Run full `uv run --locked python -B dev.py verify --output NEW` and read logs.
   Expected: full suite/static tools/immutable wheel PASS, exact count observed.
-- [ ] Compare actual saved sign/resumed input hashes and VIEW bytes to R321, render
+- [x] Compare actual saved sign/resumed input hashes and VIEW bytes to R321, render
   twice locally and in committed fresh archive. Expected: unchanged VIEW/source,
   deterministic changed HTML, actual receipts retained and all checksums PASS.
-- [ ] Document bounded status and local recheck prompt; commit code/tests/docs.
-- [ ] One fresh whole-branch review. Grade findings and disposition all exclusions.
+- [x] Document bounded status and local recheck prompt; commit code/tests/docs.
+- [x] One fresh whole-branch review. Grade findings and disposition all exclusions.
   Important fixes require one RED/GREEN pass; no repeated reviewer dispatch.
 - [ ] Push feature branch, manually run only scoped CI, keep PR2 Draft/unmerged.
   Verify exact-head CI artifact and deterministic evidence ZIP/sidecar.
+
+Delivery checkbox is intentionally pending in this pre-publication source snapshot;
+the final external publication/completion receipts record its actual outcome.
 
 Self-review: one cohesive display change, no task interface conflicts. Each focus
 has a rendered-output regression or an explicit local browser check. User standing

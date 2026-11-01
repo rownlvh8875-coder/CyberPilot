@@ -35,8 +35,12 @@ STATUS: R322_MOBILE_CHART_CODE_VERIFIED_LOCAL_VISUAL_RECHECK_PENDING
 - 기존 Python/JSON/build/lock215파일, 원래 소스10개, 원래 checkout/submodule
   HEAD/status 관찰값 불변. atomic snapshot 또는 전체 tree/OS 증명은 아니다.
 
-독립 리뷰·committed fresh 반복·최종-head scoped CI 및 봉인 결과는 외부 evidence
-receipt에 실제 수행 후 기록한다. 이 문서가 미래 결과를 미리 승인하지 않는다.
+독립 리뷰도 리포트30테스트와 별도4개 saved-data render를 수행했으며
+Critical/Important/Minor0이었다. 새 변경 전체와 관련 branch 통합 경계를 검토한
+결과이며 branch45,309추가 행 전체의 line-by-line 감사는 아니다. 별도 committed
+fresh 경로에서도 전체502/502·158compile·정적 검사·wheel 검산 PASS,4회 reader의
+HTML/VIEW 재현 PASS였다. 최종-head scoped CI 및 ZIP 봉인은 외부 evidence
+receipt에 실제 수행 후 기록한다. 미래 결과를 미리 승인하지 않는다.
 
 ## 남은 실제 화면 검증
 
