@@ -10,6 +10,8 @@ inventory만으로 테스트 PASS, 최신 GitHub 상태 또는 실차 적격성�
 
 추가 DEV 기능 R38은 [별도 참조 검사 안내](SCENARIO_REFERENCE_R38_KO.md)를 따릅니다.
 위 검토 commit과 source inventory의 R31–R37 기록을 R38 실행 증거로 사용하지 않습니다.
+추가 R39는 [완전한 저장 batch의 일괄 참조 검사](SCENARIO_BATCH_REFERENCE_R39_KO.md)입니다.
+위 historical source inventory를 R39 구현·실행 증거로 사용하지 않습니다.
 
 ## 어떤 명령을 써야 하나
 
@@ -24,6 +26,7 @@ inventory만으로 테스트 PASS, 최신 GitHub 상태 또는 실차 적격성�
 | 완전한 저장 batch 비교 | tools/scenario_compare.py (R34) | 새 모델0; 정확한 저장값 비교이지 산술 증명 아님 |
 | 고정 경계 회귀팩 | examples/r35 + 별도 literal (R35) | 정상6개/38호출과 의도적 거절3개 |
 | 완전한 저장 R31의 독립 참조 검사 | tools/scenario_reference_check.py (R38) | 새 public 모델0, 참조/helper 계산 NONZERO; 차량 승인 아님 |
+| 완전한 저장 batch의 독립 참조 검사 | tools/scenario_batch_reference_check.py (R39) | case별 R38·거절 사유 구분; 새 public 모델0, 참조/helper NONZERO |
 
 공개 wheel과 DEV 도구를 혼동하지 마세요. wheel은 설치 가능한0.3.0 모델/API와
 고정 CLI이며 R31~R34나 native 어댑터를 payload에 포함하지 않습니다. `python -m
