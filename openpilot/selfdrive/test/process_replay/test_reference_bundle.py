@@ -249,7 +249,7 @@ class TestReferenceBundle(unittest.TestCase):
     runner = Path(__file__).with_name('test_processes.py')
     result = subprocess.run([sys.executable, '-B', str(runner), '--update-refs'], capture_output=True, text=True, check=False)
     self.assertEqual(result.returncode, 2, result.stderr)
-    self.assertIn('REFERENCE_UPDATE_REQUIRES_SEPARATE_APPROVAL', result.stderr)
+    self.assertTrue('REFERENCE_UPDATE_REQUIRES_SEPARATE_APPROVAL' in result.stderr)
     self.assertNotIn('ModuleNotFoundError', result.stderr)
 
   def test_cli_source_mismatch_rejected_before_native_imports(self):
@@ -262,7 +262,7 @@ class TestReferenceBundle(unittest.TestCase):
     subprocess.run(['git', 'init', '-q', str(self.root)], capture_output=True, check=True)
     result = subprocess.run([sys.executable, '-B', str(folder / runner.name)], capture_output=True, text=True, check=False)
     self.assertEqual(result.returncode, 2, result.stderr)
-    self.assertIn('CHECKOUT_METADATA_UNAVAILABLE', result.stderr)
+    self.assertTrue('CHECKOUT_METADATA_UNAVAILABLE' in result.stderr)
     self.assertNotIn('ModuleNotFoundError', result.stderr)
 
   def test_worker_consumes_verified_bytes_not_a_reopened_reference(self):
