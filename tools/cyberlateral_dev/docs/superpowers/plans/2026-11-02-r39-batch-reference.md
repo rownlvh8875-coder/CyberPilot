@@ -44,7 +44,7 @@ User delegated routine decisions and opted out of repeated approval. No remote p
 - [x] Run coherent wrong saved-value copy: expected DIFFERENT/exit1, exact first field; corrupted late batch rejects2 before references.
 - [x] Add Korean CLI/accounting/scope documentation and README/current guide links. No wheel option changes.
 - [x] Run full `dev.py verify --output <new audit gate>`: all tests/static checks/own compiles/wheel pass; report observed counts.
-- [ ] Fresh independent final review of whole change. Fix Critical/Important via tests first, whole suite green; ledger deferred minors.
-- [ ] Preserve tested local branch; hand off exact changes/results/commands. Do not push/merge without further task scope.
+- [x] Fresh independent final review of whole change. Fix Critical/Important via tests first, whole suite green; ledger deferred minors.
+- [x] Preserve tested local branch; hand off exact changes/results/commands. Do not push/merge without further task scope.
 
 No speculative UI or policy work. One feature task because reader/runner/summary/CLI form a single independently useful deliverable.
