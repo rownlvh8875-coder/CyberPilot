@@ -45,12 +45,14 @@ jobs:
           enable-cache: false
       - name: Install locked isolated app and SDK environments
         id: dependencies
+        timeout-minutes: 2
         run: |
           uv sync --locked --project tools/cyberlateral_dev --python "$pythonLocation/bin/python"
           uv venv --python "$pythonLocation/bin/python" "$CLOUD_HF_ENV"
           uv pip sync --python "$CLOUD_HF_ENV/bin/python" --require-hashes tools/cyberlateral_cloud/hf-requirements.lock
       - name: Verify cloud tooling without live HF access
         id: verify
+        timeout-minutes: 5
         run: |
           "$UV_PROJECT_ENVIRONMENT/bin/python" -B tools/cyberlateral_cloud/ci_verify.py \
             --hf-python "$CLOUD_HF_ENV/bin/python" \

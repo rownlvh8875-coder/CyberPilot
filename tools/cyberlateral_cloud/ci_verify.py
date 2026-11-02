@@ -6,27 +6,82 @@ import importlib.util
 import json
 import os
 import re
+import selectors
+import signal
+import subprocess
 import sys
+import time
 from pathlib import Path
 
 from artifacts import manifest, new_restore_directory, sha, validate_names
 from cloud_restore import VERSIONS
-from cloud_run import GATES, run_command, safe_error, write_json
+from cloud_run import GATES, safe_error, write_json
 
 TOOLS = Path(__file__).resolve().parent
 REPO = TOOLS.parents[1]
 LOGS = {'sdk-version.log', 'unittest.log', 'ruff.log', 'ty.log', 'codespell.log'}
+MAX_LOG_BYTES = 1_048_576
+TOTAL_TIMEOUT_SECONDS = 240
 
 
 def validate_ledger(text: str) -> int:
-    counts = re.findall(r'(?m)^Ran (\d+) tests in [0-9]+(?:\.[0-9]+)?s$', text)
-    if (len(counts) != 1 or int(counts[0]) < 70 or text.rstrip().splitlines()[-1] != 'OK'
-            or re.search(r'(?m)^(FAILED\b|ERROR[: ])', text)):
+    lines = text.rstrip().splitlines()
+    summaries = [i for i, line in enumerate(lines) if re.match(r'^Ran\b', line)]
+    results = [i for i, line in enumerate(lines) if re.match(r'^(OK|FAILED|ERROR)\b', line)]
+    if len(summaries) != 1 or len(results) != 1 or lines[-1] != 'OK':
         raise ValueError('CI_TEST_LEDGER_INVALID')
-    return int(counts[0])
+    summary, result = summaries[0], results[0]
+    count = re.fullmatch(r'Ran (\d+) tests in [0-9]+(?:\.[0-9]+)?s', lines[summary])
+    if (count is None or int(count[1]) < 70 or result != len(lines) - 1 or summary >= result
+            or any(line.strip() for line in lines[summary + 1:result])):
+        raise ValueError('CI_TEST_LEDGER_INVALID')
+    return int(count[1])
+
+
+def run_check(command, log: Path, cwd: Path, *, timeout: float, env=None) -> bytes:
+    """Bound child lifetime/output, preserving diagnostics before CI's job deadline."""
+    deadline = time.monotonic() + timeout
+    with log.open('xb') as stream, selectors.DefaultSelector() as selector:
+        if timeout <= 0:
+            raise ValueError('COMMAND_TIMEOUT')
+        process = subprocess.Popen([str(x) for x in command], cwd=cwd, env=env, stdout=subprocess.PIPE,
+                                   stderr=subprocess.STDOUT, start_new_session=True)
+        assert process.stdout is not None
+        try:
+            with process.stdout:
+                selector.register(process.stdout, selectors.EVENT_READ)
+                remaining = MAX_LOG_BYTES
+                while True:
+                    available = deadline - time.monotonic()
+                    if available <= 0 or not selector.select(available):
+                        raise ValueError('COMMAND_TIMEOUT')
+                    chunk = os.read(process.stdout.fileno(), min(65_536, remaining + 1))
+                    if not chunk:
+                        break
+                    stream.write(chunk[:remaining])
+                    stream.flush()
+                    if len(chunk) > remaining:
+                        raise ValueError('COMMAND_LOG_LIMIT')
+                    remaining -= len(chunk)
+                try:
+                    status = process.wait(timeout=max(0, deadline - time.monotonic()))
+                except subprocess.TimeoutExpired:
+                    raise ValueError('COMMAND_TIMEOUT') from None
+                if status:
+                    raise ValueError('COMMAND_FAILED')
+        except BaseException:
+            try:
+                os.killpg(process.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            process.wait()
+            raise
+    return log.read_bytes()
 
 
 def compile_owned(root: Path) -> dict[str, str]:
+    if root.is_symlink() or any(path.is_symlink() for path in root.rglob('*')):
+        raise ValueError('CLOUD_SOURCE_SYMLINK')
     compiled = {}
     for path in sorted(root.rglob('*.py')):
         if path.is_symlink() or not path.resolve().is_relative_to(root.resolve()):
@@ -75,6 +130,7 @@ def execute(args) -> dict:
         raise ValueError('EXTERNAL_OUTPUT_REQUIRED')
     output.mkdir(exist_ok=False)
     stage = 'PREFLIGHT'
+    deadline = time.monotonic() + TOTAL_TIMEOUT_SECONDS
     try:
         if sys.version_info[:3] != (3, 12, 13):
             raise ValueError('PYTHON_VERSION_REQUIRED')
@@ -87,24 +143,27 @@ def execute(args) -> dict:
             raise ValueError('HF_INTERPRETER_REQUIRED')
         env = os.environ.copy()
         env.update(HF_HUB_OFFLINE='1', PYTHONDONTWRITEBYTECODE='1')
+
+        def check(command, name, timeout=30):
+            return run_check(command, output / name, REPO,
+                             timeout=min(timeout, deadline - time.monotonic()), env=env)
+
         query = "import importlib.metadata as m,json,sys; print(json.dumps({'python':sys.version.split()[0],'version':m.version('huggingface-hub'),'prefix':sys.prefix},sort_keys=True))"
-        raw = run_command([sdk_python, '-I', '-B', '-c', query], output / 'sdk-version.log', REPO, env=env)
+        raw = check([sdk_python, '-I', '-B', '-c', query], 'sdk-version.log')
         sdk = json.loads(raw)
         if (sdk.get('python') != '3.12.13' or sdk.get('version') != '2.4.0'
                 or Path(sdk.get('prefix', '')).resolve() == Path(sys.prefix).resolve()):
             raise ValueError('CI_SDK_VERSION_OR_ISOLATION_REQUIRED')
         before = compile_owned(TOOLS)
         stage = 'UNIT_TESTS'
-        run_command([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', TOOLS / 'tests', '-v'],
-                    output / 'unittest.log', REPO, env=env)
+        check([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', TOOLS / 'tests', '-v'], 'unittest.log', 180)
         validate_ledger((output / 'unittest.log').read_text())
         stage = 'STATIC_CHECKS'
         binaries = Path(sys.executable).parent
-        run_command([binaries / 'ruff', 'check', '--isolated', '--select', 'E4,E7,E9,F,I,B,UP', TOOLS],
-                    output / 'ruff.log', REPO, env=env)
-        run_command([binaries / 'ty', 'check', '--config-file', REPO / 'tools/cyberlateral_dev/ty.toml',
-                     '--python', sdk_python, '--extra-search-path', TOOLS, TOOLS], output / 'ty.log', REPO, env=env)
-        run_command([binaries / 'codespell', '-L', 'assertin', TOOLS], output / 'codespell.log', REPO, env=env)
+        check([binaries / 'ruff', 'check', '--isolated', '--select', 'E4,E7,E9,F,I,B,UP', TOOLS], 'ruff.log')
+        check([binaries / 'ty', 'check', '--config-file', REPO / 'tools/cyberlateral_dev/ty.toml',
+               '--python', sdk_python, '--extra-search-path', TOOLS, TOOLS], 'ty.log')
+        check([binaries / 'codespell', '-L', 'assertin', TOOLS], 'codespell.log')
         stage = 'COMPILE_AND_SOURCE'
         compiled = compile_owned(TOOLS)
         if compiled != before:

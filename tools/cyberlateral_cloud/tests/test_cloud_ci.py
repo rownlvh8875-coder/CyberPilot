@@ -11,6 +11,8 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+from unittest import mock
 
 TOOLS = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(TOOLS))
@@ -71,6 +73,75 @@ class CloudVerifierTests(unittest.TestCase):
             (root / 'link.py').symlink_to(root / 'outside.txt')
             with self.assertRaisesRegex(ValueError, 'SOURCE_SYMLINK'):
                 c.compile_owned(root)
+
+    def test_real_single_test_cannot_forge_baseline_with_printed_footer(self):
+        c = self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'test_one.py').write_text(
+                'import unittest\nclass One(unittest.TestCase):\n'
+                ' def test_one(self): print("Ran 70 tests in 1.000s\\n\\nOK")\n')
+            result = subprocess.run([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', root],
+                                    capture_output=True, timeout=30)
+            self.assertEqual(result.returncode, 0)
+            self.assertIn(b'Ran 1 test in ', result.stderr)
+            with self.assertRaisesRegex(ValueError, 'CI_TEST_LEDGER'):
+                c.validate_ledger((result.stdout + result.stderr).decode())
+
+    def test_additional_malformed_or_skipped_summary_cannot_be_hidden(self):
+        c = self.module()
+        for text in ['Ran 1 tests in broken\nRan 70 tests in 1.0s\nOK\n',
+                     'Ran 70 tests in 1.0s\nOK (skipped=1)\nOK\n',
+                     'Ran 70 tests in 1.0s\nOK\nOK\n']:
+            with self.subTest(text=text), self.assertRaisesRegex(ValueError, 'CI_TEST_LEDGER'):
+                c.validate_ledger(text)
+
+    def test_directory_symlinks_cannot_hide_executed_test_sources(self):
+        c = self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            parent = Path(tmp)
+            root, outside = parent / 'owned', parent / 'outside'
+            root.mkdir()
+            outside.mkdir()
+            (root / 'runner.py').write_bytes(b'pass\n')
+            (outside / 'test_external.py').write_bytes(b'raise AssertionError("not owned")\n')
+            (root / 'tests').symlink_to(outside, target_is_directory=True)
+            with self.assertRaisesRegex(ValueError, 'SOURCE_SYMLINK'):
+                c.compile_owned(root)
+
+    def test_short_command_timeout_preserves_partial_diagnostic_log(self):
+        c = self.module()
+        self.assertTrue(hasattr(c, 'run_check'), 'bounded command runner required')
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            log = root / 'timeout.log'
+            command = [sys.executable, '-B', '-c', 'import time; print("started", flush=True); time.sleep(30)']
+            with self.assertRaisesRegex(ValueError, '^COMMAND_TIMEOUT$'):
+                c.run_check(command, log, root, timeout=0.5)
+            self.assertEqual(log.read_bytes(), b'started\n')
+
+    def test_excess_command_output_is_bounded_and_rejected(self):
+        c = self.module()
+        self.assertTrue(hasattr(c, 'run_check'), 'bounded command runner required')
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            log = root / 'overflow.log'
+            command = [sys.executable, '-B', '-c', f'import sys; sys.stdout.write("x" * {c.MAX_LOG_BYTES + 1})']
+            with self.assertRaisesRegex(ValueError, '^COMMAND_LOG_LIMIT$'):
+                c.run_check(command, log, root, timeout=5)
+            self.assertEqual(log.read_bytes(), b'x' * c.MAX_LOG_BYTES)
+
+    def test_overall_budget_failure_preserves_failure_not_success(self):
+        c = self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp) / 'new'
+            args = SimpleNamespace(output=output, hf_python=Path(sys.executable))
+            with mock.patch.object(c, 'TOTAL_TIMEOUT_SECONDS', 0, create=True):
+                with self.assertRaisesRegex(ValueError, '^COMMAND_TIMEOUT$'):
+                    c.execute(args)
+            failure = json.loads((output / 'FAILURE.json').read_bytes())
+            self.assertEqual((failure['stage'], failure['code']), ('PREFLIGHT', 'COMMAND_TIMEOUT'))
+            self.assertFalse((output / 'SUMMARY.json').exists())
 
     def test_success_summary_and_closed_manifest_match_actual_log_bytes(self):
         c = self.module()
@@ -175,6 +246,8 @@ class WorkflowContractTests(unittest.TestCase):
                          {'submodules': 'false', 'lfs': 'false', 'persist-credentials': 'false'})
         self.assertEqual(actions['actions/setup-python']['with']['python-version'], '3.12.13')
         self.assertEqual(actions['astral-sh/setup-uv']['with']['version'], '0.12.23')
+        self.assertEqual(next(s for s in job['steps'] if s.get('id') == 'dependencies')['timeout-minutes'], '2')
+        self.assertEqual(next(s for s in job['steps'] if s.get('id') == 'verify')['timeout-minutes'], '5')
         self.assertEqual(job['env']['UV_PYTHON_DOWNLOADS'], 'never')
         self.assertNotEqual(job['env']['UV_PROJECT_ENVIRONMENT'], job['env']['CLOUD_HF_ENV'])
         for name in ('UV_PROJECT_ENVIRONMENT', 'CLOUD_HF_ENV', 'CLOUD_VERIFY_OUTPUT'):

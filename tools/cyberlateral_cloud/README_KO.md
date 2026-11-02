@@ -156,6 +156,8 @@ bytes 불변을 재검산합니다. 테스트 수는 실제 ledger에서 읽으�
 SHA256SUMS.txt를 만듭니다. 출력은 worktree 검사 기록이지 committed archive나 출처 인증이 아닙니다.
 실패는 exit2와 새 output의 FAILURE.json stage/code로 남기며, CI는 always() artifact로
 생성된 진단 로그를 보존합니다. bootstrap 자체가 실패하면 GitHub job 로그를 확인하세요.
+각 명령의 로그는 최대1MiB이며 초과 시 거절하고, timeout 전까지 받은 내용을 보존합니다.
+명령별30초(전체 unittest180초), 전체 명령 budget240초로 CI job 종료 전에 실패를 기록합니다.
 합성 모델/참조 unit 작업은 NONZERO/총합 미집계이며 차량 Gate를 열지 않습니다.
 
 ```bash
