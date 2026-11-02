@@ -1,14 +1,16 @@
 """Generate bounded synthetic inputs and retain existing independent verdicts."""
 
 import hashlib
-import json
 import platform
 import sys
 from pathlib import Path
 
 from . import scenario_workflow_run as workflow
+from .scenario_batch_input import _read
 from .scenario_explore_generate import ExplorationError, generate_cases, generation_record
+from .scenario_input import ScenarioError
 from .scenario_output import GATES, canonical
+from .scenario_report_data import ReportError, _json
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -41,6 +43,39 @@ def _preflight(output: Path) -> None:
 def _write(path: Path, raw: bytes) -> None:
     with path.open('xb') as stream:
         stream.write(raw)
+
+
+def _read_reference_record(path: Path, count: int) -> dict:
+    """Own bounded canonical bytes and check consumed shapes before traversal."""
+    try:
+        record = _json(_read(path))
+    except (ScenarioError, ReportError) as error:
+        raise ExplorationError('EXPLORATION_STAGE_RECORD') from error
+
+    def require(condition):
+        if not condition:
+            raise ExplorationError('EXPLORATION_STAGE_RECORD')
+
+    integers = {'input_count', 'completed_cases', 'matched_cases', 'different_cases', 'error_cases',
+                'input_rejections_confirmed', 'input_rejections_unverified', 'rejection_mismatch_cases',
+                'reference_steps', 'numerical_difference_count'}
+    require(type(record) is dict and integers | {'status', 'cases', 'reference_helper_counts'} <= record.keys())
+    require(type(record['status']) is str and all(type(record[key]) is int for key in integers))
+    require(type(record['cases']) is list and len(record['cases']) == count)
+    helpers = record['reference_helper_counts']
+    require(type(helpers) is dict and set(workflow.reference.COUNT_KEYS) <= helpers.keys())
+    require(all(type(helpers[key]) is int for key in workflow.reference.COUNT_KEYS))
+    fields = {'case_id', 'source_status', 'status', 'report', 'reference_steps', 'difference_count', 'first_difference', 'error_code'}
+    for number, case in enumerate(record['cases'], 1):
+        require(type(case) is dict and fields <= case.keys())
+        require(all(type(case[key]) is str for key in ['case_id', 'source_status', 'status']))
+        require(all(case[key] is None or type(case[key]) is int for key in ['reference_steps', 'difference_count']))
+        require(all(case[key] is None or type(case[key]) is str for key in ['report', 'error_code']))
+        first = case['first_difference']
+        require(first is None or (type(first) is dict and 'field' in first and type(first['field']) is str))
+        case_id = f'case-{number:03d}'
+        require(case['case_id'] == case_id and case['report'] in {None, case_id + '/REFERENCE_CHECK.json'})
+    return record
 
 
 def _findings(output: Path, checked: dict, payloads: dict[str, bytes]) -> list[dict]:
@@ -156,7 +191,7 @@ def run_exploration(seed: int, cases: int, steps: int, output: Path) -> dict:
             raise ExplorationError('EXPLORATION_SOURCE_CHANGED')
         if any((output / 'generated' / name).read_bytes() != raw for name, raw in payloads.items()):
             raise ExplorationError('EXPLORATION_INPUT_CHANGED')
-        checked = json.loads((output / 'workflow/reference/BATCH_REFERENCE_CHECK.json').read_bytes())
+        checked = _read_reference_record(output / 'workflow/reference/BATCH_REFERENCE_CHECK.json', cases)
         findings = _findings(output, checked, payloads)
         record = {'schema_version': 1, 'contract_id': 'R42_DECLARED_SYNTHETIC_BOUNDARY_EXPLORATION_V1',
                   'status': _verdict(produced, checked, cases, steps), 'parameters': generated['parameters'],
