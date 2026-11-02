@@ -79,6 +79,59 @@ Checksum/재다운로드는 내용 일관성이지 임의 local receipt의 출�
 Driver identity는 봉인 시점의 파일 bytes 기록입니다. 검증 도중 도구 코드를 동시에 편집하지
 마세요. 시작 시점 driver snapshot/원자적 실행 attestation은 현재 제공하지 않습니다.
 
+## 클라우드에서 읽기 전용 복구
+
+노트북 없이 시작하려면 GitHub 소스를 먼저 clone하고 정확한 source commit을 확보합니다.
+아래 명령은 그 Git object를 authority로 사용해 HF의 고정 archive와 SOURCE 전체를 비교한
+뒤, **새 외부 폴더에 DEV component만** 복구합니다. 원래 Git checkout의 dirty/untracked
+파일은 실행하거나 바꾸지 않습니다. 새 전체 Git repository/native/submodule/차량 환경을
+HF만으로 설치하는 명령이 아닙니다.
+
+uv0.12.23·CPython3.12.13과 위 전용 HF SDK2.4.0 환경이 필요합니다. 기존 Python을
+찾지 못하면 실패하며 암묵적 Python 다운로드·global install·환경 configuration 게시를
+하지 않습니다. orchestrator는 stdlib만 사용하므로 전용 SDK Python으로 시작할 수 있고,
+실제 합성 모델/참조는 새 app venv의 Python으로만 실행합니다.
+
+다음은 검증된 main be266bb4 archive를 사용하는 예입니다. 전체 SHA/revision을 그대로
+지정하며 `main`/`latest`/short SHA로 대체하지 않습니다. 출력 부모는 존재해야 하고
+`NEW-cloud-restore`는 없어야 합니다.
+
+```bash
+/workspace/.cache/cyberpilot-hf-client/bin/python -B tools/cyberlateral_cloud/cloud_restore.py run \
+  --repo-root "$PWD" \
+  --commit be266bb4abd66239741d940cbb7c546b1bd39b69 \
+  --archive-sha ee4470421574a33358b19b3f608b3be0a0b5c98db14bc7a40a4a4cdec5c26e0f \
+  --revision cc2b2728da4a717130be609efee73d636be76b3b \
+  --hf-repo jjuinho/cyberpilot-evidence \
+  --hf-python /workspace/.cache/cyberpilot-hf-client/bin/python \
+  --output /workspace/NEW-cloud-restore
+```
+
+동작: own private Dataset/pinned revision 검사 → archive+checksum bounded 강제 다운로드 →
+CRC/Manifest/SHA 검산 → SOURCE_IDENTITY/member/Git blob/mode/size/bytes 전부 비교 →
+검증된 SOURCE만 복구 → 새 venv/cache와 unchanged app lock → dependency/module origin/
+HF SDK 분리 확인 → R41 두 회차+완전한 첫 batch baseline 회차 → 기존 saved literal/VIEW/
+reference/Manifest 검증 → portable26파일의 HF 결과와 exact 비교 → source 불변 재검산.
+다운로드된 DRIVER는 실행하지 않습니다. 원격 쓰기/업로드는0입니다.
+
+완료 receipt는 `RESTORE_RESULT.json`의 `PRIVATE_HF_DEV_RESTORE_SYNTHETIC_PASS`입니다.
+`DEV_START.json`에서 복구 source/component/Python 경로를 확인합니다. source 하위는
+Git working tree가 아닌 고정 DEV snapshot입니다. 제품 변경은 원래 Git checkout의
+별도 개발 branch에서 진행하세요. `RESTORE_RESULT.json`이 없거나 FAIL이면 부분 결과를
+성공 환경으로 사용하지 마세요. 실패는 exit2와 `FAILURE.json` stage/code로 남으며,
+출력 충돌/입력 형식 오류는 기존 폴더에 실패 파일조차 쓰지 않습니다. 실패 폴더를 자동
+삭제/reset/덮어쓰지 않으므로 재시도는 새 출력 경로를 사용합니다.
+복구 명령 자체가 정상 실행된 뒤 `--hf-python` worker 경로가 없거나 실행 불가하면,
+안전하게 검증·생성한 새 출력 폴더에 `FAILURE.json`만 남깁니다. stage는 `SDK_PREFLIGHT`,
+code는 `HF_INTERPRETER_REQUIRED`입니다. HF에 접속하지 않으며 소스·app venv·성공
+receipt도 생성하지 않습니다. 명령을 시작할 launcher Python 자체가 실행되지 않는
+경우는 shell 오류이므로, 실행되지 않은 도구가 실패 파일을 남길 수는 없습니다.
+
+명시적 R41 모델972·선택-source 참조972호출을 실행합니다. unit test의 추가 합성 작업은
+NONZERO이며 별도 미집계입니다. 기본 복구는 새 venv의 전체700-test gate 재실행이나
+별도 물리 머신/실시간/차량 qualification이 아닙니다. F61·실제 r/dt·Controller·차량
+Runtime·CAN·실차 input/설치/활성화는0이고, 기존 gate는 그대로 닫혀 있습니다.
+
 ## 개발 검사
 
 ```bash
