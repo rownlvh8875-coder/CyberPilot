@@ -1,0 +1,19 @@
+{
+  "schema_version": 1, "scope": "SYNTHETIC_ONLY", "scenario_id": "R41_combined_boundaries",
+  "limits": {"STEER_MAX":16,"STEER_DELTA_UP":2,"STEER_DELTA_DOWN":5,"STEER_DRIVER_ALLOWANCE":0,"STEER_DRIVER_FACTOR":1,"STEER_DRIVER_MULTIPLIER":1},
+  "initial_state": {"index":50,"previous_requested":12,"previous_applied":6,"angle_counter":88},
+  "samples": [
+    {"index": 50, "request": 1.0, "driver": -13.5, "angle_deg": 85.0, "lat_active": true},
+    {"index": 51, "request": 0.09375, "driver": 0.0, "angle_deg": -85.0, "lat_active": true},
+    {"index": 52, "request": -1.0, "driver": 13.5, "angle_deg": 85.0, "lat_active": true},
+    {"index": 53, "request": -1.0, "driver": 12.5, "angle_deg": 85.0, "lat_active": true},
+    {"index": 54, "request": 1.0, "driver": -12.5, "angle_deg": 84.5, "lat_active": true},
+    {"index": 55, "request": 1.0, "driver": 0.0, "angle_deg": 85.0, "lat_active": false},
+    {"index": 56, "request": -1.0, "driver": 0.0, "angle_deg": 85.0, "lat_active": true},
+    {"index": 57, "request": -0.0, "driver": 0.0, "angle_deg": -85.0, "lat_active": true},
+    {"index": 58, "request": -0.09375, "driver": 0.0, "angle_deg": 85.0, "lat_active": true},
+    {"index": 59, "request": 1.0, "driver": -16.0, "angle_deg": 85.0, "lat_active": true},
+    {"index": 60, "request": 1.0, "driver": -17.0, "angle_deg": 85.0, "lat_active": true},
+    {"index": 61, "request": 0.03125, "driver": 0.0, "angle_deg": 84.5, "lat_active": true}
+  ]
+}

@@ -76,6 +76,13 @@ keeps mixed input rejection visible as exit1, and never treats rejected-only inp
 as numerical success. Model/reference work is NONZERO and reported separately;
 the unchanged public wheel and all closed vehicle gates remain unchanged.
 
+The [R41 combined-boundary and longer-sequence pack](docs/SYNTHETIC_REGRESSION_PACK_R41_KO.md)
+adds three fixed synthetic scenarios/324 invocations through this same workflow.
+Hand-derived selected literals and full selected-source parity cover interacting
+driver/rounding/sign/inactive boundaries and repeated state/fault-counter cycles.
+Coherent wrong saved histories must be detected; no new model/API, elapsed-time
+claim, actual rate policy or vehicle activation is introduced.
+
 R28 provides a [controlled internally constructed synthetic native adapter](docs/NATIVE_ADAPTER_R28.md).
 R29 connects it to the unchanged model for [two fixed state-carry profiles](docs/ADAPTER_SEQUENCE_R29.md).
 Neither is a generic external message reader, authenticated vehicle history or

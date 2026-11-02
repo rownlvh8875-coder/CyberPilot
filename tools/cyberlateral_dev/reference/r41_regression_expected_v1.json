@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "contract_id": "R41_FIXED_SYNTHETIC_BOUNDARY_SEQUENCE_PACK_V1",
+  "scope": "HAND_DERIVED_SELECTED_LITERALS_NOT_GENERIC_INDEPENDENT_ORACLE",
+  "row_columns": ["index", "previous_requested", "previous_applied", "angle_counter_before", "integer_request", "limited_command", "final_command", "steer_request", "angle_counter_after"],
+  "order": ["combined_boundaries_v1.json", "repeated_inactive_crossing_v1.json", "long_fault_cycles_v1.json"],
+  "total_samples": 324,
+  "cases": {
+    "combined_boundaries_v1.json": {
+      "sample_count": 12,
+      "rows": [
+        [50, 12, 6, 88, 16, 2, 2, true, 89],
+        [51, 16, 2, 89, 2, 2, 2, false, 90],
+        [52, 2, 2, 90, -16, -2, -2, false, 0],
+        [53, -16, -2, 0, -16, -4, -4, true, 1],
+        [54, -16, -4, 1, 16, 1, 1, true, 0],
+        [55, 16, 1, 0, 16, 3, 0, false, 0],
+        [56, 16, 0, 0, -16, -2, -2, true, 1],
+        [57, -16, -2, 1, 0, 0, 0, true, 2],
+        [58, 0, 0, 2, -2, -2, -2, true, 3],
+        [59, -2, -2, 3, 16, 0, 0, true, 4],
+        [60, 16, 0, 4, 16, 0, 0, true, 5],
+        [61, 16, 0, 5, 0, 0, 0, true, 0]
+      ],
+      "final_state": {"index": 62, "previous_requested": 0, "previous_applied": 0, "angle_counter": 0}
+    },
+    "repeated_inactive_crossing_v1.json": {
+      "sample_count": 128, "first_index": 100, "repetitions": 16,
+      "cycle_rows": [
+        [0, 16, 2, 0, -16, -2, -2, true, 1],
+        [1, -16, -2, 1, -16, -4, -4, true, 2],
+        [2, -16, -4, 2, 16, 1, 1, true, 0],
+        [3, 16, 1, 0, 16, 3, 0, false, 0],
+        [4, 16, 0, 0, -16, -2, -2, true, 1],
+        [5, -16, -2, 1, -16, -4, 0, false, 0],
+        [6, -16, 0, 0, 0, 0, 0, true, 0],
+        [7, 0, 0, 0, 16, 2, 2, true, 0]
+      ],
+      "final_state": {"index": 228, "previous_requested": 16, "previous_applied": 2, "angle_counter": 0}
+    },
+    "long_fault_cycles_v1.json": {
+      "sample_count": 184, "fault_period": 91, "complete_cycles": 2, "tail_samples": 2,
+      "suppressed_offsets": [89, 90, 180, 181],
+      "command_rule": "offset0:2; offsets1..183:4, including suppressed requests",
+      "counter_rule": "before=offset modulo91; after=(offset+1) modulo91",
+      "final_state": {"index": 184, "previous_requested": 4, "previous_applied": 4, "angle_counter": 2}
+    }
+  }
+}
