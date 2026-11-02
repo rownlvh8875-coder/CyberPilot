@@ -43,19 +43,19 @@ Files: create tools/cyberlateral_cloud/cloud_restore.py and tests/test_cloud_res
 Consumes Task1 CLI fetch receipt; produces `recover_source(repo,commit,archive,digest,destination) -> dict`
 and `verify_restored_workflows(component,workflows,archive,digest) -> dict`, plus CLI.
 
-- [ ] Tests RED for exact Git bytes despite dirty local source; altered/missing/extra source/manifest/mode/hash; existing/symlink paths; rejected CLI inputs with no success receipts; wrong saved portable data.
-- [ ] Implement minimal source proof/recovery, no DRIVER execution.
-- [ ] Add orchestration: SDK worker→Git verification→new uv env→runtime origin/dependencies→existing R41 three-run acceptance→HF exact portable comparison→source recheck→receipts.
-- [ ] Run focused tests then complete cloud suite GREEN. Run Ruff/Ty/Codespell/compile.
-- [ ] Run unchanged full DEV gate into new external evidence folder, expect700 tests/static/202compiles PASS.
-- [ ] Run real pinned-private new-command restore and classify negative existing-path/wrong-hash results. Commit task2.
+- [x] Tests RED for exact Git bytes despite dirty local source; altered/missing/extra source/manifest/mode/hash; existing/symlink paths; rejected CLI inputs with no success receipts; wrong saved portable data (14failures).
+- [x] Implement minimal source proof/recovery, no DRIVER execution.
+- [x] Add orchestration: SDK worker→Git verification→new uv env→runtime origin/dependencies→existing R41 three-run acceptance→HF exact portable comparison→source recheck→receipts.
+- [x] Focused14 GREEN, complete cloud68 GREEN; Ruff/Ty/Codespell/compile10 PASS.
+- [x] Unchanged full DEV gate PASS:700 tests/static/202compiles.
+- [x] Real pinned-private command twice PASS (project and SDK launcher), negative existing-path/wrong-hash rejected. Commit task2.
 
 ## Task 3: Usage and handoff
 
 Files: update tools/cyberlateral_cloud/README_KO.md; this plan/spec.
 
-- [ ] Document exact pinned private command, prerequisites, output scope, failure handling and gates.
-- [ ] Fresh whole-branch review from main baseline; fix important findings RED→GREEN and rerun suite.
+- [x] Document exact pinned private command, prerequisites, output scope, failure handling and gates.
+- [x] Fresh whole-branch immutable-tree review: Critical0/Important0, one safe preflight failure-recording/documentation minor deferred; final complete cloud suite rerun.
 - [ ] Preserve evidence and local feature commit. Report tested command/status and no push/merge/vehicle changes.
 
 ## Execution

@@ -9,14 +9,15 @@ from pathlib import Path
 
 TOOLS = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(TOOLS))
-from artifacts import seal
-from test_hf_archive import COMMIT, REPO, MemoryHub
+seal = importlib.import_module('artifacts').seal
+fixtures = importlib.import_module('test_hf_archive')
+COMMIT, REPO, MemoryHub = fixtures.COMMIT, fixtures.REPO, fixtures.MemoryHub
 
 REVISION = '9' * 40
 
 
 class ReadOnlyHub(MemoryHub):
-    def commit(self, *args):
+    def commit(self, repo, parent, files):
         raise AssertionError('fetch must never upload')
 
 
