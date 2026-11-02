@@ -8,6 +8,9 @@ inventory만으로 테스트 PASS, 최신 GitHub 상태 또는 실차 적격성�
 전체 CyberPilot 완성판·openpilot 설치본·물리 시뮬레이터가 아닙니다. 저장소 root에
 남아 있는 upstream 차량 설치 안내를 이 개발판의 설치 절차로 사용하지 마세요.
 
+추가 DEV 기능 R38은 [별도 참조 검사 안내](SCENARIO_REFERENCE_R38_KO.md)를 따릅니다.
+위 검토 commit과 source inventory의 R31–R37 기록을 R38 실행 증거로 사용하지 않습니다.
+
 ## 어떤 명령을 써야 하나
 
 | 목적 | 사용할 인터페이스 | 모델 작업과 제한 |
@@ -20,6 +23,7 @@ inventory만으로 테스트 PASS, 최신 GitHub 상태 또는 실차 적격성�
 | 여러 파일을 독립 실행 | tools/scenario_batch.py (R33) | 파일 사이에 상태를 전달하지 않음 |
 | 완전한 저장 batch 비교 | tools/scenario_compare.py (R34) | 새 모델0; 정확한 저장값 비교이지 산술 증명 아님 |
 | 고정 경계 회귀팩 | examples/r35 + 별도 literal (R35) | 정상6개/38호출과 의도적 거절3개 |
+| 완전한 저장 R31의 독립 참조 검사 | tools/scenario_reference_check.py (R38) | 새 public 모델0, 참조/helper 계산 NONZERO; 차량 승인 아님 |
 
 공개 wheel과 DEV 도구를 혼동하지 마세요. wheel은 설치 가능한0.3.0 모델/API와
 고정 CLI이며 R31~R34나 native 어댑터를 payload에 포함하지 않습니다. `python -m

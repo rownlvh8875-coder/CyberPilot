@@ -14,6 +14,13 @@ The [R37 validation-only mode](docs/SCENARIO_VALIDATION_R37_KO.md) checks declar
 synthetic input without model imports/execution or result files. Input acceptance
 is not model/source/runtime qualification or authenticated origin.
 
+The separate [R38 saved-scenario reference checker](docs/SCENARIO_REFERENCE_R38_KO.md)
+compares complete R31 records with the existing independent selected-source
+reference in a fresh worker. It does not rerun the public model; reference/helper
+arithmetic is explicitly NONZERO. Exact agreement is bounded synthetic parity,
+not whole-controller, input-origin or vehicle qualification. Portable subsets
+are not complete inputs for this checker.
+
 Custom declared-synthetic JSON files can now be run with the separate
 [R31 developer scenario CLI](docs/SYNTHETIC_SCENARIO_CLI_R31_KO.md) for full JSON/CSV
 traces. It preserves the public0.3.0 model/wheel; it is not a vehicle/log reader.
