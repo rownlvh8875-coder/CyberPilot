@@ -31,11 +31,11 @@
 
 **Interfaces:** `ReferenceBundle.load(path)`, `validate_checkout(root)`, `reference_name(segment, process)`, `reference_url(name)`, `verify_bytes(name, raw)`, `prepare_references(pairs, cache, fetch)` returning name-to-bytes dictionary. `ReferenceBundleError` provides stable diagnostic codes.
 
-- [ ] Fetch historical index/tree and compressed blobs outside the repository; verify declared producer, Git blob/size and calculate SHA256. Generate the tracked lock with apply_patch.
-- [ ] Write failing unittest cases for strict lock validation, immutable URLs, corrupt/missing bytes, wrong source/opendbc/schema, legacy override, cache precedence and all-selected preflight.
-- [ ] Run `python -B openpilot/selfdrive/test/process_replay/test_reference_bundle.py -v`; observe missing feature failures, then implement minimal validator.
-- [ ] Run the same command; all cases pass. No project/native modules loaded.
-- [ ] Commit scoped helper/lock/tests/design/plan after verification.
+- [x] Fetch historical index/tree and compressed blobs outside the repository; verify declared producer, Git blob/size and calculate SHA256. Generate the tracked lock with apply_patch.
+- [x] Write failing unittest cases for strict lock validation, immutable URLs, corrupt/missing bytes, wrong source/opendbc/schema, legacy override, cache precedence and all-selected preflight.
+- [x] Run `python -B openpilot/selfdrive/test/process_replay/test_reference_bundle.py -v`; observe missing feature failures, then implement minimal validator.
+- [x] Run the same command; all cases pass. No project/native modules loaded.
+- [x] Commit scoped helper/lock/tests/design/plan after verification.
 
 ### Task 2: Runner integration and verification
 
@@ -43,8 +43,12 @@
 
 **Interfaces:** stdlib preflight before heavy imports; selected-reference preparation before input logs; workers receive verified bytes.
 
-- [ ] Add regression tests executing the runner in an isolated fixture checkout with protected-source mismatch and `--update-refs`: exit2 without native imports or data/network work. Exercise worker byte consumption with controlled stdlib dependency doubles only.
-- [ ] Observe RED, then remove floating baseline selection/URL and integrate source/byte preflight; reject baseline updates and disagreeing legacy pins.
-- [ ] Run the complete new unittest suite; run the existing isolated DEV gate (700 tests expected before this root-only change), scoped Ruff/Ty/Codespell and in-memory compile.
-- [ ] Independently review the full diff and fix Important/Critical findings with RED→GREEN regressions.
-- [ ] Commit integration/docs after fresh verification. Report local commit, actual counts and root replay NOT_RUN; do not claim CI green or push/merge.
+- [x] Add regression tests executing the runner in an isolated fixture checkout with protected-source mismatch and `--update-refs`: exit2 without native imports or data/network work. Exercise worker byte consumption with controlled stdlib dependency doubles only.
+- [x] Observe RED, then remove floating baseline selection/URL and integrate source/byte preflight; reject baseline updates and disagreeing legacy pins.
+- [x] Run the complete new unittest suite; run the existing isolated DEV gate (700 tests expected before this root-only change), scoped Ruff/Ty/Codespell and in-memory compile.
+- [x] Independently review the full diff and fix Important/Critical findings with RED→GREEN regressions.
+- [x] Commit integration/docs after fresh verification. Report local commit, actual counts and root replay NOT_RUN; do not claim CI green or push/merge.
+
+Completed locally: 27 stdlib tests, 700 isolated DEV tests, scoped static checks and
+compressed-byte intake checks PASS. Independent Important finding fixed with an
+all/dirty submodule-ignore regression. Root replay/CI NOT_RUN; no push or merge.
