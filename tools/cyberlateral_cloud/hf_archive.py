@@ -8,7 +8,7 @@ import tempfile
 import zipfile
 from pathlib import Path
 
-from artifacts import sha, verify_archive
+from artifacts import MAX_TOTAL_BYTES, new_restore_directory, sha, verify_archive
 
 
 def call(code, function, *args):
@@ -80,6 +80,45 @@ def backup(archive: Path, digest: str, repo: str, source_commit: str, hub) -> di
             'scope': 'EXACT_CONTENT_CONSISTENCY_NOT_ORIGIN_AUTHENTICATION_OR_RUNTIME_QUALIFICATION'}
 
 
+def fetch(digest: str, repo: str, source_commit: str, revision: str, output: Path, hub) -> dict:
+    for value, length in [(digest, 64), (source_commit, 40), (revision, 40)]:
+        if not isinstance(value, str) or re.fullmatch('[0-9a-f]{' + str(length) + '}', value) is None:
+            raise ValueError('FULL_ARCHIVE_SOURCE_AND_REVISION_REQUIRED')
+    output = new_restore_directory(output)
+    preflight(repo, hub)
+    pinned = call('STORAGE_AUTH_OR_REPOSITORY_FAILED', hub.info, repo, revision)
+    if pinned['private'] is not True:
+        raise ValueError('PRIVATE_REPOSITORY_REQUIRED')
+    if pinned['sha'] != revision:
+        raise ValueError('REMOTE_COMMIT_INVALID')
+    prefix = f'runs/{source_commit}/{digest}/'
+    output.mkdir(exist_ok=False)
+    raw = call('STORAGE_DOWNLOAD_FAILED', hub.download, repo, prefix + 'EVIDENCE.zip', revision, MAX_TOTAL_BYTES)
+    checksum = (digest + '  EVIDENCE.zip\n').encode()
+    sidecar = call('STORAGE_DOWNLOAD_FAILED', hub.download, repo, prefix + 'SHA256SUMS.txt', revision, len(checksum))
+    if sidecar != checksum:
+        raise ValueError('ARCHIVE_CHECKSUM_MISMATCH')
+    if len(raw) > MAX_TOTAL_BYTES:
+        raise ValueError('ARCHIVE_LIMIT')
+    archive = output / 'EVIDENCE.zip'
+    with archive.open('xb') as stream:
+        stream.write(raw)
+    with (output / 'SHA256SUMS.txt').open('xb') as stream:
+        stream.write(sidecar)
+    verified = verify_archive(archive, digest)
+    with zipfile.ZipFile(archive) as bundle:
+        if json.loads(bundle.read('SOURCE_IDENTITY.json')).get('commit') != source_commit:
+            raise ValueError('SOURCE_COMMIT_MISMATCH')
+    after = call('STORAGE_AUTH_OR_REPOSITORY_FAILED', hub.info, repo, revision)
+    if after['private'] is not True or preflight(repo, hub)['private'] is not True:
+        raise ValueError('PRIVATE_REPOSITORY_REQUIRED')
+    if after['sha'] != revision:
+        raise ValueError('REMOTE_COMMIT_INVALID')
+    return {'status': 'PRIVATE_FETCH_EXACT', 'repo_id': repo, 'private': True, 'commit_sha': revision,
+            'prefix': prefix, 'archive_sha256': digest, 'archive_bytes': verified['archive_bytes'],
+            'member_count': verified['member_count'], 'verified_files': 2, 'remote_writes': 0}
+
+
 class SdkHub:
     def __init__(self):
         # Deliberately imported only in this isolated worker, never model/tests.
@@ -128,14 +167,22 @@ def main(argv=None):
     put.add_argument('--archive', type=Path, required=True)
     put.add_argument('--archive-sha', required=True)
     put.add_argument('--source-commit', required=True)
+    get = commands.add_parser('fetch')
+    get.add_argument('--repo-id', required=True)
+    get.add_argument('--archive-sha', required=True)
+    get.add_argument('--source-commit', required=True)
+    get.add_argument('--revision', required=True)
+    get.add_argument('--output', type=Path, required=True)
     args = parser.parse_args(argv)
     try:
         hub = SdkHub()
         if args.action == 'preflight':
             info = preflight(args.repo_id, hub)
             result = {'status': 'PRIVATE_STORAGE_READY', 'repo_id': args.repo_id, **info}
-        else:
+        elif args.action == 'backup':
             result = backup(args.archive, args.archive_sha, args.repo_id, args.source_commit, hub)
+        else:
+            result = fetch(args.archive_sha, args.repo_id, args.source_commit, args.revision, args.output, hub)
     except Exception as error:
         code = str(error) if type(error) is ValueError and re.fullmatch(r'[A-Z0-9_]{1,80}', str(error)) else 'STORAGE_WORKER_FAILED'
         print(json.dumps({'status': 'FAILED', 'code': code}, sort_keys=True))

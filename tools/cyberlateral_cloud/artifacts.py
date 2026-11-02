@@ -29,6 +29,16 @@ def new_path(path: Path) -> None:
         raise FileExistsError('OUTPUT_EXISTS')
 
 
+def new_restore_directory(path: Path) -> Path:
+    path = path.absolute()
+    new_path(path)
+    if any(parent.is_symlink() for parent in path.parents):
+        raise ValueError('RESTORE_PATH_SYMLINK')
+    if not path.parent.is_dir():
+        raise ValueError('OUTPUT_PARENT_REQUIRED')
+    return path
+
+
 def validate_names(names) -> None:
     seen = set()
     reserved = {'CON', 'PRN', 'AUX', 'NUL'} | {f'{p}{i}' for p in ['COM', 'LPT'] for i in range(1, 10)}
