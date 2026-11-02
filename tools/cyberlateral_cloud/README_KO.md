@@ -134,6 +134,30 @@ Runtime·CAN·실차 input/설치/활성화는0이고, 기존 gate는 그대로 
 
 ## 개발 검사
 
+`CyberLateral Cloud Tooling`은 cloud 도구·DEV component·관련 workflow/root README 변경의
+main push/PR에서 자동 실행됩니다. 기존 app700 workflow는 변경하지 않습니다.
+read-only contents 권한과 pinned actions/Python3.12.13/uv0.12.23을 사용하며,
+runner 임시 폴더에 app/SDK 환경을 각각 만듭니다. 이 job에 HF_TOKEN이나 HF secret을
+전달하지 않습니다. HF_HUB_OFFLINE=1이며 실제 private HF backup/restore integration을
+실행하지 않습니다. 패키지 설치의 PyPI/GitHub 네트워크와 live HF API를 구분합니다.
+
+로컬에서도 같은 공통 검증 명령을 사용할 수 있습니다. 앱 DEV 환경에서 실행하고,
+SDK2.4.0 전용 Python을 별도로 지정합니다. output 부모는 존재하고 마지막 경로는 새 경로여야 합니다.
+
+```bash
+tools/cyberlateral_dev/.venv/bin/python -B tools/cyberlateral_cloud/ci_verify.py \
+  --hf-python /workspace/.cache/cyberpilot-hf-client/bin/python \
+  --output /workspace/NEW-cloud-verification
+```
+
+전체 cloud unittest, Ruff/Ty/Codespell, cloud-owned Python compile을 실행하고 source
+bytes 불변을 재검산합니다. 테스트 수는 실제 ledger에서 읽으며 기존 baseline70보다
+적거나 실패/skip/중복/잘린 기록이면 거절합니다. 성공 후에만 SUMMARY.json과 closed
+SHA256SUMS.txt를 만듭니다. 출력은 worktree 검사 기록이지 committed archive나 출처 인증이 아닙니다.
+실패는 exit2와 새 output의 FAILURE.json stage/code로 남기며, CI는 always() artifact로
+생성된 진단 로그를 보존합니다. bootstrap 자체가 실패하면 GitHub job 로그를 확인하세요.
+합성 모델/참조 unit 작업은 NONZERO/총합 미집계이며 차량 Gate를 열지 않습니다.
+
 ```bash
 tools/cyberlateral_dev/.venv/bin/python -B -m unittest discover -s tools/cyberlateral_cloud/tests -v
 tools/cyberlateral_dev/.venv/bin/ruff check --isolated --select E4,E7,E9,F,I,B,UP tools/cyberlateral_cloud

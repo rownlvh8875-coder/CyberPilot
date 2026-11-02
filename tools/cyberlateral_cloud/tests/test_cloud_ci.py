@@ -1,8 +1,11 @@
 """Verifier behavior: real files/CLI and independent expected ledger/manifest values."""
 
+import fnmatch
 import hashlib
 import importlib
 import json
+import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -118,6 +121,101 @@ class CloudVerifierTests(unittest.TestCase):
             output = root / 'new'
             result = subprocess.run([sys.executable, '-B', TOOLS / 'ci_verify.py', '--hf-python', root / 'missing',
                                      '--output', output], capture_output=True, timeout=30)
+            self.assertEqual(result.returncode, 2)
+            self.assertEqual(json.loads(result.stdout)['code'], 'HF_INTERPRETER_REQUIRED')
+            self.assertEqual(json.loads((output / 'FAILURE.json').read_bytes())['stage'], 'PREFLIGHT')
+            self.assertEqual([p.name for p in output.iterdir()], ['FAILURE.json'])
+
+
+class WorkflowContractTests(unittest.TestCase):
+    def configuration(self):
+        path = TOOLS.parents[1] / '.github/workflows/cyberlateral-cloud.yaml'
+        self.assertTrue(path.is_file(), 'automatic cloud workflow missing')
+        yaml = importlib.import_module('yaml')
+        return yaml.load(path.read_text(), Loader=yaml.BaseLoader)
+
+    def test_changed_cloud_and_app_paths_trigger_but_unrelated_files_do_not(self):
+        config = self.configuration()
+        events = config['on']
+        self.assertIn('workflow_dispatch', events)
+        for event in ('push', 'pull_request'):
+            policy = events[event]
+            for path, wanted in [('tools/cyberlateral_cloud/ci_verify.py', True),
+                                 ('tools/cyberlateral_cloud/tests/test_cloud_ci.py', True),
+                                 ('tools/cyberlateral_cloud/hf-requirements.lock', True),
+                                 ('tools/cyberlateral_dev/project/model.py', True),
+                                 ('.github/workflows/cyberlateral-cloud.yaml', True),
+                                 ('.github/workflows/cyberlateral-dev.yaml', True),
+                                 ('README.md', True), ('openpilot/car.py', False)]:
+                with self.subTest(event=event, path=path):
+                    actual = 'main' in policy['branches'] and any(fnmatch.fnmatchcase(path, p) for p in policy['paths'])
+                    self.assertEqual(actual, wanted)
+            self.assertNotIn('ci/cloud-verification', policy['branches'])
+
+    def test_read_only_job_has_no_hf_credential_or_secret_binding(self):
+        config = self.configuration()
+        self.assertEqual(config['permissions'], {'contents': 'read'})
+        job = config['jobs']['verify']
+        self.assertEqual(job.get('permissions', config['permissions']), {'contents': 'read'})
+        self.assertEqual(job['runs-on'], 'ubuntu-24.04')
+        self.assertEqual(job['env']['HF_HUB_OFFLINE'], '1')
+        self.assertNotIn('HF_TOKEN', job['env'])
+        self.assertNotIn('secrets', config)
+        self.assertNotIn('secrets', job)
+        self.assertIsNone(re.search(r'\$\{\{\s*secrets\.', json.dumps(config)))
+        self.assertEqual(job.get('continue-on-error', 'false'), 'false')
+
+    def test_pinned_bootstrap_and_separate_temp_environments(self):
+        job = self.configuration()['jobs']['verify']
+        actions = {s['uses'].split('@')[0]: s for s in job['steps'] if 'uses' in s}
+        self.assertEqual(set(actions), {'actions/checkout', 'actions/setup-python', 'astral-sh/setup-uv', 'actions/upload-artifact'})
+        for action in actions.values():
+            self.assertRegex(action['uses'].split('@')[1], r'^[0-9a-f]{40}$')
+        self.assertEqual(actions['actions/checkout']['with'],
+                         {'submodules': 'false', 'lfs': 'false', 'persist-credentials': 'false'})
+        self.assertEqual(actions['actions/setup-python']['with']['python-version'], '3.12.13')
+        self.assertEqual(actions['astral-sh/setup-uv']['with']['version'], '0.12.23')
+        self.assertEqual(job['env']['UV_PYTHON_DOWNLOADS'], 'never')
+        self.assertNotEqual(job['env']['UV_PROJECT_ENVIRONMENT'], job['env']['CLOUD_HF_ENV'])
+        for name in ('UV_PROJECT_ENVIRONMENT', 'CLOUD_HF_ENV', 'CLOUD_VERIFY_OUTPUT'):
+            self.assertTrue(job['env'][name].startswith('${{ runner.temp }}/'))
+
+    def test_failure_artifact_is_always_uploaded_without_masking_verify(self):
+        steps = self.configuration()['jobs']['verify']['steps']
+        upload = next(s for s in steps if s.get('uses', '').startswith('actions/upload-artifact@'))
+        self.assertEqual(upload['if'], 'always()')
+        self.assertEqual(upload['with']['name'], 'cyberlateral-cloud-verification')
+        self.assertEqual(upload['with']['path'], '${{ env.CLOUD_VERIFY_OUTPUT }}')
+        self.assertEqual(upload['with']['if-no-files-found'], 'error')
+        verify = next(s for s in steps if s.get('id') == 'verify')
+        self.assertEqual(verify.get('continue-on-error', 'false'), 'false')
+        self.assertNotIn('if', verify)
+
+    def run_verification_step(self, root, output):
+        steps = self.configuration()['jobs']['verify']['steps']
+        step = next(s for s in steps if s.get('id') == 'verify')
+        env = os.environ.copy()
+        env.update(UV_PROJECT_ENVIRONMENT=sys.prefix, CLOUD_HF_ENV=str(root / 'missing-sdk'),
+                   CLOUD_VERIFY_OUTPUT=str(output), HF_HUB_OFFLINE='1')
+        return subprocess.run(['bash', '-e', '-c', step['run']], cwd=TOOLS.parents[1],
+                              env=env, capture_output=True, timeout=30)
+
+    def test_actual_ci_step_refuses_existing_output_without_overwriting(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            output = root / 'existing'
+            output.mkdir()
+            (output / 'keep').write_bytes(b'preserved')
+            result = self.run_verification_step(root, output)
+            self.assertEqual(result.returncode, 2)
+            self.assertEqual(json.loads(result.stdout)['code'], 'OUTPUT_EXISTS')
+            self.assertEqual([p.name for p in output.iterdir()], ['keep'])
+
+    def test_actual_ci_step_preserves_missing_sdk_failure_not_success(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            output = root / 'new'
+            result = self.run_verification_step(root, output)
             self.assertEqual(result.returncode, 2)
             self.assertEqual(json.loads(result.stdout)['code'], 'HF_INTERPRETER_REQUIRED')
             self.assertEqual(json.loads((output / 'FAILURE.json').read_bytes())['stage'], 'PREFLIGHT')
