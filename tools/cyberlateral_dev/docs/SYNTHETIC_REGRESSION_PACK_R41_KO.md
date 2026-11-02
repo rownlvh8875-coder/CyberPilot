@@ -23,6 +23,12 @@ flag/command 규칙과 최종 state를 등록했습니다. 모델 출력에서 g
 넣지 않습니다. R39는 전체 saved rows/final_state를 별도 selected-source worker와 비교합니다.
 선택 literal 일치와 source parity는 서로 다른 검사이며, 범용 독립 oracle을 뜻하지 않습니다.
 
+R41 후속 보완에서는 long-fault의 sample_count184/fault_period91/complete_cycles2/
+tail_samples2/suppressed_offsets[89,90,180,181]을 행 전개 전에 타입까지 정확히 검증합니다.
+그 뒤 검증된 주기·호출 수·offset을 사용합니다. 잘못된 값·누락·int를 float/bool로 바꾼
+메타데이터는 거절하며 기존 상수로 조용히 대체하지 않습니다. 이는 고정 회귀팩의
+기대값 기록 보호이고, 변경 가능한 fault 정책 API나 실제 시간/차량 정책이 아닙니다.
+
 합성 MAX16/UP2/DOWN5는 실제 scale·차량 한계·F61 r이 아닙니다. driver clip 뒤에
 history/rate clip이 적용되므로 +3.5 driver 경계가 있어도 이전 applied-4이면 최종1입니다.
 비활성화 sample은 제한값3/-4를 계산하고도 최종 applied/counter를0으로 만듭니다.

@@ -28,12 +28,17 @@ def selected_rows(want):
 def assert_saved_case(test, filename, result):
     want = expected_contract(test)['cases'][filename]
     rows = row_projection(result)
-    if 'fault_period' in want:
+    if filename == 'long_fault_cycles_v1.json':
+        # This is a fixed preregistered pack, not a configurable fault policy.
+        # Check types as well as values before consuming any numeric metadata.
+        fields = ['sample_count', 'fault_period', 'complete_cycles', 'tail_samples', 'suppressed_offsets']
+        assert_typed(test, [want.get(field) for field in fields], [184, 91, 2, 2, [89, 90, 180, 181]])
+        count, period, suppressed = want['sample_count'], want['fault_period'], want['suppressed_offsets']
         # Independent closed-form fixture expectation: two complete91-call cycles,
         # not a call into the model, its helpers, or the selected-source worker.
         expected_rows = [[i, None if i == 0 else 4, 0 if i == 0 else 2 if i == 1 else 4,
-                          i % 91, 4, 2 if i == 0 else 4, 2 if i == 0 else 4,
-                          i not in [89, 90, 180, 181], (i + 1) % 91] for i in range(184)]
+                          i % period, 4, 2 if i == 0 else 4, 2 if i == 0 else 4,
+                          i not in suppressed, (i + 1) % period] for i in range(count)]
         assert_typed(test, rows, expected_rows)
     else:
         assert_typed(test, rows, selected_rows(want))
