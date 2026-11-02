@@ -56,7 +56,7 @@ Files: update tools/cyberlateral_cloud/README_KO.md; this plan/spec.
 
 - [x] Document exact pinned private command, prerequisites, output scope, failure handling and gates.
 - [x] Fresh whole-branch immutable-tree review: Critical0/Important0, one safe preflight failure-recording/documentation minor deferred; final complete cloud suite rerun.
-- [ ] Preserve evidence and local feature commit. Report tested command/status and no push/merge/vehicle changes.
+- [x] Preserve evidence and local feature commits; report verified cloud68/DEV700, two real private restores, one deferred minor, and no push/merge/vehicle changes.
 
 ## Execution
 
