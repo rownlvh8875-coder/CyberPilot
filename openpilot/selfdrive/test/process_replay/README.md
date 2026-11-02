@@ -17,6 +17,8 @@ There is no latest-upstream fallback.
 
 Before native imports, the runner checks its protected tracked-source projection,
 root build/dependency inputs, submodule pointers, checked-out opendbc and schema.
+The dirty check explicitly disables Git submodule-ignore settings, so they cannot
+hide modified tracked submodule sources.
 The replay harness and independent `tools/cyberlateral_dev` / `cyberlateral_cloud`
 directories are excluded from the producer projection. A shallow checkout is
 supported: the historical producer object need not exist locally.
@@ -33,6 +35,9 @@ argument abbreviation is disabled. Changing producer/source/schema requires a
 separate reviewed baseline update; widening numerical tolerances is not a fix.
 These checks establish declared source/reference consistency, not complete build,
 runtime-environment, actual deployment or vehicle qualification.
+The supported preflight entry is direct script execution as used by this
+workflow. Package/`python -m` invocation can load the existing eager package
+initializer first and is not a native-free preflight interface.
 
 Run the stdlib-only fixture tests without importing the eager replay package:
 

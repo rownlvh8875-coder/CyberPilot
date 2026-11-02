@@ -111,7 +111,7 @@ class ReferenceBundle:
     if hashlib.sha256(projection).hexdigest() != self.record['source_fingerprint_sha256']:
       raise ReferenceBundleError('PRODUCER_SOURCE_MISMATCH')
     excluded = tuple(':(exclude)' + name.rstrip('/') for name in EXCLUDED)
-    changed = _git(root, 'diff', '--name-only', 'HEAD', '--', *SOURCE_PATHS, *excluded)
+    changed = _git(root, 'diff', '--ignore-submodules=none', '--name-only', 'HEAD', '--', *SOURCE_PATHS, *excluded)
     if changed:
       raise ReferenceBundleError('PRODUCER_SOURCE_DIRTY')
     dbc = root / 'opendbc_repo'

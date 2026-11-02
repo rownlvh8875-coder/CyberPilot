@@ -196,6 +196,7 @@ class TestReferenceBundle(unittest.TestCase):
     (dbc / 'opendbc/car').mkdir(parents=True)
     raw = b'synthetic schema fixture\n'
     (dbc / 'opendbc/car/car.capnp').write_bytes(raw)
+    (dbc / 'opendbc/limits.py').write_text('limit = 1\n')
     def dbc_git(*args):
       return subprocess.run(['git', '-C', str(dbc), *args], capture_output=True, check=True).stdout
     dbc_git('init', '-q')
@@ -225,6 +226,14 @@ class TestReferenceBundle(unittest.TestCase):
     record['opendbc_schema_git_blob'] = 'f' * 40
     with self.assertRaisesRegex(self.module.ReferenceBundleError, 'OPENDBC_SCHEMA_MISMATCH'):
       self.bundle(record).validate_checkout(self.root)
+
+  def test_git_ignore_submodules_config_cannot_hide_tracked_source_changes(self):
+    record, git = self.complete_checkout()
+    (self.root / 'opendbc_repo/opendbc/limits.py').write_text('limit = 2\n')
+    for setting in ('all', 'dirty'):
+      git('config', 'diff.ignoreSubmodules', setting)
+      with self.subTest(setting=setting), self.assertRaisesRegex(self.module.ReferenceBundleError, 'PRODUCER_SOURCE_DIRTY'):
+        self.bundle(record).validate_checkout(self.root)
 
   def test_harness_and_offline_tooling_commits_do_not_redefine_producer(self):
     record, git = self.complete_checkout()
