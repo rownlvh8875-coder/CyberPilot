@@ -89,6 +89,13 @@ and preserves complete inputs for every nonmatching case. Input feature counts
 are not exhaustive branch coverage; this does not alter the public0.3.0 model,
 select a vehicle rate policy or authorize actual vehicle inputs/activation.
 
+The separate [R43 multi-seed synthetic campaign](docs/SCENARIO_CAMPAIGN_R43_KO.md)
+runs one to four explicit unique R42 seeds in order, validates every complete child
+record/manifest, and retains all numerical differences and reference errors with
+whole reproducers. State never crosses seeds/cases. A completed ERROR outranks a
+numerical DIFFERENT; fatal/changed/incomplete evidence never gets a final campaign
+marker. No new model/oracle, minimization, rate policy, upload or vehicle authority.
+
 R28 provides a [controlled internally constructed synthetic native adapter](docs/NATIVE_ADAPTER_R28.md).
 R29 connects it to the unchanged model for [two fixed state-carry profiles](docs/ADAPTER_SEQUENCE_R29.md).
 Neither is a generic external message reader, authenticated vehicle history or

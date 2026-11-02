@@ -35,20 +35,20 @@ project/test_scenario_campaign.py, project/test_scenario_campaign_cli.py under t
 Modify tools/cyberlateral_dev/README.md; create docs/SCENARIO_CAMPAIGN_R43_KO.md.
 Interfaces exactly as spec; evidence helper→runner→CLI, no other task dependency.
 
-- [ ] Evidence tests first: closed real files/nested/portable hashes; modified/extra/missing bytes,
+- [x] Evidence tests first: closed real files/nested/portable hashes; modified/extra/missing bytes,
       file/directory symlinks/FIFO, size/count bounds. Run focused evidence module: expected RED (missing module), then GREEN.
-- [ ] Runner tests first: real2seeds[42,43]/1case/16steps→MATCH/model32/reference32;
+- [x] Runner tests first: real2seeds[42,43]/1case/16steps→MATCH/model32/reference32;
       strict bad parameters create no output; unchanged gates, order and deterministic records.
       Actual wrong saved projection under real R39→DIFFERENT, full reproducer16samples;
       reference worker ERROR for first seed still preserves later seed; both statuses visible.
       Fatal second seed preserves first with no marker; late source/child mutation and malformed returned/saved
       fields fail closed. Run focused runner: expected RED then GREEN.
-- [ ] CLI tests first: real command32steps, help/unknown flags/missing/duplicate seed/output collisions,
+- [x] CLI tests first: real command32steps, help/unknown flags/missing/duplicate seed/output collisions,
       real error exits and no forbidden frontend imports. Expected RED then GREEN.
-- [ ] Add thin CLI/source identity and Korean docs, re-run all campaign tests (expected all PASS).
-- [ ] Full unchanged component gate (all discovered tests/static/own compile/wheel checks PASS),
+- [x] Add thin CLI/source identity and Korean docs, all22 focused tests PASS; nonfinite returned-value regression RED→GREEN.
+- [x] Full component gate722tests/static/208owncompile/unchanged wheel PASS,
       full cloud ci_verify (91/static/12compile PASS), explicit two campaigns [42,43]/2cases/32steps
-      each128 model/reference + R34 MATCH64samples per seed, no tolerance. Log actual totals.
+      each128 model/reference + R34 MATCH64samples per seed, no tolerance. Real CLI DIFFERENT/ERROR exits1/2 PASS.
 - [ ] Commit implementation; fresh whole-branch reviewer from97191972. Important fixes ONE RED→GREEN
       pass + full green suite; minors/rulings ledgered. No second reviewer.
 - [ ] Normal push/new PR/attach, verify exact-head cloud/app/root CI and artifacts; do not merge main or upload HF.
