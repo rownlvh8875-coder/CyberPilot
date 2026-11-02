@@ -185,6 +185,32 @@ class ExplorationTests(unittest.TestCase):
             self.assertEqual(generated['gates']['R_BUDGET'], 'UNRESOLVED')
             self.assertEqual(generated['gates']['STATIC_EVIDENCE_GATE'], 'FAIL')
 
+    def test_reference_summary_and_case_count_contradictions_cannot_match(self):
+        m = self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp) / 'out'
+            m.run_exploration(42, 1, 16, output)
+            produced = json.loads((output / 'workflow/WORKFLOW.json').read_bytes())
+            original = json.loads((output / 'workflow/reference/BATCH_REFERENCE_CHECK.json').read_bytes())
+            mutations = [('completed_cases', 0), ('matched_cases', 0), ('reference_steps', 0), ('error_cases', 1),
+                         ('input_count', 0), ('different_cases', 1), ('input_rejections_confirmed', 1),
+                         ('input_rejections_unverified', 1), ('rejection_mismatch_cases', 1),
+                         ('numerical_difference_count', 1), ('matched_cases', True)]
+            for field, value in mutations:
+                changed = json.loads(json.dumps(original))
+                changed[field] = value
+                with self.subTest(field=field, value=value):
+                    self.assertEqual(m._verdict(produced, changed, 1, 16), 'ERROR')
+            for field, value in [('reference_steps', 0), ('reference_steps', True), ('difference_count', 1),
+                                 ('difference_count', False), ('source_status', 'REJECTED')]:
+                changed = json.loads(json.dumps(original))
+                changed['cases'][0][field] = value
+                with self.subTest(case_field=field, value=value):
+                    self.assertEqual(m._verdict(produced, changed, 1, 16), 'ERROR')
+            changed = json.loads(json.dumps(original))
+            changed['reference_helper_counts']['limiter_traced'] = 0
+            self.assertEqual(m._verdict(produced, changed, 1, 16), 'ERROR')
+
 
 class ExplorationCLITests(unittest.TestCase):
     def tool(self):

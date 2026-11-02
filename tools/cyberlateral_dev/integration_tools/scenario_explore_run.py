@@ -73,6 +73,28 @@ def _verdict(produced: dict, checked: dict, cases: int, steps: int) -> str:
                     and type(produced['reference_steps']) is int and produced['reference_steps'] == cases * steps)
     if not exact_counts or any(case['status'] not in {'MATCH', 'DIFFERENT'} for case in checked['cases']):
         return 'ERROR'
+    for case in checked['cases']:
+        if (case['source_status'] != 'COMPLETE' or type(case['reference_steps']) is not int or case['reference_steps'] != steps
+                or type(case['difference_count']) is not int or case['difference_count'] < 0 or case['error_code'] is not None
+                or (case['status'] == 'MATCH' and (case['difference_count'] != 0 or case['first_difference'] is not None))
+                or (case['status'] == 'DIFFERENT' and (case['difference_count'] == 0 or type(case['first_difference']) is not dict))):
+            return 'ERROR'
+    expected = {'input_count': cases, 'completed_cases': cases, 'matched_cases': sum(c['status'] == 'MATCH' for c in checked['cases']),
+                'different_cases': sum(c['status'] == 'DIFFERENT' for c in checked['cases']), 'error_cases': 0,
+                'input_rejections_confirmed': 0, 'input_rejections_unverified': 0, 'rejection_mismatch_cases': 0,
+                'reference_steps': cases * steps, 'numerical_difference_count': sum(c['difference_count'] for c in checked['cases'])}
+    if len(checked['cases']) != cases or any(type(checked[k]) is not int or checked[k] != v for k, v in expected.items()):
+        return 'ERROR'
+    helpers = {'compile_calls': cases, 'selected_definitions_compiled': 2 * cases, 'limiter_direct': 0,
+               'limiter_traced': cases * steps, 'fault_explicit': cases * steps, 'fault_default': 0, 'traced_clip_calls': 2 * cases * steps}
+    for counts in [checked['reference_helper_counts'], produced['reference_helper_counts']]:
+        if counts.keys() != helpers.keys() or any(type(counts[k]) is not int or counts[k] != v for k, v in helpers.items()):
+            return 'ERROR'
+    if (type(produced['input_count']) is not int or produced['input_count'] != cases
+            or type(produced['reference_difference_count']) is not int
+            or produced['reference_difference_count'] != expected['numerical_difference_count']
+            or produced['reference_status'] != checked['status']):
+        return 'ERROR'
     if (produced['status'] == 'VERIFIED' and checked['status'] == 'MATCH'
             and all(case['status'] == 'MATCH' for case in checked['cases']) and checked['numerical_difference_count'] == 0):
         return 'MATCH'
