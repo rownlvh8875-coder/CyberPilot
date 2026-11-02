@@ -121,6 +121,11 @@ Git working tree가 아닌 고정 DEV snapshot입니다. 제품 변경은 원래
 성공 환경으로 사용하지 마세요. 실패는 exit2와 `FAILURE.json` stage/code로 남으며,
 출력 충돌/입력 형식 오류는 기존 폴더에 실패 파일조차 쓰지 않습니다. 실패 폴더를 자동
 삭제/reset/덮어쓰지 않으므로 재시도는 새 출력 경로를 사용합니다.
+복구 명령 자체가 정상 실행된 뒤 `--hf-python` worker 경로가 없거나 실행 불가하면,
+안전하게 검증·생성한 새 출력 폴더에 `FAILURE.json`만 남깁니다. stage는 `SDK_PREFLIGHT`,
+code는 `HF_INTERPRETER_REQUIRED`입니다. HF에 접속하지 않으며 소스·app venv·성공
+receipt도 생성하지 않습니다. 명령을 시작할 launcher Python 자체가 실행되지 않는
+경우는 shell 오류이므로, 실행되지 않은 도구가 실패 파일을 남길 수는 없습니다.
 
 명시적 R41 모델972·선택-source 참조972호출을 실행합니다. unit test의 추가 합성 작업은
 NONZERO이며 별도 미집계입니다. 기본 복구는 새 venv의 전체700-test gate 재실행이나

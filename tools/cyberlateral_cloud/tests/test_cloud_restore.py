@@ -161,6 +161,31 @@ class RestoreTests(unittest.TestCase):
             self.assertIn('FULL_', json.loads(result.stdout)['code'])
             self.assertFalse((root / 'new').exists())
 
+    def assert_sdk_preflight_failure(self, root, sdk):
+        repo, _, commit, _ = self.fixture(root)
+        output = root / 'new'
+        result = self.cli(repo, commit, output, **{'hf-python': str(sdk)})
+        self.assertEqual(result.returncode, 2)
+        self.assertEqual(json.loads(result.stdout), {'status': 'FAILED', 'code': 'HF_INTERPRETER_REQUIRED'})
+        self.assertTrue((output / 'FAILURE.json').is_file(), 'SDK preflight must persist failure evidence')
+        self.assertEqual(json.loads((output / 'FAILURE.json').read_bytes()),
+                         {'status': 'FAILED', 'stage': 'SDK_PREFLIGHT', 'code': 'HF_INTERPRETER_REQUIRED',
+                          'outputs_preserved': True})
+        self.assertEqual([path.name for path in output.iterdir()], ['FAILURE.json'])
+
+    def test_missing_interpreter_records_sdk_preflight_failure(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.assert_sdk_preflight_failure(root, root / 'missing-sdk-python')
+
+    def test_nonexecutable_interpreter_records_sdk_preflight_failure(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            sdk = root / 'nonexecutable-sdk-python'
+            sdk.write_bytes(b'raise AssertionError("this must not execute")\n')
+            sdk.chmod(0o644)
+            self.assert_sdk_preflight_failure(root, sdk)
+
     def test_worker_failure_preserves_stage_without_dev_success_or_environment(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

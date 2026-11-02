@@ -88,11 +88,12 @@ def execute(args) -> dict:
     if output.resolve().is_relative_to(repo):
         raise ValueError('EXTERNAL_OUTPUT_REQUIRED')
     sdk_python = args.hf_python.absolute()
-    if not sdk_python.is_file() or not os.access(sdk_python, os.X_OK):
-        raise ValueError('HF_INTERPRETER_REQUIRED')
     output.mkdir(exist_ok=False)
-    stage = 'FETCH'
+    stage = 'SDK_PREFLIGHT'
     try:
+        if not sdk_python.is_file() or not os.access(sdk_python, os.X_OK):
+            raise ValueError('HF_INTERPRETER_REQUIRED')
+        stage = 'FETCH'
         env = os.environ.copy()
         env.update(PYTHONDONTWRITEBYTECODE='1', HF_HUB_DISABLE_PROGRESS_BARS='1',
                    UV_CACHE_DIR=str(output / 'uv-cache'), UV_PYTHON_DOWNLOADS='never',
