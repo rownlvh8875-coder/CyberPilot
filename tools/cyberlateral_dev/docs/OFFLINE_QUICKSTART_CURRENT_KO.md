@@ -12,6 +12,8 @@ inventory만으로 테스트 PASS, 최신 GitHub 상태 또는 실차 적격성�
 위 검토 commit과 source inventory의 R31–R37 기록을 R38 실행 증거로 사용하지 않습니다.
 추가 R39는 [완전한 저장 batch의 일괄 참조 검사](SCENARIO_BATCH_REFERENCE_R39_KO.md)입니다.
 위 historical source inventory를 R39 구현·실행 증거로 사용하지 않습니다.
+R40은 [합성 입력 통합 실행·독립 검증](SCENARIO_WORKFLOW_R40_KO.md)입니다. 기존 모델과
+도구를 연결하는 별도 DEV 명령이며 위 historical source inventory의 검토 범위를 바꾸지 않습니다.
 
 ## 어떤 명령을 써야 하나
 
@@ -27,6 +29,7 @@ inventory만으로 테스트 PASS, 최신 GitHub 상태 또는 실차 적격성�
 | 고정 경계 회귀팩 | examples/r35 + 별도 literal (R35) | 정상6개/38호출과 의도적 거절3개 |
 | 완전한 저장 R31의 독립 참조 검사 | tools/scenario_reference_check.py (R38) | 새 public 모델0, 참조/helper 계산 NONZERO; 차량 승인 아님 |
 | 완전한 저장 batch의 독립 참조 검사 | tools/scenario_batch_reference_check.py (R39) | case별 R38·거절 사유 구분; 새 public 모델0, 참조/helper NONZERO |
+| 합성 입력부터 리포트·독립 참조·선택 회귀까지 | tools/scenario_workflow.py (R40) | 실제 모델/참조 작업 NONZERO; 입력 거절·오류·차이를 분리 |
 
 공개 wheel과 DEV 도구를 혼동하지 마세요. wheel은 설치 가능한0.3.0 모델/API와
 고정 CLI이며 R31~R34나 native 어댑터를 payload에 포함하지 않습니다. `python -m
@@ -115,6 +118,12 @@ uv run --project "$r36_component" --locked --offline python -B "$r36_component/t
 입력 회귀로 취급하지 않습니다. --candidate는 파일 역할 이름이며 차량 Candidate가 아닙니다.
 
 ## 6. R35 회귀팩과 종료 코드
+
+위 단계를 한 명령으로 연결하려면 [R40 안내](SCENARIO_WORKFLOW_R40_KO.md)의
+`tools/scenario_workflow.py --input ... --output <새 폴더> [--baseline <완전한 R33 batch>]`를
+사용합니다. workflow root/공유 portable ZIP이 아니라 그 안의 완전한 batch가 baseline입니다.
+R40은 mixed 입력에 exit1, 전부 거절에는 NO_COMPLETED_CASES/exit1을 내며 수치 성공으로
+표현하지 않습니다. 추가 모델·참조 수와 전체 nested checksum은 종합 결과를 확인하세요.
 
 정확한9개 입력 순서·literal·counter1→0 검증은
 [R35 안내](SYNTHETIC_REGRESSION_PACK_R35_KO.md)를 따릅니다. 임의 glob으로 순서를 정하거나
