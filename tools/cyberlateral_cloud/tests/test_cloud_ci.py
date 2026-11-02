@@ -205,6 +205,26 @@ class WorkflowContractTests(unittest.TestCase):
         yaml = importlib.import_module('yaml')
         return yaml.load(path.read_text(), Loader=yaml.BaseLoader)
 
+    def runtime_paths(self, job, root):
+        step = next(s for s in job['steps'] if s.get('id') == 'paths')
+        env_file = root / 'github-env'
+        env = os.environ.copy()
+        env.update(RUNNER_TEMP=str(root / 'runner temp'), GITHUB_ENV=str(env_file))
+        result = subprocess.run(['bash', '-e', '-c', step['run']], env=env, capture_output=True, timeout=10)
+        self.assertEqual((result.returncode, result.stdout, result.stderr), (0, b'', b''))
+        return dict(line.split('=', 1) for line in env_file.read_text().splitlines())
+
+    def test_runner_paths_are_created_at_runtime_not_invalid_job_context(self):
+        job = self.configuration()['jobs']['verify']
+        self.assertNotIn('runner.', json.dumps(job.get('env', {})))
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            paths = self.runtime_paths(job, root)
+            self.assertEqual(paths, {
+                'UV_PROJECT_ENVIRONMENT': str(root / 'runner temp/cyberlateral-cloud-app'),
+                'CLOUD_HF_ENV': str(root / 'runner temp/cyberlateral-cloud-sdk'),
+                'CLOUD_VERIFY_OUTPUT': str(root / 'runner temp/cyberlateral-cloud-verification')})
+
     def test_changed_cloud_and_app_paths_trigger_but_unrelated_files_do_not(self):
         config = self.configuration()
         events = config['on']
@@ -249,9 +269,11 @@ class WorkflowContractTests(unittest.TestCase):
         self.assertEqual(next(s for s in job['steps'] if s.get('id') == 'dependencies')['timeout-minutes'], '2')
         self.assertEqual(next(s for s in job['steps'] if s.get('id') == 'verify')['timeout-minutes'], '5')
         self.assertEqual(job['env']['UV_PYTHON_DOWNLOADS'], 'never')
-        self.assertNotEqual(job['env']['UV_PROJECT_ENVIRONMENT'], job['env']['CLOUD_HF_ENV'])
-        for name in ('UV_PROJECT_ENVIRONMENT', 'CLOUD_HF_ENV', 'CLOUD_VERIFY_OUTPUT'):
-            self.assertTrue(job['env'][name].startswith('${{ runner.temp }}/'))
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            paths = self.runtime_paths(job, root)
+            self.assertEqual(len(set(paths.values())), 3)
+            self.assertTrue(all(value.startswith(str(root / 'runner temp') + '/') for value in paths.values()))
 
     def test_failure_artifact_is_always_uploaded_without_masking_verify(self):
         steps = self.configuration()['jobs']['verify']['steps']

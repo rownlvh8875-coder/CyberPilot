@@ -27,10 +27,13 @@ jobs:
       UV_PYTHON_PREFERENCE: only-system
       UV_PYTHON_DOWNLOADS: never
       UV_LINK_MODE: copy
-      UV_PROJECT_ENVIRONMENT: ${{ runner.temp }}/cyberlateral-cloud-app
-      CLOUD_HF_ENV: ${{ runner.temp }}/cyberlateral-cloud-sdk
-      CLOUD_VERIFY_OUTPUT: ${{ runner.temp }}/cyberlateral-cloud-verification
     steps:
+      - name: Select isolated runtime directories
+        id: paths
+        run: |
+          printf 'UV_PROJECT_ENVIRONMENT=%s/cyberlateral-cloud-app\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
+          printf 'CLOUD_HF_ENV=%s/cyberlateral-cloud-sdk\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
+          printf 'CLOUD_VERIFY_OUTPUT=%s/cyberlateral-cloud-verification\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           submodules: false
