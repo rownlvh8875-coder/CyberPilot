@@ -83,6 +83,12 @@ driver/rounding/sign/inactive boundaries and repeated state/fault-counter cycles
 Coherent wrong saved histories must be detected; no new model/API, elapsed-time
 claim, actual rate policy or vehicle activation is introduced.
 
+The separate [R42 deterministic synthetic boundary explorer](docs/SCENARIO_EXPLORATION_R42_KO.md)
+generates bounded seed-based R31 inputs, runs the existing R40 independent checks,
+and preserves complete inputs for every nonmatching case. Input feature counts
+are not exhaustive branch coverage; this does not alter the public0.3.0 model,
+select a vehicle rate policy or authorize actual vehicle inputs/activation.
+
 R28 provides a [controlled internally constructed synthetic native adapter](docs/NATIVE_ADAPTER_R28.md).
 R29 connects it to the unchanged model for [two fixed state-carry profiles](docs/ADAPTER_SEQUENCE_R29.md).
 Neither is a generic external message reader, authenticated vehicle history or
