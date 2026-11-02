@@ -58,5 +58,5 @@ Produces standalone --input repeat/--output/optional --baseline CLI, canonical s
   Ruff/Ty/Codespell/memory compile and unchanged wheel SHA3f3db36f62aa79ba97e4536a183b7e685a9d06c4e264d1fec9dd3bbda7c4d73c.
 - [x] Execute real sign/resumed, R35mixed and baseline workflow in two independent new output roots;
   compare root portable files and validate all full manifests, preserving any failed output.
-- [ ] Fresh whole-branch review; rule on every declined scope, fix significant findings RED→GREEN
+- [x] Fresh whole-branch review; rule on every declined scope, fix significant findings RED→GREEN
   plus full suite, record deferred minors. Local commit and finish branch without remote mutation.
