@@ -4,7 +4,7 @@ import hashlib
 import math
 
 from .scenario_input import parse_scenario
-from .scenario_output import canonical
+from .scenario_output import GATES, canonical
 
 GENERATOR_ID = 'R42_DETERMINISTIC_BOUNDARY_GENERATOR_V1'
 
@@ -31,8 +31,9 @@ def _case(seed: int, number: int, steps: int) -> bytes:
     scale = (16, 8, 32, 5)[number % 4]
     limits = {'STEER_MAX': scale, 'STEER_DELTA_UP': 0 if number % 4 == 2 else 2, 'STEER_DELTA_DOWN': 5,
               'STEER_DRIVER_ALLOWANCE': 0, 'STEER_DRIVER_FACTOR': 1, 'STEER_DRIVER_MULTIPLIER': 1}
-    state = {'index': 0, 'previous_requested': None, 'previous_applied': 0, 'angle_counter': 0} if number == 0 else {
-        'index': 5, 'previous_requested': 4, 'previous_applied': -3, 'angle_counter': 88 + (number - 1) % 3}
+    start = 0 if number == 0 else 5
+    state = {'index': start, 'previous_requested': None, 'previous_applied': 0, 'angle_counter': 0} if number == 0 else {
+        'index': start, 'previous_requested': 4, 'previous_applied': -3, 'angle_counter': 88 + (number - 1) % 3}
     half = 0.5 / scale
     requests = (1.0, -1.0, half, 1.5 / scale, math.nextafter(half, 0.0), math.nextafter(half, 1.0),
                 -half, -1.5 / scale, -0.0, 0.0, 1.0, -1.0, 1.0, -1.0, 0.5, -0.5)
@@ -50,7 +51,7 @@ def _case(seed: int, number: int, steps: int) -> bytes:
             driver = _pick((0.0, 0.25, -0.25, 20.5, -20.5, 1024.0, -1024.0), seed, number, offset, 'driver')
             angle = _pick(angles + (180.0, -180.0), seed, number, offset, 'angle')
             active = _pick((True, True, True, False), seed, number, offset, 'active')
-        samples.append({'index': state['index'] + offset, 'request': request, 'driver': driver,
+        samples.append({'index': start + offset, 'request': request, 'driver': driver,
                         'angle_deg': angle, 'lat_active': active})
     raw = canonical({'schema_version': 1, 'scope': 'SYNTHETIC_ONLY', 'scenario_id': f'R42_{seed}_{number + 1}',
                      'limits': limits, 'initial_state': state, 'samples': samples})
@@ -68,7 +69,7 @@ def generation_record(seed: int, cases: int, steps: int, payloads: dict[str, byt
     if (type(payloads) is not dict or any(type(k) is not str or type(v) is not bytes for k, v in payloads.items())
             or payloads != generate_cases(seed, cases, steps)):
         raise ExplorationError('EXPLORATION_GENERATION_MISMATCH')
-    rows = []
+    rows: list[dict] = []
     for name, raw in payloads.items():
         spec = parse_scenario(raw)
         samples = spec.samples
@@ -93,4 +94,5 @@ def generation_record(seed: int, cases: int, steps: int, payloads: dict[str, byt
             'coverage_claim': 'INPUT_FEATURE_COUNTS_NOT_EXHAUSTIVE_BRANCH_COVERAGE',
             'state_scope': 'DECLARED_SYNTHETIC_INITIAL_STATE_NOT_OBSERVED_PREHISTORY',
             'time_semantics': 'INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME',
-            'normalization_authority': 'SYNTHETIC_STRESS_PARAMETERS_NOT_VEHICLE_SCALE_OR_RATE_POLICY'}
+            'normalization_authority': 'SYNTHETIC_STRESS_PARAMETERS_NOT_VEHICLE_SCALE_OR_RATE_POLICY',
+            'model_executions': 0, 'gates': dict(GATES)}
