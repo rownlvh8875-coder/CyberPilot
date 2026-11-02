@@ -21,6 +21,13 @@ arithmetic is explicitly NONZERO. Exact agreement is bounded synthetic parity,
 not whole-controller, input-origin or vehicle qualification. Portable subsets
 are not complete inputs for this checker.
 
+The separate [R39 saved-batch reference checker](docs/SCENARIO_BATCH_REFERENCE_R39_KO.md)
+applies existing R38 references to every complete case in a validated owned R33
+snapshot. It distinguishes confirmed input rejections, unavailable raw inputs,
+numerical differences and reference errors in one JSON/Korean summary. It does
+not rerun the public model; reference/helper work is NONZERO. Rejected-only or
+unverifiable batches never become vacuous numerical MATCH results.
+
 Custom declared-synthetic JSON files can now be run with the separate
 [R31 developer scenario CLI](docs/SYNTHETIC_SCENARIO_CLI_R31_KO.md) for full JSON/CSV
 traces. It preserves the public0.3.0 model/wheel; it is not a vehicle/log reader.
