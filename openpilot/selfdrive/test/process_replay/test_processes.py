@@ -5,6 +5,26 @@ import os
 import sys
 import traceback
 from collections import defaultdict
+from pathlib import Path
+
+if __package__:
+  from .reference_bundle import ReferenceBundle, ReferenceBundleError
+else:
+  from reference_bundle import ReferenceBundle, ReferenceBundleError
+
+# Validate declared source/schema compatibility before importing native replay code.
+if __name__ == "__main__":
+  if '--update-refs' in sys.argv[1:]:
+    print('REFERENCE_UPDATE_REQUIRES_SEPARATE_APPROVAL', file=sys.stderr)
+    sys.exit(2)
+  try:
+    REFERENCE_BUNDLE = ReferenceBundle.load(Path(__file__).with_name('reference_bundle.json'))
+    REFERENCE_BUNDLE.validate_legacy_pin(Path(__file__).with_name('ref_commit'))
+    REFERENCE_BUNDLE.validate_checkout(Path(__file__).resolve().parents[4])
+  except ReferenceBundleError as error:
+    print(f'REFERENCE_PREFLIGHT_REJECTED:{error}', file=sys.stderr)
+    sys.exit(2)
+
 from tqdm import tqdm
 from typing import Any
 from opendbc.car.car_helpers import interface_names, interfaces
@@ -67,26 +87,21 @@ segments = [
 excluded_interfaces = {brand for brand, platforms in interface_names.items()
                        if all(interfaces[platform].get_non_essential_params(platform).dashcamOnly for platform in platforms)} | {"body"}
 
-BASE_URL = "https://raw.githubusercontent.com/commaai/ci-artifacts/refs/heads/process-replay/"
-REF_COMMIT_FN = os.path.join(PROC_REPLAY_DIR, "ref_commit")
 EXCLUDED_PROCS = {"modeld", "dmonitoringmodeld"}
 
 
 def run_test_process(data):
-  segment, cfg, args, cur_log_fn, ref_log_path, lr_dat = data
-  ref_error = None
+  segment, cfg, args, cur_log_fn, ref_dat, lr_dat = data
   try:
-    ref_log_msgs = list(LogReader(ref_log_path))
+    ref_log_msgs = list(LogReader.from_bytes(ref_dat))
   except Exception:
-    # New routes have no ref yet, still replay and publish new refs.
-    ref_log_msgs = []
-    ref_error = f"Failed to load reference {ref_log_path}:\n{traceback.format_exc()}"
+    # Failed references must not turn into an unreferenced replay/golden run.
+    ref_error = f"Failed to decode verified reference:\n{traceback.format_exc()}"
+    return (segment, cfg.proc_name, ref_error, ref_error)
   lr = LogReader.from_bytes(lr_dat)
   res, log_msgs = test_process(cfg, lr, segment, ref_log_msgs, cur_log_fn, args.ignore_fields, args.ignore_msgs)
   # save logs so we can update refs
   save_log(cur_log_fn, log_msgs)
-  if ref_error is not None:
-    return (segment, cfg.proc_name, ref_error, ref_error)
   try:
     diff_data = diff_process(cfg, ref_log_msgs, log_msgs)
   except Exception:
@@ -133,7 +148,7 @@ if __name__ == "__main__":
 
   cpu_count = os.cpu_count() or 1
 
-  parser = argparse.ArgumentParser(description="Regression test to identify changes in a process's output")
+  parser = argparse.ArgumentParser(description="Regression test to identify changes in a process's output", allow_abbrev=False)
   parser.add_argument("--whitelist-procs", type=str, nargs="*", default=all_procs,
                       help="Whitelist given processes from the test (e.g. controlsd)")
   parser.add_argument("--whitelist-cars", type=str, nargs="*", default=all_cars,
@@ -147,7 +162,7 @@ if __name__ == "__main__":
   parser.add_argument("--ignore-msgs", type=str, nargs="*", default=[],
                       help="Msgs to ignore (e.g. carEvents)")
   parser.add_argument("--update-refs", action="store_true",
-                      help="Updates reference logs using current commit")
+                      help="Rejected: reference generation requires a separate approved workflow")
   parser.add_argument("-j", "--jobs", type=int, default=max(cpu_count - 2, 1),
                       help="Max amount of parallel jobs")
   args = parser.parse_args()
@@ -160,13 +175,9 @@ if __name__ == "__main__":
   os.makedirs(os.path.dirname(FAKEDATA), exist_ok=True)
 
   if args.update_refs:
-    assert full_test, "Need to run full test when updating refs"
-
-  try:
-    with open(REF_COMMIT_FN) as f:
-      ref_commit = f.read().strip()
-  except FileNotFoundError:
-    ref_commit = URLFile(BASE_URL + "ref_commit", cache=False).read().decode().strip()
+    print('REFERENCE_UPDATE_REQUIRES_SEPARATE_APPROVAL', file=sys.stderr)
+    sys.exit(2)
+  ref_commit = REFERENCE_BUNDLE.producer_commit
 
   cur_commit = get_commit()
   if not cur_commit:
@@ -178,6 +189,15 @@ if __name__ == "__main__":
   if full_test:
     untested = (set(interface_names) - set(excluded_interfaces)) - {c.lower() for c in tested_cars}
     assert len(untested) == 0, f"Cars missing routes: {str(untested)}"
+
+  selected_pairs = [(segment, cfg.proc_name) for car_brand, segment in segments for cfg in CONFIGS
+                    if car_brand in tested_cars and cfg.proc_name in tested_procs
+                    and (cfg.proc_name in ('card', 'controlsd', 'lagd') or car_brand in ('HYUNDAI', 'TOYOTA'))]
+  try:
+    verified_references = REFERENCE_BUNDLE.prepare_references(selected_pairs, Path(FAKEDATA), lambda url: URLFile(url).read())
+  except ReferenceBundleError as error:
+    print(f'REFERENCE_PREFLIGHT_REJECTED:{error}', file=sys.stderr)
+    sys.exit(2)
 
   log_paths: defaultdict[str, dict[str, dict[str, str]]] = defaultdict(lambda: defaultdict(dict))
   with concurrent.futures.ProcessPoolExecutor(max_workers=args.jobs) as pool:
@@ -201,14 +221,10 @@ if __name__ == "__main__":
           continue
 
         cur_log_fn = os.path.join(FAKEDATA, f"{segment}_{cfg.proc_name}_{cur_commit}.zst".replace("|", "_"))
-        if args.update_refs:  # reference logs will not exist if routes were just regenerated
-          route, seg_num = segment.rsplit("--", 1)
-          ref_log_path = get_url(route, seg_num, "rlog.zst")
-        else:
-          ref_log_fn = os.path.join(FAKEDATA, f"{segment}_{cfg.proc_name}_{ref_commit}.zst".replace("|", "_"))
-          ref_log_path = ref_log_fn if os.path.exists(ref_log_fn) else BASE_URL + os.path.basename(ref_log_fn)
+        ref_name = REFERENCE_BUNDLE.reference_name(segment, cfg.proc_name)
+        ref_log_path = REFERENCE_BUNDLE.reference_url(ref_name)
 
-        pool_args.append((segment, cfg, args, cur_log_fn, ref_log_path, log_data[segment]))
+        pool_args.append((segment, cfg, args, cur_log_fn, verified_references[ref_name], log_data[segment]))
 
         log_paths[segment][cfg.proc_name]['ref'] = ref_log_path
         log_paths[segment][cfg.proc_name]['new'] = cur_log_fn
@@ -221,24 +237,18 @@ if __name__ == "__main__":
       diffs.append((segment, proc, diff_data))
 
   diff_short, diff_long, failed = format_diff(results, log_paths, ref_commit)
-  if not args.update_refs:
-    with open(os.path.join(PROC_REPLAY_DIR, "diff.txt"), "w") as f:
-      f.write(diff_long)
-    print(diff_short)
+  with open(os.path.join(PROC_REPLAY_DIR, "diff.txt"), "w") as f:
+    f.write(diff_long)
+  print(diff_short)
 
-    try:
-      diff_report(diffs, segments)
-    except Exception:
-      print(f"failed to generate diff report:\n{traceback.format_exc()}")
+  try:
+    diff_report(diffs, segments)
+  except Exception:
+    print(f"failed to generate diff report:\n{traceback.format_exc()}")
 
-    if failed:
-      print("TEST FAILED")
-    else:
-      print("TEST SUCCEEDED")
-
+  if failed:
+    print("TEST FAILED")
   else:
-    with open(REF_COMMIT_FN, "w") as f:
-      f.write(cur_commit)
-    print(f"\n\nUpdated reference logs for commit: {cur_commit}")
+    print("TEST SUCCEEDED")
 
   sys.exit(int(failed))

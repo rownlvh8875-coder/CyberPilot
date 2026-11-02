@@ -7,6 +7,42 @@ If the test fails, make sure that you didn't unintentionally change anything. If
 Use `test_processes.py` to run the test locally.
 Log files are cached by default. Use `DISABLE_FILEREADER_CACHE='1' test_processes.py` to disable caching.
 
+### Pinned reference bundle (this fork)
+
+`reference_bundle.json` binds producer `c8fb906815530460ed156f14e09e1f312bb0f851`
+to existing `commaai/ci-artifacts` revision
+`eab2cc2b1f6de3773617937868442520c7ef554c`. All66 compressed references were checked
+against that revision's Git blobs and recorded size/SHA256; none were regenerated.
+There is no latest-upstream fallback.
+
+Before native imports, the runner checks its protected tracked-source projection,
+root build/dependency inputs, submodule pointers, checked-out opendbc and schema.
+The replay harness and independent `tools/cyberlateral_dev` / `cyberlateral_cloud`
+directories are excluded from the producer projection. A shallow checkout is
+supported: the historical producer object need not exist locally.
+
+Before downloading input segments or decoding/replaying anything, all selected
+reference names and compressed bytes must match the lock. Downloads use the
+immutable artifact revision. Existing local fakedata references must also match;
+a corrupt cache is rejected, not silently replaced. Workers consume the verified
+bytes, not a reopened path. Decode failures do not create unreferenced replay runs.
+
+Preflight failures exit2 with a diagnostic code. A legacy `ref_commit` may agree
+with the lock but cannot override it. `--update-refs` is explicitly rejected and
+argument abbreviation is disabled. Changing producer/source/schema requires a
+separate reviewed baseline update; widening numerical tolerances is not a fix.
+These checks establish declared source/reference consistency, not complete build,
+runtime-environment, actual deployment or vehicle qualification.
+
+Run the stdlib-only fixture tests without importing the eager replay package:
+
+```sh
+python -B openpilot/selfdrive/test/process_replay/test_reference_bundle.py -v
+```
+
+This command performs no native log decode, replay, Controller or Runtime work.
+The tests and compressed-byte checks do not establish end-to-end replay PASS.
+
 Currently the following processes are tested:
 
 * controlsd
@@ -32,18 +68,16 @@ optional arguments:
   --blacklist-cars BLACKLIST_CARS       Blacklist given cars from the test (e.g. HONDA)
   --ignore-fields IGNORE_FIELDS         Extra fields or msgs to ignore (e.g. driverMonitoringState.events)
   --ignore-msgs IGNORE_MSGS             Msgs to ignore (e.g. onroadEvents)
-  --update-refs                         Updates reference logs using current commit
+  --update-refs                         Rejected; requires a separate approved reference-generation workflow
 ```
 
 ## Forks
 
-openpilot forks can use this test with their own reference logs, by default `test_proccesses.py` saves logs locally.
-
-To generate new logs:
-
-`./test_processes.py`
-
-Then, check in the new logs using git-lfs. Make sure to also update the `ref_commit` file to the current commit.
+This fork uses the reviewed bundle above. Ordinary comparison runs save current
+outputs but never approve or adopt them as goldens. Baseline generation, review
+and publication are separate work: a changed producer requires a compatible
+source/schema inventory, immutable artifact revision and independently checked
+byte hashes. Merely editing `ref_commit` is insufficient.
 
 ## API
 
