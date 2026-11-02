@@ -72,7 +72,7 @@ and existing test-only saved-record render/rehash utilities. No new product inte
   Expected: all inherited/new tests, Ruff/Ty/Codespell, compile and unchanged wheel PASS.
 - [x] Run two explicit R40 workflows in external evidence directories. Check complete
   manifests, canonical portable hashes, and input preservation; record actual counts.
-- [ ] Review the complete branch with a fresh reviewer, resolve important findings,
+- [x] Review the complete branch with a fresh reviewer, resolve important findings,
   rerun verification as needed, and commit locally without push/merge/CI.
 
 ## Execution notes
@@ -80,7 +80,13 @@ and existing test-only saved-record render/rehash utilities. No new product inte
 Task1's eight-test fixture RED/GREEN preceded Task2 consumer-test writing rather
 than both test files preceding the first fixture execution. No new product code
 was introduced; real coherent saved-copy mutations prove checker sensitivity.
-Final gate:665 tests, Ruff/Ty/Codespell,195 own compiles, unchanged sealed wheel
+Initial R41 gate:665 tests, Ruff/Ty/Codespell,195 own compiles, unchanged sealed wheel
 PASS. Two explicit workflows:324 model/reference steps each;26 portable payloads
-repeat exactly. Fresh review:0 Critical/Important,1 nonblocking metadata-only
-drift guard deferred in the fixed long-case test helper; no runtime defect found.
+repeat exactly. That initial review found0 Critical/Important issues and deferred
+one nonblocking metadata-only drift guard; no runtime defect was found.
+
+The metadata follow-up closes that finding with typed validation of the five
+fixed numeric metadata fields and six regression tests (RED16 subcases, then
+GREEN). Its complete gate passed671 tests/Ruff/Ty/Codespell/196 own compiles,
+with the same sealed wheel and26 portable output bytes. The original numeric
+fixtures and model/API remain unchanged. This supersedes the deferred finding.
