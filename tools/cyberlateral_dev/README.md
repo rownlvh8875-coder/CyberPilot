@@ -68,6 +68,14 @@ Their recorded counts and prospective features describe R30, not current DEV-too
 availability. These files and the historical stage descriptions retain their
 original scope; use the current guide above for R31–R37 workflows.
 
+The separate [R40 integrated synthetic workflow](docs/SCENARIO_WORKFLOW_R40_KO.md)
+connects input validation, batch execution and existing graphs, independent batch
+reference checking, and optional saved-batch regression in one DEV command.
+It snapshots readable inputs and an optional complete baseline before model work,
+keeps mixed input rejection visible as exit1, and never treats rejected-only input
+as numerical success. Model/reference work is NONZERO and reported separately;
+the unchanged public wheel and all closed vehicle gates remain unchanged.
+
 R28 provides a [controlled internally constructed synthetic native adapter](docs/NATIVE_ADAPTER_R28.md).
 R29 connects it to the unchanged model for [two fixed state-carry profiles](docs/ADAPTER_SEQUENCE_R29.md).
 Neither is a generic external message reader, authenticated vehicle history or

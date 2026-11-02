@@ -124,6 +124,17 @@ class WorkflowTests(unittest.TestCase):
             self.assertEqual(r['regression_difference_count'], 0)
             self.assertEqual(before, {p.relative_to(baseline): p.read_bytes() for p in baseline.rglob('*') if p.is_file()})
 
+    def test_readonly_baseline_in_component_is_allowed_when_output_is_outside(self):
+        m = self.module()
+        with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory(prefix='r40-test-baseline-', dir=ROOT) as component_tmp:
+            root = Path(tmp)
+            baseline = write_batch(Path(component_tmp) / 'baseline', ('sign',))
+            try:
+                r = self.check(m, [self.sign()], root / 'out', baseline=baseline)
+            except m.WorkflowError as error:
+                self.fail(f'Read-only baseline incorrectly rejected: {error.code}')
+            self.assertEqual(r['regression_status'], 'MATCH')
+
     def test_coherent_baseline_difference_is_distinct_from_reference_difference(self):
         m = self.module()
         with tempfile.TemporaryDirectory() as tmp:

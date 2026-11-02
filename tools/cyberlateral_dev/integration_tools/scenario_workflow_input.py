@@ -4,7 +4,7 @@ import platform
 import sys
 from pathlib import Path
 
-from .scenario_batch_input import ROOT, BatchInput, prepare_batch
+from .scenario_batch_input import BatchInput, prepare_batch
 from .scenario_batch_reference_run import _snapshot
 from .scenario_compare_input import _owned_files, read_batch
 
@@ -26,7 +26,7 @@ def prepare_workflow(inputs: list[Path], output: Path, baseline: Path | None, te
         return items, None, None
     try:
         str(baseline.absolute()).encode('utf-8', errors='strict')
-        if output.resolve().is_relative_to(baseline.resolve()) or baseline.resolve().is_relative_to(ROOT):
+        if output.resolve().is_relative_to(baseline.resolve()):
             raise WorkflowError('WORKFLOW_BASELINE_LOCATION')
     except UnicodeError as error:
         raise WorkflowError('WORKFLOW_PATH_ENCODING') from error

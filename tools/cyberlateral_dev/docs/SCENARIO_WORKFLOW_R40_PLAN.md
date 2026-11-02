@@ -48,15 +48,15 @@ docs/SCENARIO_WORKFLOW_R40_KO.md, README.md, docs/OFFLINE_QUICKSTART_CURRENT_KO.
 Consumes Task1 run_workflow/WorkflowError/exit_code.
 Produces standalone --input repeat/--output/optional --baseline CLI, canonical stdout and docs.
 
-- [ ] Write real CLI tests before CLI: valid exit0, mixed/all rejected exit1,
+- [x] Write real CLI tests before CLI: valid exit0, mixed/all rejected exit1,
   missing input/corrupt baseline/output/unknown --rate exit2 and no traceback.
-- [ ] Watch missing CLI assertions fail, then implement existing cold-cache frontend pattern.
-- [ ] Test frontend model/native import barrier with fresh actual worker execution, baseline path
+- [x] Watch missing CLI assertions fail, then implement existing cold-cache frontend pattern.
+- [x] Test frontend model/native import barrier with fresh actual worker execution, baseline path
   plus source/input preservation, no automatic baseline overwrite.
-- [ ] Document exact states/exits/relative links/private receipt scope/model-reference counts and gates.
-- [ ] Targeted tests GREEN then full `dev.py verify --output <new audit output>`; require full suite,
+- [x] Document exact states/exits/relative links/private receipt scope/model-reference counts and gates.
+- [x] Targeted tests GREEN then full `dev.py verify --output <new audit output>`; require full suite,
   Ruff/Ty/Codespell/memory compile and unchanged wheel SHA3f3db36f62aa79ba97e4536a183b7e685a9d06c4e264d1fec9dd3bbda7c4d73c.
-- [ ] Execute real sign/resumed, R35mixed and baseline workflow in two independent new output roots;
+- [x] Execute real sign/resumed, R35mixed and baseline workflow in two independent new output roots;
   compare root portable files and validate all full manifests, preserving any failed output.
 - [ ] Fresh whole-branch review; rule on every declined scope, fix significant findings RED→GREEN
   plus full suite, record deferred minors. Local commit and finish branch without remote mutation.

@@ -1,5 +1,6 @@
 """Compose existing DEV stages over owned synthetic inputs, never vehicle input."""
 
+import hashlib
 import platform
 import sys
 import tempfile
@@ -15,7 +16,8 @@ from .scenario_workflow_summary import summary
 
 
 def _source_identity() -> dict:
-    return batch._source_hashes()
+    return {**batch._source_hashes(),
+            'tools/scenario_workflow.py': hashlib.sha256((batch.ROOT / 'tools/scenario_workflow.py').read_bytes()).hexdigest()}
 
 
 def _write(path: Path, raw: bytes) -> None:
