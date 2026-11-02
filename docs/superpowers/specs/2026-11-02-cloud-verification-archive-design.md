@@ -15,7 +15,8 @@ manual commands only would not meet the requested one-command workflow.
 ## Contract
 
 - Explicit Git root and full commit SHA. Export only committed
-  tools/cyberlateral_dev blobs, retaining SHA256, Git blob and mode provenance.
+  tools/cyberlateral_dev blobs and required root README/offline workflow context,
+  retaining SHA256, Git blob and mode provenance.
   Worktree dirt is neither executed nor included; do not mutate/reset user files.
 - Explicit pinned project Python and separate HF SDK Python. Project gate remains
   Python3.12.13/uv0.12.23 and existing lockfile; no app dependency/lock changes.

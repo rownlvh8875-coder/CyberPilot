@@ -166,6 +166,8 @@ def execute(args) -> dict:
                     output / 'gate-private.log', output, env=env)
         compiled = 0
         for name in provenance['files']:
+            if not name.startswith(SOURCE_PREFIX):
+                continue
             relative = PurePosixPath(name).relative_to(SOURCE_PREFIX)
             if (relative.suffix == '.py' and relative.parts[0] in {'project', 'src', 'integration_tools', 'tools'}
                     or str(relative) in {'dev.py', 'build_backend.py'}):

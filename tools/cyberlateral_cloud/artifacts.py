@@ -10,6 +10,7 @@ import zipfile
 from pathlib import Path, PurePosixPath
 
 SOURCE_PREFIX = 'tools/cyberlateral_dev/'
+SOURCE_CONTEXT = ('README.md', '.github/workflows/cyberlateral-dev.yaml')
 MAX_FILE_BYTES = 8 * 1024 * 1024
 MAX_TOTAL_BYTES = 32 * 1024 * 1024
 MAX_MEMBERS = 2048
@@ -57,7 +58,7 @@ def export_source(repo: Path, commit: str, destination: Path) -> dict:
         raise ValueError('REPOSITORY_ROOT_REQUIRED')
     if git(repo, 'rev-parse', commit + '^{commit}').decode().strip() != commit:
         raise ValueError('COMMIT_IDENTITY')
-    entries = git(repo, 'ls-tree', '-r', '-z', commit, '--', SOURCE_PREFIX.rstrip('/')).split(b'\0')
+    entries = git(repo, 'ls-tree', '-r', '-z', commit, '--', SOURCE_PREFIX.rstrip('/'), *SOURCE_CONTEXT).split(b'\0')
     files, records = {}, {}
     for entry in filter(None, entries):
         header, raw_name = entry.split(b'\t', 1)
@@ -65,7 +66,7 @@ def export_source(repo: Path, commit: str, destination: Path) -> dict:
         name = raw_name.decode('utf-8')
         if kind != 'blob' or mode not in {'100644', '100755'}:
             raise ValueError('SOURCE_MODE')
-        if not name.startswith(SOURCE_PREFIX):
+        if not name.startswith(SOURCE_PREFIX) and name not in SOURCE_CONTEXT:
             raise ValueError('SOURCE_SCOPE')
         raw = git(repo, 'show', commit + ':' + name)
         if hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest() != blob:
@@ -83,7 +84,7 @@ def export_source(repo: Path, commit: str, destination: Path) -> dict:
         with path.open('xb') as stream:
             stream.write(raw)
     return {'commit': commit, 'tree': git(repo, 'rev-parse', commit + '^{tree}').decode().strip(),
-            'scope': 'COMMITTED_COMPONENT_ONLY_NOT_DIRTY_WORKTREE_OR_FULL_VEHICLE_REPOSITORY', 'files': records}
+            'scope': 'COMMITTED_COMPONENT_AND_ROOT_CI_CONTEXT_NOT_DIRTY_WORKTREE_OR_FULL_VEHICLE_REPOSITORY', 'files': records}
 
 
 def limits(files: dict[str, bytes]) -> None:

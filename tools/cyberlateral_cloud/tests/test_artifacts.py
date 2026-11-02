@@ -68,6 +68,27 @@ class ArtifactTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'SOURCE_MODE'):
                 a.export_source(root / 'repo', commit, root / 'export')
 
+    def test_export_preserves_required_root_ci_context_without_unrelated_files(self):
+        a = self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            repo = root / 'repo'
+            self.repository(repo)
+            (repo / 'README.md').write_bytes(b'root context\n')
+            workflow = repo / '.github/workflows/cyberlateral-dev.yaml'
+            workflow.parent.mkdir(parents=True)
+            workflow.write_bytes(b'name: pinned offline workflow\n')
+            (repo / 'unrelated-private.txt').write_bytes(b'do not export')
+            subprocess.run(['git', '-C', str(repo), 'add', '.'], check=True)
+            subprocess.run(['git', '-C', str(repo), '-c', 'user.name=Fixture', '-c',
+                            'user.email=fixture@example.invalid', 'commit', '-qm', 'context'], check=True)
+            commit = subprocess.check_output(['git', '-C', str(repo), 'rev-parse', 'HEAD']).decode().strip()
+            a.export_source(repo, commit, root / 'export')
+            self.assertTrue((root / 'export/.github/workflows/cyberlateral-dev.yaml').is_file())
+            self.assertEqual((root / 'export/.github/workflows/cyberlateral-dev.yaml').read_bytes(), workflow.read_bytes())
+            self.assertEqual((root / 'export/README.md').read_bytes(), b'root context\n')
+            self.assertFalse((root / 'export/unrelated-private.txt').exists())
+
     def test_seal_is_deterministic_and_manifest_covers_every_payload(self):
         a = self.module()
         with tempfile.TemporaryDirectory() as tmp:

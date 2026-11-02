@@ -37,6 +37,9 @@ broken symlink는 거절합니다. 프로젝트 Python 경로는 venv 안의 int
 Manifest/portable 비교 → 결정적 ZIP 봉인 → 비공개 업로드 → 정확한 원격 commit에서2파일
 강제 재다운로드·bytes/SHA·ZIP 재검증. 기본 target은 이미 만들어진 private Dataset이며
 repo를 생성하거나 visibility를 변경하지 않습니다. Public·잘못된 계정은 거절합니다.
+Component의 CI 계약 검사에 필요한 원형 루트 README.md와
+.github/workflows/cyberlateral-dev.yaml도 같은 commit에서 함께 내보냅니다.
+기타 루트 파일·사용자 변경·untracked는 포함하지 않습니다.
 
 ## 결과·실패·재시도
 
