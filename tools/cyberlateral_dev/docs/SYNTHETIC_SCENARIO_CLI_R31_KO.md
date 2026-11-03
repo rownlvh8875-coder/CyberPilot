@@ -80,7 +80,7 @@ raw identity를 바꿉니다. portable 파일은 signed zero/정수/bool 구분�
 
 오류는 stderr `REJECTED: SCENARIO_*`, exit2입니다. suffix는 다음과 같습니다.
 KEYS/SCHEMA/SCOPE/ID/DOMAIN/STATE/ORDER/COUNT/JSON/SIZE/INPUT_FILE,
-OUTPUT_EXISTS/OUTPUT_PARENT, RUNTIME/SOURCE_IDENTITY/MODEL_IDENTITY/SOURCE_CHANGED,
+OUTPUT_EXISTS/OUTPUT_PARENT/OUTPUT_PATH, RUNTIME/SOURCE_IDENTITY/MODEL_IDENTITY/SOURCE_CHANGED,
 MODEL_RESULT/MODEL_REJECTED/PUBLICATION_FAILED. 차량 scale·주기·정책 fallback은 없습니다.
 
 R51은 입력 파일 열기(os.open)에서 NUL 또는 인코딩할 수 없는 경로가 내는
@@ -90,6 +90,20 @@ ValueError를 원인을 보존한 SCENARIO_INPUT_FILE로 전달합니다. R31은
 interrupt 예외까지 감추지 않으며 출력 경로·publication 계약은 확장하지 않습니다.
 NUL은 OS argv에 전달할 수 없으므로 해당 CLI 회귀 검사는 새 Python 프로세스 안에서
 실제 main(argv)을 호출합니다. 일반 permission 검사는 실제 파일·OS argv를 사용합니다.
+
+R52는 R31 실행 경로를 입력 읽기·모델 로드 전에 검사합니다. 기존 출력 존재·부모
+거절을 먼저 유지하고, 출력 경로의 NUL/UTF8 JSON 표현 불가 또는 미분류 preflight
+OSError/ValueError는 원인 보존 SCENARIO_OUTPUT_PATH로 전달합니다. 이어 같은 receipt
+표현 제약에 맞지 않는 실행 입력 경로는 SCENARIO_INPUT_FILE로 거절합니다.
+CLI는 traceback·개인 경로 진단 없이 위 bounded stderr/exit2이며 출력을 만들지 않습니다.
+제공된 Path를 resolve/정규화/복구하지 않고 기존 location·publication 계약도 확장하지
+않습니다. TypeError·interrupt·후속 reader/loader 오류는 일반 경로 거절로 숨기지 않습니다.
+
+유효한 Unicode 입력·출력은 계속 실행할 수 있습니다. Linux surrogateescape 파일명은
+generic reader/R37 검사에서 유효할 수 있지만 R31의 UTF8 receipt에는 담을 수 없어
+실행 전 거절합니다. 이는 입력 수치 스키마의 변경이 아니라 실행 metadata 제약입니다.
+source root·interpreter 경로의 모든 비표준 환경이나 동시성/OS snapshot까지 보장하는
+일반 경로 프레임워크는 아닙니다. 모델·공개 wheel/API와 수치 계산은 그대로입니다.
 
 ## 주장 한계
 

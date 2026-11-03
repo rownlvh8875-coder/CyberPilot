@@ -42,10 +42,29 @@ def load_model(root: Path):
 
 def run_scenario(input_path: Path, output_path: Path) -> dict:
     # Order matters: no input read, import or simulation for invalid output paths.
-    if output_path.exists() or output_path.is_symlink():
-        raise ScenarioError('SCENARIO_OUTPUT_EXISTS')
-    if not output_path.parent.is_dir():
-        raise ScenarioError('SCENARIO_OUTPUT_PARENT')
+    try:
+        if output_path.exists() or output_path.is_symlink():
+            raise ScenarioError('SCENARIO_OUTPUT_EXISTS')
+        if not output_path.parent.is_dir():
+            raise ScenarioError('SCENARIO_OUTPUT_PARENT')
+        # Receipts are strict UTF8 JSON; keep the existing filesystem guards first.
+        output_text = str(output_path.absolute())
+        output_text.encode('utf-8', errors='strict')
+        if '\0' in output_text:
+            raise ValueError('NUL output path')
+    except ScenarioError:
+        raise
+    except (OSError, ValueError) as error:
+        raise ScenarioError('SCENARIO_OUTPUT_PATH') from error
+    try:
+        input_text = str(input_path.absolute())
+        input_text.encode('utf-8', errors='strict')
+        if '\0' in input_text:
+            raise ValueError('NUL input path')
+    except ScenarioError:
+        raise
+    except (OSError, ValueError) as error:
+        raise ScenarioError('SCENARIO_INPUT_FILE') from error
     spec = read_scenario(input_path)
     package, identity = load_model(ROOT)
     from .scenario_engine import evaluate_scenario
