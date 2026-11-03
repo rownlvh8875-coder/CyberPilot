@@ -5,9 +5,9 @@ import os
 import platform
 import sys
 import tempfile
-import warnings
 from pathlib import Path
 
+from .result_diagnostics import _warn_after_result
 from .scenario_campaign_compare_run import _source_hashes as _comparison_sources
 from .scenario_campaign_evidence import capture_tree
 from .scenario_campaign_report_data import MAX_BYTES, MAX_FILES, read_comparison
@@ -33,19 +33,6 @@ def _source_hashes():
 def _write(path, raw):
     with path.open('xb') as stream:
         stream.write(raw)
-
-
-def _warn_after_result(message: str) -> None:
-    """Best-effort diagnostic only; never replace a determined result."""
-    try:
-        warnings.warn(message, RuntimeWarning, stacklevel=2)
-    except Exception:
-        # Caller warning filters/hooks may raise. Keep their policy unchanged.
-        try:
-            print(f'WARNING: {message}', file=sys.stderr)
-        except Exception:
-            # A closed/broken diagnostic sink cannot undo publication either.
-            pass
 
 
 def _publish(output, files, check):
