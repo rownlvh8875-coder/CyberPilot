@@ -159,7 +159,7 @@ class CampaignTests(unittest.TestCase):
             self.assertEqual(finding['first_difference']['field'], 'rows[0].model_output.projection.torque_float32.bits_hex')
             self.check_manifest(output)
 
-    def test_completed_reference_error_continues_and_outranks_later_difference(self):
+    def test_completed_reference_error_outranks_difference_independent_of_order(self):
         m = self.module()
         real_run = m.exploration.run_exploration
         self.real_check = m.exploration.workflow.reference.check_batch
@@ -172,17 +172,19 @@ class CampaignTests(unittest.TestCase):
             with patch.object(m.exploration.workflow.reference, 'check_batch', side_effect=self.wrong_projection):
                 return real_run(seed, cases, steps, target)
 
-        with tempfile.TemporaryDirectory() as tmp:
-            output = Path(tmp) / 'out'
-            with patch.object(m.exploration, 'run_exploration', side_effect=run):
-                result = m.run_campaign([42, 43], 1, 16, output)
-            self.assertEqual((result['status'], m.exit_code(result)), ('ERROR', 2))
-            self.assertEqual(result['status_counts'], {'MATCH': 0, 'DIFFERENT': 1, 'ERROR': 1})
-            self.assertEqual((result['model_steps'], result['reference_steps'], result['difference_count']), (32, 16, 1))
-            self.assertEqual([row['status'] for row in result['runs']], ['ERROR', 'DIFFERENT'])
-            self.assertEqual([f['seed'] for f in result['findings']], [42, 43])
-            self.assertIn('FAILED_WORK_MAY_BE_NONZERO', result['reference_steps_accounting'])
-            self.check_manifest(output)
+        for seeds, statuses in [([42, 43], ['ERROR', 'DIFFERENT']), ([43, 42], ['DIFFERENT', 'ERROR'])]:
+            with self.subTest(seeds=seeds), tempfile.TemporaryDirectory() as tmp:
+                output = Path(tmp) / 'out'
+                with patch.object(m.exploration, 'run_exploration', side_effect=run):
+                    result = m.run_campaign(seeds, 1, 16, output)
+                self.assertEqual((result['status'], m.exit_code(result)), ('ERROR', 2))
+                self.assertEqual(result['status_counts'], {'MATCH': 0, 'DIFFERENT': 1, 'ERROR': 1})
+                self.assertEqual((result['model_steps'], result['reference_steps'], result['difference_count']), (32, 16, 1))
+                self.assertEqual([row['status'] for row in result['runs']], statuses)
+                self.assertEqual([row['seed'] for row in result['runs']], seeds)
+                self.assertEqual([f['seed'] for f in result['findings']], seeds)
+                self.assertIn('FAILED_WORK_MAY_BE_NONZERO', result['reference_steps_accounting'])
+                self.check_manifest(output)
 
     def test_fatal_second_worker_preserves_first_but_no_campaign_marker(self):
         m = self.module()
