@@ -5,11 +5,11 @@ import os
 import platform
 import sys
 import tempfile
-import warnings
 from itertools import zip_longest
 from pathlib import Path
 
 from . import scenario_campaign_run as campaign
+from .result_diagnostics import _warn_after_result
 from .scenario_campaign_compare_input import MAX_BYTES, MAX_FILES, CampaignCompareError, read_campaign
 from .scenario_campaign_evidence import capture_tree
 from .scenario_compare_data import DETAIL_LIMIT, MISSING, _changes, compare_batches
@@ -160,7 +160,7 @@ def _publish(output, record, reports, receipt, check):
     except OSError as error:
         if not committed:
             raise CampaignCompareError('CAMPAIGN_COMPARE_PUBLICATION_FAILED') from error
-        warnings.warn('CAMPAIGN_COMPARE_CLEANUP_FAILED_AFTER_COMMIT', RuntimeWarning, stacklevel=2)
+        _warn_after_result('CAMPAIGN_COMPARE_CLEANUP_FAILED_AFTER_COMMIT')
 
 
 def run_campaign_comparison(baseline: Path, candidate: Path, output: Path) -> dict:

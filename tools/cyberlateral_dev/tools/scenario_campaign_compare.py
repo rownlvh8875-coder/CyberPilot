@@ -3,7 +3,6 @@
 import argparse
 import sys
 import tempfile
-import warnings
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,7 +22,7 @@ def main(argv=None):
             sys.path.insert(0, str(ROOT))
             try:
                 from integration_tools.scenario_campaign_compare_input import CampaignCompareError
-                from integration_tools.scenario_campaign_compare_run import exit_code, run_campaign_comparison
+                from integration_tools.scenario_campaign_compare_run import _warn_after_result, exit_code, run_campaign_comparison
 
                 try:
                     record = run_campaign_comparison(args.baseline, args.candidate, args.output)
@@ -41,7 +40,7 @@ def main(argv=None):
         if result_code is None:
             print('REJECTED: CAMPAIGN_COMPARE_IO', file=sys.stderr)
             return 2
-        warnings.warn('CAMPAIGN_COMPARE_CACHE_CLEANUP_FAILED_AFTER_RESULT', RuntimeWarning, stacklevel=2)
+        _warn_after_result('CAMPAIGN_COMPARE_CACHE_CLEANUP_FAILED_AFTER_RESULT')
     return result_code
 
 

@@ -67,6 +67,12 @@ R34의 입력·명령·상태·trace를 비교합니다. 입력이 바뀐 case�
 게시합니다. 부분 marker 쓰기나 관찰된 입력 변경으로 성공 파일을 만들지 않습니다.
 이 link가 완료 시점입니다. 이후 임시 폴더/cache 정리의 IO 실패는 경고하며 이미 완료된
 결과/exit 판정을 publication 실패로 바꾸지 않습니다.
+R48 보완: RuntimeWarning을 오류로 승격하는 설정이나 warning hook의 일반 예외도
+이미 결정된 결과를 바꾸지 않습니다. 기존 RuntimeWarning을 먼저 시도하고 실패하면
+stderr에 같은 경고 코드를 씁니다. 그 진단 sink도 실패하면 경고는 유실될 수 있습니다.
+완료 MATCH0·DIFFERENT1·ERROR2와 입력 거절2를 각각 보존하며, 결과 결정 전 오류는
+여전히 거절합니다. KeyboardInterrupt/SystemExit 등 BaseException은 숨기지 않습니다.
+같은 진단 처리를 R46 리포트와 공유하지만 비교/렌더링/검증 계산은 공유하거나 바꾸지 않습니다.
 전체 폴더의 원자적 OS snapshot·fsync/crash durability를 제공한다는 뜻은 아닙니다.
 완료 파일 존재만 보지 말고 canonical record·판정·모든 Manifest를 함께 검산하세요.
 
