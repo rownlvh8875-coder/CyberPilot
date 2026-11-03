@@ -1,12 +1,14 @@
 """Isolated CLI and publication boundary; injected I/O faults only."""
 
 import hashlib
+import io
 import json
 import subprocess
 import sys
 import tempfile
 import unittest
-from contextlib import contextmanager
+import warnings
+from contextlib import contextmanager, redirect_stderr
 from pathlib import Path
 from unittest.mock import patch
 
@@ -15,6 +17,15 @@ from scenario_campaign_report_fixture import copy_comparison, real_comparison
 from v1_helpers import ROOT
 
 CLI = ROOT / 'tools/scenario_campaign_compare_report.py'
+REAL_TEMP = tempfile.TemporaryDirectory
+
+
+@contextmanager
+def cleanup_failure(*args, **kwargs):
+    # Keep creation, real publication, and real cleanup; inject only its late fault.
+    with REAL_TEMP(*args, **kwargs) as scratch:
+        yield scratch
+    raise OSError('injected cleanup failure')
 
 
 class CampaignReportCliTests(unittest.TestCase):
@@ -25,16 +36,52 @@ class CampaignReportCliTests(unittest.TestCase):
         from integration_tools.scenario_campaign_report_run import run_report
         return run_report(source, output)
 
+    def assert_closed_report(self, out):
+        self.assertEqual({p.name for p in out.iterdir()}, {'index.html', 'VIEW.json', 'RECEIPT.json', 'SHA256SUMS.txt'})
+        expected = ''.join(hashlib.sha256((out / n).read_bytes()).hexdigest() + '  ' + n + '\n'
+                           for n in ['RECEIPT.json', 'VIEW.json', 'index.html'])
+        self.assertEqual((out / 'SHA256SUMS.txt').read_text(), expected)
+
+    def completed_api(self, source, out):
+        try:
+            result = self.run_api(source, out)
+        except Exception as error:
+            self.fail(f'Diagnostic replaced completed result: {type(error).__name__}: {error}')
+        self.assertEqual(result['status'], 'REPORT_COMPLETE')
+        self.assert_closed_report(out)
+
+    def run_cache_fault_cli(self, fault, *args):
+        # Isolated interpreter: preserve CLI/imports/files, inject only cache I/O.
+        wrapper = '''
+import runpy
+import sys
+import tempfile
+from contextlib import contextmanager
+real_temp = tempfile.TemporaryDirectory
+fault = sys.argv[2]
+@contextmanager
+def cache_fault(*args, **kwargs):
+    cache = kwargs.get('prefix') == 'cyberlateral-r46-cache-'
+    if cache and fault == 'enter':
+        raise OSError('injected cache creation failure')
+    with real_temp(*args, **kwargs) as scratch:
+        yield scratch
+    if cache:
+        raise OSError('injected cache cleanup failure')
+tempfile.TemporaryDirectory = cache_fault
+module = runpy.run_path(sys.argv[1], run_name='r47_cli_fault_test')
+raise SystemExit(module['main'](sys.argv[3:]))
+'''
+        return subprocess.run([sys.executable, '-B', '-W', 'error::RuntimeWarning', '-c', wrapper,
+                               str(CLI), fault, *map(str, args)], capture_output=True, timeout=40)
+
     def test_complete_report_closed_manifest_and_no_worker_imports(self):
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / 'view'
             result = self.run_cli('--input', real_comparison(), '--output', out)
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertIn(b'REPORT_COMPLETE', result.stdout)
-            self.assertEqual({p.name for p in out.iterdir()}, {'index.html', 'VIEW.json', 'RECEIPT.json', 'SHA256SUMS.txt'})
-            expected = ''.join(hashlib.sha256((out / n).read_bytes()).hexdigest() + '  ' + n + '\n'
-                               for n in ['RECEIPT.json', 'VIEW.json', 'index.html'])
-            self.assertEqual((out / 'SHA256SUMS.txt').read_text(), expected)
+            self.assert_closed_report(out)
             receipt = json.loads((out / 'RECEIPT.json').read_bytes())
             self.assertEqual(receipt['forbidden_modules_loaded'], [])
             self.assertEqual((receipt['renderer_model_executions'], receipt['renderer_reference_executions']), (0, 0))
@@ -120,21 +167,102 @@ class CampaignReportCliTests(unittest.TestCase):
 
     def test_cleanup_failure_after_commit_warns_but_returns_completion(self):
         from integration_tools import scenario_campaign_report_run as module
-        real_temp = tempfile.TemporaryDirectory
-
-        @contextmanager
-        def cleanup_failure(*args, **kwargs):
-            with real_temp(*args, **kwargs) as scratch:
-                yield scratch
-            raise OSError('injected cleanup failure')
-
         source = real_comparison()
-        with real_temp() as tmp:
+        with REAL_TEMP() as tmp:
             out = Path(tmp) / 'view'
             with patch.object(module.tempfile, 'TemporaryDirectory', cleanup_failure), self.assertWarnsRegex(RuntimeWarning, 'AFTER_COMMIT'):
                 result = self.run_api(source, out)
             self.assertEqual(result['status'], 'REPORT_COMPLETE')
-            self.assertTrue((out / 'index.html').is_file())
+            self.assert_closed_report(out)
+
+    def test_warning_as_error_cannot_reverse_committed_report(self):
+        # Leaving an unguarded warnings.warn here must fail this real API result.
+        from integration_tools import scenario_campaign_report_run as module
+        source = real_comparison()
+        diagnostic = io.StringIO()
+        with REAL_TEMP() as tmp, warnings.catch_warnings(), redirect_stderr(diagnostic):
+            warnings.simplefilter('error', RuntimeWarning)
+            out = Path(tmp) / 'view'
+            with patch.object(module.tempfile, 'TemporaryDirectory', cleanup_failure):
+                self.completed_api(source, out)
+        self.assertIn('CAMPAIGN_REPORT_CLEANUP_FAILED_AFTER_COMMIT', diagnostic.getvalue())
+
+    def test_failing_warning_hook_cannot_reverse_committed_report(self):
+        from integration_tools import scenario_campaign_report_run as module
+        source = real_comparison()
+        diagnostic = io.StringIO()
+        with REAL_TEMP() as tmp, warnings.catch_warnings(), redirect_stderr(diagnostic):
+            warnings.simplefilter('always', RuntimeWarning)
+            out = Path(tmp) / 'view'
+            with patch.object(module.tempfile, 'TemporaryDirectory', cleanup_failure), \
+                    patch.object(warnings, 'showwarning', side_effect=RuntimeError('failed warning hook')):
+                self.completed_api(source, out)
+        self.assertIn('CAMPAIGN_REPORT_CLEANUP_FAILED_AFTER_COMMIT', diagnostic.getvalue())
+
+    def test_unavailable_stderr_cannot_reverse_committed_report(self):
+        from integration_tools import scenario_campaign_report_run as module
+        source = real_comparison()
+        for failure in [OSError('broken pipe'), ValueError('closed stream')]:
+            with self.subTest(failure=type(failure).__name__), REAL_TEMP() as tmp, warnings.catch_warnings():
+                warnings.simplefilter('always', RuntimeWarning)
+                out = Path(tmp) / 'view'
+                with patch.object(module.tempfile, 'TemporaryDirectory', cleanup_failure), \
+                        patch.object(warnings, 'showwarning', side_effect=RuntimeError('failed warning hook')), \
+                        patch.object(sys.stderr, 'write', side_effect=failure):
+                    self.completed_api(source, out)
+
+    def test_diagnostic_interrupt_is_not_swallowed(self):
+        from integration_tools import scenario_campaign_report_run as module
+        source = real_comparison()
+        with REAL_TEMP() as tmp, warnings.catch_warnings():
+            warnings.simplefilter('always', RuntimeWarning)
+            out = Path(tmp) / 'view'
+            with patch.object(module.tempfile, 'TemporaryDirectory', cleanup_failure), \
+                    patch.object(warnings, 'showwarning', side_effect=KeyboardInterrupt), self.assertRaises(KeyboardInterrupt):
+                self.run_api(source, out)
+            self.assert_closed_report(out)
+
+    def test_cache_cleanup_warning_as_error_keeps_cli_success(self):
+        with REAL_TEMP() as tmp:
+            out = Path(tmp) / 'view'
+            result = self.run_cache_fault_cli('cleanup', '--input', real_comparison(), '--output', out)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertIn(b'REPORT_COMPLETE', result.stdout)
+            self.assertIn(b'CAMPAIGN_REPORT_CACHE_CLEANUP_FAILED_AFTER_RESULT', result.stderr)
+            self.assertNotIn(b'Traceback', result.stderr)
+            self.assert_closed_report(out)
+
+    def test_cache_cleanup_warning_as_error_preserves_cli_rejection(self):
+        with REAL_TEMP() as tmp:
+            out = Path(tmp) / 'view'
+            result = self.run_cache_fault_cli('cleanup', '--input', Path(tmp) / 'missing', '--output', out)
+            self.assertEqual(result.returncode, 2, result.stderr)
+            self.assertIn(b'REJECTED: CAMPAIGN_REPORT_', result.stderr)
+            self.assertIn(b'CAMPAIGN_REPORT_CACHE_CLEANUP_FAILED_AFTER_RESULT', result.stderr)
+            self.assertNotIn(b'REPORT_COMPLETE', result.stdout)
+            self.assertNotIn(b'Traceback', result.stderr)
+            self.assertFalse(out.exists())
+
+    def test_cache_creation_failure_before_result_still_rejects(self):
+        with REAL_TEMP() as tmp:
+            out = Path(tmp) / 'view'
+            result = self.run_cache_fault_cli('enter', '--input', real_comparison(), '--output', out)
+            self.assertEqual(result.returncode, 2, result.stderr)
+            self.assertEqual(result.stderr, b'REJECTED: CAMPAIGN_REPORT_IO\n')
+            self.assertNotIn(b'REPORT_COMPLETE', result.stdout)
+            self.assertFalse(out.exists())
+
+    def test_precommit_link_failure_is_not_downgraded_to_warning(self):
+        from integration_tools import scenario_campaign_report_run as module
+        from integration_tools.scenario_campaign_report_schema import CampaignReportError
+        source = real_comparison()
+        with REAL_TEMP() as tmp, warnings.catch_warnings():
+            warnings.simplefilter('error', RuntimeWarning)
+            out = Path(tmp) / 'view'
+            with patch.object(module.os, 'link', side_effect=OSError('injected link failure')), \
+                    self.assertRaisesRegex(CampaignReportError, 'CAMPAIGN_REPORT_PUBLICATION_FAILED'):
+                self.run_api(source, out)
+            self.assertFalse((out / 'index.html').exists())
 
 
 if __name__ == '__main__':
