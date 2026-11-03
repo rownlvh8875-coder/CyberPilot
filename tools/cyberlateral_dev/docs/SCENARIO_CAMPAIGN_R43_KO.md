@@ -11,6 +11,8 @@ R42를 seed별로 순차 실행하고, 모든 결과와 전체 재현 입력을 
 출력 사전 점검의 미분류 OS/값 오류는 `CAMPAIGN_IO`/exit2로 거절합니다.
 parameter 우선 검증과 기존 `EXPLORATION_*`→`CAMPAIGN_*` 코드 대응은 유지하며,
 후속 identity/worker 결함까지 경로 오류로 바꾸는 포괄 catch는 추가하지 않습니다.
+CLI 임시 cache 생성의 OS 오류는 `CAMPAIGN_IO`/exit2로 거절합니다. argparse 다음,
+domain parameter 검증보다 먼저이며 fallback이나 사후 정리 오류 보완은 아닙니다.
 
 ```bash
 r43_component="$PWD/tools/cyberlateral_dev"

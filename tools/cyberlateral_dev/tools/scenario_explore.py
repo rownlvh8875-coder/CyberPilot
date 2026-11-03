@@ -15,7 +15,12 @@ def main(argv=None) -> int:
     parser.add_argument('--steps', type=int, required=True, help='16..256 samples per case; invocation order only')
     parser.add_argument('--output', type=Path, required=True, help='NEW folder outside component; parent must exist')
     args = parser.parse_args(argv)
-    with tempfile.TemporaryDirectory(prefix='cyberlateral-r42-cache-') as cache:
+    try:
+        cache_directory = tempfile.TemporaryDirectory(prefix='cyberlateral-r42-cache-')
+    except OSError:
+        print('REJECTED: EXPLORATION_IO', file=sys.stderr)
+        return 2
+    with cache_directory as cache:
         previous = sys.pycache_prefix
         sys.pycache_prefix = cache
         sys.path.insert(0, str(ROOT))

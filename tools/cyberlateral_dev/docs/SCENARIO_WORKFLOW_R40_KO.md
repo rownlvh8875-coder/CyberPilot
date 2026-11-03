@@ -42,6 +42,8 @@ exit2이며 출력은 만들지 않습니다. 읽힌 불량 JSON은 기존 거�
 기존 원시 OS 오류의 `WORKFLOW_IO` fallback과 구분하는 새 DEV 진단 코드입니다.
 baseline 경로의 UTF-8 오류는 `WORKFLOW_PATH_ENCODING`, 해석 실패는
 `WORKFLOW_BASELINE_LOCATION`이며 baseline 읽기·identity·worker 전에 거절합니다.
+CLI 임시 cache 생성의 OS 오류는 `WORKFLOW_IO`/exit2로 입력 읽기 전에 거절합니다.
+argparse가 먼저이며 기본 임시 경로의 fallback이나 사후 정리 오류 처리를 추가하지 않습니다.
 
 | 상태 | 뜻 | exit |
 |---|---|---|
