@@ -39,6 +39,11 @@ accepted일 때 input_raw_sha256/scenario_id/sample_count/first_index/last_index
 first/last index는 호출 순서이지 초·주기·timestamp가 아닙니다.
 개인 파일 경로·receipt·모델 출력은 JSON에 포함하지 않습니다.
 
+R51의 입력 열기 경계 보완으로 NUL·인코딩 불가 경로도 SCENARIO_INPUT_FILE로
+거절합니다. stdout은 기존 canonical 거절 JSON, stderr는 빈 bytes, exit2이며 다섯
+identity 필드는 null, 모델 실행은0입니다. parser나 후속 구현 오류의 일반 ValueError를
+검사 거절로 숨기지 않습니다. 입력 스키마·수치 계약·출력 형식은 바뀌지 않습니다.
+
 validation_scope:
 INPUT_SCHEMA_AND_DOMAIN_ONLY_NOT_MODEL_RUNTIME_OR_ORIGIN
 

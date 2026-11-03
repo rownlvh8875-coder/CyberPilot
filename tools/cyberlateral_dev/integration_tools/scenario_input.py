@@ -174,7 +174,13 @@ def read_scenario(path: Path) -> ScenarioSpec:
     """Own one bounded byte snapshot; final symlinks and nonregular files reject."""
     try:
         flags = os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK | os.O_CLOEXEC
-        with os.fdopen(os.open(path, flags), 'rb') as stream:
+        try:
+            descriptor = os.open(path, flags)
+        except ScenarioError:
+            raise
+        except ValueError as error:
+            raise ScenarioError('SCENARIO_INPUT_FILE') from error
+        with os.fdopen(descriptor, 'rb') as stream:
             _require(stat.S_ISREG(os.fstat(stream.fileno()).st_mode), 'SCENARIO_INPUT_FILE')
             raw = stream.read(MAX_BYTES + 1)
     except (OSError, AttributeError) as error:
