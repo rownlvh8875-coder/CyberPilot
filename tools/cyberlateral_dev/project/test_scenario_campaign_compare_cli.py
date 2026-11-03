@@ -64,6 +64,30 @@ class CampaignCompareCliTests(unittest.TestCase):
                     self.assertEqual(self.cli(*flags).returncode, 2)
                     self.assertFalse(output.exists())
 
+    def test_preflight_path_failures_have_bounded_cli_rejection_without_outputs(self):
+        cli = runpy.run_path(str(ROOT / 'tools/scenario_campaign_compare.py'), run_name='_r45_path_probe')
+        original = Path.exists
+        for kind in ['permission', 'invalid-path']:
+            with self.subTest(kind=kind), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                output = root / 'out'
+                baseline = root / ('invalid\0path' if kind == 'invalid-path' else 'missing-input')
+
+                def exists(path, output=output, kind=kind):
+                    if kind == 'permission' and path == output:
+                        raise PermissionError('private denied-path details')
+                    return original(path)
+
+                stdout, stderr = io.StringIO(), io.StringIO()
+                with patch.object(Path, 'exists', exists), contextlib.redirect_stdout(stdout), \
+                        contextlib.redirect_stderr(stderr):
+                    code = cli['main'](['--baseline', str(baseline), '--candidate', str(root / 'missing-input'),
+                                        '--output', str(output)])
+                self.assertEqual(code, 2)
+                self.assertEqual(stdout.getvalue(), '')
+                self.assertEqual(stderr.getvalue(), 'REJECTED: CAMPAIGN_COMPARE_IO\n')
+                self.assertEqual(list(root.iterdir()), [])
+
     def test_cli_cache_cleanup_failure_preserves_the_completed_exit_code(self):
         source = real_campaign()
         cli = runpy.run_path(str(ROOT / 'tools/scenario_campaign_compare.py'), run_name='_r44_cache_probe')

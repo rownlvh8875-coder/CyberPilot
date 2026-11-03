@@ -144,10 +144,74 @@ class CampaignCompareRunTests(unittest.TestCase):
             (root / 'exists/keep').write_bytes(b'keep')
             (root / 'dangling').symlink_to(root / 'absent')
             (root / 'link').symlink_to(root / 'exists', target_is_directory=True)
-            for output in [root / 'exists', root / 'dangling', root / 'missing/out', root / 'link/out', ROOT / 'new-r44']:
-                with self.subTest(output=output), self.assertRaises(m.CampaignCompareError):
+            for output, code in [(root / 'exists', 'CAMPAIGN_COMPARE_OUTPUT_EXISTS'),
+                                 (root / 'dangling', 'CAMPAIGN_COMPARE_OUTPUT_EXISTS'),
+                                 (root / 'missing/out', 'CAMPAIGN_COMPARE_OUTPUT_PARENT'),
+                                 (root / 'link/out', 'CAMPAIGN_COMPARE_OUTPUT_LOCATION'),
+                                 (ROOT / 'new-r44', 'CAMPAIGN_COMPARE_OUTPUT_LOCATION')]:
+                with self.subTest(output=output), self.assertRaises(m.CampaignCompareError) as caught:
                     m.run_campaign_comparison(root / 'missing-input', root / 'missing-input', output)
+                self.assertEqual(caught.exception.code, code)
             self.assertEqual((root / 'exists/keep').read_bytes(), b'keep')
+
+    def test_preflight_filesystem_errors_are_normalized_before_any_reads(self):
+        m = self.module()
+        for failure in [PermissionError('private denied path'), OSError('private device failure')]:
+            with self.subTest(failure=type(failure).__name__), tempfile.TemporaryDirectory() as tmp:
+                output = Path(tmp) / 'out'
+                with patch.object(Path, 'exists', side_effect=failure), \
+                        patch.object(m, 'read_campaign', side_effect=AssertionError('no campaign read')), \
+                        patch.object(m, '_source_hashes', side_effect=AssertionError('no source read')):
+                    try:
+                        m.run_campaign_comparison(Path(tmp) / 'old', Path(tmp) / 'new', output)
+                    except m.CampaignCompareError as error:
+                        self.assertEqual(error.code, 'CAMPAIGN_COMPARE_IO')
+                        self.assertIs(error.__cause__, failure)
+                    except OSError as error:
+                        self.fail(f'Raw {type(error).__name__} escaped the API boundary')
+                    else:
+                        self.fail('Expected a bounded preflight filesystem rejection')
+                self.assertFalse(output.exists())
+
+    def test_invalid_path_values_are_normalized_in_each_preflight_position(self):
+        m = self.module()
+        for position in range(3):
+            with self.subTest(position=position), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                paths = [root / 'old', root / 'new', root / 'out']
+                paths[position] = root / 'invalid\0path'
+                with patch.object(m, 'read_campaign', side_effect=AssertionError('no campaign read')), \
+                        patch.object(m, '_source_hashes', side_effect=AssertionError('no source read')):
+                    try:
+                        m.run_campaign_comparison(*paths)
+                    except m.CampaignCompareError as error:
+                        self.assertEqual(error.code, 'CAMPAIGN_COMPARE_IO')
+                        self.assertIsInstance(error.__cause__, ValueError)
+                    except ValueError:
+                        self.fail('Raw invalid-path ValueError escaped the API boundary')
+                    else:
+                        self.fail('Expected a bounded invalid-path rejection')
+                self.assertEqual(list(root.iterdir()), [])
+
+    def test_preflight_specific_rejection_codes_are_preserved(self):
+        m = self.module()
+        for original in ['COMPARE_OUTPUT_EXISTS', 'COMPARE_OUTPUT_PARENT', 'COMPARE_OUTPUT_LOCATION',
+                         'COMPARE_PATH_ENCODING', 'COMPARE_RUNTIME']:
+            with self.subTest(code=original), tempfile.TemporaryDirectory() as tmp:
+                with patch.object(m, '_preflight', side_effect=m.CompareError(original)), \
+                        self.assertRaises(m.CampaignCompareError) as caught:
+                    m.run_campaign_comparison(Path(tmp) / 'old', Path(tmp) / 'new', Path(tmp) / 'out')
+                self.assertEqual(caught.exception.code, original.replace('COMPARE_', 'CAMPAIGN_COMPARE_', 1))
+                self.assertEqual(list(Path(tmp).iterdir()), [])
+
+    def test_preflight_programmer_type_errors_are_not_hidden(self):
+        m = self.module()
+        failure = TypeError('controlled programmer defect')
+        with tempfile.TemporaryDirectory() as tmp, patch.object(m, '_preflight', side_effect=failure):
+            with self.assertRaises(TypeError) as caught:
+                m.run_campaign_comparison(Path(tmp) / 'old', Path(tmp) / 'new', Path(tmp) / 'out')
+            self.assertIs(caught.exception, failure)
+            self.assertEqual(list(Path(tmp).iterdir()), [])
 
     def test_late_input_and_comparator_changes_prevent_completion(self):
         m = self.module()

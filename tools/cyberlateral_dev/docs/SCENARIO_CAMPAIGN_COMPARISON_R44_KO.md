@@ -44,6 +44,15 @@ R34의 입력·명령·상태·trace를 비교합니다. 입력이 바뀐 case�
 완료된 ERROR 비교에는 최종 record가 있지만, 거절/미완료에는 유효한 완료 record가 없습니다.
 초기 invalid input은 출력 폴더를 만들지 않고, publication 실패의 부분 파일은 보존합니다.
 
+직접 Python API `run_campaign_comparison(baseline: Path, candidate: Path, output: Path)`의
+초기 경로 검사에서 코드로 분류되지 않고 발생한 파일시스템 오류·잘못된 경로 값은
+`CampaignCompareError(code='CAMPAIGN_COMPARE_IO')`로 거절합니다. 공유 검사가 이미
+분류한 입력·출력·부모·위치·encoding/runtime 등의 구체적인 거절 코드는 유지하며,
+이 시점에는 입력/source를 읽거나
+출력을 만들지 않습니다. 원래 예외는 API의 cause에 보존하지만 CLI는 경로/내부 오류
+상세를 출력하지 않습니다. 잘못된 호출 형식 같은 프로그래머 `TypeError`를 숨기는
+범용 예외 처리 계약은 아닙니다. 공유 R34 도구의 별도 API 동작은 변경하지 않습니다.
+
 ## 결과
 
 - `CAMPAIGN_COMPARE.json`: 전체/회귀/원본 판정, 조건과 source record/identity hashes,
