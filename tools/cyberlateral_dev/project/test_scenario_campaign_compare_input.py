@@ -149,3 +149,30 @@ class CampaignCompareInputTests(unittest.TestCase):
                 self.assertEqual(result['record']['status'], status)
                 self.assertEqual(len(result['record']['findings']), 1)
                 self.assertEqual(result['record']['findings'][0]['case_status'], status)
+
+    def test_full_workflow_and_validation_contracts_are_not_ignored(self):
+        m = self.module()
+        workflow = 'runs/seed-001/workflow/WORKFLOW.json'
+        validation = 'runs/seed-001/workflow/VALIDATION.json'
+        changes = [(workflow, lambda r: r.update(schema_version=99)),
+                   (workflow, lambda r: r.update(contract_id='OTHER_CONTRACT')),
+                   (workflow, lambda r: r.update(batch_record='missing/BATCH.json')),
+                   (workflow, lambda r: r.update(reference_report='missing/reference.json')),
+                   (workflow, lambda r: r.update(validation_report='../../never-open')),
+                   (workflow, lambda r: r.update(regression_status='DIFFERENT', regression_report='regression/COMPARE.json')),
+                   (workflow, lambda r: r.update(renderer_new_model_executions=1)),
+                   (validation, lambda r: r.update(cases=[])),
+                   (validation, lambda r: r['cases'][0]['validation'].update(accepted=False)),
+                   (validation, lambda r: r['cases'][0]['validation'].update(input_raw_sha256='0' * 64))]
+        for name, change in changes:
+            with self.subTest(name=name, change=change), tempfile.TemporaryDirectory() as tmp:
+                root = copy_campaign(Path(tmp) / 'input')
+                edit(root, name, change)
+                with self.assertRaises(m.CampaignCompareError):
+                    m.read_campaign(root)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = copy_campaign(Path(tmp) / 'input')
+            (root / validation).write_bytes(b'not JSON\n')
+            rehash_all(root)
+            with self.assertRaises(m.CampaignCompareError):
+                m.read_campaign(root)

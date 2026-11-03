@@ -5,6 +5,7 @@ import os
 import platform
 import sys
 import tempfile
+import warnings
 from itertools import zip_longest
 from pathlib import Path
 
@@ -68,6 +69,7 @@ def _compare(old, new):
         else:
             classification = 'RUN_COMPARED'
             add(_changes(_metadata(before), _metadata(after), 'source'), context)
+            add(_changes(before['reference_reports'], after['reference_reports'], 'reference'), context)
             checked = compare_batches(before['batch'], after['batch'])
             total += checked['difference_count']
             samples += checked['compared_sample_count']
@@ -140,6 +142,7 @@ def _publish(output, record, reports, receipt, check):
     for name, raw in reports.items():
         files[str(Path(name).parent / 'SHA256SUMS.txt')] = _manifest({'COMPARE.json': raw})
     files['SHA256SUMS.txt'] = _manifest({**files, 'CAMPAIGN_COMPARE.json': marker})
+    committed = False
     try:
         output.mkdir(exist_ok=False)
         for name, raw in files.items():
@@ -153,8 +156,11 @@ def _publish(output, record, reports, receipt, check):
             _write(pending, marker)
             check()
             os.link(pending, output / 'CAMPAIGN_COMPARE.json')
+            committed = True
     except OSError as error:
-        raise CampaignCompareError('CAMPAIGN_COMPARE_PUBLICATION_FAILED') from error
+        if not committed:
+            raise CampaignCompareError('CAMPAIGN_COMPARE_PUBLICATION_FAILED') from error
+        warnings.warn('CAMPAIGN_COMPARE_CLEANUP_FAILED_AFTER_COMMIT', RuntimeWarning, stacklevel=2)
 
 
 def run_campaign_comparison(baseline: Path, candidate: Path, output: Path) -> dict:

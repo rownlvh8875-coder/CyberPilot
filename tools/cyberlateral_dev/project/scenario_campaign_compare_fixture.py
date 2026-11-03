@@ -46,7 +46,7 @@ def edit(root, name, change):
 
 
 @cache
-def real_campaign(seeds=(42, 43), cases=1, steps=16, status='MATCH'):
+def real_campaign(seeds=(42, 43), cases=1, steps=16, status='MATCH', differences=1):
     if str(ROOT) not in sys.path:
         sys.path.insert(0, str(ROOT))
     m = importlib.import_module('integration_tools.scenario_campaign_run')
@@ -55,8 +55,9 @@ def real_campaign(seeds=(42, 43), cases=1, steps=16, status='MATCH'):
     real_check = checker.check_batch
 
     def wrong_projection(source, output):
-        edit_json(source / 'case-001/data', 'RESULTS.json',
-                  lambda record: record['rows'][0]['model_output']['projection']['torque_float32'].update(bits_hex='00000000'))
+        for offset in range(differences):
+            edit_json(source / 'case-001/data', 'RESULTS.json',
+                      lambda record, offset=offset: record['rows'][offset]['model_output']['projection']['torque_float32'].update(bits_hex='00000000'))
         refresh(source)
         return real_check(source, output)
 

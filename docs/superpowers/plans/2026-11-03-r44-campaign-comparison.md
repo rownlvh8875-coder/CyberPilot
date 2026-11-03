@@ -70,7 +70,7 @@ CLI consumes those interfaces, no alternative schema.
   corrupted input exit2/no output. Expected independent saved Manifest checks PASS.
 - [x] Full `dev.py verify --output NEW_EXTERNAL`, cloud ci_verify; Expected actual
   complete test ledger/static/own compiles PASS, original wheel3f3db...7c4d73c unchanged.
-- [ ] Commit; one fresh whole-branch reviewer from e2cf1ea9 on most-capable allowed
+- [x] Commit; one fresh whole-branch reviewer from e2cf1ea9 on most-capable allowed
   model. Re-grade findings, Important ONE RED→GREEN fix pass/full suite, defer Minors
   and ledger all rulings. No second reviewer.
 - [ ] Normal push/new PR/attach; actual exact-head app/cloud/root enabled CI and

@@ -27,6 +27,8 @@ seed와 case는 **저장된 명시 순서**로 대응합니다. 이름으로 정
 zip으로 버리지 않습니다. 조건·run 추가/삭제·저장 상태/참조 판정/계산량/전체 findings와
 R34의 입력·명령·상태·trace를 비교합니다. 입력이 바뀐 case를 동일 입력 sample 수에
 넣지 않습니다. producer identity 변화는 별도로 표시하며 값 MATCH가 identity 일치는 아닙니다.
+참조 보고서의 첫 차이/총수뿐 아니라 보존된 상세 전체와 expected digest도 비교합니다.
+입력 결속 hash·producer identity·고정 runtime metadata는 값 차이와 분리합니다.
 
 `regression_status`는 저장된 기록의 차이가0이면 MATCH입니다. 전체 `status`는
 원본 캠페인 중 ERROR가 있으면 ERROR, DIFFERENT가 있거나 회귀 차이가 있으면 DIFFERENT,
@@ -54,6 +56,8 @@ R34의 입력·명령·상태·trace를 비교합니다. 입력이 바뀐 case�
 
 모든 다른 파일을 쓴 뒤 완성된 임시 record를 같은 filesystem의 exclusive link로
 게시합니다. 부분 marker 쓰기나 관찰된 입력 변경으로 성공 파일을 만들지 않습니다.
+이 link가 완료 시점입니다. 이후 임시 폴더/cache 정리의 IO 실패는 경고하며 이미 완료된
+결과/exit 판정을 publication 실패로 바꾸지 않습니다.
 전체 폴더의 원자적 OS snapshot·fsync/crash durability를 제공한다는 뜻은 아닙니다.
 완료 파일 존재만 보지 말고 canonical record·판정·모든 Manifest를 함께 검산하세요.
 
@@ -64,7 +68,8 @@ receipt/log 경로 때문에 전체 Manifest는 다를 수 있습니다. 부모 
 ## 검증과 한계
 
 R43 child/root·R34 complete batch·canonical JSON·nested/portable hash·수치/상태/참조
-기록의 결속을 재검산합니다. R43 V1의 deterministic 입력/feature 생성 규칙은 메모리에서
+기록의 결속을 재검산합니다. R40 workflow의 고정 경로·no-baseline 조건과 VALIDATION의
+실제 입력 결속도 검사합니다. R43 V1의 deterministic 입력/feature 생성 규칙은 메모리에서
 재검산하지만 모델/참조 산술을 실행하지는 않습니다. 현재 V1 외의 새 generator/layout을
 자동으로 허용하는 loader가 아닙니다. 상한은 input별8192files/512MiB,16MiB/file/depth16,
 child별2048files/128MiB이며 최대 크기의 속도/메모리 성능 검증은 별개입니다.

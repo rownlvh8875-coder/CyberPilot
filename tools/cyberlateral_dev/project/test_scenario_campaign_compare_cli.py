@@ -1,11 +1,17 @@
 """Isolated R44 CLI must remain data-only with stable exits and no unsafe writes."""
 
+import contextlib
+import io
 import json
+import runpy
+import shutil
 import subprocess
 import sys
 import tempfile
 import unittest
+import warnings
 from pathlib import Path
+from unittest.mock import patch
 
 from scenario_campaign_compare_fixture import change_saved_trace, copy_campaign, real_campaign
 from v1_helpers import ROOT
@@ -57,3 +63,27 @@ class CampaignCompareCliTests(unittest.TestCase):
                 with self.subTest(flags=flags):
                     self.assertEqual(self.cli(*flags).returncode, 2)
                     self.assertFalse(output.exists())
+
+    def test_cli_cache_cleanup_failure_preserves_the_completed_exit_code(self):
+        source = real_campaign()
+        cli = runpy.run_path(str(ROOT / 'tools/scenario_campaign_compare.py'), run_name='_r44_cache_probe')
+        original = shutil.rmtree
+
+        def fail_cache(path, *, onexc=None):
+            original(path, onexc=onexc)
+            if Path(path).name.startswith('cyberlateral-r44-cache-'):
+                raise OSError('controlled cache cleanup failure')
+
+        with tempfile.TemporaryDirectory() as tmp, warnings.catch_warnings(record=True) as observed:
+            warnings.simplefilter('always')
+            output = Path(tmp) / 'out'
+            with patch.object(shutil, 'rmtree', side_effect=fail_cache), \
+                    contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                try:
+                    code = cli['main'](['--baseline', str(source), '--candidate', str(source), '--output', str(output)])
+                except OSError:
+                    self.fail('CLI cleanup must not contradict a completed comparison exit')
+            self.assertEqual(code, 0)
+            self.assertEqual(json.loads((output / 'CAMPAIGN_COMPARE.json').read_bytes())['status'], 'MATCH')
+            self.assertEqual(len(observed), 1)
+            self.assertIn('CACHE_CLEANUP_FAILED_AFTER_RESULT', str(observed[0].message))

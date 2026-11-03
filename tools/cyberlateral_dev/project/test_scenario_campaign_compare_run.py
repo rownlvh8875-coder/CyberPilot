@@ -6,6 +6,7 @@ import json
 import sys
 import tempfile
 import unittest
+import warnings
 from pathlib import Path
 from unittest.mock import patch
 
@@ -108,6 +109,19 @@ class CampaignCompareRunTests(unittest.TestCase):
             self.assertFalse(record['all_observed_producer_identities_match'])
             self.assertNotEqual(record['baseline_producer_identity_sha256'], record['candidate_producer_identity_sha256'])
 
+    def test_nonfirst_retained_reference_difference_is_compared(self):
+        m = self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            old = real_campaign(seeds=(42,), status='DIFFERENT', differences=2)
+            new = copy_campaign(root / 'input', seeds=(42,), status='DIFFERENT', differences=2)
+            report = 'runs/seed-001/workflow/reference/case-001/REFERENCE_CHECK.json'
+            edit(new, report, lambda r: r['differences'][1].update(after='00000001'))
+            result = m.run_campaign_comparison(old, new, root / 'out')
+            self.assertEqual((result['status'], result['regression_status'], result['difference_count']),
+                             ('DIFFERENT', 'DIFFERENT', 1))
+            self.assertEqual(result['first_difference']['field'], 'reference.case-001.differences[1].after')
+
     def test_global_details_truncate_without_truncating_true_difference_count(self):
         m = self.module()
         with tempfile.TemporaryDirectory() as tmp:
@@ -190,6 +204,25 @@ class CampaignCompareRunTests(unittest.TestCase):
             with patch.object(m, '_write', side_effect=change_after_summary), self.assertRaises(m.CampaignCompareError):
                 m.run_campaign_comparison(source, source, output)
             self.assertFalse((output / 'CAMPAIGN_COMPARE.json').exists())
+
+    def test_cleanup_failure_after_commit_does_not_report_publication_failure(self):
+        m = self.module()
+        source = real_campaign()
+        with tempfile.TemporaryDirectory() as tmp, warnings.catch_warnings(record=True) as observed:
+            warnings.simplefilter('always')
+            output = Path(tmp) / 'out'
+            with patch.object(tempfile.TemporaryDirectory, '_rmtree', side_effect=OSError('controlled cleanup failure')):
+                try:
+                    record = m.run_campaign_comparison(source, source, output)
+                except m.CampaignCompareError:
+                    self.fail('A committed complete result must not become a publication failure during cleanup')
+            self.assertEqual((record['status'], m.exit_code(record)), ('MATCH', 0))
+            self.assertEqual(json.loads((output / 'CAMPAIGN_COMPARE.json').read_bytes()), record)
+            self.assertEqual(len(observed), 1)
+            self.assertIn('CLEANUP_FAILED_AFTER_COMMIT', str(observed[0].message))
+            for line in (output / 'SHA256SUMS.txt').read_text().splitlines():
+                digest, name = line.split('  ')
+                self.assertEqual(hashlib.sha256((output / name).read_bytes()).hexdigest(), digest)
 
     def test_repeat_is_path_free_with_closed_manifests_and_separate_private_receipts(self):
         m = self.module()
