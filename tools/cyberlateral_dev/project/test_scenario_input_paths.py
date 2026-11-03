@@ -72,12 +72,13 @@ class ScenarioInputPathTests(unittest.TestCase):
                 error = self.input_error(lambda: reader.read_scenario(Path('unused')))
                 self.assertIs(error.__cause__, original)
         classified = reader.ScenarioError('SCENARIO_SIZE')
-        classified.__cause__ = ValueError('original-cause')
+        original_cause = ValueError('original-cause')
+        classified.__cause__ = original_cause
         with patch.object(reader.os, 'open', side_effect=classified), self.assertRaises(reader.ScenarioError) as caught:
             reader.read_scenario(Path('unused'))
         self.assertIs(caught.exception, classified)
         self.assertEqual(caught.exception.code, 'SCENARIO_SIZE')
-        self.assertIs(caught.exception.__cause__, classified.__cause__)
+        self.assertIs(caught.exception.__cause__, original_cause)
 
     def test_programmer_interrupt_and_parser_errors_are_not_reclassified(self):
         reader = self.reader()

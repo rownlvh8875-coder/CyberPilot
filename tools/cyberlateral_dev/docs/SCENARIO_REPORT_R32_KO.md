@@ -79,13 +79,22 @@ receipt는 기록된 선언입니다. receipt나 source inventory의 경로를 �
 receipt 경로를 portable HTML에 넣지 않습니다. 원본6개 파일은 수정하지 않습니다.
 
 기존 출력·깨진 symlink·부모 부재·입력 트리 내부 출력은 읽기 전에 거부합니다.
+R53은 출력 metadata/해석 오류를 `REPORT_OUTPUT_PATH`, 입력 경로/열기 오류를
+`REPORT_INPUT_FILE`로 제한합니다. 기존 OUTPUT_EXISTS/PARENT/LOCATION 우선순위는
+유지합니다. 입력/출력의 절대 경로 문자열은 receipt의 strict UTF8로 표현 가능하고
+NUL이 없어야 하며, 적합하지 않으면 입력 읽기·렌더 전에 거부합니다. Linux의
+surrogateescape 이름은 경로를 기록하지 않는 직접 `read_report`에서는 지원하지만
+receipt를 만드는 이 frontend에서는 지원하지 않습니다. 일반 Unicode는 지원합니다.
+이미 분류된 오류와 원인 예외는 보존하며, 이후 decode/renderer의 별개 결함을
+경로 오류로 숨기지 않습니다. non-strict 경로 해석은 입력 권한 오류를 실제
+bounded open까지 미룰 수 있습니다. 경로를 자동 수정하거나 우회하지 않습니다.
 전체 검증/렌더 후에만 새 디렉터리를 만들고 배타적으로 쓰며 index.html은 마지막입니다.
 crash atomicity·동시 교체 방지·durability·자동 rollback/resume 보장은 없습니다.
 IO/close/crash로 부분 출력이 남을 수 있습니다. CLI exit0과 전체 checksum을 모두
 확인해야 하며 index 존재만 성공으로 취급하지 않습니다. 새 이름으로 재시도합니다.
 
 오류는 exit2와 `REJECTED: REPORT_*`입니다. suffix는 INPUT_FILE/FILES/SIZE/
-CHECKSUM/JSON/SCHEMA/CONSISTENCY, OUTPUT_EXISTS/OUTPUT_PARENT/OUTPUT_LOCATION,
+CHECKSUM/JSON/SCHEMA/CONSISTENCY, OUTPUT_EXISTS/OUTPUT_PARENT/OUTPUT_LOCATION/OUTPUT_PATH,
 RUNTIME/PUBLICATION_FAILED입니다. runtime은 Linux/CPython3.12.13/binary64이며
 cooperative filesystem의 관찰입니다. OS image나 적대적 프로세스 인증은 아닙니다.
 CLI는 cold private cache prefix를 쓰나 in-process API 격리는 보장하지 않습니다.
