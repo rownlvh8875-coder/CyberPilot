@@ -30,7 +30,10 @@ def rehash(root):
 
 
 def rehash_all(root):
-    for sums in sorted(root.rglob('*SHA256SUMS.txt'), key=lambda p: len(p.parts), reverse=True):
+    # A closed manifest includes its same-directory portable manifest. Update
+    # that subset first even when the filesystem enumerates SHA256SUMS first.
+    for sums in sorted(root.rglob('*SHA256SUMS.txt'),
+                       key=lambda p: (len(p.parts), p.name == 'PORTABLE_SHA256SUMS.txt'), reverse=True):
         if sums.name == 'PORTABLE_SHA256SUMS.txt':
             names = [line.split('  ')[1] for line in sums.read_text().splitlines()]
         else:
@@ -343,6 +346,30 @@ class CampaignTests(unittest.TestCase):
                                  (2, '', 'REJECTED: CAMPAIGN_SOURCE_IDENTITY\n'))
                 self.assertFalse((output / 'CAMPAIGN.json').exists())
                 self.assertEqual((output / 'runs/seed-001/EXPLORATION.json').exists(), late)
+
+    def test_portable_rehash_is_independent_of_filesystem_order(self):
+        m = self.module()
+        original_scan = Path.rglob
+
+        def closed_before_portable(path, pattern):
+            values = list(original_scan(path, pattern))
+            if pattern == '*SHA256SUMS.txt':
+                values.sort(key=lambda p: (-len(p.parts), p.name == 'PORTABLE_SHA256SUMS.txt'))
+            return iter(values)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            target = Path(tmp) / 'child'
+            self.saved_child(42, 1, 16, target)
+            path = target / 'workflow/batch/BATCH.json'
+            value = json.loads(path.read_bytes())
+            value['total_model_steps'] = True
+            path.write_bytes(canonical(value))
+            with patch.object(Path, 'rglob', new=closed_before_portable):
+                rehash_all(target)
+            try:
+                m.verify_manifests(target, m.capture_tree(target))
+            except m.CampaignError:
+                self.fail('Negative-control checksum fixture depends on filesystem enumeration order')
 
     def test_late_source_or_earlier_child_mutation_prevents_publication(self):
         m = self.module()
