@@ -103,6 +103,12 @@ DIFFERENT remain visible even when identical failed records compare equal. Ident
 changes are separate from value changes; this is not a new numerical oracle,
 automatic baseline update, upload or vehicle qualification.
 
+The separate [R46 saved comparison report](docs/SCENARIO_CAMPAIGN_REPORT_R46_KO.md)
+opens complete R44 V1 results as escaped, responsive Korean HTML. It checks closed
+hashes and saved-record consistency, not the original comparison truth. Overall
+source ERROR/DIFFERENT and equal-record regression MATCH stay separate. No new
+model/reference work, original campaign reads or policy/vehicle authorization.
+
 R28 provides a [controlled internally constructed synthetic native adapter](docs/NATIVE_ADAPTER_R28.md).
 R29 connects it to the unchanged model for [two fixed state-carry profiles](docs/ADAPTER_SEQUENCE_R29.md).
 Neither is a generic external message reader, authenticated vehicle history or
