@@ -80,6 +80,9 @@ worker는 소유한 snapshot을 사용합니다. 읽을 수 있고1MiB 이하인
 원본 내용을 끼워 넣지 않습니다.
 NUL 등으로 파일 열기가 실패해도 해당 파일은 `SCENARIO_INPUT_FILE`로 거절하며
 확보하지 못한 bytes·SHA·schema를 추정하지 않습니다.
+CLI 임시 cache 생성의 OS 오류도 입력 읽기 전에 `BATCH_IO`/exit2로 거절합니다.
+Python 표준 임시 경로 선택 외에 추가 fallback을 구현하지 않으며 생성 이후 정리/출력 sink 오류의
+기존 동작을 바꾸는 포괄 catch는 아닙니다.
 
 출력 충돌·입력 개수/총 sample 초과·중복 경로는 worker 없이 배치를 거절합니다.
 worker/identity/기록 실패는 즉시 중단하며 이후 파일을 실행하지 않습니다.

@@ -14,7 +14,12 @@ def main(argv=None) -> int:
     parser.add_argument('--output', type=Path, required=True, help='NEW folder outside component/inputs; existing parent required')
     parser.add_argument('--baseline', type=Path, help='Optional complete saved R33 batch; never a portable subset')
     args = parser.parse_args(argv)
-    with tempfile.TemporaryDirectory(prefix='cyberlateral-r40-cache-') as cache:
+    try:
+        cache_directory = tempfile.TemporaryDirectory(prefix='cyberlateral-r40-cache-')
+    except OSError:
+        print('REJECTED: WORKFLOW_IO', file=sys.stderr)
+        return 2
+    with cache_directory as cache:
         previous = sys.pycache_prefix
         sys.pycache_prefix = cache
         sys.path.insert(0, str(ROOT))

@@ -55,6 +55,8 @@ uv run --project "$r42_component" --locked --offline python -B "$r42_component/t
 출력 사전 점검의 미분류 OS/값 오류는 `EXPLORATION_IO`/exit2입니다.
 기존 parameter 검증과 작은 합성 입력 생성이 먼저이며 출력 충돌·부모·encoding의
 검사 순서는 유지합니다. 이 경계는 후속 parser/identity/worker 결함을 숨기지 않습니다.
+CLI 임시 cache 생성의 OS 오류도 `EXPLORATION_IO`/exit2입니다. argparse 다음,
+domain parameter 검증/생성보다 먼저이며, cache 생성 이후의 오류를 새로 감싸지 않습니다.
 
 내부 R39 stage JSON은 기존1MiB bounded/no-follow regular-file capture와 canonical parser로 읽고, 소비하는 필수 field·container·nullable count·helper count·case/report 결속을 모두 검증합니다. 누락 field, list/null/scalar root, 잘못된 case/helper 형태, duplicate key/nonfinite/비정규 JSON 등은 traceback 대신 `REJECTED: EXPLORATION_STAGE_RECORD`/exit2로 거절하며 root 완료 기록·부분 재현 subset을 게시하지 않습니다. 전체 R39 API를 재설계하는 loader가 아니며 소비하지 않는 추가 metadata는 허용합니다. 구조가 유효한 참조 오류·수치/계산량 모순의 기존 ERROR 판정은 유지합니다.
 

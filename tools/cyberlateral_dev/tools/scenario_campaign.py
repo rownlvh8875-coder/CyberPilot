@@ -15,7 +15,12 @@ def main(argv=None) -> int:
     parser.add_argument('--steps', type=int, required=True, help='16..256 invocation-ordered samples per case')
     parser.add_argument('--output', type=Path, required=True, help='NEW external folder with an existing parent')
     args = parser.parse_args(argv)
-    with tempfile.TemporaryDirectory(prefix='cyberlateral-r43-cache-') as cache:
+    try:
+        cache_directory = tempfile.TemporaryDirectory(prefix='cyberlateral-r43-cache-')
+    except OSError:
+        print('REJECTED: CAMPAIGN_IO', file=sys.stderr)
+        return 2
+    with cache_directory as cache:
         previous = sys.pycache_prefix
         sys.pycache_prefix = cache
         sys.path.insert(0, str(ROOT))

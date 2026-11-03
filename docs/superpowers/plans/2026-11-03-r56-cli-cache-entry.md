@@ -7,7 +7,7 @@
 **Architecture:** Existing argparse → scoped constructor try → existing with-body.
 No generic lifecycle helper, broad later catch, cache fallback or new IO code.
 
-**Tech:** Pinned CPython3.12.13/Linux/stdlb/unittest and existing locked tools.
+**Tech:** Pinned CPython3.12.13/Linux/stdlib/unittest and existing locked tools.
 
 **Spec:** docs/superpowers/specs/2026-11-03-r56-cli-cache-entry-design.md
 
@@ -28,15 +28,16 @@ No generic lifecycle helper, broad later catch, cache fallback or new IO code.
 scenario_workflow.py, scenario_explore.py, scenario_campaign.py; create
 project/test_scenario_producer_cli_cache.py; update the R33/R40/R42/R43 KO guides.
 
-- [ ] Record exact main/same-tree873 baseline reuse and actual four mode000 failures.
+- [x] Record exact main/same-tree873 baseline reuse and actual four mode000 failures.
   Expected no new baseline tests, input/model imports/output0.
-- [ ] Write focused constructor/priority/propagation/state tests and run RED.
+- [x] Write focused constructor/priority/propagation/state tests and run RED.
   Expected missing stable IO handling, existing controls green.
-- [ ] Minimal four constructor boundaries and accurate limited docs, run GREEN.
+- [x] Minimal four constructor boundaries and accurate limited docs, run GREEN.
   Expected stable existing IO/exit2; no capture of later defects/cleanup failures.
-- [ ] With-body AST proof and same-path successful CLI parity with strict SHA
+- [x] With-body AST proof and same-path successful CLI parity with strict SHA
   dependency substitutions, closed manifests and immutable inputs/source.
-- [ ] Full DEV/cloud gates, commit and fresh committed focused completion.
+- [x] Full DEV/cloud gates (fresh883/91 and static checks); implementation ready
+  for commit and fresh committed focused completion recorded in external ledger.
 - [ ] One final whole-branch review; at most one TDD Important/Critical fix pass,
   ledger every minor and declined-to-judge boundary.
 - [ ] Normal push/create/attach PR, actual CI/artifacts, deterministic seal;
