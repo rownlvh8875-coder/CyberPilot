@@ -72,7 +72,12 @@ def _summary(record: dict) -> bytes:
 
 
 def run_comparison(baseline: Path, candidate: Path, output: Path) -> dict:
-    _preflight(baseline, candidate, output)
+    try:
+        _preflight(baseline, candidate, output)
+    except CompareError:
+        raise
+    except (OSError, ValueError) as error:
+        raise CompareError('COMPARE_IO') from error
     identity = _source_hashes()
     old, new = read_batch(baseline), read_batch(candidate)
     record = compare_batches(old, new)
