@@ -62,7 +62,13 @@ JSON에는 현재 참조 identity, 입력 파일 hashes, expected-result SHA, �
 | 1 | DIFFERENT: 참조와 다른 field가 있음; 정상적으로 완료한 불일치 판정 |
 | 2 | 요청/입력/source/runtime/worker/쓰기 오류; MATCH로 대체하지 않음 |
 
-잘못된 입력은 기존 REPORT_* 코드, 새 요청/참조 오류는 REFERENCE_* 코드입니다.
+잘못된 저장 기록은 기존 REPORT_* 코드, 요청/참조 오류는 REFERENCE_* 코드입니다.
+R54는 public `check_saved`의 미분류 사전 경로 OSError/ValueError만 원인 예외를
+보존한 `REFERENCE_IO`로 제한합니다. CLI도 기존 IO 코드와 exit2를 사용하며 입력
+읽기·참조 worker 전에 거부합니다. 기존 출력/부모/위치/loop/runtime 코드 우선순위와
+이미 분류된 오류 객체·원인은 유지합니다. 이후 reader/identity/worker 오류를 이
+경로 코드로 바꾸지 않습니다. 개인 경로 receipt가 없는 R38은 일반 Unicode 및
+Linux surrogateescape 파일명을 계속 지원하며, R32/R39의 UTF8 제약과 다릅니다.
 오류가 나면 성공 보고서는 만들지 않으며 쓰기 중 실패의 부분 폴더는 보존합니다.
 Manifest와 JSON을 함께 확인하세요. 재계산 결과가 달라도 기대값을 자동 수정하지 않습니다.
 

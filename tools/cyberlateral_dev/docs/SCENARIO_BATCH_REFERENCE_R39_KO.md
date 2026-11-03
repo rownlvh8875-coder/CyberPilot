@@ -37,6 +37,12 @@ report/log를 포함한 **완전한 R33 결과**여야 합니다. raw JSON·단�
 
 잘못된 요청/완전하지 않은 입력/checksum·schema·runtime·source/출력 쓰기 실패는
 `REJECTED: <code>`와 exit2입니다. preflight 실패에는 결과가 생기지 않습니다.
+R54는 public `check_batch`의 미분류 preflight OSError/ValueError만 원인 예외를
+보존한 기존 `BATCH_REFERENCE_IO`로 제한합니다. 입력 읽기·snapshot·참조 worker
+전에 거절하며 기존 OUTPUT_EXISTS/PARENT/LOCATION, INPUT_FILE, PATH_ENCODING,
+RUNTIME 코드와 분류된 오류 객체·원인은 유지합니다. R39의 기존 strict UTF8
+경로 제약도 그대로이며 surrogateescape 이름은 PATH_ENCODING입니다. 경로를
+자동 수정하지 않고 이후 reader/identity/worker/쓰기 실패 계약은 바꾸지 않습니다.
 case 실행 오류는 명시적 ERROR 집계로 기록할 수 있으며 정상 case와 섞어 PASS하지 않습니다.
 여러 문제가 있으면 ERROR > DIFFERENT > INCOMPLETE > NO_COMPLETED_CASES 순입니다.
 입력 거절은 오류를 숨긴 성공이 아니며, 전체가 거절이면 수치 MATCH로 처리하지 않습니다.

@@ -82,7 +82,7 @@ def _validate_reference(expected, count: int, counts: dict, spec, producer_ident
         raise ReferenceCheckError('REFERENCE_WORKER_RESULT') from error
 
 
-def check_saved(input_path: Path, output_path: Path) -> dict:
+def _preflight(input_path: Path, output_path: Path) -> None:
     if output_path.exists() or output_path.is_symlink():
         raise ReferenceCheckError('REFERENCE_OUTPUT_EXISTS')
     if not output_path.parent.is_dir():
@@ -102,6 +102,15 @@ def check_saved(input_path: Path, output_path: Path) -> dict:
     if (platform.python_implementation() != 'CPython' or platform.python_version() != '3.12.13'
             or sys.platform != 'linux' or (sys.float_info.radix, sys.float_info.mant_dig) != (2, 53)):
         raise ReferenceCheckError('REFERENCE_RUNTIME')
+
+
+def check_saved(input_path: Path, output_path: Path) -> dict:
+    try:
+        _preflight(input_path, output_path)
+    except (ReferenceCheckError, ReportError):
+        raise
+    except (OSError, ValueError) as error:
+        raise ReferenceCheckError('REFERENCE_IO') from error
     owned = _files(input_path)
     data = decode_report(owned)  # Full late-input/cross-record checks, no reference/model work.
     source, saved = _json(owned['INPUT.json']), _json(owned['RESULTS.json'])

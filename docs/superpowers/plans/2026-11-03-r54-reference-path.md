@@ -42,17 +42,17 @@ classified-first wrappers. Existing R39 preflight and both post-preflight bodies
 **Interfaces:** unchanged check_saved(Path,Path)/check_batch(Path,Path). Existing CLI IO
 codes gain typed public API exceptions; successful outputs/state/formula unchanged.
 
-- [ ] Verify clean exact base; read source/docs and baseline R38 24/R39 23 ledgers.
+- [x] Verify clean exact base; read source/docs and baseline R38 24/R39 23 ledgers.
   Expected: four actual NUL repros raw ValueError, no acquisition/output/worker.
-- [ ] Add focused actual-path/metadata/cause/priority/later-error/CLI/permission and
+- [x] Add focused actual-path/metadata/cause/priority/later-error/CLI/permission and
   valid-policy controls. Run new test_scenario_reference_paths.py with -v.
   Expected RED from missing classification, unchanged controls green. Observe actual count.
-- [ ] Extract only R38 preflight and wrap only the two calls, classified errors first.
+- [x] Extract only R38 preflight and wrap only the two calls, classified errors first.
   Expected GREEN new suite and existing47; no source/read/worker on invalid preflight.
-- [ ] Compare same saved input at baseline/fixed with exact identity deltas only;
+- [x] Compare same saved input at baseline/fixed with exact identity deltas only;
   verify moved preflight/R39 preflight/later-body AST and immutable source/input manifests.
   Expected no numerical/payload differences, truthful orchestration source hashes.
-- [ ] Full `dev.py verify` and cloud `ci_verify.py` in external folders.
+- [x] Full `dev.py verify` and cloud `ci_verify.py` in external folders.
   Expected all tests/static/compile PASS, canonical public wheel unchanged; actual counts.
 - [ ] Commit and fresh completion tests, then one fresh final whole-branch review.
   Expected no unresolved Critical/Important; at most one TDD fix pass, Minor ledgered.

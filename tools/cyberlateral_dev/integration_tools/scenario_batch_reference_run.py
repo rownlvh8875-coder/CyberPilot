@@ -127,7 +127,12 @@ def _publish(output: Path, files: dict[str, bytes]) -> None:
 
 
 def check_batch(input_path: Path, output_path: Path) -> dict:
-    _preflight(input_path, output_path)
+    try:
+        _preflight(input_path, output_path)
+    except BatchReferenceError:
+        raise
+    except (OSError, ValueError) as error:
+        raise BatchReferenceError('BATCH_REFERENCE_IO') from error
     owned, directories = _owned_files(input_path)
     with tempfile.TemporaryDirectory(prefix='cyberlateral-r39-owned-') as temporary:
         work = Path(temporary)
