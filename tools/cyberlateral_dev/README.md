@@ -96,6 +96,13 @@ whole reproducers. State never crosses seeds/cases. A completed ERROR outranks a
 numerical DIFFERENT; fatal/changed/incomplete evidence never gets a final campaign
 marker. No new model/oracle, minimization, rate policy, upload or vehicle authority.
 
+The separate [R44 saved-campaign comparator](docs/SCENARIO_CAMPAIGN_COMPARISON_R44_KO.md)
+compares two complete R43 V1 campaigns in saved seed/case order, reusing R34 exact
+recorded-value checks without new model/reference execution. Source ERROR and
+DIFFERENT remain visible even when identical failed records compare equal. Identity
+changes are separate from value changes; this is not a new numerical oracle,
+automatic baseline update, upload or vehicle qualification.
+
 R28 provides a [controlled internally constructed synthetic native adapter](docs/NATIVE_ADAPTER_R28.md).
 R29 connects it to the unchanged model for [two fixed state-carry profiles](docs/ADAPTER_SEQUENCE_R29.md).
 Neither is a generic external message reader, authenticated vehicle history or

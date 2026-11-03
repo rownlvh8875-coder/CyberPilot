@@ -50,25 +50,25 @@ CLI consumes those interfaces, no alternative schema.
 
 - [x] Baseline: `.venv/bin/python -B -m unittest discover -s project -p 'test_scenario_c*.py' -v`.
   Expected: existing R34/R43/CLI tests PASS before new product code.
-- [ ] Reader tests first: real2seed32sample complete snapshot accepted with unchanged
+- [x] Reader tests first: real2seed32sample complete snapshot accepted with unchanged
   bytes; exact root/child totals/canonical shape, fully rehashed false counts/gates/
   findings/reference/hash/paths rejected; symlinks/FIFO/caps/portable-only rejected.
   Run input module: Expected RED missing reader assertion. Implement smallest bounded
   reader using existing R43/R34 checks; Expected GREEN.
-- [ ] Runner/CLI tests first: real same pair MATCH/32samples/diff0/new model/ref0;
+- [x] Runner/CLI tests first: real same pair MATCH/32samples/diff0/new model/ref0;
   coherent saved trace mutation DIFFERENT/one exact field; positional seed reorder,
   run add/remove and changed config visible; identical ERROR->overallERROR/regressionMATCH,
   identical DIFFERENT->overallDIFFERENT; identity-only change remains separate.
   Include detail truncation, output guards, source/input changes, publication failure,
   independent repeat/canonical manifests and isolated forbidden-module observation.
   Expected RED missing runner/CLI. Implement aggregation/CLI; Expected all focused GREEN.
-- [ ] Korean docs/README match actual command and limits. Run focused suite + Ruff/Ty/
+- [x] Korean docs/README match actual command and limits. Run focused suite + Ruff/Ty/
   Codespell; Expected PASS. Do not alter old source/fixture expectations to obtain PASS.
-- [ ] Explicit read-only comparisons2 against preserved main R43 campaigns:
+- [x] Explicit read-only comparisons2 against preserved main R43 campaigns:
   each128samples/MATCH/diff0/model0/ref0, input hash maps unchanged, portable parent
   comparison/summary equal. Repaired trace control DIFFERENT/one exact field/exit1;
   corrupted input exit2/no output. Expected independent saved Manifest checks PASS.
-- [ ] Full `dev.py verify --output NEW_EXTERNAL`, cloud ci_verify; Expected actual
+- [x] Full `dev.py verify --output NEW_EXTERNAL`, cloud ci_verify; Expected actual
   complete test ledger/static/own compiles PASS, original wheel3f3db...7c4d73c unchanged.
 - [ ] Commit; one fresh whole-branch reviewer from e2cf1ea9 on most-capable allowed
   model. Re-grade findings, Important ONE RED→GREEN fix pass/full suite, defer Minors
