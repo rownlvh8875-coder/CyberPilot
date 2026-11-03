@@ -170,6 +170,10 @@ def run_campaign_comparison(baseline: Path, candidate: Path, output: Path) -> di
             raise CompareError('COMPARE_OUTPUT_LOCATION')
     except CompareError as error:
         raise CampaignCompareError(error.code.replace('COMPARE_', 'CAMPAIGN_COMPARE_', 1)) from error
+    except CampaignCompareError:
+        raise
+    except (OSError, ValueError) as error:
+        raise CampaignCompareError('CAMPAIGN_COMPARE_IO') from error
     identity = _source_hashes()
     old, new = read_campaign(baseline), read_campaign(candidate)
     record, reports = _compare(old, new)
