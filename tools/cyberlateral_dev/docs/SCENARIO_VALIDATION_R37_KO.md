@@ -44,6 +44,10 @@ R51의 입력 열기 경계 보완으로 NUL·인코딩 불가 경로도 SCENARI
 identity 필드는 null, 모델 실행은0입니다. parser나 후속 구현 오류의 일반 ValueError를
 검사 거절로 숨기지 않습니다. 입력 스키마·수치 계약·출력 형식은 바뀌지 않습니다.
 
+R52의 R31 실행 경로 UTF8 receipt 제약은 이 검사 모드에 적용하지 않습니다.
+유효한 Linux surrogateescape 입력 파일도 기존 reader로 검사할 수 있으며, R37 PASS가
+그 경로를 R31 실행 metadata에 직렬화할 수 있다는 뜻은 아닙니다.
+
 validation_scope:
 INPUT_SCHEMA_AND_DOMAIN_ONLY_NOT_MODEL_RUNTIME_OR_ORIGIN
 
