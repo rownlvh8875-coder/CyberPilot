@@ -28,16 +28,37 @@ def _publish(output: Path, files: dict[str, bytes]) -> None:
 
 
 def run_report(input_path: Path, output_path: Path) -> dict:
-    if output_path.exists() or output_path.is_symlink():
-        raise ReportError('REPORT_OUTPUT_EXISTS')
-    if not output_path.parent.is_dir():
-        raise ReportError('REPORT_OUTPUT_PARENT')
     try:
+        if output_path.exists() or output_path.is_symlink():
+            raise ReportError('REPORT_OUTPUT_EXISTS')
+        if not output_path.parent.is_dir():
+            raise ReportError('REPORT_OUTPUT_PARENT')
+        # Path-bearing receipts are strict UTF8; preserve filesystem guard priority.
+        output_text = str(output_path.absolute())
+        output_text.encode('utf-8', errors='strict')
+        if '\0' in output_text:
+            raise ValueError('NUL output path')
+    except ReportError:
+        raise
+    except (OSError, ValueError) as error:
+        raise ReportError('REPORT_OUTPUT_PATH') from error
+    try:
+        input_text = str(input_path.absolute())
+        input_text.encode('utf-8', errors='strict')
+        if '\0' in input_text:
+            raise ValueError('NUL input path')
         resolved_input = input_path.resolve()
-    except (OSError, RuntimeError) as error:
+    except ReportError:
+        raise
+    except (OSError, RuntimeError, ValueError) as error:
         raise ReportError('REPORT_INPUT_FILE') from error
-    if output_path.resolve().is_relative_to(resolved_input):
-        raise ReportError('REPORT_OUTPUT_LOCATION')
+    try:
+        if output_path.resolve().is_relative_to(resolved_input):
+            raise ReportError('REPORT_OUTPUT_LOCATION')
+    except ReportError:
+        raise
+    except (OSError, RuntimeError, ValueError) as error:
+        raise ReportError('REPORT_OUTPUT_PATH') from error
     if (platform.python_implementation() != 'CPython' or platform.python_version() != '3.12.13'
             or sys.platform != 'linux' or (sys.float_info.radix, sys.float_info.mant_dig) != (2, 53)):
         raise ReportError('REPORT_RUNTIME')

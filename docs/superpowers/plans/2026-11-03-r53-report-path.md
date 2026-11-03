@@ -41,20 +41,20 @@ the UTF8 receipt-producing frontend. No new shared abstraction or dependency.
 **Interfaces:** unchanged `read_report(Path) -> dict` and `run_report(Path,Path) -> dict`.
 New frontend code REPORT_OUTPUT_PATH; existing reader/input REPORT_INPUT_FILE.
 
-- [ ] Record clean exact base/source identities and existing report30 baseline PASS.
-- [ ] Add focused tests for every Review Focus item plus real directory-fd cleanup,
+- [x] Record clean exact base/source identities and existing report30 baseline PASS.
+- [x] Add focused tests for every Review Focus item plus real directory-fd cleanup,
   content code preservation and later failure propagation. Run
   `python -B -m unittest discover -s project -p test_scenario_report_paths.py -v`.
   Expected RED: raw ValueError/late encoding or unscoped output metadata failures;
   unchanged-behavior controls pass. Save raw ledger and exact observed count.
-- [ ] Minimal implementation: add ReportError-first/ValueError acquisition catch;
+- [x] Minimal implementation: add ReportError-first/ValueError acquisition catch;
   keep old output guards first, strict UTF8/NUL checks, separate input/output
   resolution boundaries. Save independent cause for R51-M1 and document contract.
   Expected GREEN new tests + existing report30 + R51path8, no forbidden imports.
-- [ ] Read same sign/resumed stored fixtures with baseline/fixed report frontends.
+- [x] Read same sign/resumed stored fixtures with baseline/fixed report frontends.
   Expected HTML/VIEW exact, source/input immutability and closed manifests;
   receipts may differ in source hashes/locations, no numerical oracle claim.
-- [ ] Run `dev.py verify` and cloud `ci_verify.py` into external evidence folders.
+- [x] Run `dev.py verify` and cloud `ci_verify.py` into external evidence folders.
   Expected all tests/static/compile PASS, public wheel byte-identical. Actual
   counts only; no unobserved/skipped permission test claimed PASS.
 - [ ] Commit, fresh completion tests; one fresh final branch reviewer, at most one

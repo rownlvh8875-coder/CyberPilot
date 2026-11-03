@@ -85,7 +85,9 @@ def _files(path):
                     owned[name] = raw
         finally:
             os.close(directory)
-    except (OSError, AttributeError) as error:
+    except ReportError:
+        raise
+    except (OSError, AttributeError, ValueError) as error:
         raise ReportError('REPORT_INPUT_FILE') from error
     expected = ''.join(hashlib.sha256(owned[name]).hexdigest() + '  ' + name + '\n' for name in sorted(CAPS) if name != 'SHA256SUMS.txt')
     _require(owned['SHA256SUMS.txt'] == expected.encode(), 'REPORT_CHECKSUM')
