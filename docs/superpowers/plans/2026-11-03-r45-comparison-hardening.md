@@ -39,23 +39,23 @@ under that component, and `docs/SCENARIO_CAMPAIGN_COMPARISON_R44_KO.md`.
 **Interfaces:** consumes existing `_preflight(Path,Path,Path)` and `CompareError`;
 produces the unchanged public `run_campaign_comparison` signature and CampaignCompareError.
 
-- [ ] Add direct tests expecting literal `CAMPAIGN_COMPARE_IO` for PermissionError,
+- [x] Add direct tests expecting literal `CAMPAIGN_COMPARE_IO` for PermissionError,
   OSError and embedded-NUL paths, with no output/source reads; observe current failures.
-- [ ] Add the minimal expected-exception handler after existing specific mapping.
-- [ ] Verify those regressions GREEN, exact specific codes retained and TypeError propagated.
-- [ ] Run a real isolated CLI permission-denial control and document the API boundary.
-- [ ] Run all `test_scenario_campaign_compare_*.py`; commit Task1.
+- [x] Add the minimal expected-exception handler after existing specific mapping.
+- [x] Verify those regressions GREEN, exact specific codes retained and TypeError propagated.
+- [x] Run a real isolated CLI permission-denial control and document the API boundary.
+- [x] Run all `test_scenario_campaign_compare_*.py`; commit Task1.
 
 ### Task2: R43 mixed-verdict order coverage
 
 **Files:** modify `tools/cyberlateral_dev/project/test_scenario_campaign.py` only.
 **Interfaces:** consumes unchanged `run_campaign(list[int],int,int,Path)->dict`.
 
-- [ ] Parameterize existing real reference ERROR/Difference test with seed orders
+- [x] Parameterize existing real reference ERROR/Difference test with seed orders
   `[42,43]` and `[43,42]`; literal expected runs/findings follow each order, totals32/16/1.
-- [ ] Run the test, expected GREEN for existing correct producer; do not invent a defect.
-- [ ] Demonstrate reverse-order failure under an isolated first-child-wins function mutant.
-- [ ] Run all campaign tests; commit Task2.
+- [x] Run the test, expected GREEN for existing correct producer; do not invent a defect.
+- [x] Demonstrate reverse-order failure under an isolated first-child-wins function mutant.
+- [x] Run all campaign tests; commit Task2.
 
 ### Verification and delivery
 
