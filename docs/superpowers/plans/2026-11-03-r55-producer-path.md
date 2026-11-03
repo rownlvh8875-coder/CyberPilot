@@ -43,15 +43,16 @@ Independent permanent existing-behavior coverage task, no new numerical policy.
 - Modify: R33/R40/R42/R43 KO docs under `tools/cyberlateral_dev/docs/`
 
 **Interfaces:** unchanged prepare_batch/prepare_workflow/run_exploration/run_campaign;
-existing IO/location/input-file codes gain scoped typed errors and original causes.
+new DEV BATCH_IO for unclassified batch preflight, existing other IO/location/input-file
+codes retain scoped typed errors/causes. Workflow inherits explicit batch-stage BATCH_IO.
 
-- [ ] Read clean actual main and reused854 baseline93 relevant methods, no duplicate baseline run.
+- [x] Read clean actual main and reused854 baseline93 relevant methods, no duplicate baseline run.
   Expected: same source tree as reviewed R54; actual raw NUL errors reproducible without workers.
-- [ ] Promote/complete external test draft with real CLI, cause/priority/type/later-fault controls.
+- [x] Promote/complete external test draft with real CLI, cause/priority/type/later-fault controls.
   Run focused new suite; Expected RED from missing classification, existing controls green.
-- [ ] Minimal descriptor/preflight/resolve changes per spec, docs accurate to their order.
+- [x] Minimal descriptor/preflight/resolve changes per spec, docs accurate to their order.
   Expected GREEN new suite and existing relevant suites, no forbidden worker/publication.
-- [ ] Verify extracted preflight/later-body AST and same-input successful outputs with
+- [x] Verify extracted preflight/later-body AST and same-input successful outputs with
   only exact source-identity deltas; Expected inputs/source/closed manifests retained.
 - [ ] Commit Task1 and run its fresh completion test; Expected exact committed HEAD / green ledger.
 

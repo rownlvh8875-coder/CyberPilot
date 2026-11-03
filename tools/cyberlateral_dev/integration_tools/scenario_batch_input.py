@@ -35,14 +35,16 @@ def _read(path: Path) -> bytes:
             if not stat.S_ISREG(os.fstat(stream.fileno()).st_mode):
                 raise ScenarioError('SCENARIO_INPUT_FILE')
             raw = stream.read(MAX_BYTES + 1)
-    except (OSError, AttributeError) as error:
+    except ScenarioError:
+        raise
+    except (OSError, AttributeError, ValueError) as error:
         raise ScenarioError('SCENARIO_INPUT_FILE') from error
     if len(raw) > MAX_BYTES:
         raise ScenarioError('SCENARIO_SIZE')
     return raw
 
 
-def prepare_batch(inputs: list[Path], output: Path) -> list[BatchInput]:
+def _preflight(inputs: list[Path], output: Path) -> None:
     # Every path later serialized in the UTF-8 receipt must be representable,
     # not just the basename displayed by the index.
     try:
@@ -77,6 +79,15 @@ def prepare_batch(inputs: list[Path], output: Path) -> list[BatchInput]:
             raise BatchError('BATCH_OUTPUT_LOCATION')
     if len(set(resolved)) != len(resolved):
         raise BatchError('BATCH_DUPLICATE_INPUT')
+
+
+def prepare_batch(inputs: list[Path], output: Path) -> list[BatchInput]:
+    try:
+        _preflight(inputs, output)
+    except BatchError:
+        raise
+    except (OSError, ValueError) as error:
+        raise BatchError('BATCH_IO') from error
     items = []
     for path in inputs:
         raw, digest, spec, rejection = None, None, None, None

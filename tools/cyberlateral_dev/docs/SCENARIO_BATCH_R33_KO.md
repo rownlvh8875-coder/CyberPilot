@@ -61,6 +61,9 @@ case-001 등의 독립 경로를 사용합니다. 같은 경로를 두 번 지�
 전제하며 OS 보안·atomic snapshot을 인증하지 않습니다.
 입력·출력·환경 receipt에 기록할 전체 경로는 UTF-8로 표현 가능해야 합니다.
 그렇지 않으면 BATCH_PATH_ENCODING/exit2로 출력 생성 전에 거절합니다.
+경로 사전 점검의 미분류 OS/값 오류는 `BATCH_IO`/exit2로 거절합니다.
+기존 개수·중복·출력 충돌 코드와 검사 순서는 유지합니다. 이 새 DEV 코드는
+이전의 원시 OS 오류 문구를 대체하며 입력 capture/parser 전체를 감싸지 않습니다.
 
 ## 입력 오류와 종료 코드
 
@@ -75,6 +78,8 @@ worker는 소유한 snapshot을 사용합니다. 읽을 수 있고1MiB 이하인
 원본과 SHA를 보존합니다. 읽기 불가/초과 파일에는 전체 bytes SHA나 snapshot을
 주장하지 않고 null을 기록합니다. 입력 오류는 코드로 표시하며, 예외 메시지에
 원본 내용을 끼워 넣지 않습니다.
+NUL 등으로 파일 열기가 실패해도 해당 파일은 `SCENARIO_INPUT_FILE`로 거절하며
+확보하지 못한 bytes·SHA·schema를 추정하지 않습니다.
 
 출력 충돌·입력 개수/총 sample 초과·중복 경로는 worker 없이 배치를 거절합니다.
 worker/identity/기록 실패는 즉시 중단하며 이후 파일을 실행하지 않습니다.

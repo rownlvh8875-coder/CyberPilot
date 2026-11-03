@@ -27,7 +27,10 @@ raw/digest/spec null. Workflow still refuses unavailable raw input globally.
 Extract `prepare_batch`'s existing prefix, through all path/count/alias checks
 before `items = []`, into a private preflight helper without changing its body,
 validation order or signature assumptions. Public prepare_batch wraps only that
-call: BatchError first, then OSError/ValueError → existing BATCH_IO with cause.
+call: BatchError first, then OSError/ValueError → one new DEV code BATCH_IO with cause.
+The batch CLI previously printed raw OSError text and workflow used a generic
+WORKFLOW_IO fallback; inherited batch-preflight faults now carry explicit BATCH_IO.
+This deliberate diagnostic refinement is documented, not mislabeled as an old code.
 Capture, parsing, sample-total cap and return behavior stay outside the wrapper.
 Retain UTF8 receipt checks before the existing output guards, final-component
 no-follow semantics and duplicate handling. Do not add path repair or NUL labels

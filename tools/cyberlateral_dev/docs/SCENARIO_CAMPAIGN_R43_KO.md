@@ -8,6 +8,9 @@ R42를 seed별로 순차 실행하고, 모든 결과와 전체 재현 입력을 
 
 기존 CPython3.12.13/Linux binary64 DEV 환경에서 실행합니다. output 부모는 존재해야 하며
 최종 경로는 **새 폴더**여야 합니다. 기존 결과·깨진 링크·component 안의 출력은 거절합니다.
+출력 사전 점검의 미분류 OS/값 오류는 `CAMPAIGN_IO`/exit2로 거절합니다.
+parameter 우선 검증과 기존 `EXPLORATION_*`→`CAMPAIGN_*` 코드 대응은 유지하며,
+후속 identity/worker 결함까지 경로 오류로 바꾸는 포괄 catch는 추가하지 않습니다.
 
 ```bash
 r43_component="$PWD/tools/cyberlateral_dev"
