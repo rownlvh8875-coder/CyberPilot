@@ -64,6 +64,16 @@ CLI exit0은 비교 가능한 기록 MATCH, exit1은 정상 완료된 DIFFERENT(
 뜻이 아닙니다. 회귀 CI에서는 exit1을 실패로 취급하고 변경을 검토할 수 있습니다.
 baseline 자동 갱신·r/dt/policy/fallback/허용오차 옵션은 없습니다.
 
+R50 보완: `run_comparison(baseline: Path, candidate: Path, output: Path)`의 사전
+경로 검사에서 아직 분류되지 않은 `OSError`(권한 거절 포함)·잘못된 경로의 `ValueError`는
+`CompareError(code='COMPARE_IO')`로 거절합니다. 원래 예외는 API의 cause로 보존하며,
+CLI는 `REJECTED: COMPARE_IO`/exit2만 출력하고 경로·내부 예외문·traceback은 노출하지 않습니다.
+이 시점에는 소스 identity나 batch bytes를 읽지 않고 출력을 생성하지 않습니다.
+기존 output/encoding/runtime/input-file 등의 구체적인 거절 코드와 원래 cause는 그대로입니다.
+공유 사전 검사 helper나 R44/R46의 별도 경계 처리는 바꾸지 않습니다. 프로그래머 `TypeError`,
+interrupt/exit 같은 `BaseException`, 사전 검사 이후 오류를 일괄 숨기는 계약이 아닙니다.
+정상 MATCH0·DIFFERENT1, 저장값/비교식/출력 schema는 변경하지 않습니다.
+
 완료 JSON은 마지막에 배타적으로 씁니다. 성공 exit와 전체 Manifest를 함께
 확인해야 하며 JSON 파일의 존재만 완료로 보지 않습니다. 쓰기/close/crash 시
 부분 출력이 남을 수 있고 atomic publication/resume/덮어쓰기를 보장하지 않습니다.

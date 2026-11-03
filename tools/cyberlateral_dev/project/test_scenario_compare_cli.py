@@ -25,6 +25,124 @@ class CompareCLITests(unittest.TestCase):
         return subprocess.run([sys.executable, '-I', '-B', ROOT / 'tools/scenario_compare.py', *map(str, args)],
                               capture_output=True, timeout=15, check=False)
 
+    def rejected_call(self, module, paths):
+        try:
+            module.run_comparison(*paths)
+        except Exception as error:
+            return error
+        self.fail('Invalid preflight unexpectedly completed')
+
+    def isolated_preflight_cli(self, paths, injected_position=None, error_type='PermissionError'):
+        code = ('import runpy,sys\nfrom pathlib import Path\n'
+                'sys.path.insert(0,' + repr(str(ROOT)) + ')\n'
+                'from integration_tools import scenario_compare_run as runner\n'
+                'def forbidden(*args): raise AssertionError("PREFLIGHT_PERFORMED_SOURCE_OR_INPUT_READ")\n'
+                'runner._source_hashes=forbidden\nrunner.read_batch=forbidden\n')
+        if injected_position is not None:
+            code += ('original=Path.absolute\n'
+                     'def fail_absolute(path):\n'
+                     ' if path==Path(' + repr(str(paths[injected_position])) + '):\n'
+                     '  raise ' + error_type + '("sensitive-preflight-diagnostic")\n'
+                     ' return original(path)\n'
+                     'Path.absolute=fail_absolute\n')
+        code += ('sys.argv=' + repr(['scenario_compare.py', '--baseline', str(paths[0]), '--candidate', str(paths[1]),
+                                    '--output', str(paths[2])]) + '\n'
+                 'runpy.run_path(' + repr(str(ROOT / 'tools/scenario_compare.py')) + ',run_name="__main__")\n')
+        return subprocess.run([sys.executable, '-I', '-B', '-c', code], capture_output=True, timeout=15, check=False)
+
+    def test_real_nul_arguments_are_preflight_io_before_source_or_input_reads(self):
+        m = self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for position in range(3):
+                paths = [root / 'baseline', root / 'candidate', root / 'out']
+                paths[position] = root / 'invalid\0path'
+                with self.subTest(position=position), \
+                        patch.object(m, '_source_hashes', side_effect=AssertionError('SOURCE_READ')), \
+                        patch.object(m, 'read_batch', side_effect=AssertionError('INPUT_READ')):
+                    error = self.rejected_call(m, paths)
+                    self.assertIsInstance(error, m.CompareError)
+                    self.assertEqual(getattr(error, 'code', None), 'COMPARE_IO')
+                    self.assertIsInstance(error.__cause__, ValueError)
+                self.assertEqual(list(root.iterdir()), [])
+
+    def test_unclassified_filesystem_failures_are_chained_preflight_io(self):
+        m = self.module()
+        original = Path.absolute
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            paths = [root / 'baseline', root / 'candidate', root / 'out']
+            for position in range(3):
+                for kind in [PermissionError, FileNotFoundError, OSError, ValueError]:
+                    fault = kind('sensitive-preflight-diagnostic')
+
+                    def fail_absolute(path, denied_path=paths[position], failure=fault):
+                        if path == denied_path:
+                            raise failure
+                        return original(path)
+
+                    with self.subTest(position=position, error=kind.__name__), \
+                            patch.object(Path, 'absolute', new=fail_absolute), \
+                            patch.object(m, '_source_hashes', side_effect=AssertionError('SOURCE_READ')), \
+                            patch.object(m, 'read_batch', side_effect=AssertionError('INPUT_READ')):
+                        error = self.rejected_call(m, paths)
+                        self.assertIsInstance(error, m.CompareError)
+                        self.assertEqual(getattr(error, 'code', None), 'COMPARE_IO')
+                        self.assertIs(error.__cause__, fault)
+                    self.assertEqual(list(root.iterdir()), [])
+
+    def test_preflight_programmer_and_base_exceptions_are_not_hidden(self):
+        m = self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for fault in [TypeError('programmer defect'), KeyboardInterrupt(), SystemExit(7)]:
+                with self.subTest(kind=type(fault).__name__), \
+                        patch.object(Path, 'absolute', side_effect=fault), \
+                        self.assertRaises(type(fault)) as caught:
+                    m.run_comparison(root / 'baseline', root / 'candidate', root / 'out')
+                self.assertIs(caught.exception, fault)
+                self.assertEqual(list(root.iterdir()), [])
+
+    def test_later_stage_errors_are_not_reclassified_as_preflight_io(self):
+        m = self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for fault in [OSError('later source failure'), ValueError('later programmer defect')]:
+                with self.subTest(kind=type(fault).__name__), \
+                        patch.object(m, '_source_hashes', side_effect=fault), \
+                        self.assertRaises(type(fault)) as caught:
+                    m.run_comparison(root / 'baseline', root / 'candidate', root / 'out')
+                self.assertIs(caught.exception, fault)
+                self.assertEqual(list(root.iterdir()), [])
+
+    def test_isolated_cli_nul_paths_reject_without_traceback_or_output(self):
+        self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for position in range(3):
+                paths = [root / 'baseline', root / 'candidate', root / 'out']
+                paths[position] = root / 'invalid\0path'
+                with self.subTest(position=position):
+                    result = self.isolated_preflight_cli(paths)
+                    self.assertEqual(result.returncode, 2, result.stderr.decode())
+                    self.assertEqual(result.stdout, b'')
+                    self.assertEqual(result.stderr, b'REJECTED: COMPARE_IO\n')
+                    self.assertEqual(list(root.iterdir()), [])
+
+    def test_isolated_cli_filesystem_errors_do_not_expose_private_diagnostics(self):
+        self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            paths = [root / 'baseline', root / 'candidate', root / 'out']
+            for position in range(3):
+                for kind in ['PermissionError', 'ValueError']:
+                    with self.subTest(position=position, error=kind):
+                        result = self.isolated_preflight_cli(paths, position, kind)
+                        self.assertEqual(result.returncode, 2, result.stderr.decode())
+                        self.assertEqual(result.stdout, b'')
+                        self.assertEqual(result.stderr, b'REJECTED: COMPARE_IO\n')
+                        self.assertEqual(list(root.iterdir()), [])
+
     def test_cli_match_preserves_inputs_full_output_hashes_and_private_receipt(self):
         self.module()
         with tempfile.TemporaryDirectory() as tmp:
