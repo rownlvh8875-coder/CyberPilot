@@ -83,6 +83,14 @@ KEYS/SCHEMA/SCOPE/ID/DOMAIN/STATE/ORDER/COUNT/JSON/SIZE/INPUT_FILE,
 OUTPUT_EXISTS/OUTPUT_PARENT, RUNTIME/SOURCE_IDENTITY/MODEL_IDENTITY/SOURCE_CHANGED,
 MODEL_RESULT/MODEL_REJECTED/PUBLICATION_FAILED. 차량 scale·주기·정책 fallback은 없습니다.
 
+R51은 입력 파일 열기(os.open)에서 NUL 또는 인코딩할 수 없는 경로가 내는
+ValueError를 원인을 보존한 SCENARIO_INPUT_FILE로 전달합니다. R31은 모델 로드·출력
+생성 전에 위 bounded stderr/exit2로 거절합니다. 유효한 Unicode·Linux surrogateescape
+파일명은 reader에서 계속 허용합니다. parser·후속 단계의 ValueError나 programmer/
+interrupt 예외까지 감추지 않으며 출력 경로·publication 계약은 확장하지 않습니다.
+NUL은 OS argv에 전달할 수 없으므로 해당 CLI 회귀 검사는 새 Python 프로세스 안에서
+실제 main(argv)을 호출합니다. 일반 permission 검사는 실제 파일·OS argv를 사용합니다.
+
 ## 주장 한계
 
 SYNTHETIC_ONLY는 입력자의 선언이지 실제 출처 인증이 아닙니다. label만 보고 관찰된
