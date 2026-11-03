@@ -54,7 +54,7 @@ codes retain scoped typed errors/causes. Workflow inherits explicit batch-stage 
   Expected GREEN new suite and existing relevant suites, no forbidden worker/publication.
 - [x] Verify extracted preflight/later-body AST and same-input successful outputs with
   only exact source-identity deltas; Expected inputs/source/closed manifests retained.
-- [ ] Commit Task1 and run its fresh completion test; Expected exact committed HEAD / green ledger.
+- [x] Commit Task1 and run its fresh completion test; Expected exact committed HEAD / green ledger.
 
 ### Task 2: Retain R54-M1 overlong regression permanently
 
@@ -63,9 +63,9 @@ codes retain scoped typed errors/causes. Workflow inherits explicit batch-stage 
 
 **Interfaces:** existing R38/R39 public APIs/CLIs and error codes; no production change.
 
-- [ ] Add permanent actual overlong input/output API/OS argv cases for both frontends.
+- [x] Add permanent actual overlong input/output API/OS argv cases for both frontends.
   Expected baseline GREEN; input reader/code distinction preserved, worker/output0.
-- [ ] Run that same test against exact pre-R54 source in an isolated process if available.
+- [x] Run that same test against exact pre-R54 source in an isolated process if available.
   Expected retrospective RED on untyped API output failures, not a fabricated new behavior.
 - [ ] Run current reference suites, commit Task2 and fresh completion.
   Expected GREEN and permanent test/source/ledger identity; only then mark R54-M1 addressed.
