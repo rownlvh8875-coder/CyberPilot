@@ -1,19 +1,20 @@
 # 현재 오프라인 개발판 사용 안내
 
-구현 설명의 검토 기준은 commit `8082ec3651aad95885512fe0060036f112b65bd9`입니다.
+구현 설명의 고정 검토 기준은 R48 main commit
+`d599d53c96dd965545da368ea699b661d1d07907`입니다. R49는 사용 안내만 갱신합니다.
 실행 결과는 매번 새로 생성한 SUMMARY/RESULTS/Manifest로 확인합니다. 문서나 source
-inventory만으로 테스트 PASS, 최신 GitHub 상태 또는 실차 적격성을 판정하지 않습니다.
+inventory만으로 테스트 PASS, 현재 HEAD·최신 GitHub 상태 또는 실차 적격성을 판정하지 않습니다.
 
 이 개발판은 CyberLateral0.3.0 순수 합성 command/state 모델과 별도의 개발 도구입니다.
 전체 CyberPilot 완성판·openpilot 설치본·물리 시뮬레이터가 아닙니다. 저장소 root에
 남아 있는 upstream 차량 설치 안내를 이 개발판의 설치 절차로 사용하지 마세요.
 
-추가 DEV 기능 R38은 [별도 참조 검사 안내](SCENARIO_REFERENCE_R38_KO.md)를 따릅니다.
-위 검토 commit과 source inventory의 R31–R37 기록을 R38 실행 증거로 사용하지 않습니다.
-추가 R39는 [완전한 저장 batch의 일괄 참조 검사](SCENARIO_BATCH_REFERENCE_R39_KO.md)입니다.
-위 historical source inventory를 R39 구현·실행 증거로 사용하지 않습니다.
-R40은 [합성 입력 통합 실행·독립 검증](SCENARIO_WORKFLOW_R40_KO.md)입니다. 기존 모델과
-도구를 연결하는 별도 DEV 명령이며 위 historical source inventory의 검토 범위를 바꾸지 않습니다.
+노트북 없이 클라우드에서 개발할 수 있습니다. Git checkout과 준비된 DEV 환경이 있으면
+아래 순수 오프라인 흐름을 바로 사용합니다. 새 환경의 고정 HF 복구는
+[클라우드 안내](../../cyberlateral_cloud/README_KO.md)의 **고정 R48 복구 기준**을
+따릅니다. private Dataset 접근 권한이 필요하며 HF는 전체 openpilot 설치본이 아닙니다.
+복구 source는 등록된 읽기 전용 DEV snapshot이지 Git working tree가 아닙니다.
+수정은 정확한 baseline에서 만든 별도 개발 branch에서 하고, snapshot을 덮어쓰지 않습니다.
 
 ## 어떤 명령을 써야 하나
 
@@ -30,13 +31,20 @@ R40은 [합성 입력 통합 실행·독립 검증](SCENARIO_WORKFLOW_R40_KO.md)
 | 완전한 저장 R31의 독립 참조 검사 | tools/scenario_reference_check.py (R38) | 새 public 모델0, 참조/helper 계산 NONZERO; 차량 승인 아님 |
 | 완전한 저장 batch의 독립 참조 검사 | tools/scenario_batch_reference_check.py (R39) | case별 R38·거절 사유 구분; 새 public 모델0, 참조/helper NONZERO |
 | 합성 입력부터 리포트·독립 참조·선택 회귀까지 | tools/scenario_workflow.py (R40) | 실제 모델/참조 작업 NONZERO; 입력 거절·오류·차이를 분리 |
+| 복합 경계·긴 상태 전이 고정팩 | examples/r41 + R40 (R41) | 한 회차 324모델/324참조; 실제 시간이나 차량 정책 아님 |
+| seed 기반 단일 탐색 | tools/scenario_explore.py (R42) | 기존 모델/독립 참조 NONZERO; 전체 비일치 입력 보존, exhaustive coverage 아님 |
+| 명시한 여러 seed의 캠페인 | tools/scenario_campaign.py (R43) | seed/case 사이 상태 독립; 완료 ERROR와 DIFFERENT를 보존 |
+| 완전한 저장 캠페인 비교 | tools/scenario_campaign_compare.py (R44) | 새 모델/참조0; 원본 판정과 저장 회귀 판정 분리 |
+| 저장 캠페인 비교의 HTML·VIEW | tools/scenario_campaign_compare_report.py (R46) | 새 모델/참조0; 리포트 생성 성공은 원본 수치 성공 아님 |
 
 공개 wheel과 DEV 도구를 혼동하지 마세요. wheel은 설치 가능한0.3.0 모델/API와
-고정 CLI이며 R31~R34나 native 어댑터를 payload에 포함하지 않습니다. `python -m
+고정 CLI이며 위 source DEV 도구나 native 어댑터를 payload에 포함하지 않습니다. `python -m
 cyberlateral_dev --input ...` 대신 저장소/개발용 부분 export의 R31 경로를 사용합니다.
 
 [기능·근거 source 목록](OFFLINE_CAPABILITY_INVENTORY_CURRENT.json)은 위 차이와
-미구현/미확정 영역을 구분합니다. R30 문서·목록은 R30 당시 기록으로 보존돼 있습니다.
+미구현/미확정 영역을 구분하며 각 source SHA는 **위 검토 commit의 bytes**입니다.
+작업 중인 파일과 자동 비교하는 gate가 아니며 실행·출처 인증을 대신하지 않습니다.
+R30 문서·목록은 R30 당시 기록으로 보존돼 있습니다.
 
 ## 1. 준비와 출력 위치
 
@@ -47,8 +55,8 @@ uv가 private 위치에 있다면 현재 작업 세션 PATH만 보완합니다.
 
 ```bash
 test -f tools/cyberlateral_dev/dev.py
-r36_component="$PWD/tools/cyberlateral_dev"
-r36_output="$(mktemp -d /tmp/cyberlateral-use-XXXXXX)"
+r49_component="$PWD/tools/cyberlateral_dev"
+r49_output="$(mktemp -d /tmp/cyberlateral-use-XXXXXX)"
 ```
 
 출력 부모는 존재해야 하고 각 하위 출력은 **새 경로**여야 합니다. batch/compare 출력은
@@ -62,7 +70,7 @@ root openpilot 설치, submodule/LFS, Docker, native wheel, 차량 장치는 필
 ## 2. 모델 실행 없는 입력 사전 검사
 
 ```bash
-uv run --project "$r36_component" --locked --offline python -B "$r36_component/tools/scenario.py" --input "$r36_component/examples/synthetic_sign_cycle_v1.json" --validate-only
+uv run --project "$r49_component" --locked --offline python -B "$r49_component/tools/scenario.py" --input "$r49_component/examples/synthetic_sign_cycle_v1.json" --validate-only
 ```
 
 exit0은 입력 계약 충족, exit2의 SCENARIO_INPUT_REJECTED는 기존 입력 거절입니다.
@@ -75,12 +83,12 @@ PASS는 모델/source/runtime 준비·산술 정답·출처 인증이나 실차 
 ## 3. 전체 개발 검증
 
 ```bash
-uv run --project "$r36_component" --locked --offline python -B "$r36_component/dev.py" verify --output "$r36_output/verify"
+uv run --project "$r49_component" --locked --offline python -B "$r49_component/dev.py" verify --output "$r49_output/verify"
 ```
 
 exit0과 `verify/SUMMARY.json`, 전체 checksum을 함께 확인합니다. 실제 테스트 수·자체
-compile 수·Ruff/Ty/Codespell/wheel 결과는 해당 SUMMARY와 로그가 기준입니다. 이 검토 기준의
-로컬 기록은579 tests/176 compiles였지만 미래 실행에 그 숫자를 고정된 성공 조건으로 대입하지
+compile 수·Ruff/Ty/Codespell/wheel 결과는 해당 SUMMARY와 로그가 기준입니다. 고정 R48 기준의
+기록은804 tests/225 compiles이며 미래 실행에 그 숫자를 고정된 성공 조건으로 대입하지
 않습니다. 이것은 컴포넌트 검증이며 전체 openpilot/native/실차 CI가 아닙니다.
 
 ## 4. 합성 입력 사본 → 실행 → 읽기 전용 리포트
@@ -88,10 +96,10 @@ compile 수·Ruff/Ty/Codespell/wheel 결과는 해당 SUMMARY와 로그가 기�
 등록 examples는 보존하고 사본만 편집합니다. 아래는 **편집하지 않은 사본**의 예입니다.
 
 ```bash
-mkdir "$r36_output/user-scenarios"
-cp "$r36_component/examples/synthetic_sign_cycle_v1.json" "$r36_output/user-scenarios/my_sign.json"
-uv run --project "$r36_component" --locked --offline python -B "$r36_component/tools/scenario.py" --input "$r36_output/user-scenarios/my_sign.json" --output "$r36_output/single"
-uv run --project "$r36_component" --locked --offline python -B "$r36_component/tools/scenario_report.py" --input "$r36_output/single" --output "$r36_output/single-view"
+mkdir "$r49_output/user-scenarios"
+cp "$r49_component/examples/synthetic_sign_cycle_v1.json" "$r49_output/user-scenarios/my_sign.json"
+uv run --project "$r49_component" --locked --offline python -B "$r49_component/tools/scenario.py" --input "$r49_output/user-scenarios/my_sign.json" --output "$r49_output/single"
+uv run --project "$r49_component" --locked --offline python -B "$r49_component/tools/scenario_report.py" --input "$r49_output/single" --output "$r49_output/single-view"
 ```
 
 R31은4회 순수 모델 작업으로 JSON/CSV를 저장하며 이 예제의 최종 명령은 `[2,-2,0,2]`입니다.
@@ -106,9 +114,9 @@ previous_applied를 합치거나 누락된 이력을 추정하지 않습니다. 
 ## 5. 독립 batch 두 회차 → 정확한 저장 결과 비교
 
 ```bash
-uv run --project "$r36_component" --locked --offline python -B "$r36_component/tools/scenario_batch.py" --input "$r36_component/examples/synthetic_sign_cycle_v1.json" --input "$r36_component/examples/synthetic_resumed_v1.json" --output "$r36_output/batch-one"
-uv run --project "$r36_component" --locked --offline python -B "$r36_component/tools/scenario_batch.py" --input "$r36_component/examples/synthetic_sign_cycle_v1.json" --input "$r36_component/examples/synthetic_resumed_v1.json" --output "$r36_output/batch-two"
-uv run --project "$r36_component" --locked --offline python -B "$r36_component/tools/scenario_compare.py" --baseline "$r36_output/batch-one" --candidate "$r36_output/batch-two" --output "$r36_output/comparison"
+uv run --project "$r49_component" --locked --offline python -B "$r49_component/tools/scenario_batch.py" --input "$r49_component/examples/synthetic_sign_cycle_v1.json" --input "$r49_component/examples/synthetic_resumed_v1.json" --output "$r49_output/batch-one"
+uv run --project "$r49_component" --locked --offline python -B "$r49_component/tools/scenario_batch.py" --input "$r49_component/examples/synthetic_sign_cycle_v1.json" --input "$r49_component/examples/synthetic_resumed_v1.json" --output "$r49_output/batch-two"
+uv run --project "$r49_component" --locked --offline python -B "$r49_component/tools/scenario_compare.py" --baseline "$r49_output/batch-one" --candidate "$r49_output/batch-two" --output "$r49_output/comparison"
 ```
 
 기본 예제의 각 batch는2완료/거절0/모델5호출/exit0입니다. 파일별 initial_state가
@@ -140,15 +148,81 @@ R40은 mixed 입력에 exit1, 전부 거절에는 NO_COMPLETED_CASES/exit1을 �
 R35의 예상 exit1을 worker 오류와 혼동하거나 무조건 무시하지 않습니다. `set -e`로
 연결하면 예상 exit1에서도 중단되므로 혼합 batch 명령은 각각 결과를 확인합니다.
 
-## 7. 보관·공유·해석 경계
+## 7. 복합 경계 고정팩
 
-R37 DEV source 추가로 R31/R33의 observed_dev_source_hashes는 바뀝니다. 모델 수치와
-wheel은 불변이지만 과거 RESULTS bytes 전체가 같다고 주장하지 않습니다. R34의
+[R41 안내](SYNTHETIC_REGRESSION_PACK_R41_KO.md)의 고정 순서3개를 기존 R40으로 실행합니다.
+
+```bash
+uv run --project "$r49_component" --locked --offline python -B "$r49_component/tools/scenario_workflow.py" \
+  --input "$r49_component/examples/r41/combined_boundaries_v1.json" \
+  --input "$r49_component/examples/r41/repeated_inactive_crossing_v1.json" \
+  --input "$r49_component/examples/r41/long_fault_cycles_v1.json" \
+  --output "$r49_output/boundaries"
+```
+
+실제 `boundaries/WORKFLOW.json`을 확인합니다. 기대값은 VERIFIED/3완료/
+0거절/324모델/324선택-source 참조이며, reference_status=MATCH·차이0입니다.
+합성 scale16/UP2/DOWN5는 차량 scale·r이 아닙니다. 이 호출 수를 초로 환산하지 않습니다.
+
+## 8. 여러 seed 실행 → 저장 캠페인 비교
+
+[R42](SCENARIO_EXPLORATION_R42_KO.md)는 한 seed의 입력 생성·실행·참조를 연결하고,
+[R43](SCENARIO_CAMPAIGN_R43_KO.md)은 명시 순서의 여러 seed를 모읍니다. 다음은 두 회차입니다.
+
+```bash
+uv run --project "$r49_component" --locked --offline python -B "$r49_component/tools/scenario_campaign.py" \
+  --seed 42 --seed 43 --cases 2 --steps 32 --output "$r49_output/campaign-one"
+uv run --project "$r49_component" --locked --offline python -B "$r49_component/tools/scenario_campaign.py" \
+  --seed 42 --seed 43 --cases 2 --steps 32 --output "$r49_output/campaign-two"
+uv run --project "$r49_component" --locked --offline python -B "$r49_component/tools/scenario_campaign_compare.py" \
+  --baseline "$r49_output/campaign-one" --candidate "$r49_output/campaign-two" \
+  --output "$r49_output/campaign-comparison"
+```
+
+각 R43은 MATCH/128모델/128참조/차이0/exit0을 기대하며, seed/case 사이에 상태를 넘기지
+않습니다. seed는 재현 조건이지 차량 설정/정책값이 아닙니다. 실패 case는 전체 sequence를
+보존하며 자동 최소화·baseline 갱신·r 튜닝은 없습니다. [R44](SCENARIO_CAMPAIGN_COMPARISON_R44_KO.md)는
+완전한 R43 폴더를 비교하며 전체/회귀 MATCH·128samples·차이0·새 모델/참조0을 기대합니다.
+원본 참조 계산은 과거 기록이며 비교가 다시 실행한 작업이 아닙니다.
+
+| 명령 | exit0 | exit1 | exit2 |
+|---|---|---|---|
+| R43 | 원본 MATCH | 원본 DIFFERENT | 완료 ERROR 또는 요청/기록/IO 거절 |
+| R44 | 전체 MATCH | 전체 DIFFERENT | 완료 ERROR 또는 요청/기록/IO 거절 |
+| R46 | 리포트 생성 완료 | 사용하지 않음 | 입력/기록/환경/출력 거절 |
+
+완료 ERROR의 최종 record와 거절·미완료의 marker 부재는 다릅니다. R44에서
+`regression_status=MATCH`여도 원본에 ERROR/DIFFERENT가 있으면 전체 status는 그대로
+ERROR/DIFFERENT입니다. 저장값의 반복 일치는 새 수치 oracle이나 출처 인증이 아닙니다.
+
+## 9. 저장 비교 리포트 보기
+
+```bash
+uv run --project "$r49_component" --locked --offline python -B "$r49_component/tools/scenario_campaign_compare_report.py" \
+  --input "$r49_output/campaign-comparison" --output "$r49_output/campaign-view-one"
+uv run --project "$r49_component" --locked --offline python -B "$r49_component/tools/scenario_campaign_compare_report.py" \
+  --input "$r49_output/campaign-comparison" --output "$r49_output/campaign-view-two"
+```
+
+[R46](SCENARIO_CAMPAIGN_REPORT_R46_KO.md)은 complete R44를 검산하고 HTML/VIEW를 만듭니다.
+`campaign-view-one/index.html`을 열어 전체 판정·저장 회귀 판정·seed별 상세를 봅니다.
+stdout의 REPORT_COMPLETE와 exit0은 **화면 생성 완료**이며 원본 ERROR/DIFFERENT를 성공으로
+승격하지 않습니다. 새 모델/참조는0이며 원래 campaign 입력을 다시 읽거나 계산하지 않습니다.
+같은 saved 입력의 두 리포트 HTML/VIEW는 byte-identical이어야 합니다. 독립 생성 입력의
+private receipt hash가 경로에 따라 바뀌면 리포트 전체 bytes가 같다는 주장은 하지 않습니다.
+R45는 비교 경계 IO 거절, R47/R48은 결정된 리포트/비교 결과 이후 정리 진단 보완입니다.
+경고 전달 자체는 보장하지 않으며 interrupt·primary 출력·process crash를 숨기는 기능이 아닙니다.
+기존 화면 검증 범위와 문서의 한계는 유지하며 이 안내 실행이 새 GUI 실측은 아닙니다.
+
+## 10. 보관·공유·해석 경계
+
+DEV 구현 source 변경은 R31/R33의 observed_dev_source_hashes를 바꿀 수 있습니다. 모델 수치와
+wheel이 불변이어도 과거 RESULTS bytes 전체가 같다고 주장하지 않습니다. R34의
 기록 비교와 producer identity 변경 표시는 별개입니다.
 
 완전한 batch/compare에는 개인 경로가 있는 receipt와 이를 참조하는 전체 Manifest가
 있습니다. 로컬 검증용 원본은 보존하고, 공개할 때는 검토한 portable 부분만 별도 묶음으로
-만들어 새 공유 root Manifest를 사용합니다. **portable 공유 ZIP은 완전한 R34 입력이 아닙니다.**
+만들어 새 공유 root Manifest를 사용합니다. **portable 공유 ZIP은 완전한 R34/R44/R46 입력이 아닙니다.**
 원래 HTML checksum 링크가 공유에서 빠진 파일을 가리킬 수도 있습니다. SOURCE 전체,
 venv/cache, 개인 사용 안내/helper/receipt/로그/실차 자료를 공유 묶음에 섞지 않습니다.
 
@@ -156,9 +230,10 @@ venv/cache, 개인 사용 안내/helper/receipt/로그/실차 자료를 공유 �
 EXPECTED_BATCH/COMPARE portable Manifest는 해당 reference/output root를 기준으로
 검산하는 예외를 구분합니다. REPORT_SHA256SUMS.txt도 빠뜨리지 않습니다.
 
-모델 작업은 위 single4회+기본 batch5회씩이라면 명시적14회입니다. 전체 unit/gate의
-추가 합성 모델 작업은 별도 NONZERO이며 전체 작업0회 또는14회로 축약하지 않습니다.
-R32/R34의 새 모델0과 모델 실행기 R31/R33의 작업량을 구분합니다. 호출 index는
+전체 예제를 한 번씩 실행하면 명시적 모델 작업은 single4+batch5씩2회+R41 324+
+R43 128씩2회=594이며, 선택-source 참조는 R41 324+R43 256=580입니다. 전체 unit/gate의
+추가 합성 작업은 별도 NONZERO/총합 미집계이며 전체 작업을594로 축약하지 않습니다.
+R32/R34/R44/R46의 새 모델0과 실행기/참조 검사기의 작업량을 구분합니다. 호출 index는
 실제 초·10ms·100Hz를 뜻하지 않습니다.
 
 native R27~R29는 별도 opt-in 고정 합성 경로이며 기본 안내의 필수 단계가 아닙니다.
