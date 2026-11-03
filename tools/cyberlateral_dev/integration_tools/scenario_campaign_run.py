@@ -5,7 +5,7 @@ from pathlib import Path
 
 from . import scenario_explore_run as exploration
 from .scenario_batch_input import _read
-from .scenario_campaign_evidence import CampaignError, capture_tree, verify_manifests
+from .scenario_campaign_evidence import CampaignError, capture_tree, validate_stages, verify_manifests
 from .scenario_compare_input import REPORT_FILES, ROOT_FILES
 from .scenario_explore_generate import GENERATOR_ID, _parameters, generation_record
 from .scenario_output import GATES, canonical
@@ -24,6 +24,13 @@ def _source_identity() -> dict:
              'tools/scenario_campaign.py']
     return {'exploration': exploration._source_identity(),
             'campaign': {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in names}}
+
+
+def _observe_identity() -> dict:
+    try:
+        return _source_identity()
+    except (ValueError, OSError) as error:
+        raise CampaignError('CAMPAIGN_SOURCE_IDENTITY') from error
 
 
 def _json_file(path):
@@ -54,6 +61,7 @@ def _child(output: Path, produced: dict, seed: int, cases: int, steps: int, iden
         _need(all(key in workflow for key in ['completed', 'rejected', 'model_steps', 'reference_steps',
                   'reference_helper_counts', 'input_count', 'reference_difference_count', 'reference_status', 'status']))
         _need(type(workflow['reference_helper_counts']) is dict)
+        validate_stages(output, workflow, checked, identity['exploration'], hashes, cases, steps)
         _need(canonical(workflow.get('gates')) == canonical(GATES) == canonical(checked.get('gates')))
         _need(saved['status'] == exploration._verdict(workflow, checked, cases, steps))
         _need(all(canonical(saved[key]) == canonical(workflow[key]) for key in ['model_steps', 'reference_steps']))
@@ -139,7 +147,7 @@ def run_campaign(seeds: list[int], cases: int, steps: int, output: Path) -> dict
     except exploration.ExplorationError as error:
         raise CampaignError(error.code.replace('EXPLORATION_', 'CAMPAIGN_', 1)) from error
     try:
-        identity = _source_identity()
+        identity = _observe_identity()
         output.mkdir(exist_ok=False)
         (output / 'runs').mkdir(exist_ok=False)
         rows, findings, snapshots = [], [], {}
@@ -160,7 +168,7 @@ def run_campaign(seeds: list[int], cases: int, steps: int, output: Path) -> dict
             for item in saved['findings']:
                 findings.append({**item, 'run_id': run_id, 'seed': seed, 'reproducer': prefix + item['reproducer'],
                                  'reference_report': prefix + item['reference_report'] if item['reference_report'] is not None else None})
-        if _source_identity() != identity:
+        if _observe_identity() != identity:
             raise CampaignError('CAMPAIGN_SOURCE_CHANGED')
         expected = {f'runs/{run_id}/{name}': digest for run_id, hashes in snapshots.items() for name, digest in hashes.items()}
         if capture_tree(output, max_files=8192, max_bytes=512 * 1024 * 1024) != expected:

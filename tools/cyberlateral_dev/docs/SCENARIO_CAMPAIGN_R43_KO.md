@@ -51,6 +51,8 @@ truncate·renumber·minimize하지 않습니다. checksum은 출처 인증이 �
 내부 완료 record는1MiB bounded canonical JSON으로 읽으며 bool/음수/모순 counter,
 요청한 seed/조건·source·gate·reproducer/생성 bytes 결속을 확인합니다. 기존 R42/R40/R39의
 소비 field와 V1 파일 집합을 검산하고, 추가·누락·손상·링크·특수 파일은 거절합니다.
+기존 bounded R33 read_batch 검사를 재사용하고, 개별 R38 기록의 상태·계산량·차이·입력
+해시·reference identity를 R39/R40 요약과 결속합니다. 소스 관찰 실패도 안정된 거절/exit2입니다.
 child별2048files/128MiB,16MiB/file/depth16; campaign 전체8192files/512MiB입니다.
 root/nested closed Manifest와 portable subset checksum을 검산합니다. 이 검사는 임의의
 새 R42 버전을 자동 승인하는 loader나 적대적 동시 파일 교체를 막는 OS snapshot이 아닙니다.

@@ -1,8 +1,11 @@
 """R43 must preserve real R42 verdicts, independent seeds and complete evidence."""
 
+import contextlib
 import hashlib
 import importlib
+import io
 import json
+import runpy
 import shutil
 import sys
 import tempfile
@@ -24,6 +27,16 @@ def rehash(root):
              if p.is_file() and p != root / 'SHA256SUMS.txt'}
     (root / 'SHA256SUMS.txt').write_bytes(''.join(hashlib.sha256(raw).hexdigest() + '  ' + name + '\n'
                                                for name, raw in sorted(files.items())).encode())
+
+
+def rehash_all(root):
+    for sums in sorted(root.rglob('*SHA256SUMS.txt'), key=lambda p: len(p.parts), reverse=True):
+        if sums.name == 'PORTABLE_SHA256SUMS.txt':
+            names = [line.split('  ')[1] for line in sums.read_text().splitlines()]
+        else:
+            names = [p.relative_to(sums.parent).as_posix() for p in sums.parent.rglob('*') if p.is_file() and p != sums]
+        sums.write_bytes(''.join(hashlib.sha256((sums.parent / name).read_bytes()).hexdigest() + '  ' + name + '\n'
+                                 for name in sorted(names)).encode())
 
 
 class CampaignTests(unittest.TestCase):
@@ -272,6 +285,64 @@ class CampaignTests(unittest.TestCase):
                 else:
                     self.fail('Nonfinite child was accepted')
             self.assertFalse((output / 'CAMPAIGN.json').exists())
+
+    def test_rehashed_lower_reports_batch_counts_and_reference_bindings_are_not_match(self):
+        m = self.module()
+        mutations = [
+            ('workflow/reference/case-001/REFERENCE_CHECK.json', lambda r: r.update(status='DIFFERENT', difference_count=1)),
+            ('workflow/batch/BATCH.json', lambda r: r.update(total_model_steps=True)),
+            ('workflow/reference/BATCH_REFERENCE_CHECK.json', lambda r: r.update(input_root_manifest_sha256='0' * 64)),
+            ('workflow/reference/BATCH_REFERENCE_CHECK.json', lambda r: r.update(input_portable_manifest_sha256='0' * 64)),
+            ('workflow/reference/BATCH_REFERENCE_CHECK.json', lambda r: r.update(reference_identity={})),
+            ('workflow/reference/case-001/REFERENCE_CHECK.json', lambda r: r.update(input_source_hashes={})),
+            ('workflow/reference/case-001/REFERENCE_CHECK.json', lambda r: r.update(reference_identity={})),
+            ('workflow/WORKFLOW.json', lambda r: r.update(observed_dev_source_hashes={})),
+        ]
+        for member, mutate in mutations:
+            with self.subTest(member=member, mutate=mutate), tempfile.TemporaryDirectory() as tmp:
+                output = Path(tmp) / 'out'
+
+                def child(seed, cases, steps, target, member=member, mutate=mutate):
+                    record = self.saved_child(seed, cases, steps, target)
+                    path = target / member
+                    altered = json.loads(path.read_bytes())
+                    mutate(altered)
+                    path.write_bytes(canonical(altered))
+                    rehash_all(target)
+                    return record
+
+                with patch.object(m.exploration, 'run_exploration', side_effect=child):
+                    with self.assertRaisesRegex(m.CampaignError, 'CAMPAIGN_STAGE_RECORD'):
+                        m.run_campaign([42], 1, 16, output)
+                self.assertFalse((output / 'CAMPAIGN.json').exists())
+
+    def test_initial_and_late_inherited_source_failures_are_bounded_cli_rejections(self):
+        m = self.module()
+        frontend = runpy.run_path(str(ROOT / 'tools/scenario_campaign.py'))['main']
+        identity = m._source_identity()
+        original_read = Path.read_bytes
+
+        def unavailable(path):
+            if path == ROOT / 'IMPORTED_ARTIFACT.json':
+                raise OSError('controlled missing source observation')
+            return original_read(path)
+
+        for late in [False, True]:
+            with self.subTest(late=late), tempfile.TemporaryDirectory() as tmp:
+                output = Path(tmp) / 'out'
+                stdout, stderr = io.StringIO(), io.StringIO()
+                failure = m.exploration.workflow.reference.reference.ReferenceCheckError('REFERENCE_SOURCE_IDENTITY')
+                control = (patch.object(m, '_source_identity', side_effect=[identity, failure]) if late
+                           else patch.object(Path, 'read_bytes', new=unavailable))
+                with control, contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+                    try:
+                        code = frontend(['--seed', '42', '--cases', '1', '--steps', '16', '--output', str(output)])
+                    except Exception as error:
+                        self.fail('Source failure escaped CLI as ' + type(error).__name__)
+                self.assertEqual((code, stdout.getvalue(), stderr.getvalue()),
+                                 (2, '', 'REJECTED: CAMPAIGN_SOURCE_IDENTITY\n'))
+                self.assertFalse((output / 'CAMPAIGN.json').exists())
+                self.assertEqual((output / 'runs/seed-001/EXPLORATION.json').exists(), late)
 
     def test_late_source_or_earlier_child_mutation_prevents_publication(self):
         m = self.module()

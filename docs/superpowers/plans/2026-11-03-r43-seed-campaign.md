@@ -49,8 +49,8 @@ Interfaces exactly as spec; evidence helper→runner→CLI, no other task depend
 - [x] Full component gate722tests/static/208owncompile/unchanged wheel PASS,
       full cloud ci_verify (91/static/12compile PASS), explicit two campaigns [42,43]/2cases/32steps
       each128 model/reference + R34 MATCH64samples per seed, no tolerance. Real CLI DIFFERENT/ERROR exits1/2 PASS.
-- [ ] Commit implementation; fresh whole-branch reviewer from97191972. Important fixes ONE RED→GREEN
-      pass + full green suite; minors/rulings ledgered. No second reviewer.
+- [x] Commit implementation; fresh whole-branch reviewer from97191972. Two Important fixes ONE RED→GREEN
+      pass + full724 suite/static/208compile PASS, final cloud91 and explicit repeat PASS; minor/rulings ledgered. No second reviewer.
 - [ ] Normal push/new PR/attach, verify exact-head cloud/app/root CI and artifacts; do not merge main or upload HF.
 
 ## Bookkeeping
