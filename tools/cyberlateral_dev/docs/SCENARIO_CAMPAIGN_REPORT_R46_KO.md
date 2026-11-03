@@ -39,6 +39,9 @@ R44 V1의 루트4파일, paired run별 COMPARE.json/Manifest만 허용합니다.
 과도한 중첩·미지원 schema를 거절합니다. strict bool/int, 고정 gate/claim, 명시적
 위치·source alert·부모/하위 건수·identity 플래그·보존 상세의 문맥 일관성을 검사합니다.
 입력 bytes와 renderer 소스를 전후 및 최종 게시 직전에 재확인합니다.
+상세 잘림에도 source/reference/batch 순서와 차이 배분을 확인합니다. R43 V1의
+알려진 source metadata는 조건·판정·findings에 결속합니다. 실패한 참조 작업량은
+성공 보고 step으로 세지 않으며, 미제공 reference 값의 진실을 복원하지 않습니다.
 
 이 검사는 **보존 기록의 구조/일관성**이며, 원래 캠페인으로 비교를 재계산하거나
 수치의 진실·출처·현재 source identity를 인증하지 않습니다. 해시를 일관되게 다시

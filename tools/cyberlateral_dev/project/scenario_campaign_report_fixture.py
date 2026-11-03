@@ -26,6 +26,8 @@ def _real_comparison(kind):
         old = real_campaign()
         new = copy_campaign(home / 'candidate')
         change_saved_trace(new)
+    elif kind == 'source_transition':
+        old, new = real_campaign(seeds=(42,), status='ERROR'), real_campaign(seeds=(42,))
     elif kind in {'error', 'source_different'}:
         old = new = real_campaign(seeds=(42,), status='ERROR' if kind == 'error' else 'DIFFERENT')
     elif kind == 'added':

@@ -73,5 +73,5 @@ modify README.md; create docs/SCENARIO_CAMPAIGN_REPORT_R46_KO.md.
 - [x] Run all R46 tests GREEN/static; actual saved128sample repeated reports and
   six control views, byte/Manifest/input/source checks, PC/mobile browser captures.
 - [x] Full dev.py verify + cloud ci_verify PASS and unchanged-source/wheel guards.
-- [ ] Commit Task2, one fresh whole-branch review; Important fixes only RED→GREEN.
+- [x] Commit Task2, one fresh whole-branch review; Important fixes only RED→GREEN.
 - [ ] Create feature PR, observe actual exact-head CI/artifacts; seal evidence twice.

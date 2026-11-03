@@ -1,5 +1,6 @@
 """Reader behavior: reject closed-hash contradictions, not merely damaged bytes."""
 
+import copy
 import hashlib
 import json
 import os
@@ -27,6 +28,7 @@ class CampaignReportDataTests(unittest.TestCase):
             ('match', 'MATCH', 'MATCH', 0, 32), ('difference', 'DIFFERENT', 'DIFFERENT', 1, 32),
             ('error', 'ERROR', 'MATCH', 0, 16), ('source_different', 'DIFFERENT', 'MATCH', 0, 16),
             ('added', 'DIFFERENT', 'DIFFERENT', 2, 16), ('truncated', 'DIFFERENT', 'DIFFERENT', 512, 512),
+            ('source_transition', 'ERROR', 'DIFFERENT', 4, 16),
         ]:
             with self.subTest(kind=kind):
                 source = real_comparison(kind)
@@ -87,6 +89,47 @@ class CampaignReportDataTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             source = copy_comparison(Path(tmp) / 'input', 'error')
             edit(source, 'CAMPAIGN_COMPARE.json', lambda r: r.update(source_error_runs=[]))
+            self.rejected(source)
+
+    def test_truncated_retained_metadata_cannot_exceed_run_budget(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            source = copy_comparison(Path(tmp) / 'input', 'truncated')
+
+            def change(record):
+                fake = {**record['differences'][0], 'field': 'source.model_steps', 'case_id': None,
+                        'sample_index': None, 'before': 512, 'after': 513}
+                record['differences'] = [fake, *record['differences'][:255]]
+                record['first_difference'] = copy.deepcopy(fake)
+
+            edit(source, 'CAMPAIGN_COMPARE.json', change)
+            self.rejected(source)
+
+    def test_retained_source_metadata_binds_known_parent_facts(self):
+        for field, before, after in [('source.status', 'MATCH', 'ERROR'),
+                                     ('source.model_steps', 16, 17), ('source.findings', [], ['invented'])]:
+            with self.subTest(field=field), tempfile.TemporaryDirectory() as tmp:
+                source = copy_comparison(Path(tmp) / 'input')
+
+                def change(record, field=field, before=before, after=after):
+                    fake = {'run_id': 'seed-001', 'baseline_seed': 42, 'candidate_seed': 42,
+                            'case_id': None, 'sample_index': None, 'field': field,
+                            'before_present': True, 'after_present': True, 'before': before, 'after': after}
+                    record.update(differences=[fake], first_difference=copy.deepcopy(fake), difference_count=1,
+                                  status='DIFFERENT', regression_status='DIFFERENT')
+                    record['runs'][0].update(difference_count=1, regression_status='DIFFERENT')
+
+                edit(source, 'CAMPAIGN_COMPARE.json', change)
+                self.rejected(source)
+
+    def test_truncated_child_prefix_cannot_skip_earlier_batch_detail(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            source = copy_comparison(Path(tmp) / 'input', 'truncated')
+
+            def change(record):
+                record['differences'] = record['differences'][1:] + [copy.deepcopy(record['differences'][-1])]
+                record['first_difference'] = copy.deepcopy(record['differences'][0])
+
+            edit(source, 'CAMPAIGN_COMPARE.json', change)
             self.rejected(source)
 
     def test_malformed_detail_context_never_leaks_type_error(self):

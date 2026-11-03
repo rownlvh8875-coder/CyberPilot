@@ -3,7 +3,7 @@
 import re
 from collections import Counter
 
-from .scenario_compare_data import _changes
+from .scenario_compare_data import MISSING, _changes
 from .scenario_output import GATES, canonical
 
 TIME = 'INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME'
@@ -193,6 +193,58 @@ def _findings(findings, status, parameters):
     same(status, 'ERROR' if any(f['case_status'] == 'ERROR' for f in findings) else 'DIFFERENT')
 
 
+def _metadata(record, row, side):
+    """R43 V1 reported counts: failed reference work is NOT successful steps."""
+    status = row[side + '_status']
+    if status is None:
+        return MISSING
+    params = record[side + '_parameters']
+    findings = next((a['findings'] for name in ['source_error_runs', 'source_difference_runs']
+                     for a in record[name] if a['side'] == side and a['run_id'] == row['run_id']), [])
+    failed = sum(f['case_status'] == 'ERROR' for f in findings)
+    return {'status': status, 'model_steps': params['cases'] * params['steps'],
+            'reference_steps': (params['cases'] - failed) * params['steps'],
+            'difference_count': sum(f['difference_count'] for f in findings if f['case_status'] == 'DIFFERENT'),
+            'findings': findings}
+
+
+def _retained_allocation(record, children, parameter_count):
+    """Check the producer's parameter -> run(source, reference, batch) prefix.
+
+    Known source metadata is derivable from parameters/verdicts/findings. Missing
+    reference truth stays unknown; only its count allocation/context/order is checked.
+    """
+    cursor = parameter_count
+    for row in record['runs']:
+        count = min(row['difference_count'], max(0, 256 - cursor))
+        visible = record['differences'][cursor:cursor + count]
+        same(len(visible), count)
+        cursor += count
+        context = {'run_id': row['run_id'], 'baseline_seed': row['baseline_seed'],
+                   'candidate_seed': row['candidate_seed'], 'case_id': None, 'sample_index': None}
+        old, new = [_metadata(record, row, side) for side in ['baseline', 'candidate']]
+        if row['comparison_report'] is None:
+            expected = [{**context, **d} for d in _changes(old, new, 'run')]
+            same(row['difference_count'], len(expected))
+            same(visible, expected[:count])
+            continue
+        source = [{**context, **d} for d in _changes(old, new, 'source')]
+        child = children[row['run_id']]
+        reference_count = row['difference_count'] - child['difference_count'] - len(source)
+        need(reference_count >= 0, 'CAMPAIGN_REPORT_CONSISTENCY')
+        source_count = min(count, len(source))
+        same(visible[:source_count], source[:source_count])
+        retained_reference_count = min(count - source_count, reference_count)
+        for detail in visible[source_count:source_count + retained_reference_count]:
+            need(detail['field'].startswith(('reference.', 'reference[')), 'CAMPAIGN_REPORT_CONSISTENCY')
+            for name, value in context.items():
+                same(detail[name], value)
+        batch = visible[source_count + retained_reference_count:]
+        expected = [{**context, **d, 'field': 'batch.' + d['field']} for d in child['differences']]
+        same(batch, expected[:len(batch)])
+    same(cursor, len(record['differences']))
+
+
 def validate_comparison(record: dict, children: dict) -> None:
     _fixed(record, PARENT_FIXED, {
         'status', 'regression_status', 'baseline_campaign_status', 'candidate_campaign_status',
@@ -283,6 +335,7 @@ def validate_comparison(record: dict, children: dict) -> None:
             for key, expected in [('side', side), ('run_id', run_id), ('seed', seed), ('status', state)]:
                 same(alert[key], expected)
             _findings(alert['findings'], state, old if side == 'baseline' else new)
+    _retained_allocation(record, children, len(prefix))
     same(record['compared_sample_count'], samples)
     same(record['difference_count'], total)
     same(record['all_observed_producer_identities_match'], identities)
