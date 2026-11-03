@@ -81,6 +81,27 @@ Driver identity는 봉인 시점의 파일 bytes 기록입니다. 검증 도중 
 
 ## 클라우드에서 읽기 전용 복구
 
+### 고정 R48 복구 기준
+
+노트북 없이 개발을 이어갈 수 있는 검증 기준은 다음과 같습니다. 이는 움직이는 main/
+latest 포인터가 아니라 고정 기록입니다. R49는 안내만 갱신하며 이 archive를 새로 만들거나
+덮어쓰지 않습니다. GitHub에서 source commit을 먼저 확보하고 기존 private Dataset
+접근 권한을 사용합니다. token을 문서·명령 인자·Git에 넣거나 새 login을 요구하지 않습니다.
+
+- Source: `d599d53c96dd965545da368ea699b661d1d07907`
+- Archive SHA256: `82e3f0865d5981eb7ada41b20c9daf392b16e284b95362d04ff655c047b48fc7`
+- Archive revision: `959c8876a65839729855712c5ca59df05dacea4f`
+- [실제 실행을 검증한 한국어 복구 안내](https://huggingface.co/datasets/jjuinho/cyberpilot-evidence/blob/d5da1d916b5dd54e7768d2d65ce2e760203f9e11/restore-guides/d599d53c96dd965545da368ea699b661d1d07907/82e3f0865d5981eb7ada41b20c9daf392b16e284b95362d04ff655c047b48fc7/RESTORE_KO.md)
+
+별도 SDK/app/cache를 쓰는 같은 host의 두 새 환경에서 source434파일을 검산한 기록입니다.
+기본 restore의 R41과 별도로 guide는 R43/R44/R46 및 R44 41개·R46 38개 표적 unit을
+실행합니다. 전체804 gate 재실행이나 별도 물리 머신 독립성으로 확대하지 않습니다.
+HF는 DEV component/context/합성 evidence 보관소이며 native 저장소·차량 설치본이 아닙니다.
+등록 restore snapshot은 수정하지 않고 Git checkout의 새 branch에서 개발합니다.
+기존 checkout/venv/cache/STEP7/과거 evidence는 보존하며 새 output 경로만 사용합니다.
+
+### 기본 복구 명령
+
 노트북 없이 시작하려면 GitHub 소스를 먼저 clone하고 정확한 source commit을 확보합니다.
 아래 명령은 그 Git object를 authority로 사용해 HF의 고정 archive와 SOURCE 전체를 비교한
 뒤, **새 외부 폴더에 DEV component만** 복구합니다. 원래 Git checkout의 dirty/untracked
@@ -92,16 +113,16 @@ uv0.12.23·CPython3.12.13과 위 전용 HF SDK2.4.0 환경이 필요합니다. �
 하지 않습니다. orchestrator는 stdlib만 사용하므로 전용 SDK Python으로 시작할 수 있고,
 실제 합성 모델/참조는 새 app venv의 Python으로만 실행합니다.
 
-다음은 검증된 main be266bb4 archive를 사용하는 예입니다. 전체 SHA/revision을 그대로
+다음은 위 고정 R48 archive를 사용하는 기본 명령입니다. 전체 SHA/revision을 그대로
 지정하며 `main`/`latest`/short SHA로 대체하지 않습니다. 출력 부모는 존재해야 하고
 `NEW-cloud-restore`는 없어야 합니다.
 
 ```bash
 /workspace/.cache/cyberpilot-hf-client/bin/python -B tools/cyberlateral_cloud/cloud_restore.py run \
   --repo-root "$PWD" \
-  --commit be266bb4abd66239741d940cbb7c546b1bd39b69 \
-  --archive-sha ee4470421574a33358b19b3f608b3be0a0b5c98db14bc7a40a4a4cdec5c26e0f \
-  --revision cc2b2728da4a717130be609efee73d636be76b3b \
+  --commit d599d53c96dd965545da368ea699b661d1d07907 \
+  --archive-sha 82e3f0865d5981eb7ada41b20c9daf392b16e284b95362d04ff655c047b48fc7 \
+  --revision 959c8876a65839729855712c5ca59df05dacea4f \
   --hf-repo jjuinho/cyberpilot-evidence \
   --hf-python /workspace/.cache/cyberpilot-hf-client/bin/python \
   --output /workspace/NEW-cloud-restore
@@ -128,14 +149,14 @@ receipt도 생성하지 않습니다. 명령을 시작할 launcher Python 자체
 경우는 shell 오류이므로, 실행되지 않은 도구가 실패 파일을 남길 수는 없습니다.
 
 명시적 R41 모델972·선택-source 참조972호출을 실행합니다. unit test의 추가 합성 작업은
-NONZERO이며 별도 미집계입니다. 기본 복구는 새 venv의 전체700-test gate 재실행이나
+NONZERO이며 별도 미집계입니다. 기본 복구는 새 venv의 전체 DEV gate 재실행이나
 별도 물리 머신/실시간/차량 qualification이 아닙니다. F61·실제 r/dt·Controller·차량
 Runtime·CAN·실차 input/설치/활성화는0이고, 기존 gate는 그대로 닫혀 있습니다.
 
 ## 개발 검사
 
 `CyberLateral Cloud Tooling`은 cloud 도구·DEV component·관련 workflow/root README 변경의
-main push/PR에서 자동 실행됩니다. 기존 app700 workflow는 변경하지 않습니다.
+main push/PR에서 자동 실행됩니다. 기존 app DEV workflow는 변경하지 않습니다.
 read-only contents 권한과 pinned actions/Python3.12.13/uv0.12.23을 사용하며,
 runner 임시 폴더에 app/SDK 환경을 각각 만듭니다. 이 job에 HF_TOKEN이나 HF secret을
 전달하지 않습니다. HF_HUB_OFFLINE=1이며 실제 private HF backup/restore integration을

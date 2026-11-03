@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "rownlvh8875-coder/CyberPilot",
-  "reviewed_source_commit": "8082ec3651aad95885512fe0060036f112b65bd9",
+  "reviewed_source_commit": "d599d53c96dd965545da368ea699b661d1d07907",
   "scope": "STATIC_SOURCE_INVENTORY_OF_BOUNDED_OFFLINE_DEVELOPMENT",
   "execution_verdict": "NOT_ESTABLISHED_BY_STATIC_INVENTORY; USE_FRESH_COMMAND_EXIT_OUTPUT_RECORDS_AND_MANIFESTS",
   "runtime_package_version": "0.3.0",
@@ -11,56 +11,493 @@
   "whole_product_requirements_baseline": "NOT_ESTABLISHED_FROM_REVIEWED_AUTHORITIES",
   "historical_inventory": "OFFLINE_CAPABILITY_INVENTORY_R30.json",
   "recorded_baseline_evidence": {
-    "commit": "3da79e367fcc851377d83caa88e3665f175acff6",
-    "scoped_CI": "https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/41350398736",
-    "tests": 570,
-    "own_compiles": 174,
+    "commit": "d599d53c96dd965545da368ea699b661d1d07907",
+    "scoped_CI": "https://github.com/rownlvh8875-coder/CyberPilot/actions/runs/41599602323",
+    "tests": 804,
+    "own_compiles": 225,
     "meaning": "RECORDED_BASELINE_ONLY_NOT_A_FIXED_TEST_COUNT_OR_FUTURE_EXECUTION_PASS"
   },
   "sources": {
-    "goal": {"path": "README.md", "sha256": "edf628e4fba685fec04c1d6e6cc62fc70bb8753a1d078fa55962c3e5e669055e", "reference": "CyberPilot offline development introduction only; upstream vehicle description is not this component's requirements"},
-    "step": {"path": "tools/cyberlateral_dev/src/cyberlateral_dev/api.py", "sha256": "052c4594f66d53adea4e37fc32f128b84a7a000662b564211f715e21610d5502", "symbol": "step"},
-    "simulate": {"path": "tools/cyberlateral_dev/src/cyberlateral_dev/simulation.py", "sha256": "9b7771b3a75d852ce9f031e7f8490bcf9e9e6b890174551b4d9f0a28e366f264", "symbol": "simulate"},
-    "public_cli": {"path": "tools/cyberlateral_dev/src/cyberlateral_dev/cli.py", "sha256": "fcc7ef7ecfe294b4dce8d6d90dffa0ab88d16cdae665d7386c76b0596f19ec4c", "symbol": "main"},
-    "scenario_cli": {"path": "tools/cyberlateral_dev/tools/scenario.py", "sha256": "c8ac6b0dcaec119429d7223911be6886ffcdfe3496f18151ad2480a98d0f8737", "symbol": "main"},
-    "scenario_validation": {"path": "tools/cyberlateral_dev/integration_tools/scenario_validate.py", "sha256": "fbd4302320d91551e6b17e0d8b34f6718e2aaa4d299c6a9f7acafe694cf6f5b5", "symbol": "validate_scenario"},
-    "scenario_input": {"path": "tools/cyberlateral_dev/integration_tools/scenario_input.py", "sha256": "bfc098e7c33ac415fe48cd8d4414b6dc7d28240fee26df602c9c43e9c9983794", "symbol": "read_scenario"},
-    "scenario_run": {"path": "tools/cyberlateral_dev/integration_tools/scenario_run.py", "sha256": "129a2e0d4ca9afda4a0e28f4ae9f8009d358a338438deea346c01b5d6fa2b25a", "symbol": "run_scenario"},
-    "report_cli": {"path": "tools/cyberlateral_dev/tools/scenario_report.py", "sha256": "1e454235184d24fd5e0794550d6d7828d1461859457b0d6920dca97f951c54a2", "symbol": "main"},
-    "report_run": {"path": "tools/cyberlateral_dev/integration_tools/scenario_report_run.py", "sha256": "bcb3838e58dee16616c08e180be3ef67758b5e3499371237f2b1bd6711d39194", "symbol": "run_report"},
-    "batch_cli": {"path": "tools/cyberlateral_dev/tools/scenario_batch.py", "sha256": "575484e6116b57186641429fd9a071c46ceb0e898772ce2fe7eed8474b43c179", "symbol": "main"},
-    "batch_input": {"path": "tools/cyberlateral_dev/integration_tools/scenario_batch_input.py", "sha256": "2a871a7b2a38cd08bda72ce15a699f6960b52297364a9e40815dbb35712b11f6", "symbol": "prepare_batch"},
-    "batch_run": {"path": "tools/cyberlateral_dev/integration_tools/scenario_batch_run.py", "sha256": "e56320e26657f9c31de4d3565e4a7ce5d9ef43822990714e1526de7cb4d91972", "symbol": "run_batch"},
-    "compare_cli": {"path": "tools/cyberlateral_dev/tools/scenario_compare.py", "sha256": "15b482c3bcb0c4dfb9d7fb9749f18bc763a18ccac7e6be9bff0791c971e02256", "symbol": "main"},
-    "compare_run": {"path": "tools/cyberlateral_dev/integration_tools/scenario_compare_run.py", "sha256": "181ab287cc83cd1e8dc9227568a1341583bc977e6b7eab372b2227006d9df91d", "symbol": "run_comparison"},
-    "r35_literals": {"path": "tools/cyberlateral_dev/reference/r35_regression_expected_v1.json", "sha256": "5bad0599f65cf7388d38b456b42c08b11695263e721d4e5ace6f38f6c2c4eae6", "json_pointers": ["/order", "/cases"]},
-    "verify": {"path": "tools/cyberlateral_dev/integration_tools/verify.py", "sha256": "56a9e1295dd3a0bffec184ba90d268c7c5ff52f725a98244e84832bf66129ba6", "symbol": "verify_project"},
-    "build": {"path": "tools/cyberlateral_dev/build_backend.py", "sha256": "e8dad90a54acff5d317d634878907f52acc0bd6cbed33e7a8089de4955733dec", "symbol": "build_wheel"},
-    "config": {"path": "tools/cyberlateral_dev/pyproject.toml", "sha256": "6fb6fa880215408e89782b8bffdbed561c6b47cea0d7cf16c244e37f7e4fa766", "reference": "public0.3.0, Python3.12.13, runtime dependencies empty, separate pinned DEV group"},
-    "gates": {"path": "tools/cyberlateral_dev/integration_tools/scenario_output.py", "sha256": "93a93ddbea590c380225920f67d86768669bfe5886afe8dfb3a470a48b62a6b1", "symbol": "GATES"},
-    "owned_native": {"path": "tools/cyberlateral_dev/integration_tools/native_adapter.py", "sha256": "4771adaa4ab0f42ba9249f5a90b39006b5fa43b6260a307baba16d76e382d176", "symbol": "_SyntheticAdapter"},
-    "native_chain": {"path": "tools/cyberlateral_dev/integration_tools/adapter_sequence.py", "sha256": "22d4c944724f90a7924d7b610b569b599af2cdc989e08dbabdd6e72d6c8bcdc4", "symbol": "run_registered_sequence"},
-    "native_suite": {"path": "tools/cyberlateral_dev/native_qualification/suite.py", "sha256": "7c28e8ba2fe45b7f891ac5bdaac1ddf4d6eef6ba98c5092954688db202f624f9", "symbol": "run_suite"},
-    "scoped_ci": {"path": ".github/workflows/cyberlateral-dev.yaml", "sha256": "751f5455f312331b5748f60dd6fb24e548b788be50ac358621cba071613fc036", "reference": "pure component gate; no submodules/LFS/native setup"}
+    "goal": {
+      "path": "README.md",
+      "sha256": "edf628e4fba685fec04c1d6e6cc62fc70bb8753a1d078fa55962c3e5e669055e",
+      "reference": "CyberPilot offline development introduction only; upstream vehicle description is not this component's requirements"
+    },
+    "step": {
+      "path": "tools/cyberlateral_dev/src/cyberlateral_dev/api.py",
+      "sha256": "052c4594f66d53adea4e37fc32f128b84a7a000662b564211f715e21610d5502",
+      "symbol": "step"
+    },
+    "simulate": {
+      "path": "tools/cyberlateral_dev/src/cyberlateral_dev/simulation.py",
+      "sha256": "9b7771b3a75d852ce9f031e7f8490bcf9e9e6b890174551b4d9f0a28e366f264",
+      "symbol": "simulate"
+    },
+    "public_cli": {
+      "path": "tools/cyberlateral_dev/src/cyberlateral_dev/cli.py",
+      "sha256": "fcc7ef7ecfe294b4dce8d6d90dffa0ab88d16cdae665d7386c76b0596f19ec4c",
+      "symbol": "main"
+    },
+    "scenario_cli": {
+      "path": "tools/cyberlateral_dev/tools/scenario.py",
+      "sha256": "c8ac6b0dcaec119429d7223911be6886ffcdfe3496f18151ad2480a98d0f8737",
+      "symbol": "main"
+    },
+    "scenario_validation": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_validate.py",
+      "sha256": "fbd4302320d91551e6b17e0d8b34f6718e2aaa4d299c6a9f7acafe694cf6f5b5",
+      "symbol": "validate_scenario"
+    },
+    "scenario_input": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_input.py",
+      "sha256": "bfc098e7c33ac415fe48cd8d4414b6dc7d28240fee26df602c9c43e9c9983794",
+      "symbol": "read_scenario"
+    },
+    "scenario_run": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_run.py",
+      "sha256": "129a2e0d4ca9afda4a0e28f4ae9f8009d358a338438deea346c01b5d6fa2b25a",
+      "symbol": "run_scenario"
+    },
+    "report_cli": {
+      "path": "tools/cyberlateral_dev/tools/scenario_report.py",
+      "sha256": "1e454235184d24fd5e0794550d6d7828d1461859457b0d6920dca97f951c54a2",
+      "symbol": "main"
+    },
+    "report_run": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_report_run.py",
+      "sha256": "bcb3838e58dee16616c08e180be3ef67758b5e3499371237f2b1bd6711d39194",
+      "symbol": "run_report"
+    },
+    "batch_cli": {
+      "path": "tools/cyberlateral_dev/tools/scenario_batch.py",
+      "sha256": "575484e6116b57186641429fd9a071c46ceb0e898772ce2fe7eed8474b43c179",
+      "symbol": "main"
+    },
+    "batch_input": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_batch_input.py",
+      "sha256": "2a871a7b2a38cd08bda72ce15a699f6960b52297364a9e40815dbb35712b11f6",
+      "symbol": "prepare_batch"
+    },
+    "batch_run": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_batch_run.py",
+      "sha256": "e56320e26657f9c31de4d3565e4a7ce5d9ef43822990714e1526de7cb4d91972",
+      "symbol": "run_batch"
+    },
+    "compare_cli": {
+      "path": "tools/cyberlateral_dev/tools/scenario_compare.py",
+      "sha256": "15b482c3bcb0c4dfb9d7fb9749f18bc763a18ccac7e6be9bff0791c971e02256",
+      "symbol": "main"
+    },
+    "compare_run": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_compare_run.py",
+      "sha256": "181ab287cc83cd1e8dc9227568a1341583bc977e6b7eab372b2227006d9df91d",
+      "symbol": "run_comparison"
+    },
+    "r35_literals": {
+      "path": "tools/cyberlateral_dev/reference/r35_regression_expected_v1.json",
+      "sha256": "5bad0599f65cf7388d38b456b42c08b11695263e721d4e5ace6f38f6c2c4eae6",
+      "json_pointers": [
+        "/order",
+        "/cases"
+      ]
+    },
+    "verify": {
+      "path": "tools/cyberlateral_dev/integration_tools/verify.py",
+      "sha256": "56a9e1295dd3a0bffec184ba90d268c7c5ff52f725a98244e84832bf66129ba6",
+      "symbol": "verify_project"
+    },
+    "build": {
+      "path": "tools/cyberlateral_dev/build_backend.py",
+      "sha256": "e8dad90a54acff5d317d634878907f52acc0bd6cbed33e7a8089de4955733dec",
+      "symbol": "build_wheel"
+    },
+    "config": {
+      "path": "tools/cyberlateral_dev/pyproject.toml",
+      "sha256": "6fb6fa880215408e89782b8bffdbed561c6b47cea0d7cf16c244e37f7e4fa766",
+      "reference": "public0.3.0, Python3.12.13, runtime dependencies empty, separate pinned DEV group"
+    },
+    "gates": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_output.py",
+      "sha256": "93a93ddbea590c380225920f67d86768669bfe5886afe8dfb3a470a48b62a6b1",
+      "symbol": "GATES"
+    },
+    "owned_native": {
+      "path": "tools/cyberlateral_dev/integration_tools/native_adapter.py",
+      "sha256": "4771adaa4ab0f42ba9249f5a90b39006b5fa43b6260a307baba16d76e382d176",
+      "symbol": "_SyntheticAdapter"
+    },
+    "native_chain": {
+      "path": "tools/cyberlateral_dev/integration_tools/adapter_sequence.py",
+      "sha256": "22d4c944724f90a7924d7b610b569b599af2cdc989e08dbabdd6e72d6c8bcdc4",
+      "symbol": "run_registered_sequence"
+    },
+    "native_suite": {
+      "path": "tools/cyberlateral_dev/native_qualification/suite.py",
+      "sha256": "7c28e8ba2fe45b7f891ac5bdaac1ddf4d6eef6ba98c5092954688db202f624f9",
+      "symbol": "run_suite"
+    },
+    "scoped_ci": {
+      "path": ".github/workflows/cyberlateral-dev.yaml",
+      "sha256": "751f5455f312331b5748f60dd6fb24e548b788be50ac358621cba071613fc036",
+      "reference": "pure component gate; no submodules/LFS/native setup"
+    },
+    "scenario_reference": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_reference_run.py",
+      "symbol": "check_saved",
+      "sha256": "379b778e665541aa6f22c2278ee0ff21bd8537892835997ec968e97ef55149ec"
+    },
+    "batch_reference": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_batch_reference_run.py",
+      "symbol": "check_batch",
+      "sha256": "c2355f7e1bf294d78ccb3dde70ed92a67f0600781e14f8c43ebd63c97a3117eb"
+    },
+    "workflow": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_workflow_run.py",
+      "symbol": "run_workflow",
+      "sha256": "eaf0da204d49a1bde5d8ec4fc97f60ccb9cd37bace506a34c9f3bb07dc57df8f"
+    },
+    "exploration": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_explore_run.py",
+      "symbol": "run_exploration",
+      "sha256": "2beb58b7da339a8d2ccaa496fd6c77730f71f117f41fba454bc65eaf0db1ab37"
+    },
+    "campaign_cli": {
+      "path": "tools/cyberlateral_dev/tools/scenario_campaign.py",
+      "symbol": "main",
+      "sha256": "47d48cd3c1693887dad103525f2b6561edc10b12621236ba2b6ee7ed7190a742"
+    },
+    "campaign": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_campaign_run.py",
+      "symbol": "run_campaign",
+      "sha256": "654bcbc86563c58903087eb09818c5ed03b576c18d691cbf02e4e4980625c6c0"
+    },
+    "campaign_compare_cli": {
+      "path": "tools/cyberlateral_dev/tools/scenario_campaign_compare.py",
+      "symbol": "main",
+      "sha256": "d93dc99e60fa0a1caaa7a20e3f25915590494d3e68b74d3af45a2e6a61e99f12"
+    },
+    "campaign_compare": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_campaign_compare_run.py",
+      "symbol": "run_campaign_comparison",
+      "sha256": "a367b03d4f2ae8e36300ead600294bb67c6e30ee60a8596acd387a0a8bbabd55"
+    },
+    "campaign_report_cli": {
+      "path": "tools/cyberlateral_dev/tools/scenario_campaign_compare_report.py",
+      "symbol": "main",
+      "sha256": "c5f0d719dd4b5931962f8dcdb90e908dcad2aa79405ff015187ace5d90930189"
+    },
+    "campaign_report": {
+      "path": "tools/cyberlateral_dev/integration_tools/scenario_campaign_report_run.py",
+      "symbol": "run_report",
+      "sha256": "1b2a085286de6748ebd39398233ceb47e5ad30b92136a7a379c2936136ae67c5"
+    },
+    "post_result_diagnostics": {
+      "path": "tools/cyberlateral_dev/integration_tools/result_diagnostics.py",
+      "symbol": "_warn_after_result",
+      "sha256": "11fdd77ccece4e1aac755b074df09bafb13f9e4e25e1e0e8f0440be475a8368c"
+    },
+    "r41_literals": {
+      "path": "tools/cyberlateral_dev/reference/r41_regression_expected_v1.json",
+      "json_pointers": [
+        "/order",
+        "/cases"
+      ],
+      "sha256": "a9f39aa14e0654786f554d50477dbcd4d43491a5e1fa2acdd2f8dd5128285e96"
+    },
+    "cloud_backup": {
+      "path": "tools/cyberlateral_cloud/cloud_run.py",
+      "symbol": "execute",
+      "sha256": "2b82dba6b27dcb6d6358448d2056077be849aa0abd3dd83f616ee00143a77bc5"
+    },
+    "cloud_restore": {
+      "path": "tools/cyberlateral_cloud/cloud_restore.py",
+      "symbol": "recover_source",
+      "sha256": "0b483c56ac8e49eae29e8754cb1c6fc1abb9869df20348a34c43e381d788929f"
+    },
+    "cloud_ci": {
+      "path": ".github/workflows/cyberlateral-cloud.yaml",
+      "reference": "credential-free offline cloud tooling tests, not live HF integration",
+      "sha256": "8e431ed734155d8da26ab3e2f08903e862c71ef5bca660d5545f0782f6d88524"
+    }
   },
   "capabilities": [
-    {"id": "C01", "name_ko": "명시적 합성 sample/state 단일·연속 계산", "status": "IMPLEMENTED_BOUNDED_OFFLINE", "source_ids": ["step", "simulate"], "limit": "explicit state and tuple1..4096; integer candidate history is not F61 previous_native or authentic vehicle history"},
-    {"id": "C02", "name_ko": "설치 wheel의 고정 카탈로그 CLI", "status": "IMPLEMENTED_FIXED_CATALOG_ONLY", "source_ids": ["public_cli", "build", "config"], "limit": "python -m cyberlateral_dev does not accept --input; DEV/native tools are not wheel payload"},
-    {"id": "C03", "name_ko": "개발용 사용자 선언 합성 JSON 실행", "status": "IMPLEMENTED_R31_DEV_TOOL", "source_ids": ["scenario_cli", "scenario_input", "scenario_run"], "limit": "separate source-based CLI, explicit bounded V1 state/input; SYNTHETIC_ONLY is declaration not authenticated origin"},
-    {"id": "C04", "name_ko": "저장 R31 결과의 읽기 전용 HTML·VIEW", "status": "IMPLEMENTED_R32_DEV_TOOL", "source_ids": ["report_cli", "report_run"], "limit": "complete saved data only, zero new model executions; no universal browser quality claim"},
-    {"id": "C05", "name_ko": "명시적 순서의 독립 합성 batch", "status": "IMPLEMENTED_R33_DEV_TOOL", "source_ids": ["batch_cli", "batch_input", "batch_run"], "limit": "1..32 named inputs, total valid samples<=8192, no cross-file state; exit1 can mean completed with input rejections"},
-    {"id": "C06", "name_ko": "완전한 저장 batch의 정확한 회귀 비교", "status": "IMPLEMENTED_R34_DEV_TOOL", "source_ids": ["compare_cli", "compare_run"], "limit": "zero new models; same-input recorded-value comparison, no tolerance or baseline auto-update; portable subsets not accepted"},
-    {"id": "C07", "name_ko": "고정 수치·상태 경계 literal 회귀팩", "status": "IMPLEMENTED_R35_FIXED_PACK", "source_ids": ["r35_literals", "scenario_run", "batch_run", "compare_run"], "limit": "6valid/38samples plus3intentional rejections; selected literals not generic independent numerical oracle"},
-    {"id": "C08", "name_ko": "기본 순수 개발 gate와 전용 CI 정의", "status": "IMPLEMENTED_OFFLINE_GATE", "source_ids": ["verify", "build", "config", "scoped_ci"], "limit": "fresh execution evidence required; not whole openpilot, native qualification or merge authorization"},
-    {"id": "C09", "name_ko": "별도 opt-in 고정 native 합성 경로", "status": "IMPLEMENTED_CONTROLLED_OPT_IN_NOT_REQUALIFIED_HERE", "source_ids": ["owned_native", "native_chain", "native_suite"], "limit": "qualified separate environment and fixed internally constructed messages/profiles only; not generic external readback or CAN wire"},
-    {"id": "C10", "name_ko": "모델 없는 합성 입력 사전 검사", "status": "IMPLEMENTED_R37_INPUT_CONTRACT_ONLY", "source_ids": ["scenario_cli", "scenario_validation", "scenario_input", "gates"], "limit": "--validate-only reuses V1 reader; stdout JSON exit0/2 without --output; no model/runner/engine import, result files or source/runtime/origin qualification; added DEV source intentionally changes observed producer hashes"}
+    {
+      "id": "C01",
+      "name_ko": "명시적 합성 sample/state 단일·연속 계산",
+      "status": "IMPLEMENTED_BOUNDED_OFFLINE",
+      "source_ids": [
+        "step",
+        "simulate"
+      ],
+      "limit": "explicit state and tuple1..4096; integer candidate history is not F61 previous_native or authentic vehicle history"
+    },
+    {
+      "id": "C02",
+      "name_ko": "설치 wheel의 고정 카탈로그 CLI",
+      "status": "IMPLEMENTED_FIXED_CATALOG_ONLY",
+      "source_ids": [
+        "public_cli",
+        "build",
+        "config"
+      ],
+      "limit": "fixed catalog only; source DEV and native tools are not wheel payload"
+    },
+    {
+      "id": "C03",
+      "name_ko": "개발용 사용자 선언 합성 JSON 실행",
+      "status": "IMPLEMENTED_R31_DEV_TOOL",
+      "source_ids": [
+        "scenario_cli",
+        "scenario_input",
+        "scenario_run"
+      ],
+      "limit": "separate source-based CLI, explicit bounded V1 state/input; SYNTHETIC_ONLY is declaration not authenticated origin"
+    },
+    {
+      "id": "C04",
+      "name_ko": "저장 R31 결과의 읽기 전용 HTML·VIEW",
+      "status": "IMPLEMENTED_R32_DEV_TOOL",
+      "source_ids": [
+        "report_cli",
+        "report_run"
+      ],
+      "limit": "complete saved data only, zero new model executions; no universal browser quality claim"
+    },
+    {
+      "id": "C05",
+      "name_ko": "명시적 순서의 독립 합성 batch",
+      "status": "IMPLEMENTED_R33_DEV_TOOL",
+      "source_ids": [
+        "batch_cli",
+        "batch_input",
+        "batch_run"
+      ],
+      "limit": "1..32 named inputs, total valid samples<=8192, no cross-file state; exit1 can mean completed with input rejections"
+    },
+    {
+      "id": "C06",
+      "name_ko": "완전한 저장 batch의 정확한 회귀 비교",
+      "status": "IMPLEMENTED_R34_DEV_TOOL",
+      "source_ids": [
+        "compare_cli",
+        "compare_run"
+      ],
+      "limit": "zero new models; same-input recorded-value comparison, no tolerance or baseline auto-update; portable subsets not accepted"
+    },
+    {
+      "id": "C07",
+      "name_ko": "고정 수치·상태 경계 literal 회귀팩",
+      "status": "IMPLEMENTED_R35_FIXED_PACK",
+      "source_ids": [
+        "r35_literals",
+        "scenario_run",
+        "batch_run",
+        "compare_run"
+      ],
+      "limit": "6valid/38samples plus3intentional rejections; selected literals not generic independent numerical oracle"
+    },
+    {
+      "id": "C08",
+      "name_ko": "기본 순수 개발 gate와 전용 CI 정의",
+      "status": "IMPLEMENTED_OFFLINE_GATE",
+      "source_ids": [
+        "verify",
+        "build",
+        "config",
+        "scoped_ci"
+      ],
+      "limit": "fresh execution evidence required; not whole openpilot, native qualification or merge authorization"
+    },
+    {
+      "id": "C09",
+      "name_ko": "별도 opt-in 고정 native 합성 경로",
+      "status": "IMPLEMENTED_CONTROLLED_OPT_IN_NOT_REQUALIFIED_HERE",
+      "source_ids": [
+        "owned_native",
+        "native_chain",
+        "native_suite"
+      ],
+      "limit": "qualified separate environment and fixed internally constructed messages/profiles only; not generic external readback or CAN wire"
+    },
+    {
+      "id": "C10",
+      "name_ko": "모델 없는 합성 입력 사전 검사",
+      "status": "IMPLEMENTED_R37_INPUT_CONTRACT_ONLY",
+      "source_ids": [
+        "scenario_cli",
+        "scenario_validation",
+        "scenario_input",
+        "gates"
+      ],
+      "limit": "--validate-only checks V1 input, not source/runtime/origin qualification; no model import/execution or result files"
+    },
+    {
+      "id": "C11",
+      "name_ko": "완전한 저장 R31의 독립 참조 검사",
+      "status": "IMPLEMENTED_R38_DEV_TOOL",
+      "source_ids": [
+        "scenario_reference"
+      ],
+      "limit": "zero new public models; selected-source reference/helper work NONZERO; complete inputs only"
+    },
+    {
+      "id": "C12",
+      "name_ko": "완전한 저장 batch의 독립 참조 검사",
+      "status": "IMPLEMENTED_R39_DEV_TOOL",
+      "source_ids": [
+        "batch_reference"
+      ],
+      "limit": "preserve rejection/unverifiable/reference-error classifications; no vacuous rejected-only numerical MATCH"
+    },
+    {
+      "id": "C13",
+      "name_ko": "합성 입력부터 리포트·참조·선택 회귀까지 통합",
+      "status": "IMPLEMENTED_R40_DEV_TOOL",
+      "source_ids": [
+        "workflow"
+      ],
+      "limit": "model/reference work NONZERO; optional complete R33 baseline, not portable subset"
+    },
+    {
+      "id": "C14",
+      "name_ko": "복합 경계·긴 상태 전이 고정팩",
+      "status": "IMPLEMENTED_R41_FIXED_PACK",
+      "source_ids": [
+        "r41_literals",
+        "workflow"
+      ],
+      "limit": "three scenarios324samples per explicit run; selected literals and source parity are not a general independent oracle"
+    },
+    {
+      "id": "C15",
+      "name_ko": "seed 기반 합성 경계 탐색",
+      "status": "IMPLEMENTED_R42_DEV_TOOL",
+      "source_ids": [
+        "exploration"
+      ],
+      "limit": "bounded deterministic inputs and complete reproducer sequences; feature counts not exhaustive branch coverage"
+    },
+    {
+      "id": "C16",
+      "name_ko": "명시 순서 여러 seed 캠페인",
+      "status": "IMPLEMENTED_R43_DEV_TOOL",
+      "source_ids": [
+        "campaign_cli",
+        "campaign"
+      ],
+      "limit": "1..4unique seeds; no state between seeds/cases; source ERROR outranks DIFFERENT"
+    },
+    {
+      "id": "C17",
+      "name_ko": "완전한 저장 캠페인의 정확한 기록 비교",
+      "status": "IMPLEMENTED_R44_WITH_R45_R48_BOUNDARIES",
+      "source_ids": [
+        "campaign_compare_cli",
+        "campaign_compare",
+        "post_result_diagnostics"
+      ],
+      "limit": "zero new model/reference work; source failures remain visible despite equal-record regression MATCH; no new oracle"
+    },
+    {
+      "id": "C18",
+      "name_ko": "저장 캠페인 비교의 읽기 전용 HTML·VIEW",
+      "status": "IMPLEMENTED_R46_WITH_R47_DIAGNOSTIC_BOUNDARY",
+      "source_ids": [
+        "campaign_report_cli",
+        "campaign_report",
+        "post_result_diagnostics"
+      ],
+      "limit": "report exit0 is rendering success, not source MATCH; complete R44 only; no original campaigns or new arithmetic"
+    },
+    {
+      "id": "C19",
+      "name_ko": "고정 Git 원본의 비공개 HF 보관·읽기 전용 복구",
+      "status": "IMPLEMENTED_PRIVATE_DEV_COMPONENT_CLOUD_TOOLING",
+      "source_ids": [
+        "cloud_backup",
+        "cloud_restore",
+        "cloud_ci"
+      ],
+      "limit": "own existing private Dataset; pinned source/archive/revision; separate SDK/app; no credential/visibility/latest-pointer or vehicle authorization; live integration distinct from offline CI"
+    }
   ],
   "not_implemented_or_not_authorized": [
-    {"id": "U01", "name_ko": "공개 wheel CLI에서 사용자 JSON 읽기", "status": "NOT_IMPLEMENTED_IN_PUBLIC_CLI", "source_ids": ["public_cli", "scenario_cli"], "limit": "Use separate implemented R31 DEV tool; do not mistake this for missing all custom scenario support"},
-    {"id": "U02", "name_ko": "범용 실차 로그·외부 native 메시지·인증된 실제 이력", "status": "NOT_ESTABLISHED_BY_CONTROLLED_SYNTHETIC_PATH", "source_ids": ["owned_native", "native_chain"], "limit": "no authentic previous apply state/time/deployment or persistent replay proof"},
-    {"id": "U03", "name_ko": "실제 차량 r·T2·scale 정책과 정적 context", "status": "UNRESOLVED_PRODUCTION_GATE", "source_ids": ["gates"], "limit": "actual values null, not inferred from fixture16/UP2/DOWN5 or invocation index"},
-    {"id": "U04", "name_ko": "F61·Controller·차량 Runtime·CAN·설치/활성화", "status": "NOT_AUTHORIZED_BY_THIS_COMPONENT", "source_ids": ["goal", "gates"], "limit": "offline acceptance is not production activation, candidate performance or physical safety approval"},
-    {"id": "U05", "name_ko": "전체 CyberPilot 제품 완성", "status": "NOT_ESTABLISHED_FROM_REVIEWED_REQUIREMENTS", "source_ids": ["goal"], "limit": "no invented product requirements or completion percentage; upstream descriptions are not evidence of custom implementation"}
+    {
+      "id": "U01",
+      "name_ko": "공개 wheel CLI에서 사용자 JSON 읽기",
+      "status": "NOT_IMPLEMENTED_IN_PUBLIC_CLI",
+      "source_ids": [
+        "public_cli",
+        "scenario_cli"
+      ],
+      "limit": "Use separate implemented R31 DEV tool; do not mistake this for missing all custom scenario support"
+    },
+    {
+      "id": "U02",
+      "name_ko": "범용 실차 로그·외부 native 메시지·인증된 실제 이력",
+      "status": "NOT_ESTABLISHED_BY_CONTROLLED_SYNTHETIC_PATH",
+      "source_ids": [
+        "owned_native",
+        "native_chain"
+      ],
+      "limit": "no authentic previous apply state/time/deployment or persistent replay proof"
+    },
+    {
+      "id": "U03",
+      "name_ko": "실제 차량 r·T2·scale 정책과 정적 context",
+      "status": "UNRESOLVED_PRODUCTION_GATE",
+      "source_ids": [
+        "gates"
+      ],
+      "limit": "actual values null, not inferred from fixture16/UP2/DOWN5 or invocation index"
+    },
+    {
+      "id": "U04",
+      "name_ko": "F61·Controller·차량 Runtime·CAN·설치/활성화",
+      "status": "NOT_AUTHORIZED_BY_THIS_COMPONENT",
+      "source_ids": [
+        "goal",
+        "gates"
+      ],
+      "limit": "offline acceptance is not production activation, candidate performance or physical safety approval"
+    },
+    {
+      "id": "U05",
+      "name_ko": "전체 CyberPilot 제품 완성",
+      "status": "NOT_ESTABLISHED_FROM_REVIEWED_REQUIREMENTS",
+      "source_ids": [
+        "goal"
+      ],
+      "limit": "no invented product requirements or completion percentage; upstream descriptions are not evidence of custom implementation"
+    }
   ],
-  "required_gates": {"R_BUDGET": "UNRESOLVED", "STATIC_EVIDENCE_GATE": "FAIL", "actual_r": null, "T2": null, "vehicle_scale": null, "SOURCE_SCHEMA_UNQUALIFIED": 6000, "Candidate": "NO_GO", "Runtime": "NO_GO", "F70UH": "NOT_ALLOWED", "F70V": "NOT_ALLOWED", "F71": "NOT_ALLOWED"}
+  "required_gates": {
+    "R_BUDGET": "UNRESOLVED",
+    "STATIC_EVIDENCE_GATE": "FAIL",
+    "actual_r": null,
+    "T2": null,
+    "vehicle_scale": null,
+    "SOURCE_SCHEMA_UNQUALIFIED": 6000,
+    "Candidate": "NO_GO",
+    "Runtime": "NO_GO",
+    "F70UH": "NOT_ALLOWED",
+    "F70V": "NOT_ALLOWED",
+    "F71": "NOT_ALLOWED"
+  },
+  "reviewed_implementation_stage": "R48",
+  "guide_revision_stage": "R49_DOCUMENTATION_ONLY",
+  "source_hash_scope": "EXACT_BYTES_AT_REVIEWED_SOURCE_COMMIT_NOT_A_CURRENT_WORKTREE_OR_EXECUTION_GATE",
+  "previous_reviewed_source_commit": "8082ec3651aad95885512fe0060036f112b65bd9",
+  "new_model_runtime_implementation_in_R49": 0,
+  "cloud_recovery": {
+    "scope": "PRIVATE_DEV_COMPONENT_RECOVERY_NOT_FULL_NATIVE_REPOSITORY_OR_VEHICLE_INSTALLATION",
+    "repository": "jjuinho/cyberpilot-evidence",
+    "source_commit": "d599d53c96dd965545da368ea699b661d1d07907",
+    "archive_sha256": "82e3f0865d5981eb7ada41b20c9daf392b16e284b95362d04ff655c047b48fc7",
+    "archive_revision": "959c8876a65839729855712c5ca59df05dacea4f",
+    "guide_revision": "d5da1d916b5dd54e7768d2d65ce2e760203f9e11",
+    "source_files": 434,
+    "physical_machine_independence": false,
+    "restore_snapshot_editable_git_worktree": false
+  }
 }

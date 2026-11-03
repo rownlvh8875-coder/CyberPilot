@@ -66,7 +66,9 @@ Historical R30 snapshot: [original acceptance guide](docs/OFFLINE_ACCEPTANCE_R30
 and [original source inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
 Their recorded counts and prospective features describe R30, not current DEV-tool
 availability. These files and the historical stage descriptions retain their
-original scope; use the current guide above for R31–R37 workflows.
+original scope; the current guide above covers R31–R48, including cloud-only
+recovery, two-seed campaigns, saved comparison and the read-only comparison report.
+Its inventory hashes describe a pinned reviewed commit, not a fresh execution verdict.
 
 The separate [R40 integrated synthetic workflow](docs/SCENARIO_WORKFLOW_R40_KO.md)
 connects input validation, batch execution and existing graphs, independent batch
