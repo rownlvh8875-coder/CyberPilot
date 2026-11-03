@@ -89,6 +89,18 @@ class CampaignReportDataTests(unittest.TestCase):
             edit(source, 'CAMPAIGN_COMPARE.json', lambda r: r.update(source_error_runs=[]))
             self.rejected(source)
 
+    def test_malformed_detail_context_never_leaks_type_error(self):
+        for field, value in [('run_id', []), ('case_id', []), ('baseline_seed', True)]:
+            with self.subTest(field=field), tempfile.TemporaryDirectory() as tmp:
+                source = copy_comparison(Path(tmp) / 'input', 'difference')
+
+                def change(record, field=field, value=value):
+                    record['differences'][0][field] = value
+                    record['first_difference'][field] = value
+
+                edit(source, 'CAMPAIGN_COMPARE.json', change)
+                self.rejected(source)
+
     def test_wrong_json_container_types_are_bounded_rejections(self):
         for field in ['baseline_status', 'classification']:
             with self.subTest(field=field), tempfile.TemporaryDirectory() as tmp:

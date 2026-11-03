@@ -42,13 +42,13 @@ for external bounded visual acceptance, not a project/runtime dependency.
 `validate_comparison(record: dict, children: dict) -> None`;
 `read_comparison(path: Path) -> dict` returns `view` and `hashes`.
 
-- [ ] Build cached complete real R44 test outputs (match/difference/error/source-
+- [x] Build cached complete real R44 test outputs (match/difference/error/source-
   difference/added/truncated) with existing synthetic fixture utilities, no partial mocks.
-- [ ] Write reader tests: literal values/statuses, source hash ownership, coherent
+- [x] Write reader tests: literal values/statuses, source hash ownership, coherent
   record corruptions, cap/type/context/alert/identity contradictions, closed hashes,
   canonical JSON, missing/extra/link/FIFO/size guards and ignored private paths.
-- [ ] Run reader tests RED for missing feature; implement strict schema then reader.
-- [ ] Run reader tests GREEN and static checks; commit Task1.
+- [x] Run reader tests RED for missing feature; implement strict schema then reader.
+- [x] Run reader tests GREEN and static checks; commit Task1.
 
 ### Task2: Static HTML, guarded publication and isolated CLI
 
@@ -62,16 +62,16 @@ modify README.md; create docs/SCENARIO_CAMPAIGN_REPORT_R46_KO.md.
 **Interfaces:** consumes Task1 snapshot; produces internal `_render_html(view)->bytes`,
 `run_report(input_path: Path, output_path: Path)->dict` and required input/output CLI.
 
-- [ ] Write RED tests for exact visible typed values/presence, failed source vs equal
+- [x] Write RED tests for exact visible typed values/presence, failed source vs equal
   regression, safe hostile text/no external links/scripts/private paths, fixed JSON links.
-- [ ] Write RED actual CLI/API tests for complete four-file output/Manifest, renderer
+- [x] Write RED actual CLI/API tests for complete four-file output/Manifest, renderer
   zero-work/forbidden imports, CLI source ERROR exit0/report status preserved, invalid
   input exit2/no output, required flags, existing/location/path guards, late mutations,
   pending-write failures, and postcommit cleanup warning semantics.
-- [ ] Implement escaped responsive HTML and exclusive-link index commit point, no new
+- [x] Implement escaped responsive HTML and exclusive-link index commit point, no new
   worker/model calls; document command, statuses, limits, private vs portable scope.
-- [ ] Run all R46 tests GREEN/static; actual saved128sample repeated reports and
+- [x] Run all R46 tests GREEN/static; actual saved128sample repeated reports and
   six control views, byte/Manifest/input/source checks, PC/mobile browser captures.
-- [ ] Full dev.py verify + cloud ci_verify PASS and unchanged-source/wheel guards.
+- [x] Full dev.py verify + cloud ci_verify PASS and unchanged-source/wheel guards.
 - [ ] Commit Task2, one fresh whole-branch review; Important fixes only RED→GREEN.
 - [ ] Create feature PR, observe actual exact-head CI/artifacts; seal evidence twice.

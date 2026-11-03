@@ -78,6 +78,12 @@ def _detail(value, context):
     for side in ['before', 'after']:
         need(type(value[side + '_present']) is bool)
         need(value[side + '_present'] or value[side] is None)
+    for name, prefix in [('run_id', 'seed'), ('case_id', 'case')]:
+        if name in context and value[name] is not None:
+            need(type(value[name]) is str and re.fullmatch(prefix + r'-[0-9]{3}', value[name]) is not None)
+    for name in ['baseline_seed', 'candidate_seed']:
+        if name in context and value[name] is not None:
+            integer(value[name], 0, 2 ** 32 - 1)
     if 'sample_index' in context and value['sample_index'] is not None:
         integer(value['sample_index'], 0, 4095)
 

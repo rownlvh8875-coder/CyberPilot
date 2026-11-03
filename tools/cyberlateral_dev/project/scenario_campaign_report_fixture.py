@@ -13,7 +13,7 @@ atexit.register(_scratch.cleanup)
 
 
 @cache
-def real_comparison(kind='match'):
+def _real_comparison(kind):
     from integration_tools.scenario_campaign_compare_run import run_campaign_comparison
 
     home = Path(_scratch.name) / kind
@@ -35,6 +35,10 @@ def real_comparison(kind='match'):
     output = home / 'comparison'
     run_campaign_comparison(old, new, output)
     return output
+
+
+def real_comparison(kind='match'):
+    return _real_comparison(kind)
 
 
 def copy_comparison(target, kind='match'):
