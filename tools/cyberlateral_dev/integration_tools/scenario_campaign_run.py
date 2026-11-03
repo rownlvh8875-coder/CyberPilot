@@ -144,8 +144,12 @@ def run_campaign(seeds: list[int], cases: int, steps: int, output: Path) -> dict
     seeds = seeds.copy()
     try:
         exploration._preflight(output)
+    except CampaignError:
+        raise
     except exploration.ExplorationError as error:
         raise CampaignError(error.code.replace('EXPLORATION_', 'CAMPAIGN_', 1)) from error
+    except (OSError, ValueError) as error:
+        raise CampaignError('CAMPAIGN_IO') from error
     try:
         identity = _observe_identity()
         output.mkdir(exist_ok=False)

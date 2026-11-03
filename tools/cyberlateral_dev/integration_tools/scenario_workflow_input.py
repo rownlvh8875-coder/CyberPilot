@@ -28,9 +28,11 @@ def prepare_workflow(inputs: list[Path], output: Path, baseline: Path | None, te
         str(baseline.absolute()).encode('utf-8', errors='strict')
         if output.resolve().is_relative_to(baseline.resolve()):
             raise WorkflowError('WORKFLOW_BASELINE_LOCATION')
+    except WorkflowError:
+        raise
     except UnicodeError as error:
         raise WorkflowError('WORKFLOW_PATH_ENCODING') from error
-    except (OSError, RuntimeError) as error:
+    except (OSError, RuntimeError, ValueError) as error:
         raise WorkflowError('WORKFLOW_BASELINE_LOCATION') from error
     files, directories = _owned_files(baseline)
     owned = temporary / 'baseline'

@@ -38,6 +38,10 @@ baseline의 관찰 producer identity가 달라도 기록된 값 MATCH와 구분�
 읽을 수 없거나 크기를 넘어 원형 bytes를 확보하지 못하면 WORKFLOW_INPUT_UNAVAILABLE /
 exit2이며 출력은 만들지 않습니다. 읽힌 불량 JSON은 기존 거절코드를 그대로 보존합니다.
 합성 선언은 출처 인증이 아니며 실제 로그/차량/timestamp/r/dt 입력은 지원하지 않습니다.
+공통 R33 경로 사전 점검의 미분류 OS/값 오류는 `BATCH_IO`/exit2입니다.
+기존 원시 OS 오류의 `WORKFLOW_IO` fallback과 구분하는 새 DEV 진단 코드입니다.
+baseline 경로의 UTF-8 오류는 `WORKFLOW_PATH_ENCODING`, 해석 실패는
+`WORKFLOW_BASELINE_LOCATION`이며 baseline 읽기·identity·worker 전에 거절합니다.
 
 | 상태 | 뜻 | exit |
 |---|---|---|

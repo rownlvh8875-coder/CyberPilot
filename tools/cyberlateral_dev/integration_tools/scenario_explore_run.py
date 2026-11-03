@@ -178,7 +178,12 @@ def _publish(output: Path, record: dict) -> None:
 def run_exploration(seed: int, cases: int, steps: int, output: Path) -> dict:
     payloads = generate_cases(seed, cases, steps)
     generated = generation_record(seed, cases, steps, payloads)
-    _preflight(output)
+    try:
+        _preflight(output)
+    except ExplorationError:
+        raise
+    except (OSError, ValueError) as error:
+        raise ExplorationError('EXPLORATION_IO') from error
     try:
         identity = _source_identity()
         output.mkdir(exist_ok=False)

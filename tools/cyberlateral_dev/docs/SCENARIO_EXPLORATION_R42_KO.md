@@ -52,6 +52,10 @@ uv run --project "$r42_component" --locked --offline python -B "$r42_component/t
 
 사전 조건/출력 경로/worker/source·input 변경/IO 실패는 stderr `REJECTED: <code>`/exit2이며 root 완료 JSON을 만들지 않습니다. 부분 출력은 삭제/덮어쓰기/재개하지 않습니다. 실패한 참조 작업이 NONZERO일 수 있어 보고된 성공 reference 합계와 실제 총작업량을 같다고 주장하지 않습니다.0 matched case를 MATCH로 승인하지 않습니다.
 
+출력 사전 점검의 미분류 OS/값 오류는 `EXPLORATION_IO`/exit2입니다.
+기존 parameter 검증과 작은 합성 입력 생성이 먼저이며 출력 충돌·부모·encoding의
+검사 순서는 유지합니다. 이 경계는 후속 parser/identity/worker 결함을 숨기지 않습니다.
+
 내부 R39 stage JSON은 기존1MiB bounded/no-follow regular-file capture와 canonical parser로 읽고, 소비하는 필수 field·container·nullable count·helper count·case/report 결속을 모두 검증합니다. 누락 field, list/null/scalar root, 잘못된 case/helper 형태, duplicate key/nonfinite/비정규 JSON 등은 traceback 대신 `REJECTED: EXPLORATION_STAGE_RECORD`/exit2로 거절하며 root 완료 기록·부분 재현 subset을 게시하지 않습니다. 전체 R39 API를 재설계하는 loader가 아니며 소비하지 않는 추가 metadata는 허용합니다. 구조가 유효한 참조 오류·수치/계산량 모순의 기존 ERROR 판정은 유지합니다.
 
 Root 완료 JSON은 마지막에 기록됩니다. 파일 존재만으로 성공을 판정하지 말고 canonical JSON과 모든 root/nested Manifest를 검산하세요. source/input 전후 비교는 협조적인 파일 관찰이며 atomic OS snapshot이나 출처 인증이 아닙니다.

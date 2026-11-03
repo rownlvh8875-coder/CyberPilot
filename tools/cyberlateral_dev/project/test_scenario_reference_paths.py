@@ -8,6 +8,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from contextlib import nullcontext
 from pathlib import Path
 from unittest.mock import patch
 
@@ -246,6 +247,35 @@ class ScenarioReferencePathTests(unittest.TestCase):
                     denied.chmod(0o700)
                 self.assertEqual(list(denied.iterdir()), [])
                 self.assertEqual({p.name for p in root.iterdir()}, {'denied'})
+
+    def test_actual_overlong_input_and_output_api_and_os_argv_cli_are_bounded(self):
+        single, _ = self.modules()
+        report = importlib.import_module('integration_tools.scenario_report_data')
+        compare = importlib.import_module('integration_tools.scenario_compare_input')
+        for alias, module, check, kind, reader, code in self.frontends():
+            with tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                longname = root / ('a' * 256)
+                input_kind = report.ReportError if alias == 'single' else compare.CompareError
+                input_code = 'REPORT_INPUT_FILE' if alias == 'single' else 'COMPARE_INPUT_FILE'
+                cases = [(longname, root / 'out', input_kind, input_code), (root / 'none', longname, kind, code)]
+                for source, output, expected_kind, expected_code in cases:
+                    position = 'output' if output == longname else 'input'
+                    barrier = patch.object(module, reader, side_effect=AssertionError('INPUT_READ')) if position == 'output' else nullcontext()
+                    with (self.subTest(frontend=alias, position=position, interface='API'), barrier,
+                          patch.object(single, '_launch', side_effect=AssertionError('WORKER')) as worker):
+                        error = self.rejection(lambda check=check, source=source, output=output: check(source, output),
+                                               expected_kind, expected_code)
+                        self.assertIsInstance(error.__cause__, OSError)
+                        worker.assert_not_called()
+                    tool = 'scenario_reference_check.py' if alias == 'single' else 'scenario_batch_reference_check.py'
+                    with self.subTest(frontend=alias, position=position, interface='OS_ARGV'):
+                        result = subprocess.run([sys.executable, '-I', '-B', ROOT / 'tools' / tool,
+                                                 '--input', source, '--output', output],
+                                                capture_output=True, timeout=20, check=False)
+                        self.assertEqual((result.returncode, result.stdout, result.stderr),
+                                         (2, b'', ('REJECTED: ' + expected_code + '\n').encode()))
+                    self.assertEqual(list(root.iterdir()), [])
 
     def test_single_surrogateescape_paths_and_unicode_keep_path_free_results(self):
         single, _ = self.modules()
