@@ -25,6 +25,10 @@ main/latest를 고정 tool/source commit 대신 넣지 마세요.
 브라우저·모델 재실행 없이 확인할 수 있습니다. 무결성 VALID와 원래 화면 PASS/FAIL은
 다르며, 새 명령은 고정 R62 tool checkout이 아닌 새 Git 도구 revision에 있습니다.
 
+저장 묶음 두 개는 [R66 정확한 바이트 비교](docs/SAVED_BROWSER_COMPARE_R66_KO.md)로
+비교할 수 있습니다. 양쪽 무결성을 먼저 검산하고 변경 파일의 SHA/크기를 보고합니다.
+동일한 FAIL도 MATCH일 수 있으며 새 화면 품질 판정이나 브라우저 실행은 아닙니다.
+
 ## 실행
 
 기존 Git checkout에서 사용합니다. 새 worktree를 만들거나 사용자 변경을 reset하지 않습니다.

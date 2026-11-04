@@ -99,7 +99,8 @@ def _record(raw):
         raise ValueError('BROWSER_BUNDLE_RECORD') from None
 
 
-def verify_saved_browser(root: Path) -> dict:
+def load_saved_browser(root: Path) -> tuple[dict, dict[str, bytes]]:
+    """Return the receipt and its exact validated snapshot, not a later reread."""
     files = _snapshot(root)
     for prefix in ['', *[f'{folder}/{p}/' for folder in ('fixture-inputs', 'reports') for p in PROFILES]]:
         name = prefix + 'SHA256SUMS.txt'
@@ -115,12 +116,17 @@ def verify_saved_browser(root: Path) -> dict:
     except (ValueError, TypeError, KeyError, RecursionError):
         raise ValueError('BROWSER_BUNDLE_RECORD') from None
     _need(files['SUMMARY_KO.md'] == expected, 'BROWSER_BUNDLE_SUMMARY')
-    return {'status': 'R64_SAVED_BROWSER_BUNDLE_VALID', 'recorded_status': record['status'],
+    receipt = {'status': 'R64_SAVED_BROWSER_BUNDLE_VALID', 'recorded_status': record['status'],
             'cases': len(record['cases']), 'recorded_case_failures': sum(bool(r['failures']) for r in record['cases']),
             'recorded_failure_records': len(record['failures']), 'verified_files': len(files),
             'result_sha256': sha(files['RESULT.json']), 'reader_browser_model_F61_vehicle_executions': 0,
             'source_identity_reauthenticated': False,
             'scope': 'SAVED_BYTES_AND_RECORD_CONSISTENCY_NOT_NEW_BROWSER_OR_ORIGIN_ATTESTATION'}
+    return receipt, files
+
+
+def verify_saved_browser(root: Path) -> dict:
+    return load_saved_browser(root)[0]
 
 
 def main(argv=None) -> int:
