@@ -29,6 +29,10 @@ main/latest를 고정 tool/source commit 대신 넣지 마세요.
 비교할 수 있습니다. 양쪽 무결성을 먼저 검산하고 변경 파일의 SHA/크기를 보고합니다.
 동일한 FAIL도 MATCH일 수 있으며 새 화면 품질 판정이나 브라우저 실행은 아닙니다.
 
+같은 비교를 [R67 한국어 Markdown 요약](docs/SAVED_BROWSER_COMPARE_SUMMARY_R67_KO.md)으로
+읽으려면 `--format markdown`을 사용합니다. 원래 화면 PASS/FAIL과 파일 일치를 분리하고
+변경 파일의 전체 SHA/크기를 보여줍니다. 기본 JSON과 exit 0/1/2 의미는 유지됩니다.
+
 ## 실행
 
 기존 Git checkout에서 사용합니다. 새 worktree를 만들거나 사용자 변경을 reset하지 않습니다.
