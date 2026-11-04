@@ -21,7 +21,7 @@ svg{display:block;width:100%;height:auto}.axis{stroke:#9ba9bd}.zero{stroke:#d5dd
 .legend-entry{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}.key{display:inline-block;width:16px;border-top:3px solid;flex-shrink:0}
 .scroll{overflow:auto;max-height:600px}table{border-collapse:collapse;font:12px ui-monospace,monospace;width:100%}
 th,td{white-space:nowrap;text-align:left;padding:8px;border-bottom:1px solid #e1e7f0}th{position:sticky;top:0;background:#eaf0f8}tr.event{background:#fff4e2}
-code{overflow-wrap:anywhere}small,footer{color:#53647c}a{color:#225ab0}
+code,footer{overflow-wrap:anywhere}small,footer{color:#53647c}a{color:#225ab0}
 @media(max-width:850px){.charts{grid-template-columns:1fr}main{padding:14px 8px}header,section{padding:16px}}
 @media print{.scroll{max-height:none;overflow:visible}body{background:white}}
 '''
