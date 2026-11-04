@@ -3,6 +3,10 @@
 차량 코드가 아닌 개발용 orchestration입니다. 기존 CyberLateral 계산기·wheel0.3.0·
 app lockfile·R41 API는 변경하지 않습니다. 자동 상시 실행/CI 업로드/기기 설치가 아닙니다.
 
+브라우저가 이미 준비된 cloud host에서는 별도의 명시적
+[R60 모바일/PC 리포트 회귀 검사](docs/BROWSER_SMOKE_R60_KO.md)를 실행할 수 있습니다.
+기본 CI나 HF 복구 PASS가 브라우저 검사 PASS를 대신하지 않습니다.
+
 ## 실행
 
 기존 Git checkout에서 사용합니다. 새 worktree를 만들거나 사용자 변경을 reset하지 않습니다.
