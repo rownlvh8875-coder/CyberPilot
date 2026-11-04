@@ -30,18 +30,18 @@ modify tools/cyberlateral_dev/README.md and docs/OFFLINE_QUICKSTART_CURRENT_KO.m
 **Interfaces:** Consumes existing source/guide contracts. Produces human entry links
 and literal Bash examples, not a new API or schema.
 
-- [ ] Snapshot baseline/historical hashes and read original source boundary blocks.
+- [x] Snapshot baseline/historical hashes and read original source boundary blocks.
   Expected exact baseline and clean scoped branch; no shared task interfaces.
-- [ ] Write the guide and two entry paragraphs only. Expected accurate code/ordering
+- [x] Write the guide and two entry paragraphs only. Expected accurate code/ordering
   table, explicit limitations and three literal executable blocks.
-- [ ] Execute the blocks in one fresh shell and external output directory; assert
+- [x] Execute the blocks in one fresh shell and external output directory; assert
   valid R37 exit0, missing-input R37 exit2/null identity/model0/empty stderr,
   R56 ten existing methods PASS, immutable source/examples and no product outputs.
   Expected controlled exit2 remains visible; no new mathematical example.
-- [ ] Check every local entry/supplement link; compare old inventories and remove
+- [x] Check every local entry/supplement link; compare old inventories and remove
   only the exact new paragraphs before comparing historical entry-file hashes.
   Expected no broken link or other old-document changes.
-- [ ] Run locked full DEV883/cloud91, Ruff/Ty/Codespell and compiles; compare stable
+- [x] Run locked full DEV883/cloud91, Ruff/Ty/Codespell and compiles; compare stable
   numerical/report/wheel hashes with sealed R56 baseline. Expected PASS/unchanged.
 - [ ] Commit scoped docs; fresh committed command/link recheck, one independent
   whole-branch review, at most one Important/Critical correction pass with proof.
