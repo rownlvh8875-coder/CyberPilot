@@ -23,8 +23,11 @@ class BrowserProbeTests(unittest.TestCase):
         return {'viewport': 390, 'document_width': 390, 'pan': 0, 'dpr': 1,
                 'footer_font': 16, 'footer_visible': True,
                 'footer_text': 'SCHEMA_SIMULATION_NOT_CAPNP_OR_CAN_WIRE F70UH/F70V/F71 NOT_ALLOWED',
-                'chart_count': 2, 'min_chart_font': 14, 'csp': True, 'active_assets': 0,
-                'table_position': 20, 'single_ticks': ['5', '5'], 'single_circles': 5}
+                'chart_count': 2, 'visible_chart_count': 2, 'min_chart_font': 14,
+                'chart_labels_visible': True, 'csp': True, 'active_assets': 0,
+                'table_position': 20, 'table_overflow': 'auto', 'table_visible': True,
+                'table_user_scrolled': True, 'single_ticks': ['5', '5'], 'single_circles': 5,
+                'visible_single_circles': 5, 'single_point_centered': True}
 
     def test_valid_observations_pass_without_a_browser_import(self):
         p = self.module()
@@ -63,6 +66,23 @@ class BrowserProbeTests(unittest.TestCase):
         before = deepcopy(metrics)
         p.assess_case('resumed', 390, metrics)
         self.assertEqual(metrics, before)
+
+    def test_hidden_svg_nodes_do_not_satisfy_the_visible_chart_contract(self):
+        p = self.module()
+        metrics = self.metrics() | {'visible_chart_count': 0, 'visible_single_circles': 0}
+        self.assertIn('CHARTS', p.assess_case('resumed', 390, metrics))
+        self.assertIn('RESUMED_POINT', p.assess_case('resumed', 390, metrics))
+
+    def test_hidden_labels_are_not_legible_merely_because_their_font_is_large(self):
+        p = self.module()
+        self.assertIn('CHART_FONT', p.assess_case('sign', 390, self.metrics() | {'chart_labels_visible': False}))
+
+    def test_programmatic_motion_and_clipping_do_not_prove_user_table_scrolling(self):
+        p = self.module()
+        for change in [{'table_user_scrolled': False}, {'table_overflow': 'hidden'},
+                       {'table_overflow': 'clip'}, {'table_visible': False}]:
+            with self.subTest(change=change):
+                self.assertIn('TABLE_SCROLL', p.assess_case('sign', 390, self.metrics() | change))
 
     def test_preview_serves_only_exact_owned_paths_and_copies_payloads(self):
         p = self.module()

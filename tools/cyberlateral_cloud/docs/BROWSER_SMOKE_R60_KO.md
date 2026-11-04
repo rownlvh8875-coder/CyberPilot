@@ -40,12 +40,14 @@ python -B tools/cyberlateral_cloud/browser_smoke.py \
 sign/resumed ×320/360/390/425/1440px, DPR1의 총10건에서 다음을 관찰합니다.
 
 - document 폭=viewport와 실제 가로 이동0. 1px 차이도 허용하지 않습니다.
-- footer 제한 문구·16px·보임, 그래프2개·축/범례 최소14px.
-- 모바일 표 내부 가로 스크롤, resumed 단일 점·index5 표시.
+- footer 제한 문구·16px·보임, 실제 보이는 양수 크기 그래프2개·보이는 축/범례 최소14px.
+- 모바일 표에 실제 가로 wheel 입력 후1초 이내의 내부 이동, user-scrollable CSS,
+  resumed 단일 점5개가 실제 보이고 중앙에 배치됨·index5 표시.
 - CSP 존재·active/external asset 부재, VIEW/checksum 링크 실제 탐색4회.
 
 390/1440px의 top/charts/footer 캡처12개를 남깁니다. 모든 글꼴·브라우저·화면 크기의
 가독성이나 전체 접근성을 보장하지 않으므로 필요하면 캡처를 직접 확인하세요.
+wheel 검사는 마우스 입력에 대한 한정 검사이지 모바일 touch 기기 적격성 검사가 아닙니다.
 실행 host의 Playwright/browser는 app 복구와 별개 전제입니다. 다른 물리 머신이나
 브라우저를 독립 설치했다는 증거가 아닙니다.
 
