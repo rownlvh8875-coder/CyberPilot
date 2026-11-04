@@ -6,12 +6,15 @@ app lockfile·R41 API는 변경하지 않습니다. 자동 상시 실행/CI 업�
 ## 현재 고정 복구 안내
 
 노트북 없이 시작하는 현재 검증 경로는
-[R62 도구 + 기존 R61 DEV 복구 안내](docs/RECOVERY_R62_KO.md)입니다.
-안내 문서의 revision과 실행 도구 commit은 다릅니다. 문서는 검증된 R62 도구
-`1b244fe8e2dee8636ce7811529978d9499cfedc8`과 원래 identity의 R61 archive를 고정합니다.
+[R64 도구 + 기존 R61 DEV 복구·검산 안내](docs/RECOVERY_R64_KO.md)입니다.
+복구·실제 브라우저 검사 뒤 새 R64 reader로 저장 묶음을 검산합니다. reader JSON은
+closed browser 폴더 밖에 저장합니다. 안내 문서 revision, 실행 tool commit,
+archive source는 다릅니다. 문서는 R64 도구
+`af4523c05c24ea2c9368a869c0cf9f4df0f54590`과 원래 identity의 R61 archive를 고정합니다.
 고정 도구 checkout에는 이 새 안내 파일이 없을 수 있습니다. 문서의 최신 revision이나
 main/latest를 고정 tool/source commit 대신 넣지 마세요.
-아래의 고정 R48 안내·링크·명령은 과거 기준으로 보존하며, R62 검증과 동일시하지 않습니다.
+이전 [R62 고정 안내](docs/RECOVERY_R62_KO.md)는 원래 bytes로 보존합니다.
+아래의 고정 R48 안내·링크·명령도 과거 기준이며 현재 R64 절차와 동일시하지 않습니다.
 아래 실행/backup 예시는 보관 도구 사용법이고, 현재 읽기 전용 복구 절차는 위 안내입니다.
 
 브라우저가 이미 준비된 cloud host에서는 별도의 명시적
