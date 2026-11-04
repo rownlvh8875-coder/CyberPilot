@@ -18,6 +18,10 @@ main/latest를 고정 tool/source commit 대신 넣지 마세요.
 [R60 모바일/PC 리포트 회귀 검사](docs/BROWSER_SMOKE_R60_KO.md)를 실행할 수 있습니다.
 기본 CI나 HF 복구 PASS가 브라우저 검사 PASS를 대신하지 않습니다.
 
+이미 저장한 결과는 [R64 읽기 전용 묶음 검산](docs/SAVED_BROWSER_VERIFY_R64_KO.md)으로
+브라우저·모델 재실행 없이 확인할 수 있습니다. 무결성 VALID와 원래 화면 PASS/FAIL은
+다르며, 새 명령은 고정 R62 tool checkout이 아닌 새 Git 도구 revision에 있습니다.
+
 ## 실행
 
 기존 Git checkout에서 사용합니다. 새 worktree를 만들거나 사용자 변경을 reset하지 않습니다.
