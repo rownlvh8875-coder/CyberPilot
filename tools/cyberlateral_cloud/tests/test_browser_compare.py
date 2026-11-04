@@ -301,6 +301,112 @@ class BrowserCompareTests(unittest.TestCase):
                 self.assertEqual((result.returncode, result.stdout), (2, b''))
                 self.assertNotIn(b'Traceback', result.stderr)
 
+    # Catch a presentation path that changes inputs, exit meaning or stable output.
+    def test_markdown_match_is_deterministic_read_only_and_keeps_original_pass(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            left, right = self.pair(tmp)
+            before = self.state(left), self.state(right)
+            one = self.command('--baseline', left, '--candidate', right, '--format', 'markdown')
+            two = self.command('--baseline', left, '--candidate', right, '--format', 'markdown')
+            self.assertEqual((one.returncode, one.stderr), (0, b''))
+            self.assertEqual((one.stdout, one.stderr), (two.stdout, two.stderr))
+            text = one.stdout.decode('utf-8')
+            self.assertIn('비교 파일: 38 · 변경: 0 · 불변: 38', text)
+            self.assertIn('| baseline | `R60_BROWSER_SMOKE_PASS` | 10 | 0 | 0 |', text)
+            self.assertNotIn(str(Path(tmp)), text)
+            self.assertEqual((self.state(left), self.state(right)), before)
+
+    # Catch omitting non-visual bytes, truncated hashes or swapped side columns.
+    def test_markdown_difference_preserves_full_before_after_facts_and_exit_one(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            left, right = self.pair(tmp)
+            old = (left / 'sign-render.log').read_bytes()
+            (right / 'sign-render.log').write_bytes(b'different log\n')
+            self.reseal(right)
+            result = self.command('--baseline', left, '--candidate', right, '--format', 'markdown')
+            self.assertEqual((result.returncode, result.stderr), (1, b''))
+            text = result.stdout.decode('utf-8')
+            self.assertIn('R66_SAVED_BROWSER_BYTES_DIFFERENT', text)
+            self.assertIn('| `sign-render.log` | `' + hashlib.sha256(old).hexdigest()
+                          + '` | ' + str(len(old)) + ' | `' + hashlib.sha256(b'different log\n').hexdigest() + '` | 14 |', text)
+            self.assertLess(text.index('| `SHA256SUMS.txt` |'), text.index('| `sign-render.log` |'))
+            self.assertIn('DIFFERENT는 새 화면 회귀 판정이 아닙니다', text)
+
+    def test_markdown_identical_fail_and_mixed_status_keep_both_recorded_verdicts(self):
+        for both in [False, True]:
+            with self.subTest(both=both), tempfile.TemporaryDirectory() as tmp:
+                left, right = self.pair(tmp)
+                self.fail_record(right)
+                if both:
+                    self.fail_record(left)
+                result = self.command('--baseline', left, '--candidate', right, '--format', 'markdown')
+                self.assertEqual((result.returncode, result.stderr), (0 if both else 1, b''))
+                text = result.stdout.decode('utf-8')
+                self.assertIn('| candidate | `R60_BROWSER_SMOKE_FAIL` | 10 | 0 | 1 |', text)
+                self.assertIn('| baseline | `R60_BROWSER_SMOKE_' + ('FAIL` | 10 | 0 | 1 |' if both else 'PASS` | 10 | 0 | 0 |'), text)
+                self.assertIn('MATCH는 화면 PASS가 아닙니다', text)
+
+    def test_markdown_invalid_operand_never_leaks_partial_report_or_path(self):
+        for side in [0, 1]:
+            for partial in [False, True]:
+                with self.subTest(side=side, partial=partial), tempfile.TemporaryDirectory() as tmp:
+                    pair = self.pair(tmp)
+                    if partial:
+                        (pair[side] / 'RESULT.json').unlink()
+                    else:
+                        (pair[side] / 'captures/sign-390-top.png').write_bytes(b'corrupt')
+                    result = self.command('--baseline', pair[0], '--candidate', pair[1], '--format', 'markdown')
+                    code = ('BASELINE' if side == 0 else 'CANDIDATE') + '_BROWSER_BUNDLE_' + ('LAYOUT' if partial else 'MANIFEST')
+                    self.assertEqual((result.returncode, result.stdout, result.stderr),
+                                     (2, b'', ('REJECTED: ' + code + '\n').encode()))
+
+    def test_explicit_json_is_byte_identical_to_default_r66_serialization(self):
+        for changed in [False, True]:
+            with self.subTest(changed=changed), tempfile.TemporaryDirectory() as tmp:
+                left, right = self.pair(tmp)
+                if changed:
+                    self.fail_record(right)
+                default = self.command('--baseline', left, '--candidate', right)
+                explicit = self.command('--baseline', left, '--candidate', right, '--format', 'json')
+                self.assertEqual((default.returncode, default.stderr), (1 if changed else 0, b''))
+                self.assertEqual((explicit.returncode, explicit.stdout, explicit.stderr),
+                                 (default.returncode, default.stdout, default.stderr))
+                expected = json.dumps(self.module().compare_saved_browser(left, right),
+                                      sort_keys=True, ensure_ascii=True, allow_nan=False).encode() + b'\n'
+                self.assertEqual(default.stdout, expected)
+
+    def test_markdown_is_utf8_even_when_stdout_locale_is_ascii(self):
+        env = os.environ.copy()
+        env.update(LC_ALL='C', PYTHONCOERCECLOCALE='0', PYTHONUTF8='0', PYTHONIOENCODING='ascii')
+        result = subprocess.run([sys.executable, '-B', TOOLS / 'browser_compare.py',
+                                 '--baseline', self.base, '--candidate', self.base, '--format', 'markdown'],
+                                env=env, capture_output=True, timeout=20)
+        self.assertEqual((result.returncode, result.stderr), (0, b''))
+        self.assertIn('저장 묶음 비교 요약', result.stdout.decode('utf-8'))
+        self.assertTrue(result.stdout.endswith(b'\n'))
+
+    def test_markdown_help_and_renderer_use_no_optional_or_product_imports(self):
+        result = self.command('--help')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn(b'--format {json,markdown}', result.stdout)
+        query = ("import sys;sys.path.insert(0,sys.argv[1]);from pathlib import Path;"
+                 "from browser_compare import compare_saved_browser;"
+                 "from browser_compare_summary import render_comparison_summary;"
+                 "raw=render_comparison_summary(compare_saved_browser(Path(sys.argv[2]),Path(sys.argv[2])));"
+                 "assert isinstance(raw,bytes);"
+                 "bad={'playwright','numpy','huggingface_hub','cyberlateral_dev','openpilot','opendbc','capnp','cereal',"
+                 "'synthetic_rate_constraint_feasibility_v1'};assert not {n.split('.')[0] for n in sys.modules}&bad;print('PASS')")
+        probe = subprocess.run([sys.executable, '-I', '-B', '-c', query, str(TOOLS), str(self.base)],
+                               capture_output=True, timeout=20)
+        self.assertEqual((probe.returncode, probe.stdout, probe.stderr), (0, b'PASS\n', b''))
+
+    def test_invalid_output_format_is_rejected_not_json_or_partial_markdown(self):
+        for fmt in ['html', 'MARKDOWN', '']:
+            with self.subTest(fmt=fmt):
+                result = self.command('--baseline', self.base, '--candidate', self.base, '--format', fmt)
+                self.assertEqual((result.returncode, result.stdout), (2, b''))
+                self.assertNotIn(b'Traceback', result.stderr)
+
 
 if __name__ == '__main__':
     unittest.main()

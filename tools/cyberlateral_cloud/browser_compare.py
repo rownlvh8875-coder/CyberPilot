@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 
 from artifacts import sha
+from browser_compare_summary import render_comparison_summary
 from browser_verify import load_saved_browser
 
 
@@ -40,13 +41,18 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)
     parser.add_argument('--baseline', type=Path, required=True)
     parser.add_argument('--candidate', type=Path, required=True)
+    parser.add_argument('--format', choices=('json', 'markdown'), default='json')
     args = parser.parse_args(argv)
     try:
         result = compare_saved_browser(args.baseline, args.candidate)
+        summary = render_comparison_summary(result) if args.format == 'markdown' else None
     except ValueError as error:
         print('REJECTED: ' + str(error), file=sys.stderr)
         return 2
-    print(json.dumps(result, sort_keys=True, ensure_ascii=True, allow_nan=False))
+    if summary is None:
+        print(json.dumps(result, sort_keys=True, ensure_ascii=True, allow_nan=False))
+    else:
+        sys.stdout.buffer.write(summary)
     return 1 if result['changed_files'] else 0
 
 
