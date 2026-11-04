@@ -1,5 +1,8 @@
 # 현재 오프라인 개발판 사용 안내
 
+R50–R56 경로·캐시 오류 보완은 별도의 [R56 기준 보충 안내](OFFLINE_HARDENING_R56_KO.md)를
+참고하세요. 아래의 R48 검토 기준과 과거 source 목록은 그대로 유지합니다.
+
 구현 설명의 고정 검토 기준은 R48 main commit
 `d599d53c96dd965545da368ea699b661d1d07907`입니다. R49는 사용 안내만 갱신합니다.
 실행 결과는 매번 새로 생성한 SUMMARY/RESULTS/Manifest로 확인합니다. 문서나 source

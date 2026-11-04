@@ -1,5 +1,9 @@
 # CyberLateral — isolated offline development
 
+For the fixed R56 implementation baseline, see the separate
+[Korean path/cache troubleshooting supplement](docs/OFFLINE_HARDENING_R56_KO.md).
+It complements, not replaces, the historical guide and source inventory below.
+
 CyberLateral0.3.0 is a pure synthetic command/state calculation package, imported
 byte-for-byte from the verified R7 evidence. It is now maintained as a standalone
 development project in CyberPilot. It is NOT an openpilot controller, vehicle
