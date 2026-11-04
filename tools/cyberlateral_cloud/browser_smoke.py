@@ -8,6 +8,7 @@ from pathlib import Path
 
 from artifacts import manifest, new_restore_directory, sha
 from browser_probe import PROFILES, browser_library, run_browser
+from browser_summary import render_summary
 
 TOOLS = Path(__file__).resolve().parent
 REPO = TOOLS.parents[1]
@@ -108,8 +109,12 @@ def write_json(path, value):
 
 
 def publish_result(output, result):
-    files = {name: (output / name).read_bytes() for name in tree_hashes(output)}
+    owned = tree_hashes(output)
+    files = {name: (output / name).read_bytes() for name in owned}
     files['RESULT.json'] = json_bytes(result)
+    files['SUMMARY_KO.md'] = render_summary(result, owned)
+    with (output / 'SUMMARY_KO.md').open('xb') as stream:
+        stream.write(files['SUMMARY_KO.md'])
     with (output / 'SHA256SUMS.txt').open('xb') as stream:
         stream.write(manifest(files))
     # RESULT is the completion marker: checksum publication must finish first.
