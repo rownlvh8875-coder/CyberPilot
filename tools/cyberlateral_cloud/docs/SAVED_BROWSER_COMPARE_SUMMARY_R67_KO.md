@@ -64,6 +64,9 @@ exit 1은 정상적인 차이 결과이므로 단순히 성공/실패로 합치�
 CLI는 `compare_saved_browser`를 한 번 호출한 그 결과만 요약합니다. 원본을 다시 열거나
 기록된 수치/화면 판정을 재계산하지 않습니다. API에 임의로 조립한 dict를 전달해도
 출처 인증이 되지는 않습니다. 요약 파일 자체에 별도 전자서명이나 Manifest가 없습니다.
+`RESULT.json`이 변경 목록에 없으면 양쪽의 소비하는 기록 상태·건수·RESULT SHA가
+같아야 하며, 변경 목록에 있으면 그 행의 양쪽 SHA가 각 receipt와 일치해야 합니다.
+이 연결 검사는 dict 내부의 모순을 거절할 뿐 원본 bytes를 다시 검증하지 않습니다.
 
 `quality_assessment=NOT_PERFORMED`, `source_identity_reauthenticated=false`입니다.
 이는 새 화면·픽셀 유사도·발행자 인증·수치 정답·실차 적격성 검증이 아닙니다.

@@ -65,6 +65,13 @@ def render_comparison_summary(result: dict) -> bytes:
     _need(paths == sorted(set(paths)))
     for side in ('baseline', 'candidate'):
         _receipt(result.get(side + '_verification'))
+    result_delta = next((row for row in differences if row['path'] == 'RESULT.json'), None)
+    if result_delta is None:
+        fields = ('recorded_status', 'cases', 'recorded_case_failures', 'recorded_failure_records', 'result_sha256')
+        _need(all(result['baseline_verification'][field] == result['candidate_verification'][field] for field in fields))
+    else:
+        _need(all(result_delta[side]['sha256'] == result[side + '_verification']['result_sha256']
+                  for side in ('baseline', 'candidate')))
 
     parts = ['# 저장 묶음 비교 요약', '',
              '비교 상태: `' + result['status'] + '`',

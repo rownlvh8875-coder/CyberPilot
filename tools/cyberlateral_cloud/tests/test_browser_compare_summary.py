@@ -85,6 +85,10 @@ class BrowserCompareSummaryTests(unittest.TestCase):
         result['candidate_verification'].update(recorded_status='R60_BROWSER_SMOKE_FAIL',
                                                 recorded_case_failures=2, recorded_failure_records=3,
                                                 result_sha256='f' * 64)
+        result['differences'].insert(0, {'path': 'RESULT.json',
+                                         'baseline': {'sha256': 'a' * 64, 'byte_size': 1000},
+                                         'candidate': {'sha256': 'f' * 64, 'byte_size': 1100}})
+        result.update(changed_files=3, unchanged_files=35)
         text = self.module().render_comparison_summary(result).decode('utf-8')
         self.assertIn('| baseline | `R60_BROWSER_SMOKE_PASS` | 10 | 0 | 0 |', text)
         self.assertIn('| candidate | `R60_BROWSER_SMOKE_FAIL` | 10 | 2 | 3 | `' + 'f' * 64 + '` |', text)
@@ -158,6 +162,30 @@ class BrowserCompareSummaryTests(unittest.TestCase):
             values.append(result)
             result = comparison_fixture()
             del result[side]['result_sha256']
+            values.append(result)
+        self.reject(values)
+
+    # Catch stale/edited receipts falsely paired with MATCH or an unrelated log delta.
+    def test_absent_result_delta_requires_matching_receipt_facts(self):
+        values = []
+        for base in [comparison_fixture(), self.different()]:
+            for update in [{'result_sha256': 'f' * 64},
+                           {'recorded_status': 'R60_BROWSER_SMOKE_FAIL', 'recorded_failure_records': 1}]:
+                result = deepcopy(base)
+                result['candidate_verification'].update(update)
+                values.append(result)
+        self.reject(values)
+
+    # Catch swapped or stale RESULT hashes while preserving real raw-byte semantics.
+    def test_result_delta_hashes_must_match_their_corresponding_receipts(self):
+        values = []
+        for side, digest in [('baseline', 'b' * 64), ('candidate', 'c' * 64)]:
+            result = self.different()
+            result['differences'].insert(0, {'path': 'RESULT.json',
+                                             'baseline': {'sha256': 'a' * 64, 'byte_size': 1000},
+                                             'candidate': {'sha256': 'a' * 64, 'byte_size': 1001}})
+            result.update(changed_files=3, unchanged_files=35)
+            result['differences'][0][side]['sha256'] = digest
             values.append(result)
         self.reject(values)
 
