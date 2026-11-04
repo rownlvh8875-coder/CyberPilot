@@ -121,9 +121,9 @@ class BrowserSmokeTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / 'capture.png').write_bytes(b'not an actual browser capture')
-            b.publish_result(root, {'status': 'R60_BROWSER_SMOKE_FAIL', 'cases': []})
+            b.publish_result(root, importlib.import_module('browser_result_fixture').result_fixture())
             manifest = dict(line.split('  ', 1)[::-1] for line in (root / 'SHA256SUMS.txt').read_text().splitlines())
-            self.assertEqual(set(manifest), {'capture.png', 'RESULT.json'})
+            self.assertEqual(set(manifest), {'capture.png', 'RESULT.json', 'SUMMARY_KO.md'})
             for name, digest in manifest.items():
                 self.assertEqual(digest, hashlib.sha256((root / name).read_bytes()).hexdigest())
 
@@ -133,8 +133,19 @@ class BrowserSmokeTests(unittest.TestCase):
             root = Path(tmp)
             (root / 'SHA256SUMS.txt').mkdir()
             with self.assertRaises(OSError):
-                b.publish_result(root, {'status': 'R60_BROWSER_SMOKE_PASS'})
+                b.publish_result(root, importlib.import_module('browser_result_fixture').result_fixture())
             self.assertFalse((root / 'RESULT.json').exists())
+
+    def test_summary_write_failure_cannot_create_checksum_or_result(self):
+        b = self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'SUMMARY_KO.md').mkdir()
+            with self.assertRaises(OSError):
+                b.publish_result(root, importlib.import_module('browser_result_fixture').result_fixture())
+            self.assertFalse((root / 'RESULT.json').exists())
+            self.assertFalse((root / 'SHA256SUMS.txt').exists())
+            self.assertEqual(list((root / 'SUMMARY_KO.md').iterdir()), [])
 
 
 if __name__ == '__main__':

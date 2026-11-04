@@ -64,6 +64,16 @@ HTTP는 임시 loopback 포트에서 **메모리로 소유한** HTML/VIEW/checks
 완료한 검사는 `RESULT.json`, `captures/`, `reports/`, `fixture-inputs/`, 제한된 child
 로그와 전체 파일을 닫아 검산하는 `SHA256SUMS.txt`를 남깁니다. RESULT는 checksum
 기록 뒤에 생성하는 완료 표시입니다. 기록 실패·crash의 atomic OS 복구 보장은 아닙니다.
+
+R61부터 완료 출력에 `SUMMARY_KO.md`도 남깁니다. 열 개 화면의 **저장된** 판정·측정값·
+실패 이유와 실제로 연결 가능한 리포트/캡처 경로를 한국어로 모읍니다. 별도 실행 옵션이나
+새 브라우저 검사는 없습니다. 전체 실패 기록은 개별 case가 PASS여도 표시합니다.
+null과 field 누락은 구분하며, 누락을 0으로 추정하지 않습니다. 이 요약은 source/수치/
+출처/차량 검증을 추가하지 않으며 원래 RESULT V1·stdout·exit0/1/2는 그대로입니다.
+요약은 checksum과 RESULT보다 먼저 기록되고 같은 closed checksum에 포함됩니다.
+따라서 부분 실패 폴더의 요약만 보고 완료로 쓰면 안 됩니다. RESULT 존재와 전체 검산이
+필요합니다. 이 파일은 fresh producer 결과의 표시용이며 임의 저장 JSON을 여는 reader가 아닙니다.
+
 안전한 출력 생성 뒤 실패하면 부분 결과와 `FAILURE.json`을 보존합니다. 권한/디스크
 오류로 실패 기록 자체가 불가능할 수도 있으므로 RESULT 없이 성공으로 쓰지 마세요.
 preflight 거절은 출력 폴더를 만들지 않습니다. 재시도는 반드시 새 경로를 사용합니다.
