@@ -82,6 +82,32 @@ class BrowserVerifyTests(unittest.TestCase):
                 'scope': 'SAVED_BYTES_AND_RECORD_CONSISTENCY_NOT_NEW_BROWSER_OR_ORIGIN_ATTESTATION'})
             self.assertEqual(self.snapshot(root), before)
 
+    def test_loader_returns_validated_detached_bytes_not_live_paths(self):
+        verifier = self.module()
+        self.assertTrue(hasattr(verifier, 'load_saved_browser'), 'validated byte loader missing')
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.bundle(tmp)
+            before = self.snapshot(root)
+            receipt, files = verifier.load_saved_browser(root)
+            self.assertEqual(files, before)
+            self.assertEqual(len(files), 38)
+            self.assertTrue(all(type(value) is bytes for value in files.values()))
+            self.assertEqual(receipt['status'], 'R64_SAVED_BROWSER_BUNDLE_VALID')
+            self.assertEqual(receipt['result_sha256'], hashlib.sha256(before['RESULT.json']).hexdigest())
+            (root / 'captures/sign-390-top.png').write_bytes(b'changed after snapshot')
+            self.assertEqual(files['captures/sign-390-top.png'], before['captures/sign-390-top.png'])
+
+    def test_loader_never_returns_corrupt_bytes_as_validated(self):
+        verifier = self.module()
+        self.assertTrue(hasattr(verifier, 'load_saved_browser'), 'validated byte loader missing')
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.bundle(tmp)
+            (root / 'captures/sign-390-top.png').write_bytes(b'bad')
+            before = self.snapshot(root)
+            with self.assertRaisesRegex(ValueError, '^BROWSER_BUNDLE_MANIFEST$'):
+                verifier.load_saved_browser(root)
+            self.assertEqual(self.snapshot(root), before)
+
     def test_cli_pass_is_deterministic_and_needs_no_browser_or_credentials(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self.bundle(tmp)
