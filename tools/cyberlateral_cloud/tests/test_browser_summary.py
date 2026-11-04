@@ -54,6 +54,29 @@ class BrowserSummaryTests(unittest.TestCase):
         self.assertIn('UNEXPECTED_BROWSER_REQUEST', text)
         self.assertIn('count', text)
         self.assertIn('| sign / 320 | PASS |', text)
+        global_section = text.split('## 전체 실패 기록')[1].split('## 연결')[0]
+        self.assertIn('UNEXPECTED_BROWSER_REQUEST: 허용 목록 밖 브라우저 요청', global_section)
+        self.assertIn('- `{"codes": ["UNEXPECTED_BROWSER_REQUEST"], "count": 1}`', global_section)
+
+    def test_global_unknown_and_empty_code_records_keep_original_facts(self):
+        s = self.module()
+        record, files = self.fixture()
+        record['status'] = 'R60_BROWSER_SMOKE_FAIL'
+        record['failures'] = [{'codes': ['UNEXPECTED_BROWSER_REQUEST', 'FUTURE_OBSERVATION'], 'count': 2,
+                               'detail': '<script>|`extra'}, {'codes': []}]
+        before = deepcopy(record)
+        text = s.render_summary(record, files).decode()
+        global_section = text.split('## 전체 실패 기록')[1].split('## 연결')[0]
+        self.assertIn('UNEXPECTED_BROWSER_REQUEST: 허용 목록 밖 브라우저 요청; '
+                      'FUTURE_OBSERVATION: 추가 관측 오류', global_section)
+        self.assertIn('"codes": ["UNEXPECTED_BROWSER_REQUEST", "FUTURE_OBSERVATION"]', global_section)
+        self.assertIn('"count": 2', global_section)
+        self.assertIn('&lt;script&gt;&#124;&#96;extra', global_section)
+        self.assertIn('- `{"codes": []}`', global_section)
+        self.assertNotIn('없음', global_section)
+        self.assertIn('R60_BROWSER_SMOKE_FAIL', text)
+        self.assertIn('| sign / 320 | PASS |', text)
+        self.assertEqual(record, before)
 
     def test_incomplete_duplicate_and_contradictory_records_are_not_success(self):
         s = self.module()

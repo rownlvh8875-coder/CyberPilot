@@ -79,7 +79,11 @@ def render_summary(result: dict, file_sha256: dict[str, str]) -> bytes:
     parts.extend(['', '표 wheel 요구는 모바일 네 폭에 한정됩니다. 1440px의 false/0은 실패를 새로 계산한 값이 아닙니다.',
                   'null은 저장된 null, 미관측은 해당 field 누락입니다. 둘 다 임의의 0으로 바꾸지 않았습니다.', '',
                   '## 전체 실패 기록', ''])
-    parts.extend('- ' + _cell(f) for f in failures)
+    for failure in failures:
+        parts.append('- ' + _cell(failure))
+        if failure['codes']:
+            reason = '; '.join(c + ': ' + REASONS.get(c, '추가 관측 오류') for c in failure['codes'])
+            parts.append('  - 설명: ' + reason)
     if not failures:
         parts.append('기록 없음. 개별 case와 원래 RESULT를 함께 확인하세요.')
     parts.extend(['', '## 연결 가능한 리포트·선택 캡처', '',
