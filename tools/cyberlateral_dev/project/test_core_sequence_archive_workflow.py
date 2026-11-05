@@ -122,7 +122,8 @@ class CoreArchiveWorkflowTests(unittest.TestCase):
         self.assertEqual(before, [(p.read_bytes(), p.stat().st_mode) for p in (self.left, self.right)])
 
     def test_bad_second_digest_precedes_all_caller_path_access(self):
-        with patch('os.open', side_effect=AssertionError('path access before digest rejection')):
+        with patch.object(self.m, '_output', side_effect=AssertionError('output path inspection before digest rejection')), \
+                patch('os.open', side_effect=AssertionError('path access before digest rejection')):
             with self.assertRaises(self.compare.ArchiveCompareError) as found:
                 self.m.publish_archive_report(self.left, sha(self.raw), self.right, 'abbreviated', self.output)
         self.assertIn('RIGHT:', found.exception.code); self.assertFalse(self.output.exists())
