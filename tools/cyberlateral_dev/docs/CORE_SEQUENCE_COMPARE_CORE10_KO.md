@@ -49,7 +49,9 @@ LEFT_ONLY/RIGHT_ONLY는 left_present/right_present로 누락을 구별하며 실
 상세는 deterministic 순서의 첫256개만 보존한다. difference_count와
 difference_counts는 전체 차이 수다. reported_difference_count와
 differences_truncated를 반드시 확인한다. 잘려도 차이 판정과 exit1은 유지한다.
-Markdown은 HTML/표/코드 구분자·제어문자를 escape한다. 브라우저 화면 검증은 아님.
+Markdown의 각 셀은 typed JSON code span이다. HTML/표/코드 구분자는 JSON Unicode
+escape로 표시하고, 링크·이미지·강조·backslash는 문자 그대로 보존한다. 셀을 JSON으로
+decode하면 저장값과 같다. 로컬 GFM 변환 검증은 브라우저 화면 검증이 아니다.
 
 ## 읽기 전용·근거 한계
 

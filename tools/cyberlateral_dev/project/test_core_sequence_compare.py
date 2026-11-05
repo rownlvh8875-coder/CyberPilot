@@ -195,7 +195,7 @@ class CoreSequenceCompareTests(unittest.TestCase):
             text = '<script>|`\n\x1b\u202e'
             self.edit(right, 'RESULTS.json', lambda r: r['identity'].update({text: text}))
             output = m.render_comparison(m.compare_saved_sequences(left, right), 'markdown').decode()
-            for escaped in ('&lt;script&gt;', '&#124;', '&#96;', r'\u001b', r'\u202e', '저장'):
+            for escaped in (r'\u003cscript\u003e', r'\u007c', r'\u0060', r'\u001b', r'\u202e', '저장'):
                 self.assertIn(escaped, output)
             for raw in ('<script>', '\x1b', '\u202e'):
                 self.assertNotIn(raw, output)
@@ -418,3 +418,22 @@ runpy.run_path({str(ROOT / 'tools/core_sequence_compare.py')!r},run_name='__main
             paths = [d['path'] for d in m.compare_saved_sequences(left, right)['differences']]
             self.assertEqual(paths, ['/RESULTS.json/identity/marker/10', '/RESULTS.json/identity/marker/2',
                                      '/RESULTS.json/identity/values/2', '/RESULTS.json/identity/values/10'])
+
+    def test_markdown_identity_cells_are_inert_typed_json_with_exact_roundtrip(self):
+        m = self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            left, right = self.pair(Path(tmp))
+            value = '![asset](https://example.invalid/track.png) [review](https://example.invalid/) **stars** _u_ ~~del~~ C:\\logs\\new | `x` <b>&\n\u202e'
+            self.edit(right, 'RESULTS.json', lambda r: r['identity'].update({value: value}))
+            output = m.render_comparison(m.compare_saved_sequences(left, right), 'markdown').decode()
+            rows = [line for line in output.splitlines() if line.startswith('| ')][2:]
+            self.assertEqual(len(rows), 1)
+            cells = [cell.strip() for cell in rows[0].split('|')[1:-1]]
+            self.assertEqual(len(cells), 7)
+            decoded = []
+            for cell in cells:
+                self.assertTrue(cell.startswith('`') and cell.endswith('`'), 'Stored metadata must be inert code, not active Markdown')
+                self.assertEqual(cell.count('`'), 2)
+                decoded.append(json.loads(cell[1:-1]))
+            pointer = '/RESULTS.json/identity/' + value.replace('~', '~0').replace('/', '~1')
+            self.assertEqual(decoded, [pointer, 'IDENTITY', 'RIGHT_ONLY', False, None, True, value])

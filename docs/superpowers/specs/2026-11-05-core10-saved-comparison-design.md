@@ -79,9 +79,11 @@ integrity_scope CAPTURED_RECORD_COMPARISON_NOT_ARITHMETIC_OR_ORIGIN_PROOF.
 No caller paths/timestamps in portable results; preserved stored record data may
 itself contain opaque paths/strings, not asserted authenticated or current.
 JSON canonical unchanged helper. Markdown shows both saved outcomes/counts and
-separate typed JSON-encoded cells for paths/values; ensure_ascii=true, HTML escape,
-pipe/backtick entity escape to prevent raw HTML/Markdown/control/bidi injection
-from opaque identity keys/values. No browser/visual claim; text stdout only.
+separate typed JSON-encoded code-span cells for paths/values; ensure_ascii=true,
+JSON Unicode escapes for backtick/pipe/HTML delimiters preserve decoded values
+while preventing active HTML/Markdown/control/bidi injection from opaque identity
+keys/values. Review corrected the earlier insufficient HTML/entity-only strategy.
+Local GFM consumer conversion is not a browser/visual claim; text stdout only.
 
 CLI exit0 identical,exit1 different,exit2 invalid/operational. Saved DIFFERENT or
 REJECTED self-comparison exits0 if records identical; no saved-status promotion.

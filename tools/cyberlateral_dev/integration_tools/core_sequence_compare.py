@@ -1,6 +1,5 @@
 """Exact stored-record differences, never model replay or source authentication."""
 
-import html
 import json
 from pathlib import Path
 
@@ -81,9 +80,12 @@ def compare_saved_sequences(left: Path, right: Path) -> dict:
 
 
 def _cell(value) -> str:
-    # JSON escapes control/bidi text; HTML and table/code delimiters remain inert.
+    # Code spans keep Markdown/backslashes literal. Unicode JSON escapes remove
+    # span/table/HTML delimiters without changing the decoded stored value.
     text = json.dumps(value, ensure_ascii=True, sort_keys=True, separators=(',', ':'), allow_nan=False)
-    return html.escape(text, quote=True).replace('|', '&#124;').replace('`', '&#96;')
+    for char, escaped in [('`', r'\u0060'), ('|', r'\u007c'), ('<', r'\u003c'), ('>', r'\u003e'), ('&', r'\u0026')]:
+        text = text.replace(char, escaped)
+    return '`' + text + '`'
 
 
 def render_comparison(comparison: dict, output_format: str = 'json') -> bytes:
