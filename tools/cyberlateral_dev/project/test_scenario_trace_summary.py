@@ -213,3 +213,173 @@ class TraceSummaryTests(unittest.TestCase):
             with self.assertRaises(self.reader.ReportError) as error:
                 m.summarize_saved_trace(self.root / 'absent')
         self.assertEqual(error.exception.code, 'TRACE_SUMMARY_RUNTIME')
+
+    def formatter(self):
+        module = self.module()
+        self.assertTrue(hasattr(module, 'format_saved_trace'), 'Missing R70 format API')
+        return module.format_saved_trace
+
+    def cli(self, *arguments):
+        cli = ROOT / 'tools/scenario_trace_summary.py'
+        self.assertTrue(cli.is_file(), 'Missing R70 stdout CLI')
+        return subprocess.run([sys.executable, '-I', '-B', str(cli), *map(str, arguments)],
+                              capture_output=True, timeout=15, check=False)
+
+    def test_format_validation_precedes_input_access(self):
+        formatter = self.formatter()
+
+        class Text(str):
+            pass
+
+        for mode in ['JSON', 'html', '', None, True, [], Text('json')]:
+            with self.subTest(mode=mode), self.assertRaises(self.reader.ReportError) as error:
+                formatter(self.root / 'absent', mode)
+            self.assertEqual(error.exception.code, 'TRACE_SUMMARY_FORMAT')
+
+    def test_json_markdown_relocation_and_repeated_bytes(self):
+        formatter = self.formatter()
+        before = {p.name: p.read_bytes() for p in self.sign.iterdir()}
+        with tempfile.TemporaryDirectory() as scratch:
+            relocated = Path(scratch) / 'relocated'
+            relocated.mkdir()
+            for name, raw in before.items():
+                (relocated / name).write_bytes(raw)
+            expected = self.module().summarize_saved_trace(self.sign)
+            for mode in ['json', 'markdown']:
+                first = formatter(self.sign, mode)
+                self.assertEqual(first, formatter(relocated, mode))
+                for _ in range(2):
+                    result = self.cli('--input', self.sign, '--format', mode)
+                    self.assertEqual((result.returncode, result.stdout, result.stderr), (0, first, b''))
+                if mode == 'json':
+                    self.assertEqual(json.loads(first), expected)
+                    self.assertEqual(first, formatter(self.sign))
+                    self.assertEqual(first, (json.dumps(expected, sort_keys=True, ensure_ascii=False, separators=(',', ':')) + '\n').encode())
+                else:
+                    text = first.decode()
+                    for name, event in expected['stage_events'].items():
+                        index = '-' if event['first_sample_index'] is None else str(event['first_sample_index'])
+                        self.assertIn(f'`{name}` | {event["count"]} | {index} |', text)
+                    self.assertIn(expected['source_hashes']['RESULTS.json'], text)
+                    for key, value in expected['gates'].items():
+                        self.assertIn(f'`{key}`', text)
+                        self.assertIn(json.dumps(value, ensure_ascii=False), text)
+        self.assertEqual(before, {p.name: p.read_bytes() for p in self.sign.iterdir()})
+
+    def test_resumed_markdown_retains_declared_first_index_and_suppression(self):
+        text = self.formatter()(self.resumed, 'markdown').decode()
+        self.assertIn('`fault_condition_true` | 1 | 5 |', text)
+        self.assertIn('`rate_clip_numeric_changed` | 1 | 5 |', text)
+        self.assertIn('`fault_request_suppressed` | 1 |', text)
+        self.assertIn('INVOCATION_ORDER_ONLY_NOT_ELAPSED_TIME', text)
+        self.assertIn('CHECKSUM_AND_CROSS_RECORD_CONSISTENCY_NOT_MODEL_OR_ORIGIN_VALIDATION', text)
+
+    def test_cli_late_bad_rows_and_false_gates_never_emit_partial_summary(self):
+        for mode in ['json', 'markdown']:
+            for change in [lambda r: r['rows'][-1]['prepared']['state'].update(previous_applied=99),
+                           lambda r: r['gates'].update(STATIC_EVIDENCE_GATE='PASS')]:
+                with self.subTest(mode=mode, change=change), tempfile.TemporaryDirectory() as scratch:
+                    source = write_bundle(Path(scratch) / 'source')
+                    edit_json(source, 'RESULTS.json', change)
+                    result = self.cli('--input', source, '--format', mode)
+                    self.assertEqual((result.returncode, result.stdout), (2, b''))
+                    self.assertTrue(result.stderr.startswith(b'REJECTED: REPORT_'), result.stderr)
+                    self.assertNotIn(b'Traceback', result.stderr)
+
+    def test_cli_usage_and_help_before_nonexistent_input(self):
+        for extra in [['--format', 'html'], ['--for', 'json'], ['--r', '0'], ['--dt', '0.01'],
+                      ['--output', 'somewhere'], ['--unknown']]:
+            with self.subTest(extra=extra):
+                result = self.cli('--input', self.root / 'absent', *extra)
+                self.assertEqual((result.returncode, result.stdout), (2, b''))
+                self.assertNotIn(b'Traceback', result.stderr)
+                self.assertNotIn(b'REPORT_INPUT_FILE', result.stderr)
+        help_result = self.cli('--help')
+        self.assertEqual((help_result.returncode, help_result.stderr), (0, b''))
+        self.assertIn(b'--input', help_result.stdout)
+        self.assertIn(b'--format', help_result.stdout)
+        missing = self.cli('--input', self.root / 'absent')
+        self.assertEqual((missing.returncode, missing.stdout, missing.stderr), (2, b'', b'REJECTED: REPORT_INPUT_FILE\n'))
+
+    def test_format_uses_owned_bytes_even_if_original_changes_after_capture(self):
+        formatter = self.formatter()
+        with tempfile.TemporaryDirectory() as scratch:
+            source = write_bundle(Path(scratch) / 'source')
+            expected = formatter(source)
+            real_files = self.module()._files
+            calls = []
+
+            def captured(path):
+                owned = real_files(path)
+                calls.append(path)
+                (path / 'RESULTS.json').write_bytes(b'changed after owned capture')
+                return owned
+
+            with patch.object(self.module(), '_files', side_effect=captured):
+                self.assertEqual(formatter(source), expected)
+            self.assertEqual(calls, [source])
+
+    def test_actual_cli_without_B_restores_cache_and_avoids_optional_imports(self):
+        cli = ROOT / 'tools/scenario_trace_summary.py'
+        self.assertTrue(cli.is_file(), 'Missing R70 stdout CLI')
+        watched = [ROOT / 'integration_tools', ROOT / 'tools', self.sign]
+        before = {str(p): p.read_bytes() for root in watched for p in root.rglob('*.pyc')}
+        inputs = {p.name: p.read_bytes() for p in self.sign.iterdir()}
+        code = (f'import sys,runpy;old=sys.pycache_prefix;ns=runpy.run_path({str(cli)!r});'
+                f'status=ns["main"](["--input",{str(self.sign)!r}]);'
+                'assert sys.pycache_prefix==old;'
+                'assert not any(n.split(".")[0] in {"cyberlateral_dev","capnp","numpy","openpilot","opendbc","cereal"} for n in sys.modules);'
+                'sys.exit(status)')
+        result = subprocess.run([sys.executable, '-I', '-c', code], capture_output=True, timeout=15, check=False)
+        self.assertEqual((result.returncode, result.stderr), (0, b''))
+        self.assertEqual(json.loads(result.stdout)['stage_events']['rate_clip_numeric_changed']['count'], 4)
+        self.assertEqual(before, {str(p): p.read_bytes() for root in watched for p in root.rglob('*.pyc')})
+        self.assertEqual(inputs, {p.name: p.read_bytes() for p in self.sign.iterdir()})
+
+    def test_cleanup_failure_after_complete_stdout_preserves_result(self):
+        cli = ROOT / 'tools/scenario_trace_summary.py'
+        self.assertTrue(cli.is_file(), 'Missing R70 stdout CLI')
+        with tempfile.TemporaryDirectory() as scratch:
+            code = (f'import sys,runpy,tempfile;ns=runpy.run_path({str(cli)!r});old=sys.pycache_prefix\n'
+                    'class Cache:\n'
+                    f' def __enter__(self): return {scratch!r}\n'
+                    ' def __exit__(self,*args): raise OSError("private cleanup failed")\n'
+                    'tempfile.TemporaryDirectory=lambda **kwargs: Cache()\n'
+                    f'status=ns["main"](["--input",{str(self.sign)!r}]);'
+                    'assert sys.pycache_prefix==old;sys.exit(status)')
+            result = subprocess.run([sys.executable, '-I', '-B', '-c', code], capture_output=True, timeout=15, check=False)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(json.loads(result.stdout)['stage_events']['rate_clip_numeric_changed']['count'], 4)
+            self.assertIn(b'TRACE_SUMMARY_CACHE_CLEANUP_FAILED_AFTER_RESULT', result.stderr)
+            self.assertNotIn(b'REJECTED', result.stderr)
+            self.assertNotIn(b'Traceback', result.stderr)
+
+    def test_stdout_write_and_flush_failure_return_safe_io_result(self):
+        cli = ROOT / 'tools/scenario_trace_summary.py'
+        self.assertTrue(cli.is_file(), 'Missing R70 stdout CLI')
+        for stage in ['write', 'flush']:
+            with self.subTest(stage=stage):
+                code = (f'import sys,runpy;ns=runpy.run_path({str(cli)!r});real=sys.stdout\n'
+                        'class Sink:\n'
+                        ' buffer=None\n'
+                        ' def write(self,payload):\n'
+                        f'  if {stage!r}=="write": raise OSError("sink write")\n'
+                        '  return len(payload)\n'
+                        ' def flush(self):\n'
+                        f'  if {stage!r}=="flush": raise OSError("sink flush")\n'
+                        'sink=Sink();sink.buffer=sink;sys.stdout=sink\n'
+                        f'try: status=ns["main"](["--input",{str(self.sign)!r}])\n'
+                        'finally: sys.stdout=real\n'
+                        'sys.exit(status)')
+                result = subprocess.run([sys.executable, '-I', '-B', '-c', code], capture_output=True, timeout=15, check=False)
+                self.assertEqual((result.returncode, result.stdout, result.stderr), (2, b'', b'REJECTED: TRACE_SUMMARY_IO\n'))
+        for mode in ['json', 'markdown']:
+            with self.subTest(real_closed_pipe=mode):
+                read_fd, write_fd = os.pipe()
+                os.close(read_fd)
+                try:
+                    result = subprocess.run([sys.executable, '-I', '-B', str(cli), '--input', str(self.sign), '--format', mode],
+                                            stdout=write_fd, stderr=subprocess.PIPE, timeout=15, check=False)
+                finally:
+                    os.close(write_fd)
+                self.assertEqual((result.returncode, result.stderr), (2, b'REJECTED: TRACE_SUMMARY_IO\n'))

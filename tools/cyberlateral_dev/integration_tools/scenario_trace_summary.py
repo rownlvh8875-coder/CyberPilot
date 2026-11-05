@@ -5,6 +5,7 @@ import sys
 from fractions import Fraction
 from pathlib import Path
 
+from .scenario_output import canonical
 from .scenario_report_data import ReportError, _files, _json, decode_report
 
 EVENTS = ('driver_clip_numeric_changed', 'driver_clip_representation_changed',
@@ -68,3 +69,40 @@ def summarize_saved_trace(input_path: Path) -> dict:
             'summary_model_executions': 0, 'summary_reference_executions': 0,
             'time_semantics': view['time_semantics'], 'gates': view['gates'],
             'interpretation': 'OBSERVED_STAGE_RECORD_DIFFERENCES_NOT_UNIQUE_CAUSE_OR_ARITHMETIC_APPROVAL'}
+
+
+def _markdown(record: dict) -> bytes:
+    labels = ('driver clip 숫자 차이', 'driver clip 타입·표현 차이',
+              'rate clip 숫자 차이', 'rate clip 타입·표현 차이',
+              'rate result → 정수 limited 숫자 차이', '기록된 fault 조건 true', '기록된 angle counter 초기화')
+    lines = ['# 저장된 단계 관찰 요약', '', f'시나리오: `{record["scenario_id"]}`', '',
+             f'기록된 모델 호출: {record["recorded_model_steps"]}회. 요약의 새 모델·참조 실행: 0회.', '',
+             '| 관찰 | event key | 횟수 | 최초 sample index |', '| --- | --- | ---: | ---: |']
+    for key, label in zip(EVENTS, labels, strict=True):
+        event = record['stage_events'][key]
+        first = '-' if event['first_sample_index'] is None else str(event['first_sample_index'])
+        lines.append(f'| {label} | `{key}` | {event["count"]} | {first} |')
+    lines.extend(['', '## 기존 R32 기록 요약', '', '| 항목 | 횟수 |', '| --- | ---: |'])
+    for key, value in record['recorded_summary'].items():
+        lines.append(f'| `{key}` | {value} |')
+    lines.extend(['', '## 해석 경계', '',
+                  '이벤트는 중복될 수 있으며 서로 배타적인 원인이 아닙니다. 숫자 동등과 타입·표현 동등은 다릅니다.',
+                  '비교는 같은 정수 command 단계의 저장값에 한정됩니다. 정규화 요청·물리 torque·초당 rate 비교가 아닙니다.',
+                  '최초 index는 기록된 sample index이며 row offset·실제 초·10ms 주기가 아닙니다.',
+                  'fault 조건·요청 억제는 실차 고장 또는 최종 command=0을 뜻하지 않습니다.',
+                  '체크섬과 레코드 일관성 검사만 수행합니다. 산술 재검산·원본 출처 인증·실차 승인이 아닙니다.',
+                  f'`{record["validation_claim"]}`', f'`{record["interpretation"]}`', f'`{record["time_semantics"]}`',
+                  '`source_identity_reauthenticated=false`', '',
+                  f'캡처한 RESULTS.json SHA256: `{record["source_hashes"]["RESULTS.json"]}`', '',
+                  '## 유지되는 Gate', '', '| 항목 | 저장값 |', '| --- | --- |'])
+    for key, value in record['gates'].items():
+        lines.append(f'| `{key}` | `{canonical(value).decode().strip()}` |')
+    lines.extend(['', 'F61·r/dt 계산·Controller·Runtime·CAN·실차 활성화는 수행하거나 허용하지 않습니다.', ''])
+    return '\n'.join(lines).encode()
+
+
+def format_saved_trace(input_path: Path, output_format: str = 'json') -> bytes:
+    if type(output_format) is not str or output_format not in {'json', 'markdown'}:
+        raise ReportError('TRACE_SUMMARY_FORMAT')
+    record = summarize_saved_trace(input_path)
+    return canonical(record) if output_format == 'json' else _markdown(record)

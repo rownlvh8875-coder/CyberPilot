@@ -82,6 +82,10 @@ traceback; normal valid stderr empty. Build complete bytes before stdout writing
 CLI uses a cold private temporary pycache prefix, restored in finally; no source/
 input writes or repair. Ordinary stdout write failures are IO errors, not an atomic
 publication promise. Direct API caller controls its interpreter/cache lifecycle.
+After a complete stdout result, private-cache cleanup failure preserves that result
+and emits a best-effort TRACE_SUMMARY_CACHE_CLEANUP_FAILED_AFTER_RESULT warning,
+matching existing R47 tooling. Before-result IO errors still reject. This avoids
+mislabeling a completed result as failed; a temporary cache may need manual cleanup.
 
 ## Verification and preservation
 
