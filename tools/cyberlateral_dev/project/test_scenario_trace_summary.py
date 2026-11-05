@@ -383,3 +383,8 @@ class TraceSummaryTests(unittest.TestCase):
                 finally:
                     os.close(write_fd)
                 self.assertEqual((result.returncode, result.stderr), (2, b'REJECTED: TRACE_SUMMARY_IO\n'))
+        for mode in ['json', 'markdown']:
+            with self.subTest(real_full_destination=mode), open('/dev/full', 'wb') as destination:
+                result = subprocess.run([sys.executable, '-I', '-B', str(cli), '--input', str(self.sign), '--format', mode],
+                                        stdout=destination, stderr=subprocess.PIPE, timeout=15, check=False)
+                self.assertEqual((result.returncode, result.stderr), (2, b'REJECTED: TRACE_SUMMARY_IO\n'))

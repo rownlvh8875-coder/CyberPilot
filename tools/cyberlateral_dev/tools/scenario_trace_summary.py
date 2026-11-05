@@ -15,6 +15,21 @@ class _Parser(argparse.ArgumentParser):
         self.exit(2, 'REJECTED: TRACE_SUMMARY_USAGE\n')
 
 
+def _write_stdout(payload: bytes) -> None:
+    try:
+        sys.stdout.buffer.write(payload)
+        sys.stdout.buffer.flush()
+    except OSError:
+        # Failed buffered output must not be retried at CPython shutdown (exit120).
+        try:
+            with open(os.devnull, 'wb') as sink:
+                os.dup2(sink.fileno(), sys.stdout.fileno())
+        except (OSError, ValueError, AttributeError):
+            # Custom/non-descriptor sinks may not support neutralizing; keep the IO result.
+            pass
+        raise
+
+
 def main(argv=None):
     parser = _Parser(description=__doc__, allow_abbrev=False)
     parser.add_argument('--input', type=Path, required=True, help='Complete saved R31 six-file directory')
@@ -33,13 +48,8 @@ def main(argv=None):
 
                 try:
                     payload = format_saved_trace(args.input, args.format)
-                    sys.stdout.buffer.write(payload)
-                    sys.stdout.buffer.flush()
+                    _write_stdout(payload)
                 except (ReportError, OSError) as error:
-                    if isinstance(error, BrokenPipeError):
-                        # A rejected buffered write must not be retried at CPython shutdown.
-                        with open(os.devnull, 'wb') as sink:
-                            os.dup2(sink.fileno(), sys.stdout.fileno())
                     code = error.code if isinstance(error, ReportError) else 'TRACE_SUMMARY_IO'
                     print(f'REJECTED: {code}', file=sys.stderr)
                     result_code = 2
