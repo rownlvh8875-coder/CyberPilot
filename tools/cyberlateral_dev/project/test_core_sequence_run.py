@@ -324,3 +324,39 @@ assert bad == [],bad
 '''
         result = subprocess.run([sys.executable, '-I', '-B', '-c', script], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+    def test_fresh_cli_late_unexpected_exception_is_exit_two_not_numerical_difference(self):
+        self.module()
+        for kind in ('TypeError', 'AttributeError', 'KeyError'):
+            with self.subTest(kind=kind), tempfile.TemporaryDirectory() as tmp:
+                output = Path(tmp) / 'not-published'
+                script = f'''
+import importlib.util,sys
+from pathlib import Path
+sys.path[:0]=[{str(ROOT)!r},{str(ROOT / 'src')!r}]
+import cyberlateral_dev as model
+spec=importlib.util.spec_from_file_location('core8_cli_regression',{str(ROOT / 'tools/core_sequence.py')!r})
+cli=importlib.util.module_from_spec(spec)
+spec.loader.exec_module(cli)
+original=model.step
+attempts=[]
+def late_failure(sample,state):
+    attempts.append(sample.index)
+    if sample.index==6:
+        raise {kind}('not forwarded')
+    return original(sample,state)
+model.step=late_failure
+before=sys.pycache_prefix
+try:
+    code=cli.main(['--case','sign-cycle','--output',{str(output)!r}])
+finally:
+    assert sys.pycache_prefix==before
+    assert attempts==[5,6],attempts
+    assert not Path({str(output)!r}).exists()
+raise SystemExit(code)
+'''
+                result = subprocess.run([sys.executable, '-I', '-B', '-c', script], capture_output=True, text=True)
+                self.assertEqual(result.returncode, 2, result.stdout + result.stderr)
+                self.assertEqual(result.stdout, '')
+                self.assertEqual(result.stderr, 'REJECTED: DEMO_ERROR_WORK_MAY_BE_NONZERO\n')
+                self.assertFalse(output.exists())

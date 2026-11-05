@@ -32,7 +32,7 @@ def main(argv=None) -> int:
             except DemoError as error:
                 print('REJECTED: ' + error.code, file=sys.stderr)
                 return 2
-            except (OSError, RuntimeError, ValueError):
+            except Exception:
                 print('REJECTED: DEMO_ERROR_WORK_MAY_BE_NONZERO', file=sys.stderr)
                 return 2
             print(canonical({key: record[key] for key in ('case_id', 'status', 'model_steps', 'completed_transition_count')}).decode(), end='')
