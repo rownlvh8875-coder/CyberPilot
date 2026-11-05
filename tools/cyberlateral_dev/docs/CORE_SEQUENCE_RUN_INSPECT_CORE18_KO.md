@@ -28,7 +28,8 @@ TMPDIR/TEMP/TMP와 cached tempfile.tempdir는 이 CLI에서 사용하지 않으�
 입력과 같거나 입력 내부면 RUN_INSPECT_CACHE_INPUT_OVERLAP_NO_MODEL_EXECUTION,
 parent 부재/비디렉터리/생성 불가면 RUN_INSPECT_CACHE_IO_NO_MODEL_EXECUTION으로
 exit2, fallback 없이 거절한다. 입력의 상위 디렉터리는 허용하지만 실제 private
-cache는 기존 입력과 다른 새 디렉터리여야 한다. bootstrap은 bytecode 쓰기를 억제하고,
+cache는 기존 입력과 다른 새 디렉터리여야 한다. 인자 파서의 첫 lazy import부터
+bootstrap까지 bytecode 쓰기를 억제하고,
 성공/실패 모두 pycache_prefix와 dont_write_bytecode를 원래 값으로 복구한다.
 
 API `integration_tools.core_sequence_run_inspect.inspect_archived_run(input_root: Path,

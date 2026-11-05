@@ -349,3 +349,40 @@ sys.meta_path.insert(0,Block()); sys.argv=sys.argv[1:]; runpy.run_path(sys.argv[
                 self.assertEqual(sys.pycache_prefix, str(self.root / 'caller-prefix'))
             if mode != 'success': self.assertEqual((self.root / 'receipt').read_bytes(), b'')
         self.assertEqual(before, self.snapshot()); self.assertFalse((self.root / 'caller-prefix').exists())
+
+    def test_cli_cold_parser_never_writes_to_caller_input_cache(self):
+        # Break caught: argparse imports locale before bootstrap suppression.
+        script = '''import sys
+sys.dont_write_bytecode=True
+import importlib.util
+import importlib._bootstrap_external as external
+import os
+from pathlib import Path
+source,folder,*args=sys.argv[1:]; root=Path(folder); attempts=[]; mkdir_attempts=[]
+spec=importlib.util.spec_from_file_location('cold_core18_cli',source)
+cli=importlib.util.module_from_spec(spec); spec.loader.exec_module(cli)
+assert 'locale' not in sys.modules, 'cold child preloaded locale'
+original_mkdir=os.mkdir
+def record_only(self,path,data,**kwargs):
+ if Path(path).is_relative_to(root): attempts.append(path)
+def mkdir(path,*a,**kw):
+ if Path(path).absolute().is_relative_to(root):
+  mkdir_attempts.append(str(path)); raise OSError('input mkdir prohibited')
+ return original_mkdir(path,*a,**kw)
+external.SourceFileLoader.set_data=record_only; os.mkdir=mkdir
+sys.pycache_prefix=folder; sys.dont_write_bytecode=False
+result=cli.main(args)
+assert sys.pycache_prefix==folder and sys.dont_write_bytecode is False, 'globals leaked'
+assert not attempts and not mkdir_attempts, ('input cache attempts',attempts,mkdir_attempts)
+raise SystemExit(result)
+'''
+        before = self.snapshot(); layout = sorted(p.relative_to(self.folder).as_posix() for p in self.folder.rglob('*'))
+        for invalid in (False, True):
+            args = self.args()
+            if invalid: args[-1] = 'bad'
+            result = subprocess.run([sys.executable, '-I', '-B', '-c', script, str(ROOT / 'tools/core_sequence_run_inspect.py'), str(self.folder), *args], capture_output=True)
+            with self.subTest(invalid=invalid):
+                self.assertEqual(result.returncode, 2 if invalid else 0, result.stderr)
+                if invalid: self.assertEqual(result.stdout, b''); self.assertIn(b'ARCHIVE_COMPARE_RIGHT:', result.stderr)
+                else: self.assertEqual(result.stdout, canonical(self.inspect())); self.assertEqual(result.stderr, b'')
+        self.assertEqual(before, self.snapshot()); self.assertEqual(layout, sorted(p.relative_to(self.folder).as_posix() for p in self.folder.rglob('*')))

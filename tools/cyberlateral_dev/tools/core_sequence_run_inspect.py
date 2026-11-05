@@ -15,6 +15,8 @@ def main(argv=None) -> int:
     previous_bytecode = sys.dont_write_bytecode
     known_error = None
     try:
+        # Even argparse/gettext can lazily import source modules on a cold call.
+        sys.dont_write_bytecode = True
         parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)
         parser.add_argument('--input-root', type=Path, required=True)
         parser.add_argument('--baseline-sha256', required=True)
@@ -22,7 +24,6 @@ def main(argv=None) -> int:
         args = parser.parse_args(argv)
 
         # Bootstrap must not write a source cache before the private cache exists.
-        sys.dont_write_bytecode = True
         sys.path.insert(0, str(ROOT))
         from integration_tools.core_sequence_archive_compare import ArchiveCompareError, _preflight
         from integration_tools.core_sequence_run_inspect import RunInspectError, inspect_archived_run
