@@ -181,6 +181,39 @@ class CoreSequencePortableTests(unittest.TestCase):
             with patch.object(zipfile, 'ZipFile', side_effect=AssertionError('parser must not run')):
                 self.reject(bytes(altered), 'PORTABLE_ZIP_FORMAT')
 
+    def test_zip64_override_cannot_expand_directory_before_parser(self):
+        seed = self.zip({'x' * 14: b''})
+        end = struct.unpack('<4s4H2LH', seed[-22:])
+        entry = seed[end[6]:end[6] + end[5]]
+        central = entry * 1000
+        zip64 = struct.pack('<4sQ2H2L4Q', b'PK\x06\x06', 44, 45, 45, 0, 0, 1000, 1000, len(central), 0)
+        locator = struct.pack('<4sLQL', b'PK\x06\x07', 0, len(central), 1)
+        legacy = struct.pack('<4s4H2LH', b'PK\x05\x06', 0, 0, 11, 11, 506, len(central) + 76 - 506, 0)
+        raw = central + zip64 + locator + legacy
+        with patch.object(zipfile, 'ZipFile', side_effect=AssertionError('ZIP64 preparse bypass')):
+            self.reject(raw, 'PORTABLE_ZIP_FORMAT')
+
+    def test_actual_central_entry_count_is_checked_before_parser(self):
+        files = self.files(); files['extra'] = b'x'
+        raw = bytearray(self.zip(files))
+        struct.pack_into('<2H', raw, len(raw) - 14, 11, 11)
+        with patch.object(zipfile, 'ZipFile', side_effect=AssertionError('actual count preparse bypass')):
+            self.reject(bytes(raw), 'PORTABLE_ZIP_FORMAT')
+
+    def test_zip64_central_extra_offset_cannot_escape_as_overflow(self):
+        raw, _ = self.archive()
+        changed = bytearray(raw)
+        end = struct.unpack('<4s4H2LH', raw[-22:])
+        directory = end[6]
+        name_size = struct.unpack_from('<H', raw, directory + 28)[0]
+        extra = struct.pack('<HHQ', 1, 8, (1 << 64) - 1)
+        struct.pack_into('<H', changed, directory + 30, len(extra))
+        struct.pack_into('<L', changed, directory + 42, 0xffffffff)
+        start = directory + 46 + name_size
+        changed[start:start] = extra
+        struct.pack_into('<L', changed, len(changed) - 10, end[5] + len(extra))
+        self.reject(bytes(changed))
+
     def test_crc_damage_is_not_hidden_by_correct_whole_zip_sha(self):
         raw, _ = self.archive()
         broken = bytearray(raw)

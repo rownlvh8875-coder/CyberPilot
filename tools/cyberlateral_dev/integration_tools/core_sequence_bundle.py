@@ -90,6 +90,23 @@ def _members(raw: bytes) -> dict[str, bytes]:
     if (magic != b'PK\x05\x06' or disk != 0 or cd_disk != 0 or count_disk != 11 or count != 11
             or comment != 0 or not 506 <= size <= 4096 or offset + size != len(raw) - 22):
         raise PortableError('PORTABLE_ZIP_FORMAT')
+    # The stdlib otherwise lets a ZIP64 locator override the checked legacy
+    # bounds. It also loops actual directory records, ignoring the EOCD count.
+    if raw[-42:-38] == b'PK\x06\x07':
+        raise PortableError('PORTABLE_ZIP_FORMAT')
+    position, end = offset, offset + size
+    for _ in range(11):
+        if position + 46 > end or raw[position:position + 4] != b'PK\x01\x02':
+            raise PortableError('PORTABLE_ZIP_FORMAT')
+        name_size, extra_size, comment_size = struct.unpack_from('<3H', raw, position + 28)
+        local_offset = struct.unpack_from('<L', raw, position + 42)[0]
+        if extra_size or comment_size or local_offset + 30 > offset:
+            raise PortableError('PORTABLE_ZIP_FORMAT')
+        position += 46 + name_size
+        if position > end:
+            raise PortableError('PORTABLE_ZIP_FORMAT')
+    if position != end:
+        raise PortableError('PORTABLE_ZIP_FORMAT')
     try:
         with zipfile.ZipFile(io.BytesIO(raw), 'r') as archive:
             infos = archive.infolist()
@@ -112,7 +129,7 @@ def _members(raw: bytes) -> dict[str, bytes]:
             return files
     except PortableError:
         raise
-    except (zipfile.BadZipFile, OSError, ValueError, RuntimeError, NotImplementedError, UnicodeError, struct.error) as error:
+    except (zipfile.BadZipFile, OSError, ValueError, RuntimeError, NotImplementedError, UnicodeError, struct.error, OverflowError) as error:
         raise PortableError('PORTABLE_ZIP_FORMAT') from error
 
 
