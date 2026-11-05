@@ -329,3 +329,38 @@ raise SystemExit(cli['main'](sys.argv[2:]))
         self.assertNotIn(b'\x1b', p.stdout)
         r = json.loads(p.stdout)
         self.assertEqual(r['reports'][2]['comparison']['differences'][0]['right'], '<script>|`\n\x1b')
+
+    def large_identity_pair(self, cases, width):
+        key = '/' * width
+        left = self.modified([(c, 'RESULTS.json', lambda r: r['identity'].update({key: [0] * 300})) for c in cases])
+        right = self.modified([(c, 'RESULTS.json', lambda r: r['identity'].update({key: [1] * 300})) for c in cases])
+        return left, right
+
+    def test_oversized_path_details_are_rejected_before_report_materialization(self):
+        left, right = self.large_identity_pair(('late-invalid',), 16384)
+        with patch.object(self.m, '_compare_captured', side_effect=AssertionError('report materialization before byte guard')), \
+                self.assertRaisesRegex(self.m.ArchiveCompareError, '^ARCHIVE_COMPARE_DETAIL_BYTE_LIMIT$'):
+            self.m.compare_suite_archive_bytes(left, sha(left), right, sha(right))
+
+    def test_cli_oversized_diagnostics_reject_without_large_or_partial_stdout(self):
+        left, right = self.large_identity_pair(('late-invalid',), 16384)
+        self.left.write_bytes(left); self.right.write_bytes(right)
+        p = subprocess.run([sys.executable, '-I', '-B', ROOT / 'tools/core_sequence_archive_compare.py',
+            '--left-archive', self.left, '--left-sha256', sha(left), '--right-archive', self.right, '--right-sha256', sha(right)], capture_output=True)
+        self.assertEqual(p.returncode, 2)
+        self.assertEqual(len(p.stdout), 0)
+        self.assertEqual(p.stderr, b'REJECTED: ARCHIVE_COMPARE_DETAIL_BYTE_LIMIT\n')
+
+    def test_detail_byte_budget_is_aggregate_not_reset_for_each_case(self):
+        left, right = self.large_identity_pair(('sign-cycle', 'declared-difference'), 4096)
+        with self.assertRaisesRegex(self.m.ArchiveCompareError, '^ARCHIVE_COMPARE_DETAIL_BYTE_LIMIT$'):
+            self.m.compare_suite_archive_bytes(left, sha(left), right, sha(right))
+
+    def test_large_under_budget_details_preserve_counts_and_exact_byte_accounting(self):
+        left, right = self.large_identity_pair(('late-invalid',), 4096)
+        r = self.m.compare_suite_archive_bytes(left, sha(left), right, sha(right))
+        self.assertEqual((r['difference_count'], r['reported_difference_count']), (300, 256))
+        self.assertTrue(r['differences_truncated'])
+        self.assertEqual(r['detail_byte_limit'], 4194304)
+        self.assertEqual(r['reported_difference_bytes'], sum(len(canonical(d)) for v in r['reports'] for d in v['comparison']['differences']))
+        self.assertLessEqual(r['reported_difference_bytes'], 4194304)

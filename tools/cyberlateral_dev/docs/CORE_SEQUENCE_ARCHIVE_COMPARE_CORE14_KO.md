@@ -34,6 +34,14 @@ INPUT/RESULT/IDENTITY별 전체 차이를 집계한다. identity는 opaque 저�
 현재 source 인증으로 승격하지 않는다. bool과 int, null과 missing, 배열 위치는 구분한다.
 JSON pointer는 각 case 내 파일 경로이며 바깥 `case_id`와 함께 읽는다.
 
+긴 키가 매 상세 경로에서 반복되어 메모리가 증폭되는 것을 막기 위해, 상세 리스트를
+만들기 전에 case별 첫256개 진단을 stream으로 확인한다. 각 진단 canonical JSON bytes
+(끝 newline 포함)의 합계 한도는 전체 case 합산4,194,304bytes이며 경계는 inclusive다.
+`detail_byte_limit`, `reported_difference_bytes`를 보고한다. 초과하면 양쪽 ZIP이 각각
+유효해도 `ARCHIVE_COMPARE_DETAIL_BYTE_LIMIT`/exit2로 거절하고 보고서를 만들지 않는다.
+경로를 축약하거나 조용히 차이를 생략하지 않는다. 이는 진단 메모리의 소프트웨어
+한도이며 F61 r/차량 policy 값이 아니다. 한도 내 비교는 원래 상세·전체 차이 수를 보존한다.
+
 상세는 case별 첫256개(최대768개)이며 전체 차이 개수는 모두 센다. 상세 잘림 여부와
 표시 수를 명시한다. 임의 허용오차·정렬 재매핑·숫자 coercion·field 무시는 없다.
 양쪽 CORE13 receipt와 저장 MATCH/DIFFERENT/REJECTED·과거 step 수를 보존한다.

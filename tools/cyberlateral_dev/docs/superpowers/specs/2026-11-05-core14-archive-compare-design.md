@@ -34,6 +34,15 @@ case (768 overall), retaining each case's relative JSON pointers. Metadata ident
 is opaque data and is never ignored or reauthenticated. Equality is not a new
 numerical MATCH, regression qualification, signer identity or provenance proof.
 
+Resource-profile amendment from final review: before materializing CORE10 detail
+lists, stream the first256 differences per case and sum canonical JSON byte lengths
+(one newline per diagnostic included). Aggregate limit4,194,304bytes across all
+cases, inclusive. Return detail_byte_limit and reported_difference_bytes for
+accepted reports. Exceeding this limit rejects with ARCHIVE_COMPARE_DETAIL_BYTE_LIMIT
+and no report, even if both ZIPs individually verify. No shortening paths, silent
+omission or forged complete counts. This is a software diagnostic-memory limit,
+not F61 r/vehicle policy. Accepted records/details and full difference counts stay exact.
+
 `new_synthetic_model_steps`, comparison model/reference executions are0;
 `source_identity_reauthenticated` and `arithmetic_recomputed` arefalse. All existing
 GATES unchanged. No partial success if a role is malformed; no record fallback.

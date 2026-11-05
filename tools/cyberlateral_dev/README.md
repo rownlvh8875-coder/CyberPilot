@@ -484,6 +484,8 @@ work. It preserves CORE13 receipts and CORE10 per-case exact INPUT/RESULT/IDENTI
 differences, counts all differences and caps details at256 per case. Exit0 means
 identical validated archive bytes,1 a validated difference,2 rejection; saved M/D/R
 outcomes stay data, never a numerical or provenance qualification.
+An aggregate4MiB canonical-detail byte budget is checked before materializing
+reports; oversized diagnostics reject explicitly, without silently shortened paths.
 
 ## Source/provenance boundary
 

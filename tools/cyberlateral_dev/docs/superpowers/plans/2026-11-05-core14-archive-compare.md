@@ -52,6 +52,12 @@ CLI contract in spec. CORE13 public wrapper returns the same receipt only.
 - [ ] Fresh whole-branch review using Review Focus verbatim; grade findings by
   user effects, record all declined judgments; one TDD Important/Critical fix pass
   and full suite if required; no rereview, minors deferred.
+  Final-review amendment: long escaped identity-prefix amplification reproduced;
+  add four RED tests (oversize API/CLI before materialization, global budget across
+  cases, under-budget exact counts/accounting). Stream retained differences with
+  CORE10 _walk before _compare_captured, enforce inclusive4,194,304 canonical bytes
+  globally, fixed rejection without silent truncation. Expected31focused and full
+ 1279tests/272compiles/static PASS; legacy CORE10/CORE13 public behavior unchanged.
 - [ ] Two independent acceptance runs against historical CORE13 ZIP and synthetic
   edited copies (never change originals), API/CLI/import-blocked CLI; expected
   identical/difference/error0/1/2, precise difference1, malformed no output,
