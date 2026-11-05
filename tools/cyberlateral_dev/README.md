@@ -487,6 +487,14 @@ outcomes stay data, never a numerical or provenance qualification.
 An aggregate4MiB canonical-detail byte budget is checked before materializing
 reports; oversized diagnostics reject explicitly, without silently shortened paths.
 
+The [CORE15 readable archive summary](docs/CORE_SEQUENCE_ARCHIVE_REPORT_CORE15_KO.md)
+adds a separate Korean Markdown CLI/API over unchanged CORE14 comparison. It shows
+full/retained/displayed counts distinctly, first20 details per case, safe typed
+cell previews (160escaped ASCII characters) and an explicit truncation marker.
+The original JSON result is returned unchanged alongside at-most65536bytes of
+Markdown. No JSON intake, extraction, new execution, hidden omission or weakened
+CORE14 budget; no browser/all-renderer visual-quality claim. Exit0/1/2 unchanged.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
