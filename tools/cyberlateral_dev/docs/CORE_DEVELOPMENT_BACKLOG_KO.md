@@ -39,8 +39,8 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 
 | 순서 | 개발 항목 | 완료 조건 | 이번 범위 |
 |---|---|---|---|
-| CORE1 | 기존 V4 신호 경계의 개발판 통합 | 정확한 기존 알고리즘/승인 subset 유지, literal·독립 oracle·전체 DEV gate 검증 | 구현 및 검증 대상 |
-| CORE2 | V4와 관측-record 계약의 연결 설계 | source-set별 stage/previous request/previous limited/time/flags/settings 매핑, 비호환 항목과 거절 조건 명시 | 다음 우선 작업; 임의 실제 reader를 먼저 만들지 않음 |
+| CORE1 | 기존 V4 신호 경계의 개발판 통합 | 정확한 기존 알고리즘/승인 subset 유지, literal·독립 oracle·전체 DEV gate 검증 | f3ac2341에서 완료; 합성 범위만,927 tests는 당시 기록 |
+| CORE2 | V4와 관측-record 계약의 연결 설계 | source-set별 stage/previous request/previous limited/time/flags/settings 매핑, 비호환 항목과 거절 조건 명시 | [대응 계약](F61_OBSERVATION_BINDING_CORE2_KO.md) 작성;41 leaf/35 role, bridge 미구현 |
 | CORE3 | source-bound 오프라인 관측 seam | 한 번 소비된 값을 추가 reread 없이 보존하는 순수 seam을 합성 counterfactual로 검증, reset/loss/epoch 경계 명시 | CORE2 이후; Controller 실행·CAN·실차 capture 없음 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
@@ -52,6 +52,11 @@ CORE2에서 먼저 재사용 검토할 기존 원문은 F70UGHR의
 read-order/branch 규칙이다. F70UGZ checker는 이미 record/pair **합성 일관성**을
 검사하므로 새로 중복 작성하지 않는다. 실제 source profile과 V4의 두 historical
 commit은 자동 동치가 아니며 helper bytes 일치만으로 전체 profile을 승격하지 않는다.
+
+CORE2 대조 결과 공통6 path를 V4의2 commit과 비교한12건은 모두 bytes가 다르고,
+lateral.py는 해당 V4 archive에 없다. override/reset/request-stage active 등은 기존
+record만으로 결속되지 않는다. 다음 CORE3의 counterfactual capture seam은 이 metadata를
+명시적으로 공급받아야 하며 기존 관측 기록이나 V4 pin을 임의로 수정하지 않는다.
 
 ## 종료/성공 판정
 

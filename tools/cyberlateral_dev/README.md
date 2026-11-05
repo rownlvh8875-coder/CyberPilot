@@ -81,6 +81,12 @@ invoke the calculator. The [core development backlog](docs/CORE_DEVELOPMENT_BACK
 maps current code to confirmed requirements and separates the remaining binding,
 rate-policy and vehicle gates from offline development work.
 
+The [CORE2 observation-to-V4 reconciliation](docs/F61_OBSERVATION_BINDING_CORE2_KO.md)
+covers all41 V4 leaf fields and35 observation roles. It records incompatible source
+profiles and missing request-stage flags/reset/context explicitly; this static
+draft does not implement a bridge, relabel observations, change V4 source pins or
+authorize actual inputs. Its design obligations are not executed runtime tests.
+
 Historical R30 snapshot: [original acceptance guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md)
 and [original source inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
 Their recorded counts and prospective features describe R30, not current DEV-tool
