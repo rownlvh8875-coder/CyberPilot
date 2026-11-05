@@ -66,6 +66,13 @@ passed the two-report desktop/mobile visual check; [evidence receipts and hashes
 docs/evidence/r322-visual-acceptance/README_KO.md) preserve its bounded scope.
 This is not vehicle, arithmetic, performance or deployment approval.
 
+The separate [R70 recorded trace summary](docs/RECORDED_TRACE_SUMMARY_R70_KO.md)
+prints JSON or Korean Markdown from complete saved R31 records. Exact numeric
+changes stay separate from scalar-kind/signed-zero representation changes; events
+can overlap and first indices are declared sample indices, not elapsed time.
+It validates captured record consistency without model/reference execution,
+limiter arithmetic replay, source-origin authentication or vehicle/policy approval.
+
 Historical R30 snapshot: [original acceptance guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md)
 and [original source inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
 Their recorded counts and prospective features describe R30, not current DEV-tool
