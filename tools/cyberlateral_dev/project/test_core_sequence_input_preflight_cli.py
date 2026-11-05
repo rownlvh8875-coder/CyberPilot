@@ -263,3 +263,44 @@ raise SystemExit(code)
         self.assertEqual(value['numeric_validation_work'], 'NONZERO_NOT_AGGREGATED')
         self.assertEqual(value['gates']['R_BUDGET'], 'UNRESOLVED'); self.assertEqual(value['gates']['STATIC_EVIDENCE_GATE'], 'FAIL')
         self.assertIs(value['f61_input_allowed'], False); self.assertIs(value['actual_activation_allowed'], False)
+
+    def test_failed_stderr_destinations_preserve_exit_two(self):
+        # Real failed TextIOWrapper flush must not replace operational2 with120.
+        injected = '''import importlib.util,sys
+sys.path[:0]=[sys.argv[1],sys.argv[1]+'/src']
+import integration_tools.core_sequence_input_preflight as api
+def fail(path):raise RuntimeError('unexpected failure')
+api.preflight_saved_sequence=fail
+spec=importlib.util.spec_from_file_location('failed_stderr_cli',sys.argv[2]);cli=importlib.util.module_from_spec(spec);spec.loader.exec_module(cli)
+raise SystemExit(cli.main(['--input-root',sys.argv[3]]))
+'''
+        for mode in ('saved', 'usage', 'unexpected'):
+            args = ['--input-root', str(self.root / 'absent')] if mode == 'saved' else ['--unknown', 'DO_NOT_ECHO']
+            command = [sys.executable, '-I', '-B', str(self.script), *args]
+            if mode == 'unexpected': command = [sys.executable, '-I', '-B', '-c', injected, str(ROOT), str(self.script), str(self.folder)]
+            with self.subTest(mode=mode), Path('/dev/full').open('wb', buffering=0) as failed:
+                result = subprocess.run(command, stdout=subprocess.PIPE, stderr=failed)
+                self.assertEqual(result.returncode, 2); self.assertEqual(result.stdout, b'')
+
+    def test_closed_stderr_destination_preserves_exit_two(self):
+        script = '''import os,runpy,sys
+os.close(2);sys.argv=sys.argv[1:];runpy.run_path(sys.argv[0],run_name='__main__')
+'''
+        result = subprocess.run([sys.executable, '-I', '-B', '-c', script, str(self.script), '--input-root', str(self.root / 'absent')], capture_output=True)
+        self.assertEqual(result.returncode, 2); self.assertEqual(result.stdout, b'')
+
+    def test_failed_help_stdout_destination_is_operational_two(self):
+        with Path('/dev/full').open('wb', buffering=0) as failed:
+            result = subprocess.run([sys.executable, '-I', '-B', str(self.script), '--help'], stdout=failed, stderr=subprocess.PIPE)
+        self.assertEqual(result.returncode, 2); self.assertEqual(result.stderr, b'REJECTED: INPUT_PREFLIGHT_FAILED_NO_MODEL_EXECUTION\n')
+
+    def test_failed_in_memory_diagnostic_restores_globals(self):
+        class Failed(StringIO):
+            def write(self, text: str, /) -> int: raise OSError('diagnostic unavailable')
+        paths = list(sys.path); observed = None; code = None
+        with patch.object(sys, 'dont_write_bytecode', False), patch('sys.stdout', StringIO()), patch('sys.stderr', Failed()), \
+                patch.object(self.api, 'preflight_saved_sequence', side_effect=RuntimeError('unexpected failure')):
+            try: code = self.cli.main(self.args())
+            except OSError as error: observed = error
+            self.assertFalse(sys.dont_write_bytecode); self.assertEqual(sys.path, paths)
+        self.assertIsNone(observed); self.assertEqual(code, 2)

@@ -40,6 +40,11 @@ INPUT_PREFLIGHT_FAILED_NO_MODEL_EXECUTION으로 고정한다. raw argv/입력값
 반복하며0/음수 진행은 실패로 처리한다. 전송한 prefix는 후속 stdout 실패 때 되돌릴 수
 없으므로 JSON prefix만 보고 성공으로 판단하지 말고 exit도 확인한다.
 
+도움말·진단도 실제 descriptor에는 버퍼를 거치지 않고 쓴다. 도움말 출력 실패는 운영
+오류2이며, stderr 진단 자체를 전달할 수 없더라도2를 유지한다. 이때 진단 문구가
+누락될 수 있다. 실패한 CLI 출력이 종료 시 다시 flush되어120으로 바뀌는 것을 막는다.
+main 이전에 host가 이미 버퍼에 남긴 출력이나 host hook의 종료 부작용까지 보장하지 않는다.
+
 stdout 저장이 필요하면 **입력 폴더 밖의 별도 경로**를 caller가 선택한다. 이 명령은
 exclusive/atomic 저장 publisher가 아니다. shell redirection이 먼저 입력 파일을
 truncate하는 것을 막지 못하며, 입력 내부로의 redirection은 지원하지 않는다.

@@ -9,7 +9,31 @@ from typing import NoReturn
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def _write_all(fd: int, raw: bytes) -> None:
+    pending = memoryview(raw)
+    while pending:
+        written = os.write(fd, pending)
+        if written <= 0:
+            raise OSError('output made no progress')
+        pending = pending[written:]
+
+
+def _message(text: str, stream) -> None:
+    try:
+        fd = stream.fileno()
+    except (AttributeError, OSError, ValueError):
+        # Cooperative in-memory text streams have no descriptor or final flush.
+        if stream.write(text) != len(text):
+            raise OSError('message was not delivered') from None
+    else:
+        _write_all(fd, text.encode('utf-8'))
+
+
 class _Parser(argparse.ArgumentParser):
+    def _print_message(self, message, file=None) -> None:
+        if message:
+            _message(message, sys.stderr if file is None else file)
+
     def error(self, message: str) -> NoReturn:
         self.exit(2, 'REJECTED: INPUT_PREFLIGHT_USAGE_NO_MODEL_EXECUTION\n')
 
@@ -34,16 +58,15 @@ def main(argv=None) -> int:
         known_error = InputPreflightError
         result = preflight_saved_sequence(input_root)
         code = {'INPUTS_COMPATIBLE': 0, 'INPUTS_REJECTED': 1}[result['preflight_status']]
-        pending = memoryview(canonical(result))
-        while pending:
-            written = os.write(sys.stdout.fileno(), pending)
-            if written <= 0:
-                raise OSError('stdout made no progress')
-            pending = pending[written:]
+        _write_all(sys.stdout.fileno(), canonical(result))
         return code
     except Exception as error:
         code = error.code if known_error is not None and isinstance(error, known_error) else 'INPUT_PREFLIGHT_FAILED_NO_MODEL_EXECUTION'
-        print('REJECTED: ' + code, file=sys.stderr)
+        try:
+            _message('REJECTED: ' + code + '\n', sys.stderr)
+        except Exception:
+            # Diagnostic delivery must not override the operational failure exit.
+            pass
         return 2
     finally:
         sys.path[:] = previous_paths

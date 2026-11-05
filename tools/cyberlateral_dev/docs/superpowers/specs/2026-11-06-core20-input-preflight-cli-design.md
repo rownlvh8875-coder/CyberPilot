@@ -30,6 +30,12 @@ canonical JSON, and write stdout with a progress-checked short-write loop.
   INPUT_PREFLIGHT_FAILED_NO_MODEL_EXECUTION. No false receipt on pre-output failure.
 - Partial stdout already written cannot be retracted; callers must check exit status.
 
+Descriptor-backed help/diagnostics also use unbuffered progress-checked writes.
+Help-delivery failure is operational2; diagnostic-delivery failure must preserve2
+even when no message can be delivered. Leave no CLI-owned failed text buffer for
+interpreter finalization to retry and replace2 with120. Cooperative in-memory text
+streams remain supported; caller-owned pre-main buffered data is outside this guarantee.
+
 Save sys.dont_write_bytecode and sys.path before main work, suppress bytecode before
 ArgumentParser/gettext cold imports, restore both on every path (including help,
 syntax/import/API/stdout failures and BaseException propagation). Never alter
