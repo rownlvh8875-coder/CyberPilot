@@ -1,6 +1,7 @@
 """Inspect saved CORE8 records without running a model or qualifying real inputs."""
 
 import argparse
+import os
 import sys
 import tempfile
 from pathlib import Path
@@ -27,13 +28,20 @@ def main(argv=None) -> int:
             args = parser.parse_args(argv)
             try:
                 raw = format_saved_sequence(args.input, args.format)
+                # Direct descriptor writes keep device errors inside this boundary;
+                # no pending stdout buffer can fail again during interpreter exit.
+                pending = memoryview(raw)
+                while pending:
+                    written = os.write(sys.stdout.fileno(), pending)
+                    if written <= 0:
+                        raise OSError('stdout made no progress')
+                    pending = pending[written:]
             except InspectError as error:
                 print('REJECTED: ' + error.code, file=sys.stderr)
                 return 2
             except Exception:
                 print('REJECTED: INSPECT_OPERATION_FAILED', file=sys.stderr)
                 return 2
-            sys.stdout.buffer.write(raw)
             return 0
         finally:
             sys.pycache_prefix = previous

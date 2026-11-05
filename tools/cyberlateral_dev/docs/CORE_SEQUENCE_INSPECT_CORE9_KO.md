@@ -25,6 +25,8 @@ API는 `integration_tools.core_sequence_saved.inspect_saved_sequence(Path(...))`
 - exit0: 저장 패키지 검사가 성공했다. `saved_status`는 MATCH, DIFFERENT,
   REJECTED 모두 가능하다. **새 계산의 MATCH가 아니다.**
 - exit2: 파일/체크섬/형식/저장 관계/인자/작업 오류. 요약을 출력하지 않는다.
+  stdout 장치 자체가 쓰기 도중 실패하면 이미 전달된 일부 bytes는 되돌릴 수 없으며,
+  exit2와 고정 작업 오류를 반환한다. 완전한 성공 출력으로 사용하지 않는다.
 - 저장된 `recorded_model_steps`는 과거 기록이다. 이번 조회의
   `inspection_model_executions`, `inspection_reference_executions`는 각각0이다.
   unit/gate의 fixture 준비와 합성 검증 실행은 별도이며 nonzero다.

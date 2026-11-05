@@ -342,3 +342,18 @@ runpy.run_path({str(ROOT / 'tools/core_sequence_inspect.py')!r},run_name='__main
             result = subprocess.run([sys.executable, '-I', '-B', ROOT / 'tools/core_sequence_inspect.py', *args],
                                     capture_output=True, text=True)
             self.assertEqual(result.returncode, code, result.stdout + result.stderr)
+
+    def test_cli_stdout_device_failure_has_fixed_exit_and_no_shutdown_traceback(self):
+        self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = self.fixture(Path(tmp))
+            before = {p.name: (p.read_bytes(), p.stat().st_mode) for p in folder.iterdir()}
+            for output_format in ('json', 'markdown'):
+                for unbuffered in (False, True):
+                    with self.subTest(output_format=output_format, unbuffered=unbuffered), open('/dev/full', 'wb') as full:
+                        result = subprocess.run([sys.executable, '-I', '-B', *(['-u'] if unbuffered else []),
+                            ROOT / 'tools/core_sequence_inspect.py', '--input', folder, '--format', output_format],
+                            stdout=full, stderr=subprocess.PIPE)
+                        self.assertEqual(result.returncode, 2, result.stderr)
+                        self.assertEqual(result.stderr, b'REJECTED: INSPECT_OPERATION_FAILED\n')
+            self.assertEqual(before, {p.name: (p.read_bytes(), p.stat().st_mode) for p in folder.iterdir()})
