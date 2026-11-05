@@ -96,15 +96,21 @@ def _parse(raw: bytes):
     return value
 
 
-def inspect_saved_sequence(input_path: Path) -> dict:
-    """Checksum captured bytes and compare stored relations; no authenticity claim."""
+def read_saved_sequence_records(input_path: Path) -> dict:
+    """Capture/validate once and expose owned records, never reopen their files."""
     files = _capture(input_path)
     hashes = {name: hashlib.sha256(raw).hexdigest() for name, raw in files.items()}
     manifest = ''.join(hashes[name] + '  ' + name + '\n' for name in ('INPUT.json', 'RESULTS.json')).encode()
     if files['SHA256SUMS.txt'] != manifest:
         raise InspectError('INSPECT_CHECKSUM')
-    summary = validate_records(_parse(files['INPUT.json']), _parse(files['RESULTS.json']))
-    return {**summary, 'captured_sha256': hashes}
+    input_record, result_record = _parse(files['INPUT.json']), _parse(files['RESULTS.json'])
+    summary = {**validate_records(input_record, result_record), 'captured_sha256': hashes}
+    return {'input_record': input_record, 'result_record': result_record, 'summary': summary}
+
+
+def inspect_saved_sequence(input_path: Path) -> dict:
+    """Checksum captured bytes and compare stored relations; no authenticity claim."""
+    return read_saved_sequence_records(input_path)['summary']
 
 
 def format_saved_sequence(input_path: Path, output_format: str = 'json') -> bytes:

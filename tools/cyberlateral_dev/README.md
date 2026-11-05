@@ -440,6 +440,15 @@ Inspection exit0 covers intact saved MATCH, DIFFERENT and REJECTED alike;
 `saved_status` is historical, never a fresh numerical verdict. Errors exit2.
 The stdout-only JSON/Markdown view neither alters inputs nor approves vehicle use.
 
+The [CORE10 saved sequence comparator](docs/CORE_SEQUENCE_COMPARE_CORE10_KO.md)
+checks both CORE8 packages through CORE9, then locates full INPUT/RESULTS field
+differences, including opaque identity metadata, without model/reference execution.
+JSON/Markdown stdout reports the first256 details plus exact total/section counts.
+Arrays compare positionally; false differs from0, and absent differs from null.
+Exit0 means identical saved records, exit1 different, exit2 invalid/operational;
+saved MATCH/DIFFERENT/REJECTED remains separate from this comparison status.
+No arithmetic, source authenticity, improvement or vehicle approval is inferred.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
