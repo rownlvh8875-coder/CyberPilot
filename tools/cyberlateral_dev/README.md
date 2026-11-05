@@ -449,6 +449,16 @@ Exit0 means identical saved records, exit1 different, exit2 invalid/operational;
 saved MATCH/DIFFERENT/REJECTED remains separate from this comparison status.
 No arithmetic, source authenticity, improvement or vehicle approval is inferred.
 
+The [CORE11 closed sequence workflow](docs/CORE_SEQUENCE_WORKFLOW_CORE11_KO.md)
+integrates explicit `check` (saved-only, no producer/model import) and `run` (one
+named closed synthetic case, NEW external package) with optional saved baseline
+comparison. Each role is captured once; run validates/captures baseline before
+new model work. JSON stdout distinguishes recorded steps, new steps, saved status
+and comparison. Workflow exit0 is valid orchestration, exit1 baseline differs,
+exit2 error: even run's saved DIFFERENT/REJECTED can exit0. No baseline means no
+regression comparison, and source identity changes are not silently ignored.
+Run errors may retain partial output/nonzero work; no overwrite, deletion or retry.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported

@@ -86,6 +86,7 @@ CLI ordinary errors fixed WORKFLOW_CHECK_FAILED_NO_MODEL_EXECUTION or
 WORKFLOW_RUN_FAILED_WORK_MAY_BE_NONZERO; WorkflowError retains fixed code.
 Direct descriptor write loop inside handler handles partial writes/device failures;
 already delivered partial bytes cannot be retracted; discard exit2 output.
+Cache creation failure before dispatch:WORKFLOW_CACHE_IO_NO_MODEL_EXECUTION.
 Private temporary cache prefix restored; no persistent check/output writes besides
 explicit new run package. SystemExit/KeyboardInterrupt remain normal.
 

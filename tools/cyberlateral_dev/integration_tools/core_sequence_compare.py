@@ -57,9 +57,8 @@ def _metadata(summary):
         'recorded_model_steps', 'recorded_transition_count', 'captured_sha256')}
 
 
-def compare_saved_sequences(left: Path, right: Path) -> dict:
-    """Compare all validated stored fields, including opaque historical identity."""
-    lhs, rhs = _read(left, 'LEFT'), _read(right, 'RIGHT')
+def _compare_captured(lhs: dict, rhs: dict) -> dict:
+    """Internal comparison of CORE9 loader-owned records, not external dict intake."""
     counts = {'INPUT': 0, 'RESULT': 0, 'IDENTITY': 0}
     details = []
     for filename, key in [('INPUT.json', 'input_record'), ('RESULTS.json', 'result_record')]:
@@ -77,6 +76,11 @@ def compare_saved_sequences(left: Path, right: Path) -> dict:
         'comparison_model_executions': 0, 'comparison_reference_executions': 0,
         'source_identity_reauthenticated': False, 'arithmetic_recomputed': False,
         'integrity_scope': 'CAPTURED_RECORD_COMPARISON_NOT_ARITHMETIC_OR_ORIGIN_PROOF'}
+
+
+def compare_saved_sequences(left: Path, right: Path) -> dict:
+    """Compare all validated stored fields, including opaque historical identity."""
+    return _compare_captured(_read(left, 'LEFT'), _read(right, 'RIGHT'))
 
 
 def _cell(value) -> str:
