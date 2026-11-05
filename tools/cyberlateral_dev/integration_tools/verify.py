@@ -428,6 +428,8 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
         'calculator_input_execution': 0,
         'r_calculations': 0,
         'dt_calculations': 0,
+        'dt_calculation_scope': 'F61_AND_ACTUAL_PRODUCTION_ONLY_NOT_SYNTHETIC_PAIR_PROJECTIONS',
+        'synthetic_pair_time_projections': 'NONZERO_NOT_AGGREGATED',
         'candidate_performance_evaluation': 0,
         'actual_production_inputs': 0,
         'installed_package_original_helper_calls': 0,

@@ -40,6 +40,7 @@ oracle; no public model, production reader or calculator changes.
 - Create: tools/cyberlateral_dev/docs/F61_SIGNAL_ADAPTER_V4_KO.md
 - Create: tools/cyberlateral_dev/docs/CORE_DEVELOPMENT_BACKLOG_KO.md
 - Modify: tools/cyberlateral_dev/README.md
+- Modify: tools/cyberlateral_dev/integration_tools/verify.py (additive count-scope labels only)
 
 **Interfaces:** Consumes original frozen V4 constants/`adapt(object)->dict` and
 independent `oracle(object)->dict`; produces the same adapt API at the DEV relative
@@ -69,7 +70,12 @@ import path. No downstream task or public runtime interface change.
   completion criteria; document current absence of actual binding and no duplicate validator.
 - [ ] Full `dev.py verify` from existing locked venv to NEW_FINAL output.
   Expected:904+actual new test methods PASS,238 own compiles,static/wheel PASS.
-  Existing registered source bytes/modes unchanged except component README.
+  Existing registered source bytes/modes unchanged except component README and
+  the additive verifier count-scope clarification below.
+  Integration clarification: a real emitted-summary test must first fail for an
+  unscoped dt=0, then pass for explicit F61/actual-only scope and synthetic pair-time
+  work NONZERO_NOT_AGGREGATED. Rerun full gate after the additive verifier edit;
+  preserve all other old registered source except README and this verifier.
 - [ ] Commit spec/plan and then completed implementation/tests/docs on the local feature branch.
   Run one fresh whole-branch reviewer with Review Focus verbatim and ledger; re-grade
   findings, one Critical/Important TDD fix pass if needed; no repeat review.

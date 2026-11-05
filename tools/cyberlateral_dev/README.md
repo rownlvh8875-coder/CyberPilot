@@ -73,6 +73,14 @@ can overlap and first indices are declared sample indices, not elapsed time.
 It validates captured record consistency without model/reference execution,
 limiter arithmetic replay, source-origin authentication or vehicle/policy approval.
 
+The [DEV F61 signal Adapter V4](docs/F61_SIGNAL_ADAPTER_V4_KO.md) integrates the
+previously sealed synthetic request-to-request projection, with its independent
+test-only IEEE oracle. It preserves exact values and explicit pair-local times;
+it does not accept vehicle input, construct F61 requests, select a rate policy or
+invoke the calculator. The [core development backlog](docs/CORE_DEVELOPMENT_BACKLOG_KO.md)
+maps current code to confirmed requirements and separates the remaining binding,
+rate-policy and vehicle gates from offline development work.
+
 Historical R30 snapshot: [original acceptance guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md)
 and [original source inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
 Their recorded counts and prospective features describe R30, not current DEV-tool

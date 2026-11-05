@@ -85,6 +85,9 @@ synthetic parity, without any changes to public src/imported77/lock/workflow/clo
 profile or old R28/R31 readers. No production installation/capture/decoder/controller/
 Runtime/CAN, F61 invocation, actual r/scale/T2 choice, GitHub/HF publish or CI dispatch.
 Synthetic time projection is NONZERO and reported separately from actual r/dt work.
+The full verifier must scope its legacy `dt_calculations=0` explicitly to F61/actual
+production, and mark synthetic pair-time test work NONZERO_NOT_AGGREGATED. This
+additive summary clarification changes no zero-field Gate values or cloud profiles.
 
 Fresh baseline full DEV gate, test-first missing-feature failure, focused tests,
 full final gate/static/frozen-wheel verification, exact Git source preservation,
