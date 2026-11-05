@@ -118,6 +118,12 @@ then retains every CORE6 diagnostic, including those after a difference. It uses
 declared entry states without repair or computed-state rollout. Empty or malformed
 sequences cannot pass; the anchor/prehistory and actual-source/vehicle gates remain unqualified.
 
+The [CORE8 closed sequence CLI](docs/CORE_SEQUENCE_CLI_CORE8_KO.md) runs the named
+sign-cycle, declared-difference and late-invalid examples through CORE7 and saves
+canonical input/results/checksums to a new outside-checkout folder. Exit0/1/2
+distinguishes MATCH/DIFFERENT/input rejection; operational failures are not zero-work
+success. It accepts no external vehicle/log/JSON/rate input and grants no vehicle authority.
+
 Historical R30 snapshot: [original acceptance guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md)
 and [original source inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
 Their recorded counts and prospective features describe R30, not current DEV-tool
