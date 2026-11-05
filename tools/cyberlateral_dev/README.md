@@ -495,6 +495,13 @@ The original JSON result is returned unchanged alongside at-most65536bytes of
 Markdown. No JSON intake, extraction, new execution, hidden omission or weakened
 CORE14 budget; no browser/all-renderer visual-quality claim. Exit0/1/2 unchanged.
 
+The [CORE16 archive workflow](docs/CORE_SEQUENCE_ARCHIVE_WORKFLOW_CORE16_KO.md)
+validates and compares two saved ZIPs once, then publishes unchanged comparison JSON,
+Korean Markdown and a checksum to a NEW external folder. Exclusive writes and bounded
+readback precede a path-independent receipt. Exit0/1 means identical/different saved
+archives, both successfully published; exit2 can leave partial output for inspection.
+No overwrite, extraction, replay, new model work or vehicle qualification is added.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
