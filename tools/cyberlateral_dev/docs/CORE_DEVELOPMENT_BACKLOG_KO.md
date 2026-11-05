@@ -43,6 +43,7 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 | CORE2 | V4와 관측-record 계약의 연결 설계 | source-set별 stage/previous request/previous limited/time/flags/settings 매핑, 비호환 항목과 거절 조건 명시 | [대응 계약](F61_OBSERVATION_BINDING_CORE2_KO.md) 작성;41 leaf/35 role, bridge 미구현 |
 | CORE3 | 요청 snapshot의 명시적 합성 경계 | raw 요청·active/override/reset/context 보존과 pair 인접성·시각 순서 검사 | [요청-only 구현](REQUEST_SNAPSHOT_CORE3_KO.md); 실제 source 관측·단일 read 증명·state/settings 연결은 미구현 |
 | CORE4 | 요청과 분리된 제한 state·settings 선언 연결 | 이전 saved/current entry state·counter 연결, 별도 scale/read/gate 역할 보존 | [합성 연결 구현](LIMITER_SNAPSHOT_CORE4_KO.md); limiter 산술·실제 소비·모델 입력 변환은 미구현 |
+| CORE5 | 현재 한 호출의 합성 모델 입력 연결 | driver·angle·modelindex·이전 정수 요청을 필수 선언, active read/override 호환 조건과 양자화 일치 검증 | [입력 준비 구현](SYNTHETIC_MODEL_INPUT_CORE5_KO.md); 상태 전이 실행·saved 출력 parity·실제 source bridge는 미구현 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |
@@ -63,9 +64,11 @@ CORE3의 새 carrier는 위 누락 metadata를 **counterfactual 선언값**으�
 원래 기록의 실제 flag를 복구하거나 source 불일치를 해소한 것은 아니다. 다음 개발
 경계인 CORE4는 요청과 다른 역할의 제한 state·소비 settings를 별도 소유 carrier로
 선언하고 pair 연결을 검사한다. 실제 Controller 계측이나 차량 실행과는 구분한다.
-다음 우선 항목은 기존 합성 모델의 입력 계약과 연결하는 것이다. driver·angle·이전
-정수 요청·model index와 각 active read 역할을 명시해야 하며 현재 pair 수용만으로
-모델 호환성·source arithmetic·실제 소비 설정이 해결됐다고 표시하지 않는다.
+CORE5는 driver·angle·이전 정수 요청·model index를 별도로 공급받아 기존 합성 모델의
+현재 입력 구조를 만든다. 한 frame의 두 active read가 다르거나 override가 true이면
+거절한다. 기존 CORE4 pair 수용만으로 모델 호환성은 생기지 않으며, CORE5 수용도
+declared saved 출력과의 산술 parity나 실제 소비 설정을 해결하지 않는다.
+다음 우선 항목은 명시적으로 준비한 현재 입력의 합성 상태 전이 검증이다.
 
 ## 종료/성공 판정
 

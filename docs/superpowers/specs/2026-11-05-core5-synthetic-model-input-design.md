@@ -8,7 +8,7 @@ claiming the declared saved outputs are model results. Owner delegated ordinary
 offline implementation decisions and opted out of repeated approval questions.
 This design is the author's narrow continuation, not new vehicle authority.
 
-Use existing Python3.12.13/stdlb and the frozen model. No installs. Work in the
+Use existing Python3.12.13/stdlib and the frozen model. No installs. Work in the
 already host-owned linked worktree; preserve all previous refs/evidence. Local
 stacked branch only, no push/merge/PR/HF writes/CI dispatch or cleanup.
 

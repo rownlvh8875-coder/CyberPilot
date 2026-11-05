@@ -99,6 +99,13 @@ CORE3 requests. It checks prior-saved/current-entry links, stable settings and a
 separate inactive-gate flag without running limiter arithmetic. Its result is not
 model input, source-consumption proof or V4/F61/vehicle authorization.
 
+The [CORE5 current synthetic model input](docs/SYNTHETIC_MODEL_INPUT_CORE5_KO.md)
+adds required driver/angle/model-index/previous-integer-request declarations and
+maps an explicitly compatible CORE4 pair into the unchanged public model types.
+It checks previous request quantization and rejects incompatible active reads or
+overrides. It does not execute transitions, validate declared saved outputs,
+authenticate actual settings or authorize V4/F61/vehicle input.
+
 Historical R30 snapshot: [original acceptance guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md)
 and [original source inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
 Their recorded counts and prospective features describe R30, not current DEV-tool

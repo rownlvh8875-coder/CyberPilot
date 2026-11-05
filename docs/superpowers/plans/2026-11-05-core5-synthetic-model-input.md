@@ -6,7 +6,7 @@
 **Goal:** Build one current synthetic model input from explicit CORE4 declarations.
 **Architecture:** One typed module composes unchanged CORE4 and frozen0.3.0 types;
 explicit missing context, checked previous quantization, no transition execution.
-**Tech Stack:** Existing Python3.12.13/stdlb/unittest/Ruff/Ty/Codespell; no installs.
+**Tech Stack:** Existing Python3.12.13/stdlib/unittest/Ruff/Ty/Codespell; no installs.
 **Spec:** docs/superpowers/specs/2026-11-05-core5-synthetic-model-input-design.md
 
 ## Global Constraints
