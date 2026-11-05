@@ -25,8 +25,9 @@ driver_allowance:int, driver_factor:int, driver_multiplier:int.
 Scales1..2048; delta_up/down/allowance0..64; factor/multiplier0..8, exact built-in
 ints only. request_scale==limiter_scale is this conservative stable-settings
 subset, but keep the two declared occurrences separately. No defaults/coercion.
-These bounds align with R31 `scenario_input.validate_spec`, not the entire helper
-domain (whose Limits STEER_MAX can reach4096), OEM limits or a rate-policy authority.
+These bounds align with R31 `scenario_input.validate_spec`, not the wider synthetic
+test subset in `_r4/domain.validate_limiter` (STEER_MAX up to4096). Neither bound
+is a validation rule imposed by original production helpers, an OEM limit or rate policy.
 The seven values are aggregate caller declarations, NOT all original repeated
 read occurrences or proof they were actually consumed. No source getter is read.
 

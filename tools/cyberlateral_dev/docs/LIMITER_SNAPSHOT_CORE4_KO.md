@@ -61,8 +61,9 @@ epoch·loss/reset·인접 sequence·원래 시각 순서·raw word·필수 flag�
 실행한다. result의 derived request_pair는 전체 검사 후에만 설정된다.
 
 - scale1..2048, delta/allowance0..64, factor/multiplier0..8이다. 현재 R31
-  `scenario_input.validate_spec`의 bounded 합성 subset을 따른다. 원래 helper의
-  STEER_MAX 상한4096이나 production 전체 범위와 동일하다는 뜻이 아니다.
+  `scenario_input.validate_spec`의 bounded 합성 subset을 따른다. `_r4/domain.py`의
+  `validate_limiter`는 더 넓은 합성 test subset으로 STEER_MAX4096까지 허용한다.
+  이4096 역시 실제 원본 helper가 강제하는 상한이나 production 전체 범위가 아니다.
 - 정수 제한 state는 [-2048,2048], counter는 [0,90]이다. 현재 scale로 clamp하지
   않으며 capture sequence0이라고 과거 state를 canonical0으로 만들지 않는다.
 - inactive_gate_active=false이면 saved_limited_state는0이어야 한다.

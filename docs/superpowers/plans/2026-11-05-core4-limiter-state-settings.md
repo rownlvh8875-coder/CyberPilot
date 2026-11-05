@@ -51,7 +51,7 @@ settings/state declarations and derived CORE3 request pair. No model-input API.
   Run focused unittest; expected missing-feature assertion RED, not setup errors.
 - [ ] Implement only the specified carriers/errors/composition/checks.
   Focused tests expected GREEN; scoped Ruff/Ty/Codespell PASS.
-- [ ] Guide/README/backlog explain R31 subset vs full model4096/vehicle limits,
+- [ ] Guide/README/backlog explain R31 subset vs wider `_r4` synthetic test subset4096, neither a production helper/OEM limit,
   aggregate declarations vs repeated consumed reads, absence of model/V4/F61 conversion.
 - [ ] Full stable-source dev.py verify expected956+actual new methods/242compiles/static/wheel PASS.
   Commit implementation after focused checks; one fresh whole-branch review may overlap
