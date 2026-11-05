@@ -48,7 +48,7 @@ root file. No new whole-folder Manifest or authenticity/sealing claim.
 ## Errors and work
 
 Fixed ArchiveRunError.code with stage and no raw caller text. SHA/output/baseline
-preflight error: NO_MODEL_EXECUTION, output absent. BASELINE_COPY failure:
+preflight error: NO_MODEL_EXECUTION, no new output created. BASELINE_COPY failure:
 NO_MODEL_EXECUTION/OUTPUT_MAY_EXIST. RUN/EXPORT/COMPARE/final-layout failure:
 WORK_MAY_BE_NONZERO/OUTPUT_MAY_EXIST; never claim0after work may have started.
 Preserve all partial files, no cleanup/retry/resume/overwrite. Unexpected post-copy

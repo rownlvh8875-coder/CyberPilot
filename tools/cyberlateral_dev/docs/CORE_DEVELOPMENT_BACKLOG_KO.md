@@ -55,6 +55,7 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 | CORE14 | 검증된 두 ZIP의 저장 결과 비교 | 양쪽 SHA 사전검사·role별 단일 캡처/검증·세 case INPUT/RESULT/IDENTITY 집계·상세256/case | [ZIP 비교 안내](CORE_SEQUENCE_ARCHIVE_COMPARE_CORE14_KO.md); exit0/1/2,저장 M/D/R 유지,신규 모델/추출0·출처 인증 아님 |
 | CORE15 | 비교의 한국어 Markdown 요약 | 전체/CORE14상세/요약 개수 분리·case별 INPUT/RESULT/IDENTITY 합계·20/case·typed safe160자 발췌·65536bytes 한도 | [요약 안내](CORE_SEQUENCE_ARCHIVE_REPORT_CORE15_KO.md); 원문 JSON 불변·생략 명시·기존 budget 유지·browser visual PASS 아님 |
 | CORE16 | ZIP 검증·비교·요약의 단일 저장 명령 | role별 단일 캡처·원문JSON/MD/체크섬3파일·exclusive/no overwrite·bounded readback·deterministic receipt | [통합 저장 안내](CORE_SEQUENCE_ARCHIVE_WORKFLOW_CORE16_KO.md); 신규 모델0·부분 실패 보존·산술/출처/차량 인증 아님 |
+| CORE17 | 고정 합성 실행부터 ZIP·기준 비교까지 연결 | 기준 SHA/단일 캡처/복사 검산 후 고정6step·현재 ZIP·CORE16 요약·명시적run·부분 작업량 구분 | [실행 연결 안내](CORE_SEQUENCE_ARCHIVE_RUN_CORE17_KO.md); 기존 알고리즘 재사용·임의/차량 입력/F61 없음·실차 권한 추가 없음 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |

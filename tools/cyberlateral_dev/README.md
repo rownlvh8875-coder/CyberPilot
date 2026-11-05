@@ -502,6 +502,13 @@ readback precede a path-independent receipt. Exit0/1 means identical/different s
 archives, both successfully published; exit2 can leave partial output for inspection.
 No overwrite, extraction, replay, new model work or vehicle qualification is added.
 
+The [CORE17 explicit offline run](docs/CORE_SEQUENCE_ARCHIVE_RUN_CORE17_KO.md)
+requires literal `run`, a saved baseline ZIP/full SHA and a NEW external folder.
+It validates and retains the baseline before executing the fixed three-case suite
+(6 new synthetic model steps), exports CURRENT.zip, then uses CORE16 for comparison
+and Korean summary. Original baseline is captured once; errors retain partial work.
+Exit0/1 compares ZIP bytes, not stored M/D/R. No arbitrary/vehicle input or F61 work.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
