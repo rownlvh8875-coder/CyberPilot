@@ -509,6 +509,13 @@ It validates and retains the baseline before executing the fixed three-case suit
 and Korean summary. Original baseline is captured once; errors retain partial work.
 Exit0/1 compares ZIP bytes, not stored M/D/R. No arbitrary/vehicle input or F61 work.
 
+The [CORE18 saved run inspector](docs/CORE_SEQUENCE_RUN_INSPECT_CORE18_KO.md)
+checks the exact14-file CORE17 layout read-only with both external archive digests.
+It rebuilds the suite ZIP and comparison from captured bytes, accepting only exact
+cross-artifact equality. Each file is captured once; no model/reference/extraction.
+Exit0 is inspection consistency even when the saved comparison differs; recorded
+steps and comparison0/1 remain data. No execution, arithmetic or origin proof.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
