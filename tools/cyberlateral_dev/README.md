@@ -112,6 +112,12 @@ current declared post-gate saved command and angle counter. It returns MATCH or
 explicit DIFFERENT fields without overwriting declarations. This is not previous
 transition/prehistory/full-output parity or actual-source/V4/F61/vehicle approval.
 
+The [CORE7 declared synthetic sequence check](docs/SYNTHETIC_SEQUENCE_CORE7_KO.md)
+preflights all adjacent inputs and explicit model indices before any public step,
+then retains every CORE6 diagnostic, including those after a difference. It uses
+declared entry states without repair or computed-state rollout. Empty or malformed
+sequences cannot pass; the anchor/prehistory and actual-source/vehicle gates remain unqualified.
+
 Historical R30 snapshot: [original acceptance guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md)
 and [original source inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
 Their recorded counts and prospective features describe R30, not current DEV-tool

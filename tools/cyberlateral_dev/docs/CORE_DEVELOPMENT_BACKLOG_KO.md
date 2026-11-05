@@ -45,6 +45,7 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 | CORE4 | 요청과 분리된 제한 state·settings 선언 연결 | 이전 saved/current entry state·counter 연결, 별도 scale/read/gate 역할 보존 | [합성 연결 구현](LIMITER_SNAPSHOT_CORE4_KO.md); limiter 산술·실제 소비·모델 입력 변환은 미구현 |
 | CORE5 | 현재 한 호출의 합성 모델 입력 연결 | driver·angle·modelindex·이전 정수 요청을 필수 선언, active read/override 호환 조건과 양자화 일치 검증 | [입력 준비 구현](SYNTHETIC_MODEL_INPUT_CORE5_KO.md); 상태 전이 실행·saved 출력 parity·실제 source bridge는 미구현 |
 | CORE6 | 현재 선언 상태와 합성 전이 비교 | CORE5 재검증 후 한 step, 현재 post-gate saved 상태/counter exact 비교·차이 보존 | [현재 전이 검사](SYNTHETIC_TRANSITION_CORE6_KO.md); 이전 전이·prehistory·전체 output/source parity는 미검증 |
+| CORE7 | 연속 선언 합성 전이 검사 | 전체 입력·명시 model index 사전 검증, 모든 인접 진단과 차이 위치 보존 | [연속 검사](SYNTHETIC_SEQUENCE_CORE7_KO.md); declared entry 유지, computed rollout/anchor prehistory/source 인증은 아님 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |
@@ -71,8 +72,10 @@ CORE5는 driver·angle·이전 정수 요청·model index를 별도로 공급받
 declared saved 출력과의 산술 parity나 실제 소비 설정을 해결하지 않는다.
 CORE6는 준비된 현재 입력으로 합성 모델 한 step을 실행하고 현재 선언된 saved 명령과
 counter를 exact 비교한다. 차이는 덮어쓰지 않고 DIFFERENT로 보존한다. MATCH도 이전
-전이·prehistory·전체 output/source parity는 입증하지 않는다. 다음 우선 항목은 각
-호출의 명시적 문맥을 공급하는 연속 합성 전이 검사다.
+전이·prehistory·전체 output/source parity는 입증하지 않는다. CORE7는 각 호출 문맥을
+명시적으로 공급받아 전체 입력을 먼저 검증하고 모든 인접 전이를 검사한다. 차이가 나도
+선언 상태를 고치지 않으며 다음 진단을 생략하지 않는다. 첫 anchor 전이·prehistory와
+실제 source qualification은 미해결이다. 다음은 이 DEV 결과의 사용 경계·실행 통합이다.
 
 ## 종료/성공 판정
 
