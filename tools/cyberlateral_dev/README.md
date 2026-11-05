@@ -106,6 +106,12 @@ It checks previous request quantization and rejects incompatible active reads or
 overrides. It does not execute transitions, validate declared saved outputs,
 authenticate actual settings or authorize V4/F61/vehicle input.
 
+The [CORE6 current synthetic transition check](docs/SYNTHETIC_TRANSITION_CORE6_KO.md)
+runs CORE5 preflight and exactly one public synthetic step, then compares the
+current declared post-gate saved command and angle counter. It returns MATCH or
+explicit DIFFERENT fields without overwriting declarations. This is not previous
+transition/prehistory/full-output parity or actual-source/V4/F61/vehicle approval.
+
 Historical R30 snapshot: [original acceptance guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md)
 and [original source inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
 Their recorded counts and prospective features describe R30, not current DEV-tool
