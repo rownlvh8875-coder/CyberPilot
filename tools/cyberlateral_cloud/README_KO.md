@@ -5,7 +5,13 @@ app lockfile·R41 API는 변경하지 않습니다. 자동 상시 실행/CI 업�
 
 ## 현재 고정 복구 안내
 
-노트북 없이 시작하는 현재 검증 경로는
+R68 명령이 포함된 checkout에서는 [고정 개발판 한 명령 복구](docs/PINNED_CLOUD_START_R68_KO.md)를
+사용합니다. `cloud_start.py profile`로 pins를 확인한 뒤 `cloud_start.py run`에 기존 SDK와
+새 외부 출력 경로를 지정합니다. DEV/R67 도구·합성 예제를 HF에서 읽기 전용으로 복구하며
+새 R41 합성 실행을 포함합니다. 새 브라우저 검사·HF 업로드·차량 활성화는 하지 않습니다.
+profile의 R67 archive source commit과 새 R68 실행 tool revision은 서로 다릅니다.
+
+기존의 별도 브라우저 관측을 포함한 고정 검증 경로는
 [R64 도구 + 기존 R61 DEV 복구·검산 안내](docs/RECOVERY_R64_KO.md)입니다.
 복구·실제 브라우저 검사 뒤 새 R64 reader로 저장 묶음을 검산합니다. reader JSON은
 closed browser 폴더 밖에 저장합니다. 안내 문서 revision, 실행 tool commit,
