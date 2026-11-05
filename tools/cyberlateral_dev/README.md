@@ -528,6 +528,12 @@ exposes that unchanged CORE19 receipt with exit0/1 for current compatible/reject
 inputs and exit2 for fixed operational errors. It suppresses bytecode throughout
 the command, creates no temporary cache, and does not add replay or vehicle authority.
 
+The separate [CORE21 archive input preflight](docs/CORE_SEQUENCE_ARCHIVE_PREFLIGHT_CORE21_KO.md)
+accepts a complete CORE13 ZIP and external SHA, verifies it once, then reuses owned
+CORE19 records for all three semantic verdicts without extraction or replay.
+Historical statuses, archive integrity and current input compatibility stay separate;
+the existing folder API and CLI keep their receipts and behavior.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported

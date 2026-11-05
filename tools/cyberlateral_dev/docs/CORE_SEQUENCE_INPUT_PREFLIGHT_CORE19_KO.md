@@ -11,6 +11,9 @@
 없이 같은 API receipt를 출력하며 현재 입력 판정을 exit0/1, 운영 오류를2로 구분한다.
 이 API 자체와 그 규칙·반환 JSON은 변경하지 않았다.
 
+완전한 portable suite ZIP은 별도 [CORE21 API](CORE_SEQUENCE_ARCHIVE_PREFLIGHT_CORE21_KO.md)가
+전체 검산 후 같은 소유 기록 판정을 재사용한다. 파일 추출이나 임의 dict intake가 아니다.
+
 기존 tools/cyberlateral_dev 전용 환경과 해당 디렉터리에서:
 
 ```bash

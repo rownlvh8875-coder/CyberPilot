@@ -48,6 +48,11 @@ def preflight_saved_sequence(input_path: Path) -> dict:
         captured = read_saved_sequence_records(input_path)
     except InspectError as error:
         raise InputPreflightError('INPUT_PREFLIGHT_SAVED:' + error.code) from error
+    return _preflight_captured(captured)
+
+
+def _preflight_captured(captured: dict) -> dict:
+    """Internal only: caller supplies already verified, owned CORE9 records."""
     source = captured['input_record']
     frames = _frames(source['frames'])
     contexts = []
