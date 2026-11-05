@@ -41,7 +41,7 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 |---|---|---|---|
 | CORE1 | 기존 V4 신호 경계의 개발판 통합 | 정확한 기존 알고리즘/승인 subset 유지, literal·독립 oracle·전체 DEV gate 검증 | f3ac2341에서 완료; 합성 범위만,927 tests는 당시 기록 |
 | CORE2 | V4와 관측-record 계약의 연결 설계 | source-set별 stage/previous request/previous limited/time/flags/settings 매핑, 비호환 항목과 거절 조건 명시 | [대응 계약](F61_OBSERVATION_BINDING_CORE2_KO.md) 작성;41 leaf/35 role, bridge 미구현 |
-| CORE3 | source-bound 오프라인 관측 seam | 한 번 소비된 값을 추가 reread 없이 보존하는 순수 seam을 합성 counterfactual로 검증, reset/loss/epoch 경계 명시 | CORE2 이후; Controller 실행·CAN·실차 capture 없음 |
+| CORE3 | 요청 snapshot의 명시적 합성 경계 | raw 요청·active/override/reset/context 보존과 pair 인접성·시각 순서 검사 | [요청-only 구현](REQUEST_SNAPSHOT_CORE3_KO.md); 실제 source 관측·단일 read 증명·state/settings 연결은 미구현 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |
@@ -57,6 +57,11 @@ CORE2 대조 결과 공통6 path를 V4의2 commit과 비교한12건은 모두 by
 lateral.py는 해당 V4 archive에 없다. override/reset/request-stage active 등은 기존
 record만으로 결속되지 않는다. 다음 CORE3의 counterfactual capture seam은 이 metadata를
 명시적으로 공급받아야 하며 기존 관측 기록이나 V4 pin을 임의로 수정하지 않는다.
+
+CORE3의 새 carrier는 위 누락 metadata를 **counterfactual 선언값**으로 필수 수용한다.
+원래 기록의 실제 flag를 복구하거나 source 불일치를 해소한 것은 아니다. 다음 개발
+우선 항목은 요청과 다른 역할인 이전 제한 state·소비 settings를 별도 소유 carrier로
+결속하는 설계/합성 검증이다. 실제 Controller 계측이나 차량 실행과는 구분한다.
 
 ## 종료/성공 판정
 

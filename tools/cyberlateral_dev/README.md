@@ -87,6 +87,12 @@ profiles and missing request-stage flags/reset/context explicitly; this static
 draft does not implement a bridge, relabel observations, change V4 source pins or
 authorize actual inputs. Its design obligations are not executed runtime tests.
 
+The [CORE3 counterfactual request snapshot boundary](docs/REQUEST_SNAPSHOT_CORE3_KO.md)
+preserves explicit raw binary32 requests, flags and context in immutable carriers.
+Its pair factory checks exact types, context, adjacent sequence, time order and
+declared reset without model/native/time-delta computation. This is not real source
+capture, state/settings binding, a V4 bridge or calculator/vehicle authorization.
+
 Historical R30 snapshot: [original acceptance guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md)
 and [original source inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
 Their recorded counts and prospective features describe R30, not current DEV-tool
