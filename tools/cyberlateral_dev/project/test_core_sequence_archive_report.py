@@ -94,6 +94,57 @@ class CoreArchiveReportTests(unittest.TestCase):
         self.assertIn('전체 차이: 1', text)
         self.assertEqual(r['reports'][2]['comparison']['differences'][0]['kind'], 'RIGHT_ONLY')
 
+    def test_case_categories_remain_visible_when_result_detail_is_not_shown(self):
+        files = dict(self.source)
+        prefix = 'suite/late-invalid/'
+        data = json.loads(files[prefix + 'RESULTS.json'])
+        data['identity'].update({f'marker_{i:02}': i for i in range(25)})
+        data['rejection_code'] = ('SEQUENCE_INPUT:2:MODEL_DRIVER' if data['rejection_code'] != 'SEQUENCE_INPUT:2:MODEL_DRIVER'
+                                  else 'SEQUENCE_INPUT:2:MODEL_ANGLE')
+        files[prefix + 'RESULTS.json'] = canonical(data)
+        files[prefix + 'SHA256SUMS.txt'] = ''.join(sha(files[prefix + n]) + '  ' + n + '\n' for n in ('INPUT.json', 'RESULTS.json')).encode()
+        r, raw = self.report(self.bundle.build_suite_archive(files))
+        c = r['reports'][2]['comparison']
+        self.assertEqual(c['difference_counts'], {'INPUT': 0, 'RESULT': 1, 'IDENTITY': 25})
+        self.assertEqual((c['difference_count'], c['reported_difference_count']), (26, 26))
+        text = raw.decode()
+        table = text.split('## case별 집계\n', 1)[1].split('## 상세 요약\n', 1)[0]
+        self.assertIn('| case | 왼쪽 저장 판정 | 오른쪽 저장 판정 | 전체 차이 | INPUT | RESULT | IDENTITY | CORE14 상세 | 요약 표시 |', table)
+        self.assertIn('| `"late-invalid"` | `"REJECTED"` | `"REJECTED"` | `26` | `0` | `1` | `25` | `26` | `20` |', table)
+        self.assertNotIn('"/RESULTS.json/rejection_code"', text)
+        self.assertEqual(len([line for line in text.splitlines() if line.startswith('| `"/RESULTS.json/identity/marker_')]), 20)
+
+    def test_case_categories_use_local_totals_and_leave_comparison_json_unchanged(self):
+        files = dict(self.source)
+        source = json.loads(files['suite/sign-cycle/INPUT.json'])
+        source['frames'][0]['request']['requested_binary32_be_hex'] = 'be000000'
+        files['suite/sign-cycle/INPUT.json'] = canonical(source)
+        result = json.loads(files['suite/declared-difference/RESULTS.json'])
+        result['identity'].update(marker_a=0, marker_b=1)
+        files['suite/declared-difference/RESULTS.json'] = canonical(result)
+        result = json.loads(files['suite/late-invalid/RESULTS.json'])
+        result['rejection_code'] = ('SEQUENCE_INPUT:2:MODEL_DRIVER' if result['rejection_code'] != 'SEQUENCE_INPUT:2:MODEL_DRIVER'
+                                    else 'SEQUENCE_INPUT:2:MODEL_ANGLE')
+        files['suite/late-invalid/RESULTS.json'] = canonical(result)
+        for case in CASES:
+            prefix = 'suite/' + case + '/'
+            files[prefix + 'SHA256SUMS.txt'] = ''.join(sha(files[prefix + n]) + '  ' + n + '\n' for n in ('INPUT.json', 'RESULTS.json')).encode()
+        other = self.bundle.build_suite_archive(files)
+        r, raw = self.report(other)
+        self.assertEqual(r['difference_counts'], {'INPUT': 1, 'RESULT': 1, 'IDENTITY': 2})
+        self.assertEqual(r, self.compare.compare_suite_archive_bytes(self.raw, sha(self.raw), other, sha(other)))
+        table = raw.decode().split('## case별 집계\n', 1)[1].split('## 상세 요약\n', 1)[0]
+        for wanted in (
+            '| `"sign-cycle"` | `"MATCH"` | `"MATCH"` | `1` | `1` | `0` | `0` | `1` | `1` |',
+            '| `"declared-difference"` | `"DIFFERENT"` | `"DIFFERENT"` | `2` | `0` | `0` | `2` | `2` | `2` |',
+            '| `"late-invalid"` | `"REJECTED"` | `"REJECTED"` | `1` | `0` | `1` | `0` | `1` | `1` |',
+        ):
+            self.assertIn(wanted, table)
+        self.right.write_bytes(other)
+        p = self.command()
+        self.assertEqual((p.returncode, p.stdout, p.stderr), (1, raw, b''))
+        self.assertLessEqual(len(raw), 65536)
+
     def test_missing_null_and_presence_are_distinct_in_display(self):
         _, raw = self.report(self.modified([('late-invalid', lambda i: i.update(marker=None))]))
         row = next(line for line in raw.decode().splitlines() if '/RESULTS.json/identity/marker' in line)

@@ -36,6 +36,11 @@ case별 첫20개, 전체 최대60개 상세를 보여 준다. 예를 들어 전�
 숨기거나 전체 차이 수를 표시 수로 바꾸지 않는다. missing/null은 존재 열로 구분하고
 false/0은 JSON 타입 표현을 그대로 유지한다. pointer는 case와 함께 읽는다.
 
+case별 집계 표에도 INPUT/RESULT/IDENTITY 전체 합계를 별도 열로 표시한다. 이 값은
+각 case의 원문 비교에서 가져오며, 요약 첫20개에 특정 분류의 상세가 없어도 그 분류의
+전체 수는 숨기지 않는다. 예를 들어 IDENTITY25개와 RESULT1개이면 전체26/INPUT0/
+RESULT1/IDENTITY25/CORE14상세26/요약20으로 표시한다.
+
 셀은 원문 전체가 아닌 표시용 JSON 발췌다. escape 후 ASCII payload 최대160자로
 제한하며 잘리면 PREVIEW_TRUNCATED marker와 잘림 수를 보여 준다. 발췌가 완전한 JSON일
 필요는 없다. Unicode/control/bidi는 JSON escape, backtick/pipe/HTML delimiter도

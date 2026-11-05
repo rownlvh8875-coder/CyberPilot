@@ -68,12 +68,13 @@ def _markdown(comparison: dict) -> bytes:
     lines.extend(['', '저장 M/D/R는 MATCH/DIFFERENT/REJECTED이며 새 실행의 판정이 아닙니다.',
         '신규 모델 실행: 0 / 신규 reference 실행: 0 (비교·요약 작업만 해당)',
         'source_identity_reauthenticated=false / arithmetic_recomputed=false', '',
-        '## case별 집계', '', '| case | 왼쪽 저장 판정 | 오른쪽 저장 판정 | 전체 차이 | CORE14 상세 | 요약 표시 |',
-        '| --- | --- | --- | --- | --- | --- |'])
+        '## case별 집계', '', '| case | 왼쪽 저장 판정 | 오른쪽 저장 판정 | 전체 차이 | INPUT | RESULT | IDENTITY | CORE14 상세 | 요약 표시 |',
+        '| --- | --- | --- | --- | --- | --- | --- | --- | --- |'])
     for item in r['reports']:
         c = item['comparison']
         lines.append(row([item['case_id'], c['left']['saved_status'], c['right']['saved_status'],
-            c['difference_count'], c['reported_difference_count'], min(DETAILS_PER_CASE, c['reported_difference_count'])]))
+            c['difference_count'], c['difference_counts']['INPUT'], c['difference_counts']['RESULT'], c['difference_counts']['IDENTITY'],
+            c['reported_difference_count'], min(DETAILS_PER_CASE, c['reported_difference_count'])]))
     lines.extend(['', '## 상세 요약', ''])
     for item in r['reports']:
         c = item['comparison']
