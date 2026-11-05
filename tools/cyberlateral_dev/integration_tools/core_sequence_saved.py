@@ -96,9 +96,8 @@ def _parse(raw: bytes):
     return value
 
 
-def read_saved_sequence_records(input_path: Path) -> dict:
-    """Capture/validate once and expose owned records, never reopen their files."""
-    files = _capture(input_path)
+def _decode(files: dict[str, bytes]) -> dict:
+    """Validate already captured CORE9 bytes without any filesystem access."""
     hashes = {name: hashlib.sha256(raw).hexdigest() for name, raw in files.items()}
     manifest = ''.join(hashes[name] + '  ' + name + '\n' for name in ('INPUT.json', 'RESULTS.json')).encode()
     if files['SHA256SUMS.txt'] != manifest:
@@ -106,6 +105,11 @@ def read_saved_sequence_records(input_path: Path) -> dict:
     input_record, result_record = _parse(files['INPUT.json']), _parse(files['RESULTS.json'])
     summary = {**validate_records(input_record, result_record), 'captured_sha256': hashes}
     return {'input_record': input_record, 'result_record': result_record, 'summary': summary}
+
+
+def read_saved_sequence_records(input_path: Path) -> dict:
+    """Capture/validate once and expose owned records, never reopen their files."""
+    return _decode(_capture(input_path))
 
 
 def inspect_saved_sequence(input_path: Path) -> dict:

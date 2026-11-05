@@ -468,6 +468,15 @@ comparison counts, recorded history and new steps, retaining every per-case repo
 Without a baseline, difference totals are null, not regression PASS. Errors retain
 partial output/prefix work; no subset/manifest/fallback/retry or vehicle activation.
 
+The [CORE13 portable saved-suite archive](docs/CORE_SEQUENCE_PORTABLE_CORE13_KO.md)
+exports the exact nine saved files plus a check-only report and root Manifest.
+`export --input-root --output` creates one NEW external ZIP; `verify --archive
+--sha256` requires a full external digest before file access. Both execute zero
+new model/reference steps, never extract, preserve stored M/D/R outcomes and keep
+source identity unqualified. Fixed ZIP metadata makes identical inputs portable
+byte-identically. Bounded CRC/schema/Manifest/report checks are custody, not origin
+or arithmetic proof. Publication failures retain files; no overwrite/cleanup/retry.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
