@@ -57,6 +57,11 @@ def run_closed_sequence(case_id: object, output: Path, baseline: Path | None = N
             raise WorkflowError('WORKFLOW_OUTPUT_PATH_NO_MODEL_EXECUTION') from error
         if overlaps:
             raise WorkflowError('WORKFLOW_OUTPUT_BASELINE_OVERLAP_NO_MODEL_EXECUTION')
+    return _run_captured(case_id, output, captured_baseline)
+
+
+def _run_captured(case_id: str, output: Path, captured_baseline: dict | None) -> dict:
+    """Internal closed-case run after caller preflight, with a loader-owned baseline."""
     # Only explicit run imports this execution path. CORE8 retains output guards.
     from .core_sequence_run import DemoError, run_sequence_case
 

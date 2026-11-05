@@ -459,6 +459,15 @@ exit2 error: even run's saved DIFFERENT/REJECTED can exit0. No baseline means no
 regression comparison, and source identity changes are not silently ignored.
 Run errors may retain partial output/nonzero work; no overwrite, deletion or retry.
 
+The [CORE12 closed three-case suite](docs/CORE_SEQUENCE_SUITE_CORE12_KO.md) applies
+CORE11 in fixed case order. `check --input-root` reads exactly three saved case
+directories with no producer/model import; `run --output-root` explicitly creates
+a NEW external suite (six new synthetic steps across3/3/0). Optional baseline roots
+are fully captured before ANY new work. JSON stdout separates saved outcomes,
+comparison counts, recorded history and new steps, retaining every per-case report.
+Without a baseline, difference totals are null, not regression PASS. Errors retain
+partial output/prefix work; no subset/manifest/fallback/retry or vehicle activation.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
