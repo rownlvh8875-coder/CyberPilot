@@ -85,7 +85,11 @@ Run stages in order:
 5. SAVED_COMPARISON: current trusted Git comparison code reads recovered data,
    never executes recovered SOURCE. Save one/two DIFFERENT and fail/fail MATCH
    JSON plus Korean summaries outside closed SAVED folders. Original FAIL remains.
-6. Write START_KO.md with links to child results, then START_RESULT.json LAST.
+6. Write START_KO.md with links to child results, write START_RESULT.pending.json,
+   then publish START_RESULT.json LAST via an exclusive same-folder hard link.
+   Preserve the pending file as evidence; it is never a completion marker. This
+   prevents a partial marker on write failure, not a full filesystem durability/
+   concurrent-writer guarantee. A pre-existing final name is never overwritten.
 
 Success R68_PINNED_CLOUD_START_PASS means recovery completed, NOT screen PASS or
 vehicle qualification. Include pinned profile, source counts, comparison records,
