@@ -52,6 +52,7 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 | CORE11 | 고정 합성 실행·저장·조회·비교 단일 workflow | check/run 명시 분리·baseline 사전 캡처·기존 산술 재사용·작업량/저장판정/비교 분리 | [통합 안내](CORE_SEQUENCE_WORKFLOW_CORE11_KO.md); exit0은 orchestration 성공,baseline 없으면 회귀 비교 미수행 |
 | CORE12 | 고정 세 case 묶음의 회귀 요약 | 전체 기준 사전 검증·고정 순서·저장판정/비교/신규·과거 작업량 집계·case별 보고 보존 | [묶음 안내](CORE_SEQUENCE_SUITE_CORE12_KO.md); check0/run6,기준 없으면 차이null,부분 실패 보존/실차 권한 추가 없음 |
 | CORE13 | 기존 suite의 portable ZIP 생성·검증 | 원본9파일 보존·저장-only 요약·고정11member·외부 전체 SHA·bounded CRC/Manifest·게시 readback | [인계 안내](CORE_SEQUENCE_PORTABLE_CORE13_KO.md); 신규 모델0,추출/산술/출처 인증 없음,실차 Gate 유지 |
+| CORE14 | 검증된 두 ZIP의 저장 결과 비교 | 양쪽 SHA 사전검사·role별 단일 캡처/검증·세 case INPUT/RESULT/IDENTITY 집계·상세256/case | [ZIP 비교 안내](CORE_SEQUENCE_ARCHIVE_COMPARE_CORE14_KO.md); exit0/1/2,저장 M/D/R 유지,신규 모델/추출0·출처 인증 아님 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |

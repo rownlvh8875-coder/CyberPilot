@@ -41,8 +41,8 @@ def _bounded_files(files: dict[str, bytes], caps: dict[str, int]) -> None:
         raise PortableError('PORTABLE_ZIP_SIZE')
 
 
-def _suite(files: dict[str, bytes]) -> dict:
-    reports = []
+def _records(files: dict[str, bytes]) -> dict:
+    records = {}
     for case in CASE_IDS:
         try:
             record = _decode({n: files['suite/' + case + '/' + n] for n in CAPS})
@@ -50,8 +50,17 @@ def _suite(files: dict[str, bytes]) -> dict:
             raise PortableError('PORTABLE_CASE:' + case + ':' + error.code) from error
         if record['summary']['case_id'] != case:
             raise PortableError('PORTABLE_CASE_ID:' + case)
-        reports.append(_report('CHECK_SAVED_ONLY', record, None, 0))
+        records[case] = record
+    return records
+
+
+def _suite_records(records: dict) -> dict:
+    reports = [_report('CHECK_SAVED_ONLY', records[case], None, 0) for case in CASE_IDS]
     return _summary('CHECK_SAVED_SUITE', reports, False)
+
+
+def _suite(files: dict[str, bytes]) -> dict:
+    return _suite_records(_records(files))
 
 
 def _manifest(files: dict[str, bytes]) -> bytes:
@@ -133,8 +142,8 @@ def _members(raw: bytes) -> dict[str, bytes]:
         raise PortableError('PORTABLE_ZIP_FORMAT') from error
 
 
-def verify_suite_bytes(raw: bytes, expected_sha256: str) -> dict:
-    """Verify explicit external SHA and bounded self-consistency, never authority."""
+def _verified_suite(raw: bytes, expected_sha256: str) -> tuple[dict, dict]:
+    """Private receipt and owned decoded records from one fully verified capture."""
     _expected(expected_sha256)
     if type(raw) is not bytes:
         raise PortableError('PORTABLE_ARCHIVE_FILE')
@@ -145,15 +154,22 @@ def verify_suite_bytes(raw: bytes, expected_sha256: str) -> dict:
     files = _members(raw)
     if files['SHA256SUMS.txt'] != _manifest(files):
         raise PortableError('PORTABLE_MANIFEST')
-    suite = _suite(files)
+    records = _records(files)
+    suite = _suite_records(records)
     if files['SUITE_REPORT.json'] != canonical(suite):
         raise PortableError('PORTABLE_REPORT')
     if raw != _zip(files):
         raise PortableError('PORTABLE_ZIP_CANONICAL')
-    return {'schema_version': 1, 'contract_id': 'CORE13_PORTABLE_SAVED_SUITE_V1',
+    receipt = {'schema_version': 1, 'contract_id': 'CORE13_PORTABLE_SAVED_SUITE_V1',
         'operation': 'VERIFY_SAVED_SUITE_ARCHIVE', 'status': 'SUITE_ARCHIVE_VERIFIED',
         'archive_sha256': expected_sha256, 'archive_byte_size': len(raw), 'member_count': 11, 'source_member_count': 9,
         'member_sha256': {name: _sha(files[name]) for name in sorted(files)}, 'suite': suite,
         'new_synthetic_model_steps': 0, 'reader_model_executions': 0, 'reader_reference_executions': 0,
         'source_identity_reauthenticated': False, 'gates': dict(GATES),
         'scope': 'SAVED_SUITE_BYTES_CUSTODY_NOT_ARITHMETIC_OR_ORIGIN_PROOF'}
+    return receipt, records
+
+
+def verify_suite_bytes(raw: bytes, expected_sha256: str) -> dict:
+    """Verify explicit external SHA and bounded self-consistency, never authority."""
+    return _verified_suite(raw, expected_sha256)[0]

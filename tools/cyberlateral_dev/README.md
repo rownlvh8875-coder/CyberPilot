@@ -477,6 +477,14 @@ source identity unqualified. Fixed ZIP metadata makes identical inputs portable
 byte-identically. Bounded CRC/schema/Manifest/report checks are custody, not origin
 or arithmetic proof. Publication failures retain files; no overwrite/cleanup/retry.
 
+The [CORE14 saved ZIP comparison](docs/CORE_SEQUENCE_ARCHIVE_COMPARE_CORE14_KO.md)
+accepts two archives and two explicit full digests, preflighting BOTH digests before
+file access. Each role is captured/verified once, with no extraction or new model
+work. It preserves CORE13 receipts and CORE10 per-case exact INPUT/RESULT/IDENTITY
+differences, counts all differences and caps details at256 per case. Exit0 means
+identical validated archive bytes,1 a validated difference,2 rejection; saved M/D/R
+outcomes stay data, never a numerical or provenance qualification.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
