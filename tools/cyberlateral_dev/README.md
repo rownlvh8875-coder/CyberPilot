@@ -93,6 +93,12 @@ Its pair factory checks exact types, context, adjacent sequence, time order and
 declared reset without model/native/time-delta computation. This is not real source
 capture, state/settings binding, a V4 bridge or calculator/vehicle authorization.
 
+The [CORE4 declared limiter snapshot boundary](docs/LIMITER_SNAPSHOT_CORE4_KO.md)
+adds separate integer limited-state/counter and consumed-settings declarations to
+CORE3 requests. It checks prior-saved/current-entry links, stable settings and a
+separate inactive-gate flag without running limiter arithmetic. Its result is not
+model input, source-consumption proof or V4/F61/vehicle authorization.
+
 Historical R30 snapshot: [original acceptance guide](docs/OFFLINE_ACCEPTANCE_R30_KO.md)
 and [original source inventory](docs/OFFLINE_CAPABILITY_INVENTORY_R30.json).
 Their recorded counts and prospective features describe R30, not current DEV-tool
