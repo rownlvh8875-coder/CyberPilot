@@ -1,5 +1,6 @@
 """Fourteen-file saved capture, exact cross-artifact relations, no execution."""
 
+import builtins
 import hashlib
 import importlib
 import importlib.util
@@ -265,3 +266,86 @@ sys.meta_path.insert(0,Block()); sys.argv=sys.argv[1:]; runpy.run_path(sys.argv[
         cli = self.cli_module(); err = StringIO(); before = self.snapshot()
         with patch('sys.stdout', StringIO()), patch('sys.stderr', err): self.assertEqual(cli.main(self.args()), 2)
         self.assertIn('NO_MODEL_EXECUTION', err.getvalue()); self.assertEqual(before, self.snapshot())
+
+    def test_cli_temp_settings_inside_input_never_create_input_cache(self):
+        # Break caught: implicit temp selection changes the exact input layout.
+        cli = self.cli_module(); before = self.snapshot(); layout = sorted(p.relative_to(self.folder).as_posix() for p in self.folder.rglob('*'))
+        original = tempfile.TemporaryDirectory; allocated = []; expected = canonical(self.inspect())
+        def allocate(*args, **kwargs):
+            directory = original(*args, **kwargs); allocated.append(Path(directory.name)); return directory
+        with (self.root / 'receipt').open('wb') as out, patch('sys.stdout', out), patch('sys.stderr', StringIO()), \
+                patch.dict(os.environ, {n: str(self.folder) for n in ('TMPDIR', 'TEMP', 'TMP')}), \
+                patch.object(tempfile, 'tempdir', str(self.folder)), patch.object(cli.tempfile, 'TemporaryDirectory', side_effect=allocate):
+            self.assertEqual(cli.main(self.args()), 0)
+        self.assertEqual((self.root / 'receipt').read_bytes(), expected)
+        self.assertEqual(len(allocated), 1); self.assertFalse(allocated[0].is_relative_to(self.folder))
+        self.assertEqual(allocated[0].parent, Path('/tmp')); self.assertFalse(allocated[0].exists())
+        self.assertEqual(before, self.snapshot()); self.assertEqual(layout, sorted(p.relative_to(self.folder).as_posix() for p in self.folder.rglob('*')))
+
+    def test_cli_never_probes_implicit_temp_directory(self):
+        # Break caught: gettempdir may write a discovery probe inside input.
+        cli = self.cli_module(); err = StringIO()
+        with (self.root / 'receipt').open('wb') as out, patch('sys.stdout', out), patch('sys.stderr', err), \
+                patch.object(tempfile, 'gettempdir', side_effect=AssertionError('implicit temp probe')), \
+                patch.object(tempfile, 'gettempdirb', side_effect=AssertionError('implicit temp probe')):
+            self.assertEqual(cli.main(self.args()), 0, err.getvalue())
+        self.assertEqual((self.root / 'receipt').read_bytes(), canonical(self.inspect()))
+
+    def test_cli_overlapping_cache_parent_rejects_before_allocation_or_reads(self):
+        # Break caught: configurable parent creates bytecode beneath input.
+        cli = self.cli_module(); inside = self.folder / 'inside'; inside.mkdir(); before = self.snapshot()
+        for parent in (self.folder, inside):
+            err = StringIO()
+            with self.subTest(parent=parent), patch.object(cli, 'CACHE_PARENT', parent, create=True), patch('sys.stderr', err), \
+                    patch.object(tempfile, 'TemporaryDirectory', side_effect=AssertionError('cache allocation')), \
+                    patch('os.open', side_effect=AssertionError('input read')):
+                self.assertEqual(cli.main(self.args()), 2)
+            self.assertIn('CACHE_INPUT_OVERLAP', err.getvalue())
+        self.assertEqual(before, self.snapshot()); self.assertEqual(list(inside.iterdir()), [])
+
+    def test_cli_unusable_cache_parent_has_no_fallback(self):
+        # Break caught: missing/file parent silently falls back to user temp.
+        cli = self.cli_module(); regular = self.root / 'not-directory'; regular.write_bytes(b'keep')
+        for parent in (self.root / 'missing-cache', regular):
+            err = StringIO()
+            with self.subTest(parent=parent), patch.object(cli, 'CACHE_PARENT', parent, create=True), patch('sys.stderr', err), \
+                    patch.object(tempfile, 'TemporaryDirectory', side_effect=AssertionError('cache allocation')), \
+                    patch('os.open', side_effect=AssertionError('input read')):
+                self.assertEqual(cli.main(self.args()), 2)
+            self.assertIn('CACHE_IO', err.getvalue())
+        self.assertFalse((self.root / 'missing-cache').exists()); self.assertEqual(regular.read_bytes(), b'keep')
+
+    def test_cli_bad_second_digest_precedes_path_and_cache(self):
+        # Break caught: cache creation or input metadata before both SHA checks.
+        cli = self.cli_module(); err = StringIO(); args = self.args(); args[-1] = 'bad'
+        with patch('sys.stderr', err), patch.object(self.suite, '_path', side_effect=AssertionError('input metadata')), \
+                patch.object(tempfile, 'TemporaryDirectory', side_effect=AssertionError('cache allocation')):
+            self.assertEqual(cli.main(args), 2)
+        self.assertIn('RUN_INSPECT:ARCHIVE_COMPARE_RIGHT:', err.getvalue())
+
+    def test_cli_missing_input_precedes_cache(self):
+        # Break caught: nonexistent input can collide with a new random cache.
+        cli = self.cli_module(); err = StringIO(); args = self.args(); args[1] = str(self.root / 'absent')
+        with patch('sys.stderr', err), patch.object(tempfile, 'TemporaryDirectory', side_effect=AssertionError('cache allocation')):
+            self.assertEqual(cli.main(args), 2)
+        self.assertIn('RUN_INSPECT_INPUT', err.getvalue()); self.assertFalse((self.root / 'absent').exists())
+
+    def test_cli_bootstrap_suppresses_bytecode_and_restores_both_globals(self):
+        # Break caught: bootstrap imports write source pycache; failures leak globals.
+        cli = self.cli_module(); original = builtins.__import__; before = self.snapshot()
+        for mode in ('success', 'bootstrap-failure', 'stdout-failure'):
+            observed = []; err = StringIO()
+            def importing(name, *args, observed=observed, fail=mode == 'bootstrap-failure', **kwargs):
+                if name == 'integration_tools.core_sequence_run_inspect':
+                    observed.append(sys.dont_write_bytecode)
+                    if fail: raise ImportError('bootstrap')
+                return original(name, *args, **kwargs)
+            with self.subTest(mode=mode), patch.object(sys, 'dont_write_bytecode', False), \
+                    patch.object(sys, 'pycache_prefix', str(self.root / 'caller-prefix')), patch('sys.stderr', err), \
+                    patch('builtins.__import__', side_effect=importing), (self.root / 'receipt').open('wb') as out, \
+                    patch('sys.stdout', StringIO() if mode == 'stdout-failure' else out):
+                self.assertEqual(cli.main(self.args()), 0 if mode == 'success' else 2)
+                self.assertEqual(observed, [True]); self.assertFalse(sys.dont_write_bytecode)
+                self.assertEqual(sys.pycache_prefix, str(self.root / 'caller-prefix'))
+            if mode != 'success': self.assertEqual((self.root / 'receipt').read_bytes(), b'')
+        self.assertEqual(before, self.snapshot()); self.assertFalse((self.root / 'caller-prefix').exists())

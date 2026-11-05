@@ -21,6 +21,16 @@ receipt의 baseline_verification/current_export에서도 확인할 수 있다. �
 `--run`, `--output-root`, `--format` 옵션은 없다. 입력 폴더를 수정·수리·추출하거나
 비교/모델 결과를 덮어쓰지 않는다. 기존 CLI의 private cache는 별도 임시 기반 작업이다.
 
+CORE18-R1부터 이 Linux 환경의 CLI cache parent는 `/tmp`로 명시한다.
+TMPDIR/TEMP/TMP와 cached tempfile.tempdir는 이 CLI에서 사용하지 않으며 변경하지도
+않는다. implicit gettempdir probe도 하지 않는다. 두 SHA 형식을 먼저 검사하고,
+입력이 존재하는 비심볼릭 디렉터리인지 확인한 뒤 cache를 할당한다. cache parent가
+입력과 같거나 입력 내부면 RUN_INSPECT_CACHE_INPUT_OVERLAP_NO_MODEL_EXECUTION,
+parent 부재/비디렉터리/생성 불가면 RUN_INSPECT_CACHE_IO_NO_MODEL_EXECUTION으로
+exit2, fallback 없이 거절한다. 입력의 상위 디렉터리는 허용하지만 실제 private
+cache는 기존 입력과 다른 새 디렉터리여야 한다. bootstrap은 bytecode 쓰기를 억제하고,
+성공/실패 모두 pycache_prefix와 dont_write_bytecode를 원래 값으로 복구한다.
+
 API `integration_tools.core_sequence_run_inspect.inspect_archived_run(input_root: Path,
 baseline_sha256: str, current_sha256: str) -> dict`, 오류 `RunInspectError.code`.
 두 SHA 형식은 caller path metadata/open 전에 검사한다. BASELINE=LEFT,CURRENT=RIGHT다.
