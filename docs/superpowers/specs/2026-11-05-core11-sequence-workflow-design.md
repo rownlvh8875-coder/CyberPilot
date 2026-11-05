@@ -47,7 +47,11 @@ WORKFLOW_BASELINE:<INSPECT_CODE>,fixed code/message,no partial success stdout.
 
 Reject nonbuiltin/unknown case with WORKFLOW_CASE before baseline access/import/work.
 If provided,capture/validate baseline before importing producer/creating output/
-new model work; keep that owned record through completion (no reread). Only then
+new model work; keep that owned record through completion (no reread). Reject output
+equal to or nested within baseline before execution with
+WORKFLOW_OUTPUT_BASELINE_OVERLAP_NO_MODEL_EXECUTION; path normalization failures
+are WORKFLOW_OUTPUT_PATH_NO_MODEL_EXECUTION. This protects the baseline file set.
+Only then
 lazy-import CORE8 run_sequence_case and DemoError; invoke existing closed producer.
 CORE8 remains authority for output guards: new folder,existing nonsymlink parent,
 outside checkout,no overwrite; guards precede model execution. Do not duplicate
@@ -87,6 +91,8 @@ WORKFLOW_RUN_FAILED_WORK_MAY_BE_NONZERO; WorkflowError retains fixed code.
 Direct descriptor write loop inside handler handles partial writes/device failures;
 already delivered partial bytes cannot be retracted; discard exit2 output.
 Cache creation failure before dispatch:WORKFLOW_CACHE_IO_NO_MODEL_EXECUTION.
+Cache teardown is inside the operational boundary and must complete before stdout
+success publication; failure retains mode-specific errors and generated packages.
 Private temporary cache prefix restored; no persistent check/output writes besides
 explicit new run package. SystemExit/KeyboardInterrupt remain normal.
 

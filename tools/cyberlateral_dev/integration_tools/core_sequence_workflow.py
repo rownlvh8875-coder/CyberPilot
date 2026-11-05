@@ -50,6 +50,13 @@ def run_closed_sequence(case_id: object, output: Path, baseline: Path | None = N
     if type(case_id) is not str or case_id not in CASE_IDS:
         raise WorkflowError('WORKFLOW_CASE')
     captured_baseline = None if baseline is None else _read(baseline, 'BASELINE')
+    if baseline is not None and isinstance(output, Path):
+        try:
+            overlaps = output.resolve().is_relative_to(baseline.resolve())
+        except (OSError, ValueError, RuntimeError) as error:
+            raise WorkflowError('WORKFLOW_OUTPUT_PATH_NO_MODEL_EXECUTION') from error
+        if overlaps:
+            raise WorkflowError('WORKFLOW_OUTPUT_BASELINE_OVERLAP_NO_MODEL_EXECUTION')
     # Only explicit run imports this execution path. CORE8 retains output guards.
     from .core_sequence_run import DemoError, run_sequence_case
 

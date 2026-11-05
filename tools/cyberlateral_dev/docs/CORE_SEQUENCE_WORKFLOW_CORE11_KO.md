@@ -21,6 +21,8 @@ python -I -B tools/core_sequence_workflow.py run --case sign-cycle --output /tmp
 
 출력의 parent `/tmp/new-core11`은 먼저 준비되어 있어야 한다. 기존 출력·symlink
 parent·없는 parent·checkout 내부 출력을 거절한다. 출력은 기존 CORE8 세 파일뿐이다.
+baseline 자체 또는 그 하위 폴더도 출력으로 사용할 수 없다. 기준 패키지의 파일 집합을
+변경하지 않도록 실행 전에 거절한다. 새 출력은 별도의 sibling 폴더 등에 둔다.
 workflow 영수증은 JSON stdout이다. shell로 저장한다면 **패키지 밖**에 저장한다.
 출력 폴더 안에 영수증을 더하면 CORE9의 정확한 세 파일 검사를 통과하지 못한다.
 `--case`는 sign-cycle,declared-difference,late-invalid만 허용한다. `check`에
@@ -57,6 +59,8 @@ run의 producer 반환값과 저장 RESULTS 및 요청 case가 일치하는지�
 실행 중/후의 실패는 WORK_MAY_BE_NONZERO를 유지하며 이미 생성된 폴더를 지우거나
 덮어써 재시도하지 않는다. 부분 출력은 성공 패키지가 아니며 새 경로로 조사/재실행한다.
 stdout 실패도 이미 전달된 bytes를 되돌릴 수 없다. exit2 출력은 성공 영수증이 아니다.
+임시 cache 정리까지 완료한 뒤 성공 영수증을 출력한다. cache 정리가 실패해도 생성된
+합성 패키지는 보존하며,check/run에 맞는 고정 오류·exit2를 반환한다.
 
 check는 producer/model 실행 path를 import하지 않는다. reader 모델/reference 실행0은
 명시적 run의 합성 모델 steps나 전체 unit/gate/fixture 작업량0을 뜻하지 않는다.

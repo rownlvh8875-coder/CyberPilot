@@ -489,3 +489,40 @@ runpy.run_path({str(ROOT / 'tools/core_sequence_workflow.py')!r},run_name='__mai
                 code = 'WORKFLOW_CHECK_FAILED_NO_MODEL_EXECUTION' if mode == 'check' else 'WORKFLOW_RUN_FAILED_WORK_MAY_BE_NONZERO'
                 self.assertEqual((result.returncode, result.stdout, result.stderr), (2, b'', ('REJECTED: ' + code + '\n').encode()))
                 self.assertEqual(output.exists(), mode == 'run')
+
+    def test_cli_cache_cleanup_failure_precedes_receipt_with_honest_mode_error(self):
+        self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            saved = self.fixture(root, 'saved')
+            for mode in ('check', 'run'):
+                with self.subTest(mode=mode):
+                    output = root / mode
+                    args = ['check', '--input', str(saved)] if mode == 'check' else ['run', '--case', 'sign-cycle', '--output', str(output)]
+                    script = f'''
+import runpy,sys,tempfile
+original=tempfile.TemporaryDirectory.cleanup
+def fail(self):
+ original(self)
+ raise OSError('PRIVATE_CLEANUP_VALUE')
+tempfile.TemporaryDirectory.cleanup=fail
+sys.argv=['workflow',*{args!r}]
+runpy.run_path({str(ROOT / 'tools/core_sequence_workflow.py')!r},run_name='__main__')
+'''
+                    result = subprocess.run([sys.executable, '-I', '-B', '-c', script], capture_output=True)
+                    code = 'WORKFLOW_CHECK_FAILED_NO_MODEL_EXECUTION' if mode == 'check' else 'WORKFLOW_RUN_FAILED_WORK_MAY_BE_NONZERO'
+                    self.assertEqual((result.returncode, result.stdout, result.stderr), (2, b'', ('REJECTED: ' + code + '\n').encode()))
+                    self.assertEqual(output.exists(), mode == 'run')
+                    if mode == 'run':
+                        self.assertEqual(set(self.snapshot(output)), {'INPUT.json', 'RESULTS.json', 'SHA256SUMS.txt'})
+
+    def test_run_output_inside_baseline_is_rejected_without_mutating_input(self):
+        m = self.module()
+        with tempfile.TemporaryDirectory() as tmp:
+            baseline = self.fixture(Path(tmp), 'baseline')
+            before = self.snapshot(baseline)
+            output = baseline / 'new-output'
+            with self.assertRaisesRegex(m.WorkflowError, '^WORKFLOW_OUTPUT_BASELINE_OVERLAP_NO_MODEL_EXECUTION$'):
+                m.run_closed_sequence('sign-cycle', output, baseline)
+            self.assertEqual(before, self.snapshot(baseline))
+            self.assertFalse(output.exists())
