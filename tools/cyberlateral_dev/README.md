@@ -523,6 +523,11 @@ checks exact float decoding and quantization constraints, and never invokes a
 model step or reference. Numeric validation is nonzero; compatible inputs do not
 authenticate saved arithmetic, authorize replay or produce V4/F61 constructor args.
 
+The [CORE20 preflight CLI](docs/CORE_SEQUENCE_INPUT_PREFLIGHT_CLI_CORE20_KO.md)
+exposes that unchanged CORE19 receipt with exit0/1 for current compatible/rejected
+inputs and exit2 for fixed operational errors. It suppresses bytecode throughout
+the command, creates no temporary cache, and does not add replay or vehicle authority.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported

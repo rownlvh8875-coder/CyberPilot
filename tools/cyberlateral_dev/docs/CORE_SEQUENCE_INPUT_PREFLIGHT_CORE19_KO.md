@@ -7,6 +7,10 @@
 
 ## 사용과 결과 구분
 
+별도 [CORE20 CLI](CORE_SEQUENCE_INPUT_PREFLIGHT_CLI_CORE20_KO.md)는 아래 Python recipe
+없이 같은 API receipt를 출력하며 현재 입력 판정을 exit0/1, 운영 오류를2로 구분한다.
+이 API 자체와 그 규칙·반환 JSON은 변경하지 않았다.
+
 기존 tools/cyberlateral_dev 전용 환경과 해당 디렉터리에서:
 
 ```bash
