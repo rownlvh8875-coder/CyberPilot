@@ -47,6 +47,7 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 | CORE6 | 현재 선언 상태와 합성 전이 비교 | CORE5 재검증 후 한 step, 현재 post-gate saved 상태/counter exact 비교·차이 보존 | [현재 전이 검사](SYNTHETIC_TRANSITION_CORE6_KO.md); 이전 전이·prehistory·전체 output/source parity는 미검증 |
 | CORE7 | 연속 선언 합성 전이 검사 | 전체 입력·명시 model index 사전 검증, 모든 인접 진단과 차이 위치 보존 | [연속 검사](SYNTHETIC_SEQUENCE_CORE7_KO.md); declared entry 유지, computed rollout/anchor prehistory/source 인증은 아님 |
 | CORE8 | 고정 합성 실행·저장 CLI | 세 named fixture의 실제 실행·세 portable 파일·exit0/1/2·no overwrite | [실행 안내](CORE_SEQUENCE_CLI_CORE8_KO.md); arbitrary input reader/차량 정책/실차 권한 추가 없음 |
+| CORE9 | 저장된 합성 결과 읽기 전용 조회 | captured bytes checksum·저장 스키마/행/집계 관계·JSON/Markdown·신규 모델/reference0 | [조회 안내](CORE_SEQUENCE_INSPECT_CORE9_KO.md); 저장 M/D/R 모두 조회 exit0, 산술/원본 출처/현재 소스 인증 아님 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |

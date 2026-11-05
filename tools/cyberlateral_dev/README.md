@@ -433,6 +433,13 @@ exceed[-1,1] with mismatched synthetic history/scale (95/5=19.0); no hidden clam
 or inverse-quantization claim. Binary64 quotient and Float32 numeric projections
 remain separate; neither is actual Cap'n Proto or CAN wire bytes.
 
+The [CORE9 saved sequence inspector](docs/CORE_SEQUENCE_INSPECT_CORE9_KO.md) reads
+the three CORE8 files without importing/running the model or reference. It checks
+captured-byte checksums and stored record relationships, not arithmetic or origin.
+Inspection exit0 covers intact saved MATCH, DIFFERENT and REJECTED alike;
+`saved_status` is historical, never a fresh numerical verdict. Errors exit2.
+The stdout-only JSON/Markdown view neither alters inputs nor approves vehicle use.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
