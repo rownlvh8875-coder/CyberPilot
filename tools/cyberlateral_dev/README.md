@@ -516,6 +516,13 @@ cross-artifact equality. Each file is captured once; no model/reference/extracti
 Exit0 is inspection consistency even when the saved comparison differs; recorded
 steps and comparison0/1 remain data. No execution, arithmetic or origin proof.
 
+The separate [CORE19 saved input preflight](docs/CORE_SEQUENCE_INPUT_PREFLIGHT_CORE19_KO.md)
+revalidates captured CORE8 synthetic input through the existing CORE3–5 rules.
+It separates current input compatibility from recorded MATCH/DIFFERENT/REJECTED,
+checks exact float decoding and quantization constraints, and never invokes a
+model step or reference. Numeric validation is nonzero; compatible inputs do not
+authenticate saved arithmetic, authorize replay or produce V4/F61 constructor args.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported

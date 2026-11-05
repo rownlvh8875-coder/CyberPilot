@@ -29,7 +29,8 @@ exceptions propagate, never become compatible/rejected input verdicts.
    `INPUT_PREFLIGHT_FLOAT_ENCODING:i` with0 validated transitions. Preserve -0.0.
 4. CORE5 `prepare_model_input` validates all adjacent pairs in order. First failure
    yields `SEQUENCE_INPUT:i:<original MODEL code>` and successful-prefix count.
-   Then check explicit model-index adjacency, yielding `SEQUENCE_MODEL_ORDER:i`.
+   Explicit model-index adjacency is already enforced by CORE9's saved-schema
+   validation; preserve that earlier saved-record rejection rather than bypass it.
    No model step, reference, elapsed-time calculation or silent fallback.
 5. Return a JSON-compatible owned summary, never prepared model inputs/constructor
    args: schema_version1, contract_id `CORE19_SAVED_SYNTHETIC_INPUT_PREFLIGHT_V1`,
