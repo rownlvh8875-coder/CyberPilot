@@ -549,6 +549,11 @@ prints that exact Markdown with explicit --archive/--sha256 and current compatib
 rejected exits0/1. Integrity, presentation and operational errors use2; the JSON CLI
 and underlying APIs remain unchanged, with no cache creation or new model execution.
 
+The [CORE25 preflight publication workflow](docs/CORE_SEQUENCE_PREFLIGHT_WORKFLOW_CORE25_KO.md)
+saves unchanged CORE21 JSON, CORE23 Markdown and a checksum into a NEW external
+directory with the existing exclusive/readback publisher. Its receipt separates
+publication success from current compatibility; partial failures are preserved.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported

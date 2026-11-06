@@ -8,6 +8,10 @@
 호출해 같은 Markdown을 출력하고 현재 입력 판정에 따라 exit0/1, 운영 오류는2로 정한다.
 기존 API와 CORE22 JSON 명령은 변경하지 않는다.
 
+[CORE25 저장 workflow](CORE_SEQUENCE_PREFLIGHT_WORKFLOW_CORE25_KO.md)는 이 원문 JSON·
+Markdown을 checksum과 함께 NEW 외부 폴더에 저장·readback 검산한다. 기존 저장기를
+재사용하며 기존 API의 표시·검증 규칙이나 권한을 바꾸지 않는다.
+
 ## API
 
 `integration_tools.core_sequence_preflight_report`:

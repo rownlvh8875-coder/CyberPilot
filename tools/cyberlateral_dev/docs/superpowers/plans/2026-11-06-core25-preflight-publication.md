@@ -6,7 +6,7 @@
 
 **Architecture:** One corresponding CORE23 call, all serialization before mkdir, unchanged CORE16 output validation/publisher; deterministic receipt with current compatibility separate from publication success. Thin CORE24-style CLI, no numerical/publisher rewrites.
 
-**Tech Stack:** Configured cooperative Linux CPython3.12.13,stdlb/unittest/Ruff/Ty/Codespell,frozen wheel.
+**Tech Stack:** Configured cooperative Linux CPython3.12.13,stdlib/unittest/Ruff/Ty/Codespell,frozen wheel.
 
 **Spec:** [design](../specs/2026-11-06-core25-preflight-publication-design.md)
 
