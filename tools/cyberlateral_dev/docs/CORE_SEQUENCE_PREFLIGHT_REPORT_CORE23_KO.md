@@ -4,6 +4,10 @@
 함께 반환한다. 원래 JSON·검증 규칙·[CORE22 CLI](CORE_SEQUENCE_ARCHIVE_PREFLIGHT_CLI_CORE22_KO.md)는
 변경하지 않았다. 새 HTML/CLI/모델 실행·F61 계산 기능이 아니다.
 
+별도 [CORE24 CLI](CORE_SEQUENCE_PREFLIGHT_REPORT_CLI_CORE24_KO.md)는 이 API를 그대로
+호출해 같은 Markdown을 출력하고 현재 입력 판정에 따라 exit0/1, 운영 오류는2로 정한다.
+기존 API와 CORE22 JSON 명령은 변경하지 않는다.
+
 ## API
 
 `integration_tools.core_sequence_preflight_report`:

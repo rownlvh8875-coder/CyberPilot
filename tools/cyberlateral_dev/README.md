@@ -544,6 +544,11 @@ pairs the unchanged CORE21 receipt with bounded Markdown. All current/saved case
 verdicts, validation prefixes, historical work and denial gates remain distinct;
 no new CLI, extraction, replay or vehicle authority is introduced.
 
+The separate [CORE24 Korean preflight command](docs/CORE_SEQUENCE_PREFLIGHT_REPORT_CLI_CORE24_KO.md)
+prints that exact Markdown with explicit --archive/--sha256 and current compatible/
+rejected exits0/1. Integrity, presentation and operational errors use2; the JSON CLI
+and underlying APIs remain unchanged, with no cache creation or new model execution.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
