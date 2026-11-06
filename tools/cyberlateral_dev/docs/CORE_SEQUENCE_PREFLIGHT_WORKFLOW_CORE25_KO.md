@@ -1,5 +1,9 @@
 # CORE25 입력 검증 JSON·한국어 요약 저장 묶음
 
+저장 후 원래 ZIP·전체 SHA와 읽기 전용으로 대조하려면
+[CORE26 검사](CORE_SEQUENCE_PREFLIGHT_INSPECT_CORE26_KO.md)를 사용한다.
+검사 성공0은 묶음 정합성이고,현재 입력 호환0/거절1과 구분된다.
+
 입력 ZIP을 [CORE21](CORE_SEQUENCE_ARCHIVE_PREFLIGHT_CORE21_KO.md)로 검증하고
 [CORE23](CORE_SEQUENCE_PREFLIGHT_REPORT_CORE23_KO.md)의 원래 JSON·Markdown을
 체크섬과 함께 **새 외부 폴더**에 저장한다. 모델 실행이나 원본 추출 명령이 아니다.

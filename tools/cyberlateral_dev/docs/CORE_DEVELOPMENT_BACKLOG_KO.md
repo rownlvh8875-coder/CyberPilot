@@ -64,6 +64,7 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 | CORE23 | 현재 입력 사전 검증의 한국어 Markdown 요약 | CORE21 원문 JSON 불변·모든 현재/과거 case·prefix/기록/신규 작업 분리·안전한 셀·65536bytes 한도 | [요약 안내](CORE_SEQUENCE_PREFLIGHT_REPORT_CORE23_KO.md); 단일 검산·신규모델0·시각/산술/출처/실차 인증 아님 |
 | CORE24 | 한국어 입력 검증 요약의 단일 CLI | CORE23 Markdown 불변·현재 입력 exit0/1·무결성/표시/운영2·cold cache 생성0 | [명령 안내](CORE_SEQUENCE_PREFLIGHT_REPORT_CLI_CORE24_KO.md); 단일 검산·stream 실패 처리·기존 JSON CLI/계산/실차 권한 유지 |
 | CORE25 | 입력 검증 JSON·요약·checksum 저장 workflow | CORE21/23 원문3파일·CORE16 exclusive/readback 재사용·NEW 외부 폴더·현재 판정0/1·운영2 | [저장 안내](CORE_SEQUENCE_PREFLIGHT_WORKFLOW_CORE25_KO.md); 덮어쓰기/자동삭제0·부분 실패 보존·신규모델/실차 권한 없음 |
+| CORE26 | 저장 입력 검증 묶음과 원본 ZIP 대조 | 원본 SHA·단일 검산 후 재생성 JSON/MD/checksum exact·regular bounded capture·정합성0/오류2 | [검사 안내](CORE_SEQUENCE_PREFLIGHT_INSPECT_CORE26_KO.md); 현재 입력 판정과 구분·쓰기/추출/신규모델0·실차 권한 없음 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |

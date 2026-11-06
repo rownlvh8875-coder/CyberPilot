@@ -554,6 +554,11 @@ saves unchanged CORE21 JSON, CORE23 Markdown and a checksum into a NEW external
 directory with the existing exclusive/readback publisher. Its receipt separates
 publication success from current compatibility; partial failures are preserved.
 
+The [CORE26 saved preflight inspector](docs/CORE_SEQUENCE_PREFLIGHT_INSPECT_CORE26_KO.md)
+cross-checks those three files against an explicitly supplied original ZIP/SHA,
+regenerating the unchanged reports without writes or model execution. Inspection0
+means report consistency, not current-input compatibility or vehicle authority.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
