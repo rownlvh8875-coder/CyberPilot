@@ -539,6 +539,11 @@ prints that unchanged CORE21 receipt with explicit --archive/--sha256 and curren
 compatible/rejected exits0/1. Operational errors use2; no temp cache, extraction,
 new model execution, rate policy or vehicle authority is added.
 
+The [CORE23 Korean preflight summary](docs/CORE_SEQUENCE_PREFLIGHT_REPORT_CORE23_KO.md)
+pairs the unchanged CORE21 receipt with bounded Markdown. All current/saved case
+verdicts, validation prefixes, historical work and denial gates remain distinct;
+no new CLI, extraction, replay or vehicle authority is introduced.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported

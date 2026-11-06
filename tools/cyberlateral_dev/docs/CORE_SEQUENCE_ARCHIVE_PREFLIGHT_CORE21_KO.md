@@ -8,6 +8,10 @@
 --archive/--sha256으로 원래 JSON을 출력한다. 현재 입력 호환/거절은 exit0/1,
 사용법·파일·운영 오류는2이며 이 API의 규칙과 반환 JSON은 바꾸지 않는다.
 
+[CORE23 한국어 요약 API](CORE_SEQUENCE_PREFLIGHT_REPORT_CORE23_KO.md)는 같은 원문 JSON에
+bounded Markdown을 함께 반환한다. 현재 입력 의미와 과거 저장 판정을 분리해 보여 주며
+새 CLI나 모델/F61 실행 기능은 추가하지 않는다.
+
 ## API와 사용
 
 `integration_tools.core_sequence_archive_preflight`:
