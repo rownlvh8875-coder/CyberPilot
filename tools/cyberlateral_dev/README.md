@@ -559,6 +559,12 @@ cross-checks those three files against an explicitly supplied original ZIP/SHA,
 regenerating the unchanged reports without writes or model execution. Inspection0
 means report consistency, not current-input compatibility or vehicle authority.
 
+The separate [CORE27 computed-state rollout API](docs/SYNTHETIC_SEQUENCE_ROLLOUT_CORE27_KO.md)
+preflights all counterfactual inputs, seeds from the first declared entry, then feeds
+computed next states without reseeding or repairing declarations. It executes one
+synthetic model step per transition and separately records entry/output differences;
+CORE7 diagnostics and all actual-vehicle/calculator gates remain unchanged.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported

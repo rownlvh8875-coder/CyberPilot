@@ -1,5 +1,9 @@
 # CORE7 — 선언 상태를 유지하는 연속 합성 전이 검사
 
+계산 상태 자체를 이어가는 별도 합성 실험은
+[CORE27 rollout](SYNTHETIC_SEQUENCE_ROLLOUT_CORE27_KO.md)을 사용한다.
+CORE7의 선언 entry 기반 진단과 과거 결과는 그대로 유지한다.
+
 `integration_tools.synthetic_sequence_check.check_synthetic_sequence(frames,contexts)`는
 여러 호출의 인접 전이를 검사한다. [CORE5](SYNTHETIC_MODEL_INPUT_CORE5_KO.md)로
 전체 입력을 사전 검증하고 [CORE6](SYNTHETIC_TRANSITION_CORE6_KO.md)로 각 현재 saved
