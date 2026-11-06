@@ -60,6 +60,7 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 | CORE19 | 저장 합성 입력의 현재 의미 검증 | CORE9 단일 capture 후 exact float 복원·CORE3~5 입력 규칙 재검증·과거 판정과 분리·신규모델/reference0 | [입력 사전 검증](CORE_SEQUENCE_INPUT_PREFLIGHT_CORE19_KO.md); numeric validation 비영·산술 재실행/실제 source bridge/F61 연결 아님 |
 | CORE20 | 저장 입력 사전 검증의 단일 CLI | CORE19 JSON 불변·현재 판정 exit0/1·운영 오류2·cold parser부터 bytecode 억제·cache 생성0 | [명령 안내](CORE_SEQUENCE_INPUT_PREFLIGHT_CLI_CORE20_KO.md); source/path 설정 복원·모델/F61 실행·정책값/실차 권한 추가 없음 |
 | CORE21 | portable ZIP의 세 case 입력 의미 검증 | 전체 CORE13 검산 후 소유 records로 CORE19 재사용·단일 archive capture·모든 case 처리·추출/신규모델0 | [ZIP 사전 검증](CORE_SEQUENCE_ARCHIVE_PREFLIGHT_CORE21_KO.md); 기존 폴더/CLI JSON 유지·numeric validation 비영·산술/출처/실차 인증 아님 |
+| CORE22 | portable 입력 사전 검증의 단일 CLI | 전체 SHA/단일 ZIP capture·CORE21 JSON 불변·현재 판정 exit0/1·운영2·cache 생성0 | [명령 안내](CORE_SEQUENCE_ARCHIVE_PREFLIGHT_CLI_CORE22_KO.md); cold bytecode 억제·실패 stream 처리·모델/F61/실차 권한 추가 없음 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |

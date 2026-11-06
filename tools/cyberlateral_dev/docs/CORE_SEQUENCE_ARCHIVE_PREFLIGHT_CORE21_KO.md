@@ -4,6 +4,10 @@
 추출하지 않고 검산한 뒤, 그 안의 세 case 입력을 [CORE19](CORE_SEQUENCE_INPUT_PREFLIGHT_CORE19_KO.md)
 규칙으로 재검증한다. 새 API이며 새 CLI/모델/차량 reader가 아니다.
 
+이 API를 그대로 호출하는 별도 [CORE22 CLI](CORE_SEQUENCE_ARCHIVE_PREFLIGHT_CLI_CORE22_KO.md)는
+--archive/--sha256으로 원래 JSON을 출력한다. 현재 입력 호환/거절은 exit0/1,
+사용법·파일·운영 오류는2이며 이 API의 규칙과 반환 JSON은 바꾸지 않는다.
+
 ## API와 사용
 
 `integration_tools.core_sequence_archive_preflight`:

@@ -534,6 +534,11 @@ CORE19 records for all three semantic verdicts without extraction or replay.
 Historical statuses, archive integrity and current input compatibility stay separate;
 the existing folder API and CLI keep their receipts and behavior.
 
+The [CORE22 archive preflight command](docs/CORE_SEQUENCE_ARCHIVE_PREFLIGHT_CLI_CORE22_KO.md)
+prints that unchanged CORE21 receipt with explicit --archive/--sha256 and current
+compatible/rejected exits0/1. Operational errors use2; no temp cache, extraction,
+new model execution, rate policy or vehicle authority is added.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
