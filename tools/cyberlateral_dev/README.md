@@ -570,6 +570,11 @@ The [CORE28 closed rollout command](docs/CORE_ROLLOUT_RUN_CORE28_KO.md) requires
 input/results/checksums through the existing checked publisher; MATCH/DIFFERENT/
 preflight-REJECTED exits0/1/2 remain distinct from publication/operational failures.
 
+The [CORE29 pinned rollout inspector](docs/CORE_ROLLOUT_INSPECT_CORE29_KO.md) compares
+the three saved files to fixed historical CORE28 size/SHA pins without JSON parsing,
+numeric revalidation or model execution. Inspection exit0 is separate from the pinned
+historical MATCH/DIFFERENT/REJECTED result; it is not input/source/vehicle authority.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
