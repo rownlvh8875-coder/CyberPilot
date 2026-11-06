@@ -1,5 +1,9 @@
 # CORE27 — 계산 상태를 이어가는 순수 합성 rollout
 
+고정 합성 예제를 명령으로 실행·저장하려면
+[CORE28 명령](CORE_ROLLOUT_RUN_CORE28_KO.md)을 사용한다.
+CORE27 API와 계산식은 그대로 유지하며 CLI는 별도 --run을 요구한다.
+
 `integration_tools.synthetic_sequence_rollout.rollout_synthetic_sequence(frames,contexts)`는
 첫 선언 entry에서 시작하고,그 후에는 직전 모델의 `output.next_state` 객체를 그대로
 다음 호출에 전달한다. 기존 [CORE7](SYNTHETIC_SEQUENCE_CORE7_KO.md)은 바꾸지 않는다.

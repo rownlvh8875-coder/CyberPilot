@@ -565,6 +565,11 @@ computed next states without reseeding or repairing declarations. It executes on
 synthetic model step per transition and separately records entry/output differences;
 CORE7 diagnostics and all actual-vehicle/calculator gates remain unchanged.
 
+The [CORE28 closed rollout command](docs/CORE_ROLLOUT_RUN_CORE28_KO.md) requires explicit
+--run with one fixed case and a NEW external output folder. It preserves canonical
+input/results/checksums through the existing checked publisher; MATCH/DIFFERENT/
+preflight-REJECTED exits0/1/2 remain distinct from publication/operational failures.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
