@@ -1,5 +1,8 @@
 # CORE31 — 합성 상태 전이 경계의 참조 대조
 
+CORE30과 이 세 case를 한 번에 실행하려면 [CORE32 고정 회귀 명령](CORE_REFERENCE_SUITE_CORE32_KO.md)을
+사용한다. 이 API·참조·계산식은 그대로이며 전체 suite의 명시 실행은 별도19model steps다.
+
 [CORE30](CORE_ROLLOUT_REFERENCE_CORE30_KO.md)을 보존하고 별도 세 예제를 추가한다.
 기존 모델·CORE27 계산식·CORE28/29/30·CLI·wheel은 바꾸지 않는다. 새 Python API이며
 임의 파일 reader나 새 CLI·실차 stream·F61 연결이 아니다.

@@ -585,6 +585,12 @@ inactive/resume, fault-counter reset and signed-zero/half-tie chains against new
 hand literals. It executes3/4/6 synthetic model steps and preserves CORE30 and every
 actual-input, rate-policy and vehicle gate; it is not a general numerical oracle.
 
+Run all six existing CORE30/31 audits with the [CORE32 reference suite command](docs/CORE_REFERENCE_SUITE_CORE32_KO.md):
+`tools/cyberlateral_dev/.venv/bin/python -I -B tools/cyberlateral_dev/tools/core_reference_suite.py --run`
+from the repository root. Normal execution reports19 synthetic model steps and six audit matches,
+separate from observed4MATCH/1DIFFERENT/1REJECTED; mismatch1 and operational2 remain distinct.
+This does not replace the full DEV gate or grant source/vehicle authority.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
