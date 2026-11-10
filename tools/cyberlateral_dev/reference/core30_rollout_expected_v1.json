@@ -1,0 +1,21 @@
+{
+  "contract_id": "CORE30_HAND_DERIVED_CLOSED_ROLLOUT_V1",
+  "scope": "THREE_FIXED_COUNTERFACTUAL_FIXTURES_NOT_GENERIC_NUMERICAL_OR_VEHICLE_ORACLE",
+  "input_identities": {
+    "sign-cycle": {"byte_size": 4732, "sha256": "5d25bdc18d3fb8d29fca5905ce111e5727572f8801dc0071280cd5adf1371309"},
+    "declared-difference": {"byte_size": 4741, "sha256": "4165a779107894c3ff8a772e630dabee13b0173a59f7c53a9d74119521addf37"},
+    "late-invalid": {"byte_size": 4734, "sha256": "13b6f346bf8b8df7d9a8390f3efc2782b234ffc1182034363696d08fe5df37f6"}
+  },
+  "scale": 16,
+  "driver_bounds": [-16, 16],
+  "steps": [
+    {"request_hex": "0x1.0000000000000p-1", "product_hex": "0x1.0000000000000p+3", "integer_request": 8, "entry": [5, -4, -2, 4], "next": [6, 8, 2, 5], "rate_bounds": [-4, 2], "command": 2, "normalized_hex": "0x1.0000000000000p-3", "normalized_bits": "3e000000", "command_hex": "0x1.0000000000000p+1", "command_bits": "40000000"},
+    {"request_hex": "-0x1.0000000000000p-1", "product_hex": "-0x1.0000000000000p+3", "integer_request": -8, "entry": [6, 8, 2, 5], "next": [7, -8, -2, 6], "rate_bounds": [-2, 4], "command": -2, "normalized_hex": "-0x1.0000000000000p-3", "normalized_bits": "be000000", "command_hex": "-0x1.0000000000000p+1", "command_bits": "c0000000"},
+    {"request_hex": "0x1.0000000000000p-2", "product_hex": "0x1.0000000000000p+2", "integer_request": 4, "entry": [7, -8, -2, 6], "next": [8, 4, 2, 7], "rate_bounds": [-4, 2], "command": 2, "normalized_hex": "0x1.0000000000000p-3", "normalized_bits": "3e000000", "command_hex": "0x1.0000000000000p+1", "command_bits": "40000000"}
+  ],
+  "cases": {
+    "sign-cycle": {"status": "MATCH", "rejection_code": null, "declared_applied": [-2, 2, -2], "saved_applied": [2, -2, 2], "entry_indices": [], "output_indices": [], "difference_indices": []},
+    "declared-difference": {"status": "DIFFERENT", "rejection_code": null, "declared_applied": [-2, 10, 5], "saved_applied": [10, 5, 4], "entry_indices": [1, 2], "output_indices": [0, 1, 2], "difference_indices": [0, 1, 2]},
+    "late-invalid": {"status": "REJECTED", "rejection_code": "ROLLOUT_INPUT:2:MODEL_DRIVER"}
+  }
+}
