@@ -72,6 +72,7 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 | CORE31 | 비활성화/fault/반올림의 합성 연결 경계 대조 | 새 closed3case·모델3/4/6·수동 reference·post-gate feed/89→90→0/half-tie·signed zero 구분 | [경계 대조](CORE_BOUNDARY_ROLLOUT_CORE31_KO.md); CORE30/계산식 불변·범용 oracle/실차 인증 아님 |
 | CORE32 | CORE30/31 여섯 audit의 고정 회귀 명령 | --run 명시·정상19model·원문receipt 보존·관측/회귀 판정과 작업량 분리·차이1/운영2 | [suite 명령](CORE_REFERENCE_SUITE_CORE32_KO.md); 전체 DEV gate/계산식/참조/실차 권한 변경 없음 |
 | CORE33 | 고정 suite를 전체 DEV gate에 연결 | 별도 CLI2회·이전 봉인 stdout identity·네 artifact/Manifest·실패 시 성공 미게시 | [개발 gate](CORE_REFERENCE_GATE_CORE33_KO.md); reported38과 전체 작업량 분리·기준 자동갱신/실차 권한 없음 |
+| CORE34 | public API의 driver/rate 경계 회귀 보강 | 수동28사례/4method·양 부호 threshold/type·비대칭 seed·순차 clip/hold·표적 변형 탐지 | [경계 테스트](DRIVER_RATE_BOUNDARIES_CORE34_KO.md); runtime/계산식/차량 정책 변경 없음·범용 oracle 아님 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |

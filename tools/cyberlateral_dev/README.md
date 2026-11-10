@@ -281,6 +281,11 @@ the prior sealed byte identity; four logs/JSON files enter the final Manifest.
 The reported38 synthetic model steps are additional, not a whole-gate work count
 or installed-wheel/vehicle qualification. Failure preserves artifacts without final success.
 
+[CORE34 driver/rate boundary tests](docs/DRIVER_RATE_BOUNDARIES_CORE34_KO.md)
+add28 hand-derived public API cases in4 test methods. They protect endpoint kinds,
+asymmetric history and sequential clips without changing model formulas or the wheel.
+Zero invocation steps are not an F61 rate-budget policy or vehicle safety claim.
+
 The R9 gate also runs a DEV caller harness twice against the installed wheel:
 seven fixed scenarios/112 model invocations,105 internal two-chunk splits,
 single-step chaining, round-robin independent caller states and11 exact rejection
