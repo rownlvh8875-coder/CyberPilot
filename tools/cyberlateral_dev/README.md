@@ -290,6 +290,10 @@ Zero invocation steps are not an F61 rate-budget policy or vehicle safety claim.
 returned state through two canonical nine-call driver/hold/inactive/recovery chains.
 Their18 synthetic steps add finite state-continuity coverage,not native replay or runtime changes.
 
+[CORE36 partition/resume tests](docs/PARTITION_RESUME_CORE36_KO.md) exercise all
+512 contiguous partitions of those two known chains plus interleaved singleton
+batches. Same-process resume only; no new API,persistent checkpoint or vehicle authority.
+
 The R9 gate also runs a DEV caller harness twice against the installed wheel:
 seven fixed scenarios/112 model invocations,105 internal two-chunk splits,
 single-step chaining, round-robin independent caller states and11 exact rejection
