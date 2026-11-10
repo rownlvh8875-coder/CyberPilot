@@ -294,6 +294,10 @@ Their18 synthetic steps add finite state-continuity coverage,not native replay o
 512 contiguous partitions of those two known chains plus interleaved singleton
 batches. Same-process resume only; no new API,persistent checkpoint or vehicle authority.
 
+[CORE37 fault lifecycle tests](docs/FAULT_LIFECYCLE_CORE37_KO.md) cover two fixed
+canonical100-call chains with counter wrap,inactive/angle resets,driver release
+and36 declared batch schedules. Existing model behavior only;not vehicle fault handling.
+
 The R9 gate also runs a DEV caller harness twice against the installed wheel:
 seven fixed scenarios/112 model invocations,105 internal two-chunk splits,
 single-step chaining, round-robin independent caller states and11 exact rejection
