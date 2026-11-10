@@ -14,6 +14,10 @@ tools/cyberlateral_dev/.venv/bin/python -B tools/cyberlateral_dev/dev.py verify 
 ```
 
 출력 경로는 반드시 새 경로여야 한다. 기존 경로를 삭제하거나 덮어쓰지 않는다.
+자식 프로세스의 cwd는 호출자가 --output으로 지정한 경로를 resolve한 출력 폴더다.
+컴포넌트 내부·외부 모두 가능하며 외부 cwd를 강제하지 않는다. 위 예시와 기록된
+CORE33 acceptance는 외부 폴더를 사용했다. 이는 개발 tree를 사용하는 명령이며
+cwd 위치만으로 installed-wheel 격리나 Python sandbox를 보장하지 않는다.
 CORE33이 추가하는 파일은 core_reference_one.json/core_reference_two.json과 같은 이름의
 .log 두 개다. JSON은 각 CLI의 stdout 원문,log는 기존 runner의 stdout+stderr다.
 정상 CLI에는 stderr가 없으므로 각각 같은 bytes다. 최종 SUMMARY.json의

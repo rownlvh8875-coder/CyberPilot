@@ -15,7 +15,9 @@ fresh whole-branch review; no new package/network work or approval menu.
 ## Exact boundary
 
 Use the development interpreter to run tools/core_reference_suite.py --run twice,
-with -I -B and a cwd outside the component. This is development-tree CLI regression,
+with -I -B. The child cwd is the caller-selected resolved output directory, which
+may be inside or outside the component; an external cwd is not enforced. Recorded
+CORE33 acceptance used external directories. This is development-tree CLI regression,
 not installed-wheel isolation or a Python sandbox. Existing _run retains combined
 stdout/stderr logs; separately preserve returned stdout as core_reference_one.json
 and core_reference_two.json. Corresponding logs have .log names.
