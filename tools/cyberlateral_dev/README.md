@@ -575,6 +575,11 @@ the three saved files to fixed historical CORE28 size/SHA pins without JSON pars
 numeric revalidation or model execution. Inspection exit0 is separate from the pinned
 historical MATCH/DIFFERENT/REJECTED result; it is not input/source/vehicle authority.
 
+The [CORE30 closed full-output reference audit](docs/CORE_ROLLOUT_REFERENCE_CORE30_KO.md)
+explicitly executes three fixed cases and compares full outputs and chain roles against
+preregistered hand-derived literals. Audit verdicts are separate from rollout M/D/R;
+synthetic work is nonzero, with no generic oracle, source or vehicle authority.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported

@@ -1,5 +1,9 @@
 # CORE27 — 계산 상태를 이어가는 순수 합성 rollout
 
+고정 세 예제의 전체 model output을 독립 literal 기대값과 대조하려면
+[CORE30 audit](CORE_ROLLOUT_REFERENCE_CORE30_KO.md)를 사용한다. 별도 명시 실행이며,
+아래 CORE27 MATCH의 제한된 의미나 실제 차량 Gate를 바꾸지 않는다.
+
 고정 합성 예제를 명령으로 실행·저장하려면
 [CORE28 명령](CORE_ROLLOUT_RUN_CORE28_KO.md)을 사용한다.
 CORE27 API와 계산식은 그대로 유지하며 CLI는 별도 --run을 요구한다.
