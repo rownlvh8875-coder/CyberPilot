@@ -286,6 +286,10 @@ add28 hand-derived public API cases in4 test methods. They protect endpoint kind
 asymmetric history and sequential clips without changing model formulas or the wheel.
 Zero invocation steps are not an F61 rate-budget policy or vehicle safety claim.
 
+[CORE35 state-chain tests](docs/DRIVER_STATE_CHAIN_CORE35_KO.md) carry the actual
+returned state through two canonical nine-call driver/hold/inactive/recovery chains.
+Their18 synthetic steps add finite state-continuity coverage,not native replay or runtime changes.
+
 The R9 gate also runs a DEV caller harness twice against the installed wheel:
 seven fixed scenarios/112 model invocations,105 internal two-chunk splits,
 single-step chaining, round-robin independent caller states and11 exact rejection
