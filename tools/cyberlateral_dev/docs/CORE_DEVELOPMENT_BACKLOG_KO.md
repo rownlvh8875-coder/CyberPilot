@@ -69,6 +69,7 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 | CORE28 | 고정 합성 rollout 명시 실행·저장 | --run 필수·고정3case·정확한 INPUT/RESULTS/checksum·CORE16 exclusive/readback·결과0/1/2 | [실행 안내](CORE_ROLLOUT_RUN_CORE28_KO.md); 실제 입력/계산식 변경 없음·부분 실패/비영 작업 구분·실차 권한 없음 |
 | CORE29 | 고정 CORE28 저장 bytes 검사 | size/SHA 핀·bounded capture·JSON 해석/모델0·과거 판정과 검사 exit 분리 | [검사 안내](CORE_ROLLOUT_INSPECT_CORE29_KO.md); 현재 입력/산술/출처 인증 없음·실차 권한 없음 |
 | CORE30 | 고정 rollout 전체 출력의 독립 literal 대조 | 수동 preregistered vectors·모델3/3/0·projection/trace/상태/차이위치 exact-type 비교 | [참조 대조](CORE_ROLLOUT_REFERENCE_CORE30_KO.md); 기존 CORE27 MATCH와 별도·범용 oracle/실차 인증 아님 |
+| CORE31 | 비활성화/fault/반올림의 합성 연결 경계 대조 | 새 closed3case·모델3/4/6·수동 reference·post-gate feed/89→90→0/half-tie·signed zero 구분 | [경계 대조](CORE_BOUNDARY_ROLLOUT_CORE31_KO.md); CORE30/계산식 불변·범용 oracle/실차 인증 아님 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |

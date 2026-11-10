@@ -1,5 +1,8 @@
 # CORE30 — 고정 rollout의 독립 참조 대조
 
+새 비활성화/복귀·fault reset·반올림/signed-zero 예제는 별도
+[CORE31 경계 대조](CORE_BOUNDARY_ROLLOUT_CORE31_KO.md)에 있다. 이 CORE30의 세 case/pins/API는 보존한다.
+
 [CORE27](SYNTHETIC_SEQUENCE_ROLLOUT_CORE27_KO.md)의 MATCH는 entry3필드와 saved2필드의
 일치다. [CORE29](CORE_ROLLOUT_INSPECT_CORE29_KO.md)는 과거 bytes 일치만 검사한다.
 CORE30은 별도로 모델을 명시 실행하고 고정 세 예제의 전체 model output과 상태 전달을

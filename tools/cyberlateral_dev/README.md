@@ -580,6 +580,11 @@ explicitly executes three fixed cases and compares full outputs and chain roles 
 preregistered hand-derived literals. Audit verdicts are separate from rollout M/D/R;
 synthetic work is nonzero, with no generic oracle, source or vehicle authority.
 
+The separate [CORE31 boundary audit](docs/CORE_BOUNDARY_ROLLOUT_CORE31_KO.md) adds
+inactive/resume, fault-counter reset and signed-zero/half-tie chains against new pinned
+hand literals. It executes3/4/6 synthetic model steps and preserves CORE30 and every
+actual-input, rate-policy and vehicle gate; it is not a general numerical oracle.
+
 ## Source/provenance boundary
 
 IMPORTED_ARTIFACT.json records the original R7 ZIP identity, each unchanged imported
