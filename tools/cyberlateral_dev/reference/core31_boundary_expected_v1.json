@@ -1,0 +1,32 @@
+{
+  "contract_id": "CORE31_HAND_DERIVED_BOUNDARY_V1",
+  "scope": "THREE_CLOSED_BOUNDARY_FIXTURES_NOT_GENERIC_OR_VEHICLE_ORACLE",
+  "scale": 16,
+  "driver_bounds": [-16, 16],
+  "input_identities": {
+    "inactive-resume": {"byte_size": 4771, "sha256": "257023afa2e295d42a559d71c1a129c02af349c0db2f9051fc97014e719b4976"},
+    "fault-reset": {"byte_size": 5943, "sha256": "493d968fb71ae76f7b6ac6ffc7429bcf5ffc3542024a9838ab6b10645238acd4"},
+    "rounding-ties": {"byte_size": 8249, "sha256": "5de12d50782fc64d06b5673d2175353c377a654e7507d9a574917ca2eead102a"}
+  },
+  "cases": {
+    "inactive-resume": {"steps": [
+      {"request_hex": "0x1.0000000000000p-1", "product_hex": "0x1.0000000000000p+3", "integer_request": 8, "entry": [5,-4,-2,4], "next": [6,8,0,0], "rate_bounds": [-4,2], "limited": 2, "fault": true, "steer": false, "final": 0, "normalized_hex": "0x0.0p+0", "normalized_bits": "00000000", "command_hex": "0x0.0p+0", "command_bits": "00000000"},
+      {"request_hex": "-0x1.0000000000000p-1", "product_hex": "-0x1.0000000000000p+3", "integer_request": -8, "entry": [6,8,0,0], "next": [7,-8,-2,1], "rate_bounds": [-2,2], "limited": -2, "fault": true, "steer": true, "final": -2, "normalized_hex": "-0x1.0000000000000p-3", "normalized_bits": "be000000", "command_hex": "-0x1.0000000000000p+1", "command_bits": "c0000000"},
+      {"request_hex": "0x1.0000000000000p-2", "product_hex": "0x1.0000000000000p+2", "integer_request": 4, "entry": [7,-8,-2,1], "next": [8,4,2,2], "rate_bounds": [-4,2], "limited": 2, "fault": true, "steer": true, "final": 2, "normalized_hex": "0x1.0000000000000p-3", "normalized_bits": "3e000000", "command_hex": "0x1.0000000000000p+1", "command_bits": "40000000"}
+    ]},
+    "fault-reset": {"steps": [
+      {"request_hex": "0x1.0000000000000p-1", "product_hex": "0x1.0000000000000p+3", "integer_request": 8, "entry": [5,-4,-2,88], "next": [6,8,2,89], "rate_bounds": [-4,2], "limited": 2, "fault": true, "steer": true, "final": 2, "normalized_hex": "0x1.0000000000000p-3", "normalized_bits": "3e000000", "command_hex": "0x1.0000000000000p+1", "command_bits": "40000000"},
+      {"request_hex": "-0x1.0000000000000p-1", "product_hex": "-0x1.0000000000000p+3", "integer_request": -8, "entry": [6,8,2,89], "next": [7,-8,-2,90], "rate_bounds": [-2,4], "limited": -2, "fault": true, "steer": false, "final": -2, "normalized_hex": "-0x1.0000000000000p-3", "normalized_bits": "be000000", "command_hex": "-0x1.0000000000000p+1", "command_bits": "c0000000"},
+      {"request_hex": "0x1.0000000000000p-2", "product_hex": "0x1.0000000000000p+2", "integer_request": 4, "entry": [7,-8,-2,90], "next": [8,4,2,0], "rate_bounds": [-4,2], "limited": 2, "fault": true, "steer": false, "final": 2, "normalized_hex": "0x1.0000000000000p-3", "normalized_bits": "3e000000", "command_hex": "0x1.0000000000000p+1", "command_bits": "40000000"},
+      {"request_hex": "-0x1.0000000000000p-2", "product_hex": "-0x1.0000000000000p+2", "integer_request": -4, "entry": [8,4,2,0], "next": [9,-4,-2,1], "rate_bounds": [-2,4], "limited": -2, "fault": true, "steer": true, "final": -2, "normalized_hex": "-0x1.0000000000000p-3", "normalized_bits": "be000000", "command_hex": "-0x1.0000000000000p+1", "command_bits": "c0000000"}
+    ]},
+    "rounding-ties": {"steps": [
+      {"request_hex": "0x1.0000000000000p-5", "product_hex": "0x1.0000000000000p-1", "integer_request": 0, "entry": [5,0,0,0], "next": [6,0,0,0], "rate_bounds": [-2,2], "limited": 0, "fault": false, "steer": true, "final": 0, "normalized_hex": "0x0.0p+0", "normalized_bits": "00000000", "command_hex": "0x0.0p+0", "command_bits": "00000000"},
+      {"request_hex": "0x1.8000000000000p-4", "product_hex": "0x1.8000000000000p+0", "integer_request": 2, "entry": [6,0,0,0], "next": [7,2,2,0], "rate_bounds": [-2,2], "limited": 2, "fault": false, "steer": true, "final": 2, "normalized_hex": "0x1.0000000000000p-3", "normalized_bits": "3e000000", "command_hex": "0x1.0000000000000p+1", "command_bits": "40000000"},
+      {"request_hex": "-0x1.0000000000000p-5", "product_hex": "-0x1.0000000000000p-1", "integer_request": 0, "entry": [7,2,2,0], "next": [8,0,0,0], "rate_bounds": [-2,4], "limited": 0, "fault": false, "steer": true, "final": 0, "normalized_hex": "0x0.0p+0", "normalized_bits": "00000000", "command_hex": "0x0.0p+0", "command_bits": "00000000"},
+      {"request_hex": "-0x1.8000000000000p-4", "product_hex": "-0x1.8000000000000p+0", "integer_request": -2, "entry": [8,0,0,0], "next": [9,-2,-2,0], "rate_bounds": [-2,2], "limited": -2, "fault": false, "steer": true, "final": -2, "normalized_hex": "-0x1.0000000000000p-3", "normalized_bits": "be000000", "command_hex": "-0x1.0000000000000p+1", "command_bits": "c0000000"},
+      {"request_hex": "0x0.0p+0", "product_hex": "0x0.0p+0", "integer_request": 0, "entry": [9,-2,-2,0], "next": [10,0,0,0], "rate_bounds": [-4,2], "limited": 0, "fault": false, "steer": true, "final": 0, "normalized_hex": "0x0.0p+0", "normalized_bits": "00000000", "command_hex": "0x0.0p+0", "command_bits": "00000000"},
+      {"request_hex": "-0x0.0p+0", "product_hex": "-0x0.0p+0", "integer_request": 0, "entry": [10,0,0,0], "next": [11,0,0,0], "rate_bounds": [-2,2], "limited": 0, "fault": false, "steer": true, "final": 0, "normalized_hex": "0x0.0p+0", "normalized_bits": "00000000", "command_hex": "0x0.0p+0", "command_bits": "00000000"}
+    ]}
+  }
+}
