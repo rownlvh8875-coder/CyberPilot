@@ -4,6 +4,9 @@
 수정하지 않고 한 번씩 실행해 결과를 묶는다. 새 계산식/참조값/차량 입력/정책은 없다.
 전체 DEV 테스트를 대체하지 않는 빠른 고정 예제 회귀 명령이다.
 
+[CORE33 개발 gate](CORE_REFERENCE_GATE_CORE33_KO.md)는 이 명령을 두 번 명시 실행하고
+봉인된 정상 stdout identity를 검사한다. 이 단독 명령의 API·출력은 변경하지 않는다.
+
 ## 실행
 
 기존 개발 환경을 준비한 뒤 repository root에서:

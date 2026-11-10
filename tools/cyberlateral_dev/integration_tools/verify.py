@@ -18,6 +18,7 @@ from .audit_bundle import bundle_pair_summary
 from .handoff_audit import audit_pair_summary
 from .handoff_validation import handoff_pair_summary
 from .lifecycle_validation import lifecycle_pair_summary
+from .reference_suite_gate import reference_suite_pair_summary
 
 WHEEL = 'cyberlateral_dev-0.3.0-py3-none-any.whl'
 PINS = {'numpy': '2.5.3', 'ruff': '0.16.7', 'ty': '0.0.80', 'codespell': '2.4.3', 'PyYAML': '6.0.3'}
@@ -333,6 +334,24 @@ def test_count(text: str) -> int:
     return int(match[1])
 
 
+def verify_reference_suite(root: Path, python: Path, output: Path, cwd: Path) -> dict:
+    """Two explicit development-tree CLI runs; keep failure artifacts, never retry."""
+    try:
+        for name in ('core_reference_one', 'core_reference_two'):
+            for suffix in ('.json', '.log'):
+                verify_new_output(output / (name + suffix))
+        receipts = []
+        for name in ('core_reference_one', 'core_reference_two'):
+            raw = _run([python, '-I', '-B', root / 'tools/core_reference_suite.py', '--run'], output / (name + '.log'), cwd)
+            with (output / (name + '.json')).open('xb') as stream:
+                stream.write(raw)
+            reference_suite_pair_summary(raw, raw)
+            receipts.append(raw)
+        return reference_suite_pair_summary(*receipts)
+    except (OSError, RuntimeError, ValueError) as error:
+        raise RuntimeError('REFERENCE_SUITE_GATE_FAILED_WORK_MAY_BE_NONZERO') from error
+
+
 def verify_project(root: Path, output: Path) -> dict:
     verify_new_output(output)
     imported, runtime = verify_imports(root), _runtime()
@@ -352,6 +371,7 @@ def verify_project(root: Path, output: Path) -> dict:
     for name in ['dev.py', 'build_backend.py']:
         compile((root / name).read_bytes(), name, 'exec')
         compiled.append(name)
+    core_reference = verify_reference_suite(root, python, output, output)
     wheels = build_wheels(root, output / 'wheels')
     with tempfile.TemporaryDirectory(prefix='cyberlateral-installed-') as scratch:
         temp = Path(scratch)
@@ -412,6 +432,7 @@ print(json.dumps({'status':'PASS','version':p.__version__,'runtime_dependencies'
         'wheel': wheels,
         'report_file_hashes': report_hashes,
         'numeric_file_hashes': numeric_hashes,
+        'synthetic_core_reference_suite': core_reference,
         'synthetic_harness': harness,
         'synthetic_dev_bridge': bridge,
         'synthetic_message_boundary': message_boundary,

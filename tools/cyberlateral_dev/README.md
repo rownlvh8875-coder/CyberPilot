@@ -275,6 +275,12 @@ compares two isolated report runs and two fixed numerical reference runs. Output
 contains logs, wheel, reports, checksums and SUMMARY.json. No environment/cache
 payload is included. Do not interpret descriptive counts or CI PASS as vehicle safety.
 
+The [CORE33 reference gate](docs/CORE_REFERENCE_GATE_CORE33_KO.md) explicitly runs
+the fixed CORE32 command twice before wheel work. Both complete receipts must match
+the prior sealed byte identity; four logs/JSON files enter the final Manifest.
+The reported38 synthetic model steps are additional, not a whole-gate work count
+or installed-wheel/vehicle qualification. Failure preserves artifacts without final success.
+
 The R9 gate also runs a DEV caller harness twice against the installed wheel:
 seven fixed scenarios/112 model invocations,105 internal two-chunk splits,
 single-step chaining, round-robin independent caller states and11 exact rejection
