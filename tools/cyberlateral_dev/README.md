@@ -298,6 +298,10 @@ batches. Same-process resume only; no new API,persistent checkpoint or vehicle a
 canonical100-call chains with counter wrap,inactive/angle resets,driver release
 and36 declared batch schedules. Existing model behavior only;not vehicle fault handling.
 
+[CORE38 remaining-work readiness](docs/REMAINING_WORK_READINESS_KO.md) closes
+fault-test diagnostic M1 and separates offline branch delivery from unresolved
+actual binding/rate/static authority and broad upstream PR-triggered CI.
+
 The R9 gate also runs a DEV caller harness twice against the installed wheel:
 seven fixed scenarios/112 model invocations,105 internal two-chunk splits,
 single-step chaining, round-robin independent caller states and11 exact rejection

@@ -76,6 +76,7 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 | CORE35 | canonical 합성 driver/state 연속 인계 | 실제 next_state feed·양/음9호출·hold/driver/inactive/recovery/reverse·이력 오류 변형 탐지 | [상태 chain](DRIVER_STATE_CHAIN_CORE35_KO.md); 2method/18steps·runtime/실제 source/time 권한 변경 없음 |
 | CORE36 | 기존 batch의 유한 분할·재개 경계 회귀 | CORE35 두 chain의 512 partition·교차 singleton·literal/state/전체 parity·6종 변형 탐지 | [분할·재개 테스트](PARTITION_RESUME_CORE36_KO.md); 같은 프로세스 한정·runtime/API/persistent checkpoint 변경 없음 |
 | CORE37 | canonical fault counter와 혼합 상태의 재개 경계 | 양/음100호출·89/90/wrap·inactive/angle reset·driver/hold/reverse·36선언 schedule | [fault lifecycle](FAULT_LIFECYCLE_CORE37_KO.md); 기존 모델 회귀·임의 fault/실차/persistence 권한 아님 |
+| CORE38 | 진단 보완·오프라인 전달·실제 사용 진입조건 정리 | CORE37 M1 RED/GREEN·기존 정상값 불변·actual prerequisites/CI trigger 경계 분리 | [남은 작업 readiness](REMAINING_WORK_READINESS_KO.md); actual 값/Gate를 채우지 않음·PR/main 통합은 CI 범위 정리 필요 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |

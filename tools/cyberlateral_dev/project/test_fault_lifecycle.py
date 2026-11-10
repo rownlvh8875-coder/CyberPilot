@@ -46,9 +46,9 @@ def fixed_cases():
 
 
 class FaultLifecycleTests(unittest.TestCase):
-    def integer(self, actual, expected):
-        self.assertIs(type(actual), int)
-        self.assertEqual(actual, expected)
+    def integer(self, actual, expected, context=None):
+        self.assertIs(type(actual), int, msg=context)
+        self.assertEqual(actual, expected, msg=context)
 
     def samples(self, p, case):
         self.assertTrue(all(len(case[k]) == 100 for k in ('inputs', 'limited', 'final', 'commands')))
@@ -58,24 +58,26 @@ class FaultLifecycleTests(unittest.TestCase):
                      for i, (request, driver, angle, active, up, down) in enumerate(case['inputs']))
 
     def prefix_state(self, state, case, end):
-        self.integer(state.index, end)
-        self.integer(state.previous_requested, case['commands'][end - 1])
-        self.integer(state.previous_applied, case['final'][end - 1])
-        self.integer(state.angle_counter, COUNTERS[end - 1])
+        location = f'sample_index={end - 1} prefix_end={end}'
+        self.integer(state.index, end, f'{location} field=state.index')
+        self.integer(state.previous_requested, case['commands'][end - 1], f'{location} field=state.previous_requested')
+        self.integer(state.previous_applied, case['final'][end - 1], f'{location} field=state.previous_applied')
+        self.integer(state.angle_counter, COUNTERS[end - 1], f'{location} field=state.angle_counter')
 
     def selected_expectations(self, outputs, case):
-        self.assertEqual(len(outputs), 100)
+        self.assertEqual(len(outputs), 100, msg='field=outputs.length')
         previous = (0,) + case['final'][:-1]
         for i, output in enumerate(outputs):
             trace = output.trace.downstream
-            self.integer(output.trace.quantization.integer_command, case['commands'][i])
-            self.integer(trace.limiter_previous, previous[i])
-            self.integer(trace.limited_command, case['limited'][i])
-            self.integer(trace.final_command, case['final'][i])
-            self.integer(output.projection.integer_command, case['final'][i])
-            self.assertIs(trace.fault_condition, CONDITIONS[i])
-            self.assertIs(trace.steer_request, FLAGS[i])
-            self.assertIs(output.steer_request, FLAGS[i])
+            location = f'sample_index={i}'
+            self.integer(output.trace.quantization.integer_command, case['commands'][i], f'{location} field=trace.quantization.integer_command')
+            self.integer(trace.limiter_previous, previous[i], f'{location} field=trace.limiter_previous')
+            self.integer(trace.limited_command, case['limited'][i], f'{location} field=trace.limited_command')
+            self.integer(trace.final_command, case['final'][i], f'{location} field=trace.final_command')
+            self.integer(output.projection.integer_command, case['final'][i], f'{location} field=projection.integer_command')
+            self.assertIs(trace.fault_condition, CONDITIONS[i], msg=f'{location} field=trace.fault_condition')
+            self.assertIs(trace.steer_request, FLAGS[i], msg=f'{location} field=trace.steer_request')
+            self.assertIs(output.steer_request, FLAGS[i], msg=f'{location} field=steer_request')
             self.prefix_state(output.next_state, case, i + 1)
 
     def test_critical_batch_splits_preserve_canonical_fault_counter_lifecycle(self):
