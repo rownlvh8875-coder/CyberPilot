@@ -27,7 +27,7 @@ class RecordingInputCodecTests(unittest.TestCase):
         self.fixture = case
         self.model, self.recording, self.contexts = case.model, case.recording, case.contexts
         self.m: Any = importlib.import_module('integration_tools.offline_recording_input_codec')
-        self.payload = {'schema_version': 1, 'contract_id': 'CORE55_COUNTERFACTUAL_RECORDING_INPUT_V1',
+        self.payload: dict[str, Any] = {'schema_version': 1, 'contract_id': 'CORE55_COUNTERFACTUAL_RECORDING_INPUT_V1',
             'scope': 'COUNTERFACTUAL_RECORDING_INPUT_ONLY', 'recording_json': case.raw.decode(),
             'contexts': [{'scope': 'COUNTERFACTUAL_MODEL_INPUT_ONLY', 'model_index': index,
                 'previous_integer_request': previous, 'current_driver_hex': '0x1.8000000000000p+0',

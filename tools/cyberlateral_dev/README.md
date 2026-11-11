@@ -685,3 +685,9 @@ strictly decodes the existing CORE41 synthetic recording bytes before invoking
 CORE49 with separately supplied explicit contexts. It adds no file reader, context
 inference, math, result schema or vehicle authority. The guide includes a runnable
 two-frame synthetic example; malformed bytes never execute a model prefix.
+
+The [CORE55 recording input codec](docs/RECORDING_INPUT_CODEC_CORE55_KO.md) preserves
+the exact CORE41 recording text and explicitly supplied CORE5 contexts together
+as bounded canonical bytes. Restoring them runs full CORE46 compatibility checks
+and returns its unchanged false-authority receipt,not a model result or execution
+capability. Codec calls perform no model/reference steps and infer no missing data.
