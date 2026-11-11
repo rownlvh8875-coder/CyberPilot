@@ -679,3 +679,9 @@ then runs the unchanged CORE7 declared-transition checker. It returns the existi
 CORE7 result and executes N-1 synthetic model steps; it never repairs declared state,
 infers context, computes dt/r, or promotes recording/receipt/vehicle permissions.
 Invalid late inputs execute no model prefix; later model failures may follow nonzero work.
+
+The [CORE52 canonical bytes diagnostics API](docs/SERIALIZED_RECORDING_DIAGNOSTICS_CORE52_KO.md)
+strictly decodes the existing CORE41 synthetic recording bytes before invoking
+CORE49 with separately supplied explicit contexts. It adds no file reader, context
+inference, math, result schema or vehicle authority. The guide includes a runnable
+two-frame synthetic example; malformed bytes never execute a model prefix.

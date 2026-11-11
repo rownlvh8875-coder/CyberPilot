@@ -154,7 +154,7 @@ class SerializedRecordingDiagnosticsTests(unittest.TestCase):
         self.reject(self.raw, self.contexts, self.preflight.RecordingPreflightError, 'RECORDING_PREFLIGHT_INPUT:2:MODEL_DRIVER')
 
     def test_signed_zero_subnormals_and_int64_endpoints_remain_exact(self):
-        for clock in ('DECLARED_LIVE_MONOTONIC_NS', 'DECLARED_REPLAY_APPLY_NS'):
+        for clock in ('DECLARED_LIVE_MONOTONIC_NS', 'DECLARED_REPLAY_RECORDED_CAN_NS'):
             for words in (('80000000', '00000001'), ('80000001', '00000000')):
                 base = self.recording.records[0]
                 request_context = replace(base.request.context, clock_domain=clock)
@@ -165,7 +165,7 @@ class SerializedRecordingDiagnosticsTests(unittest.TestCase):
                 contexts = (replace(self.contexts[0], model_index=4095, previous_integer_request=0,
                                     current_driver=-0.0, current_angle_deg=-0.0),)
                 raw = self.codec.encode_recording(self.recorder.FinishedSyntheticRecordingV1(frames))
-                result, counts = self.counted(lambda: self.m.check_serialized_synthetic_recording(raw, contexts))
+                result, counts = self.counted(lambda raw=raw, contexts=contexts: self.m.check_serialized_synthetic_recording(raw, contexts))
                 self.assertEqual(result.status, 'MATCH')
                 self.assertEqual(tuple(f.request.requested_binary32.hex() for f in result.frames), words)
                 self.assertEqual(tuple(f.request.sample_time_ns for f in result.frames), (-(1 << 63), (1 << 63) - 1))
