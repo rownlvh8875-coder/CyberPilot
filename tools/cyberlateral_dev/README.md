@@ -657,3 +657,11 @@ Candidate/Runtime=NO_GO; actual activation/F70UH/F70V/F71=NOT_ALLOWED;
 SOURCE_SCHEMA_UNQUALIFIED=6000; D2=PERFORMANCE_NOT_EVALUATED;
 F19=LEGACY_UNRESOLVED; NATIVE_EXACT_REPLAY=NOT_PROVEN.
 No vehicle deployment or policy approval follows from repository integration.
+
+The [CORE41 offline call recorder](docs/OFFLINE_CALL_RECORDER_CORE41_KO.md) adds
+bounded synthetic begin/complete/abort transactions over the unchanged CORE3/4
+snapshots. Failed or incomplete histories cannot export a successful prefix.
+Its strict canonical codec preserves raw request words and exact integer time
+tokens; the fixed isolated demo takes no external data or runtime arguments.
+This is not actual source capture, a Controller hook, a model/F61 input bridge,
+rate-policy qualification or vehicle activation. All production gates stay closed.

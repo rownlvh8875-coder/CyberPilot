@@ -3,6 +3,7 @@ import importlib
 import sys
 import unittest
 from dataclasses import FrozenInstanceError, replace
+from functools import partial
 from typing import Any
 
 from v1_helpers import ROOT
@@ -73,7 +74,7 @@ class RecorderTests(unittest.TestCase):
             (replace(self.first.request, context=replace(self.first.request.context, scope='ACTUAL_PRODUCTION')), 'REQUEST_SCOPE'),
             (replace(self.first.request, sample_time_ns=True), 'REQUEST_TIME')):
             recorder = self.m.SyntheticCallRecorderV1(2)
-            self.reject(lambda: recorder.begin(request), 'RECORDER_REQUEST:' + suffix)
+            self.reject(partial(recorder.begin, request), 'RECORDER_REQUEST:' + suffix)
             self.reject(recorder.finish, 'RECORDER_FAILED')
 
     def test_external_objects_and_subclasses_reject_without_attribute_reads(self):
@@ -85,7 +86,7 @@ class RecorderTests(unittest.TestCase):
         child = Child(self.first.request.context, 7, -9, b'\x00' * 4, True, False, False)
         for wrong in (External(), child, None):
             recorder = self.m.SyntheticCallRecorderV1(2)
-            self.reject(lambda: recorder.begin(wrong), 'RECORDER_REQUEST_TYPE')
+            self.reject(partial(recorder.begin, wrong), 'RECORDER_REQUEST_TYPE')
         recorder = self.m.SyntheticCallRecorderV1(2)
         recorder.begin(self.first.request)
         self.reject(lambda: recorder.complete(External()), 'RECORDER_FRAME_TYPE')
@@ -113,7 +114,7 @@ class RecorderTests(unittest.TestCase):
             (replace(self.first, settings_origin='ACTUAL_CONSUMED'), 'LIMITER_DECLARATION')):
             recorder = self.m.SyntheticCallRecorderV1(2)
             recorder.begin(frame.request)
-            self.reject(lambda: recorder.complete(frame), 'RECORDER_LIMITER:' + suffix)
+            self.reject(partial(recorder.complete, frame), 'RECORDER_LIMITER:' + suffix)
             self.reject(recorder.finish, 'RECORDER_FAILED')
 
     def test_context_sequence_time_and_reset_discontinuity_reject_at_begin(self):
@@ -125,7 +126,7 @@ class RecorderTests(unittest.TestCase):
             recorder = self.m.SyntheticCallRecorderV1(2)
             recorder.begin(self.first.request)
             recorder.complete(self.first)
-            self.reject(lambda: recorder.begin(request), 'RECORDER_REQUEST:' + suffix)
+            self.reject(partial(recorder.begin, request), 'RECORDER_REQUEST:' + suffix)
             self.reject(recorder.finish, 'RECORDER_FAILED')
 
     def test_changed_settings_state_or_counter_do_not_finish_as_a_valid_prefix(self):
@@ -136,7 +137,7 @@ class RecorderTests(unittest.TestCase):
             recorder.begin(self.first.request)
             recorder.complete(self.first)
             recorder.begin(frame.request)
-            self.reject(lambda: recorder.complete(frame), 'RECORDER_LIMITER:' + suffix)
+            self.reject(partial(recorder.complete, frame), 'RECORDER_LIMITER:' + suffix)
             self.reject(recorder.finish, 'RECORDER_FAILED')
 
     def test_pending_finish_is_not_a_successful_prefix(self):
@@ -160,7 +161,7 @@ class RecorderTests(unittest.TestCase):
                 recorder.begin(self.first.request)
             recorder.abort()
             self.reject(recorder.finish, 'RECORDER_ABORTED')
-            self.reject(lambda: recorder.begin(self.first.request), 'RECORDER_ABORTED')
+            self.reject(partial(recorder.begin, self.first.request), 'RECORDER_ABORTED')
 
     def test_capacity_overflow_does_not_evict_or_export_a_prefix(self):
         recorder = self.complete_two()
