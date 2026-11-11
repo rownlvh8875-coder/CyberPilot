@@ -1,5 +1,6 @@
 """Recording preservation must not imply executable input or output arithmetic parity."""
 
+import copy
 import importlib
 import sys
 import unittest
@@ -50,6 +51,12 @@ class RecordingPreflightTests(unittest.TestCase):
 
     def changed_recording(self, *frames):
         return self.recorder.FinishedSyntheticRecordingV1(tuple(frames))
+
+    def clone_receipt(self, operation, receipt, memo=None):
+        try:
+            return operation(receipt) if memo is None else operation(receipt, memo)
+        except TypeError as error:
+            self.fail('Copy must reconstruct a validated receipt: ' + str(error))
 
     def maximum(self):
         first = self.recording.records[0]
@@ -314,3 +321,122 @@ class RecordingPreflightTests(unittest.TestCase):
         self.assertEqual(result.validated_transition_count, 3)
         self.assertEqual(self.codec.encode_recording(self.recording), before)
         self.assertEqual({f.name for f in fields(result) if f.init}, {'recording', 'contexts'})
+
+    def test_shallow_copy_reconstructs_and_shares_declared_inputs(self):
+        receipt = self.m.preflight_recording_input(self.recording, self.contexts)
+        clone = self.clone_receipt(copy.copy, receipt)
+        self.assertIsNot(clone, receipt)
+        self.assertIs(type(clone), self.m.SyntheticRecordingInputPreflightV1)
+        self.assertIs(clone.recording, receipt.recording)
+        self.assertIs(clone.contexts, receipt.contexts)
+        self.assertEqual((clone.status, clone.record_count, clone.validated_transition_count), ('INPUTS_COMPATIBLE', 4, 3))
+
+    def test_deep_copy_reconstructs_copied_declarations(self):
+        receipt = self.m.preflight_recording_input(self.recording, self.contexts)
+        clone = self.clone_receipt(copy.deepcopy, receipt)
+        self.assertIsNot(clone, receipt)
+        self.assertIsNot(clone.recording, receipt.recording)
+        self.assertIsNot(clone.contexts, receipt.contexts)
+        self.assertIsNot(clone.recording.records[0], receipt.recording.records[0])
+        self.assertIsNot(clone.contexts[0], receipt.contexts[0])
+        self.assertEqual((clone.status, clone.record_count, clone.validated_transition_count), ('INPUTS_COMPATIBLE', 4, 3))
+        self.assertEqual(self.codec.encode_recording(clone.recording), self.codec.encode_recording(self.recording))
+
+    def test_deep_copy_preserves_graph_aliases_and_shared_memo(self):
+        receipt = self.m.preflight_recording_input(self.recording, self.contexts)
+        graph = [receipt, receipt, receipt.recording, receipt.contexts, receipt.recording.records[0]]
+        memo = {}
+        cloned = self.clone_receipt(copy.deepcopy, graph, memo)
+        self.assertIs(cloned[0], cloned[1])
+        self.assertIs(cloned[0].recording, cloned[2])
+        self.assertIs(cloned[0].contexts, cloned[3])
+        self.assertIs(cloned[0].recording.records[0], cloned[4])
+        self.assertIs(memo[id(receipt)], cloned[0])
+        self.assertIs(memo[id(receipt.recording)], cloned[2])
+        self.assertIsNot(cloned[0], receipt)
+
+    def test_copy_rejects_modified_input_declarations(self):
+        for operation in (copy.copy, copy.deepcopy):
+            receipt = self.m.preflight_recording_input(self.recording, self.contexts)
+            object.__setattr__(receipt, 'contexts', (*self.contexts[:2], replace(self.contexts[2], current_driver=0.1)))
+            with self.assertRaises(self.m.RecordingPreflightError) as caught:
+                self.clone_receipt(operation, receipt)
+            self.assertEqual(caught.exception.code, 'RECORDING_PREFLIGHT_INPUT:2:MODEL_DRIVER')
+            recording = self.changed_recording(*self.recording.records)
+            receipt = self.m.preflight_recording_input(recording, self.contexts)
+            object.__setattr__(recording, 'model_input_allowed', True)
+            with self.assertRaises(self.m.RecordingPreflightError) as caught:
+                self.clone_receipt(operation, receipt)
+            self.assertEqual(caught.exception.code, 'RECORDING_PREFLIGHT_RECORDING:RECORDER_METADATA')
+
+    def test_deep_copy_rejects_foreign_context_before_copy_hooks(self):
+        class Foreign:
+            def __deepcopy__(self, _memo):
+                raise AssertionError('FOREIGN_COPY_HOOK_EXECUTED')
+
+        receipt = self.m.preflight_recording_input(self.recording, self.contexts)
+        object.__setattr__(receipt, 'contexts', (*self.contexts[:2], Foreign()))
+        with self.assertRaises(self.m.RecordingPreflightError) as caught:
+            self.clone_receipt(copy.deepcopy, receipt)
+        self.assertEqual(caught.exception.code, 'RECORDING_PREFLIGHT_INPUT:2:MODEL_CONTEXT_TYPE')
+
+    def test_deep_copy_revalidates_memo_substituted_declarations(self):
+        receipt = self.m.preflight_recording_input(self.recording, self.contexts)
+        invalid = self.changed_recording(*self.recording.records)
+        object.__setattr__(invalid, 'model_input_allowed', True)
+        memo = {id(receipt.recording): invalid}
+        with self.assertRaises(self.m.RecordingPreflightError) as caught:
+            self.clone_receipt(copy.deepcopy, receipt, memo)
+        self.assertEqual(caught.exception.code, 'RECORDING_PREFLIGHT_RECORDING:RECORDER_METADATA')
+
+    def test_copy_rederives_counts_and_keeps_permissions_false(self):
+        receipt = self.m.preflight_recording_input(self.recording, self.contexts)
+        object.__setattr__(receipt, 'record_count', 999)
+        object.__setattr__(receipt, 'validated_transition_count', 998)
+        object.__setattr__(receipt, 'model_input_allowed', True)
+        for operation in (copy.copy, copy.deepcopy):
+            clone = self.clone_receipt(operation, receipt)
+            self.assertEqual((clone.record_count, clone.validated_transition_count), (4, 3))
+            for name in ('source_identity_reauthenticated', 'model_input_allowed', 'v4_payload_allowed',
+                         'f61_input_allowed', 'actual_activation_allowed'):
+                self.assertIs(getattr(clone, name), False)
+
+    def test_copy_preserves_raw_words_signed_zero_and_time_declarations(self):
+        first = replace(self.recording.records[0], request=replace(self.recording.records[0].request,
+                        requested_binary32=bytes.fromhex('80000001'), sample_time_ns=-(1 << 63)))
+        recording = self.changed_recording(first, *self.recording.records[1:])
+        contexts = (replace(self.contexts[0], previous_integer_request=0, current_driver=-0.0, current_angle_deg=-0.0), *self.contexts[1:])
+        receipt = self.m.preflight_recording_input(recording, contexts)
+        original = self.codec.encode_recording(recording)
+        for operation in (copy.copy, copy.deepcopy):
+            clone = self.clone_receipt(operation, receipt)
+            self.assertEqual(self.codec.encode_recording(clone.recording), original)
+            self.assertEqual(clone.recording.records[0].request.requested_binary32.hex(), '80000001')
+            self.assertEqual(clone.recording.records[0].request.sample_time_ns, -(1 << 63))
+            self.assertEqual((clone.contexts[0].current_driver.hex(), clone.contexts[0].current_angle_deg.hex()), ('-0x0.0p+0', '-0x0.0p+0'))
+            self.assertEqual(clone.time_semantics, 'ORDER_ONLY_NO_DELTA_OR_PERIOD')
+
+    def test_copy_paths_execute_no_model_steps_and_propagate_unexpected_errors(self):
+        receipt = self.m.preflight_recording_input(self.recording, self.contexts)
+        codes = (self.model.step.__code__, self.model.simulate.__code__)
+        calls = []
+
+        def profile(frame, event, _arg):
+            if event == 'call' and frame.f_code in codes:
+                calls.append(frame.f_code.co_name)
+
+        old = sys.getprofile()
+        try:
+            sys.setprofile(profile)
+            for operation in (copy.copy, copy.deepcopy):
+                clone = self.clone_receipt(operation, receipt)
+                self.assertEqual(clone.status, 'INPUTS_COMPATIBLE')
+        finally:
+            sys.setprofile(old)
+        self.assertEqual(calls, [])
+        failure = RuntimeError('opaque copy validation failure')
+        for operation in (copy.copy, copy.deepcopy):
+            with patch.object(self.m, 'prepare_model_input', side_effect=failure):
+                with self.assertRaises(RuntimeError) as caught:
+                    self.clone_receipt(operation, receipt)
+            self.assertIs(caught.exception, failure)
