@@ -61,7 +61,7 @@ bad digest, malformed/late semantic input and existing/invalid destination0steps
 serialization/size/publication/readback/stream failures with honest work/partial
 custody; exact two files/manifest/private modes/no overwrite, deterministic fresh
 processes, parser/help/cold import suppression and process-global restoration.
-Unchanged full DEV plus new tests, statics/compile/98Manifest/wheel/CORE32 pins;
+Unchanged full DEV plus new tests, static checks/compile/98Manifest/wheel/CORE32 pins;
 fresh final review and author disposition, two deterministic evidence builds.
 Keep old CLI/model/math/source config and primary checkout unchanged.
 

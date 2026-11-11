@@ -54,7 +54,7 @@ API and CLI main(argv=None)->int specified above. No existing producer edits.
 - [ ] Implement only two new modules with unchanged producers; rerun focused
   command. Expected all new tests PASS, no warning. Document and actually execute
   MATCH/DIFFERENT/rejection guide examples in new external folders.
-- [ ] Run configured statics and `.venv/bin/python -B dev.py verify --output /absolute/NEW`.
+- [ ] Run configured static checks and `.venv/bin/python -B dev.py verify --output /absolute/NEW`.
   Expected2166tests (2133+33new),352 own compiles,98Manifest and unchanged pins.
   Freeze eight scoped paths; focused tests PASS again; commit implementation.
 - [ ] One fresh whole-branch review; author-grade findings and declined scopes.

@@ -705,3 +705,11 @@ It captures bounded regular bytes once,then reuses CORE58 and emits canonical JS
 with every declared transition diagnostic. MATCH/DIFFERENT exit0/1;failures exit2.
 No automatic file publication,policy input,actual log reader or vehicle authority
 is added;late execution/output failures may follow nonzero synthetic work.
+
+The [CORE64 diagnostic save command](docs/RECORDING_INPUT_WORKFLOW_CORE64_KO.md)
+adds a separate explicit `--run` workflow with the same SHA-pinned synthetic input
+and a required new external output folder. It executes CORE61 once and publishes
+the complete `DIAGNOSTICS.json` plus checksum without overwrite,then verifies both
+files. MATCH/DIFFERENT exit0/1 require successful publication;all failures exit2.
+Partial files or stdout may remain on late failure;no cleanup,retry,input copy,
+durability or vehicle authority is implied. The original stdout command is unchanged.
