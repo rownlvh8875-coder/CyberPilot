@@ -108,3 +108,14 @@ NATIVE_EXACT_REPLAY=NOT_PROVEN, actual activation/F70UH/F70V/F71=NOT_ALLOWED를 
 첫 명령은 기존 offline 테스트도 포함한다. 새 recorder/codec/demo 테스트와 기존 전체
 DEV gate의 합성 모델/reference 작업을 구분하며, 후자는 NONZERO_NOT_AGGREGATED다.
 새 기록 계층 자체는 모델/helper/F61·실제 dt/r 연산을 하지 않는다.
+
+## CORE42 회귀 검사 보강
+
+request/frame subclass가 attribute 접근 시 예외를 내도록 구성해, 읽기 전에 exact
+type으로 거절되는지 검사한다. 각 완료 실패 뒤 finish와 begin이 모두 차단되는지
+확인하며,정상 기록2개가 쌓인 뒤 세 번째 완료에서 type/request/settings/state/counter
+오류가 나도 성공 prefix를 내보내거나 재진입하지 못하는지 검증한다.
+
+이는 CORE41 리뷰 M1/M2의 테스트 보강이다. 수집기·codec·demo·모델의 동작은
+변경하지 않는다. 격리된 오류 복사본에서 검사의 민감도를 확인하는 것은 원래
+수집기에 오류가 있었다거나 실제 수집·실차 권한이 해결됐다는 뜻이 아니다.

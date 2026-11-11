@@ -38,6 +38,11 @@ class RecorderTests(unittest.TestCase):
             operation()
         self.assertEqual((caught.exception.code, str(caught.exception)), (code, code))
 
+    def reject_failed(self, recorder, operation, code):
+        self.reject(operation, code)
+        self.reject(recorder.finish, 'RECORDER_FAILED')
+        self.reject(partial(recorder.begin, self.first.request), 'RECORDER_FAILED')
+
     def complete_two(self, capacity=2):
         recorder = self.m.SyntheticCallRecorderV1(capacity)
         for frame in (self.first, self.second):
@@ -89,7 +94,27 @@ class RecorderTests(unittest.TestCase):
             self.reject(partial(recorder.begin, wrong), 'RECORDER_REQUEST_TYPE')
         recorder = self.m.SyntheticCallRecorderV1(2)
         recorder.begin(self.first.request)
-        self.reject(lambda: recorder.complete(External()), 'RECORDER_FRAME_TYPE')
+        self.reject_failed(recorder, partial(recorder.complete, External()), 'RECORDER_FRAME_TYPE')
+
+    def test_request_subclasses_reject_before_side_effecting_reads(self):
+        class SideEffectingRequest(SyntheticRequestSnapshotV1):
+            def __getattribute__(self, _name):
+                raise AssertionError('REQUEST_SUBCLASS_ATTRIBUTE_READ')
+
+        request = SideEffectingRequest(self.first.request.context, 7, -9, bytes.fromhex('80000000'), True, False, True)
+        recorder = self.m.SyntheticCallRecorderV1(2)
+        self.reject_failed(recorder, partial(recorder.begin, request), 'RECORDER_REQUEST_TYPE')
+
+    def test_frame_subclasses_reject_before_side_effecting_reads(self):
+        class SideEffectingFrame(SyntheticLimiterSnapshotV1):
+            def __getattribute__(self, _name):
+                raise AssertionError('FRAME_SUBCLASS_ATTRIBUTE_READ')
+
+        frame = SideEffectingFrame(self.first.request, self.first.settings, 'DECLARED_LIMITED_STATE_POST_INACTIVE_GATE',
+            'DECLARED_COUNTERFACTUAL_CONSUMED_SETTINGS', 12, -2, 3, 4, True)
+        recorder = self.m.SyntheticCallRecorderV1(2)
+        recorder.begin(self.first.request)
+        self.reject_failed(recorder, partial(recorder.complete, frame), 'RECORDER_FRAME_TYPE')
 
     def test_double_begin_is_terminal_and_never_overwrites_pending_request(self):
         recorder = self.m.SyntheticCallRecorderV1(2)
@@ -99,14 +124,13 @@ class RecorderTests(unittest.TestCase):
 
     def test_completion_without_begin_is_terminal(self):
         recorder = self.m.SyntheticCallRecorderV1(2)
-        self.reject(lambda: recorder.complete(self.first), 'RECORDER_NOT_PENDING')
-        self.reject(lambda: recorder.begin(self.first.request), 'RECORDER_FAILED')
+        self.reject_failed(recorder, partial(recorder.complete, self.first), 'RECORDER_NOT_PENDING')
 
     def test_mismatched_completion_does_not_publish_or_resume_prefix(self):
         recorder = self.m.SyntheticCallRecorderV1(2)
         recorder.begin(self.first.request)
-        self.reject(lambda: recorder.complete(replace(self.first, request=replace(self.first.request, request_override=True))), 'RECORDER_REQUEST_CHANGED')
-        self.reject(recorder.finish, 'RECORDER_FAILED')
+        wrong = replace(self.first, request=replace(self.first.request, request_override=True))
+        self.reject_failed(recorder, partial(recorder.complete, wrong), 'RECORDER_REQUEST_CHANGED')
 
     def test_first_completion_validates_settings_and_saved_state(self):
         for frame, suffix in ((replace(self.first, saved_limited_state=True), 'LIMITER_STATE_DOMAIN'),
@@ -114,8 +138,7 @@ class RecorderTests(unittest.TestCase):
             (replace(self.first, settings_origin='ACTUAL_CONSUMED'), 'LIMITER_DECLARATION')):
             recorder = self.m.SyntheticCallRecorderV1(2)
             recorder.begin(frame.request)
-            self.reject(partial(recorder.complete, frame), 'RECORDER_LIMITER:' + suffix)
-            self.reject(recorder.finish, 'RECORDER_FAILED')
+            self.reject_failed(recorder, partial(recorder.complete, frame), 'RECORDER_LIMITER:' + suffix)
 
     def test_context_sequence_time_and_reset_discontinuity_reject_at_begin(self):
         for request, suffix in ((replace(self.second.request, sequence=9), 'REQUEST_PAIR_SEQUENCE'),
@@ -137,8 +160,28 @@ class RecorderTests(unittest.TestCase):
             recorder.begin(self.first.request)
             recorder.complete(self.first)
             recorder.begin(frame.request)
-            self.reject(partial(recorder.complete, frame), 'RECORDER_LIMITER:' + suffix)
-            self.reject(recorder.finish, 'RECORDER_FAILED')
+            self.reject_failed(recorder, partial(recorder.complete, frame), 'RECORDER_LIMITER:' + suffix)
+
+    def test_failed_third_completion_blocks_export_and_reentry(self):
+        third_request = replace(self.second.request, sequence=9, sample_time_ns=-7)
+        third = replace(self.second, request=third_request, limited_state_at_entry=4, saved_limited_state=6,
+                        angle_counter_at_entry=5, saved_angle_counter=6)
+        invalid = (
+            (None, 'RECORDER_FRAME_TYPE'),
+            (replace(third, request=None), 'RECORDER_REQUEST_TYPE'),
+            (replace(third, request=replace(third_request, requested_binary32=b'bad')), 'RECORDER_REQUEST:REQUEST_WORD'),
+            (replace(third, request=replace(third_request, request_override=True)), 'RECORDER_REQUEST_CHANGED'),
+            (replace(third, settings=replace(third.settings, delta_up=True)), 'RECORDER_LIMITER:LIMITER_SETTINGS_DOMAIN'),
+            (replace(third, saved_limited_state=True), 'RECORDER_LIMITER:LIMITER_STATE_DOMAIN'),
+            (replace(third, settings=replace(third.settings, delta_up=3)), 'RECORDER_LIMITER:LIMITER_PAIR_SETTINGS'),
+            (replace(third, limited_state_at_entry=0), 'RECORDER_LIMITER:LIMITER_PAIR_STATE_LINK'),
+            (replace(third, angle_counter_at_entry=4), 'RECORDER_LIMITER:LIMITER_PAIR_COUNTER_LINK'),
+            (replace(third, inactive_gate_active=False), 'RECORDER_LIMITER:LIMITER_INACTIVE_STATE'),
+        )
+        for frame, code in invalid:
+            recorder = self.complete_two(3)
+            recorder.begin(third_request)
+            self.reject_failed(recorder, partial(recorder.complete, frame), code)
 
     def test_pending_finish_is_not_a_successful_prefix(self):
         recorder = self.complete_two(3)
