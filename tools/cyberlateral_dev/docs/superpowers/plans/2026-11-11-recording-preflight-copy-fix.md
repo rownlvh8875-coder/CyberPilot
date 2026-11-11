@@ -31,8 +31,8 @@
 
 - [x] Add copy-specific real-behavior tests and run them against the unchanged implementation; expect failures naming missing reconstruction support, not import/setup errors.
 - [x] Commit tests/spec/plan preregistration, then implement only copy hooks and the guide.
-- [ ] Run focused tests, fresh documented import command, configured owned-path static checks and full dev.py verify with a NEW external output. Expected all tests/compiles/Manifest/wheel/pins PASS; report actual counts.
-- [ ] Commit verified fixes and record task completion; obtain independent delta review before publication. Fix any important issue with TDD and a green suite.
+- [x] Run focused tests, fresh documented import command, configured owned-path static checks and full dev.py verify with a NEW external output. Expected all tests/compiles/Manifest/wheel/pins PASS; report actual counts.
+- [x] Commit verified fixes and record task completion; obtain independent delta review before publication. Fix any important issue with TDD and a green suite.
 
 ## Post-task delivery
 

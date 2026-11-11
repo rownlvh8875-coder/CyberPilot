@@ -1,5 +1,6 @@
 """Explicit synthetic recording input compatibility, never execution or source proof."""
 
+from copy import deepcopy
 from dataclasses import dataclass, field
 from typing import cast
 
@@ -44,6 +45,16 @@ class SyntheticRecordingInputPreflightV1:
         count = _validate(self)
         object.__setattr__(self, 'record_count', count)
         object.__setattr__(self, 'validated_transition_count', count - 1)
+
+    def __copy__(self) -> 'SyntheticRecordingInputPreflightV1':
+        _validate(self)
+        return SyntheticRecordingInputPreflightV1(self.recording, self.contexts)
+
+    def __deepcopy__(self, memo: dict[int, object]) -> 'SyntheticRecordingInputPreflightV1':
+        _validate(self)
+        clone = SyntheticRecordingInputPreflightV1(deepcopy(self.recording, memo), deepcopy(self.contexts, memo))
+        memo[id(self)] = clone
+        return clone
 
 
 def _need(condition: bool, code: str) -> None:

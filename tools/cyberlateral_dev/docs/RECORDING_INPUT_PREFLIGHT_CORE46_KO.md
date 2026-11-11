@@ -7,6 +7,16 @@ CORE41 기록은 요청·설정·상태를 보존하지만 driver·angle·이전
 
 ## 사용 경계
 
+이 API는 설치 wheel이 아니라 개발 tree의 도구다. 저장소의
+`tools/cyberlateral_dev` 디렉터리에서 source 경로를 명시해 import를 확인한다.
+
+```bash
+PYTHONPATH=src .venv/bin/python -B -c 'from integration_tools.offline_recording_preflight import preflight_recording_input; print("CORE46_IMPORT_OK")'
+```
+
+아래는 같은 source 경로가 설정된 Python에서 이미 명시적으로 만든 기록·문맥을
+검사하는 API 예제다. finished/contexts를 파일이나 실제 데이터에서 자동 생성하지 않는다.
+
 ```python
 from integration_tools.offline_recording_preflight import preflight_recording_input
 
@@ -60,6 +70,14 @@ RecordingPreflightError.code와 메시지는 동일한 고정 code다.
 결과는 frozen/slotted SyntheticRecordingInputPreflightV1이다. recording/contexts는
 원래 객체를 보존하고 직접 생성·dataclasses.replace도 재검증한다. derived count나
 고정 claim/권한은 생성자에 넣을 수 없다. prepared model input/state를 결과로 내보내지 않는다.
+
+CORE47 보완 후 copy.copy는 새 receipt를 만들되 recording/contexts를 공유한다.
+copy.deepcopy는 선언을 깊게 복사하며 전달받은 memo와 반복 참조를 보존한다.
+두 hook은 원래 선언을 검사하고 검증된 생성자로 새 receipt를 만든다. 깊은 복사에서는
+중첩 copy hook 전에 검사하며,memo로 공급된 복사 선언도 생성자에서 다시 검사한다.
+derived count와 권한은 생성자에서 재생성되며,원래 source 선언이나 saved 상태를 고치지 않는다.
+표준 deepcopy가 기존 memo 항목을 바로 재사용하면 hook은 다시 호출되지 않는다.
+memo는 인증 수단이 아니며,이 지원은 pickle·영속 저장·전송 계약을 추가하지 않는다.
 
 INPUTS_COMPATIBLE은 **선언 입력의 현재 합성 모델 호환성**이다. 예를 들어 선언 saved10과
 다음 entry10이 연결돼 있으면 보존하며,계산 saved2로 고치지 않는다. 저장 출력의 산술
