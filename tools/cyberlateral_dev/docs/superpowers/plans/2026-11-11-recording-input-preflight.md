@@ -44,12 +44,18 @@ never repair declarations, infer metadata or grant model/vehicle permissions.
 
 - [x] Step1: Add real four-frame fixtures and failing tests. Literal requests be800000/3f000000/bf000000/3e800000; previous integer requests -4/8/-8, model indices5/6/7 and capture sequences7/8/9/10.
 - [x] Step2: Run `.venv/bin/python -B -m unittest discover -s project -p 'test_offline_recording_preflight.py' -v`; expect assertion failures for missing CORE46 module, not import errors. Preserve RED ledger and commit spec/plan/tests only.
-- [ ] Step3: Implement the small module with exact error order in the spec; no new decoder or arithmetic algorithm. Derive counts only after all checks succeed.
-- [ ] Step4: Run focused tests; literal success counts4/3, max128/127, wrong previous request→INPUT:0:MODEL_PREVIOUS_REQUEST_MISMATCH, final bad driver→INPUT:2:MODEL_DRIVER, model-order gap→MODEL_ORDER:1.
-- [ ] Step5: Document compatibility vs saved-output parity, false permissions and nonzero numeric validation; update README/backlog without rewriting historical evidence.
-- [ ] Step6: Run baseline-related tests and full `.venv/bin/python -B dev.py verify --output /absolute/NEW-output`, Ruff/Ty/Codespell/compile, whole Manifest, unchanged wheel and CORE32 pins. Confirm fresh source counts rather than reusing old1958/338 literals.
-- [ ] Step7: Obtain independent whole-branch review, resolve any important finding, rerun affected verification, commit implementation and documentation.
-- [ ] Step8: Verify seven-path scope, unchanged main/other refs/704 out-of-scope baseline files/primary metadata; seal external evidence deterministically. Keep branch/worktree; report next publication stage without doing it.
+- [x] Step3: Implement the small module with exact error order in the spec; no new decoder or arithmetic algorithm. Derive counts only after all checks succeed.
+- [x] Step4: Run focused tests; literal success counts4/3, max128/127, wrong previous request→INPUT:0:MODEL_PREVIOUS_REQUEST_MISMATCH, final bad driver→INPUT:2:MODEL_DRIVER, model-order gap→MODEL_ORDER:1.
+- [x] Step5: Document compatibility vs saved-output parity, false permissions and nonzero numeric validation; update README/backlog without rewriting historical evidence.
+- [x] Step6: Run baseline-related tests and full `.venv/bin/python -B dev.py verify --output /absolute/NEW-output`, Ruff/Ty/Codespell/compile, whole Manifest, unchanged wheel and CORE32 pins. Confirm fresh source counts rather than reusing old1958/338 literals.
+- [x] Step7: Commit the verified implementation/documentation and record task completion with its focused test command.
+
+## Post-task finalization
+
+These finalization boxes describe the implementation commit's checkpoint; the external ledger records subsequent review/seal completion without a post-review documentation-only commit.
+
+- [ ] Obtain the native workflow's independent whole-branch review on the frozen commit. Resolve important findings in one TDD fix pass with a green whole suite.
+- [ ] Verify seven-path scope, unchanged main/other refs/704 out-of-scope baseline files/primary metadata; seal external evidence deterministically. Keep branch/worktree; report next publication stage without doing it.
 
 ## Execution selection and self-review
 

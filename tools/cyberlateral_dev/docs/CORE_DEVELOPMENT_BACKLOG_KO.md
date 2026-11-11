@@ -77,6 +77,8 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 | CORE36 | 기존 batch의 유한 분할·재개 경계 회귀 | CORE35 두 chain의 512 partition·교차 singleton·literal/state/전체 parity·6종 변형 탐지 | [분할·재개 테스트](PARTITION_RESUME_CORE36_KO.md); 같은 프로세스 한정·runtime/API/persistent checkpoint 변경 없음 |
 | CORE37 | canonical fault counter와 혼합 상태의 재개 경계 | 양/음100호출·89/90/wrap·inactive/angle reset·driver/hold/reverse·36선언 schedule | [fault lifecycle](FAULT_LIFECYCLE_CORE37_KO.md); 기존 모델 회귀·임의 fault/실차/persistence 권한 아님 |
 | CORE38 | 진단 보완·오프라인 전달·실제 사용 진입조건 정리 | CORE37 M1 RED/GREEN·기존 정상값 불변·actual prerequisites/CI trigger 경계 분리 | [남은 작업 readiness](REMAINING_WORK_READINESS_KO.md); actual 값/Gate를 채우지 않음·PR/main 통합은 CI 범위 정리 필요 |
+| CORE41/42 | 완료된 합성 호출 기록과 정확한 codec·회귀 보강 | bounded begin/complete/abort·권한false·canonical bytes·실패 prefix 거절 | [기록기](OFFLINE_CALL_RECORDER_CORE41_KO.md); 실제 collector/모델 실행 bridge 아님 |
+| CORE46 | 합성 기록과 명시적 CORE5 문맥의 입력 사전검증 | 전체 기록 재검증·모든 adjacent input·명시 index 연속·모델 실행0 | [사전검증](RECORDING_INPUT_PREFLIGHT_CORE46_KO.md); 저장 출력 산술·실제 소비·실행 권한 아님 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |
@@ -111,6 +113,12 @@ counter를 exact 비교한다. 차이는 덮어쓰지 않고 DIFFERENT로 보존
 차량 데이터 reader는 열지 않았으며 source 관찰과 실제 차량 authority를 구별한다.
 
 ## 종료/성공 판정
+
+CORE46의 개발 기준 main은695e76ae8ff67a974f6f7f9dd9d1f90996f1e8c8이다.
+CORE45에서 기존 feature3개 commit의 main 통합과 해당 main의 DEV1958/Cloud203 tests
+자동 push CI·전체 artifact 검산을 완료했다. 위 CORE38의 PR/main 보류 문장은 당시의
+역사 기록이며 현재 전달 판정을 덮어쓰지 않는다. CORE46의 신규 구현은 별도 feature
+branch에서 진행하며 그 main 게시/CI/실차 승인을 자동 주장하지 않는다.
 
 - CORE1 성공은 신호 경계의 합성 개발 기능 완료이지 production binding 완료가 아니다.
 - CORE2/CORE3도 실제 입력·차량 사용 권한을 발행하지 않는다.

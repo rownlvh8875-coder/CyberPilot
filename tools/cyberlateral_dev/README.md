@@ -665,3 +665,10 @@ Its strict canonical codec preserves raw request words and exact integer time
 tokens; the fixed isolated demo takes no external data or runtime arguments.
 This is not actual source capture, a Controller hook, a model/F61 input bridge,
 rate-policy qualification or vehicle activation. All production gates stay closed.
+
+The [CORE46 recording input preflight](docs/RECORDING_INPUT_PREFLIGHT_CORE46_KO.md)
+revalidates a completed CORE41 recording with separately supplied, explicit CORE5
+contexts. It checks all adjacent input compatibilities and consecutive model indices
+without model steps, output repair, time-delta or rate calculation. Numeric input
+validation is nonzero. Its frozen receipt exposes no prepared model payload and
+grants no model/F61/actual-use permission; the recording and all vehicle gates stay unchanged.

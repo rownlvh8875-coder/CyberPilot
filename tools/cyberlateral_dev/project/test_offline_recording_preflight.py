@@ -4,6 +4,7 @@ import importlib
 import sys
 import unittest
 from dataclasses import FrozenInstanceError, fields, replace
+from typing import Any
 from unittest.mock import patch
 
 from v1_helpers import ROOT, package_feature
@@ -15,7 +16,7 @@ class RecordingPreflightTests(unittest.TestCase):
         self.model = package_feature()
         if str(ROOT) not in sys.path:
             sys.path.insert(0, str(ROOT))
-        self.m = importlib.import_module('integration_tools.offline_recording_preflight')
+        self.m: Any = importlib.import_module('integration_tools.offline_recording_preflight')
         self.recorder = importlib.import_module('integration_tools.offline_call_recorder')
         self.inputs = importlib.import_module('integration_tools.synthetic_model_input')
         self.request = importlib.import_module('integration_tools.request_snapshot')
