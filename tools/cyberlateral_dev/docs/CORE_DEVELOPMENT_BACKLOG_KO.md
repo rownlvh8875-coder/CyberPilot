@@ -85,6 +85,7 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 | CORE58 | 완전 입력 묶음의 명시적 합성 진단 | CORE55 전체 복원/검증→CORE49·기존 CORE7 결과·N-1step | [묶음 진단](BUNDLED_INPUT_DIAGNOSTICS_CORE58_KO.md); 새 reader/문맥 override/repair/차량 권한 없음 |
 | CORE61 | 저장된 완전 합성 입력의 명시적 진단 CLI | --run·외부SHA 필수·bounded 단일캡처→CORE58·canonical stdout·exit0/1/2 | [명령 안내](RECORDING_INPUT_CLI_CORE61_KO.md); 파일 저장/실제 로그/정책 추론/차량 권한 없음 |
 | CORE64 | 완전 합성 입력 진단의 exclusive 저장 | CORE61 단일실행·전체 JSON/체크섬2파일·새 외부폴더·readback·exit0/1/2 | [저장 안내](RECORDING_INPUT_WORKFLOW_CORE64_KO.md); 기존 CLI 유지·원본복사/자동삭제/재시도/실차 권한 없음 |
+| CORE66 | 저장 진단의 모델 재실행 없는 검사 | 외부 진단SHA·두파일 단일캡처·typed schema/행/요약 관계·조회0/오류2 | [조회 안내](RECORDING_DIAGNOSTICS_INSPECT_CORE66_KO.md); 과거 진단/작업량 별도·재계산/원본입력/출처 인증 없음 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |

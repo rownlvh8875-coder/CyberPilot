@@ -713,3 +713,10 @@ the complete `DIAGNOSTICS.json` plus checksum without overwrite,then verifies bo
 files. MATCH/DIFFERENT exit0/1 require successful publication;all failures exit2.
 Partial files or stdout may remain on late failure;no cleanup,retry,input copy,
 durability or vehicle authority is implied. The original stdout command is unchanged.
+
+The [CORE66 saved diagnostic inspector](docs/RECORDING_DIAGNOSTICS_INSPECT_CORE66_KO.md)
+checks the two saved files with an external DIAGNOSTICS SHA,strict canonical schema
+and stored row/summary relations. It performs no model/reference replay or writes.
+Valid saved MATCH and DIFFERENT both inspect with exit0;the original diagnosis and
+historical work remain separate in the receipt. Errors exit2. Checksums/consistency
+do not authenticate input,arithmetic,source,prehistory or vehicle readiness.

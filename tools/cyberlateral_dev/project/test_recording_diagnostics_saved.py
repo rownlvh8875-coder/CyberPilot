@@ -322,7 +322,7 @@ class SavedRecordingDiagnosticsTests(unittest.TestCase):
 
     def test_model_index_gaps_reject_even_when_each_row_local_indices_match(self):
         def changed(value):
-            for row, index in zip(value['rows'][1:], (7, 8)):
+            for row, index in zip(value['rows'][1:], (7, 8), strict=True):
                 row['model_index'] = row['declared_entry_state']['index'] = index
                 row['computed_next_state']['index'] = index + 1
         self.invalid(changed, 'SAVED_DIAGNOSTICS_ROWS')
