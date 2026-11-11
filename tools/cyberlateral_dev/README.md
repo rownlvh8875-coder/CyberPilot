@@ -698,3 +698,10 @@ It reuses the unchanged decoder and CORE49/CORE7 checks,returns the existing res
 and runs N-1 synthetic model steps only after full input validation. Codec-only
 operations remain step-free;no file reader,context override,repair or vehicle
 permission is added. The guide includes a complete runnable two-frame example.
+
+The [CORE61 saved-input diagnostic CLI](docs/RECORDING_INPUT_CLI_CORE61_KO.md)
+requires explicit `--run`,one complete synthetic input file and its external SHA256.
+It captures bounded regular bytes once,then reuses CORE58 and emits canonical JSON
+with every declared transition diagnostic. MATCH/DIFFERENT exit0/1;failures exit2.
+No automatic file publication,policy input,actual log reader or vehicle authority
+is added;late execution/output failures may follow nonzero synthetic work.

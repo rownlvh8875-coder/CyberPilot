@@ -518,8 +518,11 @@ class Block(importlib.abc.MetaPathFinder):
   forbidden=('openpilot','opendbc','numpy','integration_tools.fixed_model_reference','integration_tools.sequence_reference')
   if any(fullname==n or fullname.startswith(n+'.') for n in forbidden) or fullname.startswith(('integration_tools.f61_','synthetic_rate_constraint_feasibility')):raise AssertionError('FORBIDDEN:'+fullname)
 counts={'step':0,'simulate':0}
+calls={('cyberlateral_dev.api','step'):'step',('cyberlateral_dev.simulation','simulate'):'simulate'}
 def profile(frame,event,arg):
- if event=='call' and frame.f_globals.get('__name__','').startswith('cyberlateral_dev') and frame.f_code.co_name in counts:counts[frame.f_code.co_name]+=1
+ if event=='call':
+  key=calls.get((frame.f_globals.get('__name__',''),frame.f_code.co_name))
+  if key is not None:counts[key]+=1
 sys.meta_path.insert(0,Block());sys.setprofile(profile);sys.argv=sys.argv[1:]
 try:runpy.run_path(sys.argv[0],run_name='__main__')
 except SystemExit as end:
