@@ -691,3 +691,10 @@ the exact CORE41 recording text and explicitly supplied CORE5 contexts together
 as bounded canonical bytes. Restoring them runs full CORE46 compatibility checks
 and returns its unchanged false-authority receipt,not a model result or execution
 capability. Codec calls perform no model/reference steps and infer no missing data.
+
+The [CORE58 complete-input diagnostics API](docs/BUNDLED_INPUT_DIAGNOSTICS_CORE58_KO.md)
+explicitly diagnoses the recording and contexts stored together in CORE55 bytes.
+It reuses the unchanged decoder and CORE49/CORE7 checks,returns the existing result,
+and runs N-1 synthetic model steps only after full input validation. Codec-only
+operations remain step-free;no file reader,context override,repair or vehicle
+permission is added. The guide includes a complete runnable two-frame example.

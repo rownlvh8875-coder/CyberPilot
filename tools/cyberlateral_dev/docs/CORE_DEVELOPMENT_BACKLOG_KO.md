@@ -82,6 +82,7 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 | CORE49 | 완료된 합성 기록의 명시적 전이 진단 | CORE46 전체 사전검증 후 기존 CORE7·N-1 합성 step·차이 위치와 declared feed 유지 | [진단 API](RECORDING_DIAGNOSTICS_CORE49_KO.md); 실제 source/first anchor/prehistory/rollout/차량 권한 아님 |
 | CORE52 | canonical 합성 기록 bytes의 명시적 진단 | 기존 CORE41 decoder→CORE49·별도 필수 문맥·손상 bytes prefix0 | [bytes 진단](SERIALIZED_RECORDING_DIAGNOSTICS_CORE52_KO.md); 새 reader/schema/문맥 추론/실제 출처 인증 없음 |
 | CORE55 | 합성 기록과 필수 문맥의 canonical 입력 codec | exact CORE41 text/문맥 hex 보존·CORE46 전체 검증·모델0 | [입력 묶음](RECORDING_INPUT_CODEC_CORE55_KO.md); 실제 reader/문맥 추론/출력 산술·출처 인증 아님 |
+| CORE58 | 완전 입력 묶음의 명시적 합성 진단 | CORE55 전체 복원/검증→CORE49·기존 CORE7 결과·N-1step | [묶음 진단](BUNDLED_INPUT_DIAGNOSTICS_CORE58_KO.md); 새 reader/문맥 override/repair/차량 권한 없음 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |
@@ -137,6 +138,11 @@ CORE54에서 main은14ced2348d2d89035a03e1f9384d9d7bc175098e로 fast-forward됐�
 main/push DEV2037·Cloud203 tests와 전체 artifact 검산이 완료됐다. CORE55는 그
 main에서 분리한 로컬 feature의 입력 codec이며,이 기능 자체의 main 게시/CI나
 실제 차량 사용 승인은 아니다.
+
+CORE57에서 main은d0f4d7f97185611b64593f74480262adbf0122e6로 fast-forward됐고
+main/push DEV2065·Cloud203 tests와 전체 artifact 검산이 완료됐다. CORE58은 그
+main에서 분리한 새 로컬 feature의 완전 입력 진단이며,해당 기능의 main 게시/CI나
+실제 차량 사용 승인을 자동 주장하지 않는다. 위 CORE55 기준은 당시 역사 기록이다.
 
 - CORE1 성공은 신호 경계의 합성 개발 기능 완료이지 production binding 완료가 아니다.
 - CORE2/CORE3도 실제 입력·차량 사용 권한을 발행하지 않는다.
