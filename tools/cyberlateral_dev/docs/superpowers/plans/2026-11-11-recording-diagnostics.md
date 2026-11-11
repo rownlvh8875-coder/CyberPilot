@@ -1,6 +1,6 @@
 # CORE49 Recorded Synthetic Diagnostics Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Explicitly diagnose finished synthetic recordings using unchanged CORE46 and CORE7.
 **Architecture:** Compose full preflight with the existing declared-sequence checker; return its existing result without a new wrapper or mathematics.
@@ -30,11 +30,11 @@
 **Consumes:** `preflight_recording_input(recording,contexts)` and `check_synthetic_sequence(frames,contexts)`.
 **Produces:** Exact API above; unchanged CORE7 result and CORE46/CORE7 exceptions.
 
-- [ ] Add literal real-behavior tests: three transitions yield MATCH/states(6,8,2,5),(7,-8,-2,6),(8,4,2,7); minimum1step/maximum127steps; early DIFFERENT indices(0,) and declared feed10; late DIFFERENT(2,); all differences(0,1,2); no input repair; fixed metadata/foreign type/context container/late context/late index rejection with0steps; prior receipt rejection and fresh revalidation; false permissions; raw/time preservation; model failure/unknown exception propagation; no default policy args; cold import0steps.
-- [ ] Run `.venv/bin/python -B -m unittest discover -s project -p 'test_offline_recording_diagnostics.py' -v`. Expected assertion failures naming missing CORE49,not import/setup errors. Commit RED tests/spec/plan.
-- [ ] Implement the exact function and usage guide. Explain explicit invocation,existing result/errors,N-1 synthetic steps,no repair/rollout/first-anchor/source/time/F61 authority. Append README/backlog without rewriting historical records.
-- [ ] Rerun the focused tests and existing preflight/sequence tests; all PASS. Run configured owned-path static checks and fresh `.venv/bin/python -B dev.py verify --output NEW_EXTERNAL_OUTPUT`; all tests/static/342 compiles/98 Manifest,unchanged wheel/CORE32 pins PASS. Report actual test count.
-- [ ] Commit verified code/docs,rerun focused task completion,and record exact head/ledger.
+- [x] Add literal real-behavior tests: three transitions yield MATCH/states(6,8,2,5),(7,-8,-2,6),(8,4,2,7); minimum1step/maximum127steps; early DIFFERENT indices(0,) and declared feed10; late DIFFERENT(2,); all differences(0,1,2); no input repair; fixed metadata/foreign type/context container/late context/late index rejection with0steps; prior receipt rejection and fresh revalidation; false permissions; raw/time preservation; model failure/unknown exception propagation; no default policy args; cold import0steps.
+- [x] Run `.venv/bin/python -B -m unittest discover -s project -p 'test_offline_recording_diagnostics.py' -v`. Expected assertion failures naming missing CORE49,not import/setup errors. Commit RED tests/spec/plan.
+- [x] Implement the exact function and usage guide. Explain explicit invocation,existing result/errors,N-1 synthetic steps,no repair/rollout/first-anchor/source/time/F61 authority. Append README/backlog without rewriting historical records.
+- [x] Rerun the focused tests and existing preflight/sequence tests; all PASS. Run configured owned-path static checks and fresh `.venv/bin/python -B dev.py verify --output NEW_EXTERNAL_OUTPUT`; all tests/static/342 compiles/98 Manifest,unchanged wheel/CORE32 pins PASS. Report actual test count.
+- [x] Commit verified code/docs,rerun focused task completion,and record exact head/ledger.
 
 ## Completion
 

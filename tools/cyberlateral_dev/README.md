@@ -672,3 +672,10 @@ contexts. It checks all adjacent input compatibilities and consecutive model ind
 without model steps, output repair, time-delta or rate calculation. Numeric input
 validation is nonzero. Its frozen receipt exposes no prepared model payload and
 grants no model/F61/actual-use permission; the recording and all vehicle gates stay unchanged.
+
+The separate [CORE49 recorded diagnostics API](docs/RECORDING_DIAGNOSTICS_CORE49_KO.md)
+explicitly revalidates a finished synthetic recording and every supplied context,
+then runs the unchanged CORE7 declared-transition checker. It returns the existing
+CORE7 result and executes N-1 synthetic model steps; it never repairs declared state,
+infers context, computes dt/r, or promotes recording/receipt/vehicle permissions.
+Invalid late inputs execute no model prefix; later model failures may follow nonzero work.
