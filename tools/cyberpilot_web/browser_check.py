@@ -54,6 +54,12 @@ def main():
   server = create_server("127.0.0.1", 0, token, store, {"branch": "browser-test", "commit": "test-source-only"})
   thread = threading.Thread(target=server.serve_forever, daemon=True)
   thread.start()
+  sampling_stop = threading.Event()
+  def sample_host():
+    while not sampling_stop.wait(1):
+      HostCollector(store).poll()
+  sampler = threading.Thread(target=sample_host, daemon=True)
+  sampler.start()
   stopped = False
   checks = []
   browser_version = None
@@ -140,6 +146,8 @@ def main():
     (args.output / "browser-results.json").write_text(json.dumps({"status": "PASS", "checks": checks, "vehicle_execution": 0, "browser_version": browser_version}, ensure_ascii=False, indent=2) + "\n")
     print(f"Browser PASS: {len(checks)} checks; 7 screenshots")
   finally:
+    sampling_stop.set()
+    sampler.join(timeout=2)
     if not stopped:
       server.shutdown()
       server.server_close()
