@@ -1,0 +1,49 @@
+name: CyberPilot Host Native Telemetry
+on:
+  push:
+    branches: [main]
+    paths: ['tools/cyberpilot_web_native/**', 'tools/cyberpilot_web/**', 'openpilot/system/cyberpilot_web/**', 'openpilot/cereal/**', 'openpilot/common/utils.py', 'openpilot/__init__.py', 'openpilot/system/__init__.py', '.gitmodules', 'msgq_repo', 'opendbc_repo', 'docs/CYBERPILOT_WEB_NATIVE_KO.md', '.github/workflows/cyberpilot-web-native.yaml', '.github/workflows/cyberpilot-web.yaml']
+  pull_request:
+    branches: [main]
+    paths: ['tools/cyberpilot_web_native/**', 'tools/cyberpilot_web/**', 'openpilot/system/cyberpilot_web/**', 'openpilot/cereal/**', 'openpilot/common/utils.py', 'openpilot/__init__.py', 'openpilot/system/__init__.py', '.gitmodules', 'msgq_repo', 'opendbc_repo', 'docs/CYBERPILOT_WEB_NATIVE_KO.md', '.github/workflows/cyberpilot-web-native.yaml', '.github/workflows/cyberpilot-web.yaml']
+permissions:
+  contents: read
+concurrency:
+  group: cyberpilot-web-native-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      UV_LINK_MODE: copy
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          submodules: false
+          lfs: false
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12.13'
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78
+        with:
+          version: '0.12.23'
+          enable-cache: false
+      - name: Install locked native verification SDK
+        run: uv sync --locked --project tools/cyberpilot_web_native --python "$pythonLocation/bin/python"
+      - name: Build pinned host IPC module externally
+        run: tools/cyberpilot_web_native/.venv/bin/python -B tools/cyberpilot_web_native/prepare.py --output "$RUNNER_TEMP/cyberpilot-native-build"
+      - name: Qualify native synthetic telemetry and basic web
+        run: tools/cyberpilot_web_native/.venv/bin/python -B tools/cyberpilot_web_native/verify.py --prepared "$RUNNER_TEMP/cyberpilot-native-build" --output "$RUNNER_TEMP/cyberpilot-native-verification"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: cyberpilot-native-telemetry-verification
+          path: |
+            ${{ runner.temp }}/cyberpilot-native-verification
+            ${{ runner.temp }}/cyberpilot-native-build/*.log
+            ${{ runner.temp }}/cyberpilot-native-build/BUILD_RECEIPT.json
+          if-no-files-found: error
+          retention-days: 14

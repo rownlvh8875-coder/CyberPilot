@@ -67,3 +67,9 @@ MOBILE-01은 지원 모바일 브라우저에서 실제 상태를 받아 갱신�
 설치 성공, 웹 접속 성공, 상태 수신 성공, 주행 기능 검증을 구분해 보고한다.
 R_BUDGET·Static Evidence Gate·실제 신호/설정/시각 결속 등 기존 미해결 항목은
 별도로 유지하며, 이 요구사항 기록이 실차 활성화 승인을 발행하지 않는다.
+
+## Host-native 통신 개발 검증
+
+실제 Cereal schema와 msgq IPC를 사용해 합성 상태 메시지를 별도 상태 웹 프로세스와
+모바일/PC 화면까지 전달하는 검증을 추가했다. [재현 방법과 한계](CYBERPILOT_WEB_NATIVE_KO.md)를
+참조한다. 이 결과는 실제 comma4/차량 식별·설치·폰 연결 qualification과 구분한다.
