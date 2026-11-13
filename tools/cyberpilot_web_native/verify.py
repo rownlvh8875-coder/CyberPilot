@@ -26,6 +26,11 @@ def sources():
   return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(chosen)}
 
 
+def verification_environment(prepared):
+  return {**os.environ, 'PYTHONPATH': os.pathsep.join(str(p) for p in (ROOT, prepared / 'msgq', prepared / 'opendbc')),
+          'PYTHONDONTWRITEBYTECODE': '1', 'VIRTUAL_ENV': sys.prefix}
+
+
 def main():
   parser = argparse.ArgumentParser(description=__doc__)
   parser.add_argument('--prepared', type=Path, required=True)
@@ -37,8 +42,7 @@ def main():
   output = check_output_path(ROOT, args.output)
   output.mkdir()
   before = sources()
-  env = {**os.environ, 'PYTHONPATH': os.pathsep.join(str(p) for p in (ROOT, args.prepared / 'msgq', args.prepared / 'opendbc')),
-         'PYTHONDONTWRITEBYTECODE': '1'}
+  env = verification_environment(args.prepared)
   results = {}
 
   def command(name, argv, environment=env):
