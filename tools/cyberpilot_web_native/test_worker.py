@@ -30,7 +30,7 @@ def main():
   suite = unittest.defaultTestLoader.discover(str(ROOT / 'tools/cyberpilot_web_native/tests'))
   result = unittest.TextTestRunner(verbosity=2, resultclass=result_factory).run(suite)
   native = [name for name in executed if name.startswith('test_native.NativeCollectorTests.')]
-  passed = result.wasSuccessful() and not result.skipped and len(native) >= 8 and 'OPENPILOT_PREFIX' not in os.environ
+  passed = result.wasSuccessful() and not result.skipped and len(native) >= 9 and 'OPENPILOT_PREFIX' not in os.environ
   module = sys.modules.get('msgq.ipc_pyx')
   cereal = sys.modules.get('openpilot.cereal.messaging')
   passed = passed and module is not None and cereal is not None

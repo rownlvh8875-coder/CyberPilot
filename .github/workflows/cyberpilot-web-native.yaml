@@ -2,10 +2,10 @@ name: CyberPilot Host Native Telemetry
 on:
   push:
     branches: [main]
-    paths: ['tools/cyberpilot_web_native/**', 'tools/cyberpilot_web/**', 'openpilot/system/cyberpilot_web/**', 'openpilot/cereal/**', 'openpilot/common/utils.py', 'openpilot/__init__.py', 'openpilot/system/__init__.py', '.gitmodules', 'msgq_repo', 'opendbc_repo', 'docs/CYBERPILOT_WEB_NATIVE_KO.md', '.github/workflows/cyberpilot-web-native.yaml', '.github/workflows/cyberpilot-web.yaml']
+    paths: ['tools/cyberpilot_web_native/**', 'tools/cyberpilot_web/**', 'openpilot/system/cyberpilot_web/**', 'openpilot/cereal/**', 'openpilot/common/utils.py', 'openpilot/__init__.py', 'openpilot/system/__init__.py', '.gitmodules', 'msgq_repo', 'opendbc_repo', 'docs/CYBERPILOT_WEB_NATIVE_KO.md', '.github/workflows/cyberpilot-web-native.yaml', '.github/workflows/cyberpilot-web.yaml', 'openpilot/system/manager/process_config.py', 'openpilot/system/manager/process.py', 'launch*.sh', 'openpilot/system/manager/manager.py', 'openpilot/common/hardware/comma/agnos.*', 'openpilot/common/hardware/comma/updater', 'openpilot/system/hardware/comma/agnos.json', 'docs/CYBERPILOT_WEB_KO.md', 'docs/CYBERPILOT_TARGET_PROFILE_KO.md']
   pull_request:
     branches: [main]
-    paths: ['tools/cyberpilot_web_native/**', 'tools/cyberpilot_web/**', 'openpilot/system/cyberpilot_web/**', 'openpilot/cereal/**', 'openpilot/common/utils.py', 'openpilot/__init__.py', 'openpilot/system/__init__.py', '.gitmodules', 'msgq_repo', 'opendbc_repo', 'docs/CYBERPILOT_WEB_NATIVE_KO.md', '.github/workflows/cyberpilot-web-native.yaml', '.github/workflows/cyberpilot-web.yaml']
+    paths: ['tools/cyberpilot_web_native/**', 'tools/cyberpilot_web/**', 'openpilot/system/cyberpilot_web/**', 'openpilot/cereal/**', 'openpilot/common/utils.py', 'openpilot/__init__.py', 'openpilot/system/__init__.py', '.gitmodules', 'msgq_repo', 'opendbc_repo', 'docs/CYBERPILOT_WEB_NATIVE_KO.md', '.github/workflows/cyberpilot-web-native.yaml', '.github/workflows/cyberpilot-web.yaml', 'openpilot/system/manager/process_config.py', 'openpilot/system/manager/process.py', 'launch*.sh', 'openpilot/system/manager/manager.py', 'openpilot/common/hardware/comma/agnos.*', 'openpilot/common/hardware/comma/updater', 'openpilot/system/hardware/comma/agnos.json', 'docs/CYBERPILOT_WEB_KO.md', 'docs/CYBERPILOT_TARGET_PROFILE_KO.md']
 permissions:
   contents: read
 concurrency:
