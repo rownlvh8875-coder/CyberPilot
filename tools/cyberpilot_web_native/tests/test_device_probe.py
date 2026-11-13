@@ -1,0 +1,129 @@
+import hashlib
+import json
+import os
+import subprocess
+import sys
+import tempfile
+import unittest
+import zipfile
+from pathlib import Path
+from unittest.mock import patch
+
+from tools.cyberpilot_web_native.device_probe import collect
+from tools.cyberpilot_web_native.device_probe_bundle import build_bundle
+
+ROOT = Path(__file__).resolve().parents[3]
+
+
+class DeviceProbeTests(unittest.TestCase):
+  def setUp(self):
+    self.temp = tempfile.TemporaryDirectory()
+    self.addCleanup(self.temp.cleanup)
+    self.root = Path(self.temp.name)
+    self.model = self.root / 'sys/firmware/devicetree/base/model'
+    self.model.parent.mkdir(parents=True)
+
+  def test_missing_facts_are_unavailable_and_never_qualify(self):
+    result = collect(self.root)
+    self.assertEqual(result['model']['status'], 'MISSING')
+    self.assertIsNone(result['model']['value'])
+    self.assertIsNone(result['hardware_code_hint'])
+    self.assertEqual(result['source']['status'], 'NOT_PROVIDED')
+    self.assertFalse(result['device_installation_qualified'])
+    self.assertFalse(result['actual_activation_allowed'])
+
+  def test_fixture_mici_is_labelled_without_becoming_device_evidence(self):
+    self.model.write_bytes(b'comma mici\x00')
+    (self.root / 'VERSION').write_text('19.9\n')
+    (self.root / 'AGNOS').touch()
+    with patch('platform.machine', return_value='aarch64'):
+      result = collect(self.root)
+    self.assertEqual(result['observation_scope'], 'FILESYSTEM_FIXTURE')
+    self.assertEqual(result['hardware_code_hint'], 'mici')
+    self.assertEqual(result['product_hint'], 'comma four')
+    self.assertEqual(result['model']['sha256'], hashlib.sha256(b'comma mici\x00').hexdigest())
+    self.assertFalse(result['device_installation_qualified'])
+    self.assertFalse(result['actual_activation_allowed'])
+
+  def test_other_model_not_relabelled_as_comma4(self):
+    self.model.write_bytes(b'comma tizi\x00')
+    result = collect(self.root)
+    self.assertEqual(result['hardware_code_hint'], 'tizi')
+    self.assertIsNone(result['product_hint'])
+
+  def test_empty_model_has_no_hint(self):
+    self.model.write_bytes(b'\x00')
+    result = collect(self.root)
+    self.assertEqual(result['model']['status'], 'EMPTY')
+    self.assertIsNone(result['hardware_code_hint'])
+
+  def test_invalid_utf8_and_oversized_files_are_not_returned(self):
+    for data, status in ((b'\xff\xfe', 'UNREADABLE'), (b'x' * 4097, 'TOO_LARGE')):
+      self.model.write_bytes(data)
+      result = collect(self.root)
+      self.assertEqual(result['model']['status'], status)
+      self.assertIsNone(result['model']['value'])
+
+  def test_final_symlink_cannot_capture_unrelated_bytes(self):
+    other = self.root / 'unrelated-private-file'
+    other.write_text('DO_NOT_CAPTURE')
+    self.model.symlink_to(other)
+    result = collect(self.root)
+    self.assertEqual(result['model']['status'], 'UNREADABLE')
+    self.assertNotIn('DO_NOT_CAPTURE', json.dumps(result))
+
+  def test_fifo_is_rejected_without_waiting(self):
+    os.mkfifo(self.model)
+    self.assertEqual(collect(self.root)['model']['status'], 'UNREADABLE')
+
+  def test_observation_does_not_change_files(self):
+    self.model.write_bytes(b'comma mici\x00')
+    (self.root / 'VERSION').write_bytes(b'19.9\n')
+    before = {str(p):p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
+    collect(self.root)
+    after = {str(p):p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
+    self.assertEqual(after, before)
+
+  def test_unresolvable_optional_source_is_unavailable(self):
+    result = collect(self.root, source_root=self.root / ('x' * 5000))
+    self.assertEqual(result['source']['status'], 'UNAVAILABLE')
+    self.assertIsNone(result['source']['commit'])
+
+  def test_parent_repository_is_not_attributed_to_subdirectory(self):
+    result = collect(self.root, source_root=ROOT / 'openpilot')
+    self.assertEqual(result['source']['status'], 'NOT_REPOSITORY_ROOT')
+    self.assertIsNone(result['source']['commit'])
+
+  def test_requested_git_root_ignores_inherited_git_selectors(self):
+    expected = subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+    with patch.dict(os.environ, {'GIT_DIR':str(self.root/'wrong.git'), 'GIT_WORK_TREE':str(self.root)}):
+      result = collect(self.root, source_root=ROOT)
+    self.assertEqual(result['source']['status'], 'OBSERVED_METADATA_ONLY')
+    self.assertEqual(result['source']['commit'], expected)
+    self.assertFalse(result['source']['working_tree_content_verified'])
+
+  def test_native_modules_not_needed_for_observation(self):
+    before = set(sys.modules)
+    collect(self.root)
+    self.assertFalse(any(name.startswith(('openpilot.', 'msgq', 'capnp')) for name in set(sys.modules)-before))
+
+  def test_bundle_is_identical_and_runs_outside_repo_without_site_packages(self):
+    a, b = self.root/'a.zip', self.root/'b.zip'
+    build_bundle(a)
+    build_bundle(b)
+    self.assertEqual(a.read_bytes(), b.read_bytes())
+    out = self.root/'extracted'
+    with zipfile.ZipFile(a) as archive:
+      self.assertIsNone(archive.testzip())
+      manifest = json.loads(archive.read('MANIFEST.json'))
+      self.assertEqual(set(archive.namelist()), set(manifest['files']) | {'MANIFEST.json'})
+      for name, sha in manifest['files'].items():
+        self.assertEqual(hashlib.sha256(archive.read(name)).hexdigest(), sha)
+      archive.extractall(out)
+    result = subprocess.run([sys.executable,'-S','-B','device_probe.py'],cwd=out,env={**os.environ,'PYTHONPATH':''},capture_output=True,text=True,timeout=8)
+    self.assertEqual(result.returncode, 0, result.stderr)
+    data = json.loads(result.stdout)
+    self.assertEqual(data['observation_scope'], 'SYSTEM_ROOT')
+    self.assertEqual(data['source']['status'], 'NOT_PROVIDED')
+    self.assertFalse(data['device_installation_qualified'])
+    self.assertEqual(data['probe_sha256'], manifest['files']['device_probe.py'])
