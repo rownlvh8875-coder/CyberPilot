@@ -19,7 +19,15 @@ There is no public renderer accepting arbitrary saved JSON in this feature.
 diagnostics_root: Path, diagnostics_sha256: str, output_root: Path) -> dict`.
 Validate both exact lowercase64 digests before any caller paths. Reuse existing
 CORE16 `_output` for absent/new external directory with existing parent before
-input capture or reference work. Call unchanged CORE69
+input capture or reference work.
+Reject output nested within the supplied diagnostics root before the checker,
+because adding a directory would invalidate CORE66's exact two-file layout.
+Compare resolved paths so ordinary `..` aliases on either side cannot bypass
+this relationship check. Resolution failures use fixed diagnostics-path errors;
+this does not claim atomic protection against hostile filesystem changes.
+Use `ArchiveWorkflowError(REFERENCE_WORKFLOW_OUTPUT_OVERLAPS_DIAGNOSTICS)`.
+This is an author amendment from the witnessed nested-output regression.
+Call unchanged CORE69
 `check_recording_reference(input_file,input_sha256,diagnostics_root,diagnostics_sha256)`
 exactly once. CORE69 retains whole admission/capture/source/worker/result checks.
 No model step, fallback, input inference or extra worker invocation.

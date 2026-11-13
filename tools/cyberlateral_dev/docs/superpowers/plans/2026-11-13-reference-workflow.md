@@ -50,6 +50,7 @@ defined in spec. Private formatter accepts fresh checker record only.
   Include real saved DIFFERENT/auditMATCH and forged202/audit1. Test both absent
   sides,>20rows omitted count,all diagnostic/header indices and work distinctions.
   Test pins/output/preflight before work,captures/originals,serialization limits,
+  nested output rejection before checker with source package layout preserved,
   partial publisher/readback faults,CLI parsing/help/output/repeatability.
 - [ ] **Step2: RED.** Run `.venv/bin/python -B -m unittest discover -s project -p test_recording_reference_workflow.py -v`.
   Expected missing-feature assertions,not import/fixture errors.

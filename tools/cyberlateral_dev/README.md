@@ -9,6 +9,12 @@ byte-for-byte from the verified R7 evidence. It is now maintained as a standalon
 development project in CyberPilot. It is NOT an openpilot controller, vehicle
 installation, physical simulator, F61 invocation or safety/performance approval.
 
+The [CORE70 reference audit workflow](docs/RECORDING_REFERENCE_WORKFLOW_CORE70_KO.md)
+runs the existing reference audit once and saves its complete JSON, Korean summary
+and checksum in a fresh external directory. It preserves diagnostic-versus-audit
+status, bounded difference details, partial failures and zero new model steps.
+It adds no input, source/build, policy or vehicle authority.
+
 The [CORE69 declared diagnostic reference](docs/RECORDING_DIAGNOSTICS_REFERENCE_CORE69_KO.md)
 checks the supplied synthetic input with the existing integer-bit oracle and pinned
 selected-source helpers in a separate worker, without public-model steps. Admission
