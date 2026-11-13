@@ -2,10 +2,10 @@ name: CyberPilot Read-only Web
 on:
   push:
     branches: [main]
-    paths: ['openpilot/system/cyberpilot_web/**', 'tools/cyberpilot_web/**', 'openpilot/system/manager/process_config.py', 'launch*.sh', 'docs/CYBERPILOT_WEB_KO.md', '.github/workflows/cyberpilot-web.yaml']
+    paths: ['openpilot/system/cyberpilot_web/**', 'tools/cyberpilot_web/**', 'openpilot/system/manager/process_config.py', 'launch*.sh', 'docs/CYBERPILOT_WEB_KO.md', 'docs/CYBERPILOT_TARGET_PROFILE_KO.md', '.github/workflows/cyberpilot-web.yaml']
   pull_request:
     branches: [main]
-    paths: ['openpilot/system/cyberpilot_web/**', 'tools/cyberpilot_web/**', 'openpilot/system/manager/process_config.py', 'launch*.sh', 'docs/CYBERPILOT_WEB_KO.md', '.github/workflows/cyberpilot-web.yaml']
+    paths: ['openpilot/system/cyberpilot_web/**', 'tools/cyberpilot_web/**', 'openpilot/system/manager/process_config.py', 'launch*.sh', 'docs/CYBERPILOT_WEB_KO.md', 'docs/CYBERPILOT_TARGET_PROFILE_KO.md', '.github/workflows/cyberpilot-web.yaml']
 permissions:
   contents: read
 concurrency:

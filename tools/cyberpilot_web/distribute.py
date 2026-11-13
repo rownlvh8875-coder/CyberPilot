@@ -15,6 +15,7 @@ def build_bundle(root: Path, output: Path):
            for path in sorted((root / PACKAGE).rglob("*")) if path.is_file() and path.suffix in (".py", ".js", ".css", ".html")}
   for name in ("openpilot/__init__.py", "openpilot/system/__init__.py"):
     files[name] = (root / name).read_bytes()
+  files["CYBERPILOT_TARGET_PROFILE_KO.md"] = (root / "docs/CYBERPILOT_TARGET_PROFILE_KO.md").read_bytes()
   files["README_KO.md"] = (root / "docs/CYBERPILOT_WEB_KO.md").read_bytes()
   files["run-web.sh"] = b'#!/usr/bin/env bash\nset -euo pipefail\ncd -- "$(dirname -- "$0")"\nexec python3 -B -m openpilot.system.cyberpilot_web "$@"\n'
   manifest = {"schema_version": 1, "scope": "SOURCE_ONLY_READ_ONLY_MONITOR_NOT_VEHICLE_IMAGE",

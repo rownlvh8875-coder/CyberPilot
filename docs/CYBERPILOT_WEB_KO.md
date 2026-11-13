@@ -77,7 +77,8 @@ python3 -m openpilot.system.cyberpilot_web readiness
 
 ## 최종 장치 검증까지 남은 일
 
-- 콤마 기종·차량 모델/연식 및 실제 대상 확정.
+- 1차 대상은 콤마4 / 더 뉴 싼타페 TM 2021년식 디젤로 지정됨. 실제 장치 식별·연결은 미검증.
+  [대상과 소스 근거](CYBERPILOT_TARGET_PROFILE_KO.md)를 참조.
 - native 의존성/submodule 전체 빌드, 기기 시작·업데이트·복구 검증.
 - 실제 기기의 상태 구독, 휴대폰 인증·네트워크·연결 끊김 검증.
 - 제어 Adapter의 실제 입력 결속, 별도 rate 정책과 static 차량 근거 해결.
