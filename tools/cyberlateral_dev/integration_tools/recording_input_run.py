@@ -54,14 +54,8 @@ def _capture(path: Path) -> bytes:
         raise RecordingInputRunError('RECORDING_DIAGNOSTICS_INPUT_FILE') from error
 
 
-def run_recording_input(input_file: Path, expected_sha256: str) -> dict:
-    """Pin one capture,then explicitly run unchanged CORE58;no reopen or publication."""
-    if type(expected_sha256) is not str or len(expected_sha256) != 64 or any(c not in '0123456789abcdef' for c in expected_sha256):
-        raise RecordingInputRunError('RECORDING_DIAGNOSTICS_INPUT_SHA256')
-    raw = _capture(input_file)
-    digest = hashlib.sha256(raw).hexdigest()
-    if digest != expected_sha256:
-        raise RecordingInputRunError('RECORDING_DIAGNOSTICS_INPUT_CHECKSUM')
+def _diagnose_captured(raw: bytes) -> dict:
+    """Run unchanged CORE58 on owned bytes and preserve the CORE61 record format."""
     checked = check_serialized_recording_input(raw)
     rows = [{'transition_index': i, 'model_index': check.context.model_index, 'status': check.status,
              'declared_entry_state': asdict(check.prepared.model_state),
@@ -71,7 +65,7 @@ def run_recording_input(input_file: Path, expected_sha256: str) -> dict:
              'differences': [asdict(difference) for difference in check.differences]}
             for i, check in enumerate(checked.checks)]
     return {'schema_version': 1, 'contract_id': 'CORE61_COUNTERFACTUAL_RECORDING_DIAGNOSTICS_V1',
-        'scope': 'DECLARED_SYNTHETIC_INPUT_DIAGNOSTICS_ONLY', 'input_sha256': digest, 'input_bytes': len(raw),
+        'scope': 'DECLARED_SYNTHETIC_INPUT_DIAGNOSTICS_ONLY', 'input_sha256': hashlib.sha256(raw).hexdigest(), 'input_bytes': len(raw),
         'status': checked.status, 'frame_count': len(checked.frames),
         'checked_transition_count': checked.checked_transition_count,
         'new_synthetic_model_steps': checked.synthetic_model_steps,
@@ -82,3 +76,13 @@ def run_recording_input(input_file: Path, expected_sha256: str) -> dict:
         'source_identity_reauthenticated': checked.source_identity_reauthenticated,
         'v4_payload_allowed': checked.v4_payload_allowed, 'f61_input_allowed': checked.f61_input_allowed,
         'actual_activation_allowed': checked.actual_activation_allowed, 'gates': dict(GATES)}
+
+
+def run_recording_input(input_file: Path, expected_sha256: str) -> dict:
+    """Pin one capture,then explicitly run unchanged CORE58;no reopen or publication."""
+    if type(expected_sha256) is not str or len(expected_sha256) != 64 or any(c not in '0123456789abcdef' for c in expected_sha256):
+        raise RecordingInputRunError('RECORDING_DIAGNOSTICS_INPUT_SHA256')
+    raw = _capture(input_file)
+    if hashlib.sha256(raw).hexdigest() != expected_sha256:
+        raise RecordingInputRunError('RECORDING_DIAGNOSTICS_INPUT_CHECKSUM')
+    return _diagnose_captured(raw)

@@ -9,6 +9,13 @@ byte-for-byte from the verified R7 evidence. It is now maintained as a standalon
 development project in CyberPilot. It is NOT an openpilot controller, vehicle
 installation, physical simulator, F61 invocation or safety/performance approval.
 
+The [CORE68 saved diagnostic audit](docs/RECORDING_DIAGNOSTICS_AUDIT_CORE68_KO.md)
+explicitly recomputes a supplied SHA-pinned synthetic input and compares the entire
+saved diagnostic. It detects changed records that stored-only consistency checks
+can accept; it is current-algorithm reproduction, not an independent oracle or
+authenticated source/vehicle qualification. A reproduced saved DIFFERENT remains
+diagnostically DIFFERENT even when the audit itself succeeds.
+
 Start with the [current Korean offline workflow guide](docs/OFFLINE_QUICKSTART_CURRENT_KO.md)
 and [reviewed source capability map](docs/OFFLINE_CAPABILITY_INVENTORY_CURRENT.json).
 They distinguish the installed fixed-catalog wheel CLI from the separate custom
