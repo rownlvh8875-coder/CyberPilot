@@ -2,6 +2,7 @@ import os
 import subprocess
 import sys
 import tempfile
+import time
 import unittest
 from pathlib import Path
 
@@ -26,6 +27,9 @@ class SupervisionTests(unittest.TestCase):
           run_command([sys.executable, '-c', script, str(pidfile)], Path.cwd(), os.environ.copy(), root / 'timeout.log', timeout=0.5)
         pid = int(pidfile.read_text())
         status = Path(f'/proc/{pid}/stat')
+        deadline = time.monotonic() + 3
+        while status.exists() and status.read_text().split()[2] != 'Z' and time.monotonic() < deadline:
+          time.sleep(0.01)
         self.assertTrue(not status.exists() or status.read_text().split()[2] == 'Z', 'descendant still executing')
       finally:
         if pidfile.exists():
