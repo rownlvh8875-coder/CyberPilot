@@ -33,7 +33,7 @@ Strict canonical JSON parse via existing `_parse`:UTF8,duplicate/float/NaN/depth
 oversized-int/noncanonical rejection;root dict. Narrow required envelope only:
 schema_version exact int1;contract_id CORE69_DECLARED_DIAGNOSTICS_REFERENCE_AUDIT_V1;
 scope BOUNDED_DECLARED_NEXT_STATE_SELECTED_SOURCE_PARITY_NOT_FULL_CONTROLLER_ORIGIN_OR_VEHICLE_PROOF;
-all six CORE66 authority flags exact False;gates canonical-equal to existing GATES.
+all six top-level CORE66 authority flags exact False;top-level gates canonical-equal to existing GATES.
 Other body fields and additional keys are not semantically checked. Do not expose
 stored audit status,work counters,identity or body as trusted inspection fields.
 Summary is bounded strict UTF8 text only;do not render or interpolate its content.

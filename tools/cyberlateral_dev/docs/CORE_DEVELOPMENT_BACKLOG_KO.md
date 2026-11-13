@@ -89,6 +89,7 @@ CORE1은 오프라인 개발 구분명이며 금지된 F-71 단계가 아니다.
 | CORE68 | 공급된 합성 입력으로 저장 진단 재계산·대조 | 입력/진단 두SHA·단일캡처·기존N-1step·전체header/row 대조·audit0/1/2 | [재계산 안내](RECORDING_DIAGNOSTICS_AUDIT_CORE68_KO.md); 저장 진단/재현 판정 분리·독립 oracle/원본 출처/실차 인증 아님 |
 | CORE69 | 선언 합성 진단과 별도 선택-source 참조 대조 | 두SHA·공유 admission·격리 참조N-1step·모델0·전체header/row 대조 | [참조 안내](RECORDING_DIAGNOSTICS_REFERENCE_CORE69_KO.md); 선언 state feed 유지·입력 검증 공유·전체 제어기/출처/실차 인증 아님 |
 | CORE70 | 단일 참조 대조·한국어 요약·체크섬 저장 | 두SHA·새 외부 목적지 사전검사·CORE69한번·완전JSON/요약/체크섬3파일·exclusive/readback | [저장 안내](RECORDING_REFERENCE_WORKFLOW_CORE70_KO.md); 진단/대조 판정 분리·20전이상세/생략명시·재시도/실차 권한 없음 |
+| CORE71 | 저장 참조 패키지의 Manifest 고정 무결성 조회 | 외부Manifest SHA·세파일 단일캡처·정규JSON/UTF8/제한envelope·모델/reference0 | [무결성 안내](REFERENCE_PACKAGE_INTEGRITY_CORE71_KO.md); audit행·JSON/요약 의미·과거작업량 미검증·F-71 실차 승인 아님 |
 | RATE | rate 정책 구현과 근거 | 승인 정책 ID·기간 의미·normalization authority·단위·비대칭 축약·no fallback 확인 | 실제 T2/scale/r은 미정; 신호 통합과 분리 |
 | STATIC | 차량 정적 근거 qualification | 적용되는 platform/firmware/gateway/context 근거의 독립 authority | 오프라인 개발 선행조건 아님; 실차 사용의 별도 Gate |
 | INTEGRATION | 실제 source/state/time binding | 실제 source/build/context와 완전한 연속 pair, actual consumed settings 및 요청/제한 상태 역할 검증 | 현재 미충족; 합성 label/PASS 선언으로 대신하지 않음 |

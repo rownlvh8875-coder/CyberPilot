@@ -9,6 +9,12 @@ byte-for-byte from the verified R7 evidence. It is now maintained as a standalon
 development project in CyberPilot. It is NOT an openpilot controller, vehicle
 installation, physical simulator, F61 invocation or safety/performance approval.
 
+The [CORE71 saved package integrity inspector](docs/REFERENCE_PACKAGE_INTEGRITY_CORE71_KO.md)
+pins all three CORE70 files through an external manifest SHA without model or
+reference execution. It checks captured byte integrity, canonical format and a
+narrow closed-authority envelope; audit semantics and JSON/summary agreement are
+explicitly unvalidated. This is an offline label, not F-71 vehicle authorization.
+
 The [CORE70 reference audit workflow](docs/RECORDING_REFERENCE_WORKFLOW_CORE70_KO.md)
 runs the existing reference audit once and saves its complete JSON, Korean summary
 and checksum in a fresh external directory. It preserves diagnostic-versus-audit
