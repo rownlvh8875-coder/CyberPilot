@@ -9,6 +9,12 @@ byte-for-byte from the verified R7 evidence. It is now maintained as a standalon
 development project in CyberPilot. It is NOT an openpilot controller, vehicle
 installation, physical simulator, F61 invocation or safety/performance approval.
 
+The [CORE69 declared diagnostic reference](docs/RECORDING_DIAGNOSTICS_REFERENCE_CORE69_KO.md)
+checks the supplied synthetic input with the existing integer-bit oracle and pinned
+selected-source helpers in a separate worker, without public-model steps. Admission
+remains shared; this checks declared next-state arithmetic, not an independent input
+validator, complete-controller behavior, authenticated origin or vehicle readiness.
+
 The [CORE68 saved diagnostic audit](docs/RECORDING_DIAGNOSTICS_AUDIT_CORE68_KO.md)
 explicitly recomputes a supplied SHA-pinned synthetic input and compares the entire
 saved diagnostic. It detects changed records that stored-only consistency checks
