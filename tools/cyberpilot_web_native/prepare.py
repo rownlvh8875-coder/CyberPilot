@@ -11,6 +11,8 @@ from pathlib import Path
 
 PROFILE = Path(__file__).with_name('dependencies.json')
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+from tools.cyberpilot_web_native.supervise import run_command  # noqa: E402
 
 
 def check_output_path(root: Path, output: Path) -> Path:
@@ -46,8 +48,9 @@ def prepare(root: Path, output: Path):
 
   def command(name, argv, cwd):
     env = {**os.environ, 'PATH': str(Path(sys.executable).parent) + os.pathsep + os.environ['PATH']}
-    with (out / (name + '.log')).open('w') as stream:
-      subprocess.run(argv, cwd=cwd, env=env, stdout=stream, stderr=subprocess.STDOUT, check=True, timeout=180)
+    code = run_command(argv, cwd, env, out / (name + '.log'))
+    if code:
+      raise subprocess.CalledProcessError(code, argv)
 
   records = {}
   for name, entry in profile.items():

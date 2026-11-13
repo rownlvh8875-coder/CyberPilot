@@ -5,7 +5,7 @@ import re
 import stat
 import uuid
 from contextlib import contextmanager
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 TOPICS = ('deviceState', 'selfdriveState', 'carState', 'managerState')
@@ -17,6 +17,10 @@ class Namespace:
   path: Path
   device: int
   inode: int
+  retained_reason: str | None = field(default=None, init=False)
+
+  def retain(self, reason):
+    object.__setattr__(self, 'retained_reason', reason)
 
 
 def validate_namespace(run: Namespace):
@@ -29,8 +33,17 @@ def validate_namespace(run: Namespace):
       or (info.st_dev, info.st_ino) != (run.device, run.inode) or run.path.name != 'msgq_' + run.prefix):
     raise ValueError('namespace_identity_mismatch')
   for child in run.path.iterdir():
-    if child.name not in TOPICS or not stat.S_ISREG(child.lstat().st_mode):
+    child_info = child.lstat()
+    if (child.name not in TOPICS or not stat.S_ISREG(child_info.st_mode)
+        or child_info.st_uid != os.getuid() or child_info.st_nlink != 1):
       raise ValueError('unexpected_endpoint')
+
+
+def validate_native_namespace(run: Namespace):
+  validate_namespace(run)
+  expected = Path('/dev/shm') / ('msgq_' + run.prefix)
+  if run.path != expected or run.path.resolve() != expected or run.path.parent.resolve() != Path('/dev/shm'):
+    raise ValueError('namespace_is_not_native_ipc_path')
 
 
 @contextmanager
@@ -51,9 +64,10 @@ def namespace(shm_root=Path('/dev/shm')):
     yield run
   finally:
     try:
-      validate_namespace(run)
-      for child in path.iterdir():
-        child.unlink()
-      path.rmdir()
+      if run.retained_reason is None:
+        validate_namespace(run)
+        for child in path.iterdir():
+          child.unlink()
+        path.rmdir()
     finally:
       os.environ.pop('OPENPILOT_PREFIX', None)

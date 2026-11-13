@@ -4,19 +4,19 @@ import gc
 import time
 
 from openpilot.system.cyberpilot_web.telemetry import CerealCollector, Store
-from tools.cyberpilot_web_native.isolation import TOPICS, validate_namespace
+from tools.cyberpilot_web_native.isolation import TOPICS, validate_native_namespace
 
 
 class SyntheticPublisher:
   def __init__(self, run):
-    validate_namespace(run)  # before importing native code or opening sockets
+    validate_native_namespace(run)  # before importing native code or opening sockets
     from openpilot.cereal import messaging
     self.run = run
     self.messaging = messaging
     self.pm = messaging.PubMaster(list(TOPICS))
 
   def publish(self, topic, stamp=None, valid=True, fields=None):
-    validate_namespace(self.run)
+    validate_native_namespace(self.run)
     if topic not in TOPICS:
       raise ValueError('status_topics_only')
     data = {

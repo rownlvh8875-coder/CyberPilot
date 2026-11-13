@@ -12,7 +12,9 @@
 - 외부 새 폴더에서 `msgq/ipc_pyx.so`만 빌드한다. root native submodule,
   root Python 환경, 기존 개발판과 제어 소스는 변경하지 않는다.
 
-운영 환경의 기본 IPC에 시험 메시지를 보내지 않는다. 매 시험은 고유한
+운영 환경의 기본 IPC에 시험 메시지를 보내지 않는다. native 진입 시 폴더의 실제
+경로가 정확히 /dev/shm의 해당 prefix 경로인지 확인하며, endpoint는 동일 소유자의
+단일 링크인 일반 파일만 허용한다. 테스트용 임시 폴더는 native 진입에 사용할 수 없다. 매 시험은 고유한
 `OPENPILOT_PREFIX`와 소유자 전용 0700 `/dev/shm/msgq_cyberpilot_web_native_*`
 폴더를 생성한다. 환경에 기존 OPENPILOT_PREFIX 또는 CEREAL_FAKE가 있으면 거절한다.
 CEREAL_FAKE_PREFIX만으로 IPC 격리가 되는 것은 아니다. 이미 설정된 세션을
@@ -43,6 +45,11 @@ native collector 테스트·별도 웹 CLI·HTTP·PC/모바일 Chromium 검사�
 실행 환경은 자동으로 출력 폴더의 native 경로를 사용하며 운영 환경을 수정하지 않는다.
 Chromium 또는 Google Chrome이 없으면 Playwright의 Chromium을 설치해야 한다.
 기존 basic web 검증도 실행한다. 단계가 실패하면 PASS 영수증을 생성하지 않는다.
+웹 프로세스 생성·브라우저 종료가 실패해도 다른 정리 단계를 계속 시도한다.
+통신 자원 종료를 확인하지 못하면 IPC_NAMESPACE_*.json과 오류에 소유 경로를
+남기고 시험 폴더를 보존하며 FAIL 처리한다. 명령 timeout은 새 세션의 프로세스
+그룹을 종료한다. 강제 종료·커널 중단 등에서는 사후 폴더 정리가 보장되지 않으며
+일반 메시지 폴더를 일괄 삭제하지 않는다.
 
 출력의 RESULTS.json, NATIVE_TEST_RESULTS.json, native-web/NATIVE_WEB_RESULTS.json,
 BUILD_RECEIPT.json, SOURCE_SHA256.json, MANIFEST.json과 로그·캡처를 보존한다.

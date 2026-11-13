@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from openpilot.system.cyberpilot_web.server import init_token  # noqa: E402
 from tools.cyberpilot_web_native.fixtures import SyntheticPublisher  # noqa: E402
-from tools.cyberpilot_web_native.isolation import TOPICS, namespace, validate_namespace  # noqa: E402
+from tools.cyberpilot_web_native.isolation import TOPICS, namespace, validate_native_namespace  # noqa: E402
 from tools.cyberpilot_web_native.prepare import check_gitlinks, check_output_path, source_hashes  # noqa: E402
 
 
@@ -35,25 +35,83 @@ def validate_build(prepared):
   return receipt
 
 
+def cleanup_case(run, publisher, process, worker, stop, context):
+  problems = []
+  stop.set()
+  if context is not None:
+    try:
+      context.close()
+    except Exception:
+      problems.append('browser_close_failed')
+  worker_stopped = worker is None
+  if worker is not None:
+    try:
+      if worker.ident is not None:
+        worker.join(timeout=3)
+      worker_stopped = not worker.is_alive()
+    except Exception:
+      worker_stopped = False
+    if not worker_stopped:
+      problems.append('publisher_worker_unconfirmed')
+  process_stopped = process is None
+  if process is not None:
+    try:
+      if process.poll() is None:
+        process.terminate()
+      try:
+        process.communicate(timeout=8)
+      except subprocess.TimeoutExpired:
+        process.kill()
+        process.communicate(timeout=3)
+      process_stopped = process.poll() is not None
+    except Exception:
+      try:
+        process.kill()
+        process.wait(timeout=3)
+        process_stopped = process.poll() is not None
+      except Exception:
+        process_stopped = False
+    if not process_stopped:
+      problems.append('monitor_process_unconfirmed')
+  publisher_closed = publisher is None
+  if publisher is not None and worker_stopped:
+    try:
+      publisher.close()
+      publisher_closed = True
+    except Exception:
+      problems.append('publisher_close_failed')
+  if not (worker_stopped and process_stopped and publisher_closed):
+    run.retain('native_resources_not_quiescent')
+  if problems:
+    raise RuntimeError('native_cleanup_failed:' + ','.join(problems) + (' retained_namespace=' + str(run.path) if run.retained_reason else ''))
+
+
 def exercise_case(browser, output, width, height, prepared):
   checks = []
   with namespace() as run, tempfile.TemporaryDirectory(prefix='cyberpilot-native-private-') as directory:
     private = Path(directory)
     token_path = private / 'token'
     token = init_token(token_path)
-    validate_namespace(run)
+    validate_native_namespace(run)
     ipc = importlib.import_module('msgq.ipc_pyx')
     opendbc = importlib.import_module('opendbc')
     assert ipc.__file__ is not None and opendbc.__file__ is not None
     assert Path(ipc.__file__).resolve() == (prepared / 'msgq/msgq/ipc_pyx.so').resolve()
     assert Path(opendbc.__file__).resolve() == (prepared / 'opendbc/opendbc/__init__.py').resolve()
-    publisher = SyntheticPublisher(run)
+    journal = output / f'IPC_NAMESPACE_{width}.json'
+    journal_record = {'scope': 'SYNTHETIC_ONLY', 'path': str(run.path), 'prefix': run.prefix, 'owner_uid': os.getuid(), 'test_pid': os.getpid()}
+    journal.write_text(json.dumps(journal_record, indent=2) + '\n')
+    publisher = None
+    process = None
+    worker = None
+    context = None
     settings = {'car_valid': True, 'pause_car': False}
     lock = threading.Lock()
     stop = threading.Event()
     errors = []
 
     def publish():
+      assert publisher is not None
       try:
         while not stop.is_set():
           with lock:
@@ -66,12 +124,12 @@ def exercise_case(browser, output, width, height, prepared):
       except Exception as error:
         errors.append(type(error).__name__)
 
-    process = subprocess.Popen([sys.executable, '-B', '-m', 'openpilot.system.cyberpilot_web', 'serve',
-                                '--source', 'openpilot', '--port', '0', '--token-file', str(token_path)],
-                               cwd=ROOT, env=os.environ.copy(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-    worker = threading.Thread(target=publish, daemon=True)
-    context = None
     try:
+      publisher = SyntheticPublisher(run)
+      process = subprocess.Popen([sys.executable, '-B', '-m', 'openpilot.system.cyberpilot_web', 'serve',
+                                  '--source', 'openpilot', '--port', '0', '--token-file', str(token_path)],
+                                 cwd=ROOT, env=os.environ.copy(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+      worker = threading.Thread(target=publish, daemon=True)
       lines = queue.Queue()
       stream = process.stdout
       assert stream is not None
@@ -135,21 +193,13 @@ def exercise_case(browser, output, width, height, prepared):
       assert not page_errors and not errors, (page_errors, errors)
       return checks
     finally:
-      if context:
-        context.close()
-      stop.set()
-      if worker.ident is not None:
-        worker.join(timeout=3)
-      if worker.is_alive():
-        raise RuntimeError('publisher_did_not_stop')
-      process.terminate()
       try:
-        stdout, stderr = process.communicate(timeout=8)
-      except subprocess.TimeoutExpired:
-        process.kill()
-        stdout, stderr = process.communicate(timeout=3)
-      publisher.close()
-      assert token not in stdout + stderr
+        cleanup_case(run, publisher, process, worker, stop, context)
+      finally:
+        journal_record['retained_reason'] = run.retained_reason
+        journal_record['native_resources_quiescent'] = run.retained_reason is None
+        journal_record['monitor_returncode'] = process.poll() if process is not None else None
+        journal.write_text(json.dumps(journal_record, indent=2) + '\n')
 
 
 def main():

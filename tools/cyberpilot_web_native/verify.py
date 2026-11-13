@@ -5,7 +5,6 @@ import hashlib
 import json
 import os
 import py_compile
-import subprocess
 import sys
 from pathlib import Path
 
@@ -13,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from tools.cyberpilot_web_native.native_check import validate_build  # noqa: E402
 from tools.cyberpilot_web_native.prepare import check_output_path  # noqa: E402
+from tools.cyberpilot_web_native.supervise import run_command  # noqa: E402
 
 
 def sources():
@@ -42,10 +42,9 @@ def main():
   results = {}
 
   def command(name, argv, environment=env):
-    with (output / (name + '.log')).open('w') as stream:
-      result = subprocess.run(argv, cwd=ROOT, env=environment, stdout=stream, stderr=subprocess.STDOUT, timeout=180)
-    results[name] = {'exit': result.returncode}
-    if result.returncode:
+    code = run_command(argv, ROOT, environment, output / (name + '.log'))
+    results[name] = {'exit': code}
+    if code:
       raise RuntimeError(name + ' failed; inspect ' + str(output / (name + '.log')))
 
   target = 'tools/cyberpilot_web_native'
