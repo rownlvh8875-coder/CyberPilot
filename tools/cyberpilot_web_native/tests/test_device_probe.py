@@ -10,7 +10,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from tools.cyberpilot_web_native.device_probe import collect
-from tools.cyberpilot_web_native.device_probe_bundle import build_bundle
+from tools.cyberpilot_web_native.device_probe_bundle import build_bundle, export_release
 
 ROOT = Path(__file__).resolve().parents[3]
 
@@ -127,3 +127,18 @@ class DeviceProbeTests(unittest.TestCase):
     self.assertEqual(data['source']['status'], 'NOT_PROVIDED')
     self.assertFalse(data['device_installation_qualified'])
     self.assertEqual(data['probe_sha256'], manifest['files']['device_probe.py'])
+
+  def test_export_records_public_host_facts_and_complete_checksums(self):
+    release = self.root / 'release'
+    export_release(release)
+    manifest = json.loads((release / 'MANIFEST.json').read_text())
+    self.assertEqual({p.name for p in release.iterdir()}, set(manifest) | {'MANIFEST.json'})
+    for name, sha in manifest.items():
+      self.assertEqual(hashlib.sha256((release/name).read_bytes()).hexdigest(), sha)
+    observation = json.loads((release/'HOST_OBSERVATION.json').read_text())
+    self.assertEqual(observation['observation_scope'], 'SYSTEM_ROOT')
+    self.assertFalse(observation['device_installation_qualified'])
+    for line in (release/'SHA256SUMS.txt').read_text().splitlines():
+      sha, name = line.split('  ', 1)
+      self.assertEqual(Path(name).name, name)
+      self.assertEqual(hashlib.sha256((release/name).read_bytes()).hexdigest(), sha)

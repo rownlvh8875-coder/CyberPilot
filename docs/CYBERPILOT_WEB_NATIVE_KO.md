@@ -67,3 +67,14 @@ native 바이너리의 비트 재현성은 주장하지 않는다. 컴파일러/
 실제 상태 및 폰 네트워크 검증, 실제 제어 Adapter 입력 결속과 rate/static 근거다.
 R_BUDGET=UNRESOLVED, Static Gate=FAIL, 실제 r/T2/vehicle scale=null을 유지한다.
 실차 제어·F70UH/V/F71은 열리지 않는다.
+
+## 장치 관찰 준비와 추가 회귀
+
+고정 소스의 시각이 낮아져 재시작될 때 새 Store/collector가 이전 값을 물려받지
+않는 실제 native 회귀 검사를 추가했다. 자동 epoch 감지나 기존 Store의 시각
+역행 허용을 추가한 것은 아니다. CI 경로는 직접 사용하는 manager/process.py와
+기본 웹 입력을 포함한다.
+
+CyberPilot 설치 없이 공개 기기 정보를 확인할 수 있는 별도 소스 도구는
+[장치 확인 안내](CYBERPILOT_DEVICE_PROBE_KO.md)를 참조한다. 이것은 실제 장치
+접근 경로를 제공하거나 설치 적합성을 승인하는 도구가 아니다.

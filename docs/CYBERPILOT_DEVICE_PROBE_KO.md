@@ -31,11 +31,12 @@ python3 -S -B device_probe.py --source-root /data/openpilot
 
 ## 읽는 범위
 
-- `/sys/firmware/devicetree/base/model`: 최대4096 bytes, NUL 제거 후 모델 문자열.
-- `/VERSION`: 최대4096 bytes의 공개 OS 버전 파일. 원본 bytes SHA도 함께 기록.
+- `/sys/firmware/devicetree/base/model`: 수용 한도4096 bytes, NUL 제거 후 모델 문자열.
+- `/VERSION`: 수용 한도4096 bytes의 공개 OS 버전 파일. 원본 bytes SHA도 함께 기록.
 - `/AGNOS`: 존재·파일 종류 metadata만 관찰하며 내용을 읽지 않는다.
 - OS·아키텍처·Python 버전, 선택한 소스 root의 Git metadata.
 
+초과 감지를 위해 최대4097 bytes까지 읽으며, 한도를 넘으면 값과 전체 SHA를 반환하지 않는다.
 읽지 못한 값은 MISSING/EMPTY/UNREADABLE/TOO_LARGE와 null로 표시한다.
 마지막 파일 symlink·FIFO·디렉터리는 읽지 않는다. 환경 변수 전체, Params,
 VIN·serial·인증 정보·raw 로그는 수집하지 않는다. 네트워크 서비스나 차량 프로세스를 시작하지 않는다.
@@ -64,3 +65,7 @@ python3 tools/cyberpilot_web_native/device_probe_bundle.py --output /tmp/device-
 ZIP은 probe·이 안내문·모델 규칙 출처·Manifest의4파일이며 설치 이미지가 아니다.
 각 파일 SHA와 ZIP SHA를 확인한 뒤 사용한다. 외부 native build SDK나 기존 개발 환경은 바꾸지 않는다.
 R_BUDGET=UNRESOLVED, Static Gate=FAIL, 실제 r/T2/vehicle scale=null과 실차 활성화 금지는 유지된다.
+
+`--release-dir /tmp/device-probe-release-new`를 사용하면 ZIP·호스트 관찰 JSON·
+체크섬·Manifest를 새 외부 폴더로 내보낸다. HOST_OBSERVATION.json은 도구가
+실행된 클라우드/CI 호스트의 값이며 실제 콤마의 값으로 해석하지 않는다.

@@ -2,10 +2,10 @@ name: CyberPilot Host Native Telemetry
 on:
   push:
     branches: [main]
-    paths: ['tools/cyberpilot_web_native/**', 'tools/cyberpilot_web/**', 'openpilot/system/cyberpilot_web/**', 'openpilot/cereal/**', 'openpilot/common/utils.py', 'openpilot/__init__.py', 'openpilot/system/__init__.py', '.gitmodules', 'msgq_repo', 'opendbc_repo', 'docs/CYBERPILOT_WEB_NATIVE_KO.md', '.github/workflows/cyberpilot-web-native.yaml', '.github/workflows/cyberpilot-web.yaml', 'openpilot/system/manager/process_config.py', 'openpilot/system/manager/process.py', 'launch*.sh', 'openpilot/system/manager/manager.py', 'openpilot/common/hardware/comma/agnos.*', 'openpilot/common/hardware/comma/updater', 'openpilot/system/hardware/comma/agnos.json', 'docs/CYBERPILOT_WEB_KO.md', 'docs/CYBERPILOT_TARGET_PROFILE_KO.md']
+    paths: ['tools/cyberpilot_web_native/**', 'tools/cyberpilot_web/**', 'openpilot/system/cyberpilot_web/**', 'openpilot/cereal/**', 'openpilot/common/utils.py', 'openpilot/__init__.py', 'openpilot/system/__init__.py', '.gitmodules', 'msgq_repo', 'opendbc_repo', 'docs/CYBERPILOT_WEB_NATIVE_KO.md', 'docs/CYBERPILOT_DEVICE_PROBE_KO.md', '.github/workflows/cyberpilot-web-native.yaml', '.github/workflows/cyberpilot-web.yaml', 'openpilot/system/manager/process_config.py', 'openpilot/system/manager/process.py', 'launch*.sh', 'openpilot/system/manager/manager.py', 'openpilot/common/hardware/comma/agnos.*', 'openpilot/common/hardware/comma/updater', 'openpilot/system/hardware/comma/agnos.json', 'docs/CYBERPILOT_WEB_KO.md', 'docs/CYBERPILOT_TARGET_PROFILE_KO.md']
   pull_request:
     branches: [main]
-    paths: ['tools/cyberpilot_web_native/**', 'tools/cyberpilot_web/**', 'openpilot/system/cyberpilot_web/**', 'openpilot/cereal/**', 'openpilot/common/utils.py', 'openpilot/__init__.py', 'openpilot/system/__init__.py', '.gitmodules', 'msgq_repo', 'opendbc_repo', 'docs/CYBERPILOT_WEB_NATIVE_KO.md', '.github/workflows/cyberpilot-web-native.yaml', '.github/workflows/cyberpilot-web.yaml', 'openpilot/system/manager/process_config.py', 'openpilot/system/manager/process.py', 'launch*.sh', 'openpilot/system/manager/manager.py', 'openpilot/common/hardware/comma/agnos.*', 'openpilot/common/hardware/comma/updater', 'openpilot/system/hardware/comma/agnos.json', 'docs/CYBERPILOT_WEB_KO.md', 'docs/CYBERPILOT_TARGET_PROFILE_KO.md']
+    paths: ['tools/cyberpilot_web_native/**', 'tools/cyberpilot_web/**', 'openpilot/system/cyberpilot_web/**', 'openpilot/cereal/**', 'openpilot/common/utils.py', 'openpilot/__init__.py', 'openpilot/system/__init__.py', '.gitmodules', 'msgq_repo', 'opendbc_repo', 'docs/CYBERPILOT_WEB_NATIVE_KO.md', 'docs/CYBERPILOT_DEVICE_PROBE_KO.md', '.github/workflows/cyberpilot-web-native.yaml', '.github/workflows/cyberpilot-web.yaml', 'openpilot/system/manager/process_config.py', 'openpilot/system/manager/process.py', 'launch*.sh', 'openpilot/system/manager/manager.py', 'openpilot/common/hardware/comma/agnos.*', 'openpilot/common/hardware/comma/updater', 'openpilot/system/hardware/comma/agnos.json', 'docs/CYBERPILOT_WEB_KO.md', 'docs/CYBERPILOT_TARGET_PROFILE_KO.md']
 permissions:
   contents: read
 concurrency:
@@ -37,6 +37,8 @@ jobs:
         run: tools/cyberpilot_web_native/.venv/bin/python -B tools/cyberpilot_web_native/prepare.py --output "$RUNNER_TEMP/cyberpilot-native-build"
       - name: Qualify native synthetic telemetry and basic web
         run: tools/cyberpilot_web_native/.venv/bin/python -B tools/cyberpilot_web_native/verify.py --prepared "$RUNNER_TEMP/cyberpilot-native-build" --output "$RUNNER_TEMP/cyberpilot-native-verification"
+      - name: Export standalone read-only device probe
+        run: tools/cyberpilot_web_native/.venv/bin/python -B tools/cyberpilot_web_native/device_probe_bundle.py --release-dir "$RUNNER_TEMP/cyberpilot-device-probe"
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
@@ -45,5 +47,6 @@ jobs:
             ${{ runner.temp }}/cyberpilot-native-verification
             ${{ runner.temp }}/cyberpilot-native-build/*.log
             ${{ runner.temp }}/cyberpilot-native-build/BUILD_RECEIPT.json
+            ${{ runner.temp }}/cyberpilot-device-probe
           if-no-files-found: error
           retention-days: 14
