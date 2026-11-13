@@ -26,10 +26,20 @@ def public_text(path):
   result = {'status': 'UNREADABLE', 'value': None, 'sha256': None, 'bytes_read': None}
   try:
     fd = os.open(path, os.O_RDONLY | os.O_NONBLOCK | os.O_NOFOLLOW)
-    with os.fdopen(fd, 'rb') as stream:
+    with os.fdopen(fd, 'rb', buffering=0) as stream:
       if not stat.S_ISREG(os.fstat(stream.fileno()).st_mode):
         return result
-      data = stream.read(4097)
+      chunks = []
+      remaining = 4097
+      while remaining:
+        chunk = stream.read(remaining)
+        if chunk is None:
+          return result
+        if not chunk:
+          break
+        chunks.append(chunk)
+        remaining -= len(chunk)
+      data = b''.join(chunks)
     if len(data) > 4096:
       result['status'] = 'TOO_LARGE'
       return result
@@ -68,10 +78,14 @@ def source_metadata(source_root):
     if not (root / '.git').exists():
       result['status'] = 'NOT_REPOSITORY_ROOT'
       return result
-  except (OSError, ValueError):
+  except (OSError, ValueError, RuntimeError):
     result.update(status='UNAVAILABLE', root=None)
     return result
-  env = {key: value for key, value in os.environ.items() if key not in SELECTORS}
+  env = {key: value for key, value in os.environ.items()
+         if key not in SELECTORS and not key.startswith('GIT_TRACE') and key not in ('GIT_REDIRECT_STDERR', 'GIT_CURL_VERBOSE')}
+  # Trace2 targets can also come from global/system Git config. Explicit zero
+  # values disable those without editing config or dropping auth/proxy settings.
+  env.update(GIT_TRACE='0', GIT_TRACE2='0', GIT_TRACE2_PERF='0', GIT_TRACE2_EVENT='0')
   try:
     def git(*args):
       run = subprocess.run(['git', '--no-optional-locks', '-C', str(root), 'rev-parse', *args],
@@ -86,7 +100,7 @@ def source_metadata(source_root):
     if not re.fullmatch(r'[0-9a-f]{40}|[0-9a-f]{64}', commit):
       raise ValueError('invalid_git_commit')
     result.update(status='OBSERVED_METADATA_ONLY', commit=commit, branch=branch[:256])
-  except (OSError, ValueError, subprocess.SubprocessError):
+  except (OSError, ValueError, RuntimeError, subprocess.SubprocessError):
     result['status'] = 'UNAVAILABLE'
   return result
 

@@ -26,22 +26,22 @@
 ### Task 1 — Close deferred coverage
 
 Files: native tests/test_native.py, test_worker.py and both web workflows.
-- [ ] Add actual native source-restart/new-store characterization case, confirm expected values/missing state.
-- [ ] Witness deliberate old-store reuse mutation failing; keep real production classes/IPC in normal run.
-- [ ] Add process.py to basic push/PR filters and union direct basic inputs into native filters; focused changed-path selection probe before/after.
-- [ ] Raise required actual-native coverage to9, run complete native suite and static checks, commit.
+- [x] Add actual native source-restart/new-store characterization case, confirm expected values/missing state.
+- [x] Witness deliberate old-store reuse mutation failing; keep real production classes/IPC in normal run.
+- [x] Add process.py to basic push/PR filters and union direct basic inputs into native filters; focused changed-path selection probe before/after.
+- [x] Raise required actual-native coverage to9, run complete native suite and static checks, commit.
 
 ### Task 2 — Portable device observer
 
 Files: tools/cyberpilot_web_native/{device_probe.py,device_probe_bundle.py,tests/test_device_probe.py}, docs/CYBERPILOT_DEVICE_PROBE_KO.md.
-- [ ] Tests first RED missing observer: bounded fixed-file status, missing/no invented values, symlink/FIFO rejection, fixture scope, never-qualified output, exact-root Git and inherited selector isolation.
-- [ ] Implement collect(root=Path('/'),source_root=None) and stdout-only CLI, no native imports/network/install.
-- [ ] Add deterministic ZIP and extracted stdlib-only real-host CLI smoke, with source/SHA provenance.
-- [ ] Run full project tests/static/compile and actual host probe, commit.
+- [x] Tests first RED missing observer: bounded fixed-file status, missing/no invented values, symlink/FIFO rejection, fixture scope, never-qualified output, exact-root Git and inherited selector isolation.
+- [x] Implement collect(root=Path('/'),source_root=None) and stdout-only CLI, no native imports/network/install.
+- [x] Add deterministic ZIP and extracted stdlib-only real-host CLI smoke, with source/SHA provenance.
+- [x] Run full project tests/static/compile and actual host probe, commit.
 
 ### Task 3 — Qualification and publication
 
-- [ ] Existing full native gate discovers all new tests; run it, record device probe/ZIP verification separately (no protected verifier edits unless needed).
-- [ ] One fresh whole-branch review using strongest model, fix Important findings RED/GREEN plus full gate; no repeated reviewer.
+- [x] Existing full native gate discovers all new tests; run it, record device probe/ZIP verification separately (no protected verifier edits unless needed).
+- [x] One fresh whole-branch review using strongest model, fix Important findings RED/GREEN plus full gate; no repeated reviewer.
 - [ ] Normal feature backup/main FF/push; exact-head basic/native CI and artifacts, source custody, sealed external package.
 - [ ] Report actual result and physical-device limitations without claiming install completion.

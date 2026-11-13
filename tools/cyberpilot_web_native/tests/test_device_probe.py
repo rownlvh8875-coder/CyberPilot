@@ -84,6 +84,58 @@ class DeviceProbeTests(unittest.TestCase):
     after = {str(p):p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
     self.assertEqual(after, before)
 
+  def test_inherited_git_trace_destinations_do_not_modify_files(self):
+    for key in ('GIT_TRACE', 'GIT_TRACE2', 'GIT_TRACE2_PERF', 'GIT_TRACE2_EVENT'):
+      with self.subTest(trace=key):
+        trace = self.root / (key + '.log')
+        trace.write_bytes(b'preserve trace sentinel\n')
+        with patch.dict(os.environ, {key: str(trace)}):
+          result = collect(self.root, source_root=ROOT)
+        self.assertEqual(result['source']['status'], 'OBSERVED_METADATA_ONLY')
+        self.assertEqual(trace.read_bytes(), b'preserve trace sentinel\n')
+
+  def test_git_global_trace2_config_cannot_enable_file_writes(self):
+    targets = [self.root / (name + '.log') for name in ('normal', 'perf', 'event')]
+    config = self.root / 'trace-global.gitconfig'
+    config.write_text('[trace2]\n' + ''.join('  ' + name + 'Target = ' + str(path) + '\n' for name, path in zip(('normal', 'perf', 'event'), targets, strict=True)))
+    for path in targets:
+      path.write_bytes(b'preserve configured trace\n')
+    with patch.dict(os.environ, {'GIT_CONFIG_GLOBAL': str(config)}):
+      result = collect(self.root, source_root=ROOT)
+    self.assertEqual(result['source']['status'], 'OBSERVED_METADATA_ONLY')
+    for path in targets:
+      self.assertEqual(path.read_bytes(), b'preserve configured trace\n')
+
+  def test_cyclic_source_path_still_produces_observation_json(self):
+    loop = self.root / 'source-loop'
+    loop.symlink_to(loop.name)
+    result = subprocess.run([sys.executable, '-S', '-B', str(ROOT/'tools/cyberpilot_web_native/device_probe.py'), '--source-root', str(loop)],
+                            cwd=self.root, env={**os.environ, 'PYTHONPATH': ''}, capture_output=True, text=True, timeout=8)
+    self.assertEqual(result.returncode, 0, result.stderr)
+    data = json.loads(result.stdout)
+    self.assertEqual(data['source']['status'], 'UNAVAILABLE')
+    self.assertFalse(data['device_installation_qualified'])
+
+  def test_public_file_descriptor_read_budget_is_bounded(self):
+    self.model.write_bytes(b'x' * 20000)
+    positions = []
+    original = os.fdopen
+    class ObserveClose:
+      def __init__(self, stream):
+        self.stream = stream
+      def __enter__(self):
+        return self.stream
+      def __exit__(self, *args):
+        positions.append(os.lseek(self.stream.fileno(), 0, os.SEEK_CUR))
+        self.stream.close()
+    def observe(*args, **kwargs):
+      return ObserveClose(original(*args, **kwargs))
+    with patch('os.fdopen', observe):
+      result = collect(self.root)
+    self.assertEqual(result['model']['status'], 'TOO_LARGE')
+    self.assertTrue(positions)
+    self.assertLessEqual(max(positions), 4097)
+
   def test_unresolvable_optional_source_is_unavailable(self):
     result = collect(self.root, source_root=self.root / ('x' * 5000))
     self.assertEqual(result['source']['status'], 'UNAVAILABLE')

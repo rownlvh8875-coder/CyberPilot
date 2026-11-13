@@ -26,7 +26,9 @@ python3 -S -B device_probe.py --source-root /data/openpilot
 
 `/data/openpilot`은 예시다. 실제 경로가 맞는 경우에만 지정한다. root의 하위 폴더나
 상위 저장소의 Git 정보를 빌려오지 않는다. 소스가 dirty인지/빌드와 같은지/실제 배포본인지
-판정하지 않으며 Git HEAD·브랜치 metadata만 기록한다. 원격 주소나 Git 설정은 수집하지 않는다.
+판정하지 않으며 Git HEAD·브랜치 metadata만 기록한다. 원격 주소나 Git 설정은 수집하지 않는다. 하위 Git 명령의 trace 출력을 끄므로
+상속된 trace 환경이나 global/system Trace2 설정으로 로그 파일이 생성되지 않게 한다.
+기존 Git 설정 파일과 인증·proxy 설정은 수정하지 않는다.
 필요하면 셸에서 표준 출력을 새 JSON 파일로 저장한다. 도구 자체는 파일을 쓰지 않는다.
 
 ## 읽는 범위
@@ -36,7 +38,7 @@ python3 -S -B device_probe.py --source-root /data/openpilot
 - `/AGNOS`: 존재·파일 종류 metadata만 관찰하며 내용을 읽지 않는다.
 - OS·아키텍처·Python 버전, 선택한 소스 root의 Git metadata.
 
-초과 감지를 위해 최대4097 bytes까지 읽으며, 한도를 넘으면 값과 전체 SHA를 반환하지 않는다.
+초과 감지를 위해 프로세스 read 호출로 최대4097 bytes를 받으며, 한도를 넘으면 값과 전체 SHA를 반환하지 않는다.
 읽지 못한 값은 MISSING/EMPTY/UNREADABLE/TOO_LARGE와 null로 표시한다.
 마지막 파일 symlink·FIFO·디렉터리는 읽지 않는다. 환경 변수 전체, Params,
 VIN·serial·인증 정보·raw 로그는 수집하지 않는다. 네트워크 서비스나 차량 프로세스를 시작하지 않는다.
