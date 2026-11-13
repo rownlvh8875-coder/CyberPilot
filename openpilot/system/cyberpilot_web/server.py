@@ -5,7 +5,6 @@ import json
 import os
 import re
 import secrets
-import socket
 import stat
 import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -15,10 +14,12 @@ from urllib.parse import urlsplit
 ASSETS = Path(__file__).with_name("assets")
 
 
-def private_parent(path: Path):
+def private_parent(path: Path, allow_missing=False):
   parent = path.absolute().parent
   if parent.resolve() != parent or any((p / ".git").exists() for p in (parent, *parent.parents)):
     raise ValueError("credential_path_unsafe")
+  if allow_missing and not parent.exists():
+    return
   info = parent.stat()
   if info.st_mode & 0o077 or info.st_uid != os.getuid():
     raise ValueError("credential_directory_must_be_private")
@@ -39,6 +40,7 @@ def load_token(path: Path) -> str:
 
 def init_token(path: Path) -> str:
   # Only create the explicitly requested credential directory, never repo content.
+  private_parent(path, allow_missing=True)
   if not path.parent.exists():
     path.parent.mkdir(mode=0o700)
   private_parent(path)
@@ -93,7 +95,7 @@ def create_server(host, port, token, store, identity):
     server_version = "CyberPilotStatus/1"
     sys_version = ""
 
-    def log_message(self, *_args):
+    def log_message(self, format, *args):
       pass
 
     def reply(self, code, content, content_type="application/json; charset=utf-8"):

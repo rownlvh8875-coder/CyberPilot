@@ -30,6 +30,12 @@ class CliTests(unittest.TestCase):
     self.assertEqual(len(identity["commit"]), 40)
     self.assertIsInstance(identity["branch"], str)
 
+  def test_unrelated_parent_git_not_used_for_bundle(self):
+    with tempfile.TemporaryDirectory() as directory:
+      with patch("openpilot.system.cyberpilot_web.cli.ROOT", Path(directory)), patch("subprocess.run") as run:
+        run.return_value.stdout = "unrelated-parent-repository\n"
+        self.assertEqual(source_identity(), {"commit": None, "branch": None})
+
   def test_serve_requires_existing_credentials(self):
     with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stderr(io.StringIO()):
       with patch("openpilot.system.cyberpilot_web.cli.run") as run:

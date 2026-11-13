@@ -27,8 +27,8 @@ There are no remote control/config endpoints. Assets have no external resources.
 Manager registration is opt-in (`CYBERPILOT_WEB=1`); normal boot behavior stays
 unchanged. Source bundle works standalone for host monitoring, with a deterministic
 manifest. Safe readiness inspection checks launcher resources without executing
-launch scripts. Fix the confirmed misplaced AGNOS manifest reference after a
-failing static test. Uninitialized native submodules and absent actual target
+launch scripts. Check AGNOS manifest resolution, including tracked compatibility symlinks;
+change launch resources only if a failing test establishes a real defect. Uninitialized native submodules and absent actual target
 qualification remain visible blockers. A mobile monitor is not a control Adapter.
 
 ## Completion

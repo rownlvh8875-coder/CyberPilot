@@ -1,6 +1,7 @@
 import math
 import unittest
 from types import SimpleNamespace
+from typing import Any, cast
 
 from openpilot.system.cyberpilot_web.telemetry import CerealCollector, HostCollector, Store
 
@@ -38,13 +39,13 @@ class StateTests(unittest.TestCase):
 
   def test_source_time_exact_string(self):
     stamp = 2**63 - 1
-    self.store.update("carState", {}, stamp, True)
+    self.store.update("carState", {}, cast(Any, stamp), True)
     self.assertEqual(self.store.snapshot()["topics"]["carState"]["source_time_ns"], str(stamp))
 
   def test_bad_timestamps_rejected(self):
     for stamp in (True, -1, 1.5, 2**64):
       with self.assertRaises(ValueError):
-        self.store.update("carState", {}, stamp, True)
+        self.store.update("carState", {}, cast(Any, stamp), True)
 
   def test_unknown_topic_rejected(self):
     with self.assertRaises(ValueError):

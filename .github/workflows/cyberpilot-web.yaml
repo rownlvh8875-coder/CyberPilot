@@ -1,0 +1,44 @@
+name: CyberPilot Read-only Web
+on:
+  push:
+    branches: [main]
+    paths: ['openpilot/system/cyberpilot_web/**', 'tools/cyberpilot_web/**', 'openpilot/system/manager/process_config.py', 'launch*.sh', 'docs/CYBERPILOT_WEB_KO.md', '.github/workflows/cyberpilot-web.yaml']
+  pull_request:
+    branches: [main]
+    paths: ['openpilot/system/cyberpilot_web/**', 'tools/cyberpilot_web/**', 'openpilot/system/manager/process_config.py', 'launch*.sh', 'docs/CYBERPILOT_WEB_KO.md', '.github/workflows/cyberpilot-web.yaml']
+permissions:
+  contents: read
+concurrency:
+  group: cyberpilot-web-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      UV_LINK_MODE: copy
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          submodules: false
+          lfs: false
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12.13'
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+        with:
+          version: '0.12.23'
+          enable-cache: false
+      - name: Install locked verification tools
+        run: uv sync --locked --project tools/cyberpilot_web --python "$pythonLocation/bin/python"
+      - name: Verify read-only monitor with runner Chrome
+        run: tools/cyberpilot_web/.venv/bin/python -B tools/cyberpilot_web/verify.py --output "$RUNNER_TEMP/cyberpilot-web-verification"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        if: always()
+        with:
+          name: cyberpilot-web-verification
+          path: ${{ runner.temp }}/cyberpilot-web-verification
+          if-no-files-found: error
+          retention-days: 14

@@ -16,7 +16,9 @@ ROOT = Path(__file__).resolve().parents[3]
 
 
 def source_identity() -> dict:
-  result = {"commit": None, "branch": None}
+  result: dict[str, str | None] = {"commit": None, "branch": None}
+  if not (ROOT / ".git").exists():
+    return result
   for key, args in (("commit", ["rev-parse", "HEAD"]), ("branch", ["rev-parse", "--abbrev-ref", "HEAD"])):
     try:
       value = subprocess.run(["git", "--no-optional-locks", *args], cwd=ROOT, capture_output=True, text=True, timeout=2, check=True)
@@ -75,8 +77,14 @@ def main(argv=None):
   serve.add_argument("--source", choices=("host", "openpilot"), default="host")
   serve.add_argument("--tls-cert", type=Path)
   serve.add_argument("--tls-key", type=Path)
+  readiness = commands.add_parser("readiness", help="inspect static source paths, never qualify a device")
+  readiness.add_argument("--root", type=Path, default=ROOT)
   args = parser.parse_args(argv)
   try:
+    if args.command == "readiness":
+      from .readiness import inspect_readiness
+      print(json.dumps(inspect_readiness(args.root), indent=2))
+      return 2
     if args.command == "init":
       init_token(args.token_file)
       print("Private credential ready. Token is not printed; read it locally when pairing.")

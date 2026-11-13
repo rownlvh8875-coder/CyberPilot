@@ -1,5 +1,4 @@
 import http.client
-import os
 import tempfile
 import threading
 import unittest
@@ -21,6 +20,13 @@ class CredentialTests(unittest.TestCase):
     self.assertEqual(self.path.stat().st_mode & 0o777, 0o600)
     self.assertEqual(load_token(self.path), token)
     self.assertEqual(init_token(self.path), token)
+
+  def test_rejected_repository_path_creates_no_directory(self):
+    (Path(self.temp.name) / ".git").mkdir()
+    child = Path(self.temp.name) / "new-private-dir"
+    with self.assertRaises(ValueError):
+      init_token(child / "token")
+    self.assertFalse(child.exists())
 
   def test_world_readable_rejected(self):
     init_token(self.path)

@@ -67,7 +67,12 @@ def or_(*fns):
 def and_(*fns):
   return lambda *args: operator.and_(*(fn(*args) for fn in fns))
 
+def cyberpilot_web_enabled() -> bool:
+  return os.getenv("CYBERPILOT_WEB") == "1" and bool(os.getenv("CYBERPILOT_WEB_TOKEN_FILE"))
+
+
 procs = [
+  PythonProcess("cyberpilot_web", "openpilot.system.cyberpilot_web.daemon", always_run, enabled=cyberpilot_web_enabled()),
   DaemonProcess("manage_athenad", "openpilot.system.athena.manage_athenad", "AthenadPid"),
 
   NativeProcess("loggerd", "openpilot/system/loggerd", ["./loggerd"], logging),

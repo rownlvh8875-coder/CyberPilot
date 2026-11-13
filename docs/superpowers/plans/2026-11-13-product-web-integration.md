@@ -29,7 +29,7 @@ per-topic stale, connection loss and logout. Inspect screenshots. Commit.
 Consumes Task 2 serve config; daemon reads explicit env, no manager argv.
 Write RED tests for default-off process registration, safe daemon configuration,
 missing launch resource, deterministic bundle/extracted smoke and not-qualified
-readiness. Fix AGNOS manifest literal; implement opt-in manager entry, readiness,
+readiness. Resolve/test AGNOS compatibility symlinks; fix only a demonstrated defect; implement opt-in manager entry, readiness,
 bundle tools, locked dev environment, CI and Korean usage/remaining-work docs.
 Run all new tests/static/compile/browser/bundle checks (Expected PASS). Commit.
 
