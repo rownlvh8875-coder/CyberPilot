@@ -6,6 +6,7 @@ import os
 import shutil
 import sys
 import threading
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -16,6 +17,27 @@ from openpilot.system.cyberpilot_web.telemetry import HostCollector, Store  # no
 
 def response_fixture(payload):
   def handler(route):
+    route.fulfill(json=payload)
+  return handler
+
+
+def near_expiry_then_hold(payload, held):
+  sent = False
+  def handler(route):
+    nonlocal sent
+    if not sent:
+      sent = True
+      route.fulfill(json=payload)
+    else:
+      held.append(route)
+    # Later requests intentionally stay pending; connection failure must not
+    # make the per-topic expiration regression pass accidentally.
+  return handler
+
+
+def delayed_fixture(payload):
+  def handler(route):
+    time.sleep(0.4)
     route.fulfill(json=payload)
   return handler
 
@@ -73,6 +95,33 @@ def main():
         checks.append(f"synthetic-stale-safe-text-{width}")
         page.unroute("**/api/status")
         if width == 390:
+          fixture["topics"]["selfdriveState"]["age_s"] = 4.8
+          fixture["topics"]["carState"] = {"status": "live", "age_s": 0, "source_time_ns": "2", "data": {"can_valid": True}}
+          fixture["host_age_s"] = 4.8
+          held = []
+          page.route("**/api/status", near_expiry_then_hold(fixture, held))
+          expect(page.locator("#can")).to_have_text("연결됨")
+          page.wait_for_timeout(1400)
+          assert page.locator("#active").inner_text() == "—", "near-expiry topic stayed live during hung request"
+          assert page.locator("#memory").inner_text() == "—", "near-expiry host value stayed live"
+          assert page.locator("#can").inner_text() == "연결됨", "newer topic expired with older topic"
+          assert page.locator("#connection").inner_text() == "서버 연결됨"
+          checks.append("independent-local-expiration-with-hung-request")
+          page.screenshot(path=str(args.output / "local-expiry-390.png"), full_page=True)
+          for route in held:
+            route.abort()
+          page.unroute("**/api/status")
+          page.route("**/api/status", delayed_fixture(fixture))
+          page.reload()
+          expect(page.locator("#can")).to_have_text("연결됨")
+          expect(page.locator("#selfdrive-status")).to_contain_text("오래된 메시지")
+          assert page.locator("#active").inner_text() == "—"
+          assert page.locator("#memory").inner_text() == "—"
+          checks.append("conservative-response-transit-aging")
+          page.screenshot(path=str(args.output / "transit-expiry-390.png"), full_page=True)
+          page.unroute("**/api/status")
+          page.reload()
+          expect(page.locator("#connection")).to_have_text("서버 연결됨")
           server.shutdown()
           server.server_close()
           thread.join(timeout=2)
@@ -89,7 +138,7 @@ def main():
         context.close()
       browser.close()
     (args.output / "browser-results.json").write_text(json.dumps({"status": "PASS", "checks": checks, "vehicle_execution": 0, "browser_version": browser_version}, ensure_ascii=False, indent=2) + "\n")
-    print(f"Browser PASS: {len(checks)} checks; 5 screenshots")
+    print(f"Browser PASS: {len(checks)} checks; 7 screenshots")
   finally:
     if not stopped:
       server.shutdown()

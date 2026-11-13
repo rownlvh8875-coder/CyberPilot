@@ -6,6 +6,7 @@ from opendbc.car.structs import car
 from openpilot.common.params import Params
 from openpilot.common.hardware import PC, COMMA_HARDWARE
 from openpilot.system.manager.process import PythonProcess, NativeProcess, DaemonProcess
+from openpilot.system.cyberpilot_web.manager_process import OptionalStatusProcess
 
 WEBCAM = os.getenv("USE_WEBCAM") is not None
 
@@ -72,7 +73,7 @@ def cyberpilot_web_enabled() -> bool:
 
 
 procs = [
-  PythonProcess("cyberpilot_web", "openpilot.system.cyberpilot_web.daemon", always_run, enabled=cyberpilot_web_enabled()),
+  OptionalStatusProcess("cyberpilot_web", "openpilot.system.cyberpilot_web.daemon", always_run, enabled=cyberpilot_web_enabled()),
   DaemonProcess("manage_athenad", "openpilot.system.athena.manage_athenad", "AthenadPid"),
 
   NativeProcess("loggerd", "openpilot/system/loggerd", ["./loggerd"], logging),

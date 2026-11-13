@@ -71,7 +71,7 @@ class DeploymentTests(unittest.TestCase):
       with patch.dict(os.environ, env, clear=True):
         self.assertIs(scope["cyberpilot_web_enabled"](), expected)
     entries = [n for n in ast.walk(tree) if isinstance(n, ast.Call) and isinstance(n.func, ast.Name)
-               and n.func.id == "PythonProcess" and n.args and isinstance(n.args[0], ast.Constant) and n.args[0].value == "cyberpilot_web"]
+               and n.func.id == "OptionalStatusProcess" and n.args and isinstance(n.args[0], ast.Constant) and n.args[0].value == "cyberpilot_web"]
     self.assertEqual(len(entries), 1)
     assert isinstance(entries[0].args[1], ast.Constant)
     self.assertEqual(entries[0].args[1].value, "openpilot.system.cyberpilot_web.daemon")
