@@ -1,6 +1,7 @@
 import os
 import tempfile
 import unittest
+from dataclasses import replace
 from pathlib import Path
 from unittest.mock import patch
 
@@ -57,6 +58,29 @@ class BoundaryTests(unittest.TestCase):
       with self.assertRaises(ValueError):
         validate_namespace(run)
       os.environ['OPENPILOT_PREFIX'] = run.prefix
+
+  def test_foreign_ownership_refused(self):
+    with patch.dict(os.environ, {}, clear=True), namespace(self.root) as run:
+      uid = os.getuid()
+      with patch('os.getuid', return_value=uid + 1), self.assertRaises(ValueError):
+        validate_namespace(run)
+
+  def test_replaced_namespace_inode_refused(self):
+    with patch.dict(os.environ, {}, clear=True), namespace(self.root) as run:
+      backup = self.root / 'original-directory'
+      run.path.rename(backup)
+      run.path.mkdir(mode=0o700)
+      try:
+        with self.assertRaises(ValueError):
+          validate_namespace(run)
+      finally:
+        run.path.rmdir()
+        backup.rename(run.path)
+
+  def test_unsafe_prefix_refused(self):
+    with patch.dict(os.environ, {}, clear=True), namespace(self.root) as run:
+      with self.assertRaises(ValueError):
+        validate_namespace(replace(run, prefix='../other'))
 
   def test_owned_endpoint_cleanup_only(self):
     unrelated = self.root / 'msgq_do_not_touch'
