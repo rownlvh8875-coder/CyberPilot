@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CyberPilot · 실시간 상태</title><link rel="stylesheet" href="/app.css"><script src="/app.js" defer></script></head>
+<body><main>
+<header><div class="brand">C<span>·</span>P <small>CYBERPILOT</small></div><span id="connection" class="badge">연결 대기</span></header>
+<section class="intro"><p class="eyebrow">LIVE STATUS / 읽기 전용</p><h1>지금, CyberPilot</h1><p>기기의 상태와 수신한 오픈파일럿 메시지를 확인합니다.</p></section>
+<form id="login"><label for="token">연결 토큰</label><div class="login-row"><input id="token" type="password" autocomplete="off" required placeholder="기기에서 발급한 토큰"><button>연결</button></div><p id="login-error" role="alert"></p><small>토큰은 이 탭에만 보관됩니다. 외부 네트워크에서는 HTTPS를 사용하세요.</small></form>
+<section id="dashboard" hidden>
+<div class="source-row"><div><strong id="source">—</strong><p id="received">아직 수신한 상태가 없습니다</p></div><button id="logout" class="secondary">연결 해제</button></div>
+<div class="grid">
+<article class="card"><p class="eyebrow">OPENPILOT</p><h2>관측된 작동 상태</h2><strong id="active" class="metric">—</strong><p id="selfdrive-status">메시지 없음</p><p class="note">오픈파일럿의 상태 표시이며 CyberPilot 제어 승인과는 별개입니다.</p></article>
+<article class="card"><p class="eyebrow">VEHICLE LINK</p><h2>차량 CAN 연결</h2><strong id="can" class="metric">—</strong><p id="car-status">메시지 없음</p><p class="note">유효한 최신 carState가 수신된 경우에만 표시합니다.</p></article>
+<article class="card"><p class="eyebrow">HOST</p><h2>현재 서버 호스트</h2><dl><div><dt>메모리 사용</dt><dd id="memory">—</dd></div><div><dt>디스크 여유</dt><dd id="disk">—</dd></div><div><dt>1분 평균 부하</dt><dd id="load">—</dd></div></dl><p id="host-source" class="note">—</p></article>
+<article class="card"><p class="eyebrow">DEVICE MESSAGE</p><h2>기기 메시지</h2><dl><div><dt>시작 상태</dt><dd id="started">—</dd></div><div><dt>CPU 온도</dt><dd id="temperature">—</dd></div></dl><p id="device-status">메시지 없음</p></article>
+<article class="card wide"><p class="eyebrow">HEALTH</p><h2>알림 및 프로세스</h2><p id="alert">—</p><p id="processes">프로세스 메시지 없음</p><p id="collector-error" role="status"></p></article>
+<article class="card wide"><p class="eyebrow">VERSION</p><h2>소스 정보</h2><dl><div><dt>브랜치</dt><dd id="branch">—</dd></div><div><dt>커밋</dt><dd id="commit">—</dd></div></dl><p class="note">소스 정보는 실제 설치·차량 적합성 검증을 대신하지 않습니다.</p></article>
+</div></section>
+<footer>상태 화면은 차량을 조작하지 않습니다. 1초 갱신 · 5초 이상 새 메시지가 없으면 값 숨김. 주행 중에는 화면을 조작하지 마세요.</footer>
+</main></body></html>
